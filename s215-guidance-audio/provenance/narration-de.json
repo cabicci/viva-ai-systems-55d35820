@@ -1,0 +1,441 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-de.json",
+    "sha256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+    "bytes": 46487
+  },
+  "units": [
+    {
+      "id": "S2-15-de-report-record-layout-r1",
+      "unitId": "S2-15-de-report-record-layout-r1",
+      "locale": "de",
+      "semanticGroup": "report-record-layout",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/modelHelp",
+          "text": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.",
+          "sha256": "90370ac8247a3a95aca3220c483af643f579beb8584791d02d4a021b7df76ea5"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/0",
+          "text": "Titel und Auftraggeber",
+          "sha256": "ac2e81c4f3dd5553463fd7154c76db213bc41c93aaf281a055710b96527bbd47"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/1",
+          "text": "Einleitung / Ziel",
+          "sha256": "56926d8b2f92ae468a4c4f5b9c43430995a407d01de37c0c21ed1f6f73bd690d"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/2",
+          "text": "Verfahren und Beobachtungen",
+          "sha256": "dfd0c4759d8cfb221422d062e790af4ea0b0da8f4c691220dec64d717e3005c5"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/3",
+          "text": "Ergebnisse",
+          "sha256": "12ba6ae54b68929226b9399481560566fbb281d718f9a96504d03d137904efb2"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/4",
+          "text": "Deutung und Empfehlungen",
+          "sha256": "9fff9037be236bbf0c6a92561c114a8a76886ccd9b2c3c554c21f7d59e1c5efa"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/0",
+          "text": "Auftraggeber / Feld / Proben-ID",
+          "sha256": "32afd25d7b79b4b99679cc25de69d519eaf51603a32956c7ed64fb5bca6f1639"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/1",
+          "text": "Entnahme-/Testdaten / Standort / Kultur",
+          "sha256": "d53ef9191c9818c5e2f142168327cec5688d96ebd59008303f93286a9f89d865"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/0",
+          "text": "Parameter",
+          "sha256": "dd066ec1bf1d4485d3597f93a32c2f64b88ccdb6c555428ac4af3d17bf691cc2"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/1",
+          "text": "Tatsächlicher Wert oder leer",
+          "sha256": "d9be1d5993fb79ae938f2e02c4d34f01a0772badda9d93f361f24b4c338ba457"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/2",
+          "text": "Verfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten",
+          "sha256": "57792e26e38045d59d3b31abb2b282ec64433d448b798dc9f8602a139057fe41"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/0",
+          "text": "Eigener pH (einheitenlos)",
+          "sha256": "c8eb71b0fe935c9157976e2d97016e789df04d165f8d20e296d5b043286b575e"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/1",
+          "text": "Eigene Sand-/Schluff-/Tonanteile und Klasse",
+          "sha256": "18ae7d76c570485cec781548a79706c2f273b8cbe679c22e2f3b282776bf36b9"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/2",
+          "text": "Bereitgestellte OM 2.1%",
+          "sha256": "38ec7c7eb31fcbe8ef7dcf95009097547277bdef6eb954d9e4e2216db2b07fb3"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/3",
+          "text": "Bereitgestelltes P 12 ppm",
+          "sha256": "784793bed4b7a6af4b7077e4022f73af0b52bafc89e0d163a498686da5b53cdd"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/4",
+          "text": "Bereitgestelltes K 185 ppm",
+          "sha256": "8cb32e8593b88512742e1aac60b92da6bf4505c12aacf4f1ef40a5e3d95474ac"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/5",
+          "text": "N: nicht bereitgestellt",
+          "sha256": "f729940afb45a19d245b0b78faab04f5250566d050d73827fa15524c771ed819"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/0",
+          "text": "Jeden Befund mit Referenz deuten oder als offen begründen",
+          "sha256": "896dfc7409774dae9c7e75adfef3ec1e2288a7c0605eec1884102272949124ff"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/1",
+          "text": "Erster bedingter Schritt und Beleg",
+          "sha256": "deb37123012328e3c87b9ec1f3d32fd1c94dfa6465802608593cafd5d255953d"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/2",
+          "text": "Zweiter bedingter Schritt und Beleg",
+          "sha256": "1ab56b802a92c3c0f1af62686c46680fcb23f9976522b6ccc93eac9741ed7dd0"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/3",
+          "text": "Eine Priorität, Grund und mögliche Änderung",
+          "sha256": "92392eb1989e60a0f4e0dfd23b6a631f95da5e21b1725ac0f11994f14174ceda"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/4",
+          "text": "Anmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)",
+          "sha256": "226feb8b08d41274e35dcd544d6103d0c248682a973995a765a827ade829cfb7"
+        },
+        {
+          "pointer": "/portfolio/ui/recordHelp",
+          "text": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+          "sha256": "2b637d47d62e016c08af40b4079b4787f54139b96b823bc877ba221e424785da"
+        }
+      ],
+      "scientificMeaning": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung / Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+      "displayText": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung / Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+      "captionText": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung / Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+      "spokenText": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung, Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber, Feld, Proben-ID\n\nEntnahme-, Testdaten, Standort, Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren, Einheit, Herkunft, Protokoll, Grund fehlender Daten\n\nEigener Pe Ha (einheitenlos)\n\nEigene Sand-, Schluff-, Tonanteile und Klasse\n\nBereitgestellte organische Substanz zwei Komma eins Prozent \n\nBereitgestelltes Phosphor zwölf Teile pro Million\n\nBereitgestelltes Kalium einhundertfünfundachtzig Teile pro Million\n\nStickstoff: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+      "spokenTextSHA256": "2f79011c322da69ff726c10ee90afac211ee652101b16d28f86ba8958467d4e2",
+      "spokenTextSha256": "2f79011c322da69ff726c10ee90afac211ee652101b16d28f86ba8958467d4e2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung / Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+          "spoken": "Die Papierfelder dienen dazu, die Berichtsgliederung zu üben; sie zeigen weder Bodenmessungen noch einen freigegebenen Bericht. Wähle einen Abschnitt und übe die vollständige Reihenfolge. Schreibe für jeden Fall einen eigenen Versuch, bevor du den Vergleich öffnest; die Schaltfläche prüft nur, ob Text eingegeben wurde.\n\nTitel und Auftraggeber\n\nEinleitung, Ziel\n\nVerfahren und Beobachtungen\n\nErgebnisse\n\nDeutung und Empfehlungen\n\nAuftraggeber, Feld, Proben-ID\n\nEntnahme-, Testdaten, Standort, Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren, Einheit, Herkunft, Protokoll, Grund fehlender Daten\n\nEigener Pe Ha (einheitenlos)\n\nEigene Sand-, Schluff-, Tonanteile und Klasse\n\nBereitgestellte organische Substanz zwei Komma eins Prozent \n\nBereitgestelltes Phosphor zwölf Teile pro Million\n\nBereitgestelltes Kalium einhundertfünfundachtzig Teile pro Million\n\nStickstoff: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nUnbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0dd2e116e16a9bd09d8a15ad7771ba551b9fb16d0790114fe205cb190a74210a",
+      "requestFingerprintSha256": "0dd2e116e16a9bd09d8a15ad7771ba551b9fb16d0790114fe205cb190a74210a",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-15-de-report-process-and-peer-r1",
+      "unitId": "S2-15-de-report-process-and-peer-r1",
+      "locale": "de",
+      "semanticGroup": "report-process-and-peer",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/sequence/0",
+          "text": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.",
+          "sha256": "4ddb81ff62e1a33f9be7ea45fc091556d746b09ddf46154e2edc6c457a265eee"
+        },
+        {
+          "pointer": "/portfolio/sequence/1",
+          "text": "pH, NPK, organische Substanz und KAK zwei Minuten einem Partner erklären und einen Fehler berichtigen.",
+          "sha256": "c47cc32477bcf71cdf70c4e7077beb9b66b46096885e18b9e3d3a531a794d23b"
+        },
+        {
+          "pointer": "/portfolio/sequence/2",
+          "text": "West Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.",
+          "sha256": "40cb0f96a6f37a926005da79a100ae8cfcf91879e91ca9b3db11064e0d6dc108"
+        },
+        {
+          "pointer": "/portfolio/sequence/3",
+          "text": "Field-B-Mittel 6.24 bei fünf Einzelwerten und fehlendem Datum berechnen.",
+          "sha256": "f288d246abdfca36a62746ef40e3a9b350e55d7223c1857522057d97afb21d24"
+        },
+        {
+          "pointer": "/portfolio/sequence/4",
+          "text": "Paddock-3-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.",
+          "sha256": "4267fcc5adb20a850c713351f9df6cd6f7076994601800d2aef177eda57afbc9"
+        },
+        {
+          "pointer": "/portfolio/peerReview/prompt",
+          "text": "Prüfe einen West-Field- oder Paddock-3-Bericht: markiere fehlende Tatsache/Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen 1–5 nur für Übungsplanung einschätzen.",
+          "sha256": "bc0431a24ff9df62447b22ba2bacf8ca78811d81c3b04443c6359aa3c33259e8"
+        },
+        {
+          "pointer": "/portfolio/peerReview/trainerBoundary",
+          "text": "Nur die reale Lehrkraft trägt Ja/Nein, Beleg, Korrektur und Unterschrift auf der Paddock-3-Produktkarte ein.",
+          "sha256": "11fb6da572ad086a6b00f4065e3a556557d764551b869401b4bb3b7c5d9ce3cb"
+        },
+        {
+          "pointer": "/portfolio/ui/casesHelp",
+          "text": "Lehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.",
+          "sha256": "21ade12d261d14f8c2063e48bd9035924130c768f471196e8492bb256a1be21b"
+        },
+        {
+          "pointer": "/portfolio/ui/reason",
+          "text": "Schreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.",
+          "sha256": "06c5aa24ba83373596160785361abfca09c5f14799f670099c30eb7476af2a03"
+        },
+        {
+          "pointer": "/portfolio/ui/reasonBoundary",
+          "text": "Der Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+          "sha256": "29b8fe9b75c0b1d2a5def9c75f7dbd41952c0a418d47a4ab1744485d65146a0c"
+        }
+      ],
+      "scientificMeaning": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\npH, NPK, organische Substanz und KAK zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel 6.24 bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-3-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-3-Bericht: markiere fehlende Tatsache/Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen 1–5 nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja/Nein, Beleg, Korrektur und Unterschrift auf der Paddock-3-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+      "displayText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\npH, NPK, organische Substanz und KAK zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel 6.24 bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-3-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-3-Bericht: markiere fehlende Tatsache/Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen 1–5 nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja/Nein, Beleg, Korrektur und Unterschrift auf der Paddock-3-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+      "captionText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\npH, NPK, organische Substanz und KAK zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel 6.24 bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-3-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-3-Bericht: markiere fehlende Tatsache/Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen 1–5 nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja/Nein, Beleg, Korrektur und Unterschrift auf der Paddock-3-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+      "spokenText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nPe Ha, En Pe Ka, organische Substanz und Ka A Ka zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel sechs Komma zwei vier bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-drei-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-drei-Bericht: markiere fehlende Tatsache, Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen eins bis fünf nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja, Nein, Beleg, Korrektur und Unterschrift auf der Paddock-drei-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+      "spokenTextSHA256": "799d140806597ed23d88e5853bfc2544f893b77d363fa00e12d9c9e6d9ef7e9e",
+      "spokenTextSha256": "799d140806597ed23d88e5853bfc2544f893b77d363fa00e12d9c9e6d9ef7e9e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\npH, NPK, organische Substanz und KAK zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel 6.24 bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-3-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-3-Bericht: markiere fehlende Tatsache/Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen 1–5 nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja/Nein, Beleg, Korrektur und Unterschrift auf der Paddock-3-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+          "spoken": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nPe Ha, En Pe Ka, organische Substanz und Ka A Ka zwei Minuten einem Partner erklären und einen Fehler berichtigen.\n\nWest Field mit bedingten Prioritäten erstellen und gegenseitig prüfen.\n\nField-B-Mittel sechs Komma zwei vier bei fünf Einzelwerten und fehlendem Datum berechnen.\n\nPaddock-drei-Produkt an fünf Punkten ansehen; keine Lehrkraft-Unterschrift selbst setzen.\n\nPrüfe einen West-Field- oder Paddock-drei-Bericht: markiere fehlende Tatsache, Methode, Denkfehler und genaue Berichtigung. Danach Vertrauen eins bis fünf nur für Übungsplanung einschätzen.\n\nNur die reale Lehrkraft trägt Ja, Nein, Beleg, Korrektur und Unterschrift auf der Paddock-drei-Produktkarte ein.\n\nLehrdaten, keine eigenen Messungen. Fehlende Daten zu Datum, Labor und Beobachtungen bleiben unbekannt. Beispielbereiche sind keine örtlichen Laborgrenzen.\n\nSchreibe für diesen Fall deinen eigenen Berichtsentwurf mit fünf Abschnitten und eine kritische Anmerkung. Benenne unbekannte Angaben ausdrücklich. Vollständigkeit und Bedeutung werden nicht automatisch geprüft.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "70c9be7a3ee3437a0b542c630bb32564ea94b8cedf8cf763e6f37fe462c9de4f",
+      "requestFingerprintSha256": "70c9be7a3ee3437a0b542c630bb32564ea94b8cedf8cf763e6f37fe462c9de4f",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-15-de-report-criteria-r1",
+      "unitId": "S2-15-de-report-criteria-r1",
+      "locale": "de",
+      "semanticGroup": "report-criteria",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/passChecks/0/evidence",
+          "text": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode/Referenz und Deutung. NPK, organische Substanz und KAK werden verständlich erklärt, ohne KAK als Nitratbindung auszugeben.",
+          "sha256": "9e8fc965422507d1d39536fc2bc4bca19153001bd8eb1d3c811a3d6d07bd210b"
+        },
+        {
+          "pointer": "/portfolio/passChecks/0/decision",
+          "text": "Bestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.",
+          "sha256": "4d8870637d5c0f3fde560f694b6cddb539c1dd612709305a5dd578b3fa840651"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/evidence",
+          "text": "Field B zeigt 6.2, 6.4, 6.1, 6.3, 6.2 und 31.2/5 = 6.24, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.",
+          "sha256": "708b354d40ee72f23b51df644f910df806d34c4f0406c4d08c0e2564e1860127"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/decision",
+          "text": "Nur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.",
+          "sha256": "8a22488a480c36dea836e2d99a2bdf6447878d081010ea95f9c0ce99a813bf0e"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/evidence",
+          "text": "Für den Fall werden Säure/Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung/Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen N-Mangel und keine Dosis.",
+          "sha256": "88068e665dc5aa06a06e8abb8d33ccf937e33a81b80779c8d8c21fd710628e6e"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/decision",
+          "text": "Bestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.",
+          "sha256": "c058d2dc5871d69a5509928629d7c25ed845739faecefb58d241fc5558b317fa"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/evidence",
+          "text": "Mindestens eine fehlende Methode/Datum/Einheit/Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.",
+          "sha256": "6e93c8faca13c3e034fc3fc4004bc05f20a45e9af5ec5da2a2a3fa2885854d76"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/decision",
+          "text": "Bestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+          "sha256": "9e93493971ac864fae4db099fdae8a274dfe4e007e61a773756c9f1fad220f4e"
+        }
+      ],
+      "scientificMeaning": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode/Referenz und Deutung. NPK, organische Substanz und KAK werden verständlich erklärt, ohne KAK als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt 6.2, 6.4, 6.1, 6.3, 6.2 und 31.2/5 = 6.24, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure/Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung/Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen N-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode/Datum/Einheit/Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+      "displayText": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode/Referenz und Deutung. NPK, organische Substanz und KAK werden verständlich erklärt, ohne KAK als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt 6.2, 6.4, 6.1, 6.3, 6.2 und 31.2/5 = 6.24, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure/Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung/Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen N-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode/Datum/Einheit/Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+      "captionText": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode/Referenz und Deutung. NPK, organische Substanz und KAK werden verständlich erklärt, ohne KAK als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt 6.2, 6.4, 6.1, 6.3, 6.2 und 31.2/5 = 6.24, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure/Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung/Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen N-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode/Datum/Einheit/Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+      "spokenText": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode, Referenz und Deutung. En Pe Ka, organische Substanz und Ka A Ka werden verständlich erklärt, ohne Ka A Ka als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt sechs Komma zwei, sechs Komma vier, sechs Komma eins, sechs Komma drei, sechs Komma zwei und einunddreißig Komma zwei geteilt durch fünf gleich sechs Komma zwei vier, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure, Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung, Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen Stickstoff-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode, Datum, Einheit, Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+      "spokenTextSHA256": "c857b2cea6cd93d202215a9ce5bc31b9674c4dee4f24a2b35837e12caa0c9e1e",
+      "spokenTextSha256": "c857b2cea6cd93d202215a9ce5bc31b9674c4dee4f24a2b35837e12caa0c9e1e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode/Referenz und Deutung. NPK, organische Substanz und KAK werden verständlich erklärt, ohne KAK als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt 6.2, 6.4, 6.1, 6.3, 6.2 und 31.2/5 = 6.24, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure/Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung/Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen N-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode/Datum/Einheit/Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+          "spoken": "Fünf Abschnitte; Betrieb, Feld, Probe, Datum sowie echte Methode oder Lücke sind erkennbar. Tabelle nennt Parameter, Wert, Einheit, Methode, Referenz und Deutung. En Pe Ka, organische Substanz und Ka A Ka werden verständlich erklärt, ohne Ka A Ka als Nitratbindung auszugeben.\n\nBestanden bei nachvollziehbarem, korrektem und verständlichem Bericht; irreführende Herkunft oder Einheit verlangt gezielte Überarbeitung.\n\nField B zeigt sechs Komma zwei, sechs Komma vier, sechs Komma eins, sechs Komma drei, sechs Komma zwei und einunddreißig Komma zwei geteilt durch fünf gleich sechs Komma zwei vier, als Mittel fünf einzelner Werte; Datum belegt oder als fehlend markiert.\n\nNur bestanden, wenn alle fünf Werte, Rechnung, Feldkennung und Unterschied zwischen Mittel und Mischprobenmessung stimmen.\n\nFür den Fall werden Säure, Nährstoffe mit kultur- und methodenbezogener Laborplanung, Entwässerung, Verdichtung mit Standortprüfung verknüpft; gelbe Blätter allein beweisen keinen Stickstoff-Mangel und keine Dosis.\n\nBestanden, wenn Priorität und Maßnahme den Belegen und Grenzen folgen; unbelegte Ursache oder Dosis führt zur gezielten Wiederholung.\n\nMindestens eine fehlende Methode, Datum, Einheit, Quelle, ein Deutungs- oder Empfehlungsfehler sowie eine konkrete Korrektur; Selbstvertrauen wird von Leistung getrennt.\n\nBestanden bei genauer fachlich richtiger Berichtigung; die Vertrauenszahl allein reicht nicht.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "660d37d9aff0d9c0e5e6edebe0ddb479694b401ac3a4c2490844d915943dc4db",
+      "requestFingerprintSha256": "660d37d9aff0d9c0e5e6edebe0ddb479694b401ac3a4c2490844d915943dc4db",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-15-de-report-trainer-and-timing-r1",
+      "unitId": "S2-15-de-report-trainer-and-timing-r1",
+      "locale": "de",
+      "semanticGroup": "report-trainer-and-timing",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/trainerTitle",
+          "text": "Paddock 3: fünf Produktkriterien für die Lehrkraft",
+          "sha256": "daff5b23cb17d7f9995d2dfa4a48743eacce923571d5f365939f5e877920e867"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/0",
+          "text": "Bericht nennt Paddock 3",
+          "sha256": "64e4a578c484c729a5511fe463f3493f4b4e9f21d79f5c5b776001a8d93035dc"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/1",
+          "text": "Alle fünf Ergebnisse pH/OM/N/P/K vorhanden",
+          "sha256": "43fa884527dc0a2357a77588fc3fc1ef56e70f6878b3b23992b6e5e15182dcd6"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/2",
+          "text": "Einfache verständliche Deutung",
+          "sha256": "215d6f2c5d1fa44d2643ca5c759ce1d79a225be7569772269938b894bde12a2d"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/3",
+          "text": "Mindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-/Labor-/Standortprüfung",
+          "sha256": "b5ef354275f2ba413b6218982b609667b5ba2bbad2612b2ec1f38988aa728311"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/4",
+          "text": "Bericht geordnet, lesbar und professionell",
+          "sha256": "e801b48ebba056f540d110cfcbedfc972465b66718433e05c22821375aa9a75e"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerNote",
+          "text": "Protokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.",
+          "sha256": "086c434a296b72594bfd961d983e9b6895859f3e31cc1beb15859e6ea7e252cf"
+        },
+        {
+          "pointer": "/portfolio/practical/instruction",
+          "text": "Dieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+          "sha256": "74d8c3cf9a455e063b5e574700f447a6db06b51cab18df85c523e9fe3c6229d2"
+        },
+        {
+          "pointer": "/portfolio/ui/timing",
+          "text": "60 aktive Minuten: 5 Einstieg + 10 Begriffe + 35 Schreiben + 10 Austausch. Die Moderation nennt zusätzlich 5 Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von 3–4, Hinweise bei 15 und 5 Restminuten; 2 Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen/Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+          "sha256": "d6adb0a1ed6f23c252f5328f99780ffe8049f204b26215fbd4c52b58249f2a18"
+        }
+      ],
+      "scientificMeaning": "Paddock 3: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock 3\n\nAlle fünf Ergebnisse pH/OM/N/P/K vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-/Labor-/Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\n60 aktive Minuten: 5 Einstieg + 10 Begriffe + 35 Schreiben + 10 Austausch. Die Moderation nennt zusätzlich 5 Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von 3–4, Hinweise bei 15 und 5 Restminuten; 2 Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen/Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+      "displayText": "Paddock 3: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock 3\n\nAlle fünf Ergebnisse pH/OM/N/P/K vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-/Labor-/Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\n60 aktive Minuten: 5 Einstieg + 10 Begriffe + 35 Schreiben + 10 Austausch. Die Moderation nennt zusätzlich 5 Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von 3–4, Hinweise bei 15 und 5 Restminuten; 2 Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen/Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+      "captionText": "Paddock 3: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock 3\n\nAlle fünf Ergebnisse pH/OM/N/P/K vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-/Labor-/Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\n60 aktive Minuten: 5 Einstieg + 10 Begriffe + 35 Schreiben + 10 Austausch. Die Moderation nennt zusätzlich 5 Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von 3–4, Hinweise bei 15 und 5 Restminuten; 2 Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen/Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+      "spokenText": "Paddock drei: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock drei\n\nAlle fünf Ergebnisse Pe Ha, organische Substanz, Stickstoff, Phosphor, Kalium vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-, Labor-, Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-drei-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\nsechzig aktive Minuten: fünf Einstieg plus zehn Begriffe plus fünfunddreißig Schreiben plus zehn Austausch. Die Moderation nennt zusätzlich fünf Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von drei bis vier, Hinweise bei fünfzehn und fünf Restminuten; zwei Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen, Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+      "spokenTextSHA256": "2a931d690593fc19d2384165cce9a91e74232e87c19a30cff0b0248a8a06f0c2",
+      "spokenTextSha256": "2a931d690593fc19d2384165cce9a91e74232e87c19a30cff0b0248a8a06f0c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Paddock 3: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock 3\n\nAlle fünf Ergebnisse pH/OM/N/P/K vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-/Labor-/Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\n60 aktive Minuten: 5 Einstieg + 10 Begriffe + 35 Schreiben + 10 Austausch. Die Moderation nennt zusätzlich 5 Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von 3–4, Hinweise bei 15 und 5 Restminuten; 2 Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen/Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+          "spoken": "Paddock drei: fünf Produktkriterien für die Lehrkraft\n\nBericht nennt Paddock drei\n\nAlle fünf Ergebnisse Pe Ha, organische Substanz, Stickstoff, Phosphor, Kalium vorhanden\n\nEinfache verständliche Deutung\n\nMindestens eine konkrete mangelbezogene Maßnahme mit Beleg; Knochenmehlbeispiel nur mit Kultur-, Labor-, Standortprüfung\n\nBericht geordnet, lesbar und professionell\n\nProtokoll unbeobachtet und ohne Unterschrift. Fünf Originalkriterien erhalten; kein Schülerklick erfasst Lehrkraftentscheidungen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-drei-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.\n\nsechzig aktive Minuten: fünf Einstieg plus zehn Begriffe plus fünfunddreißig Schreiben plus zehn Austausch. Die Moderation nennt zusätzlich fünf Minuten Vorbereitung; ohne stillschweigende Verlängerung organisieren. Gruppen von drei bis vier, Hinweise bei fünfzehn und fünf Restminuten; zwei Minuten Partnererklärung innerhalb der Übung. Muster nach Versuch und Kritik. Vorgefüllte Tabellen, Satzanfänge bestätigen keinen selbstständigen Tabellenaufbau.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f0161da94bb5cf15df7aca19085001c33096ef8f289fabdfc0e393aac55f7c98",
+      "requestFingerprintSha256": "f0161da94bb5cf15df7aca19085001c33096ef8f289fabdfc0e393aac55f7c98",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

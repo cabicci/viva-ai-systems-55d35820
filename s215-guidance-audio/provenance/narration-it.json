@@ -1,0 +1,441 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-it.json",
+    "sha256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+    "bytes": 45531
+  },
+  "units": [
+    {
+      "id": "S2-15-it-report-record-layout-r1",
+      "unitId": "S2-15-it-report-record-layout-r1",
+      "locale": "it",
+      "semanticGroup": "report-record-layout",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/modelHelp",
+          "text": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.",
+          "sha256": "da92c730985a3bfccf0678ed7cc8de605abcd9b3ddee347ccc96e603d03e1540"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/0",
+          "text": "Titolo e dati del cliente",
+          "sha256": "f49bcb33c7c8ba3fd986621524f4b7b7147ab1f3f45ec0fe6ce409e5957acedc"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/1",
+          "text": "Introduzione / obiettivo",
+          "sha256": "30255f00e4769f81291a1766ba199f8408bdea24e544198459e65fc0a5ada020"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/2",
+          "text": "Metodi e osservazioni",
+          "sha256": "3071a17986f1666c2432c2ba493434be828240bb8d904c64533ad3baf533e405"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/3",
+          "text": "Risultati",
+          "sha256": "a9c35945bf93dfa8fdcb2b12a8018e9181a1e1e7fba3e20d0c6bf2ca90c570ce"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/4",
+          "text": "Interpretazione e raccomandazioni",
+          "sha256": "084504d977941f40037055a43620bd590224b363662125c7b98019dfb8f83951"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/0",
+          "text": "Cliente / campo / ID campione",
+          "sha256": "448b785fa1e5184c9cf1d678f74fbbdb5909762285aba5ac921492cea1a129b2"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/1",
+          "text": "Date di raccolta e prova / sito / coltura",
+          "sha256": "5419514cce6f79f26ec04720c47615aa0fcadf6cb7e94c85cf5c0ac1f4a8dcab"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/0",
+          "text": "Parametro",
+          "sha256": "5a84bf2c51967bcdf09bc043c195c3b1b43511aff2db6d7f37a9f0f5d6dc47d7"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/1",
+          "text": "Valore reale, o vuoto",
+          "sha256": "28f7f655f8f188b74ab8acd87b9fbce8df1bbfa3989bdb45192aaf5ede8d1534"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/2",
+          "text": "Metodo / unità / origine / registro / motivo del dato mancante",
+          "sha256": "23a8d9d82bc71cee889928611c853955efa7103b2851656c90dc1f02e43a055b"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/0",
+          "text": "Tuo pH (senza unità)",
+          "sha256": "6b7efd604529aabeb0001072e9514ca4489025d4a22dda66fe50199a7f7e24d6"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/1",
+          "text": "Tue percentuali sabbia/limo/argilla e classe",
+          "sha256": "e5a5b4e0a6e36b7916471d74726a3a391d4ec190d60f04090dcd51bf720307e0"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/2",
+          "text": "OM fornita 2.1%",
+          "sha256": "aa4a8a2d538d8622efab1b8e1f73f54a2be6bde51007e502991480d47a16dfb2"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/3",
+          "text": "P fornito 12 ppm",
+          "sha256": "24bd137a2bf4612fe14d7bebfb08be3ea3bf9f45d8b7226de1b8d84324543c88"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/4",
+          "text": "K fornito 185 ppm",
+          "sha256": "17731641b829c83e744760a4c9af217cdfd4b2f704dd9b89b419c12d027401d8"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/5",
+          "text": "N: non fornito",
+          "sha256": "f30b6f2befd4218dba6ce5a488aa2edda53ca7733df1f332608a79bbea23bcee"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/0",
+          "text": "Interpreta ogni risultato con riferimento, oppure irrisolto con motivo",
+          "sha256": "6bd124c7b4e132cc4cf60fd653d3025e30fca7536a6a80038674f4b3153f358a"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/1",
+          "text": "Prima azione condizionata e prova",
+          "sha256": "280a025a019e9dd32e875cab548b8dbf937e3c52ad39d7f01cc76d9f7383d193"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/2",
+          "text": "Seconda azione condizionata e prova",
+          "sha256": "f96461dc6f6319afbbcf0b1bb871a13aaa03d35ca5f752508a3df243c355cee3"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/3",
+          "text": "Una priorità, motivo e cosa potrebbe cambiarla",
+          "sha256": "b6ecd9bc8b38f224bf0fe905229c96e141e9d1c019c38a835552338e665e1357"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/4",
+          "text": "Commenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)",
+          "sha256": "26cee9b816186114937f91fbaf69a82129d9edb58c21af1d53d194caebbc1b7e"
+        },
+        {
+          "pointer": "/portfolio/ui/recordHelp",
+          "text": "Lascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+          "sha256": "a723406998ffe84b8f7362235206b323d8e1c8630a4ccf11959e32486de39004"
+        }
+      ],
+      "scientificMeaning": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione / obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente / campo / ID campione\n\nDate di raccolta e prova / sito / coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo / unità / origine / registro / motivo del dato mancante\n\nTuo pH (senza unità)\n\nTue percentuali sabbia/limo/argilla e classe\n\nOM fornita 2.1%\n\nP fornito 12 ppm\n\nK fornito 185 ppm\n\nN: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+      "displayText": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione / obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente / campo / ID campione\n\nDate di raccolta e prova / sito / coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo / unità / origine / registro / motivo del dato mancante\n\nTuo pH (senza unità)\n\nTue percentuali sabbia/limo/argilla e classe\n\nOM fornita 2.1%\n\nP fornito 12 ppm\n\nK fornito 185 ppm\n\nN: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+      "captionText": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione / obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente / campo / ID campione\n\nDate di raccolta e prova / sito / coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo / unità / origine / registro / motivo del dato mancante\n\nTuo pH (senza unità)\n\nTue percentuali sabbia/limo/argilla e classe\n\nOM fornita 2.1%\n\nP fornito 12 ppm\n\nK fornito 185 ppm\n\nN: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+      "spokenText": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione, obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente, campo, ID campione\n\nDate di raccolta e prova, sito, coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo, unità, origine, registro, motivo del dato mancante\n\nTuo pi acca (senza unità)\n\nTue percentuali sabbia, limo, argilla e classe\n\nsostanza organica fornita due virgola uno per cento \n\nfosforo fornito dodici parti per milione\n\npotassio fornito centottantacinque parti per milione\n\nazoto: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+      "spokenTextSHA256": "b9b95ba9de6618e8bd53e818fe7c27378fe6902da4ad53d08beadb0febc94730",
+      "spokenTextSha256": "b9b95ba9de6618e8bd53e818fe7c27378fe6902da4ad53d08beadb0febc94730",
+      "spokenAdaptationChanges": [
+        {
+          "written": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione / obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente / campo / ID campione\n\nDate di raccolta e prova / sito / coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo / unità / origine / registro / motivo del dato mancante\n\nTuo pH (senza unità)\n\nTue percentuali sabbia/limo/argilla e classe\n\nOM fornita 2.1%\n\nP fornito 12 ppm\n\nK fornito 185 ppm\n\nN: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+          "spoken": "I pannelli di carta esercitano l’organizzazione del rapporto; non rappresentano misure del suolo né un rapporto approvato. Seleziona una sezione ed esercitati con l’ordine completo. Per ogni caso, scrivi un tuo tentativo prima di aprire il confronto; il pulsante controlla soltanto che sia stato inserito del testo.\n\nTitolo e dati del cliente\n\nIntroduzione, obiettivo\n\nMetodi e osservazioni\n\nRisultati\n\nInterpretazione e raccomandazioni\n\nCliente, campo, ID campione\n\nDate di raccolta e prova, sito, coltura\n\nParametro\n\nValore reale, o vuoto\n\nMetodo, unità, origine, registro, motivo del dato mancante\n\nTuo pi acca (senza unità)\n\nTue percentuali sabbia, limo, argilla e classe\n\nsostanza organica fornita due virgola uno per cento \n\nfosforo fornito dodici parti per milione\n\npotassio fornito centottantacinque parti per milione\n\nazoto: non fornito\n\nInterpreta ogni risultato con riferimento, oppure irrisolto con motivo\n\nPrima azione condizionata e prova\n\nSeconda azione condizionata e prova\n\nUna priorità, motivo e cosa potrebbe cambiarla\n\nCommenti, informazioni mancanti e riscontro del formatore (lascia vuoto finché non è stato ricevuto)\n\nLascia ignoti vuoti e motiva. Salvare non verifica risultati, significato, cronologia o pratica. Le cifre fornite sono dati didattici, non prova di consegna reale da parte del formatore.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "16f46ec672d0d35482f3a3fe8d67f0f3a1a2de2ac1fdc54de49efaf9ed63c347",
+      "requestFingerprintSha256": "16f46ec672d0d35482f3a3fe8d67f0f3a1a2de2ac1fdc54de49efaf9ed63c347",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-15-it-report-process-and-peer-r1",
+      "unitId": "S2-15-it-report-process-and-peer-r1",
+      "locale": "it",
+      "semanticGroup": "report-process-and-peer",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/sequence/0",
+          "text": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.",
+          "sha256": "9b066fbfefe91476b86104c2e3119fcc7773d30e6b1a073dc050315f36605691"
+        },
+        {
+          "pointer": "/portfolio/sequence/1",
+          "text": "Spiega pH, NPK, sostanza organica e CEC a un collega in due minuti, poi correggi una frase sbagliata.",
+          "sha256": "9f00e635efc6ce275e518dd123944da2f6699c9f45ef5123ad86a6cd28b35910"
+        },
+        {
+          "pointer": "/portfolio/sequence/2",
+          "text": "Redigi West Field con priorità condizionate e revisione tra pari.",
+          "sha256": "4a5e90460a5689ee466155cf7a5ec6a49a92edbf2d7bb7335c21a269c4c0118d"
+        },
+        {
+          "pointer": "/portfolio/sequence/3",
+          "text": "Calcola la media Field B 6.24 mantenendo cinque letture e data sconosciuta.",
+          "sha256": "e69c3dbb0f95a528eb979a226c42a10b7d121c757bb41ef874ede1cbf715d7e4"
+        },
+        {
+          "pointer": "/portfolio/sequence/4",
+          "text": "Confronta il prodotto Paddock 3 con cinque criteri; non firmare al posto del formatore.",
+          "sha256": "125e61474e4e84489101dee05b19ae538804f48fbfa2841048ef4108e87f8362"
+        },
+        {
+          "pointer": "/portfolio/peerReview/prompt",
+          "text": "Rivedi West Field o Paddock 3 di un collega: trova un fatto/metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia 1–5 solo per pianificare esercizio.",
+          "sha256": "a326c5e762f77dec47754325f62c380b03cdbf8bccf877cf63231343324b975c"
+        },
+        {
+          "pointer": "/portfolio/peerReview/trainerBoundary",
+          "text": "Solo il formatore reale può segnare sì/no, prova, correzione e firma nelle cinque righe Paddock 3.",
+          "sha256": "58b81083356d92560c7e1ceb52b32490aad896a1bc468ae375693b002f3078dd"
+        },
+        {
+          "pointer": "/portfolio/ui/casesHelp",
+          "text": "Dati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.",
+          "sha256": "ecf1a433eb826c883ad9eafe42cc72ab54b556d81ebc5afeafe7300615cd5d02"
+        },
+        {
+          "pointer": "/portfolio/ui/reason",
+          "text": "Scrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.",
+          "sha256": "0e551d749c410c052e0f6722e6cbff5ab31a31111b3fe9b38c5976812da4bdac"
+        },
+        {
+          "pointer": "/portfolio/ui/reasonBoundary",
+          "text": "Il confronto non valuta il significato del testo e non certifica abilità pratiche.",
+          "sha256": "90aa84251cf051565b628464a4ecace3e1f2a4be6e85b934b7770b30bec9aaec"
+        }
+      ],
+      "scientificMeaning": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pH, NPK, sostanza organica e CEC a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B 6.24 mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock 3 con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock 3 di un collega: trova un fatto/metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia 1–5 solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì/no, prova, correzione e firma nelle cinque righe Paddock 3.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+      "displayText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pH, NPK, sostanza organica e CEC a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B 6.24 mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock 3 con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock 3 di un collega: trova un fatto/metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia 1–5 solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì/no, prova, correzione e firma nelle cinque righe Paddock 3.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+      "captionText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pH, NPK, sostanza organica e CEC a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B 6.24 mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock 3 con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock 3 di un collega: trova un fatto/metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia 1–5 solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì/no, prova, correzione e firma nelle cinque righe Paddock 3.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+      "spokenText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pi acca, enne pi cappa, sostanza organica e ci e ci a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B sei virgola due quattro mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock tre con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock tre di un collega: trova un fatto, metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia uno a cinque solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì, no, prova, correzione e firma nelle cinque righe Paddock tre.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+      "spokenTextSHA256": "2d34daef739558c7517662626e11b6e4ba0bbfd07c7702d5a5c4749f7c3891c8",
+      "spokenTextSha256": "2d34daef739558c7517662626e11b6e4ba0bbfd07c7702d5a5c4749f7c3891c8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pH, NPK, sostanza organica e CEC a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B 6.24 mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock 3 con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock 3 di un collega: trova un fatto/metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia 1–5 solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì/no, prova, correzione e firma nelle cinque righe Paddock 3.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+          "spoken": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nSpiega pi acca, enne pi cappa, sostanza organica e ci e ci a un collega in due minuti, poi correggi una frase sbagliata.\n\nRedigi West Field con priorità condizionate e revisione tra pari.\n\nCalcola la media Field B sei virgola due quattro mantenendo cinque letture e data sconosciuta.\n\nConfronta il prodotto Paddock tre con cinque criteri; non firmare al posto del formatore.\n\nRivedi West Field o Paddock tre di un collega: trova un fatto, metodo mancante, un errore di ragionamento e una correzione precisa. Poi valuta la fiducia uno a cinque solo per pianificare esercizio.\n\nSolo il formatore reale può segnare sì, no, prova, correzione e firma nelle cinque righe Paddock tre.\n\nDati didattici, non tue misure. Date, laboratorio e osservazioni assenti restano ignoti. Intervalli illustrativi, non soglie del laboratorio locale.\n\nScrivi il tuo tentativo di rapporto nelle cinque sezioni e una critica per questo caso, indicando esplicitamente i dati ignoti. Completezza e significato non vengono verificati automaticamente.\n\nIl confronto non valuta il significato del testo e non certifica abilità pratiche.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "55bac0b42ac34cf65b94231e8cd7f4c66b622ccde9b89fd1f2b5590e7236e722",
+      "requestFingerprintSha256": "55bac0b42ac34cf65b94231e8cd7f4c66b622ccde9b89fd1f2b5590e7236e722",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-15-it-report-criteria-r1",
+      "unitId": "S2-15-it-report-criteria-r1",
+      "locale": "it",
+      "semanticGroup": "report-criteria",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/passChecks/0/evidence",
+          "text": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo/riferimento e interpretazione. La spiegazione di NPK, sostanza organica e CEC non attribuisce a CEC la ritenzione del nitrato.",
+          "sha256": "80f64148a1b9b99c7ae6666b3e13c0fb3e96650a86d30a9140fb04618ac7e576"
+        },
+        {
+          "pointer": "/portfolio/passChecks/0/decision",
+          "text": "Superato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.",
+          "sha256": "e69550534a967d5094f42884fb8da8205d11ac8a3ad4c1aee55be303bc19f681"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/evidence",
+          "text": "Field B riporta 6.2, 6.4, 6.1, 6.3, 6.2 e 31.2/5 = 6.24, come media di cinque letture; data reale oppure mancante.",
+          "sha256": "29459bc3aa4d63371d5d1ae1651440fc2581caad7cd4bba92c00dabc5f50ecc9"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/decision",
+          "text": "Superato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.",
+          "sha256": "5ddae9dfd15e7017a7733e653c98d8f5127117d6c4b12ef9d4fd519634265e2b"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/evidence",
+          "text": "Nel caso dato collega acidità e nutrienti a un piano calibrato per coltura/metodo e drenaggio/compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di N e non indicano dosi.",
+          "sha256": "3ec2a5598cb35c696754c5a40dd56f931f10edf75ee05c737c7aa7f46214b95b"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/decision",
+          "text": "Superato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.",
+          "sha256": "d6430aa872fa9714358ca76afee3f0e1db823d126c2a9ea93325004c87f59e30"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/evidence",
+          "text": "Segnala almeno una mancanza di metodo/data/unità/fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.",
+          "sha256": "204a6cf868611bd5e8d03c44badbe054c8391cd1ddd9eaff994f479e45c13bae"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/decision",
+          "text": "Superato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+          "sha256": "f3792ea6eb090b7225da4a6ec3d7d99f4c30ed790748f3d584caeedbb4ea53c7"
+        }
+      ],
+      "scientificMeaning": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo/riferimento e interpretazione. La spiegazione di NPK, sostanza organica e CEC non attribuisce a CEC la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta 6.2, 6.4, 6.1, 6.3, 6.2 e 31.2/5 = 6.24, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura/metodo e drenaggio/compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di N e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo/data/unità/fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+      "displayText": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo/riferimento e interpretazione. La spiegazione di NPK, sostanza organica e CEC non attribuisce a CEC la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta 6.2, 6.4, 6.1, 6.3, 6.2 e 31.2/5 = 6.24, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura/metodo e drenaggio/compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di N e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo/data/unità/fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+      "captionText": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo/riferimento e interpretazione. La spiegazione di NPK, sostanza organica e CEC non attribuisce a CEC la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta 6.2, 6.4, 6.1, 6.3, 6.2 e 31.2/5 = 6.24, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura/metodo e drenaggio/compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di N e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo/data/unità/fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+      "spokenText": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo, riferimento e interpretazione. La spiegazione di enne pi cappa, sostanza organica e ci e ci non attribuisce a ci e ci la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta sei virgola due, sei virgola quattro, sei virgola uno, sei virgola tre, sei virgola due e trentuno virgola due diviso per cinque uguale a sei virgola due quattro, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura, metodo e drenaggio, compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di azoto e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo, data, unità, fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+      "spokenTextSHA256": "c339d52515279d62c39242e80541fd4d1ed7759ce2877dbac5dd95fba3d8e027",
+      "spokenTextSha256": "c339d52515279d62c39242e80541fd4d1ed7759ce2877dbac5dd95fba3d8e027",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo/riferimento e interpretazione. La spiegazione di NPK, sostanza organica e CEC non attribuisce a CEC la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta 6.2, 6.4, 6.1, 6.3, 6.2 e 31.2/5 = 6.24, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura/metodo e drenaggio/compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di N e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo/data/unità/fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+          "spoken": "Cinque sezioni presenti; cliente, campo, campione, data e metodo reale o assente indicati. La tabella nomina parametro, risultato, unità, metodo, riferimento e interpretazione. La spiegazione di enne pi cappa, sostanza organica e ci e ci non attribuisce a ci e ci la ritenzione del nitrato.\n\nSuperato se il rapporto è tracciabile, corretto e comprensibile; provenienza o unità fuorvianti richiedono revisione mirata.\n\nField B riporta sei virgola due, sei virgola quattro, sei virgola uno, sei virgola tre, sei virgola due e trentuno virgola due diviso per cinque uguale a sei virgola due quattro, come media di cinque letture; data reale oppure mancante.\n\nSuperato solo con cinque valori, calcolo, identità del campo e distinzione tra media delle letture e misura di una miscela.\n\nNel caso dato collega acidità e nutrienti a un piano calibrato per coltura, metodo e drenaggio, compattazione a un sopralluogo; le foglie gialle da sole non provano carenza di azoto e non indicano dosi.\n\nSuperato se priorità e azioni seguono prove e limiti; causa o dose non documentata comporta nuovo tentativo guidato.\n\nSegnala almeno una mancanza di metodo, data, unità, fonte, un problema di interpretazione o raccomandazione e una correzione precisa; separa fiducia percepita e prestazione.\n\nSuperato se le correzioni sono specifiche e fondate; un punteggio di fiducia da solo non basta.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86d81c777a5aa62b950b9c789d539ded31ca68cc84e9aee04e1222a30779327e",
+      "requestFingerprintSha256": "86d81c777a5aa62b950b9c789d539ded31ca68cc84e9aee04e1222a30779327e",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-15-it-report-trainer-and-timing-r1",
+      "unitId": "S2-15-it-report-trainer-and-timing-r1",
+      "locale": "it",
+      "semanticGroup": "report-trainer-and-timing",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/trainerTitle",
+          "text": "Paddock 3: cinque criteri del prodotto per il formatore",
+          "sha256": "1f0553d97c901ef4741c25cc5e49e227b32464a93b57cbb0df3a845501d35dae"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/0",
+          "text": "Il rapporto identifica Paddock 3",
+          "sha256": "ed620f03c7af01832d1d7246bd547c4463f9956d4ec5e1515ec7f8103b68c9f7"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/1",
+          "text": "Tutti i cinque risultati pH/OM/N/P/K presenti",
+          "sha256": "5e1ba50130f95bfba48b2dc76bc12517e214b054b78272ce4e806b38ea3bb86e"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/2",
+          "text": "Linguaggio semplice per spiegare i risultati",
+          "sha256": "40f68dabf4938a46a87bbc9d5b65c0ccec9982df61281dba8f253f5916fbfa4c"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/3",
+          "text": "Almeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura/laboratorio/sito",
+          "sha256": "0710a45178816ab6aa023cb91844c46bd2b12e31f0c54d588c8d9a70efd947ef"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/4",
+          "text": "Rapporto ordinato, leggibile e professionale",
+          "sha256": "63b707181b6f4aa88780a7ae69ec021dec8fb9edb9c7f096bb4ed876eeb570e0"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerNote",
+          "text": "Registro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.",
+          "sha256": "e5e918860980b5013ad643e88990c4e6a7151f85380ab398227a72341ff0bb03"
+        },
+        {
+          "pointer": "/portfolio/practical/instruction",
+          "text": "Questo passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+          "sha256": "119c52555377fffdebed847f7d68021590162c67934b6ac11adfb0c7e741290a"
+        },
+        {
+          "pointer": "/portfolio/ui/timing",
+          "text": "Piano di 60 minuti: 5 introduzione + 10 concetti + 35 scrittura + 10 discussione. Le note indicano anche 5 minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di 3–4, avvisi a 15 e 5 minuti; spiegazione a coppie di 2 minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+          "sha256": "1d454c6633b4996163fe00c211ad9ab934b6885b2feb24c88a2092344c2c1b53"
+        }
+      ],
+      "scientificMeaning": "Paddock 3: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock 3\n\nTutti i cinque risultati pH/OM/N/P/K presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura/laboratorio/sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di 60 minuti: 5 introduzione + 10 concetti + 35 scrittura + 10 discussione. Le note indicano anche 5 minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di 3–4, avvisi a 15 e 5 minuti; spiegazione a coppie di 2 minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+      "displayText": "Paddock 3: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock 3\n\nTutti i cinque risultati pH/OM/N/P/K presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura/laboratorio/sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di 60 minuti: 5 introduzione + 10 concetti + 35 scrittura + 10 discussione. Le note indicano anche 5 minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di 3–4, avvisi a 15 e 5 minuti; spiegazione a coppie di 2 minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+      "captionText": "Paddock 3: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock 3\n\nTutti i cinque risultati pH/OM/N/P/K presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura/laboratorio/sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di 60 minuti: 5 introduzione + 10 concetti + 35 scrittura + 10 discussione. Le note indicano anche 5 minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di 3–4, avvisi a 15 e 5 minuti; spiegazione a coppie di 2 minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+      "spokenText": "Paddock tre: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock tre\n\nTutti i cinque risultati pi acca, sostanza organica, azoto, fosforo, potassio presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura, laboratorio, sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock tre mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di sessanta minuti: cinque introduzione più dieci concetti più trentacinque scrittura più dieci discussione. Le note indicano anche cinque minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di tre a quattro, avvisi a quindici e cinque minuti; spiegazione a coppie di due minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+      "spokenTextSHA256": "649c362d00beaa6ca3628148891d7c894095c4aa14df0f8269751e375a69e6e0",
+      "spokenTextSha256": "649c362d00beaa6ca3628148891d7c894095c4aa14df0f8269751e375a69e6e0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Paddock 3: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock 3\n\nTutti i cinque risultati pH/OM/N/P/K presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura/laboratorio/sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di 60 minuti: 5 introduzione + 10 concetti + 35 scrittura + 10 discussione. Le note indicano anche 5 minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di 3–4, avvisi a 15 e 5 minuti; spiegazione a coppie di 2 minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+          "spoken": "Paddock tre: cinque criteri del prodotto per il formatore\n\nIl rapporto identifica Paddock tre\n\nTutti i cinque risultati pi acca, sostanza organica, azoto, fosforo, potassio presenti\n\nLinguaggio semplice per spiegare i risultati\n\nAlmeno un’azione specifica legata a carenza con prove; farina d’ossa solo con verifica coltura, laboratorio, sito\n\nRapporto ordinato, leggibile e professionale\n\nRegistro non osservato e non firmato. Cinque criteri originali conservati; nessun clic dello studente registra decisioni del formatore.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock tre mantiene le cinque righe originali e richiede un valutatore reale.\n\nPiano di sessanta minuti: cinque introduzione più dieci concetti più trentacinque scrittura più dieci discussione. Le note indicano anche cinque minuti di preparazione: organizzarli senza aggiungere tacitamente tempo al totale. Gruppi di tre a quattro, avvisi a quindici e cinque minuti; spiegazione a coppie di due minuti nella pratica. Modelli dopo tentativo e critica. Tabelle pronte e avvii di frase non provano costruzione indipendente.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c78f7f27ff18b311481abccbbe9c47e95ef62cd043c434a480a88a075700fe12",
+      "requestFingerprintSha256": "c78f7f27ff18b311481abccbbe9c47e95ef62cd043c434a480a88a075700fe12",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

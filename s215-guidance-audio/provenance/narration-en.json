@@ -1,0 +1,441 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-en.json",
+    "sha256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "bytes": 49429
+  },
+  "units": [
+    {
+      "id": "S2-15-en-report-record-layout-r1",
+      "unitId": "S2-15-en-report-record-layout-r1",
+      "locale": "en",
+      "semanticGroup": "report-record-layout",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/modelHelp",
+          "text": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.",
+          "sha256": "0023c4b10ba18f46b348e0d785844054012284a7375b52980bc572e0cb270e05"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/0",
+          "text": "Title and client information",
+          "sha256": "9f48778715da5baf7b9e27c467cc132c332b55305e0dac07428cf2b63ef2ef04"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/1",
+          "text": "Introduction / objective",
+          "sha256": "2d279f2e11e14efdab611f825ec83f534403290f9ec2165cefe771b4cd41a441"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/2",
+          "text": "Methods and observations",
+          "sha256": "07882e74b675767c26a1cde9b4b2e51f9071ab57d58803172fdfd0a077f50c18"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/3",
+          "text": "Results",
+          "sha256": "219c4a6c86a716e99d5dc9611b61e584deb11b57e972d87d4b773387ebc3cadd"
+        },
+        {
+          "pointer": "/portfolio/ui/sections/4",
+          "text": "Interpretation and recommendations",
+          "sha256": "e4df0c42e6cdc7529ebdb2d468fe2fd6b83ab29e7e2b4858f26c65c744b0111d"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/0",
+          "text": "Client / field / sample ID",
+          "sha256": "53d3401a71aa29d20e2e02e2eb166c4ef9f78a97a3f3621d2d1d2a344bce8c60"
+        },
+        {
+          "pointer": "/portfolio/ui/identityFields/1",
+          "text": "Collection and test dates / location / crop",
+          "sha256": "6ebdc95d4835526173b8dc4e439ae471b5cb0bdf538fee35149fee4ae1717c58"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/0",
+          "text": "Parameter",
+          "sha256": "dd066ec1bf1d4485d3597f93a32c2f64b88ccdb6c555428ac4af3d17bf691cc2"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/1",
+          "text": "Actual value (or blank)",
+          "sha256": "07cc4aa598143f94b2aadc74fcb54a813722c252e88cfb140271a62e9847b971"
+        },
+        {
+          "pointer": "/portfolio/ui/resultColumns/2",
+          "text": "Method / units / origin / record / missing-data reason",
+          "sha256": "02e63009e86ab96549ab26d12ba65bc9c7c2b11032fe43398d3ec7e91501865f"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/0",
+          "text": "Own pH (unitless)",
+          "sha256": "a4ec9d9c0efe3c6c69339aeceb7c4153f3a4b0040a0123d9a44ac6d7c3f99a83"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/1",
+          "text": "Own sand/silt/clay percentages and texture class",
+          "sha256": "ecd9a11ac2527abed59fc410be4b261a543382b7fbe5c64e05c879e11d7767ba"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/2",
+          "text": "Supplied OM 2.1%",
+          "sha256": "6c3caf95ce4a274ba472834b39c81647dd30aae4a0895b5b9704e7f2dc4440a1"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/3",
+          "text": "Supplied P 12 ppm",
+          "sha256": "dbd1382b9f30bc7364cf1bf99df7821a910aef26d32b34b99e7625dc48b7ff2f"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/4",
+          "text": "Supplied K 185 ppm",
+          "sha256": "24fc5ad4a00ad4c268fd20a65ced48d21ce7881c1fbf85a753761d123f913a98"
+        },
+        {
+          "pointer": "/portfolio/ui/resultNames/5",
+          "text": "N: not supplied",
+          "sha256": "53f218429519920fbd1ff001fa61eabd8c47a04cbd6348a22608ea9f214902ce"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/0",
+          "text": "Interpret each result with its reference, or mark unresolved and explain",
+          "sha256": "671be6f4ec8fd1f5a75aba7841d0a38488165c1d197dccd799aa915f722f850b"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/1",
+          "text": "First conditional action and its evidence",
+          "sha256": "785eab8feb2e96e5f13589f33230f45bddaa654fbb711f6069d6be3bacff5fad"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/2",
+          "text": "Second conditional action and its evidence",
+          "sha256": "8ea44676dd1e322216a32e48e6670e7962d09e912a0b70306664a93e5cd0cbe4"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/3",
+          "text": "One priority, reason and what could change it",
+          "sha256": "50c59a596394dba004e0ec3181eaad26c77af7d28573da2227f3cb1ea33feedd"
+        },
+        {
+          "pointer": "/portfolio/ui/reportFields/4",
+          "text": "Comments, missing information and trainer feedback (blank until received)",
+          "sha256": "3b35783a7517a42a8dd13bde83cac3f373fa883185409ad85509a20c28f7ce40"
+        },
+        {
+          "pointer": "/portfolio/ui/recordHelp",
+          "text": "Keep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+          "sha256": "7ab436b085c3eb43f2d34d51262e3e49ba3530495d2a79f68607b8e43dff7914"
+        }
+      ],
+      "scientificMeaning": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction / objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient / field / sample ID\n\nCollection and test dates / location / crop\n\nParameter\n\nActual value (or blank)\n\nMethod / units / origin / record / missing-data reason\n\nOwn pH (unitless)\n\nOwn sand/silt/clay percentages and texture class\n\nSupplied OM 2.1%\n\nSupplied P 12 ppm\n\nSupplied K 185 ppm\n\nN: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+      "displayText": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction / objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient / field / sample ID\n\nCollection and test dates / location / crop\n\nParameter\n\nActual value (or blank)\n\nMethod / units / origin / record / missing-data reason\n\nOwn pH (unitless)\n\nOwn sand/silt/clay percentages and texture class\n\nSupplied OM 2.1%\n\nSupplied P 12 ppm\n\nSupplied K 185 ppm\n\nN: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+      "captionText": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction / objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient / field / sample ID\n\nCollection and test dates / location / crop\n\nParameter\n\nActual value (or blank)\n\nMethod / units / origin / record / missing-data reason\n\nOwn pH (unitless)\n\nOwn sand/silt/clay percentages and texture class\n\nSupplied OM 2.1%\n\nSupplied P 12 ppm\n\nSupplied K 185 ppm\n\nN: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+      "spokenText": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction, objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient, field, sample ID\n\nCollection and test dates, location, crop\n\nParameter\n\nActual value (or blank)\n\nMethod, units, origin, record, missing-data reason\n\nOwn P H (unitless)\n\nOwn sand, silt, clay percentages and texture class\n\nSupplied organic matter two point one percent \n\nSupplied phosphorus twelve parts per million\n\nSupplied potassium one hundred eighty-five parts per million\n\nnitrogen: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+      "spokenTextSHA256": "04aaa091d6a70c4a18a99b06eebda6a7327b501daec02573b0ad7588e940626f",
+      "spokenTextSha256": "04aaa091d6a70c4a18a99b06eebda6a7327b501daec02573b0ad7588e940626f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction / objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient / field / sample ID\n\nCollection and test dates / location / crop\n\nParameter\n\nActual value (or blank)\n\nMethod / units / origin / record / missing-data reason\n\nOwn pH (unitless)\n\nOwn sand/silt/clay percentages and texture class\n\nSupplied OM 2.1%\n\nSupplied P 12 ppm\n\nSupplied K 185 ppm\n\nN: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+          "spoken": "Paper panels rehearse report organization. They represent no soil measurement or approved report. Select a section and practise the complete order. For each worked case, write your own attempt before opening the comparison; the button checks only that text has been entered.\n\nTitle and client information\n\nIntroduction, objective\n\nMethods and observations\n\nResults\n\nInterpretation and recommendations\n\nClient, field, sample ID\n\nCollection and test dates, location, crop\n\nParameter\n\nActual value (or blank)\n\nMethod, units, origin, record, missing-data reason\n\nOwn P H (unitless)\n\nOwn sand, silt, clay percentages and texture class\n\nSupplied organic matter two point one percent \n\nSupplied phosphorus twelve parts per million\n\nSupplied potassium one hundred eighty-five parts per million\n\nnitrogen: not supplied\n\nInterpret each result with its reference, or mark unresolved and explain\n\nFirst conditional action and its evidence\n\nSecond conditional action and its evidence\n\nOne priority, reason and what could change it\n\nComments, missing information and trainer feedback (blank until received)\n\nKeep unknown values blank and explain why. Saving does not validate results, interpretation, chronology or a practical pass. Supplied figures below are curriculum fixtures, not proof a real trainer released the handout.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e5550f602130af4a09efdf454145763c78a5adead7fccd15e832ca928f38167a",
+      "requestFingerprintSha256": "e5550f602130af4a09efdf454145763c78a5adead7fccd15e832ca928f38167a",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-report-process-and-peer-r1",
+      "unitId": "S2-15-en-report-process-and-peer-r1",
+      "locale": "en",
+      "semanticGroup": "report-process-and-peer",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/sequence/0",
+          "text": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.",
+          "sha256": "ffe3db08bc0dda5cbee4285df7fe924592db6ecef6a643d985ed5b0a971a0a2f"
+        },
+        {
+          "pointer": "/portfolio/sequence/1",
+          "text": "Explain pH, NPK, OM and CEC to a partner in two minutes, then revise an inaccurate statement.",
+          "sha256": "7781582082f768e0ab6f86f5cde8038bc06994f5e8ff329ab3477d31d7c26c29"
+        },
+        {
+          "pointer": "/portfolio/sequence/2",
+          "text": "Build the West Field case report with prioritized conditional actions and peer review.",
+          "sha256": "5edfdc4597b8f4817af50c20f103f3ae003ed074432d9fa83d29c63f4a417b63"
+        },
+        {
+          "pointer": "/portfolio/sequence/3",
+          "text": "Calculate Field B's mean 6.24 while preserving all five readings and unknown date.",
+          "sha256": "7e2937a8da103304d33616311ec90ac0dbe7478df797c1c8b0304362e1a1ada0"
+        },
+        {
+          "pointer": "/portfolio/sequence/4",
+          "text": "Inspect the Paddock 3 one-page product against all five trainer checklist rows; do not self-sign the trainer record.",
+          "sha256": "304b546c2df3bc9220e10c495c6d980c75fc215272f854a77cd06fb5b2c039d1"
+        },
+        {
+          "pointer": "/portfolio/peerReview/prompt",
+          "text": "Review a partner's West Field or Paddock 3 draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence 1–5 for planning only.",
+          "sha256": "d4f94b61ebc4e0b2e350994fcd233386ae35ced5aa1b161f3b66ad490ce2d248"
+        },
+        {
+          "pointer": "/portfolio/peerReview/trainerBoundary",
+          "text": "Only a real trainer can record the Paddock 3 product-card yes/no, observation, corrective action and sign-off.",
+          "sha256": "e440d3f1d16049f4506913572bad1cefd620dc784ff0873aab71d1f361164123"
+        },
+        {
+          "pointer": "/portfolio/ui/casesHelp",
+          "text": "These are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.",
+          "sha256": "8406547c0991328724a43aab32e32bc907ce22c344829c6f50d585104954cc77"
+        },
+        {
+          "pointer": "/portfolio/ui/reason",
+          "text": "Write your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.",
+          "sha256": "a6bd632fdef1839f0c4808c069bc3e1ca252b58e4585335cb47cae3d2a29fca1"
+        },
+        {
+          "pointer": "/portfolio/ui/reasonBoundary",
+          "text": "The comparison checks no free-text meaning and certifies no practical skill.",
+          "sha256": "99c0bd6ccde0ba8f233a0daf4921c5d002a9c460669ccedf714f8f55f67ed140"
+        }
+      ],
+      "scientificMeaning": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain pH, NPK, OM and CEC to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean 6.24 while preserving all five readings and unknown date.\n\nInspect the Paddock 3 one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock 3 draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence 1–5 for planning only.\n\nOnly a real trainer can record the Paddock 3 product-card yes/no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+      "displayText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain pH, NPK, OM and CEC to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean 6.24 while preserving all five readings and unknown date.\n\nInspect the Paddock 3 one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock 3 draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence 1–5 for planning only.\n\nOnly a real trainer can record the Paddock 3 product-card yes/no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+      "captionText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain pH, NPK, OM and CEC to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean 6.24 while preserving all five readings and unknown date.\n\nInspect the Paddock 3 one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock 3 draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence 1–5 for planning only.\n\nOnly a real trainer can record the Paddock 3 product-card yes/no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+      "spokenText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain P H, nitrogen phosphorus potassium, organic matter and C E C to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean six point two four while preserving all five readings and unknown date.\n\nInspect the Paddock three one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock three draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence one to five for planning only.\n\nOnly a real trainer can record the Paddock three product-card yes, no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+      "spokenTextSHA256": "1c76faa767ca654732d90df66b4dcaab9a67752249709f59720897587aec2990",
+      "spokenTextSha256": "1c76faa767ca654732d90df66b4dcaab9a67752249709f59720897587aec2990",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain pH, NPK, OM and CEC to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean 6.24 while preserving all five readings and unknown date.\n\nInspect the Paddock 3 one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock 3 draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence 1–5 for planning only.\n\nOnly a real trainer can record the Paddock 3 product-card yes/no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+          "spoken": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nExplain P H, nitrogen phosphorus potassium, organic matter and C E C to a partner in two minutes, then revise an inaccurate statement.\n\nBuild the West Field case report with prioritized conditional actions and peer review.\n\nCalculate Field B's mean six point two four while preserving all five readings and unknown date.\n\nInspect the Paddock three one-page product against all five trainer checklist rows; do not self-sign the trainer record.\n\nReview a partner's West Field or Paddock three draft against the source case and five sections. Mark a missing fact or method, a reasoning error, and a concrete correction. Then re-rate confidence one to five for planning only.\n\nOnly a real trainer can record the Paddock three product-card yes, no, observation, corrective action and sign-off.\n\nThese are teaching fixtures, not your measurements. Keep dates, laboratory and field observations unknown where absent. Example reference ranges below are not local laboratory thresholds.\n\nWrite your own five-section report attempt and one critique for this case, marking unknown facts explicitly. Completeness and meaning are not checked automatically.\n\nThe comparison checks no free-text meaning and certifies no practical skill.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "29fe07246ed513ed9245986a2182f2bd897fa7ce42234b384b9bf3747ec90322",
+      "requestFingerprintSha256": "29fe07246ed513ed9245986a2182f2bd897fa7ce42234b384b9bf3747ec90322",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-report-criteria-r1",
+      "unitId": "S2-15-en-report-criteria-r1",
+      "locale": "en",
+      "semanticGroup": "report-criteria",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/passChecks/0/evidence",
+          "text": "All five sections present; client/field/sample/date and real method or unknown marked; table identifies property, result, unit, method/reference and interpretation; farmer explanation distinguishes N/P/K roles, OM and exchangeable-cation CEC without saying CEC retains nitrate.",
+          "sha256": "f7f57d662b9ae0b9e9d47112f92e3a1f1bab812ab51438657b3750bf1c7b426a"
+        },
+        {
+          "pointer": "/portfolio/passChecks/0/decision",
+          "text": "Pass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.",
+          "sha256": "af1d5481bd109a261fa6ec875323d445089d8d6d12b6f5417f6afdbadb011281"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/evidence",
+          "text": "Field B table gives 6.2, 6.4, 6.1, 6.3, 6.2 and 31.2/5 = 6.24, labelled mean of five pH readings; test date is recorded if known, otherwise expressly missing.",
+          "sha256": "e75c933530ce81e6995fe85c196ccf53e318762eeb6a75f824db8d8ddee3d069"
+        },
+        {
+          "pointer": "/portfolio/passChecks/1/decision",
+          "text": "Pass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.",
+          "sha256": "e9cafb505659bb7daab4c21d08836461b468845c15316b7b80c5a91e5e0670a5"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/evidence",
+          "text": "For the stated case, links acidity/nutrients to a method- and crop-specific lab plan and links poor drainage/compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime/fertilizer/tillage rates.",
+          "sha256": "fa767bf8948dac5ab0c794b6c9647ce62399ef1085775547f4219bb4423eff5d"
+        },
+        {
+          "pointer": "/portfolio/passChecks/2/decision",
+          "text": "Pass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.",
+          "sha256": "d5591d83c2cf25bdce84ea97e32ba2624f59fa7fe6be11cb2400ce6d3e174f19"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/evidence",
+          "text": "Annotates a draft report with at least one missing method/date/unit or source, one interpretation/recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.",
+          "sha256": "44198f627025ec15b87fdf8e9c8d938d287dedd0759d4e88c4062df0c8100f29"
+        },
+        {
+          "pointer": "/portfolio/passChecks/3/decision",
+          "text": "Pass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+          "sha256": "7c8c90278f724a01154c5358763ab0e50e38035151321b3245d9026c8ea02c6c"
+        }
+      ],
+      "scientificMeaning": "All five sections present; client/field/sample/date and real method or unknown marked; table identifies property, result, unit, method/reference and interpretation; farmer explanation distinguishes N/P/K roles, OM and exchangeable-cation CEC without saying CEC retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives 6.2, 6.4, 6.1, 6.3, 6.2 and 31.2/5 = 6.24, labelled mean of five pH readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity/nutrients to a method- and crop-specific lab plan and links poor drainage/compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime/fertilizer/tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method/date/unit or source, one interpretation/recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+      "displayText": "All five sections present; client/field/sample/date and real method or unknown marked; table identifies property, result, unit, method/reference and interpretation; farmer explanation distinguishes N/P/K roles, OM and exchangeable-cation CEC without saying CEC retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives 6.2, 6.4, 6.1, 6.3, 6.2 and 31.2/5 = 6.24, labelled mean of five pH readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity/nutrients to a method- and crop-specific lab plan and links poor drainage/compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime/fertilizer/tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method/date/unit or source, one interpretation/recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+      "captionText": "All five sections present; client/field/sample/date and real method or unknown marked; table identifies property, result, unit, method/reference and interpretation; farmer explanation distinguishes N/P/K roles, OM and exchangeable-cation CEC without saying CEC retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives 6.2, 6.4, 6.1, 6.3, 6.2 and 31.2/5 = 6.24, labelled mean of five pH readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity/nutrients to a method- and crop-specific lab plan and links poor drainage/compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime/fertilizer/tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method/date/unit or source, one interpretation/recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+      "spokenText": "All five sections present; client, field, sample, date and real method or unknown marked; table identifies property, result, unit, method, reference and interpretation; farmer explanation distinguishes nitrogen, phosphorus, potassium roles, organic matter and exchangeable-cation C E C without saying C E C retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives six point two, six point four, six point one, six point three, six point two and thirty-one point two divided by five equals six point two four, labelled mean of five P H readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity, nutrients to a method- and crop-specific lab plan and links poor drainage, compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime, fertilizer, tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method, date, unit or source, one interpretation, recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+      "spokenTextSHA256": "e6baeadaf7db15e42c793db1ef09cd139196219ab23e69907a5d70bbeea12499",
+      "spokenTextSha256": "e6baeadaf7db15e42c793db1ef09cd139196219ab23e69907a5d70bbeea12499",
+      "spokenAdaptationChanges": [
+        {
+          "written": "All five sections present; client/field/sample/date and real method or unknown marked; table identifies property, result, unit, method/reference and interpretation; farmer explanation distinguishes N/P/K roles, OM and exchangeable-cation CEC without saying CEC retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives 6.2, 6.4, 6.1, 6.3, 6.2 and 31.2/5 = 6.24, labelled mean of five pH readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity/nutrients to a method- and crop-specific lab plan and links poor drainage/compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime/fertilizer/tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method/date/unit or source, one interpretation/recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+          "spoken": "All five sections present; client, field, sample, date and real method or unknown marked; table identifies property, result, unit, method, reference and interpretation; farmer explanation distinguishes nitrogen, phosphorus, potassium roles, organic matter and exchangeable-cation C E C without saying C E C retains nitrate.\n\nPass if report is traceable, scientifically accurate and intelligible; missing provenance or a misleading unit requires guided revision.\n\nField B table gives six point two, six point four, six point one, six point three, six point two and thirty-one point two divided by five equals six point two four, labelled mean of five P H readings; test date is recorded if known, otherwise expressly missing.\n\nPass only when all five figures, arithmetic, sample identity and mean-vs-pooled distinction are correct.\n\nFor the stated case, links acidity, nutrients to a method- and crop-specific lab plan and links poor drainage, compaction to field investigation; states why leaf yellowing alone is not a diagnosis and avoids fixed lime, fertilizer, tillage rates.\n\nPass when priority and each proposed action follow the evidence and its limits; unsupported causes and doses trigger targeted retry.\n\nAnnotates a draft report with at least one missing method, date, unit or source, one interpretation, recommendation issue, and a clear corrected sentence or table cell; separates self-rated confidence from assessed work.\n\nPass when corrections are specific and scientifically sound; a numeric confidence score alone never passes.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "75f2bbf89059b8847e8b3f34d8173cc4014640154c6dd18a5f14227e20f9ebfc",
+      "requestFingerprintSha256": "75f2bbf89059b8847e8b3f34d8173cc4014640154c6dd18a5f14227e20f9ebfc",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-report-trainer-and-timing-r1",
+      "unitId": "S2-15-en-report-trainer-and-timing-r1",
+      "locale": "en",
+      "semanticGroup": "report-trainer-and-timing",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/ui/trainerTitle",
+          "text": "Paddock 3: five-row trainer product card",
+          "sha256": "ae1f386e155874701d0e8120b0e0e501d594785d58e2398349d568ced79e84eb"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/0",
+          "text": "Report identifies Paddock 3",
+          "sha256": "f899db80cdf127406085fd432f5a58936588e4f1aee880f30567384815e98565"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/1",
+          "text": "All five results pH/OM/N/P/K listed",
+          "sha256": "0eacb90a49f7485ae89865ea6d2cab30223b99e60072aefc918f96295d4d1492"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/2",
+          "text": "Plain language explains the findings",
+          "sha256": "6542b3870831f9ea6fba0540c565a8ba89b3a97cbd856bf4f48950bf9659e827"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/3",
+          "text": "At least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop/lab/site qualification",
+          "sha256": "7b199b0d49f1225fa5ade5e0a7b1f79086468756ee98961745adc5d85d4fa896"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerRows/4",
+          "text": "Report is organized, legible and professional",
+          "sha256": "20a9cbe9ddc3ab0028dd416ac478565683603a3e2015f6e11231b8abb227c0ef"
+        },
+        {
+          "pointer": "/portfolio/ui/trainerNote",
+          "text": "Trainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.",
+          "sha256": "96ba76d001d3db8c47c5f4655160b6178be3abccf30c7bc975960cc8220a220b"
+        },
+        {
+          "pointer": "/portfolio/practical/instruction",
+          "text": "This step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "sha256": "78c3dc15d28afa519d9e47c85afac1c0dc3c93dea2900b974bd5ba1ab1a8c848"
+        },
+        {
+          "pointer": "/portfolio/ui/timing",
+          "text": "The overview is 60 active minutes: 5 introduction + 10 concepts + 35 writing + 10 discussion. The facilitation notes also name a 5-minute setup; arrange it within preparation rather than silently adding a different total. Groups of 3–4; 15- and 5-minute warnings; a 2-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables/sentence starters are support, not evidence of independent table construction.",
+          "sha256": "04359043c59d6ba5fbea06b346a4106f18a4f023dc81db38cccbecc636bbb5c1"
+        }
+      ],
+      "scientificMeaning": "Paddock 3: five-row trainer product card\n\nReport identifies Paddock 3\n\nAll five results pH/OM/N/P/K listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop/lab/site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is 60 active minutes: 5 introduction + 10 concepts + 35 writing + 10 discussion. The facilitation notes also name a 5-minute setup; arrange it within preparation rather than silently adding a different total. Groups of 3–4; 15- and 5-minute warnings; a 2-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables/sentence starters are support, not evidence of independent table construction.",
+      "displayText": "Paddock 3: five-row trainer product card\n\nReport identifies Paddock 3\n\nAll five results pH/OM/N/P/K listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop/lab/site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is 60 active minutes: 5 introduction + 10 concepts + 35 writing + 10 discussion. The facilitation notes also name a 5-minute setup; arrange it within preparation rather than silently adding a different total. Groups of 3–4; 15- and 5-minute warnings; a 2-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables/sentence starters are support, not evidence of independent table construction.",
+      "captionText": "Paddock 3: five-row trainer product card\n\nReport identifies Paddock 3\n\nAll five results pH/OM/N/P/K listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop/lab/site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is 60 active minutes: 5 introduction + 10 concepts + 35 writing + 10 discussion. The facilitation notes also name a 5-minute setup; arrange it within preparation rather than silently adding a different total. Groups of 3–4; 15- and 5-minute warnings; a 2-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables/sentence starters are support, not evidence of independent table construction.",
+      "spokenText": "Paddock three: five-row trainer product card\n\nReport identifies Paddock three\n\nAll five results P H, organic matter, nitrogen, phosphorus, potassium listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop, lab, site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is sixty active minutes: five introduction plus ten concepts plus thirty-five writing plus ten discussion. The facilitation notes also name a five-minute setup; arrange it within preparation rather than silently adding a different total. Groups of three to four; fifteen- and five-minute warnings; a two-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables, sentence starters are support, not evidence of independent table construction.",
+      "spokenTextSHA256": "e1c0e3f8faba5bc6dc328af08916261ca451bbeb37ef12c3b690df4e59f75b93",
+      "spokenTextSha256": "e1c0e3f8faba5bc6dc328af08916261ca451bbeb37ef12c3b690df4e59f75b93",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Paddock 3: five-row trainer product card\n\nReport identifies Paddock 3\n\nAll five results pH/OM/N/P/K listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop/lab/site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is 60 active minutes: 5 introduction + 10 concepts + 35 writing + 10 discussion. The facilitation notes also name a 5-minute setup; arrange it within preparation rather than silently adding a different total. Groups of 3–4; 15- and 5-minute warnings; a 2-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables/sentence starters are support, not evidence of independent table construction.",
+          "spoken": "Paddock three: five-row trainer product card\n\nReport identifies Paddock three\n\nAll five results P H, organic matter, nitrogen, phosphorus, potassium listed\n\nPlain language explains the findings\n\nAt least one specific deficiency-related action with evidence; the source’s bone-meal example requires crop, lab, site qualification\n\nReport is organized, legible and professional\n\nTrainer record remains unobserved and unsigned. The five original product criteria are preserved; no learner click records a trainer decision.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.\n\nThe overview is sixty active minutes: five introduction plus ten concepts plus thirty-five writing plus ten discussion. The facilitation notes also name a five-minute setup; arrange it within preparation rather than silently adding a different total. Groups of three to four; fifteen- and five-minute warnings; a two-minute partner explanation fits within practice. Compare models only after attempts and critique. Prepared tables, sentence starters are support, not evidence of independent table construction.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "07417ad5e8a6a22c93d751bce324b28d147898f423acda045d848d2163444240",
+      "requestFingerprintSha256": "07417ad5e8a6a22c93d751bce324b28d147898f423acda045d848d2163444240",
+      "disclosure": {
+        "mode": "UPFRONT_SOURCE_GUIDANCE_NOT_WORKED_CASE_KEY",
+        "explicitSourceGateRetained": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
