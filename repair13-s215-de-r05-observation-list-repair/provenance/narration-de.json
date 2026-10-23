@@ -1,0 +1,73 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-de.json",
+    "sha256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+    "bytes": 46487
+  },
+  "units": [
+    {
+      "id": "S2-15-de-R05-observation-list-repair-r1",
+      "unitId": "S2-15-de-R05-observation-list-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair13-s215-de-r05-observation-list-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung. Gelbe Blätter können eine N-Frage auslösen, bestätigen aber keinen N-Mangel; Ernährung, Krankheiten, Wurzeln und Staunässe sind zu prüfen. Schlechte Entwässerung kann Wurzeln und Aufnahme stören, doch die Ursache muss untersucht werden. Schreibe Beobachtung, mögliche Deutung und nötigen Test in getrennte Felder.",
+          "sha256": "6517a932c0f5a16ed1280715f5276f390bcdd833cc74c7994bdad57a1bb96d94"
+        }
+      ],
+      "scientificMeaning": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung. Gelbe Blätter können eine N-Frage auslösen, bestätigen aber keinen N-Mangel; Ernährung, Krankheiten, Wurzeln und Staunässe sind zu prüfen. Schlechte Entwässerung kann Wurzeln und Aufnahme stören, doch die Ursache muss untersucht werden. Schreibe Beobachtung, mögliche Deutung und nötigen Test in getrennte Felder.",
+      "displayText": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung. Gelbe Blätter können eine N-Frage auslösen, bestätigen aber keinen N-Mangel; Ernährung, Krankheiten, Wurzeln und Staunässe sind zu prüfen. Schlechte Entwässerung kann Wurzeln und Aufnahme stören, doch die Ursache muss untersucht werden. Schreibe Beobachtung, mögliche Deutung und nötigen Test in getrennte Felder.",
+      "captionText": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung. Gelbe Blätter können eine N-Frage auslösen, bestätigen aber keinen N-Mangel; Ernährung, Krankheiten, Wurzeln und Staunässe sind zu prüfen. Schlechte Entwässerung kann Wurzeln und Aufnahme stören, doch die Ursache muss untersucht werden. Schreibe Beobachtung, mögliche Deutung und nötigen Test in getrennte Felder.",
+      "spokenText": "Notiere das Aussehen, die gefühlte Textur, die Feuchte, stehendes Wasser, den Pflanzenzustand und Unkraut als Beobachtungen.",
+      "spokenTextSHA256": "06defbf5d01e0b517b914d2e678575f1a18891fadc1bf9e92f3d3bcb03203795",
+      "spokenTextSha256": "06defbf5d01e0b517b914d2e678575f1a18891fadc1bf9e92f3d3bcb03203795",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung. Gelbe Blätter können eine N-Frage auslösen, bestätigen aber keinen N-Mangel; Ernährung, Krankheiten, Wurzeln und Staunässe sind zu prüfen. Schlechte Entwässerung kann Wurzeln und Aufnahme stören, doch die Ursache muss untersucht werden. Schreibe Beobachtung, mögliche Deutung und nötigen Test in getrennte Felder.",
+          "spoken": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung.",
+          "spoken": "Notiere das Aussehen, die gefühlte Textur, die Feuchte, stehendes Wasser, den Pflanzenzustand und Unkraut als Beobachtungen.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "9a7ff4a923865e9b1fb77cec60c529c7bff9723444c170e9b3bf5f31b46ced4e",
+      "requestFingerprintSha256": "9a7ff4a923865e9b1fb77cec60c529c7bff9723444c170e9b3bf5f31b46ced4e",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Erfasse Erscheinung, gefühlte Textur, Feuchte, stehendes Wasser, Pflanzenzustand und Unkraut als Beobachtung.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
