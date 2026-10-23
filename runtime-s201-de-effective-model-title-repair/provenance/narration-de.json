@@ -1,0 +1,74 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-de.json",
+    "sha256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+    "bytes": 24233
+  },
+  "units": [
+    {
+      "id": "S2-01-de-effective-model-title-repair-r1",
+      "unitId": "S2-01-de-effective-model-title-repair-r1",
+      "locale": "de",
+      "semanticGroup": "runtime-s201-de-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/modelTitle",
+          "text": "Wurzel und Bodenlösung · 3D-Schema",
+          "sha256": "4bc0cc1a4018356133fedcb1a528d47d6dd6084f39c6234bfc94b6b0c0f4f4e4"
+        }
+      ],
+      "scientificMeaning": "Wurzel und Bodenlösung · 3D-Schema",
+      "displayText": "Wurzel und Bodenlösung · 3D-Schema",
+      "captionText": "Wurzel und Bodenlösung · 3D-Schema",
+      "spokenText": "Wurzel und Bodenlösung · interaktive Übung",
+      "spokenTextSHA256": "8eb02a3c0f75b37707b042fa7fa88841fa3fa7bb5001a338d1696dda9b74795d",
+      "spokenTextSha256": "8eb02a3c0f75b37707b042fa7fa88841fa3fa7bb5001a338d1696dda9b74795d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Wurzel und Bodenlösung · 3D-Schema",
+          "spoken": "Wurzel und Bodenlösung · 3D-Schema",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Wurzel und Bodenlösung · 3D-Schema",
+          "spoken": "Wurzel und Bodenlösung · interaktive Übung",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "8c83a65db93db117a582905c5a509b5b5821a9012252b212ba8b527fe406ddfd",
+      "requestFingerprintSha256": "8c83a65db93db117a582905c5a509b5b5821a9012252b212ba8b527fe406ddfd",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Wurzel und Bodenlösung · 3D-Schema",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/modelTitle",
+        "original": "Wurzel und Bodenlösung · 3D-Schema",
+        "effective": "Wurzel und Bodenlösung · interaktive Übung",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
