@@ -1,0 +1,425 @@
+{
+  "originalRunId": "39896591297",
+  "originalCommit": "852116ad13bfd844551a4ae08c2ce96cd0f40512",
+  "originalAudio": [
+    {
+      "unitId": "S2-02-de-R01-r1",
+      "path": "inputs/S2-02-de-R01-r1-audio.zip",
+      "pin": {
+        "sha256": "1af629fdf1b50f6402469316467e4ea1d1980dfdd17976704ee9764fd7a90f5e",
+        "bytes": 6859476
+      },
+      "artifactId": 12477290630,
+      "apiDigest": "sha256:1af629fdf1b50f6402469316467e4ea1d1980dfdd17976704ee9764fd7a90f5e",
+      "runId": "39896591297",
+      "commit": "852116ad13bfd844551a4ae08c2ce96cd0f40512",
+      "files": {
+        "provider-audio-format.json": {
+          "sha256": "ff2d4b4668273e15048305ed8c8e396c515a5c3d4f2d8c28c74f6c98582256b5",
+          "bytes": 124
+        },
+        "tts-attempt.json": {
+          "sha256": "19b1682a3b1d54273515375e3312d388ca354efbce7fa4a072e041b16637f3d7",
+          "bytes": 1041
+        },
+        "provider-audio.original.bin": {
+          "sha256": "61bd17f1bf06ce8ffa6cd93ee181b6c5821c5003ebd7e3b66c00fc06eade1d92",
+          "bytes": 2720996
+        },
+        "tts-request.json": {
+          "sha256": "6619b591ec4900e339e63e3240e19fd5652bf9e71770980cad806b814990f61e",
+          "bytes": 1965
+        },
+        "tts-response.raw.json": {
+          "sha256": "32ba97d3d7959115f7f1ab80e9ba29c624405b166c47eeb9d646b6c4b777adc6",
+          "bytes": 3628880
+        },
+        "voice.wav": {
+          "sha256": "61bd17f1bf06ce8ffa6cd93ee181b6c5821c5003ebd7e3b66c00fc06eade1d92",
+          "bytes": 2720996
+        }
+      }
+    },
+    {
+      "unitId": "S2-02-de-R02-r1",
+      "path": "inputs/S2-02-de-R02-r1-audio.zip",
+      "pin": {
+        "sha256": "d4bb65cba1c7bdd59cdab5a8d9751a3ee08bf96331c608b991d1fb9dcbd9a88d",
+        "bytes": 6253077
+      },
+      "artifactId": 12477076825,
+      "apiDigest": "sha256:d4bb65cba1c7bdd59cdab5a8d9751a3ee08bf96331c608b991d1fb9dcbd9a88d",
+      "runId": "39896591297",
+      "commit": "852116ad13bfd844551a4ae08c2ce96cd0f40512",
+      "files": {
+        "provider-audio-format.json": {
+          "sha256": "5939ce1006dfd95e6dbe3711e6b0ccc0a494b907c5c481bdb9c5106c22076e06",
+          "bytes": 124
+        },
+        "provider-audio.original.bin": {
+          "sha256": "a69ace4e67c662b52e44c0faf4781a7b469148536ee84cc178e91d081054ef45",
+          "bytes": 2415716
+        },
+        "tts-attempt.json": {
+          "sha256": "9893c3bcb6e1826eb7f0f5f653e19f912517d7dc38c86c026c591d48395e628e",
+          "bytes": 1040
+        },
+        "tts-request.json": {
+          "sha256": "35840651c1addc0f44601f2ffc77b8376d852df7aff38cdf5b2817181ed51eb6",
+          "bytes": 1839
+        },
+        "tts-response.raw.json": {
+          "sha256": "fae3ec9aaf788387354883d51a0292c8cd92ecf47edbffbe943a7c53bc152f00",
+          "bytes": 3221840
+        },
+        "voice.wav": {
+          "sha256": "a69ace4e67c662b52e44c0faf4781a7b469148536ee84cc178e91d081054ef45",
+          "bytes": 2415716
+        }
+      }
+    },
+    {
+      "unitId": "S2-02-de-R03-r1",
+      "path": "inputs/S2-02-de-R03-r1-audio.zip",
+      "pin": {
+        "sha256": "3ef3d1f763d11f40ca8041b5cc0bcb7dbd2e9a411500c9e32b2deacb1e34dd3e",
+        "bytes": 6219183
+      },
+      "artifactId": 12476679436,
+      "apiDigest": "sha256:3ef3d1f763d11f40ca8041b5cc0bcb7dbd2e9a411500c9e32b2deacb1e34dd3e",
+      "runId": "39896591297",
+      "commit": "852116ad13bfd844551a4ae08c2ce96cd0f40512",
+      "files": {
+        "provider-audio-format.json": {
+          "sha256": "66fba33b39105315b8a1cd711d787c7b633fdfd626955243bbb07d48f04cbdd9",
+          "bytes": 124
+        },
+        "provider-audio.original.bin": {
+          "sha256": "ac5dea146347b0582f8806705c81c454f5aa4b7096b81e842a6e7b464241d0e7",
+          "bytes": 2432996
+        },
+        "tts-attempt.json": {
+          "sha256": "e545740061a3719d3252f99a28f114424b3323803bd6c224745042164ec90f5d",
+          "bytes": 1041
+        },
+        "tts-request.json": {
+          "sha256": "065477797f49d088b64a1d2a4123040b7035308883df25413b7408a7dd7f9b40",
+          "bytes": 1900
+        },
+        "tts-response.raw.json": {
+          "sha256": "9494a305daa5753484fe24c24a407f4ddf4523431c5d8923f1870c08ec1d41b1",
+          "bytes": 3244880
+        },
+        "voice.wav": {
+          "sha256": "ac5dea146347b0582f8806705c81c454f5aa4b7096b81e842a6e7b464241d0e7",
+          "bytes": 2432996
+        }
+      }
+    }
+  ],
+  "completeEvidence": {
+    "path": "inputs/original-de-complete.zip",
+    "pin": {
+      "sha256": "31c8369d35074b1ad3c037a099c01d46037bfeb032f09ce5260c0012ff0958ec",
+      "bytes": 230169
+    },
+    "artifactId": 12477361265,
+    "apiDigest": "sha256:31c8369d35074b1ad3c037a099c01d46037bfeb032f09ce5260c0012ff0958ec",
+    "runId": "39896591297",
+    "commit": "852116ad13bfd844551a4ae08c2ce96cd0f40512",
+    "files": {
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/audio-upload-receipt.json": {
+        "sha256": "bf24f10ecbea445530bb3030b0c95ca3244cbd13c8774b9bd04a7c586ccf308d",
+        "bytes": 316
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/blind-review-prompt.json": {
+        "sha256": "4a829b1ba7e674631b5ce3b030503d045a91d9f421843a8eb587778b3c6a261b",
+        "bytes": 1071
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/failure-asr.json": {
+        "sha256": "556a2578e81902b09ff9f4761aee540670ae1de96a1d3754a65e5ee85b301e0d",
+        "bytes": 224
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/failure-blind-review.json": {
+        "sha256": "78c05418332286a8502ecb870f3caa70c6682b40ae747bfed07acab8c5a188a3",
+        "bytes": 233
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/failure-compare.json": {
+        "sha256": "b8ea37bb7f174d10f865287893ae575befc55bbdeab90eef7eddd1cc8347d92e",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/immutable-audio-reference.json": {
+        "sha256": "1ad343325a4b509221771366dc47049bea9faf78ce5767f51ee986bdaab958f7",
+        "bytes": 1018
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/provider-audio-format.json": {
+        "sha256": "ff2d4b4668273e15048305ed8c8e396c515a5c3d4f2d8c28c74f6c98582256b5",
+        "bytes": 124
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/reference-comparison.json": {
+        "sha256": "fe58637b6400845462330e2535484879fb5da505d12b7d7dc4ea4bd7fc6c9ce9",
+        "bytes": 1320
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/tts-attempt.json": {
+        "sha256": "19b1682a3b1d54273515375e3312d388ca354efbce7fa4a072e041b16637f3d7",
+        "bytes": 1041
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R01-r1/tts-request.json": {
+        "sha256": "6619b591ec4900e339e63e3240e19fd5652bf9e71770980cad806b814990f61e",
+        "bytes": 1965
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/audio-upload-receipt.json": {
+        "sha256": "7788564549ebbe3a12a5d33df8323318e98ca9bb763b8196ae19f4af8247e5e0",
+        "bytes": 316
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/blind-review-prompt.json": {
+        "sha256": "5cb60b42e0b2c23d4a3508596aeb806a7cf236997ccb60edb68bd633bf4e1654",
+        "bytes": 1071
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/failure-asr.json": {
+        "sha256": "3c248cb0ffd638612c127eb1ccffc2f690e20cddfa6c87b3ea6d9b98e2d6ae4a",
+        "bytes": 224
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/failure-blind-review.json": {
+        "sha256": "c1ef0074b9c11db6fb0ffae54b0fa90677af8a353e7165c5de3e64c09eb8b329",
+        "bytes": 233
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/failure-compare.json": {
+        "sha256": "f8f9dfc5905c793c1f216f52c93ba4b5da1e0144f2b999549562927d37b3bcd3",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/immutable-audio-reference.json": {
+        "sha256": "de94e403c6dd360c0713d464a5074ff2bca3cb0ec48aae53055a370f61670ba3",
+        "bytes": 1018
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/provider-audio-format.json": {
+        "sha256": "5939ce1006dfd95e6dbe3711e6b0ccc0a494b907c5c481bdb9c5106c22076e06",
+        "bytes": 124
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/reference-comparison.json": {
+        "sha256": "78b1f1623e59393f06b3bce19f37544e97fe2efc479512250517028bf92a4378",
+        "bytes": 1196
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/tts-attempt.json": {
+        "sha256": "9893c3bcb6e1826eb7f0f5f653e19f912517d7dc38c86c026c591d48395e628e",
+        "bytes": 1040
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R02-r1/tts-request.json": {
+        "sha256": "35840651c1addc0f44601f2ffc77b8376d852df7aff38cdf5b2817181ed51eb6",
+        "bytes": 1839
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/audio-upload-receipt.json": {
+        "sha256": "bbe15a058356b8c7eebe3fcbdf23c2a6e0130bc602222a8304a8ebe707b7b6ac",
+        "bytes": 316
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/blind-review-prompt.json": {
+        "sha256": "650a8bc55388b3ccc3141dc1e39ceefba68133767c59525bbba3d5f7be0a1663",
+        "bytes": 1071
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/failure-asr.json": {
+        "sha256": "09e71647e451b10eb5724d4998e5150f6f110c79d16da87972fb980cfff45d88",
+        "bytes": 224
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/failure-blind-review.json": {
+        "sha256": "42c9367ce21291a30c1855c6f5e0b0223628837ac8e17ce40f9d414082934033",
+        "bytes": 233
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/failure-compare.json": {
+        "sha256": "f2a21f1ea65c9cbf65afe5df7787cadad9fbaa525cf63b194334e109f97ba4b7",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/immutable-audio-reference.json": {
+        "sha256": "8a9b692522d59fb5456bd7a82e641132531b56f273d89b8baa216c6b29c9daea",
+        "bytes": 1018
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/provider-audio-format.json": {
+        "sha256": "66fba33b39105315b8a1cd711d787c7b633fdfd626955243bbb07d48f04cbdd9",
+        "bytes": 124
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/reference-comparison.json": {
+        "sha256": "b233badd71aed8383f17225dc9b3142e6fb21d1d174d1cd5b5b6dffce26adaec",
+        "bytes": 1255
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/tts-attempt.json": {
+        "sha256": "e545740061a3719d3252f99a28f114424b3323803bd6c224745042164ec90f5d",
+        "bytes": 1041
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R03-r1/tts-request.json": {
+        "sha256": "065477797f49d088b64a1d2a4123040b7035308883df25413b7408a7dd7f9b40",
+        "bytes": 1900
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R04-r1/failure-produce.json": {
+        "sha256": "8d7e9e72923788b71d99d05bd3308c1e55972a1e8f9f3ac42868f7517c235a21",
+        "bytes": 226
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R04-r1/immutable-audio-reference.json": {
+        "sha256": "949772f14590d30e8f85a2bab904cdf5c784a49cf7244d094edab4fa94cfeef5",
+        "bytes": 433
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R04-r1/tts-attempt.json": {
+        "sha256": "83872c306aec9818f512be9d43a20348b5a8d5a5e7ed10a44238ed84081f045a",
+        "bytes": 725
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R04-r1/tts-request.json": {
+        "sha256": "24d21ac57a9dad9f388256dd25a67a017bae6540b16ecb9f7e99b82b0831adbf",
+        "bytes": 1826
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R05-r1/failure-produce.json": {
+        "sha256": "36bfc4cd355ae7e777ce71258f33818ec76f6b9a13c22cce7c4d46fb3f8b7d34",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R05-r1/immutable-audio-reference.json": {
+        "sha256": "7dd92e416928ea0b1ed2b91723d8f0100042b035a933bc37c66e5b3ce7ac4cf0",
+        "bytes": 433
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R06-r1/failure-produce.json": {
+        "sha256": "36f753d53a9ac0a8b6ea7eb8751519adcbe1a5a09cf52c268aa64d9d4679634f",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R06-r1/immutable-audio-reference.json": {
+        "sha256": "0041c3706e497c78d88e0483d7383050d9696ab4e709b2ef146cece792f1e53d",
+        "bytes": 433
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R07-r1/failure-produce.json": {
+        "sha256": "19be97ae0658429897f9c5c7975cb7054e5369c933a2c8ace2410c2aebdca65e",
+        "bytes": 228
+      },
+      "s202-readings-audio/complete-output/S2-02-de-R07-r1/immutable-audio-reference.json": {
+        "sha256": "d7f596e6f1d0a99315a9317f8dca98cab23416e3516da85f0225b8df8925b04b",
+        "bytes": 433
+      },
+      "s202-readings-audio/complete-output/asr-wheel-verification.json": {
+        "sha256": "2f808dc6f3943c02e081adb1ff907dad138a8e31414c4aa7ffc6d5d6aa6a3740",
+        "bytes": 105
+      },
+      "s202-readings-audio/complete-output/bundle-completeness.json": {
+        "sha256": "4790a87d677fe8d5d4101b9b166e2b0edec7bf12f54d6bc7e0e7df89cdeef5ee",
+        "bytes": 5671
+      },
+      "s202-readings-audio/complete-output/failure-summarize.json": {
+        "sha256": "af8d4599574b1f384177afc4057445f466cdec0f96ed6cd7814ade09bebecb24",
+        "bytes": 215
+      },
+      "s202-readings-audio/complete-output/model-gemini-3.8-flash-tts.raw.json": {
+        "sha256": "1372bd3f26a9aadb818a4c86ba9098aaf7867b6355a9c963ac1a5a8f5db140f4",
+        "bytes": 393
+      },
+      "s202-readings-audio/complete-output/model-gemini-4-argon.raw.json": {
+        "sha256": "7b7d55606f5776840e9ea2d3dde17b001c7ab3f71f9a83eda9773516b1ced8b2",
+        "bytes": 388
+      },
+      "s202-readings-audio/complete-output/model-preflight-attempt.json": {
+        "sha256": "6d413f9c0ba8d63a4ca7282b057d10ab3fae6e2fa0d48d21c05471fb084cacf2",
+        "bytes": 227
+      },
+      "s202-readings-audio/complete-output/model-preflight.json": {
+        "sha256": "27fcb5de74fb67c2b5e81e82eba277af919096b55610caf03b520807b38da684",
+        "bytes": 1115
+      },
+      "s202-readings-audio/complete-output/pip-install-report.json": {
+        "sha256": "a51356f9b6bca0e451cd1de2206822c560ef901ed33d7b649a0277ed363c6231",
+        "bytes": 248155
+      },
+      "s202-readings-audio/complete-output/runtime-ready.json": {
+        "sha256": "ad67f8b95cea876ef6ff39ea0abdd4f0ace346860e8faed63d5a3bf2dc1b3ad1",
+        "bytes": 2470
+      },
+      "s202-readings-audio/complete-output/runtime-setup-attempt.json": {
+        "sha256": "45455db8a3bc06fd20ed8b074904cd43cdf896f83ffe870abe8ac16b01a88198",
+        "bytes": 197
+      },
+      "s202-readings-audio/complete-output/shared-provider-stop.json": {
+        "sha256": "72733b7fdbbe5de2e56139fdb4023c6076b46160060381e45d1d930b180abc9f",
+        "bytes": 91
+      },
+      "s202-readings-audio/complete-output/summary.json": {
+        "sha256": "92457912460301a70e395bf1fb18e96faf9e0de06ee3eaa6f03c03e016404a53",
+        "bytes": 7679
+      },
+      "s202-readings-audio/.gitignore": {
+        "sha256": "03d3d2cc9590d14b314dcae4119d51349518719196e200ebeec35236bed507cb",
+        "bytes": 48
+      },
+      "s202-readings-audio/README.en.txt": {
+        "sha256": "9aa9c1925ea37676c720c2d4c6dd352b3bdf5d0e450b98f6866b457096f9d955",
+        "bytes": 353
+      },
+      "s202-readings-audio/freeze_package.py": {
+        "sha256": "20709e7d0dafe095768cb3eb21c52f8725e3ebc13e799d6ae3cdda7f8bcd1b91",
+        "bytes": 731
+      },
+      "s202-readings-audio/offline_check.py": {
+        "sha256": "6167a5ecdcd9abd4dbc710996f2582865960f6f62e8aff7adb8a4ed910cecee3",
+        "bytes": 240
+      },
+      "s202-readings-audio/owner-authority.json": {
+        "sha256": "c99896d1941dbe5d0edf38554cbc37daaa7f97e631444263249c66ea72131400",
+        "bytes": 484
+      },
+      "s202-readings-audio/cumulative-attempt-ledger.json": {
+        "sha256": "615659bba0b4f375716faada4b968bd13f5766bf06f892d7834e05f3b50c89be",
+        "bytes": 3130
+      },
+      "s202-readings-audio/cache-live-audit.json": {
+        "sha256": "3f09bd9c0282dfa14c885fa8f12e5d3b58ad71f15aefbabdcc2db46802ece419",
+        "bytes": 71950
+      },
+      "s202-readings-audio/expected-criteria.NOT-FOR-MODEL.json": {
+        "sha256": "811114d027bd0f0631bcfcf6f3449225c74bea1d9e6fd30f24adfd459ed88cae",
+        "bytes": 1400
+      },
+      "s202-readings-audio/provenance/worker-derivation.json": {
+        "sha256": "271e6036d5c842af8a24cf1bbda783a41aa5fbfd46bf3822c467bcbd37275606",
+        "bytes": 505
+      },
+      "s202-readings-audio/request.json": {
+        "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a",
+        "bytes": 221898
+      },
+      "s202-readings-audio/runtime.json": {
+        "sha256": "aa1628b995fe7a2372d187b9f01b2b5daffa8c081e1ae296a219c42069823fc2",
+        "bytes": 1194
+      },
+      "s202-readings-audio/vendor/course/manifest.json": {
+        "sha256": "15cfd7e732694c107dbf353a065b72d64e8169c104f1a7376d7a8f7dd1551aad",
+        "bytes": 73
+      },
+      "s202-readings-audio/vendor/pipeline-engine.py": {
+        "sha256": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595",
+        "bytes": 24800
+      },
+      "s202-readings-audio/worker.py": {
+        "sha256": "3ab6a10181e6eae684bc4e392a332dbae7915ae7baac56464882aad6bf4ea901",
+        "bytes": 50398
+      },
+      "s202-readings-audio/provenance/narration-ar-EG.json": {
+        "sha256": "8bca94e329505e595582cc8debc5bfe2d282e6b16dce1fa86374b461555220f2",
+        "bytes": 65042
+      },
+      "s202-readings-audio/provenance/narration-en.json": {
+        "sha256": "3bbcaa1dbf2617927d751f23f7ccf4b367ef106cdfe65e2e35a82dc4ce518fa1",
+        "bytes": 47110
+      },
+      "s202-readings-audio/provenance/narration-it.json": {
+        "sha256": "9730fef7de57b6b46f9d4ae59ece2522cf542a62d711fe838210ea0639e3ca40",
+        "bytes": 48981
+      },
+      "s202-readings-audio/provenance/narration-de.json": {
+        "sha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+        "bytes": 49042
+      },
+      "s202-readings-audio/thin_artifacts.py": {
+        "sha256": "12ea17beea128eead185a666b6dc47cfb399e91e89ffe5f4ef6f8c1d943db190",
+        "bytes": 6410
+      },
+      "s202-readings-audio/freeze.json": {
+        "sha256": "7bdfe1fc68402d12c869204c0ec7432602e15c3038eeadf01ea604b8eb6b2cd8",
+        "bytes": 1901
+      },
+      ".github/workflows/s202-readings-audio.yml": {
+        "sha256": "491ce968c889254da176f5cf6972d0c2e24750c7e778813df7120414f5b25242",
+        "bytes": 97447
+      }
+    }
+  }
+}

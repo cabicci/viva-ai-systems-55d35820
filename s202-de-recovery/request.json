@@ -1,0 +1,496 @@
+{
+  "schemaVersion": 1,
+  "scope": "S202_DE_ONLY_THREE_IMPORTED_ORIGINALS_THREE_UNCALLED_NEW_UNITS_R04_QUARANTINED",
+  "stepId": "S2-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s202-de-recovery-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 3,
+  "maximumBlindAudioReviewCalls": 6,
+  "maximumASRInvocations": 6,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "THREE_EXACT_IMPORTS_AND_THREE_UNCALLED_TTS_THEN_INDEPENDENT_DIAGNOSTICS_NO_R04_RETRY",
+  "units": [
+    {
+      "id": "S2-02-de-R01-r1",
+      "unitId": "S2-02-de-R01-r1",
+      "locale": "de",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Stickstoff in alten Maisblättern steckt überwiegend in organischen Molekülen. Beim Abbau der Reste wandeln Bodenorganismen einen Teil dieses Stickstoffs in mineralische Formen wie Ammonium um; weitere Vorgänge können Nitrat bilden. Diese Ionen können ins Bodenwasser gelangen und neuen Wurzeln zur Verfügung stehen. Mikroben können N aber auch zeitweise festlegen: Zersetzung garantiert deshalb keine sofortige Versorgung. Wasser, Temperatur und Belüftung bestimmen den zeitlichen Verlauf mit.",
+          "sha256": "03764888b9546512281ecde8d49d05a166ee81adf9bca4d3f276a50a291f5d42"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Dieses Beispiel verbindet Nährstoffkreislauf und Wurzelaufnahme. Die neue Pflanze nimmt weder das ganze alte Blatt noch eine Handvoll Erde auf. Ein Element muss die Wurzeloberfläche in nutzbarer Form erreichen, bevor es aufgenommen werden kann. Die folgenden drei Wege beschreiben die Ankunft an der Oberfläche; der Durchtritt in die Wurzel ist ein weiterer Schritt.",
+          "sha256": "8ca7f1a69ebfc7cb7c2aab3b965b0ce8f33dbf651489c0b937e6e33977512ba4"
+        }
+      ],
+      "scientificMeaning": "Stickstoff in alten Maisblättern steckt überwiegend in organischen Molekülen. Beim Abbau der Reste wandeln Bodenorganismen einen Teil dieses Stickstoffs in mineralische Formen wie Ammonium um; weitere Vorgänge können Nitrat bilden. Diese Ionen können ins Bodenwasser gelangen und neuen Wurzeln zur Verfügung stehen. Mikroben können N aber auch zeitweise festlegen: Zersetzung garantiert deshalb keine sofortige Versorgung. Wasser, Temperatur und Belüftung bestimmen den zeitlichen Verlauf mit.\n\nDieses Beispiel verbindet Nährstoffkreislauf und Wurzelaufnahme. Die neue Pflanze nimmt weder das ganze alte Blatt noch eine Handvoll Erde auf. Ein Element muss die Wurzeloberfläche in nutzbarer Form erreichen, bevor es aufgenommen werden kann. Die folgenden drei Wege beschreiben die Ankunft an der Oberfläche; der Durchtritt in die Wurzel ist ein weiterer Schritt.",
+      "displayText": "Stickstoff in alten Maisblättern steckt überwiegend in organischen Molekülen. Beim Abbau der Reste wandeln Bodenorganismen einen Teil dieses Stickstoffs in mineralische Formen wie Ammonium um; weitere Vorgänge können Nitrat bilden. Diese Ionen können ins Bodenwasser gelangen und neuen Wurzeln zur Verfügung stehen. Mikroben können N aber auch zeitweise festlegen: Zersetzung garantiert deshalb keine sofortige Versorgung. Wasser, Temperatur und Belüftung bestimmen den zeitlichen Verlauf mit.\n\nDieses Beispiel verbindet Nährstoffkreislauf und Wurzelaufnahme. Die neue Pflanze nimmt weder das ganze alte Blatt noch eine Handvoll Erde auf. Ein Element muss die Wurzeloberfläche in nutzbarer Form erreichen, bevor es aufgenommen werden kann. Die folgenden drei Wege beschreiben die Ankunft an der Oberfläche; der Durchtritt in die Wurzel ist ein weiterer Schritt.",
+      "captionText": "Stickstoff in alten Maisblättern steckt überwiegend in organischen Molekülen. Beim Abbau der Reste wandeln Bodenorganismen einen Teil dieses Stickstoffs in mineralische Formen wie Ammonium um; weitere Vorgänge können Nitrat bilden. Diese Ionen können ins Bodenwasser gelangen und neuen Wurzeln zur Verfügung stehen. Mikroben können N aber auch zeitweise festlegen: Zersetzung garantiert deshalb keine sofortige Versorgung. Wasser, Temperatur und Belüftung bestimmen den zeitlichen Verlauf mit.\n\nDieses Beispiel verbindet Nährstoffkreislauf und Wurzelaufnahme. Die neue Pflanze nimmt weder das ganze alte Blatt noch eine Handvoll Erde auf. Ein Element muss die Wurzeloberfläche in nutzbarer Form erreichen, bevor es aufgenommen werden kann. Die folgenden drei Wege beschreiben die Ankunft an der Oberfläche; der Durchtritt in die Wurzel ist ein weiterer Schritt.",
+      "spokenText": "Stickstoff in alten Maisblättern steckt überwiegend in organischen Molekülen. Beim Abbau der Reste wandeln Bodenorganismen einen Teil dieses Stickstoffs in mineralische Formen wie Ammonium um; weitere Vorgänge können Nitrat bilden. Diese Ionen können ins Bodenwasser gelangen und neuen Wurzeln zur Verfügung stehen. Mikroben können N aber auch zeitweise festlegen: Zersetzung garantiert deshalb keine sofortige Versorgung. Wasser, Temperatur und Belüftung bestimmen den zeitlichen Verlauf mit.\n\nDieses Beispiel verbindet Nährstoffkreislauf und Wurzelaufnahme. Die neue Pflanze nimmt weder das ganze alte Blatt noch eine Handvoll Erde auf. Ein Element muss die Wurzeloberfläche in nutzbarer Form erreichen, bevor es aufgenommen werden kann. Die folgenden drei Wege beschreiben die Ankunft an der Oberfläche; der Durchtritt in die Wurzel ist ein weiterer Schritt.",
+      "spokenTextSHA256": "ee5549cb01d9f43d076a78b29e107b2d15f5058f3ddc2c94748c161bff572c67",
+      "spokenTextSha256": "ee5549cb01d9f43d076a78b29e107b2d15f5058f3ddc2c94748c161bff572c67",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 0,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "87af690e21170079ff8029dfd55aeff23bd807038e73af5e2c0964b2fc3058dc",
+      "requestFingerprintSha256": "87af690e21170079ff8029dfd55aeff23bd807038e73af5e2c0964b2fc3058dc",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "IMPORT_ORIGINAL_DIAGNOSTICS_ONLY"
+    },
+    {
+      "id": "S2-02-de-R02-r1",
+      "unitId": "S2-02-de-R02-r1",
+      "locale": "de",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Wenn Wurzeln Wasser aufnehmen, bewegt sich weiteres Wasser durch den Boden zu ihnen und trägt gelöste Nährstoffe in dieselbe Richtung. Das heißt Massenfluss. Im Lieferwagenvergleich ist Wasser das Fahrzeug und die Ionen sind die Pakete. Der Vergleich hilft bei Richtung und Mitnahme, doch die Wurzel erhält keine festen Pakete an einer Haustür.",
+          "sha256": "8c1f7805e0d32d61551ee8e726ba53979a1a4f39b0cd28e7fa62f98b7a090bd2"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Nitrat ist ein wichtiges Beispiel für Massenfluss. Auch Calcium, Magnesium und Sulfat können erheblich so zugeführt werden. Es ist falsch, diesen Weg für jedes Element und jede Feldlage als vorherrschend zu bezeichnen. Trockener Boden oder geringe Wasseraufnahme können den Nachschub verringern. Die Ankunft eines Ions an der Wurzeloberfläche beweist noch nicht seine tatsächliche Aufnahme.",
+          "sha256": "3c1684e6b944d94b264c83e6edffc61e73f1f7a3608a1d72ef9573407095e362"
+        }
+      ],
+      "scientificMeaning": "Wenn Wurzeln Wasser aufnehmen, bewegt sich weiteres Wasser durch den Boden zu ihnen und trägt gelöste Nährstoffe in dieselbe Richtung. Das heißt Massenfluss. Im Lieferwagenvergleich ist Wasser das Fahrzeug und die Ionen sind die Pakete. Der Vergleich hilft bei Richtung und Mitnahme, doch die Wurzel erhält keine festen Pakete an einer Haustür.\n\nNitrat ist ein wichtiges Beispiel für Massenfluss. Auch Calcium, Magnesium und Sulfat können erheblich so zugeführt werden. Es ist falsch, diesen Weg für jedes Element und jede Feldlage als vorherrschend zu bezeichnen. Trockener Boden oder geringe Wasseraufnahme können den Nachschub verringern. Die Ankunft eines Ions an der Wurzeloberfläche beweist noch nicht seine tatsächliche Aufnahme.",
+      "displayText": "Wenn Wurzeln Wasser aufnehmen, bewegt sich weiteres Wasser durch den Boden zu ihnen und trägt gelöste Nährstoffe in dieselbe Richtung. Das heißt Massenfluss. Im Lieferwagenvergleich ist Wasser das Fahrzeug und die Ionen sind die Pakete. Der Vergleich hilft bei Richtung und Mitnahme, doch die Wurzel erhält keine festen Pakete an einer Haustür.\n\nNitrat ist ein wichtiges Beispiel für Massenfluss. Auch Calcium, Magnesium und Sulfat können erheblich so zugeführt werden. Es ist falsch, diesen Weg für jedes Element und jede Feldlage als vorherrschend zu bezeichnen. Trockener Boden oder geringe Wasseraufnahme können den Nachschub verringern. Die Ankunft eines Ions an der Wurzeloberfläche beweist noch nicht seine tatsächliche Aufnahme.",
+      "captionText": "Wenn Wurzeln Wasser aufnehmen, bewegt sich weiteres Wasser durch den Boden zu ihnen und trägt gelöste Nährstoffe in dieselbe Richtung. Das heißt Massenfluss. Im Lieferwagenvergleich ist Wasser das Fahrzeug und die Ionen sind die Pakete. Der Vergleich hilft bei Richtung und Mitnahme, doch die Wurzel erhält keine festen Pakete an einer Haustür.\n\nNitrat ist ein wichtiges Beispiel für Massenfluss. Auch Calcium, Magnesium und Sulfat können erheblich so zugeführt werden. Es ist falsch, diesen Weg für jedes Element und jede Feldlage als vorherrschend zu bezeichnen. Trockener Boden oder geringe Wasseraufnahme können den Nachschub verringern. Die Ankunft eines Ions an der Wurzeloberfläche beweist noch nicht seine tatsächliche Aufnahme.",
+      "spokenText": "Wenn Wurzeln Wasser aufnehmen, bewegt sich weiteres Wasser durch den Boden zu ihnen und trägt gelöste Nährstoffe in dieselbe Richtung. Das heißt Massenfluss. Im Lieferwagenvergleich ist Wasser das Fahrzeug und die Ionen sind die Pakete. Der Vergleich hilft bei Richtung und Mitnahme, doch die Wurzel erhält keine festen Pakete an einer Haustür.\n\nNitrat ist ein wichtiges Beispiel für Massenfluss. Auch Calcium, Magnesium und Sulfat können erheblich so zugeführt werden. Es ist falsch, diesen Weg für jedes Element und jede Feldlage als vorherrschend zu bezeichnen. Trockener Boden oder geringe Wasseraufnahme können den Nachschub verringern. Die Ankunft eines Ions an der Wurzeloberfläche beweist noch nicht seine tatsächliche Aufnahme.",
+      "spokenTextSHA256": "fc651aae5c3071be24c498ee00ae834f36b73a79d5d96aebc51a9c86f11f1ab1",
+      "spokenTextSha256": "fc651aae5c3071be24c498ee00ae834f36b73a79d5d96aebc51a9c86f11f1ab1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 0,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "580c211d9761f2339cccdf6ee0268698cd908f60bd0306620afb1a6ce5360b84",
+      "requestFingerprintSha256": "580c211d9761f2339cccdf6ee0268698cd908f60bd0306620afb1a6ce5360b84",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "IMPORT_ORIGINAL_DIAGNOSTICS_ONLY"
+    },
+    {
+      "id": "S2-02-de-R03-r1",
+      "unitId": "S2-02-de-R03-r1",
+      "locale": "de",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Nimmt eine Wurzel Ionen auf, kann deren Konzentration direkt an ihrer Oberfläche niedriger werden als etwas weiter draußen im Bodenwasser. Die Nettobewegung gelöster Ionen entlang dieses Gefälles, vom Bereich höherer Konzentration zur verarmten Wurzeloberfläche, heißt Diffusion. Phosphor und Kalium sind oft stark auf diesen kurzen Weg angewiesen; der Anteil hängt auch von Element, Boden und Bedingungen ab.",
+          "sha256": "eba6784c9d4f9339c894d38d7d8e15ca19b5ab74ae74391a3cf7ffbd27d68f78"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Vergleiche Diffusion mit Popcorngeruch im Flur oder einem Farbtropfen im Wasserglas. Das erklärt ein Gefälle, aber im Boden läuft Diffusion durch wassergefüllte Poren und ist über Entfernung oft langsam. Feuchte, verwinkelte Poren und Nachlieferung aus Bodenvorräten zählen. Zeichne keinen Kreispfeil, der das Ion von der Wurzel wegführt, und nenne ihn gleichzeitig Nettolieferung.",
+          "sha256": "fe87cf00523b51ef1c3493ae041ebe32e6477668798e2c1c0e826d040ef9dbdb"
+        }
+      ],
+      "scientificMeaning": "Nimmt eine Wurzel Ionen auf, kann deren Konzentration direkt an ihrer Oberfläche niedriger werden als etwas weiter draußen im Bodenwasser. Die Nettobewegung gelöster Ionen entlang dieses Gefälles, vom Bereich höherer Konzentration zur verarmten Wurzeloberfläche, heißt Diffusion. Phosphor und Kalium sind oft stark auf diesen kurzen Weg angewiesen; der Anteil hängt auch von Element, Boden und Bedingungen ab.\n\nVergleiche Diffusion mit Popcorngeruch im Flur oder einem Farbtropfen im Wasserglas. Das erklärt ein Gefälle, aber im Boden läuft Diffusion durch wassergefüllte Poren und ist über Entfernung oft langsam. Feuchte, verwinkelte Poren und Nachlieferung aus Bodenvorräten zählen. Zeichne keinen Kreispfeil, der das Ion von der Wurzel wegführt, und nenne ihn gleichzeitig Nettolieferung.",
+      "displayText": "Nimmt eine Wurzel Ionen auf, kann deren Konzentration direkt an ihrer Oberfläche niedriger werden als etwas weiter draußen im Bodenwasser. Die Nettobewegung gelöster Ionen entlang dieses Gefälles, vom Bereich höherer Konzentration zur verarmten Wurzeloberfläche, heißt Diffusion. Phosphor und Kalium sind oft stark auf diesen kurzen Weg angewiesen; der Anteil hängt auch von Element, Boden und Bedingungen ab.\n\nVergleiche Diffusion mit Popcorngeruch im Flur oder einem Farbtropfen im Wasserglas. Das erklärt ein Gefälle, aber im Boden läuft Diffusion durch wassergefüllte Poren und ist über Entfernung oft langsam. Feuchte, verwinkelte Poren und Nachlieferung aus Bodenvorräten zählen. Zeichne keinen Kreispfeil, der das Ion von der Wurzel wegführt, und nenne ihn gleichzeitig Nettolieferung.",
+      "captionText": "Nimmt eine Wurzel Ionen auf, kann deren Konzentration direkt an ihrer Oberfläche niedriger werden als etwas weiter draußen im Bodenwasser. Die Nettobewegung gelöster Ionen entlang dieses Gefälles, vom Bereich höherer Konzentration zur verarmten Wurzeloberfläche, heißt Diffusion. Phosphor und Kalium sind oft stark auf diesen kurzen Weg angewiesen; der Anteil hängt auch von Element, Boden und Bedingungen ab.\n\nVergleiche Diffusion mit Popcorngeruch im Flur oder einem Farbtropfen im Wasserglas. Das erklärt ein Gefälle, aber im Boden läuft Diffusion durch wassergefüllte Poren und ist über Entfernung oft langsam. Feuchte, verwinkelte Poren und Nachlieferung aus Bodenvorräten zählen. Zeichne keinen Kreispfeil, der das Ion von der Wurzel wegführt, und nenne ihn gleichzeitig Nettolieferung.",
+      "spokenText": "Nimmt eine Wurzel Ionen auf, kann deren Konzentration direkt an ihrer Oberfläche niedriger werden als etwas weiter draußen im Bodenwasser. Die Nettobewegung gelöster Ionen entlang dieses Gefälles, vom Bereich höherer Konzentration zur verarmten Wurzeloberfläche, heißt Diffusion. Phosphor und Kalium sind oft stark auf diesen kurzen Weg angewiesen; der Anteil hängt auch von Element, Boden und Bedingungen ab.\n\nVergleiche Diffusion mit Popcorngeruch im Flur oder einem Farbtropfen im Wasserglas. Das erklärt ein Gefälle, aber im Boden läuft Diffusion durch wassergefüllte Poren und ist über Entfernung oft langsam. Feuchte, verwinkelte Poren und Nachlieferung aus Bodenvorräten zählen. Zeichne keinen Kreispfeil, der das Ion von der Wurzel wegführt, und nenne ihn gleichzeitig Nettolieferung.",
+      "spokenTextSHA256": "98632c76c93329da6da46feedc52298f9c61e6a5ca9dadf49a2bcd652c27ecd5",
+      "spokenTextSha256": "98632c76c93329da6da46feedc52298f9c61e6a5ca9dadf49a2bcd652c27ecd5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 0,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d66e6eedfde870fdebfedfda8783de0451e3cd11cb4ab15e7c91327983e1d45c",
+      "requestFingerprintSha256": "d66e6eedfde870fdebfedfda8783de0451e3cd11cb4ab15e7c91327983e1d45c",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "IMPORT_ORIGINAL_DIAGNOSTICS_ONLY"
+    },
+    {
+      "id": "S2-02-de-R05-r1",
+      "unitId": "S2-02-de-R05-r1",
+      "locale": "de",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Zeichne im Querschnitt den Massenfluss als Wasser und gelöste Ionen zur Wurzel; die Diffusion als gelöste Ionen aus einem Bereich höherer Konzentration durch Bodenwasser zur verarmten Zone an der Wurzel; und die Interzeption als Wurzelspitze oder Wurzelhaar, das nach außen in einen neuen Bodenbereich wächst. Der Pfeil der Interzeption zeigt Wurzelwachstum, die ersten zwei zeigen Nährstoffbewegung zur Wurzel.",
+          "sha256": "9ab9227431ce1e4ad65643df518d19fd61fd2b37afe95086ad600c65133d810f"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Nutze drei nummerierte Wege. Unterscheide Wasserbewegung, Nettobewegung der Ionen und Wurzelwachstum. Vergleiche jeden Pfeil mit seinem Antrieb; ein Kreispfeil von der Wurzel weg zeigt keine Nettolieferung zu dieser Wurzel.",
+          "sha256": "cbd4343568d7174f5cbed7f4e6250112922d9baab88102c28cd4846f30989590"
+        }
+      ],
+      "scientificMeaning": "Zeichne im Querschnitt den Massenfluss als Wasser und gelöste Ionen zur Wurzel; die Diffusion als gelöste Ionen aus einem Bereich höherer Konzentration durch Bodenwasser zur verarmten Zone an der Wurzel; und die Interzeption als Wurzelspitze oder Wurzelhaar, das nach außen in einen neuen Bodenbereich wächst. Der Pfeil der Interzeption zeigt Wurzelwachstum, die ersten zwei zeigen Nährstoffbewegung zur Wurzel.\n\nNutze drei nummerierte Wege. Unterscheide Wasserbewegung, Nettobewegung der Ionen und Wurzelwachstum. Vergleiche jeden Pfeil mit seinem Antrieb; ein Kreispfeil von der Wurzel weg zeigt keine Nettolieferung zu dieser Wurzel.",
+      "displayText": "Zeichne im Querschnitt den Massenfluss als Wasser und gelöste Ionen zur Wurzel; die Diffusion als gelöste Ionen aus einem Bereich höherer Konzentration durch Bodenwasser zur verarmten Zone an der Wurzel; und die Interzeption als Wurzelspitze oder Wurzelhaar, das nach außen in einen neuen Bodenbereich wächst. Der Pfeil der Interzeption zeigt Wurzelwachstum, die ersten zwei zeigen Nährstoffbewegung zur Wurzel.\n\nNutze drei nummerierte Wege. Unterscheide Wasserbewegung, Nettobewegung der Ionen und Wurzelwachstum. Vergleiche jeden Pfeil mit seinem Antrieb; ein Kreispfeil von der Wurzel weg zeigt keine Nettolieferung zu dieser Wurzel.",
+      "captionText": "Zeichne im Querschnitt den Massenfluss als Wasser und gelöste Ionen zur Wurzel; die Diffusion als gelöste Ionen aus einem Bereich höherer Konzentration durch Bodenwasser zur verarmten Zone an der Wurzel; und die Interzeption als Wurzelspitze oder Wurzelhaar, das nach außen in einen neuen Bodenbereich wächst. Der Pfeil der Interzeption zeigt Wurzelwachstum, die ersten zwei zeigen Nährstoffbewegung zur Wurzel.\n\nNutze drei nummerierte Wege. Unterscheide Wasserbewegung, Nettobewegung der Ionen und Wurzelwachstum. Vergleiche jeden Pfeil mit seinem Antrieb; ein Kreispfeil von der Wurzel weg zeigt keine Nettolieferung zu dieser Wurzel.",
+      "spokenText": "Zeichne im Querschnitt den Massenfluss als Wasser und gelöste Ionen zur Wurzel; die Diffusion als gelöste Ionen aus einem Bereich höherer Konzentration durch Bodenwasser zur verarmten Zone an der Wurzel; und die Interzeption als Wurzelspitze oder Wurzelhaar, das nach außen in einen neuen Bodenbereich wächst. Der Pfeil der Interzeption zeigt Wurzelwachstum, die ersten zwei zeigen Nährstoffbewegung zur Wurzel.\n\nNutze drei nummerierte Wege. Unterscheide Wasserbewegung, Nettobewegung der Ionen und Wurzelwachstum. Vergleiche jeden Pfeil mit seinem Antrieb; ein Kreispfeil von der Wurzel weg zeigt keine Nettolieferung zu dieser Wurzel.",
+      "spokenTextSHA256": "c206567f610123cca76e52dd7b0a7481ac2acc093a6e53343751cebe078aacfa",
+      "spokenTextSha256": "c206567f610123cca76e52dd7b0a7481ac2acc093a6e53343751cebe078aacfa",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "afdd8641ceec574f7df658e5905058ec942c5f3491eabab2d8191c01f6c07519",
+      "requestFingerprintSha256": "afdd8641ceec574f7df658e5905058ec942c5f3491eabab2d8191c01f6c07519",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "PROVEN_UNCALLED_NEW_GENERATION"
+    },
+    {
+      "id": "S2-02-de-R06-r1",
+      "unitId": "S2-02-de-R06-r1",
+      "locale": "de",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.",
+          "sha256": "8fa52b89d4b49d42926fba5ecd25ab9dfe5f35f99923d352e6fd167be84872c6"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Der pH-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der pH-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer pH-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+          "sha256": "95181ed9ac2c147c637684b74bd6b799ee740433b0dbf30f4349984b03806260"
+        }
+      ],
+      "scientificMeaning": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer pH-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der pH-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer pH-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+      "displayText": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer pH-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der pH-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer pH-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+      "captionText": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer pH-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der pH-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer pH-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+      "spokenText": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer P H-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der P H-Bereich sechs Komma null bis sieben Komma null ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer P H-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+      "spokenTextSHA256": "c99f6851c47b8379f59762ae6bd1490cec88f81c59e47662774ccb90dc0ca6ce",
+      "spokenTextSha256": "c99f6851c47b8379f59762ae6bd1490cec88f81c59e47662774ccb90dc0ca6ce",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer pH-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der pH-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer pH-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+          "spoken": "Gute Bodenstruktur erleichtert Wasser- und Luftbewegung und gibt Wurzeln Raum. Organische Substanz unterstützt Struktur und Nährstoffkreislauf. Wassermangel begrenzt Fluss und Diffusion, Staunässe kann Wurzeln Sauerstoff entziehen. Verdichtung und Wurzelverletzung verringern das erkundete Bodenvolumen. Jeder dieser Faktoren kann die Aufnahme trotz vorhandener Nährstoffe einschränken.\n\nDer P H-Wert verändert Nährstoffchemie und biologische Aktivität und kann die Verfügbarkeit verringern, ohne dass das Element aus dem Boden verschwindet. Der P H-Bereich 6.0–7.0 ist eine grobe Lernorientierung für viele Kulturen, kein universelles Ziel für alle Kulturen, Böden und Elemente. Vor einer P H-Korrektur braucht es Bodenanalyse, Kulturbedarf und Feldkontext. Spätere Schritte behandeln Messung und Deutung.",
+          "occurrences": 1,
+          "purpose": "One simultaneous exact scientific notation expansion preserving element symbols, atom counts and ionic charges; source/display unchanged"
+        },
+        {
+          "written": "6.0–7.0",
+          "spoken": "sechs Komma null bis sieben Komma null",
+          "occurrences": 1,
+          "purpose": "Faithful number/unit or natural Egyptian spoken form, no scientific fact change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f60118f319d3c23f7b0fa2d83b1dbdf4777f970dfdc418d53fdd56c0005e796b",
+      "requestFingerprintSha256": "f60118f319d3c23f7b0fa2d83b1dbdf4777f970dfdc418d53fdd56c0005e796b",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "PROVEN_UNCALLED_NEW_GENERATION"
+    },
+    {
+      "id": "S2-02-de-R07-r1",
+      "unitId": "S2-02-de-R07-r1",
+      "locale": "de",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.",
+          "sha256": "d4bd5b931c783e2f95bcae6564b80e2027855e28f9c83c0815a94c741f583c8e"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "N, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit NPK: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+          "sha256": "c366b1743fd47bf55f479aecf6e02457aacc6c7c3083534c10877978029b00f5"
+        }
+      ],
+      "scientificMeaning": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit NPK: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+      "displayText": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit NPK: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+      "captionText": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit NPK: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+      "spokenText": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit N P K: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+      "spokenTextSHA256": "06112af20c8fd69b164f19c010b423ca32885084c2794a9f5396f3645a3c7bd0",
+      "spokenTextSha256": "06112af20c8fd69b164f19c010b423ca32885084c2794a9f5396f3645a3c7bd0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit NPK: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+          "spoken": "Massenfluss, Diffusion und Interzeption beschreiben den Weg vom Boden zur Wurzel. Nach der Aufnahme kann die Pflanze Stoffe durch ihre Gewebe transportieren und umverteilen. Das sind andere Orte und Prozesse. Aus der Beweglichkeit eines Elements zwischen Blättern folgt nicht, dass es sich auch in jedem Boden schnell ausbreitet.\n\nN, P und K sind in der Pflanze hinreichend beweglich, sodass bei knapper Versorgung ein Teil aus altem Gewebe in neues Wachstum verlagert werden kann. Mangelzeichen erscheinen deshalb oft zuerst an älteren, unteren Blättern. Das ist ein Hinweis, keine Garantie und keine Diagnose. Vergleiche Calcium und Schwefel mit N P K: Calcium ist wenig mobil; Schwefel ist begrenzt bis mäßig mobil und sein Mangel zeigt sich bei Mais oft an jüngerem Wachstum. Ein gelbes junges Blatt beweist allein weder Calcium- noch Schwefelmangel. Kultur, Stadium und andere Belastungen beeinflussen das Bild; „Nährstoffzeichen lesen, ohne vorschnell zu diagnostizieren“ behandelt die Sichtdiagnose ausführlich.",
+          "occurrences": 1,
+          "purpose": "One simultaneous exact scientific notation expansion preserving element symbols, atom counts and ionic charges; source/display unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "60ccc82e18bf7c6b983b53ac03ab39acc92784e74c413f7c1b7685cb2325f526",
+      "requestFingerprintSha256": "60ccc82e18bf7c6b983b53ac03ab39acc92784e74c413f7c1b7685cb2325f526",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1d77a2792f8f64dba07edb09f9281db979861498129ea13f22e98c870bd26477",
+      "operationKind": "PROVEN_UNCALLED_NEW_GENERATION"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 6,
+    "asr": 6,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-02-de-R01-r1",
+      "S2-02-de-R02-r1",
+      "S2-02-de-R03-r1",
+      "S2-02-de-R05-r1",
+      "S2-02-de-R06-r1",
+      "S2-02-de-R07-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  },
+  "importedOriginalUnitIds": [
+    "S2-02-de-R01-r1",
+    "S2-02-de-R02-r1",
+    "S2-02-de-R03-r1"
+  ],
+  "newGenerationUnitIds": [
+    "S2-02-de-R05-r1",
+    "S2-02-de-R06-r1",
+    "S2-02-de-R07-r1"
+  ]
+}
