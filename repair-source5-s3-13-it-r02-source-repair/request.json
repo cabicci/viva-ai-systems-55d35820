@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_SOURCE5_S3_13_IT_R02_SOURCE_REPAIR",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-source5-s3-13-it-r02-source-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-it-R02-source-repair-r1",
+      "unitId": "S3-13-it-R02-source-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-source5-s3-13-it-r02-source-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.",
+          "sha256": "9d3645ce6aff74109d52284d26712d1007709f05037c582ba10f5b677228d381"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Vantaggi possibili: meno lavoro a mano, minore competizione delle infestanti, lieve aerazione superficiale, preparazione leggera del letto e incorporazione condizionata con attrezzo adatto. Non sono risparmi o miglioramenti strutturali garantiti. Lavorazioni ripetute o passaggi su bagnato possono danneggiare la struttura e aggravare compattazione. Per il caso di 1 acre confronta manodopera, costi fissi e correnti, trasporto, danni a coltura e suolo, accesso e rischi con lavoro manuale o altri metodi. Un acre non è un feddan egiziano.",
+          "sha256": "a55735380be04a8849e4bd3be2d373349eab4b81d755bd203c275c5a113d32d4"
+        }
+      ],
+      "scientificMeaning": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.\n\nVantaggi possibili: meno lavoro a mano, minore competizione delle infestanti, lieve aerazione superficiale, preparazione leggera del letto e incorporazione condizionata con attrezzo adatto. Non sono risparmi o miglioramenti strutturali garantiti. Lavorazioni ripetute o passaggi su bagnato possono danneggiare la struttura e aggravare compattazione. Per il caso di 1 acre confronta manodopera, costi fissi e correnti, trasporto, danni a coltura e suolo, accesso e rischi con lavoro manuale o altri metodi. Un acre non è un feddan egiziano.",
+      "displayText": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.\n\nVantaggi possibili: meno lavoro a mano, minore competizione delle infestanti, lieve aerazione superficiale, preparazione leggera del letto e incorporazione condizionata con attrezzo adatto. Non sono risparmi o miglioramenti strutturali garantiti. Lavorazioni ripetute o passaggi su bagnato possono danneggiare la struttura e aggravare compattazione. Per il caso di 1 acre confronta manodopera, costi fissi e correnti, trasporto, danni a coltura e suolo, accesso e rischi con lavoro manuale o altri metodi. Un acre non è un feddan egiziano.",
+      "captionText": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.\n\nVantaggi possibili: meno lavoro a mano, minore competizione delle infestanti, lieve aerazione superficiale, preparazione leggera del letto e incorporazione condizionata con attrezzo adatto. Non sono risparmi o miglioramenti strutturali garantiti. Lavorazioni ripetute o passaggi su bagnato possono danneggiare la struttura e aggravare compattazione. Per il caso di 1 acre confronta manodopera, costi fissi e correnti, trasporto, danni a coltura e suolo, accesso e rischi con lavoro manuale o altri metodi. Un acre non è un feddan egiziano.",
+      "spokenText": "Honda chiama il modello effe i lunga cinquecento, esse e erre, una motozappa.",
+      "spokenTextSHA256": "9572cad8912b36c4857903d75ea4826a7eeea83173a7f2104ebd22cd0d94bb94",
+      "spokenTextSha256": "9572cad8912b36c4857903d75ea4826a7eeea83173a7f2104ebd22cd0d94bb94",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.\n\nVantaggi possibili: meno lavoro a mano, minore competizione delle infestanti, lieve aerazione superficiale, preparazione leggera del letto e incorporazione condizionata con attrezzo adatto. Non sono risparmi o miglioramenti strutturali garantiti. Lavorazioni ripetute o passaggi su bagnato possono danneggiare la struttura e aggravare compattazione. Per il caso di 1 acre confronta manodopera, costi fissi e correnti, trasporto, danni a coltura e suolo, accesso e rischi con lavoro manuale o altri metodi. Un acre non è un feddan egiziano.",
+          "spoken": "Honda chiama FJ500-SER una motozappa.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Honda chiama FJ500-SER una motozappa.",
+          "spoken": "Honda chiama il modello effe i lunga cinquecento, esse e erre, una motozappa.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "7490951187a44f46640adce2efd36881dc5bc9e6a65feec1f9a1f611e92cc12c",
+      "requestFingerprintSha256": "7490951187a44f46640adce2efd36881dc5bc9e6a65feec1f9a1f611e92cc12c",
+      "sourcePlanSha256": "1f80b8be5e0f8b9bd889d91006147e964aa29f5b19ce0c74549382c07f1d8616",
+      "exactSentenceBefore": "Honda chiama FJ500-SER una motozappa.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/1/paragraphs/0",
+        "sourceText": "La fonte docente descrive un mezzo compatto per file strette con lame o denti rotanti che tagliano o interrano infestanti e smuovono uno strato superficiale. Honda chiama FJ500-SER una motozappa. Lavorare davvero fra file dipende da larghezza effettiva, distanza, spazio dalle radici, coperture, percorso dell’operatore e suolo. Il manuale avverte di pietre, fili e altri pericoli; il motore a benzina emette monossido di carbonio e il manuale vieta di farlo funzionare in uno spazio confinato, compresa una serra chiusa.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-13-it-R02-source-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
