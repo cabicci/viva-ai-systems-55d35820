@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR13_S215_AR_R06_GROUP_TABLE_REPAIR",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair13-s215-ar-r06-group-table-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-15-ar-EG-R06-group-table-repair-r1",
+      "unitId": "S2-15-ar-EG-R06-group-table-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair13-s215-ar-r06-group-table-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات: ٥ دقائق تجهيز، ٣٥ كتابة، ١٠ نقاش، وتنبيه عند بقاء ١٥ ثم ٥ دقائق. ناقشوا الحموضة وN/P والصرف لكن لا تحددوا جيرًا أو سمادًا قبل خطة مختبرية مناسبة. لا تختاروا سمادًا متوازنًا تلقائيًا وK قد يكون كافيًا. افحصوا موضع الطبقة المانعة والماء ومخرج الصرف قبل الحرث العميق، ولا تحرثوا أرضًا غير مناسبة الرطوبة. اسمعوا تبريرات الأولوية المختلفة ثم قارنوا النموذج بعد المحاولة. بدايات الجمل والجدول الجاهز تساعد التدريب، ولا تثبت بناء التقرير باستقلال. إدارة الغطاء النباتي/الدورة الزراعية إضافة اختيارية طويلة المدى.",
+          "sha256": "e0d6163de93d6e70f584bcbce4ecdf77f47a29e1df50574096d9b1b414b17cde"
+        }
+      ],
+      "scientificMeaning": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات: ٥ دقائق تجهيز، ٣٥ كتابة، ١٠ نقاش، وتنبيه عند بقاء ١٥ ثم ٥ دقائق. ناقشوا الحموضة وN/P والصرف لكن لا تحددوا جيرًا أو سمادًا قبل خطة مختبرية مناسبة. لا تختاروا سمادًا متوازنًا تلقائيًا وK قد يكون كافيًا. افحصوا موضع الطبقة المانعة والماء ومخرج الصرف قبل الحرث العميق، ولا تحرثوا أرضًا غير مناسبة الرطوبة. اسمعوا تبريرات الأولوية المختلفة ثم قارنوا النموذج بعد المحاولة. بدايات الجمل والجدول الجاهز تساعد التدريب، ولا تثبت بناء التقرير باستقلال. إدارة الغطاء النباتي/الدورة الزراعية إضافة اختيارية طويلة المدى.",
+      "displayText": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات: ٥ دقائق تجهيز، ٣٥ كتابة، ١٠ نقاش، وتنبيه عند بقاء ١٥ ثم ٥ دقائق. ناقشوا الحموضة وN/P والصرف لكن لا تحددوا جيرًا أو سمادًا قبل خطة مختبرية مناسبة. لا تختاروا سمادًا متوازنًا تلقائيًا وK قد يكون كافيًا. افحصوا موضع الطبقة المانعة والماء ومخرج الصرف قبل الحرث العميق، ولا تحرثوا أرضًا غير مناسبة الرطوبة. اسمعوا تبريرات الأولوية المختلفة ثم قارنوا النموذج بعد المحاولة. بدايات الجمل والجدول الجاهز تساعد التدريب، ولا تثبت بناء التقرير باستقلال. إدارة الغطاء النباتي/الدورة الزراعية إضافة اختيارية طويلة المدى.",
+      "captionText": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات: ٥ دقائق تجهيز، ٣٥ كتابة، ١٠ نقاش، وتنبيه عند بقاء ١٥ ثم ٥ دقائق. ناقشوا الحموضة وN/P والصرف لكن لا تحددوا جيرًا أو سمادًا قبل خطة مختبرية مناسبة. لا تختاروا سمادًا متوازنًا تلقائيًا وK قد يكون كافيًا. افحصوا موضع الطبقة المانعة والماء ومخرج الصرف قبل الحرث العميق، ولا تحرثوا أرضًا غير مناسبة الرطوبة. اسمعوا تبريرات الأولوية المختلفة ثم قارنوا النموذج بعد المحاولة. بدايات الجمل والجدول الجاهز تساعد التدريب، ولا تثبت بناء التقرير باستقلال. إدارة الغطاء النباتي/الدورة الزراعية إضافة اختيارية طويلة المدى.",
+      "spokenText": "اشتغلوا في مجموعات من تلاتة لأربعة، واكتبوا الأقسام الخمسة، وجدول واضح، وأولويات.",
+      "spokenTextSHA256": "80ec21241a72a2810ad3ce1cc15ea74af10c499c755af259c50592a602a717ac",
+      "spokenTextSha256": "80ec21241a72a2810ad3ce1cc15ea74af10c499c755af259c50592a602a717ac",
+      "spokenAdaptationChanges": [
+        {
+          "written": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات: ٥ دقائق تجهيز، ٣٥ كتابة، ١٠ نقاش، وتنبيه عند بقاء ١٥ ثم ٥ دقائق. ناقشوا الحموضة وN/P والصرف لكن لا تحددوا جيرًا أو سمادًا قبل خطة مختبرية مناسبة. لا تختاروا سمادًا متوازنًا تلقائيًا وK قد يكون كافيًا. افحصوا موضع الطبقة المانعة والماء ومخرج الصرف قبل الحرث العميق، ولا تحرثوا أرضًا غير مناسبة الرطوبة. اسمعوا تبريرات الأولوية المختلفة ثم قارنوا النموذج بعد المحاولة. بدايات الجمل والجدول الجاهز تساعد التدريب، ولا تثبت بناء التقرير باستقلال. إدارة الغطاء النباتي/الدورة الزراعية إضافة اختيارية طويلة المدى.",
+          "spoken": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات",
+          "spoken": "اشتغلوا في مجموعات من تلاتة لأربعة، واكتبوا الأقسام الخمسة، وجدول واضح، وأولويات.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "da2ec67d5183cb7e9ee77049247354a6674d32ea2ba240006da68ffdb0ab1a2d",
+      "requestFingerprintSha256": "da2ec67d5183cb7e9ee77049247354a6674d32ea2ba240006da68ffdb0ab1a2d",
+      "sourcePlanSha256": "a9e2add72a5ba0a79fa768672ae2bd7f7bc9319a3bef8c154f5a0d10a423ce31",
+      "exactSentenceBefore": "في مجموعات ٣–٤، اكتبوا الأقسام الخمسة وجدولًا واضحًا وأولويات",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-15-ar-EG-R06-group-table-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
