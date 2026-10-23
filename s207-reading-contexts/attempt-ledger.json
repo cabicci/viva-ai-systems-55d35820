@@ -1,0 +1,74 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 3,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationID": "s207-reading-contexts",
+    "reservationSHA256": "769f62fbc4ebc5ef392aaafc012ce4cfaaea1eb1b31f2ab1fbd618ec0b06085a",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 91,
+    "globalConservativelyReservedOrConsumed": 94,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S2-07-ar-EG-R01-r1",
+        "wavSHA256": "e04f9df4ead5f97704ec88dac5f6964507731589c92a1d5a6e74a1f7c9ad6a12",
+        "firstSample": 456000,
+        "endSampleExclusive": 600000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S2-07-it-R02-r1",
+        "wavSHA256": "feecbfe7a176ddedd76ddd10439c30cb42e255780bfc80e44ab4945cee7bb879",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C03",
+        "sourceUnitId": "S2-07-it-R03-r1",
+        "wavSHA256": "4d87d9bcde9301ba60392f1bdadcef9e2f2253922eb36a25c8d70e8a93f9e547",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}

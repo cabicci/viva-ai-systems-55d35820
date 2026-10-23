@@ -1,0 +1,128 @@
+name: s207-reading-contexts bounded audio diagnostics
+'on':
+  push:
+    branches:
+    - work/soil-s207-reading-contexts-20261023-r1
+    paths:
+    - s207-reading-contexts/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s207-reading-contexts-6b8ad21629a39bd6a1c3913c50db7b485bc5038a5ef5c3706204bde183e8f5fa
+  cancel-in-progress: false
+env:
+  PACKAGE: s207-reading-contexts
+  REQUEST_SHA: 6b8ad21629a39bd6a1c3913c50db7b485bc5038a5ef5c3706204bde183e8f5fa
+  WORKER_SHA: 969f02e8bfdf9b5ee742363a4729b2df9fa1b730126cb2563a047eb4d04b6b24
+  FREEZE_SHA: a85189fef05a48752bd165a8e2381bd3f03bf3606d5541e25057bf902e79b3e5
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s207-reading-contexts-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify exact original sixsecond PCM and finitebudget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Preserve exact context before onlyreview
+      id: audio
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s207-reading-contexts-r1-inputs
+        path: ${{ env.PACKAGE }}/inputs/
+        if-no-files-found: error
+        retention-days: 30
+    - name: Record immutable context upload
+      id: receipt
+      env:
+        AID: ${{ steps.audio.outputs.artifact-id }}
+        DIGEST: ${{ steps.audio.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One unhinted review C01
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C01
+
+        '
+    - name: One unhinted review C02
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C02
+
+        '
+    - name: One unhinted review C03
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C03
+
+        '
+    - name: Preserve all exact payload and partial outcomes
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s207-reading-contexts-r1-evidence
+        retention-days: 30
+        include-hidden-files: true
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/attempt-ledger.json
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/prompts/blind.txt
+
+          ${{ env.PACKAGE }}/provenance/model-availability.json
+
+          ${{ env.PACKAGE }}/provenance/context-proof.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/inputs/C01.wav
+
+          ${{ env.PACKAGE }}/inputs/C02.wav
+
+          ${{ env.PACKAGE }}/inputs/C03.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s207-reading-contexts.yml'
