@@ -1,0 +1,110 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-en.json",
+    "sha256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+    "bytes": 32131
+  },
+  "units": [
+    {
+      "id": "S3-02-en-candidate-record-closure-repair-r1",
+      "unitId": "S3-02-en-candidate-record-closure-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-closure3-s3-02-en-candidate-record-closure-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/candidates",
+          "text": "At least two distinct candidates in each group",
+          "sha256": "5a05e5fc314de353875498d197489cebf534a1f21b1f49eb952c98e91f3b3178"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/0",
+          "text": "Crop name",
+          "sha256": "fcdb6d39e7e7b57228330a95832ba38c2155a7dc65c893f2cfe4a3635d792f1b"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/1",
+          "text": "Crop-specific reason it might fit",
+          "sha256": "2d9640e276e2cb24c8ebf747ae90bf6b5acc4a501020c14eabdbf5d4f5fb178d"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/2",
+          "text": "Unmet condition or limiting factor",
+          "sha256": "7b34563e9eb0fe8266e131c867d387bf5a11f52938c1e68a58d19e9d10a7e45b"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/3",
+          "text": "Occupancy duration, establishment and termination",
+          "sha256": "1f6a4cd4d42f1c1f48c38ae6a53c1ec6b06dca65e5cce4752289e256a9e77136"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/4",
+          "text": "Evidence or source needed to decide",
+          "sha256": "0b48a1650cd69b67784d046f8227d37711e1eb87e08aa27d09e8738f43243671"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateHelp",
+          "text": "These alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "sha256": "67b3af9a51ff6b206674d46952747bc9d7a7ce98b9409d49a210f73935a2690d"
+        }
+      ],
+      "scientificMeaning": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "displayText": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "captionText": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "spokenText": "Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "spokenTextSHA256": "613683077951b7a07908669c2ae22fd17ca9b72f8ebbd1b1b43dbb7546df3c7d",
+      "spokenTextSha256": "613683077951b7a07908669c2ae22fd17ca9b72f8ebbd1b1b43dbb7546df3c7d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "spoken": "Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "spoken": "Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "747629a9fc541949513d9f169ffa46d195ff80a8c6bcd3777ed634eabfdf73dd",
+      "requestFingerprintSha256": "747629a9fc541949513d9f169ffa46d195ff80a8c6bcd3777ed634eabfdf73dd",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointers": [
+          "/siteMatch/ui/candidates",
+          "/siteMatch/ui/candidateFields/0",
+          "/siteMatch/ui/candidateFields/1",
+          "/siteMatch/ui/candidateFields/2",
+          "/siteMatch/ui/candidateFields/3",
+          "/siteMatch/ui/candidateFields/4",
+          "/siteMatch/ui/candidateHelp"
+        ],
+        "spokenOnly": true,
+        "sourceTextUnchanged": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
