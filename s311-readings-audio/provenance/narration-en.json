@@ -1,0 +1,449 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-11-en.json",
+    "sha256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+    "bytes": 34263
+  },
+  "units": [
+    {
+      "id": "S3-11-en-R01-r1",
+      "unitId": "S3-11-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, pH, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.",
+          "sha256": "657d3b701c126c4b736fe7eb3a07dd8cca888fb2555628fd56e8802ebb314be1"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Organic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+          "sha256": "83d02979c6b74fbcd3dcfd26c6fc3baaa6dbece19cf575d633bf2055cbdf36bc"
+        }
+      ],
+      "scientificMeaning": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, pH, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+      "displayText": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, pH, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+      "captionText": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, pH, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+      "spokenText": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, p H, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+      "spokenTextSHA256": "6609202fccf5924bdcb403c2db49818fc565c1c3ed044723d2ae05b03eb14973",
+      "spokenTextSha256": "6609202fccf5924bdcb403c2db49818fc565c1c3ed044723d2ae05b03eb14973",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, pH, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+          "spoken": "The original lesson offers two options: change the soil or change the crop. Before either, describe mineral texture separately from compaction, structure, drainage, organic matter, nutrients, p H, salinity, water supply and climate. Probe or inspect the root zone and ask when the land carries machinery and whether it is wet. A raised bed above a saturated area is not proof that water has a safe exit.\n\nOrganic material can help aggregation and water management, but it does not turn clay mineral particles into sand or cure an impermeable layer automatically. Gypsum is not a general remedy for every clay texture; consider it only after a sodicity diagnosis, with water movement and an appropriate local recommendation.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "41f37a2b7fec84fe6a8e622f1da255bf92e57f332f3f06692a0969782ed81aed",
+      "requestFingerprintSha256": "41f37a2b7fec84fe6a8e622f1da255bf92e57f332f3f06692a0969782ed81aed",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R02-r1",
+      "unitId": "S3-11-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost/manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.",
+          "sha256": "9f799451eb3d2905177dc5831cd388a9112bc056d49b106abba3347b9ed6d12f"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "A clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+          "sha256": "0d7acf11e9856102e9f0f14d6d47a21bfb9e9cd189796a21daf5babd19062984"
+        }
+      ],
+      "scientificMeaning": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost/manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+      "displayText": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost/manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+      "captionText": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost/manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+      "spokenText": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost, manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+      "spokenTextSHA256": "af9541291e6228c6f0cce2e9034f4716ce9dcb7405da3409cb54cec5e2cf9c11",
+      "spokenTextSha256": "af9541291e6228c6f0cce2e9034f4716ce9dcb7405da3409cb54cec5e2cf9c11",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost/manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+          "spoken": "The teacher source proposes compost or aged manure to increase organic matter, straw, wood-chip or plastic surface mulch to reduce evaporation, and an off-season clover or vetch cover crop. Select clean, suitable material, check compost, manure nutrient and salt content, water the establishing cover crop and plan how and when to terminate it. Plastic mulch is not an organic-matter input and needs retrieval and waste handling. Bare sand, limited irrigation or excess salts can change the choice.\n\nA clover or vetch crop can add residue and, when effective rhizobia nodulation and conditions allow, contribute nitrogen. Nitrogen transfer and later release are variable; do not promise a fixed fertilizer credit without evidence.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e63f37d9f0960f7ea7b3f9187206ba9f4f35adf9d0fc688d4a1f93da8ce301ae",
+      "requestFingerprintSha256": "e63f37d9f0960f7ea7b3f9187206ba9f4f35adf9d0fc688d4a1f93da8ce301ae",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R03-r1",
+      "unitId": "S3-11-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage/traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.",
+          "sha256": "d16692da23c4add6212cd5419545c3f22904ce1c93c28fab182754c7452f46c2"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Daikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+          "sha256": "7d9e8f7097a63879d898155356d477c8b95446343875ee86b5b5e15e60cfb39b"
+        }
+      ],
+      "scientificMeaning": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage/traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+      "displayText": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage/traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+      "captionText": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage/traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+      "spokenText": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage, traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+      "spokenTextSHA256": "370adfdb35f7e56121d200d55c46cc7610d06e56f6cc6c2072476aee2097b820",
+      "spokenTextSha256": "370adfdb35f7e56121d200d55c46cc7610d06e56f6cc6c2072476aee2097b820",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage/traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+          "spoken": "The source proposes compost or peat moss, raised beds and avoiding work on wet clay. Appropriate organic inputs can support aggregation and porosity over time; peat has sourcing and environmental tradeoffs. Raised beds need adequate root depth, stable sides, an outlet or drainage design and a medium suited to the crop. Stop traffic and cultivation while the soil smears or forms a sticky ball. Where a restrictive layer or waterlogging persists, test the cause and plan drainage, traffic control; merely mixing compost or repeatedly tilling will not guarantee a fix.\n\nDaikon radish and clover are source cover-crop options. Roots and residues may help some compacted zones when they establish and reach the layer, but they cannot be assumed to break every deep machinery pan. Drying state, layer depth, root survival, termination and future wheel traffic matter.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "079fcb839460c397892e4154c287b98fdcab5aa072b986a229d1b26f5961cbf5",
+      "requestFingerprintSha256": "079fcb839460c397892e4154c287b98fdcab5aa072b986a229d1b26f5961cbf5",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R04-r1",
+      "unitId": "S3-11-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "For a dry sandy site, the source lists sweet potato, cowpea, millet and sorghum, and rosemary, thyme, lavender and oregano. These are candidates, not blanket drought-proof crops; establishment water, variety, heat, rooting depth, salinity and market must be checked. For heavy wet clay it lists certain rice varieties and taro where climate and managed water permit, lettuce or spinach on raised rows, and some forage grasses and clovers. A shallow root system is not waterlogging tolerance. A crop suited to managed paddy water does not prove that an uncontrolled waterlogged plot is suitable.",
+          "sha256": "98d280dff66338eb3327b7e17f383af653f8d01af11d80cc710a3c0e8abe2276"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "For the compacted-clay carrot client, the model offers bush or pole beans, lettuce or spinach. Beans require suitable drainage; nitrogen fixation depends on compatible, active rhizobia and conditions. Leafy crops on designed, drained raised rows may be trial candidates but chronic root-zone saturation can still damage them. Carrots themselves can grow in heavier clay when drainage and structure are suitable, so neither path is automatic.",
+          "sha256": "479cbaf06d1dba053ef0b1c69eec93077662937e0f22ce2bbcdd5582cd11b9fb"
+        }
+      ],
+      "scientificMeaning": "For a dry sandy site, the source lists sweet potato, cowpea, millet and sorghum, and rosemary, thyme, lavender and oregano. These are candidates, not blanket drought-proof crops; establishment water, variety, heat, rooting depth, salinity and market must be checked. For heavy wet clay it lists certain rice varieties and taro where climate and managed water permit, lettuce or spinach on raised rows, and some forage grasses and clovers. A shallow root system is not waterlogging tolerance. A crop suited to managed paddy water does not prove that an uncontrolled waterlogged plot is suitable.\n\nFor the compacted-clay carrot client, the model offers bush or pole beans, lettuce or spinach. Beans require suitable drainage; nitrogen fixation depends on compatible, active rhizobia and conditions. Leafy crops on designed, drained raised rows may be trial candidates but chronic root-zone saturation can still damage them. Carrots themselves can grow in heavier clay when drainage and structure are suitable, so neither path is automatic.",
+      "displayText": "For a dry sandy site, the source lists sweet potato, cowpea, millet and sorghum, and rosemary, thyme, lavender and oregano. These are candidates, not blanket drought-proof crops; establishment water, variety, heat, rooting depth, salinity and market must be checked. For heavy wet clay it lists certain rice varieties and taro where climate and managed water permit, lettuce or spinach on raised rows, and some forage grasses and clovers. A shallow root system is not waterlogging tolerance. A crop suited to managed paddy water does not prove that an uncontrolled waterlogged plot is suitable.\n\nFor the compacted-clay carrot client, the model offers bush or pole beans, lettuce or spinach. Beans require suitable drainage; nitrogen fixation depends on compatible, active rhizobia and conditions. Leafy crops on designed, drained raised rows may be trial candidates but chronic root-zone saturation can still damage them. Carrots themselves can grow in heavier clay when drainage and structure are suitable, so neither path is automatic.",
+      "captionText": "For a dry sandy site, the source lists sweet potato, cowpea, millet and sorghum, and rosemary, thyme, lavender and oregano. These are candidates, not blanket drought-proof crops; establishment water, variety, heat, rooting depth, salinity and market must be checked. For heavy wet clay it lists certain rice varieties and taro where climate and managed water permit, lettuce or spinach on raised rows, and some forage grasses and clovers. A shallow root system is not waterlogging tolerance. A crop suited to managed paddy water does not prove that an uncontrolled waterlogged plot is suitable.\n\nFor the compacted-clay carrot client, the model offers bush or pole beans, lettuce or spinach. Beans require suitable drainage; nitrogen fixation depends on compatible, active rhizobia and conditions. Leafy crops on designed, drained raised rows may be trial candidates but chronic root-zone saturation can still damage them. Carrots themselves can grow in heavier clay when drainage and structure are suitable, so neither path is automatic.",
+      "spokenText": "For a dry sandy site, the source lists sweet potato, cowpea, millet and sorghum, and rosemary, thyme, lavender and oregano. These are candidates, not blanket drought-proof crops; establishment water, variety, heat, rooting depth, salinity and market must be checked. For heavy wet clay it lists certain rice varieties and taro where climate and managed water permit, lettuce or spinach on raised rows, and some forage grasses and clovers. A shallow root system is not waterlogging tolerance. A crop suited to managed paddy water does not prove that an uncontrolled waterlogged plot is suitable.\n\nFor the compacted-clay carrot client, the model offers bush or pole beans, lettuce or spinach. Beans require suitable drainage; nitrogen fixation depends on compatible, active rhizobia and conditions. Leafy crops on designed, drained raised rows may be trial candidates but chronic root-zone saturation can still damage them. Carrots themselves can grow in heavier clay when drainage and structure are suitable, so neither path is automatic.",
+      "spokenTextSHA256": "74876b306950362a3cc8c02b222c2c5930734d281030b554b45c3a7a3956210f",
+      "spokenTextSha256": "74876b306950362a3cc8c02b222c2c5930734d281030b554b45c3a7a3956210f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9649e33d80a71704a405c0433c9c3a4d082dd54b6193673ea30559b44b7bc055",
+      "requestFingerprintSha256": "9649e33d80a71704a405c0433c9c3a4d082dd54b6193673ea30559b44b7bc055",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R05-r1",
+      "unitId": "S3-11-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Beans are conditional candidates, not a way to bypass deep compaction: common beans form a deep taproot as well as shallow lateral roots. Verify the crop identity, rooting zone and drainage; do not infer shallow roots or a reliable harvest from the word bean.",
+          "sha256": "1ec3f8727d6f94c53c335094dbc3ede7436a5025f7f960a231b16f8c01f81f71"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/3",
+          "text": "The separate written-answer model also names broccoli, cabbage, kale, lettuce, beans and peas. Retain them as conditional candidates with drainage, root-zone, crop identity, climate, nutrient and rhizobia checks; the list does not prove shallow roots, wet-feet tolerance or a fixed nitrogen benefit.",
+          "sha256": "c3abb3835103f152bd35e089bd372711ccd777bca934745ffc560332a59f4d37"
+        }
+      ],
+      "scientificMeaning": "Beans are conditional candidates, not a way to bypass deep compaction: common beans form a deep taproot as well as shallow lateral roots. Verify the crop identity, rooting zone and drainage; do not infer shallow roots or a reliable harvest from the word bean.\n\nThe separate written-answer model also names broccoli, cabbage, kale, lettuce, beans and peas. Retain them as conditional candidates with drainage, root-zone, crop identity, climate, nutrient and rhizobia checks; the list does not prove shallow roots, wet-feet tolerance or a fixed nitrogen benefit.",
+      "displayText": "Beans are conditional candidates, not a way to bypass deep compaction: common beans form a deep taproot as well as shallow lateral roots. Verify the crop identity, rooting zone and drainage; do not infer shallow roots or a reliable harvest from the word bean.\n\nThe separate written-answer model also names broccoli, cabbage, kale, lettuce, beans and peas. Retain them as conditional candidates with drainage, root-zone, crop identity, climate, nutrient and rhizobia checks; the list does not prove shallow roots, wet-feet tolerance or a fixed nitrogen benefit.",
+      "captionText": "Beans are conditional candidates, not a way to bypass deep compaction: common beans form a deep taproot as well as shallow lateral roots. Verify the crop identity, rooting zone and drainage; do not infer shallow roots or a reliable harvest from the word bean.\n\nThe separate written-answer model also names broccoli, cabbage, kale, lettuce, beans and peas. Retain them as conditional candidates with drainage, root-zone, crop identity, climate, nutrient and rhizobia checks; the list does not prove shallow roots, wet-feet tolerance or a fixed nitrogen benefit.",
+      "spokenText": "Beans are conditional candidates, not a way to bypass deep compaction: common beans form a deep taproot as well as shallow lateral roots. Verify the crop identity, rooting zone and drainage; do not infer shallow roots or a reliable harvest from the word bean.\n\nThe separate written-answer model also names broccoli, cabbage, kale, lettuce, beans and peas. Retain them as conditional candidates with drainage, root-zone, crop identity, climate, nutrient and rhizobia checks; the list does not prove shallow roots, wet-feet tolerance or a fixed nitrogen benefit.",
+      "spokenTextSHA256": "4982a556e14fd4ffa17fbb624494896270fb3fc999352755fc404525189cda02",
+      "spokenTextSha256": "4982a556e14fd4ffa17fbb624494896270fb3fc999352755fc404525189cda02",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "590253d68c34407126369f56475a1b11f016a077e82003193876488d943b22a9",
+      "requestFingerprintSha256": "590253d68c34407126369f56475a1b11f016a077e82003193876488d943b22a9",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R06-r1",
+      "unitId": "S3-11-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Keep the original workshop outputs: 5 minutes observing three unlabelled samples, 15 minutes proposing three crops per texture, 15 minutes giving two paths for the carrot client, and 10 minutes explaining one path to a partner. The trainer may flex the 45-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in S3-10.",
+          "sha256": "2567b8826f9283f480dc7024aa960a56ff61e43a2c653dc41ff44e8a9d0f869e"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "The teacher model gives 2–3 inches of bulky organic matter mixed into the top 6–8 inches, an 8–12-inch-high raised bed filled with 50% existing clay soil and 50% compost, then daikon or clover. Preserve those exact source quantities as *unverified teaching proposals*, not a field recipe: test compost/manure nutrients and salts, root-zone depth, drainage and material suitability first. The 50:50 example is separate from other course potting-mix ratios and a 5 kg bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+          "sha256": "2c88cab22e0a9bf055b80ca8da1e4b88b42f6ddde7cfd74cd1606c8dad19a218"
+        }
+      ],
+      "scientificMeaning": "Keep the original workshop outputs: 5 minutes observing three unlabelled samples, 15 minutes proposing three crops per texture, 15 minutes giving two paths for the carrot client, and 10 minutes explaining one path to a partner. The trainer may flex the 45-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in S3-10.\n\nThe teacher model gives 2–3 inches of bulky organic matter mixed into the top 6–8 inches, an 8–12-inch-high raised bed filled with 50% existing clay soil and 50% compost, then daikon or clover. Preserve those exact source quantities as *unverified teaching proposals*, not a field recipe: test compost/manure nutrients and salts, root-zone depth, drainage and material suitability first. The 50:50 example is separate from other course potting-mix ratios and a 5 kg bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+      "displayText": "Keep the original workshop outputs: 5 minutes observing three unlabelled samples, 15 minutes proposing three crops per texture, 15 minutes giving two paths for the carrot client, and 10 minutes explaining one path to a partner. The trainer may flex the 45-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in S3-10.\n\nThe teacher model gives 2–3 inches of bulky organic matter mixed into the top 6–8 inches, an 8–12-inch-high raised bed filled with 50% existing clay soil and 50% compost, then daikon or clover. Preserve those exact source quantities as *unverified teaching proposals*, not a field recipe: test compost/manure nutrients and salts, root-zone depth, drainage and material suitability first. The 50:50 example is separate from other course potting-mix ratios and a 5 kg bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+      "captionText": "Keep the original workshop outputs: 5 minutes observing three unlabelled samples, 15 minutes proposing three crops per texture, 15 minutes giving two paths for the carrot client, and 10 minutes explaining one path to a partner. The trainer may flex the 45-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in S3-10.\n\nThe teacher model gives 2–3 inches of bulky organic matter mixed into the top 6–8 inches, an 8–12-inch-high raised bed filled with 50% existing clay soil and 50% compost, then daikon or clover. Preserve those exact source quantities as *unverified teaching proposals*, not a field recipe: test compost/manure nutrients and salts, root-zone depth, drainage and material suitability first. The 50:50 example is separate from other course potting-mix ratios and a 5 kg bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+      "spokenText": "Keep the original workshop outputs: five minutes observing three unlabelled samples, fifteen minutes proposing three crops per texture, fifteen minutes giving two paths for the carrot client, and ten minutes explaining one path to a partner. The trainer may flex the forty-five-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in step S three ten.\n\nThe teacher model gives two to three inches of bulky organic matter mixed into the top six to eight inches, an eight to twelve-inch-high raised bed filled with fifty percent existing clay soil and fifty percent compost, then daikon or clover. Preserve those exact source quantities as unverified teaching proposals, not a field recipe: test compost, manure nutrients and salts, root-zone depth, drainage and material suitability first. The fifty to fifty example is separate from other course potting-mix ratios and a five-kilogram bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+      "spokenTextSHA256": "00601fc6ec8fb001ea03d4b9bdc894b1578b58788fc465adbab4c6eb48cb85aa",
+      "spokenTextSha256": "00601fc6ec8fb001ea03d4b9bdc894b1578b58788fc465adbab4c6eb48cb85aa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Keep the original workshop outputs: 5 minutes observing three unlabelled samples, 15 minutes proposing three crops per texture, 15 minutes giving two paths for the carrot client, and 10 minutes explaining one path to a partner. The trainer may flex the 45-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in S3-10.\n\nThe teacher model gives 2–3 inches of bulky organic matter mixed into the top 6–8 inches, an 8–12-inch-high raised bed filled with 50% existing clay soil and 50% compost, then daikon or clover. Preserve those exact source quantities as *unverified teaching proposals*, not a field recipe: test compost/manure nutrients and salts, root-zone depth, drainage and material suitability first. The 50:50 example is separate from other course potting-mix ratios and a 5 kg bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+          "spoken": "Keep the original workshop outputs: five minutes observing three unlabelled samples, fifteen minutes proposing three crops per texture, fifteen minutes giving two paths for the carrot client, and ten minutes explaining one path to a partner. The trainer may flex the forty-five-minute schedule and accepts well-defended alternatives, not only model crop names. The individual exit ticket asks for one sandy-soil crop and one management action with reasons; it cannot replace the three-crops-per-texture task or real-sample observation in step S three ten.\n\nThe teacher model gives two to three inches of bulky organic matter mixed into the top six to eight inches, an eight to twelve-inch-high raised bed filled with fifty percent existing clay soil and fifty percent compost, then daikon or clover. Preserve those exact source quantities as unverified teaching proposals, not a field recipe: test compost, manure nutrients and salts, root-zone depth, drainage and material suitability first. The fifty to fifty example is separate from other course potting-mix ratios and a five-kilogram bank task. Do not specify these amounts to a real client without a site-specific design and trainer approval.",
+          "occurrences": 1,
+          "purpose": "Explicit Arabic percent/duration forms and separate inherited joined ratio typography; exact quantities and all source meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "85c46b372e398d84b15439a550c4fa8dc1ec65b72666d3a91d4b1d1c3be4783b",
+      "requestFingerprintSha256": "85c46b372e398d84b15439a550c4fa8dc1ec65b72666d3a91d4b1d1c3be4783b",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R07-r1",
+      "unitId": "S3-11-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient/salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The50:50 source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.",
+          "sha256": "d5306641bd0a30fcaea25051c43b7c3ce5114823c9524fb76e1a8c9e1c309da3"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/3",
+          "text": "Link with the S3-10 workshop:5minutes real-sample observation,15nine-crop planning,15two-path client and10peer explanation; facilitator may flex the45minutes. Retain the separate one-crop/one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+          "sha256": "a59c33119d43d7c690da0b1b6cde42989cf484ce167b63fe1c50cec43924e0fc"
+        }
+      ],
+      "scientificMeaning": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient/salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The50:50 source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the S3-10 workshop:5minutes real-sample observation,15nine-crop planning,15two-path client and10peer explanation; facilitator may flex the45minutes. Retain the separate one-crop/one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+      "displayText": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient/salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The50:50 source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the S3-10 workshop:5minutes real-sample observation,15nine-crop planning,15two-path client and10peer explanation; facilitator may flex the45minutes. Retain the separate one-crop/one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+      "captionText": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient/salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The50:50 source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the S3-10 workshop:5minutes real-sample observation,15nine-crop planning,15two-path client and10peer explanation; facilitator may flex the45minutes. Retain the separate one-crop/one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+      "spokenText": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient, salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The fifty to fifty source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the step S three ten workshop:five minutes real-sample observation,fifteen nine-crop planning,fifteen two-path client and ten peer explanation; facilitator may flex the forty-five minutes. Retain the separate one-crop, one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+      "spokenTextSHA256": "53adcf22def1675f8ed0b123113fb771d993bc618ba3543b2d5640643c3f06dd",
+      "spokenTextSha256": "53adcf22def1675f8ed0b123113fb771d993bc618ba3543b2d5640643c3f06dd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient/salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The50:50 source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the S3-10 workshop:5minutes real-sample observation,15nine-crop planning,15two-path client and10peer explanation; facilitator may flex the45minutes. Retain the separate one-crop/one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+          "spoken": "The source material list also explicitly includes leaf mould alongside compost and aged manure. Material quality, nutrient, salt analysis and purpose matter; these materials are not automatically interchangeable fertilizers. The fifty to fifty source proposal does not specify mass or volume, so neither basis may be inferred or used as an approved real-site specification.\n\nLink with the step S three ten workshop:five minutes real-sample observation,fifteen nine-crop planning,fifteen two-path client and ten peer explanation; facilitator may flex the forty-five minutes. Retain the separate one-crop, one-action sandy exit ticket. These are planned activities, not evidence they occurred. Use the glossary and sentence starters: First check…; One management option is…if…; An alternative crop is…because… . A partner may question the choice; keep your individual reasoning and accept other well-defended answers.",
+          "occurrences": 1,
+          "purpose": "Explicit Arabic percent/duration forms and separate inherited joined ratio typography; exact quantities and all source meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6349eb794a0dcf94ba3a1409b3259465fbb4d81582902ca9562538120351529d",
+      "requestFingerprintSha256": "6349eb794a0dcf94ba3a1409b3259465fbb4d81582902ca9562538120351529d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R08-r1",
+      "unitId": "S3-11-en-R08-r1",
+      "locale": "en",
+      "semanticGroup": "R08",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Phase 1: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, pH and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase 2: when conditions allow, choose a documented clean compost/aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase 3: after growth and weathering, compare infiltration/root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.",
+          "sha256": "96a69eb2fe6e9bd585c8b17e7f1a20c2f75dd227503d05cc4fdd372d08e5f3d1"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Compost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient/salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+          "sha256": "b4a72d354feff9f3f7d41e456f90b4df9aa9c2afb085c247d7d9eaa513c83afe"
+        }
+      ],
+      "scientificMeaning": "Phase 1: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, pH and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase 2: when conditions allow, choose a documented clean compost/aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase 3: after growth and weathering, compare infiltration/root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient/salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+      "displayText": "Phase 1: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, pH and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase 2: when conditions allow, choose a documented clean compost/aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase 3: after growth and weathering, compare infiltration/root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient/salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+      "captionText": "Phase 1: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, pH and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase 2: when conditions allow, choose a documented clean compost/aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase 3: after growth and weathering, compare infiltration/root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient/salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+      "spokenText": "Phase one: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, p H and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase two: when conditions allow, choose a documented clean compost, aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase three: after growth and weathering, compare infiltration, root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient, salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+      "spokenTextSHA256": "7dce5df533c6869cbafd3bbef88d686109a2c4cacc858d7eb45621251bbd0ecc",
+      "spokenTextSha256": "7dce5df533c6869cbafd3bbef88d686109a2c4cacc858d7eb45621251bbd0ecc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Phase 1: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, pH and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase 2: when conditions allow, choose a documented clean compost/aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase 3: after growth and weathering, compare infiltration/root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient/salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+          "spoken": "Phase one: stop or redirect machinery, inspect how deep and continuous the compacted zone is and test organic matter, nutrients, p H and any site-relevant salinity or contamination. Observe water movement in suitable conditions. Phase two: when conditions allow, choose a documented clean compost, aged-manure amount and a cover crop or suitable bed system; address drainage and traffic. A deep mechanical intervention is considered only after diagnosis and at an appropriate dry condition, with no claim of lasting benefit if traffic resumes. Phase three: after growth and weathering, compare infiltration, root evidence and soil tests with baseline, adjust the plan and trial a suitable crop. Three to six months is the planning window from the question bank, not a guaranteed date for complete restoration.\n\nCompost is an organic-matter input with variable, often gradual nutrient availability and possible nutrient, salt overload. A mineral fertilizer can supply specified nutrients more promptly after soil and crop tests, but does not physically remove compaction or replace root-zone structure. Neither is inherently sustainable or harmful at every rate; losses, application timing, source quality, crop response and longer-term monitoring decide. Do not invent a rate or claim that yield must rise.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "517a14ee8bc8abbbf354473528775c9f4e6829e0613b1a04835106df6583d6f3",
+      "requestFingerprintSha256": "517a14ee8bc8abbbf354473528775c9f4e6829e0613b1a04835106df6583d6f3",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-R09-r1",
+      "unitId": "S3-11-en-R09-r1",
+      "locale": "en",
+      "semanticGroup": "R09",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "The final-bank hillside case contrasts deep-rooted carrots or potatoes, corn and a rice paddy with shallow-rooted, drought-tolerant pasture grasses or herbs. Among those options, stable locally adapted vegetation with ground cover is the lower-erosion starting choice for very shallow rocky sloping soil; species and rooting depth still require local verification. Avoid exposing shallow soil for a high-disturbance crop just because it is familiar.",
+          "sha256": "5c8d3e4f7070959a36cb059bb711a35ea4a79fb6457cdb690c66b00ef65cf2dc"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "No-till with retained crop residue can protect the surface from wind and water and may build organic inputs over time. It is a management system, not a promise of rapid organic-matter gain or a way to fix every compacted layer. Establishment, weeds, pests, moisture and the amount and persistence of residue must be considered; steep slopes may need additional contour or permanent-cover measures. Never leave the slope bare while waiting for a hypothetical improvement.",
+          "sha256": "06c4b5366d8b047cb41911bcb1154be95f3e637ffc148c793b30df7a843ce1cb"
+        }
+      ],
+      "scientificMeaning": "The final-bank hillside case contrasts deep-rooted carrots or potatoes, corn and a rice paddy with shallow-rooted, drought-tolerant pasture grasses or herbs. Among those options, stable locally adapted vegetation with ground cover is the lower-erosion starting choice for very shallow rocky sloping soil; species and rooting depth still require local verification. Avoid exposing shallow soil for a high-disturbance crop just because it is familiar.\n\nNo-till with retained crop residue can protect the surface from wind and water and may build organic inputs over time. It is a management system, not a promise of rapid organic-matter gain or a way to fix every compacted layer. Establishment, weeds, pests, moisture and the amount and persistence of residue must be considered; steep slopes may need additional contour or permanent-cover measures. Never leave the slope bare while waiting for a hypothetical improvement.",
+      "displayText": "The final-bank hillside case contrasts deep-rooted carrots or potatoes, corn and a rice paddy with shallow-rooted, drought-tolerant pasture grasses or herbs. Among those options, stable locally adapted vegetation with ground cover is the lower-erosion starting choice for very shallow rocky sloping soil; species and rooting depth still require local verification. Avoid exposing shallow soil for a high-disturbance crop just because it is familiar.\n\nNo-till with retained crop residue can protect the surface from wind and water and may build organic inputs over time. It is a management system, not a promise of rapid organic-matter gain or a way to fix every compacted layer. Establishment, weeds, pests, moisture and the amount and persistence of residue must be considered; steep slopes may need additional contour or permanent-cover measures. Never leave the slope bare while waiting for a hypothetical improvement.",
+      "captionText": "The final-bank hillside case contrasts deep-rooted carrots or potatoes, corn and a rice paddy with shallow-rooted, drought-tolerant pasture grasses or herbs. Among those options, stable locally adapted vegetation with ground cover is the lower-erosion starting choice for very shallow rocky sloping soil; species and rooting depth still require local verification. Avoid exposing shallow soil for a high-disturbance crop just because it is familiar.\n\nNo-till with retained crop residue can protect the surface from wind and water and may build organic inputs over time. It is a management system, not a promise of rapid organic-matter gain or a way to fix every compacted layer. Establishment, weeds, pests, moisture and the amount and persistence of residue must be considered; steep slopes may need additional contour or permanent-cover measures. Never leave the slope bare while waiting for a hypothetical improvement.",
+      "spokenText": "The final-bank hillside case contrasts deep-rooted carrots or potatoes, corn and a rice paddy with shallow-rooted, drought-tolerant pasture grasses or herbs. Among those options, stable locally adapted vegetation with ground cover is the lower-erosion starting choice for very shallow rocky sloping soil; species and rooting depth still require local verification. Avoid exposing shallow soil for a high-disturbance crop just because it is familiar.\n\nNo-till with retained crop residue can protect the surface from wind and water and may build organic inputs over time. It is a management system, not a promise of rapid organic-matter gain or a way to fix every compacted layer. Establishment, weeds, pests, moisture and the amount and persistence of residue must be considered; steep slopes may need additional contour or permanent-cover measures. Never leave the slope bare while waiting for a hypothetical improvement.",
+      "spokenTextSHA256": "939dfa0ab82082d5af4a48024a1fdd436b892e95ce6c56ad8505b965c088652d",
+      "spokenTextSha256": "939dfa0ab82082d5af4a48024a1fdd436b892e95ce6c56ad8505b965c088652d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e66e02c7084f8a0c183447261f47fdb3ea4fa4f2d8f522b208ff61fdf0aa6afc",
+      "requestFingerprintSha256": "e66e02c7084f8a0c183447261f47fdb3ea4fa4f2d8f522b208ff61fdf0aa6afc",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
