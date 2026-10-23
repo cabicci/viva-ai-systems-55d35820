@@ -1,0 +1,1 @@
+Two explicitly root-authorized validity-constrained reviews after empty/emoji responses. Same original PCM, same reviewed model/API/schema; no reference words and no TTS/ASR/GET/retry. Earlier invalid results remain charged.
