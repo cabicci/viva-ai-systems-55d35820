@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_GUIDANCE_S215_AR_REPORT_BOUNDARY_REPAIR",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-guidance-s215-ar-report-boundary-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-15-ar-EG-report-boundary-repair-r1",
+      "unitId": "S2-15-ar-EG-report-boundary-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-guidance-s215-ar-report-boundary-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/portfolio/practical/instruction",
+          "text": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+          "sha256": "5cf5ecbe15190877777992cd16eeb61682403599bcec3a6cad36c0f323b09cb7"
+        }
+      ],
+      "scientificMeaning": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "displayText": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "captionText": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "spokenText": "الخطوة دي بتقيّم التقرير ومراجعة الزميل بس؛ اجتيازها مش معناه إنك اجتزت مهارة ميدانية جديدة.",
+      "spokenTextSHA256": "f08955f0f31b75218072f05b97c975e33900c247d41334ec7b5774431c7f7a0c",
+      "spokenTextSha256": "f08955f0f31b75218072f05b97c975e33900c247d41334ec7b5774431c7f7a0c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+          "spoken": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة.",
+          "spoken": "الخطوة دي بتقيّم التقرير ومراجعة الزميل بس؛ اجتيازها مش معناه إنك اجتزت مهارة ميدانية جديدة.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "f356bcbc12ee938523ff4502df228177d5e3109a69532f6307877304586d31f1",
+      "requestFingerprintSha256": "f356bcbc12ee938523ff4502df228177d5e3109a69532f6307877304586d31f1",
+      "sourcePlanSha256": "53a93e327787c459531323b4e9f4ae57d01d51c4de1503a6b3a94be63e1d1589",
+      "exactSentenceBefore": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-two-guidance-bounded-authority-r1.json",
+        "authoritySHA256": "d61945313e4524b4ea06856cbd864bb392cc3e260d242a0d00eb0705a2d21377"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-15-ar-EG-report-boundary-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
