@@ -1,0 +1,504 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-de.json",
+    "sha256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+    "bytes": 33401
+  },
+  "units": [
+    {
+      "id": "S3-03-de-R01-r1",
+      "unitId": "S3-03-de-R01-r1",
+      "locale": "de",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Fruchtfolge bedeutet, verschiedene Kulturen in einer geplanten Reihenfolge auf demselben Feld anzubauen. Das unterscheidet sich vom wiederholten Anbau derselben Kultur; Wiederholung allein diagnostiziert aber keinen Ertragsrückgang. Nährstoffanalysen, Wasser- und Klimadaten sowie Schädlings-, Krankheits- und Bewirtschaftungsgeschichte erklären, warum ein Wechsel erwogen wird.",
+          "sha256": "eff39001be0b6a55aa57bbf7bdf4bbb04e0e90ef12e0519ccc2766b9db47ff6a"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Ein Vergleich mit abwechslungsreichem Essen kann das Gespräch eröffnen, beweist aber nicht, dass der Boden genau einen Nährstoff „braucht“. Ein brauchbarer Plan nennt Zweck und Kontrolle für jedes Jahr.",
+          "sha256": "21d62a38e3992fd30d984cbc999ee1ac5ce2a75851401b87ab57012cfe797f19"
+        }
+      ],
+      "scientificMeaning": "Fruchtfolge bedeutet, verschiedene Kulturen in einer geplanten Reihenfolge auf demselben Feld anzubauen. Das unterscheidet sich vom wiederholten Anbau derselben Kultur; Wiederholung allein diagnostiziert aber keinen Ertragsrückgang. Nährstoffanalysen, Wasser- und Klimadaten sowie Schädlings-, Krankheits- und Bewirtschaftungsgeschichte erklären, warum ein Wechsel erwogen wird.\n\nEin Vergleich mit abwechslungsreichem Essen kann das Gespräch eröffnen, beweist aber nicht, dass der Boden genau einen Nährstoff „braucht“. Ein brauchbarer Plan nennt Zweck und Kontrolle für jedes Jahr.",
+      "displayText": "Fruchtfolge bedeutet, verschiedene Kulturen in einer geplanten Reihenfolge auf demselben Feld anzubauen. Das unterscheidet sich vom wiederholten Anbau derselben Kultur; Wiederholung allein diagnostiziert aber keinen Ertragsrückgang. Nährstoffanalysen, Wasser- und Klimadaten sowie Schädlings-, Krankheits- und Bewirtschaftungsgeschichte erklären, warum ein Wechsel erwogen wird.\n\nEin Vergleich mit abwechslungsreichem Essen kann das Gespräch eröffnen, beweist aber nicht, dass der Boden genau einen Nährstoff „braucht“. Ein brauchbarer Plan nennt Zweck und Kontrolle für jedes Jahr.",
+      "captionText": "Fruchtfolge bedeutet, verschiedene Kulturen in einer geplanten Reihenfolge auf demselben Feld anzubauen. Das unterscheidet sich vom wiederholten Anbau derselben Kultur; Wiederholung allein diagnostiziert aber keinen Ertragsrückgang. Nährstoffanalysen, Wasser- und Klimadaten sowie Schädlings-, Krankheits- und Bewirtschaftungsgeschichte erklären, warum ein Wechsel erwogen wird.\n\nEin Vergleich mit abwechslungsreichem Essen kann das Gespräch eröffnen, beweist aber nicht, dass der Boden genau einen Nährstoff „braucht“. Ein brauchbarer Plan nennt Zweck und Kontrolle für jedes Jahr.",
+      "spokenText": "Fruchtfolge bedeutet, verschiedene Kulturen in einer geplanten Reihenfolge auf demselben Feld anzubauen. Das unterscheidet sich vom wiederholten Anbau derselben Kultur; Wiederholung allein diagnostiziert aber keinen Ertragsrückgang. Nährstoffanalysen, Wasser- und Klimadaten sowie Schädlings-, Krankheits- und Bewirtschaftungsgeschichte erklären, warum ein Wechsel erwogen wird.\n\nEin Vergleich mit abwechslungsreichem Essen kann das Gespräch eröffnen, beweist aber nicht, dass der Boden genau einen Nährstoff „braucht“. Ein brauchbarer Plan nennt Zweck und Kontrolle für jedes Jahr.",
+      "spokenTextSHA256": "adad1c074b47579d21899874ab9b776797f2ec9981ff5b107c896e1ad3ca8701",
+      "spokenTextSha256": "adad1c074b47579d21899874ab9b776797f2ec9981ff5b107c896e1ad3ca8701",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5830b310982ba80cb76c6a52956fe51d01acd45aae1a7d9f13a78bc7b9fc4365",
+      "requestFingerprintSha256": "5830b310982ba80cb76c6a52956fe51d01acd45aae1a7d9f13a78bc7b9fc4365",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R02a-r1",
+      "unitId": "S3-03-de-R02a-r1",
+      "locale": "de",
+      "semanticGroup": "R02a",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer N-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann N fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.",
+          "sha256": "1275985e2bf91ed4bbe05b18bedc72c8a786bc9bfec9e8ffd8788b1cf1806bf7"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Zweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+          "sha256": "7e9085a563edcf5c3d3e7cd454a868698e84e463e755f5aba4a58344563d5ca0"
+        }
+      ],
+      "scientificMeaning": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer N-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann N fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+      "displayText": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer N-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann N fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+      "captionText": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer N-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann N fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+      "spokenText": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer Stickstoff-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann Stickstoff fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+      "spokenTextSHA256": "01f4b6088c03458f51f0a73ce803f363423a38b8c4a8fad90ad7127f1dcaf634",
+      "spokenTextSha256": "01f4b6088c03458f51f0a73ce803f363423a38b8c4a8fad90ad7127f1dcaf634",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer N-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann N fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+          "spoken": "Erstens kann sich Nährstoffmanagement verbessern, wenn Kulturen sich in Bedarf, Abfuhr mit der Ernte und biologischer Stickstoff-Fixierung unterscheiden. Eine wirksam knöllchenbildende Leguminose kann Stickstoff fixieren; wie viel später verfügbar ist, hängt von Kultur, Ernte und Rückständen ab. Das folgende Getreide kann dennoch analysengestützte Nährstoffzufuhr brauchen.\n\nZweitens kann eine Nichtwirt-Kultur manche wirtsgebundenen Schädlinge und Krankheiten unterbrechen. Maiswurzelbohrer und Soja sind ein Beispiel aus Regionen, in denen der Schädling vorkommt, kein Nachweis für ein ägyptisches Feld. Einige Populationen oder Lebenszyklen überstehen eine einfache Einjahresrotation; Organismus und örtlichen Befall feststellen.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e52eebec00593ba89b3a91e75f5001307e7b2ca57f7f89eee6b2b8dbc572ac7e",
+      "requestFingerprintSha256": "e52eebec00593ba89b3a91e75f5001307e7b2ca57f7f89eee6b2b8dbc572ac7e",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R02b-r1",
+      "unitId": "S3-03-de-R02b-r1",
+      "locale": "de",
+      "semanticGroup": "R02b",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.",
+          "sha256": "81ba21fe17cf0b7aa5aca10c338bfd1665976916bbc6ba6205a3d57f782e41ea"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "Die gesamte N-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen N ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbares N. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+          "sha256": "f2e39650f7bd02d643a25a28b93b7e8bf955457b3da115d5eae94b7e2c6579c5"
+        }
+      ],
+      "scientificMeaning": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte N-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen N ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbares N. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+      "displayText": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte N-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen N ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbares N. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+      "captionText": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte N-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen N ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbares N. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+      "spokenText": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte Stickstoff-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen Stickstoff ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbaren Stickstoff. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+      "spokenTextSHA256": "37b40e98a0d6a9501691a9de00e0a107312d5ac91ab5dea54c920648adc666b4",
+      "spokenTextSha256": "37b40e98a0d6a9501691a9de00e0a107312d5ac91ab5dea54c920648adc666b4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte N-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen N ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbares N. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+          "spoken": "Drittens unterscheiden sich Wurzeln, Bodenbedeckung und zurückgegebene Rückstände. Faserige Weizen- oder Maiswurzeln und tiefere Wurzeln können organisches Material und andere Porenwege beitragen, beseitigen aber nicht jede Verdichtung automatisch. Mehr Mais kann mehr Rückstände und unter bestimmter Bewirtschaftung mehr Bodenkohlenstoff liefern; daraus folgt keine pauschale Empfehlung für Mais in Dauerkultur. Vergleiche die Faserwurzeln von Weizen oder Mais mit der bei Luzerne häufigen Pfahlwurzel. Nicht alle Leguminosen haben denselben Wurzelaufbau; tatsächliches Wurzelwachstum und Auswirkungen auf Verdichtung müssen weiterhin geprüft werden.\n\nDie gesamte Stickstoff-Fixierung der Soja ist nicht mit der Düngergutschrift für folgenden Mais gleichzusetzen. Geerntete Körner führen Stickstoff ab; Zusammensetzung und Bewirtschaftung der Rückstände beeinflussen später verfügbaren Stickstoff. Dafür ein geeignetes örtliches Verfahren statt eines pauschalen Werts nach Kulturnamen nutzen.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7fbe0558190cff3c02e5f900265da2553f89444b0fb32a0dccd986b82facf1d4",
+      "requestFingerprintSha256": "7fbe0558190cff3c02e5f900265da2553f89444b0fb32a0dccd986b82facf1d4",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R02c-r1",
+      "unitId": "S3-03-de-R02c-r1",
+      "locale": "de",
+      "semanticGroup": "R02c",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/4",
+          "text": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die N-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.",
+          "sha256": "69357bc63e9b70c80a2294f8976cc27b98f97b28480917639b9e3f8e27e26256"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/5",
+          "text": "Eine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+          "sha256": "a585e64cacb1d5b9747caa755629bf1e82583e9b8481b557db821fd71a1e09e3"
+        }
+      ],
+      "scientificMeaning": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die N-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+      "displayText": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die N-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+      "captionText": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die N-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+      "spokenText": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die Stickstoff-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+      "spokenTextSHA256": "1051777111ee21a0e78e74132b0153016a687f09df729f2d236eb64382fa8660",
+      "spokenTextSha256": "1051777111ee21a0e78e74132b0153016a687f09df729f2d236eb64382fa8660",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die N-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+          "spoken": "Auch Ernteprodukte vergleichen: Mais, Weizen und Reis sind Getreide mit Stärke und Kohlenhydratenergie; Soja, Erbse und Bohne sind proteinreiche Leguminosen. Diese Ernährungsunterschiede bestimmen nicht die Stickstoff-Bilanz des Feldes. Nährstoffbedarf, wirksame Knöllchen, Ernteabfuhr und zurückgegebene Rückstände gesondert vergleichen.\n\nEine belegte Verringerung zugekauften Stickstoffs kann Kosten senken; andere Kulturen verändern aber auch Saatgut-, Arbeits-, Geräte-, Wasser- und Marktrisiken. Den ganzen Plan statt nur Düngerersparnisse vergleichen. Fruchtfolge beseitigt Nitratverluste nicht und garantiert weder stabile Erträge noch Gewinn. Nährstoffmanagement, Wasserbedingungen und tatsächliche Ergebnisse dokumentieren, bevor Umwelt- oder Resilienzvorteile behauptet werden.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "66c60a80df9d6874f4a7194c550338501f6bd24e8a3ade49c399549128586eba",
+      "requestFingerprintSha256": "66c60a80df9d6874f4a7194c550338501f6bd24e8a3ade49c399549128586eba",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R03-r1",
+      "unitId": "S3-03-de-R03-r1",
+      "locale": "de",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Die erste Lehrfolge lautet Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → zurück zu Jahr 1 Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-/Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.",
+          "sha256": "acd5464fd15cdc9070c2cb26e36d2b74936bfedba524a13ae07199b2418852bd"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Zu jedem Pfeil beschreiben, was sich ändert und warum: N-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+          "sha256": "74d7ee0c8a670e76d1e405364f099950716c0513189ffb92f563290cd330b4b0"
+        }
+      ],
+      "scientificMeaning": "Die erste Lehrfolge lautet Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → zurück zu Jahr 1 Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-/Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: N-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+      "displayText": "Die erste Lehrfolge lautet Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → zurück zu Jahr 1 Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-/Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: N-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+      "captionText": "Die erste Lehrfolge lautet Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → zurück zu Jahr 1 Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-/Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: N-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+      "spokenText": "Die erste Lehrfolge lautet Jahr eins Mais danach Jahr zwei Soja danach Jahr drei Weizen danach zurück zu Jahr eins Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-, Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: Stickstoff-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+      "spokenTextSHA256": "e313cbff0b35428c354fddb9886e3ce95a3c2480920d781a533b6fc85e1d50b3",
+      "spokenTextSha256": "e313cbff0b35428c354fddb9886e3ce95a3c2480920d781a533b6fc85e1d50b3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die erste Lehrfolge lautet Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → zurück zu Jahr 1 Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-/Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: N-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+          "spoken": "Die erste Lehrfolge lautet Jahr eins Mais danach Jahr zwei Soja danach Jahr drei Weizen danach zurück zu Jahr eins Mais. Die Pfeile müssen dieser schriftlichen Reihenfolge folgen. Maiskornernte entzieht Nährstoffe, während zurückgelassene Stängel und Wurzeln organische Stoffe liefern können. Soja kann mit wirksamen Rhizobien Luftstickstoff binden; eine vollständige „Aufladung“ des Bodens ist nicht garantiert. Weizen bringt andere Saison, Wirtseigenschaften und Wurzel-, Rückstandsmuster, wenn Klima und Kalender passen. In diesem Lehrbeispiel ist Weizen eine optionale dritte Kultur. Wenn Kultur und Jahreszeit passen, kann er auch im Winter den Boden bedecken; dies ist kein Pflanzkalender für jeden Standort.\n\nZu jedem Pfeil beschreiben, was sich ändert und warum: Stickstoff-Angebot oder -Bedarf, Wirt für einen nachgewiesenen Schädling, Wurzeln, Rückstände und Saison. Die drei Kulturen passen nicht automatisch überall. Jeden Pfeil mit den Jahreszahlen vergleichen; widerspricht die Grafik den Zahlen, gelten die nummerierten Jahre und die Grafik wird korrigiert.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5a7cfcdbad998f87fab6e2e3e2cb773482f023850bf8b6af42f8391a5b601c3c",
+      "requestFingerprintSha256": "5a7cfcdbad998f87fab6e2e3e2cb773482f023850bf8b6af42f8391a5b601c3c",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R04a-r1",
+      "unitId": "S3-03-de-R04a-r1",
+      "locale": "de",
+      "semanticGroup": "R04a",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: 10 ha sandiger Lehm, pH 6,2, wenig gemessenes N, ausreichend P/K, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen 1 und 2 wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil 3 trägt nun Jahre 1–3 mit Gründen ein, Teil 4 vergleicht Pläne. Insgesamt 10+10+15+10=45 Minuten.",
+          "sha256": "e746b497f78243ec0ded57889fb1638b5d2fdff940305525c042abb4c62c12c7"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Eine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+          "sha256": "0e162b2740774ea2c78781e83060826bb5e527a96c799637dd06eaf8d6c4ab8a"
+        }
+      ],
+      "scientificMeaning": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: 10 ha sandiger Lehm, pH 6,2, wenig gemessenes N, ausreichend P/K, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen 1 und 2 wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil 3 trägt nun Jahre 1–3 mit Gründen ein, Teil 4 vergleicht Pläne. Insgesamt 10+10+15+10=45 Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+      "displayText": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: 10 ha sandiger Lehm, pH 6,2, wenig gemessenes N, ausreichend P/K, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen 1 und 2 wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil 3 trägt nun Jahre 1–3 mit Gründen ein, Teil 4 vergleicht Pläne. Insgesamt 10+10+15+10=45 Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+      "captionText": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: 10 ha sandiger Lehm, pH 6,2, wenig gemessenes N, ausreichend P/K, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen 1 und 2 wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil 3 trägt nun Jahre 1–3 mit Gründen ein, Teil 4 vergleicht Pläne. Insgesamt 10+10+15+10=45 Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+      "spokenText": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: zehn Hektar sandiger Lehm, Pe Ha sechs Komma zwei, wenig gemessener Stickstoff, ausreichend Phosphor und Kalium, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen eins und zwei wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil drei trägt nun Jahre eins bis drei mit Gründen ein, Teil vier vergleicht Pläne. Insgesamt zehn plus zehn plus fünfzehn plus zehn gleich fünfundvierzig Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+      "spokenTextSHA256": "f7c495ab80752fc68d68117ad3f09c7f71fa89e32fd422069eb4914714df584c",
+      "spokenTextSha256": "f7c495ab80752fc68d68117ad3f09c7f71fa89e32fd422069eb4914714df584c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: 10 ha sandiger Lehm, pH 6,2, wenig gemessenes N, ausreichend P/K, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen 1 und 2 wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil 3 trägt nun Jahre 1–3 mit Gründen ein, Teil 4 vergleicht Pläne. Insgesamt 10+10+15+10=45 Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+          "spoken": "Derselbe gemäßigte Lehrfall aus dem vorigen Schritt gilt: zehn Hektar sandiger Lehm, Pe Ha sechs Komma zwei, wenig gemessener Stickstoff, ausreichend Phosphor und Kalium, mäßiger Regen, drei aufeinanderfolgende Maisjahre und sinkender Ertrag. In Teilen eins und zwei wurden je mindestens zwei Kandidaten pro Gruppe und eine bedingte Wahl für Jahr eins geprüft. Teil drei trägt nun Jahre eins bis drei mit Gründen ein, Teil vier vergleicht Pläne. Insgesamt zehn plus zehn plus fünfzehn plus zehn gleich fünfundvierzig Minuten.\n\nEine geeignete Leguminose kann für Jahr eins untersucht werden, wenn Saison, Wasser, Knöllchen und Nutzungszweck passen. Sie ist weder die einzige vertretbare Antwort noch eine sichere Ertragsheilung. Belege können eine andere Kultur oder weitere Ursachenforschung begründen. Das gemäßigte Fallklima wird nicht durch einen ausgetauschten Ortsnamen zu Ägyptens Klima.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ddc7414a36f03785dd353732daac589a264e3436aebb3cf2f204dbb84805ee5",
+      "requestFingerprintSha256": "6ddc7414a36f03785dd353732daac589a264e3436aebb3cf2f204dbb84805ee5",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R04b-r1",
+      "unitId": "S3-03-de-R04b-r1",
+      "locale": "de",
+      "semanticGroup": "R04b",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Herr Evans · gemäßigter Lehrfall mit 10 Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr1 aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von3–4 arbeiten mit Arbeitsblatt, Papier und Stiften. Die45 aktiven Minuten umfassen10+10 im vorigen Schritt sowie hier15 für Planung und10 für Vergleich:35 Arbeit und10 Diskussion. Mit den separat genannten2 Minuten Vorbereitung insgesamt47. Jede Gruppe teilt die erste Kulturwahl;2–3 Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt/Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+          "sha256": "80b4c6a29331187247e4b634461082b97b7dd011180b5f80656425b2c6b70e79"
+        }
+      ],
+      "scientificMeaning": "Herr Evans · gemäßigter Lehrfall mit 10 Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr1 aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von3–4 arbeiten mit Arbeitsblatt, Papier und Stiften. Die45 aktiven Minuten umfassen10+10 im vorigen Schritt sowie hier15 für Planung und10 für Vergleich:35 Arbeit und10 Diskussion. Mit den separat genannten2 Minuten Vorbereitung insgesamt47. Jede Gruppe teilt die erste Kulturwahl;2–3 Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt/Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+      "displayText": "Herr Evans · gemäßigter Lehrfall mit 10 Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr1 aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von3–4 arbeiten mit Arbeitsblatt, Papier und Stiften. Die45 aktiven Minuten umfassen10+10 im vorigen Schritt sowie hier15 für Planung und10 für Vergleich:35 Arbeit und10 Diskussion. Mit den separat genannten2 Minuten Vorbereitung insgesamt47. Jede Gruppe teilt die erste Kulturwahl;2–3 Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt/Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+      "captionText": "Herr Evans · gemäßigter Lehrfall mit 10 Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr1 aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von3–4 arbeiten mit Arbeitsblatt, Papier und Stiften. Die45 aktiven Minuten umfassen10+10 im vorigen Schritt sowie hier15 für Planung und10 für Vergleich:35 Arbeit und10 Diskussion. Mit den separat genannten2 Minuten Vorbereitung insgesamt47. Jede Gruppe teilt die erste Kulturwahl;2–3 Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt/Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+      "spokenText": "Herr Evans · gemäßigter Lehrfall mit zehn Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr eins aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von drei bis vier arbeiten mit Arbeitsblatt, Papier und Stiften. Die fünfundvierzig aktiven Minuten umfassen zehn plus zehn im vorigen Schritt sowie hier fünfzehn für Planung und zehn für Vergleich: fünfunddreißig Arbeit und zehn Diskussion. Mit den separat genannten zwei Minuten Vorbereitung insgesamt siebenundvierzig. Jede Gruppe teilt die erste Kulturwahl; zwei bis drei Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt, Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+      "spokenTextSHA256": "f2646daa234be49d506bf00e6b4440c31aaa11ea82cd5f86c51744a788e87842",
+      "spokenTextSha256": "f2646daa234be49d506bf00e6b4440c31aaa11ea82cd5f86c51744a788e87842",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Herr Evans · gemäßigter Lehrfall mit 10 Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr1 aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von3–4 arbeiten mit Arbeitsblatt, Papier und Stiften. Die45 aktiven Minuten umfassen10+10 im vorigen Schritt sowie hier15 für Planung und10 für Vergleich:35 Arbeit und10 Diskussion. Mit den separat genannten2 Minuten Vorbereitung insgesamt47. Jede Gruppe teilt die erste Kulturwahl;2–3 Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt/Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+          "spoken": "Herr Evans · gemäßigter Lehrfall mit zehn Hektar. Vorgegebene Lehrdaten, keine eigenen Messungen. Ort unbekannt; Klima, Boden und Vorgeschichte bleiben erhalten. Kein ägyptischer Standort bestätigt. Der Fall erlaubt Warm- und Kühlsaisonkulturen; örtliche Saisontermine fehlen. Jahr eins aus der vorigen bedingten Empfehlung beginnen und Änderungen begründen. Gruppen von drei bis vier arbeiten mit Arbeitsblatt, Papier und Stiften. Die fünfundvierzig aktiven Minuten umfassen zehn plus zehn im vorigen Schritt sowie hier fünfzehn für Planung und zehn für Vergleich: fünfunddreißig Arbeit und zehn Diskussion. Mit den separat genannten zwei Minuten Vorbereitung insgesamt siebenundvierzig. Jede Gruppe teilt die erste Kulturwahl; zwei bis drei Gruppen erläutern den ganzen Plan. Begründung und Überarbeitung bleiben individuell. Viertes Jahr, Deckfrucht, Markt, Geräte, Bildglossar und Zeichnung unterstützen das Lernen. Der fünfminütige Abschluss ohne Notizen ist getrennt.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e447347eb7f357b5fdbd2d76c925b714b7ec90a3048435763cf58aced74633a8",
+      "requestFingerprintSha256": "e447347eb7f357b5fdbd2d76c925b714b7ec90a3048435763cf58aced74633a8",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R05-r1",
+      "unitId": "S3-03-de-R05-r1",
+      "locale": "de",
+      "semanticGroup": "R05",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Das Modell verwendet Jahr 1 Soja → Jahr 2 Mais → Jahr 3 Kartoffel. Soja kann bei wirksamen Knöllchen N fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.",
+          "sha256": "3ef183dd3c35f7567fa6165668038b593790c17dfab39e643f6726616d3af4a4"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Andere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+          "sha256": "0bb3c75cf05af5a85b4892c2cb1114365ee018735252365af5b4f589bac67450"
+        }
+      ],
+      "scientificMeaning": "Das Modell verwendet Jahr 1 Soja → Jahr 2 Mais → Jahr 3 Kartoffel. Soja kann bei wirksamen Knöllchen N fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+      "displayText": "Das Modell verwendet Jahr 1 Soja → Jahr 2 Mais → Jahr 3 Kartoffel. Soja kann bei wirksamen Knöllchen N fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+      "captionText": "Das Modell verwendet Jahr 1 Soja → Jahr 2 Mais → Jahr 3 Kartoffel. Soja kann bei wirksamen Knöllchen N fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+      "spokenText": "Das Modell verwendet Jahr eins Soja danach Jahr zwei Mais danach Jahr drei Kartoffel. Soja kann bei wirksamen Knöllchen Stickstoff fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+      "spokenTextSHA256": "2323c728c9a5326883d145177c9ede5ae98286d9b37761c177a8e84c7f8e2788",
+      "spokenTextSha256": "2323c728c9a5326883d145177c9ede5ae98286d9b37761c177a8e84c7f8e2788",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Das Modell verwendet Jahr 1 Soja → Jahr 2 Mais → Jahr 3 Kartoffel. Soja kann bei wirksamen Knöllchen N fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+          "spoken": "Das Modell verwendet Jahr eins Soja danach Jahr zwei Mais danach Jahr drei Kartoffel. Soja kann bei wirksamen Knöllchen Stickstoff fixieren, doch geerntete Bohnen und entfernte Rückstände führen Nährstoffe ab. Für den Mais im zweiten Jahr ist weiterhin ein standort- und kulturbezogener Nährstoffplan nötig. Kartoffeln im dritten Jahr wechseln Familie und Bewirtschaftungsansprüche gegenüber Mais und brauchen Prüfung von Boden, Saison, Wasser, Geräten und Markt; sie verbessern die Struktur und unterdrücken Schädlinge nicht automatisch.\n\nAndere Kulturen können richtig sein. Die Vorauswahl enthielt auch Gerste, Klee oder Luzerne, Karotte, Salat, Spinat, Erdbeere und Melone; sie sind nur bei passender Kulturbedingung und Jahresfunktion sinnvoll. Weizen oder anderes Gemüse kann begründet in Jahr drei stehen. Die Position jedes Jahres erklären, statt die Namen als allgemeines Rezept zu kopieren.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4ed6c24beb19625604d88569663b3cfb2b7daae469451d2a3bc9d0a15297b1ff",
+      "requestFingerprintSha256": "4ed6c24beb19625604d88569663b3cfb2b7daae469451d2a3bc9d0a15297b1ff",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R06-r1",
+      "unitId": "S3-03-de-R06-r1",
+      "locale": "de",
+      "semanticGroup": "R06",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen N fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.",
+          "sha256": "caa36d3f34439e4aa72ccc1826fcb10f2f91dd4c12f494cb296ce53b35ccc07e"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Luzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+          "sha256": "d4bdd615680b99145fdb7fa49e3f1f875e430cc7f4b4d56e0bc0189f2a08edbc"
+        }
+      ],
+      "scientificMeaning": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen N fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+      "displayText": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen N fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+      "captionText": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen N fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+      "spokenText": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen Stickstoff fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+      "spokenTextSHA256": "a12dc162dca5822b9964e24d6c57e308d9c2f2890dc6f0c581ea025964a5c158",
+      "spokenTextSha256": "a12dc162dca5822b9964e24d6c57e308d9c2f2890dc6f0c581ea025964a5c158",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen N fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+          "spoken": "Eine tragfähige Folge erst nach Prüfung von Saisonlänge, Wasser, möglichen Wirtswechseln, Rückständen, Markt und Geräten auf vier Jahre ausdehnen. Klee als Deckfrucht kann Boden schützen und unter passenden Bedingungen Stickstoff fixieren; angeben, ob er zwischen Marktfrüchten, eine ganze Saison oder länger wächst und wie er geerntet oder beendet wird.\n\nLuzerne und viele Obstanlagen bleiben mehrere Saisons auf der Fläche. Ein Plan, der eine Dauerkultur ohne Anlage- und Beendigungsannahmen in nur ein Jahresfeld einsetzt, ist unvollständig. Bild oder Hilfskarte mit fünf bis sechs Kulturen stützt die Auswahl, ersetzt nicht die eigene Erklärung.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0747c8660062914550991d0e3b10901a6bdd12b3af9b3caf7d56b0a755ac7f1f",
+      "requestFingerprintSha256": "0747c8660062914550991d0e3b10901a6bdd12b3af9b3caf7d56b0a755ac7f1f",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-R07-r1",
+      "unitId": "S3-03-de-R07-r1",
+      "locale": "de",
+      "semanticGroup": "R07",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische N-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+          "sha256": "c9801cbf3a92d388520116fd42117c6da18f86903d482af5fb5bf6edc5058ee8"
+        }
+      ],
+      "scientificMeaning": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische N-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+      "displayText": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische N-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+      "captionText": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische N-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+      "spokenText": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische Stickstoff-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+      "spokenTextSHA256": "fffcd84716440580ffbfadf67ae1db1b0c2efc1ae386374f7b4851f701447266",
+      "spokenTextSha256": "fffcd84716440580ffbfadf67ae1db1b0c2efc1ae386374f7b4851f701447266",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische N-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+          "spoken": "Fünf Minuten für den Abschluss vorsehen und ohne Notizen in einem Satz antworten. In einem Satz erklären, warum eine passende Leguminose nach anspruchsvollem Getreide stehen kann. Eine gute Antwort nennt mögliche biologische Stickstoff-Fixierung und dass die tatsächliche Gutschrift für die Folgekultur Belege braucht. Ein nachgewiesener Wirtsschädling oder Rückstandsziel ist gegebenenfalls getrennt zu begründen.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "081bde7c5706f7cc3cd98b9ef9aaf8e5165299a835eb1dd8102d6e7f3dbe258e",
+      "requestFingerprintSha256": "081bde7c5706f7cc3cd98b9ef9aaf8e5165299a835eb1dd8102d6e7f3dbe258e",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

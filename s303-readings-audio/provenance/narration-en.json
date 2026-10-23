@@ -1,0 +1,497 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-en.json",
+    "sha256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+    "bytes": 32274
+  },
+  "units": [
+    {
+      "id": "S3-03-en-R01-r1",
+      "unitId": "S3-03-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Crop rotation means growing different crops in a planned sequence on the same field. It contrasts with repeatedly growing the same crop there, but repetition alone does not diagnose a yield decline. Use the field's nutrient tests, water, climate, pest and disease history and management records to understand why a change is being considered.",
+          "sha256": "304023a309d94a287242a89607041018d9fc23fe0104ee2c6d358d834a302c40"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "A simple food analogy can start discussion, but it is not evidence that the soil is 'hungry' for exactly one nutrient. A useful plan states a purpose and a check for each year.",
+          "sha256": "06c44f3e62e28b61c2d14e5dea368d62b7d5de8c03e8af046d5e249ea74cbe21"
+        }
+      ],
+      "scientificMeaning": "Crop rotation means growing different crops in a planned sequence on the same field. It contrasts with repeatedly growing the same crop there, but repetition alone does not diagnose a yield decline. Use the field's nutrient tests, water, climate, pest and disease history and management records to understand why a change is being considered.\n\nA simple food analogy can start discussion, but it is not evidence that the soil is 'hungry' for exactly one nutrient. A useful plan states a purpose and a check for each year.",
+      "displayText": "Crop rotation means growing different crops in a planned sequence on the same field. It contrasts with repeatedly growing the same crop there, but repetition alone does not diagnose a yield decline. Use the field's nutrient tests, water, climate, pest and disease history and management records to understand why a change is being considered.\n\nA simple food analogy can start discussion, but it is not evidence that the soil is 'hungry' for exactly one nutrient. A useful plan states a purpose and a check for each year.",
+      "captionText": "Crop rotation means growing different crops in a planned sequence on the same field. It contrasts with repeatedly growing the same crop there, but repetition alone does not diagnose a yield decline. Use the field's nutrient tests, water, climate, pest and disease history and management records to understand why a change is being considered.\n\nA simple food analogy can start discussion, but it is not evidence that the soil is 'hungry' for exactly one nutrient. A useful plan states a purpose and a check for each year.",
+      "spokenText": "Crop rotation means growing different crops in a planned sequence on the same field. It contrasts with repeatedly growing the same crop there, but repetition alone does not diagnose a yield decline. Use the field's nutrient tests, water, climate, pest and disease history and management records to understand why a change is being considered.\n\nA simple food analogy can start discussion, but it is not evidence that the soil is 'hungry' for exactly one nutrient. A useful plan states a purpose and a check for each year.",
+      "spokenTextSHA256": "980880d581086a27d137c2b5e93534df2b12f903f9ee9f9941a4556e52e47c29",
+      "spokenTextSha256": "980880d581086a27d137c2b5e93534df2b12f903f9ee9f9941a4556e52e47c29",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fda73e5dad7d6efccb0a79f4c0c555f6979d2e96317c14abfc34e5df4ec58151",
+      "requestFingerprintSha256": "fda73e5dad7d6efccb0a79f4c0c555f6979d2e96317c14abfc34e5df4ec58151",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R02a-r1",
+      "unitId": "S3-03-en-R02a-r1",
+      "locale": "en",
+      "semanticGroup": "R02a",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix N; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.",
+          "sha256": "0e4eef0a642b848b0a95467c47bd2a41702e5ab1da6b6fb2beee3e6eba7edf6d"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Second, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm/soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+          "sha256": "66ca0fe72ac7c9f4f06e3ce4a78e3cde728605bcb79e321557cf17eef95ccdaf"
+        }
+      ],
+      "scientificMeaning": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix N; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm/soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+      "displayText": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix N; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm/soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+      "captionText": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix N; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm/soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+      "spokenText": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix nitrogen; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm, soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+      "spokenTextSHA256": "a4e232bef0b70ae00927fcb555538869a74f17e0aa74137342522c7f3383adfd",
+      "spokenTextSha256": "a4e232bef0b70ae00927fcb555538869a74f17e0aa74137342522c7f3383adfd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix N; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm/soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+          "spoken": "First, nutrient management can improve when crops differ in demand, harvest removal and biological nitrogen fixation. A well-nodulated legume can fix nitrogen; how much remains available later depends on the crop, its harvest and residue management. The next cereal may still need tested nutrient inputs.\n\nSecond, changing to a non-host crop can interrupt some host-specific pests and diseases. The corn-rootworm, soybean example comes from regions where that pest occurs; it is not proof of a pest on an Egyptian farm. Some rootworm populations or life cycles can survive a simple one-year rotation, so identify the organism and local pressure.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "959163ba0b29f33c35b5f96bff0a6a755bdcb09a61b29178300e826392c1657c",
+      "requestFingerprintSha256": "959163ba0b29f33c35b5f96bff0a6a755bdcb09a61b29178300e826392c1657c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R02b-r1",
+      "unitId": "S3-03-en-R02b-r1",
+      "locale": "en",
+      "semanticGroup": "R02b",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.",
+          "sha256": "5ef1fad6ecc7e07b7d12bbfe7201154018ca624ecda9cf7cad5ff36afd419dfd"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "Do not equate total N fixed by soybean with the fertilizer credit for following maize. Soybean grain exports N, and residue composition and management affect the following crop’s available N. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+          "sha256": "ee30b69e024c2b158165a2dd24ca27a8da693cbbe932a5ca260be92e522543f2"
+        }
+      ],
+      "scientificMeaning": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total N fixed by soybean with the fertilizer credit for following maize. Soybean grain exports N, and residue composition and management affect the following crop’s available N. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+      "displayText": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total N fixed by soybean with the fertilizer credit for following maize. Soybean grain exports N, and residue composition and management affect the following crop’s available N. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+      "captionText": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total N fixed by soybean with the fertilizer credit for following maize. Soybean grain exports N, and residue composition and management affect the following crop’s available N. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+      "spokenText": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total nitrogen fixed by soybean with the fertilizer credit for following maize. Soybean grain exports nitrogen, and residue composition and management affect the following crop’s available nitrogen. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+      "spokenTextSHA256": "6e5c19903c76e8cb341b01ca683689b54e0e197f049045f9a515daf455e40f8f",
+      "spokenTextSha256": "6e5c19903c76e8cb341b01ca683689b54e0e197f049045f9a515daf455e40f8f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total N fixed by soybean with the fertilizer credit for following maize. Soybean grain exports N, and residue composition and management affect the following crop’s available N. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+          "spoken": "Third, crops differ in roots, soil cover and returned residue. Fibrous wheat or maize roots and deeper-rooted crops can contribute organic material and different pore pathways, but roots do not automatically break every compacted layer. More maize can mean more residue and sometimes more soil carbon under specific management; it does not justify continuous maize as a universal carbon or nutrient recommendation. Compare fibrous-rooted wheat or maize with the taproot commonly found in alfalfa. Legumes do not all have the same root architecture; actual root growth and compaction effects still need checking.\n\nDo not equate total nitrogen fixed by soybean with the fertilizer credit for following maize. Soybean grain exports nitrogen, and residue composition and management affect the following crop’s available nitrogen. A credit must use an appropriate local method, not a fixed number inferred from the crop name.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "687c1e5cb0c10e5af9f4bb91d7994e86e619914d569b8c36222ab689366dece0",
+      "requestFingerprintSha256": "687c1e5cb0c10e5af9f4bb91d7994e86e619914d569b8c36222ab689366dece0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R02c-r1",
+      "unitId": "S3-03-en-R02c-r1",
+      "locale": "en",
+      "semanticGroup": "R02c",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/4",
+          "text": "Compare the harvested products too: maize, wheat and rice are cereal grains valued for starch and carbohydrate energy; soybean, pea and bean are legumes valued for protein. These food-use differences do not establish a field’s nitrogen balance. Crop nutrient demand, effective nodulation, harvest removal and returned residues still need separate comparison.",
+          "sha256": "5646dba165f803e8ae2b59498dee5512b6f2c1fb954cbd2832d9ddb3b80c9957"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/5",
+          "text": "A supported reduction in purchased nitrogen may lower input costs, but a different crop also changes seed, labour, machinery, water and market risks. Compare the whole plan, not fertilizer savings alone. Rotation does not eliminate nitrate losses or guarantee stable yield and profit: record nutrient management, water conditions and actual performance before claiming an environmental or resilience benefit.",
+          "sha256": "17b55d65352100f6335945d4ee44a99a8615439a4057a7aa272d983cbbc7075b"
+        }
+      ],
+      "scientificMeaning": "Compare the harvested products too: maize, wheat and rice are cereal grains valued for starch and carbohydrate energy; soybean, pea and bean are legumes valued for protein. These food-use differences do not establish a field’s nitrogen balance. Crop nutrient demand, effective nodulation, harvest removal and returned residues still need separate comparison.\n\nA supported reduction in purchased nitrogen may lower input costs, but a different crop also changes seed, labour, machinery, water and market risks. Compare the whole plan, not fertilizer savings alone. Rotation does not eliminate nitrate losses or guarantee stable yield and profit: record nutrient management, water conditions and actual performance before claiming an environmental or resilience benefit.",
+      "displayText": "Compare the harvested products too: maize, wheat and rice are cereal grains valued for starch and carbohydrate energy; soybean, pea and bean are legumes valued for protein. These food-use differences do not establish a field’s nitrogen balance. Crop nutrient demand, effective nodulation, harvest removal and returned residues still need separate comparison.\n\nA supported reduction in purchased nitrogen may lower input costs, but a different crop also changes seed, labour, machinery, water and market risks. Compare the whole plan, not fertilizer savings alone. Rotation does not eliminate nitrate losses or guarantee stable yield and profit: record nutrient management, water conditions and actual performance before claiming an environmental or resilience benefit.",
+      "captionText": "Compare the harvested products too: maize, wheat and rice are cereal grains valued for starch and carbohydrate energy; soybean, pea and bean are legumes valued for protein. These food-use differences do not establish a field’s nitrogen balance. Crop nutrient demand, effective nodulation, harvest removal and returned residues still need separate comparison.\n\nA supported reduction in purchased nitrogen may lower input costs, but a different crop also changes seed, labour, machinery, water and market risks. Compare the whole plan, not fertilizer savings alone. Rotation does not eliminate nitrate losses or guarantee stable yield and profit: record nutrient management, water conditions and actual performance before claiming an environmental or resilience benefit.",
+      "spokenText": "Compare the harvested products too: maize, wheat and rice are cereal grains valued for starch and carbohydrate energy; soybean, pea and bean are legumes valued for protein. These food-use differences do not establish a field’s nitrogen balance. Crop nutrient demand, effective nodulation, harvest removal and returned residues still need separate comparison.\n\nA supported reduction in purchased nitrogen may lower input costs, but a different crop also changes seed, labour, machinery, water and market risks. Compare the whole plan, not fertilizer savings alone. Rotation does not eliminate nitrate losses or guarantee stable yield and profit: record nutrient management, water conditions and actual performance before claiming an environmental or resilience benefit.",
+      "spokenTextSHA256": "7b7d2b66cfef22fea0d8aea6a648a28753efb65efa1caa8e51578a2fe8ea446a",
+      "spokenTextSha256": "7b7d2b66cfef22fea0d8aea6a648a28753efb65efa1caa8e51578a2fe8ea446a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3d86c46f7b7a96bc207f501e846a0ba8b2b29b12b3bdcb6bb460df54e6bb6a9a",
+      "requestFingerprintSha256": "3d86c46f7b7a96bc207f501e846a0ba8b2b29b12b3bdcb6bb460df54e6bb6a9a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R03-r1",
+      "unitId": "S3-03-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "The first teaching sequence is Year 1 maize (corn) → Year 2 soybean → Year 3 wheat → back to Year 1 maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric N with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root/residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.",
+          "sha256": "9b79fc7eab60b9b0c72d34e9d6125a143468802a158c28ce41f0f1a66f7e164b"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "For each arrow, write what changed and why: crop N supply or demand, host status for a verified pest, root/residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+          "sha256": "6466b37318bd0925705159b0cf59f3a1f71ff736aa3047eac5e313ef56107918"
+        }
+      ],
+      "scientificMeaning": "The first teaching sequence is Year 1 maize (corn) → Year 2 soybean → Year 3 wheat → back to Year 1 maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric N with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root/residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop N supply or demand, host status for a verified pest, root/residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+      "displayText": "The first teaching sequence is Year 1 maize (corn) → Year 2 soybean → Year 3 wheat → back to Year 1 maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric N with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root/residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop N supply or demand, host status for a verified pest, root/residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+      "captionText": "The first teaching sequence is Year 1 maize (corn) → Year 2 soybean → Year 3 wheat → back to Year 1 maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric N with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root/residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop N supply or demand, host status for a verified pest, root/residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+      "spokenText": "The first teaching sequence is Year one maize (corn) then Year two soybean then Year three wheat then back to Year one maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric nitrogen with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root, residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop nitrogen supply or demand, host status for a verified pest, root, residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+      "spokenTextSHA256": "89f79128852cbc5c71995b7c8559878f4c83c07cd2eb3228f1a2f98aa04b5c75",
+      "spokenTextSha256": "89f79128852cbc5c71995b7c8559878f4c83c07cd2eb3228f1a2f98aa04b5c75",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The first teaching sequence is Year 1 maize (corn) → Year 2 soybean → Year 3 wheat → back to Year 1 maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric N with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root/residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop N supply or demand, host status for a verified pest, root/residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+          "spoken": "The first teaching sequence is Year one maize (corn) then Year two soybean then Year three wheat then back to Year one maize. The arrows must follow that written order. Maize grain harvest removes nutrients, while returned stalks and roots may add organic inputs. Soybean may fix atmospheric nitrogen with effective rhizobia, but a full soil 'recharge' is not guaranteed. Wheat adds a different season, host and fibrous-root, residue pattern when the local climate and planting calendar allow it. Wheat is an optional third crop in this teaching example. Where the crop and season fit, it can also provide winter ground cover; this is not a planting calendar for every site.\n\nFor each arrow, write what changed and why: crop nitrogen supply or demand, host status for a verified pest, root, residue behaviour and season. Do not assume the three crops fit every site or year. Check that every displayed arrow follows the numbered year order; if an arrow contradicts the labels, use the year sequence and correct the drawing.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "432867b285eb2bbc52ed562be3857c5f8cbfc67d2eafdb4522b44dcf731a5819",
+      "requestFingerprintSha256": "432867b285eb2bbc52ed562be3857c5f8cbfc67d2eafdb4522b44dcf731a5819",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R04a-r1",
+      "unitId": "S3-03-en-R04a-r1",
+      "locale": "en",
+      "semanticGroup": "R04a",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Keep the same labelled temperate classroom case from the preceding step: 10 hectares, sandy loam, pH 6.2, tested N low, P and K adequate, moderate rainfall, three successive maize crops and declining yield. Parts 1 and 2 screened at least two crop candidates per practical group and justified a conditional year-one choice. Part 3 now fills Years 1–3 with a reason for each, and Part 4 compares plans. Across both steps the complete activity uses 10 + 10 + 15 + 10 minutes, or 45 minutes.",
+          "sha256": "64406b17f3708b34f829fd2f31cc540f60ec98f01011e18e43ae49cdab974d9c"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "A possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+          "sha256": "5cf56ed10a5a3d8b3df934280b12fca35b7debbff2e86c16bf6ef46d54ad8923"
+        }
+      ],
+      "scientificMeaning": "Keep the same labelled temperate classroom case from the preceding step: 10 hectares, sandy loam, pH 6.2, tested N low, P and K adequate, moderate rainfall, three successive maize crops and declining yield. Parts 1 and 2 screened at least two crop candidates per practical group and justified a conditional year-one choice. Part 3 now fills Years 1–3 with a reason for each, and Part 4 compares plans. Across both steps the complete activity uses 10 + 10 + 15 + 10 minutes, or 45 minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+      "displayText": "Keep the same labelled temperate classroom case from the preceding step: 10 hectares, sandy loam, pH 6.2, tested N low, P and K adequate, moderate rainfall, three successive maize crops and declining yield. Parts 1 and 2 screened at least two crop candidates per practical group and justified a conditional year-one choice. Part 3 now fills Years 1–3 with a reason for each, and Part 4 compares plans. Across both steps the complete activity uses 10 + 10 + 15 + 10 minutes, or 45 minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+      "captionText": "Keep the same labelled temperate classroom case from the preceding step: 10 hectares, sandy loam, pH 6.2, tested N low, P and K adequate, moderate rainfall, three successive maize crops and declining yield. Parts 1 and 2 screened at least two crop candidates per practical group and justified a conditional year-one choice. Part 3 now fills Years 1–3 with a reason for each, and Part 4 compares plans. Across both steps the complete activity uses 10 + 10 + 15 + 10 minutes, or 45 minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+      "spokenText": "Keep the same labelled temperate classroom case from the preceding step: ten hectares, sandy loam, P H six point two, tested nitrogen low, phosphorus and potassium adequate, moderate rainfall, three successive maize crops and declining yield. Parts one and two screened at least two crop candidates per practical group and justified a conditional year-one choice. Part three now fills Years one to three with a reason for each, and Part four compares plans. Across both steps the complete activity uses ten plus ten plus fifteen plus ten minutes, or forty-five minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+      "spokenTextSHA256": "9bc5779f581af5e625696717688583317961eb4fb36e83dfd4d66d67b1e218f5",
+      "spokenTextSha256": "9bc5779f581af5e625696717688583317961eb4fb36e83dfd4d66d67b1e218f5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Keep the same labelled temperate classroom case from the preceding step: 10 hectares, sandy loam, pH 6.2, tested N low, P and K adequate, moderate rainfall, three successive maize crops and declining yield. Parts 1 and 2 screened at least two crop candidates per practical group and justified a conditional year-one choice. Part 3 now fills Years 1–3 with a reason for each, and Part 4 compares plans. Across both steps the complete activity uses 10 + 10 + 15 + 10 minutes, or 45 minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+          "spoken": "Keep the same labelled temperate classroom case from the preceding step: ten hectares, sandy loam, P H six point two, tested nitrogen low, phosphorus and potassium adequate, moderate rainfall, three successive maize crops and declining yield. Parts one and two screened at least two crop candidates per practical group and justified a conditional year-one choice. Part three now fills Years one to three with a reason for each, and Part four compares plans. Across both steps the complete activity uses ten plus ten plus fifteen plus ten minutes, or forty-five minutes.\n\nA possible year-one group is a locally suitable legume, if its season, water, nodulation and purpose fit. It is not the only defensible action or a guaranteed cure for declining yield. Evidence may justify a different crop or a remedial investigation before final advice. The case's stated temperate climate cannot be relabelled as an Egyptian locality without new local data.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4bc667c41a631146874c32adea02e5a982756d416143684787aebe0f5dcccb40",
+      "requestFingerprintSha256": "4bc667c41a631146874c32adea02e5a982756d416143684787aebe0f5dcccb40",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R04b-r1",
+      "unitId": "S3-03-en-R04b-r1",
+      "locale": "en",
+      "semanticGroup": "R04b",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/2",
+          "text": "Mr Evans · 10-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year1 from your preceding conditional recommendation and explain any revision. Groups of 3–4 use a worksheet, pens and paper. The 45 active minutes span 10+10 minutes in the preceding step, then 15 minutes planning and 10 minutes comparing here (35 work +10 discussion). The separately stated 2-minute setup makes 47 minutes including preparation. Each group shares its first-year choice; 2–3 groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets/equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+          "sha256": "b0a819951650334927a9b09e6173bd16a06b8ba55e453b197eec5bd61247c575"
+        }
+      ],
+      "scientificMeaning": "Mr Evans · 10-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year1 from your preceding conditional recommendation and explain any revision. Groups of 3–4 use a worksheet, pens and paper. The 45 active minutes span 10+10 minutes in the preceding step, then 15 minutes planning and 10 minutes comparing here (35 work +10 discussion). The separately stated 2-minute setup makes 47 minutes including preparation. Each group shares its first-year choice; 2–3 groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets/equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+      "displayText": "Mr Evans · 10-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year1 from your preceding conditional recommendation and explain any revision. Groups of 3–4 use a worksheet, pens and paper. The 45 active minutes span 10+10 minutes in the preceding step, then 15 minutes planning and 10 minutes comparing here (35 work +10 discussion). The separately stated 2-minute setup makes 47 minutes including preparation. Each group shares its first-year choice; 2–3 groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets/equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+      "captionText": "Mr Evans · 10-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year1 from your preceding conditional recommendation and explain any revision. Groups of 3–4 use a worksheet, pens and paper. The 45 active minutes span 10+10 minutes in the preceding step, then 15 minutes planning and 10 minutes comparing here (35 work +10 discussion). The separately stated 2-minute setup makes 47 minutes including preparation. Each group shares its first-year choice; 2–3 groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets/equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+      "spokenText": "Mr Evans · ten-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year one from your preceding conditional recommendation and explain any revision. Groups of three to four use a worksheet, pens and paper. The forty-five active minutes span ten plus ten minutes in the preceding step, then fifteen minutes planning and ten minutes comparing here (thirty-five work plus ten discussion). The separately stated two-minute setup makes forty-seven minutes including preparation. Each group shares its first-year choice; two to three groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets, equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+      "spokenTextSHA256": "e53d0edafdac33771c7a26c125436f79b06ed4d36ef0dbad88275ef4429afdae",
+      "spokenTextSha256": "e53d0edafdac33771c7a26c125436f79b06ed4d36ef0dbad88275ef4429afdae",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Mr Evans · 10-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year1 from your preceding conditional recommendation and explain any revision. Groups of 3–4 use a worksheet, pens and paper. The 45 active minutes span 10+10 minutes in the preceding step, then 15 minutes planning and 10 minutes comparing here (35 work +10 discussion). The separately stated 2-minute setup makes 47 minutes including preparation. Each group shares its first-year choice; 2–3 groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets/equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+          "spoken": "Mr Evans · ten-hectare temperate teaching case. Supplied classroom facts, not your field measurements. The location is unspecified. Keep climate, soil and crop history unchanged; no Egyptian locality is verified. The source case allows both warm- and cool-season crops; actual local season dates are not supplied. Begin Year one from your preceding conditional recommendation and explain any revision. Groups of three to four use a worksheet, pens and paper. The forty-five active minutes span ten plus ten minutes in the preceding step, then fifteen minutes planning and ten minutes comparing here (thirty-five work plus ten discussion). The separately stated two-minute setup makes forty-seven minutes including preparation. Each group shares its first-year choice; two to three groups explain their whole plan. Everyone submits individual reasoning and revision. The optional fourth year, cover crop, markets, equipment, visual glossary and a drawn plan support learning. The five-minute no-notes exit is separate.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f497106d8099a2e029f3fcb2bd6bd3b769e004ab21f57a138aa7deb8badb6cd7",
+      "requestFingerprintSha256": "f497106d8099a2e029f3fcb2bd6bd3b769e004ab21f57a138aa7deb8badb6cd7",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R05-r1",
+      "unitId": "S3-03-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The worked case uses Year 1 soybean → Year 2 maize → Year 3 potato. Soybean may add biologically fixed N if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year 2 maize must still be checked against a soil and crop nutrient plan. Year 3 potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.",
+          "sha256": "9b561e40f6e5fae8b6e36f6f0cfc5190ec75e77dd9c481a98f76c62b499351d3"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Other crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year 3 when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+          "sha256": "1d30fe97656f53d98d556359cbcbf680254b7df90ec305ab9d3531de8963d20c"
+        }
+      ],
+      "scientificMeaning": "The worked case uses Year 1 soybean → Year 2 maize → Year 3 potato. Soybean may add biologically fixed N if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year 2 maize must still be checked against a soil and crop nutrient plan. Year 3 potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year 3 when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+      "displayText": "The worked case uses Year 1 soybean → Year 2 maize → Year 3 potato. Soybean may add biologically fixed N if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year 2 maize must still be checked against a soil and crop nutrient plan. Year 3 potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year 3 when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+      "captionText": "The worked case uses Year 1 soybean → Year 2 maize → Year 3 potato. Soybean may add biologically fixed N if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year 2 maize must still be checked against a soil and crop nutrient plan. Year 3 potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year 3 when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+      "spokenText": "The worked case uses Year one soybean then Year two maize then Year three potato. Soybean may add biologically fixed nitrogen if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year two maize must still be checked against a soil and crop nutrient plan. Year three potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year three when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+      "spokenTextSHA256": "7041f285cbf194adb559b87b5a485bc53a3c41e72daccad0ba4012eb8c165286",
+      "spokenTextSha256": "7041f285cbf194adb559b87b5a485bc53a3c41e72daccad0ba4012eb8c165286",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The worked case uses Year 1 soybean → Year 2 maize → Year 3 potato. Soybean may add biologically fixed N if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year 2 maize must still be checked against a soil and crop nutrient plan. Year 3 potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year 3 when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+          "spoken": "The worked case uses Year one soybean then Year two maize then Year three potato. Soybean may add biologically fixed nitrogen if properly nodulated, but its harvested grain and removed residues also carry nutrients away. Year two maize must still be checked against a soil and crop nutrient plan. Year three potato changes the host and rooting pattern relative to maize and requires its own soil, season, water, equipment and market assessment; it does not automatically improve tilth or suppress every pest.\n\nOther crop choices can be valid. The screening list also included barley, clover or alfalfa, carrot, lettuce, spinach, strawberry and melon; use them only if crop-specific conditions and the year's purpose match. Wheat or another vegetable can occupy Year three when justified. Explain why each year is in that position, rather than copying crop names as a universal recipe.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "84684ec25ab0802d7ef1571daeb9acd77e62180e2a90fca872c44466f22d8f9d",
+      "requestFingerprintSha256": "84684ec25ab0802d7ef1571daeb9acd77e62180e2a90fca872c44466f22d8f9d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R06-r1",
+      "unitId": "S3-03-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix N if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.",
+          "sha256": "52f9bd2f1c49dea3bc8f21651153cb8fd4da272ccbb0658df40db6f4d454cc19"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Alfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+          "sha256": "b1f40b1ea1300ed720682e4b66f498e40bdf6708765d8b964fde4e06b12be557"
+        }
+      ],
+      "scientificMeaning": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix N if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+      "displayText": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix N if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+      "captionText": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix N if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+      "spokenText": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix nitrogen if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+      "spokenTextSHA256": "9478e505f3c3b37bc1055bfae9ebc03e0bb2a27d4020c649eacbec888e4981c2",
+      "spokenTextSha256": "9478e505f3c3b37bc1055bfae9ebc03e0bb2a27d4020c649eacbec888e4981c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix N if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+          "spoken": "Extend a defensible three-year sequence to four years only after checking season length, water, likely host-pest changes, residue, market access and equipment. A clover cover crop may protect soil and may fix nitrogen if conditions permit; explain whether it is grown between cash crops, for a full season or longer, and how it is terminated or harvested.\n\nAlfalfa and many fruit plantings can remain on land for multiple seasons. A plan that puts a perennial in just one annual slot without establishment and termination assumptions is incomplete. A crop picture or a five- to six-item help card supports selection, but it never substitutes for the student's explanation.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3879a8724f69db1506351b7c8aaa8a18f7f5ce6540ee1e14dd219aa83586d038",
+      "requestFingerprintSha256": "3879a8724f69db1506351b7c8aaa8a18f7f5ce6540ee1e14dd219aa83586d038",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-R07-r1",
+      "unitId": "S3-03-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological N fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+          "sha256": "675058e46c1e3c9ebc8e00b12e0fe7463b1a052b127d16cf4a4a65e13523617f"
+        }
+      ],
+      "scientificMeaning": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological N fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+      "displayText": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological N fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+      "captionText": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological N fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+      "spokenText": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological nitrogen fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+      "spokenTextSHA256": "39c0a035d15a81bb30e0416151f3bfaf1c1d312754dae02728ae6c4c2c0509dc",
+      "spokenTextSha256": "39c0a035d15a81bb30e0416151f3bfaf1c1d312754dae02728ae6c4c2c0509dc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological N fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+          "spoken": "Allow five minutes for the wrap-up and answer in one sentence without using notes. In one sentence, explain why a suitable legume may be placed after a nutrient-demanding cereal. A strong response mentions biological nitrogen fixation as a potential nutrient-management benefit and adds that the next crop's actual credit requires evidence. If a verified host pest or residue goal also motivates the change, explain that separately.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected paragraph adaptation; accurate element/ha/arrows/numerals/decimalcomma, naturalEgyptian yearordinals/selectivenodulevowels and grammaticalagreement following expandednutrientnames. Quantities/conditionalNcredit/foreignerpest/twosequences/47inclusiveand5exitseparate unchanged. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "20497e30678c5575e695a352cb48e3e5ece564f8a18feaaefe69da2dcec70b62",
+      "requestFingerprintSha256": "20497e30678c5575e695a352cb48e3e5ece564f8a18feaaefe69da2dcec70b62",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
