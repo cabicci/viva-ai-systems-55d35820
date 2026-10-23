@@ -1,0 +1,360 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-de.json",
+    "sha256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+    "bytes": 33401
+  },
+  "units": [
+    {
+      "id": "S3-03-de-E01-r1",
+      "unitId": "S3-03-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Pfeile der Dreijahresfolge korrigieren",
+          "sha256": "a3d1d1dfcd8f434268d5a5aef156c59329b4fd332e80167cc82a5d756e4f63d1"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.",
+          "sha256": "c3ca3a420df8c7529174767f3903e460f6b42470aa502482166b42ac766f1fe5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zuerst gedruckte Jahreszahlen und Kulturfolge lesen.",
+          "sha256": "8bfd8d9ddbff5efd881a552e95273ccd7ec96f2ad1a950147147c1aacbc5d281"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.",
+          "sha256": "00ad6566fc6e646794167117b045ba6c3fe4037a3acfc5e0738223278a2b5c8c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Unter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.",
+          "sha256": "351c6a6373e84c0853cfc21a8653fbe9cc412a85848aaff005b7cb0a4885f528"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "sha256": "8bcfc4f58702abd9b57b8f5db47389c1fc81a98857577a5e50e6097d5dcbf652"
+        }
+      ],
+      "scientificMeaning": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "displayText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "captionText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "spokenText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "spokenTextSHA256": "06de50b06a93c890a4d51228f759aa4b832535cc198f13841d182838d55a3c30",
+      "spokenTextSha256": "06de50b06a93c890a4d51228f759aa4b832535cc198f13841d182838d55a3c30",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "spoken": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "91b82fdd709d3a5b5571f3d51eb80f3aa5af3aac9a2348ac48096a54e79b5c65",
+      "requestFingerprintSha256": "91b82fdd709d3a5b5571f3d51eb80f3aa5af3aac9a2348ac48096a54e79b5c65",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "31115d3cbf0d6b2771e8dd5f9508a3f1c112b89f7d56131d5131b8275c80dedd",
+        "before": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins→drei→zwei→eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais → Jahr zwei Soja → Jahr drei Weizen → Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais → zwei Soja → drei Weizen → eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+        "after": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-E02-r1",
+      "unitId": "S3-03-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modell der Betriebsberatung begründen",
+          "sha256": "4addb5b5d813bb08f5586fdeb4794b01955a6bfc197240619ad6852cbf1f7deb"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Im gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.",
+          "sha256": "ba7c57fab701925c8010f35cc6b662e3436190259aa8fcf29b79c07561a3ee1a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Jahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.",
+          "sha256": "3352d9ec85a8f13931aa6295af6ba6aefd30fa86bcdbb1eff69e730e557352a8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Jahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.",
+          "sha256": "fc6943b7429e46c6745a42a4d62f6f0d2c32d5e96a851153ee508852b02d331f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Jahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.",
+          "sha256": "2bcebee1c6ed772d541a1882ee9c460c71fd2f4bd5ca14211c302a8f36724ff1"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Es ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "sha256": "b7fd82abdb6f1f21d259edc51d81b9857459da07af0ad4fa5cd2be9537fc836e"
+        }
+      ],
+      "scientificMeaning": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "displayText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "captionText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "spokenText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "spokenTextSHA256": "f30238eb8c1c99ef0f6cd53209adf04041fcd76b7a0e5a37b23d4f99db441385",
+      "spokenTextSha256": "f30238eb8c1c99ef0f6cd53209adf04041fcd76b7a0e5a37b23d4f99db441385",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "spoken": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "85daf0b80b4ae9d496eb318f35da736c7598be332538b792e63413e9f0e17122",
+      "requestFingerprintSha256": "85daf0b80b4ae9d496eb318f35da736c7598be332538b792e63413e9f0e17122",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "fc355a73db95f3deafbb7611e2922960c537659ccfdf733d0c2f3c5e4c992f9d",
+        "before": "Modell der Betriebsberatung begründen\n\nIm gemäßigten zehn-ha-Fall ist En nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche En-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem En-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+        "after": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-E03-r1",
+      "unitId": "S3-03-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Eine andere Antwort braucht eigene Belege",
+          "sha256": "0d1e5e2272fe0e780a56eee9cf1fac99ca1c9fda16e4a72c527d265cabf25cdd"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Jemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.",
+          "sha256": "0a11985c506dcafffa9dcb552ebd21926164d56a6bbf538e0d58b33c73157d65"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Prüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.",
+          "sha256": "fd6c9f6f88888a8082f0d2574524419f6fc5189491f1bfe56523472bca0be98b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "N- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.",
+          "sha256": "3a8e0851ecc4a896f3dfb28f27df6ff7530c8e5d9576cc96a8f21c7582bce27a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Geräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.",
+          "sha256": "f2f5580c7b0f57ad0e9f87cce4855a9a55d75eec840295f24a3e075eda4c2ee2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Akzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "sha256": "f031365a355e4d8f23377559236c40777d94ce5f9861cbcf180417535e744ae8"
+        }
+      ],
+      "scientificMeaning": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "displayText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "captionText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "spokenText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "spokenTextSHA256": "c3916c6b34c74feeeaa4955016f7aea786b69a269e626b44826bdc2e013d454b",
+      "spokenTextSha256": "c3916c6b34c74feeeaa4955016f7aea786b69a269e626b44826bdc2e013d454b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "spoken": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5ebab36e97feb1791fa3677466c512caf2109166a547e8e6860876bfaec63cde",
+      "requestFingerprintSha256": "5ebab36e97feb1791fa3677466c512caf2109166a547e8e6860876bfaec63cde",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4d6b1e538d637134ffaabb70231c1308824a42f257c82fc4d221284312a497bf",
+        "before": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nEn- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+        "after": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-03-de-E04-r1",
+      "unitId": "S3-03-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Schädlingsbeispiel unter Vorbehalt",
+          "sha256": "3e38ffdf362275d9885cd900857365dcc6367473c63d48b7be6e9d50fbdffa7d"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Jemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.",
+          "sha256": "be4e177056e429afe904bffcfe740e2686fd7e0bca2e4918f558dfa2b2f1c05a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Nichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.",
+          "sha256": "049ba009cabe273f7f09a43b19c6c68be8afde3ff26605b26c5c75f6ff6cba3f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Arten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.",
+          "sha256": "093411a4398f150cdb325c2eaf86af9da1322cb80583f7facc4fdd23e7d96ce3"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Ein ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.",
+          "sha256": "f80cbdb772c822e68d9b38da2d73d11df9165e4bd84c442dac163e94ee776bdc"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Das Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+          "sha256": "63b036fe69ce0f76be992de3fcd6d8dcaf6e75b5aeb641b64f426f2ea61a2a09"
+        }
+      ],
+      "scientificMeaning": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "displayText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "captionText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "spokenText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "spokenTextSHA256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+      "spokenTextSha256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b8ba76b879957efcb9462b32c48b47bae63a6e5c4abe4e9e1569505f6fc625fe",
+      "requestFingerprintSha256": "b8ba76b879957efcb9462b32c48b47bae63a6e5c4abe4e9e1569505f6fc625fe",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+        "before": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+        "after": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

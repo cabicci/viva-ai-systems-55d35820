@@ -1,0 +1,2263 @@
+{
+  "schemaVersion": 1,
+  "scope": "S303_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s303-gated-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-03-ar-EG-E01-r1",
+      "unitId": "S3-03-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c4a4017cfafa4b2c4ca01e44fdf30132e1404460672d080e24116290e350e844",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "صحح أسهم دورة التلات سنين",
+          "sha256": "2552b35d1cc7c63e42474d1be6c0fe85f206de2c8fbecd661a45f90e4abf0d47"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "البطاقات سنة ١ ذرة وسنة ٢ فول صويا وسنة ٣ قمح، لكن الأسهم ماشية ١ ثم ٣ ثم ٢ ثم ١.",
+          "sha256": "f821606a681e9f8c4cec338463c9b928eecf321642870b135cd54e4d80bee5f2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "اقرأ أرقام السنوات وأسماء المحاصيل الأول.",
+          "sha256": "3700671c9fb325b49b95f64f9585cf684c20444cb0370beb5eeca32962657e1a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "ارسم سنة ١ ذرة ثم سنة ٢ فول صويا ثم سنة ٣ قمح ثم سنة ١ ذرة.",
+          "sha256": "41c716104e8573b3739847b43f75f3146acc9d4adaf21c6536c40fb90cfaef1c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "تحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.",
+          "sha256": "bd86adcbd7e02c0818f53937a0aaa7c696a442814a1cec342ad1a64b04dd4ad6"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "١ ذرة ثم ٢ فول صويا ثم ٣ قمح ثم ١ ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+          "sha256": "4bc037c088f5ea46f7d20f470e8df868a41d2b6400d6cb936ddb894a67e1ef39"
+        }
+      ],
+      "scientificMeaning": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة ١ ذرة وسنة ٢ فول صويا وسنة ٣ قمح، لكن الأسهم ماشية ١ ثم ٣ ثم ٢ ثم ١.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة ١ ذرة ثم سنة ٢ فول صويا ثم سنة ٣ قمح ثم سنة ١ ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\n١ ذرة ثم ٢ فول صويا ثم ٣ قمح ثم ١ ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+      "displayText": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة ١ ذرة وسنة ٢ فول صويا وسنة ٣ قمح، لكن الأسهم ماشية ١ ثم ٣ ثم ٢ ثم ١.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة ١ ذرة ثم سنة ٢ فول صويا ثم سنة ٣ قمح ثم سنة ١ ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\n١ ذرة ثم ٢ فول صويا ثم ٣ قمح ثم ١ ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+      "captionText": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة ١ ذرة وسنة ٢ فول صويا وسنة ٣ قمح، لكن الأسهم ماشية ١ ثم ٣ ثم ٢ ثم ١.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة ١ ذرة ثم سنة ٢ فول صويا ثم سنة ٣ قمح ثم سنة ١ ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\n١ ذرة ثم ٢ فول صويا ثم ٣ قمح ثم ١ ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+      "spokenText": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة واحد ذرة وسنة اتنين فول صويا وسنة تلاتة قمح، لكن الأسهم ماشية واحد ثم تلاتة ثم اتنين ثم واحد.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة واحد ذرة ثم سنة اتنين فول صويا ثم سنة تلاتة قمح ثم سنة واحد ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\nواحد ذرة ثم اتنين فول صويا ثم تلاتة قمح ثم واحد ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+      "spokenTextSHA256": "b937d80e15e7eff0a7848529bd3386b7c449aa6e429b6db4bab59337bc46129a",
+      "spokenTextSha256": "b937d80e15e7eff0a7848529bd3386b7c449aa6e429b6db4bab59337bc46129a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة ١ ذرة وسنة ٢ فول صويا وسنة ٣ قمح، لكن الأسهم ماشية ١ ثم ٣ ثم ٢ ثم ١.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة ١ ذرة ثم سنة ٢ فول صويا ثم سنة ٣ قمح ثم سنة ١ ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\n١ ذرة ثم ٢ فول صويا ثم ٣ قمح ثم ١ ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+          "spoken": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة واحد ذرة وسنة اتنين فول صويا وسنة تلاتة قمح، لكن الأسهم ماشية واحد ثم تلاتة ثم اتنين ثم واحد.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة واحد ذرة ثم سنة اتنين فول صويا ثم سنة تلاتة قمح ثم سنة واحد ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\nواحد ذرة ثم اتنين فول صويا ثم تلاتة قمح ثم واحد ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8f1e5d19a89169d1555a884875765bdce8d3504cb2de7c145991c8f66438a050",
+      "requestFingerprintSha256": "8f1e5d19a89169d1555a884875765bdce8d3504cb2de7c145991c8f66438a050",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "b937d80e15e7eff0a7848529bd3386b7c449aa6e429b6db4bab59337bc46129a",
+        "before": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة واحد ذرة وسنة اتنين فول صويا وسنة تلاتة قمح، لكن الأسهم ماشية واحد ثم تلاتة ثم اتنين ثم واحد.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة واحد ذرة ثم سنة اتنين فول صويا ثم سنة تلاتة قمح ثم سنة واحد ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\nواحد ذرة ثم اتنين فول صويا ثم تلاتة قمح ثم واحد ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+        "after": "صحح أسهم دورة التلات سنين\n\nالبطاقات سنة واحد ذرة وسنة اتنين فول صويا وسنة تلاتة قمح، لكن الأسهم ماشية واحد ثم تلاتة ثم اتنين ثم واحد.\n\nاقرأ أرقام السنوات وأسماء المحاصيل الأول.\n\nارسم سنة واحد ذرة ثم سنة اتنين فول صويا ثم سنة تلاتة قمح ثم سنة واحد ذرة.\n\nتحت كل سهم اكتب غرض بشروطه للعناصر أو عائل الآفة أو الجذور أو البقايا أو الموسم.\n\nواحد ذرة ثم اتنين فول صويا ثم تلاتة قمح ثم واحد ذرة؛ الأسهم لازم توافق السنوات المكتوبة.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0ee43f60fe355b1cc46d314175ba1b5288f01126747ab2cd85ee55b852dc1091"
+    },
+    {
+      "id": "S3-03-ar-EG-E02-r1",
+      "unitId": "S3-03-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c4a4017cfafa4b2c4ca01e44fdf30132e1404460672d080e24116290e350e844",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "برر نموذج مستشار المزرعة",
+          "sha256": "f64d076da040d2e96b8cbf69ed5e5d0308d3e925bbc8d7503cf6f4c8ad03f39c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "الحالة المعتدلة ذات ١٠ هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.",
+          "sha256": "71aa42dd680bfdec302ba09dd074f8603e00e482f6e43c7fc61600370149d346"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "السنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.",
+          "sha256": "3edf52b30db769be4dd7d4b907eb9e852cbca38fc721872f9b32ea407db0a49c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "السنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.",
+          "sha256": "247332b038f43d866f38594f655880bd10e40a68da22da5a996b86c534f961a9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "السنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.",
+          "sha256": "9b429e89d4d80d612fcfa07bab1e1b1c2ed61a7c92c42073eb36a016c76a73a5"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "ده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+          "sha256": "1a747b6635fa236175678f5197dd7ff81c5bf009382662e6ee32898da7aabc91"
+        }
+      ],
+      "scientificMeaning": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات ١٠ هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+      "displayText": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات ١٠ هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+      "captionText": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات ١٠ هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+      "spokenText": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات عشرة هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+      "spokenTextSHA256": "ec91af4b7fde64a4aa9f9606ce4f1f684468808e5c1347f420c7b1eb07ffd0fa",
+      "spokenTextSha256": "ec91af4b7fde64a4aa9f9606ce4f1f684468808e5c1347f420c7b1eb07ffd0fa",
+      "spokenAdaptationChanges": [
+        {
+          "written": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات ١٠ هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+          "spoken": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات عشرة هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "db0d0216796d65a9f10b935535f4333f08a14afb426d6ef759e6b5b2b9d7412c",
+      "requestFingerprintSha256": "db0d0216796d65a9f10b935535f4333f08a14afb426d6ef759e6b5b2b9d7412c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "ec91af4b7fde64a4aa9f9606ce4f1f684468808e5c1347f420c7b1eb07ffd0fa",
+        "before": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات عشرة هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+        "after": "برر نموذج مستشار المزرعة\n\nالحالة المعتدلة ذات عشرة هكتارات فيها نيتروجين منخفض بعد تلات سنين ذرة. النموذج يقترح فول صويا ثم ذرة ثم بطاطس.\n\nالسنة الأولى فول صويا للتنوع وإمكان تثبيت النيتروجين بعد فحص العقد والملاءمة.\n\nالسنة الثانية ذرة بخطة نيتروجين تخصها، مش افتراض رد كل النيتروجين.\n\nالسنة الثالثة بطاطس تغير العائلة والاحتياجات؛ افحص تاريخ الآفات والمياه والمعدات والسوق.\n\nده نموذج تعليمي مشروط من تلات سنين. الإجابة الصحيحة هي التسلسل المبرر، مش أسماء المحاصيل وحدها.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0ee43f60fe355b1cc46d314175ba1b5288f01126747ab2cd85ee55b852dc1091"
+    },
+    {
+      "id": "S3-03-ar-EG-E03-r1",
+      "unitId": "S3-03-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c4a4017cfafa4b2c4ca01e44fdf30132e1404460672d080e24116290e350e844",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "الخطة المختلفة محتاجة دليل مختلف",
+          "sha256": "ce248a940cc4a676bef4e47dd8e0d6a6c6b31157a24d0f1a5f1c817afa446db3"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "طالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.",
+          "sha256": "9f60e98858a3b8cdc1f2a7ba33d417e254618410c5ff2feb40c5d03e8179b2fa"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "افحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.",
+          "sha256": "2d835cc5e6405cc8d3662daea5ca40e5b63d70d0ae4222357b9b9ba4fbeb68d1"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "قارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.",
+          "sha256": "d421aeaa2704a9102272c0938ad4a99cfa3d4b8ed278b239b28cd304d4520d75"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "راجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.",
+          "sha256": "263fb0478506a4ce5ea58f537be6c55c55c269df090aa6280ada5dd0454bbf43"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "اقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+          "sha256": "39396281a9500466078a0d42f7bc14e665afc5d620b50286afab33ea17e65cec"
+        }
+      ],
+      "scientificMeaning": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+      "displayText": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+      "captionText": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+      "spokenText": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+      "spokenTextSHA256": "eecc417bce5599f6dd3ec560781af0204cef0513e9ad84551145a2e24c6a46a0",
+      "spokenTextSha256": "eecc417bce5599f6dd3ec560781af0204cef0513e9ad84551145a2e24c6a46a0",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e188b17a102f2104eb7927eee8b836a5c2c6711560f908cdd6dab08cc3089fb5",
+      "requestFingerprintSha256": "e188b17a102f2104eb7927eee8b836a5c2c6711560f908cdd6dab08cc3089fb5",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "eecc417bce5599f6dd3ec560781af0204cef0513e9ad84551145a2e24c6a46a0",
+        "before": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+        "after": "الخطة المختلفة محتاجة دليل مختلف\n\nطالب يقترح بقولي مناسب ثم ذرة ثم قمح، ومعاهم سنة رابعة برسيم غطاء.\n\nافحص ملاءمة القمح والبرسيم للموسم والمياه، وهل البرسيم يشغل سنة كاملة ولا فترة بين محصولين.\n\nقارن ادعاء النيتروجين والبقايا بالحصاد والإدارة الفعليين؛ ما تفترضش رصيد سماد ثابت.\n\nراجع المعدات والسوق وعوائل الآفات وإيه اللي يحصل قبل تكرار الدورة.\n\nاقبلها لو كل سنة وانتقال مدعومين بدليل الموقع والإدارة، وتوقيت محصول الغطاء واضح. خطط أخرى مبنية على دليل ممكنة.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0ee43f60fe355b1cc46d314175ba1b5288f01126747ab2cd85ee55b852dc1091"
+    },
+    {
+      "id": "S3-03-ar-EG-E04-r1",
+      "unitId": "S3-03-ar-EG-E04-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c4a4017cfafa4b2c4ca01e44fdf30132e1404460672d080e24116290e350e844",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "مثال الآفة مش ضمان",
+          "sha256": "3de4da3f13e8878679236e3b9714bd84d736c8eeeca3bc18183f6bb44ee841d3"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "حد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.",
+          "sha256": "c8e06507e69110cf3289aa2e99e337ef74ea846ebc169b7b10ffbe0284b6686d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "محصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.",
+          "sha256": "599d279f12acca6f2f5f874635835d431b8edc391deda89239d217f7fe8a3584"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "أنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.",
+          "sha256": "7b615814b53bc0876df3fcc15aa2fe06b7bd3fdcb56bb99a39202d4d5a6def41"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "الحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.",
+          "sha256": "2a3a4887645a8b19c2c6d2b91edd0edbeeb577b5e25ca5bc46824b7fb763a2ae"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "استخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+          "sha256": "ba077581d2f6920ee4826d134d802bcf547b1f5c627f1750a6f60887d7527535"
+        }
+      ],
+      "scientificMeaning": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+      "displayText": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+      "captionText": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+      "spokenText": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+      "spokenTextSHA256": "d0c72fb65104af8af7a12f0983e9d6596617f9682c02ca056dc5d3f12f2d5b1a",
+      "spokenTextSha256": "d0c72fb65104af8af7a12f0983e9d6596617f9682c02ca056dc5d3f12f2d5b1a",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c9bbcff354d44dfb6dc0a9e05f623c5b01b29e7851e89d069745849ddd6046e1",
+      "requestFingerprintSha256": "c9bbcff354d44dfb6dc0a9e05f623c5b01b29e7851e89d069745849ddd6046e1",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "d0c72fb65104af8af7a12f0983e9d6596617f9682c02ca056dc5d3f12f2d5b1a",
+        "before": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+        "after": "مثال الآفة مش ضمان\n\nحد يقول إن فول الصويا بعد الذرة يقتل كل دودة جذور الذرة، فلازم يحصل في أي مزرعة.\n\nمحصول غير عائل ممكن يقلل بعض الآفات المرتبطة بعائل في الأماكن اللي الآفة موجودة فيها.\n\nأنواع وجماعات دودة الجذور بتختلف؛ السكون الممتد أو التكيف مع الدورة قد يضعف سنة تناوب واحدة.\n\nالحقل المصري محتاج تحديد ورصد محلي للآفة بدل تشخيص مستورد.\n\nاستخدم المثال لتفسير آلية محتملة، مش ضمان أو ادعاء آفة محلية.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0ee43f60fe355b1cc46d314175ba1b5288f01126747ab2cd85ee55b852dc1091"
+    },
+    {
+      "id": "S3-03-en-E01-r1",
+      "unitId": "S3-03-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Correct the three-year arrow cycle",
+          "sha256": "ddbc741bb6131d99a7b2ebb6de56704e6c66d0b9d280df1b224c4039dbabd3c9"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Three cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.",
+          "sha256": "1bf17aa7bd0bb5a767ff89b249e7e5f3cb82f244cefba403b3c9b9545871aa5d"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Read the printed year numbers and crop order first.",
+          "sha256": "0228170ae290c60dd952dc9a89e3b5405c9eea8b6bfcf59249f1c0741308bad3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Draw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.",
+          "sha256": "66e55e280a755779a5681e21d6694a94504624920a5ccf6dc8f6af92de153a97"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Under each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.",
+          "sha256": "ce974992f764da1944ebba96c6876f708011f5eaa7c08345dfd044584bf7be7c"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+          "sha256": "0cb28b6adadc77a028584c6c149f0af71477df35b9ce740619b0c6f15d2ea444"
+        }
+      ],
+      "scientificMeaning": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "displayText": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "captionText": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "spokenText": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+      "spokenTextSHA256": "44e2ed810daff6341f434f8e4f43e899ed5b2d81a14c8c88bbf1a090a288e9ed",
+      "spokenTextSha256": "44e2ed810daff6341f434f8e4f43e899ed5b2d81a14c8c88bbf1a090a288e9ed",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+          "spoken": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86c97da8f5b63098cbf233f6423f026686b52c83837d39c507fecfc4481d4e4e",
+      "requestFingerprintSha256": "86c97da8f5b63098cbf233f6423f026686b52c83837d39c507fecfc4481d4e4e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "7770835f30c6898b95e7e55e8d7977ce1ca8f2b96793aa5d64cfe3cc073eca49",
+        "before": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one→three→two→one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize → Year two soybean → Year three wheat → Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize → two soybean → three wheat → one maize; the arrows must match the written sequence.",
+        "after": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "18d896c778470f98919eac8a9e320c3ab33d1413d8a568b55dacea267e951cad"
+    },
+    {
+      "id": "S3-03-en-E02-r1",
+      "unitId": "S3-03-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Justify the adviser case model",
+          "sha256": "ef56ea055a0fa35883cd72803edd804c54b780f0bff52947ec74d17dfc3f7a11"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.",
+          "sha256": "98c67ea55598d77594da04d6a3ac289360a5e1906b3f82e5bcbca4e06ebf3f59"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Year 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.",
+          "sha256": "e56ae12e18c0412fcad4ecfa25b7e0e90cdfad3217450579d40e6a843840c645"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Year 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.",
+          "sha256": "33e36e209d66af0b5fa44847a7b1dfc64cf4cc2af3351800be5cb016e3b19f50"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Year 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.",
+          "sha256": "b6bbe2a50ac6d8b14cc670b1967c58975ff0f126b6d9456d9375d47488df3b20"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "This is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "sha256": "2d039e1065e50b5b962ec0d74db4a64c8ef650886715ad7513a2a5a4a319151a"
+        }
+      ],
+      "scientificMeaning": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "displayText": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "captionText": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "spokenText": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "spokenTextSHA256": "46aab59af1d7a56f25a0e4a492f82863bdc9516a8ec74e12f2341ca70efb1b85",
+      "spokenTextSha256": "46aab59af1d7a56f25a0e4a492f82863bdc9516a8ec74e12f2341ca70efb1b85",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "spoken": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "75f9da0493d4b8fdd355cc4f5034709a957f9fafb8e3d5367346752e8d420d23",
+      "requestFingerprintSha256": "75f9da0493d4b8fdd355cc4f5034709a957f9fafb8e3d5367346752e8d420d23",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "5686cccc33cb4567843359512668781f83ac80d34601bb3003b8aeac9571f687",
+        "before": "Justify the adviser case model\n\nThe supplied ten-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear one soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+        "after": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "18d896c778470f98919eac8a9e320c3ab33d1413d8a568b55dacea267e951cad"
+    },
+    {
+      "id": "S3-03-en-E03-r1",
+      "unitId": "S3-03-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A different valid answer needs different evidence",
+          "sha256": "190b6a82bfedcf8353015b9c69ad241689340cda09b85ee0ad9fe8fc7c48d6e8"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.",
+          "sha256": "2e74cd88bab58ab6158a42bc0bace819790e0e671e6a51bac4bd680f29b9ec85"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Check whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.",
+          "sha256": "13bf4cd93928120fa3c817e5452e9e99e9710f24bbf32975a6b3813e85e3fd05"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Compare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.",
+          "sha256": "ab778a5db3bb23a8e84505facf4eddd9d5cf7fa91b17c81a13ebd26db1891eaf"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Check equipment, market, pest hosts and what happens before the cycle restarts.",
+          "sha256": "53fbe40b5d098dafcdbfd9ee3f6df3db5e83604fac5e5fbc8df9b15f738abf0e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Accept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "sha256": "d6b5e88c413854cd6e4a4fec4668b4ae346e62008915e9fb1f38502312e7f7c9"
+        }
+      ],
+      "scientificMeaning": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "displayText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "captionText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "spokenText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "spokenTextSHA256": "0bd8a8be194ac9729de45e2893bcea00a2ea089b3adde7d6c835be1f536dd3cc",
+      "spokenTextSha256": "0bd8a8be194ac9729de45e2893bcea00a2ea089b3adde7d6c835be1f536dd3cc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "spoken": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c6afc761dc01293d3ea4b15d8c5a73c5dcf0de300c272b22adaeafbf009b8abf",
+      "requestFingerprintSha256": "c6afc761dc01293d3ea4b15d8c5a73c5dcf0de300c272b22adaeafbf009b8abf",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "90044a6ccc9426fa9cdb716ea9284ab4efa97e9c39ae6cd979a478fc2ed3d946",
+        "before": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+        "after": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "18d896c778470f98919eac8a9e320c3ab33d1413d8a568b55dacea267e951cad"
+    },
+    {
+      "id": "S3-03-en-E04-r1",
+      "unitId": "S3-03-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "A pest example is conditional",
+          "sha256": "af1d7472b95b5f74f1d81ace5577f9041ea50a507163b54ff822a603b71b7a44"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Someone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.",
+          "sha256": "626a1b0fb54d1a4abd57e5095bd22d8ba1b8c8e8d85cee90c18f561472df435a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Rotation to a non-host can reduce some host-specific pests where they actually occur.",
+          "sha256": "ca84f262a8f77ff36150faf50e2b5b45614cc13ee82d05bdac55a39daa91a368"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Rootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.",
+          "sha256": "ba463381b9ac0d265e2a31609ab8a98ad12848a563e1f5816fb8ce333861150d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "An Egyptian field needs local identification and scouting rather than an imported pest diagnosis.",
+          "sha256": "ce988503d673a27cfc5cde7ec11817bcdd446c55bcda3f314c05b67a198cff8a"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Use the example to explain a mechanism, not a guarantee or local pest claim.",
+          "sha256": "af0dfe53292289822373a696e0e4601810bbc944250492cf255634827205912e"
+        }
+      ],
+      "scientificMeaning": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "displayText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "captionText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "spokenText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "spokenTextSHA256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+      "spokenTextSha256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d5de50335f7bcd5ba5a05d01c2c5d2689fa3a10e90f46c41aac14885a7b1b91c",
+      "requestFingerprintSha256": "d5de50335f7bcd5ba5a05d01c2c5d2689fa3a10e90f46c41aac14885a7b1b91c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+        "before": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+        "after": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "18d896c778470f98919eac8a9e320c3ab33d1413d8a568b55dacea267e951cad"
+    },
+    {
+      "id": "S3-03-it-E01-r1",
+      "unitId": "S3-03-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Correggere le frecce del ciclo triennale",
+          "sha256": "871e8c08cc68f70941a1360caa05bbb1596a0a22144e20ee4220be6fa219ee61"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Le carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.",
+          "sha256": "8bd21eefa890577ca406225e0f16495892554bf65d91ae689391e2102d1f0856"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Leggere prima gli anni stampati e l’ordine delle colture.",
+          "sha256": "70b295c2cb378f07f84657140931707dddd7d6fbdd2fd7866d0647ec44e34819"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Disegnare 1 mais → 2 soia → 3 frumento → 1 mais.",
+          "sha256": "bebc9d7a3faf17999274723780c4afb97aeb6d40edc79ed405246490f10b4c2c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Aggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.",
+          "sha256": "a15193fdc77a6af8f534602a9d4a84d236a871bbbe2eb0b0139ffbceecbdd884"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+          "sha256": "21c354d43b646972d928c62d154c08b3fe5947633f1a4d1c98994bdd37105e92"
+        }
+      ],
+      "scientificMeaning": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "displayText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "captionText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "spokenText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+      "spokenTextSHA256": "430ead36fe57338e81e64ecc97c6cc88aeeb10c5a6dc7739194babafc355d3c8",
+      "spokenTextSha256": "430ead36fe57338e81e64ecc97c6cc88aeeb10c5a6dc7739194babafc355d3c8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+          "spoken": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "04e7c52fefe62d43357e6163b916a9e72c1a58d463d45762c6ae5800a80aa59a",
+      "requestFingerprintSha256": "04e7c52fefe62d43357e6163b916a9e72c1a58d463d45762c6ae5800a80aa59a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "a05ec9ee0385a9d40ad5382a593ca22996931ef33e7f880b79e8d4f750d84290",
+        "before": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno→tre→due→uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais → due soia → tre frumento → uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais → due soia → tre frumento → uno mais: le frecce devono corrispondere al testo.",
+        "after": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fc4dff013472f2d4f473f750e071c5608f19a88fd6adb44101b3824b976baf0b"
+    },
+    {
+      "id": "S3-03-it-E02-r1",
+      "unitId": "S3-03-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Giustificare il modello del consulente",
+          "sha256": "d9636436a65a9a6f204ee02e702a5c38f92d3f45ee2cd009ee4f002317bdb8b2"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.",
+          "sha256": "4ea6ed06d577b87b13dabb04b925e61aa04ec14aa1be08abea131ac29b938578"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Anno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.",
+          "sha256": "0c939a8acd4e1453bf0996b1c767707cc5c9cd26ae2461519ed99b9161392253"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Anno 2 mais con piano N specifico, non con un rimborso completo supposto.",
+          "sha256": "9309a9ff2ce6fd42689ee634975253e2bc4e8eb1c8b8eb14abe9be2fd474eb5f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Anno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.",
+          "sha256": "91e1297b07719f9efba91ed9b1b572e84f419343522f8217a3230c444d6e3dd6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "È un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "sha256": "dd83805108d7dcdecd0a1c0c3e087ee275c20644b3191f09a10ea7d35337e949"
+        }
+      ],
+      "scientificMeaning": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "displayText": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "captionText": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "spokenText": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "spokenTextSHA256": "c164882f9652b23dc1e9857a9de9bc8ceb82ac5413faee1175e7c0344b495e0a",
+      "spokenTextSha256": "c164882f9652b23dc1e9857a9de9bc8ceb82ac5413faee1175e7c0344b495e0a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "spoken": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "21924fcfc98cf432a9ed8ea917e307a2e84d06684828a6d38a82b46e9d2f026d",
+      "requestFingerprintSha256": "21924fcfc98cf432a9ed8ea917e307a2e84d06684828a6d38a82b46e9d2f026d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "3c5d88779164758de55cc8259acd2a6405c4d9903c244fac31e616916ef4f110",
+        "before": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ha ha enne basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano enne specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+        "after": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fc4dff013472f2d4f473f750e071c5608f19a88fd6adb44101b3824b976baf0b"
+    },
+    {
+      "id": "S3-03-it-E03-r1",
+      "unitId": "S3-03-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Una risposta diversa richiede altre prove",
+          "sha256": "45a619cb636105210ec36a72ef2938073af012ef8e393029e0cb6f5864b33eb2"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Uno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.",
+          "sha256": "0fc7f619650d88019be30773e2bf2b223ef1ba23130f0dfcdf188341a115a4c2"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Verificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.",
+          "sha256": "5ba5c5611c96707ce3ee98bd788f2a8bf35783827c520588fc7e4d397c91564c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Confrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.",
+          "sha256": "bc7ef564f57adef81deb2413f6f4e7946c6905dbc1ecf66c1056cd73bccb8760"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Controllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.",
+          "sha256": "5e585bbbac20e19986661a43fea8477e6e08da61eee52422fc40170732d47959"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Accettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "sha256": "5713151c8832984d0081c8c6ba24f9af0b0de7e05e11d22238b92a42ab6dc837"
+        }
+      ],
+      "scientificMeaning": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "displayText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "captionText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "spokenText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "spokenTextSHA256": "5650e71a8e2e3f482db8877dd1eb7aff4ad2dcecc67a6d041f7370921dd23cfb",
+      "spokenTextSha256": "5650e71a8e2e3f482db8877dd1eb7aff4ad2dcecc67a6d041f7370921dd23cfb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "spoken": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ebb5c83c1c203eaa449860849ab05c1befda0cfb5355716bd8185e6ebffb64d",
+      "requestFingerprintSha256": "8ebb5c83c1c203eaa449860849ab05c1befda0cfb5355716bd8185e6ebffb64d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "ebb865adbb70ed345af0c0d6f1fa1a987b19a75b42dd5c2ab90b02ba52b7087f",
+        "before": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su enne e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+        "after": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fc4dff013472f2d4f473f750e071c5608f19a88fd6adb44101b3824b976baf0b"
+    },
+    {
+      "id": "S3-03-it-E04-r1",
+      "unitId": "S3-03-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "L’esempio dell’insetto ha limiti",
+          "sha256": "a588ff4865db2502ff58d20c14926517251d4031c9d172dfbd1080422ad6577c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Qualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.",
+          "sha256": "e069429e072fbabad31d9a99b6940eaa8137eee843448423fc8376324c7239f2"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Passare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.",
+          "sha256": "eae98a14928b230d3bc29544fc245177b370afae0de9cc9f1befcf6a8471afd6"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Specie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.",
+          "sha256": "182c731c87707f518e01bfb3d6f015049e8ed1f5fab9dea8386e07cc926ba833"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Un campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.",
+          "sha256": "b500bd6b282fe4b61f95c029b1b047f7e6a90d545490bce4836d0a231248731a"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Usare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+          "sha256": "96072835669ba35e421b5928e8b1f84173fd5805179ef3052708198271145386"
+        }
+      ],
+      "scientificMeaning": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "displayText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "captionText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "spokenText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "spokenTextSHA256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+      "spokenTextSha256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ed1d44522e4c823f2e30c5eac4dc0f564a4ec76c94f94d9017adbe2e312847e6",
+      "requestFingerprintSha256": "ed1d44522e4c823f2e30c5eac4dc0f564a4ec76c94f94d9017adbe2e312847e6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+        "before": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+        "after": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fc4dff013472f2d4f473f750e071c5608f19a88fd6adb44101b3824b976baf0b"
+    },
+    {
+      "id": "S3-03-de-E01-r1",
+      "unitId": "S3-03-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Pfeile der Dreijahresfolge korrigieren",
+          "sha256": "a3d1d1dfcd8f434268d5a5aef156c59329b4fd332e80167cc82a5d756e4f63d1"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.",
+          "sha256": "c3ca3a420df8c7529174767f3903e460f6b42470aa502482166b42ac766f1fe5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zuerst gedruckte Jahreszahlen und Kulturfolge lesen.",
+          "sha256": "8bfd8d9ddbff5efd881a552e95273ccd7ec96f2ad1a950147147c1aacbc5d281"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Jahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.",
+          "sha256": "00ad6566fc6e646794167117b045ba6c3fe4037a3acfc5e0738223278a2b5c8c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Unter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.",
+          "sha256": "351c6a6373e84c0853cfc21a8653fbe9cc412a85848aaff005b7cb0a4885f528"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "sha256": "8bcfc4f58702abd9b57b8f5db47389c1fc81a98857577a5e50e6097d5dcbf652"
+        }
+      ],
+      "scientificMeaning": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "displayText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "captionText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "spokenText": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+      "spokenTextSHA256": "06de50b06a93c890a4d51228f759aa4b832535cc198f13841d182838d55a3c30",
+      "spokenTextSha256": "06de50b06a93c890a4d51228f759aa4b832535cc198f13841d182838d55a3c30",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr 1 Mais, Jahr 2 Soja und Jahr 3 Weizen, doch die Pfeile laufen 1→3→2→1.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr 1 Mais → Jahr 2 Soja → Jahr 3 Weizen → Jahr 1 Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\n1 Mais → 2 Soja → 3 Weizen → 1 Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "spoken": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "91b82fdd709d3a5b5571f3d51eb80f3aa5af3aac9a2348ac48096a54e79b5c65",
+      "requestFingerprintSha256": "91b82fdd709d3a5b5571f3d51eb80f3aa5af3aac9a2348ac48096a54e79b5c65",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "31115d3cbf0d6b2771e8dd5f9508a3f1c112b89f7d56131d5131b8275c80dedd",
+        "before": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins→drei→zwei→eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais → Jahr zwei Soja → Jahr drei Weizen → Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais → zwei Soja → drei Weizen → eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+        "after": "Pfeile der Dreijahresfolge korrigieren\n\nDie Karten zeigen Jahr eins Mais, Jahr zwei Soja und Jahr drei Weizen, doch die Pfeile laufen eins dann drei dann zwei dann eins.\n\nZuerst gedruckte Jahreszahlen und Kulturfolge lesen.\n\nJahr eins Mais dann Jahr zwei Soja dann Jahr drei Weizen dann Jahr eins Mais zeichnen.\n\nUnter jeden Pfeil einen bedingten Grund zu Nährstoffen, Wirt, Wurzeln, Rückständen oder Saison setzen.\n\neins Mais dann zwei Soja dann drei Weizen dann eins Mais; Pfeile und geschriebene Folge müssen übereinstimmen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "45dddff6258ac4fceaa09dce6ef37f2b66473bb8b199f5f46a4c124dc2e7f0f0"
+    },
+    {
+      "id": "S3-03-de-E02-r1",
+      "unitId": "S3-03-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modell der Betriebsberatung begründen",
+          "sha256": "4addb5b5d813bb08f5586fdeb4794b01955a6bfc197240619ad6852cbf1f7deb"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Im gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.",
+          "sha256": "ba7c57fab701925c8010f35cc6b662e3436190259aa8fcf29b79c07561a3ee1a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Jahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.",
+          "sha256": "3352d9ec85a8f13931aa6295af6ba6aefd30fa86bcdbb1eff69e730e557352a8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Jahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.",
+          "sha256": "fc6943b7429e46c6745a42a4d62f6f0d2c32d5e96a851153ee508852b02d331f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Jahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.",
+          "sha256": "2bcebee1c6ed772d541a1882ee9c460c71fd2f4bd5ca14211c302a8f36724ff1"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Es ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "sha256": "b7fd82abdb6f1f21d259edc51d81b9857459da07af0ad4fa5cd2be9537fc836e"
+        }
+      ],
+      "scientificMeaning": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "displayText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "captionText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "spokenText": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+      "spokenTextSHA256": "f30238eb8c1c99ef0f6cd53209adf04041fcd76b7a0e5a37b23d4f99db441385",
+      "spokenTextSha256": "f30238eb8c1c99ef0f6cd53209adf04041fcd76b7a0e5a37b23d4f99db441385",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell der Betriebsberatung begründen\n\nIm gemäßigten 10-ha-Fall ist N nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr 1 Soja für Vielfalt und mögliche N-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr 2 Mais mit eigenem N-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr 3 Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "spoken": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "85daf0b80b4ae9d496eb318f35da736c7598be332538b792e63413e9f0e17122",
+      "requestFingerprintSha256": "85daf0b80b4ae9d496eb318f35da736c7598be332538b792e63413e9f0e17122",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "fc355a73db95f3deafbb7611e2922960c537659ccfdf733d0c2f3c5e4c992f9d",
+        "before": "Modell der Betriebsberatung begründen\n\nIm gemäßigten zehn-ha-Fall ist En nach drei Maisjahren niedrig. Das Muster schlägt Soja → Mais → Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche En-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem En-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+        "after": "Modell der Betriebsberatung begründen\n\nIm gemäßigten Fall mit zehn Hektar ist Stickstoff nach drei Maisjahren niedrig. Das Muster schlägt Soja dann Mais dann Kartoffel vor.\n\nJahr eins Soja für Vielfalt und mögliche Stickstoff-Fixierung nach Prüfung von Knöllchen und Eignung.\n\nJahr zwei Mais mit eigenem Stickstoff-Plan, nicht mit vollständig angenommener Gutschrift.\n\nJahr drei Kartoffel verändert Familie und Anbau; Schädlingsgeschichte, Wasser, Geräte und Markt prüfen.\n\nEs ist ein bedingtes dreijähriges Lehrmodell; die begründete Folge zählt, nicht bloße Namen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "45dddff6258ac4fceaa09dce6ef37f2b66473bb8b199f5f46a4c124dc2e7f0f0"
+    },
+    {
+      "id": "S3-03-de-E03-r1",
+      "unitId": "S3-03-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Eine andere Antwort braucht eigene Belege",
+          "sha256": "0d1e5e2272fe0e780a56eee9cf1fac99ca1c9fda16e4a72c527d265cabf25cdd"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Jemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.",
+          "sha256": "0a11985c506dcafffa9dcb552ebd21926164d56a6bbf538e0d58b33c73157d65"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Prüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.",
+          "sha256": "fd6c9f6f88888a8082f0d2574524419f6fc5189491f1bfe56523472bca0be98b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "N- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.",
+          "sha256": "3a8e0851ecc4a896f3dfb28f27df6ff7530c8e5d9576cc96a8f21c7582bce27a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Geräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.",
+          "sha256": "f2f5580c7b0f57ad0e9f87cce4855a9a55d75eec840295f24a3e075eda4c2ee2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Akzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "sha256": "f031365a355e4d8f23377559236c40777d94ce5f9861cbcf180417535e744ae8"
+        }
+      ],
+      "scientificMeaning": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "displayText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "captionText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "spokenText": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+      "spokenTextSHA256": "c3916c6b34c74feeeaa4955016f7aea786b69a269e626b44826bdc2e013d454b",
+      "spokenTextSha256": "c3916c6b34c74feeeaa4955016f7aea786b69a269e626b44826bdc2e013d454b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nN- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "spoken": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5ebab36e97feb1791fa3677466c512caf2109166a547e8e6860876bfaec63cde",
+      "requestFingerprintSha256": "5ebab36e97feb1791fa3677466c512caf2109166a547e8e6860876bfaec63cde",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4d6b1e538d637134ffaabb70231c1308824a42f257c82fc4d221284312a497bf",
+        "before": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose → Mais → Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nEn- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+        "after": "Eine andere Antwort braucht eigene Belege\n\nJemand schlägt geeignete Leguminose dann Mais dann Weizen plus Klee als Deckfrucht in Jahr vier vor.\n\nPrüfen, ob Weizen und Klee zu Saison und Wasser passen und ob Klee ein ganzes Jahr oder ein Intervall belegt.\n\nStickstoff- und Rückstandsbehauptungen mit realer Ernte und Bewirtschaftung abgleichen; keine feste Düngegutschrift vergeben.\n\nGeräte, Markt, Wirte und den Übergang vor Neubeginn prüfen.\n\nAkzeptieren, wenn jedes Jahr und jeder Übergang mit Standort und Management begründet ist und Deckfruchtzeiten klar sind; andere begründete Folgen sind möglich.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "45dddff6258ac4fceaa09dce6ef37f2b66473bb8b199f5f46a4c124dc2e7f0f0"
+    },
+    {
+      "id": "S3-03-de-E04-r1",
+      "unitId": "S3-03-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f952c05d54215f41ef49d64ddab8c9ae15ccec04549318abc34fea693b5f8ac1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Schädlingsbeispiel unter Vorbehalt",
+          "sha256": "3e38ffdf362275d9885cd900857365dcc6367473c63d48b7be6e9d50fbdffa7d"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Jemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.",
+          "sha256": "be4e177056e429afe904bffcfe740e2686fd7e0bca2e4918f558dfa2b2f1c05a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Nichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.",
+          "sha256": "049ba009cabe273f7f09a43b19c6c68be8afde3ff26605b26c5c75f6ff6cba3f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Arten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.",
+          "sha256": "093411a4398f150cdb325c2eaf86af9da1322cb80583f7facc4fdd23e7d96ce3"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Ein ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.",
+          "sha256": "f80cbdb772c822e68d9b38da2d73d11df9165e4bd84c442dac163e94ee776bdc"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Das Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+          "sha256": "63b036fe69ce0f76be992de3fcd6d8dcaf6e75b5aeb641b64f426f2ea61a2a09"
+        }
+      ],
+      "scientificMeaning": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "displayText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "captionText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "spokenText": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+      "spokenTextSHA256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+      "spokenTextSha256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b8ba76b879957efcb9462b32c48b47bae63a6e5c4abe4e9e1569505f6fc625fe",
+      "requestFingerprintSha256": "b8ba76b879957efcb9462b32c48b47bae63a6e5c4abe4e9e1569505f6fc625fe",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "dd35dc4f0b7c74848cc48532c04b1f62cce51fd12ffca2cc331a0e094da5f41a",
+        "before": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+        "after": "Schädlingsbeispiel unter Vorbehalt\n\nJemand behauptet, Soja nach Mais töte alle Maiswurzelbohrer und sei auf jedem Hof Pflicht.\n\nNichtwirte können manche wirtsgebundene Schädlinge verringern, wo sie vorkommen.\n\nArten und Populationen unterscheiden sich; verlängerte Ruhephase oder Rotationsanpassung können ein einfaches Jahr aushebeln.\n\nEin ägyptisches Feld braucht lokale Bestimmung und Überwachung statt importierter Diagnose.\n\nDas Beispiel erklärt einen möglichen Mechanismus, keine Garantie und keine örtliche Schädlingsmeldung.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "45dddff6258ac4fceaa09dce6ef37f2b66473bb8b199f5f46a4c124dc2e7f0f0"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-03-ar-EG-E01-r1",
+      "S3-03-ar-EG-E02-r1",
+      "S3-03-ar-EG-E03-r1",
+      "S3-03-ar-EG-E04-r1"
+    ],
+    "en": [
+      "S3-03-en-E01-r1",
+      "S3-03-en-E02-r1",
+      "S3-03-en-E03-r1",
+      "S3-03-en-E04-r1"
+    ],
+    "it": [
+      "S3-03-it-E01-r1",
+      "S3-03-it-E02-r1",
+      "S3-03-it-E03-r1",
+      "S3-03-it-E04-r1"
+    ],
+    "de": [
+      "S3-03-de-E01-r1",
+      "S3-03-de-E02-r1",
+      "S3-03-de-E03-r1",
+      "S3-03-de-E04-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "409175334a76b31b02dbe228eb9ee9f998136d8ed852f4ad6582627a5947cfc7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

@@ -1,0 +1,360 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-it.json",
+    "sha256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+    "bytes": 32681
+  },
+  "units": [
+    {
+      "id": "S3-03-it-E01-r1",
+      "unitId": "S3-03-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Correggere le frecce del ciclo triennale",
+          "sha256": "871e8c08cc68f70941a1360caa05bbb1596a0a22144e20ee4220be6fa219ee61"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Le carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.",
+          "sha256": "8bd21eefa890577ca406225e0f16495892554bf65d91ae689391e2102d1f0856"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Leggere prima gli anni stampati e l’ordine delle colture.",
+          "sha256": "70b295c2cb378f07f84657140931707dddd7d6fbdd2fd7866d0647ec44e34819"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Disegnare 1 mais → 2 soia → 3 frumento → 1 mais.",
+          "sha256": "bebc9d7a3faf17999274723780c4afb97aeb6d40edc79ed405246490f10b4c2c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Aggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.",
+          "sha256": "a15193fdc77a6af8f534602a9d4a84d236a871bbbe2eb0b0139ffbceecbdd884"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+          "sha256": "21c354d43b646972d928c62d154c08b3fe5947633f1a4d1c98994bdd37105e92"
+        }
+      ],
+      "scientificMeaning": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "displayText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "captionText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+      "spokenText": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+      "spokenTextSHA256": "430ead36fe57338e81e64ecc97c6cc88aeeb10c5a6dc7739194babafc355d3c8",
+      "spokenTextSha256": "430ead36fe57338e81e64ecc97c6cc88aeeb10c5a6dc7739194babafc355d3c8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare 1 mais → 2 soia → 3 frumento → 1 mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\n1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo.",
+          "spoken": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "04e7c52fefe62d43357e6163b916a9e72c1a58d463d45762c6ae5800a80aa59a",
+      "requestFingerprintSha256": "04e7c52fefe62d43357e6163b916a9e72c1a58d463d45762c6ae5800a80aa59a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "a05ec9ee0385a9d40ad5382a593ca22996931ef33e7f880b79e8d4f750d84290",
+        "before": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno→tre→due→uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais → due soia → tre frumento → uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais → due soia → tre frumento → uno mais: le frecce devono corrispondere al testo.",
+        "after": "Correggere le frecce del ciclo triennale\n\nLe carte indicano anno uno mais, anno due soia e anno tre frumento, ma le frecce mostrano uno poi tre poi due poi uno.\n\nLeggere prima gli anni stampati e l’ordine delle colture.\n\nDisegnare uno mais poi due soia poi tre frumento poi uno mais.\n\nAggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione.\n\nuno mais poi due soia poi tre frumento poi uno mais: le frecce devono corrispondere al testo.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-03-it-E02-r1",
+      "unitId": "S3-03-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Giustificare il modello del consulente",
+          "sha256": "d9636436a65a9a6f204ee02e702a5c38f92d3f45ee2cd009ee4f002317bdb8b2"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.",
+          "sha256": "4ea6ed06d577b87b13dabb04b925e61aa04ec14aa1be08abea131ac29b938578"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Anno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.",
+          "sha256": "0c939a8acd4e1453bf0996b1c767707cc5c9cd26ae2461519ed99b9161392253"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Anno 2 mais con piano N specifico, non con un rimborso completo supposto.",
+          "sha256": "9309a9ff2ce6fd42689ee634975253e2bc4e8eb1c8b8eb14abe9be2fd474eb5f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Anno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.",
+          "sha256": "91e1297b07719f9efba91ed9b1b572e84f419343522f8217a3230c444d6e3dd6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "È un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "sha256": "dd83805108d7dcdecd0a1c0c3e087ee275c20644b3191f09a10ea7d35337e949"
+        }
+      ],
+      "scientificMeaning": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "displayText": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "captionText": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "spokenText": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+      "spokenTextSHA256": "c164882f9652b23dc1e9857a9de9bc8ceb82ac5413faee1175e7c0344b495e0a",
+      "spokenTextSha256": "c164882f9652b23dc1e9857a9de9bc8ceb82ac5413faee1175e7c0344b495e0a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Giustificare il modello del consulente\n\nIl caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno 2 mais con piano N specifico, non con un rimborso completo supposto.\n\nAnno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "spoken": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "21924fcfc98cf432a9ed8ea917e307a2e84d06684828a6d38a82b46e9d2f026d",
+      "requestFingerprintSha256": "21924fcfc98cf432a9ed8ea917e307a2e84d06684828a6d38a82b46e9d2f026d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "3c5d88779164758de55cc8259acd2a6405c4d9903c244fac31e616916ef4f110",
+        "before": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ha ha enne basso dopo tre anni di mais. Il modello propone soia → mais → patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano enne specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+        "after": "Giustificare il modello del consulente\n\nIl caso temperato di dieci ettari ha azoto basso dopo tre anni di mais. Il modello propone soia poi mais poi patata.\n\nAnno uno soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.\n\nAnno due mais con piano azoto specifico, non con un rimborso completo supposto.\n\nAnno tre patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato.\n\nÈ un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-03-it-E03-r1",
+      "unitId": "S3-03-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Una risposta diversa richiede altre prove",
+          "sha256": "45a619cb636105210ec36a72ef2938073af012ef8e393029e0cb6f5864b33eb2"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Uno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.",
+          "sha256": "0fc7f619650d88019be30773e2bf2b223ef1ba23130f0dfcdf188341a115a4c2"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Verificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.",
+          "sha256": "5ba5c5611c96707ce3ee98bd788f2a8bf35783827c520588fc7e4d397c91564c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Confrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.",
+          "sha256": "bc7ef564f57adef81deb2413f6f4e7946c6905dbc1ecf66c1056cd73bccb8760"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Controllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.",
+          "sha256": "5e585bbbac20e19986661a43fea8477e6e08da61eee52422fc40170732d47959"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Accettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "sha256": "5713151c8832984d0081c8c6ba24f9af0b0de7e05e11d22238b92a42ab6dc837"
+        }
+      ],
+      "scientificMeaning": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "displayText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "captionText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "spokenText": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+      "spokenTextSHA256": "5650e71a8e2e3f482db8877dd1eb7aff4ad2dcecc67a6d041f7370921dd23cfb",
+      "spokenTextSha256": "5650e71a8e2e3f482db8877dd1eb7aff4ad2dcecc67a6d041f7370921dd23cfb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "spoken": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ebb5c83c1c203eaa449860849ab05c1befda0cfb5355716bd8185e6ebffb64d",
+      "requestFingerprintSha256": "8ebb5c83c1c203eaa449860849ab05c1befda0cfb5355716bd8185e6ebffb64d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "ebb865adbb70ed345af0c0d6f1fa1a987b19a75b42dd5c2ab90b02ba52b7087f",
+        "before": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su enne e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+        "after": "Una risposta diversa richiede altre prove\n\nUno studente propone leguminosa adatta poi mais poi frumento, con trifoglio di copertura nell’anno quattro.\n\nVerificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.\n\nConfrontare le affermazioni su azoto e residui con raccolta e gestione reali; non assegnare un credito fisso.\n\nControllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio.\n\nAccettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-03-it-E04-r1",
+      "unitId": "S3-03-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "L’esempio dell’insetto ha limiti",
+          "sha256": "a588ff4865db2502ff58d20c14926517251d4031c9d172dfbd1080422ad6577c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Qualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.",
+          "sha256": "e069429e072fbabad31d9a99b6940eaa8137eee843448423fc8376324c7239f2"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Passare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.",
+          "sha256": "eae98a14928b230d3bc29544fc245177b370afae0de9cc9f1befcf6a8471afd6"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Specie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.",
+          "sha256": "182c731c87707f518e01bfb3d6f015049e8ed1f5fab9dea8386e07cc926ba833"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Un campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.",
+          "sha256": "b500bd6b282fe4b61f95c029b1b047f7e6a90d545490bce4836d0a231248731a"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Usare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+          "sha256": "96072835669ba35e421b5928e8b1f84173fd5805179ef3052708198271145386"
+        }
+      ],
+      "scientificMeaning": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "displayText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "captionText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "spokenText": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+      "spokenTextSHA256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+      "spokenTextSha256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ed1d44522e4c823f2e30c5eac4dc0f564a4ec76c94f94d9017adbe2e312847e6",
+      "requestFingerprintSha256": "ed1d44522e4c823f2e30c5eac4dc0f564a4ec76c94f94d9017adbe2e312847e6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4e56e4ac78b086f1d1efc9a9d5cfbabb21d479c716ca8c30ebe4097219689eb8",
+        "before": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+        "after": "L’esempio dell’insetto ha limiti\n\nQualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.\n\nPassare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.\n\nSpecie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.\n\nUn campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata.\n\nUsare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

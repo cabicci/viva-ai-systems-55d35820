@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-03",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "ede94d46728b68329d0379cdd474d1bc0f48e49d77c7be95fb57d3a1426d84fa",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "correct-arrow-cycle",
+      "title": "Correggere le frecce del ciclo triennale",
+      "situation": "Le carte indicano anno 1 mais, anno 2 soia e anno 3 frumento, ma le frecce mostrano 1→3→2→1.",
+      "reasoning": [
+        "Leggere prima gli anni stampati e l’ordine delle colture.",
+        "Disegnare 1 mais → 2 soia → 3 frumento → 1 mais.",
+        "Aggiungere sotto ogni freccia una motivazione condizionata di nutrienti, ospite, radici, residui o stagione."
+      ],
+      "takeaway": "1 mais → 2 soia → 3 frumento → 1 mais: le frecce devono corrispondere al testo."
+    },
+    {
+      "id": "model-plan",
+      "title": "Giustificare il modello del consulente",
+      "situation": "Il caso temperato di 10 ha ha N basso dopo tre anni di mais. Il modello propone soia → mais → patata.",
+      "reasoning": [
+        "Anno 1 soia per diversità e possibile fissazione dopo verifica di noduli e idoneità.",
+        "Anno 2 mais con piano N specifico, non con un rimborso completo supposto.",
+        "Anno 3 patata cambia famiglia ed esigenze: verificare parassiti, acqua, attrezzature e mercato."
+      ],
+      "takeaway": "È un possibile modello didattico triennale condizionato; conta la logica, non soltanto i nomi."
+    },
+    {
+      "id": "alternative-plan",
+      "title": "Una risposta diversa richiede altre prove",
+      "situation": "Uno studente propone leguminosa adatta → mais → frumento, con trifoglio di copertura nell’anno 4.",
+      "reasoning": [
+        "Verificare stagione e acqua di frumento e trifoglio e se questo occupa un anno intero o un intervallo.",
+        "Confrontare le affermazioni su N e residui con raccolta e gestione reali; non assegnare un credito fisso.",
+        "Controllare attrezzature, mercato, ospiti dei parassiti e cosa accade prima del ritorno all’inizio."
+      ],
+      "takeaway": "Accettare se ogni anno e passaggio è sostenuto da prove di sito e gestione e la copertura ha tempi chiari. Altri piani motivati sono possibili."
+    },
+    {
+      "id": "rootworm-limit",
+      "title": "L’esempio dell’insetto ha limiti",
+      "situation": "Qualcuno sostiene che la soia dopo mais uccide ogni diabrotica e quindi è obbligatoria ovunque.",
+      "reasoning": [
+        "Passare a non ospite può ridurre alcuni organismi specifici dove sono davvero presenti.",
+        "Specie e popolazioni differiscono; diapausa estesa o adattamento alla rotazione possono indebolire la sequenza di un anno.",
+        "Un campo egiziano richiede identificazione e monitoraggio locali, non una diagnosi importata."
+      ],
+      "takeaway": "Usare l’esempio per spiegare un meccanismo, non una garanzia né una dichiarazione sulla presenza locale."
+    }
+  ]
+}

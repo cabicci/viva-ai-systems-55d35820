@@ -1,0 +1,360 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-03-en.json",
+    "sha256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+    "bytes": 32274
+  },
+  "units": [
+    {
+      "id": "S3-03-en-E01-r1",
+      "unitId": "S3-03-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Correct the three-year arrow cycle",
+          "sha256": "ddbc741bb6131d99a7b2ebb6de56704e6c66d0b9d280df1b224c4039dbabd3c9"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Three cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.",
+          "sha256": "1bf17aa7bd0bb5a767ff89b249e7e5f3cb82f244cefba403b3c9b9545871aa5d"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Read the printed year numbers and crop order first.",
+          "sha256": "0228170ae290c60dd952dc9a89e3b5405c9eea8b6bfcf59249f1c0741308bad3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Draw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.",
+          "sha256": "66e55e280a755779a5681e21d6694a94504624920a5ccf6dc8f6af92de153a97"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Under each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.",
+          "sha256": "ce974992f764da1944ebba96c6876f708011f5eaa7c08345dfd044584bf7be7c"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+          "sha256": "0cb28b6adadc77a028584c6c149f0af71477df35b9ce740619b0c6f15d2ea444"
+        }
+      ],
+      "scientificMeaning": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "displayText": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "captionText": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+      "spokenText": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+      "spokenTextSHA256": "44e2ed810daff6341f434f8e4f43e899ed5b2d81a14c8c88bbf1a090a288e9ed",
+      "spokenTextSha256": "44e2ed810daff6341f434f8e4f43e899ed5b2d81a14c8c88bbf1a090a288e9ed",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Correct the three-year arrow cycle\n\nThree cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.\n\nRead the printed year numbers and crop order first.\n\nDraw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\n1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence.",
+          "spoken": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86c97da8f5b63098cbf233f6423f026686b52c83837d39c507fecfc4481d4e4e",
+      "requestFingerprintSha256": "86c97da8f5b63098cbf233f6423f026686b52c83837d39c507fecfc4481d4e4e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "correct-arrow-cycle",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "7770835f30c6898b95e7e55e8d7977ce1ca8f2b96793aa5d64cfe3cc073eca49",
+        "before": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one→three→two→one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize → Year two soybean → Year three wheat → Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize → two soybean → three wheat → one maize; the arrows must match the written sequence.",
+        "after": "Correct the three-year arrow cycle\n\nThree cards read Year one maize, Year two soybean and Year three wheat, but arrows point Year one then three then two then one.\n\nRead the printed year numbers and crop order first.\n\nDraw Year one maize then Year two soybean then Year three wheat then Year one maize.\n\nUnder each arrow, add the conditional nutrient, pest-host, root, residue or season purpose.\n\none maize then two soybean then three wheat then one maize; the arrows must match the written sequence.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-E02-r1",
+      "unitId": "S3-03-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Justify the adviser case model",
+          "sha256": "ef56ea055a0fa35883cd72803edd804c54b780f0bff52947ec74d17dfc3f7a11"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.",
+          "sha256": "98c67ea55598d77594da04d6a3ac289360a5e1906b3f82e5bcbca4e06ebf3f59"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Year 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.",
+          "sha256": "e56ae12e18c0412fcad4ecfa25b7e0e90cdfad3217450579d40e6a843840c645"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Year 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.",
+          "sha256": "33e36e209d66af0b5fa44847a7b1dfc64cf4cc2af3351800be5cb016e3b19f50"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Year 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.",
+          "sha256": "b6bbe2a50ac6d8b14cc670b1967c58975ff0f126b6d9456d9375d47488df3b20"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "This is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "sha256": "2d039e1065e50b5b962ec0d74db4a64c8ef650886715ad7513a2a5a4a319151a"
+        }
+      ],
+      "scientificMeaning": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "displayText": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "captionText": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "spokenText": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+      "spokenTextSHA256": "46aab59af1d7a56f25a0e4a492f82863bdc9516a8ec74e12f2341ca70efb1b85",
+      "spokenTextSha256": "46aab59af1d7a56f25a0e4a492f82863bdc9516a8ec74e12f2341ca70efb1b85",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Justify the adviser case model\n\nThe supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "spoken": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "75f9da0493d4b8fdd355cc4f5034709a957f9fafb8e3d5367346752e8d420d23",
+      "requestFingerprintSha256": "75f9da0493d4b8fdd355cc4f5034709a957f9fafb8e3d5367346752e8d420d23",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "model-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "5686cccc33cb4567843359512668781f83ac80d34601bb3003b8aeac9571f687",
+        "before": "Justify the adviser case model\n\nThe supplied ten-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.\n\nYear one soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific N plan, not a presumed complete N refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+        "after": "Justify the adviser case model\n\nThe supplied ten-hectare temperate case has low tested nitrogen after three maize years. A model proposes soybean then maize then potato.\n\nYear one soybean is considered for rotation diversity and possible nitrogen fixation after checking nodulation and fit.\n\nYear two maize uses the field under a crop-specific nitrogen plan, not a presumed complete nitrogen refund.\n\nYear three potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit.\n\nThis is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-E03-r1",
+      "unitId": "S3-03-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A different valid answer needs different evidence",
+          "sha256": "190b6a82bfedcf8353015b9c69ad241689340cda09b85ee0ad9fe8fc7c48d6e8"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.",
+          "sha256": "2e74cd88bab58ab6158a42bc0bace819790e0e671e6a51bac4bd680f29b9ec85"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Check whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.",
+          "sha256": "13bf4cd93928120fa3c817e5452e9e99e9710f24bbf32975a6b3813e85e3fd05"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Compare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.",
+          "sha256": "ab778a5db3bb23a8e84505facf4eddd9d5cf7fa91b17c81a13ebd26db1891eaf"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Check equipment, market, pest hosts and what happens before the cycle restarts.",
+          "sha256": "53fbe40b5d098dafcdbfd9ee3f6df3db5e83604fac5e5fbc8df9b15f738abf0e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Accept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "sha256": "d6b5e88c413854cd6e4a4fec4668b4ae346e62008915e9fb1f38502312e7f7c9"
+        }
+      ],
+      "scientificMeaning": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "displayText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "captionText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "spokenText": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+      "spokenTextSHA256": "0bd8a8be194ac9729de45e2893bcea00a2ea089b3adde7d6c835be1f536dd3cc",
+      "spokenTextSha256": "0bd8a8be194ac9729de45e2893bcea00a2ea089b3adde7d6c835be1f536dd3cc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "spoken": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c6afc761dc01293d3ea4b15d8c5a73c5dcf0de300c272b22adaeafbf009b8abf",
+      "requestFingerprintSha256": "c6afc761dc01293d3ea4b15d8c5a73c5dcf0de300c272b22adaeafbf009b8abf",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "alternative-plan",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "90044a6ccc9426fa9cdb716ea9284ab4efa97e9c39ae6cd979a478fc2ed3d946",
+        "before": "A different valid answer needs different evidence\n\nA student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+        "after": "A different valid answer needs different evidence\n\nA student suggests a suitable legume then maize then wheat, plus a fourth-year clover cover crop.\n\nCheck whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.\n\nCompare nitrogen and residue claims with actual harvest and management; do not award a fixed fertiliser credit.\n\nCheck equipment, market, pest hosts and what happens before the cycle restarts.\n\nAccept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-03-en-E04-r1",
+      "unitId": "S3-03-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "A pest example is conditional",
+          "sha256": "af1d7472b95b5f74f1d81ace5577f9041ea50a507163b54ff822a603b71b7a44"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Someone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.",
+          "sha256": "626a1b0fb54d1a4abd57e5095bd22d8ba1b8c8e8d85cee90c18f561472df435a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Rotation to a non-host can reduce some host-specific pests where they actually occur.",
+          "sha256": "ca84f262a8f77ff36150faf50e2b5b45614cc13ee82d05bdac55a39daa91a368"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Rootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.",
+          "sha256": "ba463381b9ac0d265e2a31609ab8a98ad12848a563e1f5816fb8ce333861150d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "An Egyptian field needs local identification and scouting rather than an imported pest diagnosis.",
+          "sha256": "ce988503d673a27cfc5cde7ec11817bcdd446c55bcda3f314c05b67a198cff8a"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Use the example to explain a mechanism, not a guarantee or local pest claim.",
+          "sha256": "af0dfe53292289822373a696e0e4601810bbc944250492cf255634827205912e"
+        }
+      ],
+      "scientificMeaning": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "displayText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "captionText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "spokenText": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+      "spokenTextSHA256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+      "spokenTextSha256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d5de50335f7bcd5ba5a05d01c2c5d2689fa3a10e90f46c41aac14885a7b1b91c",
+      "requestFingerprintSha256": "d5de50335f7bcd5ba5a05d01c2c5d2689fa3a10e90f46c41aac14885a7b1b91c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "rootworm-limit",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "5d2ab4088c767ea6996d5f8620744183cb27ef5284ab354bcbb4de2c77a286d1",
+        "before": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+        "after": "A pest example is conditional\n\nSomeone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.\n\nRotation to a non-host can reduce some host-specific pests where they actually occur.\n\nRootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.\n\nAn Egyptian field needs local identification and scouting rather than an imported pest diagnosis.\n\nUse the example to explain a mechanism, not a guarantee or local pest claim.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-03",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "d04153930dbf42ac5f27af15f7383972ecb8d3a9b3fd7ab623fc4179585c8069",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "correct-arrow-cycle",
+      "title": "Correct the three-year arrow cycle",
+      "situation": "Three cards read Year 1 maize, Year 2 soybean and Year 3 wheat, but arrows point Year 1→3→2→1.",
+      "reasoning": [
+        "Read the printed year numbers and crop order first.",
+        "Draw Year 1 maize → Year 2 soybean → Year 3 wheat → Year 1 maize.",
+        "Under each arrow, add the conditional nutrient, pest-host, root, residue or season purpose."
+      ],
+      "takeaway": "1 maize → 2 soybean → 3 wheat → 1 maize; the arrows must match the written sequence."
+    },
+    {
+      "id": "model-plan",
+      "title": "Justify the adviser case model",
+      "situation": "The supplied 10-ha temperate case has low tested N after three maize years. A model proposes soybean → maize → potato.",
+      "reasoning": [
+        "Year 1 soybean is considered for rotation diversity and possible N fixation after checking nodulation and fit.",
+        "Year 2 maize uses the field under a crop-specific N plan, not a presumed complete N refund.",
+        "Year 3 potato changes crop family and cultivation needs; examine pest history, water, equipment and market before calling it a fit."
+      ],
+      "takeaway": "This is one conditional, three-year teaching model. The correct answer is the reasoned sequence, not the mere names."
+    },
+    {
+      "id": "alternative-plan",
+      "title": "A different valid answer needs different evidence",
+      "situation": "A student suggests a suitable legume → maize → wheat, plus a fourth-year clover cover crop.",
+      "reasoning": [
+        "Check whether wheat and clover fit the model season and water supply, and whether the clover occupies a full year or an interval.",
+        "Compare N and residue claims with actual harvest and management; do not award a fixed fertiliser credit.",
+        "Check equipment, market, pest hosts and what happens before the cycle restarts."
+      ],
+      "takeaway": "Accept if each year and transition is supported by site and management evidence, with clear cover-crop timing. Other evidence-based plans are also possible."
+    },
+    {
+      "id": "rootworm-limit",
+      "title": "A pest example is conditional",
+      "situation": "Someone says soybean after maize kills every corn rootworm and is therefore mandatory on every farm.",
+      "reasoning": [
+        "Rotation to a non-host can reduce some host-specific pests where they actually occur.",
+        "Rootworm species and populations differ; extended diapause or rotation-adapted behaviour can weaken a simple one-year pattern.",
+        "An Egyptian field needs local identification and scouting rather than an imported pest diagnosis."
+      ],
+      "takeaway": "Use the example to explain a mechanism, not a guarantee or local pest claim."
+    }
+  ]
+}
