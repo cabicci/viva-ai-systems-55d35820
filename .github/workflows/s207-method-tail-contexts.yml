@@ -1,0 +1,117 @@
+name: s207-method-tail-contexts bounded audio diagnostics
+'on':
+  push:
+    branches:
+    - work/soil-s207-method-tail-contexts-20261023-r1
+    paths:
+    - s207-method-tail-contexts/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s207-method-tail-contexts-31e59fe07d616bc1c8288f3ef35463d95a0e9e6db38791b5ab0f942a7625dd17
+  cancel-in-progress: false
+env:
+  PACKAGE: s207-method-tail-contexts
+  REQUEST_SHA: 31e59fe07d616bc1c8288f3ef35463d95a0e9e6db38791b5ab0f942a7625dd17
+  WORKER_SHA: 0c5b6b581b96189fc3d28526b05f7b920d59fa3f45b8cab4a78dddfedbfdaba2
+  FREEZE_SHA: da351c7b49b0c5c699cc5ced34e174eef0307bce7f754b5803405f110eb928d6
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s207-method-tail-contexts-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify exact original sixsecond PCM and finitebudget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Preserve exact context before onlyreview
+      id: audio
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s207-method-tail-contexts-r1-inputs
+        path: ${{ env.PACKAGE }}/inputs/
+        if-no-files-found: error
+        retention-days: 30
+    - name: Record immutable context upload
+      id: receipt
+      env:
+        AID: ${{ steps.audio.outputs.artifact-id }}
+        DIGEST: ${{ steps.audio.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One unhinted review C01
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C01
+
+        '
+    - name: One unhinted review C02
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C02
+
+        '
+    - name: Preserve all exact payload and partial outcomes
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s207-method-tail-contexts-r1-evidence
+        retention-days: 30
+        include-hidden-files: true
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/attempt-ledger.json
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/prompts/blind.txt
+
+          ${{ env.PACKAGE }}/provenance/model-availability.json
+
+          ${{ env.PACKAGE }}/provenance/context-proof.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/inputs/C01.wav
+
+          ${{ env.PACKAGE }}/inputs/C02.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s207-method-tail-contexts.yml'
