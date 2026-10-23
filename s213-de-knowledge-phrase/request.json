@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "scope": "S213_DE_KNOWLEDGE_PHRASE",
+  "stepId": "S2-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s213-de-knowledge-phrase-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-13-de-knowledge-source-clarification-subpassage-repair-r1",
+      "unitId": "S2-13-de-knowledge-source-clarification-subpassage-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s213-de-knowledge-phrase-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/passChecks/0/decision",
+          "text": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.",
+          "sha256": "baf5468764c0c047bcbb1ced450d795126460db554a2fc639d0dcdd5d1b9dc56"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/1/evidence",
+          "text": "Die vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+          "sha256": "6c61860ef04e99469ef410874c82d67c3dfac4523e7d3b61015cf6c2632296ba"
+        }
+      ],
+      "scientificMeaning": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+      "displayText": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+      "captionText": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+      "spokenText": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung. Bei einer absoluten Aussage allein aus der Textur sind eine gezielte Wiederholung des Lernstoffs und ein neuer Versuch nötig. Die vorgegebenen Modelle A, B und C bleiben von den eigenen Messwerten aus dem Absetzglas getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption. Entwässerung, Klima, Pe Ha, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+      "spokenTextSHA256": "06a622181b420fcd3f19549ded643d5f6d06177f85f019fb4ad37fcfba5a1cb6",
+      "spokenTextSha256": "06a622181b420fcd3f19549ded643d5f6d06177f85f019fb4ad37fcfba5a1cb6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+          "spoken": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+          "spoken": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung. Bei einer absoluten Aussage allein aus der Textur sind eine gezielte Wiederholung des Lernstoffs und ein neuer Versuch nötig. Die vorgegebenen Modelle A, B und C bleiben von den eigenen Messwerten aus dem Absetzglas getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption. Entwässerung, Klima, Pe Ha, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "15921e30aa412924065c1b0b5c55dfeb10f1b389d4ebf69082b974eff86a9d88",
+      "requestFingerprintSha256": "15921e30aa412924065c1b0b5c55dfeb10f1b389d4ebf69082b974eff86a9d88",
+      "sourcePlanSha256": "084e767e7c311c5ce3eb8b9633eabf631164b374458f91e1eebe87fe81ee0f62",
+      "exactSentenceBefore": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.\n\nDie vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/managementPractice/passChecks/0/decision",
+        "original": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.",
+        "effective": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/managementPractice/passChecks/0/decision",
+            "text": "Bestanden nur bei stimmiger Gegenüberstellung mit Begründung; absolute Aussagen allein aus der Textur werden gezielt wiederholt.",
+            "sha256": "baf5468764c0c047bcbb1ced450d795126460db554a2fc639d0dcdd5d1b9dc56"
+          },
+          {
+            "pointer": "/managementPractice/passChecks/1/evidence",
+            "text": "Die vorgegebenen Modelle A/B/C werden von eigenen Glasdaten getrennt. Für jedes Profil folgen vorläufige Klasse, plausible Herausforderung und eine bedingte Kultur- oder Bewirtschaftungsoption; Entwässerung, Klima, pH, Salzgehalt und Kulturansprüche bleiben zu prüfen.",
+            "sha256": "6c61860ef04e99469ef410874c82d67c3dfac4523e7d3b61015cf6c2632296ba"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s213-four-bounded-subpassage-root-decisions-r2.json",
+        "rootSelectedAuthoritySHA256": "5b8000205667d306d3163082076a9b13ed0cb6e87566ae2e1b9bf7172e02a662"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-13-de-knowledge-source-clarification-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
