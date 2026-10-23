@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-05",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "table-interpretation",
+      "title": "Leggere il cavolo correttamente",
+      "situation": "La tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.",
+      "reasoning": [
+        "L’intervallo copre l’intero periodo, non un evento.",
+        "È indicativo: clima, durata e fase cambiano il bisogno.",
+        "Pioggia efficace, acqua del suolo e perdite non sono note."
+      ],
+      "takeaway": "Respinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere."
+    },
+    {
+      "id": "stage-pattern",
+      "title": "Trovare il vero elemento comune",
+      "situation": "La classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.",
+      "reasoning": [
+        "La fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.",
+        "Effetto dello stress dipende da intensità, durata e momento.",
+        "Proteggere i periodi sensibili controllando l’acqua del suolo."
+      ],
+      "takeaway": "Le fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile."
+    },
+    {
+      "id": "choice",
+      "title": "Scegliere con compromessi",
+      "situation": "Piccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.",
+      "reasoning": [
+        "Goccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.",
+        "Aspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.",
+        "Misurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario."
+      ],
+      "takeaway": "Proporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla."
+    }
+  ]
+}

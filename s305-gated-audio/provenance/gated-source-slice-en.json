@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-05",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "table-interpretation",
+      "title": "Read cabbage correctly",
+      "situation": "The table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.",
+      "reasoning": [
+        "The range covers the crop's entire growing period, not one event.",
+        "The range is indicative; climate, growing-period length and stage change actual need.",
+        "Effective rain, soil water and system losses are unknown."
+      ],
+      "takeaway": "Reject the one-event dose; use the range only to compare and plan what local data to collect."
+    },
+    {
+      "id": "stage-pattern",
+      "title": "Find the useful common pattern",
+      "situation": "A class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.",
+      "reasoning": [
+        "Flowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.",
+        "Water-stress impact depends on intensity, duration and stage.",
+        "Protect sensitive periods while checking measured soil-water condition."
+      ],
+      "takeaway": "These stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible."
+    },
+    {
+      "id": "choice",
+      "title": "Choose with trade-offs",
+      "situation": "Small row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.",
+      "reasoning": [
+        "Drip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.",
+        "Sprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.",
+        "Check measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling."
+      ],
+      "takeaway": "Propose maintainable drip as a conditional first choice; state the data and trade-offs that could change it."
+    }
+  ]
+}

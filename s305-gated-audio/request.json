@@ -1,0 +1,1836 @@
+{
+  "schemaVersion": 1,
+  "scope": "S305_TWELVE_SOURCE_GATED_COMPLETE_WORKED_CASES_FOUR_FIXED_LOCALE_LANES",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s305-gated-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 12,
+  "maximumBlindAudioReviewCalls": 12,
+  "maximumASRInvocations": 12,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_THREE_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-ar-EG-E01-r1",
+      "unitId": "S3-05-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "اقرأ رقم الكرنب صح",
+          "sha256": "1ca4b12710ec438c3631468c88101602712cbd8239c57bc4b7f9c3281a8bf55d"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "الجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.",
+          "sha256": "b3650189761e67fe72c76d7f55967edf1cba540872900729451724dd0ce7de57"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "المدى للموسم كله، مش لمرة واحدة.",
+          "sha256": "b75f27fe14247b28e3bac3192c334d344c26e8c0c9e29f7bf41952c3849a93b2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "هو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.",
+          "sha256": "35ba93aa6d39782af5b1696ed1ea46d9aff7b57342460227d47b5f31d80d8477"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "المطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.",
+          "sha256": "717c2c7dfe49e41f8308cd22f911b90fed59da129b57a046bb550c3d201b6e6a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "ارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "sha256": "cf69b64b16716ca8b1ae3d990b842edf6508b5c4d7a8f8cd802fbf98063ed5da"
+        }
+      ],
+      "scientificMeaning": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "displayText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "captionText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "spokenText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب تلتمية وخمسين إلى خمسمية ملليمتر طول النمو، وطالب كتب أربعمية ملليمتر لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nالمدى ده تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض فكرة إن الرقم ده جرعة لرية واحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "spokenTextSHA256": "29967690a7be4d6989e34a9a9dc647e1a34057d9994f135f2bfb9cbfd988100b",
+      "spokenTextSha256": "29967690a7be4d6989e34a9a9dc647e1a34057d9994f135f2bfb9cbfd988100b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "spoken": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب تلتمية وخمسين إلى خمسمية ملليمتر طول النمو، وطالب كتب أربعمية ملليمتر لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nالمدى ده تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض فكرة إن الرقم ده جرعة لرية واحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ca996feec7fe9183968e6c7ece69a3a6ccb8737d8de0c6d1a1cc8355a0b177d",
+      "requestFingerprintSha256": "6ca996feec7fe9183968e6c7ece69a3a6ccb8737d8de0c6d1a1cc8355a0b177d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "ca912b18735cb527bb5c30f26ce61bd3d9a5f5b05beda0c20fbcb1b6c1bab88b"
+    },
+    {
+      "id": "S3-05-ar-EG-E02-r1",
+      "unitId": "S3-05-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "استخرج الفكرة المشتركة من غير تعميم",
+          "sha256": "c3ee83ab6ea397be664ed128d355f1cac82a78321570ce4a630047214dc451ed"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».",
+          "sha256": "f1fe37da14be8d22eafe4a0dae0e9177a05dc47a098b4f70f768770f7ddb833a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "التزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.",
+          "sha256": "d80fb9ef63cf404115336395490bf33cd415745374d09ebcf2c22d9b452d5b13"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "أثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.",
+          "sha256": "09cc92d3a78e5bd026bdcd95408e8fe436b7b4d329f080f4bff48dd8d10dd09e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "احمي المراحل الحساسة مع متابعة مياه التربة فعليًا.",
+          "sha256": "f09d659e8a24336cf5ecaf0c61dbc8c35ec1c2f02a9a1d270b06431504763b95"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "المراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+          "sha256": "c4d07104399676317d9c968bff1c01908f59f5064aee662ab877672bf74180e3"
+        }
+      ],
+      "scientificMeaning": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "displayText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "captionText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "spokenText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "spokenTextSHA256": "b1221bf6a850f9b5d49b9d7bf37cc9ce124511f41a5c1d17b94c00adeadcfb99",
+      "spokenTextSha256": "b1221bf6a850f9b5d49b9d7bf37cc9ce124511f41a5c1d17b94c00adeadcfb99",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5a5e56b552228db2c9515cb20220111cbec457f6853430122e24cfbaeaf6faee",
+      "requestFingerprintSha256": "5a5e56b552228db2c9515cb20220111cbec457f6853430122e24cfbaeaf6faee",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "ca912b18735cb527bb5c30f26ce61bd3d9a5f5b05beda0c20fbcb1b6c1bab88b"
+    },
+    {
+      "id": "S3-05-ar-EG-E03-r1",
+      "unitId": "S3-05-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "اختار مع المفاضلات",
+          "sha256": "a879fb71fc12c89c8c59bed03fdf5278a0e4e534609f903d7fd3dfec4f94511f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "قطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.",
+          "sha256": "cc8c403aaf5e0c92bfea60ff48324a40fae44086d28237feaf498c71fa9b895e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "التنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.",
+          "sha256": "9770c06361eec68b30704f9d3318280e60b973598689180fec5f885d8b29807e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "الرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.",
+          "sha256": "f30ac22344815c9746eeea2f626e211778e0d9663007179f8506def9f34aebb9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "افحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.",
+          "sha256": "5021f2fa5305f74dfb55657b814d9384742d70976968c7cae3af86702fff6f75"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "اقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+          "sha256": "678520397247c61a850a0b284fbbbc71bfb95bf58fd67534e0cd54c925d4a8f8"
+        }
+      ],
+      "scientificMeaning": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "displayText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "captionText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "spokenText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور من غير انجراف الرش، بس محتاج تكلفة وترشيح وصيانة للنقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، وقول إيه اللي ممكن يغيّر الاختيار.",
+      "spokenTextSHA256": "e23fc18bb39e7ad47c64bb89d7f8988304fabeab121e92adcde799fe016f6d9c",
+      "spokenTextSha256": "e23fc18bb39e7ad47c64bb89d7f8988304fabeab121e92adcde799fe016f6d9c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+          "spoken": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور من غير انجراف الرش، بس محتاج تكلفة وترشيح وصيانة للنقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، وقول إيه اللي ممكن يغيّر الاختيار.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "594430a68d89e08dd4b454be07bb6c8b2e520c48e0cbe275b0d2d0d1a6b6df94",
+      "requestFingerprintSha256": "594430a68d89e08dd4b454be07bb6c8b2e520c48e0cbe275b0d2d0d1a6b6df94",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "ca912b18735cb527bb5c30f26ce61bd3d9a5f5b05beda0c20fbcb1b6c1bab88b"
+    },
+    {
+      "id": "S3-05-en-E01-r1",
+      "unitId": "S3-05-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Read cabbage correctly",
+          "sha256": "b946b40cd9d2f3b8304bb5d4c3712ba8722904e9e5c04b48415b1a3380175134"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.",
+          "sha256": "c89447640879f4a234bf99e2ca81a2498b36124a341cc315d50e2bb022b7a8ec"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The range covers the crop's entire growing period, not one event.",
+          "sha256": "b4f1f12b7ac08381235f25e011a4a38f12b45e3f8c9a54334675fec278660c6a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "The range is indicative; climate, growing-period length and stage change actual need.",
+          "sha256": "93dfa9b30486a41ac4d892fd3f9d196a5d2b54651a1dac36ea092ef827ae2b3c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Effective rain, soil water and system losses are unknown.",
+          "sha256": "99740f12229c38cb8536f70c18f6ca60375d429922507129e7947c097a5d5419"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Reject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "sha256": "1f09b133e5d855f27f59ff2f802ee3bcafd29d03b9b8bac3946d828686492a09"
+        }
+      ],
+      "scientificMeaning": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "displayText": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "captionText": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "spokenText": "Read cabbage correctly\n\nThe table says cabbage three hundred fifty to five hundred millimetres per total growing period and another student writes four hundred millimetres for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "spokenTextSHA256": "1aa1e31b86d6e6fd53c942551265aefcb349f85d7af43d840a609fd48fe5d61d",
+      "spokenTextSha256": "1aa1e31b86d6e6fd53c942551265aefcb349f85d7af43d840a609fd48fe5d61d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "spoken": "Read cabbage correctly\n\nThe table says cabbage three hundred fifty to five hundred millimetres per total growing period and another student writes four hundred millimetres for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d03df6783c6281e15cee78992ffdfe0aeb56e2d8c960718fce9b3f8f4990c80f",
+      "requestFingerprintSha256": "d03df6783c6281e15cee78992ffdfe0aeb56e2d8c960718fce9b3f8f4990c80f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "c0c00a355bb941bb42d4d54e5b422e8cb109da28d5ed8abbe63e91fa132b809b"
+    },
+    {
+      "id": "S3-05-en-E02-r1",
+      "unitId": "S3-05-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Find the useful common pattern",
+          "sha256": "2e54bb2b8defef23618f7b1d40169bd8616370d23564648157512b74a9053e3e"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.",
+          "sha256": "783cc56b0f37a76385e3a168298ef28d598c9889fc30b6b882f5473345320130"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Flowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.",
+          "sha256": "760f65c8c35e75092e9c6407b49ef7a16ebb99d41173ae03e6b43dad739e617d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Water-stress impact depends on intensity, duration and stage.",
+          "sha256": "2a55035bbd6bdf640f771a11bce8fb263a5c512efd3d6ac4f8d5b877aa5e5642"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Protect sensitive periods while checking measured soil-water condition.",
+          "sha256": "97b0b8af56d2fdc6d0c2c3cce0d95483540dd4574fb2669001595ac6d393db33"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "These stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+          "sha256": "ef02959be9ac45ca5227db67f09a988055a096d65f6cff6718b574405876edb2"
+        }
+      ],
+      "scientificMeaning": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "displayText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "captionText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "spokenText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "spokenTextSHA256": "625bbe051a2806c22562bbe3573bf24d601e04bc33b454ff46105e3aabbb5b7c",
+      "spokenTextSha256": "625bbe051a2806c22562bbe3573bf24d601e04bc33b454ff46105e3aabbb5b7c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba9b0f09c0beaf3a626c114313c74711f3accf1b40a07ea15a010370406473f9",
+      "requestFingerprintSha256": "ba9b0f09c0beaf3a626c114313c74711f3accf1b40a07ea15a010370406473f9",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "c0c00a355bb941bb42d4d54e5b422e8cb109da28d5ed8abbe63e91fa132b809b"
+    },
+    {
+      "id": "S3-05-en-E03-r1",
+      "unitId": "S3-05-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Choose with trade-offs",
+          "sha256": "910a5f33765743a106dae64668f2f09908449af9b3a40cfc12ca3ebc7e0ab443"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Small row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.",
+          "sha256": "ccf0ec2ea52098e92698cbf3c047626166ab9dd9eeb02b451ac8d01820341370"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Drip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.",
+          "sha256": "8b5b408ca3fa9e5d8c1b6238c7386ba56a95c36ebd620b27c118aa3d4830f45b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Sprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.",
+          "sha256": "fecca81f6ef18ef95def3534d421fc04705153e0fca775ce9c8564779bf5c922"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Check measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.",
+          "sha256": "8524549e5a15be52a174a680931c6f4663e558e4c825b1cce0b16cb6a4014dc7"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Propose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+          "sha256": "2c6bc75d6aa0fb3066aee33fd093978afb492629a2d99996550b2ad03223e094"
+        }
+      ],
+      "scientificMeaning": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "displayText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "captionText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "spokenText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "spokenTextSHA256": "dcb49dfcadcc886d143fc224ade909d10aa6b5e3e9f5dc7814efb3e2bad5ffba",
+      "spokenTextSha256": "dcb49dfcadcc886d143fc224ade909d10aa6b5e3e9f5dc7814efb3e2bad5ffba",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b34987541b3b6fe26cf1f7353e33268977642bf3fc9a2b86a57a890e819848f",
+      "requestFingerprintSha256": "6b34987541b3b6fe26cf1f7353e33268977642bf3fc9a2b86a57a890e819848f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "c0c00a355bb941bb42d4d54e5b422e8cb109da28d5ed8abbe63e91fa132b809b"
+    },
+    {
+      "id": "S3-05-it-E01-r1",
+      "unitId": "S3-05-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Leggere il cavolo correttamente",
+          "sha256": "8c433a6b69c2d5167e38866eec59bd35fcd88d7475c677e83140f084f408e404"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "La tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.",
+          "sha256": "531bcd6690a2016252775322745dd54a9201d1df997d368db12b7eb69f9dda44"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "L’intervallo copre l’intero periodo, non un evento.",
+          "sha256": "9c3e8f6d257ec5f2e8e2c5ea21096b46ec6a0412929cbc3d2ebc4ce1e3172ec0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "È indicativo: clima, durata e fase cambiano il bisogno.",
+          "sha256": "a3df6a3e865d7931f90e97645914a7efeff5f4aa22863bfbf097ac8448d3c112"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Pioggia efficace, acqua del suolo e perdite non sono note.",
+          "sha256": "f06593e65e8d5496d3aabf94887080c109eae2be98964cac350d8bd2a98b8857"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Respinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "sha256": "7d81b0395ea5e5582dee29b59e049e6926917a75abe61ead0259e978d5a33d72"
+        }
+      ],
+      "scientificMeaning": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "displayText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "captionText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "spokenText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo trecentocinquanta a cinquecento millimetri per tutta la crescita; uno studente scrive quattrocento millimetri per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRifiuta la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "spokenTextSHA256": "32603c2798bfd03a848758cbb61b776a939c88f1ab5208df0828d79d0c7674b0",
+      "spokenTextSha256": "32603c2798bfd03a848758cbb61b776a939c88f1ab5208df0828d79d0c7674b0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "spoken": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo trecentocinquanta a cinquecento millimetri per tutta la crescita; uno studente scrive quattrocento millimetri per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRifiuta la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fb78fcd2bb2c107abdf602af90e9705fe0b2fdac7c2f685ed240a1e595b42a2d",
+      "requestFingerprintSha256": "fb78fcd2bb2c107abdf602af90e9705fe0b2fdac7c2f685ed240a1e595b42a2d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fa32ef4255c58e5bfede9cbccb998d026b7b18423e6fb50ddcc55976b57f9475"
+    },
+    {
+      "id": "S3-05-it-E02-r1",
+      "unitId": "S3-05-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Trovare il vero elemento comune",
+          "sha256": "62749f736534eaca5cbf32da32532904149d5cbe7da49199d1e2a77e9902619e"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "La classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.",
+          "sha256": "021d84fc06ae5ffc589d3b015d0a9693da39fcfe0b38d394a1d49aa6df03a4e5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "La fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.",
+          "sha256": "e8535656443e0163382c4aebe5497ea321797149297b5d95dc6653fd3388316c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Effetto dello stress dipende da intensità, durata e momento.",
+          "sha256": "8f9d53f2245a3e59b931194a788b746d654063f835a3afedd615a667ca35cfcf"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Proteggere i periodi sensibili controllando l’acqua del suolo.",
+          "sha256": "d3e713a6464e585e0d3758c6f8473ca875c99e0090628274f5d94a1d63eacb2c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Le fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+          "sha256": "3c7ecbec1f532f14904720508fb071c4528cc9a66c6d200e008d3e68fca59c99"
+        }
+      ],
+      "scientificMeaning": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "displayText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "captionText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "spokenText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "spokenTextSHA256": "028d2d945d05cb7ff3c177a4f9980778104768bedc3392289d71f38d336d3327",
+      "spokenTextSha256": "028d2d945d05cb7ff3c177a4f9980778104768bedc3392289d71f38d336d3327",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7a62be964df4fe4411a2e58c4c2e05463a2356e2c08ec43088051c406cfe1347",
+      "requestFingerprintSha256": "7a62be964df4fe4411a2e58c4c2e05463a2356e2c08ec43088051c406cfe1347",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fa32ef4255c58e5bfede9cbccb998d026b7b18423e6fb50ddcc55976b57f9475"
+    },
+    {
+      "id": "S3-05-it-E03-r1",
+      "unitId": "S3-05-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Scegliere con compromessi",
+          "sha256": "22e8b0cdaa28f875f8243c29e52109b16efa74d28f979b7cfd7d2cb8dbe3ef38"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Piccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.",
+          "sha256": "3b5f1668d7c7624327e0a35afd8e119a3e73a5089b1b979efd325dd26133d011"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Goccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.",
+          "sha256": "e547f84f4da21955daa73b1a199900e204eb0a9c4babc59fa7617e866d693b53"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Aspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.",
+          "sha256": "eaf5dba432c972e2a75bd3b911152f9677a66710c24f5289663ae611749cef15"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Misurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.",
+          "sha256": "fd4ef9edc30b013eb443d414252ceb6a988bdc845b5fe2b55c081285801d437e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Proporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+          "sha256": "ba27deb8e3909f0b8dd56bb1a859591b3e585b0109783661fc065afa13cf1d4d"
+        }
+      ],
+      "scientificMeaning": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "displayText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "captionText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "spokenText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "spokenTextSHA256": "edd703c5268e59d3e65ef110b322666560deba06f5b58798ca3ede6ba338fe8e",
+      "spokenTextSha256": "edd703c5268e59d3e65ef110b322666560deba06f5b58798ca3ede6ba338fe8e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7e1010fff51cf53f711bc525e2c1513f5e5a50f28f98c68507e7d8ecbe8af13c",
+      "requestFingerprintSha256": "7e1010fff51cf53f711bc525e2c1513f5e5a50f28f98c68507e7d8ecbe8af13c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "fa32ef4255c58e5bfede9cbccb998d026b7b18423e6fb50ddcc55976b57f9475"
+    },
+    {
+      "id": "S3-05-de-E01-r1",
+      "unitId": "S3-05-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Kohlwert richtig lesen",
+          "sha256": "8fb69f82831c766958430f899d84cfcecd3e427dd01490964634700cd6dbdeb7"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.",
+          "sha256": "441d4efab3bf39be4bf26bbe025a490ef6815b1cee7c3eb8af7cbe1ce2fd6aa9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Der Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.",
+          "sha256": "443c700708f2a7bf52b03e8a20de16639c612dcfbcbf6b6407ab796553537e7d"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Es ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.",
+          "sha256": "e8c2a1e6fac5e9ddd16a38e942f96d061d8c7bb5005d7cc4115bcb7ba35dd486"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Wirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.",
+          "sha256": "4b0e7eac4d196cae3b1526fbbd6243ea4898f323c214ddaa0faa202cddc081f2"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Einzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "sha256": "9fe7bd78420622c6ac583adbb8a8e72159d99f10d41d99b850d1bae88c336318"
+        }
+      ],
+      "scientificMeaning": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "displayText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "captionText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "spokenText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl dreihundertfünfzig bis fünfhundert Millimeter für die ganze Saison, jemand plant daraus vierhundert Millimeter für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "spokenTextSHA256": "f790522a9fd19b38a2eddb0e854f8a585de07d1cb01aae1f8d2abaf90a82f4f2",
+      "spokenTextSha256": "f790522a9fd19b38a2eddb0e854f8a585de07d1cb01aae1f8d2abaf90a82f4f2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "spoken": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl dreihundertfünfzig bis fünfhundert Millimeter für die ganze Saison, jemand plant daraus vierhundert Millimeter für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "03b50d6f4ebea7209f0ea2d40e5f065b2fa952531a993ac9f4add1c9decd3523",
+      "requestFingerprintSha256": "03b50d6f4ebea7209f0ea2d40e5f065b2fa952531a993ac9f4add1c9decd3523",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e2845913d08a4e7a21f3ce0458b900378499f81a010d201c8d5908f6c4bef29f"
+    },
+    {
+      "id": "S3-05-de-E02-r1",
+      "unitId": "S3-05-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Das hilfreiche gemeinsame Muster erkennen",
+          "sha256": "4807be971d22be458ed0e4eb4bf27302def036cf10d9d393f1186331771152b4"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Eine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.",
+          "sha256": "1befb860adebd908de6068a5b7a2872599388939dee4249fe3aeb0db78ec5090"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Blüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.",
+          "sha256": "d2483c5c4f1d932adaf0f32f2915a479a39d05ab286d2eaa8545c7c31fb677bc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Stresswirkung hängt von Intensität, Dauer und Stadium ab.",
+          "sha256": "fdb9e76ce7f329afabae485d6eb24a5740cd77bfe9379f59af9982a659538076"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Empfindliche Zeiten schützen und gemessenes Bodenwasser beachten.",
+          "sha256": "789ff312db644cda95c7a9771b3adaebf1d3c6ea73db45e924a013a4a7d63be9"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Solche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+          "sha256": "bdf18d623a1554cd52e521061016dcde10ae5c913c37ebf101950fb26908c472"
+        }
+      ],
+      "scientificMeaning": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "displayText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "captionText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "spokenText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "spokenTextSHA256": "072b85a1d77c718fa6dae8bf02fb97533c432b2d1bc19d0b565379fb87f8e36f",
+      "spokenTextSha256": "072b85a1d77c718fa6dae8bf02fb97533c432b2d1bc19d0b565379fb87f8e36f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "968c6b381a6f6f4311d63bcdc667a9c5639af3388e743dd7c324f0195c032504",
+      "requestFingerprintSha256": "968c6b381a6f6f4311d63bcdc667a9c5639af3388e743dd7c324f0195c032504",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e2845913d08a4e7a21f3ce0458b900378499f81a010d201c8d5908f6c4bef29f"
+    },
+    {
+      "id": "S3-05-de-E03-r1",
+      "unitId": "S3-05-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Mit Abwägungen wählen",
+          "sha256": "2b1c155f08aa1fe385ec2fb4ac1c18bd800f84749948fdc782d9197009a5a91d"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Kleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.",
+          "sha256": "c9750ceeb615e2e152016de37367a98e32262fcdca26bc9e303a665ac97a8f0b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.",
+          "sha256": "278a8989cdbae781c9e6fca49c4f1217ef2c30391e4a326719b98195b27ecb3a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Beregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.",
+          "sha256": "ac843a9a8915cd52e0a65be64ed00b74c5a4c31d906deda486e206648d9d4baa"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Gemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.",
+          "sha256": "716a0e0c230378c25522a1ce430db05027d5d2a94d62e1ab101956e20ac026cd"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Pflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "sha256": "5af94a051b8c5a96fc417de064e7bec1f73be0f09155f613f53d9cefd30d59ff"
+        }
+      ],
+      "scientificMeaning": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "displayText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "captionText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "spokenText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter, Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "spokenTextSHA256": "c203395b8090db73c2cd68febb9985dff2450df9ba1e7b6a7572fc9fec640dbd",
+      "spokenTextSha256": "c203395b8090db73c2cd68febb9985dff2450df9ba1e7b6a7572fc9fec640dbd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "spoken": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter, Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "287fd1bf4b9bbbbc24a2e4e6f9892dcc80daa0a4da5916a7c18a75441c4af319",
+      "requestFingerprintSha256": "287fd1bf4b9bbbbc24a2e4e6f9892dcc80daa0a4da5916a7c18a75441c4af319",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e2845913d08a4e7a21f3ce0458b900378499f81a010d201c8d5908f6c4bef29f"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 3,
+    "asr": 3,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-05-ar-EG-E01-r1",
+      "S3-05-ar-EG-E02-r1",
+      "S3-05-ar-EG-E03-r1"
+    ],
+    "en": [
+      "S3-05-en-E01-r1",
+      "S3-05-en-E02-r1",
+      "S3-05-en-E03-r1"
+    ],
+    "it": [
+      "S3-05-it-E01-r1",
+      "S3-05-it-E02-r1",
+      "S3-05-it-E03-r1"
+    ],
+    "de": [
+      "S3-05-de-E01-r1",
+      "S3-05-de-E02-r1",
+      "S3-05-de-E03-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r2\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r3\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "a6f9bba236cdd1797fb64537c82d77d8fd61fcd5d34e390560ba58713b9fbf29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-reading-job-r1\\request.json",
+      "sha256": "b3063d5cf960b6dac5aae290314893823f11f0ed57ca34bdbada7de39275a649"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

@@ -1,0 +1,253 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-de.json",
+    "sha256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+    "bytes": 29182
+  },
+  "units": [
+    {
+      "id": "S3-05-de-E01-r1",
+      "unitId": "S3-05-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Kohlwert richtig lesen",
+          "sha256": "8fb69f82831c766958430f899d84cfcecd3e427dd01490964634700cd6dbdeb7"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.",
+          "sha256": "441d4efab3bf39be4bf26bbe025a490ef6815b1cee7c3eb8af7cbe1ce2fd6aa9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Der Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.",
+          "sha256": "443c700708f2a7bf52b03e8a20de16639c612dcfbcbf6b6407ab796553537e7d"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Es ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.",
+          "sha256": "e8c2a1e6fac5e9ddd16a38e942f96d061d8c7bb5005d7cc4115bcb7ba35dd486"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Wirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.",
+          "sha256": "4b0e7eac4d196cae3b1526fbbd6243ea4898f323c214ddaa0faa202cddc081f2"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Einzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "sha256": "9fe7bd78420622c6ac583adbb8a8e72159d99f10d41d99b850d1bae88c336318"
+        }
+      ],
+      "scientificMeaning": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "displayText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "captionText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "spokenText": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl dreihundertfünfzig bis fünfhundert Millimeter für die ganze Saison, jemand plant daraus vierhundert Millimeter für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+      "spokenTextSHA256": "f790522a9fd19b38a2eddb0e854f8a585de07d1cb01aae1f8d2abaf90a82f4f2",
+      "spokenTextSha256": "f790522a9fd19b38a2eddb0e854f8a585de07d1cb01aae1f8d2abaf90a82f4f2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "spoken": "Kohlwert richtig lesen\n\nDie Tabelle nennt Kopfkohl dreihundertfünfzig bis fünfhundert Millimeter für die ganze Saison, jemand plant daraus vierhundert Millimeter für heute.\n\nDer Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.\n\nEs ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.\n\nWirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt.\n\nEinzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "03b50d6f4ebea7209f0ea2d40e5f065b2fa952531a993ac9f4add1c9decd3523",
+      "requestFingerprintSha256": "03b50d6f4ebea7209f0ea2d40e5f065b2fa952531a993ac9f4add1c9decd3523",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-05-de-E02-r1",
+      "unitId": "S3-05-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Das hilfreiche gemeinsame Muster erkennen",
+          "sha256": "4807be971d22be458ed0e4eb4bf27302def036cf10d9d393f1186331771152b4"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Eine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.",
+          "sha256": "1befb860adebd908de6068a5b7a2872599388939dee4249fe3aeb0db78ec5090"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Blüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.",
+          "sha256": "d2483c5c4f1d932adaf0f32f2915a479a39d05ab286d2eaa8545c7c31fb677bc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Stresswirkung hängt von Intensität, Dauer und Stadium ab.",
+          "sha256": "fdb9e76ce7f329afabae485d6eb24a5740cd77bfe9379f59af9982a659538076"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Empfindliche Zeiten schützen und gemessenes Bodenwasser beachten.",
+          "sha256": "789ff312db644cda95c7a9771b3adaebf1d3c6ea73db45e924a013a4a7d63be9"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Solche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+          "sha256": "bdf18d623a1554cd52e521061016dcde10ae5c913c37ebf101950fb26908c472"
+        }
+      ],
+      "scientificMeaning": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "displayText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "captionText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "spokenText": "Das hilfreiche gemeinsame Muster erkennen\n\nEine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.\n\nBlüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.\n\nStresswirkung hängt von Intensität, Dauer und Stadium ab.\n\nEmpfindliche Zeiten schützen und gemessenes Bodenwasser beachten.\n\nSolche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel.",
+      "spokenTextSHA256": "072b85a1d77c718fa6dae8bf02fb97533c432b2d1bc19d0b565379fb87f8e36f",
+      "spokenTextSha256": "072b85a1d77c718fa6dae8bf02fb97533c432b2d1bc19d0b565379fb87f8e36f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "968c6b381a6f6f4311d63bcdc667a9c5639af3388e743dd7c324f0195c032504",
+      "requestFingerprintSha256": "968c6b381a6f6f4311d63bcdc667a9c5639af3388e743dd7c324f0195c032504",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-05-de-E03-r1",
+      "unitId": "S3-05-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Mit Abwägungen wählen",
+          "sha256": "2b1c155f08aa1fe385ec2fb4ac1c18bd800f84749948fdc782d9197009a5a91d"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Kleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.",
+          "sha256": "c9750ceeb615e2e152016de37367a98e32262fcdca26bc9e303a665ac97a8f0b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.",
+          "sha256": "278a8989cdbae781c9e6fca49c4f1217ef2c30391e4a326719b98195b27ecb3a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Beregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.",
+          "sha256": "ac843a9a8915cd52e0a65be64ed00b74c5a4c31d906deda486e206648d9d4baa"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Gemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.",
+          "sha256": "716a0e0c230378c25522a1ce430db05027d5d2a94d62e1ab101956e20ac026cd"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Pflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "sha256": "5af94a051b8c5a96fc417de064e7bec1f73be0f09155f613f53d9cefd30d59ff"
+        }
+      ],
+      "scientificMeaning": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "displayText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "captionText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "spokenText": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter, Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+      "spokenTextSHA256": "c203395b8090db73c2cd68febb9985dff2450df9ba1e7b6a7572fc9fec640dbd",
+      "spokenTextSha256": "c203395b8090db73c2cd68febb9985dff2450df9ba1e7b6a7572fc9fec640dbd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "spoken": "Mit Abwägungen wählen\n\nKleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.\n\nTropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter, Tropferpflege.\n\nBeregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.\n\nGemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen.\n\nPflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "287fd1bf4b9bbbbc24a2e4e6f9892dcc80daa0a4da5916a7c18a75441c4af319",
+      "requestFingerprintSha256": "287fd1bf4b9bbbbc24a2e4e6f9892dcc80daa0a4da5916a7c18a75441c4af319",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

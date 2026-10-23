@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-05",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "table-interpretation",
+      "title": "Kohlwert richtig lesen",
+      "situation": "Die Tabelle nennt Kopfkohl 350–500 mm für die ganze Saison, jemand plant daraus 400 mm für heute.",
+      "reasoning": [
+        "Der Bereich gilt für die gesamte Wachstumsperiode, nicht ein Ereignis.",
+        "Es ist ein Richtwert; Klima, Dauer und Stadium ändern den wirklichen Bedarf.",
+        "Wirksamer Regen, Bodenwasser und Anlagenverluste sind unbekannt."
+      ],
+      "takeaway": "Einzelgabe ablehnen; Bereich zum Vergleich und zur Planung nötiger Ortsdaten verwenden."
+    },
+    {
+      "id": "stage-pattern",
+      "title": "Das hilfreiche gemeinsame Muster erkennen",
+      "situation": "Eine Klasse nennt jede empfindliche Phase „reproduktiv und durch einen trockenen Tag dauerhaft zerstört“.",
+      "reasoning": [
+        "Blüte ist reproduktiv, Kartoffelknollen und Zwiebeln sind vegetative Ertragsorgane.",
+        "Stresswirkung hängt von Intensität, Dauer und Stadium ab.",
+        "Empfindliche Zeiten schützen und gemessenes Bodenwasser beachten."
+      ],
+      "takeaway": "Solche Phasen bestimmen oft Ertrag, sind aber nicht alle reproduktiv und Schäden nicht einheitlich irreversibel."
+    },
+    {
+      "id": "choice",
+      "title": "Mit Abwägungen wählen",
+      "situation": "Kleines Reihengemüsefeld: Sand, Hitze, Wind und knappes teures Wasser; Wartungsbudget unbekannt.",
+      "reasoning": [
+        "Tropf bringt Wasser nahe Wurzeln ohne Verwehung, kostet aber und benötigt Filter/Tropferpflege.",
+        "Beregnung ist flexibel, Wind mindert Gleichmäßigkeit; Oberfläche hängt von Gefälle, Infiltration, Arbeit und Wasser ab.",
+        "Gemessenen Wurzelspeicher, Wasserqualität, Wartung und Kosten vor Kauf und Plan prüfen."
+      ],
+      "takeaway": "Pflegbares Tropfsystem als bedingte erste Wahl mit Daten und Abwägungen vorschlagen."
+    }
+  ]
+}

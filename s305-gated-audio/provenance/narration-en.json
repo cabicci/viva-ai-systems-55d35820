@@ -1,0 +1,246 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-en.json",
+    "sha256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+    "bytes": 29547
+  },
+  "units": [
+    {
+      "id": "S3-05-en-E01-r1",
+      "unitId": "S3-05-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Read cabbage correctly",
+          "sha256": "b946b40cd9d2f3b8304bb5d4c3712ba8722904e9e5c04b48415b1a3380175134"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.",
+          "sha256": "c89447640879f4a234bf99e2ca81a2498b36124a341cc315d50e2bb022b7a8ec"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The range covers the crop's entire growing period, not one event.",
+          "sha256": "b4f1f12b7ac08381235f25e011a4a38f12b45e3f8c9a54334675fec278660c6a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "The range is indicative; climate, growing-period length and stage change actual need.",
+          "sha256": "93dfa9b30486a41ac4d892fd3f9d196a5d2b54651a1dac36ea092ef827ae2b3c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Effective rain, soil water and system losses are unknown.",
+          "sha256": "99740f12229c38cb8536f70c18f6ca60375d429922507129e7947c097a5d5419"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Reject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "sha256": "1f09b133e5d855f27f59ff2f802ee3bcafd29d03b9b8bac3946d828686492a09"
+        }
+      ],
+      "scientificMeaning": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "displayText": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "captionText": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "spokenText": "Read cabbage correctly\n\nThe table says cabbage three hundred fifty to five hundred millimetres per total growing period and another student writes four hundred millimetres for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+      "spokenTextSHA256": "1aa1e31b86d6e6fd53c942551265aefcb349f85d7af43d840a609fd48fe5d61d",
+      "spokenTextSha256": "1aa1e31b86d6e6fd53c942551265aefcb349f85d7af43d840a609fd48fe5d61d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Read cabbage correctly\n\nThe table says cabbage 350–500 mm per total growing period and another student writes 400 mm for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "spoken": "Read cabbage correctly\n\nThe table says cabbage three hundred fifty to five hundred millimetres per total growing period and another student writes four hundred millimetres for today's irrigation.\n\nThe range covers the crop's entire growing period, not one event.\n\nThe range is indicative; climate, growing-period length and stage change actual need.\n\nEffective rain, soil water and system losses are unknown.\n\nReject the one-event dose; use the range only to compare and plan what local data to collect.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d03df6783c6281e15cee78992ffdfe0aeb56e2d8c960718fce9b3f8f4990c80f",
+      "requestFingerprintSha256": "d03df6783c6281e15cee78992ffdfe0aeb56e2d8c960718fce9b3f8f4990c80f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-E02-r1",
+      "unitId": "S3-05-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Find the useful common pattern",
+          "sha256": "2e54bb2b8defef23618f7b1d40169bd8616370d23564648157512b74a9053e3e"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.",
+          "sha256": "783cc56b0f37a76385e3a168298ef28d598c9889fc30b6b882f5473345320130"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Flowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.",
+          "sha256": "760f65c8c35e75092e9c6407b49ef7a16ebb99d41173ae03e6b43dad739e617d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Water-stress impact depends on intensity, duration and stage.",
+          "sha256": "2a55035bbd6bdf640f771a11bce8fb263a5c512efd3d6ac4f8d5b877aa5e5642"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Protect sensitive periods while checking measured soil-water condition.",
+          "sha256": "97b0b8af56d2fdc6d0c2c3cce0d95483540dd4574fb2669001595ac6d393db33"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "These stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+          "sha256": "ef02959be9ac45ca5227db67f09a988055a096d65f6cff6718b574405876edb2"
+        }
+      ],
+      "scientificMeaning": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "displayText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "captionText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "spokenText": "Find the useful common pattern\n\nA class labels every critical stage in the table 'reproductive and permanently damaged by one dry day'.\n\nFlowering is reproductive, but potato tuber growth and onion bulb formation are yield-forming vegetative storage stages.\n\nWater-stress impact depends on intensity, duration and stage.\n\nProtect sensitive periods while checking measured soil-water condition.\n\nThese stages often shape yield, but they are not all reproductive and impact is not uniformly irreversible.",
+      "spokenTextSHA256": "625bbe051a2806c22562bbe3573bf24d601e04bc33b454ff46105e3aabbb5b7c",
+      "spokenTextSha256": "625bbe051a2806c22562bbe3573bf24d601e04bc33b454ff46105e3aabbb5b7c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba9b0f09c0beaf3a626c114313c74711f3accf1b40a07ea15a010370406473f9",
+      "requestFingerprintSha256": "ba9b0f09c0beaf3a626c114313c74711f3accf1b40a07ea15a010370406473f9",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-E03-r1",
+      "unitId": "S3-05-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Choose with trade-offs",
+          "sha256": "910a5f33765743a106dae64668f2f09908449af9b3a40cfc12ca3ebc7e0ab443"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Small row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.",
+          "sha256": "ccf0ec2ea52098e92698cbf3c047626166ab9dd9eeb02b451ac8d01820341370"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Drip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.",
+          "sha256": "8b5b408ca3fa9e5d8c1b6238c7386ba56a95c36ebd620b27c118aa3d4830f45b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Sprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.",
+          "sha256": "fecca81f6ef18ef95def3534d421fc04705153e0fca775ce9c8564779bf5c922"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Check measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.",
+          "sha256": "8524549e5a15be52a174a680931c6f4663e558e4c825b1cce0b16cb6a4014dc7"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Propose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+          "sha256": "2c6bc75d6aa0fb3066aee33fd093978afb492629a2d99996550b2ad03223e094"
+        }
+      ],
+      "scientificMeaning": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "displayText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "captionText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "spokenText": "Choose with trade-offs\n\nSmall row-vegetable plot; sandy soil; hot wind; expensive, limited water; maintenance budget unknown.\n\nDrip delivers near roots and avoids spray drift, but it needs investment, filtration and emitter maintenance.\n\nSprinklers cover flexibly but wind can reduce uniformity; a gravity surface option depends on grade, infiltration, labour and water available.\n\nCheck measured root-zone water, water quality, system upkeep and costs before final purchase and scheduling.\n\nPropose maintainable drip as a conditional first choice; state the data and trade-offs that could change it.",
+      "spokenTextSHA256": "dcb49dfcadcc886d143fc224ade909d10aa6b5e3e9f5dc7814efb3e2bad5ffba",
+      "spokenTextSha256": "dcb49dfcadcc886d143fc224ade909d10aa6b5e3e9f5dc7814efb3e2bad5ffba",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b34987541b3b6fe26cf1f7353e33268977642bf3fc9a2b86a57a890e819848f",
+      "requestFingerprintSha256": "6b34987541b3b6fe26cf1f7353e33268977642bf3fc9a2b86a57a890e819848f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

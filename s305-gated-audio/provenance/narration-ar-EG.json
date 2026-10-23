@@ -1,0 +1,253 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-ar-EG.json",
+    "sha256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+    "bytes": 38491
+  },
+  "units": [
+    {
+      "id": "S3-05-ar-EG-E01-r1",
+      "unitId": "S3-05-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "اقرأ رقم الكرنب صح",
+          "sha256": "1ca4b12710ec438c3631468c88101602712cbd8239c57bc4b7f9c3281a8bf55d"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "الجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.",
+          "sha256": "b3650189761e67fe72c76d7f55967edf1cba540872900729451724dd0ce7de57"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "المدى للموسم كله، مش لمرة واحدة.",
+          "sha256": "b75f27fe14247b28e3bac3192c334d344c26e8c0c9e29f7bf41952c3849a93b2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "هو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.",
+          "sha256": "35ba93aa6d39782af5b1696ed1ea46d9aff7b57342460227d47b5f31d80d8477"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "المطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.",
+          "sha256": "717c2c7dfe49e41f8308cd22f911b90fed59da129b57a046bb550c3d201b6e6a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "ارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "sha256": "cf69b64b16716ca8b1ae3d990b842edf6508b5c4d7a8f8cd802fbf98063ed5da"
+        }
+      ],
+      "scientificMeaning": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "displayText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "captionText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "spokenText": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب تلتمية وخمسين إلى خمسمية ملليمتر طول النمو، وطالب كتب أربعمية ملليمتر لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nالمدى ده تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض فكرة إن الرقم ده جرعة لرية واحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+      "spokenTextSHA256": "29967690a7be4d6989e34a9a9dc647e1a34057d9994f135f2bfb9cbfd988100b",
+      "spokenTextSha256": "29967690a7be4d6989e34a9a9dc647e1a34057d9994f135f2bfb9cbfd988100b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب ٣٥٠–٥٠٠ مم طول النمو، وطالب كتب ٤٠٠ مم لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nهو تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض جرعة الرية الواحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "spoken": "اقرأ رقم الكرنب صح\n\nالجدول يقول للكرنب تلتمية وخمسين إلى خمسمية ملليمتر طول النمو، وطالب كتب أربعمية ملليمتر لرية اليوم.\n\nالمدى للموسم كله، مش لمرة واحدة.\n\nالمدى ده تقديري؛ المناخ وطول الموسم والمرحلة يغيروا الحاجة.\n\nالمطر الفعال ومياه التربة وفواقد النظام لسه مجهولة.\n\nارفض فكرة إن الرقم ده جرعة لرية واحدة؛ استخدم المدى للمقارنة وتحديد البيانات المحلية الناقصة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ca996feec7fe9183968e6c7ece69a3a6ccb8737d8de0c6d1a1cc8355a0b177d",
+      "requestFingerprintSha256": "6ca996feec7fe9183968e6c7ece69a3a6ccb8737d8de0c6d1a1cc8355a0b177d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-05-ar-EG-E02-r1",
+      "unitId": "S3-05-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "استخرج الفكرة المشتركة من غير تعميم",
+          "sha256": "c3ee83ab6ea397be664ed128d355f1cac82a78321570ce4a630047214dc451ed"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».",
+          "sha256": "f1fe37da14be8d22eafe4a0dae0e9177a05dc47a098b4f70f768770f7ddb833a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "التزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.",
+          "sha256": "d80fb9ef63cf404115336395490bf33cd415745374d09ebcf2c22d9b452d5b13"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "أثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.",
+          "sha256": "09cc92d3a78e5bd026bdcd95408e8fe436b7b4d329f080f4bff48dd8d10dd09e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "احمي المراحل الحساسة مع متابعة مياه التربة فعليًا.",
+          "sha256": "f09d659e8a24336cf5ecaf0c61dbc8c35ec1c2f02a9a1d270b06431504763b95"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "المراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+          "sha256": "c4d07104399676317d9c968bff1c01908f59f5064aee662ab877672bf74180e3"
+        }
+      ],
+      "scientificMeaning": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "displayText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "captionText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "spokenText": "استخرج الفكرة المشتركة من غير تعميم\n\nمجموعة سمّت كل المراحل الحساسة «تناسلية وتتلف نهائيًا من يوم جفاف واحد».\n\nالتزهير تناسلي، لكن تكوين درنة البطاطس وبصلة البصل نمو أعضاء تخزين للمحصول.\n\nأثر الإجهاد يتغير بشدته ومدته وتوقيت حدوثه.\n\nاحمي المراحل الحساسة مع متابعة مياه التربة فعليًا.\n\nالمراحل مؤثرة في الإنتاج، لكن مش كلها تناسلية ولا الضرر دائمًا غير قابل للتعويض.",
+      "spokenTextSHA256": "b1221bf6a850f9b5d49b9d7bf37cc9ce124511f41a5c1d17b94c00adeadcfb99",
+      "spokenTextSha256": "b1221bf6a850f9b5d49b9d7bf37cc9ce124511f41a5c1d17b94c00adeadcfb99",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5a5e56b552228db2c9515cb20220111cbec457f6853430122e24cfbaeaf6faee",
+      "requestFingerprintSha256": "5a5e56b552228db2c9515cb20220111cbec457f6853430122e24cfbaeaf6faee",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-05-ar-EG-E03-r1",
+      "unitId": "S3-05-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "اختار مع المفاضلات",
+          "sha256": "a879fb71fc12c89c8c59bed03fdf5278a0e4e534609f903d7fd3dfec4f94511f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "قطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.",
+          "sha256": "cc8c403aaf5e0c92bfea60ff48324a40fae44086d28237feaf498c71fa9b895e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "التنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.",
+          "sha256": "9770c06361eec68b30704f9d3318280e60b973598689180fec5f885d8b29807e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "الرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.",
+          "sha256": "f30ac22344815c9746eeea2f626e211778e0d9663007179f8506def9f34aebb9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "افحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.",
+          "sha256": "5021f2fa5305f74dfb55657b814d9384742d70976968c7cae3af86702fff6f75"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "اقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+          "sha256": "678520397247c61a850a0b284fbbbc71bfb95bf58fd67534e0cd54c925d4a8f8"
+        }
+      ],
+      "scientificMeaning": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "displayText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "captionText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+      "spokenText": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور من غير انجراف الرش، بس محتاج تكلفة وترشيح وصيانة للنقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، وقول إيه اللي ممكن يغيّر الاختيار.",
+      "spokenTextSHA256": "e23fc18bb39e7ad47c64bb89d7f8988304fabeab121e92adcde799fe016f6d9c",
+      "spokenTextSha256": "e23fc18bb39e7ad47c64bb89d7f8988304fabeab121e92adcde799fe016f6d9c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور بلا انجراف رش، لكنه يحتاج تكلفة وترشيح وصيانة نقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، واذكر إيه اللي ممكن يغيّر الاختيار.",
+          "spoken": "اختار مع المفاضلات\n\nقطعة خضار صفوف صغيرة، رمل، حر ورياح، مياه قليلة وغالية، وميزانية الصيانة غير معروفة.\n\nالتنقيط قرب الجذور من غير انجراف الرش، بس محتاج تكلفة وترشيح وصيانة للنقاطات.\n\nالرش مرن لكن الرياح تقلل التجانس؛ السطحي بالجاذبية حسب الميل والامتصاص والعمالة والمياه.\n\nافحص مياه منطقة الجذور وجودة المياه والصيانة والتكلفة قبل شراء النظام وجدولته.\n\nاقترح تنقيط قابل للصيانة كخيار أول مشروط، وقول إيه اللي ممكن يغيّر الاختيار.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "594430a68d89e08dd4b454be07bb6c8b2e520c48e0cbe275b0d2d0d1a6b6df94",
+      "requestFingerprintSha256": "594430a68d89e08dd4b454be07bb6c8b2e520c48e0cbe275b0d2d0d1a6b6df94",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

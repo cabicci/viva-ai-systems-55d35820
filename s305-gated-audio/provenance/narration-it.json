@@ -1,0 +1,246 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-it.json",
+    "sha256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+    "bytes": 29327
+  },
+  "units": [
+    {
+      "id": "S3-05-it-E01-r1",
+      "unitId": "S3-05-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Leggere il cavolo correttamente",
+          "sha256": "8c433a6b69c2d5167e38866eec59bd35fcd88d7475c677e83140f084f408e404"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "La tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.",
+          "sha256": "531bcd6690a2016252775322745dd54a9201d1df997d368db12b7eb69f9dda44"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "L’intervallo copre l’intero periodo, non un evento.",
+          "sha256": "9c3e8f6d257ec5f2e8e2c5ea21096b46ec6a0412929cbc3d2ebc4ce1e3172ec0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "È indicativo: clima, durata e fase cambiano il bisogno.",
+          "sha256": "a3df6a3e865d7931f90e97645914a7efeff5f4aa22863bfbf097ac8448d3c112"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Pioggia efficace, acqua del suolo e perdite non sono note.",
+          "sha256": "f06593e65e8d5496d3aabf94887080c109eae2be98964cac350d8bd2a98b8857"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Respinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "sha256": "7d81b0395ea5e5582dee29b59e049e6926917a75abe61ead0259e978d5a33d72"
+        }
+      ],
+      "scientificMeaning": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "displayText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "captionText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "spokenText": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo trecentocinquanta a cinquecento millimetri per tutta la crescita; uno studente scrive quattrocento millimetri per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRifiuta la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+      "spokenTextSHA256": "32603c2798bfd03a848758cbb61b776a939c88f1ab5208df0828d79d0c7674b0",
+      "spokenTextSha256": "32603c2798bfd03a848758cbb61b776a939c88f1ab5208df0828d79d0c7674b0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo 350–500 mm per tutta la crescita; uno studente scrive 400 mm per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRespinge la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "spoken": "Leggere il cavolo correttamente\n\nLa tabella indica cavolo trecentocinquanta a cinquecento millimetri per tutta la crescita; uno studente scrive quattrocento millimetri per l’irrigazione di oggi.\n\nL’intervallo copre l’intero periodo, non un evento.\n\nÈ indicativo: clima, durata e fase cambiano il bisogno.\n\nPioggia efficace, acqua del suolo e perdite non sono note.\n\nRifiuta la dose singola; usare l’intervallo solo per confronto e dati da raccogliere.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fb78fcd2bb2c107abdf602af90e9705fe0b2fdac7c2f685ed240a1e595b42a2d",
+      "requestFingerprintSha256": "fb78fcd2bb2c107abdf602af90e9705fe0b2fdac7c2f685ed240a1e595b42a2d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "table-interpretation",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-05-it-E02-r1",
+      "unitId": "S3-05-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Trovare il vero elemento comune",
+          "sha256": "62749f736534eaca5cbf32da32532904149d5cbe7da49199d1e2a77e9902619e"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "La classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.",
+          "sha256": "021d84fc06ae5ffc589d3b015d0a9693da39fcfe0b38d394a1d49aa6df03a4e5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "La fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.",
+          "sha256": "e8535656443e0163382c4aebe5497ea321797149297b5d95dc6653fd3388316c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Effetto dello stress dipende da intensità, durata e momento.",
+          "sha256": "8f9d53f2245a3e59b931194a788b746d654063f835a3afedd615a667ca35cfcf"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Proteggere i periodi sensibili controllando l’acqua del suolo.",
+          "sha256": "d3e713a6464e585e0d3758c6f8473ca875c99e0090628274f5d94a1d63eacb2c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Le fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+          "sha256": "3c7ecbec1f532f14904720508fb071c4528cc9a66c6d200e008d3e68fca59c99"
+        }
+      ],
+      "scientificMeaning": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "displayText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "captionText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "spokenText": "Trovare il vero elemento comune\n\nLa classe chiama ogni fase critica “riproduttiva e danneggiata per sempre da un solo giorno asciutto”.\n\nLa fioritura è riproduttiva, ma tuberi di patata e bulbi di cipolla sono fasi vegetative di formazione del prodotto.\n\nEffetto dello stress dipende da intensità, durata e momento.\n\nProteggere i periodi sensibili controllando l’acqua del suolo.\n\nLe fasi incidono sul prodotto, ma non tutte sono riproduttive e l’effetto non è sempre irreversibile.",
+      "spokenTextSHA256": "028d2d945d05cb7ff3c177a4f9980778104768bedc3392289d71f38d336d3327",
+      "spokenTextSha256": "028d2d945d05cb7ff3c177a4f9980778104768bedc3392289d71f38d336d3327",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7a62be964df4fe4411a2e58c4c2e05463a2356e2c08ec43088051c406cfe1347",
+      "requestFingerprintSha256": "7a62be964df4fe4411a2e58c4c2e05463a2356e2c08ec43088051c406cfe1347",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "stage-pattern",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-05-it-E03-r1",
+      "unitId": "S3-05-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Scegliere con compromessi",
+          "sha256": "22e8b0cdaa28f875f8243c29e52109b16efa74d28f979b7cfd7d2cb8dbe3ef38"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Piccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.",
+          "sha256": "3b5f1668d7c7624327e0a35afd8e119a3e73a5089b1b979efd325dd26133d011"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Goccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.",
+          "sha256": "e547f84f4da21955daa73b1a199900e204eb0a9c4babc59fa7617e866d693b53"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Aspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.",
+          "sha256": "eaf5dba432c972e2a75bd3b911152f9677a66710c24f5289663ae611749cef15"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Misurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.",
+          "sha256": "fd4ef9edc30b013eb443d414252ceb6a988bdc845b5fe2b55c081285801d437e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Proporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+          "sha256": "ba27deb8e3909f0b8dd56bb1a859591b3e585b0109783661fc065afa13cf1d4d"
+        }
+      ],
+      "scientificMeaning": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "displayText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "captionText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "spokenText": "Scegliere con compromessi\n\nPiccolo orto in file; sabbia, caldo, vento e acqua scarsa e costosa; budget di manutenzione ignoto.\n\nGoccia porta acqua alle radici senza deriva, ma costa e richiede filtri e cura dei gocciolatori.\n\nAspersione è flessibile ma il vento riduce uniformità; una soluzione di superficie dipende da pendenza, infiltrazione, lavoro e acqua.\n\nMisurare riserva radicale, qualità dell’acqua, manutenzione e costi prima dell’acquisto e del calendario.\n\nProporre goccia mantenibile come prima scelta condizionata e indicare ciò che potrebbe cambiarla.",
+      "spokenTextSHA256": "edd703c5268e59d3e65ef110b322666560deba06f5b58798ca3ede6ba338fe8e",
+      "spokenTextSha256": "edd703c5268e59d3e65ef110b322666560deba06f5b58798ca3ede6ba338fe8e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7e1010fff51cf53f711bc525e2c1513f5e5a50f28f98c68507e7d8ecbe8af13c",
+      "requestFingerprintSha256": "7e1010fff51cf53f711bc525e2c1513f5e5a50f28f98c68507e7d8ecbe8af13c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choice",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
