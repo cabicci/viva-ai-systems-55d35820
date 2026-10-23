@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXCEPTION_S209_EN_GUIDED_PRACTICE_SOURCE_PHRASE_REPAIR",
+  "stepId": "S2-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-exception-s209-en-guided-practice-source-phrase-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-09-en-guided-practice-source-phrase-repair-r1",
+      "unitId": "S2-09-en-guided-practice-source-phrase-repair-r1",
+      "locale": "en",
+      "semanticGroup": "exception-s209-en-guided-practice-source-phrase-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+          "sha256": "135543ae05bf999d39e90dfbc40492e9786787dcf3ddf1ed9e23d41bce1a7649"
+        }
+      ],
+      "scientificMeaning": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+      "displayText": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+      "captionText": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+      "spokenText": "For each card, state the method or crop information still needed; leave the application amounts X and Y blank.",
+      "spokenTextSHA256": "fa12d8a8c935e438f541da8239901364821db2c5d602f5371603470532d19143",
+      "spokenTextSha256": "fa12d8a8c935e438f541da8239901364821db2c5d602f5371603470532d19143",
+      "spokenAdaptationChanges": [
+        {
+          "written": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+          "spoken": "For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+          "spoken": "For each card, state the method or crop information still needed; leave the application amounts X and Y blank.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "993c168b8c99bf20ec921318e8500bea01737885bc90ca1f14d17682d4d41189",
+      "requestFingerprintSha256": "993c168b8c99bf20ec921318e8500bea01737885bc90ca1f14d17682d4d41189",
+      "sourcePlanSha256": "9a208a6abf11c4f0a99241141109ba526f6048cee49dfaccfa13b7500f10e194",
+      "exactSentenceBefore": "For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/guidedPractice/prompt",
+        "original": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+        "effective": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-09-en-guided-practice-source-phrase-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
