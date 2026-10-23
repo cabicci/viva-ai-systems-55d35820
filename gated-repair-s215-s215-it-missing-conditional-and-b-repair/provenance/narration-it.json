@@ -1,0 +1,93 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-it.json",
+    "sha256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+    "bytes": 45531
+  },
+  "units": [
+    {
+      "id": "S2-15-it-missing-conditional-and-b-repair-r1",
+      "unitId": "S2-15-it-missing-conditional-and-b-repair-r1",
+      "locale": "it",
+      "semanticGroup": "gated-repair-s215-s215-it-missing-conditional-and-b-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/5/reasoning/1",
+          "text": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.",
+          "sha256": "de19c2c3b64003399836b0232f64af08a2874c540c9b550c0a02ef6a1e0a9a7d"
+        },
+        {
+          "pointer": "/examples/5/reasoning/2",
+          "text": "Per B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+          "sha256": "2d0665d7e7cabe16c5ce7cfb97531fb4fce76a23a5e82f0f45c0490ddcb2b205"
+        }
+      ],
+      "scientificMeaning": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+      "displayText": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+      "captionText": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+      "spokenText": "Dopo un miglioramento verificato, pomodoro e mais dolce sono candidati per il caso A, se clima, drenaggio, salinità e varietà lo consentono. Per il caso B, evita fosforo superfluo, verifica il potassio e bilancia l’azoto. Pomodoro e mais dolce sono candidati da esaminare a pi acca sei virgola otto: non sono promesse, né una base per stabilire una dose.",
+      "spokenTextSHA256": "5f4b944996763c484025771fb3de950070e913d7d7c22cfa46a3074160023cfb",
+      "spokenTextSha256": "5f4b944996763c484025771fb3de950070e913d7d7c22cfa46a3074160023cfb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+          "spoken": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+          "spoken": "Dopo un miglioramento verificato, pomodoro e mais dolce sono candidati per il caso A, se clima, drenaggio, salinità e varietà lo consentono. Per il caso B, evita fosforo superfluo, verifica il potassio e bilancia l’azoto. Pomodoro e mais dolce sono candidati da esaminare a pi acca sei virgola otto: non sono promesse, né una base per stabilire una dose.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": true,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "f0a6a47a7f18c19ef5b990dc2355ee3b5b1cdd74c55ba91feba75c1d88ebdad7",
+      "requestFingerprintSha256": "f0a6a47a7f18c19ef5b990dc2355ee3b5b1cdd74c55ba91feba75c1d88ebdad7",
+      "exactSentenceBefore": "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.\n\nPer B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_GATED_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-italian-five-subpassage-authority-r1.json",
+        "authoritySHA256": "1fc99605bdbd2cd05a3d6998cd938bc58174ff1ad5ea577f13cdaa55efe9546a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false,
+      "sourceWrittenCaseModelAnswerIncluded": true,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S2-15-it-E06-r1",
+      "sourceCaseIndex": 5,
+      "sourceCaseId": "other-final-cases",
+      "answerSubpassageOnly": true
+    }
+  ]
+}
