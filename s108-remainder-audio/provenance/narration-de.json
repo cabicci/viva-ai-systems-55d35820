@@ -1,0 +1,573 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-08-de.json",
+    "sha256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+    "bytes": 24217
+  },
+  "units": [
+    {
+      "id": "S1-08-de-opening-r1",
+      "unitId": "S1-08-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Wende dasselbe sorgfältige Verfahren auf drei Proben an. Notiere zuerst, was wirklich geschieht, und bestimme dann die Textur. Wenn eine richtig angefeuchtete Probe keine Kugel bildet, ist auch das ein nützlicher Befund.",
+          "sha256": "fb2b099233b09441db3e70504ddc4b2ca0bba3c9dc3cf9aca2bd72f6f26a47c5"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Alle drei Proben selbst vorbereiten und prüfen, Wasser richtig dosieren und Verschleppung zwischen Proben vermeiden.",
+          "sha256": "1ad5398808eabe8322a3a46ffd05ca1c536ff67a5d01a587f164a8255ff0809b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Farbe, Tastgefühl sowie Länge oder Ausbleiben des Bodenbandes festhalten, bevor anhand der Entscheidungshilfe klassifiziert wird.",
+          "sha256": "04302983965821c909df3274b7f2d170d59b9cc5393006144d29926b7bb13c82"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Die Einteilung mit Tastgefühl und Bandverhalten begründen und Fehler bei Technik oder Feuchte korrigieren, statt eine Musterlösung abzuschreiben.",
+          "sha256": "198e165c594500618db01be0c946099e73822713da0ec96c88ea802ab5013d91"
+        }
+      ],
+      "scientificMeaning": "Wende dasselbe sorgfältige Verfahren auf drei Proben an. Notiere zuerst, was wirklich geschieht, und bestimme dann die Textur. Wenn eine richtig angefeuchtete Probe keine Kugel bildet, ist auch das ein nützlicher Befund.\n\nAlle drei Proben selbst vorbereiten und prüfen, Wasser richtig dosieren und Verschleppung zwischen Proben vermeiden.\n\nFarbe, Tastgefühl sowie Länge oder Ausbleiben des Bodenbandes festhalten, bevor anhand der Entscheidungshilfe klassifiziert wird.\n\nDie Einteilung mit Tastgefühl und Bandverhalten begründen und Fehler bei Technik oder Feuchte korrigieren, statt eine Musterlösung abzuschreiben.",
+      "displayText": "Wende dasselbe sorgfältige Verfahren auf drei Proben an. Notiere zuerst, was wirklich geschieht, und bestimme dann die Textur. Wenn eine richtig angefeuchtete Probe keine Kugel bildet, ist auch das ein nützlicher Befund.\n\nAlle drei Proben selbst vorbereiten und prüfen, Wasser richtig dosieren und Verschleppung zwischen Proben vermeiden.\n\nFarbe, Tastgefühl sowie Länge oder Ausbleiben des Bodenbandes festhalten, bevor anhand der Entscheidungshilfe klassifiziert wird.\n\nDie Einteilung mit Tastgefühl und Bandverhalten begründen und Fehler bei Technik oder Feuchte korrigieren, statt eine Musterlösung abzuschreiben.",
+      "captionText": "Wende dasselbe sorgfältige Verfahren auf drei Proben an. Notiere zuerst, was wirklich geschieht, und bestimme dann die Textur. Wenn eine richtig angefeuchtete Probe keine Kugel bildet, ist auch das ein nützlicher Befund.\n\nAlle drei Proben selbst vorbereiten und prüfen, Wasser richtig dosieren und Verschleppung zwischen Proben vermeiden.\n\nFarbe, Tastgefühl sowie Länge oder Ausbleiben des Bodenbandes festhalten, bevor anhand der Entscheidungshilfe klassifiziert wird.\n\nDie Einteilung mit Tastgefühl und Bandverhalten begründen und Fehler bei Technik oder Feuchte korrigieren, statt eine Musterlösung abzuschreiben.",
+      "spokenText": "Wende dasselbe sorgfältige Verfahren auf drei Proben an. Notiere zuerst, was wirklich geschieht, und bestimme dann die Textur. Wenn eine richtig angefeuchtete Probe keine Kugel bildet, ist auch das ein nützlicher Befund.\n\nAlle drei Proben selbst vorbereiten und prüfen, Wasser richtig dosieren und Verschleppung zwischen Proben vermeiden.\n\nFarbe, Tastgefühl sowie Länge oder Ausbleiben des Bodenbandes festhalten, bevor anhand der Entscheidungshilfe klassifiziert wird.\n\nDie Einteilung mit Tastgefühl und Bandverhalten begründen und Fehler bei Technik oder Feuchte korrigieren, statt eine Musterlösung abzuschreiben.",
+      "spokenTextSHA256": "3bb46c52402afd21971829a94f1112310c10fe4713cd718cd30271aaca32c599",
+      "spokenTextSha256": "3bb46c52402afd21971829a94f1112310c10fe4713cd718cd30271aaca32c599",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0cb403ca7989cbcf60c16cb1c138369b4ee1bb092cb126c4df08a798aebcdcbf",
+      "requestFingerprintSha256": "0cb403ca7989cbcf60c16cb1c138369b4ee1bb092cb126c4df08a798aebcdcbf",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-preparation-card-r1",
+      "unitId": "S1-08-de-preparation-card-r1",
+      "locale": "de",
+      "semanticGroup": "preparation-card",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/trainingCard/sampleRequirement",
+          "text": "Drei sichere, von der Lehrkraft geprüfte mineralische Bodenproben mit sandreichem, tonreichem und lehmigem Material; Identität bis zur Beobachtung unbekannt. Ungeprüfte Handels-Pflanzerde ersetzt keinen mineralischen Lehm.",
+          "sha256": "0789d645a9db109340db3d48f65f76ca6f8164716bc771dc6bbda6ec324a3949"
+        },
+        {
+          "pointer": "/trainingCard/materials/0",
+          "text": "Wassersprühflasche",
+          "sha256": "43e97dfaabc95f5de19e72e02ab187eb12df32ec935c44509ae73aee14d4d676"
+        },
+        {
+          "pointer": "/trainingCard/materials/1",
+          "text": "Sauberes Tablett oder ebene Arbeitsfläche",
+          "sha256": "7e8cb6cbe8f234720b72d448d287d6e7b49fb06cbd25493f45208d30e198848e"
+        },
+        {
+          "pointer": "/trainingCard/materials/2",
+          "text": "Papiertücher",
+          "sha256": "3207cd10b8e566bf5890ff0f3de92594992adf76785a0e845fd9bc42e59465f6"
+        },
+        {
+          "pointer": "/trainingCard/materials/3",
+          "text": "Ergebnisblatt und Stift",
+          "sha256": "9f087ef8b0d7d088203862f93c8ae06fc6307a15efc8b79e526a43f41eb06a7a"
+        },
+        {
+          "pointer": "/trainingCard/materials/4",
+          "text": "Zentimeterlineal",
+          "sha256": "422466e509d75598ecdf6bfa49a6c96b7903bea8b4be639b1db30e69d0e20e26"
+        },
+        {
+          "pointer": "/trainingCard/materials/5",
+          "text": "Von der Lehrkraft ausgewählte geeignete Handschuhe",
+          "sha256": "c2d332715cf5f6d8b772a04d59f795c3560d1ebe715fea425b904b3b123b8040"
+        },
+        {
+          "pointer": "/trainingCard/individualRequirement",
+          "text": "Jede lernende Person prüft und dokumentiert alle drei Proben selbst. Gruppenrollen ersetzen die individuelle Leistung nicht.",
+          "sha256": "474eecafd4f13ddc1804e162649e4f045a1b9d92e4224fe1e7f9b29dd1fa6a86"
+        },
+        {
+          "pointer": "/trainingCard/measurementRule",
+          "text": "Bandlänge beim Abreißen in cm sowie gemessen oder geschätzt notieren. Keine Kugel oder kein Band sind gültige Befunde, wenn Technik und Feuchte geprüft wurden.",
+          "sha256": "531a9622d828db866dbae4769af22955691338fc9c2595aa5204c2237b96ddc5"
+        }
+      ],
+      "scientificMeaning": "Drei sichere, von der Lehrkraft geprüfte mineralische Bodenproben mit sandreichem, tonreichem und lehmigem Material; Identität bis zur Beobachtung unbekannt. Ungeprüfte Handels-Pflanzerde ersetzt keinen mineralischen Lehm.\n\nWassersprühflasche\n\nSauberes Tablett oder ebene Arbeitsfläche\n\nPapiertücher\n\nErgebnisblatt und Stift\n\nZentimeterlineal\n\nVon der Lehrkraft ausgewählte geeignete Handschuhe\n\nJede lernende Person prüft und dokumentiert alle drei Proben selbst. Gruppenrollen ersetzen die individuelle Leistung nicht.\n\nBandlänge beim Abreißen in cm sowie gemessen oder geschätzt notieren. Keine Kugel oder kein Band sind gültige Befunde, wenn Technik und Feuchte geprüft wurden.",
+      "displayText": "Drei sichere, von der Lehrkraft geprüfte mineralische Bodenproben mit sandreichem, tonreichem und lehmigem Material; Identität bis zur Beobachtung unbekannt. Ungeprüfte Handels-Pflanzerde ersetzt keinen mineralischen Lehm.\n\nWassersprühflasche\n\nSauberes Tablett oder ebene Arbeitsfläche\n\nPapiertücher\n\nErgebnisblatt und Stift\n\nZentimeterlineal\n\nVon der Lehrkraft ausgewählte geeignete Handschuhe\n\nJede lernende Person prüft und dokumentiert alle drei Proben selbst. Gruppenrollen ersetzen die individuelle Leistung nicht.\n\nBandlänge beim Abreißen in cm sowie gemessen oder geschätzt notieren. Keine Kugel oder kein Band sind gültige Befunde, wenn Technik und Feuchte geprüft wurden.",
+      "captionText": "Drei sichere, von der Lehrkraft geprüfte mineralische Bodenproben mit sandreichem, tonreichem und lehmigem Material; Identität bis zur Beobachtung unbekannt. Ungeprüfte Handels-Pflanzerde ersetzt keinen mineralischen Lehm.\n\nWassersprühflasche\n\nSauberes Tablett oder ebene Arbeitsfläche\n\nPapiertücher\n\nErgebnisblatt und Stift\n\nZentimeterlineal\n\nVon der Lehrkraft ausgewählte geeignete Handschuhe\n\nJede lernende Person prüft und dokumentiert alle drei Proben selbst. Gruppenrollen ersetzen die individuelle Leistung nicht.\n\nBandlänge beim Abreißen in cm sowie gemessen oder geschätzt notieren. Keine Kugel oder kein Band sind gültige Befunde, wenn Technik und Feuchte geprüft wurden.",
+      "spokenText": "Drei sichere, von der Lehrkraft geprüfte mineralische Bodenproben mit sandreichem, tonreichem und lehmigem Material; Identität bis zur Beobachtung unbekannt. Ungeprüfte Handels-Pflanzerde ersetzt keinen mineralischen Lehm.\n\nWassersprühflasche\n\nSauberes Tablett oder ebene Arbeitsfläche\n\nPapiertücher\n\nErgebnisblatt und Stift\n\nZentimeterlineal\n\nVon der Lehrkraft ausgewählte geeignete Handschuhe\n\nJede lernende Person prüft und dokumentiert alle drei Proben selbst. Gruppenrollen ersetzen die individuelle Leistung nicht.\n\nBandlänge beim Abreißen in Zentimetern sowie gemessen oder geschätzt notieren. Keine Kugel oder kein Band sind gültige Befunde, wenn Technik und Feuchte geprüft wurden.",
+      "spokenTextSHA256": "ce51bd8d27ae805b441f2e78e3e8552c504c54ef1a9a0707a411c17af416dbb9",
+      "spokenTextSha256": "ce51bd8d27ae805b441f2e78e3e8552c504c54ef1a9a0707a411c17af416dbb9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "in cm",
+          "spoken": "in Zentimetern",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f57c621e6af094270815a11827465fcd874da3e04c6bf4af6aac10afbccd8c99",
+      "requestFingerprintSha256": "f57c621e6af094270815a11827465fcd874da3e04c6bf4af6aac10afbccd8c99",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-E01-r1",
+      "unitId": "S1-08-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die passend angefeuchtete Probe hält eine Kugel und bildet ein schwaches Band von 1,8 cm. Die feuchtere Prise fühlt sich sehr rau an.",
+          "sha256": "e320548054438d6fe324e9dce74cae2a8d76ff77cf74993f4f338eb9f1c48582"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Kugel- und Bandbildung schließen den direkten Sprung zum Ohne-Kugel-Zweig aus.",
+          "sha256": "383a002b977882c7592a66edf30b9aa73c131215e9ebf9bb227558740151379e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Die Länge gehört zum kurzen Zweig.",
+          "sha256": "b72eca0e033f29bebdff0335a6b578014a1caa1afa21d85e927fd539dc7d47ad"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Das deutlich raue Gefühl führt zu sandigem Lehm, nicht bloß wegen der kurzen Länge zu Lehm.",
+          "sha256": "85befccad27fff7133b0d6842b3a8491cf36007a3f6f1461a38fc453a36bcb30"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Länge und Tastgefühl gemeinsam auswerten.",
+          "sha256": "f320320d6ebe9edf431e845205a9a026cf027ef8c4b872fa200ea327476fbb66"
+        }
+      ],
+      "scientificMeaning": "Die passend angefeuchtete Probe hält eine Kugel und bildet ein schwaches Band von 1,8 cm. Die feuchtere Prise fühlt sich sehr rau an.\n\nKugel- und Bandbildung schließen den direkten Sprung zum Ohne-Kugel-Zweig aus.\n\nDie Länge gehört zum kurzen Zweig.\n\nDas deutlich raue Gefühl führt zu sandigem Lehm, nicht bloß wegen der kurzen Länge zu Lehm.\n\nLänge und Tastgefühl gemeinsam auswerten.",
+      "displayText": "Die passend angefeuchtete Probe hält eine Kugel und bildet ein schwaches Band von 1,8 cm. Die feuchtere Prise fühlt sich sehr rau an.\n\nKugel- und Bandbildung schließen den direkten Sprung zum Ohne-Kugel-Zweig aus.\n\nDie Länge gehört zum kurzen Zweig.\n\nDas deutlich raue Gefühl führt zu sandigem Lehm, nicht bloß wegen der kurzen Länge zu Lehm.\n\nLänge und Tastgefühl gemeinsam auswerten.",
+      "captionText": "Die passend angefeuchtete Probe hält eine Kugel und bildet ein schwaches Band von 1,8 cm. Die feuchtere Prise fühlt sich sehr rau an.\n\nKugel- und Bandbildung schließen den direkten Sprung zum Ohne-Kugel-Zweig aus.\n\nDie Länge gehört zum kurzen Zweig.\n\nDas deutlich raue Gefühl führt zu sandigem Lehm, nicht bloß wegen der kurzen Länge zu Lehm.\n\nLänge und Tastgefühl gemeinsam auswerten.",
+      "spokenText": "Die passend angefeuchtete Probe hält eine Kugel und bildet ein schwaches Band von eins Komma acht Zentimeter. Die feuchtere Prise fühlt sich sehr rau an.\n\nKugel- und Bandbildung schließen den direkten Sprung zum Ohne-Kugel-Zweig aus.\n\nDie Länge gehört zum kurzen Zweig.\n\nDas deutlich raue Gefühl führt zu sandigem Lehm, nicht bloß wegen der kurzen Länge zu Lehm.\n\nLänge und Tastgefühl gemeinsam auswerten.",
+      "spokenTextSHA256": "ccf0c1e59b030981413228b92f5e54a5ffc12a48c7f47672f709c5994d4df5b3",
+      "spokenTextSha256": "ccf0c1e59b030981413228b92f5e54a5ffc12a48c7f47672f709c5994d4df5b3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "1,8 cm",
+          "spoken": "eins Komma acht Zentimeter",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "08cab6068586192914562f0183a254dfc46799b3e0e0ea4e32b2afc6be1a96e2",
+      "requestFingerprintSha256": "08cab6068586192914562f0183a254dfc46799b3e0e0ea4e32b2afc6be1a96e2",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-E02-r1",
+      "unitId": "S1-08-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Die lernende Person hat übermäßige Trockenheit und Nässe geprüft und nur Material derselben Probe verwendet. Sie zerfällt dennoch.",
+          "sha256": "3c66cffd107c1b83777edbd4ce6681bd14fcb4b13eceea35ed9bcd7fcd2a97eb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Notiere, dass keine haltbare Kugel entsteht.",
+          "sha256": "1d8a9ecb9afc0ba40bb2dd398baf629b4f12109d11a622d702fed92bc45336a5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Füge keinen anderen Boden zu, presse nicht endlos und erfinde kein gebildetes Band mit null Länge.",
+          "sha256": "4e54c48b4bdf8ccf892a70362ec3e8b3e0da383a17b318f19286114193dd4095"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Folge dem Zweig in Richtung Sand und bewahre die Beobachtungen für die Lehrkraft auf.",
+          "sha256": "9c909e27b5c0051010c542a0a7b48d9324df4de48cd3420e98edf7a1105e364c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Eine trotz richtiger Vorbereitung fehlende Kugel ist ein Befund, kein Versagen.",
+          "sha256": "9456dac4a0b5d1d5efd3739d21df4876e545ff15dca1f1dd01a06728d60e1719"
+        }
+      ],
+      "scientificMeaning": "Die lernende Person hat übermäßige Trockenheit und Nässe geprüft und nur Material derselben Probe verwendet. Sie zerfällt dennoch.\n\nNotiere, dass keine haltbare Kugel entsteht.\n\nFüge keinen anderen Boden zu, presse nicht endlos und erfinde kein gebildetes Band mit null Länge.\n\nFolge dem Zweig in Richtung Sand und bewahre die Beobachtungen für die Lehrkraft auf.\n\nEine trotz richtiger Vorbereitung fehlende Kugel ist ein Befund, kein Versagen.",
+      "displayText": "Die lernende Person hat übermäßige Trockenheit und Nässe geprüft und nur Material derselben Probe verwendet. Sie zerfällt dennoch.\n\nNotiere, dass keine haltbare Kugel entsteht.\n\nFüge keinen anderen Boden zu, presse nicht endlos und erfinde kein gebildetes Band mit null Länge.\n\nFolge dem Zweig in Richtung Sand und bewahre die Beobachtungen für die Lehrkraft auf.\n\nEine trotz richtiger Vorbereitung fehlende Kugel ist ein Befund, kein Versagen.",
+      "captionText": "Die lernende Person hat übermäßige Trockenheit und Nässe geprüft und nur Material derselben Probe verwendet. Sie zerfällt dennoch.\n\nNotiere, dass keine haltbare Kugel entsteht.\n\nFüge keinen anderen Boden zu, presse nicht endlos und erfinde kein gebildetes Band mit null Länge.\n\nFolge dem Zweig in Richtung Sand und bewahre die Beobachtungen für die Lehrkraft auf.\n\nEine trotz richtiger Vorbereitung fehlende Kugel ist ein Befund, kein Versagen.",
+      "spokenText": "Die lernende Person hat übermäßige Trockenheit und Nässe geprüft und nur Material derselben Probe verwendet. Sie zerfällt dennoch.\n\nNotiere, dass keine haltbare Kugel entsteht.\n\nFüge keinen anderen Boden zu, presse nicht endlos und erfinde kein gebildetes Band mit null Länge.\n\nFolge dem Zweig in Richtung Sand und bewahre die Beobachtungen für die Lehrkraft auf.\n\nEine trotz richtiger Vorbereitung fehlende Kugel ist ein Befund, kein Versagen.",
+      "spokenTextSHA256": "3a80b0fefeb851d59a0c01f367251c8dc928d587bd1b5a8241de6ba230a0210f",
+      "spokenTextSha256": "3a80b0fefeb851d59a0c01f367251c8dc928d587bd1b5a8241de6ba230a0210f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1be82076e29f02503928616a3a89fa08eb3195c1bbe2b350a53453f41b17d086",
+      "requestFingerprintSha256": "1be82076e29f02503928616a3a89fa08eb3195c1bbe2b350a53453f41b17d086",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-E03-r1",
+      "unitId": "S1-08-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Die Probe bildet ein mittleres Band; die feuchtere Prise ist weder besonders rau noch besonders glatt.",
+          "sha256": "6c439ffd8b57ee45c8990c287126217550b5edf138bb6d59522939056ef8a13d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Notiere gemessene 3,5 cm und Tastgefühl getrennt.",
+          "sha256": "ca22d4b1b14028da31ac3b9d508dbff71b044b2e4e3dea6798bfb41105af4834"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Folge dem mittleren Zweig und dann dem Zweig ohne dominierende Empfindung.",
+          "sha256": "ed5d14b4c6ccaaea0801acc1e0c0f8edc744838f10989976cf43a355139044e3"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Die Hilfe zeigt tonigen Lehm an; ersetze ihn nicht durch Lehm aus einer widersprüchlichen Mustertabelle.",
+          "sha256": "9bd6d999366714d4b3452d082ff6515fc12d6591167a6a8af082a68bdb6549d2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Beobachtungen gehen einer abgeschriebenen Musterbezeichnung vor.",
+          "sha256": "a5423c24caaa872b3c7f22711df3c4b7de7d033ae447f4286d35b558a48a2839"
+        }
+      ],
+      "scientificMeaning": "Die Probe bildet ein mittleres Band; die feuchtere Prise ist weder besonders rau noch besonders glatt.\n\nNotiere gemessene 3,5 cm und Tastgefühl getrennt.\n\nFolge dem mittleren Zweig und dann dem Zweig ohne dominierende Empfindung.\n\nDie Hilfe zeigt tonigen Lehm an; ersetze ihn nicht durch Lehm aus einer widersprüchlichen Mustertabelle.\n\nBeobachtungen gehen einer abgeschriebenen Musterbezeichnung vor.",
+      "displayText": "Die Probe bildet ein mittleres Band; die feuchtere Prise ist weder besonders rau noch besonders glatt.\n\nNotiere gemessene 3,5 cm und Tastgefühl getrennt.\n\nFolge dem mittleren Zweig und dann dem Zweig ohne dominierende Empfindung.\n\nDie Hilfe zeigt tonigen Lehm an; ersetze ihn nicht durch Lehm aus einer widersprüchlichen Mustertabelle.\n\nBeobachtungen gehen einer abgeschriebenen Musterbezeichnung vor.",
+      "captionText": "Die Probe bildet ein mittleres Band; die feuchtere Prise ist weder besonders rau noch besonders glatt.\n\nNotiere gemessene 3,5 cm und Tastgefühl getrennt.\n\nFolge dem mittleren Zweig und dann dem Zweig ohne dominierende Empfindung.\n\nDie Hilfe zeigt tonigen Lehm an; ersetze ihn nicht durch Lehm aus einer widersprüchlichen Mustertabelle.\n\nBeobachtungen gehen einer abgeschriebenen Musterbezeichnung vor.",
+      "spokenText": "Die Probe bildet ein mittleres Band; die feuchtere Prise ist weder besonders rau noch besonders glatt.\n\nNotiere gemessene drei Komma fünf Zentimeter und Tastgefühl getrennt.\n\nFolge dem mittleren Zweig und dann dem Zweig ohne dominierende Empfindung.\n\nDie Hilfe zeigt tonigen Lehm an; ersetze ihn nicht durch Lehm aus einer widersprüchlichen Mustertabelle.\n\nBeobachtungen gehen einer abgeschriebenen Musterbezeichnung vor.",
+      "spokenTextSHA256": "a223c7f1f30db7acdd29424dc1c498c3e6d2be82184562e702c35a161a42e483",
+      "spokenTextSha256": "a223c7f1f30db7acdd29424dc1c498c3e6d2be82184562e702c35a161a42e483",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3,5 cm",
+          "spoken": "drei Komma fünf Zentimeter",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0f1ad5986f67fa435bf729f3feffcd556bc20e497186f4aa6c76f53d381ce81f",
+      "requestFingerprintSha256": "0f1ad5986f67fa435bf729f3feffcd556bc20e497186f4aa6c76f53d381ce81f",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-P01-r1",
+      "unitId": "S1-08-de-P01-r1",
+      "locale": "de",
+      "semanticGroup": "P01",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/safety",
+          "text": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.",
+          "sha256": "b5b7e1ad9ae3d5446275fe77fdf8a4c420f43f21735333e2613bcc2da723cc82"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/0",
+          "text": "Arbeitsplatz vorbereiten und A, B und C getrennt und gekennzeichnet halten.",
+          "sha256": "c976eaf0bffd678205de83e8bb3dad18345b86df1cf8e2213b6b1d874639848a"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/1",
+          "text": "A beobachten, eine handflächengroße Menge nehmen, Fremdkörper entfernen und schrittweise befeuchten.",
+          "sha256": "9860cc2564f257590dfcb768ca6545728a680c4d83f57519e338d794ca74fd6b"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/2",
+          "text": "Kugel prüfen; nach Feuchtekontrolle gültige Nichtbildung notieren, statt jede Probe zur Kugel zu zwingen.",
+          "sha256": "018d8f7d411faaf7e26e66327e5426855efab571ee50d7589e095af836b96988"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/3",
+          "text": "Wenn eine Kugel entsteht, das Band korrekt formen; sonst den gültigen Zweig dokumentieren und erklären.",
+          "sha256": "b87156f46f004925fe5d0748b4f6012aec41f6079d40aebf8e26a2aced711d73"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/4",
+          "text": "Beobachtungen zu A vor der Einteilung festhalten und die vollständige Längen- und Tastregel anwenden.",
+          "sha256": "870093cbb533c29401dd984d3a8256c61e469d4e4773b9530bf22da33ee5d31d"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Zwischen Proben reinigen und B selbst richtig vorbereiten und prüfen.",
+          "sha256": "2b8275da9bfdc02b63d1cee7fe6cc8eb09d87173af5b7393e37bb2b24a41ed41"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/6",
+          "text": "B anhand eigener Beobachtungen einstufen und begründen.",
+          "sha256": "eb86dfe7b4362d7024307b4bb08e949d91f318c0d8e4fce7e1629234ac8deb2f"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/7",
+          "text": "Zwischen Proben reinigen und C selbst richtig vorbereiten und prüfen.",
+          "sha256": "379694d483ed2cc680efca6c41765665a90b2654ac3745bbe80a3276d1063be3"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/8",
+          "text": "C anhand eigener Beobachtungen einstufen und begründen.",
+          "sha256": "2dd6b10af776da6ed8af35a0452c4437e8c533e7c913b04c4313fc9c1d467e6a"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/9",
+          "text": "Im verbundenen Kulturschritt mindestens zwei Kandidaten je Probe empfehlen und begründen, darunter das Ein-Kultur-Minimum der ursprünglichen Karte; diesen Punkt bis zum Beleg offenlassen.",
+          "sha256": "32b3075c67aaf8478a2afcf447f78532a0c8d80c2fa089ac321ea581a2d9676a"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/10",
+          "text": "Hände, Schutz, Materialien und Arbeitsplatz reinigen und Proben nach Anweisung entsorgen.",
+          "sha256": "500f2a517059f047c783cbf2ad0491a7cb383e8940f97b6b5b44ece8fc5e6353"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nArbeitsplatz vorbereiten und A, B und C getrennt und gekennzeichnet halten.\n\nA beobachten, eine handflächengroße Menge nehmen, Fremdkörper entfernen und schrittweise befeuchten.\n\nKugel prüfen; nach Feuchtekontrolle gültige Nichtbildung notieren, statt jede Probe zur Kugel zu zwingen.\n\nWenn eine Kugel entsteht, das Band korrekt formen; sonst den gültigen Zweig dokumentieren und erklären.\n\nBeobachtungen zu A vor der Einteilung festhalten und die vollständige Längen- und Tastregel anwenden.\n\nZwischen Proben reinigen und B selbst richtig vorbereiten und prüfen.\n\nB anhand eigener Beobachtungen einstufen und begründen.\n\nZwischen Proben reinigen und C selbst richtig vorbereiten und prüfen.\n\nC anhand eigener Beobachtungen einstufen und begründen.\n\nIm verbundenen Kulturschritt mindestens zwei Kandidaten je Probe empfehlen und begründen, darunter das Ein-Kultur-Minimum der ursprünglichen Karte; diesen Punkt bis zum Beleg offenlassen.\n\nHände, Schutz, Materialien und Arbeitsplatz reinigen und Proben nach Anweisung entsorgen.",
+      "displayText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nArbeitsplatz vorbereiten und A, B und C getrennt und gekennzeichnet halten.\n\nA beobachten, eine handflächengroße Menge nehmen, Fremdkörper entfernen und schrittweise befeuchten.\n\nKugel prüfen; nach Feuchtekontrolle gültige Nichtbildung notieren, statt jede Probe zur Kugel zu zwingen.\n\nWenn eine Kugel entsteht, das Band korrekt formen; sonst den gültigen Zweig dokumentieren und erklären.\n\nBeobachtungen zu A vor der Einteilung festhalten und die vollständige Längen- und Tastregel anwenden.\n\nZwischen Proben reinigen und B selbst richtig vorbereiten und prüfen.\n\nB anhand eigener Beobachtungen einstufen und begründen.\n\nZwischen Proben reinigen und C selbst richtig vorbereiten und prüfen.\n\nC anhand eigener Beobachtungen einstufen und begründen.\n\nIm verbundenen Kulturschritt mindestens zwei Kandidaten je Probe empfehlen und begründen, darunter das Ein-Kultur-Minimum der ursprünglichen Karte; diesen Punkt bis zum Beleg offenlassen.\n\nHände, Schutz, Materialien und Arbeitsplatz reinigen und Proben nach Anweisung entsorgen.",
+      "captionText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nArbeitsplatz vorbereiten und A, B und C getrennt und gekennzeichnet halten.\n\nA beobachten, eine handflächengroße Menge nehmen, Fremdkörper entfernen und schrittweise befeuchten.\n\nKugel prüfen; nach Feuchtekontrolle gültige Nichtbildung notieren, statt jede Probe zur Kugel zu zwingen.\n\nWenn eine Kugel entsteht, das Band korrekt formen; sonst den gültigen Zweig dokumentieren und erklären.\n\nBeobachtungen zu A vor der Einteilung festhalten und die vollständige Längen- und Tastregel anwenden.\n\nZwischen Proben reinigen und B selbst richtig vorbereiten und prüfen.\n\nB anhand eigener Beobachtungen einstufen und begründen.\n\nZwischen Proben reinigen und C selbst richtig vorbereiten und prüfen.\n\nC anhand eigener Beobachtungen einstufen und begründen.\n\nIm verbundenen Kulturschritt mindestens zwei Kandidaten je Probe empfehlen und begründen, darunter das Ein-Kultur-Minimum der ursprünglichen Karte; diesen Punkt bis zum Beleg offenlassen.\n\nHände, Schutz, Materialien und Arbeitsplatz reinigen und Proben nach Anweisung entsorgen.",
+      "spokenText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis zum verbundenen Kulturschritt S eins null neun offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nArbeitsplatz vorbereiten und A, B und C getrennt und gekennzeichnet halten.\n\nA beobachten, eine handflächengroße Menge nehmen, Fremdkörper entfernen und schrittweise befeuchten.\n\nKugel prüfen; nach Feuchtekontrolle gültige Nichtbildung notieren, statt jede Probe zur Kugel zu zwingen.\n\nWenn eine Kugel entsteht, das Band korrekt formen; sonst den gültigen Zweig dokumentieren und erklären.\n\nBeobachtungen zu A vor der Einteilung festhalten und die vollständige Längen- und Tastregel anwenden.\n\nZwischen Proben reinigen und B selbst richtig vorbereiten und prüfen.\n\nB anhand eigener Beobachtungen einstufen und begründen.\n\nZwischen Proben reinigen und C selbst richtig vorbereiten und prüfen.\n\nC anhand eigener Beobachtungen einstufen und begründen.\n\nIm verbundenen Kulturschritt mindestens zwei Kandidaten je Probe empfehlen und begründen, darunter das Ein-Kultur-Minimum der ursprünglichen Karte; diesen Punkt bis zum Beleg offenlassen.\n\nHände, Schutz, Materialien und Arbeitsplatz reinigen und Proben nach Anweisung entsorgen.",
+      "spokenTextSHA256": "65ed2b0855048134a33d4b4d9a20d19af30884ee025874eab4388ef91b4eb22c",
+      "spokenTextSha256": "65ed2b0855048134a33d4b4d9a20d19af30884ee025874eab4388ef91b4eb22c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "bis S1-09",
+          "spoken": "bis zum verbundenen Kulturschritt S eins null neun",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7439f30ff4b4c001d408910cad7a73e3339db9aba72ac2fcbb09354a287d7998",
+      "requestFingerprintSha256": "7439f30ff4b4c001d408910cad7a73e3339db9aba72ac2fcbb09354a287d7998",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-P02-r1",
+      "unitId": "S1-08-de-P02-r1",
+      "locale": "de",
+      "semanticGroup": "P02",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/1/safety",
+          "text": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.",
+          "sha256": "b5b7e1ad9ae3d5446275fe77fdf8a4c420f43f21735333e2613bcc2da723cc82"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/0",
+          "text": "Geeigneten Schutz einschließlich Handschuhen nach dem sicheren Probenverfahren der Lehrkraft tragen.",
+          "sha256": "49307384c71d7f8c0a6f67dc92e5ee31df4c585196d9c1af55dd258598127c41"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/1",
+          "text": "Eine kleine repräsentative Handvoll der zugewiesenen Probe nehmen und Steine und Fremdkörper entfernen.",
+          "sha256": "450804a57f6bfba364a9f993693e7d0bc9544466698ddf3ff9afce5bbe024b38"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/2",
+          "text": "Wasser langsam zugeben und kneten; Kugel prüfen oder Nichtbildung korrekt festhalten.",
+          "sha256": "e9e706721fc8e425dcc6b1736e458a26cdec337ea2832c034d8f0149916fd595"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/3",
+          "text": "Soweit möglich ein gleichmäßiges ungestütztes Band bilden oder den Zweig ohne Band richtig erklären.",
+          "sha256": "cc2293e58e8115d336cf8f9cd29c9cffc8585d6533e341674c403f2c261a68ef"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/4",
+          "text": "Bandlänge und Festigkeit oder ihr Ausbleiben nach vollständiger Hilfe festhalten, nicht nach der vereinfachten Ein-Name-Regel.",
+          "sha256": "751523ed1b8cf52b4b9ce1dab658fb172e4c07cfed8ff078ac06a6cb65f73b00"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/5",
+          "text": "Raues und glattes Gefühl mit einer feuchteren Prise prüfen.",
+          "sha256": "ad99aef77ad5625beb8526af5ccd9bf0fca608c2d78562b4cbe4f6b733449b91"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/6",
+          "text": "Feldtexturschluss, Belege und Unsicherheit nennen.",
+          "sha256": "7233140d3dcb16b2249c98956fe87732a35ceb748ebffeb69fb5cf16ff16a9ab"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/7",
+          "text": "Arbeitsplatz reinigen und Material angemessen entsorgen.",
+          "sha256": "903412548e4a07c53eefdc31c1a56c302955a5e1e786702f0da056270c9456ef"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nGeeigneten Schutz einschließlich Handschuhen nach dem sicheren Probenverfahren der Lehrkraft tragen.\n\nEine kleine repräsentative Handvoll der zugewiesenen Probe nehmen und Steine und Fremdkörper entfernen.\n\nWasser langsam zugeben und kneten; Kugel prüfen oder Nichtbildung korrekt festhalten.\n\nSoweit möglich ein gleichmäßiges ungestütztes Band bilden oder den Zweig ohne Band richtig erklären.\n\nBandlänge und Festigkeit oder ihr Ausbleiben nach vollständiger Hilfe festhalten, nicht nach der vereinfachten Ein-Name-Regel.\n\nRaues und glattes Gefühl mit einer feuchteren Prise prüfen.\n\nFeldtexturschluss, Belege und Unsicherheit nennen.\n\nArbeitsplatz reinigen und Material angemessen entsorgen.",
+      "displayText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nGeeigneten Schutz einschließlich Handschuhen nach dem sicheren Probenverfahren der Lehrkraft tragen.\n\nEine kleine repräsentative Handvoll der zugewiesenen Probe nehmen und Steine und Fremdkörper entfernen.\n\nWasser langsam zugeben und kneten; Kugel prüfen oder Nichtbildung korrekt festhalten.\n\nSoweit möglich ein gleichmäßiges ungestütztes Band bilden oder den Zweig ohne Band richtig erklären.\n\nBandlänge und Festigkeit oder ihr Ausbleiben nach vollständiger Hilfe festhalten, nicht nach der vereinfachten Ein-Name-Regel.\n\nRaues und glattes Gefühl mit einer feuchteren Prise prüfen.\n\nFeldtexturschluss, Belege und Unsicherheit nennen.\n\nArbeitsplatz reinigen und Material angemessen entsorgen.",
+      "captionText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis S1-09 offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nGeeigneten Schutz einschließlich Handschuhen nach dem sicheren Probenverfahren der Lehrkraft tragen.\n\nEine kleine repräsentative Handvoll der zugewiesenen Probe nehmen und Steine und Fremdkörper entfernen.\n\nWasser langsam zugeben und kneten; Kugel prüfen oder Nichtbildung korrekt festhalten.\n\nSoweit möglich ein gleichmäßiges ungestütztes Band bilden oder den Zweig ohne Band richtig erklären.\n\nBandlänge und Festigkeit oder ihr Ausbleiben nach vollständiger Hilfe festhalten, nicht nach der vereinfachten Ein-Name-Regel.\n\nRaues und glattes Gefühl mit einer feuchteren Prise prüfen.\n\nFeldtexturschluss, Belege und Unsicherheit nennen.\n\nArbeitsplatz reinigen und Material angemessen entsorgen.",
+      "spokenText": "Die Lehrkraft prüft sichere Mineralbodenproben, Schutz und die individuelle Arbeit an A/B/C. Der Kulturteil bleibt bis zum verbundenen Kulturschritt S eins null neun offen; Online-Antworten und Gruppenrollen bestehen ihn nicht.\n\nGeeigneten Schutz einschließlich Handschuhen nach dem sicheren Probenverfahren der Lehrkraft tragen.\n\nEine kleine repräsentative Handvoll der zugewiesenen Probe nehmen und Steine und Fremdkörper entfernen.\n\nWasser langsam zugeben und kneten; Kugel prüfen oder Nichtbildung korrekt festhalten.\n\nSoweit möglich ein gleichmäßiges ungestütztes Band bilden oder den Zweig ohne Band richtig erklären.\n\nBandlänge und Festigkeit oder ihr Ausbleiben nach vollständiger Hilfe festhalten, nicht nach der vereinfachten Ein-Name-Regel.\n\nRaues und glattes Gefühl mit einer feuchteren Prise prüfen.\n\nFeldtexturschluss, Belege und Unsicherheit nennen.\n\nArbeitsplatz reinigen und Material angemessen entsorgen.",
+      "spokenTextSHA256": "f6bc50959d45cd2cbd3dd6b56ec1b38f4daeaeb349df232338568edaff88a0f2",
+      "spokenTextSha256": "f6bc50959d45cd2cbd3dd6b56ec1b38f4daeaeb349df232338568edaff88a0f2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "bis S1-09",
+          "spoken": "bis zum verbundenen Kulturschritt S eins null neun",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c1e6e5483a4e893f8cbb9d09e4ad06b6256e9fe2d4ae6d6093257ae6940a6f8c",
+      "requestFingerprintSha256": "c1e6e5483a4e893f8cbb9d09e4ad06b6256e9fe2d4ae6d6093257ae6940a6f8c",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-08-de-reflection-r1",
+      "unitId": "S1-08-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c159a8834b7e57bc79c6697bd565e04e6bb3e21ed74eb39120339069f2fea0b",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kann ich die Probe durchführen, Beobachtungen beschreiben und meine Entscheidung begründen, ohne einen Musterschlüssel abzuschreiben?",
+          "sha256": "19b998524fb20063e5124549ac4e604a5c35dd572484202e14773d649ba3c0bd"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Selbsteinschätzung belegt keine praktische Kompetenz.",
+          "sha256": "7c431bae30193e319bf95ed0c67a1ecd0fb9e9ed28e497de046fbbc382b35ebd"
+        }
+      ],
+      "scientificMeaning": "Kann ich die Probe durchführen, Beobachtungen beschreiben und meine Entscheidung begründen, ohne einen Musterschlüssel abzuschreiben?\n\nSelbsteinschätzung belegt keine praktische Kompetenz.",
+      "displayText": "Kann ich die Probe durchführen, Beobachtungen beschreiben und meine Entscheidung begründen, ohne einen Musterschlüssel abzuschreiben?\n\nSelbsteinschätzung belegt keine praktische Kompetenz.",
+      "captionText": "Kann ich die Probe durchführen, Beobachtungen beschreiben und meine Entscheidung begründen, ohne einen Musterschlüssel abzuschreiben?\n\nSelbsteinschätzung belegt keine praktische Kompetenz.",
+      "spokenText": "Kann ich die Probe durchführen, Beobachtungen beschreiben und meine Entscheidung begründen, ohne einen Musterschlüssel abzuschreiben?\n\nSelbsteinschätzung belegt keine praktische Kompetenz.",
+      "spokenTextSHA256": "fb200049041eca066711ac21e35b7835badfbf8f4093c65c68a6d4253d757888",
+      "spokenTextSha256": "fb200049041eca066711ac21e35b7835badfbf8f4093c65c68a6d4253d757888",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e628303ce474da7925bcaaad02e27429d9bdb10196a4259481c4f1b11e60d2e0",
+      "requestFingerprintSha256": "e628303ce474da7925bcaaad02e27429d9bdb10196a4259481c4f1b11e60d2e0",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

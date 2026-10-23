@@ -1,0 +1,573 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-08-it.json",
+    "sha256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+    "bytes": 23929
+  },
+  "units": [
+    {
+      "id": "S1-08-it-opening-r1",
+      "unitId": "S1-08-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Applica con cura lo stesso procedimento a tre campioni. Registra ciò che accade prima di scegliere il nome della tessitura: se un campione ben inumidito non forma una palla, anche questo è un risultato utile.",
+          "sha256": "5375d2d71b12b04e5239390acdb56e281e4ec94810b88d0c76d1c877edb96d46"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Preparare e provare personalmente tutti e tre i campioni, regolando l'acqua ed evitando contaminazioni incrociate.",
+          "sha256": "cb3a1e9328ca01e2652f954dd19b897c217e87051188e531c361df4d874edffa"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Registrare colore, sensazione tattile e lunghezza o assenza del nastro prima di classificare con la guida decisionale.",
+          "sha256": "6211bcc21e83ff5bcff70bea8a0dfd11ac25f0d8001a75cd5da41add000ce8cf"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Motivare la classificazione con sensazione tattile e comportamento del nastro, correggendo tecnica e umidità senza copiare una risposta attesa.",
+          "sha256": "f8a0891e4e0248e3cb1082b33660748153b908ae1301454d4a65fb7145eedc8f"
+        }
+      ],
+      "scientificMeaning": "Applica con cura lo stesso procedimento a tre campioni. Registra ciò che accade prima di scegliere il nome della tessitura: se un campione ben inumidito non forma una palla, anche questo è un risultato utile.\n\nPreparare e provare personalmente tutti e tre i campioni, regolando l'acqua ed evitando contaminazioni incrociate.\n\nRegistrare colore, sensazione tattile e lunghezza o assenza del nastro prima di classificare con la guida decisionale.\n\nMotivare la classificazione con sensazione tattile e comportamento del nastro, correggendo tecnica e umidità senza copiare una risposta attesa.",
+      "displayText": "Applica con cura lo stesso procedimento a tre campioni. Registra ciò che accade prima di scegliere il nome della tessitura: se un campione ben inumidito non forma una palla, anche questo è un risultato utile.\n\nPreparare e provare personalmente tutti e tre i campioni, regolando l'acqua ed evitando contaminazioni incrociate.\n\nRegistrare colore, sensazione tattile e lunghezza o assenza del nastro prima di classificare con la guida decisionale.\n\nMotivare la classificazione con sensazione tattile e comportamento del nastro, correggendo tecnica e umidità senza copiare una risposta attesa.",
+      "captionText": "Applica con cura lo stesso procedimento a tre campioni. Registra ciò che accade prima di scegliere il nome della tessitura: se un campione ben inumidito non forma una palla, anche questo è un risultato utile.\n\nPreparare e provare personalmente tutti e tre i campioni, regolando l'acqua ed evitando contaminazioni incrociate.\n\nRegistrare colore, sensazione tattile e lunghezza o assenza del nastro prima di classificare con la guida decisionale.\n\nMotivare la classificazione con sensazione tattile e comportamento del nastro, correggendo tecnica e umidità senza copiare una risposta attesa.",
+      "spokenText": "Applica con cura lo stesso procedimento a tre campioni. Registra ciò che accade prima di scegliere il nome della tessitura: se un campione ben inumidito non forma una palla, anche questo è un risultato utile.\n\nPreparare e provare personalmente tutti e tre i campioni, regolando l'acqua ed evitando contaminazioni incrociate.\n\nRegistrare colore, sensazione tattile e lunghezza o assenza del nastro prima di classificare con la guida decisionale.\n\nMotivare la classificazione con sensazione tattile e comportamento del nastro, correggendo tecnica e umidità senza copiare una risposta attesa.",
+      "spokenTextSHA256": "7b5ca1d4d5a1dec21af7a441e5ddb3c115a8f7398f7415379a73bc8fe8fdefac",
+      "spokenTextSha256": "7b5ca1d4d5a1dec21af7a441e5ddb3c115a8f7398f7415379a73bc8fe8fdefac",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a5c2cbdf0502a570ca09c1d3269f19cca22cbda31bfa322e56f7467311ae0feb",
+      "requestFingerprintSha256": "a5c2cbdf0502a570ca09c1d3269f19cca22cbda31bfa322e56f7467311ae0feb",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-preparation-card-r1",
+      "unitId": "S1-08-it-preparation-card-r1",
+      "locale": "it",
+      "semanticGroup": "preparation-card",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/trainingCard/sampleRequirement",
+          "text": "Tre campioni minerali sicuri e verificati dal formatore, rappresentativi di materiale sabbioso, argilloso e franco; identità nascosta fino all'osservazione. Nessun substrato commerciale non verificato sostituisce il franco minerale.",
+          "sha256": "cc16cc9d1ac8f859db39ca2dbd453f02d1cf3f94e635e334d18659cd9c9a82a2"
+        },
+        {
+          "pointer": "/trainingCard/materials/0",
+          "text": "Spruzzatore d'acqua",
+          "sha256": "bbbfa04e072c233e4e1e90eab1f5b97413b3f1ec9d5e38b30f74147daf581e96"
+        },
+        {
+          "pointer": "/trainingCard/materials/1",
+          "text": "Vassoio pulito o piano di lavoro",
+          "sha256": "b01e8e5771a7d7769570f3238a5eed013b76f303435084c1e3de5a5b15b10eb9"
+        },
+        {
+          "pointer": "/trainingCard/materials/2",
+          "text": "Carta assorbente",
+          "sha256": "8ee2148bb8af0ff953d8b327fe3c50e65d57763a71b73eb89e414b8d1788a94c"
+        },
+        {
+          "pointer": "/trainingCard/materials/3",
+          "text": "Scheda dei risultati e penna",
+          "sha256": "58d44e587aa7cab21a07b468294d447babfafbea6737817a90aa99291baf6bd7"
+        },
+        {
+          "pointer": "/trainingCard/materials/4",
+          "text": "Righello graduato in centimetri",
+          "sha256": "8fa94306d6f30499efc21cca2846378bb8ccc0ce0a3ba9aaf6483c47ac88b840"
+        },
+        {
+          "pointer": "/trainingCard/materials/5",
+          "text": "Guanti adeguati scelti dal formatore",
+          "sha256": "f85b5e3f32d8548ae86863df8c84dfeb717ec1224d7521e09d6f5246944efb81"
+        },
+        {
+          "pointer": "/trainingCard/individualRequirement",
+          "text": "Ogni studente manipola e registra tutti e tre i campioni. I ruoli di gruppo non sostituiscono la prestazione individuale.",
+          "sha256": "e3250423f2bf6da9fb8f12eb4228bf70a2a13a82d5008bd8a11e01fdd61e9618"
+        },
+        {
+          "pointer": "/trainingCard/measurementRule",
+          "text": "Registra in cm la lunghezza alla rottura e indica se misurata o stimata. L'assenza di palla o nastro è valida dopo controllo di tecnica e umidità.",
+          "sha256": "930122291df508fedb7ddeaada3d1591f66ffd6e9c6586c4403d865c86152668"
+        }
+      ],
+      "scientificMeaning": "Tre campioni minerali sicuri e verificati dal formatore, rappresentativi di materiale sabbioso, argilloso e franco; identità nascosta fino all'osservazione. Nessun substrato commerciale non verificato sostituisce il franco minerale.\n\nSpruzzatore d'acqua\n\nVassoio pulito o piano di lavoro\n\nCarta assorbente\n\nScheda dei risultati e penna\n\nRighello graduato in centimetri\n\nGuanti adeguati scelti dal formatore\n\nOgni studente manipola e registra tutti e tre i campioni. I ruoli di gruppo non sostituiscono la prestazione individuale.\n\nRegistra in cm la lunghezza alla rottura e indica se misurata o stimata. L'assenza di palla o nastro è valida dopo controllo di tecnica e umidità.",
+      "displayText": "Tre campioni minerali sicuri e verificati dal formatore, rappresentativi di materiale sabbioso, argilloso e franco; identità nascosta fino all'osservazione. Nessun substrato commerciale non verificato sostituisce il franco minerale.\n\nSpruzzatore d'acqua\n\nVassoio pulito o piano di lavoro\n\nCarta assorbente\n\nScheda dei risultati e penna\n\nRighello graduato in centimetri\n\nGuanti adeguati scelti dal formatore\n\nOgni studente manipola e registra tutti e tre i campioni. I ruoli di gruppo non sostituiscono la prestazione individuale.\n\nRegistra in cm la lunghezza alla rottura e indica se misurata o stimata. L'assenza di palla o nastro è valida dopo controllo di tecnica e umidità.",
+      "captionText": "Tre campioni minerali sicuri e verificati dal formatore, rappresentativi di materiale sabbioso, argilloso e franco; identità nascosta fino all'osservazione. Nessun substrato commerciale non verificato sostituisce il franco minerale.\n\nSpruzzatore d'acqua\n\nVassoio pulito o piano di lavoro\n\nCarta assorbente\n\nScheda dei risultati e penna\n\nRighello graduato in centimetri\n\nGuanti adeguati scelti dal formatore\n\nOgni studente manipola e registra tutti e tre i campioni. I ruoli di gruppo non sostituiscono la prestazione individuale.\n\nRegistra in cm la lunghezza alla rottura e indica se misurata o stimata. L'assenza di palla o nastro è valida dopo controllo di tecnica e umidità.",
+      "spokenText": "Tre campioni minerali sicuri e verificati dal formatore, rappresentativi di materiale sabbioso, argilloso e franco; identità nascosta fino all'osservazione. Nessun substrato commerciale non verificato sostituisce il franco minerale.\n\nSpruzzatore d'acqua\n\nVassoio pulito o piano di lavoro\n\nCarta assorbente\n\nScheda dei risultati e penna\n\nRighello graduato in centimetri\n\nGuanti adeguati scelti dal formatore\n\nOgni studente manipola e registra tutti e tre i campioni. I ruoli di gruppo non sostituiscono la prestazione individuale.\n\nRegistra in centimetri la lunghezza alla rottura e indica se misurata o stimata. L'assenza di palla o nastro è valida dopo controllo di tecnica e umidità.",
+      "spokenTextSHA256": "292333bae7448881ea3bb008921b3d89958f8f86c2a5cb14d761ae64cf160ba8",
+      "spokenTextSha256": "292333bae7448881ea3bb008921b3d89958f8f86c2a5cb14d761ae64cf160ba8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "in cm",
+          "spoken": "in centimetri",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "352b6f3cf311a1d7c97eddc54b548fd774c1f17b6e3fd4178bbd78719cbf7f90",
+      "requestFingerprintSha256": "352b6f3cf311a1d7c97eddc54b548fd774c1f17b6e3fd4178bbd78719cbf7f90",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-E01-r1",
+      "unitId": "S1-08-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Il campione correttamente inumidito forma una palla e un nastro debole di 1,8 cm. Il pizzico più bagnato è molto ruvido.",
+          "sha256": "5902a03a7bdcc6f280c96cd0ab09b0491aef512bf9a85b8e84b880d15e141bc0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Palla e nastro impediscono di saltare al ramo senza palla.",
+          "sha256": "0bdc8eaa9778e0dd8d1772ce96de10fb4fef1f2b56caa84bfd94a4c54db96ce5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "La lunghezza entra nel ramo dei nastri corti.",
+          "sha256": "2a07f2b834bca6d873b78ef8e9d8d34016864a64fe747580cf784761f5a88bf4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "La forte ruvidità porta al franco sabbioso, non semplicemente al franco perché il nastro è corto.",
+          "sha256": "1d0c3986f9533b1b2a89cee834573e85fa4664f4fdad4b09bedd10e2c5906bcb"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Leggi insieme il ramo della lunghezza e quello della sensazione.",
+          "sha256": "7cecc25bd918e091dc57581e5f9ca0d4fb0c5708eb039ba774278c2ba3c172e5"
+        }
+      ],
+      "scientificMeaning": "Il campione correttamente inumidito forma una palla e un nastro debole di 1,8 cm. Il pizzico più bagnato è molto ruvido.\n\nPalla e nastro impediscono di saltare al ramo senza palla.\n\nLa lunghezza entra nel ramo dei nastri corti.\n\nLa forte ruvidità porta al franco sabbioso, non semplicemente al franco perché il nastro è corto.\n\nLeggi insieme il ramo della lunghezza e quello della sensazione.",
+      "displayText": "Il campione correttamente inumidito forma una palla e un nastro debole di 1,8 cm. Il pizzico più bagnato è molto ruvido.\n\nPalla e nastro impediscono di saltare al ramo senza palla.\n\nLa lunghezza entra nel ramo dei nastri corti.\n\nLa forte ruvidità porta al franco sabbioso, non semplicemente al franco perché il nastro è corto.\n\nLeggi insieme il ramo della lunghezza e quello della sensazione.",
+      "captionText": "Il campione correttamente inumidito forma una palla e un nastro debole di 1,8 cm. Il pizzico più bagnato è molto ruvido.\n\nPalla e nastro impediscono di saltare al ramo senza palla.\n\nLa lunghezza entra nel ramo dei nastri corti.\n\nLa forte ruvidità porta al franco sabbioso, non semplicemente al franco perché il nastro è corto.\n\nLeggi insieme il ramo della lunghezza e quello della sensazione.",
+      "spokenText": "Il campione correttamente inumidito forma una palla e un nastro debole di uno virgola otto centimetri. Il pizzico più bagnato è molto ruvido.\n\nPalla e nastro impediscono di saltare al ramo senza palla.\n\nLa lunghezza entra nel ramo dei nastri corti.\n\nLa forte ruvidità porta al franco sabbioso, non semplicemente al franco perché il nastro è corto.\n\nLeggi insieme il ramo della lunghezza e quello della sensazione.",
+      "spokenTextSHA256": "b36b0303e79b0903367b1870e0fa0f6e0d10bc974d518a1890e7a74b0b07cba4",
+      "spokenTextSha256": "b36b0303e79b0903367b1870e0fa0f6e0d10bc974d518a1890e7a74b0b07cba4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "1,8 cm",
+          "spoken": "uno virgola otto centimetri",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "967ea5f5f1e5a22a92676a4116f7978a27a4b615b9be9b64ba65049fc0ac3997",
+      "requestFingerprintSha256": "967ea5f5f1e5a22a92676a4116f7978a27a4b615b9be9b64ba65049fc0ac3997",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-E02-r1",
+      "unitId": "S1-08-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Lo studente ha controllato che non fosse troppo secco né troppo bagnato e ha usato solo materiale dello stesso campione. Continua a disfarsi.",
+          "sha256": "4f0009f4e4bebd71746f32aedce88992ffa24d7bb4017cae4b0ea79d218bdf21"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Registra la mancata tenuta della palla.",
+          "sha256": "8c4d150120f4046a8f16e16f026109ac2661f5de57e9822e29cceced819f5ff8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Non aggiungere altro suolo, non premere all'infinito e non inventare un nastro formato di lunghezza zero.",
+          "sha256": "3178624845cca9886735faebbf2e3455c31e1a425a22de63a8b575ed79b70cf7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Segui la guida verso la sabbia e conserva le osservazioni per il formatore.",
+          "sha256": "b8511750feb0b0a45e3377b34ac8f90820440e2c9501a75e274e8e89b555e05b"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "La mancata formazione della palla, dopo aver verificato tecnica e umidità, è un risultato valido, non un fallimento dello studente.",
+          "sha256": "abb4104c2acbdc929c3e5a83c596da34782f93258c70e847968f0cc92cddcebe"
+        }
+      ],
+      "scientificMeaning": "Lo studente ha controllato che non fosse troppo secco né troppo bagnato e ha usato solo materiale dello stesso campione. Continua a disfarsi.\n\nRegistra la mancata tenuta della palla.\n\nNon aggiungere altro suolo, non premere all'infinito e non inventare un nastro formato di lunghezza zero.\n\nSegui la guida verso la sabbia e conserva le osservazioni per il formatore.\n\nLa mancata formazione della palla, dopo aver verificato tecnica e umidità, è un risultato valido, non un fallimento dello studente.",
+      "displayText": "Lo studente ha controllato che non fosse troppo secco né troppo bagnato e ha usato solo materiale dello stesso campione. Continua a disfarsi.\n\nRegistra la mancata tenuta della palla.\n\nNon aggiungere altro suolo, non premere all'infinito e non inventare un nastro formato di lunghezza zero.\n\nSegui la guida verso la sabbia e conserva le osservazioni per il formatore.\n\nLa mancata formazione della palla, dopo aver verificato tecnica e umidità, è un risultato valido, non un fallimento dello studente.",
+      "captionText": "Lo studente ha controllato che non fosse troppo secco né troppo bagnato e ha usato solo materiale dello stesso campione. Continua a disfarsi.\n\nRegistra la mancata tenuta della palla.\n\nNon aggiungere altro suolo, non premere all'infinito e non inventare un nastro formato di lunghezza zero.\n\nSegui la guida verso la sabbia e conserva le osservazioni per il formatore.\n\nLa mancata formazione della palla, dopo aver verificato tecnica e umidità, è un risultato valido, non un fallimento dello studente.",
+      "spokenText": "Lo studente ha controllato che non fosse troppo secco né troppo bagnato e ha usato solo materiale dello stesso campione. Continua a disfarsi.\n\nRegistra la mancata tenuta della palla.\n\nNon aggiungere altro suolo, non premere all'infinito e non inventare un nastro formato di lunghezza zero.\n\nSegui la guida verso la sabbia e conserva le osservazioni per il formatore.\n\nLa mancata formazione della palla, dopo aver verificato tecnica e umidità, è un risultato valido, non un fallimento dello studente.",
+      "spokenTextSHA256": "f508a085e49ad5aa045c7e6bcc8beab63bcb4d43ae1ada8bab885059d158da54",
+      "spokenTextSha256": "f508a085e49ad5aa045c7e6bcc8beab63bcb4d43ae1ada8bab885059d158da54",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dc9e248e0608aea2a6a0c36b25466528df81816a7d5fa0fb1b437e88c7745880",
+      "requestFingerprintSha256": "dc9e248e0608aea2a6a0c36b25466528df81816a7d5fa0fb1b437e88c7745880",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-E03-r1",
+      "unitId": "S1-08-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Il campione forma un nastro intermedio; al controllo del pizzico più umido non domina né ruvidità né forte levigatezza.",
+          "sha256": "d2805183b64f4e48b5e271402495a9375e82675fb9592d5dcf442ee4e53099d8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Registra separatamente i 3,5 cm misurati e la sensazione.",
+          "sha256": "11c78eff325b06129c683439333386ba59670b7361ac448d5131a39dbace4e94"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Segui il ramo intermedio, poi quello senza sensazione dominante.",
+          "sha256": "a930a8f002c4cf7bbc4a323b5c76d46bbff8e3a0f649659cdab5f01cf7ca7762"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "La guida indica franco argilloso; non sostituirlo con franco da una tabella modello contraddittoria.",
+          "sha256": "5e03bfacaee9e215e8e3cb99cad9cd4ba7d6fc370e82c9c201dcf5f299a15490"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Le osservazioni prevalgono su un'etichetta attesa copiata.",
+          "sha256": "6ebe0e41ab59c75ea34533208de4e024f918e92edfd69241733fd1eca062623f"
+        }
+      ],
+      "scientificMeaning": "Il campione forma un nastro intermedio; al controllo del pizzico più umido non domina né ruvidità né forte levigatezza.\n\nRegistra separatamente i 3,5 cm misurati e la sensazione.\n\nSegui il ramo intermedio, poi quello senza sensazione dominante.\n\nLa guida indica franco argilloso; non sostituirlo con franco da una tabella modello contraddittoria.\n\nLe osservazioni prevalgono su un'etichetta attesa copiata.",
+      "displayText": "Il campione forma un nastro intermedio; al controllo del pizzico più umido non domina né ruvidità né forte levigatezza.\n\nRegistra separatamente i 3,5 cm misurati e la sensazione.\n\nSegui il ramo intermedio, poi quello senza sensazione dominante.\n\nLa guida indica franco argilloso; non sostituirlo con franco da una tabella modello contraddittoria.\n\nLe osservazioni prevalgono su un'etichetta attesa copiata.",
+      "captionText": "Il campione forma un nastro intermedio; al controllo del pizzico più umido non domina né ruvidità né forte levigatezza.\n\nRegistra separatamente i 3,5 cm misurati e la sensazione.\n\nSegui il ramo intermedio, poi quello senza sensazione dominante.\n\nLa guida indica franco argilloso; non sostituirlo con franco da una tabella modello contraddittoria.\n\nLe osservazioni prevalgono su un'etichetta attesa copiata.",
+      "spokenText": "Il campione forma un nastro intermedio; al controllo del pizzico più umido non domina né ruvidità né forte levigatezza.\n\nRegistra separatamente i tre virgola cinque centimetri misurati e la sensazione.\n\nSegui il ramo intermedio, poi quello senza sensazione dominante.\n\nLa guida indica franco argilloso; non sostituirlo con franco da una tabella modello contraddittoria.\n\nLe osservazioni prevalgono su un'etichetta attesa copiata.",
+      "spokenTextSHA256": "af33f532712ac021727bece3590646eba99a7390e3f1a347e864f0fb9efb60b9",
+      "spokenTextSha256": "af33f532712ac021727bece3590646eba99a7390e3f1a347e864f0fb9efb60b9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3,5 cm",
+          "spoken": "tre virgola cinque centimetri",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cac858d4125bd65f692f3cedc8a4a18e11859ad8cc16ed082bc7ce24e0f0ae47",
+      "requestFingerprintSha256": "cac858d4125bd65f692f3cedc8a4a18e11859ad8cc16ed082bc7ce24e0f0ae47",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-P01-r1",
+      "unitId": "S1-08-it-P01-r1",
+      "locale": "it",
+      "semanticGroup": "P01",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/safety",
+          "text": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.",
+          "sha256": "7202d249b6cc12bfd7e8e5fbddacd0bc47970eef166420ea9d9db20552ac43d2"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/0",
+          "text": "Prepara la postazione mantenendo A, B e C identificati e separati.",
+          "sha256": "fc293f0a4ecfcbc49a99708fac2e48313f683ff40f89dd71c911fc8f6c0988cb"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/1",
+          "text": "Osserva A, prendine una quantità grande quanto il palmo, rimuovi residui e inumidiscila gradualmente.",
+          "sha256": "16572d982a789d15956e8a6415be427158010609b05e52a39ec5e4622bedb60b"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/2",
+          "text": "Prova la palla; dopo aver controllato l'umidità registra una mancata formazione valida invece di pretendere che ogni suolo tenga.",
+          "sha256": "5bfafd5091be90f9d429f57ec2f4328b23cafebd5f119e6864a1cd5633d98c92"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/3",
+          "text": "Se si forma una palla esegui il nastro correttamente; altrimenti registra e spiega il ramo valido.",
+          "sha256": "37b15f9a177b464edfb345802c6ee3b4ee27787117872383d2b14340ed6857f3"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/4",
+          "text": "Registra le osservazioni di A prima di classificarla e applica la guida completa di lunghezza e sensazione.",
+          "sha256": "2d2490eed7f0c7a29b7b3956f364249b1fcef84554f17f9b7d48e10276ce8478"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Pulisci fra campioni, poi prepara e prova B individualmente in modo corretto.",
+          "sha256": "d55670f506bbb51b73388b2d14d4f3ac7a11e25c11446cb919527abdde596867"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/6",
+          "text": "Registra e motiva la classificazione di B dalle sue osservazioni.",
+          "sha256": "1b224cd0e1afb65bbe0d7db9ac31fbdff8d4469022d7c3a67f43025ed6980cc1"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/7",
+          "text": "Pulisci fra campioni, poi prepara e prova C individualmente in modo corretto.",
+          "sha256": "ebc73d20870f1b156ec5fe789518678aa7b6839b447cb738c9edb28ec64f34ee"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/8",
+          "text": "Registra e motiva la classificazione di C dalle sue osservazioni.",
+          "sha256": "f2f012d87a3d483421770d7357c005cc4738fe9bfd5daea21393e0a8b5f8b60b"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/9",
+          "text": "Nella fase colturale collegata, raccomanda e motiva almeno due colture candidate per campione, includendo il minimo di una previsto dalla scheda originale; mantieni questa voce in sospeso finché non sono disponibili le relative evidenze.",
+          "sha256": "43f5fddf2871f19bca6ab68600442f97ec2dcc3e27c1f0c7f6826e1919aa9172"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/10",
+          "text": "Pulisci mani, protezioni, materiali e postazione e smaltisci i campioni come indicato.",
+          "sha256": "7af5f239424a3de97a4ea4761919d6c1b6a0595357b3eeb6dcdd304d4ce25ec5"
+        }
+      ],
+      "scientificMeaning": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nPrepara la postazione mantenendo A, B e C identificati e separati.\n\nOsserva A, prendine una quantità grande quanto il palmo, rimuovi residui e inumidiscila gradualmente.\n\nProva la palla; dopo aver controllato l'umidità registra una mancata formazione valida invece di pretendere che ogni suolo tenga.\n\nSe si forma una palla esegui il nastro correttamente; altrimenti registra e spiega il ramo valido.\n\nRegistra le osservazioni di A prima di classificarla e applica la guida completa di lunghezza e sensazione.\n\nPulisci fra campioni, poi prepara e prova B individualmente in modo corretto.\n\nRegistra e motiva la classificazione di B dalle sue osservazioni.\n\nPulisci fra campioni, poi prepara e prova C individualmente in modo corretto.\n\nRegistra e motiva la classificazione di C dalle sue osservazioni.\n\nNella fase colturale collegata, raccomanda e motiva almeno due colture candidate per campione, includendo il minimo di una previsto dalla scheda originale; mantieni questa voce in sospeso finché non sono disponibili le relative evidenze.\n\nPulisci mani, protezioni, materiali e postazione e smaltisci i campioni come indicato.",
+      "displayText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nPrepara la postazione mantenendo A, B e C identificati e separati.\n\nOsserva A, prendine una quantità grande quanto il palmo, rimuovi residui e inumidiscila gradualmente.\n\nProva la palla; dopo aver controllato l'umidità registra una mancata formazione valida invece di pretendere che ogni suolo tenga.\n\nSe si forma una palla esegui il nastro correttamente; altrimenti registra e spiega il ramo valido.\n\nRegistra le osservazioni di A prima di classificarla e applica la guida completa di lunghezza e sensazione.\n\nPulisci fra campioni, poi prepara e prova B individualmente in modo corretto.\n\nRegistra e motiva la classificazione di B dalle sue osservazioni.\n\nPulisci fra campioni, poi prepara e prova C individualmente in modo corretto.\n\nRegistra e motiva la classificazione di C dalle sue osservazioni.\n\nNella fase colturale collegata, raccomanda e motiva almeno due colture candidate per campione, includendo il minimo di una previsto dalla scheda originale; mantieni questa voce in sospeso finché non sono disponibili le relative evidenze.\n\nPulisci mani, protezioni, materiali e postazione e smaltisci i campioni come indicato.",
+      "captionText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nPrepara la postazione mantenendo A, B e C identificati e separati.\n\nOsserva A, prendine una quantità grande quanto il palmo, rimuovi residui e inumidiscila gradualmente.\n\nProva la palla; dopo aver controllato l'umidità registra una mancata formazione valida invece di pretendere che ogni suolo tenga.\n\nSe si forma una palla esegui il nastro correttamente; altrimenti registra e spiega il ramo valido.\n\nRegistra le osservazioni di A prima di classificarla e applica la guida completa di lunghezza e sensazione.\n\nPulisci fra campioni, poi prepara e prova B individualmente in modo corretto.\n\nRegistra e motiva la classificazione di B dalle sue osservazioni.\n\nPulisci fra campioni, poi prepara e prova C individualmente in modo corretto.\n\nRegistra e motiva la classificazione di C dalle sue osservazioni.\n\nNella fase colturale collegata, raccomanda e motiva almeno due colture candidate per campione, includendo il minimo di una previsto dalla scheda originale; mantieni questa voce in sospeso finché non sono disponibili le relative evidenze.\n\nPulisci mani, protezioni, materiali e postazione e smaltisci i campioni come indicato.",
+      "spokenText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino alla fase colturale collegata S uno zero nove; risposte online e ruolo di gruppo non la superano.\n\nPrepara la postazione mantenendo A, B e C identificati e separati.\n\nOsserva A, prendine una quantità grande quanto il palmo, rimuovi residui e inumidiscila gradualmente.\n\nProva la palla; dopo aver controllato l'umidità registra una mancata formazione valida invece di pretendere che ogni suolo tenga.\n\nSe si forma una palla esegui il nastro correttamente; altrimenti registra e spiega il ramo valido.\n\nRegistra le osservazioni di A prima di classificarla e applica la guida completa di lunghezza e sensazione.\n\nPulisci fra campioni, poi prepara e prova B individualmente in modo corretto.\n\nRegistra e motiva la classificazione di B dalle sue osservazioni.\n\nPulisci fra campioni, poi prepara e prova C individualmente in modo corretto.\n\nRegistra e motiva la classificazione di C dalle sue osservazioni.\n\nNella fase colturale collegata, raccomanda e motiva almeno due colture candidate per campione, includendo il minimo di una previsto dalla scheda originale; mantieni questa voce in sospeso finché non sono disponibili le relative evidenze.\n\nPulisci mani, protezioni, materiali e postazione e smaltisci i campioni come indicato.",
+      "spokenTextSHA256": "451d089cf07eb3905f28c41d9889a36145723d7b2bf64838a1397eda90260069",
+      "spokenTextSha256": "451d089cf07eb3905f28c41d9889a36145723d7b2bf64838a1397eda90260069",
+      "spokenAdaptationChanges": [
+        {
+          "written": "fino a S1-09",
+          "spoken": "fino alla fase colturale collegata S uno zero nove",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "77d56542401a19822646726c9894604fe31523d316525abbed191c8d1905510a",
+      "requestFingerprintSha256": "77d56542401a19822646726c9894604fe31523d316525abbed191c8d1905510a",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-P02-r1",
+      "unitId": "S1-08-it-P02-r1",
+      "locale": "it",
+      "semanticGroup": "P02",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/1/safety",
+          "text": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.",
+          "sha256": "7202d249b6cc12bfd7e8e5fbddacd0bc47970eef166420ea9d9db20552ac43d2"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/0",
+          "text": "Indossa protezioni adeguate, inclusi guanti, secondo la procedura sicura del formatore.",
+          "sha256": "f50163cbd9ab77b857876ba6a73389d69e0325f224a326162ad4689f881b7798"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/1",
+          "text": "Prendi una piccola manciata rappresentativa dal campione assegnato e togli pietre e residui.",
+          "sha256": "9d461b9d53e4899bb85baf3931b3595f346d3df1f8f4af1865f41e1b3b9b90eb"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/2",
+          "text": "Aggiungi acqua gradualmente e impasta; controlla la palla o registra correttamente l'assenza.",
+          "sha256": "aac85a99e8a9cba08b578d1931e0eede2535f3f3b93b543b89a503658e1ef937"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/3",
+          "text": "Forma un nastro uniforme non sostenuto se il materiale lo permette, oppure spiega il ramo senza nastro.",
+          "sha256": "8f8de74fc2f50c05116c9d0941501952eef30c0c3fb47267fb1fe2636dcc1239"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/4",
+          "text": "Registra lunghezza e resistenza del nastro o assenza, usando la guida completa e non una regola semplificata con un'unica etichetta.",
+          "sha256": "8f6fd8419fbe273de3ecfb8e8bb83ef7262db6741d77688ba606d78d3831145e"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/5",
+          "text": "Valuta ruvidità e levigatezza con un pizzico più umido.",
+          "sha256": "556fd631995be3c93e5310c73ceec5ae4e3cc3523dcd2143f38db2ac3012b9cd"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/6",
+          "text": "Dichiara la stima tessiturale di campo, prove e incertezza.",
+          "sha256": "1d29869e36364bbd048df3767ce2f9857c46c1eb9606d3908d52bf4582ba8bb1"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/7",
+          "text": "Pulisci la postazione e smaltisci il materiale adeguatamente.",
+          "sha256": "e6073a8caa2b23c3187a93ad0f32264b61d8d44641c5fdd1b3de8fdab9a23456"
+        }
+      ],
+      "scientificMeaning": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nIndossa protezioni adeguate, inclusi guanti, secondo la procedura sicura del formatore.\n\nPrendi una piccola manciata rappresentativa dal campione assegnato e togli pietre e residui.\n\nAggiungi acqua gradualmente e impasta; controlla la palla o registra correttamente l'assenza.\n\nForma un nastro uniforme non sostenuto se il materiale lo permette, oppure spiega il ramo senza nastro.\n\nRegistra lunghezza e resistenza del nastro o assenza, usando la guida completa e non una regola semplificata con un'unica etichetta.\n\nValuta ruvidità e levigatezza con un pizzico più umido.\n\nDichiara la stima tessiturale di campo, prove e incertezza.\n\nPulisci la postazione e smaltisci il materiale adeguatamente.",
+      "displayText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nIndossa protezioni adeguate, inclusi guanti, secondo la procedura sicura del formatore.\n\nPrendi una piccola manciata rappresentativa dal campione assegnato e togli pietre e residui.\n\nAggiungi acqua gradualmente e impasta; controlla la palla o registra correttamente l'assenza.\n\nForma un nastro uniforme non sostenuto se il materiale lo permette, oppure spiega il ramo senza nastro.\n\nRegistra lunghezza e resistenza del nastro o assenza, usando la guida completa e non una regola semplificata con un'unica etichetta.\n\nValuta ruvidità e levigatezza con un pizzico più umido.\n\nDichiara la stima tessiturale di campo, prove e incertezza.\n\nPulisci la postazione e smaltisci il materiale adeguatamente.",
+      "captionText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino a S1-09; risposte online e ruolo di gruppo non la superano.\n\nIndossa protezioni adeguate, inclusi guanti, secondo la procedura sicura del formatore.\n\nPrendi una piccola manciata rappresentativa dal campione assegnato e togli pietre e residui.\n\nAggiungi acqua gradualmente e impasta; controlla la palla o registra correttamente l'assenza.\n\nForma un nastro uniforme non sostenuto se il materiale lo permette, oppure spiega il ramo senza nastro.\n\nRegistra lunghezza e resistenza del nastro o assenza, usando la guida completa e non una regola semplificata con un'unica etichetta.\n\nValuta ruvidità e levigatezza con un pizzico più umido.\n\nDichiara la stima tessiturale di campo, prove e incertezza.\n\nPulisci la postazione e smaltisci il materiale adeguatamente.",
+      "spokenText": "Il formatore verifica campioni minerali sicuri, protezione e prova individuale su A/B/C. La parte sulle colture resta aperta fino alla fase colturale collegata S uno zero nove; risposte online e ruolo di gruppo non la superano.\n\nIndossa protezioni adeguate, inclusi guanti, secondo la procedura sicura del formatore.\n\nPrendi una piccola manciata rappresentativa dal campione assegnato e togli pietre e residui.\n\nAggiungi acqua gradualmente e impasta; controlla la palla o registra correttamente l'assenza.\n\nForma un nastro uniforme non sostenuto se il materiale lo permette, oppure spiega il ramo senza nastro.\n\nRegistra lunghezza e resistenza del nastro o assenza, usando la guida completa e non una regola semplificata con un'unica etichetta.\n\nValuta ruvidità e levigatezza con un pizzico più umido.\n\nDichiara la stima tessiturale di campo, prove e incertezza.\n\nPulisci la postazione e smaltisci il materiale adeguatamente.",
+      "spokenTextSHA256": "3616435737a0512dbba54eb9b021ba5a84e2cb628d6ab693dde8ea5de200ee13",
+      "spokenTextSha256": "3616435737a0512dbba54eb9b021ba5a84e2cb628d6ab693dde8ea5de200ee13",
+      "spokenAdaptationChanges": [
+        {
+          "written": "fino a S1-09",
+          "spoken": "fino alla fase colturale collegata S uno zero nove",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b450c7ef31d6a3899c30237cd81a08442a8df55ad57b3c403cca3e99da209981",
+      "requestFingerprintSha256": "b450c7ef31d6a3899c30237cd81a08442a8df55ad57b3c403cca3e99da209981",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-08-it-reflection-r1",
+      "unitId": "S1-08-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9402468b8f32db49a0d11819251b76cc2ab8bf578d3f4675ac9a58d3c383618",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So svolgere la prova, descrivere le osservazioni e motivare la decisione senza copiare una risposta modello?",
+          "sha256": "b7a9183ae4fcf1d70a956926d4e08ebcdc34aa9912f92b815efb7964d9920aa3"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "L'autovalutazione non prova la competenza pratica.",
+          "sha256": "51d39f8be68dc1cf565dd2455c30f19ca25f607bb1fff1a9c47c69e22ff92986"
+        }
+      ],
+      "scientificMeaning": "So svolgere la prova, descrivere le osservazioni e motivare la decisione senza copiare una risposta modello?\n\nL'autovalutazione non prova la competenza pratica.",
+      "displayText": "So svolgere la prova, descrivere le osservazioni e motivare la decisione senza copiare una risposta modello?\n\nL'autovalutazione non prova la competenza pratica.",
+      "captionText": "So svolgere la prova, descrivere le osservazioni e motivare la decisione senza copiare una risposta modello?\n\nL'autovalutazione non prova la competenza pratica.",
+      "spokenText": "So svolgere la prova, descrivere le osservazioni e motivare la decisione senza copiare una risposta modello?\n\nL'autovalutazione non prova la competenza pratica.",
+      "spokenTextSHA256": "973f4dcab41cb0995ff5fd5e9c279a2e0f136578cf4b927927f1b454d32489f0",
+      "spokenTextSha256": "973f4dcab41cb0995ff5fd5e9c279a2e0f136578cf4b927927f1b454d32489f0",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3020a8fe3eb02947ca5752bb433c5e78c124d6f41d4474463dbccf857f23f630",
+      "requestFingerprintSha256": "3020a8fe3eb02947ca5752bb433c5e78c124d6f41d4474463dbccf857f23f630",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

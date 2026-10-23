@@ -1,0 +1,573 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-08-en.json",
+    "sha256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+    "bytes": 22777
+  },
+  "units": [
+    {
+      "id": "S1-08-en-opening-r1",
+      "unitId": "S1-08-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Use the same careful procedure on three samples. Record what actually happens before choosing a texture name; a sample that correctly fails to form a ball has still given useful evidence.",
+          "sha256": "a83d234e083c49c9c18cd3783f5064d7935188e3ae41ad17dc5422c6dad689df"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Individually prepare and test all three samples, adjusting water and preventing cross-contamination.",
+          "sha256": "c53d4f3fa745564e559020ba57498052f1897243091f3036eb51f132be3944b7"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Record colour, feel and ribbon length or absence before classifying with the decision guide.",
+          "sha256": "6f0fe34d766d60377b9f9bdc3f9042e456d64695b1054420d8d16a4be3e747d1"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain the classification using feel and ribbon behaviour, and correct technique or moisture problems without copying an expected answer.",
+          "sha256": "6c0f22b54929c8c64b713fa79dfca3adbc179bf8808f5de8c94e3120cf3932e3"
+        }
+      ],
+      "scientificMeaning": "Use the same careful procedure on three samples. Record what actually happens before choosing a texture name; a sample that correctly fails to form a ball has still given useful evidence.\n\nIndividually prepare and test all three samples, adjusting water and preventing cross-contamination.\n\nRecord colour, feel and ribbon length or absence before classifying with the decision guide.\n\nExplain the classification using feel and ribbon behaviour, and correct technique or moisture problems without copying an expected answer.",
+      "displayText": "Use the same careful procedure on three samples. Record what actually happens before choosing a texture name; a sample that correctly fails to form a ball has still given useful evidence.\n\nIndividually prepare and test all three samples, adjusting water and preventing cross-contamination.\n\nRecord colour, feel and ribbon length or absence before classifying with the decision guide.\n\nExplain the classification using feel and ribbon behaviour, and correct technique or moisture problems without copying an expected answer.",
+      "captionText": "Use the same careful procedure on three samples. Record what actually happens before choosing a texture name; a sample that correctly fails to form a ball has still given useful evidence.\n\nIndividually prepare and test all three samples, adjusting water and preventing cross-contamination.\n\nRecord colour, feel and ribbon length or absence before classifying with the decision guide.\n\nExplain the classification using feel and ribbon behaviour, and correct technique or moisture problems without copying an expected answer.",
+      "spokenText": "Use the same careful procedure on three samples. Record what actually happens before choosing a texture name; a sample that correctly fails to form a ball has still given useful evidence.\n\nIndividually prepare and test all three samples, adjusting water and preventing cross-contamination.\n\nRecord colour, feel and ribbon length or absence before classifying with the decision guide.\n\nExplain the classification using feel and ribbon behaviour, and correct technique or moisture problems without copying an expected answer.",
+      "spokenTextSHA256": "6b1eb356575dab182784f63c72d9504da7c4a89d32766a40a58f6d3ea2e732ba",
+      "spokenTextSha256": "6b1eb356575dab182784f63c72d9504da7c4a89d32766a40a58f6d3ea2e732ba",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "428b4e8b35a91a3aa5e64e2836a140fb4b94a0069c95a6b7cf2edc2c0e4ccb1f",
+      "requestFingerprintSha256": "428b4e8b35a91a3aa5e64e2836a140fb4b94a0069c95a6b7cf2edc2c0e4ccb1f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-preparation-card-r1",
+      "unitId": "S1-08-en-preparation-card-r1",
+      "locale": "en",
+      "semanticGroup": "preparation-card",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/trainingCard/sampleRequirement",
+          "text": "Three safe, trainer-checked mineral soils representing contrasting sandy, clay-rich and loamy material; identity withheld until observation. No unverified potting-mix substitute.",
+          "sha256": "18448b1e2d25b6aeace569daab82b820afe0922437b31f20dfd2b4f0ae2edc32"
+        },
+        {
+          "pointer": "/trainingCard/materials/0",
+          "text": "Water spray bottle",
+          "sha256": "cc8c37a40710cb28c9cf7a9426f55233f54b9888dc40858a1504c74fa2a0772c"
+        },
+        {
+          "pointer": "/trainingCard/materials/1",
+          "text": "Clean tray or flat work surface",
+          "sha256": "c8bf993778720aac968e7459995a5e7959fc514d8fb0e293e565a874f0e3f1f5"
+        },
+        {
+          "pointer": "/trainingCard/materials/2",
+          "text": "Paper towels",
+          "sha256": "4e12fbcfae7b25a1c416bd148a4fe092c5ef1f4d164b819a60acca06c7f4e210"
+        },
+        {
+          "pointer": "/trainingCard/materials/3",
+          "text": "Results sheet and pen",
+          "sha256": "349a5fad708e6060ff35be76a5f4d9d67650ec36ab577c3e75541578141303c6"
+        },
+        {
+          "pointer": "/trainingCard/materials/4",
+          "text": "Ruler marked in centimetres",
+          "sha256": "27a00ccc1ff3d159ff2d63af0a9266cd1c06859b1f404e3ac8174152a205055d"
+        },
+        {
+          "pointer": "/trainingCard/materials/5",
+          "text": "Task-appropriate gloves selected by the trainer",
+          "sha256": "42f784fcc93fb48e8d839e01a6c3cc6206ae454c0ecac6b7dcde706a78fadff4"
+        },
+        {
+          "pointer": "/trainingCard/individualRequirement",
+          "text": "Each learner handles and records all three samples. Group roles do not replace individual performance.",
+          "sha256": "9f27e93f22f84dc2f1889679fdfa6dd6aff6d63a3dc27f37f479ceef0f83e391"
+        },
+        {
+          "pointer": "/trainingCard/measurementRule",
+          "text": "Record length in cm at breakage and whether measured or estimated. No ball and no ribbon are valid recorded outcomes when technique and moisture have been checked.",
+          "sha256": "ca3e5b891f02eefbabb9f3ebb0c2a01bc116f9356315e990157e78a74dffeb46"
+        }
+      ],
+      "scientificMeaning": "Three safe, trainer-checked mineral soils representing contrasting sandy, clay-rich and loamy material; identity withheld until observation. No unverified potting-mix substitute.\n\nWater spray bottle\n\nClean tray or flat work surface\n\nPaper towels\n\nResults sheet and pen\n\nRuler marked in centimetres\n\nTask-appropriate gloves selected by the trainer\n\nEach learner handles and records all three samples. Group roles do not replace individual performance.\n\nRecord length in cm at breakage and whether measured or estimated. No ball and no ribbon are valid recorded outcomes when technique and moisture have been checked.",
+      "displayText": "Three safe, trainer-checked mineral soils representing contrasting sandy, clay-rich and loamy material; identity withheld until observation. No unverified potting-mix substitute.\n\nWater spray bottle\n\nClean tray or flat work surface\n\nPaper towels\n\nResults sheet and pen\n\nRuler marked in centimetres\n\nTask-appropriate gloves selected by the trainer\n\nEach learner handles and records all three samples. Group roles do not replace individual performance.\n\nRecord length in cm at breakage and whether measured or estimated. No ball and no ribbon are valid recorded outcomes when technique and moisture have been checked.",
+      "captionText": "Three safe, trainer-checked mineral soils representing contrasting sandy, clay-rich and loamy material; identity withheld until observation. No unverified potting-mix substitute.\n\nWater spray bottle\n\nClean tray or flat work surface\n\nPaper towels\n\nResults sheet and pen\n\nRuler marked in centimetres\n\nTask-appropriate gloves selected by the trainer\n\nEach learner handles and records all three samples. Group roles do not replace individual performance.\n\nRecord length in cm at breakage and whether measured or estimated. No ball and no ribbon are valid recorded outcomes when technique and moisture have been checked.",
+      "spokenText": "Three safe, trainer-checked mineral soils representing contrasting sandy, clay-rich and loamy material; identity withheld until observation. No unverified potting-mix substitute.\n\nWater spray bottle\n\nClean tray or flat work surface\n\nPaper towels\n\nResults sheet and pen\n\nRuler marked in centimetres\n\nTask-appropriate gloves selected by the trainer\n\nEach learner handles and records all three samples. Group roles do not replace individual performance.\n\nRecord length in centimetres at breakage and whether measured or estimated. No ball and no ribbon are valid recorded outcomes when technique and moisture have been checked.",
+      "spokenTextSHA256": "66094fe8a12c46117fae8126ce737c9c37d1fa6219cd3e9a91bfa2f21808db2f",
+      "spokenTextSha256": "66094fe8a12c46117fae8126ce737c9c37d1fa6219cd3e9a91bfa2f21808db2f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "in cm",
+          "spoken": "in centimetres",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bc8f9dd4af94155a6e3d0bee1aa5137bcfe9bce6fed3bed87de8731b743be2fd",
+      "requestFingerprintSha256": "bc8f9dd4af94155a6e3d0bee1aa5137bcfe9bce6fed3bed87de8731b743be2fd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-E01-r1",
+      "unitId": "S1-08-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The conditioned sample holds a ball and makes a weak 1.8 cm ribbon. The wetter pinch feels very gritty.",
+          "sha256": "181d915180aff7992f44169b97976fb8eb79b6b0a06e669e7546acd9575bbc21"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The ball and ribbon outcomes rule out skipping directly to the no-ball branch.",
+          "sha256": "f39c2d0331bdb6dd6f23e4eda8c4b68b33bd50f8bf8d0ca282e0bfe23bb5848c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "The length enters the short-ribbon branch.",
+          "sha256": "7b1312e7158bf756a0f95cceaf87f4cce3f5d39f1e4008b9f7b0df6804592c4e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Very gritty feel leads to sandy loam, not simply loam because the ribbon is short.",
+          "sha256": "918476ec3bf3a896523d333481e5080a04ad1f867c6a274e661e6279b5b4812a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Read the length branch and the feel branch together.",
+          "sha256": "9e7a0728f3fa33030294a326a43f200e88c4b4a2846a32f67f78fff930b4abf2"
+        }
+      ],
+      "scientificMeaning": "The conditioned sample holds a ball and makes a weak 1.8 cm ribbon. The wetter pinch feels very gritty.\n\nThe ball and ribbon outcomes rule out skipping directly to the no-ball branch.\n\nThe length enters the short-ribbon branch.\n\nVery gritty feel leads to sandy loam, not simply loam because the ribbon is short.\n\nRead the length branch and the feel branch together.",
+      "displayText": "The conditioned sample holds a ball and makes a weak 1.8 cm ribbon. The wetter pinch feels very gritty.\n\nThe ball and ribbon outcomes rule out skipping directly to the no-ball branch.\n\nThe length enters the short-ribbon branch.\n\nVery gritty feel leads to sandy loam, not simply loam because the ribbon is short.\n\nRead the length branch and the feel branch together.",
+      "captionText": "The conditioned sample holds a ball and makes a weak 1.8 cm ribbon. The wetter pinch feels very gritty.\n\nThe ball and ribbon outcomes rule out skipping directly to the no-ball branch.\n\nThe length enters the short-ribbon branch.\n\nVery gritty feel leads to sandy loam, not simply loam because the ribbon is short.\n\nRead the length branch and the feel branch together.",
+      "spokenText": "The conditioned sample holds a ball and makes a weak ribbon one point eight centimetres long. The wetter pinch feels very gritty.\n\nThe ball and ribbon outcomes rule out skipping directly to the no-ball branch.\n\nThe length enters the short-ribbon branch.\n\nVery gritty feel leads to sandy loam, not simply loam because the ribbon is short.\n\nRead the length branch and the feel branch together.",
+      "spokenTextSHA256": "5a1a996e3eef3e626ff04113f2482d9eb355b1ebc07828e096e232088238688a",
+      "spokenTextSha256": "5a1a996e3eef3e626ff04113f2482d9eb355b1ebc07828e096e232088238688a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "a weak 1.8 cm ribbon",
+          "spoken": "a weak ribbon one point eight centimetres long",
+          "occurrences": 1,
+          "purpose": "Natural source-equivalent spoken numeral placement, unchanged length/strength and visible source"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "058edfe68c633d596ff4a865a26b1a0d365a773b4c63fd91fb3d8dafd7069e23",
+      "requestFingerprintSha256": "058edfe68c633d596ff4a865a26b1a0d365a773b4c63fd91fb3d8dafd7069e23",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-E02-r1",
+      "unitId": "S1-08-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The learner has checked for excessive dryness and wetness and used only material from the same sample. It still falls apart.",
+          "sha256": "5d5f5a5185da06c9f3dfc7d7a129c42d63d065cb7d08724c7f4b56864650d048"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Record that it does not remain in a ball.",
+          "sha256": "6ee846855a84d9b634d6a48012686c5852c17d689b673c2e0aba5f517e81ffb2"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Do not add another soil, press indefinitely or invent a zero-length formed ribbon.",
+          "sha256": "536cb15762d1aa4747d5ae17605fdf471a1657165419352ed8d4cbd5848f116b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Follow the guide towards sand and retain the observations for the trainer.",
+          "sha256": "6be4883cd6d7ebc1bf805560c91145766fae9ea640726151b9821feca720089b"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "A valid failed ball is evidence, not a failed learner.",
+          "sha256": "2b4c9e11553d6ea6187d54c9bdd075e6f14d6373e907cf37e2846bef5feb05df"
+        }
+      ],
+      "scientificMeaning": "The learner has checked for excessive dryness and wetness and used only material from the same sample. It still falls apart.\n\nRecord that it does not remain in a ball.\n\nDo not add another soil, press indefinitely or invent a zero-length formed ribbon.\n\nFollow the guide towards sand and retain the observations for the trainer.\n\nA valid failed ball is evidence, not a failed learner.",
+      "displayText": "The learner has checked for excessive dryness and wetness and used only material from the same sample. It still falls apart.\n\nRecord that it does not remain in a ball.\n\nDo not add another soil, press indefinitely or invent a zero-length formed ribbon.\n\nFollow the guide towards sand and retain the observations for the trainer.\n\nA valid failed ball is evidence, not a failed learner.",
+      "captionText": "The learner has checked for excessive dryness and wetness and used only material from the same sample. It still falls apart.\n\nRecord that it does not remain in a ball.\n\nDo not add another soil, press indefinitely or invent a zero-length formed ribbon.\n\nFollow the guide towards sand and retain the observations for the trainer.\n\nA valid failed ball is evidence, not a failed learner.",
+      "spokenText": "The learner has checked for excessive dryness and wetness and used only material from the same sample. It still falls apart.\n\nRecord that it does not remain in a ball.\n\nDo not add another soil, press indefinitely or invent a zero-length formed ribbon.\n\nFollow the guide towards sand and retain the observations for the trainer.\n\nA valid failed ball is evidence, not a failed learner.",
+      "spokenTextSHA256": "3872e0e1667702cbe4a4d5442b99f016d2926b725cc1144d76ed51adbade1506",
+      "spokenTextSha256": "3872e0e1667702cbe4a4d5442b99f016d2926b725cc1144d76ed51adbade1506",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9e4392e4857ef066ff00ab9f9674cdde76dcb98ec18175771bb5fc7ca31e9492",
+      "requestFingerprintSha256": "9e4392e4857ef066ff00ab9f9674cdde76dcb98ec18175771bb5fc7ca31e9492",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-E03-r1",
+      "unitId": "S1-08-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The sample forms a medium ribbon. Neither a gritty nor a very smooth sensation dominates the wetter-pinch check.",
+          "sha256": "4d3b5a052f6d1630da83a24b3385ebeeac95c779031397e0086324ec5165eaa8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Record the measured 3.5 cm and the feel separately.",
+          "sha256": "540581c60a1db32bd6b9df991029faa5cc7f8b941b3724b067d9c2e9167e2571"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Follow the intermediate branch and then the neither-dominating branch.",
+          "sha256": "a445b31c3cf75c500fb6d94f16186773b21f3a40c88bcb3a5e2c8a08833c8b1a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "The guide indicates clay loam; do not substitute the name loam from an inconsistent model table.",
+          "sha256": "60b480bf6f1f60ac8cb30951ff342147ec1dd9df41d2683eb10fc39c2e368507"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "The observations take priority over a copied expected label.",
+          "sha256": "9e15de75a491d9bd053ed48bacc9f88191cbf28a6e6d81d8fac091e9699f6849"
+        }
+      ],
+      "scientificMeaning": "The sample forms a medium ribbon. Neither a gritty nor a very smooth sensation dominates the wetter-pinch check.\n\nRecord the measured 3.5 cm and the feel separately.\n\nFollow the intermediate branch and then the neither-dominating branch.\n\nThe guide indicates clay loam; do not substitute the name loam from an inconsistent model table.\n\nThe observations take priority over a copied expected label.",
+      "displayText": "The sample forms a medium ribbon. Neither a gritty nor a very smooth sensation dominates the wetter-pinch check.\n\nRecord the measured 3.5 cm and the feel separately.\n\nFollow the intermediate branch and then the neither-dominating branch.\n\nThe guide indicates clay loam; do not substitute the name loam from an inconsistent model table.\n\nThe observations take priority over a copied expected label.",
+      "captionText": "The sample forms a medium ribbon. Neither a gritty nor a very smooth sensation dominates the wetter-pinch check.\n\nRecord the measured 3.5 cm and the feel separately.\n\nFollow the intermediate branch and then the neither-dominating branch.\n\nThe guide indicates clay loam; do not substitute the name loam from an inconsistent model table.\n\nThe observations take priority over a copied expected label.",
+      "spokenText": "The sample forms a medium ribbon. Neither a gritty nor a very smooth sensation dominates the wetter-pinch check.\n\nRecord the measured three point five centimetres and the feel separately.\n\nFollow the intermediate branch and then the neither-dominating branch.\n\nThe guide indicates clay loam; do not substitute the name loam from an inconsistent model table.\n\nThe observations take priority over a copied expected label.",
+      "spokenTextSHA256": "83f39d2b84d34c4649beb2bf23337a176031c5b081c2e6af030fed62d9c4b700",
+      "spokenTextSha256": "83f39d2b84d34c4649beb2bf23337a176031c5b081c2e6af030fed62d9c4b700",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3.5 cm",
+          "spoken": "three point five centimetres",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8882d7927d5cb9167107ca611c9524636f646aa5bea272e46320c1f5ef8c0c67",
+      "requestFingerprintSha256": "8882d7927d5cb9167107ca611c9524636f646aa5bea272e46320c1f5ef8c0c67",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-P01-r1",
+      "unitId": "S1-08-en-P01-r1",
+      "locale": "en",
+      "semanticGroup": "P01",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/safety",
+          "text": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.",
+          "sha256": "d748dc2b5c328998558351b7b464ad3af2ca61dca94808ea7267800966d2c567"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/0",
+          "text": "Prepare the workstation and keep A, B and C separately identified.",
+          "sha256": "3c01273f9bb22397ce6e54ba009e722e7a35bf8d7c2ada092d0ae64d4d71dd32"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/1",
+          "text": "Observe A, take a palm-sized portion, remove debris and condition it gradually with water.",
+          "sha256": "73e290b930bd93b4d4bca1b9529ebbc76191b6f51685c509b44059200965be9f"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/2",
+          "text": "Try the ball; record valid non-formation after moisture checks rather than require every soil to hold a ball.",
+          "sha256": "44a7725bd6ed18d2740dff56d99ce8f472af82fc567fbd9bcc58012f49b071cc"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/3",
+          "text": "Use the correct ribbon method if a ball forms; otherwise record the valid branch and explain it.",
+          "sha256": "6a7319c349ed0e43742cd8fa0907803ab463b4b1b40e1fc28a5fc899d63f5736"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/4",
+          "text": "Record A's observations before its classification and apply the complete length-plus-feel guide.",
+          "sha256": "6907e3318805218f379d04da9cc217250da1e52b3068aa723abe3aec61567fbe"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Clean between samples, then individually prepare and test B correctly.",
+          "sha256": "bb0725b633f7cee990d4f55cf834592fdfb76ff886e9335b97205bb37b6f595f"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/6",
+          "text": "Record and justify B's classification from its observations.",
+          "sha256": "e558895a02cd6168ab15af2b9df4a0e70e90a6cb4c9d301462c13013d5cf6978"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/7",
+          "text": "Clean between samples, then individually prepare and test C correctly.",
+          "sha256": "358f385f3465b9b24917519675b5376271c961d5431f2b0c7abcd8d5da34e182"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/8",
+          "text": "Record and justify C's classification from its observations.",
+          "sha256": "75461510098e9ff02f3fc06eff8e6d4807f2eb036d3d64871f7b70e38a084fce"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/9",
+          "text": "In the linked crop step, recommend and justify at least two candidates for each sample, including the practical card's minimum of one; keep this item pending until that evidence exists.",
+          "sha256": "c0b3611a332669be968b9f56d4c6be4dc29d03b1b3365248d234a244747d4fd6"
+        },
+        {
+          "pointer": "/practicalTasks/0/checklist/10",
+          "text": "Clean hands, protection, materials and workstation and dispose of samples as instructed.",
+          "sha256": "ccc7f3d3e349d456d11c1519143a4648fd4c2d69aba81f46dc805d9409abcc19"
+        }
+      ],
+      "scientificMeaning": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nPrepare the workstation and keep A, B and C separately identified.\n\nObserve A, take a palm-sized portion, remove debris and condition it gradually with water.\n\nTry the ball; record valid non-formation after moisture checks rather than require every soil to hold a ball.\n\nUse the correct ribbon method if a ball forms; otherwise record the valid branch and explain it.\n\nRecord A's observations before its classification and apply the complete length-plus-feel guide.\n\nClean between samples, then individually prepare and test B correctly.\n\nRecord and justify B's classification from its observations.\n\nClean between samples, then individually prepare and test C correctly.\n\nRecord and justify C's classification from its observations.\n\nIn the linked crop step, recommend and justify at least two candidates for each sample, including the practical card's minimum of one; keep this item pending until that evidence exists.\n\nClean hands, protection, materials and workstation and dispose of samples as instructed.",
+      "displayText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nPrepare the workstation and keep A, B and C separately identified.\n\nObserve A, take a palm-sized portion, remove debris and condition it gradually with water.\n\nTry the ball; record valid non-formation after moisture checks rather than require every soil to hold a ball.\n\nUse the correct ribbon method if a ball forms; otherwise record the valid branch and explain it.\n\nRecord A's observations before its classification and apply the complete length-plus-feel guide.\n\nClean between samples, then individually prepare and test B correctly.\n\nRecord and justify B's classification from its observations.\n\nClean between samples, then individually prepare and test C correctly.\n\nRecord and justify C's classification from its observations.\n\nIn the linked crop step, recommend and justify at least two candidates for each sample, including the practical card's minimum of one; keep this item pending until that evidence exists.\n\nClean hands, protection, materials and workstation and dispose of samples as instructed.",
+      "captionText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nPrepare the workstation and keep A, B and C separately identified.\n\nObserve A, take a palm-sized portion, remove debris and condition it gradually with water.\n\nTry the ball; record valid non-formation after moisture checks rather than require every soil to hold a ball.\n\nUse the correct ribbon method if a ball forms; otherwise record the valid branch and explain it.\n\nRecord A's observations before its classification and apply the complete length-plus-feel guide.\n\nClean between samples, then individually prepare and test B correctly.\n\nRecord and justify B's classification from its observations.\n\nClean between samples, then individually prepare and test C correctly.\n\nRecord and justify C's classification from its observations.\n\nIn the linked crop step, recommend and justify at least two candidates for each sample, including the practical card's minimum of one; keep this item pending until that evidence exists.\n\nClean hands, protection, materials and workstation and dispose of samples as instructed.",
+      "spokenText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until the linked crop step S one zero nine; online answers and a group role do not pass it.\n\nPrepare the workstation and keep A, B and C separately identified.\n\nObserve A, take a palm-sized portion, remove debris and condition it gradually with water.\n\nTry the ball; record valid non-formation after moisture checks rather than require every soil to hold a ball.\n\nUse the correct ribbon method if a ball forms; otherwise record the valid branch and explain it.\n\nRecord A's observations before its classification and apply the complete length-plus-feel guide.\n\nClean between samples, then individually prepare and test B correctly.\n\nRecord and justify B's classification from its observations.\n\nClean between samples, then individually prepare and test C correctly.\n\nRecord and justify C's classification from its observations.\n\nIn the linked crop step, recommend and justify at least two candidates for each sample, including the practical card's minimum of one; keep this item pending until that evidence exists.\n\nClean hands, protection, materials and workstation and dispose of samples as instructed.",
+      "spokenTextSHA256": "56eb9ca4a313d330937efd45b496255ef2173e28a1133b1360c330ec2ac178fc",
+      "spokenTextSha256": "56eb9ca4a313d330937efd45b496255ef2173e28a1133b1360c330ec2ac178fc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "S1-09",
+          "spoken": "the linked crop step S one zero nine",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fbc99f025fc619b105ecc9da3ac1f0b6840efc4365856085566914107ca0616a",
+      "requestFingerprintSha256": "fbc99f025fc619b105ecc9da3ac1f0b6840efc4365856085566914107ca0616a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-P02-r1",
+      "unitId": "S1-08-en-P02-r1",
+      "locale": "en",
+      "semanticGroup": "P02",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/1/safety",
+          "text": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.",
+          "sha256": "d748dc2b5c328998558351b7b464ad3af2ca61dca94808ea7267800966d2c567"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/0",
+          "text": "Wear suitable task protection, including gloves, under the trainer's safe-sample procedure.",
+          "sha256": "29ece313bf24dfa9e860d6d9b5b0a7d43e8241e84b5f253b1c725dccbc442ad3"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/1",
+          "text": "Take a representative small handful from the assigned sample and remove stones and debris.",
+          "sha256": "91ab72f5131455f0b629f9ffca9b74df169341929544e89ed9931b253a78eac6"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/2",
+          "text": "Add water gradually and knead; check a ball or correctly record non-formation.",
+          "sha256": "3dedc349e2442df382b3ace6868a78d441e69ccf76de1206cd2d9dc88c2ee96d"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/3",
+          "text": "Form an even unsupported ribbon where the material allows it, or correctly explain the no-ribbon branch.",
+          "sha256": "80ddcde892edfbaf8a04ba10c81f11cbdeb28ff2da0f3783e64fbbe1b247ea75"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/4",
+          "text": "Record ribbon length and strength or absence, using the full guide rather than the simplified one-label rule.",
+          "sha256": "b6239246c2390506eea20557d5ad59dfd9ce56232cdd49282d840aee6c081a22"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/5",
+          "text": "Assess gritty versus smooth feel with the wet pinch.",
+          "sha256": "a9eb9a4a820398b40db037a43861273fd409b69c4a3a60a9bfe2765fba36027e"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/6",
+          "text": "State the field texture conclusion, evidence and any uncertainty.",
+          "sha256": "2b860193cc9381b35804b5a9286b38b5edae37176db59af76cdbd1eb3c164e56"
+        },
+        {
+          "pointer": "/practicalTasks/1/checklist/7",
+          "text": "Clean the workspace and dispose of material appropriately.",
+          "sha256": "b278e4f10cec663408db9bf8ffd04282a1e5de067b867c1336cd34a717541c84"
+        }
+      ],
+      "scientificMeaning": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nWear suitable task protection, including gloves, under the trainer's safe-sample procedure.\n\nTake a representative small handful from the assigned sample and remove stones and debris.\n\nAdd water gradually and knead; check a ball or correctly record non-formation.\n\nForm an even unsupported ribbon where the material allows it, or correctly explain the no-ribbon branch.\n\nRecord ribbon length and strength or absence, using the full guide rather than the simplified one-label rule.\n\nAssess gritty versus smooth feel with the wet pinch.\n\nState the field texture conclusion, evidence and any uncertainty.\n\nClean the workspace and dispose of material appropriately.",
+      "displayText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nWear suitable task protection, including gloves, under the trainer's safe-sample procedure.\n\nTake a representative small handful from the assigned sample and remove stones and debris.\n\nAdd water gradually and knead; check a ball or correctly record non-formation.\n\nForm an even unsupported ribbon where the material allows it, or correctly explain the no-ribbon branch.\n\nRecord ribbon length and strength or absence, using the full guide rather than the simplified one-label rule.\n\nAssess gritty versus smooth feel with the wet pinch.\n\nState the field texture conclusion, evidence and any uncertainty.\n\nClean the workspace and dispose of material appropriately.",
+      "captionText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until S1-09; online answers and a group role do not pass it.\n\nWear suitable task protection, including gloves, under the trainer's safe-sample procedure.\n\nTake a representative small handful from the assigned sample and remove stones and debris.\n\nAdd water gradually and knead; check a ball or correctly record non-formation.\n\nForm an even unsupported ribbon where the material allows it, or correctly explain the no-ribbon branch.\n\nRecord ribbon length and strength or absence, using the full guide rather than the simplified one-label rule.\n\nAssess gritty versus smooth feel with the wet pinch.\n\nState the field texture conclusion, evidence and any uncertainty.\n\nClean the workspace and dispose of material appropriately.",
+      "spokenText": "Trainer must verify safe mineral samples, protection and actual individual A/B/C handling. The linked crop item remains pending until the linked crop step S one zero nine; online answers and a group role do not pass it.\n\nWear suitable task protection, including gloves, under the trainer's safe-sample procedure.\n\nTake a representative small handful from the assigned sample and remove stones and debris.\n\nAdd water gradually and knead; check a ball or correctly record non-formation.\n\nForm an even unsupported ribbon where the material allows it, or correctly explain the no-ribbon branch.\n\nRecord ribbon length and strength or absence, using the full guide rather than the simplified one-label rule.\n\nAssess gritty versus smooth feel with the wet pinch.\n\nState the field texture conclusion, evidence and any uncertainty.\n\nClean the workspace and dispose of material appropriately.",
+      "spokenTextSHA256": "71ade44406b91487a6ce304cf28e373cf71298550e14c3d8013b5b045aa2dda4",
+      "spokenTextSha256": "71ade44406b91487a6ce304cf28e373cf71298550e14c3d8013b5b045aa2dda4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "S1-09",
+          "spoken": "the linked crop step S one zero nine",
+          "occurrences": 1,
+          "purpose": "Source-equivalent natural spoken wording/notation only; display, identifiers, facts and conditions unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fb161380fabfb07779b588d4be2456084195f6fb6cf63556b5dd5718b25adc93",
+      "requestFingerprintSha256": "fb161380fabfb07779b588d4be2456084195f6fb6cf63556b5dd5718b25adc93",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-08-en-reflection-r1",
+      "unitId": "S1-08-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I perform the test, describe the observations and justify the decision without copying a sample key?",
+          "sha256": "a3032c0c31da35836d497d400e76d4d1804e4390474ebf9e946f406a5feeedbc"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-rating is not proof of practical competence.",
+          "sha256": "5ef15e226f6474dc8af7764edfb70335fc749e785c57c0d8a117f0f6026426d0"
+        }
+      ],
+      "scientificMeaning": "Can I perform the test, describe the observations and justify the decision without copying a sample key?\n\nSelf-rating is not proof of practical competence.",
+      "displayText": "Can I perform the test, describe the observations and justify the decision without copying a sample key?\n\nSelf-rating is not proof of practical competence.",
+      "captionText": "Can I perform the test, describe the observations and justify the decision without copying a sample key?\n\nSelf-rating is not proof of practical competence.",
+      "spokenText": "Can I perform the test, describe the observations and justify the decision without copying a sample key?\n\nSelf-rating is not proof of practical competence.",
+      "spokenTextSHA256": "e4670ffcd983cb5fd33404fcc4d2f749d226540fcbad625509b18fe8fe46a503",
+      "spokenTextSha256": "e4670ffcd983cb5fd33404fcc4d2f749d226540fcbad625509b18fe8fe46a503",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8b149cba66d24d765daeadfc07c5829d44b297f5b45a94f917b1a4f7ff143a6d",
+      "requestFingerprintSha256": "8b149cba66d24d765daeadfc07c5829d44b297f5b45a94f917b1a4f7ff143a6d",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
