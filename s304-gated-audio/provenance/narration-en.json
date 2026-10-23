@@ -1,0 +1,336 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-en.json",
+    "sha256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+    "bytes": 25054
+  },
+  "units": [
+    {
+      "id": "S3-04-en-E01-r1",
+      "unitId": "S3-04-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "What two demonstrations really show",
+          "sha256": "5c9001714218e873668112bf59dbaaa5d1bfcf75dd09bd75ebb6ec7e20b968ba"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.",
+          "sha256": "731722153ae40d54b49faf99aa8f650e599fff40af5efbb1bd6a74727fde2c22"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.",
+          "sha256": "4ec476ff4f90f1676efa5e35df734220053101bed75ff69d81612232bc9379a9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Color appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.",
+          "sha256": "c8cbcdadd782d01820f81df502357d3ffe51c06563e2da720b6ee62684e11526"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "The dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil.",
+          "sha256": "95d48658a8dcc3810be2ea0ccdf05af6206ff3a13be168343d03a74549bb28e3"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Explain turgor and water transport, then state each demonstration's limit.",
+          "sha256": "4def15cdde02a02af10429084caf2c6b97411475c3f5c4eb6d05f71c99bdac15"
+        }
+      ],
+      "scientificMeaning": "What two demonstrations really show\n\nA crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.\n\nThe carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.\n\nColor appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.\n\nThe dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil.\n\nExplain turgor and water transport, then state each demonstration's limit.",
+      "displayText": "What two demonstrations really show\n\nA crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.\n\nThe carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.\n\nColor appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.\n\nThe dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil.\n\nExplain turgor and water transport, then state each demonstration's limit.",
+      "captionText": "What two demonstrations really show\n\nA crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.\n\nThe carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.\n\nColor appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.\n\nThe dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil.\n\nExplain turgor and water transport, then state each demonstration's limit.",
+      "spokenText": "What two demonstrations really show\n\nA crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.\n\nThe carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.\n\nColor appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.\n\nThe dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil.\n\nExplain turgor and water transport, then state each demonstration's limit.",
+      "spokenTextSHA256": "dc2f73603eb6c7cb9463c2d3411742379557bf2eec11f69a25c1dcf6665bba08",
+      "spokenTextSha256": "dc2f73603eb6c7cb9463c2d3411742379557bf2eec11f69a25c1dcf6665bba08",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "308df3c36fe5410e8f19904d599f2f54ba8e83b8eecbae13d7164d49ba8dfd72",
+      "requestFingerprintSha256": "308df3c36fe5410e8f19904d599f2f54ba8e83b8eecbae13d7164d49ba8dfd72",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "carrot-celery",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-E02-r1",
+      "unitId": "S3-04-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Order a soil profile after wetting",
+          "sha256": "6814751350b1fd80c59baa4e4278196bfc50a01b7a6ae390f34906c7aecaae46"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A soil is initially saturated, then drains and later dries as roots extract water.",
+          "sha256": "8a49390f006585d9880834f1dd3480638504727e4890eb97a4d2c0842e925470"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "At saturation pores are water-filled; excess gravity water can move downward if drainage permits.",
+          "sha256": "1195f927c8619fcffa8fba468d9e66bbc27fbf8dba4a98b8fe7fd7900f8ed7a8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "After drainable water leaves, field capacity is the upper reference for stored plant-available water.",
+          "sha256": "50a9ff35c2cc8c179aaff0bf4b2590291c5b381442bfc01c2f7db6577cf34f0b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "As soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP.",
+          "sha256": "96839cfd53e00d31f885b8b28c43a49da69e188a9c5a1cd4d63b00d3f6cf16be"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Saturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP.",
+          "sha256": "2936fa42e2c86ff1c25c13305a89f952d2af9e1871e6fc61d096a9ff42274f3c"
+        }
+      ],
+      "scientificMeaning": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP.\n\nSaturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP.",
+      "displayText": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP.\n\nSaturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP.",
+      "captionText": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP.\n\nSaturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP.",
+      "spokenText": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; plant-available water capacity is field capacity minus permanent wilting point.\n\nSaturation then field capacity then permanent wilting point as drying proceeds, with a downward drainage arrow above field capacity and a plant-available water capacity bracket between field capacity and permanent wilting point.",
+      "spokenTextSHA256": "a5bf4a81683901c0f0d112cf79714a0df23379c94ae9ac92cc726964d643866b",
+      "spokenTextSha256": "a5bf4a81683901c0f0d112cf79714a0df23379c94ae9ac92cc726964d643866b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP.\n\nSaturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP.",
+          "spoken": "Order a soil profile after wetting\n\nA soil is initially saturated, then drains and later dries as roots extract water.\n\nAt saturation pores are water-filled; excess gravity water can move downward if drainage permits.\n\nAfter drainable water leaves, field capacity is the upper reference for stored plant-available water.\n\nAs soil dries toward permanent wilting point, the available portion shrinks; plant-available water capacity is field capacity minus permanent wilting point.\n\nSaturation then field capacity then permanent wilting point as drying proceeds, with a downward drainage arrow above field capacity and a plant-available water capacity bracket between field capacity and permanent wilting point.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7b8bdd9d5254f5c48aeb3d7040f2e6ece6b6742db1181c72afd6ee219cf7955c",
+      "requestFingerprintSha256": "7b8bdd9d5254f5c48aeb3d7040f2e6ece6b6742db1181c72afd6ee219cf7955c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "three-levels",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-E03-r1",
+      "unitId": "S3-04-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Subtract on a common basis",
+          "sha256": "9a71aac92ca407d2cd7d97ed7e6c23491039bbf0ff8ede36de3228383ea7bdb5"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.",
+          "sha256": "ed4efaef0441815dad8089d83cd55c5b7cedb120b37442e8bf6a74be4ff8cb53"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Both values use the same basis and layer.",
+          "sha256": "722175036d3f2ad2423a0a5be0c3c21c08789f8b403707a4a847b8b40cccaa52"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "30 − 12 = 18 percentage points by volume.",
+          "sha256": "efffd1153533da669b2ea0bf7fd26c01eb16aa5431652a64728a5bdea4152ead"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Without layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.",
+          "sha256": "949ecad3594c682014f60a88054c74a0df53b4c22e4ab602fc09ca43fdc4c70c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "AWC = 18 percentage points by volume for the given example layer.",
+          "sha256": "d30438f392ad65cb050ed0630434bbb9d06a466eebe3ec1118893c04a1c25d83"
+        }
+      ],
+      "scientificMeaning": "Subtract on a common basis\n\nA labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.\n\nBoth values use the same basis and layer.\n\n30 − 12 = 18 percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nAWC = 18 percentage points by volume for the given example layer.",
+      "displayText": "Subtract on a common basis\n\nA labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.\n\nBoth values use the same basis and layer.\n\n30 − 12 = 18 percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nAWC = 18 percentage points by volume for the given example layer.",
+      "captionText": "Subtract on a common basis\n\nA labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.\n\nBoth values use the same basis and layer.\n\n30 − 12 = 18 percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nAWC = 18 percentage points by volume for the given example layer.",
+      "spokenText": "Subtract on a common basis\n\nA labelled practice layer has field capacity thirty percent by volume and permanent wilting point twelve percent by volume.\n\nBoth values use the same basis and layer.\n\nthirty minus twelve equals eighteen percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nplant-available water capacity equals eighteen percentage points by volume for the given example layer.",
+      "spokenTextSHA256": "32fb1160c1c2f21eccad737dfe0a3a208e89d7a813b9fe1dbdd696608cfd2bc4",
+      "spokenTextSha256": "32fb1160c1c2f21eccad737dfe0a3a208e89d7a813b9fe1dbdd696608cfd2bc4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Subtract on a common basis\n\nA labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.\n\nBoth values use the same basis and layer.\n\n30 − 12 = 18 percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nAWC = 18 percentage points by volume for the given example layer.",
+          "spoken": "Subtract on a common basis\n\nA labelled practice layer has field capacity thirty percent by volume and permanent wilting point twelve percent by volume.\n\nBoth values use the same basis and layer.\n\nthirty minus twelve equals eighteen percentage points by volume.\n\nWithout layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose.\n\nplant-available water capacity equals eighteen percentage points by volume for the given example layer.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e51c87137da8855dbda32b470d4e6f13700543ba449b4f75a7d2412fdda03c77",
+      "requestFingerprintSha256": "e51c87137da8855dbda32b470d4e6f13700543ba449b4f75a7d2412fdda03c77",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "calculation",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-04-en-E04-r1",
+      "unitId": "S3-04-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Texture is one clue, not a schedule",
+          "sha256": "c611c2a98c7ce4271454dd7092b2b9ab17f15842c60667159607a7506dd3946a"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Two fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.",
+          "sha256": "5dcb92b94ea0c6e3821df8a53ff3112f09eebce45ff3d8f43b54cd9068222e57"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Sands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.",
+          "sha256": "0e5c84a01f91b2535b50441b21f0e35abf26534d302c8de0c31ae1b5f49650c0"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Compare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.",
+          "sha256": "aeafa0c79e2e01f9625651c433cdae380b74c388d68c6a3cba22ae0d17e119da"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Check moisture or a suitable sensor and the crop's condition before setting interval and amount.",
+          "sha256": "dfa95992edf8c54a1d3aa860292b38dcbc2aecd5eed4b2051a1dbd40607422ac"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "A tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+          "sha256": "6efbe3ac8806e7f790fecbd68d4f30287a3280bc652d9be8f3012d0bce1912ef"
+        }
+      ],
+      "scientificMeaning": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+      "displayText": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+      "captionText": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+      "spokenText": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth plant-available water capacity; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+      "spokenTextSHA256": "0d88f6d3d3a2f819769f4671dd6ed503c2db6b56dd8de900657dc654248fda4b",
+      "spokenTextSha256": "0d88f6d3d3a2f819769f4671dd6ed503c2db6b56dd8de900657dc654248fda4b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+          "spoken": "Texture is one clue, not a schedule\n\nTwo fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.\n\nSands often drain faster and may have lower per-depth plant-available water capacity; clays can retain more total water, with a portion held too tightly.\n\nCompare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.\n\nCheck moisture or a suitable sensor and the crop's condition before setting interval and amount.\n\nA tendency may guide a measurement plan, but neither schedule follows from texture alone.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6871e7aa788ef29dfed56e72aee1e89563a56da2f7dffaf05e6a40c93a1e2bc3",
+      "requestFingerprintSha256": "6871e7aa788ef29dfed56e72aee1e89563a56da2f7dffaf05e6a40c93a1e2bc3",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "sand-clay",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

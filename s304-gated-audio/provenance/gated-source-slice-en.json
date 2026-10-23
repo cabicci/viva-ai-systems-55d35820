@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-04",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "carrot-celery",
+      "title": "What two demonstrations really show",
+      "situation": "A crisp carrot is compared with a limp one; a cut celery petiole stands in tinted water for several hours.",
+      "reasoning": [
+        "The carrot contrast illustrates cell water pressure and firmness, not a field diagnosis by itself.",
+        "Color appearing higher in celery reveals a pathway for water movement through vascular tissue; record elapsed time and observation.",
+        "The dye is not a measurement of fertiliser uptake, and plant transpiration is different from water evaporating directly from soil."
+      ],
+      "takeaway": "Explain turgor and water transport, then state each demonstration's limit."
+    },
+    {
+      "id": "three-levels",
+      "title": "Order a soil profile after wetting",
+      "situation": "A soil is initially saturated, then drains and later dries as roots extract water.",
+      "reasoning": [
+        "At saturation pores are water-filled; excess gravity water can move downward if drainage permits.",
+        "After drainable water leaves, field capacity is the upper reference for stored plant-available water.",
+        "As soil dries toward permanent wilting point, the available portion shrinks; AWC is FC − PWP."
+      ],
+      "takeaway": "Saturation → field capacity → permanent wilting point as drying proceeds, with a downward drainage arrow above FC and an AWC bracket between FC and PWP."
+    },
+    {
+      "id": "calculation",
+      "title": "Subtract on a common basis",
+      "situation": "A labelled practice layer has field capacity 30% by volume and permanent wilting point 12% by volume.",
+      "reasoning": [
+        "Both values use the same basis and layer.",
+        "30 − 12 = 18 percentage points by volume.",
+        "Without layer thickness, rooting pattern, crop demand and irrigation efficiency, this is not a field watering dose."
+      ],
+      "takeaway": "AWC = 18 percentage points by volume for the given example layer."
+    },
+    {
+      "id": "sand-clay",
+      "title": "Texture is one clue, not a schedule",
+      "situation": "Two fields are called sandy and clay-rich. Someone proposes fixed daily versus weekly irrigation solely from those names.",
+      "reasoning": [
+        "Sands often drain faster and may have lower per-depth AWC; clays can retain more total water, with a portion held too tightly.",
+        "Compare actual root-zone depth, structure, salinity, stage, evapotranspiration and irrigation capacity.",
+        "Check moisture or a suitable sensor and the crop's condition before setting interval and amount."
+      ],
+      "takeaway": "A tendency may guide a measurement plan, but neither schedule follows from texture alone."
+    }
+  ]
+}

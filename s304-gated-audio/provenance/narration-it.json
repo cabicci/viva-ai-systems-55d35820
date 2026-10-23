@@ -1,0 +1,329 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-it.json",
+    "sha256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+    "bytes": 24790
+  },
+  "units": [
+    {
+      "id": "S3-04-it-E01-r1",
+      "unitId": "S3-04-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Che cosa mostrano davvero le due prove",
+          "sha256": "839d5d28d6db6a1778fe485a721ce1bf69870d02b07beb10ad6f3ca49e09f594"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.",
+          "sha256": "21a8cffe84ae24edb21eed969dd495b40b1e65d2a090176f5f1fbc33a804ef93"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "La differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.",
+          "sha256": "9a834c4957ff7450f5fce93bc0cd65130d2b689f579efbff71e116e068dc76f6"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Il colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.",
+          "sha256": "f93dc14dccaafc0b4495f153fe2a448a4228c08636c4f8361c4397615b962ad8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Il colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo.",
+          "sha256": "84b2c86c5bfc91f6ecbeb34e0f0acaa8055af901ae0e84207540598fbb3f2e36"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Spiegare turgore e trasporto, poi il limite di ogni prova.",
+          "sha256": "7ea1c0ad79e211fff4833f742d3b3c2cacc386b2069ef724c4a509862b7ab2e3"
+        }
+      ],
+      "scientificMeaning": "Che cosa mostrano davvero le due prove\n\nUna carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.\n\nLa differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.\n\nIl colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.\n\nIl colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo.\n\nSpiegare turgore e trasporto, poi il limite di ogni prova.",
+      "displayText": "Che cosa mostrano davvero le due prove\n\nUna carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.\n\nLa differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.\n\nIl colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.\n\nIl colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo.\n\nSpiegare turgore e trasporto, poi il limite di ogni prova.",
+      "captionText": "Che cosa mostrano davvero le due prove\n\nUna carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.\n\nLa differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.\n\nIl colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.\n\nIl colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo.\n\nSpiegare turgore e trasporto, poi il limite di ogni prova.",
+      "spokenText": "Che cosa mostrano davvero le due prove\n\nUna carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.\n\nLa differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.\n\nIl colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.\n\nIl colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo.\n\nSpiegare turgore e trasporto, poi il limite di ogni prova.",
+      "spokenTextSHA256": "7287909bcc3029fd2f7fab4e090664eef34918aeb40ad07ad3cd705760e58fa3",
+      "spokenTextSha256": "7287909bcc3029fd2f7fab4e090664eef34918aeb40ad07ad3cd705760e58fa3",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aae209db3877016b274be6936fa46be5efc1b75584a533e559b56cf3e17a46c1",
+      "requestFingerprintSha256": "aae209db3877016b274be6936fa46be5efc1b75584a533e559b56cf3e17a46c1",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "carrot-celery",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-E02-r1",
+      "unitId": "S3-04-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Ordinare un profilo dopo la bagnatura",
+          "sha256": "50322d4c0657b862ab8b8863eb89d4369b8f25399af6363b29089a40099fd7cc"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.",
+          "sha256": "0a61108e1d2e68001486d96f1db0adc40af88c52bae91fc30db61cae8fa2b2f0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Alla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.",
+          "sha256": "0ef02fee19303a9be94c70373af60f19edd1e00bd65c256fe23e6c1fd4a959a1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Dopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.",
+          "sha256": "a7e4daa0eea380d447572212da27d755a07a6114e28089c637d305f31100f931"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Avvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP.",
+          "sha256": "d17e36239779e09092850ab69713e1a05f451b65ef8937faa4748e2940a3eea2"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Durante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP.",
+          "sha256": "6e99fdd9f6350636915d4907f3f7758d50c9221c8e81752a9edea2edf6717a95"
+        }
+      ],
+      "scientificMeaning": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP.\n\nDurante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP.",
+      "displayText": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP.\n\nDurante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP.",
+      "captionText": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP.\n\nDurante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP.",
+      "spokenText": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, la capacità di campo è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi al punto di appassimento permanente la quota disponibile si riduce; capacità d’acqua disponibile uguale a capacità di campo meno punto di appassimento permanente.\n\nDurante l’asciugatura: saturazione poi capacità di campo poi punto di appassimento permanente, con freccia verso il basso sopra la capacità di campo e fascia capacità d’acqua disponibile tra la capacità di campo e il punto di appassimento permanente.",
+      "spokenTextSHA256": "7f667d9e1eaec6e9affce83acff88e4d4ace5ea70e2abc521848de5f02a84442",
+      "spokenTextSha256": "7f667d9e1eaec6e9affce83acff88e4d4ace5ea70e2abc521848de5f02a84442",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP.\n\nDurante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP.",
+          "spoken": "Ordinare un profilo dopo la bagnatura\n\nIl suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.\n\nAlla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.\n\nDopo la perdita dell’acqua mobile, la capacità di campo è il riferimento superiore della riserva accessibile.\n\nAvvicinandosi al punto di appassimento permanente la quota disponibile si riduce; capacità d’acqua disponibile uguale a capacità di campo meno punto di appassimento permanente.\n\nDurante l’asciugatura: saturazione poi capacità di campo poi punto di appassimento permanente, con freccia verso il basso sopra la capacità di campo e fascia capacità d’acqua disponibile tra la capacità di campo e il punto di appassimento permanente.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "338dbb464cdb08a3724c5769ec345aa3dccc1b4c7dfd14c54f9fef5358be176a",
+      "requestFingerprintSha256": "338dbb464cdb08a3724c5769ec345aa3dccc1b4c7dfd14c54f9fef5358be176a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "three-levels",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-E03-r1",
+      "unitId": "S3-04-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Sottrarre valori sulla stessa base",
+          "sha256": "bd418982a85382982a2ff54009372bc131da52136f2e646ee2d5a9779eecaa9e"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Uno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.",
+          "sha256": "034efcfeee984856953db2f676d8336d8a8812462bcfe7d9b72eb84dbe633d38"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Valori dello stesso strato e base.",
+          "sha256": "4b51dfc1a140d8f2cfd9d97b25232bfd5c2bdf49b32ec219dda7101b208d2f64"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "30 − 12 = 18 punti percentuali volumetrici.",
+          "sha256": "1babe2b7e400fe9a0451ecc7d390b925adaea8046dea5f516c8a710cb13f206d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Senza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.",
+          "sha256": "4db94698a20875ffd86dfc1ad940d886b5711e97eaae64050ae512bb3a95c570"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "AWC = 18 punti percentuali in volume per lo strato dato.",
+          "sha256": "8e052f8324e4ee4966d8cf122fd382de8a419020b928196e4ce3acce82b99bd6"
+        }
+      ],
+      "scientificMeaning": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.\n\nValori dello stesso strato e base.\n\n30 − 12 = 18 punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\nAWC = 18 punti percentuali in volume per lo strato dato.",
+      "displayText": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.\n\nValori dello stesso strato e base.\n\n30 − 12 = 18 punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\nAWC = 18 punti percentuali in volume per lo strato dato.",
+      "captionText": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.\n\nValori dello stesso strato e base.\n\n30 − 12 = 18 punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\nAWC = 18 punti percentuali in volume per lo strato dato.",
+      "spokenText": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo trenta per cento in volume e appassimento permanente dodici per cento in volume.\n\nValori dello stesso strato e base.\n\ntrenta meno dodici uguale a diciotto punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\ncapacità d’acqua disponibile uguale a diciotto punti percentuali in volume per lo strato dato.",
+      "spokenTextSHA256": "646daf7d671885d9101fcbaedde3a1387873c586692b4a6c4f76b555b4c4d778",
+      "spokenTextSha256": "646daf7d671885d9101fcbaedde3a1387873c586692b4a6c4f76b555b4c4d778",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.\n\nValori dello stesso strato e base.\n\n30 − 12 = 18 punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\nAWC = 18 punti percentuali in volume per lo strato dato.",
+          "spoken": "Sottrarre valori sulla stessa base\n\nUno strato didattico ha capacità di campo trenta per cento in volume e appassimento permanente dodici per cento in volume.\n\nValori dello stesso strato e base.\n\ntrenta meno dodici uguale a diciotto punti percentuali volumetrici.\n\nSenza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo.\n\ncapacità d’acqua disponibile uguale a diciotto punti percentuali in volume per lo strato dato.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bca18fbbaf9dfde6df47246442c0d6355ded88430af93e7ad670be98b7cd6176",
+      "requestFingerprintSha256": "bca18fbbaf9dfde6df47246442c0d6355ded88430af93e7ad670be98b7cd6176",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "calculation",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-04-it-E04-r1",
+      "unitId": "S3-04-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "La tessitura è un indizio, non un calendario",
+          "sha256": "170f1a27090c68be0062af5d3fdfab814e48ec4c48bf96d967fe9b60e30b588d"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Un campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.",
+          "sha256": "ce5dc3189f16d0aee769310fa2491c9842a4c42ebc0e858c3e31a325be56e9cc"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "I suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.",
+          "sha256": "c126fa207cf0cd32f7ae641f36bf7e7b94b0443cb284a803725e38eb1a58ab90"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Confrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.",
+          "sha256": "2321a01fc6b18cceab6e24d966588a1960ae28a4e81fe735053c51cdd03cedbd"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Misurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose.",
+          "sha256": "7067ad25a5f96a9f2881cdcdbd8eaff45bbb96876d09d26955d5bd7867be098f"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Una tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura.",
+          "sha256": "3d644fd7d7fab3cd35ad97b42fa2d671600bb79ca63f9b0e7eefc1e22c7b50f6"
+        }
+      ],
+      "scientificMeaning": "La tessitura è un indizio, non un calendario\n\nUn campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.\n\nI suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.\n\nConfrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.\n\nMisurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose.\n\nUna tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura.",
+      "displayText": "La tessitura è un indizio, non un calendario\n\nUn campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.\n\nI suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.\n\nConfrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.\n\nMisurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose.\n\nUna tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura.",
+      "captionText": "La tessitura è un indizio, non un calendario\n\nUn campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.\n\nI suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.\n\nConfrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.\n\nMisurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose.\n\nUna tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura.",
+      "spokenText": "La tessitura è un indizio, non un calendario\n\nUn campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.\n\nI suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.\n\nConfrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.\n\nMisurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose.\n\nUna tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura.",
+      "spokenTextSHA256": "2da71f398d9f81638bd1f5b2de5b9cf3ff6708d51b24d07a520726417cb52f46",
+      "spokenTextSha256": "2da71f398d9f81638bd1f5b2de5b9cf3ff6708d51b24d07a520726417cb52f46",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "29f8e6908a287623c666f08212668d03471d8a53ab0131590abf51a39bf10c7e",
+      "requestFingerprintSha256": "29f8e6908a287623c666f08212668d03471d8a53ab0131590abf51a39bf10c7e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "sand-clay",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

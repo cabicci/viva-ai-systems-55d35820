@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-04",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "carrot-celery",
+      "title": "Was zwei Versuche wirklich zeigen",
+      "situation": "Eine feste Karotte wird mit einer weichen verglichen; ein abgeschnittener Sellerieblattstiel steht mehrere Stunden in gefärbtem Wasser.",
+      "reasoning": [
+        "Karottenfestigkeit zeigt Zellwasserdruck, keine vollständige Felddiagnose.",
+        "Aufsteigende Farbe macht Wasserwege im Leitgewebe sichtbar; Zeit und Beobachtung notieren.",
+        "Die Farbe misst keine Düngernährstoffe, und Transpiration unterscheidet sich von direkter Bodenverdunstung."
+      ],
+      "takeaway": "Turgor und Transport erklären und jeweils Versuchsgrenzen nennen."
+    },
+    {
+      "id": "three-levels",
+      "title": "Ein Bodenprofil nach dem Befeuchten ordnen",
+      "situation": "Boden ist anfangs gesättigt, drainiert und trocknet später durch Wurzelentnahme.",
+      "reasoning": [
+        "Bei Sättigung sind Poren wassergefüllt; Schwerkraftwasser bewegt sich bei funktionierender Drainage nach unten.",
+        "Nach dem Abfluss ist FC die obere Bezugsgröße für gespeichertes verfügbares Wasser.",
+        "Beim Trocknen zum PWP nimmt der nutzbare Teil ab; AWC = FC − PWP."
+      ],
+      "takeaway": "Beim Trocknen Sättigung → FC → PWP; Drainagepfeil oberhalb FC nach unten, AWC-Klammer zwischen FC und PWP."
+    },
+    {
+      "id": "calculation",
+      "title": "Auf derselben Basis subtrahieren",
+      "situation": "Eine beschriftete Übungsschicht hat FC 30% nach Volumen und PWP 12% nach Volumen.",
+      "reasoning": [
+        "Beide Werte betreffen dieselbe Schicht und Messbasis.",
+        "30 − 12 = 18 Volumen-Prozentpunkte.",
+        "Ohne Schichtdicke, Wurzeln, Bedarf und Wirkungsgrad keine Feldwassergabe."
+      ],
+      "takeaway": "AWC = 18 Volumen-Prozentpunkte für diese Übungsschicht."
+    },
+    {
+      "id": "sand-clay",
+      "title": "Textur ist Hinweis, kein Zeitplan",
+      "situation": "Ein Feld heißt sandig, ein anderes tonreich. Jemand plant allein deshalb täglich beziehungsweise wöchentlich zu gießen.",
+      "reasoning": [
+        "Sand drainiert oft schneller und kann je Tiefe weniger AWC haben; Ton kann mehr Gesamtwasser halten, teils zu fest gebunden.",
+        "Wurzeltiefe, Struktur, Salz, Stadium, Evapotranspiration und Anlagenkapazität vergleichen.",
+        "Mit geeigneter Feuchtemessung und Pflanzenbeobachtung Intervall und Menge entscheiden."
+      ],
+      "takeaway": "Eine Tendenz leitet Messungen an; keiner der beiden Zeitpläne folgt allein aus dem Namen."
+    }
+  ]
+}

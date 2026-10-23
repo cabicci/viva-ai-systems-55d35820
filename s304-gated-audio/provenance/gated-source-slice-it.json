@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-04",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "carrot-celery",
+      "title": "Che cosa mostrano davvero le due prove",
+      "situation": "Una carota croccante viene confrontata con una floscia; un picciolo di sedano reciso resta per ore in acqua colorata.",
+      "reasoning": [
+        "La differenza nella carota illustra pressione idrica e consistenza, non la diagnosi di un intero campo.",
+        "Il colore che sale nel sedano evidenzia una via vascolare; annotare tempo e osservazione.",
+        "Il colorante non misura assorbimento di concime e la traspirazione è distinta dall’evaporazione diretta del suolo."
+      ],
+      "takeaway": "Spiegare turgore e trasporto, poi il limite di ogni prova."
+    },
+    {
+      "id": "three-levels",
+      "title": "Ordinare un profilo dopo la bagnatura",
+      "situation": "Il suolo è prima saturo, poi drena e infine si asciuga mentre le radici assorbono.",
+      "reasoning": [
+        "Alla saturazione i pori sono pieni; l’eccesso gravitazionale scende se il drenaggio funziona.",
+        "Dopo la perdita dell’acqua mobile, FC è il riferimento superiore della riserva accessibile.",
+        "Avvicinandosi a PWP la quota disponibile si riduce; AWC = FC − PWP."
+      ],
+      "takeaway": "Durante l’asciugatura: saturazione → FC → PWP, con freccia verso il basso sopra FC e fascia AWC tra FC e PWP."
+    },
+    {
+      "id": "calculation",
+      "title": "Sottrarre valori sulla stessa base",
+      "situation": "Uno strato didattico ha capacità di campo 30% in volume e appassimento permanente 12% in volume.",
+      "reasoning": [
+        "Valori dello stesso strato e base.",
+        "30 − 12 = 18 punti percentuali volumetrici.",
+        "Senza spessore, radici, domanda colturale ed efficienza irrigua non è una dose di campo."
+      ],
+      "takeaway": "AWC = 18 punti percentuali in volume per lo strato dato."
+    },
+    {
+      "id": "sand-clay",
+      "title": "La tessitura è un indizio, non un calendario",
+      "situation": "Un campo è definito sabbioso e uno ricco di argilla. Qualcuno impone irrigazione quotidiana al primo e settimanale al secondo solo per quei nomi.",
+      "reasoning": [
+        "I suoli sabbiosi spesso drenano più rapidamente e possono avere una minore capacità d'acqua disponibile per unità di profondità; quelli argillosi possono trattenere più acqua totale, di cui una parte è legata troppo fortemente per essere assorbita dalle radici.",
+        "Confrontare profondità delle radici, struttura, salinità, fase, evapotraspirazione e capacità dell’impianto.",
+        "Misurare umidità con metodo adatto e controllare la coltura prima di decidere intervallo e dose."
+      ],
+      "takeaway": "Una tendenza orienta le misure; nessuno dei due calendari segue dalla sola tessitura."
+    }
+  ]
+}
