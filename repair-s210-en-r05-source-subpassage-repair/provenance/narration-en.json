@@ -1,0 +1,75 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-10-en.json",
+    "sha256": "29074f378d3147b69c8a7e57c1449a9781d5f8f5be11ed08d091f7b6a9a9b0ef",
+    "bytes": 28863
+  },
+  "units": [
+    {
+      "id": "S2-10-en-R05-source-subpassage-repair-r1",
+      "unitId": "S2-10-en-R05-source-subpassage-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-s210-en-r05-source-subpassage-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "29074f378d3147b69c8a7e57c1449a9781d5f8f5be11ed08d091f7b6a9a9b0ef",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+          "sha256": "f86104d003d317e52d1676d12c959429858dfc94a41189db49777adefa7f9b0d"
+        }
+      ],
+      "scientificMeaning": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+      "displayText": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+      "captionText": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+      "spokenText": "Methods at other temperatures and times are not automatically interchangeable.",
+      "spokenTextSHA256": "0fdadcc4a1488a622dfbabb75d500b78d1f6a5ce8fd3d8f512ee770750566701",
+      "spokenTextSha256": "0fdadcc4a1488a622dfbabb75d500b78d1f6a5ce8fd3d8f512ee770750566701",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+          "spoken": "Methods at other temperatures and times are not automatically interchangeable.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Methods at other temperatures and times are not automatically interchangeable.",
+          "spoken": "Methods at other temperatures and times are not automatically interchangeable.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "16e09b0711b78225d8720d74fc9d3b9764460fc800953adf9d523b2f60b3eff8",
+      "requestFingerprintSha256": "16e09b0711b78225d8720d74fc9d3b9764460fc800953adf9d523b2f60b3eff8",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Methods at other temperatures and times are not automatically interchangeable.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/4/paragraphs/0",
+        "original": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+        "effective": "The teacher example mentions roughly 400–500°C for several hours, but that range alone is not a complete standard operating procedure. A laboratory must define its sample preparation, vessel, drying and ignition schedule, cooling, blanks or quality checks and safety controls before a real test. Methods at other temperatures and times are not automatically interchangeable.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s210-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "24f9b78d4698a623e8b85f3e6842f645bad49a472892f86d5429188c265629a6"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
