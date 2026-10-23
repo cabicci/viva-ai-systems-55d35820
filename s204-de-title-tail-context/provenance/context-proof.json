@@ -1,0 +1,31 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S2-04-de-effective-model-title-repair-r1",
+      "contextWavSHA256": "c49a2b183a0b51ebcf96fe32bc7c6530686d1a027909ae47b4c4e474c74fbce6",
+      "contextPCMSHA256": "c7334474174e1a91a2dad33de9c16cfa0478c9c52e2a7451510a40e46c89b1db",
+      "frames": 66240,
+      "sampleRate": 24000,
+      "durationSeconds": 2.76,
+      "originalWavSHA256": "8382f582827cf2521ee396d89f8457155024b6f69232d8b703b55e12b0b0dbba",
+      "originalPCMSHA256": "2f12c25c8fd4025b3a58ac0e0712c25e696fda8d7de971102b0f072f246a73a9",
+      "originalFrames": 114240,
+      "sourceFirstSample": 48000,
+      "sourceEndSampleExclusive": 114240,
+      "sourceOffsetSeconds": 2.0,
+      "sourceEndSeconds": 4.76,
+      "endsAtOriginalRecordingEnd": true,
+      "boundaryFact": "The excerpt ends at the exact end of its source recording; its start is an intentional interior cut.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
