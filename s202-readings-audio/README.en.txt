@@ -1,0 +1,1 @@
+28NEW full current S2-02 reading sections,7perlocale: organicNcycling,three soil-to-root deliveryroutes with distinctmovement/arrows,conditions/6.0–7.0pHapproximation and separateinternalplantmobility. Same4locale7unitfiniteengine28TTS28blind28ASR8GET0retry. Source/displayunchanged; no hiddenanswers/native/privatepayload or dose/diagnostic claims.

@@ -1,0 +1,339 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-02-en.json",
+    "sha256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+    "bytes": 24960
+  },
+  "units": [
+    {
+      "id": "S2-02-en-R01-r1",
+      "unitId": "S2-02-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "The nitrogen in old maize leaves is mostly part of organic molecules. As residues break down, soil organisms transform some of that organic nitrogen into mineral forms, including ammonium; other processes can form nitrate. Those ions may enter soil water and become available to new roots. Microbes can also temporarily retain nitrogen, so decomposition does not guarantee immediate supply. Water, temperature and aeration affect the timing.",
+          "sha256": "2e537fcd608ce2a66a6bc0be249fecfc305900ded733b776c4f25210ad271ea4"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "This example links nutrient cycling to root uptake. The new plant does not take in the old leaf or a handful of soil intact. A nutrient has to be in a usable form at the root surface before the root can absorb it. The three routes below describe how nutrients reach that surface; the movement across the root membrane is a further step.",
+          "sha256": "e9602c9dc9a72a173c7adb90841d19ba3ba4af623308da6b195bedf7714d8d05"
+        }
+      ],
+      "scientificMeaning": "The nitrogen in old maize leaves is mostly part of organic molecules. As residues break down, soil organisms transform some of that organic nitrogen into mineral forms, including ammonium; other processes can form nitrate. Those ions may enter soil water and become available to new roots. Microbes can also temporarily retain nitrogen, so decomposition does not guarantee immediate supply. Water, temperature and aeration affect the timing.\n\nThis example links nutrient cycling to root uptake. The new plant does not take in the old leaf or a handful of soil intact. A nutrient has to be in a usable form at the root surface before the root can absorb it. The three routes below describe how nutrients reach that surface; the movement across the root membrane is a further step.",
+      "displayText": "The nitrogen in old maize leaves is mostly part of organic molecules. As residues break down, soil organisms transform some of that organic nitrogen into mineral forms, including ammonium; other processes can form nitrate. Those ions may enter soil water and become available to new roots. Microbes can also temporarily retain nitrogen, so decomposition does not guarantee immediate supply. Water, temperature and aeration affect the timing.\n\nThis example links nutrient cycling to root uptake. The new plant does not take in the old leaf or a handful of soil intact. A nutrient has to be in a usable form at the root surface before the root can absorb it. The three routes below describe how nutrients reach that surface; the movement across the root membrane is a further step.",
+      "captionText": "The nitrogen in old maize leaves is mostly part of organic molecules. As residues break down, soil organisms transform some of that organic nitrogen into mineral forms, including ammonium; other processes can form nitrate. Those ions may enter soil water and become available to new roots. Microbes can also temporarily retain nitrogen, so decomposition does not guarantee immediate supply. Water, temperature and aeration affect the timing.\n\nThis example links nutrient cycling to root uptake. The new plant does not take in the old leaf or a handful of soil intact. A nutrient has to be in a usable form at the root surface before the root can absorb it. The three routes below describe how nutrients reach that surface; the movement across the root membrane is a further step.",
+      "spokenText": "The nitrogen in old maize leaves is mostly part of organic molecules. As residues break down, soil organisms transform some of that organic nitrogen into mineral forms, including ammonium; other processes can form nitrate. Those ions may enter soil water and become available to new roots. Microbes can also temporarily retain nitrogen, so decomposition does not guarantee immediate supply. Water, temperature and aeration affect the timing.\n\nThis example links nutrient cycling to root uptake. The new plant does not take in the old leaf or a handful of soil intact. A nutrient has to be in a usable form at the root surface before the root can absorb it. The three routes below describe how nutrients reach that surface; the movement across the root membrane is a further step.",
+      "spokenTextSHA256": "54398fa11fccdfa716c1f79bb54122bd4124dd59740407cb66b0d9bebdfc94ff",
+      "spokenTextSha256": "54398fa11fccdfa716c1f79bb54122bd4124dd59740407cb66b0d9bebdfc94ff",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "243fec5bd89b2a7c0de995e1368a282904dd37bf5b91de3069409d50db8c6255",
+      "requestFingerprintSha256": "243fec5bd89b2a7c0de995e1368a282904dd37bf5b91de3069409d50db8c6255",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R02-r1",
+      "unitId": "S2-02-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "When roots take up water, water moves through soil toward them, carrying dissolved nutrients in the same direction. This is mass flow. In a delivery-truck analogy, water is the truck and nutrient ions are the packages. The analogy is useful for direction and carriage, but a root does not receive discrete solid parcels at a front door.",
+          "sha256": "105661409d4d74111fdb0e23ad6873dd699b583e9d8e97da4b39e38ae6804ea0"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Nitrate is an important mass-flow example. Calcium, magnesium and sulfate can also be supplied substantially this way. It is inaccurate to call mass flow the dominant route for every nutrient and every field condition. Dry soil or limited water uptake can reduce the supply carried by this route. Movement to the root surface does not by itself prove that the root absorbs every arriving ion.",
+          "sha256": "76dd823734e99eb0a3ebd420747abbb2f8d47191b6347d3bb122e1cb80941a8e"
+        }
+      ],
+      "scientificMeaning": "When roots take up water, water moves through soil toward them, carrying dissolved nutrients in the same direction. This is mass flow. In a delivery-truck analogy, water is the truck and nutrient ions are the packages. The analogy is useful for direction and carriage, but a root does not receive discrete solid parcels at a front door.\n\nNitrate is an important mass-flow example. Calcium, magnesium and sulfate can also be supplied substantially this way. It is inaccurate to call mass flow the dominant route for every nutrient and every field condition. Dry soil or limited water uptake can reduce the supply carried by this route. Movement to the root surface does not by itself prove that the root absorbs every arriving ion.",
+      "displayText": "When roots take up water, water moves through soil toward them, carrying dissolved nutrients in the same direction. This is mass flow. In a delivery-truck analogy, water is the truck and nutrient ions are the packages. The analogy is useful for direction and carriage, but a root does not receive discrete solid parcels at a front door.\n\nNitrate is an important mass-flow example. Calcium, magnesium and sulfate can also be supplied substantially this way. It is inaccurate to call mass flow the dominant route for every nutrient and every field condition. Dry soil or limited water uptake can reduce the supply carried by this route. Movement to the root surface does not by itself prove that the root absorbs every arriving ion.",
+      "captionText": "When roots take up water, water moves through soil toward them, carrying dissolved nutrients in the same direction. This is mass flow. In a delivery-truck analogy, water is the truck and nutrient ions are the packages. The analogy is useful for direction and carriage, but a root does not receive discrete solid parcels at a front door.\n\nNitrate is an important mass-flow example. Calcium, magnesium and sulfate can also be supplied substantially this way. It is inaccurate to call mass flow the dominant route for every nutrient and every field condition. Dry soil or limited water uptake can reduce the supply carried by this route. Movement to the root surface does not by itself prove that the root absorbs every arriving ion.",
+      "spokenText": "When roots take up water, water moves through soil toward them, carrying dissolved nutrients in the same direction. This is mass flow. In a delivery-truck analogy, water is the truck and nutrient ions are the packages. The analogy is useful for direction and carriage, but a root does not receive discrete solid parcels at a front door.\n\nNitrate is an important mass-flow example. Calcium, magnesium and sulfate can also be supplied substantially this way. It is inaccurate to call mass flow the dominant route for every nutrient and every field condition. Dry soil or limited water uptake can reduce the supply carried by this route. Movement to the root surface does not by itself prove that the root absorbs every arriving ion.",
+      "spokenTextSHA256": "6b6e99a7ef9eb2253f8e444170acb4a2cef6bd44b2f72df4b000867a3d0bd580",
+      "spokenTextSha256": "6b6e99a7ef9eb2253f8e444170acb4a2cef6bd44b2f72df4b000867a3d0bd580",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7c1b91a1081d3ee41f66cf3081d51b3ce57a2ebb8bf291d8edfbdc425fa38080",
+      "requestFingerprintSha256": "7c1b91a1081d3ee41f66cf3081d51b3ce57a2ebb8bf291d8edfbdc425fa38080",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R03-r1",
+      "unitId": "S2-02-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "As a root absorbs an ion, its concentration close to the root surface can fall below that in nearby soil water. Net movement of dissolved ions along that concentration gradient, from the higher-concentration region toward the lower-concentration root surface, is diffusion. Phosphorus and potassium often depend strongly on this short-distance process; the share also depends on nutrient, soil and conditions.",
+          "sha256": "cb88c4b3c76a85aef5f33823acdaa6e4e329f8bebabdbb005f07101069c971e1"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "You can compare diffusion with smelling popcorn down a hall or watching food colouring spread in water. The comparison explains a gradient, but soil diffusion takes place through water-filled pores and can be slow over distance. Moisture, tortuous pores and replenishment from soil reserves matter. Do not draw a circular arrow that returns the nutrient away from the root while labelling it net delivery.",
+          "sha256": "b977c4d5a89d81c02ba991e81a5f5ba1e340ffa1b9a90ab54d345584f6b4e156"
+        }
+      ],
+      "scientificMeaning": "As a root absorbs an ion, its concentration close to the root surface can fall below that in nearby soil water. Net movement of dissolved ions along that concentration gradient, from the higher-concentration region toward the lower-concentration root surface, is diffusion. Phosphorus and potassium often depend strongly on this short-distance process; the share also depends on nutrient, soil and conditions.\n\nYou can compare diffusion with smelling popcorn down a hall or watching food colouring spread in water. The comparison explains a gradient, but soil diffusion takes place through water-filled pores and can be slow over distance. Moisture, tortuous pores and replenishment from soil reserves matter. Do not draw a circular arrow that returns the nutrient away from the root while labelling it net delivery.",
+      "displayText": "As a root absorbs an ion, its concentration close to the root surface can fall below that in nearby soil water. Net movement of dissolved ions along that concentration gradient, from the higher-concentration region toward the lower-concentration root surface, is diffusion. Phosphorus and potassium often depend strongly on this short-distance process; the share also depends on nutrient, soil and conditions.\n\nYou can compare diffusion with smelling popcorn down a hall or watching food colouring spread in water. The comparison explains a gradient, but soil diffusion takes place through water-filled pores and can be slow over distance. Moisture, tortuous pores and replenishment from soil reserves matter. Do not draw a circular arrow that returns the nutrient away from the root while labelling it net delivery.",
+      "captionText": "As a root absorbs an ion, its concentration close to the root surface can fall below that in nearby soil water. Net movement of dissolved ions along that concentration gradient, from the higher-concentration region toward the lower-concentration root surface, is diffusion. Phosphorus and potassium often depend strongly on this short-distance process; the share also depends on nutrient, soil and conditions.\n\nYou can compare diffusion with smelling popcorn down a hall or watching food colouring spread in water. The comparison explains a gradient, but soil diffusion takes place through water-filled pores and can be slow over distance. Moisture, tortuous pores and replenishment from soil reserves matter. Do not draw a circular arrow that returns the nutrient away from the root while labelling it net delivery.",
+      "spokenText": "As a root absorbs an ion, its concentration close to the root surface can fall below that in nearby soil water. Net movement of dissolved ions along that concentration gradient, from the higher-concentration region toward the lower-concentration root surface, is diffusion. Phosphorus and potassium often depend strongly on this short-distance process; the share also depends on nutrient, soil and conditions.\n\nYou can compare diffusion with smelling popcorn down a hall or watching food colouring spread in water. The comparison explains a gradient, but soil diffusion takes place through water-filled pores and can be slow over distance. Moisture, tortuous pores and replenishment from soil reserves matter. Do not draw a circular arrow that returns the nutrient away from the root while labelling it net delivery.",
+      "spokenTextSHA256": "ae2765643a5b684f66c913dffec37e40fd82fe7b6210a5b7071eeee84a0830d8",
+      "spokenTextSha256": "ae2765643a5b684f66c913dffec37e40fd82fe7b6210a5b7071eeee84a0830d8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bc760021f9739f1b688524f639795f41e7f844108e3bc3fc98b1a2880015d30c",
+      "requestFingerprintSha256": "bc760021f9739f1b688524f639795f41e7f844108e3bc3fc98b1a2880015d30c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R04-r1",
+      "unitId": "S2-02-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "As roots and root hairs extend, they contact new soil surfaces and water films where nutrients can be supplied. This is root interception. The 'walking to the refrigerator' analogy captures the moving root, but the root does not eat soil particles. Nutrient ions must become available at the surface and cross into the root by suitable uptake processes.",
+          "sha256": "0d92ab0d4e172b380f84abd24c7a2aefbb00ac66cea0b02c7c66e746e2bfb8d6"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "A healthy, extensive root system explores more soil. Compaction, a damaged root or lack of oxygen can limit that exploration. Root interception is one of the three routes, generally a smaller direct contribution than mass flow or diffusion for many nutrients; its contribution differs by nutrient and setting.",
+          "sha256": "bfd1486e703a41ba93fa46eb149f6e6f39ed0c58a3ec0eb415a162e6f4c54409"
+        }
+      ],
+      "scientificMeaning": "As roots and root hairs extend, they contact new soil surfaces and water films where nutrients can be supplied. This is root interception. The 'walking to the refrigerator' analogy captures the moving root, but the root does not eat soil particles. Nutrient ions must become available at the surface and cross into the root by suitable uptake processes.\n\nA healthy, extensive root system explores more soil. Compaction, a damaged root or lack of oxygen can limit that exploration. Root interception is one of the three routes, generally a smaller direct contribution than mass flow or diffusion for many nutrients; its contribution differs by nutrient and setting.",
+      "displayText": "As roots and root hairs extend, they contact new soil surfaces and water films where nutrients can be supplied. This is root interception. The 'walking to the refrigerator' analogy captures the moving root, but the root does not eat soil particles. Nutrient ions must become available at the surface and cross into the root by suitable uptake processes.\n\nA healthy, extensive root system explores more soil. Compaction, a damaged root or lack of oxygen can limit that exploration. Root interception is one of the three routes, generally a smaller direct contribution than mass flow or diffusion for many nutrients; its contribution differs by nutrient and setting.",
+      "captionText": "As roots and root hairs extend, they contact new soil surfaces and water films where nutrients can be supplied. This is root interception. The 'walking to the refrigerator' analogy captures the moving root, but the root does not eat soil particles. Nutrient ions must become available at the surface and cross into the root by suitable uptake processes.\n\nA healthy, extensive root system explores more soil. Compaction, a damaged root or lack of oxygen can limit that exploration. Root interception is one of the three routes, generally a smaller direct contribution than mass flow or diffusion for many nutrients; its contribution differs by nutrient and setting.",
+      "spokenText": "As roots and root hairs extend, they contact new soil surfaces and water films where nutrients can be supplied. This is root interception. The 'walking to the refrigerator' analogy captures the moving root, but the root does not eat soil particles. Nutrient ions must become available at the surface and cross into the root by suitable uptake processes.\n\nA healthy, extensive root system explores more soil. Compaction, a damaged root or lack of oxygen can limit that exploration. Root interception is one of the three routes, generally a smaller direct contribution than mass flow or diffusion for many nutrients; its contribution differs by nutrient and setting.",
+      "spokenTextSHA256": "f2138808bdce1abb8e73800c4e6d26e69206da435afcef68d3b4a0c2d4ee5cd7",
+      "spokenTextSha256": "f2138808bdce1abb8e73800c4e6d26e69206da435afcef68d3b4a0c2d4ee5cd7",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "39750308774065119544ee019dcb043cbc513c72ae93941881599bf4837fceb8",
+      "requestFingerprintSha256": "39750308774065119544ee019dcb043cbc513c72ae93941881599bf4837fceb8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R05-r1",
+      "unitId": "S2-02-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "On a cross-section, draw mass flow as soil water and dissolved ions moving toward the root; diffusion as dissolved ions moving from a higher-concentration patch through soil water toward a depleted zone at the root; and root interception as the root tip or root hair growing outward into a new soil region. The arrow for interception follows root growth, while the first two follow nutrient movement toward the root.",
+          "sha256": "862a4f3e020dd645109abd678e31fb81af417fd03b84290c4ea55cf191e92db6"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Use three numbered routes. Keep water movement, net ion movement and root growth distinct. Compare each arrow with its driving cause; a loop leading away from the root does not represent net nutrient delivery to that root.",
+          "sha256": "78ba41b13c6dabef3365f035e65bd8c73efa0102a1d691eb6b4602aae4dce4ae"
+        }
+      ],
+      "scientificMeaning": "On a cross-section, draw mass flow as soil water and dissolved ions moving toward the root; diffusion as dissolved ions moving from a higher-concentration patch through soil water toward a depleted zone at the root; and root interception as the root tip or root hair growing outward into a new soil region. The arrow for interception follows root growth, while the first two follow nutrient movement toward the root.\n\nUse three numbered routes. Keep water movement, net ion movement and root growth distinct. Compare each arrow with its driving cause; a loop leading away from the root does not represent net nutrient delivery to that root.",
+      "displayText": "On a cross-section, draw mass flow as soil water and dissolved ions moving toward the root; diffusion as dissolved ions moving from a higher-concentration patch through soil water toward a depleted zone at the root; and root interception as the root tip or root hair growing outward into a new soil region. The arrow for interception follows root growth, while the first two follow nutrient movement toward the root.\n\nUse three numbered routes. Keep water movement, net ion movement and root growth distinct. Compare each arrow with its driving cause; a loop leading away from the root does not represent net nutrient delivery to that root.",
+      "captionText": "On a cross-section, draw mass flow as soil water and dissolved ions moving toward the root; diffusion as dissolved ions moving from a higher-concentration patch through soil water toward a depleted zone at the root; and root interception as the root tip or root hair growing outward into a new soil region. The arrow for interception follows root growth, while the first two follow nutrient movement toward the root.\n\nUse three numbered routes. Keep water movement, net ion movement and root growth distinct. Compare each arrow with its driving cause; a loop leading away from the root does not represent net nutrient delivery to that root.",
+      "spokenText": "On a cross-section, draw mass flow as soil water and dissolved ions moving toward the root; diffusion as dissolved ions moving from a higher-concentration patch through soil water toward a depleted zone at the root; and root interception as the root tip or root hair growing outward into a new soil region. The arrow for interception follows root growth, while the first two follow nutrient movement toward the root.\n\nUse three numbered routes. Keep water movement, net ion movement and root growth distinct. Compare each arrow with its driving cause; a loop leading away from the root does not represent net nutrient delivery to that root.",
+      "spokenTextSHA256": "5ab85f213a50d96782444ac71e6f7f345c49cf69aafac619ba40138faa6d77ee",
+      "spokenTextSha256": "5ab85f213a50d96782444ac71e6f7f345c49cf69aafac619ba40138faa6d77ee",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "103b53240998c3af43ad3470da60d1fb96174c20e46839cc9cc6f0e42773a2de",
+      "requestFingerprintSha256": "103b53240998c3af43ad3470da60d1fb96174c20e46839cc9cc6f0e42773a2de",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R06-r1",
+      "unitId": "S2-02-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.",
+          "sha256": "b925216375f67b8aeb65af147923fd9ff0c7c62ac16dc76ad3c960104f34b269"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Soil pH changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The pH range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a pH amendment. Later steps teach measurement and interpretation.",
+          "sha256": "a4db8a22b13a0cc68eabb05c47b82f7afc043827375f17226e17d1efeaef82eb"
+        }
+      ],
+      "scientificMeaning": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil pH changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The pH range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a pH amendment. Later steps teach measurement and interpretation.",
+      "displayText": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil pH changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The pH range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a pH amendment. Later steps teach measurement and interpretation.",
+      "captionText": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil pH changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The pH range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a pH amendment. Later steps teach measurement and interpretation.",
+      "spokenText": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil P H changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The P H range six point zero to seven point zero is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a P H amendment. Later steps teach measurement and interpretation.",
+      "spokenTextSHA256": "5b96bccc65dc1597631eb99ff53417133d59a985fe4f69a244b4de9fd284e3d1",
+      "spokenTextSha256": "5b96bccc65dc1597631eb99ff53417133d59a985fe4f69a244b4de9fd284e3d1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil pH changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The pH range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a pH amendment. Later steps teach measurement and interpretation.",
+          "spoken": "Good soil structure helps water and air move and gives roots room to extend. Organic matter supports structure and nutrient cycling. Too little water restricts flow and diffusion; waterlogging can deprive roots of oxygen. Compaction or root injury reduces the volume of soil explored. Each can limit uptake even when a nutrient occurs somewhere in the field.\n\nSoil P H changes nutrient chemistry and biological activity, and can reduce availability without removing the element from the soil. The P H range 6.0–7.0 is a useful approximate range for many crops, not one universal target for every crop, soil and nutrient. A soil test, crop requirement and field context are needed before deciding on a P H amendment. Later steps teach measurement and interpretation.",
+          "occurrences": 1,
+          "purpose": "One simultaneous exact scientific notation expansion preserving element symbols, atom counts and ionic charges; source/display unchanged"
+        },
+        {
+          "written": "6.0–7.0",
+          "spoken": "six point zero to seven point zero",
+          "occurrences": 1,
+          "purpose": "Faithful number/unit or natural Egyptian spoken form, no scientific fact change"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c86968549aad50d0d18adb9c19951a5466118d59052c3ed747b0c6eaa0136daa",
+      "requestFingerprintSha256": "c86968549aad50d0d18adb9c19951a5466118d59052c3ed747b0c6eaa0136daa",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-R07-r1",
+      "unitId": "S2-02-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.",
+          "sha256": "54cd8286434aae38c8e20960daf3ce8ab496bc792dad48a2ac2f7d6dff44cf95"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "N, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with NPK; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+          "sha256": "1fee911080ae1204b99d9aba1e1bc013cb0d01828cc68273aaa9d425d08aeccc"
+        }
+      ],
+      "scientificMeaning": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with NPK; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+      "displayText": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with NPK; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+      "captionText": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with NPK; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+      "spokenText": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with N P K; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+      "spokenTextSHA256": "5d86883692d0a2ef0f521d26aad9896e4c69714e1665ced99c7688a35474710a",
+      "spokenTextSha256": "5d86883692d0a2ef0f521d26aad9896e4c69714e1665ced99c7688a35474710a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with NPK; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+          "spoken": "Mass flow, diffusion and root interception explain how nutrients reach a root from soil. After uptake, the plant may transport and redistribute nutrients through its tissues. These are different locations and mechanisms. Never infer that a nutrient diffuses quickly through soil merely because the plant can move it from one leaf to another.\n\nN, P and K are mobile enough inside plants that, when supply becomes limiting, the plant can shift some of them from older tissues to newer growth. Deficiency signs therefore often appear on older, lower leaves first. This is a clue, not a guarantee or diagnosis. Compare calcium and sulfur with N P K; calcium is poorly mobile, while sulfur has limited to moderate mobility and its deficiency often appears on newer growth in maize. A yellow young leaf cannot by itself be assigned to calcium or sulfur. The pattern depends on crop, stage and other stresses; the step “Evidence-based nutrient symptom interpretation” treats visual diagnosis in detail.",
+          "occurrences": 1,
+          "purpose": "One simultaneous exact scientific notation expansion preserving element symbols, atom counts and ionic charges; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ac04f44fe8b9bf9e005b4154ccd0861b42264c8f2e2850ad594091ed50bf0104",
+      "requestFingerprintSha256": "ac04f44fe8b9bf9e005b4154ccd0861b42264c8f2e2850ad594091ed50bf0104",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
