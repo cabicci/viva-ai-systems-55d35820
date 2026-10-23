@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S211_AR_SETUP_RESIDUES_SOURCE_SUBPASSAGE_REPAIR",
+  "stepId": "S2-11",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s211-ar-setup-residues-source-subpassage-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-11-ar-EG-setup-residues-source-subpassage-repair-r1",
+      "unitId": "S2-11-ar-EG-setup-residues-source-subpassage-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s211-ar-setup-residues-source-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cf805d864719506b1f21f828b1997b232456418e51f34a9c60a383db0a4c8320",
+      "sourceBindings": [
+        {
+          "pointer": "/jarPractice/practical/0/observationRows/2",
+          "text": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+          "sha256": "cd38fccc2bcccd26a425187df1804ca042b3e90ac3741f4e99917e806414577a"
+        }
+      ],
+      "scientificMeaning": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+      "displayText": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+      "captionText": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+      "spokenText": "يفك التكتلات من غير طحن الحجارة، ويشيل البقايا اللي الطريقة بتطلب إزالتها.",
+      "spokenTextSHA256": "cc8dd493752ad8419eb4142debb901bf046b3f8ee52f21ee507d21faa605b6fb",
+      "spokenTextSha256": "cc8dd493752ad8419eb4142debb901bf046b3f8ee52f21ee507d21faa605b6fb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+          "spoken": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+          "spoken": "يفك التكتلات من غير طحن الحجارة، ويشيل البقايا اللي الطريقة بتطلب إزالتها.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "2c25e4a002a05fcfa0d66711dd50a345ac2f4c282b90dd7d0142d6fcffbb8f93",
+      "requestFingerprintSha256": "2c25e4a002a05fcfa0d66711dd50a345ac2f4c282b90dd7d0142d6fcffbb8f93",
+      "sourcePlanSha256": "55850f7de45c4be3aec6721d938df50bb7f96bcd2e5bc5a0e4043befeee755c0",
+      "exactSentenceBefore": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/jarPractice/practical/0/observationRows/2",
+        "original": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+        "effective": "يفك التكتلات من غير طحن الحجارة ويشيل البقايا المطلوبة",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s211-ar-setup-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "a9e0fcd53fc811c1d2019be2ea4cf0dd576c22aeb44da198409537253eba21e1"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-11-ar-EG-setup-residues-source-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
