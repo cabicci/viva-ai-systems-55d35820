@@ -1,0 +1,67 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-05-de.json",
+    "sha256": "0d8e0a481f9181dc0c7620fa83e661c9ac6aed34bd6a2b25b7315c1955b83130",
+    "bytes": 24319
+  },
+  "scope": "One root-approved route sentence only; all other original PCM retained.",
+  "units": [
+    {
+      "id": "S1-05-de-R05-route-sentence-repair-r1",
+      "unitId": "S1-05-de-R05-route-sentence-repair-r1",
+      "locale": "de",
+      "semanticGroup": "R05-route-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d8e0a481f9181dc0c7620fa83e661c9ac6aed34bd6a2b25b7315c1955b83130",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+          "sha256": "6ff9836be8f022edab44e580a5495d48c28f9fb8d3f29c7ad6a0337453d7e4a0"
+        }
+      ],
+      "scientificMeaning": "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+      "displayText": "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+      "captionText": "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+      "spokenText": "Eine sauber gezeichnete Route ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+      "spokenTextSHA256": "db2bc7e6197a584c61feb4c0fdbf04e8aa76d29e851367977f0a43ef1ebe678b",
+      "spokenTextSha256": "db2bc7e6197a584c61feb4c0fdbf04e8aa76d29e851367977f0a43ef1ebe678b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Schreibe auf Karte oder Feldprotokoll Feldname, Zonenkennung, beabsichtigte Entnahmeschicht, die zehn Punktkennungen und Route. Markiere ausgeschlossene Bereiche und begründe, warum sie ausgelassen oder getrennt untersucht werden. Halte genügend Orientierungspunkte fest, um die Zeichnung dem wirklichen Übungsfeld zuzuordnen; ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+          "spoken": "ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+          "occurrences": 1,
+          "purpose": "EXACT_INDEPENDENT_CLAUSE_EXTRACTION_ALL_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+          "spoken": "Eine sauber gezeichnete Route ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ROUTE_DESCRIPTION_FOR_CORROBORATED_W_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "Erkläre ruhig und natürlich für Lernende in der beruflichen Bildung, in klarem Deutsch. Lies nur den Sprechtext als zusammenhängende Erklärung mit natürlichen Pausen. Bewahre alle Mengen, Einheiten, Verneinungen, Bedingungen und Einschränkungen der Beispiele. Unterscheide Planung von beobachteter Praxis. Keine Rollenstimmen, Musik, zusätzlichen Einleitungen oder Zusammenfassungen. Halte die Sprechweise stabil. P kennzeichnet einen geplanten Punkt; W ist der Buchstabe We.",
+      "deliverySHA256": "20a524a5e32b52415a6a0caec3ebfac19881cd806c2164fb3157cc2f954af1dd",
+      "deliverySha256": "20a524a5e32b52415a6a0caec3ebfac19881cd806c2164fb3157cc2f954af1dd",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "ba64838a6b815611e0ec97ad1b5e059a4470178cd72d64398d7f2e244489a353",
+      "requestFingerprintSha256": "ba64838a6b815611e0ec97ad1b5e059a4470178cd72d64398d7f2e244489a353",
+      "sourcePlanSha256": "ee0ed6e6e3cb36c37a5b517f01355f655b0872924aed1a94dc9e24ff4c8e1d68",
+      "exactSentenceBefore": "ein sauberes W ohne Feldkennung lässt sich später nicht zurückverfolgen.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}

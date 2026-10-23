@@ -1,0 +1,211 @@
+name: S105 one exact German route sentence repair
+'on':
+  push:
+    branches:
+    - work/soil-s105-de-route-sentence-repair-20261023-r1
+    paths:
+    - s105-de-route-repair/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s105-de-route-repair-r1-4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897
+  cancel-in-progress: false
+env:
+  PACKAGE: s105-de-route-repair
+  REQUEST_SHA: 4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897
+  WORKER_SHA: 5f802fc8a62f821a242ab06b097d7d7083f4210cbb63a98325d5cf0078d5324f
+  FREEZE_SHA: fff6eba07a8d84a5272d5cdd9326c2569c549e0e2805d9eac43674209f30aeb9
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_de:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s105-de-route-sentence-repair-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: de
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S1-05-de-R05-route-sentence-repair-r1
+      id: tts1
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-05-de-R05-route-sentence-repair-r1
+
+        '
+    - name: Upload full immutable audio once S1-05-de-R05-route-sentence-repair-r1
+      id: upload1
+      if: always() && steps.tts1.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-de-route-repair-r1-S1-05-de-R05-route-sentence-repair-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-05-de-R05-route-sentence-repair-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-05-de-R05-route-sentence-repair-r1
+      id: receipt1
+      if: always() && steps.upload1.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload1.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload1.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-05-de-R05-route-sentence-repair-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S1-05-de-R05-route-sentence-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-05-de-R05-route-sentence-repair-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-05-de-R05-route-sentence-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-05-de-R05-route-sentence-repair-r1
+
+        '
+    - name: compare S1-05-de-R05-route-sentence-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-05-de-R05-route-sentence-repair-r1
+
+        '
+    - name: Stage thin diagnostics S1-05-de-R05-route-sentence-repair-r1
+      id: stage1
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-05-de-R05-route-sentence-repair-r1
+
+        '
+    - name: Preserve thin diagnostics S1-05-de-R05-route-sentence-repair-r1
+      if: always() && steps.stage1.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-de-route-repair-r1-S1-05-de-R05-route-sentence-repair-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-05-de-R05-route-sentence-repair-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s105-de-route-repair-r1-de-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s105-de-route-repair.yml'

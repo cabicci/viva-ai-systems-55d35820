@@ -1,0 +1,1 @@
+One eleven-word source-equivalent German route sentence only. One TTS, one blind review, one ASR, two model metadata GET, no retry. Preserve original W-route context and all outside PCM. No automatic join or further calls.
