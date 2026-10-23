@@ -1,0 +1,1872 @@
+{
+  "schemaVersion": 1,
+  "scope": "S304_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s304-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-04-ar-EG-opening-r1",
+      "unitId": "S3-04-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "الورقة الدبلانة علامة تستدعي الفحص، مش تشخيص. هنتعلم النبات محتاج المياه ليه، والمياه بتتحرك فيه إزاي، وأنهي جزء من مياه التربة ممكن الجذور تستخدمه قبل قرار الري.",
+          "sha256": "67a34634a36d0720d63395f6ff8cdce3125498fff45ab5766522a0bf11e0cf02"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تشرح وظائف المياه الأربع في البناء الضوئي ونقل العناصر وضغط الامتلاء وتبريد النتح، وتفسر تجربة الجزر والكرفس من غير خلط نتح النبات بتبخر التربة.",
+          "sha256": "88409690f544eab64961762bda72970e51643beffdf605d3cc1b5f974d9d69e7"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "ترتب التشبع ثم السعة الحقلية ثم نقطة الذبول الدائم، وتحدد صرف المياه الزائدة فوق السعة الحقلية والمياه المتاحة بينها وبين الذبول، وتحسب فرق قيمتين على نفس الأساس صح.",
+          "sha256": "6ebc53ecf539bffbea2eb7920648db98b5028f42523e0c91a7975af7de3f476a"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "تشرح ليه احتفاظ الطين بمياه كلية أكتر ما يضمنش إمدادًا أكتر للجذور في كل حقل، وتربط مخزون منطقة الجذور بطلب المحصول والقياس الفعلي.",
+          "sha256": "27c917d2ec2a6873c055ac0ea74e3c6240a242273c2a27a9c191ed9e8b31c180"
+        }
+      ],
+      "scientificMeaning": "الورقة الدبلانة علامة تستدعي الفحص، مش تشخيص. هنتعلم النبات محتاج المياه ليه، والمياه بتتحرك فيه إزاي، وأنهي جزء من مياه التربة ممكن الجذور تستخدمه قبل قرار الري.\n\nتشرح وظائف المياه الأربع في البناء الضوئي ونقل العناصر وضغط الامتلاء وتبريد النتح، وتفسر تجربة الجزر والكرفس من غير خلط نتح النبات بتبخر التربة.\n\nترتب التشبع ثم السعة الحقلية ثم نقطة الذبول الدائم، وتحدد صرف المياه الزائدة فوق السعة الحقلية والمياه المتاحة بينها وبين الذبول، وتحسب فرق قيمتين على نفس الأساس صح.\n\nتشرح ليه احتفاظ الطين بمياه كلية أكتر ما يضمنش إمدادًا أكتر للجذور في كل حقل، وتربط مخزون منطقة الجذور بطلب المحصول والقياس الفعلي.",
+      "displayText": "الورقة الدبلانة علامة تستدعي الفحص، مش تشخيص. هنتعلم النبات محتاج المياه ليه، والمياه بتتحرك فيه إزاي، وأنهي جزء من مياه التربة ممكن الجذور تستخدمه قبل قرار الري.\n\nتشرح وظائف المياه الأربع في البناء الضوئي ونقل العناصر وضغط الامتلاء وتبريد النتح، وتفسر تجربة الجزر والكرفس من غير خلط نتح النبات بتبخر التربة.\n\nترتب التشبع ثم السعة الحقلية ثم نقطة الذبول الدائم، وتحدد صرف المياه الزائدة فوق السعة الحقلية والمياه المتاحة بينها وبين الذبول، وتحسب فرق قيمتين على نفس الأساس صح.\n\nتشرح ليه احتفاظ الطين بمياه كلية أكتر ما يضمنش إمدادًا أكتر للجذور في كل حقل، وتربط مخزون منطقة الجذور بطلب المحصول والقياس الفعلي.",
+      "captionText": "الورقة الدبلانة علامة تستدعي الفحص، مش تشخيص. هنتعلم النبات محتاج المياه ليه، والمياه بتتحرك فيه إزاي، وأنهي جزء من مياه التربة ممكن الجذور تستخدمه قبل قرار الري.\n\nتشرح وظائف المياه الأربع في البناء الضوئي ونقل العناصر وضغط الامتلاء وتبريد النتح، وتفسر تجربة الجزر والكرفس من غير خلط نتح النبات بتبخر التربة.\n\nترتب التشبع ثم السعة الحقلية ثم نقطة الذبول الدائم، وتحدد صرف المياه الزائدة فوق السعة الحقلية والمياه المتاحة بينها وبين الذبول، وتحسب فرق قيمتين على نفس الأساس صح.\n\nتشرح ليه احتفاظ الطين بمياه كلية أكتر ما يضمنش إمدادًا أكتر للجذور في كل حقل، وتربط مخزون منطقة الجذور بطلب المحصول والقياس الفعلي.",
+      "spokenText": "الورقة الدبلانة علامة تستدعي الفحص، مش تشخيص. هنتعلم النبات محتاج المياه ليه، والمياه بتتحرك فيه إزاي، وأنهي جزء من مياه التربة ممكن الجذور تستخدمه قبل قرار الري.\n\nتشرح وظائف المياه الأربع في البناء الضوئي ونقل العناصر وضغط الامتلاء وتبريد النتح، وتفسر تجربة الجزر والكرفس من غير خلط نتح النبات بتبخر التربة.\n\nترتب التشبع ثم السعة الحقلية ثم نقطة الذبول الدائم، وتحدد صرف المياه الزائدة فوق السعة الحقلية والمياه المتاحة بينها وبين الذبول، وتحسب فرق قيمتين على نفس الأساس صح.\n\nتشرح ليه احتفاظ الطين بمياه كلية أكتر ما يضمنش إمدادًا أكتر للجذور في كل حقل، وتربط مخزون منطقة الجذور بطلب المحصول والقياس الفعلي.",
+      "spokenTextSHA256": "08e03bdb81fc0deffdfeb255db79dae04fd5d6c2a14a8bc28f77a3db5e139406",
+      "spokenTextSha256": "08e03bdb81fc0deffdfeb255db79dae04fd5d6c2a14a8bc28f77a3db5e139406",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ff4d88dba28652f15a77b681764c5ae8ff2091dd896649220fcabee1835065c",
+      "requestFingerprintSha256": "8ff4d88dba28652f15a77b681764c5ae8ff2091dd896649220fcabee1835065c",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "e9717862933fc049f8e71b08efe1789db904939bef47c1924da14c74f6a0cfdd"
+    },
+    {
+      "id": "S3-04-ar-EG-guided-practice-r1",
+      "unitId": "S3-04-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.",
+          "sha256": "bffde0ae1f427a5435cbcce6e4f0a015c382c9fbdac5630d3b04d1ae5e462363"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "اربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.",
+          "sha256": "8e325ab58e4e58d2c8abf7f9cd430df9753231c135238e42232a49374dc60970"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "رتب التشبع وFC وPWP على مقياس مياه رأسي، وارسم صرف لأسفل فوق FC وقوس AWC بين FC وPWP. احسب الفرق لو 30 و12 بالمئة على نفس الأساس مع الوحدة.",
+          "sha256": "71e13c945cbe634ba7119dca72003e0253e4257b2eb17c674c9be27c502ac742"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "قارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.",
+          "sha256": "8db294aacc1856eb2b26845d8f096da48a4f45a2f1323ecf82edb239d162dbef"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "ما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.",
+          "sha256": "50a109ddd30b4b39ca7f11f414c6f600061d29793a66aaecfadd82104da87507"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "المدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+          "sha256": "310e4e5b490af8a9134af78318fe522d92db487e2691b4423265df6b1839b4be"
+        }
+      ],
+      "scientificMeaning": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع وFC وPWP على مقياس مياه رأسي، وارسم صرف لأسفل فوق FC وقوس AWC بين FC وPWP. احسب الفرق لو 30 و12 بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+      "displayText": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع وFC وPWP على مقياس مياه رأسي، وارسم صرف لأسفل فوق FC وقوس AWC بين FC وPWP. احسب الفرق لو 30 و12 بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+      "captionText": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع وFC وPWP على مقياس مياه رأسي، وارسم صرف لأسفل فوق FC وقوس AWC بين FC وPWP. احسب الفرق لو 30 و12 بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+      "spokenText": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع والسعة الحقلية ونقطة الذبول الدائم على مقياس مياه رأسي، وارسم صرف لأسفل فوق السعة الحقلية وقوس السعة المائية المتاحة بين السعة الحقلية ونقطة الذبول الدائم. احسب الفرق لو تلاتين واتناشر بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+      "spokenTextSHA256": "f98d1886efadfce9a27c40d20ed66e1df24b650779169237110905d65bf53aa6",
+      "spokenTextSha256": "f98d1886efadfce9a27c40d20ed66e1df24b650779169237110905d65bf53aa6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع وFC وPWP على مقياس مياه رأسي، وارسم صرف لأسفل فوق FC وقوس AWC بين FC وPWP. احسب الفرق لو 30 و12 بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+          "spoken": "اوصف نبات بيت دبل أو اصفر، واذكر تفسيرين محتملين على الأقل وملاحظة واحدة تفرق بينهم.\n\nاربط البناء الضوئي والنقل والامتلاء وتبريد النتح بجزء من النبات وملاحظة، وحط تبخر التربة في خانة منفصلة.\n\nرتب التشبع والسعة الحقلية ونقطة الذبول الدائم على مقياس مياه رأسي، وارسم صرف لأسفل فوق السعة الحقلية وقوس السعة المائية المتاحة بين السعة الحقلية ونقطة الذبول الدائم. احسب الفرق لو تلاتين واتناشر بالمئة على نفس الأساس مع الوحدة.\n\nقارن حقل رملي بحقل غني بالطين مع نفس طلب المحصول، ثم اكتب معلومات منطقة الجذور والقياسات اللازمة قبل تحديد الري.\n\nما تعتبرش العلامة الظاهرة تشخيص مؤكد لعطش أو نقص عنصر.\n\nالمدرّب يقدر يجهز ويشرف على تجربتي الجزر والكرفس وبرطمانات التربة الاختيارية. كل طالب يسجل الوقت والملاحظة وما هو غير مؤكد. الخطوة دي ما تمنحش مهارة ري حقلي ولا تحل محل ورشة التشخيص اللاحقة.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f042a8ffc66c45d335580ef5d0abd05dbb3f0a98579a7a7d6bc9d9e2e034122f",
+      "requestFingerprintSha256": "f042a8ffc66c45d335580ef5d0abd05dbb3f0a98579a7a7d6bc9d9e2e034122f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "e9717862933fc049f8e71b08efe1789db904939bef47c1924da14c74f6a0cfdd"
+    },
+    {
+      "id": "S3-04-ar-EG-reflection-r1",
+      "unitId": "S3-04-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أقدر أفرّق بين نقل المياه ومخزون التربة ودليل قرار الري الفعلي؟",
+          "sha256": "243a1237b48794846b8fa20ff32c1f6cc4572dbde90581ba8718b670c86b1806"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "استخدم التقييم الذاتي ده عشان تخطط لتدريب أكتر؛ هو مش قرار اجتياز.",
+          "sha256": "eac5a6d7853409388429c16c70492210ef049f71eddb189aea03b4c91b1316e5"
+        }
+      ],
+      "scientificMeaning": "أقدر أفرّق بين نقل المياه ومخزون التربة ودليل قرار الري الفعلي؟\n\nاستخدم التقييم الذاتي ده عشان تخطط لتدريب أكتر؛ هو مش قرار اجتياز.",
+      "displayText": "أقدر أفرّق بين نقل المياه ومخزون التربة ودليل قرار الري الفعلي؟\n\nاستخدم التقييم الذاتي ده عشان تخطط لتدريب أكتر؛ هو مش قرار اجتياز.",
+      "captionText": "أقدر أفرّق بين نقل المياه ومخزون التربة ودليل قرار الري الفعلي؟\n\nاستخدم التقييم الذاتي ده عشان تخطط لتدريب أكتر؛ هو مش قرار اجتياز.",
+      "spokenText": "أقدر أفرّق بين نقل المياه ومخزون التربة ودليل قرار الري الفعلي؟\n\nاستخدم التقييم الذاتي ده عشان تخطط لتدريب أكتر؛ هو مش قرار اجتياز.",
+      "spokenTextSHA256": "382a16490612a51e9aa448ec39aa7e1d85d97e9e092ad25a93672cf2ba6a9017",
+      "spokenTextSha256": "382a16490612a51e9aa448ec39aa7e1d85d97e9e092ad25a93672cf2ba6a9017",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9ef34474ee946726fc8f2901a245e23ae48dcf7da6e8442c4095498c11fc0276",
+      "requestFingerprintSha256": "9ef34474ee946726fc8f2901a245e23ae48dcf7da6e8442c4095498c11fc0276",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "e9717862933fc049f8e71b08efe1789db904939bef47c1924da14c74f6a0cfdd"
+    },
+    {
+      "id": "S3-04-ar-EG-glossary-r1",
+      "unitId": "S3-04-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "ضغط الامتلاء",
+          "sha256": "e1caff837fa2f7b4e08cf5d12bfe2566d65329b907ebba6f9040f4a27c6f6b3a"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "ضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.",
+          "sha256": "03e0416e719eb309a7e468622d15e23951fd2641f07b3bb0dc5a9d2da7e77679"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "النتح",
+          "sha256": "8a6719bedaa4266d7bc758fd306b0db6526d5b68e35f817f44775372636625fb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "خروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.",
+          "sha256": "38c09d93722f6b5883d06ad8e96b20eb70daec2cf0f5dad143b86f3d74b729ac"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "تبخر التربة",
+          "sha256": "5bf13877426278340b81caf448262f1ca33a61e6616a26c232db319b154e95a7"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "فقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.",
+          "sha256": "eadc8a20161e1905b5c3d4a3af27e2efeb2148bfa05f93dab86723cf4b525f6d"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "التشبع",
+          "sha256": "659cb0abcd324ccb460cb2178309f310c1eee0c5f07213b6200baef1b90b2031"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "حالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.",
+          "sha256": "41965323973eebf781fbbe5438d7c687ed79a5727d73c57dbd8adeb81afd00cd"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "السعة الحقلية FC",
+          "sha256": "71cbed04a4683c87cc34ebdb0414e3cb121317e9ada506b734f7dd461294e41e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "المياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.",
+          "sha256": "1bd33267dfceb2984e9ab7a05c01aecc335e6267d31235d151e1d912d8a1d801"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "نقطة الذبول الدائم PWP",
+          "sha256": "a0c0d63e3e52c107190321b90e2fdf56afa2e7faf15a948fac79ebfdf718ba33"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "حد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.",
+          "sha256": "fe802c0a7c5be0d9c3ff06cf4173ef83551dc525aaeb36ef9b1cafa9c659653c"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "السعة المائية المتاحة AWC",
+          "sha256": "0e23b99618e9b1ce91a16343ff83060591f0f9a0a6fd3e1a3d9ef3e01f3c6cba"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "محتوى المياه عند FC ناقص محتواها عند PWP على نفس أساس القياس ونفس الطبقة.",
+          "sha256": "e8946d09fa64d058027557a6c3dfeac8d73e51a8341942ea7a566781d9109515"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "إجمالي المياه المتاحة بمنطقة الجذور",
+          "sha256": "14fd1a1867eb9cb14d8e4a6e9046c774e821bd0085f1f0fea0c8532fd0739ad9"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "المخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+          "sha256": "810e4f685acf255d751b2fde7d0c4b109b8d2b1a2886925e56e78204d8abf7a3"
+        }
+      ],
+      "scientificMeaning": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية FC\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم PWP\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة AWC\n\nمحتوى المياه عند FC ناقص محتواها عند PWP على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+      "displayText": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية FC\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم PWP\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة AWC\n\nمحتوى المياه عند FC ناقص محتواها عند PWP على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+      "captionText": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية FC\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم PWP\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة AWC\n\nمحتوى المياه عند FC ناقص محتواها عند PWP على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+      "spokenText": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة\n\nمحتوى المياه عند السعة الحقلية ناقص محتواها عند نقطة الذبول الدائم على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+      "spokenTextSHA256": "c190f665e580cc83be3a9968ed2f8f10e0ef278787e7f4dde8401cb921d1cf5c",
+      "spokenTextSha256": "c190f665e580cc83be3a9968ed2f8f10e0ef278787e7f4dde8401cb921d1cf5c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية FC\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم PWP\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة AWC\n\nمحتوى المياه عند FC ناقص محتواها عند PWP على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+          "spoken": "ضغط الامتلاء\n\nضغط مرتبط بالمياه داخل خلايا النبات الحية يساعدها تفضل متماسكة.\n\nالنتح\n\nخروج بخار المياه من النبات، غالبًا عبر ثغور الورقة، وقد يساعد في التبريد وحركة المياه.\n\nتبخر التربة\n\nفقد المياه مباشرة من سطح التربة، مختلف عن نتح النبات.\n\nالتشبع\n\nحالة مبتلة تملأ فيها المياه مسام التربة قبل خروج الجزء سهل الصرف.\n\nالسعة الحقلية\n\nالمياه الباقية بعد خروج الزيادة سهلة الصرف وفق طريقة محددة؛ حد علوي مرجعي للمخزون المتاح.\n\nنقطة الذبول الدائم\n\nحد سفلي مرجعي ما يقدرش عنده النبات المحدد يستخرج مياه كافية لاستعادة التماسك في شروط محددة.\n\nالسعة المائية المتاحة\n\nمحتوى المياه عند السعة الحقلية ناقص محتواها عند نقطة الذبول الدائم على نفس أساس القياس ونفس الطبقة.\n\nإجمالي المياه المتاحة بمنطقة الجذور\n\nالمخزون المتاح عبر عمق الجذور الفعّال؛ ما يُستنتجش من اسم القوام وحده.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful naturalspoken numeral/acronym/unit expansion; FC/PWP/AWC quantitynames, wilt-not-diagnosis/all4waterfunctions/transpiration-vs-soilevaporation, methoddefinedstoragereferences/samebasis30and12percent, rootdepth/monitoringbeforeirrigation/teacher-demo-onlyboundary/selfchecknotpass/all8glossarydefinitions preserved. Source/display unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bc76bc31714db564e3fff459aa4fe108f84850dc04a45cd6d0ac2df6d582b179",
+      "requestFingerprintSha256": "bc76bc31714db564e3fff459aa4fe108f84850dc04a45cd6d0ac2df6d582b179",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "e9717862933fc049f8e71b08efe1789db904939bef47c1924da14c74f6a0cfdd"
+    },
+    {
+      "id": "S3-04-en-opening-r1",
+      "unitId": "S3-04-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.",
+          "sha256": "e9bf4b8c4d0cc3a6fa18753b2fd1db8e9ab2adecb0a29d1ba27ee0c10cbcb67f"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Explain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot/celery demonstration without confusing leaf transpiration with bare-soil evaporation.",
+          "sha256": "4fb46d5072623cbc0cdb84616d904da404d4d3ec64853847ee053ea924a3227a"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Order saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.",
+          "sha256": "825813b796558e08b791762017f2caf58128f311e3d474c4a2bd5928291c719f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+          "sha256": "9964f8fb0f2c64eda00a1b45ac6d60a2ce3099926054352f25fb5a751cf366f4"
+        }
+      ],
+      "scientificMeaning": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot/celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+      "displayText": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot/celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+      "captionText": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot/celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+      "spokenText": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot and celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+      "spokenTextSHA256": "6611ed83b0e1014744b25daf6ebbc4e1a6a5504829fb946dcd341a46488cdb96",
+      "spokenTextSha256": "6611ed83b0e1014744b25daf6ebbc4e1a6a5504829fb946dcd341a46488cdb96",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot/celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+          "spoken": "A drooping leaf is a clue, not a diagnosis. Learn why plants need water, how water moves through a plant, and which portion of stored soil water roots may use before deciding what a field needs.\n\nExplain water's four roles in photosynthesis, transport, cell turgor and transpiration cooling, and interpret a carrot and celery demonstration without confusing leaf transpiration with bare-soil evaporation.\n\nOrder saturation, field capacity and permanent wilting point; identify water draining above field capacity and plant-available water between field capacity and wilting point, and subtract two compatible values correctly.\n\nExplain why greater total water retention in clay does not guarantee greater plant-accessible supply at a particular site, and connect usable root-zone storage with crop demand and actual monitoring.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "187244e8fd3345dbfd4853513f05033c061100d416f292498fba753e0cc8a27e",
+      "requestFingerprintSha256": "187244e8fd3345dbfd4853513f05033c061100d416f292498fba753e0cc8a27e",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "4d3b68aad995e4f5493cf8c01ca2d3267b3eda343b6fd591286a345b61e83b31"
+    },
+    {
+      "id": "S3-04-en-guided-practice-r1",
+      "unitId": "S3-04-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.",
+          "sha256": "080db2f6bc33f71c307edb7ab842649d26b6b930e48d41ead23fd50e8535aead"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Connect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.",
+          "sha256": "bc9ff8a98c274dfd1619eb63e6902f460977cd6bc30ad6adb5aba44106f8931b"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Arrange saturation, FC and PWP on a vertical water scale; draw downward drainage above FC and bracket AWC between FC and PWP. For supplied matching percentages 30 and 12, calculate the difference with units.",
+          "sha256": "e07b29df64a05e41ad2ab420031a962be713988775c00b75659fa0caabb1b174"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Compare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.",
+          "sha256": "a1dd2661a2f5f76dc218f10486ad6e8150d66bab441472d89529edc9922382f6"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Do not mark a visual symptom as a confirmed drought or deficiency diagnosis.",
+          "sha256": "132fd2bb521cf892f4df29ab6fc108602c9e19530063edeba5e483128849899e"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer can prepare and supervise the carrot/celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+          "sha256": "69f694dba68e1d9549368f2f39e71b37245e0755839eb5e8b1b3150566a48a2e"
+        }
+      ],
+      "scientificMeaning": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, FC and PWP on a vertical water scale; draw downward drainage above FC and bracket AWC between FC and PWP. For supplied matching percentages 30 and 12, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot/celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+      "displayText": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, FC and PWP on a vertical water scale; draw downward drainage above FC and bracket AWC between FC and PWP. For supplied matching percentages 30 and 12, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot/celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+      "captionText": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, FC and PWP on a vertical water scale; draw downward drainage above FC and bracket AWC between FC and PWP. For supplied matching percentages 30 and 12, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot/celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+      "spokenText": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, field capacity and permanent wilting point on a vertical water scale; draw downward drainage above field capacity and bracket plant-available water capacity between field capacity and permanent wilting point. For supplied matching percentages thirty and twelve, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot, celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+      "spokenTextSHA256": "29bbdbc9f3027f77d29b2b91c5ce3dbca1d4339894f3b0a9bc97065921b6284c",
+      "spokenTextSha256": "29bbdbc9f3027f77d29b2b91c5ce3dbca1d4339894f3b0a9bc97065921b6284c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, FC and PWP on a vertical water scale; draw downward drainage above FC and bracket AWC between FC and PWP. For supplied matching percentages 30 and 12, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot/celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+          "spoken": "Describe a drooping or yellow houseplant, give at least two competing explanations and one observation that would distinguish them.\n\nConnect photosynthesis, transport, turgor and transpiration cooling to a plant part and observation; place soil evaporation in a separate category.\n\nArrange saturation, field capacity and permanent wilting point on a vertical water scale; draw downward drainage above field capacity and bracket plant-available water capacity between field capacity and permanent wilting point. For supplied matching percentages thirty and twelve, calculate the difference with units.\n\nCompare a sandy and a clay-rich field under the same crop demand, then list root-zone and monitoring information required before scheduling irrigation.\n\nDo not mark a visual symptom as a confirmed drought or deficiency diagnosis.\n\nThe trainer can prepare and supervise the carrot, celery and optional soil-jar demonstrations; students individually record time, observations and uncertainty. This step does not certify field irrigation skill or replace the later diagnostic workshop.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful naturalspoken numeral/acronym/unit expansion; FC/PWP/AWC quantitynames, wilt-not-diagnosis/all4waterfunctions/transpiration-vs-soilevaporation, methoddefinedstoragereferences/samebasis30and12percent, rootdepth/monitoringbeforeirrigation/teacher-demo-onlyboundary/selfchecknotpass/all8glossarydefinitions preserved. Source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "740ce08c1fa100dbadfbdfacb2115a957975d7555f68db5c2664dfd6f1ac322c",
+      "requestFingerprintSha256": "740ce08c1fa100dbadfbdfacb2115a957975d7555f68db5c2664dfd6f1ac322c",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "4d3b68aad995e4f5493cf8c01ca2d3267b3eda343b6fd591286a345b61e83b31"
+    },
+    {
+      "id": "S3-04-en-reflection-r1",
+      "unitId": "S3-04-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I distinguish water transport, soil storage and actual irrigation evidence?",
+          "sha256": "45ae403016180dbe2e77aa8a52938ba538fb9a0f1803f5773037181494ba5743"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Use this self-check to plan further practice; it does not award a pass.",
+          "sha256": "448f42694a7bf0b7852497bf77a1352e910ec6a45c323d743fa564a2544d1148"
+        }
+      ],
+      "scientificMeaning": "Can I distinguish water transport, soil storage and actual irrigation evidence?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "displayText": "Can I distinguish water transport, soil storage and actual irrigation evidence?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "captionText": "Can I distinguish water transport, soil storage and actual irrigation evidence?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "spokenText": "Can I distinguish water transport, soil storage and actual irrigation evidence?\n\nUse this self-check to plan further practice; it does not award a pass.",
+      "spokenTextSHA256": "5c1fca0030d69c8a30ca786c639e3befb5ec0bef4894f505bb3af5bfe03954d9",
+      "spokenTextSha256": "5c1fca0030d69c8a30ca786c639e3befb5ec0bef4894f505bb3af5bfe03954d9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1f962520e75fc9a8c2d9ec6547c9324058f6de47bc58b992b388f8f046caa364",
+      "requestFingerprintSha256": "1f962520e75fc9a8c2d9ec6547c9324058f6de47bc58b992b388f8f046caa364",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "4d3b68aad995e4f5493cf8c01ca2d3267b3eda343b6fd591286a345b61e83b31"
+    },
+    {
+      "id": "S3-04-en-glossary-r1",
+      "unitId": "S3-04-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "dec13d3bf3b2f98cd233d3211eafa3c06df31f54c279716254a1c6005ac8d296",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "turgor pressure",
+          "sha256": "d414e0b026dcbf9528a72531fa5a6ede06e22eefd610cf99da194205a5b354d0"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Water-related pressure within living plant cells that supports firmness.",
+          "sha256": "2dddf3d36aefa89f64b665c9b5b955f9bf1426658bc548780890c941468e39af"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "transpiration",
+          "sha256": "226e73bff0522f5ba24752f90c3e39cce9ed5f8c425e7978d6a2e9303446de81"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Loss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.",
+          "sha256": "d02e1cee9911b4f993c18a13e4e6d776dcef78195fba9dd28023c00841041454"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "soil evaporation",
+          "sha256": "10205f6f8bd0967d84d4226e4a8bf91a5e2c5c2b0ea4783d178d56a9bae78e71"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Water loss directly from the soil surface, separate from plant transpiration.",
+          "sha256": "15491190e724a9f2206ed9dfec28dac3c48094d00797f50f5e5c13965595ad3c"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "saturation",
+          "sha256": "77ad8d9c8ae260ee282046fbd74bfe170d4dc8a51522332b201d6182ab3d2f98"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "The wet condition where soil pores are filled with water before readily drainable water leaves.",
+          "sha256": "0b8223cffaa701c0ba32a6e0724abb849104fd2df9ec61cc2aa9f73bb0b95771"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "field capacity (FC)",
+          "sha256": "a8dea2c50f66215c0b04b452be2d96981ae4654f323d2b9fdb539b77a5b95548"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Water remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.",
+          "sha256": "bc40c6fada933f5c6b71459a669c6419789f9f18ea97530b53927d775e58dbb6"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "permanent wilting point (PWP)",
+          "sha256": "50f8802a134e011a8f150ae9117bef4a91685f8cabd57627b8c90d287e4f0f6a"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.",
+          "sha256": "3fb69c9923ed24ba4720673e2bed09df183908e778ee1f91dcc27e7bb13a0557"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "available water capacity (AWC)",
+          "sha256": "df808e519a939060649d29cf6a10c7f26218b247407da13883354629df4218af"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Water content at FC minus water content at PWP on a consistent measurement basis and soil layer.",
+          "sha256": "ef408d265da42f2f6648cfaa95cca27dfe17337a5e2bd75e2bdf2e4aab6ad490"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "root-zone total available water",
+          "sha256": "db8ac4b4997c616c7b4be82ae8c0749ba77fa4cdbb6063514134a5cf5bf865ae"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Available storage summed over the effective rooting depth; it is not inferred from texture alone.",
+          "sha256": "25b390ec1fcd3311f08462f6464035eddb45d8571a89eda4ce58145a49bfcaa4"
+        }
+      ],
+      "scientificMeaning": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity (FC)\n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point (PWP)\n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity (AWC)\n\nWater content at FC minus water content at PWP on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+      "displayText": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity (FC)\n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point (PWP)\n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity (AWC)\n\nWater content at FC minus water content at PWP on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+      "captionText": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity (FC)\n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point (PWP)\n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity (AWC)\n\nWater content at FC minus water content at PWP on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+      "spokenText": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity \n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point \n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity \n\nWater content at field capacity minus water content at permanent wilting point on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+      "spokenTextSHA256": "b77a48412194ddb08c73412ad39fab8f9c9e4ebb699233d33211e35bdaa2ac47",
+      "spokenTextSha256": "b77a48412194ddb08c73412ad39fab8f9c9e4ebb699233d33211e35bdaa2ac47",
+      "spokenAdaptationChanges": [
+        {
+          "written": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity (FC)\n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point (PWP)\n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity (AWC)\n\nWater content at FC minus water content at PWP on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+          "spoken": "turgor pressure\n\nWater-related pressure within living plant cells that supports firmness.\n\ntranspiration\n\nLoss of water vapour from the plant, chiefly through leaf stomata; it can aid cooling and water movement.\n\nsoil evaporation\n\nWater loss directly from the soil surface, separate from plant transpiration.\n\nsaturation\n\nThe wet condition where soil pores are filled with water before readily drainable water leaves.\n\nfield capacity \n\nWater remaining after readily drainable excess has moved out under a specified method; an upper reference for available storage.\n\npermanent wilting point \n\nA lower reference where a plant can no longer extract enough water to recover turgor under defined conditions.\n\navailable water capacity \n\nWater content at field capacity minus water content at permanent wilting point on a consistent measurement basis and soil layer.\n\nroot-zone total available water\n\nAvailable storage summed over the effective rooting depth; it is not inferred from texture alone.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful naturalspoken numeral/acronym/unit expansion; FC/PWP/AWC quantitynames, wilt-not-diagnosis/all4waterfunctions/transpiration-vs-soilevaporation, methoddefinedstoragereferences/samebasis30and12percent, rootdepth/monitoringbeforeirrigation/teacher-demo-onlyboundary/selfchecknotpass/all8glossarydefinitions preserved. Source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "05b2c2ab6de0bf1e784183926e4e56db196c9275efbd66de26afc535e0efbdb2",
+      "requestFingerprintSha256": "05b2c2ab6de0bf1e784183926e4e56db196c9275efbd66de26afc535e0efbdb2",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "4d3b68aad995e4f5493cf8c01ca2d3267b3eda343b6fd591286a345b61e83b31"
+    },
+    {
+      "id": "S3-04-it-opening-r1",
+      "unitId": "S3-04-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Una foglia afflosciata è un indizio, non una diagnosi. Scopriamo perché le piante hanno bisogno di acqua, come questa si muove e quale parte dell’acqua trattenuta dal suolo può essere usata dalle radici prima di decidere gli interventi.",
+          "sha256": "0074752d39c0efbe5c12843b33507962f640866fbdd8123b7ff0b818df034779"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Spiegare i quattro ruoli dell’acqua in fotosintesi, trasporto, turgore e raffreddamento tramite traspirazione; interpretare le dimostrazioni di carota e sedano distinguendo traspirazione delle foglie ed evaporazione del suolo nudo.",
+          "sha256": "c877eae1f81801abfd19708b317246cb74b4ada80eb67ff2bfbfe53dd2e1d625"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Ordinare saturazione, capacità di campo e punto di appassimento permanente; individuare drenaggio sopra la capacità di campo e acqua disponibile fra i due riferimenti, sottraendo valori compatibili con unità corrette.",
+          "sha256": "71a794b9c6d0a1f34bb8b88adaa51ffe09cea9b27cf7bf71d71482bd50ed9f2c"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Spiegare perché maggiore acqua totale trattenuta dall’argilla non garantisce maggiore accesso alle radici in un sito; collegare la riserva realmente utilizzabile nella zona radicale a domanda colturale e monitoraggio.",
+          "sha256": "4129529b30a9ef197183b1fbca077e8298ec19d3cefe1ff4edd8f4df5392d1ae"
+        }
+      ],
+      "scientificMeaning": "Una foglia afflosciata è un indizio, non una diagnosi. Scopriamo perché le piante hanno bisogno di acqua, come questa si muove e quale parte dell’acqua trattenuta dal suolo può essere usata dalle radici prima di decidere gli interventi.\n\nSpiegare i quattro ruoli dell’acqua in fotosintesi, trasporto, turgore e raffreddamento tramite traspirazione; interpretare le dimostrazioni di carota e sedano distinguendo traspirazione delle foglie ed evaporazione del suolo nudo.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente; individuare drenaggio sopra la capacità di campo e acqua disponibile fra i due riferimenti, sottraendo valori compatibili con unità corrette.\n\nSpiegare perché maggiore acqua totale trattenuta dall’argilla non garantisce maggiore accesso alle radici in un sito; collegare la riserva realmente utilizzabile nella zona radicale a domanda colturale e monitoraggio.",
+      "displayText": "Una foglia afflosciata è un indizio, non una diagnosi. Scopriamo perché le piante hanno bisogno di acqua, come questa si muove e quale parte dell’acqua trattenuta dal suolo può essere usata dalle radici prima di decidere gli interventi.\n\nSpiegare i quattro ruoli dell’acqua in fotosintesi, trasporto, turgore e raffreddamento tramite traspirazione; interpretare le dimostrazioni di carota e sedano distinguendo traspirazione delle foglie ed evaporazione del suolo nudo.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente; individuare drenaggio sopra la capacità di campo e acqua disponibile fra i due riferimenti, sottraendo valori compatibili con unità corrette.\n\nSpiegare perché maggiore acqua totale trattenuta dall’argilla non garantisce maggiore accesso alle radici in un sito; collegare la riserva realmente utilizzabile nella zona radicale a domanda colturale e monitoraggio.",
+      "captionText": "Una foglia afflosciata è un indizio, non una diagnosi. Scopriamo perché le piante hanno bisogno di acqua, come questa si muove e quale parte dell’acqua trattenuta dal suolo può essere usata dalle radici prima di decidere gli interventi.\n\nSpiegare i quattro ruoli dell’acqua in fotosintesi, trasporto, turgore e raffreddamento tramite traspirazione; interpretare le dimostrazioni di carota e sedano distinguendo traspirazione delle foglie ed evaporazione del suolo nudo.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente; individuare drenaggio sopra la capacità di campo e acqua disponibile fra i due riferimenti, sottraendo valori compatibili con unità corrette.\n\nSpiegare perché maggiore acqua totale trattenuta dall’argilla non garantisce maggiore accesso alle radici in un sito; collegare la riserva realmente utilizzabile nella zona radicale a domanda colturale e monitoraggio.",
+      "spokenText": "Una foglia afflosciata è un indizio, non una diagnosi. Scopriamo perché le piante hanno bisogno di acqua, come questa si muove e quale parte dell’acqua trattenuta dal suolo può essere usata dalle radici prima di decidere gli interventi.\n\nSpiegare i quattro ruoli dell’acqua in fotosintesi, trasporto, turgore e raffreddamento tramite traspirazione; interpretare le dimostrazioni di carota e sedano distinguendo traspirazione delle foglie ed evaporazione del suolo nudo.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente; individuare drenaggio sopra la capacità di campo e acqua disponibile fra i due riferimenti, sottraendo valori compatibili con unità corrette.\n\nSpiegare perché maggiore acqua totale trattenuta dall’argilla non garantisce maggiore accesso alle radici in un sito; collegare la riserva realmente utilizzabile nella zona radicale a domanda colturale e monitoraggio.",
+      "spokenTextSHA256": "a4858eaa08cd6f893f1b8c224b4cd3efc6f4aab37ef2fd7a45c5696a4b822cfc",
+      "spokenTextSha256": "a4858eaa08cd6f893f1b8c224b4cd3efc6f4aab37ef2fd7a45c5696a4b822cfc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "568d55f21fe73a0e3185a98a4f3a561cbc08a27fd56b58ebd71b278e5fee883b",
+      "requestFingerprintSha256": "568d55f21fe73a0e3185a98a4f3a561cbc08a27fd56b58ebd71b278e5fee883b",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "130b2a8a74485811ec4d957725b9c8d5ce146d3b28232d5839a2b90f45c0e2c4"
+    },
+    {
+      "id": "S3-04-it-guided-practice-r1",
+      "unitId": "S3-04-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.",
+          "sha256": "7616329a5fd285f4facdfe4c1de76f3f500ccca71ebb3a1590b95b796ab572b6"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Collegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.",
+          "sha256": "f228afb5ebd770db6f4807c9ac1271cdd49fd31427561b697cb1d746e6a81ac9"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Ordinare saturazione, FC e PWP su scala verticale; disegnare drenaggio verso il basso sopra FC e fascia AWC tra FC e PWP. Con 30 e 12 percento sulla stessa base, calcolare differenza e unità.",
+          "sha256": "23eee6f5029ba06640cc7fcf1e153c162605d603524b456d6e4d93f0a52e5358"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Confrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.",
+          "sha256": "b73a3daa5fdd423110af46dbc4062d1501be18a44a085f42fee26a691e5b210b"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Non dare per confermata siccità o carenza dal solo aspetto.",
+          "sha256": "006f57d8c12dcbd18951d2ce262f3f056a7cdcae484bbf455f998aad8dbce607"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+          "sha256": "ed5da459b60b7755058a54fc92d30047e9d1445834c314a3f84fbc8f0ac3e43b"
+        }
+      ],
+      "scientificMeaning": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, FC e PWP su scala verticale; disegnare drenaggio verso il basso sopra FC e fascia AWC tra FC e PWP. Con 30 e 12 percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+      "displayText": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, FC e PWP su scala verticale; disegnare drenaggio verso il basso sopra FC e fascia AWC tra FC e PWP. Con 30 e 12 percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+      "captionText": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, FC e PWP su scala verticale; disegnare drenaggio verso il basso sopra FC e fascia AWC tra FC e PWP. Con 30 e 12 percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+      "spokenText": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente su scala verticale; disegnare drenaggio verso il basso sopra la capacità di campo e una fascia della capacità d’acqua disponibile tra la capacità di campo e il punto di appassimento permanente. Con trenta e dodici percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+      "spokenTextSHA256": "f158122778a92d2dadd69d8a01fe4b201bf9b34f423ed37832c42f894528d5c1",
+      "spokenTextSha256": "f158122778a92d2dadd69d8a01fe4b201bf9b34f423ed37832c42f894528d5c1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, FC e PWP su scala verticale; disegnare drenaggio verso il basso sopra FC e fascia AWC tra FC e PWP. Con 30 e 12 percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+          "spoken": "Descrivere una pianta domestica floscia o gialla, almeno due spiegazioni concorrenti e un’osservazione che le distingua.\n\nCollegare fotosintesi, trasporto, turgore e raffreddamento per traspirazione a organi e osservazioni; mettere l’evaporazione del suolo in categoria separata.\n\nOrdinare saturazione, capacità di campo e punto di appassimento permanente su scala verticale; disegnare drenaggio verso il basso sopra la capacità di campo e una fascia della capacità d’acqua disponibile tra la capacità di campo e il punto di appassimento permanente. Con trenta e dodici percento sulla stessa base, calcolare differenza e unità.\n\nConfrontare campo sabbioso e argilloso con uguale domanda della coltura; elencare dati radicali e misure prima del calendario irriguo.\n\nNon dare per confermata siccità o carenza dal solo aspetto.\n\nIl formatore può preparare e supervisionare carota, sedano e vasetti di suolo facoltativi; ogni studente registra tempo, osservazioni e incertezze. Questa tappa non certifica irrigazione di campo né sostituisce il laboratorio diagnostico successivo.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c31d1f090383a25d8b2e42c1ac22158462681e74e87c2d3a4fe3c330bb10f887",
+      "requestFingerprintSha256": "c31d1f090383a25d8b2e42c1ac22158462681e74e87c2d3a4fe3c330bb10f887",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "130b2a8a74485811ec4d957725b9c8d5ce146d3b28232d5839a2b90f45c0e2c4"
+    },
+    {
+      "id": "S3-04-it-reflection-r1",
+      "unitId": "S3-04-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So distinguere trasporto, riserva del suolo e prove per irrigare?",
+          "sha256": "148e35ef911fd8bba496b7d624b024e1b17c61ea9c2820fc64f04212b45425c0"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Usa questa autoverifica per pianificare altra pratica; non attribuisce il superamento.",
+          "sha256": "c8033da06cc3b707d342829609df694cfaa8c5883763784937f2bf4a22fa24f7"
+        }
+      ],
+      "scientificMeaning": "So distinguere trasporto, riserva del suolo e prove per irrigare?\n\nUsa questa autoverifica per pianificare altra pratica; non attribuisce il superamento.",
+      "displayText": "So distinguere trasporto, riserva del suolo e prove per irrigare?\n\nUsa questa autoverifica per pianificare altra pratica; non attribuisce il superamento.",
+      "captionText": "So distinguere trasporto, riserva del suolo e prove per irrigare?\n\nUsa questa autoverifica per pianificare altra pratica; non attribuisce il superamento.",
+      "spokenText": "So distinguere trasporto, riserva del suolo e prove per irrigare?\n\nUsa questa autoverifica per pianificare altra pratica; non attribuisce il superamento.",
+      "spokenTextSHA256": "f960b9eb016b48f9a6f8e7a05b78807b0b07c8bd819634b6afc2de24373813a4",
+      "spokenTextSha256": "f960b9eb016b48f9a6f8e7a05b78807b0b07c8bd819634b6afc2de24373813a4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dba85ec0ab7d6df69dc90bd0d18622020faa44cf17395184e7fae2d0be864c96",
+      "requestFingerprintSha256": "dba85ec0ab7d6df69dc90bd0d18622020faa44cf17395184e7fae2d0be864c96",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "130b2a8a74485811ec4d957725b9c8d5ce146d3b28232d5839a2b90f45c0e2c4"
+    },
+    {
+      "id": "S3-04-it-glossary-r1",
+      "unitId": "S3-04-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pressione di turgore",
+          "sha256": "e5224c6e3529cb922c3783b0cdbab66faf2c7c88d860fc1b2437788631e47543"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Pressione associata all’acqua nelle cellule vive che sostiene la consistenza.",
+          "sha256": "121e0b34ed5f148cf04d881af2208fa0a292d444a412ab63b758cc815b5fe21b"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "traspirazione",
+          "sha256": "c72c451fa8775353916c7d137793270c10d4bcb9ae5a4f001c9fc41fbcd67195"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Perdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.",
+          "sha256": "e29e3518dc9dd21bab151d38bd2fb7970a8618879ee33c745d0ee7167877a700"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "evaporazione del suolo",
+          "sha256": "b197f8f89caee072e67f8f566cbdf5690532efe118aa30e6a0aa2f5025d88396"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Perdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.",
+          "sha256": "8937055188cbe109abe58182bcf6699bfc50aee548fd2ba08b7e4a3d6dabb77b"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "saturazione",
+          "sha256": "9d80632f482a596db632830eb2b0fac50164f5469c8de57744d9b832d5875c41"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Condizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.",
+          "sha256": "fc7d61c5ce95bc151364426c4eb02ec4a3d299505ae29b7fd3e21474cfcaf90d"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "capacità di campo (FC)",
+          "sha256": "cdff16121bb8f6248a430863a744a1d12e121ba4567e5a3e65ccf15d3ccd641e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Acqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.",
+          "sha256": "23f731c396a32e750dfabeb63f09c86a1c3c09e877d580c0a95530136b062062"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "punto di appassimento permanente (PWP)",
+          "sha256": "f11c62786900f7d9d73c7885b2103189a3706c26d3de5eef6bd7b1a0986a8f73"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Riferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.",
+          "sha256": "ed7258d8cbf84930e546906da383787044b9ea9c1a2591cee7532c6246455b00"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "capacità d’acqua disponibile (AWC)",
+          "sha256": "922c498c59bae24970c80ea92f9b15572d48ac249387499bb65815eabf948ab3"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Contenuto idrico a FC meno quello a PWP sulla stessa base e nello stesso strato.",
+          "sha256": "5f05e164d5a2e9a8879a52a1ae2fab006c9ad4031892a24385d2e3c9279fbc4d"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "acqua totale disponibile nella zona radicale",
+          "sha256": "5a6f37a761c95d251907b3ba3cfee43015fe5b1f0a1339f0b951a0b9e3f85b45"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Riserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+          "sha256": "bdb6e01b1d89eb142f7b870390e15d61fc4c591af069a7fe5025bb75c341b9ce"
+        }
+      ],
+      "scientificMeaning": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo (FC)\n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente (PWP)\n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile (AWC)\n\nContenuto idrico a FC meno quello a PWP sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+      "displayText": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo (FC)\n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente (PWP)\n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile (AWC)\n\nContenuto idrico a FC meno quello a PWP sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+      "captionText": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo (FC)\n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente (PWP)\n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile (AWC)\n\nContenuto idrico a FC meno quello a PWP sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+      "spokenText": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo \n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente \n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile \n\nContenuto idrico alla capacità di campo meno quello al punto di appassimento permanente sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+      "spokenTextSHA256": "be9e63968108d43c7b7051f212b6dc4d0c03b7bf8eb0c4dba3a046fa3427a0da",
+      "spokenTextSha256": "be9e63968108d43c7b7051f212b6dc4d0c03b7bf8eb0c4dba3a046fa3427a0da",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo (FC)\n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente (PWP)\n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile (AWC)\n\nContenuto idrico a FC meno quello a PWP sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+          "spoken": "pressione di turgore\n\nPressione associata all’acqua nelle cellule vive che sostiene la consistenza.\n\ntraspirazione\n\nPerdita di vapore dalla pianta soprattutto dagli stomi; può raffreddare e sostenere il flusso idrico.\n\nevaporazione del suolo\n\nPerdita d’acqua direttamente dalla superficie del terreno, distinta dalla traspirazione.\n\nsaturazione\n\nCondizione con pori pieni d’acqua prima che esca la frazione facilmente drenabile.\n\ncapacità di campo \n\nAcqua rimasta dopo il drenaggio della frazione mobile secondo un metodo definito; riferimento superiore della riserva disponibile.\n\npunto di appassimento permanente \n\nRiferimento inferiore in cui la pianta definita non estrae abbastanza acqua da recuperare il turgore nelle condizioni stabilite.\n\ncapacità d’acqua disponibile \n\nContenuto idrico alla capacità di campo meno quello al punto di appassimento permanente sulla stessa base e nello stesso strato.\n\nacqua totale disponibile nella zona radicale\n\nRiserva utile sommata sulla profondità radicale effettiva; non si deduce dalla sola tessitura.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d524a9c70e19526b00bcaf3921e29766981de036433b771628667097bd366f75",
+      "requestFingerprintSha256": "d524a9c70e19526b00bcaf3921e29766981de036433b771628667097bd366f75",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "130b2a8a74485811ec4d957725b9c8d5ce146d3b28232d5839a2b90f45c0e2c4"
+    },
+    {
+      "id": "S3-04-de-opening-r1",
+      "unitId": "S3-04-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.",
+          "sha256": "a37d4c6d89d081e5cb2cb2fab6219547df1d3833b0d9bf227f6ffdbd6afa0840"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Die vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten-/Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.",
+          "sha256": "c7851a9bf74c7bbdaa8eebda12b90496f927a4a44e1c1aca08e13adeba8942a1"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Sättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.",
+          "sha256": "a12cd91997d5224cebc5761e73ab196ad80901014b5c203944971ce974599600"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Erklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+          "sha256": "bf72b474558f31a8829f8faa4e8b0d0a5a02f8f958d93ee7f298494e8a9ddc46"
+        }
+      ],
+      "scientificMeaning": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten-/Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+      "displayText": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten-/Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+      "captionText": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten-/Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+      "spokenText": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten- und Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+      "spokenTextSHA256": "ee5bdb47af1dc02807d31be11e11f0ec85d3a53b81a3227e486e8c8c8cb6cec0",
+      "spokenTextSha256": "ee5bdb47af1dc02807d31be11e11f0ec85d3a53b81a3227e486e8c8c8cb6cec0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten-/Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+          "spoken": "Ein hängendes Blatt ist ein Hinweis, keine Diagnose. Wir untersuchen, wozu Pflanzen Wasser brauchen, wie es sich in ihnen bewegt und welcher Teil des gespeicherten Bodenwassers den Wurzeln zur Verfügung stehen kann, bevor über das Feld entschieden wird.\n\nDie vier Aufgaben von Wasser bei Photosynthese, Stofftransport, Zell-Turgor und Kühlung durch Transpiration erklären sowie Karotten- und Stangensellerieversuche deuten, ohne Blatttranspiration mit Verdunstung vom nackten Boden zu verwechseln.\n\nSättigung, Feldkapazität und permanenten Welkepunkt ordnen, Drainage oberhalb der Feldkapazität und verfügbares Wasser dazwischen markieren und zwei Werte gleicher Messbasis korrekt subtrahieren.\n\nErklären, warum mehr insgesamt gebundenes Wasser im Ton an einem Standort nicht automatisch mehr zugängliches Wasser bedeutet, und nutzbaren Wurzelraumspeicher mit Pflanzenbedarf und tatsächlicher Messung verbinden.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e8dff19cd0893a650893fe015d6fbccb7f5428377a49825f89f209edba153436",
+      "requestFingerprintSha256": "e8dff19cd0893a650893fe015d6fbccb7f5428377a49825f89f209edba153436",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c8bfe7c0c5782b32278bdada026e0cf0980a300c89e24774223c2c5a1613c093"
+    },
+    {
+      "id": "S3-04-de-guided-practice-r1",
+      "unitId": "S3-04-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.",
+          "sha256": "ea80cec943b6eb880183d239ed3974740d785f83290b072a065dce37711c9c03"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Photosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.",
+          "sha256": "bad2c0fc4c4805ed31ba825df3392d7d02a2b9f3adc040c9a93cbe4a5a3a787c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Sättigung, FC und PWP auf vertikaler Wasserskala ordnen; Drainagepfeil oberhalb FC abwärts, AWC-Klammer dazwischen. Für 30 und 12 Prozent auf gleicher Basis Differenz mit Einheit berechnen.",
+          "sha256": "893da1ac256f5f2781691eb225dcc5e246397e226d9680c8e3f5666fb69bec98"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Sandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.",
+          "sha256": "c97c0b116c1046683638f92189918d1c6b416299d3640cccc89101631e764dd9"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Sichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.",
+          "sha256": "9b58f99c521ad5c7fae3f46e8286b2fc9fd523a9cec8ca3ff51a6be147645781"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Die Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+          "sha256": "81b2db47a510fd1f6951ce0f4367f354a5d6ae5a7c5d5108f370fcdec85aed01"
+        }
+      ],
+      "scientificMeaning": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, FC und PWP auf vertikaler Wasserskala ordnen; Drainagepfeil oberhalb FC abwärts, AWC-Klammer dazwischen. Für 30 und 12 Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+      "displayText": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, FC und PWP auf vertikaler Wasserskala ordnen; Drainagepfeil oberhalb FC abwärts, AWC-Klammer dazwischen. Für 30 und 12 Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+      "captionText": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, FC und PWP auf vertikaler Wasserskala ordnen; Drainagepfeil oberhalb FC abwärts, AWC-Klammer dazwischen. Für 30 und 12 Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+      "spokenText": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, Feldkapazität und permanenten Welkepunkt auf einer vertikalen Wasserskala ordnen; Drainagepfeil oberhalb der Feldkapazität abwärts, eine Klammer für die nutzbare Wasserkapazität dazwischen. Für dreißig und zwölf Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+      "spokenTextSHA256": "8ed8ed4a2e5cd675cd83f61d2a5f366cbd436f435edb0d1e105c832187bf04ad",
+      "spokenTextSha256": "8ed8ed4a2e5cd675cd83f61d2a5f366cbd436f435edb0d1e105c832187bf04ad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, FC und PWP auf vertikaler Wasserskala ordnen; Drainagepfeil oberhalb FC abwärts, AWC-Klammer dazwischen. Für 30 und 12 Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+          "spoken": "Eine hängende oder gelbe Zimmerpflanze, mindestens zwei mögliche Ursachen und eine unterscheidende Beobachtung beschreiben.\n\nPhotosynthese, Transport, Turgor und Transpirationskühlung jeweils einem Pflanzenteil und einer Beobachtung zuordnen; Bodenverdunstung getrennt einordnen.\n\nSättigung, Feldkapazität und permanenten Welkepunkt auf einer vertikalen Wasserskala ordnen; Drainagepfeil oberhalb der Feldkapazität abwärts, eine Klammer für die nutzbare Wasserkapazität dazwischen. Für dreißig und zwölf Prozent auf gleicher Basis Differenz mit Einheit berechnen.\n\nSandiges und tonreiches Feld bei gleichem Bedarf vergleichen und benötigte Wurzelraum- und Messdaten vor einem Bewässerungsplan nennen.\n\nSichtbares Symptom nicht als gesicherte Trockenheit oder Nährstoffmangel bewerten.\n\nDie Lehrkraft kann Karotten-, Stangensellerie- und optionale Bodenglasversuche vorbereiten und beaufsichtigen; alle Lernenden notieren Zeit, Beobachtung und Unsicherheit selbst. Das zertifiziert weder Feldbewässerung noch ersetzt es die spätere Diagnosewerkstatt.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b392fd14ba13ae719c873655f1e98b0a608c4019d673e0fee868f93e4fb0ff4d",
+      "requestFingerprintSha256": "b392fd14ba13ae719c873655f1e98b0a608c4019d673e0fee868f93e4fb0ff4d",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c8bfe7c0c5782b32278bdada026e0cf0980a300c89e24774223c2c5a1613c093"
+    },
+    {
+      "id": "S3-04-de-reflection-r1",
+      "unitId": "S3-04-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kann ich Transport, Bodenspeicher und echte Bewässerungsbelege unterscheiden?",
+          "sha256": "23831b42d062643c1bcdcb53314d927ed2e138b1b04a2f19155dbf011ed249dc"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Nutze diese Selbstprüfung für weitere Übungen; sie vergibt kein Bestehen.",
+          "sha256": "7844843beee20291d098f6325344b94f7854c879108089eb7683c83627d9f4c4"
+        }
+      ],
+      "scientificMeaning": "Kann ich Transport, Bodenspeicher und echte Bewässerungsbelege unterscheiden?\n\nNutze diese Selbstprüfung für weitere Übungen; sie vergibt kein Bestehen.",
+      "displayText": "Kann ich Transport, Bodenspeicher und echte Bewässerungsbelege unterscheiden?\n\nNutze diese Selbstprüfung für weitere Übungen; sie vergibt kein Bestehen.",
+      "captionText": "Kann ich Transport, Bodenspeicher und echte Bewässerungsbelege unterscheiden?\n\nNutze diese Selbstprüfung für weitere Übungen; sie vergibt kein Bestehen.",
+      "spokenText": "Kann ich Transport, Bodenspeicher und echte Bewässerungsbelege unterscheiden?\n\nNutze diese Selbstprüfung für weitere Übungen; sie vergibt kein Bestehen.",
+      "spokenTextSHA256": "1d773b4f7482f38ebc1cd5cca3cbca7c3a2b594f6c658ea41245702b5b986bf0",
+      "spokenTextSha256": "1d773b4f7482f38ebc1cd5cca3cbca7c3a2b594f6c658ea41245702b5b986bf0",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3380f56571404d140b04cfd9f105d1f8be20da282718b393e00825026888b33e",
+      "requestFingerprintSha256": "3380f56571404d140b04cfd9f105d1f8be20da282718b393e00825026888b33e",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c8bfe7c0c5782b32278bdada026e0cf0980a300c89e24774223c2c5a1613c093"
+    },
+    {
+      "id": "S3-04-de-glossary-r1",
+      "unitId": "S3-04-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8bf10eb7f6f976fe13ec3ca42ecb009ba01fe27024ce4b282b3524283f765a83",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Turgordruck",
+          "sha256": "bd5b5ea11dacf929632813a23b0a3e3c4429df4dba9a08da0e93c37d8db0534a"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Wasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.",
+          "sha256": "bb4f9e4af4c65a34a59d9727675c617fa29f0b72646690089457d758fc20c1e3"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Transpiration",
+          "sha256": "4cf3c91e0b08a784f9fb3dd69fe9cec45aae547caed39196a72588e443680f7f"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Abgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.",
+          "sha256": "9a49677dbe168a3f52e93c52bc1bf0cb8557c06f6f3196ae9f86083519f7097f"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Bodenverdunstung",
+          "sha256": "3107b1a7105c4e7ac4070f257ab50d6b10ce93b3f5e8c87a8c3c3d63058c1c82"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Wasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.",
+          "sha256": "935adc857485f9563c6dc70f75cfb27e0c4cba4bde860ac3e2ebaa2665f3de3a"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Sättigung",
+          "sha256": "36b84f2a02a82a075ca875774da18c0055639c34761a34606f08e5ccddd5f2e6"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Nasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.",
+          "sha256": "f4b3fdeec186432bf32b5b8d6e6072a3c9b6e76af839ad07155e42795f928553"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Feldkapazität (FC)",
+          "sha256": "c56bb313468d63cd237104e7d9eda1c92cf657a12e084c22cd871b829f25ef58"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Wasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.",
+          "sha256": "adcdb5f390361cc97bdfb9700a98475c5d7f06bed254dfb216926fa1b035c922"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "permanenter Welkepunkt (PWP)",
+          "sha256": "118759ada54e0abe777b8a2c7b4ecb311f53d91238275caf85e680171ae3fb4a"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Untere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.",
+          "sha256": "85cc524391ed1c2d6f4f7f09e6e1db2b5d12d85e3f9c7bbc0720ea166f6ca22c"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "nutzbare Wasserkapazität (AWC)",
+          "sha256": "bfe7ed192c1c201b2508cfcd067b58084b7095b258747b3264d7ef697ba87b4f"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Wassergehalt bei FC minus Wassergehalt bei PWP auf gleicher Messbasis in derselben Bodenschicht.",
+          "sha256": "eb52f01b79aa832c6e368cdda54c52c995d28387549ac0413667aec4b4d2fafa"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "gesamtes verfügbares Wurzelraumwasser",
+          "sha256": "391600a4e13dfa8f0d786e75c5bd3fcd2dd82b72a29c554162e9b056065d6bcf"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Nutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+          "sha256": "3ea1b9798a57b0431566eb33ceed50d0a5a086af3673bf39f2a25a750f2f9687"
+        }
+      ],
+      "scientificMeaning": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität (FC)\n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt (PWP)\n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität (AWC)\n\nWassergehalt bei FC minus Wassergehalt bei PWP auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+      "displayText": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität (FC)\n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt (PWP)\n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität (AWC)\n\nWassergehalt bei FC minus Wassergehalt bei PWP auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+      "captionText": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität (FC)\n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt (PWP)\n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität (AWC)\n\nWassergehalt bei FC minus Wassergehalt bei PWP auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+      "spokenText": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität \n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt \n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität \n\nWassergehalt bei Feldkapazität minus Wassergehalt beim permanenten Welkepunkt auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+      "spokenTextSHA256": "04c0b0d2f6dbc04840fca8be81e5d0e1b373b745c8f11c52ff03d3d74eab049b",
+      "spokenTextSha256": "04c0b0d2f6dbc04840fca8be81e5d0e1b373b745c8f11c52ff03d3d74eab049b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität (FC)\n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt (PWP)\n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität (AWC)\n\nWassergehalt bei FC minus Wassergehalt bei PWP auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+          "spoken": "Turgordruck\n\nWasserbedingter Druck in lebenden Pflanzenzellen, der Festigkeit unterstützt.\n\nTranspiration\n\nAbgabe von Wasserdampf aus der Pflanze überwiegend über Blattspaltöffnungen; kann Kühlung und Wasserbewegung fördern.\n\nBodenverdunstung\n\nWasserverlust direkt von der Bodenoberfläche, verschieden von Transpiration.\n\nSättigung\n\nNasser Zustand mit wassergefüllten Poren vor Abfluss des leicht drainierbaren Teils.\n\nFeldkapazität \n\nWasser nach Abfluss leicht beweglichen Überschusses unter einer festgelegten Methode; obere Speicherbezugsgröße.\n\npermanenter Welkepunkt \n\nUntere Bezugsgröße, bei der eine definierte Pflanze unter festgelegten Bedingungen nicht genug Wasser für Turgorerholung entnimmt.\n\nnutzbare Wasserkapazität \n\nWassergehalt bei Feldkapazität minus Wassergehalt beim permanenten Welkepunkt auf gleicher Messbasis in derselben Bodenschicht.\n\ngesamtes verfügbares Wurzelraumwasser\n\nNutzbarer Speicher über die tatsächliche Durchwurzelungstiefe; nicht aus Textur allein ableitbar.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent named-quantity expansion and natural grammatical agreement. All facts/units/limits preserved; display/source unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "36863651a3251ede20a77f422351fce88d0a549a455a21bc52be154cddf0f627",
+      "requestFingerprintSha256": "36863651a3251ede20a77f422351fce88d0a549a455a21bc52be154cddf0f627",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c8bfe7c0c5782b32278bdada026e0cf0980a300c89e24774223c2c5a1613c093"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-04-ar-EG-opening-r1",
+      "S3-04-ar-EG-guided-practice-r1",
+      "S3-04-ar-EG-reflection-r1",
+      "S3-04-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-04-en-opening-r1",
+      "S3-04-en-guided-practice-r1",
+      "S3-04-en-reflection-r1",
+      "S3-04-en-glossary-r1"
+    ],
+    "it": [
+      "S3-04-it-opening-r1",
+      "S3-04-it-guided-practice-r1",
+      "S3-04-it-reflection-r1",
+      "S3-04-it-glossary-r1"
+    ],
+    "de": [
+      "S3-04-de-opening-r1",
+      "S3-04-de-guided-practice-r1",
+      "S3-04-de-reflection-r1",
+      "S3-04-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
