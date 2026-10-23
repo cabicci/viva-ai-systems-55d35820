@@ -1,0 +1,67 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-10-en.json",
+    "sha256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+    "bytes": 19199
+  },
+  "scope": "One approved22word source-equivalent cooler-proof/no-freezing sentence; exact originalprefix/suffix remain, measuredquietcuts37.49–45.25, no automaticjoin.",
+  "units": [
+    {
+      "id": "S1-10-en-R04-sentence-repair-r1",
+      "unitId": "S1-10-en-R04-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "cooler-proof-no-freezing-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "In a stated cooled-sample example, a laboratory-approved sealed container and a cooler with ice packs maintain the required condition, around 4°C where that protocol specifies it. Check and record temperature by the required method. A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+          "sha256": "e29448ecb8e87bf59d5aaa9184445e25c6243038c62398ccdb0feacb7b3ebd3a"
+        }
+      ],
+      "scientificMeaning": "In a stated cooled-sample example, a laboratory-approved sealed container and a cooler with ice packs maintain the required condition, around 4°C where that protocol specifies it. Check and record temperature by the required method. A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+      "displayText": "In a stated cooled-sample example, a laboratory-approved sealed container and a cooler with ice packs maintain the required condition, around 4°C where that protocol specifies it. Check and record temperature by the required method. A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+      "captionText": "In a stated cooled-sample example, a laboratory-approved sealed container and a cooler with ice packs maintain the required condition, around 4°C where that protocol specifies it. Check and record temperature by the required method. A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+      "spokenText": "A cooler alone cannot prove that the sample stayed at four degrees Celsius. An ice pack does not permit freezing the sample.",
+      "spokenTextSHA256": "bda4a6ad71918cd7839bba3248034095b345dbdfd534c367ee6f4d7064d80313",
+      "spokenTextSha256": "bda4a6ad71918cd7839bba3248034095b345dbdfd534c367ee6f4d7064d80313",
+      "spokenAdaptationChanges": [
+        {
+          "written": "In a stated cooled-sample example, a laboratory-approved sealed container and a cooler with ice packs maintain the required condition, around 4°C where that protocol specifies it. Check and record temperature by the required method. A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+          "spoken": "A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+          "spoken": "A cooler alone cannot prove that the sample stayed at four degrees Celsius. An ice pack does not permit freezing the sample.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_COOLER_CANNOT_PROVE_FOUR_C_AND_NO_FREEZING"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "ff2ce63b1669476a35c65eb87b45ccae38eabba6d77dcf32864f5bd4252410ea",
+      "requestFingerprintSha256": "ff2ce63b1669476a35c65eb87b45ccae38eabba6d77dcf32864f5bd4252410ea",
+      "sourcePlanSha256": "cd1bccd373a99fabf5e611e929b163320ed21bffda07c6b768fddb296b95cb9c",
+      "exactSentenceBefore": "A cooler's presence does not prove the sample stayed at 4°C, and an ice pack does not authorize freezing a sample.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}

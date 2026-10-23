@@ -1,0 +1,1 @@
+One approved22word English cooler-proof/no-freezing complete sentence only; both source prohibitions and conditional four Celsius retained.1TTS1blind1ASR2GET0retry, exactoriginalKore/delivery. Preservealloriginalsuffix/current source/display; no automaticjoin/postjoin.
