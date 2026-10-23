@@ -1,0 +1,1742 @@
+{
+  "schemaVersion": 1,
+  "scope": "S301_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s301-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-ar-EG-opening-r1",
+      "unitId": "S3-01-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.",
+          "sha256": "2a4b9c64b2c1e56fa5d0519fc43aff02a4c7d0bba5c65d044422637e3e7b4a6e"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيًا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.",
+          "sha256": "afe2ed47c2f96c93364d43fe326c692dbc43c8bf0df541ddb0c40a365d7cc997"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "تحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.",
+          "sha256": "8dbfd8d59f6112d8a34bc51f522816313a038dcf7f675aa859830a9b39640667"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "تشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+          "sha256": "65b32e23c8b4426c1ed764fe9e557173775bb6353fb6261bc99edb0a482c98b6"
+        }
+      ],
+      "scientificMeaning": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيًا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+      "displayText": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيًا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+      "captionText": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيًا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+      "spokenText": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+      "spokenTextSHA256": "5104987fcab114f3b18d9037ad5b5a8a15d7a6e48d560071b90ac34d7a2cc0e6",
+      "spokenTextSha256": "5104987fcab114f3b18d9037ad5b5a8a15d7a6e48d560071b90ac34d7a2cc0e6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيًا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+          "spoken": "افتكر أكل امبارح: رز، عيش من القمح، فول أو فاصوليا، طماطم وتفاح. كل واحد أصله محصول. هنجمع المحاصيل هنا في أربع مجموعات عملية، ونشوف الجزء اللي بناكله، وظروف الحقل، وتأثير الزراعة الحقيقي على التربة. ملاءمة المكان وخطة الدورة الزراعية ليهم خطوات جاية في المحطة.\n\nتصنّف المحاصيل المذكورة في أربع مجموعات حسب الاستخدام العملي، وتفرق في الطماطم بين الثمرة نباتيا والخضار في الاستعمال، وفي الفول السوداني بين البقوليات والبقول الجافة.\n\nتحدد الجزء المأكول في الكرفس والهليون والبطاطس والبطاطا، وتوثّق محصول مزروع في منطقتك من كل مجموعة بدل افتراض ملاءمته من رسمة أجنبية.\n\nتشرح دور جذور الحبوب الليفية وعقد البقوليات والحصاد وبقايا المحصول في التربة، وليه محصول بقولي ما يضمنش تعويض النيتروجين كله أو يغني عن فحص الحقل.",
+          "occurrences": 1,
+          "purpose": "Faithful fullconnected source adaptation for naturalspokenlocale, numerals and Nnotation expanded withoutaltering quantities/legumeconditions/harvestorgan distinctions. No examples/model/UI/assessmentkey or3Dclaim narrated."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "49cda806c0cad3e9dbf6030525488c2b7e58674f5ec42e5009959b51ea728a36",
+      "requestFingerprintSha256": "49cda806c0cad3e9dbf6030525488c2b7e58674f5ec42e5009959b51ea728a36",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "813019cf01368ea81ca2da0884fc0becf13f0cade98edc7a8e5e28ce50eafab9"
+    },
+    {
+      "id": "S3-01-ar-EG-guided-practice-r1",
+      "unitId": "S3-01-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.",
+          "sha256": "769ecc0caa070166363bb4c8f6e7bdb83483c6fd38af9c1ef032d410ad9e7f86"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "في النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.",
+          "sha256": "389735a99c7525ca9db06110ad33f3b3a2605eac00975d138378a60f0f7032ee"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "لكل مجموعة استخدام، سجّل محصولًا واحدًا شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.",
+          "sha256": "ec898302da5a38fc968d7f4e230056a9288148436ca19cd5c3ffc75d9d2e87e2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "جاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.",
+          "sha256": "eca58ccfe2bd61e83227f280548ff8059c439caed1e2bf858697c81f2e10e62a"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "سمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.",
+          "sha256": "edf5d54a7b363e66a164633c2ad9ea2e2efa1eeffcbb0c585fa06cc7e559d7a4"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "المدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+          "sha256": "b59438f67610692a5fc2352a21d80969c393ac55ef200821e2b26d29ebef5aad"
+        }
+      ],
+      "scientificMeaning": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصولًا واحدًا شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+      "displayText": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصولًا واحدًا شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+      "captionText": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصولًا واحدًا شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+      "spokenText": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصول واحد شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+      "spokenTextSHA256": "bff3d30d7b8e4c9d56540551c15d5018c667e3cc4ebb38dcbdd6b9acdae5c059",
+      "spokenTextSha256": "bff3d30d7b8e4c9d56540551c15d5018c667e3cc4ebb38dcbdd6b9acdae5c059",
+      "spokenAdaptationChanges": [
+        {
+          "written": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصولًا واحدًا شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+          "spoken": "رتب كل الأمثلة: الذرة، الأرز، القمح، الشعير، الذرة الرفيعة، الشوفان؛ فول الصويا، فاصوليا حمراء وسوداء، عدس، بسلة، فول سوداني، برسيم حجازي؛ خس، سبانخ، كرنب، جزر، فجل، لفت، طماطم، فلفل، خيار، كرفس، هليون؛ تفاح، برتقال، عنب، فراولة، توت أزرق، موز. بعدين اختار مثالين ينفع يتصنفوا صح من زاويتين مختلفتين.\n\nفي النموذج اللي فيه أربع لوحات حدد جذور الحبوب الليفية وعقدة البقوليات وجذر الجزر الوتدي، واذكر حاجة واحدة ما يقدرش الرسم يثبتها عن ملاءمة الحقل أو عمق الجذور بالأرقام.\n\nلكل مجموعة استخدام، سجّل محصول واحد شفته أو لقيت له توثيقًا موثوقًا في منطقتك، واكتب المكان أو المصدر.\n\nجاوب بنفسك عن اختلاف حقلين للذرة وعن تكرار المحصول، وقارن بزميل، وبعدها عدّل إجابتك أنت بأدلة عن النبات والتربة والإدارة.\n\nسمّ المجموعة العملية، وعند اللزوم اشرح العضو النباتي أو الاستخدام في الأكل أو فئة البقول الجافة لوحدها. أي مثال متروك يرجع في مراجعة موجهة.\n\nالمدرّب ممكن ينظم مشاهدة لمحاصيل في الحقل أو السوق ويتفقد تصنيف وتبرير كل طالب. الخطوة دي معاييرها معرفية فقط؛ لا نقاش المجموعة ولا اختبار أونلاين يثبتوا مهارة تطبيق عملي.",
+          "occurrences": 1,
+          "purpose": "Faithful fullconnected source adaptation for naturalspokenlocale, numerals and Nnotation expanded withoutaltering quantities/legumeconditions/harvestorgan distinctions. No examples/model/UI/assessmentkey or3Dclaim narrated."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "23d5532d5463030f63d254585be99ea6a7f0cd624e35ee827cb1c641a5c987e0",
+      "requestFingerprintSha256": "23d5532d5463030f63d254585be99ea6a7f0cd624e35ee827cb1c641a5c987e0",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "813019cf01368ea81ca2da0884fc0becf13f0cade98edc7a8e5e28ce50eafab9"
+    },
+    {
+      "id": "S3-01-ar-EG-reflection-r1",
+      "unitId": "S3-01-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "اذكر مجموعات المحاصيل الشائعة: الحبوب والبقوليات والخضار والفاكهة.",
+          "sha256": "0ffaf09072bb82d9139e9e4c1d9df9ad5d300fa8580b4d004a8acc668a9364bb"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "نفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+          "sha256": "3c47661f957aebb6767e4ae420bb0d5a978f0929dd5846918879a631d29d37e0"
+        }
+      ],
+      "scientificMeaning": "اذكر مجموعات المحاصيل الشائعة: الحبوب والبقوليات والخضار والفاكهة.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "displayText": "اذكر مجموعات المحاصيل الشائعة: الحبوب والبقوليات والخضار والفاكهة.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "captionText": "اذكر مجموعات المحاصيل الشائعة: الحبوب والبقوليات والخضار والفاكهة.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "spokenText": "اذكر مجموعات المحاصيل الشائعة: الحبوب والبقوليات والخضار والفاكهة.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "spokenTextSHA256": "e572ec6934dbe7be80a927ff0db9679c8edc4ea2b5b8d3b1ea46efeb1ac2c948",
+      "spokenTextSha256": "e572ec6934dbe7be80a927ff0db9679c8edc4ea2b5b8d3b1ea46efeb1ac2c948",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c24b1a3c106e2621ce7085dcd0793d84ea09cc1075fdb2fc182df8329967416e",
+      "requestFingerprintSha256": "c24b1a3c106e2621ce7085dcd0793d84ea09cc1075fdb2fc182df8329967416e",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "813019cf01368ea81ca2da0884fc0becf13f0cade98edc7a8e5e28ce50eafab9"
+    },
+    {
+      "id": "S3-01-ar-EG-glossary-r1",
+      "unitId": "S3-01-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "مجموعة محصول عملية",
+          "sha256": "2efabfd0c24724b2f75d2bbd4b82e64a2c5c14741d1eaef1136a47f7381c8a7a"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "تجميع حسب الاستخدام الزراعي أو الغذائي في الدرس، مش الطريقة الوحيدة لتصنيف النباتات.",
+          "sha256": "738068a56542d93b955041096ad4b729770777e9f50694db69ec41119957f2a8"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "محصول حبوب",
+          "sha256": "fd22acefc1f747bbac23e47fd1c8345285361576a1d099a79d9de5de451eafe3"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "نبات نجيلي بنزرعه أساسًا لحبوبه المأكولة، زي القمح والأرز والذرة.",
+          "sha256": "4641310b0af090b7b4a3f0afe535dcb6562e17714e01484a678c5956db3b1500"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "بقولي",
+          "sha256": "2a09fc6c4ef698676923bd774a0f6f54d8801ece12090cc92d53e5dbd692f335"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "نبات من الفصيلة البقولية غالبًا بيكوّن قرون، وبعض أنواعه يقدر يدخل في تكافل يثبت النيتروجين.",
+          "sha256": "12435d7ded84a224a39f3ae7903a322cb1a6231347739a8c9cc5fa17e3556871"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "بقول جافة",
+          "sha256": "1c3f801efc631f908d719ac4be9c6a62097dc0a6e0cc38d19905ec7f74f171c3"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "محصول بقولي بيتحصد لبذوره الجافة المأكولة، ومش بيشمل هنا البقوليات الزيتية كالفول السوداني وفول الصويا أو الأعلاف كالبرسيم الحجازي.",
+          "sha256": "78bd2a4b6d11eb69edab29028d32e6f655204588fd31c840c89d5f072093e909"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "ريزوبيوم",
+          "sha256": "94a6c56db31a711cf15b65d47faffbb453fd1f6215140f6b1bf5eb38452ae698"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "بكتيريا مناسبة تقدر تكوّن عقد مع بعض البقوليات وتثبت نيتروجين الجو في ظروف ملائمة.",
+          "sha256": "678d2f4adc60ea4ab2ef23da4915ccddca0b5e2e79feac46f042fef9ca7c6a59"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "عنق الورقة",
+          "sha256": "f03bc259aa2f1a38de354514e013fb63c230c9f156b098476e35a3a939cd003b"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "الجزء اللي يوصل نصل الورقة بالساق؛ الجزء المقرمش الشائع في الكرفس من التركيب ده.",
+          "sha256": "8b6f3aebe27644a671b1ff18eee3f31fca007a78332f0434ffb2bd823683e6ae"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "درنة ساقية",
+          "sha256": "0920510af457a7bf377a681072d604e8c463d8e34f07dc18c00be609368bec44"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "ساق منتفخة تحت الأرض بتخزن غذاء، زي البطاطس.",
+          "sha256": "3014681e380def3f4188da66e7a53dea0715de3f6c64d773dc24eabe8c4e4270"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "جذر مخزّن",
+          "sha256": "ad16f826c33af28d312b82569ca388a46b25bff36324f88a73042680c6c233e2"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "جذر متضخم لتخزين الغذاء، زي البطاطا.",
+          "sha256": "54a97253094da448b5513c90f6049b7bf8f64c16d445efddbb0c97bd3fa65467"
+        }
+      ],
+      "scientificMeaning": "مجموعة محصول عملية\n\nتجميع حسب الاستخدام الزراعي أو الغذائي في الدرس، مش الطريقة الوحيدة لتصنيف النباتات.\n\nمحصول حبوب\n\nنبات نجيلي بنزرعه أساسًا لحبوبه المأكولة، زي القمح والأرز والذرة.\n\nبقولي\n\nنبات من الفصيلة البقولية غالبًا بيكوّن قرون، وبعض أنواعه يقدر يدخل في تكافل يثبت النيتروجين.\n\nبقول جافة\n\nمحصول بقولي بيتحصد لبذوره الجافة المأكولة، ومش بيشمل هنا البقوليات الزيتية كالفول السوداني وفول الصويا أو الأعلاف كالبرسيم الحجازي.\n\nريزوبيوم\n\nبكتيريا مناسبة تقدر تكوّن عقد مع بعض البقوليات وتثبت نيتروجين الجو في ظروف ملائمة.\n\nعنق الورقة\n\nالجزء اللي يوصل نصل الورقة بالساق؛ الجزء المقرمش الشائع في الكرفس من التركيب ده.\n\nدرنة ساقية\n\nساق منتفخة تحت الأرض بتخزن غذاء، زي البطاطس.\n\nجذر مخزّن\n\nجذر متضخم لتخزين الغذاء، زي البطاطا.",
+      "displayText": "مجموعة محصول عملية\n\nتجميع حسب الاستخدام الزراعي أو الغذائي في الدرس، مش الطريقة الوحيدة لتصنيف النباتات.\n\nمحصول حبوب\n\nنبات نجيلي بنزرعه أساسًا لحبوبه المأكولة، زي القمح والأرز والذرة.\n\nبقولي\n\nنبات من الفصيلة البقولية غالبًا بيكوّن قرون، وبعض أنواعه يقدر يدخل في تكافل يثبت النيتروجين.\n\nبقول جافة\n\nمحصول بقولي بيتحصد لبذوره الجافة المأكولة، ومش بيشمل هنا البقوليات الزيتية كالفول السوداني وفول الصويا أو الأعلاف كالبرسيم الحجازي.\n\nريزوبيوم\n\nبكتيريا مناسبة تقدر تكوّن عقد مع بعض البقوليات وتثبت نيتروجين الجو في ظروف ملائمة.\n\nعنق الورقة\n\nالجزء اللي يوصل نصل الورقة بالساق؛ الجزء المقرمش الشائع في الكرفس من التركيب ده.\n\nدرنة ساقية\n\nساق منتفخة تحت الأرض بتخزن غذاء، زي البطاطس.\n\nجذر مخزّن\n\nجذر متضخم لتخزين الغذاء، زي البطاطا.",
+      "captionText": "مجموعة محصول عملية\n\nتجميع حسب الاستخدام الزراعي أو الغذائي في الدرس، مش الطريقة الوحيدة لتصنيف النباتات.\n\nمحصول حبوب\n\nنبات نجيلي بنزرعه أساسًا لحبوبه المأكولة، زي القمح والأرز والذرة.\n\nبقولي\n\nنبات من الفصيلة البقولية غالبًا بيكوّن قرون، وبعض أنواعه يقدر يدخل في تكافل يثبت النيتروجين.\n\nبقول جافة\n\nمحصول بقولي بيتحصد لبذوره الجافة المأكولة، ومش بيشمل هنا البقوليات الزيتية كالفول السوداني وفول الصويا أو الأعلاف كالبرسيم الحجازي.\n\nريزوبيوم\n\nبكتيريا مناسبة تقدر تكوّن عقد مع بعض البقوليات وتثبت نيتروجين الجو في ظروف ملائمة.\n\nعنق الورقة\n\nالجزء اللي يوصل نصل الورقة بالساق؛ الجزء المقرمش الشائع في الكرفس من التركيب ده.\n\nدرنة ساقية\n\nساق منتفخة تحت الأرض بتخزن غذاء، زي البطاطس.\n\nجذر مخزّن\n\nجذر متضخم لتخزين الغذاء، زي البطاطا.",
+      "spokenText": "مجموعة محصول عملية\n\nتجميع حسب الاستخدام الزراعي أو الغذائي في الدرس، مش الطريقة الوحيدة لتصنيف النباتات.\n\nمحصول حبوب\n\nنبات نجيلي بنزرعه أساسًا لحبوبه المأكولة، زي القمح والأرز والذرة.\n\nبقولي\n\nنبات من الفصيلة البقولية غالبًا بيكوّن قرون، وبعض أنواعه يقدر يدخل في تكافل يثبت النيتروجين.\n\nبقول جافة\n\nمحصول بقولي بيتحصد لبذوره الجافة المأكولة، ومش بيشمل هنا البقوليات الزيتية كالفول السوداني وفول الصويا أو الأعلاف كالبرسيم الحجازي.\n\nريزوبيوم\n\nبكتيريا مناسبة تقدر تكوّن عقد مع بعض البقوليات وتثبت نيتروجين الجو في ظروف ملائمة.\n\nعنق الورقة\n\nالجزء اللي يوصل نصل الورقة بالساق؛ الجزء المقرمش الشائع في الكرفس من التركيب ده.\n\nدرنة ساقية\n\nساق منتفخة تحت الأرض بتخزن غذاء، زي البطاطس.\n\nجذر مخزّن\n\nجذر متضخم لتخزين الغذاء، زي البطاطا.",
+      "spokenTextSHA256": "8ba075601de0ae8e42185598c5c6cf2882d46356b7b4ef3323360adf8e06f9f5",
+      "spokenTextSha256": "8ba075601de0ae8e42185598c5c6cf2882d46356b7b4ef3323360adf8e06f9f5",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9f718becc309a2d7d35a919c572ff32eeb6476e77fb4b6f6d29b6f3bedc36cce",
+      "requestFingerprintSha256": "9f718becc309a2d7d35a919c572ff32eeb6476e77fb4b6f6d29b6f3bedc36cce",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "813019cf01368ea81ca2da0884fc0becf13f0cade98edc7a8e5e28ce50eafab9"
+    },
+    {
+      "id": "S3-01-en-opening-r1",
+      "unitId": "S3-01-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.",
+          "sha256": "7405abede998773f2fc2d7cfaa2bd246f6b40e63de29ccc27d6592cd7d75a02e"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Sort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.",
+          "sha256": "62f156de40e4c29718caa282adb84a43455a5d6d761f406e491b530abe166c28"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Identify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.",
+          "sha256": "a8c3d66ee6b9fa64a88ec1fa9c77b7c85cc98cd6c7af546fd47ba770470faa93"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+          "sha256": "57a0ef2b73e6119ab4502fb7820069209881a9fbac25997c172d08a8ef14af94"
+        }
+      ],
+      "scientificMeaning": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "displayText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "captionText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "spokenText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "spokenTextSHA256": "81938e20d2cd2dffeb266a9ecbbacfff11e8b2115f6ccdc3ce88e7b044cc40c4",
+      "spokenTextSha256": "81938e20d2cd2dffeb266a9ecbbacfff11e8b2115f6ccdc3ce88e7b044cc40c4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b84cedd799d5ec87455d696582d856cfa3e6332ac6c04e53549099775c412c0c",
+      "requestFingerprintSha256": "b84cedd799d5ec87455d696582d856cfa3e6332ac6c04e53549099775c412c0c",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "12993b653b543787f77570b12ab2dd77071413d12dbefaa8b2ac8d04a306cecc"
+    },
+    {
+      "id": "S3-01-en-guided-practice-r1",
+      "unitId": "S3-01-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.",
+          "sha256": "f465f5a4571f101b40c36b730b94caab2743f953b66e8184328d1aa2d50b053d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "In the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.",
+          "sha256": "dc8571293e1792ae035da02ab37e896ce8c50429241287bf0043a579475800db"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "For your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.",
+          "sha256": "5e640d15501de9ab7819abd2cdc4541344e533aa21ce76ece268760ee0796a6f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Individually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.",
+          "sha256": "5ad45450b4f69ee4271f4d31ad1ab627f36cd0bc6aeb537eea7a0bd48379d749"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Name the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.",
+          "sha256": "6d72284260f4b687dd05bf4f7d856b166ffa98b2f958cbbaf9136f83e4a51477"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+          "sha256": "1dff080c47243266ea18c137b6da700253c6915b7966f739aa1b30a1a31f7c4f"
+        }
+      ],
+      "scientificMeaning": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "displayText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "captionText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "spokenText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "spokenTextSHA256": "21a628f3f2654ea044309e50f2fc08c101c129cb79157ad8bbe5ec03d35334d9",
+      "spokenTextSha256": "21a628f3f2654ea044309e50f2fc08c101c129cb79157ad8bbe5ec03d35334d9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f324d7692b98ac443723a7b6d1a59970f1c77e7477823f4b5c02b476f91d3622",
+      "requestFingerprintSha256": "f324d7692b98ac443723a7b6d1a59970f1c77e7477823f4b5c02b476f91d3622",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "12993b653b543787f77570b12ab2dd77071413d12dbefaa8b2ac8d04a306cecc"
+    },
+    {
+      "id": "S3-01-en-reflection-r1",
+      "unitId": "S3-01-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "List common groups of crops (grains, legumes, vegetables, fruits).",
+          "sha256": "438f4dee6bf202a8986816f36a35415dca727d4a7958f3b9a41f9d7843144b21"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment wording and response order; not a pass.",
+          "sha256": "aa606c596b1afd9d37beff2c0f9896eab4f6d617a63dd0513c12759293cf6514"
+        }
+      ],
+      "scientificMeaning": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "displayText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "captionText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenTextSHA256": "4d6da72c69c7455728ebd8a87e8b4fa62ae99d2722564fc2922b9fe850c6de66",
+      "spokenTextSha256": "4d6da72c69c7455728ebd8a87e8b4fa62ae99d2722564fc2922b9fe850c6de66",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd0033eeb2d9a3455be8280c6fa38daeb6264946986521eb4530d7fcf4845ce0",
+      "requestFingerprintSha256": "fd0033eeb2d9a3455be8280c6fa38daeb6264946986521eb4530d7fcf4845ce0",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "12993b653b543787f77570b12ab2dd77071413d12dbefaa8b2ac8d04a306cecc"
+    },
+    {
+      "id": "S3-01-en-glossary-r1",
+      "unitId": "S3-01-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "practical crop group",
+          "sha256": "dfb6a4a7a03d7791c0dc4e593e04e980bb3a483316adda3cb178e3de0cfaa816"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A grouping by agricultural or food use for this lesson; it is not the only way to classify plants.",
+          "sha256": "e8ecc49ad2dd068c392fd165556985badb171dbb0510096d29862040f60afafa"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "cereal",
+          "sha256": "38c09b54483898f2aea7e6c0939e3513a74aa80cf05098ecf92c493b4e34ffbf"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A grass grown chiefly for its edible grain, such as wheat, rice or maize.",
+          "sha256": "27f7281e5d8356aa7039afbd9134aa4c6199d0b1ee3e0c239f22981c0fe70fad"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "legume",
+          "sha256": "682ab9067e792ac2cc1817ebf3529190253b11c3282b2b929d8715a78c9a2694"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.",
+          "sha256": "ba66cdd29dd45051bc80eef9fa033bfc3b78f2d75e6e8258c7c3419aa27af603"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "pulse",
+          "sha256": "41b589ea15f2d94a20fbdde82b0ed6988fb46742a7cdb44e396b0dd4747ffbc2"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "A legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.",
+          "sha256": "a465379cb8f01b5fa2476ad1b76ec6b0d1abbbcae604164187efb8d8f3747c12"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "rhizobia",
+          "sha256": "ce0b3625ae5f7aecf790af72bd05b4b9083b7210bcfbc09b5b7657aa28230841"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Compatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.",
+          "sha256": "5d824999db8053b2b86bd608473287b985e325d42c4612a30e33387f4bb6f53f"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "petiole",
+          "sha256": "6ccbd8808c27696e2fc29101a23bfaece1882dd12125b53ffe41df6e67d31051"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "The stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.",
+          "sha256": "be47b9440c15f1f6b3e0a190259a80cfce74ab07e884665c1ebe783732fd44ed"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "stem tuber",
+          "sha256": "6b9aa82863e1bd1cbd24f072b1e0204df0815ef68c1de3d60e4596974528025a"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "A swollen underground stem used for storage, as in potato.",
+          "sha256": "5bf5c7e582f9ffd51f58bd8a650341c8fa008ebe39a88e08a45ac9fb13d07670"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "storage root",
+          "sha256": "8a85cf5fe1c123ef77ed54d3b8ba189b1f5b88b45e6994daf153e15d2a94f468"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A thickened root storing reserves, as in sweet potato.",
+          "sha256": "8dc287da197e262fe9589b9561ba19e0b46fed3bb8f0b4365ceeda2bd651fd40"
+        }
+      ],
+      "scientificMeaning": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "displayText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "captionText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "spokenText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "spokenTextSHA256": "9f18d56ce30a6d205d2c86441be4e2b44071cc8939c30bf8b7fd4bd19e528a00",
+      "spokenTextSha256": "9f18d56ce30a6d205d2c86441be4e2b44071cc8939c30bf8b7fd4bd19e528a00",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6edaf3cfb0cc4f799f8a71ca6b794d3b8140d25e034b2d1bac24db54192ffeaf",
+      "requestFingerprintSha256": "6edaf3cfb0cc4f799f8a71ca6b794d3b8140d25e034b2d1bac24db54192ffeaf",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "12993b653b543787f77570b12ab2dd77071413d12dbefaa8b2ac8d04a306cecc"
+    },
+    {
+      "id": "S3-01-it-opening-r1",
+      "unitId": "S3-01-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Pensa a ciò che hai mangiato ieri: riso, pane di frumento, fagioli, pomodori e mele. Sono tutti prodotti di colture. Useremo quattro gruppi pratici, verificando anche l'organo raccolto, il campo e l'effetto reale della coltura sul suolo. L'abbinamento al sito e il piano di rotazione saranno trattati nei passi successivi della stazione.",
+          "sha256": "eca0d5a31d079a8f9acf6e8f1d7e26b8cdb7d1655078fd127fb84f5b9ca50ca1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Classificare tutte le colture elencate nei quattro gruppi d'uso, distinguere il frutto botanico dalla verdura d'uso nel pomodoro e la famiglia delle leguminose dai legumi secchi nell'arachide.",
+          "sha256": "89b8329e2a530f37ab5f0bf7b5a62b3b2f1eeaa77862f500a92cd10ed7969a14"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Identificare la parte mangiata di sedano, asparago, patata e patata dolce e documentare una coltura locale per gruppo senza dedurre idoneità da un disegno straniero.",
+          "sha256": "efe8aab5c69b19c2a77c373e2730c596c34fd8bb38bcefc534d13f94e33e1225"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Spiegare che cosa possono significare radici fibrose dei cereali, noduli delle leguminose, raccolto e residui restituiti per il suolo, e perché una leguminosa non garantisce tutto l'azoto per la coltura seguente.",
+          "sha256": "853674fb2ce39d815f66fc905ba899ba3f3fb830ef33636ae91c8bf4c3e0efd7"
+        }
+      ],
+      "scientificMeaning": "Pensa a ciò che hai mangiato ieri: riso, pane di frumento, fagioli, pomodori e mele. Sono tutti prodotti di colture. Useremo quattro gruppi pratici, verificando anche l'organo raccolto, il campo e l'effetto reale della coltura sul suolo. L'abbinamento al sito e il piano di rotazione saranno trattati nei passi successivi della stazione.\n\nClassificare tutte le colture elencate nei quattro gruppi d'uso, distinguere il frutto botanico dalla verdura d'uso nel pomodoro e la famiglia delle leguminose dai legumi secchi nell'arachide.\n\nIdentificare la parte mangiata di sedano, asparago, patata e patata dolce e documentare una coltura locale per gruppo senza dedurre idoneità da un disegno straniero.\n\nSpiegare che cosa possono significare radici fibrose dei cereali, noduli delle leguminose, raccolto e residui restituiti per il suolo, e perché una leguminosa non garantisce tutto l'azoto per la coltura seguente.",
+      "displayText": "Pensa a ciò che hai mangiato ieri: riso, pane di frumento, fagioli, pomodori e mele. Sono tutti prodotti di colture. Useremo quattro gruppi pratici, verificando anche l'organo raccolto, il campo e l'effetto reale della coltura sul suolo. L'abbinamento al sito e il piano di rotazione saranno trattati nei passi successivi della stazione.\n\nClassificare tutte le colture elencate nei quattro gruppi d'uso, distinguere il frutto botanico dalla verdura d'uso nel pomodoro e la famiglia delle leguminose dai legumi secchi nell'arachide.\n\nIdentificare la parte mangiata di sedano, asparago, patata e patata dolce e documentare una coltura locale per gruppo senza dedurre idoneità da un disegno straniero.\n\nSpiegare che cosa possono significare radici fibrose dei cereali, noduli delle leguminose, raccolto e residui restituiti per il suolo, e perché una leguminosa non garantisce tutto l'azoto per la coltura seguente.",
+      "captionText": "Pensa a ciò che hai mangiato ieri: riso, pane di frumento, fagioli, pomodori e mele. Sono tutti prodotti di colture. Useremo quattro gruppi pratici, verificando anche l'organo raccolto, il campo e l'effetto reale della coltura sul suolo. L'abbinamento al sito e il piano di rotazione saranno trattati nei passi successivi della stazione.\n\nClassificare tutte le colture elencate nei quattro gruppi d'uso, distinguere il frutto botanico dalla verdura d'uso nel pomodoro e la famiglia delle leguminose dai legumi secchi nell'arachide.\n\nIdentificare la parte mangiata di sedano, asparago, patata e patata dolce e documentare una coltura locale per gruppo senza dedurre idoneità da un disegno straniero.\n\nSpiegare che cosa possono significare radici fibrose dei cereali, noduli delle leguminose, raccolto e residui restituiti per il suolo, e perché una leguminosa non garantisce tutto l'azoto per la coltura seguente.",
+      "spokenText": "Pensa a ciò che hai mangiato ieri: riso, pane di frumento, fagioli, pomodori e mele. Sono tutti prodotti di colture. Useremo quattro gruppi pratici, verificando anche l'organo raccolto, il campo e l'effetto reale della coltura sul suolo. L'abbinamento al sito e il piano di rotazione saranno trattati nei passi successivi della stazione.\n\nClassificare tutte le colture elencate nei quattro gruppi d'uso, distinguere il frutto botanico dalla verdura d'uso nel pomodoro e la famiglia delle leguminose dai legumi secchi nell'arachide.\n\nIdentificare la parte mangiata di sedano, asparago, patata e patata dolce e documentare una coltura locale per gruppo senza dedurre idoneità da un disegno straniero.\n\nSpiegare che cosa possono significare radici fibrose dei cereali, noduli delle leguminose, raccolto e residui restituiti per il suolo, e perché una leguminosa non garantisce tutto l'azoto per la coltura seguente.",
+      "spokenTextSHA256": "41aa6f4ad9f8b2f651c874cbc7f1b01efdf9e4f972535194a48b4e4543a066cc",
+      "spokenTextSha256": "41aa6f4ad9f8b2f651c874cbc7f1b01efdf9e4f972535194a48b4e4543a066cc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "731a0d1669bef18886c292add9f7237be16860637f2f1108cd64c06062308752",
+      "requestFingerprintSha256": "731a0d1669bef18886c292add9f7237be16860637f2f1108cd64c06062308752",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "b4942e242b87acb62cce65fce004c7a25944081f8b0bff1a92f480ab8d935354"
+    },
+    {
+      "id": "S3-01-it-guided-practice-r1",
+      "unitId": "S3-01-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ordina l'intera lista: mais, riso, frumento, orzo, sorgo, avena; soia, fagiolo rosso, fagiolo nero, lenticchia, pisello, arachide, erba medica; lattuga, spinacio, cavolo, carota, ravanello, rapa, pomodoro, peperone, cetriolo, sedano, asparago; mela, arancia, uva, fragola, mirtillo, banana. Poi scegli due esempi con due prospettive classificatorie valide.",
+          "sha256": "a5782143b52d104577ade9516e02e5d0a6980c9dc9712487bafb38a4ccf1b363"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Nel diagramma a quattro pannelli indica radici fibrose di cereale, nodulo di leguminosa, fittone di carota e un fatto che l'immagine non dimostra sull'idoneità del sito o la profondità numerica delle radici.",
+          "sha256": "f9ac0de2d392a57088881d4ef11ccb95f8f9c15565d97f1269c1d0d5bab9af81"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Per la tua zona registra una coltura osservata o documentata in modo credibile per ogni gruppo e il luogo o la fonte.",
+          "sha256": "65238ed6639ec49051daec5557dff43018d51959f5f1b6b9cddc301cdbf24669"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Spiega da solo la differenza fra due campi di mais e la ripetizione della coltura, confrontati con un compagno, poi rivedi la tua risposta usando prove su coltura, suolo e gestione.",
+          "sha256": "81c4855918b7de7fae649e8764ee51fe6420518134c58460ba300e30c718ac8a"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Nomina il gruppo pratico e, quando serve, separa organo botanico, uso alimentare e status di legume secco. Ogni esempio omesso attiva ripasso mirato.",
+          "sha256": "e4d9fce0b1338360957dde5a6cc7b411c410550c3acd302647c2a5168356ae26"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore può guidare l'osservazione di colture in campo o al mercato e controllare classificazione e ragionamento di ciascuno. Qui i criteri sono conoscitivi; discussione o quiz online non certificano abilità fisiche.",
+          "sha256": "4c7f2cf689e98b9e053855d08fd965e0fd0fd66f0b125a9252a96021fa3f9ed4"
+        }
+      ],
+      "scientificMeaning": "Ordina l'intera lista: mais, riso, frumento, orzo, sorgo, avena; soia, fagiolo rosso, fagiolo nero, lenticchia, pisello, arachide, erba medica; lattuga, spinacio, cavolo, carota, ravanello, rapa, pomodoro, peperone, cetriolo, sedano, asparago; mela, arancia, uva, fragola, mirtillo, banana. Poi scegli due esempi con due prospettive classificatorie valide.\n\nNel diagramma a quattro pannelli indica radici fibrose di cereale, nodulo di leguminosa, fittone di carota e un fatto che l'immagine non dimostra sull'idoneità del sito o la profondità numerica delle radici.\n\nPer la tua zona registra una coltura osservata o documentata in modo credibile per ogni gruppo e il luogo o la fonte.\n\nSpiega da solo la differenza fra due campi di mais e la ripetizione della coltura, confrontati con un compagno, poi rivedi la tua risposta usando prove su coltura, suolo e gestione.\n\nNomina il gruppo pratico e, quando serve, separa organo botanico, uso alimentare e status di legume secco. Ogni esempio omesso attiva ripasso mirato.\n\nIl formatore può guidare l'osservazione di colture in campo o al mercato e controllare classificazione e ragionamento di ciascuno. Qui i criteri sono conoscitivi; discussione o quiz online non certificano abilità fisiche.",
+      "displayText": "Ordina l'intera lista: mais, riso, frumento, orzo, sorgo, avena; soia, fagiolo rosso, fagiolo nero, lenticchia, pisello, arachide, erba medica; lattuga, spinacio, cavolo, carota, ravanello, rapa, pomodoro, peperone, cetriolo, sedano, asparago; mela, arancia, uva, fragola, mirtillo, banana. Poi scegli due esempi con due prospettive classificatorie valide.\n\nNel diagramma a quattro pannelli indica radici fibrose di cereale, nodulo di leguminosa, fittone di carota e un fatto che l'immagine non dimostra sull'idoneità del sito o la profondità numerica delle radici.\n\nPer la tua zona registra una coltura osservata o documentata in modo credibile per ogni gruppo e il luogo o la fonte.\n\nSpiega da solo la differenza fra due campi di mais e la ripetizione della coltura, confrontati con un compagno, poi rivedi la tua risposta usando prove su coltura, suolo e gestione.\n\nNomina il gruppo pratico e, quando serve, separa organo botanico, uso alimentare e status di legume secco. Ogni esempio omesso attiva ripasso mirato.\n\nIl formatore può guidare l'osservazione di colture in campo o al mercato e controllare classificazione e ragionamento di ciascuno. Qui i criteri sono conoscitivi; discussione o quiz online non certificano abilità fisiche.",
+      "captionText": "Ordina l'intera lista: mais, riso, frumento, orzo, sorgo, avena; soia, fagiolo rosso, fagiolo nero, lenticchia, pisello, arachide, erba medica; lattuga, spinacio, cavolo, carota, ravanello, rapa, pomodoro, peperone, cetriolo, sedano, asparago; mela, arancia, uva, fragola, mirtillo, banana. Poi scegli due esempi con due prospettive classificatorie valide.\n\nNel diagramma a quattro pannelli indica radici fibrose di cereale, nodulo di leguminosa, fittone di carota e un fatto che l'immagine non dimostra sull'idoneità del sito o la profondità numerica delle radici.\n\nPer la tua zona registra una coltura osservata o documentata in modo credibile per ogni gruppo e il luogo o la fonte.\n\nSpiega da solo la differenza fra due campi di mais e la ripetizione della coltura, confrontati con un compagno, poi rivedi la tua risposta usando prove su coltura, suolo e gestione.\n\nNomina il gruppo pratico e, quando serve, separa organo botanico, uso alimentare e status di legume secco. Ogni esempio omesso attiva ripasso mirato.\n\nIl formatore può guidare l'osservazione di colture in campo o al mercato e controllare classificazione e ragionamento di ciascuno. Qui i criteri sono conoscitivi; discussione o quiz online non certificano abilità fisiche.",
+      "spokenText": "Ordina l'intera lista: mais, riso, frumento, orzo, sorgo, avena; soia, fagiolo rosso, fagiolo nero, lenticchia, pisello, arachide, erba medica; lattuga, spinacio, cavolo, carota, ravanello, rapa, pomodoro, peperone, cetriolo, sedano, asparago; mela, arancia, uva, fragola, mirtillo, banana. Poi scegli due esempi con due prospettive classificatorie valide.\n\nNel diagramma a quattro pannelli indica radici fibrose di cereale, nodulo di leguminosa, fittone di carota e un fatto che l'immagine non dimostra sull'idoneità del sito o la profondità numerica delle radici.\n\nPer la tua zona registra una coltura osservata o documentata in modo credibile per ogni gruppo e il luogo o la fonte.\n\nSpiega da solo la differenza fra due campi di mais e la ripetizione della coltura, confrontati con un compagno, poi rivedi la tua risposta usando prove su coltura, suolo e gestione.\n\nNomina il gruppo pratico e, quando serve, separa organo botanico, uso alimentare e status di legume secco. Ogni esempio omesso attiva ripasso mirato.\n\nIl formatore può guidare l'osservazione di colture in campo o al mercato e controllare classificazione e ragionamento di ciascuno. Qui i criteri sono conoscitivi; discussione o quiz online non certificano abilità fisiche.",
+      "spokenTextSHA256": "a0c7089907dc93868162b4f7f2f1974a19227473e1149abb1ed874cdbc1d7b8f",
+      "spokenTextSha256": "a0c7089907dc93868162b4f7f2f1974a19227473e1149abb1ed874cdbc1d7b8f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "65651c46105bcdbdcd7d77edcde87ceabfb42c4e33f7ea1c008033b698ff5235",
+      "requestFingerprintSha256": "65651c46105bcdbdcd7d77edcde87ceabfb42c4e33f7ea1c008033b698ff5235",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "b4942e242b87acb62cce65fce004c7a25944081f8b0bff1a92f480ab8d935354"
+    },
+    {
+      "id": "S3-01-it-reflection-r1",
+      "unitId": "S3-01-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Elencare i gruppi comuni di colture: cereali, leguminose, verdure e frutta.",
+          "sha256": "9c73d8d76677d98a74b99273a83ae46053672da1f159a01ff337a099aaba77d9"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Richiesta e ordine originali dell’autovalutazione; non un esito.",
+          "sha256": "c40b0c24a7f058ff4d33c97f853735dc53555d258f51ce19f6a21337af6d82a5"
+        }
+      ],
+      "scientificMeaning": "Elencare i gruppi comuni di colture: cereali, leguminose, verdure e frutta.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "displayText": "Elencare i gruppi comuni di colture: cereali, leguminose, verdure e frutta.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "captionText": "Elencare i gruppi comuni di colture: cereali, leguminose, verdure e frutta.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "spokenText": "Elencare i gruppi comuni di colture: cereali, leguminose, verdure e frutta.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "spokenTextSHA256": "a2e780200ef05946a0da845d43d821fb9e869691ddf7c17b2fdeecdbc6c35deb",
+      "spokenTextSha256": "a2e780200ef05946a0da845d43d821fb9e869691ddf7c17b2fdeecdbc6c35deb",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "859bfe5d7c962b248f3105e4b1df5ccce122cfa71f64d7a7731ceb51ae202a2f",
+      "requestFingerprintSha256": "859bfe5d7c962b248f3105e4b1df5ccce122cfa71f64d7a7731ceb51ae202a2f",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "b4942e242b87acb62cce65fce004c7a25944081f8b0bff1a92f480ab8d935354"
+    },
+    {
+      "id": "S3-01-it-glossary-r1",
+      "unitId": "S3-01-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "gruppo pratico di colture",
+          "sha256": "e067e55685f3dcb7d9f08a0deb33f03430ae2c97e9e77d63affad8b525052901"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Raggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.",
+          "sha256": "7467a0f389d884c1b551e0cd6bd9d8a1aa4c3d685495557abb0d2c5441c5ab98"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "cereale",
+          "sha256": "f1f0e7177ba6e041e199362bd18ff2255bd3f3cb0155a08972c11712c33a0f41"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Graminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.",
+          "sha256": "c978565aaba9f1b5006e0bf694abc741e72a733be74adb64d063cc9448c7b361"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "leguminosa",
+          "sha256": "043c41892eb762f8c502b6df5d9d128b9daf8e9a1d7e686c763991bc3c5ff9c5"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Pianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.",
+          "sha256": "b4608f813337eddb16ee734c83c172edddbb7aca0f47ed2545faa9e596e78d3d"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "legume secco",
+          "sha256": "81ead6be52dcf862cb57f7ebd900b1c929113142eaf7cd4886288d4760da7c00"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Leguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.",
+          "sha256": "91f8e500b341be0a3c2a30b3c2dfc3dc7a0b1fe7337b8d9aa6749fb8415b9ca6"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "rizobi",
+          "sha256": "717f3037be97da465b273a22ba8ae9c96d77738178cad48eadb23f023f097204"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Batteri compatibili che formano noduli con alcune leguminose e possono fissare N atmosferico in condizioni adatte.",
+          "sha256": "5caefdb41b8adda8ebfa747b213d34a6b46d4af3cc871eaab3300ff0c30c7913"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "picciolo",
+          "sha256": "b09163c58940a650515f50eab4aed746443f05b548d4cf3c6671b0615d6f25b6"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Parte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.",
+          "sha256": "5de12f4a9a9ef02be63fb451195564d90b26d19fc93fc1f7a183e199adf53d60"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "tubero caulinare",
+          "sha256": "ec44e6e3e3241ba71857bc09fb44799135a107a22077576d1e65a301b5c4a5eb"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Fusto sotterraneo ingrossato che conserva riserve, come nella patata.",
+          "sha256": "31abe7f0b64e456f1077e18f8ba5338b01b5c171e8974cae8c0078e3d12a6450"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "radice di riserva",
+          "sha256": "ac948223d87612db94d5baf16f2932b30412cfe73db9872bde98b9913ad2f8c0"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Radice ingrossata che conserva riserve, come nella patata dolce.",
+          "sha256": "feb0d6c4f612f6ecf80aa57c2b757b7a10c181b6298e05cf7827093d20a7ea3a"
+        }
+      ],
+      "scientificMeaning": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare N atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+      "displayText": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare N atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+      "captionText": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare N atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+      "spokenText": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare enne atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+      "spokenTextSHA256": "e44194e8895191ced349a90c5164eea7225390a53957b597f2f3bb7f50cd09b1",
+      "spokenTextSha256": "e44194e8895191ced349a90c5164eea7225390a53957b597f2f3bb7f50cd09b1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare N atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+          "spoken": "gruppo pratico di colture\n\nRaggruppamento per uso agricolo o alimentare in questa lezione, non l'unica classificazione delle piante.\n\ncereale\n\nGraminacea coltivata soprattutto per il chicco commestibile, come frumento, riso o mais.\n\nleguminosa\n\nPianta della famiglia dei piselli che di norma forma baccelli; alcune stabiliscono simbiosi di fissazione dell'azoto.\n\nlegume secco\n\nLeguminosa raccolta per semi secchi commestibili; esclude oleaginose come arachide e soia e foraggere come erba medica.\n\nrizobi\n\nBatteri compatibili che formano noduli con alcune leguminose e possono fissare enne atmosferico in condizioni adatte.\n\npicciolo\n\nParte che collega la lamina fogliare al fusto; la costa commestibile del sedano è questa struttura.\n\ntubero caulinare\n\nFusto sotterraneo ingrossato che conserva riserve, come nella patata.\n\nradice di riserva\n\nRadice ingrossata che conserva riserve, come nella patata dolce.",
+          "occurrences": 1,
+          "purpose": "Faithful fullconnected source adaptation for naturalspokenlocale, numerals and Nnotation expanded withoutaltering quantities/legumeconditions/harvestorgan distinctions. No examples/model/UI/assessmentkey or3Dclaim narrated."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b831c4d61cb699ad1b2b6e428638cfb152092920ad4e717f61a04c783d4aa55c",
+      "requestFingerprintSha256": "b831c4d61cb699ad1b2b6e428638cfb152092920ad4e717f61a04c783d4aa55c",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "b4942e242b87acb62cce65fce004c7a25944081f8b0bff1a92f480ab8d935354"
+    },
+    {
+      "id": "S3-01-de-opening-r1",
+      "unitId": "S3-01-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Denke an das Essen von gestern: Reis, Weizenbrot, Bohnen, Tomaten und Äpfel. Alles stammt aus Kulturpflanzen. Wir nutzen vier praktische Gruppen und prüfen zugleich das geerntete Pflanzenorgan, den Standort und die tatsächliche Wirkung der Kultur auf den Boden. Standortzuordnung und Fruchtfolgeplan folgen in späteren Schritten dieser Station.",
+          "sha256": "2d1a8d5406760844824a9947b568267cecf19727b7080d8809bb550aab3acf60"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Die genannten Kulturen nach vier praktischen Nutzungsgruppen ordnen, bei Tomate botanische Frucht und Gemüseverwendung sowie bei Erdnuss Leguminose und trockene Hülsenfrucht unterscheiden.",
+          "sha256": "e4ae19a268c4a041f63e68f9ea29022c64de15302a37a16c73d8a2a370b212aa"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Das verzehrte Organ von Stangensellerie, Spargel, Kartoffel und Süßkartoffel benennen und je Gruppe ein tatsächlich örtlich angebautes Beispiel belegen, ohne Eignung aus einer ausländischen Abbildung abzuleiten.",
+          "sha256": "79614719d63cfe2d2119555e9556898ccdca362946eb4e7e08da244be69181bf"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Mögliche Bodenwirkungen faseriger Getreidewurzeln, Leguminosenknöllchen, Ernte und zurückgelassener Reste erklären und begründen, warum eine Leguminose keinen vollständigen Stickstoffersatz garantiert.",
+          "sha256": "6f5a63d36ab88b11f04383a453302c46dca856b0d8f0115f8468c656d287be93"
+        }
+      ],
+      "scientificMeaning": "Denke an das Essen von gestern: Reis, Weizenbrot, Bohnen, Tomaten und Äpfel. Alles stammt aus Kulturpflanzen. Wir nutzen vier praktische Gruppen und prüfen zugleich das geerntete Pflanzenorgan, den Standort und die tatsächliche Wirkung der Kultur auf den Boden. Standortzuordnung und Fruchtfolgeplan folgen in späteren Schritten dieser Station.\n\nDie genannten Kulturen nach vier praktischen Nutzungsgruppen ordnen, bei Tomate botanische Frucht und Gemüseverwendung sowie bei Erdnuss Leguminose und trockene Hülsenfrucht unterscheiden.\n\nDas verzehrte Organ von Stangensellerie, Spargel, Kartoffel und Süßkartoffel benennen und je Gruppe ein tatsächlich örtlich angebautes Beispiel belegen, ohne Eignung aus einer ausländischen Abbildung abzuleiten.\n\nMögliche Bodenwirkungen faseriger Getreidewurzeln, Leguminosenknöllchen, Ernte und zurückgelassener Reste erklären und begründen, warum eine Leguminose keinen vollständigen Stickstoffersatz garantiert.",
+      "displayText": "Denke an das Essen von gestern: Reis, Weizenbrot, Bohnen, Tomaten und Äpfel. Alles stammt aus Kulturpflanzen. Wir nutzen vier praktische Gruppen und prüfen zugleich das geerntete Pflanzenorgan, den Standort und die tatsächliche Wirkung der Kultur auf den Boden. Standortzuordnung und Fruchtfolgeplan folgen in späteren Schritten dieser Station.\n\nDie genannten Kulturen nach vier praktischen Nutzungsgruppen ordnen, bei Tomate botanische Frucht und Gemüseverwendung sowie bei Erdnuss Leguminose und trockene Hülsenfrucht unterscheiden.\n\nDas verzehrte Organ von Stangensellerie, Spargel, Kartoffel und Süßkartoffel benennen und je Gruppe ein tatsächlich örtlich angebautes Beispiel belegen, ohne Eignung aus einer ausländischen Abbildung abzuleiten.\n\nMögliche Bodenwirkungen faseriger Getreidewurzeln, Leguminosenknöllchen, Ernte und zurückgelassener Reste erklären und begründen, warum eine Leguminose keinen vollständigen Stickstoffersatz garantiert.",
+      "captionText": "Denke an das Essen von gestern: Reis, Weizenbrot, Bohnen, Tomaten und Äpfel. Alles stammt aus Kulturpflanzen. Wir nutzen vier praktische Gruppen und prüfen zugleich das geerntete Pflanzenorgan, den Standort und die tatsächliche Wirkung der Kultur auf den Boden. Standortzuordnung und Fruchtfolgeplan folgen in späteren Schritten dieser Station.\n\nDie genannten Kulturen nach vier praktischen Nutzungsgruppen ordnen, bei Tomate botanische Frucht und Gemüseverwendung sowie bei Erdnuss Leguminose und trockene Hülsenfrucht unterscheiden.\n\nDas verzehrte Organ von Stangensellerie, Spargel, Kartoffel und Süßkartoffel benennen und je Gruppe ein tatsächlich örtlich angebautes Beispiel belegen, ohne Eignung aus einer ausländischen Abbildung abzuleiten.\n\nMögliche Bodenwirkungen faseriger Getreidewurzeln, Leguminosenknöllchen, Ernte und zurückgelassener Reste erklären und begründen, warum eine Leguminose keinen vollständigen Stickstoffersatz garantiert.",
+      "spokenText": "Denke an das Essen von gestern: Reis, Weizenbrot, Bohnen, Tomaten und Äpfel. Alles stammt aus Kulturpflanzen. Wir nutzen vier praktische Gruppen und prüfen zugleich das geerntete Pflanzenorgan, den Standort und die tatsächliche Wirkung der Kultur auf den Boden. Standortzuordnung und Fruchtfolgeplan folgen in späteren Schritten dieser Station.\n\nDie genannten Kulturen nach vier praktischen Nutzungsgruppen ordnen, bei Tomate botanische Frucht und Gemüseverwendung sowie bei Erdnuss Leguminose und trockene Hülsenfrucht unterscheiden.\n\nDas verzehrte Organ von Stangensellerie, Spargel, Kartoffel und Süßkartoffel benennen und je Gruppe ein tatsächlich örtlich angebautes Beispiel belegen, ohne Eignung aus einer ausländischen Abbildung abzuleiten.\n\nMögliche Bodenwirkungen faseriger Getreidewurzeln, Leguminosenknöllchen, Ernte und zurückgelassener Reste erklären und begründen, warum eine Leguminose keinen vollständigen Stickstoffersatz garantiert.",
+      "spokenTextSHA256": "0f77188be59337354b1587f7ce9b6d64142cb065a0b452de9bbf19d7019972e9",
+      "spokenTextSha256": "0f77188be59337354b1587f7ce9b6d64142cb065a0b452de9bbf19d7019972e9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "282c4954ca3e93f0a87170f853f85e89f76c0913a8a7b405809f029dd5c25489",
+      "requestFingerprintSha256": "282c4954ca3e93f0a87170f853f85e89f76c0913a8a7b405809f029dd5c25489",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "4c19bb0f046c214606bcd693b3a120247ebb60eb695db421ad4cd66ac69129ab"
+    },
+    {
+      "id": "S3-01-de-guided-practice-r1",
+      "unitId": "S3-01-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ordne die vollständige Liste: Mais, Reis, Weizen, Gerste, Sorghum, Hafer; Soja, rote Bohne, schwarze Bohne, Linse, Erbse, Erdnuss, Luzerne; Salat, Spinat, Kohl, Karotte, Radieschen, Speiserübe, Tomate, Paprika, Gurke, Stangensellerie, Spargel; Apfel, Orange, Traube, Erdbeere, Heidelbeere, Banane. Wähle danach zwei Beispiele mit mehr als einer gültigen Einordnungsperspektive.",
+          "sha256": "b2399ac6b7c7447f412a921da023a198770c408c82c643fd935186c97768bcd4"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Zeige in der vierteiligen Abbildung faserige Getreidewurzeln, ein Leguminosenknöllchen, die Karotten-Pfahlwurzel und eine Tatsache, die das Bild zur Standorteignung oder gemessenen Wurzeltiefe nicht belegen kann.",
+          "sha256": "63c2dfd9c6cbcc1a625d604ee70ab21e24fbfb68ab994cf3af233c0bee7c9879"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Notiere für deinen Ort je Gruppe eine beobachtete oder glaubwürdig belegte Kultur und den Standort oder die Quelle.",
+          "sha256": "54531e5fec6f40d6955e9fea74e1d054bd98cc740ae9405086e824b6e398144e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Erkläre die zwei Fragen zu verschiedenen Maisfeldern und wiederholter Kultur erst allein, vergleiche zu zweit und überarbeite deine eigene Antwort mit Kultur-, Boden- und Bewirtschaftungsbelegen.",
+          "sha256": "729d9f4b84cddc1b315bdffb9087745ed594467abe14ba0283385b73e5593346"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Nenne die Nutzungsgruppe und erkläre gegebenenfalls getrennt Organ, Küchengebrauch oder Status als trockene Hülsenfrucht. Fehlende Kulturen lösen gezielte Wiederholung aus.",
+          "sha256": "c4e74e67f67a2816b848a81413931d13741a9f73700a0a92e0a5448bda9fecee"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Die Fachkraft kann Kulturbeispiele auf einem Feld oder Markt zeigen und Einordnung und Gründe jeder Person prüfen. Diese Stufe enthält nur Wissenskriterien; Gruppengespräch oder Online-Test bescheinigt keine körperliche Fertigkeit.",
+          "sha256": "b1c65831c3050e1a097159520cb30414da506b53b8b65f83780f9b7888ae0c3d"
+        }
+      ],
+      "scientificMeaning": "Ordne die vollständige Liste: Mais, Reis, Weizen, Gerste, Sorghum, Hafer; Soja, rote Bohne, schwarze Bohne, Linse, Erbse, Erdnuss, Luzerne; Salat, Spinat, Kohl, Karotte, Radieschen, Speiserübe, Tomate, Paprika, Gurke, Stangensellerie, Spargel; Apfel, Orange, Traube, Erdbeere, Heidelbeere, Banane. Wähle danach zwei Beispiele mit mehr als einer gültigen Einordnungsperspektive.\n\nZeige in der vierteiligen Abbildung faserige Getreidewurzeln, ein Leguminosenknöllchen, die Karotten-Pfahlwurzel und eine Tatsache, die das Bild zur Standorteignung oder gemessenen Wurzeltiefe nicht belegen kann.\n\nNotiere für deinen Ort je Gruppe eine beobachtete oder glaubwürdig belegte Kultur und den Standort oder die Quelle.\n\nErkläre die zwei Fragen zu verschiedenen Maisfeldern und wiederholter Kultur erst allein, vergleiche zu zweit und überarbeite deine eigene Antwort mit Kultur-, Boden- und Bewirtschaftungsbelegen.\n\nNenne die Nutzungsgruppe und erkläre gegebenenfalls getrennt Organ, Küchengebrauch oder Status als trockene Hülsenfrucht. Fehlende Kulturen lösen gezielte Wiederholung aus.\n\nDie Fachkraft kann Kulturbeispiele auf einem Feld oder Markt zeigen und Einordnung und Gründe jeder Person prüfen. Diese Stufe enthält nur Wissenskriterien; Gruppengespräch oder Online-Test bescheinigt keine körperliche Fertigkeit.",
+      "displayText": "Ordne die vollständige Liste: Mais, Reis, Weizen, Gerste, Sorghum, Hafer; Soja, rote Bohne, schwarze Bohne, Linse, Erbse, Erdnuss, Luzerne; Salat, Spinat, Kohl, Karotte, Radieschen, Speiserübe, Tomate, Paprika, Gurke, Stangensellerie, Spargel; Apfel, Orange, Traube, Erdbeere, Heidelbeere, Banane. Wähle danach zwei Beispiele mit mehr als einer gültigen Einordnungsperspektive.\n\nZeige in der vierteiligen Abbildung faserige Getreidewurzeln, ein Leguminosenknöllchen, die Karotten-Pfahlwurzel und eine Tatsache, die das Bild zur Standorteignung oder gemessenen Wurzeltiefe nicht belegen kann.\n\nNotiere für deinen Ort je Gruppe eine beobachtete oder glaubwürdig belegte Kultur und den Standort oder die Quelle.\n\nErkläre die zwei Fragen zu verschiedenen Maisfeldern und wiederholter Kultur erst allein, vergleiche zu zweit und überarbeite deine eigene Antwort mit Kultur-, Boden- und Bewirtschaftungsbelegen.\n\nNenne die Nutzungsgruppe und erkläre gegebenenfalls getrennt Organ, Küchengebrauch oder Status als trockene Hülsenfrucht. Fehlende Kulturen lösen gezielte Wiederholung aus.\n\nDie Fachkraft kann Kulturbeispiele auf einem Feld oder Markt zeigen und Einordnung und Gründe jeder Person prüfen. Diese Stufe enthält nur Wissenskriterien; Gruppengespräch oder Online-Test bescheinigt keine körperliche Fertigkeit.",
+      "captionText": "Ordne die vollständige Liste: Mais, Reis, Weizen, Gerste, Sorghum, Hafer; Soja, rote Bohne, schwarze Bohne, Linse, Erbse, Erdnuss, Luzerne; Salat, Spinat, Kohl, Karotte, Radieschen, Speiserübe, Tomate, Paprika, Gurke, Stangensellerie, Spargel; Apfel, Orange, Traube, Erdbeere, Heidelbeere, Banane. Wähle danach zwei Beispiele mit mehr als einer gültigen Einordnungsperspektive.\n\nZeige in der vierteiligen Abbildung faserige Getreidewurzeln, ein Leguminosenknöllchen, die Karotten-Pfahlwurzel und eine Tatsache, die das Bild zur Standorteignung oder gemessenen Wurzeltiefe nicht belegen kann.\n\nNotiere für deinen Ort je Gruppe eine beobachtete oder glaubwürdig belegte Kultur und den Standort oder die Quelle.\n\nErkläre die zwei Fragen zu verschiedenen Maisfeldern und wiederholter Kultur erst allein, vergleiche zu zweit und überarbeite deine eigene Antwort mit Kultur-, Boden- und Bewirtschaftungsbelegen.\n\nNenne die Nutzungsgruppe und erkläre gegebenenfalls getrennt Organ, Küchengebrauch oder Status als trockene Hülsenfrucht. Fehlende Kulturen lösen gezielte Wiederholung aus.\n\nDie Fachkraft kann Kulturbeispiele auf einem Feld oder Markt zeigen und Einordnung und Gründe jeder Person prüfen. Diese Stufe enthält nur Wissenskriterien; Gruppengespräch oder Online-Test bescheinigt keine körperliche Fertigkeit.",
+      "spokenText": "Ordne die vollständige Liste: Mais, Reis, Weizen, Gerste, Sorghum, Hafer; Soja, rote Bohne, schwarze Bohne, Linse, Erbse, Erdnuss, Luzerne; Salat, Spinat, Kohl, Karotte, Radieschen, Speiserübe, Tomate, Paprika, Gurke, Stangensellerie, Spargel; Apfel, Orange, Traube, Erdbeere, Heidelbeere, Banane. Wähle danach zwei Beispiele mit mehr als einer gültigen Einordnungsperspektive.\n\nZeige in der vierteiligen Abbildung faserige Getreidewurzeln, ein Leguminosenknöllchen, die Karotten-Pfahlwurzel und eine Tatsache, die das Bild zur Standorteignung oder gemessenen Wurzeltiefe nicht belegen kann.\n\nNotiere für deinen Ort je Gruppe eine beobachtete oder glaubwürdig belegte Kultur und den Standort oder die Quelle.\n\nErkläre die zwei Fragen zu verschiedenen Maisfeldern und wiederholter Kultur erst allein, vergleiche zu zweit und überarbeite deine eigene Antwort mit Kultur-, Boden- und Bewirtschaftungsbelegen.\n\nNenne die Nutzungsgruppe und erkläre gegebenenfalls getrennt Organ, Küchengebrauch oder Status als trockene Hülsenfrucht. Fehlende Kulturen lösen gezielte Wiederholung aus.\n\nDie Fachkraft kann Kulturbeispiele auf einem Feld oder Markt zeigen und Einordnung und Gründe jeder Person prüfen. Diese Stufe enthält nur Wissenskriterien; Gruppengespräch oder Online-Test bescheinigt keine körperliche Fertigkeit.",
+      "spokenTextSHA256": "e0da369d1b91a8323aace1d014e4070d4bc360649bb09c2ec90ed6e51051292d",
+      "spokenTextSha256": "e0da369d1b91a8323aace1d014e4070d4bc360649bb09c2ec90ed6e51051292d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0ec82a1779e54811ecb567a23959d6e0284e94dce13da707cb5e4aca77c80db0",
+      "requestFingerprintSha256": "0ec82a1779e54811ecb567a23959d6e0284e94dce13da707cb5e4aca77c80db0",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "4c19bb0f046c214606bcd693b3a120247ebb60eb695db421ad4cd66ac69129ab"
+    },
+    {
+      "id": "S3-01-de-reflection-r1",
+      "unitId": "S3-01-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Übliche Kulturgruppen nennen: Getreide, Leguminosen, Gemüse und Obst.",
+          "sha256": "71c5facdf04c67ee018c5ea118e0251fac89ef7d5dfd4226a6808b63cf68ff60"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Ursprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+          "sha256": "9717b97862b45031706d41ef2fcd0b3735a39b5491bf6980e9d1c619fcb0fb67"
+        }
+      ],
+      "scientificMeaning": "Übliche Kulturgruppen nennen: Getreide, Leguminosen, Gemüse und Obst.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "displayText": "Übliche Kulturgruppen nennen: Getreide, Leguminosen, Gemüse und Obst.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "captionText": "Übliche Kulturgruppen nennen: Getreide, Leguminosen, Gemüse und Obst.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "spokenText": "Übliche Kulturgruppen nennen: Getreide, Leguminosen, Gemüse und Obst.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "spokenTextSHA256": "d45732175f42aebcb9f22b67ff92a04e7610825fa78243275ceb1b53b7f4a9b8",
+      "spokenTextSha256": "d45732175f42aebcb9f22b67ff92a04e7610825fa78243275ceb1b53b7f4a9b8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "816d69db4f282fd2af067dacc633e1b063644879bac593b7132cecad1f20d5ce",
+      "requestFingerprintSha256": "816d69db4f282fd2af067dacc633e1b063644879bac593b7132cecad1f20d5ce",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "4c19bb0f046c214606bcd693b3a120247ebb60eb695db421ad4cd66ac69129ab"
+    },
+    {
+      "id": "S3-01-de-glossary-r1",
+      "unitId": "S3-01-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "praktische Kulturgruppe",
+          "sha256": "711b1161648bdcd42b9d51efa649de6ffe43749b8951354156e83d15a764b3bf"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Einteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.",
+          "sha256": "04ed937434c503ea90277d2060bcea0edb5083ff9f36949e274a07c746486ba9"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Getreide",
+          "sha256": "78128fbe525c35a12585231741c87147641b6525f85372854613e492c5f5fc06"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Gras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.",
+          "sha256": "947a95569ac65fb95ddf1f2e23f0e27f1bb0d2e3bd6bdb85f3297a8bcbc30573"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Leguminose",
+          "sha256": "53421fc2f3f223400d990d258ca8107805c8208075ddc32d85e7411c74b514c4"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Pflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine N-fixierende Symbiose eingehen.",
+          "sha256": "b32606500bdab3ba7bfa6d921e86272e1162e1ea46417df5674171f6603b34a4"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "trockene Hülsenfrucht",
+          "sha256": "a1bd681d284e04a8ae4ace24726cfe99aa54ecc4c1919e212fccac07b6357249"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Leguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss/Soja und Futterpflanzen wie Luzerne.",
+          "sha256": "4b822ccd9e585720bc2cbd36e2554630816723d49b546f2ef553de86c56afb55"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Rhizobien",
+          "sha256": "96a2038e7e0c9a2675e8827eb36f6b338ce231944688cb781d6085ba3dfd0097"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Passende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.",
+          "sha256": "cca520558506117109843f0101d3cbaf1708bfa3fa4b9f12b40bd443e6ce02ff"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Blattstiel",
+          "sha256": "3cd77afe29168935807c7aba1a4f4dcffdf8ae41a89ae73d7ce791e7f1b40096"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Verbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.",
+          "sha256": "10294f76194449cd984cdab7682dca35067acc506b8d426538d04ab9c3e5be4d"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Sprossknolle",
+          "sha256": "93d2f22b96963a60c1bd1aae7472f9663641095e86b22b2f4c5033043f0ebaf5"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Verdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.",
+          "sha256": "32335c8e6536a0bdc99cac2af77238a9f9ffcf21d57e00a33b8c6ecb12a3fbfc"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Speicherwurzel",
+          "sha256": "f14af13f9a2a62400a9f17707fadf9b46205f6c1850e240d0b478225e7201cf3"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Verdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+          "sha256": "77690885e8ac23ab0365b5d5d09b7017db0f5a9739969cd35be86506bebef791"
+        }
+      ],
+      "scientificMeaning": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine N-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss/Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+      "displayText": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine N-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss/Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+      "captionText": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine N-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss/Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+      "spokenText": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine En-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss, Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+      "spokenTextSHA256": "a6b5dc832f5ca5bf1c5968bb0bd87420b06d0572ff787177cbf4f46769faf6e1",
+      "spokenTextSha256": "a6b5dc832f5ca5bf1c5968bb0bd87420b06d0572ff787177cbf4f46769faf6e1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine N-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss/Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+          "spoken": "praktische Kulturgruppe\n\nEinteilung nach landwirtschaftlicher oder Lebensmittel-Nutzung in dieser Lektion; nicht die einzige botanische Ordnung.\n\nGetreide\n\nGras, vor allem wegen seiner essbaren Körner angebaut, etwa Weizen, Reis oder Mais.\n\nLeguminose\n\nPflanze aus der Hülsenfrüchtlerfamilie, die meist Hülsen bildet; manche können eine En-fixierende Symbiose eingehen.\n\ntrockene Hülsenfrucht\n\nLeguminose für trockene essbare Samen; ausgenommen Ölsaaten wie Erdnuss, Soja und Futterpflanzen wie Luzerne.\n\nRhizobien\n\nPassende Bakterien, die mit bestimmten Leguminosen Knöllchen bilden und unter geeigneten Bedingungen Luftstickstoff fixieren können.\n\nBlattstiel\n\nVerbindet die Blattspreite mit dem Spross; der übliche essbare Selleriestiel ist so ein Organ.\n\nSprossknolle\n\nVerdickter unterirdischer Spross als Speicherorgan, wie bei Kartoffeln.\n\nSpeicherwurzel\n\nVerdickte Wurzel für Reservestoffe, wie bei Süßkartoffeln.",
+          "occurrences": 1,
+          "purpose": "Faithful fullconnected source adaptation for naturalspokenlocale, numerals and Nnotation expanded withoutaltering quantities/legumeconditions/harvestorgan distinctions. No examples/model/UI/assessmentkey or3Dclaim narrated."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "30ff368ad10f57cad28af24c4706bd2464c48fbc704d2fcba05d1a04d132a339",
+      "requestFingerprintSha256": "30ff368ad10f57cad28af24c4706bd2464c48fbc704d2fcba05d1a04d132a339",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "4c19bb0f046c214606bcd693b3a120247ebb60eb695db421ad4cd66ac69129ab"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-01-ar-EG-opening-r1",
+      "S3-01-ar-EG-guided-practice-r1",
+      "S3-01-ar-EG-reflection-r1",
+      "S3-01-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-01-en-opening-r1",
+      "S3-01-en-guided-practice-r1",
+      "S3-01-en-reflection-r1",
+      "S3-01-en-glossary-r1"
+    ],
+    "it": [
+      "S3-01-it-opening-r1",
+      "S3-01-it-guided-practice-r1",
+      "S3-01-it-reflection-r1",
+      "S3-01-it-glossary-r1"
+    ],
+    "de": [
+      "S3-01-de-opening-r1",
+      "S3-01-de-guided-practice-r1",
+      "S3-01-de-reflection-r1",
+      "S3-01-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

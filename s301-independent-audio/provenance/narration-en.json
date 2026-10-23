@@ -1,0 +1,287 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-en.json",
+    "sha256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+    "bytes": 31414
+  },
+  "units": [
+    {
+      "id": "S3-01-en-opening-r1",
+      "unitId": "S3-01-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.",
+          "sha256": "7405abede998773f2fc2d7cfaa2bd246f6b40e63de29ccc27d6592cd7d75a02e"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Sort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.",
+          "sha256": "62f156de40e4c29718caa282adb84a43455a5d6d761f406e491b530abe166c28"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Identify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.",
+          "sha256": "a8c3d66ee6b9fa64a88ec1fa9c77b7c85cc98cd6c7af546fd47ba770470faa93"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+          "sha256": "57a0ef2b73e6119ab4502fb7820069209881a9fbac25997c172d08a8ef14af94"
+        }
+      ],
+      "scientificMeaning": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "displayText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "captionText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "spokenText": "Think about yesterday's food: rice, wheat bread, beans, tomatoes and apples. Each comes from a crop. We will use four practical groups to describe what we grow, while checking the plant part, the field and the crop's actual effect on soil. The wider station later addresses site matching and a rotation plan.\n\nSort the listed crops into the four practical use groups, distinguish a botanical fruit from a culinary vegetable using tomato, and distinguish the legume family from dry pulses using peanut.\n\nIdentify the eaten part in celery, asparagus, potato and sweet potato, and document one locally grown example of each practical group without assuming local suitability from a foreign illustration.\n\nExplain what fibrous cereal roots, legume nodules, harvested produce and retained residues can mean for soil, and explain why a legume never guarantees a full nitrogen credit or removes the need for a field assessment.",
+      "spokenTextSHA256": "81938e20d2cd2dffeb266a9ecbbacfff11e8b2115f6ccdc3ce88e7b044cc40c4",
+      "spokenTextSha256": "81938e20d2cd2dffeb266a9ecbbacfff11e8b2115f6ccdc3ce88e7b044cc40c4",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b84cedd799d5ec87455d696582d856cfa3e6332ac6c04e53549099775c412c0c",
+      "requestFingerprintSha256": "b84cedd799d5ec87455d696582d856cfa3e6332ac6c04e53549099775c412c0c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-guided-practice-r1",
+      "unitId": "S3-01-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.",
+          "sha256": "f465f5a4571f101b40c36b730b94caab2743f953b66e8184328d1aa2d50b053d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "In the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.",
+          "sha256": "dc8571293e1792ae035da02ab37e896ce8c50429241287bf0043a579475800db"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "For your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.",
+          "sha256": "5e640d15501de9ab7819abd2cdc4541344e533aa21ce76ece268760ee0796a6f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Individually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.",
+          "sha256": "5ad45450b4f69ee4271f4d31ad1ab627f36cd0bc6aeb537eea7a0bd48379d749"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Name the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.",
+          "sha256": "6d72284260f4b687dd05bf4f7d856b166ffa98b2f958cbbaf9136f83e4a51477"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+          "sha256": "1dff080c47243266ea18c137b6da700253c6915b7966f739aa1b30a1a31f7c4f"
+        }
+      ],
+      "scientificMeaning": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "displayText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "captionText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "spokenText": "Sort the full crop list: maize, rice, wheat, barley, sorghum, oats; soybean, kidney bean, black bean, lentil, pea, peanut, alfalfa; lettuce, spinach, cabbage, carrot, radish, turnip, tomato, pepper, cucumber, celery, asparagus; apple, orange, grape, strawberry, blueberry, banana. Then select two items with more than one valid classification lens.\n\nIn the four-panel diagram, identify cereal fibrous roots, a legume nodule, carrot taproot and one fact the picture cannot establish about site suitability or numerical root depth.\n\nFor your locality, record one observed or credibly documented crop in each use group and the place or source of the observation.\n\nIndividually explain the two maize-field and repeated-crop questions, compare with a partner, then revise your own answer using crop, soil and management evidence.\n\nName the practical group and, where relevant, separately explain botanical organ, culinary use or dry-pulse status. An omitted crop triggers a targeted retry.\n\nThe trainer may facilitate field or market observation of local crop examples and inspect each student's classification and reasoning. This step carries knowledge criteria only; no group discussion or online quiz certifies a physical skill.",
+      "spokenTextSHA256": "21a628f3f2654ea044309e50f2fc08c101c129cb79157ad8bbe5ec03d35334d9",
+      "spokenTextSha256": "21a628f3f2654ea044309e50f2fc08c101c129cb79157ad8bbe5ec03d35334d9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f324d7692b98ac443723a7b6d1a59970f1c77e7477823f4b5c02b476f91d3622",
+      "requestFingerprintSha256": "f324d7692b98ac443723a7b6d1a59970f1c77e7477823f4b5c02b476f91d3622",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-reflection-r1",
+      "unitId": "S3-01-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "List common groups of crops (grains, legumes, vegetables, fruits).",
+          "sha256": "438f4dee6bf202a8986816f36a35415dca727d4a7958f3b9a41f9d7843144b21"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment wording and response order; not a pass.",
+          "sha256": "aa606c596b1afd9d37beff2c0f9896eab4f6d617a63dd0513c12759293cf6514"
+        }
+      ],
+      "scientificMeaning": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "displayText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "captionText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenText": "List common groups of crops (grains, legumes, vegetables, fruits).\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenTextSHA256": "4d6da72c69c7455728ebd8a87e8b4fa62ae99d2722564fc2922b9fe850c6de66",
+      "spokenTextSha256": "4d6da72c69c7455728ebd8a87e8b4fa62ae99d2722564fc2922b9fe850c6de66",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd0033eeb2d9a3455be8280c6fa38daeb6264946986521eb4530d7fcf4845ce0",
+      "requestFingerprintSha256": "fd0033eeb2d9a3455be8280c6fa38daeb6264946986521eb4530d7fcf4845ce0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-glossary-r1",
+      "unitId": "S3-01-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "practical crop group",
+          "sha256": "dfb6a4a7a03d7791c0dc4e593e04e980bb3a483316adda3cb178e3de0cfaa816"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A grouping by agricultural or food use for this lesson; it is not the only way to classify plants.",
+          "sha256": "e8ecc49ad2dd068c392fd165556985badb171dbb0510096d29862040f60afafa"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "cereal",
+          "sha256": "38c09b54483898f2aea7e6c0939e3513a74aa80cf05098ecf92c493b4e34ffbf"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A grass grown chiefly for its edible grain, such as wheat, rice or maize.",
+          "sha256": "27f7281e5d8356aa7039afbd9134aa4c6199d0b1ee3e0c239f22981c0fe70fad"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "legume",
+          "sha256": "682ab9067e792ac2cc1817ebf3529190253b11c3282b2b929d8715a78c9a2694"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.",
+          "sha256": "ba66cdd29dd45051bc80eef9fa033bfc3b78f2d75e6e8258c7c3419aa27af603"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "pulse",
+          "sha256": "41b589ea15f2d94a20fbdde82b0ed6988fb46742a7cdb44e396b0dd4747ffbc2"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "A legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.",
+          "sha256": "a465379cb8f01b5fa2476ad1b76ec6b0d1abbbcae604164187efb8d8f3747c12"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "rhizobia",
+          "sha256": "ce0b3625ae5f7aecf790af72bd05b4b9083b7210bcfbc09b5b7657aa28230841"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Compatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.",
+          "sha256": "5d824999db8053b2b86bd608473287b985e325d42c4612a30e33387f4bb6f53f"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "petiole",
+          "sha256": "6ccbd8808c27696e2fc29101a23bfaece1882dd12125b53ffe41df6e67d31051"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "The stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.",
+          "sha256": "be47b9440c15f1f6b3e0a190259a80cfce74ab07e884665c1ebe783732fd44ed"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "stem tuber",
+          "sha256": "6b9aa82863e1bd1cbd24f072b1e0204df0815ef68c1de3d60e4596974528025a"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "A swollen underground stem used for storage, as in potato.",
+          "sha256": "5bf5c7e582f9ffd51f58bd8a650341c8fa008ebe39a88e08a45ac9fb13d07670"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "storage root",
+          "sha256": "8a85cf5fe1c123ef77ed54d3b8ba189b1f5b88b45e6994daf153e15d2a94f468"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A thickened root storing reserves, as in sweet potato.",
+          "sha256": "8dc287da197e262fe9589b9561ba19e0b46fed3bb8f0b4365ceeda2bd651fd40"
+        }
+      ],
+      "scientificMeaning": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "displayText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "captionText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "spokenText": "practical crop group\n\nA grouping by agricultural or food use for this lesson; it is not the only way to classify plants.\n\ncereal\n\nA grass grown chiefly for its edible grain, such as wheat, rice or maize.\n\nlegume\n\nA plant in the pea family that typically produces pods; some can form nitrogen-fixing symbioses.\n\npulse\n\nA legume crop harvested for its dry edible seed; the term excludes oilseed legumes such as peanut and soybean and forage legumes such as alfalfa.\n\nrhizobia\n\nCompatible bacteria that can form nodules with certain legumes and fix atmospheric nitrogen under suitable conditions.\n\npetiole\n\nThe stalk attaching a leaf blade to the stem; the common edible celery stalk is this structure.\n\nstem tuber\n\nA swollen underground stem used for storage, as in potato.\n\nstorage root\n\nA thickened root storing reserves, as in sweet potato.",
+      "spokenTextSHA256": "9f18d56ce30a6d205d2c86441be4e2b44071cc8939c30bf8b7fd4bd19e528a00",
+      "spokenTextSha256": "9f18d56ce30a6d205d2c86441be4e2b44071cc8939c30bf8b7fd4bd19e528a00",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6edaf3cfb0cc4f799f8a71ca6b794d3b8140d25e034b2d1bac24db54192ffeaf",
+      "requestFingerprintSha256": "6edaf3cfb0cc4f799f8a71ca6b794d3b8140d25e034b2d1bac24db54192ffeaf",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
