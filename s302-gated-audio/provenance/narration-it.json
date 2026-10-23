@@ -1,0 +1,365 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-it.json",
+    "sha256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+    "bytes": 31956
+  },
+  "units": [
+    {
+      "id": "S3-02-it-E01-r1",
+      "unitId": "S3-02-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Campo bagnato e appiccicoso",
+          "sha256": "17625eac3e7739174f78d2ab8280a4bd115b3a60483c582ed295cc4c6fe32f56"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Dopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.",
+          "sha256": "1626db870835b4746fa1d0295f756ea70b66db4b3b456ccfa882f547d361303b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Una tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.",
+          "sha256": "0b05d3844c5b5afa15b50f52dc57582ced736998919aee8f4dcd982d27ac7eb7"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Verificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.",
+          "sha256": "29fc17837756c9ad60d4d9393cf87e78ad9cb514344fc876dc6e02a3b2d475e2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "La carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.",
+          "sha256": "a4a1710cd805cdb43ad80c80f56e722ce3eb4ceb64c83e68026d427bc5884c3f"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Segnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+          "sha256": "5824b6d5ffb67a95a9263efa9f74c71ffb270fb89182f1a3c739f3f8ae4228ed"
+        }
+      ],
+      "scientificMeaning": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+      "displayText": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+      "captionText": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+      "spokenText": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+      "spokenTextSHA256": "bc3fa5da2d2230ef01dfa2ee4d1a9744acb4430d5ef9b7f3e96ff4938ef32cc3",
+      "spokenTextSha256": "bc3fa5da2d2230ef01dfa2ee4d1a9744acb4430d5ef9b7f3e96ff4938ef32cc3",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "888cb531bc00a80d3776b755e1d60a554e4c344d41655c6f3c51d52d16df254b",
+      "requestFingerprintSha256": "888cb531bc00a80d3776b755e1d60a554e4c344d41655c6f3c51d52d16df254b",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-carrot",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "bc3fa5da2d2230ef01dfa2ee4d1a9744acb4430d5ef9b7f3e96ff4938ef32cc3",
+        "before": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+        "after": "Campo bagnato e appiccicoso\n\nDopo la pioggia l’acqua rimane per giorni e il campo è appiccicoso; qualcuno lo chiama subito argilla ed esclude la carota.\n\nUna tessitura fine è possibile, ma anche compattazione, falda sospesa o scarico ostruito.\n\nVerificare separatamente tessitura e struttura, movimento dell’acqua e profondità radicale.\n\nLa carota può soffrire in condizioni dense, sature o poco aerate, anche se il solo nome della tessitura non decide.\n\nSegnalare un rischio per la carota e chiedere diagnosi del campo; non dichiarare argilla certa né prescrivere una coltura dalla sola tessitura.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-E02-r1",
+      "unitId": "S3-02-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "L’eccezione del pH",
+          "sha256": "03354e53f7d8ec27eb81c099a2f5a7b1128b99c33e30a1cd155761090061ef91"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il caso riporta pH 6,2 e uno studente propone mirtilli perché il suolo è lievemente acido.",
+          "sha256": "3bed02ebee8ad55d1633f180ff3f7782264901f4a1e3ba514bf96bc8b92f9b80"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Il mirtillo richiede in genere una zona radicale molto più acida e ben drenata.",
+          "sha256": "d836d119f3bb79a85bcb58533c52e7795d952466654f4c9732bf541da2f6a6d1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "pH 6,2 non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.",
+          "sha256": "6934505c5bc60b05fadf33e72dd1921b0e6aa256d946018284b24796f8f719e9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Scegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.",
+          "sha256": "4de7869e51b9fc555764c26595d9b97e05f7514ad0478bc06fe130c1f48967b2"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Il mirtillo fa eccezione alla regola generale: pH 6,2 non è una condizione pronta alla piantagione.",
+          "sha256": "455f57fb2df3550c3dcb9aadb24725a7469d1ef0f9aac83f3146b6805f3a305a"
+        }
+      ],
+      "scientificMeaning": "L’eccezione del pH\n\nIl caso riporta pH 6,2 e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npH 6,2 non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pH 6,2 non è una condizione pronta alla piantagione.",
+      "displayText": "L’eccezione del pH\n\nIl caso riporta pH 6,2 e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npH 6,2 non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pH 6,2 non è una condizione pronta alla piantagione.",
+      "captionText": "L’eccezione del pH\n\nIl caso riporta pH 6,2 e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npH 6,2 non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pH 6,2 non è una condizione pronta alla piantagione.",
+      "spokenText": "L’eccezione del pi acca\n\nIl caso riporta pi acca sei virgola due e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npi acca sei virgola due non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pi acca sei virgola due non è una condizione pronta alla piantagione.",
+      "spokenTextSHA256": "d4dc838e0d318d1e43e300e9e02ad4394fd2515c9d3b266c3ce31b94a7ae35f8",
+      "spokenTextSha256": "d4dc838e0d318d1e43e300e9e02ad4394fd2515c9d3b266c3ce31b94a7ae35f8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L’eccezione del pH\n\nIl caso riporta pH 6,2 e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npH 6,2 non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pH 6,2 non è una condizione pronta alla piantagione.",
+          "spoken": "L’eccezione del pi acca\n\nIl caso riporta pi acca sei virgola due e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npi acca sei virgola due non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pi acca sei virgola due non è una condizione pronta alla piantagione.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "44f01f4ccc9f5a4f8c60e3f8fd95bf372c922c5ad313696e7c41dff4de248ad0",
+      "requestFingerprintSha256": "44f01f4ccc9f5a4f8c60e3f8fd95bf372c922c5ad313696e7c41dff4de248ad0",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "blueberry",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "fd65b0d0ad74a7c5999cd504e7f4b4755c7c1586d4afae78b6345824f1b1c639",
+        "before": "L’eccezione del pi acca\n\nIl caso riporta pi acca sei,due e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npi acca sei,due non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pi acca sei,due non è una condizione pronta alla piantagione.",
+        "after": "L’eccezione del pi acca\n\nIl caso riporta pi acca sei virgola due e uno studente propone mirtilli perché il suolo è lievemente acido.\n\nIl mirtillo richiede in genere una zona radicale molto più acida e ben drenata.\n\npi acca sei virgola due non è una corrispondenza immediata con piccola correzione; la fattibilità di modificarlo stabilmente va valutata.\n\nScegliere un altro candidato o condizionare i mirtilli a un piano praticabile e misurato e ai requisiti varietali.\n\nIl mirtillo fa eccezione alla regola generale: pi acca sei virgola due non è una condizione pronta alla piantagione.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-E03-r1",
+      "unitId": "S3-02-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Otto caselle da verificare, non otto idoneità inventate",
+          "sha256": "798518641cefb666d31b05ee9a5b89a05ecf1dcafd8e621d54a60fc083986db5"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Il modello temperato da 10 ha ha franco-sabbioso, pH 6,2, N basso, P/K adeguati, pioggia moderata e tre anni di mais con resa calante.",
+          "sha256": "399a2fae97574a65ea523edc53f383a0633b5f20409aab4577c0692613c1e928"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Cereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.",
+          "sha256": "deecfb86afb961a47e05bef28bdfa05b641701a67e2166e1ef235acee086a7b4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Leguminose: soia e trifoglio/erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.",
+          "sha256": "0f1cca075ed92b694dcff4f5b7e1a2c334b390a6a913ae982981579b73f8e901"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Ortaggi: carota/patata e lattuga/spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.",
+          "sha256": "9f22ec3fb18b1ffbac5aa3baa4193be00600dc8d4e426ff3382c8dec0c1918d0"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Frutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.",
+          "sha256": "338137310edc221824468607813e6d850da641b4ec7179b7275edd2904ffa79e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Elencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+          "sha256": "8848adc625aa1954f94a6b0aa95a14f72d7e871495157c2982ed995e2d9fc8c6"
+        }
+      ],
+      "scientificMeaning": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da 10 ha ha franco-sabbioso, pH 6,2, N basso, P/K adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio/erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota/patata e lattuga/spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+      "displayText": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da 10 ha ha franco-sabbioso, pH 6,2, N basso, P/K adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio/erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota/patata e lattuga/spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+      "captionText": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da 10 ha ha franco-sabbioso, pH 6,2, N basso, P/K adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio/erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota/patata e lattuga/spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+      "spokenText": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da dieci ettari ha franco-sabbioso, pi acca sei virgola due, azoto basso, fosforo, potassio adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio, erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota, patata e lattuga, spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+      "spokenTextSHA256": "0e590ac6622d5718a143ff7b867caccbb8cf7828c4ed8d2345f8389eb369b126",
+      "spokenTextSha256": "0e590ac6622d5718a143ff7b867caccbb8cf7828c4ed8d2345f8389eb369b126",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da 10 ha ha franco-sabbioso, pH 6,2, N basso, P/K adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio/erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota/patata e lattuga/spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+          "spoken": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da dieci ettari ha franco-sabbioso, pi acca sei virgola due, azoto basso, fosforo, potassio adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio, erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota, patata e lattuga, spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "119cfb68b91a446b9bad688d49ddc0716e3c3f6d6f72459505d9f0c0624637a1",
+      "requestFingerprintSha256": "119cfb68b91a446b9bad688d49ddc0716e3c3f6d6f72459505d9f0c0624637a1",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "case-shortlist",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "b56dd486ebbb0930c81f1bfb77af8278899221bb6d909e2e9ae01860528c59f1",
+        "before": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da dieci ha ha franco-sabbioso, pi acca sei,due, enne basso, pi, cappa adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio, erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota, patata e lattuga, spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+        "after": "Otto caselle da verificare, non otto idoneità inventate\n\nIl modello temperato da dieci ettari ha franco-sabbioso, pi acca sei virgola due, azoto basso, fosforo, potassio adeguati, pioggia moderata e tre anni di mais con resa calante.\n\nCereali: il mais è noto ma servono controlli su azoto e calo di resa; l’orzo richiede ancora verifiche di stagione, acqua e varietà.\n\nLeguminose: soia e trifoglio, erba medica vanno esaminati per nodulazione, acqua, stagione e scopo; copertura e prodotto raccolto differiscono.\n\nOrtaggi: carota, patata e lattuga, spinacio dipendono da zona radicale, drenaggio, acqua, temperatura e piano nutrizionale.\n\nFrutti: fragola e melone restano nel modello con controlli su acidità, drenaggio, stagione calda, acqua e mercato; non sono una prescrizione universale di frutteto.\n\nElencare almeno due colture per gruppo con motivo, condizione irrisolta e dato richiesto. Sono candidati del caso temperato, non una lista di impianto egiziana.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-E04-r1",
+      "unitId": "S3-02-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Una decisione condizionata per il primo anno",
+          "sha256": "237b726a9475b5e691fcadb26e3a3c3d6151b5726fa00377d63a2ec092490d8c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "N basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.",
+          "sha256": "25200c59d47bdcabc96fe9c7d11b468020dce0d18f9872fb796f6cc8adfe4d33"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Una leguminosa localmente adatta potrebbe diversificare e fissare N se la nodulazione funziona.",
+          "sha256": "26393261229c637d62288655231606788646db299873b8054d7ea216bfc9ce83"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Decidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.",
+          "sha256": "0600c0c2cbca4a02d6d2b0ecf3b64b9c50eb6c732e505799ab9ee7338416c4b9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Verificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito N solo da prove.",
+          "sha256": "3b360daa6380788ce542975411e8f908a11c262647c5aafb30ebca486ae1ba0b"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Indagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+          "sha256": "63ac53cb3cc929bfa53a4becb8d8b82e10c4095a35a0ba50b5b6ff108d8969c5"
+        }
+      ],
+      "scientificMeaning": "Una decisione condizionata per il primo anno\n\nN basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare N se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito N solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+      "displayText": "Una decisione condizionata per il primo anno\n\nN basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare N se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito N solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+      "captionText": "Una decisione condizionata per il primo anno\n\nN basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare N se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito N solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+      "spokenText": "Una decisione condizionata per il primo anno\n\nazoto basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare azoto se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito azoto solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+      "spokenTextSHA256": "e43003caca60481ebe9dd80bb9f38fcb808c2ef90ebe0d461c3070284e467ba4",
+      "spokenTextSha256": "e43003caca60481ebe9dd80bb9f38fcb808c2ef90ebe0d461c3070284e467ba4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Una decisione condizionata per il primo anno\n\nN basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare N se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito N solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+          "spoken": "Una decisione condizionata per il primo anno\n\nazoto basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare azoto se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito azoto solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6c813b454eacb56feff054b5267f261b92fa9ec7b78d8b5de95130d1644fe914",
+      "requestFingerprintSha256": "6c813b454eacb56feff054b5267f261b92fa9ec7b78d8b5de95130d1644fe914",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "year-one",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "f4dc98f4cd9906c263f16f213a4000e93cb166c8c15090efabc724d6bb906ec6",
+        "before": "Una decisione condizionata per il primo anno\n\nenne basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare enne se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito enne solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+        "after": "Una decisione condizionata per il primo anno\n\nazoto basso segue tre raccolti di mais, ma la causa del calo di resa non è confermata.\n\nUna leguminosa localmente adatta potrebbe diversificare e fissare azoto se la nodulazione funziona.\n\nDecidere se raccoglierla, usarla come copertura o mantenerla più a lungo: cambiano residui e occupazione.\n\nVerificare terreno, esigenze colturali e altre cause del limite produttivo; stimare il credito azoto solo da prove.\n\nIndagare una leguminosa idonea per il primo anno indicando specie, scopo e controlli; non promettere che curi il campo o sostituisca tutto il concime.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "stepId": "S3-02",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "wet-carrot",
+      "title": "Sticky, wet field",
+      "situation": "Water remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.",
+      "reasoning": [
+        "A fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.",
+        "Check texture and structure separately; inspect water movement and rooting depth.",
+        "Carrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive."
+      ],
+      "takeaway": "Flag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone."
+    },
+    {
+      "id": "blueberry",
+      "title": "The pH exception",
+      "situation": "The model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.",
+      "reasoning": [
+        "Blueberry generally needs a substantially more acidic and well-drained root zone.",
+        "The case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.",
+        "Choose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements."
+      ],
+      "takeaway": "Blueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition."
+    },
+    {
+      "id": "case-shortlist",
+      "title": "Screen eight candidate slots without inventing suitability",
+      "situation": "The temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.",
+      "reasoning": [
+        "Grains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.",
+        "Legumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.",
+        "Vegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.",
+        "Fruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation."
+      ],
+      "takeaway": "List at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list."
+    },
+    {
+      "id": "year-one",
+      "title": "A conditional first-year decision",
+      "situation": "Low N follows three maize harvests, but the cause of declining yield is not confirmed.",
+      "reasoning": [
+        "A locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.",
+        "Choose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.",
+        "Check soil and crop needs and other yield-limit causes; estimate any N credit only from evidence."
+      ],
+      "takeaway": "Investigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser."
+    }
+  ]
+}

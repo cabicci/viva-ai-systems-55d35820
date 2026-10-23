@@ -1,0 +1,365 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-en.json",
+    "sha256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+    "bytes": 32131
+  },
+  "units": [
+    {
+      "id": "S3-02-en-E01-r1",
+      "unitId": "S3-02-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Sticky, wet field",
+          "sha256": "be50d6fe75abc2656d33d576abd7d8fbecfa918e01fd41a301dcd93c2c6e9c61"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Water remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.",
+          "sha256": "2bb82dbaae8673cff21c4f26e508f9c49415bf74a8d8437e2c37cd6011d5f813"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "A fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.",
+          "sha256": "6380bcc07030a43bc691b4709f71f31fe496d92956c348110cde34651192e89a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Check texture and structure separately; inspect water movement and rooting depth.",
+          "sha256": "451e778f1d3680b41a9b579d71bba15c3868022730ccdbd6a37677aa44b7e3cf"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Carrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.",
+          "sha256": "bc339c5ee07e3fadce40608fcdfb71528840609c1ca0a7f2b47349b561b33566"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Flag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+          "sha256": "8130fae9013b56360944dd7e0e104295daefefd5933b388e6183d49e1b0d117b"
+        }
+      ],
+      "scientificMeaning": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+      "displayText": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+      "captionText": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+      "spokenText": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+      "spokenTextSHA256": "2d4bd21328f44ed62c2beb379c59bfd900dad6b4771c50a8cfc17371cd3ec8be",
+      "spokenTextSha256": "2d4bd21328f44ed62c2beb379c59bfd900dad6b4771c50a8cfc17371cd3ec8be",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "645e2d4988365f0f33653dbbef8593c7b6d8396f00492696b71cfe72e58310db",
+      "requestFingerprintSha256": "645e2d4988365f0f33653dbbef8593c7b6d8396f00492696b71cfe72e58310db",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-carrot",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "2d4bd21328f44ed62c2beb379c59bfd900dad6b4771c50a8cfc17371cd3ec8be",
+        "before": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+        "after": "Sticky, wet field\n\nWater remains for several days after rain and the field feels sticky; someone immediately calls it clay and rules out carrot.\n\nA fine texture is one possible cause, but compaction, a perched water table or blocked drainage are alternatives.\n\nCheck texture and structure separately; inspect water movement and rooting depth.\n\nCarrot may struggle if its storage root meets dense, waterlogged or poorly aerated conditions, even when the mineral texture name alone is not decisive.\n\nFlag carrot as a concern and request field diagnosis; do not call the observation a confirmed clay class or prescribe a crop from texture alone.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-E02-r1",
+      "unitId": "S3-02-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "The pH exception",
+          "sha256": "86a55906f8066bd056a944007757251381072bb8334300969f68a605bd178fab"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.",
+          "sha256": "0ad2bde0f7417b7c70b74d2c98423d8cb4303db612bde1236009198e73b5fa71"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Blueberry generally needs a substantially more acidic and well-drained root zone.",
+          "sha256": "c8a3011fee78bc0e05da2bd9eefbb6fbee5465440f76a1970338353b98262120"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "The case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.",
+          "sha256": "131f131860bd44674859f8cdce517dc798e6e993f667624b4375fce1dec2a32c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Choose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.",
+          "sha256": "f3a046c0ec19f48170dd8e5e1013d6638f60ab5e072cc3a55131586e0abe11c9"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Blueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition.",
+          "sha256": "4f01398a627627c51d99cd0b8e16a07f1692a2373c2fa996d32e1f808a24d362"
+        }
+      ],
+      "scientificMeaning": "The pH exception\n\nThe model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition.",
+      "displayText": "The pH exception\n\nThe model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition.",
+      "captionText": "The pH exception\n\nThe model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition.",
+      "spokenText": "The p H exception\n\nThe model case reports p H six point two and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case p H six point two cannot be called an immediate minimal-amendment match; the feasibility of a lasting p H change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad p H rule, and p H six point two is not its ready planting condition.",
+      "spokenTextSHA256": "6ec8aa4529e971b28af4917985b623c425553682207f525469736b318367d019",
+      "spokenTextSha256": "6ec8aa4529e971b28af4917985b623c425553682207f525469736b318367d019",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The pH exception\n\nThe model case reports pH 6.2 and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case pH 6.2 cannot be called an immediate minimal-amendment match; the feasibility of a lasting pH change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad pH rule, and pH 6.2 is not its ready planting condition.",
+          "spoken": "The p H exception\n\nThe model case reports p H six point two and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case p H six point two cannot be called an immediate minimal-amendment match; the feasibility of a lasting p H change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad p H rule, and p H six point two is not its ready planting condition.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3bd5386b54da058b86ca08a6613fd4fb933ea2d2e08cbf1b7a9d43cefdabc22e",
+      "requestFingerprintSha256": "3bd5386b54da058b86ca08a6613fd4fb933ea2d2e08cbf1b7a9d43cefdabc22e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "blueberry",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "eb5b37414ca19f57eb72e4d70fc0edab51c7c9cdef1415d75714e402d463fef0",
+        "before": "The P H exception\n\nThe model case reports P H six point two and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case P H six point two cannot be called an immediate minimal-amendment match; the feasibility of a lasting P H change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad P H rule, and P H six point two is not its ready planting condition.",
+        "after": "The p H exception\n\nThe model case reports p H six point two and a student proposes blueberry because the site is slightly acidic.\n\nBlueberry generally needs a substantially more acidic and well-drained root zone.\n\nThe case p H six point two cannot be called an immediate minimal-amendment match; the feasibility of a lasting p H change must be separately assessed.\n\nChoose another candidate for the classroom shortlist or mark blueberry conditional on a measured, practical amendment plan and crop-specific requirements.\n\nBlueberry is an exception to a broad p H rule, and p H six point two is not its ready planting condition.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-E03-r1",
+      "unitId": "S3-02-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Screen eight candidate slots without inventing suitability",
+          "sha256": "f4eb9a6bf3dc2f398febd41474f579a8ab31134589921aaa0a49113a0299c656"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.",
+          "sha256": "f4bf5b3f622bbdcb92d3615e811eb1462915d72a4167fd9e25c8c6c4eeffd1e7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Grains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.",
+          "sha256": "9ce3cc6fc3a422bbbcf0422b8d60d61c09da7ecf0fb78d64d3f52e21ccf4bd51"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Legumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.",
+          "sha256": "022ede2570eb2e0ab4728380d3a129f110d0790f09b68fbbee1cc4725f1e0c88"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Vegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.",
+          "sha256": "b51b7b389271699b1dbb243a463bea273385384a019cdb74bdab4e3c4a0e27dc"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Fruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.",
+          "sha256": "b8c59688d07419abea1178d38ba9679664723b551cf914058be3bbfa42ba6d38"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "List at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+          "sha256": "4b7f7bcbc2d461b494189113e8487037a9a0b00d3de97f53558b214fd7bf8a25"
+        }
+      ],
+      "scientificMeaning": "Screen eight candidate slots without inventing suitability\n\nThe temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+      "displayText": "Screen eight candidate slots without inventing suitability\n\nThe temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+      "captionText": "Screen eight candidate slots without inventing suitability\n\nThe temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+      "spokenText": "Screen eight candidate slots without inventing suitability\n\nThe temperate ten-hectare model has sandy loam, p H six point two, low nitrogen, adequate phosphorus, potassium, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less nitrogen-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover, alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot, potato and lettuce, spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity, drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+      "spokenTextSHA256": "2f7822bd2556b46cb66cbd6061d1c2d44bdfaae94363711df78b3e6eb6c7893c",
+      "spokenTextSha256": "2f7822bd2556b46cb66cbd6061d1c2d44bdfaae94363711df78b3e6eb6c7893c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Screen eight candidate slots without inventing suitability\n\nThe temperate 10-hectare model has sandy loam, pH 6.2, low N, adequate P/K, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover/alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot/potato and lettuce/spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity/drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+          "spoken": "Screen eight candidate slots without inventing suitability\n\nThe temperate ten-hectare model has sandy loam, p H six point two, low nitrogen, adequate phosphorus, potassium, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less nitrogen-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover, alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot, potato and lettuce, spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity, drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "edbb64576fcf1814ad57beee1046b62f334bcde985979a075e6d2a9b53bbd20d",
+      "requestFingerprintSha256": "edbb64576fcf1814ad57beee1046b62f334bcde985979a075e6d2a9b53bbd20d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "case-shortlist",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "59d9d21aefb27ce770444c6589d85938f14c787530ca332ebfcac43de1b44a6b",
+        "before": "Screen eight candidate slots without inventing suitability\n\nThe temperate ten-hectare model has sandy loam, P H six point two, low N, adequate P, K, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less N-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover, alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot, potato and lettuce, spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity, drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+        "after": "Screen eight candidate slots without inventing suitability\n\nThe temperate ten-hectare model has sandy loam, p H six point two, low nitrogen, adequate phosphorus, potassium, moderate rainfall and three years of maize with declining yield.\n\nGrains: maize is familiar but needs a nitrogen and yield-decline investigation; barley may be less nitrogen-demanding but still needs season, water and variety checks.\n\nLegumes: soybean and clover, alfalfa are candidates to examine for nodulation, water, season and intended use; cover-crop and harvested-crop outcomes differ.\n\nVegetables: carrot, potato and lettuce, spinach offer root or cooler-season options, provided rooting depth, drainage, water, temperature and nutrient plans fit.\n\nFruits: strawberry and melon are retained from the model, subject to soil acidity, drainage, warm-season timing, water and market checks; neither is a blanket orchard recommendation.\n\nList at least two per practical group, with crop-specific reason, unresolved condition and the data still needed. These are candidate slots for the temperate exercise, not a final Egyptian planting list.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-E04-r1",
+      "unitId": "S3-02-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "A conditional first-year decision",
+          "sha256": "151ea9eebf8e67e1ee3d74faea65a3282e76611b5768f885afad4996c112157a"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Low N follows three maize harvests, but the cause of declining yield is not confirmed.",
+          "sha256": "fd61642be018d6671d35f05f0a198f87475e383329c4c28cadf63528d87eaf2e"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.",
+          "sha256": "1259826da2e9149ed8ea0ac8d0adc69cba0e05008fdc839c71aed67bdd489ded"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Choose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.",
+          "sha256": "ccad610cd969c9fcb998ef30e677238144710dbc033100e6cd5e7b30555c3a4b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Check soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.",
+          "sha256": "981d60c0db2f584e9fec30f58d90afb163232aeb3c291473cb011d5f34b37418"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Investigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+          "sha256": "362c897d5779b1079e990b00e71d80399e17185ef40cf8203b7112ef968ec4a0"
+        }
+      ],
+      "scientificMeaning": "A conditional first-year decision\n\nLow N follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+      "displayText": "A conditional first-year decision\n\nLow N follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+      "captionText": "A conditional first-year decision\n\nLow N follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+      "spokenText": "A conditional first-year decision\n\nLow nitrogen follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix nitrogen if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any nitrogen credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+      "spokenTextSHA256": "0a806e1fa0daf794e7ca544793fe64541b209c73816b3a712fca009beeb11a8c",
+      "spokenTextSha256": "0a806e1fa0daf794e7ca544793fe64541b209c73816b3a712fca009beeb11a8c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A conditional first-year decision\n\nLow N follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+          "spoken": "A conditional first-year decision\n\nLow nitrogen follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix nitrogen if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any nitrogen credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4b2927c4f170ff2d1c647212736e61404ad4912242725426d847e9fda9902b65",
+      "requestFingerprintSha256": "4b2927c4f170ff2d1c647212736e61404ad4912242725426d847e9fda9902b65",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "year-one",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "63c7ba93bcc1d04379fa5b974da03f45bbf153bffb1099e95608b854e699c5b1",
+        "before": "A conditional first-year decision\n\nLow N follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix N if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any N credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+        "after": "A conditional first-year decision\n\nLow nitrogen follows three maize harvests, but the cause of declining yield is not confirmed.\n\nA locally suitable legume might help diversify the sequence and biologically fix nitrogen if nodulation succeeds.\n\nChoose whether it will be harvested, used as cover or retained longer; those choices alter residue and land occupancy.\n\nCheck soil and crop needs and other yield-limit causes; estimate any nitrogen credit only from evidence.\n\nInvestigate a suitable legume for year one, with a stated crop, purpose and checks. Do not promise that it cures the field or fully replaces fertiliser.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

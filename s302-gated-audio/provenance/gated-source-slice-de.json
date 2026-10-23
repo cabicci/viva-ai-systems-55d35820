@@ -1,0 +1,53 @@
+{
+  "stepId": "S3-02",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "wet-carrot",
+      "title": "Klebriges, nasses Feld",
+      "situation": "Nach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.",
+      "reasoning": [
+        "Feinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.",
+        "Bodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.",
+        "Karotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet."
+      ],
+      "takeaway": "Karotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben."
+    },
+    {
+      "id": "blueberry",
+      "title": "Die pH-Ausnahme",
+      "situation": "Im Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.",
+      "reasoning": [
+        "Heidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.",
+        "pH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.",
+        "Anderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken."
+      ],
+      "takeaway": "Heidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand."
+    },
+    {
+      "id": "case-shortlist",
+      "title": "Acht Kandidatenplätze ohne erfundene Eignung",
+      "situation": "Der gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.",
+      "reasoning": [
+        "Getreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.",
+        "Leguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.",
+        "Gemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.",
+        "Obst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung."
+      ],
+      "takeaway": "Mindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste."
+    },
+    {
+      "id": "year-one",
+      "title": "Bedingte Entscheidung im ersten Jahr",
+      "situation": "Auf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.",
+      "reasoning": [
+        "Eine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.",
+        "Ernte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.",
+        "Standort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen."
+      ],
+      "takeaway": "Eine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen."
+    }
+  ]
+}

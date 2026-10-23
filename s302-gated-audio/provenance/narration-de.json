@@ -1,0 +1,365 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-de.json",
+    "sha256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+    "bytes": 32038
+  },
+  "units": [
+    {
+      "id": "S3-02-de-E01-r1",
+      "unitId": "S3-02-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Klebriges, nasses Feld",
+          "sha256": "e01b227fd00ed81eeb4d60cd6c080e45dd475276d9ea019c972f3dbd5b593599"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Nach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.",
+          "sha256": "2727e1d946903f6841197cfce710e63606006f5f0576513b8eeb66ae5f13bfc5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Feinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.",
+          "sha256": "ad42fbb1bfcbd81ff311b9421b5442996bfd24947c691991112aa16797fd6844"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Bodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.",
+          "sha256": "b703a45d2a4a091865cff6af4a4a82f767530898ee639f9fa6145c4879ef4242"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Karotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.",
+          "sha256": "eeb712006c0f76998006e62ffff43eac2715ef5b922581ecdd9fab3cece1ff57"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Karotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+          "sha256": "a5501d9057c190d0e489a398620d3db65d981a45b248d3e5e459e73644e2abaa"
+        }
+      ],
+      "scientificMeaning": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+      "displayText": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+      "captionText": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+      "spokenText": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+      "spokenTextSHA256": "1dad9973fda0966453e3436d46c9bba5555bf4188339eca5fd2cdb44b730cc65",
+      "spokenTextSha256": "1dad9973fda0966453e3436d46c9bba5555bf4188339eca5fd2cdb44b730cc65",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a196545ec6447db966d53c9bbe9861dd46ee554279a57ac27f94c305a1c6c17c",
+      "requestFingerprintSha256": "a196545ec6447db966d53c9bbe9861dd46ee554279a57ac27f94c305a1c6c17c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-carrot",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "1dad9973fda0966453e3436d46c9bba5555bf4188339eca5fd2cdb44b730cc65",
+        "before": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+        "after": "Klebriges, nasses Feld\n\nNach Regen steht tagelang Wasser und der Boden klebt; jemand nennt ihn sofort Ton und schließt Karotten aus.\n\nFeinkörniger Boden ist möglich, aber Verdichtung, schwebendes Stauwasser oder blockierter Abfluss ebenfalls.\n\nBodenart und Struktur getrennt prüfen; Wasserbewegung und Wurzelraum untersuchen.\n\nKarotten können in dichtem, vernässtem oder schlecht belüftetem Boden leiden, auch wenn die Bodenart allein nicht entscheidet.\n\nKarotten als Risiko markieren und eine Standortdiagnose verlangen; die Beobachtung weder als sicheren Tonbefund noch als Pflanzempfehlung ausgeben.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-E02-r1",
+      "unitId": "S3-02-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Die pH-Ausnahme",
+          "sha256": "8d256824a06f0bb6b8771ef282371d41f9723c41c6e7ee77424cd6bad54c1469"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Im Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.",
+          "sha256": "730d80c48ad7645d690428701ea3a6ee4baca177351f8ebc1e1a546fc97b0f14"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Heidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.",
+          "sha256": "fc39990a866a84f6199c127c460e07dcbbf468d88cf038d120091aa21a763559"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "pH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.",
+          "sha256": "a12b9c14914f5b488ca41940e75e9ffda02bb39f0d265747daceb97e00ff77d5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Anderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.",
+          "sha256": "761baa7b1058bcbef527e39b80b3029147317a59a170b8c51ac4123d4193bebd"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Heidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand.",
+          "sha256": "864e16ec0a71a82e4d566a4241a15b2d20a29ac7df7aeccad24af41de9702d2e"
+        }
+      ],
+      "scientificMeaning": "Die pH-Ausnahme\n\nIm Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\npH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand.",
+      "displayText": "Die pH-Ausnahme\n\nIm Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\npH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand.",
+      "captionText": "Die pH-Ausnahme\n\nIm Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\npH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand.",
+      "spokenText": "Die Pe Ha-Ausnahme\n\nIm Lehrfall liegt Pe Ha sechs Komma zwei vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\nPe Ha sechs Komma zwei passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften Pe Ha-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen Pe Ha-Regel; Pe Ha sechs Komma zwei ist kein pflanzfertiger Zustand.",
+      "spokenTextSHA256": "34e86b4744067a87ac2818ac4735aa18d82a2cda95d2e02188bf9fc8e26dc284",
+      "spokenTextSha256": "34e86b4744067a87ac2818ac4735aa18d82a2cda95d2e02188bf9fc8e26dc284",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die pH-Ausnahme\n\nIm Lehrfall liegt pH 6,2 vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\npH 6,2 passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften pH-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen pH-Regel; pH 6,2 ist kein pflanzfertiger Zustand.",
+          "spoken": "Die Pe Ha-Ausnahme\n\nIm Lehrfall liegt Pe Ha sechs Komma zwei vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\nPe Ha sechs Komma zwei passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften Pe Ha-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen Pe Ha-Regel; Pe Ha sechs Komma zwei ist kein pflanzfertiger Zustand.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dc261b7aa0a93ad2434e87df9daeaca849c89b007ce967f71664166b85ea681a",
+      "requestFingerprintSha256": "dc261b7aa0a93ad2434e87df9daeaca849c89b007ce967f71664166b85ea681a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "blueberry",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "43d77cb05c773296df85baa5427eae3df9f08d4f45569899c7111e788096949e",
+        "before": "Die Pe Ha-Ausnahme\n\nIm Lehrfall liegt Pe Ha sechs,zwei vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\nPe Ha sechs,zwei passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften Pe Ha-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen Pe Ha-Regel; Pe Ha sechs,zwei ist kein pflanzfertiger Zustand.",
+        "after": "Die Pe Ha-Ausnahme\n\nIm Lehrfall liegt Pe Ha sechs Komma zwei vor; eine lernende Person empfiehlt Heidelbeeren, weil der Boden leicht sauer sei.\n\nHeidelbeeren brauchen normalerweise einen wesentlich stärker sauren, gut drainierten Wurzelraum.\n\nPe Ha sechs Komma zwei passt nicht sofort mit geringer Änderung; die Machbarkeit einer dauerhaften Pe Ha-Korrektur ist gesondert zu prüfen.\n\nAnderen Kandidaten wählen oder Heidelbeeren nur mit gemessenem, praktikablem Korrekturplan und Sortenprüfung vormerken.\n\nHeidelbeeren sind die Ausnahme zur allgemeinen Pe Ha-Regel; Pe Ha sechs Komma zwei ist kein pflanzfertiger Zustand.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-E03-r1",
+      "unitId": "S3-02-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Acht Kandidatenplätze ohne erfundene Eignung",
+          "sha256": "313a536e41d39b9548166a29b7065d2bf3d4ab84b8e329aafe8e4ae5af73b360"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Der gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.",
+          "sha256": "2076732ef96ec050eb8eec542996dd22469356b4b4fc26752c43281550383dca"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Getreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.",
+          "sha256": "b49f377775f6401b6c134995d9b34658c855fc702d0966c963543f1071babae5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Leguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.",
+          "sha256": "7ea7d5e9ee3a11c9c1551f6e2c3dfe487a37e2d285f7cc17efbf668c4a0327e8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Gemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.",
+          "sha256": "7b59f631a7a3ed9a1b55460bf4b23a6658f2462856a3aeeb00bc012853f76041"
+        },
+        {
+          "pointer": "/examples/2/reasoning/3",
+          "text": "Obst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.",
+          "sha256": "43e4ed6cbcba3c77db6a85fe51b927326ed1b2ff2068f6fad6ac1269f34c7b7b"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Mindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+          "sha256": "a06404f3c684315d64ca515837f298cf6aa7367fb4dbcd91c1788d411ac1f90b"
+        }
+      ],
+      "scientificMeaning": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+      "displayText": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+      "captionText": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+      "spokenText": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte Fall mit zehn Hektar: sandiger Lehm, Pe Ha sechs Komma zwei, wenig Stickstoff, ausreichendes Phosphor, Kalium, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch Stickstoff und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee, Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte, Kartoffel und Salat, Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit Pe Ha-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+      "spokenTextSHA256": "8935cb0d5f106c98d6800556918fc81afe8e7437e9e681b786e1f6f5c0282d1e",
+      "spokenTextSha256": "8935cb0d5f106c98d6800556918fc81afe8e7437e9e681b786e1f6f5c0282d1e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte 10-ha-Fall: sandiger Lehm, pH 6,2, wenig N, ausreichendes P/K, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch N und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee/Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte/Kartoffel und Salat/Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit pH-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+          "spoken": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte Fall mit zehn Hektar: sandiger Lehm, Pe Ha sechs Komma zwei, wenig Stickstoff, ausreichendes Phosphor, Kalium, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch Stickstoff und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee, Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte, Kartoffel und Salat, Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit Pe Ha-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e05e7b6adb0a37bdcb58ee6e61806a7b47fab017ad5a5180f3b4ec5e4172b180",
+      "requestFingerprintSha256": "e05e7b6adb0a37bdcb58ee6e61806a7b47fab017ad5a5180f3b4ec5e4172b180",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "case-shortlist",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "557ada69d002d4b8a2626c56c1fb3db45d423a6071dc7f518831e83dcf841d20",
+        "before": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte zehn-ha-Fall: sandiger Lehm, Pe Ha sechs,zwei, wenig En, ausreichendes Pe, Ka, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch En und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee, Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte, Kartoffel und Salat, Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit Pe Ha-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+        "after": "Acht Kandidatenplätze ohne erfundene Eignung\n\nDer gemäßigte Fall mit zehn Hektar: sandiger Lehm, Pe Ha sechs Komma zwei, wenig Stickstoff, ausreichendes Phosphor, Kalium, mäßiger Regen und drei Maisjahre mit rückläufigem Ertrag.\n\nGetreide: Mais ist bekannt, doch Stickstoff und Ertragsursache sind zu prüfen; Gerste braucht ebenfalls Saison-, Wasser- und Sortenprüfung.\n\nLeguminosen: Soja und Klee, Luzerne nach Knöllchen, Wasser, Saison und Nutzungszweck prüfen; Deck- und Erntefrucht unterscheiden sich.\n\nGemüse: Karotte, Kartoffel und Salat, Spinat sind an Wurzelraum, Drainage, Wasser, Temperatur und Nährstoffplan gebunden.\n\nObst: Erdbeere und Melone aus der Musterlösung bleiben Kandidaten mit Pe Ha-, Drainage-, Saison-, Wasser- und Marktprüfung; keine pauschale Obstgartenempfehlung.\n\nMindestens zwei pro Gruppe mit spezifischem Grund, offener Bedingung und fehlenden Daten nennen. Es sind Fallkandidaten, keine fertige ägyptische Pflanzliste.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-E04-r1",
+      "unitId": "S3-02-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Bedingte Entscheidung im ersten Jahr",
+          "sha256": "bf4a09f7c65095e7ea54f49acca536a6fcee6c3e37bdd3175abf9e46be198f3e"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Auf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.",
+          "sha256": "c3b90edb73a2f7408aba96758b087f0ec6d9acb5661dc1ac68dbb1efea824ec5"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Eine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.",
+          "sha256": "1206d9e33f7787cb011b7a88ac73e406a75ba2be9a4f7474dd1ad3a7e0e8d6b9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Ernte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.",
+          "sha256": "f7c05eee7678212d2107edc2b550562c68bb1310d79e10f1d32cb59755f2794f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Standort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen.",
+          "sha256": "a0ffd29c47342018fb3ef98530d4e1c5a7df64a852fb265c01fe7b56b7172b9b"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Eine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+          "sha256": "f808a71f2c4831bbabca605f43e8eb46ab0b83513ab6b39ee01fcc83ff182ad2"
+        }
+      ],
+      "scientificMeaning": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+      "displayText": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+      "captionText": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+      "spokenText": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig Stickstoff; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung Stickstoff fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; Stickstoff-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+      "spokenTextSHA256": "a4c7c6006074b366828a6412db24ff40986864a3ddeec526e68445e781cdaa2e",
+      "spokenTextSha256": "a4c7c6006074b366828a6412db24ff40986864a3ddeec526e68445e781cdaa2e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig N; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung N fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; N-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+          "spoken": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig Stickstoff; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung Stickstoff fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; Stickstoff-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3afeb62794c4cbcee554244f8378d415424c61db47dddcf473db937d29e7adb2",
+      "requestFingerprintSha256": "3afeb62794c4cbcee554244f8378d415424c61db47dddcf473db937d29e7adb2",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "year-one",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "d24553b80b9785a54c99acc0cfb1cec5b9eaa22aa0f9636221e19fc9a47f27c8",
+        "before": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig En; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung En fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; En-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+        "after": "Bedingte Entscheidung im ersten Jahr\n\nAuf drei Maisernten folgt wenig Stickstoff; die Ursache des sinkenden Ertrags ist jedoch ungeklärt.\n\nEine örtlich passende Leguminose kann die Folge diversifizieren und bei wirksamer Knöllchenbildung Stickstoff fixieren.\n\nErnte, Deckfrucht oder längerer Bestand verändern Rückstände und Belegungsdauer.\n\nStandort- und Kulturbedarf sowie andere Ertragsursachen prüfen; Stickstoff-Gutschrift nur anhand von Belegen schätzen.\n\nEine passende Leguminose für Jahr eins prüfen und Art, Zweck und Kontrollen angeben; weder Heilung noch vollständigen Düngerersatz versprechen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
