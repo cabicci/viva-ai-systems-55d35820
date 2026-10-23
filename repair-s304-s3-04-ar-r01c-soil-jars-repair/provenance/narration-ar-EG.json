@@ -1,0 +1,73 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-ar-EG.json",
+    "sha256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+    "bytes": 31744
+  },
+  "units": [
+    {
+      "id": "S3-04-ar-EG-R01c-soil-jars-repair-r1",
+      "unitId": "S3-04-ar-EG-R01c-soil-jars-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s304-s3-04-ar-r01c-soil-jars-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/4",
+          "text": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+          "sha256": "add3e1cd522a34c0f7b021914bedfbbd037d7899873c7e798e0790283d15a898"
+        }
+      ],
+      "scientificMeaning": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "displayText": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "captionText": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "spokenText": "ممكن نستخدم رمل ولوم وطِين في برطمانات شفافة، ومعاهم جزر وكرفس متحضّر في مية ملوّنة، كوسائل اختيارية.",
+      "spokenTextSHA256": "21ecba840c6188d24dfd103f3cb83b8d146609fd2a8569d90c786a534d17dc75",
+      "spokenTextSha256": "21ecba840c6188d24dfd103f3cb83b8d146609fd2a8569d90c786a534d17dc75",
+      "spokenAdaptationChanges": [
+        {
+          "written": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+          "spoken": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+          "spoken": "ممكن نستخدم رمل ولوم وطِين في برطمانات شفافة، ومعاهم جزر وكرفس متحضّر في مية ملوّنة، كوسائل اختيارية.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "2f1dc037e960ded505b0ff39f5ce9fa87a4e56d2668b839c539ca75fc130768e",
+      "requestFingerprintSha256": "2f1dc037e960ded505b0ff39f5ce9fa87a4e56d2668b839c539ca75fc130768e",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s304-three-repairs-one-context-root-authority-r1.json",
+        "authoritySHA256": "703cc846f723c5a145f38558960e2fec8e0fc9f069c76ec9ec4dab2b35a41f26",
+        "metadataGETAuthoritySHA256": "21d7a238bc1be716c7acbee8f9c12c96f9dad5accc0383b5e6fcba505cb5c1c5"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S304_S3_04_AR_R01C_SOIL_JARS_REPAIR",
+  "stepId": "S3-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s304-s3-04-ar-r01c-soil-jars-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-04-ar-EG-R01c-soil-jars-repair-r1",
+      "unitId": "S3-04-ar-EG-R01c-soil-jars-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s304-s3-04-ar-r01c-soil-jars-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/4",
+          "text": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+          "sha256": "add3e1cd522a34c0f7b021914bedfbbd037d7899873c7e798e0790283d15a898"
+        }
+      ],
+      "scientificMeaning": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "displayText": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "captionText": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+      "spokenText": "ممكن نستخدم رمل ولوم وطِين في برطمانات شفافة، ومعاهم جزر وكرفس متحضّر في مية ملوّنة، كوسائل اختيارية.",
+      "spokenTextSHA256": "21ecba840c6188d24dfd103f3cb83b8d146609fd2a8569d90c786a534d17dc75",
+      "spokenTextSha256": "21ecba840c6188d24dfd103f3cb83b8d146609fd2a8569d90c786a534d17dc75",
+      "spokenAdaptationChanges": [
+        {
+          "written": "أدوات الشرح: سبورة أو لوحة ورق، أقلام تعليم، جهاز عرض وبطاقات حالات تشخيص متجهزة. الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة. الإسفنجة تشبيه للجزء المتاح، مش أداة قياس.",
+          "spoken": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+          "spoken": "ممكن نستخدم رمل ولوم وطِين في برطمانات شفافة، ومعاهم جزر وكرفس متحضّر في مية ملوّنة، كوسائل اختيارية.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "2f1dc037e960ded505b0ff39f5ce9fa87a4e56d2668b839c539ca75fc130768e",
+      "requestFingerprintSha256": "2f1dc037e960ded505b0ff39f5ce9fa87a4e56d2668b839c539ca75fc130768e",
+      "sourcePlanSha256": "12fc38063e6f6a0f0e593876d0589a90995713894a1d19ed277672cf66a0cbde",
+      "exactSentenceBefore": "الوسائل الاختيارية: رمل ولوم وطين في برطمانات شفافة، وجزر وكرفس محضّر في مياه ملوّنة.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s304-three-repairs-one-context-root-authority-r1.json",
+        "authoritySHA256": "703cc846f723c5a145f38558960e2fec8e0fc9f069c76ec9ec4dab2b35a41f26",
+        "metadataGETAuthoritySHA256": "21d7a238bc1be716c7acbee8f9c12c96f9dad5accc0383b5e6fcba505cb5c1c5"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-04-ar-EG-R01c-soil-jars-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
