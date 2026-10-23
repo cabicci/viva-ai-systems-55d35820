@@ -1,0 +1,1424 @@
+{
+  "schemaVersion": 1,
+  "scope": "S209_LAB_12_SOURCEBOUND_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S2-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s209-lab-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 12,
+  "maximumBlindAudioReviewCalls": 12,
+  "maximumASRInvocations": 12,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_NINE_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-09-ar-EG-demonstration-guidance-r1",
+      "unitId": "S2-09-ar-EG-demonstration-guidance-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "demonstration-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c7fc846103549cbff0b0ddf7c4967c8055f333822c77d61933093ffb8dbdb2",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/modelHelp",
+          "text": "ده توضيح لفكرة عرض المدرّب بس. الزجاجات والسائل والشاشة الفاضية رسومات توضيحية؛ مفيش نوع كاشف أو كمية أو لون قياس وتركيز حقيقي، ومفيش تصريح تشغيل. تغيير المرحلة مش معناه إن اختبار معمل اتعمل.",
+          "sha256": "3fcf803dc49dfcadd8b5cb8c7758633d33eb129d262bc87ae5ff1336943d4025"
+        },
+        {
+          "pointer": "/npkPractice/physical",
+          "text": "اتفرج على تحليل المدرّب واشرح الطريقة والنتيجة. ما تمسكش محاليل الاستخلاص أو الكواشف اللونية أو الأجهزة من الدرس الأونلاين ده. أي تشغيل فعلي في المعمل يحتاج إجراءات الموقع وإشراف المدرّب.",
+          "sha256": "cbdb31984145b4e1b9c6406d5c1aa56a91dc1a925b372adcf7ed1914111a5202"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/0",
+          "text": "استخلص جزء تربة مقاس حسب الطريقة المعلنة",
+          "sha256": "7a1644d238e1bd91e080c9761a8dbde5e374ea9d394117be82e470395ba85b7f"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/1",
+          "text": "رشّح المعلق علشان تاخد المستخلص",
+          "sha256": "cb660073a8c22797871f499403323e7def8427d32a0003d9d43c0b503b660cc2"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/2",
+          "text": "خلّي جزء مقاس يتفاعل مع كاشف الطريقة المحدد",
+          "sha256": "66726389065db4c2b73cc41a7835d1547cecc04f5356a42d30230ecc118d634c"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/3",
+          "text": "اقرأ بالجدول المطابق أو الجهاز اللي اتفحص",
+          "sha256": "6ce0d448f3132b1611b7bd2cf11e849aa6ca2fe70a85012f92b904acdd13f8a7"
+        },
+        {
+          "pointer": "/npkPractice/ui/orderGood",
+          "text": "ترتيب الفكرة صح. الكميات والكيمياء والوقت وعينة الشاهد (البلانك) والمعايرة لسه حسب الطريقة؛ مفيش مهارة تشغيل عملي اتجتازت.",
+          "sha256": "ce8c2816bd5252c85f930886eb754f3fc658280545d21dc56d5dfc228acaa429"
+        },
+        {
+          "pointer": "/npkPractice/accessibility",
+          "text": "عناوين كبيرة قابلة للتعديل، بدائل نصية للألوان، ترتيب بلوحة المفاتيح، شرح للمصطلحات ونتيجة ما تعتمدش على اللون وحده.",
+          "sha256": "8957218a26dde4648161f3395fbc4ef17908ec3277f1ffaeeea53cb11a222e0c"
+        }
+      ],
+      "scientificMeaning": "ده توضيح لفكرة عرض المدرّب بس. الزجاجات والسائل والشاشة الفاضية رسومات توضيحية؛ مفيش نوع كاشف أو كمية أو لون قياس وتركيز حقيقي، ومفيش تصريح تشغيل. تغيير المرحلة مش معناه إن اختبار معمل اتعمل.\n\nاتفرج على تحليل المدرّب واشرح الطريقة والنتيجة. ما تمسكش محاليل الاستخلاص أو الكواشف اللونية أو الأجهزة من الدرس الأونلاين ده. أي تشغيل فعلي في المعمل يحتاج إجراءات الموقع وإشراف المدرّب.\n\nاستخلص جزء تربة مقاس حسب الطريقة المعلنة\n\nرشّح المعلق علشان تاخد المستخلص\n\nخلّي جزء مقاس يتفاعل مع كاشف الطريقة المحدد\n\nاقرأ بالجدول المطابق أو الجهاز اللي اتفحص\n\nترتيب الفكرة صح. الكميات والكيمياء والوقت وعينة الشاهد (البلانك) والمعايرة لسه حسب الطريقة؛ مفيش مهارة تشغيل عملي اتجتازت.\n\nعناوين كبيرة قابلة للتعديل، بدائل نصية للألوان، ترتيب بلوحة المفاتيح، شرح للمصطلحات ونتيجة ما تعتمدش على اللون وحده.",
+      "displayText": "ده توضيح لفكرة عرض المدرّب بس. الزجاجات والسائل والشاشة الفاضية رسومات توضيحية؛ مفيش نوع كاشف أو كمية أو لون قياس وتركيز حقيقي، ومفيش تصريح تشغيل. تغيير المرحلة مش معناه إن اختبار معمل اتعمل.\n\nاتفرج على تحليل المدرّب واشرح الطريقة والنتيجة. ما تمسكش محاليل الاستخلاص أو الكواشف اللونية أو الأجهزة من الدرس الأونلاين ده. أي تشغيل فعلي في المعمل يحتاج إجراءات الموقع وإشراف المدرّب.\n\nاستخلص جزء تربة مقاس حسب الطريقة المعلنة\n\nرشّح المعلق علشان تاخد المستخلص\n\nخلّي جزء مقاس يتفاعل مع كاشف الطريقة المحدد\n\nاقرأ بالجدول المطابق أو الجهاز اللي اتفحص\n\nترتيب الفكرة صح. الكميات والكيمياء والوقت وعينة الشاهد (البلانك) والمعايرة لسه حسب الطريقة؛ مفيش مهارة تشغيل عملي اتجتازت.\n\nعناوين كبيرة قابلة للتعديل، بدائل نصية للألوان، ترتيب بلوحة المفاتيح، شرح للمصطلحات ونتيجة ما تعتمدش على اللون وحده.",
+      "captionText": "ده توضيح لفكرة عرض المدرّب بس. الزجاجات والسائل والشاشة الفاضية رسومات توضيحية؛ مفيش نوع كاشف أو كمية أو لون قياس وتركيز حقيقي، ومفيش تصريح تشغيل. تغيير المرحلة مش معناه إن اختبار معمل اتعمل.\n\nاتفرج على تحليل المدرّب واشرح الطريقة والنتيجة. ما تمسكش محاليل الاستخلاص أو الكواشف اللونية أو الأجهزة من الدرس الأونلاين ده. أي تشغيل فعلي في المعمل يحتاج إجراءات الموقع وإشراف المدرّب.\n\nاستخلص جزء تربة مقاس حسب الطريقة المعلنة\n\nرشّح المعلق علشان تاخد المستخلص\n\nخلّي جزء مقاس يتفاعل مع كاشف الطريقة المحدد\n\nاقرأ بالجدول المطابق أو الجهاز اللي اتفحص\n\nترتيب الفكرة صح. الكميات والكيمياء والوقت وعينة الشاهد (البلانك) والمعايرة لسه حسب الطريقة؛ مفيش مهارة تشغيل عملي اتجتازت.\n\nعناوين كبيرة قابلة للتعديل، بدائل نصية للألوان، ترتيب بلوحة المفاتيح، شرح للمصطلحات ونتيجة ما تعتمدش على اللون وحده.",
+      "spokenText": "ده توضيح لفكرة عرض المدرّب بس. الزجاجات والسائل والشاشة الفاضية رسومات توضيحية؛ مفيش نوع كاشف أو كمية أو لون قياس وتركيز حقيقي، ومفيش تصريح تشغيل. تغيير المرحلة مش معناه إن اختبار معمل اتعمل.\n\nاتفرج على تحليل المدرّب واشرح الطريقة والنتيجة. ما تمسكش محاليل الاستخلاص أو الكواشف اللونية أو الأجهزة من الدرس الأونلاين ده. أي تشغيل فعلي في المعمل يحتاج إجراءات الموقع وإشراف المدرّب.\n\nاستخلص جزء تربة مقاس حسب الطريقة المعلنة\n\nرشّح المعلق علشان تاخد المستخلص\n\nخلّي جزء مقاس يتفاعل مع كاشف الطريقة المحدد\n\nاقرأ بالجدول المطابق أو الجهاز اللي اتفحص\n\nترتيب الفكرة صح. الكميات والكيمياء والوقت وعينة الشاهد (البلانك) والمعايرة لسه حسب الطريقة؛ مفيش مهارة تشغيل عملي اتجتازت.\n\nعناوين كبيرة قابلة للتعديل، بدائل نصية للألوان، ترتيب بلوحة المفاتيح، شرح للمصطلحات ونتيجة ما تعتمدش على اللون وحده.",
+      "spokenTextSHA256": "6cf100cec1079d344042846c6952609cc274a50a51f6d9b443fb772fe4a8cbe9",
+      "spokenTextSha256": "6cf100cec1079d344042846c6952609cc274a50a51f6d9b443fb772fe4a8cbe9",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ccaeb5d9f9454f0895d91a5a3832a06e5860a7b572f3dac447cf28c5ef2e14e4",
+      "requestFingerprintSha256": "ccaeb5d9f9454f0895d91a5a3832a06e5860a7b572f3dac447cf28c5ef2e14e4",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "03afe064951eadcf7b91c45029d179c9a88ee53f7b73bec8fc6d89e47d927380"
+    },
+    {
+      "id": "S2-09-ar-EG-knowledge-completion-r1",
+      "unitId": "S2-09-ar-EG-knowledge-completion-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c7fc846103549cbff0b0ddf7c4967c8055f333822c77d61933093ffb8dbdb2",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/passChecks/0/evidence",
+          "text": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.",
+          "sha256": "2d7b7dfdfb704bf9e32daced6ddf2ea38abfd5ae2d41beb667c7190e44c0e54d"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/0/decision",
+          "text": "الاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.",
+          "sha256": "234a1b329c1383cee17acb7e5410492d30357c037d2137b1c96166fd68175bca"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/evidence",
+          "text": "الطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب N-P2O5-K2O على عبوة السماد وppm في تحليل التربة.",
+          "sha256": "4277d9d0fff92cb2721a057d302258efa368842ab22e9fc07033d85660b5fac1"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/decision",
+          "text": "الاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.",
+          "sha256": "fb8be840f093337ffeea12e09a2f3db09d366a714462f051652f8fc1184f2442"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/evidence",
+          "text": "في حالة pH 5.5 وP 12 ppm وفراغَي X/Y، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.",
+          "sha256": "e6a426d205da2db3efc05a93f55e5771ff579a94a97b12308aea235bb58843de"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/decision",
+          "text": "الاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية N تلقائية من رقم منخفض ترفض.",
+          "sha256": "e6ff4498df4a5b9fb33dd403a6b203b64b431c8478a0e96798e4e164b8a86acc"
+        }
+      ],
+      "scientificMeaning": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب N-P2O5-K2O على عبوة السماد وppm في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة pH 5.5 وP 12 ppm وفراغَي X/Y، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية N تلقائية من رقم منخفض ترفض.",
+      "displayText": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب N-P2O5-K2O على عبوة السماد وppm في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة pH 5.5 وP 12 ppm وفراغَي X/Y، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية N تلقائية من رقم منخفض ترفض.",
+      "captionText": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب N-P2O5-K2O على عبوة السماد وppm في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة pH 5.5 وP 12 ppm وفراغَي X/Y، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية N تلقائية من رقم منخفض ترفض.",
+      "spokenText": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب النيتروجين-بي اتنين أو خمسة-كيه اتنين أو على عبوة السماد وجزء في المليون في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة بي إتش خمسة فاصلة خمسة والفوسفور اتناشر جزء في المليون وفراغَي إكس وواي، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية النيتروجين تلقائية من رقم منخفض ترفض.",
+      "spokenTextSHA256": "530ffde7f50b2991d7418c741bc6f48b654ee56e499ab138a2f678ba729096a9",
+      "spokenTextSha256": "530ffde7f50b2991d7418c741bc6f48b654ee56e499ab138a2f678ba729096a9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب N-P2O5-K2O على عبوة السماد وppm في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة pH 5.5 وP 12 ppm وفراغَي X/Y، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية N تلقائية من رقم منخفض ترفض.",
+          "spoken": "الطالب يرتب المراحل الأربع اللي شافها في عرض المدرّب، ويعرف إن كمية التربة ومحلول الاستخلاص والكاشف يحددهم الإجراء الفعلي، ويشرح إن الاستخلاص مؤشر خاص بالطريقة، مش كل العناصر الموجودة في الأرض ولا بالضبط اللي هتسحبه الجذور.\n\nالاجتياز بتسلسل كامل وفهم حدود الطريقة. مشاهدة العرض لا تعطي كفاءة تنفيذ تحليل كيميائي مستقل.\n\nالطالب يكتب وحدة كل نتيجة وطريقة المعمل ويستخدم مرجعًا مناسبًا للمحصول والمنطقة قبل التصنيف؛ ويفرق بين نسب النيتروجين-بي اتنين أو خمسة-كيه اتنين أو على عبوة السماد وppm في تحليل التربة.\n\nالاجتياز بتحديد صحيح للوحدة والطريقة وحدود التفسير؛ نقل حد من جدول المثال كأنه معيار عام لا يجتاز.\n\nفي حالة بي إتش خمسة فاصلة خمسة والفوسفور اتناشر جزء في المليون وفراغَي إكس وواي، يذكر الطالب أساس التحليل والمحصول والمنطقة واحتياج الجير وتوصية العنصر وتفاصيل المنتج اللي لسه ناقصة، ثم يقترح فحصًا تاليًا مشروطًا من غير اختراع جرعة.\n\nالاجتياز لما يوضح الدليل الناقص والاتجاه المشروط. جرعة حقل متخيلة أو توصية النيتروجين تلقائية من رقم منخفض ترفض.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        },
+        {
+          "written": "وppm",
+          "spoken": "وجزء في المليون",
+          "occurrences": 1,
+          "purpose": "Prospective Egyptian spoken grammar and attached unit-token expansion; all source facts, amounts and qualifications retained, canonical/display untouched"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5533a252d6cd06bdf11c7e5a8d0b928350c4ca9dbb31a9ba2e2ab295da4b4e2d",
+      "requestFingerprintSha256": "5533a252d6cd06bdf11c7e5a8d0b928350c4ca9dbb31a9ba2e2ab295da4b4e2d",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "03afe064951eadcf7b91c45029d179c9a88ee53f7b73bec8fc6d89e47d927380"
+    },
+    {
+      "id": "S2-09-ar-EG-record-guidance-r1",
+      "unitId": "S2-09-ar-EG-record-guidance-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c7fc846103549cbff0b0ddf7c4967c8055f333822c77d61933093ffb8dbdb2",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/recordHelp",
+          "text": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.",
+          "sha256": "7b53db84ba69b07826164001a411f2bee61d82ce34a9619196b0e007f5888174"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/0",
+          "text": "العدة الفعلية ودليلها أو طريقة المعمل",
+          "sha256": "5b6c49acde3c2f945cfbabdc508346c166908e52f6c8985ae93d16cb8fb49dfe"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/1",
+          "text": "هوية العينة وأساس تسجيل النتيجة",
+          "sha256": "3e696eb37dd40bd38233a2abc15d5ffd8cb9f113c3d01e6156b60836bbbd6798"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/2",
+          "text": "محلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)",
+          "sha256": "d8d4b66e1fc45ee987b2957f1b4cf59dd9622cb4a87ef5bba7c5231bb41a0196"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/3",
+          "text": "عينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق",
+          "sha256": "540cffa937d419e7db014b2b905674243455c125a616e557c608f83dc47e7c90"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/4",
+          "text": "المحصول والمنطقة ودليل التفسير المناسب",
+          "sha256": "1637d1d429006fdc4decc6d36e8ddd6ab50de3d461e4e91347bfabcd93898489"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/5",
+          "text": "المعلومات الناقصة لكمية الجير X والسماد Y، من غير تخمين جرعة",
+          "sha256": "654932eaa180ec4b94174225f9244f46d5a6507853a2bbc359d28aff045533ec"
+        },
+        {
+          "pointer": "/npkPractice/ui/saved",
+          "text": "الصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.",
+          "sha256": "70e5d8a417980edefb7015c877050e15a8453f1e1d46d12f22de48c8ffefda88"
+        },
+        {
+          "pointer": "/npkPractice/ui/unknown",
+          "text": "X وY لسه مش محسومين؛ المجهول مش صفر",
+          "sha256": "90508f1c3aff2af5a51597b0704d13974a41832f3e4172b2f86081b1e7b8b417"
+        },
+        {
+          "pointer": "/npkPractice/ui/reasonBoundary",
+          "text": "دي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.",
+          "sha256": "675fc032fcfb1f7744077aefa384f2be5a31463485379f67baabcb2e45c086ca"
+        },
+        {
+          "pointer": "/npkPractice/ui/tableWarning",
+          "text": "التدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.",
+          "sha256": "a35117d5cb7bf07688cbf611d76af40abb9ed38ad80a36e9ddc6d139b5d77d0e"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "ورقة تدريب تفسير اختبار NPK",
+          "sha256": "c6d4cecf5f047b39569aed3023c8c89c4c9daa99da2b7f36f1bdf7ea0f9d2db0"
+        }
+      ],
+      "scientificMeaning": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير X والسماد Y، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nX وY لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار NPK",
+      "displayText": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير X والسماد Y، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nX وY لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار NPK",
+      "captionText": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير X والسماد Y، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nX وY لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار NPK",
+      "spokenText": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير إكس والسماد واي، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nإكس وواي لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار إن بي كيه",
+      "spokenTextSHA256": "e382c5ca8ce489648daed1086339881c00b20156fbefb7c9515fe9a30ae1fa16",
+      "spokenTextSha256": "e382c5ca8ce489648daed1086339881c00b20156fbefb7c9515fe9a30ae1fa16",
+      "spokenAdaptationChanges": [
+        {
+          "written": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير X والسماد Y، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nX وY لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار NPK",
+          "spoken": "استخدم بيانات تدريب متسمّية بوضوح أو ملاحظات وفرها المدرّب بس. المجهول سيبه فاضي؛ كتابة كلام ما تثبتش إن قياس حصل.\n\nالعدة الفعلية ودليلها أو طريقة المعمل\n\nهوية العينة وأساس تسجيل النتيجة\n\nمحلول الاستخلاص وكميات الطريقة المحددة (يوفرها المدرّب)\n\nعينة الشاهد (البلانك) أو المعايرة والقراءة أو الجدول المطابق\n\nالمحصول والمنطقة ودليل التفسير المناسب\n\nالمعلومات الناقصة لكمية الجير إكس والسماد واي، من غير تخمين جرعة\n\nالصف اتحفظ محليًا. ما اتعملش اعتماد نتيجة عملية ولا توقيع مدرّب.\n\nإكس وواي لسه مش محسومين؛ المجهول مش صفر\n\nدي مقارنة بإجابة نموذجية بعد محاولتك؛ مش حكم على معنى إجابتك ولا اعتماد لجرعة سماد.\n\nالتدريب هنا على جدول المثال القديم بس. المعمل الحقيقي ممكن يصنّف نفس الرقم بشكل مختلف.\n\nورقة تدريب تفسير اختبار إن بي كيه",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8618cd74c29bbf6c2f36e75765b805750010f7d54f2a0a6f6d5eb7d448bb745e",
+      "requestFingerprintSha256": "8618cd74c29bbf6c2f36e75765b805750010f7d54f2a0a6f6d5eb7d448bb745e",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "03afe064951eadcf7b91c45029d179c9a88ee53f7b73bec8fc6d89e47d927380"
+    },
+    {
+      "id": "S2-09-en-demonstration-guidance-r1",
+      "unitId": "S2-09-en-demonstration-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "demonstration-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/modelHelp",
+          "text": "Conceptual trainer demonstration only. Bottles, liquid and blank readout are schematic: no specified reagent, amount, real colour/concentration or operating permission. Changing a phase does not perform a laboratory test.",
+          "sha256": "ccef6a4a3ad49314f9b9ed72eff6b66cd9d956993d298b5cd591418d4b0cf95e"
+        },
+        {
+          "pointer": "/npkPractice/physical",
+          "text": "Watch the trainer's analysis and explain the method and result. Do not handle extraction reagents, colour reagents or analytical instruments from this online step. Any actual laboratory operation requires its own site procedure and trainer supervision.",
+          "sha256": "8def090e6bf1d5055cd792d5b86d0d0c1caaf2ad7ffa22bff86da90a1d57624a"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/0",
+          "text": "Extract a measured soil portion by the declared method",
+          "sha256": "cf832ec5ed3ced0811c7f79218cea8b758b5bb1f56075340bac3e46bfe4f8c93"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/1",
+          "text": "Filter the suspension to obtain the extract",
+          "sha256": "7f377825e87269a053416e0b7c08e71e9dbef73050434a7f7db9a91d2a22a21b"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/2",
+          "text": "React a measured portion with the method’s stated reagent",
+          "sha256": "1b09e67a3c3e0516a41f7386c6c68f15388a6fa0c8e792bae3624060a3c0b5e7"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/3",
+          "text": "Read with the matching chart or checked instrument",
+          "sha256": "2b199717246243d757d792972e5a9b17a8a307468c4a7b631f2b897964e7d9e6"
+        },
+        {
+          "pointer": "/npkPractice/ui/orderGood",
+          "text": "Concept order correct. The method still supplies quantities, chemistry, timing, blanks and calibration; no practical operation passed.",
+          "sha256": "ff30c489ef333c67ef89d6672fd386d441986c0c98fb0c1526528a0fd14c2c3e"
+        },
+        {
+          "pointer": "/npkPractice/accessibility",
+          "text": "Provide large editable labels, text equivalents for colours, keyboard order controls, glossary help and a readout not dependent on colour alone.",
+          "sha256": "bbea9d7ce17eb6c5ebb261448eb9a11d9d18721abbe9ecda597a40b0b45086c5"
+        }
+      ],
+      "scientificMeaning": "Conceptual trainer demonstration only. Bottles, liquid and blank readout are schematic: no specified reagent, amount, real colour/concentration or operating permission. Changing a phase does not perform a laboratory test.\n\nWatch the trainer's analysis and explain the method and result. Do not handle extraction reagents, colour reagents or analytical instruments from this online step. Any actual laboratory operation requires its own site procedure and trainer supervision.\n\nExtract a measured soil portion by the declared method\n\nFilter the suspension to obtain the extract\n\nReact a measured portion with the method’s stated reagent\n\nRead with the matching chart or checked instrument\n\nConcept order correct. The method still supplies quantities, chemistry, timing, blanks and calibration; no practical operation passed.\n\nProvide large editable labels, text equivalents for colours, keyboard order controls, glossary help and a readout not dependent on colour alone.",
+      "displayText": "Conceptual trainer demonstration only. Bottles, liquid and blank readout are schematic: no specified reagent, amount, real colour/concentration or operating permission. Changing a phase does not perform a laboratory test.\n\nWatch the trainer's analysis and explain the method and result. Do not handle extraction reagents, colour reagents or analytical instruments from this online step. Any actual laboratory operation requires its own site procedure and trainer supervision.\n\nExtract a measured soil portion by the declared method\n\nFilter the suspension to obtain the extract\n\nReact a measured portion with the method’s stated reagent\n\nRead with the matching chart or checked instrument\n\nConcept order correct. The method still supplies quantities, chemistry, timing, blanks and calibration; no practical operation passed.\n\nProvide large editable labels, text equivalents for colours, keyboard order controls, glossary help and a readout not dependent on colour alone.",
+      "captionText": "Conceptual trainer demonstration only. Bottles, liquid and blank readout are schematic: no specified reagent, amount, real colour/concentration or operating permission. Changing a phase does not perform a laboratory test.\n\nWatch the trainer's analysis and explain the method and result. Do not handle extraction reagents, colour reagents or analytical instruments from this online step. Any actual laboratory operation requires its own site procedure and trainer supervision.\n\nExtract a measured soil portion by the declared method\n\nFilter the suspension to obtain the extract\n\nReact a measured portion with the method’s stated reagent\n\nRead with the matching chart or checked instrument\n\nConcept order correct. The method still supplies quantities, chemistry, timing, blanks and calibration; no practical operation passed.\n\nProvide large editable labels, text equivalents for colours, keyboard order controls, glossary help and a readout not dependent on colour alone.",
+      "spokenText": "Conceptual trainer demonstration only. Bottles, liquid and blank readout are schematic: no specified reagent, amount, real colour/concentration or operating permission. Changing a phase does not perform a laboratory test.\n\nWatch the trainer's analysis and explain the method and result. Do not handle extraction reagents, colour reagents or analytical instruments from this online step. Any actual laboratory operation requires its own site procedure and trainer supervision.\n\nExtract a measured soil portion by the declared method\n\nFilter the suspension to obtain the extract\n\nReact a measured portion with the method’s stated reagent\n\nRead with the matching chart or checked instrument\n\nConcept order correct. The method still supplies quantities, chemistry, timing, blanks and calibration; no practical operation passed.\n\nProvide large editable labels, text equivalents for colours, keyboard order controls, glossary help and a readout not dependent on colour alone.",
+      "spokenTextSHA256": "6a37910e89c3def0fc93add2b604421b3cb239e4f79d8bb10499f372b4ffb5f2",
+      "spokenTextSha256": "6a37910e89c3def0fc93add2b604421b3cb239e4f79d8bb10499f372b4ffb5f2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "25159ff6be1e8316ec8e76a3eed65c63d3c4b28d8b2169e3e76fbfaf8792720a",
+      "requestFingerprintSha256": "25159ff6be1e8316ec8e76a3eed65c63d3c4b28d8b2169e3e76fbfaf8792720a",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "9a3f696448f57b59e23e639b99d2ac55a8ed2094d0b36dbabd713b29c9071c70"
+    },
+    {
+      "id": "S2-09-en-knowledge-completion-r1",
+      "unitId": "S2-09-en-knowledge-completion-r1",
+      "locale": "en",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/passChecks/0/evidence",
+          "text": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.",
+          "sha256": "5194fd6b142ddf219698eda3acbf98a0d24b5acb75242f843b7186b65c7bd6e0"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/0/decision",
+          "text": "Pass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.",
+          "sha256": "44d38488d6530892f869f993acd58d9f33cb70e7e1b5bfab97e3fa9dbcb4edf6"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/evidence",
+          "text": "Learner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label N-P2O5-K2O percentages as different from soil-test ppm.",
+          "sha256": "7d4033429e79abe63ba4426e59cac9fd683773bc25b11c47d9f6672d2b6dee4f"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/decision",
+          "text": "Pass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.",
+          "sha256": "07b4331ce008485b9a81416e41be7c1b33fdefd88d5a98b937e8864d0c6b88e5"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/evidence",
+          "text": "For pH 5.5/P 12 ppm and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.",
+          "sha256": "93d5fa8500f0dccce87dfdbcb856da60ebb7880c1c26ec956da28fac871ee4b2"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/decision",
+          "text": "Pass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional N application fails.",
+          "sha256": "82c60a98001487d28ca6ce8ff161ce2adfc3b80c150e341f6cfb7808749f0166"
+        }
+      ],
+      "scientificMeaning": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label N-P2O5-K2O percentages as different from soil-test ppm.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor pH 5.5/P 12 ppm and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional N application fails.",
+      "displayText": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label N-P2O5-K2O percentages as different from soil-test ppm.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor pH 5.5/P 12 ppm and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional N application fails.",
+      "captionText": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label N-P2O5-K2O percentages as different from soil-test ppm.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor pH 5.5/P 12 ppm and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional N application fails.",
+      "spokenText": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label nitrogen-P two O five-K two O percentages as different from soil-test parts per million.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor P H five point five/phosphorus twelve parts per million and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional nitrogen application fails.",
+      "spokenTextSHA256": "579dd3754f86271d44dd98549ed12ff010f1822eab481ff70aaa5a546270e07b",
+      "spokenTextSha256": "579dd3754f86271d44dd98549ed12ff010f1822eab481ff70aaa5a546270e07b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label N-P2O5-K2O percentages as different from soil-test ppm.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor pH 5.5/P 12 ppm and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional N application fails.",
+          "spoken": "Learner orders four observed demonstration stages, names the known amount of soil, extractant and reagent as method-specific, and explains that the extraction is an operational index rather than all nutrients in the soil or exactly what roots take up.\n\nPass only with the full sequence and method limitation. Watching the trainer does not award independent chemical-analysis competence.\n\nLearner labels the units and the laboratory's method for each value and uses a crop- and region-appropriate guide before classifying; identifies fertilizer-label nitrogen-P two O five-K two O percentages as different from soil-test parts per million.\n\nPass with correct unit, method and interpretation boundary; copying an example threshold as a universal standard does not pass.\n\nFor P H five point five/phosphorus twelve parts per million and report placeholders X/Y, learner names the unavailable test basis, crop, region, lime requirement, nutrient recommendation and product details, then states a conditional next step without fabricating a dose.\n\nPass if missing evidence and conditional direction are explicit. A guessed field rate or unconditional nitrogen application fails.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5b51ac040647ed0fa853f575ef2fc88cb2c31bdf85d8d0850bbc955fbe9794e0",
+      "requestFingerprintSha256": "5b51ac040647ed0fa853f575ef2fc88cb2c31bdf85d8d0850bbc955fbe9794e0",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "9a3f696448f57b59e23e639b99d2ac55a8ed2094d0b36dbabd713b29c9071c70"
+    },
+    {
+      "id": "S2-09-en-record-guidance-r1",
+      "unitId": "S2-09-en-record-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/recordHelp",
+          "text": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.",
+          "sha256": "d3b46231e6e5ef80ed23aac0b36a89193abb835b41f21b77a33eefdbc3f86a7b"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/0",
+          "text": "Actual kit/manual or laboratory method",
+          "sha256": "8f6ceb97e397e219a0c8478c691e0f6c3149281734026261c4dfd1e1f86c8d8a"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/1",
+          "text": "Declared sample and reporting basis",
+          "sha256": "8d0cfda5f83fe45edd4b69e69ddefc25d72c8f7177d3d1008f03e8c8bed31c43"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/2",
+          "text": "Extractant and method-specific quantities (trainer supplies)",
+          "sha256": "edd4b9ab1dd62ceed9077ba011b72673c57f0a86cd7ec36e09f5e1c517c69759"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/3",
+          "text": "Blank/calibration and readout or matching chart",
+          "sha256": "c3138f2ad63542ec8b7d17f461e53df3663d416e03e58556dde1562f5c11d6eb"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/4",
+          "text": "Crop, region and applicable interpretation guide",
+          "sha256": "c95ca211976db8e58ab99b9a72af25dccfb441043655380a6f31fbddee2c29b1"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/5",
+          "text": "Missing inputs for lime X and fertilizer Y; do not invent a rate",
+          "sha256": "8a8d29104e01f77baa073a78ca5638702aef2b788949baf40164a8c7fbc272c4"
+        },
+        {
+          "pointer": "/npkPractice/ui/saved",
+          "text": "Row saved locally. No practical result or trainer signature has been created.",
+          "sha256": "62c7270d05bedab98a453106b48f0bed9507d77be519761ae9c7858a01235dcc"
+        },
+        {
+          "pointer": "/npkPractice/ui/unknown",
+          "text": "X and Y: unresolved; unknown is not zero",
+          "sha256": "270c403371da1a1fe36b2bb2551520e903cfd447809d65f6a437520834b1db5c"
+        },
+        {
+          "pointer": "/npkPractice/ui/reasonBoundary",
+          "text": "This displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.",
+          "sha256": "1bef47ff7e9e1d9d1347a5bed79d5486415d811b51bc7b9facfc8de6e1e4dce2"
+        },
+        {
+          "pointer": "/npkPractice/ui/tableWarning",
+          "text": "Only the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.",
+          "sha256": "1df25caa9b581a93b031c0c5b0f51fb8ef6038c7d6e31b0ee15da68fcb7dd6f4"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "NPK interpretation worksheet",
+          "sha256": "bce489a678120d120106d37ad51b3ae00573c0cbe66194fc6026a6389d086af1"
+        }
+      ],
+      "scientificMeaning": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nNPK interpretation worksheet",
+      "displayText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nNPK interpretation worksheet",
+      "captionText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nNPK interpretation worksheet",
+      "spokenText": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nN P K interpretation worksheet",
+      "spokenTextSHA256": "63f8fa22ce15bb98e299e5aed56c063bea700ad74da05045f04145740089f445",
+      "spokenTextSha256": "63f8fa22ce15bb98e299e5aed56c063bea700ad74da05045f04145740089f445",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nNPK interpretation worksheet",
+          "spoken": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nActual kit/manual or laboratory method\n\nDeclared sample and reporting basis\n\nExtractant and method-specific quantities (trainer supplies)\n\nBlank/calibration and readout or matching chart\n\nCrop, region and applicable interpretation guide\n\nMissing inputs for lime X and fertilizer Y; do not invent a rate\n\nRow saved locally. No practical result or trainer signature has been created.\n\nX and Y: unresolved; unknown is not zero\n\nThis displays model reasoning after your attempt; it does not judge the meaning of your answer or approve a fertilizer rate.\n\nOnly the historic teaching table is being rehearsed. A real laboratory may classify the same result differently.\n\nN P K interpretation worksheet",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8fa7214f68945b8576cd471f8a73a0ff49924e3067873b0b1aa9424f4336bea3",
+      "requestFingerprintSha256": "8fa7214f68945b8576cd471f8a73a0ff49924e3067873b0b1aa9424f4336bea3",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "9a3f696448f57b59e23e639b99d2ac55a8ed2094d0b36dbabd713b29c9071c70"
+    },
+    {
+      "id": "S2-09-it-demonstration-guidance-r1",
+      "unitId": "S2-09-it-demonstration-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "demonstration-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/modelHelp",
+          "text": "Solo concetto della dimostrazione del formatore. Flaconi, liquido e lettura vuota sono schematici: nessun reagente, quantità o colore/concentrazione reale specificato, nessun permesso operativo. Cambiare fase non esegue un test.",
+          "sha256": "8c7dc73431d83b243137de81f06739be4204b9ef3b7fbc0706fe6025331937e7"
+        },
+        {
+          "pointer": "/npkPractice/physical",
+          "text": "Osserva l'analisi del formatore e spiega metodo e risultato. Questa fase online non autorizza l'uso di estraenti, reagenti o strumenti analitici. Qualsiasi pratica reale richiede procedura locale e supervisione.",
+          "sha256": "84542c410c6155982f9a07a65ecc8d2a2e713ad9d2081122bb3aace0dfb41d43"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/0",
+          "text": "Estrai una porzione misurata con il metodo dichiarato",
+          "sha256": "b11279e4f2828dc811e1958e9341192b0279387ada1fc440db37a37b14bec896"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/1",
+          "text": "Filtra la sospensione per ottenere l’estratto",
+          "sha256": "f83da26ec6d7386a11193cd9b3a700de156e4325bdf1093065760beac12d2f98"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/2",
+          "text": "Fai reagire una porzione misurata con il reagente previsto",
+          "sha256": "4a57001ed5481cd8720ab85ef0df446b417dddad50a07faf4dcb7d169054e0b2"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/3",
+          "text": "Leggi con scala abbinata o strumento verificato",
+          "sha256": "948140618fa8572c2d5beacd8bcef4ce2e08f4cbde3198a3093b9350d4a64e55"
+        },
+        {
+          "pointer": "/npkPractice/ui/orderGood",
+          "text": "Ordine concettuale corretto. Quantità, chimica, tempi, bianco e calibrazione dipendono dal metodo; nessuna abilità pratica superata.",
+          "sha256": "8bbb1f65942d079c87005032d12f476f1daaf1ba7d57786d1489e844509e9f17"
+        },
+        {
+          "pointer": "/npkPractice/accessibility",
+          "text": "Etichette grandi modificabili, equivalenti testuali dei colori, ordinamento da tastiera, glossario e lettura non affidata solo al colore.",
+          "sha256": "1fba8fdd9b3acb3293662cfeb1a8d1a03d916f8cbbc4b675a72dbc97441f5f6b"
+        }
+      ],
+      "scientificMeaning": "Solo concetto della dimostrazione del formatore. Flaconi, liquido e lettura vuota sono schematici: nessun reagente, quantità o colore/concentrazione reale specificato, nessun permesso operativo. Cambiare fase non esegue un test.\n\nOsserva l'analisi del formatore e spiega metodo e risultato. Questa fase online non autorizza l'uso di estraenti, reagenti o strumenti analitici. Qualsiasi pratica reale richiede procedura locale e supervisione.\n\nEstrai una porzione misurata con il metodo dichiarato\n\nFiltra la sospensione per ottenere l’estratto\n\nFai reagire una porzione misurata con il reagente previsto\n\nLeggi con scala abbinata o strumento verificato\n\nOrdine concettuale corretto. Quantità, chimica, tempi, bianco e calibrazione dipendono dal metodo; nessuna abilità pratica superata.\n\nEtichette grandi modificabili, equivalenti testuali dei colori, ordinamento da tastiera, glossario e lettura non affidata solo al colore.",
+      "displayText": "Solo concetto della dimostrazione del formatore. Flaconi, liquido e lettura vuota sono schematici: nessun reagente, quantità o colore/concentrazione reale specificato, nessun permesso operativo. Cambiare fase non esegue un test.\n\nOsserva l'analisi del formatore e spiega metodo e risultato. Questa fase online non autorizza l'uso di estraenti, reagenti o strumenti analitici. Qualsiasi pratica reale richiede procedura locale e supervisione.\n\nEstrai una porzione misurata con il metodo dichiarato\n\nFiltra la sospensione per ottenere l’estratto\n\nFai reagire una porzione misurata con il reagente previsto\n\nLeggi con scala abbinata o strumento verificato\n\nOrdine concettuale corretto. Quantità, chimica, tempi, bianco e calibrazione dipendono dal metodo; nessuna abilità pratica superata.\n\nEtichette grandi modificabili, equivalenti testuali dei colori, ordinamento da tastiera, glossario e lettura non affidata solo al colore.",
+      "captionText": "Solo concetto della dimostrazione del formatore. Flaconi, liquido e lettura vuota sono schematici: nessun reagente, quantità o colore/concentrazione reale specificato, nessun permesso operativo. Cambiare fase non esegue un test.\n\nOsserva l'analisi del formatore e spiega metodo e risultato. Questa fase online non autorizza l'uso di estraenti, reagenti o strumenti analitici. Qualsiasi pratica reale richiede procedura locale e supervisione.\n\nEstrai una porzione misurata con il metodo dichiarato\n\nFiltra la sospensione per ottenere l’estratto\n\nFai reagire una porzione misurata con il reagente previsto\n\nLeggi con scala abbinata o strumento verificato\n\nOrdine concettuale corretto. Quantità, chimica, tempi, bianco e calibrazione dipendono dal metodo; nessuna abilità pratica superata.\n\nEtichette grandi modificabili, equivalenti testuali dei colori, ordinamento da tastiera, glossario e lettura non affidata solo al colore.",
+      "spokenText": "Solo concetto della dimostrazione del formatore. Flaconi, liquido e lettura vuota sono schematici: nessun reagente, quantità o colore/concentrazione reale specificato, nessun permesso operativo. Cambiare fase non esegue un test.\n\nOsserva l'analisi del formatore e spiega metodo e risultato. Questa fase online non autorizza l'uso di estraenti, reagenti o strumenti analitici. Qualsiasi pratica reale richiede procedura locale e supervisione.\n\nEstrai una porzione misurata con il metodo dichiarato\n\nFiltra la sospensione per ottenere l’estratto\n\nFai reagire una porzione misurata con il reagente previsto\n\nLeggi con scala abbinata o strumento verificato\n\nOrdine concettuale corretto. Quantità, chimica, tempi, bianco e calibrazione dipendono dal metodo; nessuna abilità pratica superata.\n\nEtichette grandi modificabili, equivalenti testuali dei colori, ordinamento da tastiera, glossario e lettura non affidata solo al colore.",
+      "spokenTextSHA256": "50fa40592028fed845fa804597727dd9d7d93c8495c43cfb75427fd348b2f429",
+      "spokenTextSha256": "50fa40592028fed845fa804597727dd9d7d93c8495c43cfb75427fd348b2f429",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "417643c9ab1d2d0f2837e454ff230a399e1080c9a19b8d77002ece0b0bc959f4",
+      "requestFingerprintSha256": "417643c9ab1d2d0f2837e454ff230a399e1080c9a19b8d77002ece0b0bc959f4",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c77388a451f6e0587da385d80211e5ba16f0e937a3972ee3aaf5dfee0cf5e730"
+    },
+    {
+      "id": "S2-09-it-knowledge-completion-r1",
+      "unitId": "S2-09-it-knowledge-completion-r1",
+      "locale": "it",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/passChecks/0/evidence",
+          "text": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.",
+          "sha256": "d504483b07beb7815a8e4bbee210f1788a93510a8d1999bcd2f540629969c1ed"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/0/decision",
+          "text": "Superato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.",
+          "sha256": "d386dac730c7336a498292cb66dc4e6226e7b7565f4a55b2a81006689cccff2c"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/evidence",
+          "text": "L'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali N-P2O5-K2O sull'etichetta dai ppm del suolo.",
+          "sha256": "455b45a03d17eb25c8de942fb4adf9f471964329a2764332397ad353579aea31"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/decision",
+          "text": "Superato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.",
+          "sha256": "e1843b352f804dba8f3b26314d98bb0faf04b567d7acfc64695cf0180f8b7142"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/evidence",
+          "text": "Nel caso pH 5.5/P 12 ppm e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.",
+          "sha256": "b0ebc88fbfa9ef08c6645d3c7b367e95c1feeaa39af2a4c5c1b4d5983676d7f4"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/decision",
+          "text": "Superato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di N incondizionata non supera.",
+          "sha256": "5507912728f680ae734ff0349451e312560ca66dc07c9a0adb06aa574af56627"
+        }
+      ],
+      "scientificMeaning": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali N-P2O5-K2O sull'etichetta dai ppm del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso pH 5.5/P 12 ppm e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di N incondizionata non supera.",
+      "displayText": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali N-P2O5-K2O sull'etichetta dai ppm del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso pH 5.5/P 12 ppm e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di N incondizionata non supera.",
+      "captionText": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali N-P2O5-K2O sull'etichetta dai ppm del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso pH 5.5/P 12 ppm e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di N incondizionata non supera.",
+      "spokenText": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali azoto-pi due o cinque-cappa due o sull'etichetta dalle parti per milione del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso P H cinque virgola cinque/fosforo dodici parti per milione e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di azoto incondizionata non supera.",
+      "spokenTextSHA256": "7678951037d1a25dfe02437118fddb6e0f09751f6a33ef895752802aa1d89e9d",
+      "spokenTextSha256": "7678951037d1a25dfe02437118fddb6e0f09751f6a33ef895752802aa1d89e9d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali N-P2O5-K2O sull'etichetta dai ppm del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso pH 5.5/P 12 ppm e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di N incondizionata non supera.",
+          "spoken": "L'allievo ordina le quattro fasi osservate, riconosce che quantità di suolo, estraente e reagente dipendono dal metodo, e spiega che l'estrazione è un indice operativo, non tutti i nutrienti del suolo né esattamente quanto assorbono le radici.\n\nSuperato solo con sequenza completa e limite del metodo. Guardare il formatore non conferisce competenza per analisi chimica autonoma.\n\nL'allievo indica unità e metodo del laboratorio per ogni valore, consulta una guida adatta a coltura e regione prima di classificare e distingue le percentuali azoto-pi due o cinque-cappa due o sull'etichetta dai parti per milione del suolo.\n\nSuperato con corretti limiti di unità, metodo e interpretazione; usare una soglia d'esempio come standard universale non basta.\n\nNel caso P H cinque virgola cinque/fosforo dodici parti per milione e nei segnaposto X/Y, l'allievo nomina base del test, coltura, regione, fabbisogno di calce, raccomandazione dei nutrienti e dettagli del prodotto mancanti, poi indica una verifica condizionata senza inventare dosi.\n\nSuperato se prove mancanti e direzione condizionata sono esplicite. Una dose di campo ipotizzata o applicazione di azoto incondizionata non supera.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        },
+        {
+          "written": "dai parti per milione",
+          "spoken": "dalle parti per milione",
+          "occurrences": 1,
+          "purpose": "Prospective grammatical gender/case/number/spacing after exact symbol-unit expansion; same source meaning and quantities, no scientific/display edit"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a1188fcc47be5917d4edec0e51d72a7bb07f94c6bb00f78d4f1f0631518bc1ab",
+      "requestFingerprintSha256": "a1188fcc47be5917d4edec0e51d72a7bb07f94c6bb00f78d4f1f0631518bc1ab",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c77388a451f6e0587da385d80211e5ba16f0e937a3972ee3aaf5dfee0cf5e730"
+    },
+    {
+      "id": "S2-09-it-record-guidance-r1",
+      "unitId": "S2-09-it-record-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/recordHelp",
+          "text": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.",
+          "sha256": "a472a13c8f02c773e6b0e2fdcb6b1be4da81655f451cfb6035afb3fdb8fcc0f1"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/0",
+          "text": "Kit reale/manuale o metodo di laboratorio",
+          "sha256": "88c05d0c2acdd047e663114bc5c7347b3ecd2d7645e5956867dacb36faa33bcb"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/1",
+          "text": "Campione e base di refertazione dichiarati",
+          "sha256": "1b3a2397d9f4077deed7375c36bbf157cd37296ff74c9be97d2471083b462ee3"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/2",
+          "text": "Estraente e quantità specifiche (fornite dal formatore)",
+          "sha256": "200ae492323f40fa8817d6d99f47cee6e13a33d7cebea656fd012e74ce6fdf60"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/3",
+          "text": "Bianco/calibrazione e lettura o scala abbinata",
+          "sha256": "bf069a12357fcad925d7a184615f6da46489929d949d31a1ad483604f4a78c1f"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/4",
+          "text": "Coltura, regione e guida interpretativa pertinente",
+          "sha256": "95b65a87f1835f3a30e341e037b4fc0af244d64a915e916b84e7815e928d1b6b"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/5",
+          "text": "Dati mancanti per calce X e fertilizzante Y, senza inventare dose",
+          "sha256": "0fdaf87275c6ec89ebefc2cbdb6bde9d893ebb8473e9d22ecf824b57aac95bce"
+        },
+        {
+          "pointer": "/npkPractice/ui/saved",
+          "text": "Riga salvata in locale. Nessun risultato pratico certificato né firma creata.",
+          "sha256": "a0ccc837d3726361d5ed077b53e4cdac08fca4dac8487f843e9eda224124ac77"
+        },
+        {
+          "pointer": "/npkPractice/ui/unknown",
+          "text": "X eY irrisolti; ignoto non significa zero",
+          "sha256": "72c1b4028ecc6a3327345fbdb6890109f5ecb7bc41778effa8f524cfa85bd11f"
+        },
+        {
+          "pointer": "/npkPractice/ui/reasonBoundary",
+          "text": "Modello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.",
+          "sha256": "dd3f403a1d8f1ae2006350872b4c64574bb0175fd75c2f26d10db66d2e91aa93"
+        },
+        {
+          "pointer": "/npkPractice/ui/tableWarning",
+          "text": "Esercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.",
+          "sha256": "4aafdcbf4c3e8336cb44806a026e19a08c731bb65ebdcbc0b5718a8cfa0ca537"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda interpretativa NPK",
+          "sha256": "f491ddc895d5227ee0314bb02cb6d3ad7c4405871adea49a6f3475e40aa2d295"
+        }
+      ],
+      "scientificMeaning": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX eY irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa NPK",
+      "displayText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX eY irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa NPK",
+      "captionText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX eY irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa NPK",
+      "spokenText": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX e Y irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa enne pi cappa",
+      "spokenTextSHA256": "cb893995c2d517622291fecd6b05fd0f6db21080f251f524f2ca9fbc19d6466e",
+      "spokenTextSha256": "cb893995c2d517622291fecd6b05fd0f6db21080f251f524f2ca9fbc19d6466e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX eY irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa NPK",
+          "spoken": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nKit reale/manuale o metodo di laboratorio\n\nCampione e base di refertazione dichiarati\n\nEstraente e quantità specifiche (fornite dal formatore)\n\nBianco/calibrazione e lettura o scala abbinata\n\nColtura, regione e guida interpretativa pertinente\n\nDati mancanti per calce X e fertilizzante Y, senza inventare dose\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nX eY irrisolti; ignoto non significa zero\n\nModello mostrato dopo il tentativo: non valuta semanticamente la risposta né approva una dose.\n\nEsercizio sulla sola tabella storica. Un laboratorio reale può classificare diversamente lo stesso risultato.\n\nScheda interpretativa enne pi cappa",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        },
+        {
+          "written": "X eY",
+          "spoken": "X e Y",
+          "occurrences": 1,
+          "purpose": "Prospective grammatical gender/case/number/spacing after exact symbol-unit expansion; same source meaning and quantities, no scientific/display edit"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "39a9851d03bd5b9ec239017143a77b59e576e5703bd595b885e007e5a8637ead",
+      "requestFingerprintSha256": "39a9851d03bd5b9ec239017143a77b59e576e5703bd595b885e007e5a8637ead",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c77388a451f6e0587da385d80211e5ba16f0e937a3972ee3aaf5dfee0cf5e730"
+    },
+    {
+      "id": "S2-09-de-demonstration-guidance-r1",
+      "unitId": "S2-09-de-demonstration-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "demonstration-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "11e8c9390434c52633db5922792715ed6a44a47294257f4b403739cddb21b6f7",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/modelHelp",
+          "text": "Nur Konzept der Lehrkraftvorführung. Flaschen, Flüssigkeit und leeres Display sind schematisch: kein bestimmtes Reagenz, keine Menge oder echte Messfarbe/Konzentration und keine Bedienfreigabe. Phasenwahl führt keinen Labortest aus.",
+          "sha256": "b0e51ac292b84a81b2bdb92bb950643b92e540fb18a0f31b3ccd67ffa7981562"
+        },
+        {
+          "pointer": "/npkPractice/physical",
+          "text": "Beobachte die Analyse der Lehrkraft und erkläre Verfahren und Ergebnis. Aus diesem Online-Schritt folgt keine Erlaubnis zum Umgang mit Extraktions- oder Farbreagenzien und Analysegeräten. Tatsächliche Laborarbeit braucht Standortverfahren und Aufsicht.",
+          "sha256": "056bec7c9f6f8a3a7796ccd11065ef420fa1601107834781bd1702bec216e28c"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/0",
+          "text": "Abgemessene Bodenportion nach benanntem Verfahren extrahieren",
+          "sha256": "c3b0734218549cdb90ebe8bb131169122e22b82877dd13312c201d77dc633150"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/1",
+          "text": "Suspension zum Extrakt filtrieren",
+          "sha256": "63fdbbaa9f5d5032776e92d45ca4055463fb0edbbed72bbbfe94e2345479f148"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/2",
+          "text": "Abgemessene Portion mit vorgesehenem Reagenz reagieren lassen",
+          "sha256": "55c0c5e0268655dd25704104c7dfec52f4e18ddec050c178eba6174f56bbee9d"
+        },
+        {
+          "pointer": "/npkPractice/ui/steps/3",
+          "text": "Mit passender Skala oder geprüftem Gerät ablesen",
+          "sha256": "f2743bd580045a30481b81cf83b5cbc74ddf7d4058e2c483772c59ef4e67e4a7"
+        },
+        {
+          "pointer": "/npkPractice/ui/orderGood",
+          "text": "Konzeptablauf stimmt. Mengen, Chemie, Zeiten, Blindwert und Kalibrierung bleiben methodenabhängig; keine praktische Kompetenz bestanden.",
+          "sha256": "df2750bfc7e877287b47c071263a6b98e810838b9f880a5da7d3f793833bd4db"
+        },
+        {
+          "pointer": "/npkPractice/accessibility",
+          "text": "Große bearbeitbare Beschriftungen, Farb-Textalternativen, Tastaturbedienung für Reihenfolge, Glossar und Ausgabe, die nicht nur von Farbe abhängt.",
+          "sha256": "eab4a485525215ad825d9bc5d0f3411e3aee312b70b6f5c65f558949ca3eeb97"
+        }
+      ],
+      "scientificMeaning": "Nur Konzept der Lehrkraftvorführung. Flaschen, Flüssigkeit und leeres Display sind schematisch: kein bestimmtes Reagenz, keine Menge oder echte Messfarbe/Konzentration und keine Bedienfreigabe. Phasenwahl führt keinen Labortest aus.\n\nBeobachte die Analyse der Lehrkraft und erkläre Verfahren und Ergebnis. Aus diesem Online-Schritt folgt keine Erlaubnis zum Umgang mit Extraktions- oder Farbreagenzien und Analysegeräten. Tatsächliche Laborarbeit braucht Standortverfahren und Aufsicht.\n\nAbgemessene Bodenportion nach benanntem Verfahren extrahieren\n\nSuspension zum Extrakt filtrieren\n\nAbgemessene Portion mit vorgesehenem Reagenz reagieren lassen\n\nMit passender Skala oder geprüftem Gerät ablesen\n\nKonzeptablauf stimmt. Mengen, Chemie, Zeiten, Blindwert und Kalibrierung bleiben methodenabhängig; keine praktische Kompetenz bestanden.\n\nGroße bearbeitbare Beschriftungen, Farb-Textalternativen, Tastaturbedienung für Reihenfolge, Glossar und Ausgabe, die nicht nur von Farbe abhängt.",
+      "displayText": "Nur Konzept der Lehrkraftvorführung. Flaschen, Flüssigkeit und leeres Display sind schematisch: kein bestimmtes Reagenz, keine Menge oder echte Messfarbe/Konzentration und keine Bedienfreigabe. Phasenwahl führt keinen Labortest aus.\n\nBeobachte die Analyse der Lehrkraft und erkläre Verfahren und Ergebnis. Aus diesem Online-Schritt folgt keine Erlaubnis zum Umgang mit Extraktions- oder Farbreagenzien und Analysegeräten. Tatsächliche Laborarbeit braucht Standortverfahren und Aufsicht.\n\nAbgemessene Bodenportion nach benanntem Verfahren extrahieren\n\nSuspension zum Extrakt filtrieren\n\nAbgemessene Portion mit vorgesehenem Reagenz reagieren lassen\n\nMit passender Skala oder geprüftem Gerät ablesen\n\nKonzeptablauf stimmt. Mengen, Chemie, Zeiten, Blindwert und Kalibrierung bleiben methodenabhängig; keine praktische Kompetenz bestanden.\n\nGroße bearbeitbare Beschriftungen, Farb-Textalternativen, Tastaturbedienung für Reihenfolge, Glossar und Ausgabe, die nicht nur von Farbe abhängt.",
+      "captionText": "Nur Konzept der Lehrkraftvorführung. Flaschen, Flüssigkeit und leeres Display sind schematisch: kein bestimmtes Reagenz, keine Menge oder echte Messfarbe/Konzentration und keine Bedienfreigabe. Phasenwahl führt keinen Labortest aus.\n\nBeobachte die Analyse der Lehrkraft und erkläre Verfahren und Ergebnis. Aus diesem Online-Schritt folgt keine Erlaubnis zum Umgang mit Extraktions- oder Farbreagenzien und Analysegeräten. Tatsächliche Laborarbeit braucht Standortverfahren und Aufsicht.\n\nAbgemessene Bodenportion nach benanntem Verfahren extrahieren\n\nSuspension zum Extrakt filtrieren\n\nAbgemessene Portion mit vorgesehenem Reagenz reagieren lassen\n\nMit passender Skala oder geprüftem Gerät ablesen\n\nKonzeptablauf stimmt. Mengen, Chemie, Zeiten, Blindwert und Kalibrierung bleiben methodenabhängig; keine praktische Kompetenz bestanden.\n\nGroße bearbeitbare Beschriftungen, Farb-Textalternativen, Tastaturbedienung für Reihenfolge, Glossar und Ausgabe, die nicht nur von Farbe abhängt.",
+      "spokenText": "Nur Konzept der Lehrkraftvorführung. Flaschen, Flüssigkeit und leeres Display sind schematisch: kein bestimmtes Reagenz, keine Menge oder echte Messfarbe/Konzentration und keine Bedienfreigabe. Phasenwahl führt keinen Labortest aus.\n\nBeobachte die Analyse der Lehrkraft und erkläre Verfahren und Ergebnis. Aus diesem Online-Schritt folgt keine Erlaubnis zum Umgang mit Extraktions- oder Farbreagenzien und Analysegeräten. Tatsächliche Laborarbeit braucht Standortverfahren und Aufsicht.\n\nAbgemessene Bodenportion nach benanntem Verfahren extrahieren\n\nSuspension zum Extrakt filtrieren\n\nAbgemessene Portion mit vorgesehenem Reagenz reagieren lassen\n\nMit passender Skala oder geprüftem Gerät ablesen\n\nKonzeptablauf stimmt. Mengen, Chemie, Zeiten, Blindwert und Kalibrierung bleiben methodenabhängig; keine praktische Kompetenz bestanden.\n\nGroße bearbeitbare Beschriftungen, Farb-Textalternativen, Tastaturbedienung für Reihenfolge, Glossar und Ausgabe, die nicht nur von Farbe abhängt.",
+      "spokenTextSHA256": "e4047bad8aea8f33a7ef509db96b3a716b857a8f22028ceec1b4a178e05fb48b",
+      "spokenTextSha256": "e4047bad8aea8f33a7ef509db96b3a716b857a8f22028ceec1b4a178e05fb48b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7bf0865fcd64d3f6777fb5fe5ba9495072aa13ef8f0a166af3ee792d4b86e4f5",
+      "requestFingerprintSha256": "7bf0865fcd64d3f6777fb5fe5ba9495072aa13ef8f0a166af3ee792d4b86e4f5",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e1325ef3d5e799e288e890bc559fbe8d98ef7a253c34f2347291b3c2cdb2dacc"
+    },
+    {
+      "id": "S2-09-de-knowledge-completion-r1",
+      "unitId": "S2-09-de-knowledge-completion-r1",
+      "locale": "de",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "11e8c9390434c52633db5922792715ed6a44a47294257f4b403739cddb21b6f7",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/passChecks/0/evidence",
+          "text": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.",
+          "sha256": "5bd0318726c59d3352c8c4939afd6572751a63c0a756867e8b73768bd0a95b13"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/0/decision",
+          "text": "Bestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.",
+          "sha256": "7b7fa0d28146daab104762392d065f02b746a7763248614bdeeb1c6265edbdf3"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/evidence",
+          "text": "Für jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente N-P2O5-K2O werden von Boden-ppm unterschieden.",
+          "sha256": "fd9e066f54461200bd62d342c4eeddb1668f69b1deb0aad7f54f5848adaa5db8"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/1/decision",
+          "text": "Bestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.",
+          "sha256": "78a5728d88bae87ab493af0f12f72b9fd14d57559bdd837bc9d0ff484a6e8d11"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/evidence",
+          "text": "Bei pH 5.5/P 12 ppm und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.",
+          "sha256": "3750d5b522b13fe6ddfd3790974313e832b89dcc666e50f6b863e4e7fa636802"
+        },
+        {
+          "pointer": "/npkPractice/passChecks/2/decision",
+          "text": "Bestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale N-Gabe ist falsch.",
+          "sha256": "01e0f92aca0989ba331bc9e06b5ba3aa5e9fab54754cfbd8ba58c062c57b114a"
+        }
+      ],
+      "scientificMeaning": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente N-P2O5-K2O werden von Boden-ppm unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei pH 5.5/P 12 ppm und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale N-Gabe ist falsch.",
+      "displayText": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente N-P2O5-K2O werden von Boden-ppm unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei pH 5.5/P 12 ppm und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale N-Gabe ist falsch.",
+      "captionText": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente N-P2O5-K2O werden von Boden-ppm unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei pH 5.5/P 12 ppm und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale N-Gabe ist falsch.",
+      "spokenText": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente Stickstoff-Pe zwei O fünf-Ka zwei O werden von Bodenwerten in Teilen pro Million unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei P H fünf Komma fünf/Phosphor zwölf Teile pro Million und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale Stickstoff-Gabe ist falsch.",
+      "spokenTextSHA256": "c5633673ce26df96bbd28af3928446d9b3f4d58a38b6eaa2464ac67c796b2494",
+      "spokenTextSha256": "c5633673ce26df96bbd28af3928446d9b3f4d58a38b6eaa2464ac67c796b2494",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente N-P2O5-K2O werden von Boden-ppm unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei pH 5.5/P 12 ppm und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale N-Gabe ist falsch.",
+          "spoken": "Die lernende Person ordnet vier beobachtete Vorführschritte, benennt Boden-, Extraktions- und Reagenzmenge als verfahrensabhängig und erklärt, dass die Extraktion ein operationaler Index ist, nicht der gesamte Nährstoffvorrat oder die genaue Wurzelaufnahme.\n\nBestanden nur mit vollständiger Folge und Verfahrensgrenze. Zuschauen vergibt keine Befähigung zur eigenständigen chemischen Analyse.\n\nFür jeden Wert werden Einheit und Labormethode benannt und vor der Klassifikation ein geeigneter Kultur- und Regionalbezug genutzt. Produktprozente Stickstoff-Pe zwei O fünf-Ka zwei O werden von Boden-Teile pro Million unterschieden.\n\nBestanden mit korrekter Einheit, Methode und Deutungsgrenze; eine Beispielschwelle als allgemeine Norm abzuschreiben reicht nicht.\n\nBei P H fünf Komma fünf/Phosphor zwölf Teile pro Million und Platzhaltern X/Y nennt die Person fehlende Testbasis, Kultur, Region, Kalkbedarf, Nährstoffempfehlung und Produktangaben und empfiehlt bedingt den nächsten Prüfschritt, ohne eine Menge zu erfinden.\n\nBestanden, wenn fehlende Belege und bedingte Richtung ausdrücklich genannt werden. Eine erratene Feldmenge oder pauschale Stickstoff-Gabe ist falsch.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        },
+        {
+          "written": "von Boden-Teile pro Million",
+          "spoken": "von Bodenwerten in Teilen pro Million",
+          "occurrences": 1,
+          "purpose": "Prospective grammatical gender/case/number/spacing after exact symbol-unit expansion; same source meaning and quantities, no scientific/display edit"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b1e016960d98b1b00aea50d275b406f8d300c2bbd0d7effdd1be9a52a7306ec5",
+      "requestFingerprintSha256": "b1e016960d98b1b00aea50d275b406f8d300c2bbd0d7effdd1be9a52a7306ec5",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e1325ef3d5e799e288e890bc559fbe8d98ef7a253c34f2347291b3c2cdb2dacc"
+    },
+    {
+      "id": "S2-09-de-record-guidance-r1",
+      "unitId": "S2-09-de-record-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "11e8c9390434c52633db5922792715ed6a44a47294257f4b403739cddb21b6f7",
+      "sourceBindings": [
+        {
+          "pointer": "/npkPractice/ui/recordHelp",
+          "text": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.",
+          "sha256": "96ee0b875efd85ca6b5edc7f289a7738230bebd3bb42ba62e3ba26bbd8649866"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/0",
+          "text": "Echtes Set/Anleitung oder Laborverfahren",
+          "sha256": "e5a7b8eeb7e61ada5ab6884ff9622faafcbe33d80becbfe2da724f8c973a8d42"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/1",
+          "text": "Benannte Probe und Bezugsbasis",
+          "sha256": "cd9793818ed43c01578b6f22bf1d7e6754ad4d6b97c5d2837e3ccaeb2dcc637a"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/2",
+          "text": "Extraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)",
+          "sha256": "655cdf883e44d1d08f05c12731d7f7e6c62340eaa5ccf154446bf12518a3302b"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/3",
+          "text": "Blindwert/Kalibrierung und Ablesung/passende Skala",
+          "sha256": "3b19e3fe71705f6c931922a8fbe07beff8f996dea30e5db696663a4b17e28f46"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/4",
+          "text": "Kultur, Region und passende Deutungshilfe",
+          "sha256": "58de80281868388366d543efbfae44cc083e739e1528193472b2786540d274be"
+        },
+        {
+          "pointer": "/npkPractice/ui/fields/5",
+          "text": "Fehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden",
+          "sha256": "62f4a42dcca12d8ec2f5f6b3a252a913f539aa8673d287d6e5bf6298b270a77c"
+        },
+        {
+          "pointer": "/npkPractice/ui/saved",
+          "text": "Lokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.",
+          "sha256": "e2d01ad0810b05294c20db0fb827b99ae0ee0f09041648c1e5a96fdd3172dac6"
+        },
+        {
+          "pointer": "/npkPractice/ui/unknown",
+          "text": "X undY ungeklärt; unbekannt ist nicht null",
+          "sha256": "ebafb9eb272d5274bedeec3cfa6029388efce64c0d9d6401a4d391729c155648"
+        },
+        {
+          "pointer": "/npkPractice/ui/reasonBoundary",
+          "text": "Modell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.",
+          "sha256": "93762aeac5e3618e24ab3f18aea01a159bd19be95e9380d24448b7df74532cb5"
+        },
+        {
+          "pointer": "/npkPractice/ui/tableWarning",
+          "text": "Nur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.",
+          "sha256": "5685f635f4fc7903c31b60174643bafae9387b2deb95846938988e7eaf2d6fa3"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt NPK-Deutung",
+          "sha256": "59c98046b5e2c07f087f7f02c35cf5930cdbfa5556fb1d3623e1780fa326978a"
+        }
+      ],
+      "scientificMeaning": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX undY ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt NPK-Deutung",
+      "displayText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX undY ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt NPK-Deutung",
+      "captionText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX undY ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt NPK-Deutung",
+      "spokenText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX und Y ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt En Pe Ka-Deutung",
+      "spokenTextSHA256": "8c84e835602fd2de45c429cba11769222c532cd2469c85672c54ee1b7d3849e6",
+      "spokenTextSha256": "8c84e835602fd2de45c429cba11769222c532cd2469c85672c54ee1b7d3849e6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX undY ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt NPK-Deutung",
+          "spoken": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchtes Set/Anleitung oder Laborverfahren\n\nBenannte Probe und Bezugsbasis\n\nExtraktionsmittel und methodenspezifische Mengen (Lehrkraft liefert)\n\nBlindwert/Kalibrierung und Ablesung/passende Skala\n\nKultur, Region und passende Deutungshilfe\n\nFehlende Angaben für Kalk X und Dünger Y; keine Menge erfinden\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nX undY ungeklärt; unbekannt ist nicht null\n\nModell nach dem Versuch; keine semantische Bewertung oder Freigabe einer Düngemenge.\n\nNur historische Lehrtabelle üben. Ein echtes Labor kann denselben Wert anders einstufen.\n\nArbeitsblatt En Pe Ka-Deutung",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        },
+        {
+          "written": "X undY",
+          "spoken": "X und Y",
+          "occurrences": 1,
+          "purpose": "Prospective grammatical gender/case/number/spacing after exact symbol-unit expansion; same source meaning and quantities, no scientific/display edit"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b1ca441c7905f258b09894a0b4c03af88bf2c4f4f0c7be1f863c63ad76cacfc7",
+      "requestFingerprintSha256": "b1ca441c7905f258b09894a0b4c03af88bf2c4f4f0c7be1f863c63ad76cacfc7",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "e1325ef3d5e799e288e890bc559fbe8d98ef7a253c34f2347291b3c2cdb2dacc"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 3,
+    "asr": 3,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-09-ar-EG-demonstration-guidance-r1",
+      "S2-09-ar-EG-knowledge-completion-r1",
+      "S2-09-ar-EG-record-guidance-r1"
+    ],
+    "en": [
+      "S2-09-en-demonstration-guidance-r1",
+      "S2-09-en-knowledge-completion-r1",
+      "S2-09-en-record-guidance-r1"
+    ],
+    "it": [
+      "S2-09-it-demonstration-guidance-r1",
+      "S2-09-it-knowledge-completion-r1",
+      "S2-09-it-record-guidance-r1"
+    ],
+    "de": [
+      "S2-09-de-demonstration-guidance-r1",
+      "S2-09-de-knowledge-completion-r1",
+      "S2-09-de-record-guidance-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
