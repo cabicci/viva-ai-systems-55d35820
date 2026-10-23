@@ -1,0 +1,74 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-it.json",
+    "sha256": "0fca3da77c0e0c739d3b8ab62cc79bde29c8f2873d0558d50ee2e12297b0ef20",
+    "bytes": 23445
+  },
+  "units": [
+    {
+      "id": "S2-01-it-effective-fallback-repair-r1",
+      "unitId": "S2-01-it-effective-fallback-repair-r1",
+      "locale": "it",
+      "semanticGroup": "runtime-s201-it-effective-fallback-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0fca3da77c0e0c739d3b8ab62cc79bde29c8f2873d0558d50ee2e12297b0ef20",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/fallback",
+          "text": "3D non disponibile; usa formule e controlli equivalenti.",
+          "sha256": "f0aaf2f409f593a86f4cbc19cc970c971f021bbc77820e41e8c539a4da2f4b07"
+        }
+      ],
+      "scientificMeaning": "3D non disponibile; usa formule e controlli equivalenti.",
+      "displayText": "3D non disponibile; usa formule e controlli equivalenti.",
+      "captionText": "3D non disponibile; usa formule e controlli equivalenti.",
+      "spokenText": "Usa le formule e i controlli di abbinamento.",
+      "spokenTextSHA256": "395ef1eda2ceed10586f7d6f09d368aee25655f5b8b583d8630355aba97e8e59",
+      "spokenTextSha256": "395ef1eda2ceed10586f7d6f09d368aee25655f5b8b583d8630355aba97e8e59",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3D non disponibile; usa formule e controlli equivalenti.",
+          "spoken": "3D non disponibile; usa formule e controlli equivalenti.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "3D non disponibile; usa formule e controlli equivalenti.",
+          "spoken": "Usa le formule e i controlli di abbinamento.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "db94bfc165d33d33e1e99f96121934600125db7ec79e768fe6da801d563e86e4",
+      "requestFingerprintSha256": "db94bfc165d33d33e1e99f96121934600125db7ec79e768fe6da801d563e86e4",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "3D non disponibile; usa formule e controlli equivalenti.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/fallback",
+        "original": "3D non disponibile; usa formule e controlli equivalenti.",
+        "effective": "Usa le formule e i controlli di abbinamento.",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
