@@ -1,0 +1,503 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-07-de.json",
+    "sha256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+    "bytes": 34221
+  },
+  "units": [
+    {
+      "id": "S2-07-de-documented-method-r1",
+      "unitId": "S2-07-de-documented-method-r1",
+      "locale": "de",
+      "semanticGroup": "documented-method",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/method/role",
+          "text": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts",
+          "sha256": "8fbf45f0b10849f0106702145eb4ee05bfd05e130bceaed4f5c804eecaa792fb"
+        },
+        {
+          "pointer": "/digitalPractice/method/exampleMeter",
+          "text": "Hanna HI99121 mit Bodenelektrode HI12923",
+          "sha256": "006d685fb354065b69c2ac3631ee5dc97cadf8f6314e1549c619fde5d2ccfdd0"
+        },
+        {
+          "pointer": "/digitalPractice/method/manufacturerSlurryExample",
+          "text": "Das Handbuch des Hanna HI99121 beschreibt 10 g trockenen, auf 2 mm gesiebten Boden plus 25 mL HI7051-Bodenvorbereitungslösung: 30 Sekunden mischen, 5 Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit 20 g Boden und 20 mL destilliertem Wasser.",
+          "sha256": "9798abc6b57989496b624cd29bd578331e3dfb3b40a22fb0bf870c42667fc32e"
+        },
+        {
+          "pointer": "/digitalPractice/method/laboratoryComparison",
+          "text": "UC Davis dokumentiert getrennte pH-Verfahren mit Boden und entionisiertem Wasser im Verhältnis 1:1 oder 1:2. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die HI99121-Vorbereitungslösung vor.",
+          "sha256": "d18ce47cd5ffb1b491a0d64e1d4950f6f180577c02fc1d03f561ed7fac74e935"
+        },
+        {
+          "pointer": "/digitalPractice/method/siteGate",
+          "text": "Vor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+          "sha256": "fb1953a88c9f947dd8703c62fe7ef8df2a1ae0f09902439ad4c03505638312fc"
+        }
+      ],
+      "scientificMeaning": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna HI99121 mit Bodenelektrode HI12923\n\nDas Handbuch des Hanna HI99121 beschreibt 10 g trockenen, auf 2 mm gesiebten Boden plus 25 mL HI7051-Bodenvorbereitungslösung: 30 Sekunden mischen, 5 Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit 20 g Boden und 20 mL destilliertem Wasser.\n\nUC Davis dokumentiert getrennte pH-Verfahren mit Boden und entionisiertem Wasser im Verhältnis 1:1 oder 1:2. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die HI99121-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+      "displayText": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna HI99121 mit Bodenelektrode HI12923\n\nDas Handbuch des Hanna HI99121 beschreibt 10 g trockenen, auf 2 mm gesiebten Boden plus 25 mL HI7051-Bodenvorbereitungslösung: 30 Sekunden mischen, 5 Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit 20 g Boden und 20 mL destilliertem Wasser.\n\nUC Davis dokumentiert getrennte pH-Verfahren mit Boden und entionisiertem Wasser im Verhältnis 1:1 oder 1:2. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die HI99121-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+      "captionText": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna HI99121 mit Bodenelektrode HI12923\n\nDas Handbuch des Hanna HI99121 beschreibt 10 g trockenen, auf 2 mm gesiebten Boden plus 25 mL HI7051-Bodenvorbereitungslösung: 30 Sekunden mischen, 5 Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit 20 g Boden und 20 mL destilliertem Wasser.\n\nUC Davis dokumentiert getrennte pH-Verfahren mit Boden und entionisiertem Wasser im Verhältnis 1:1 oder 1:2. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die HI99121-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+      "spokenText": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna Ha I neun neun eins zwei eins mit Bodenelektrode Ha I eins zwei neun zwei drei\n\nDas Handbuch des Hanna Ha I neun neun eins zwei eins beschreibt zehn Gramm trockenen, auf zwei Millimeter gesiebten Boden plus fünfundzwanzig Milliliter Ha I sieben null fünf eins-Bodenvorbereitungslösung: dreißig Sekunden mischen, fünf Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit zwanzig Gramm Boden und zwanzig Milliliter destilliertem Wasser.\n\nUC Davis dokumentiert getrennte P H-Verfahren mit Boden und entionisiertem Wasser im Verhältnis eins zu eins oder eins zu zwei. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die Ha I neun neun eins zwei eins-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+      "spokenTextSHA256": "7667b24f2cbdcad8595d85793f311a5715c06e79132afcf3b89fafa5b9372a9a",
+      "spokenTextSha256": "7667b24f2cbdcad8595d85793f311a5715c06e79132afcf3b89fafa5b9372a9a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI12923",
+          "spoken": "Ha I eins zwei neun zwei drei",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:1",
+          "spoken": "eins zu eins",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:2",
+          "spoken": "eins zu zwei",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI99121",
+          "spoken": "Ha I neun neun eins zwei eins",
+          "occurrences": 3,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI7051",
+          "spoken": "Ha I sieben null fünf eins",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna Ha I neun neun eins zwei eins mit Bodenelektrode Ha I eins zwei neun zwei drei\n\nDas Handbuch des Hanna Ha I neun neun eins zwei eins beschreibt 10 g trockenen, auf 2 mm gesiebten Boden plus 25 mL Ha I sieben null fünf eins-Bodenvorbereitungslösung: 30 Sekunden mischen, 5 Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit 20 g Boden und 20 mL destilliertem Wasser.\n\nUC Davis dokumentiert getrennte pH-Verfahren mit Boden und entionisiertem Wasser im Verhältnis eins zu eins oder eins zu zwei. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die Ha I neun neun eins zwei eins-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+          "spoken": "dokumentiertes Vergleichsbeispiel, kein nachgewiesenes Gerät des Ausbildungsorts\n\nHanna Ha I neun neun eins zwei eins mit Bodenelektrode Ha I eins zwei neun zwei drei\n\nDas Handbuch des Hanna Ha I neun neun eins zwei eins beschreibt zehn Gramm trockenen, auf zwei Millimeter gesiebten Boden plus fünfundzwanzig Milliliter Ha I sieben null fünf eins-Bodenvorbereitungslösung: dreißig Sekunden mischen, fünf Minuten stehen lassen und dann die Sonde eintauchen. Es beschreibt außerdem eine getrennte Direktmessung im Boden mit geeigneter Sonde. Beides ist nicht die ursprüngliche Arbeitskarte mit zwanzig Gramm Boden und zwanzig Milliliter destilliertem Wasser.\n\nUC Davis dokumentiert getrennte P H-Verfahren mit Boden und entionisiertem Wasser im Verhältnis eins zu eins oder eins zu zwei. Verfahren und Bezugsgrößen des Verhältnisses gehören zum Ergebnis. Diese Zusammenfassung schreibt weder die Wartezeit der ursprünglichen Karte noch die Ha I neun neun eins zwei eins-Vorbereitungslösung vor.\n\nVor der Bewertung einer praktischen Arbeit dokumentiert die Lehrkraft das tatsächliche Messgerät, die Sonde, die aktuelle Handbuchfassung, das gewählte Aufbereitungsverfahren, Flüssigkeit, Masse-Volumen-Verhältnis samt Einheiten, Puffer, Annahmeregeln für Kalibrierung und Qualitätskontrolle, Elektrodenpflege, gegebenenfalls Sicherheitsdatenblätter und Entsorgungsweg. Fehlen diese Angaben, findet nur die Online-Übung statt; die Praxis bleibt unbewertet.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c71c9f632752691e5ed4977423239f659514575f6c44ae734dc7a6c31b2063dd",
+      "requestFingerprintSha256": "c71c9f632752691e5ed4977423239f659514575f6c44ae734dc7a6c31b2063dd",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-07-de-supervised-stages-r1",
+      "unitId": "S2-07-de-supervised-stages-r1",
+      "locale": "de",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/steps/0",
+          "text": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen",
+          "sha256": "8895c66f4c7ac22eddead9de0f171dc87ea33a5e562f28336b0db06bb51a4fda"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/1",
+          "text": "Klumpen vorsichtig lösen; vorgeschriebenes 2-mm-Sieb nutzen",
+          "sha256": "15821f6ab2f98d5f42d841abc4df608b3d074666cde540350b93e6d1c1f14388"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/2",
+          "text": "Für diese Karte 20 g vorbereiteten Boden wiegen",
+          "sha256": "643a139cfa523fba3d19cf3243b35f36bc061d12c96823e90024ab6049da59b6"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/3",
+          "text": "Für diese Karte 20 mL destilliertes Wasser abmessen",
+          "sha256": "6528c075dfc5170ce00d6d29afb660b6258c098cbd3e746d987107956b103ff9"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/4",
+          "text": "1 Minute rühren",
+          "sha256": "e890ddafef0eaecfb56372ca3c7cf19c91b889b4811cdad2e6bf35b5f07ceda7"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/5",
+          "text": "15 Minuten stehen lassen; echte Zeit notieren",
+          "sha256": "8e1d6f6fe2f9d8ad47ff3941efc3a26404f68afc73f62f23aff7e6a6d247f891"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/6",
+          "text": "Erforderliche Pufferkalibrierung akzeptieren lassen",
+          "sha256": "bc688690640911441c5011748f3700cc949ebe8c257b0f480d3db6ea00d87893"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/7",
+          "text": "Geeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen",
+          "sha256": "4a9a3bf658dffd4cb26dddfe358de92ec459c8fdf862f08a49a105a5c75e5186"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/8",
+          "text": "Akzeptierte Stabilität abwarten",
+          "sha256": "639df6d8dc862d48f95e82fc8ede3ea573f2f5a8d7b37c57d8d6b5c5fb6f6071"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/9",
+          "text": "Echten Wert, Kennung und Qualitätskontrollen notieren",
+          "sha256": "7b2fe560cd1ff9efa732413b0b424ba04c86dcbb319101960989853210aff01b"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/10",
+          "text": "Zwischen Proben spülen; nach Anleitung reinigen/lagern",
+          "sha256": "6d2a3b742ec628864fa47d0f3d329842ace7f7b98a66bbd06e5c7f4b36049fce"
+        },
+        {
+          "pointer": "/digitalPractice/guidedPhysical",
+          "text": "Die Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+          "sha256": "91473705f09968b270434687fa32962d6c0a6d0d656cb876075ea5ed6c60ecd5"
+        }
+      ],
+      "scientificMeaning": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes 2-mm-Sieb nutzen\n\nFür diese Karte 20 g vorbereiteten Boden wiegen\n\nFür diese Karte 20 mL destilliertes Wasser abmessen\n\n1 Minute rühren\n\n15 Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+      "displayText": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes 2-mm-Sieb nutzen\n\nFür diese Karte 20 g vorbereiteten Boden wiegen\n\nFür diese Karte 20 mL destilliertes Wasser abmessen\n\n1 Minute rühren\n\n15 Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+      "captionText": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes 2-mm-Sieb nutzen\n\nFür diese Karte 20 g vorbereiteten Boden wiegen\n\nFür diese Karte 20 mL destilliertes Wasser abmessen\n\n1 Minute rühren\n\n15 Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+      "spokenText": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes zwei-Millimeter-Sieb nutzen\n\nFür diese Karte zwanzig Gramm vorbereiteten Boden wiegen\n\nFür diese Karte zwanzig Milliliter destilliertes Wasser abmessen\n\neine Minute rühren\n\nfünfzehn Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+      "spokenTextSHA256": "9f679805311d8fb50e231a247cd285a20630ebec6e101d98fbd2cc885ee411c0",
+      "spokenTextSha256": "9f679805311d8fb50e231a247cd285a20630ebec6e101d98fbd2cc885ee411c0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes 2-mm-Sieb nutzen\n\nFür diese Karte 20 g vorbereiteten Boden wiegen\n\nFür diese Karte 20 mL destilliertes Wasser abmessen\n\n1 Minute rühren\n\n15 Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+          "spoken": "Kennung, Schutz, echte Sonde und vollständiges Verfahren prüfen\n\nKlumpen vorsichtig lösen; vorgeschriebenes zwei-Millimeter-Sieb nutzen\n\nFür diese Karte zwanzig Gramm vorbereiteten Boden wiegen\n\nFür diese Karte zwanzig Milliliter destilliertes Wasser abmessen\n\neine Minute rühren\n\nfünfzehn Minuten stehen lassen; echte Zeit notieren\n\nErforderliche Pufferkalibrierung akzeptieren lassen\n\nGeeignete Sonde ohne Kontakt mit Körnern oder Glas eintauchen\n\nAkzeptierte Stabilität abwarten\n\nEchten Wert, Kennung und Qualitätskontrollen notieren\n\nZwischen Proben spülen; nach Anleitung reinigen/lagern\n\nDie Lehrkraft erfasst tatsächliches Gerät, Sonde, Handbuch und zugelassenes Standortverfahren. Jede Person bereitet die nötige Probe selbst vor, kalibriert und kontrolliert das Gerät, misst A/B/C, dokumentiert Qualität und Ergebnis, spült und lagert die Sonde und wird bei allen zutreffenden Kriterien beobachtet. Unterscheidet sich das Standortverfahren von der Originalkarte, bleibt diese ein Vergleich und der Praxisbogen wird vor der Bewertung angepasst.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "db8b33e5b8cb28de69611f2133bad67796b062ec7dc68b90beef5a8b1a61c28b",
+      "requestFingerprintSha256": "db8b33e5b8cb28de69611f2133bad67796b062ec7dc68b90beef5a8b1a61c28b",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-07-de-practical-completion-r1",
+      "unitId": "S2-07-de-practical-completion-r1",
+      "locale": "de",
+      "semanticGroup": "practical-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/passChecks/0/evidence",
+          "text": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf 2 mm, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.",
+          "sha256": "6a602dab08b02976bc96c26ef80e7d22fbb1f5a40773a2f812740b9eb83d9727"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/0/decision",
+          "text": "Bestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit 20 g:20 mL der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.",
+          "sha256": "1443b19daee7ec525ae636c65c528ec15e0ead1863513eb86cad2c4feb475b45"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/evidence",
+          "text": "Tatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.",
+          "sha256": "42013f8a9b234e646e6909c407f691ba06456ae07ec847d47f1cb69cb53ae05b"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/decision",
+          "text": "Bestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.",
+          "sha256": "0b95e563ea0d28a847ab9a75db1fbd41f6606b2fb1f8db2a0194c64ad91d5b98"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/evidence",
+          "text": "Drei getrennte Zeilen zeigen tatsächlichen pH-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.",
+          "sha256": "68e0545771134aaacaf55895209a62e06795f454e52f5aa1b9d61043cb53ff21"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/decision",
+          "text": "Bestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+          "sha256": "68e8ce0103c4828f321edc3b2e35bc0b24ce854f2e623fe1e31e428bf84f4d41"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf 2 mm, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit 20 g:20 mL der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen pH-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+      "displayText": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf 2 mm, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit 20 g:20 mL der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen pH-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+      "captionText": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf 2 mm, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit 20 g:20 mL der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen pH-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+      "spokenText": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf zwei Millimeter, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit zwanzig Gramm:zwanzig Milliliter der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen P H-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+      "spokenTextSHA256": "59ddccf48995d1c7f4c489f19cef3bfb230102110cfb64c669372be004ebfbac",
+      "spokenTextSha256": "59ddccf48995d1c7f4c489f19cef3bfb230102110cfb64c669372be004ebfbac",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf 2 mm, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit 20 g:20 mL der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen pH-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+          "spoken": "Die Lehrkraft beobachtet jede lernende Person beim Umgang mit vorbereiteter, beschrifteter Erde, beim vorsichtigen Zerkleinern der Klumpen ohne Mahlen von Steinen, gegebenenfalls beim Sieben auf zwei Millimeter, beim Wiegen mit geprüfter Waage und beim Abmessen der Flüssigkeit in einem sauberen Messzylinder. Tatsächliche Masse, Volumen, Flüssigkeit, Bezugsgrößen des Verhältnisses sowie Rühr- und Standzeiten des festgelegten Verfahrens werden erfasst.\n\nBestanden nur, wenn alle zutreffenden Phasen dem gewählten Standortprotokoll entsprechen und die Probenidentität erhalten bleibt. Die Übung mit zwanzig Gramm:zwanzig Milliliter der Originalkarte allein genügt nicht zum Bestehen eines abweichenden tatsächlichen Verfahrens.\n\nTatsächliches Gerät und Sonde, akzeptierte Kalibrierpunkte, Charge und Haltbarkeit der Puffer, Akzeptanzanzeige oder unabhängiger Kontrollwert, Spülen und Pflege nach Handbuch, korrekter Kontakt und Stabilitätsbedingung werden erfasst; die Lehrkraft beobachtet jede Person.\n\nBestanden nur mit verfahrensgerechter, akzeptierter Kalibrierung und sauberer Handhabung. Meldet das Gerät einen falschen Puffer, ist die Elektrode trocken oder beschädigt oder bleibt der Wert instabil, wird die Bewertung bis zur Behebung unterbrochen.\n\nDrei getrennte Zeilen zeigen tatsächlichen P H-Wert, Anzeigeauflösung, Verfahren, ausführende Person, Zeitpunkt und gegebenenfalls Nachmessung. Die lernende Person erkennt instabile Werte, überschrittene Kontrollgrenzen oder Widersprüche zur Aufbereitung und wiederholt mit Anleitung nur die betroffene Phase.\n\nBestanden nur, wenn A, B und C jeweils selbst gemessen und mit nachvollziehbaren Qualitätskontrollen dokumentiert wurden. Ein Gruppenblatt, Musterlösung oder drei erfundene Zielwerte reichen nicht.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6068547de30910b915476952d35002240957f7dd2878699e2c9dc8864028e4e8",
+      "requestFingerprintSha256": "6068547de30910b915476952d35002240957f7dd2878699e2c9dc8864028e4e8",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-07-de-card-scope-r1",
+      "unitId": "S2-07-de-card-scope-r1",
+      "locale": "de",
+      "semanticGroup": "card-scope",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/card/scope",
+          "text": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, 2-mm-Sieb, 20 g Boden, 20 mL destilliertes Wasser, eine Minute Rühren und 15 Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen pH-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.",
+          "sha256": "87e4b97b276446b553b68c3801824ebeefe4cbb60d6cac296dc8468ee8fedf97"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/0/action",
+          "text": "Schutz für die wirkliche Standortaufgabe wählen",
+          "sha256": "451923d19b4376f6c9a7774a097955e76d591b5a3cb696b6570fc94d354019af"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/1/action",
+          "text": "Bodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern",
+          "sha256": "99bf4fa493aeb1971685164ba18016d7505cf23bb37df743e474357874e05b7b"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/2/action",
+          "text": "Auf 2 mm gesiebten Boden entnehmen",
+          "sha256": "84a4e9b4cb81629b767ba4ec48341843e852b89bdf03bfc748842963f090b680"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/3/action",
+          "text": "Im Originalszenario 20 g wiegen",
+          "sha256": "012f2f7efbb9916c80eca79e9feaf6a6d31c0294cfd161086a3a431b8c5ff5bc"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/4/action",
+          "text": "Im Originalszenario 20 mL destilliertes Wasser abmessen",
+          "sha256": "bd3c3aad27c870e67a7cb485f219e2f13760036b9d10d02547ca62c4bc78bb7f"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/5/action",
+          "text": "Im Originalszenario 1 Minute rühren und 15 Minuten stehen lassen",
+          "sha256": "8ca47104c550d12ecf16c2035ab0a9e24f9a69740ebe7ea35b4d967d98064162"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/6/action",
+          "text": "Mit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren",
+          "sha256": "e49a84e912257adfa7b6ae1256fb8dd0d1c0751168a87779da79b4e47332bc01"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/7/action",
+          "text": "Geeignete Sonde richtig in das festgelegte Medium einsetzen",
+          "sha256": "0aac746ca4bdc9c475a970a34d1d352d3c768c865c464dbc5f5818f55ed9d723"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/8/action",
+          "text": "Stabilen endgültigen pH-Wert mit Probe und Verfahren erfassen",
+          "sha256": "ec34d498b7884580415d781aa43b7543c7ad760fe7c2dfdca782d0f082c2d05a"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/0",
+          "text": "Pufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.",
+          "sha256": "dde12e44024c3a2be1a557a2525dd0db21e236262cb6556085d223b09bf0cabc"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/1",
+          "text": "Zwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.",
+          "sha256": "cf5c1441248e2474e8837b5d317e230c48835c1ee2d9997ac96c1095dd11eb26"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/2",
+          "text": "Die Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+          "sha256": "d0c2ab20a66ccb66df682c58d65743d60b9155999cbd67c8f4a1bea478116b7e"
+        }
+      ],
+      "scientificMeaning": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, 2-mm-Sieb, 20 g Boden, 20 mL destilliertes Wasser, eine Minute Rühren und 15 Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen pH-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf 2 mm gesiebten Boden entnehmen\n\nIm Originalszenario 20 g wiegen\n\nIm Originalszenario 20 mL destilliertes Wasser abmessen\n\nIm Originalszenario 1 Minute rühren und 15 Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen pH-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+      "displayText": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, 2-mm-Sieb, 20 g Boden, 20 mL destilliertes Wasser, eine Minute Rühren und 15 Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen pH-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf 2 mm gesiebten Boden entnehmen\n\nIm Originalszenario 20 g wiegen\n\nIm Originalszenario 20 mL destilliertes Wasser abmessen\n\nIm Originalszenario 1 Minute rühren und 15 Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen pH-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+      "captionText": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, 2-mm-Sieb, 20 g Boden, 20 mL destilliertes Wasser, eine Minute Rühren und 15 Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen pH-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf 2 mm gesiebten Boden entnehmen\n\nIm Originalszenario 20 g wiegen\n\nIm Originalszenario 20 mL destilliertes Wasser abmessen\n\nIm Originalszenario 1 Minute rühren und 15 Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen pH-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+      "spokenText": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, zwei-Millimeter-Sieb, zwanzig Gramm Boden, zwanzig Milliliter destilliertes Wasser, eine Minute Rühren und fünfzehn Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen P H-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf zwei Millimeter gesiebten Boden entnehmen\n\nIm Originalszenario zwanzig Gramm wiegen\n\nIm Originalszenario zwanzig Milliliter destilliertes Wasser abmessen\n\nIm Originalszenario eine Minute rühren und fünfzehn Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen P H-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+      "spokenTextSHA256": "6ed1396097cd193497ef6cb4dae5d59fd9837e8052a70ce21542bfdc86dc9513",
+      "spokenTextSha256": "6ed1396097cd193497ef6cb4dae5d59fd9837e8052a70ce21542bfdc86dc9513",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, 2-mm-Sieb, 20 g Boden, 20 mL destilliertes Wasser, eine Minute Rühren und 15 Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen pH-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf 2 mm gesiebten Boden entnehmen\n\nIm Originalszenario 20 g wiegen\n\nIm Originalszenario 20 mL destilliertes Wasser abmessen\n\nIm Originalszenario 1 Minute rühren und 15 Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen pH-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+          "spoken": "Die neun Prüfpunkte dieser Karte sind passende Schutzausrüstung, vorsichtiges Zerkleinern der Aggregate, zwei-Millimeter-Sieb, zwanzig Gramm Boden, zwanzig Milliliter destilliertes Wasser, eine Minute Rühren und fünfzehn Minuten Stehen, Pufferkalibrierung nach Hersteller, korrekte Elektrodenplatzierung und Aufzeichnung eines stabilen P H-Wertes. Diese Mengen definieren das schriftliche Lernszenario. Vor der praktischen Nutzung prüft die Lehrkraft das tatsächliche Gerät und Standortverfahren und ordnet die beobachtbaren Handlungen diesem Verfahren zu, ohne Abläufe zu vermischen.\n\nSchutz für die wirkliche Standortaufgabe wählen\n\nBodenklumpen vorsichtig ohne Mahlen von Steinen zerkleinern\n\nAuf zwei Millimeter gesiebten Boden entnehmen\n\nIm Originalszenario zwanzig Gramm wiegen\n\nIm Originalszenario zwanzig Milliliter destilliertes Wasser abmessen\n\nIm Originalszenario eine Minute rühren und fünfzehn Minuten stehen lassen\n\nMit akzeptierten Puffern nach Anleitung des tatsächlichen Geräts kalibrieren\n\nGeeignete Sonde richtig in das festgelegte Medium einsetzen\n\nStabilen endgültigen P H-Wert mit Probe und Verfahren erfassen\n\nPufferidentität, Annahme der Kalibrierung und Verfahren getrennt von den neun Originalpunkten erfassen.\n\nZwischen Proben spülen, instabile oder abgelehnte Läufe dokumentieren und die Elektrode nach Handbuch reinigen und lagern.\n\nDie Lehrkraft dokumentiert eigene beobachtete Leistung und Korrektur jeder Person; eine Gruppennote bewirkt kein individuelles Bestehen.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a9df466f7a15a42b14c8c3aed821b85c232b3dc95a6653f20ef0e4390df30cf6",
+      "requestFingerprintSha256": "a9df466f7a15a42b14c8c3aed821b85c232b3dc95a6653f20ef0e4390df30cf6",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-07-de-record-and-method-guidance-r1",
+      "unitId": "S2-07-de-record-and-method-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "311f0faf17eb2b202b58f0dbc8ae75a9bafa7c85f3cace3db687a39b128f1794",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/modelHelp",
+          "text": "Allgemeines Verfahrensmodell, keine genaue HI99121-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.",
+          "sha256": "7f745f8c84ba687f42db8d6462ad4ac975e1b34973dd915bb7a3ca9ac1119cdd"
+        },
+        {
+          "pointer": "/digitalPractice/ui/recordHelp",
+          "text": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.",
+          "sha256": "96ee0b875efd85ca6b5edc7f289a7738230bebd3bb42ba62e3ba26bbd8649866"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/0",
+          "text": "Proben- und Feldkennung",
+          "sha256": "f13a137862cc9ca3fbba70c5f59447a7d9b7d811b05472802a11f1a211858ed4"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/1",
+          "text": "Datum / messende Person",
+          "sha256": "5feacb7477419930ce925afb78efbe6e2af7bee74839c2827afb058cf6aef332"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/2",
+          "text": "Messgerät, Sonde und Anleitung",
+          "sha256": "1fd61a00823776c79abb6299d73d6bc52ac36f2fc540c8681e2f6bb2bb3a4aa4"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/3",
+          "text": "Bodenmasse, Flüssigkeit/-volumen und g:mL-Basis",
+          "sha256": "5eb1209cdfb043136a5484963ebf9390e58c78dba5d3baf273c60877e9ac2464"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/4",
+          "text": "Echte Misch- und Standzeiten",
+          "sha256": "9ebeb7df40603a12373da6f1053539d2135ea5635afcae3a75c17da0749b43cd"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/5",
+          "text": "Puffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung",
+          "sha256": "d77e9646e5319e697702fc6076a8810a44b2d491de0bc2673c4a78094bbcddbb"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/6",
+          "text": "Tatsächlich beobachteter pH mit unterstützter Auflösung",
+          "sha256": "789364b30ee2f764809a0cf4b3571a89c714f71a0991222087a9971f46c335ca"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/7",
+          "text": "Stabilität / Unsicherheit / Wiederholungsgrund",
+          "sha256": "8cc307275ba057b13d6473c8c99b66cccea511af6fde81be075f57a967bca18a"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/8",
+          "text": "Nächste kulturspezifische Prüfung; keine erfundene Dosis",
+          "sha256": "05a1e2bb7dfff1406ad657cca3c65a90b94823d17e5879c3d2486fe2fe666dd9"
+        },
+        {
+          "pointer": "/digitalPractice/ui/saved",
+          "text": "Lokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.",
+          "sha256": "e2d01ad0810b05294c20db0fb827b99ae0ee0f09041648c1e5a96fdd3172dac6"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt digitale pH-Messung",
+          "sha256": "45d8bacea78e9ecae20c870dc2a198c07f89dffa1dcf9957ccb9182a357a2f53"
+        }
+      ],
+      "scientificMeaning": "Allgemeines Verfahrensmodell, keine genaue HI99121-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und g:mL-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter pH mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale pH-Messung",
+      "displayText": "Allgemeines Verfahrensmodell, keine genaue HI99121-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und g:mL-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter pH mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale pH-Messung",
+      "captionText": "Allgemeines Verfahrensmodell, keine genaue HI99121-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und g:mL-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter pH mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale pH-Messung",
+      "spokenText": "Allgemeines Verfahrensmodell, keine genaue Ha I neun neun eins zwei eins-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und Gramm pro Milliliter-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter P H mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale P H-Messung",
+      "spokenTextSHA256": "e6a220468d3cb4761b8c6afe193eb0c122f171f9cb5a6934f98fd2c8b1ac6f00",
+      "spokenTextSha256": "e6a220468d3cb4761b8c6afe193eb0c122f171f9cb5a6934f98fd2c8b1ac6f00",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI99121",
+          "spoken": "Ha I neun neun eins zwei eins",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "g:mL",
+          "spoken": "Gramm pro Milliliter",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "Allgemeines Verfahrensmodell, keine genaue Ha I neun neun eins zwei eins-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und Gramm pro Milliliter-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter pH mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale pH-Messung",
+          "spoken": "Allgemeines Verfahrensmodell, keine genaue Ha I neun neun eins zwei eins-Nachbildung. Leeres Display ist keine Bodenmessung. Phasenwechsel ersetzt keine echte Vorbereitung, Kalibrierung oder Wartezeit.\n\nNur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nProben- und Feldkennung\n\nDatum / messende Person\n\nMessgerät, Sonde und Anleitung\n\nBodenmasse, Flüssigkeit/-volumen und Gramm pro Milliliter-Basis\n\nEchte Misch- und Standzeiten\n\nPuffersatz, Punkte, Charge/Haltbarkeit und Annahme/Prüfung\n\nTatsächlich beobachteter P H mit unterstützter Auflösung\n\nStabilität / Unsicherheit / Wiederholungsgrund\n\nNächste kulturspezifische Prüfung; keine erfundene Dosis\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nArbeitsblatt digitale P H-Messung",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba184c006da1d33c2fac31bce5ac1880876a360793a60dff7b0e4463eec51d87",
+      "requestFingerprintSha256": "ba184c006da1d33c2fac31bce5ac1880876a360793a60dff7b0e4463eec51d87",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

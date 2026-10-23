@@ -1,0 +1,533 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-07-en.json",
+    "sha256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+    "bytes": 31319
+  },
+  "units": [
+    {
+      "id": "S2-07-en-documented-method-r1",
+      "unitId": "S2-07-en-documented-method-r1",
+      "locale": "en",
+      "semanticGroup": "documented-method",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/method/role",
+          "text": "documented comparison example, not the verified training-site instrument",
+          "sha256": "a4a3d20a47e6241aac9a7b4126ea037a02a40bc68558ac2cdcef7db4ed8126ad"
+        },
+        {
+          "pointer": "/digitalPractice/method/exampleMeter",
+          "text": "Hanna HI99121 with HI12923 soil electrode",
+          "sha256": "960a2d53387840df9777efb71a6de33eb919ea13946eb35c81b542715398aedd"
+        },
+        {
+          "pointer": "/digitalPractice/method/manufacturerSlurryExample",
+          "text": "This manual describes 10 g dry, 2 mm-sieved soil plus 25 mL HI7051 soil preparation solution, mixed 30 seconds and rested 5 minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the 20 g plus 20 mL distilled-water source process card.",
+          "sha256": "1410ea290812d2e4df3c4ee2751de8be4975be51556c9ec3a352090f47c83d5d"
+        },
+        {
+          "pointer": "/digitalPractice/method/laboratoryComparison",
+          "text": "UC Davis documents separate 1:1 and 1:2 soil-to-deionized-water pH methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the HI99121 preparation solution.",
+          "sha256": "2ca54889c02fb9af9f19c187867e95fa96c1b454be54b237deede3b991bb91a1"
+        },
+        {
+          "pointer": "/digitalPractice/method/siteGate",
+          "text": "The trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, SDS where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+          "sha256": "3fbbe2637b9bcb355ccc207b51ce7c9a8d79a9cf4c369f6c7b911fe171b596d4"
+        }
+      ],
+      "scientificMeaning": "documented comparison example, not the verified training-site instrument\n\nHanna HI99121 with HI12923 soil electrode\n\nThis manual describes 10 g dry, 2 mm-sieved soil plus 25 mL HI7051 soil preparation solution, mixed 30 seconds and rested 5 minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the 20 g plus 20 mL distilled-water source process card.\n\nUC Davis documents separate 1:1 and 1:2 soil-to-deionized-water pH methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the HI99121 preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, SDS where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+      "displayText": "documented comparison example, not the verified training-site instrument\n\nHanna HI99121 with HI12923 soil electrode\n\nThis manual describes 10 g dry, 2 mm-sieved soil plus 25 mL HI7051 soil preparation solution, mixed 30 seconds and rested 5 minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the 20 g plus 20 mL distilled-water source process card.\n\nUC Davis documents separate 1:1 and 1:2 soil-to-deionized-water pH methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the HI99121 preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, SDS where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+      "captionText": "documented comparison example, not the verified training-site instrument\n\nHanna HI99121 with HI12923 soil electrode\n\nThis manual describes 10 g dry, 2 mm-sieved soil plus 25 mL HI7051 soil preparation solution, mixed 30 seconds and rested 5 minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the 20 g plus 20 mL distilled-water source process card.\n\nUC Davis documents separate 1:1 and 1:2 soil-to-deionized-water pH methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the HI99121 preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, SDS where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+      "spokenText": "documented comparison example, not the verified training-site instrument\n\nHanna H I nine nine one two one with H I one two nine two three soil electrode\n\nThis manual describes ten grams of dry soil passed through a two-millimetre sieve plus twenty-five millilitres H I seven zero five one soil preparation solution, mixed thirty seconds and rested five minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the twenty grams plus twenty millilitres distilled-water source process card.\n\nUC Davis documents separate one to one and one to two soil-to-deionized-water P H methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the H I nine nine one two one preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, S D S where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+      "spokenTextSHA256": "bda7061afcf280d9c189a16ba9fd8289866f3cb35bc41da875b33757a92c1ee4",
+      "spokenTextSha256": "bda7061afcf280d9c189a16ba9fd8289866f3cb35bc41da875b33757a92c1ee4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI12923",
+          "spoken": "H I one two nine two three",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:1",
+          "spoken": "one to one",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:2",
+          "spoken": "one to two",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI99121",
+          "spoken": "H I nine nine one two one",
+          "occurrences": 2,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI7051",
+          "spoken": "H I seven zero five one",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "documented comparison example, not the verified training-site instrument\n\nHanna H I nine nine one two one with H I one two nine two three soil electrode\n\nThis manual describes 10 g dry, 2 mm-sieved soil plus 25 mL H I seven zero five one soil preparation solution, mixed 30 seconds and rested 5 minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the 20 g plus 20 mL distilled-water source process card.\n\nUC Davis documents separate one to one and one to two soil-to-deionized-water pH methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the H I nine nine one two one preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, SDS where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+          "spoken": "documented comparison example, not the verified training-site instrument\n\nHanna H I nine nine one two one with H I one two nine two three soil electrode\n\nThis manual describes ten grams dry, two millimetres-sieved soil plus twenty-five millilitres H I seven zero five one soil preparation solution, mixed thirty seconds and rested five minutes before immersion. It also describes a separate direct-soil method with a suitable probe. Neither is the twenty grams plus twenty millilitres distilled-water source process card.\n\nUC Davis documents separate one to one and one to two soil-to-deionized-water P H methods; method choice and liquid basis must accompany the result. This summary does not prescribe the source card's wait time or the H I nine nine one two one preparation solution.\n\nThe trainer records the actual meter, probe, manual revision, chosen preparation method, liquid, mass-to-volume ratio and basis, buffer set, calibration acceptance or check rules, electrode care, S D S where applicable, and waste route before a physical learner is scored. If unavailable, use online rehearsal only and mark practice unassessed.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        },
+        {
+          "written": "two millimetres-sieved",
+          "spoken": "soil passed through a two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Offline natural spoken grammar, source specimen identity and units preserved; no source edit"
+        },
+        {
+          "written": "ten grams dry, soil passed through a two-millimetre sieve soil",
+          "spoken": "ten grams of dry soil passed through a two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Natural source-equivalent dry-sieved soil wording; mass and aperture unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3816fccad55b348fb1127149e0fa3ba1649c49ee00c2e86aec633abb3b90c5ef",
+      "requestFingerprintSha256": "3816fccad55b348fb1127149e0fa3ba1649c49ee00c2e86aec633abb3b90c5ef",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-supervised-stages-r1",
+      "unitId": "S2-07-en-supervised-stages-r1",
+      "locale": "en",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/steps/0",
+          "text": "Check sample ID, PPE, actual probe and complete method",
+          "sha256": "a5352e3e8e98c516b55f9fa7c9577fc9a34778d5b00d0a5e1417f54848240638"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/1",
+          "text": "Gently break clods; use the specified 2 mm sieve",
+          "sha256": "64640dac828e1e05da0d4c7054f98116f6f9adaeed44339d0c42203f016c5f7e"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/2",
+          "text": "Weigh 20 g prepared soil for this card",
+          "sha256": "d6f5da7fce0ff725cd562c43a75300109459462932ff83a566ce08c1fefa6672"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/3",
+          "text": "Measure 20 mL distilled water for this card",
+          "sha256": "bfcabb983ecd140703e6afa04c2178f932579e6e4f2898fca2f214b412e8a344"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/4",
+          "text": "Stir for 1 minute",
+          "sha256": "cf199f57ccf8630e70ef7917c7cc9380ba909f6863f29cbb9cbd53e537f3f9d6"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/5",
+          "text": "Stand for 15 minutes; record real elapsed time",
+          "sha256": "7621a274a0e649a0d7bb11d5bb6b276505091283f670fc6300d9189a466f350a"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/6",
+          "text": "Accept the required buffer calibration",
+          "sha256": "9b5283dbefa599c939f2f4b7b742c06c890dbb1b2aa3cec874bca381a4add1d7"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/7",
+          "text": "Place the suitable electrode without contact with grit or glass",
+          "sha256": "594143d1131833aa5ae4c3768455bceceaa98b07db7307b6f18fcebef090a73d"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/8",
+          "text": "Wait for an accepted stable display",
+          "sha256": "4c163630a7af0ad17df21637083cba5805a26736f53aaa4e5f0977570392faa7"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/9",
+          "text": "Record actual value, identity and quality checks",
+          "sha256": "a13c6f1a2ae28efffa5f01609c3bd51265e0944883c336baaef7eb933d2a49fa"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/10",
+          "text": "Rinse between samples; clean and store by the probe manual",
+          "sha256": "9df6c7f4a6bb7305d094e9dd15abe0b84ef45afb03ca6e843c604865c5b9adf6"
+        },
+        {
+          "pointer": "/digitalPractice/guidedPhysical",
+          "text": "Trainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+          "sha256": "2e4ea908e22707173cea80a1ffaa79d68f216300a21a039349d2d817059b82fd"
+        }
+      ],
+      "scientificMeaning": "Check sample ID, PPE, actual probe and complete method\n\nGently break clods; use the specified 2 mm sieve\n\nWeigh 20 g prepared soil for this card\n\nMeasure 20 mL distilled water for this card\n\nStir for 1 minute\n\nStand for 15 minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+      "displayText": "Check sample ID, PPE, actual probe and complete method\n\nGently break clods; use the specified 2 mm sieve\n\nWeigh 20 g prepared soil for this card\n\nMeasure 20 mL distilled water for this card\n\nStir for 1 minute\n\nStand for 15 minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+      "captionText": "Check sample ID, PPE, actual probe and complete method\n\nGently break clods; use the specified 2 mm sieve\n\nWeigh 20 g prepared soil for this card\n\nMeasure 20 mL distilled water for this card\n\nStir for 1 minute\n\nStand for 15 minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+      "spokenText": "Check sample I D, P P E, actual probe and complete method\n\nGently break clods; use the specified two-millimetre sieve\n\nWeigh twenty grams prepared soil for this card\n\nMeasure twenty millilitres distilled water for this card\n\nStir for one minute\n\nStand for fifteen minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+      "spokenTextSHA256": "e4b17b6feef63678c256b70f006f4736dfee5e06a51646e0201e054a76ae17bf",
+      "spokenTextSha256": "e4b17b6feef63678c256b70f006f4736dfee5e06a51646e0201e054a76ae17bf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Check sample ID, PPE, actual probe and complete method\n\nGently break clods; use the specified 2 mm sieve\n\nWeigh 20 g prepared soil for this card\n\nMeasure 20 mL distilled water for this card\n\nStir for 1 minute\n\nStand for 15 minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+          "spoken": "Check sample I D, P P E, actual probe and complete method\n\nGently break clods; use the specified two millimetres sieve\n\nWeigh twenty grams prepared soil for this card\n\nMeasure twenty millilitres distilled water for this card\n\nStir for one minute\n\nStand for fifteen minutes; record real elapsed time\n\nAccept the required buffer calibration\n\nPlace the suitable electrode without contact with grit or glass\n\nWait for an accepted stable display\n\nRecord actual value, identity and quality checks\n\nRinse between samples; clean and store by the probe manual\n\nTrainer records the real meter/probe/manual and approved site method. Each learner personally prepares the required sample, calibrates and checks the meter, measures A/B/C, records quality and result, rinses and stores the probe, and is observed against every applicable criterion. If the site method differs from the source card, keep the source card as a comparison and update the task sheet before scoring.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        },
+        {
+          "written": "two millimetres sieve",
+          "spoken": "two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Offline natural spoken grammar, source specimen identity and units preserved; no source edit"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8538d121e32a72a025e0b33ecdcc7cef81538a31b8fadc857ac1b9fce3620f5f",
+      "requestFingerprintSha256": "8538d121e32a72a025e0b33ecdcc7cef81538a31b8fadc857ac1b9fce3620f5f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-practical-completion-r1",
+      "unitId": "S2-07-en-practical-completion-r1",
+      "locale": "en",
+      "semanticGroup": "practical-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/passChecks/0/evidence",
+          "text": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through 2 mm where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.",
+          "sha256": "52f9f0a533e5b7a0625e8c7edbae9070402b65d3b8abed48a476c4ce4e669127"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/0/decision",
+          "text": "Pass only when every applicable stage follows the declared site protocol and source identity is preserved. A 20 g:20 mL source-card rehearsal alone does not pass a different actual method.",
+          "sha256": "6122cd901ab9837d99b88d94811011b8bd1b9d20623b588346469e9454c92570"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/evidence",
+          "text": "Record actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.",
+          "sha256": "5fe4faabd1c3ca145ad405d13feec3de2c302c5cbfedec1471694cba6d57a3c7"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/decision",
+          "text": "Pass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.",
+          "sha256": "eefa601c280cf909ace15d80c9169c7cea62f9f5c6fc006670e871bb60111cd2"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/evidence",
+          "text": "Three separate sample rows show actual pH, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.",
+          "sha256": "c956a508b7191bda8263d74e85d7de458fd6f039d819bbd3be55de6d19dd984b"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/decision",
+          "text": "Pass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+          "sha256": "e1dba864549d9ef2846b41f2905008e7d2adcad73172bc573513314d3bd18006"
+        }
+      ],
+      "scientificMeaning": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through 2 mm where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A 20 g:20 mL source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual pH, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+      "displayText": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through 2 mm where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A 20 g:20 mL source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual pH, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+      "captionText": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through 2 mm where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A 20 g:20 mL source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual pH, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+      "spokenText": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through two millimetres where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A twenty grams:twenty millilitres source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual P H, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+      "spokenTextSHA256": "7f08a1a345801618cdb3e03e73434d420b63991d12eda0e54b2219d657a58dad",
+      "spokenTextSha256": "7f08a1a345801618cdb3e03e73434d420b63991d12eda0e54b2219d657a58dad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through 2 mm where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A 20 g:20 mL source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual pH, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+          "spoken": "Trainer sees each learner handle the labelled prepared soil, gently break clods without milling stones, sieve through two millimetres where required, weigh with a checked balance and measure the specified liquid in a clean graduated vessel; log actual mass, volume, liquid, ratio basis, stir and rest times for the declared method.\n\nPass only when every applicable stage follows the declared site protocol and source identity is preserved. A twenty grams:twenty millilitres source-card rehearsal alone does not pass a different actual method.\n\nRecord actual meter and probe, accepted calibration points and buffer lot/expiry, the device's acceptance indication or independent check, rinse/blot or care as its manual states, correct immersion/contact, and stable-reading condition; trainer observes each learner.\n\nPass only with accepted method-specific calibration and non-contaminating handling. A 'WRONG' buffer message, damaged/dry electrode or unstable reading stops scoring until corrected.\n\nThree separate sample rows show actual P H, display resolution and method, operator, time and any recheck. Learner identifies when a reading is unstable, outside a check limit or inconsistent with sample preparation, then repeats only the affected stage under trainer direction.\n\nPass only when A, B and C are individually measured and recorded with defensible quality checks. Do not award a pass from a group sheet, a model key or three invented target numbers.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "755c97ff536e955bd9adeb9bd997ffb2a6df49af5cec92e0790b729cf3f02220",
+      "requestFingerprintSha256": "755c97ff536e955bd9adeb9bd997ffb2a6df49af5cec92e0790b729cf3f02220",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-card-scope-r1",
+      "unitId": "S2-07-en-card-scope-r1",
+      "locale": "en",
+      "semanticGroup": "card-scope",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/card/scope",
+          "text": "The nine checks on this card are correct PPE, gentle clod crushing, 2 mm sieving, 20 g soil, 20 mL distilled water, one-minute stirring and 15-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable pH value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.",
+          "sha256": "022dfecb85112dcb2872fe6d5f42057b77ffd09873d7ce6659d95a68fdc1ec61"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/0/action",
+          "text": "PPE selected for the actual site task",
+          "sha256": "b252e89d4db06ab1119f9948936b1a523be1ae7301656ae92d0f2929304b00c5"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/1/action",
+          "text": "Crush aggregates gently without grinding stones",
+          "sha256": "bd8bcb25992e9d489f16cefe465f4191a8d652681b125dc354c7ab10baf7f015"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/2/action",
+          "text": "Collect 2 mm-sieved soil",
+          "sha256": "2ec57a7b3c7fcce4d7d24b12920aeada7443020c83b6d5cffd0890ffd488fffa"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/3/action",
+          "text": "Weigh 20 g in the source scenario",
+          "sha256": "5a0b27ce23878c07f18a803eb6612219e408c2ea2f0c7fcd63647ac217e40099"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/4/action",
+          "text": "Measure 20 mL distilled water in the source scenario",
+          "sha256": "370a9a31e24779a0ef0c8c6775c0d8608f8a74ec2b0f0e13def5c45eab70f5da"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/5/action",
+          "text": "Stir 1 minute and stand 15 minutes in the source scenario",
+          "sha256": "6c7bac1fc4805c055f4a43e9a81b1de60f65825582485d33f3d11620a87219b8"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/6/action",
+          "text": "Calibrate with accepted buffers per the actual manufacturer instructions",
+          "sha256": "c63f55e438704c7982a67173ff7885d89f578780ae661de19ffeb3d8c61a2559"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/7/action",
+          "text": "Place the correct probe correctly in the declared medium",
+          "sha256": "45a5e21269341383ba1b1905e9872dcb18ff5fbdf3a3d422d9b7a478061a431c"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/8/action",
+          "text": "Record final stable measured pH with sample and method identity",
+          "sha256": "8090bf5f704faba7ab20fb0c059f6a9acba1c669fce574e0ac4b4f84f5757807"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/0",
+          "text": "Record buffer identity, calibration acceptance and method separately from the original nine source rows.",
+          "sha256": "f481dec011f97d1f20c4ec004eaf682eb18d5844eb274abb429ecec5db56902f"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/1",
+          "text": "Rinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.",
+          "sha256": "c933213ff5a085b3b755207d122477aa9c294e0a8799184855b340766cec32e9"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/2",
+          "text": "Trainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+          "sha256": "6393a9d2dd706dccbafb13ce5dadd09bde51410b3fcd6d62a9f4d5f42f0956c9"
+        }
+      ],
+      "scientificMeaning": "The nine checks on this card are correct PPE, gentle clod crushing, 2 mm sieving, 20 g soil, 20 mL distilled water, one-minute stirring and 15-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable pH value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nPPE selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect 2 mm-sieved soil\n\nWeigh 20 g in the source scenario\n\nMeasure 20 mL distilled water in the source scenario\n\nStir 1 minute and stand 15 minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured pH with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+      "displayText": "The nine checks on this card are correct PPE, gentle clod crushing, 2 mm sieving, 20 g soil, 20 mL distilled water, one-minute stirring and 15-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable pH value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nPPE selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect 2 mm-sieved soil\n\nWeigh 20 g in the source scenario\n\nMeasure 20 mL distilled water in the source scenario\n\nStir 1 minute and stand 15 minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured pH with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+      "captionText": "The nine checks on this card are correct PPE, gentle clod crushing, 2 mm sieving, 20 g soil, 20 mL distilled water, one-minute stirring and 15-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable pH value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nPPE selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect 2 mm-sieved soil\n\nWeigh 20 g in the source scenario\n\nMeasure 20 mL distilled water in the source scenario\n\nStir 1 minute and stand 15 minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured pH with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+      "spokenText": "The nine checks on this card are correct P P E, gentle clod crushing, two millimetres sieving, twenty grams soil, twenty millilitres distilled water, one-minute stirring and fifteen-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable P H value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nP P E selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect soil passed through a two-millimetre sieve\n\nWeigh twenty grams in the source scenario\n\nMeasure twenty millilitres distilled water in the source scenario\n\nStir one minute and stand fifteen minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured P H with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+      "spokenTextSHA256": "7b29ac3b377fe5037560839c7950cda8965c1fbc8bbc9ac773be184cee792c40",
+      "spokenTextSha256": "7b29ac3b377fe5037560839c7950cda8965c1fbc8bbc9ac773be184cee792c40",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The nine checks on this card are correct PPE, gentle clod crushing, 2 mm sieving, 20 g soil, 20 mL distilled water, one-minute stirring and 15-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable pH value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nPPE selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect 2 mm-sieved soil\n\nWeigh 20 g in the source scenario\n\nMeasure 20 mL distilled water in the source scenario\n\nStir 1 minute and stand 15 minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured pH with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+          "spoken": "The nine checks on this card are correct P P E, gentle clod crushing, two millimetres sieving, twenty grams soil, twenty millilitres distilled water, one-minute stirring and fifteen-minute settling, manufacturer-directed buffer calibration, correct electrode placement, and recording a stable P H value. These quantities define the paper teaching scenario. Before physical use, the trainer verifies the actual meter and site method and matches the observable actions to that method without mixing procedures.\n\nP P E selected for the actual site task\n\nCrush aggregates gently without grinding stones\n\nCollect two millimetres-sieved soil\n\nWeigh twenty grams in the source scenario\n\nMeasure twenty millilitres distilled water in the source scenario\n\nStir one minute and stand fifteen minutes in the source scenario\n\nCalibrate with accepted buffers per the actual manufacturer instructions\n\nPlace the correct probe correctly in the declared medium\n\nRecord final stable measured P H with sample and method identity\n\nRecord buffer identity, calibration acceptance and method separately from the original nine source rows.\n\nRinse between samples, record unstable or rejected runs and clean/store the electrode by its manual.\n\nTrainer records each learner's own observed evidence and any correction; no automatic pass from a group mark.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        },
+        {
+          "written": "two millimetres-sieved",
+          "spoken": "soil passed through a two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Offline natural spoken grammar, source specimen identity and units preserved; no source edit"
+        },
+        {
+          "written": "Collect soil passed through a two-millimetre sieve soil",
+          "spoken": "Collect soil passed through a two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Natural source-equivalent dry-sieved soil wording; mass and aperture unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d132a8966cd0aea4d01425559c86bbd87393fd902f99d50acda50437a1f84cb3",
+      "requestFingerprintSha256": "d132a8966cd0aea4d01425559c86bbd87393fd902f99d50acda50437a1f84cb3",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-record-and-method-guidance-r1",
+      "unitId": "S2-07-en-record-and-method-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/modelHelp",
+          "text": "A generic procedural model, not an exact HI99121 replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.",
+          "sha256": "7db645c71a5cdc96ec307dc5b2e7387a6bfc5cdb6f1293e07b867f9fb08bc6db"
+        },
+        {
+          "pointer": "/digitalPractice/ui/recordHelp",
+          "text": "Use only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.",
+          "sha256": "d3b46231e6e5ef80ed23aac0b36a89193abb835b41f21b77a33eefdbc3f86a7b"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/0",
+          "text": "Sample and field identity",
+          "sha256": "25f83ea38467cf98689ac3f0a68c4e9dca14f6f2cf73beb04320990d311a654f"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/1",
+          "text": "Date / tester",
+          "sha256": "023ef27b8797d46b8f1fdf6b732decddc8b2b04e81e0e614c415860302a3b1b3"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/2",
+          "text": "Meter, probe and manual",
+          "sha256": "8198ca4e209457ffd779e192bcc901c25d57b85d63c857b9db25e060fba4155d"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/3",
+          "text": "Soil mass, liquid identity/volume and g:mL basis",
+          "sha256": "febec6cb3d89df04f92c5e71aa344f8a8bd9f10d6539a89b316eb86a80d272bb"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/4",
+          "text": "Actual mixing and standing times",
+          "sha256": "cbf06a87c0bed4ba1cd246248207dd5541baaeea63d7cd81161b896df875b172"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/5",
+          "text": "Buffer set, points, lot/expiry and acceptance / check",
+          "sha256": "343e025be1cd34335ec329b0d729fc81577a3ee7bb0d91304e58b5422d8adbe6"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/6",
+          "text": "Actual observed pH at supported resolution",
+          "sha256": "8c98f204c212c4e7498bf8d0ef86394356cbdd7691db37009cafec2962353f5d"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/7",
+          "text": "Stability / uncertainty / repeat reason",
+          "sha256": "5b66a0f3c2b5684e88c9b1c050c3eaf48f5778a7e2a1a80d3d459c11e54af979"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/8",
+          "text": "Crop-specific next check; no guessed amendment dose",
+          "sha256": "0587b99e21826352cbea63f950d0da23e93ebd8b9d0cb0642816c298446ffc6f"
+        },
+        {
+          "pointer": "/digitalPractice/ui/saved",
+          "text": "Row saved locally. No practical result or trainer signature has been created.",
+          "sha256": "62c7270d05bedab98a453106b48f0bed9507d77be519761ae9c7858a01235dcc"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Digital pH practice worksheet",
+          "sha256": "c2276fa89d769cbf96d30109e45007e264f0e9dd7f17622e053abd8e5c114b0c"
+        }
+      ],
+      "scientificMeaning": "A generic procedural model, not an exact HI99121 replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and g:mL basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed pH at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital pH practice worksheet",
+      "displayText": "A generic procedural model, not an exact HI99121 replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and g:mL basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed pH at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital pH practice worksheet",
+      "captionText": "A generic procedural model, not an exact HI99121 replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and g:mL basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed pH at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital pH practice worksheet",
+      "spokenText": "A generic procedural model, not an exact H I nine nine one two one replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and grams per millilitre basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed P H at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital P H practice worksheet",
+      "spokenTextSHA256": "bb45555eb0412e5a33e290393d7ab81330352ef5720a7cac74af51c5da31520f",
+      "spokenTextSha256": "bb45555eb0412e5a33e290393d7ab81330352ef5720a7cac74af51c5da31520f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI99121",
+          "spoken": "H I nine nine one two one",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "g:mL",
+          "spoken": "grams per millilitre",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "A generic procedural model, not an exact H I nine nine one two one replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and grams per millilitre basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed pH at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital pH practice worksheet",
+          "spoken": "A generic procedural model, not an exact H I nine nine one two one replica. The blank screen is not a soil measurement. Phase changes do not complete a real preparation, calibration or wait.\n\nUse only clearly identified training data or observations supplied by your trainer. Leave unknown values blank. Entering text does not prove that a measurement occurred.\n\nSample and field identity\n\nDate / tester\n\nMeter, probe and manual\n\nSoil mass, liquid identity/volume and grams per millilitre basis\n\nActual mixing and standing times\n\nBuffer set, points, lot/expiry and acceptance / check\n\nActual observed P H at supported resolution\n\nStability / uncertainty / repeat reason\n\nCrop-specific next check; no guessed amendment dose\n\nRow saved locally. No practical result or trainer signature has been created.\n\nDigital P H practice worksheet",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3315a67fcfed8b54d9bc0b61abd21559c2f178499c5737734a3116a6fde66bda",
+      "requestFingerprintSha256": "3315a67fcfed8b54d9bc0b61abd21559c2f178499c5737734a3116a6fde66bda",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

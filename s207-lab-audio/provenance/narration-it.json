@@ -1,0 +1,503 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-07-it.json",
+    "sha256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+    "bytes": 32510
+  },
+  "units": [
+    {
+      "id": "S2-07-it-documented-method-r1",
+      "unitId": "S2-07-it-documented-method-r1",
+      "locale": "it",
+      "semanticGroup": "documented-method",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/method/role",
+          "text": "esempio documentato per il confronto, non strumento verificato della sede formativa",
+          "sha256": "250ece1c92d3283e9e2a94fd63ec5684db7b07b0771cff7ac4cd9916d5e066c4"
+        },
+        {
+          "pointer": "/digitalPractice/method/exampleMeter",
+          "text": "Hanna HI99121 con elettrodo per suolo HI12923",
+          "sha256": "818d01dc4a26d0ca1e5b406fb4588369265667448b0784d2aba58ba99f454086"
+        },
+        {
+          "pointer": "/digitalPractice/method/manufacturerSlurryExample",
+          "text": "Il manuale Hanna HI99121 descrive 10 g di suolo asciutto setacciato a 2 mm più 25 mL di soluzione preparatoria HI7051: mescolare per 30 secondi, lasciare riposare per 5 minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da 20 g più 20 mL d'acqua distillata.",
+          "sha256": "60fc1335a4df4ca2dd597eae340a163dffe78b5cd036947883838fba0afb6536"
+        },
+        {
+          "pointer": "/digitalPractice/method/laboratoryComparison",
+          "text": "UC Davis documenta distinti metodi di pH con rapporto suolo:acqua deionizzata di 1:1 e 1:2. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria HI99121.",
+          "sha256": "7491ecf752f989dc649e887d26a85daeaaff1f97f3f8045bb6e750fa3666af6f"
+        },
+        {
+          "pointer": "/digitalPractice/method/siteGate",
+          "text": "Prima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+          "sha256": "99b380a90aa832a45efe1a069ca41f97f9bfd39070789f391f14216f1c814318"
+        }
+      ],
+      "scientificMeaning": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna HI99121 con elettrodo per suolo HI12923\n\nIl manuale Hanna HI99121 descrive 10 g di suolo asciutto setacciato a 2 mm più 25 mL di soluzione preparatoria HI7051: mescolare per 30 secondi, lasciare riposare per 5 minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da 20 g più 20 mL d'acqua distillata.\n\nUC Davis documenta distinti metodi di pH con rapporto suolo:acqua deionizzata di 1:1 e 1:2. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria HI99121.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+      "displayText": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna HI99121 con elettrodo per suolo HI12923\n\nIl manuale Hanna HI99121 descrive 10 g di suolo asciutto setacciato a 2 mm più 25 mL di soluzione preparatoria HI7051: mescolare per 30 secondi, lasciare riposare per 5 minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da 20 g più 20 mL d'acqua distillata.\n\nUC Davis documenta distinti metodi di pH con rapporto suolo:acqua deionizzata di 1:1 e 1:2. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria HI99121.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+      "captionText": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna HI99121 con elettrodo per suolo HI12923\n\nIl manuale Hanna HI99121 descrive 10 g di suolo asciutto setacciato a 2 mm più 25 mL di soluzione preparatoria HI7051: mescolare per 30 secondi, lasciare riposare per 5 minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da 20 g più 20 mL d'acqua distillata.\n\nUC Davis documenta distinti metodi di pH con rapporto suolo:acqua deionizzata di 1:1 e 1:2. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria HI99121.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+      "spokenText": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna acca i nove nove uno due uno con elettrodo per suolo acca i uno due nove due tre\n\nIl manuale Hanna acca i nove nove uno due uno descrive dieci grammi di suolo asciutto setacciato a due millimetri più venticinque millilitri di soluzione preparatoria acca i sette zero cinque uno: mescolare per trenta secondi, lasciare riposare per cinque minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da venti grammi più venti millilitri d'acqua distillata.\n\nUC Davis documenta distinti metodi di P H con rapporto suolo:acqua deionizzata di uno a uno e uno a due. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria acca i nove nove uno due uno.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+      "spokenTextSHA256": "5ef9fc86639be26223d90e78e959d340d518f70cce5892c018cff66319d1a8c7",
+      "spokenTextSha256": "5ef9fc86639be26223d90e78e959d340d518f70cce5892c018cff66319d1a8c7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI12923",
+          "spoken": "acca i uno due nove due tre",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:1",
+          "spoken": "uno a uno",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "1:2",
+          "spoken": "uno a due",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI99121",
+          "spoken": "acca i nove nove uno due uno",
+          "occurrences": 3,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "HI7051",
+          "spoken": "acca i sette zero cinque uno",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna acca i nove nove uno due uno con elettrodo per suolo acca i uno due nove due tre\n\nIl manuale Hanna acca i nove nove uno due uno descrive 10 g di suolo asciutto setacciato a 2 mm più 25 mL di soluzione preparatoria acca i sette zero cinque uno: mescolare per 30 secondi, lasciare riposare per 5 minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da 20 g più 20 mL d'acqua distillata.\n\nUC Davis documenta distinti metodi di pH con rapporto suolo:acqua deionizzata di uno a uno e uno a due. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria acca i nove nove uno due uno.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+          "spoken": "esempio documentato per il confronto, non strumento verificato della sede formativa\n\nHanna acca i nove nove uno due uno con elettrodo per suolo acca i uno due nove due tre\n\nIl manuale Hanna acca i nove nove uno due uno descrive dieci grammi di suolo asciutto setacciato a due millimetri più venticinque millilitri di soluzione preparatoria acca i sette zero cinque uno: mescolare per trenta secondi, lasciare riposare per cinque minuti e poi immergere la sonda. Descrive anche un metodo separato di misura diretta nel suolo con sonda idonea. Nessuno dei due coincide con la scheda originale da venti grammi più venti millilitri d'acqua distillata.\n\nUC Davis documenta distinti metodi di P H con rapporto suolo:acqua deionizzata di uno a uno e uno a due. Insieme al risultato vanno indicati metodo e base del rapporto. Questa sintesi non prescrive il tempo d'attesa della scheda originale né la soluzione preparatoria acca i nove nove uno due uno.\n\nPrima di valutare la prova fisica, il formatore registra strumento e sonda effettivi, revisione del manuale, metodo scelto, liquido, rapporto massa:volume e sua base, tamponi, criteri di accettazione della taratura e dei controlli, cura dell'elettrodo, schede di sicurezza se pertinenti e smaltimento. Se mancano, si svolge solo l'esercitazione online e la prova pratica resta non valutata.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4c93c64050308e94c17b4a16746cc506505f307002c44b55aeaa383afee9897b",
+      "requestFingerprintSha256": "4c93c64050308e94c17b4a16746cc506505f307002c44b55aeaa383afee9897b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-07-it-supervised-stages-r1",
+      "unitId": "S2-07-it-supervised-stages-r1",
+      "locale": "it",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/steps/0",
+          "text": "Verifica identità, DPI, sonda e metodo completo",
+          "sha256": "655aaa74f6f5179b21fe7f42f156559fe0ec26cb55c13091ecc0fee794e5b853"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/1",
+          "text": "Disgrega delicatamente; usa il setaccio da 2 mm previsto",
+          "sha256": "6265de45d5bc8e276f4a5640e8621c0c719c55f92ecd8b132d5d76a34d49b3b8"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/2",
+          "text": "Pesa 20 g di terreno preparato per questa scheda",
+          "sha256": "e5b44fe8c761372790056ebca1e04f95867810c518f6a52670223ccecefb72ab"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/3",
+          "text": "Misura 20 mL di acqua distillata per questa scheda",
+          "sha256": "c767d5208c6441627b6066476938f6be0675229769f2fc1461c701b21548b961"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/4",
+          "text": "Mescola per 1 minuto",
+          "sha256": "36f98e98bb5efe6694c1efd1fe9a3c0771a084690d1cf232879fbbc80a7c44c1"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/5",
+          "text": "Lascia riposare 15 minuti; registra il tempo reale",
+          "sha256": "b284a91c47870736497d5dc2ed2efa77dd2844db3ad74ff88429c2737466c997"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/6",
+          "text": "Ottieni la calibrazione accettata richiesta",
+          "sha256": "6d32d71163dc1734070ac490ded2257004b8b0e8455f47129ee2c274c240b8cc"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/7",
+          "text": "Immergi la sonda idonea senza urtare granelli o vetro",
+          "sha256": "8994a1cbdfb107f094c8d38a9af7c74a8233b5ff7b58c4b3447a7f19ef8f3b43"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/8",
+          "text": "Attendi la stabilità accettata",
+          "sha256": "37f27bdff146e88019df755eb7284104ded98d3596587093cc58cfc58a7c85bf"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/9",
+          "text": "Registra valore reale, identità e controlli",
+          "sha256": "ff3129f634079fefbd9ab824d9db2f281ff544d568417ae788474cc1ac1cc924"
+        },
+        {
+          "pointer": "/digitalPractice/ui/steps/10",
+          "text": "Risciacqua tra campioni; pulisci e conserva secondo il manuale",
+          "sha256": "1b12ed43f6d8780c60cb95ac8dee03f0ec176e730fcf0fd13310d47a858bdbf7"
+        },
+        {
+          "pointer": "/digitalPractice/guidedPhysical",
+          "text": "Il formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+          "sha256": "dc53c3b01ce5720dd63539bf23b4d0b8c21996f8991b36ba2ac7c05b39776859"
+        }
+      ],
+      "scientificMeaning": "Verifica identità, DPI, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da 2 mm previsto\n\nPesa 20 g di terreno preparato per questa scheda\n\nMisura 20 mL di acqua distillata per questa scheda\n\nMescola per 1 minuto\n\nLascia riposare 15 minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+      "displayText": "Verifica identità, DPI, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da 2 mm previsto\n\nPesa 20 g di terreno preparato per questa scheda\n\nMisura 20 mL di acqua distillata per questa scheda\n\nMescola per 1 minuto\n\nLascia riposare 15 minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+      "captionText": "Verifica identità, DPI, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da 2 mm previsto\n\nPesa 20 g di terreno preparato per questa scheda\n\nMisura 20 mL di acqua distillata per questa scheda\n\nMescola per 1 minuto\n\nLascia riposare 15 minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+      "spokenText": "Verifica identità, D P I, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da due millimetri previsto\n\nPesa venti grammi di terreno preparato per questa scheda\n\nMisura venti millilitri di acqua distillata per questa scheda\n\nMescola per un minuto\n\nLascia riposare quindici minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+      "spokenTextSHA256": "87f3582124cc681784870f847a36853bc9860a153864aa12926568e051e27168",
+      "spokenTextSha256": "87f3582124cc681784870f847a36853bc9860a153864aa12926568e051e27168",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Verifica identità, DPI, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da 2 mm previsto\n\nPesa 20 g di terreno preparato per questa scheda\n\nMisura 20 mL di acqua distillata per questa scheda\n\nMescola per 1 minuto\n\nLascia riposare 15 minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+          "spoken": "Verifica identità, D P I, sonda e metodo completo\n\nDisgrega delicatamente; usa il setaccio da due millimetri previsto\n\nPesa venti grammi di terreno preparato per questa scheda\n\nMisura venti millilitri di acqua distillata per questa scheda\n\nMescola per un minuto\n\nLascia riposare quindici minuti; registra il tempo reale\n\nOttieni la calibrazione accettata richiesta\n\nImmergi la sonda idonea senza urtare granelli o vetro\n\nAttendi la stabilità accettata\n\nRegistra valore reale, identità e controlli\n\nRisciacqua tra campioni; pulisci e conserva secondo il manuale\n\nIl formatore registra strumento, sonda, manuale e metodo locale approvato. Ciascun allievo prepara personalmente il campione richiesto, tara e controlla lo strumento, misura A/B/C, registra qualità e risultato, risciacqua e conserva la sonda ed è osservato su tutti i criteri applicabili. Se il metodo locale differisce dalla scheda originale, quest'ultima resta un confronto e la scheda pratica si aggiorna prima di assegnare un esito.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "908a81c8c76c68b32571093c9ad145f15730ea05c75914191d8149f80623eb13",
+      "requestFingerprintSha256": "908a81c8c76c68b32571093c9ad145f15730ea05c75914191d8149f80623eb13",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-07-it-practical-completion-r1",
+      "unitId": "S2-07-it-practical-completion-r1",
+      "locale": "it",
+      "semanticGroup": "practical-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/passChecks/0/evidence",
+          "text": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a 2 mm ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.",
+          "sha256": "a955cd9e9d159365719649f455edbe7fee3d1ba2b5f05890e8aa9c12c506594e"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/0/decision",
+          "text": "Superato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione 20 g:20 mL della scheda originale non supera un diverso metodo effettivo.",
+          "sha256": "579023e5692b7c972ed290adcf5252670841f8093f42bc66bd6845ba841fdc9b"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/evidence",
+          "text": "Registrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.",
+          "sha256": "c77ade402ff13ccd2ef8614e31be42678062bcd1d24229117856bbb05b1bc8a8"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/1/decision",
+          "text": "Superato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.",
+          "sha256": "97824558e848faf6f2c8a65332678d1b07706e9b3bb9d38081b6d20d57718929"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/evidence",
+          "text": "Tre righe separate riportano pH effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.",
+          "sha256": "cd0581df6801e5895763984d8b73274e2ff6acc9b346643c2dd7cac12aaa9fe4"
+        },
+        {
+          "pointer": "/digitalPractice/passChecks/2/decision",
+          "text": "Superato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+          "sha256": "59a98bf4f3a808e49ad2531cf8b5451df4ac27b0961c3fd32926a980c61f495c"
+        }
+      ],
+      "scientificMeaning": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a 2 mm ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione 20 g:20 mL della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano pH effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+      "displayText": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a 2 mm ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione 20 g:20 mL della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano pH effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+      "captionText": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a 2 mm ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione 20 g:20 mL della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano pH effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+      "spokenText": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a due millimetri ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione venti grammi:venti millilitri della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano P H effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+      "spokenTextSHA256": "7234325181de42665d3f1d0733286ddb5048e95df2190dee951f90db1d707d3d",
+      "spokenTextSha256": "7234325181de42665d3f1d0733286ddb5048e95df2190dee951f90db1d707d3d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a 2 mm ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione 20 g:20 mL della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano pH effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+          "spoken": "Il formatore osserva ciascun allievo mentre manipola suolo preparato ed etichettato, rompe delicatamente le zolle senza macinare i sassi, setaccia a due millimetri ove richiesto, pesa con bilancia controllata e misura il liquido in un cilindro pulito; si registrano massa, volume, liquido, base del rapporto e tempi reali di mescolamento e riposo del metodo dichiarato.\n\nSuperato solo se ogni fase applicabile segue il protocollo scelto dalla sede e conserva l'identità del campione. La sola esercitazione venti grammi:venti millilitri della scheda originale non supera un diverso metodo effettivo.\n\nRegistrare strumento e sonda effettivi, punti di taratura accettati e lotto/scadenza dei tamponi, indicazione di accettazione o controllo indipendente, risciacquo e cura previsti dal manuale, corretto contatto e condizione di stabilità; il formatore osserva ogni allievo.\n\nSuperato solo con taratura accettata per il metodo e manipolazione senza contaminazioni. Un messaggio di tampone errato, un elettrodo secco o danneggiato o una lettura instabile sospende la valutazione finché il problema non è risolto.\n\nTre righe separate riportano P H effettivo, risoluzione del display, metodo, operatore, ora ed eventuale ripetizione. L'allievo riconosce una lettura instabile, oltre i limiti di controllo o incoerente con la preparazione, e ripete solo la fase interessata con il formatore.\n\nSuperato solo se A, B e C sono misurati e registrati individualmente con controlli di qualità motivati. Non bastano la scheda di gruppo, una soluzione modello o tre valori inventati.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "610e10e2a8aec1fbd121b14109c9fb8ac96a147c7e447e7654334c85838a4006",
+      "requestFingerprintSha256": "610e10e2a8aec1fbd121b14109c9fb8ac96a147c7e447e7654334c85838a4006",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-07-it-card-scope-r1",
+      "unitId": "S2-07-it-card-scope-r1",
+      "locale": "it",
+      "semanticGroup": "card-scope",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/card/scope",
+          "text": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio 2 mm, 20 g di suolo, 20 mL di acqua distillata, mescolamento di un minuto e riposo di 15 minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un pH stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.",
+          "sha256": "2cffe1d46f53157d80c8d26bec8a38418245c4021f9adc205a8daa251bc8a8e1"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/0/action",
+          "text": "Protezioni scelte per il compito reale nella sede",
+          "sha256": "e81e71fdf08da273adbb0785e875b6ab08ccbb69f06f42f7be6f45258300b874"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/1/action",
+          "text": "Rompere delicatamente le zolle senza macinare sassi",
+          "sha256": "74528c48093efbaa931df3546b98b36049ea461da94047e4d7c2c4259f33a854"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/2/action",
+          "text": "Raccogliere suolo setacciato a 2 mm",
+          "sha256": "cefc6027456676d79824004c32c65621b964d170ed7c2780083e6ac77837352d"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/3/action",
+          "text": "Pesare 20 g nello scenario originale",
+          "sha256": "01de257b681da8855eed6daadbc4c07c596e92926b6591dc6e9198a27bb7a754"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/4/action",
+          "text": "Misurare 20 mL d'acqua distillata nello scenario originale",
+          "sha256": "f01f93f5a370e5663149fa1c1d10234903e091fbf943f14fdb32e73d6c7ac5fb"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/5/action",
+          "text": "Mescolare 1 minuto e attendere 15 minuti nello scenario originale",
+          "sha256": "40724c600d3eaeb9a2192db5630faaacfb96f13bd64d35a5482768734344670a"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/6/action",
+          "text": "Tarare con tamponi accettati secondo il produttore dello strumento effettivo",
+          "sha256": "bddfd1cddee73cd426283eff00243a96b94d55867d3b069958f7f7c42eeafa6b"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/7/action",
+          "text": "Collocare correttamente la sonda idonea nel mezzo dichiarato",
+          "sha256": "75e1ec9e47b9efecd081e0898f7944fddff58b829ba2307b801a9c1e43ecbdf3"
+        },
+        {
+          "pointer": "/digitalPractice/card/observationRows/8/action",
+          "text": "Registrare il pH finale stabile con identità di campione e metodo",
+          "sha256": "c0557679dd56c379ef1e9c35ba72d142e5f89fcd7eb4b20a7b6c64df53fb7750"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/0",
+          "text": "Registrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.",
+          "sha256": "d62bbc4190d51a880a8535321b52ec91e4ed30049a5a9cd2402fce368ea1dd95"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/1",
+          "text": "Risciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.",
+          "sha256": "b074133a24f22cef170776b64d4cda136b7e56a512fa5e6c8c2ce125a7b50bb9"
+        },
+        {
+          "pointer": "/digitalPractice/card/additionalSafetyAndQuality/2",
+          "text": "Il formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+          "sha256": "6e63ff6f1ed3d0c64856fdccb82bb792b22524663dac1f673b97967f02452130"
+        }
+      ],
+      "scientificMeaning": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio 2 mm, 20 g di suolo, 20 mL di acqua distillata, mescolamento di un minuto e riposo di 15 minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un pH stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a 2 mm\n\nPesare 20 g nello scenario originale\n\nMisurare 20 mL d'acqua distillata nello scenario originale\n\nMescolare 1 minuto e attendere 15 minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il pH finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+      "displayText": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio 2 mm, 20 g di suolo, 20 mL di acqua distillata, mescolamento di un minuto e riposo di 15 minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un pH stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a 2 mm\n\nPesare 20 g nello scenario originale\n\nMisurare 20 mL d'acqua distillata nello scenario originale\n\nMescolare 1 minuto e attendere 15 minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il pH finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+      "captionText": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio 2 mm, 20 g di suolo, 20 mL di acqua distillata, mescolamento di un minuto e riposo di 15 minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un pH stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a 2 mm\n\nPesare 20 g nello scenario originale\n\nMisurare 20 mL d'acqua distillata nello scenario originale\n\nMescolare 1 minuto e attendere 15 minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il pH finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+      "spokenText": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio due millimetri, venti grammi di suolo, venti millilitri di acqua distillata, mescolamento di un minuto e riposo di quindici minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un P H stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a due millimetri\n\nPesare venti grammi nello scenario originale\n\nMisurare venti millilitri d'acqua distillata nello scenario originale\n\nMescolare un minuto e attendere quindici minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il P H finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+      "spokenTextSHA256": "8e5caadeddda032ee3540f1c13449c633498820a8976e1f809b2ce32b5624af1",
+      "spokenTextSha256": "8e5caadeddda032ee3540f1c13449c633498820a8976e1f809b2ce32b5624af1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio 2 mm, 20 g di suolo, 20 mL di acqua distillata, mescolamento di un minuto e riposo di 15 minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un pH stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a 2 mm\n\nPesare 20 g nello scenario originale\n\nMisurare 20 mL d'acqua distillata nello scenario originale\n\nMescolare 1 minuto e attendere 15 minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il pH finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+          "spoken": "I nove controlli di questa scheda sono protezioni corrette, rottura delicata delle zolle, setaccio due millimetri, venti grammi di suolo, venti millilitri di acqua distillata, mescolamento di un minuto e riposo di quindici minuti, taratura con tamponi secondo il produttore, posizione corretta dell’elettrodo e registrazione di un P H stabile. Queste quantità definiscono lo scenario didattico cartaceo. Prima dell’uso pratico, il formatore verifica lo strumento e il metodo effettivi del sito e associa le azioni osservabili a quel metodo senza mescolare procedure.\n\nProtezioni scelte per il compito reale nella sede\n\nRompere delicatamente le zolle senza macinare sassi\n\nRaccogliere suolo setacciato a due millimetri\n\nPesare venti grammi nello scenario originale\n\nMisurare venti millilitri d'acqua distillata nello scenario originale\n\nMescolare un minuto e attendere quindici minuti nello scenario originale\n\nTarare con tamponi accettati secondo il produttore dello strumento effettivo\n\nCollocare correttamente la sonda idonea nel mezzo dichiarato\n\nRegistrare il P H finale stabile con identità di campione e metodo\n\nRegistrare identità dei tamponi, accettazione della taratura e metodo separatamente dai nove controlli originali.\n\nRisciacquare tra campioni, registrare prove instabili o respinte, pulire e conservare l'elettrodo secondo manuale.\n\nIl formatore registra prove e correzioni osservate per ogni allievo; il voto di gruppo non implica superamento individuale.",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aaaa669e56df38f3267a03ca65a0629ad0b3fea8dbac51c1db40fbec2667f2d7",
+      "requestFingerprintSha256": "aaaa669e56df38f3267a03ca65a0629ad0b3fea8dbac51c1db40fbec2667f2d7",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-07-it-record-and-method-guidance-r1",
+      "unitId": "S2-07-it-record-and-method-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-and-method-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "55df86c7cd8b8b653444afcbadb993bf2a44d029cbcc64744067f22dc4f7bfa5",
+      "sourceBindings": [
+        {
+          "pointer": "/digitalPractice/ui/modelHelp",
+          "text": "Modello procedurale generico, non replica esatta HI99121. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.",
+          "sha256": "37910fc5768256c06c9236a7676d1850fa13994f12faab4eefee7ae5da441aab"
+        },
+        {
+          "pointer": "/digitalPractice/ui/recordHelp",
+          "text": "Solo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.",
+          "sha256": "a472a13c8f02c773e6b0e2fdcb6b1be4da81655f451cfb6035afb3fdb8fcc0f1"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/0",
+          "text": "Identità di campione e campo",
+          "sha256": "c7929905766512abde5c461901809a80092ec7f03af1f2006700e3a9f03a092c"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/1",
+          "text": "Data / esecutore",
+          "sha256": "113177fcb7fb996f5b01bbd60aeb8b86e442fb716c026adaa187814a3da74490"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/2",
+          "text": "Strumento, sonda e manuale",
+          "sha256": "7dd9fd1c61069462349d8f3f6046a55b309ed7518b61590e9a1da3a4fab5ba39"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/3",
+          "text": "Massa, tipo/volume di liquido e base g:mL",
+          "sha256": "4876da5fcd588cca022b9214fa62a9dac9442ee2a6bf949820b7cb078b1248ce"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/4",
+          "text": "Tempi reali di miscelazione e riposo",
+          "sha256": "b9277151235b83b51540763d861c95a70adc04dc22c1e82c153c2a8a69f08b26"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/5",
+          "text": "Serie tamponi, valori, lotto/scadenza e accettazione/controllo",
+          "sha256": "57be48c97758bf52aeee34ff42d5d234f5eaedfa808f197d2982f129df1c68fc"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/6",
+          "text": "pH realmente osservato alla risoluzione supportata",
+          "sha256": "745bdb32e50cc00ba26a351dc13eb216bf0af7186f30f3cd18d972a6b04d18da"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/7",
+          "text": "Stabilità / incertezza / motivo della ripetizione",
+          "sha256": "3f7cbb58780f33dd195cd2b6cc7fa305959d90720742074354d41cdc220ec8cb"
+        },
+        {
+          "pointer": "/digitalPractice/ui/fields/8",
+          "text": "Indagine successiva per la coltura, senza dosi inventate",
+          "sha256": "53e32011135d2c73a9705cb46737dd179495e5c141fad5bdf3888128355340ae"
+        },
+        {
+          "pointer": "/digitalPractice/ui/saved",
+          "text": "Riga salvata in locale. Nessun risultato pratico certificato né firma creata.",
+          "sha256": "a0ccc837d3726361d5ed077b53e4cdac08fca4dac8487f843e9eda224124ac77"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda di esercitazione pH digitale",
+          "sha256": "ade481a8db2005805b2d62c80315011f8690b01482a51cbaf39b92984b6cd63c"
+        }
+      ],
+      "scientificMeaning": "Modello procedurale generico, non replica esatta HI99121. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base g:mL\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\npH realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione pH digitale",
+      "displayText": "Modello procedurale generico, non replica esatta HI99121. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base g:mL\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\npH realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione pH digitale",
+      "captionText": "Modello procedurale generico, non replica esatta HI99121. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base g:mL\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\npH realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione pH digitale",
+      "spokenText": "Modello procedurale generico, non replica esatta acca i nove nove uno due uno. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base grammi per millilitro\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\nP H realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione P H digitale",
+      "spokenTextSHA256": "659520d97a0fc8adf2dd47a7a7b8715cab47611123e68b12b4ad1a211f129f64",
+      "spokenTextSha256": "659520d97a0fc8adf2dd47a7a7b8715cab47611123e68b12b4ad1a211f129f64",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI99121",
+          "spoken": "acca i nove nove uno due uno",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "g:mL",
+          "spoken": "grammi per millilitro",
+          "occurrences": 1,
+          "purpose": "Exact method/ratio/code spoken form or natural Egyptian grammar; scientific facts/source unchanged"
+        },
+        {
+          "written": "Modello procedurale generico, non replica esatta acca i nove nove uno due uno. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base grammi per millilitro\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\npH realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione pH digitale",
+          "spoken": "Modello procedurale generico, non replica esatta acca i nove nove uno due uno. Lo schermo vuoto non è una misura. Cambiare fase non completa preparazione, calibrazione o attesa reali.\n\nSolo dati didattici identificati o osservazioni fornite dal formatore. Lascia vuoto ciò che non conosci; scrivere non prova una misura.\n\nIdentità di campione e campo\n\nData / esecutore\n\nStrumento, sonda e manuale\n\nMassa, tipo/volume di liquido e base grammi per millilitro\n\nTempi reali di miscelazione e riposo\n\nSerie tamponi, valori, lotto/scadenza e accettazione/controllo\n\nP H realmente osservato alla risoluzione supportata\n\nStabilità / incertezza / motivo della ripetizione\n\nIndagine successiva per la coltura, senza dosi inventate\n\nRiga salvata in locale. Nessun risultato pratico certificato né firma creata.\n\nScheda di esercitazione P H digitale",
+          "occurrences": 1,
+          "purpose": "Whole-token quantities, units, acronyms and specimen IDs; preserve1:1g:mL/1:2basis and6.8model versus6.5actual distinctly"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dc796fb88a99a112222c9f2600370028ef5b2c1f2b3ff61fdff0e64537efc1ec",
+      "requestFingerprintSha256": "dc796fb88a99a112222c9f2600370028ef5b2c1f2b3ff61fdff0e64537efc1ec",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
