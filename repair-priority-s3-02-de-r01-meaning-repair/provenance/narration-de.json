@@ -1,0 +1,72 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-de.json",
+    "sha256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+    "bytes": 32038
+  },
+  "units": [
+    {
+      "id": "S3-02-de-R01-meaning-repair-r1",
+      "unitId": "S3-02-de-R01-meaning-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair-priority-s3-02-de-r01-meaning-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Vor der Vorauswahl Bodenart und -struktur, Drainage, pH, Nährstoffanalyse, Bewässerung oder Niederschlag, Temperatur und Saison erfassen. Sand entwässert oft schnell, kann aber weniger Wasser und gelöste Nährstoffe halten. Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten. Lehm enthält ausgewogenere Korngrößen; sein Name garantiert weder Drainage noch Belüftung noch Fruchtbarkeit. Sand, sandigen Lehm, Lehm und Ton sprachlich sauber trennen.",
+          "sha256": "b8821f5c2d93a78ef76cdb7a566c67ec35b56543cd0ce9871d2f98bc83d0b338"
+        }
+      ],
+      "scientificMeaning": "Vor der Vorauswahl Bodenart und -struktur, Drainage, pH, Nährstoffanalyse, Bewässerung oder Niederschlag, Temperatur und Saison erfassen. Sand entwässert oft schnell, kann aber weniger Wasser und gelöste Nährstoffe halten. Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten. Lehm enthält ausgewogenere Korngrößen; sein Name garantiert weder Drainage noch Belüftung noch Fruchtbarkeit. Sand, sandigen Lehm, Lehm und Ton sprachlich sauber trennen.",
+      "displayText": "Vor der Vorauswahl Bodenart und -struktur, Drainage, pH, Nährstoffanalyse, Bewässerung oder Niederschlag, Temperatur und Saison erfassen. Sand entwässert oft schnell, kann aber weniger Wasser und gelöste Nährstoffe halten. Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten. Lehm enthält ausgewogenere Korngrößen; sein Name garantiert weder Drainage noch Belüftung noch Fruchtbarkeit. Sand, sandigen Lehm, Lehm und Ton sprachlich sauber trennen.",
+      "captionText": "Vor der Vorauswahl Bodenart und -struktur, Drainage, pH, Nährstoffanalyse, Bewässerung oder Niederschlag, Temperatur und Saison erfassen. Sand entwässert oft schnell, kann aber weniger Wasser und gelöste Nährstoffe halten. Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten. Lehm enthält ausgewogenere Korngrößen; sein Name garantiert weder Drainage noch Belüftung noch Fruchtbarkeit. Sand, sandigen Lehm, Lehm und Ton sprachlich sauber trennen.",
+      "spokenText": "Ein tonreicher Boden kann mehr Wasser und Kationen halten. Bei Nässe oder Verdichtung ist er jedoch schwer zu bearbeiten.",
+      "spokenTextSHA256": "7fe4a9f2bb2738ffd3ff9864252e295f7bdaebb2324d3dd27d36e5ae85cda4e0",
+      "spokenTextSha256": "7fe4a9f2bb2738ffd3ff9864252e295f7bdaebb2324d3dd27d36e5ae85cda4e0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vor der Vorauswahl Bodenart und -struktur, Drainage, pH, Nährstoffanalyse, Bewässerung oder Niederschlag, Temperatur und Saison erfassen. Sand entwässert oft schnell, kann aber weniger Wasser und gelöste Nährstoffe halten. Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten. Lehm enthält ausgewogenere Korngrößen; sein Name garantiert weder Drainage noch Belüftung noch Fruchtbarkeit. Sand, sandigen Lehm, Lehm und Ton sprachlich sauber trennen.",
+          "spoken": "Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten.",
+          "spoken": "Ein tonreicher Boden kann mehr Wasser und Kationen halten. Bei Nässe oder Verdichtung ist er jedoch schwer zu bearbeiten.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "278c8238ccc4c62dc2a29f20c6c8e515e3476c579225bbd5470fc78390fe9570",
+      "requestFingerprintSha256": "278c8238ccc4c62dc2a29f20c6c8e515e3476c579225bbd5470fc78390fe9570",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Tonreicher Boden kann mehr Wasser und Kationen halten, ist bei Nässe oder Verdichtung jedoch schwer zu bearbeiten.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\five-meaning-priority-repairs-root-authority-r1.json",
+        "authoritySHA256": "f720d03b66fba9da2c37a833d87476dd4c4084ba6228817e29e60d09e798ea91"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
