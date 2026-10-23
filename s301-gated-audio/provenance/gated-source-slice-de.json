@@ -1,0 +1,42 @@
+{
+  "stepId": "S3-01",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato-peanut",
+      "title": "Zwei Perspektiven der Einordnung",
+      "situation": "Ordne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.",
+      "reasoning": [
+        "Tomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.",
+        "In einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.",
+        "Erdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.",
+        "Nach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen."
+      ],
+      "takeaway": "Tomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an."
+    },
+    {
+      "id": "eaten-organ",
+      "title": "Vier scheinbar ähnliche Ernten",
+      "situation": "Ein Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.",
+      "reasoning": [
+        "Bestimme das tatsächlich geerntete Organ, nicht nur seine Lage.",
+        "Der übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.",
+        "Kartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel."
+      ],
+      "takeaway": "Beschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht."
+    },
+    {
+      "id": "soil-account",
+      "title": "Was das Bodenkonto erklärt und was nicht",
+      "situation": "Ein Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.",
+      "reasoning": [
+        "Ernte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.",
+        "Knöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.",
+        "Ein zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode."
+      ],
+      "takeaway": "Getreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen."
+    }
+  ]
+}

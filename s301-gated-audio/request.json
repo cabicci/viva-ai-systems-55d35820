@@ -1,0 +1,1937 @@
+{
+  "schemaVersion": 1,
+  "scope": "S301_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s301-gated-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 12,
+  "maximumBlindAudioReviewCalls": 12,
+  "maximumASRInvocations": 12,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_THREE_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-ar-EG-E01-r1",
+      "unitId": "S3-01-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "زاويتان للتصنيف",
+          "sha256": "6827335fe7d4aab2e4d600266dfb76202ca53edeec4ef3d5022a02ee1d3c60a7"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "صنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.",
+          "sha256": "440d1ca96fd2755bb56036c92010ae777c5de6e0f0d550c09bfc7f9510f2bd3b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.",
+          "sha256": "d34dc813fd215a4e1aff0eb2e8608d0e97309637daf73de1884952bf8f9d40bb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "في جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.",
+          "sha256": "9808556ec1e58d56c20174b3404254e99b430ffa0a8d4f54cc319a0503af8018"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "الفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.",
+          "sha256": "b6915c928d152332e60d7e2f2d31e4c9a5f5dc1291f350e737a83337868f853a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "الفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.",
+          "sha256": "5dd68c0ea8b65479dfd3fb9971d2bd0472e51153943928a62bdcd0367621b14e"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "الطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+          "sha256": "9a80ca08bcdcfcf9477a1c2934d1c83b8afde397d9bf56e08ff75115b3420073"
+        }
+      ],
+      "scientificMeaning": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+      "displayText": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+      "captionText": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+      "spokenText": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف الفاو الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+      "spokenTextSHA256": "c4def778e28110e8cdb0bfaa9a15aea7edba077e8aef8312c56f9d4041b85564",
+      "spokenTextSha256": "c4def778e28110e8cdb0bfaa9a15aea7edba077e8aef8312c56f9d4041b85564",
+      "spokenAdaptationChanges": [
+        {
+          "written": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+          "spoken": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف الفاو الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1c7385ee134f412c192f5c24e531a7ed8bf09da5bc42c48aada5f6e95c52aeba",
+      "requestFingerprintSha256": "1c7385ee134f412c192f5c24e531a7ed8bf09da5bc42c48aada5f6e95c52aeba",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4d1231303d3c105f77923ad76c34b2da5e10e88744e206bd8264df68c78c53af",
+        "before": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف FAO الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+        "after": "زاويتان للتصنيف\n\nصنّف الطماطم والفول السوداني في جدول الاستخدام بالسوق، وبعدين حدد تركيب كل نبات.\n\nالطماطم بتتكون من زهرة وفيها بذور، فهي ثمرة نباتيًا.\n\nفي جدول استخدام الأكل خضار ثمري؛ وده ما ينفيش تركيبها النباتي.\n\nالفول السوداني بيكوّن قرون وينتمي للبقوليات، رغم إن اسمه أو بذوره الزيتية ممكن يخلّوك تفتكره من المكسرات.\n\nالفول السوداني مش من البقول الجافة حسب تعريف الفاو الضيق؛ البقوليات الزيتية خارجة من الفئة دي.\n\nالطماطم خضار ثمري عمليًا وثمرة نباتيًا؛ والفول السوداني بقولي مش من البقول الجافة. وضّح أنت بتجاوب عن أنهي نوع تصنيف.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "de3c81aeee466c070714dca63f392fe777fd4212a3920f148ea16f6c8e257c9f"
+    },
+    {
+      "id": "S3-01-ar-EG-E02-r1",
+      "unitId": "S3-01-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "أربع محاصيل شكلها ممكن تخدعك",
+          "sha256": "d9b455198b30aa77b5d879afd8897c75d6da0ef8daaa6048e64ac9be4b3e1544"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "بطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.",
+          "sha256": "c600c9c4071cea8200831abbd928386a3c3a3e5c8a545f8d415b2e06c6ee29ed"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "حدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.",
+          "sha256": "a6a939f232d0b459d64ce884ec4844f5c34e502b792993fbb33a5e22efc5b5d9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "الجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.",
+          "sha256": "8289a33cdac00e4e07d1ca1587eb638c1bdd461854ab2c7bd4728975dab83ca3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "البطاطس درنة ساقية، والبطاطا جذر مخزّن.",
+          "sha256": "af4b64f9c321f06e344f4eef098b1456d5a949f25e2701a1d520b1681f773251"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "صحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+          "sha256": "e942688cc3f78c190dc66fb5aa388bf4603dda51275ea2c898c578598f80cf3c"
+        }
+      ],
+      "scientificMeaning": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+      "displayText": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+      "captionText": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+      "spokenText": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+      "spokenTextSHA256": "9c3987097b1e299c9b3a69d8f339f1f0ba2a09773583035655c5d64ee6e49ef5",
+      "spokenTextSha256": "9c3987097b1e299c9b3a69d8f339f1f0ba2a09773583035655c5d64ee6e49ef5",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5f6ada2d140bf6de86e0cffc44020b5585bb502e54cd544a4b3c64d623678d3c",
+      "requestFingerprintSha256": "5f6ada2d140bf6de86e0cffc44020b5585bb502e54cd544a4b3c64d623678d3c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "9c3987097b1e299c9b3a69d8f339f1f0ba2a09773583035655c5d64ee6e49ef5",
+        "before": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+        "after": "أربع محاصيل شكلها ممكن تخدعك\n\nبطاقة بتقول إن أي خضار واقف هو ساق وأي جزء متضخم تحت الأرض هو جذر.\n\nحدد العضو الحقيقي اللي بيتحصد، مش مكانه فقط.\n\nالجزء الشائع المأكول من الكرفس عنق ورقة؛ والهليون فرخ أو ساق صغيرة.\n\nالبطاطس درنة ساقية، والبطاطا جذر مخزّن.\n\nصحح أسماء الأجزاء حسب العضو النباتي؛ الشكل أو الاسم في الأكل وحده مش كفاية.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "de3c81aeee466c070714dca63f392fe777fd4212a3920f148ea16f6c8e257c9f"
+    },
+    {
+      "id": "S3-01-ar-EG-E03-r1",
+      "unitId": "S3-01-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟",
+          "sha256": "4e13697907b266fc738c646b133ead7d3c2080e93dabd210e74f695b6bac341c"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "مزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.",
+          "sha256": "281f9d54d3021262f4e3474ee744993b79bef492b511b8990ace5e7440651797"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "الحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.",
+          "sha256": "81cbdf6bdd523d51e5887df3411e2627aae9bdf87d784bff556cfa31a2616c83"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "عقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.",
+          "sha256": "c81bf7ea08694467eab25864469aaa050fd9b15181470c3d0f5dabd74927da17"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "تقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.",
+          "sha256": "8c49078d08f0c3bd40473986bccccb1f0ece3d1911cad1800ecd8663af7d6648"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "ما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+          "sha256": "7265e289e74394a61debd122e0d51d51d2de49d1252f17df60a32ebfe314aa34"
+        }
+      ],
+      "scientificMeaning": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+      "displayText": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+      "captionText": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+      "spokenText": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+      "spokenTextSHA256": "cf73b0a23ab98051be78b10bbe034c456639274c4ffac3f6a1389b40e7a5da32",
+      "spokenTextSha256": "cf73b0a23ab98051be78b10bbe034c456639274c4ffac3f6a1389b40e7a5da32",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fdd9b8dd9c18fe0f21e5252e698ef1dcabedda1455f7c1a738be82624014e477",
+      "requestFingerprintSha256": "fdd9b8dd9c18fe0f21e5252e698ef1dcabedda1455f7c1a738be82624014e477",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "cf73b0a23ab98051be78b10bbe034c456639274c4ffac3f6a1389b40e7a5da32",
+        "before": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+        "after": "تشبيه البنك يفيد في إيه وما يثبتش إيه؟\n\nمزارع حصد حبوب الذرة ورجّع بعض السيقان للتربة، ثم زرع محصول بقولي وشال إنتاجه عند الحصاد.\n\nالحصاد والبقايا اللي اتشالت بيخرجوا مادة؛ الجذور والبقايا اللي فضلت ممكن تساهم في المادة العضوية.\n\nعقد البقوليات ممكن تثبّت نيتروجين لو النبات والريزوبيوم والظروف مناسبين.\n\nتقدير رصيد نيتروجين رقمي محتاج تاريخ المحاصيل والحصاد والبقايا وفحص التربة وطريقة محلية مناسبة.\n\nما تقولش إن الحبوب حتمًا بتفقد التربة مادتها العضوية أو إن البقوليات بترجع النيتروجين كله تلقائيًا.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "de3c81aeee466c070714dca63f392fe777fd4212a3920f148ea16f6c8e257c9f"
+    },
+    {
+      "id": "S3-01-en-E01-r1",
+      "unitId": "S3-01-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Two classification lenses",
+          "sha256": "07c6355dbe18a4b6ff83949a80b991497bd2031fc57cb24af47b2743bc58ce92"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Sort a tomato and a peanut for a market-use table, then identify their plant structures.",
+          "sha256": "fbc30415d0fe984a8e90a6f78b4455923585267ce207b137d21654b8e2002e19"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "A tomato develops from a flower and contains seeds, so it is a botanical fruit.",
+          "sha256": "2e8ad3b63e6aaf292edcf2b28b03321e855ec39df8f55fd33f3daced7eb38773"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "In the practical food-use table it is a fruiting vegetable; that does not undo its botany.",
+          "sha256": "c506129b0fe1f31dc3e6569a731e127b358da86ed4885f465d66bd8ba79ea406"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Peanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.",
+          "sha256": "6fd34c37806de1f41a85af20080c8cacbee4ca9f1fca32e586a962e1c511a976"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Peanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.",
+          "sha256": "d3654bb4dda1740cc8de94e1752e9923358085ed63cff70e92c0b1e88021fcc5"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "sha256": "6cd0521b7fcc48dc8a5ed318aa94330b92eaf70459c20b36d14fe436824be081"
+        }
+      ],
+      "scientificMeaning": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "displayText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "captionText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "spokenText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "spokenTextSHA256": "f64165bf3a05ff45ba914c027c7659620271f171f70674b28e27d54c67218b98",
+      "spokenTextSha256": "f64165bf3a05ff45ba914c027c7659620271f171f70674b28e27d54c67218b98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "spoken": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c763df71f72cf70a7d4c8f9f32ed3b26e6e7e929d24a16cdccdfa47f25073766",
+      "requestFingerprintSha256": "c763df71f72cf70a7d4c8f9f32ed3b26e6e7e929d24a16cdccdfa47f25073766",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "c0b8082fc0d9e940d4c1527faf7933fa9c141d06984626d96efc11133df5c863",
+        "before": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+        "after": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "31392563c9a48f411dc669c6c9c9bbe482028ce6e724c090a892f2538e5bb0f3"
+    },
+    {
+      "id": "S3-01-en-E02-r1",
+      "unitId": "S3-01-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Four similar-looking harvests",
+          "sha256": "2a3ee5e4bde136a8108e16bc1b7982713a3da9324e75900f0b7a4f35bc3b5c1d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A label says every upright vegetable is a stem and every underground swollen part is a root.",
+          "sha256": "877bfc1350f37ddc9f693ecacc6f01b97e4c618e0e5ffd4f439d193d91e0293c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identify the actual harvested organ, not its position alone.",
+          "sha256": "276bdd7160ea828047b305ebf260518e7e5241b68c036aabcdfdcc834fb81547"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Celery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.",
+          "sha256": "81a46beb28862c3e876e88451a1c94e503761d94eaa20184af47b1392f57495c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Potato forms a stem tuber, while sweet potato forms a storage root.",
+          "sha256": "c4d0557381fbb381f203b29639852a7bb24cb9b449c44e15b9bbd42f86d9aa35"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Revise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "sha256": "c1d6d6c5178f7129ba385570c683962f30d65f9463ce5753075681d4abc65d05"
+        }
+      ],
+      "scientificMeaning": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "displayText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "captionText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "spokenText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "spokenTextSHA256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+      "spokenTextSha256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "spoken": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0700af4e1477933df71f21962d4a1d4673187b44589f89f2bf659363d2116414",
+      "requestFingerprintSha256": "0700af4e1477933df71f21962d4a1d4673187b44589f89f2bf659363d2116414",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+        "before": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+        "after": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "31392563c9a48f411dc669c6c9c9bbe482028ce6e724c090a892f2538e5bb0f3"
+    },
+    {
+      "id": "S3-01-en-E03-r1",
+      "unitId": "S3-01-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "What the bank analogy can and cannot tell us",
+          "sha256": "39ef2ca2f5f3785413fa51ca48b9e827fd216d8950c10c80da98353f6b9bf41c"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.",
+          "sha256": "b054e870939c41b0cb4411beb4b397790bc1d039dd9811f979823118ae548a3e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Harvest and removed residues export material; returned roots and residues may contribute to soil organic matter.",
+          "sha256": "6ed9b7901cdf7b69b0c156ad581e471a077cdf66f8bd1c32250bd1dbb82b9b98"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Legume nodules may fix nitrogen if the plant, rhizobia and conditions allow.",
+          "sha256": "5e1615045bf4d094de3770faf317bd3f4e1b939007815fc312f3282fa5d00623"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "A numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.",
+          "sha256": "aa79ebdecadf5dbfdfd6482386f1d3dc8ec49fdaa72d0c2b4feabd5c33ffaf93"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Do not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "sha256": "dff6f6592fc1cd7c3b23826ef6c051d5455dfebd05d2949ee75c2bccd55217e1"
+        }
+      ],
+      "scientificMeaning": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "displayText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "captionText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "spokenText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "spokenTextSHA256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+      "spokenTextSha256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "spoken": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c2c9b45b02b71f439701111fdf9696f87617d6502da855007fdd86df5bbe784e",
+      "requestFingerprintSha256": "c2c9b45b02b71f439701111fdf9696f87617d6502da855007fdd86df5bbe784e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+        "before": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+        "after": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "31392563c9a48f411dc669c6c9c9bbe482028ce6e724c090a892f2538e5bb0f3"
+    },
+    {
+      "id": "S3-01-it-E01-r1",
+      "unitId": "S3-01-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Due prospettive di classificazione",
+          "sha256": "a60d92076284ff5508f215ffdf1822e9d812ba2633336dfe4dcc434c4c605f93"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Classifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.",
+          "sha256": "8cb2aa4b67bd1ae2822c15ffd63f499b2af1662b0e7828911f9e1631e3446d2e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Il pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.",
+          "sha256": "ae4c613cb0434f416f8f2408a8adbf2ec3e341277b18b7b4ddae36057f4a6e66"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Nella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.",
+          "sha256": "80d38c807d0aa98a732176596bac6e86a6d36486c3a862c65848b02028dd6446"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "L'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.",
+          "sha256": "4d9ea8b7e3de1d9b151b32fd431c0ec1a104d9476efea351497a909a721fe975"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Per la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.",
+          "sha256": "e0701b2853ed7685b4ebfb95853aabe2052b42d952ab462f69e4803427f2b92a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Pomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "sha256": "df42bced97f51c63fc89c246481f9bdb62395171afdb4af7923c8ff3db923890"
+        }
+      ],
+      "scientificMeaning": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "displayText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "captionText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "spokenText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "spokenTextSHA256": "2793f7c91543a1940420efed5fa7f51d777761282a47edace5e9bc5ebc8ad284",
+      "spokenTextSha256": "2793f7c91543a1940420efed5fa7f51d777761282a47edace5e9bc5ebc8ad284",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "spoken": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5b4ade2de894729451acb5380ff482c188af330237d992b5a21b8893b8bfebaa",
+      "requestFingerprintSha256": "5b4ade2de894729451acb5380ff482c188af330237d992b5a21b8893b8bfebaa",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "546076f5900132e520e1cda6ce09740635c2e02dfa8fb6bfcc7e3cd2b799fadc",
+        "before": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+        "after": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "a13d57bf37170ecd8dfbb5ab5cd0350b1347b6b0cd3bbf7bd6603966151af6b9"
+    },
+    {
+      "id": "S3-01-it-E02-r1",
+      "unitId": "S3-01-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Quattro raccolti dall'aspetto ingannevole",
+          "sha256": "8bcf9bc07f99c79c97b5b9a3276695d3e0e326749e00c0f788389ef7e2098d1c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.",
+          "sha256": "6799a55f53c858b3c7dca407e4c9ae6fb1c2f4439919472d18028a0348408190"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identifica l'organo raccolto, non soltanto la posizione.",
+          "sha256": "e65dd8c370a6d14786c095bf289f0abd40a6f9116977a001e2987271964ed013"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "La costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.",
+          "sha256": "43d5f23c69dac5405faea90e9bc584997ae6488c319e1627f350f2d0d3fe439b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "La patata è un tubero caulinare, la patata dolce una radice di riserva.",
+          "sha256": "c901b1e5e63a25e9bdedab9090c580857aa94bf4b4d575c7de06b7353c01bedf"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Correggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "sha256": "2e2fe1f809548a61cbcd686123ef6f2836456d330e872d53871b25625907bec4"
+        }
+      ],
+      "scientificMeaning": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "displayText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "captionText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "spokenText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "spokenTextSHA256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+      "spokenTextSha256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "spoken": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d8b1cf91353b008dba993eedb0cb26527c94d02aee5adf46a1a6b4e1a29441df",
+      "requestFingerprintSha256": "d8b1cf91353b008dba993eedb0cb26527c94d02aee5adf46a1a6b4e1a29441df",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+        "before": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+        "after": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "a13d57bf37170ecd8dfbb5ab5cd0350b1347b6b0cd3bbf7bd6603966151af6b9"
+    },
+    {
+      "id": "S3-01-it-E03-r1",
+      "unitId": "S3-01-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Cosa spiega e cosa non prova la banca del suolo",
+          "sha256": "de713f413e6b29d2157c75cef7a9f6f2d5190f31af05820e3c9831222e29dd35"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.",
+          "sha256": "5fe8c2ac80f3c52f553251aeb6866518979d104f1f50868d8812426f1c42768d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Raccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.",
+          "sha256": "88c77f9a2b7b1a3c8ba6afa834a1611a7ac70d713563aea5163b9adf3237c779"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Noduli possono fissare N se pianta, rizobi e condizioni sono compatibili.",
+          "sha256": "bffe5700da55522fa9b377ae4a94ba0ab138e4fcc1152acf3a326eb41d5972eb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Un credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.",
+          "sha256": "971c8164eb42f1dd5ca24c433fbca42a03e95a2db6c17e7268af11de42f014d3"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Non dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "sha256": "1cd93d6e3781411a4bda58ae0ef43773455fa5aab5cfd2ed5ba12b9898f4ca16"
+        }
+      ],
+      "scientificMeaning": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "displayText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "captionText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "spokenText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "spokenTextSHA256": "0f201fde0776e650d78812285bb05d047549bd2583de8b2d56eca2377fd0a8e3",
+      "spokenTextSha256": "0f201fde0776e650d78812285bb05d047549bd2583de8b2d56eca2377fd0a8e3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "spoken": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ac825187b44e599960b84e643f32ca589dd3b11f1214ce7d7fa8384bbf44dcd",
+      "requestFingerprintSha256": "8ac825187b44e599960b84e643f32ca589dd3b11f1214ce7d7fa8384bbf44dcd",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4deada0431a1ed1926fcd55ae95d601c43b7b777764862d21369716667051360",
+        "before": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare enne se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di enne richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+        "after": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "a13d57bf37170ecd8dfbb5ab5cd0350b1347b6b0cd3bbf7bd6603966151af6b9"
+    },
+    {
+      "id": "S3-01-de-E01-r1",
+      "unitId": "S3-01-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Zwei Perspektiven der Einordnung",
+          "sha256": "21c84d1c9bc63203706ded8942520c4cabac45158daaa4a5e89052b52aedb538"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ordne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.",
+          "sha256": "2e37250795eb4710a9ccc5a201fa3849c7e07251c60e7da7d3689fdb61993c06"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Tomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.",
+          "sha256": "a0d681ca3d58ea4d14bbb2fcfb0997690d42f318200ad18ff0fe6d9ae64ffa41"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "In einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.",
+          "sha256": "0b6fb84c0ae494093895556ec315e820a0c599b2b951c43f8237e7c1bcd584bd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Erdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.",
+          "sha256": "63e384c9c0c39657a7188024553aab958dbeba10d4f13b4fd3500c66f0c326d0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Nach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.",
+          "sha256": "135b12565c3910984f55d8e8e5f73ffc85d979364ccf4cc8fe5dc61801d8977c"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "sha256": "12fdd0cc015663f98b9cc2f650ea7b3859765f71e665110f8aa72daa75d66157"
+        }
+      ],
+      "scientificMeaning": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "displayText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "captionText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "spokenText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "spokenTextSHA256": "309fc9e25ceef77e377d4f8b43d2c3c2d22e575bc4fb2675dd1ba098095d53d5",
+      "spokenTextSha256": "309fc9e25ceef77e377d4f8b43d2c3c2d22e575bc4fb2675dd1ba098095d53d5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "spoken": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "270527d9a712705511f66a7960dd92f1b63f50ea04eb67132d8245f2c94dcc1b",
+      "requestFingerprintSha256": "270527d9a712705511f66a7960dd92f1b63f50ea04eb67132d8245f2c94dcc1b",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "567d0cdc083d9ca058fbac49db5075f21d23693f83c0fae19a61cd998a712f8a",
+        "before": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+        "after": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "318f2ad144f7337a906b18d5f8fa571687b483227f82783a08e79c88dc3819b2"
+    },
+    {
+      "id": "S3-01-de-E02-r1",
+      "unitId": "S3-01-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Vier scheinbar ähnliche Ernten",
+          "sha256": "44307ee55c97c719fc94d4875c99722ef9f7373a1f79d65c05a2b721030b7569"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.",
+          "sha256": "8889c9b5fc8c9aba59b327976bdbf023aafcfc70d110314e4ddce269faa4fda9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Bestimme das tatsächlich geerntete Organ, nicht nur seine Lage.",
+          "sha256": "f4c46fec9aba6576fa4da75a1bfd4b2cb37301ad99bed8ee898ebe79c7580616"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Der übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.",
+          "sha256": "2b87e6e93ae0cc3779be08c7bff14986c42381a1fae76141afe3bd0a4177cbf4"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Kartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.",
+          "sha256": "13e76365da595469cfa6ca9b9fe6d3571bcf7b931b3f4f11ce827e5b256020e3"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Beschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+          "sha256": "f3b52e4b7ae1dd0dfd4aa22160879a7f2451ae74edeefdb2baf945bb9a1133ba"
+        }
+      ],
+      "scientificMeaning": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "displayText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "captionText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "spokenText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "spokenTextSHA256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+      "spokenTextSha256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9de4735ff83ace901b1668c9cd71d2b0cd6a8532825879163403007ad2c78235",
+      "requestFingerprintSha256": "9de4735ff83ace901b1668c9cd71d2b0cd6a8532825879163403007ad2c78235",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+        "before": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+        "after": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "318f2ad144f7337a906b18d5f8fa571687b483227f82783a08e79c88dc3819b2"
+    },
+    {
+      "id": "S3-01-de-E03-r1",
+      "unitId": "S3-01-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Was das Bodenkonto erklärt und was nicht",
+          "sha256": "7553b5962e07528bf39f6a2bd6be8f36ad2d0801c168d61cc9711f43cdc985b8"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.",
+          "sha256": "4103b7985de8b52c43ce2ac3aba0f8afa23bfeed724f6230ee8e6dc584ecc87b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Ernte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.",
+          "sha256": "c362e8f9e2529489f1a86ecc434b7a45c9e3af4189a08544063e6a947e887c5c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Knöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.",
+          "sha256": "5508dd37dfc5c2af2ca08a3e0657634a2149dda257c211e85fbe80a7af2d6640"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Ein zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.",
+          "sha256": "e3c4f9a4b3a4c8688ca009d02e0d2ff6209405263a81d24ce2e6e69d97173e8e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Getreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+          "sha256": "d3716f6d92df4bf97c43044202474aaf108576b3ee39aa842883d1e09027d07e"
+        }
+      ],
+      "scientificMeaning": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "displayText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "captionText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "spokenText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+      "spokenTextSHA256": "49c02c1c6428ed56618d064a9cb42a83aa3e18136251fd85413ad27178ea4094",
+      "spokenTextSha256": "49c02c1c6428ed56618d064a9cb42a83aa3e18136251fd85413ad27178ea4094",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+          "spoken": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "871f6b5638d16ba674832fcb7e8348ece87488251ebb8e2f7ab61635ff147f7d",
+      "requestFingerprintSha256": "871f6b5638d16ba674832fcb7e8348ece87488251ebb8e2f7ab61635ff147f7d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "f939e49eb79852d99629078649042b17e9fea816de54b21af142126a3750b3ff",
+        "before": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können En fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges En-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige En-Rückzahlung bezeichnen.",
+        "after": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "318f2ad144f7337a906b18d5f8fa571687b483227f82783a08e79c88dc3819b2"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 3,
+    "asr": 3,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-01-ar-EG-E01-r1",
+      "S3-01-ar-EG-E02-r1",
+      "S3-01-ar-EG-E03-r1"
+    ],
+    "en": [
+      "S3-01-en-E01-r1",
+      "S3-01-en-E02-r1",
+      "S3-01-en-E03-r1"
+    ],
+    "it": [
+      "S3-01-it-E01-r1",
+      "S3-01-it-E02-r1",
+      "S3-01-it-E03-r1"
+    ],
+    "de": [
+      "S3-01-de-E01-r1",
+      "S3-01-de-E02-r1",
+      "S3-01-de-E03-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "409175334a76b31b02dbe228eb9ee9f998136d8ed852f4ad6582627a5947cfc7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

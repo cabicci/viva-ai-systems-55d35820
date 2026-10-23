@@ -1,0 +1,283 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-en.json",
+    "sha256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+    "bytes": 31414
+  },
+  "units": [
+    {
+      "id": "S3-01-en-E01-r1",
+      "unitId": "S3-01-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Two classification lenses",
+          "sha256": "07c6355dbe18a4b6ff83949a80b991497bd2031fc57cb24af47b2743bc58ce92"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Sort a tomato and a peanut for a market-use table, then identify their plant structures.",
+          "sha256": "fbc30415d0fe984a8e90a6f78b4455923585267ce207b137d21654b8e2002e19"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "A tomato develops from a flower and contains seeds, so it is a botanical fruit.",
+          "sha256": "2e8ad3b63e6aaf292edcf2b28b03321e855ec39df8f55fd33f3daced7eb38773"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "In the practical food-use table it is a fruiting vegetable; that does not undo its botany.",
+          "sha256": "c506129b0fe1f31dc3e6569a731e127b358da86ed4885f465d66bd8ba79ea406"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Peanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.",
+          "sha256": "6fd34c37806de1f41a85af20080c8cacbee4ca9f1fca32e586a962e1c511a976"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Peanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.",
+          "sha256": "d3654bb4dda1740cc8de94e1752e9923358085ed63cff70e92c0b1e88021fcc5"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "sha256": "6cd0521b7fcc48dc8a5ed318aa94330b92eaf70459c20b36d14fe436824be081"
+        }
+      ],
+      "scientificMeaning": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "displayText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "captionText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "spokenText": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+      "spokenTextSHA256": "f64165bf3a05ff45ba914c027c7659620271f171f70674b28e27d54c67218b98",
+      "spokenTextSha256": "f64165bf3a05ff45ba914c027c7659620271f171f70674b28e27d54c67218b98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "spoken": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c763df71f72cf70a7d4c8f9f32ed3b26e6e7e929d24a16cdccdfa47f25073766",
+      "requestFingerprintSha256": "c763df71f72cf70a7d4c8f9f32ed3b26e6e7e929d24a16cdccdfa47f25073766",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "c0b8082fc0d9e940d4c1527faf7933fa9c141d06984626d96efc11133df5c863",
+        "before": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+        "after": "Two classification lenses\n\nSort a tomato and a peanut for a market-use table, then identify their plant structures.\n\nA tomato develops from a flower and contains seeds, so it is a botanical fruit.\n\nIn the practical food-use table it is a fruiting vegetable; that does not undo its botany.\n\nPeanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.\n\nPeanut is not a F A O dry pulse; oilseed legumes are excluded from that narrower category.\n\nTomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-E02-r1",
+      "unitId": "S3-01-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Four similar-looking harvests",
+          "sha256": "2a3ee5e4bde136a8108e16bc1b7982713a3da9324e75900f0b7a4f35bc3b5c1d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A label says every upright vegetable is a stem and every underground swollen part is a root.",
+          "sha256": "877bfc1350f37ddc9f693ecacc6f01b97e4c618e0e5ffd4f439d193d91e0293c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identify the actual harvested organ, not its position alone.",
+          "sha256": "276bdd7160ea828047b305ebf260518e7e5241b68c036aabcdfdcc834fb81547"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Celery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.",
+          "sha256": "81a46beb28862c3e876e88451a1c94e503761d94eaa20184af47b1392f57495c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Potato forms a stem tuber, while sweet potato forms a storage root.",
+          "sha256": "c4d0557381fbb381f203b29639852a7bb24cb9b449c44e15b9bbd42f86d9aa35"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Revise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "sha256": "c1d6d6c5178f7129ba385570c683962f30d65f9463ce5753075681d4abc65d05"
+        }
+      ],
+      "scientificMeaning": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "displayText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "captionText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "spokenText": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+      "spokenTextSHA256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+      "spokenTextSha256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "spoken": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0700af4e1477933df71f21962d4a1d4673187b44589f89f2bf659363d2116414",
+      "requestFingerprintSha256": "0700af4e1477933df71f21962d4a1d4673187b44589f89f2bf659363d2116414",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "1c1b49a38d58f4413fc55c832b43ce854821747bd7fe04b0c6c9aed36de57d9a",
+        "before": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+        "after": "Four similar-looking harvests\n\nA label says every upright vegetable is a stem and every underground swollen part is a root.\n\nIdentify the actual harvested organ, not its position alone.\n\nCelery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots, stems.\n\nPotato forms a stem tuber, while sweet potato forms a storage root.\n\nRevise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-E03-r1",
+      "unitId": "S3-01-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "What the bank analogy can and cannot tell us",
+          "sha256": "39ef2ca2f5f3785413fa51ca48b9e827fd216d8950c10c80da98353f6b9bf41c"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.",
+          "sha256": "b054e870939c41b0cb4411beb4b397790bc1d039dd9811f979823118ae548a3e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Harvest and removed residues export material; returned roots and residues may contribute to soil organic matter.",
+          "sha256": "6ed9b7901cdf7b69b0c156ad581e471a077cdf66f8bd1c32250bd1dbb82b9b98"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Legume nodules may fix nitrogen if the plant, rhizobia and conditions allow.",
+          "sha256": "5e1615045bf4d094de3770faf317bd3f4e1b939007815fc312f3282fa5d00623"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "A numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.",
+          "sha256": "aa79ebdecadf5dbfdfd6482386f1d3dc8ec49fdaa72d0c2b4feabd5c33ffaf93"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Do not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "sha256": "dff6f6592fc1cd7c3b23826ef6c051d5455dfebd05d2949ee75c2bccd55217e1"
+        }
+      ],
+      "scientificMeaning": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "displayText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "captionText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "spokenText": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+      "spokenTextSHA256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+      "spokenTextSha256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "spoken": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c2c9b45b02b71f439701111fdf9696f87617d6502da855007fdd86df5bbe784e",
+      "requestFingerprintSha256": "c2c9b45b02b71f439701111fdf9696f87617d6502da855007fdd86df5bbe784e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "458ca4b411789cb54867ca80deda56e7d4c83c78a5e06f1411855bc3a7bb96ec",
+        "before": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+        "after": "What the bank analogy can and cannot tell us\n\nA grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.\n\nHarvest and removed residues export material; returned roots and residues may contribute to soil organic matter.\n\nLegume nodules may fix nitrogen if the plant, rhizobia and conditions allow.\n\nA numerical nitrogen credit needs crop history, harvest, residue details, soil assessment and a locally appropriate method.\n\nDo not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

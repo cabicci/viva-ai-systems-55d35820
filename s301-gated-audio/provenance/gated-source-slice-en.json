@@ -1,0 +1,42 @@
+{
+  "stepId": "S3-01",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato-peanut",
+      "title": "Two classification lenses",
+      "situation": "Sort a tomato and a peanut for a market-use table, then identify their plant structures.",
+      "reasoning": [
+        "A tomato develops from a flower and contains seeds, so it is a botanical fruit.",
+        "In the practical food-use table it is a fruiting vegetable; that does not undo its botany.",
+        "Peanut forms pods and belongs to the legume group, though its common name and oily seed may suggest a nut.",
+        "Peanut is not a FAO dry pulse; oilseed legumes are excluded from that narrower category."
+      ],
+      "takeaway": "Tomato: practical fruiting vegetable and botanical fruit. Peanut: legume, not a dry pulse. State which classification question is being asked."
+    },
+    {
+      "id": "eaten-organ",
+      "title": "Four similar-looking harvests",
+      "situation": "A label says every upright vegetable is a stem and every underground swollen part is a root.",
+      "reasoning": [
+        "Identify the actual harvested organ, not its position alone.",
+        "Celery's commonly eaten crisp stalk is a petiole; asparagus spears are young shoots/stems.",
+        "Potato forms a stem tuber, while sweet potato forms a storage root."
+      ],
+      "takeaway": "Revise the labels by organ. The two pairs demonstrate why visual position and culinary names are insufficient."
+    },
+    {
+      "id": "soil-account",
+      "title": "What the bank analogy can and cannot tell us",
+      "situation": "A grower harvests maize grain, returns some stalks, then grows a legume and removes its harvested product.",
+      "reasoning": [
+        "Harvest and removed residues export material; returned roots and residues may contribute to soil organic matter.",
+        "Legume nodules may fix nitrogen if the plant, rhizobia and conditions allow.",
+        "A numerical nitrogen credit needs crop history, harvest/residue details, soil assessment and a locally appropriate method."
+      ],
+      "takeaway": "Do not label the cereal an inevitable organic-matter loss or the legume an automatic full nitrogen refund."
+    }
+  ]
+}

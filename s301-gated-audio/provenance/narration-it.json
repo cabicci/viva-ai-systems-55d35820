@@ -1,0 +1,283 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-it.json",
+    "sha256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+    "bytes": 31630
+  },
+  "units": [
+    {
+      "id": "S3-01-it-E01-r1",
+      "unitId": "S3-01-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Due prospettive di classificazione",
+          "sha256": "a60d92076284ff5508f215ffdf1822e9d812ba2633336dfe4dcc434c4c605f93"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Classifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.",
+          "sha256": "8cb2aa4b67bd1ae2822c15ffd63f499b2af1662b0e7828911f9e1631e3446d2e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Il pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.",
+          "sha256": "ae4c613cb0434f416f8f2408a8adbf2ec3e341277b18b7b4ddae36057f4a6e66"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Nella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.",
+          "sha256": "80d38c807d0aa98a732176596bac6e86a6d36486c3a862c65848b02028dd6446"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "L'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.",
+          "sha256": "4d9ea8b7e3de1d9b151b32fd431c0ec1a104d9476efea351497a909a721fe975"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Per la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.",
+          "sha256": "e0701b2853ed7685b4ebfb95853aabe2052b42d952ab462f69e4803427f2b92a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Pomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "sha256": "df42bced97f51c63fc89c246481f9bdb62395171afdb4af7923c8ff3db923890"
+        }
+      ],
+      "scientificMeaning": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "displayText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "captionText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "spokenText": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+      "spokenTextSHA256": "2793f7c91543a1940420efed5fa7f51d777761282a47edace5e9bc5ebc8ad284",
+      "spokenTextSha256": "2793f7c91543a1940420efed5fa7f51d777761282a47edace5e9bc5ebc8ad284",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "spoken": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5b4ade2de894729451acb5380ff482c188af330237d992b5a21b8893b8bfebaa",
+      "requestFingerprintSha256": "5b4ade2de894729451acb5380ff482c188af330237d992b5a21b8893b8bfebaa",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "546076f5900132e520e1cda6ce09740635c2e02dfa8fb6bfcc7e3cd2b799fadc",
+        "before": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+        "after": "Due prospettive di classificazione\n\nClassifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.\n\nIl pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.\n\nNella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.\n\nL'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.\n\nPer la definizione effe a o dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse.\n\nPomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-01-it-E02-r1",
+      "unitId": "S3-01-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Quattro raccolti dall'aspetto ingannevole",
+          "sha256": "8bcf9bc07f99c79c97b5b9a3276695d3e0e326749e00c0f788389ef7e2098d1c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.",
+          "sha256": "6799a55f53c858b3c7dca407e4c9ae6fb1c2f4439919472d18028a0348408190"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identifica l'organo raccolto, non soltanto la posizione.",
+          "sha256": "e65dd8c370a6d14786c095bf289f0abd40a6f9116977a001e2987271964ed013"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "La costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.",
+          "sha256": "43d5f23c69dac5405faea90e9bc584997ae6488c319e1627f350f2d0d3fe439b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "La patata è un tubero caulinare, la patata dolce una radice di riserva.",
+          "sha256": "c901b1e5e63a25e9bdedab9090c580857aa94bf4b4d575c7de06b7353c01bedf"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Correggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "sha256": "2e2fe1f809548a61cbcd686123ef6f2836456d330e872d53871b25625907bec4"
+        }
+      ],
+      "scientificMeaning": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "displayText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "captionText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "spokenText": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+      "spokenTextSHA256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+      "spokenTextSha256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "spoken": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d8b1cf91353b008dba993eedb0cb26527c94d02aee5adf46a1a6b4e1a29441df",
+      "requestFingerprintSha256": "d8b1cf91353b008dba993eedb0cb26527c94d02aee5adf46a1a6b4e1a29441df",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "f32774d1a2893cab9b14e99f5625d3437474b63b2fb2901290809370d1194c6b",
+        "before": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+        "after": "Quattro raccolti dall'aspetto ingannevole\n\nUn'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.\n\nIdentifica l'organo raccolto, non soltanto la posizione.\n\nLa costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli, fusti.\n\nLa patata è un tubero caulinare, la patata dolce una radice di riserva.\n\nCorreggi le etichette secondo l'organo: posizione e nome culinario non bastano.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-01-it-E03-r1",
+      "unitId": "S3-01-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Cosa spiega e cosa non prova la banca del suolo",
+          "sha256": "de713f413e6b29d2157c75cef7a9f6f2d5190f31af05820e3c9831222e29dd35"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.",
+          "sha256": "5fe8c2ac80f3c52f553251aeb6866518979d104f1f50868d8812426f1c42768d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Raccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.",
+          "sha256": "88c77f9a2b7b1a3c8ba6afa834a1611a7ac70d713563aea5163b9adf3237c779"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Noduli possono fissare N se pianta, rizobi e condizioni sono compatibili.",
+          "sha256": "bffe5700da55522fa9b377ae4a94ba0ab138e4fcc1152acf3a326eb41d5972eb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Un credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.",
+          "sha256": "971c8164eb42f1dd5ca24c433fbca42a03e95a2db6c17e7268af11de42f014d3"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Non dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "sha256": "1cd93d6e3781411a4bda58ae0ef43773455fa5aab5cfd2ed5ba12b9898f4ca16"
+        }
+      ],
+      "scientificMeaning": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "displayText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "captionText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "spokenText": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+      "spokenTextSHA256": "0f201fde0776e650d78812285bb05d047549bd2583de8b2d56eca2377fd0a8e3",
+      "spokenTextSha256": "0f201fde0776e650d78812285bb05d047549bd2583de8b2d56eca2377fd0a8e3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare N se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "spoken": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ac825187b44e599960b84e643f32ca589dd3b11f1214ce7d7fa8384bbf44dcd",
+      "requestFingerprintSha256": "8ac825187b44e599960b84e643f32ca589dd3b11f1214ce7d7fa8384bbf44dcd",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "4deada0431a1ed1926fcd55ae95d601c43b7b777764862d21369716667051360",
+        "before": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare enne se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di enne richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+        "after": "Cosa spiega e cosa non prova la banca del suolo\n\nUn coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.\n\nRaccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.\n\nNoduli possono fissare azoto se pianta, rizobi e condizioni sono compatibili.\n\nUn credito numerico di azoto richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato.\n\nNon dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "stepId": "S3-01",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "tomato-peanut",
+      "title": "Due prospettive di classificazione",
+      "situation": "Classifica pomodoro e arachide per una tabella d'uso commerciale e poi identifica le strutture botaniche.",
+      "reasoning": [
+        "Il pomodoro si sviluppa dal fiore e contiene semi: botanicamente è un frutto.",
+        "Nella tabella d'uso alimentare è una verdura da frutto; i due punti di vista non si escludono.",
+        "L'arachide forma baccelli ed è leguminosa, benché nome e seme oleoso facciano pensare a una noce.",
+        "Per la definizione FAO dei legumi secchi l'arachide non è inclusa: le leguminose oleaginose sono escluse."
+      ],
+      "takeaway": "Pomodoro: verdura da frutto nell'uso e frutto botanico. Arachide: leguminosa, non legume secco. Dichiara quale classificazione stai usando."
+    },
+    {
+      "id": "eaten-organ",
+      "title": "Quattro raccolti dall'aspetto ingannevole",
+      "situation": "Un'etichetta dice che ogni verdura eretta è un fusto e ogni parte gonfia sotterranea è una radice.",
+      "reasoning": [
+        "Identifica l'organo raccolto, non soltanto la posizione.",
+        "La costa commestibile del sedano è un picciolo; i turioni dell'asparago sono giovani germogli/fusti.",
+        "La patata è un tubero caulinare, la patata dolce una radice di riserva."
+      ],
+      "takeaway": "Correggi le etichette secondo l'organo: posizione e nome culinario non bastano."
+    },
+    {
+      "id": "soil-account",
+      "title": "Cosa spiega e cosa non prova la banca del suolo",
+      "situation": "Un coltivatore raccoglie mais, restituisce parte degli stocchi, coltiva poi una leguminosa e ne asporta il prodotto.",
+      "reasoning": [
+        "Raccolto e residui rimossi esportano materia; radici e residui restituiti possono contribuire alla sostanza organica.",
+        "Noduli possono fissare N se pianta, rizobi e condizioni sono compatibili.",
+        "Un credito numerico di N richiede storia colturale, dettagli di raccolto e residui, analisi del suolo e metodo locale appropriato."
+      ],
+      "takeaway": "Non dire che il cereale perda inevitabilmente sostanza organica né che la leguminosa rimborsi automaticamente tutto l'azoto."
+    }
+  ]
+}

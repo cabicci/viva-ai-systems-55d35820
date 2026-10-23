@@ -1,0 +1,276 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-de.json",
+    "sha256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+    "bytes": 32589
+  },
+  "units": [
+    {
+      "id": "S3-01-de-E01-r1",
+      "unitId": "S3-01-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Zwei Perspektiven der Einordnung",
+          "sha256": "21c84d1c9bc63203706ded8942520c4cabac45158daaa4a5e89052b52aedb538"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ordne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.",
+          "sha256": "2e37250795eb4710a9ccc5a201fa3849c7e07251c60e7da7d3689fdb61993c06"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Tomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.",
+          "sha256": "a0d681ca3d58ea4d14bbb2fcfb0997690d42f318200ad18ff0fe6d9ae64ffa41"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "In einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.",
+          "sha256": "0b6fb84c0ae494093895556ec315e820a0c599b2b951c43f8237e7c1bcd584bd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Erdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.",
+          "sha256": "63e384c9c0c39657a7188024553aab958dbeba10d4f13b4fd3500c66f0c326d0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Nach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.",
+          "sha256": "135b12565c3910984f55d8e8e5f73ffc85d979364ccf4cc8fe5dc61801d8977c"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "sha256": "12fdd0cc015663f98b9cc2f650ea7b3859765f71e665110f8aa72daa75d66157"
+        }
+      ],
+      "scientificMeaning": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "displayText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "captionText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "spokenText": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+      "spokenTextSHA256": "309fc9e25ceef77e377d4f8b43d2c3c2d22e575bc4fb2675dd1ba098095d53d5",
+      "spokenTextSha256": "309fc9e25ceef77e377d4f8b43d2c3c2d22e575bc4fb2675dd1ba098095d53d5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "spoken": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "270527d9a712705511f66a7960dd92f1b63f50ea04eb67132d8245f2c94dcc1b",
+      "requestFingerprintSha256": "270527d9a712705511f66a7960dd92f1b63f50ea04eb67132d8245f2c94dcc1b",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "tomato-peanut",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "567d0cdc083d9ca058fbac49db5075f21d23693f83c0fae19a61cd998a712f8a",
+        "before": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren FAO-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+        "after": "Zwei Perspektiven der Einordnung\n\nOrdne Tomate und Erdnuss in einer Marktnutzungstabelle ein und bestimme danach die Pflanzenorgane.\n\nTomate entsteht aus der Blüte und enthält Samen; botanisch ist sie eine Frucht.\n\nIn einer Tabelle nach Lebensmittelverwendung gehört sie zum Fruchtgemüse; das widerspricht der Botanik nicht.\n\nErdnuss bildet Hülsen und ist eine Leguminose, auch wenn Name und ölhaltiger Samen an Nüsse denken lassen.\n\nNach der engeren Eff A O-Definition trockener Hülsenfrüchte zählt die Erdnuss nicht dazu; Ölsaat-Leguminosen sind ausgeschlossen.\n\nTomate: praktisch Fruchtgemüse und botanisch Frucht. Erdnuss: Leguminose, keine trockene Hülsenfrucht. Gib die Fragestellung der Einordnung an.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-01-de-E02-r1",
+      "unitId": "S3-01-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Vier scheinbar ähnliche Ernten",
+          "sha256": "44307ee55c97c719fc94d4875c99722ef9f7373a1f79d65c05a2b721030b7569"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.",
+          "sha256": "8889c9b5fc8c9aba59b327976bdbf023aafcfc70d110314e4ddce269faa4fda9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Bestimme das tatsächlich geerntete Organ, nicht nur seine Lage.",
+          "sha256": "f4c46fec9aba6576fa4da75a1bfd4b2cb37301ad99bed8ee898ebe79c7580616"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Der übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.",
+          "sha256": "2b87e6e93ae0cc3779be08c7bff14986c42381a1fae76141afe3bd0a4177cbf4"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Kartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.",
+          "sha256": "13e76365da595469cfa6ca9b9fe6d3571bcf7b931b3f4f11ce827e5b256020e3"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Beschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+          "sha256": "f3b52e4b7ae1dd0dfd4aa22160879a7f2451ae74edeefdb2baf945bb9a1133ba"
+        }
+      ],
+      "scientificMeaning": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "displayText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "captionText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "spokenText": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+      "spokenTextSHA256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+      "spokenTextSha256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9de4735ff83ace901b1668c9cd71d2b0cd6a8532825879163403007ad2c78235",
+      "requestFingerprintSha256": "9de4735ff83ace901b1668c9cd71d2b0cd6a8532825879163403007ad2c78235",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "eaten-organ",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "84e7967ef401922ba4f17f8964303022224ee4f7c78943c65a91e2bad1e9f2fc",
+        "before": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+        "after": "Vier scheinbar ähnliche Ernten\n\nEin Schild behauptet, jedes aufrechte Gemüse sei ein Stängel und jedes verdickte unterirdische Organ eine Wurzel.\n\nBestimme das tatsächlich geerntete Organ, nicht nur seine Lage.\n\nDer übliche Selleriestiel ist ein Blattstiel; Spargelstangen sind junge Sprosse oder Stängel.\n\nKartoffel ist eine Sprossknolle, Süßkartoffel eine Speicherwurzel.\n\nBeschriftungen nach Organ korrigieren: Lage und Küchenname reichen nicht.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-01-de-E03-r1",
+      "unitId": "S3-01-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Was das Bodenkonto erklärt und was nicht",
+          "sha256": "7553b5962e07528bf39f6a2bd6be8f36ad2d0801c168d61cc9711f43cdc985b8"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.",
+          "sha256": "4103b7985de8b52c43ce2ac3aba0f8afa23bfeed724f6230ee8e6dc584ecc87b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Ernte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.",
+          "sha256": "c362e8f9e2529489f1a86ecc434b7a45c9e3af4189a08544063e6a947e887c5c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Knöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.",
+          "sha256": "5508dd37dfc5c2af2ca08a3e0657634a2149dda257c211e85fbe80a7af2d6640"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Ein zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.",
+          "sha256": "e3c4f9a4b3a4c8688ca009d02e0d2ff6209405263a81d24ce2e6e69d97173e8e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Getreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+          "sha256": "d3716f6d92df4bf97c43044202474aaf108576b3ee39aa842883d1e09027d07e"
+        }
+      ],
+      "scientificMeaning": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "displayText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "captionText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+      "spokenText": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+      "spokenTextSHA256": "49c02c1c6428ed56618d064a9cb42a83aa3e18136251fd85413ad27178ea4094",
+      "spokenTextSha256": "49c02c1c6428ed56618d064a9cb42a83aa3e18136251fd85413ad27178ea4094",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können N fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges N-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige N-Rückzahlung bezeichnen.",
+          "spoken": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+          "occurrences": 1,
+          "purpose": "Allsourcecasefacts preserved. Numerals/chemicalquantityletters/FAO expanded naturally; arrows spoken as sequential then/poi/dann; hectare and decimal terms expanded, source/display unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "871f6b5638d16ba674832fcb7e8348ece87488251ebb8e2f7ab61635ff147f7d",
+      "requestFingerprintSha256": "871f6b5638d16ba674832fcb7e8348ece87488251ebb8e2f7ab61635ff147f7d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "soil-account",
+      "spokenRefinementBeforeCalls": {
+        "previousTextSHA256": "f939e49eb79852d99629078649042b17e9fea816de54b21af142126a3750b3ff",
+        "before": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können En fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges En-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige En-Rückzahlung bezeichnen.",
+        "after": "Was das Bodenkonto erklärt und was nicht\n\nEin Betrieb erntet Maiskörner, belässt einige Stängel, baut danach eine Leguminose an und entfernt ihr Ernteprodukt.\n\nErnte und abgefahrene Reste tragen Material aus; zurückgelassene Wurzeln und Reste können organische Substanz beitragen.\n\nKnöllchen können Stickstoff fixieren, wenn Pflanze, Rhizobien und Bedingungen passen.\n\nEin zahlenmäßiges Stickstoff-Guthaben braucht Kulturgeschichte, Ernte- und Reststoffdaten, Bodenbefunde und eine lokal passende Methode.\n\nGetreide nicht als zwangsläufigen Humusverlust und Leguminosen nicht als automatische vollständige Stickstoff-Rückzahlung bezeichnen.",
+        "sourceChanged": false
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
