@@ -1,0 +1,31 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S3-10-ar-EG-opening-r1",
+      "contextWavSHA256": "3c2f22dbde2abfd93f477491f652bfea7b50714fbe881fd08c45acd6ecd41ed5",
+      "contextPCMSHA256": "30f4357a45ce37d887a963973d0a274aee7d9d28f47897b6182e2de492af409f",
+      "frames": 133440,
+      "sampleRate": 24000,
+      "durationSeconds": 5.56,
+      "originalWavSHA256": "c8d5518e318b6be7cc101bf5a3b17d4a7f4fba0866a3094e56ffe27e9f49136b",
+      "originalPCMSHA256": "bf017bbe5688479b7460fd83f640a7d40479f73b2b3935b817aaf740a1404c5e",
+      "originalFrames": 1448640,
+      "sourceFirstSample": 1315200,
+      "sourceEndSampleExclusive": 1448640,
+      "sourceOffsetSeconds": 54.8,
+      "sourceEndSeconds": 60.36,
+      "endsAtOriginalRecordingEnd": true,
+      "boundaryFact": "The excerpt ends at the exact end of its source recording; its start is an intentional interior cut.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNCHANGED_SAVED_SOURCE_PCM"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNCHANGED_SAVED_SOURCE_PCM",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
