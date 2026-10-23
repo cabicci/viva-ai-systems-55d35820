@@ -1,0 +1,435 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-en.json",
+    "sha256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+    "bytes": 29547
+  },
+  "units": [
+    {
+      "id": "S3-05-en-R01a-r1",
+      "unitId": "S3-05-en-R01a-r1",
+      "locale": "en",
+      "semanticGroup": "R01a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a 1 mm water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.",
+          "sha256": "e5ae95647ab902c0310e68617b6b95f82949b400a75fb8d135eb6cfce9e63be9"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Irrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+          "sha256": "451475c5a25bc7132dc14de6150fa6cdbb09c04e563ebcd323d7bfc3122320d2"
+        }
+      ],
+      "scientificMeaning": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a 1 mm water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+      "displayText": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a 1 mm water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+      "captionText": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a 1 mm water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+      "spokenText": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a one-millimetre water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+      "spokenTextSHA256": "ec80f5ea7638e2d5e37238d5fd1594f709be62954492bb616e25a3bf2741bc33",
+      "spokenTextSha256": "ec80f5ea7638e2d5e37238d5fd1594f709be62954492bb616e25a3bf2741bc33",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a 1 mm water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+          "spoken": "The table's millimetres describe an indicative depth of crop water need over the total growing period. One millimetre means a one-millimetre water depth over the cropped area; it is not a dose for one irrigation. Crop water need changes with climate, crop and growth stage. These broad ranges are a learning comparison, not measurements for a particular Egyptian field.\n\nIrrigation means deliberately applying water to support crop production. The amount to apply is not automatically the same as crop water need: effective rainfall, stored root-zone water, losses, and the system's application efficiency also matter. Monitor before harmful stress rather than using visible wilting as the only trigger.",
+          "occurrences": 1,
+          "purpose": "Exact source-equivalent unit/numeral expansion and grammatical agreement; wholeoriginalsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9c82d2ab5ae10ecf7a27456ab6efbe60127198733bdf537c993402ded6dd0d88",
+      "requestFingerprintSha256": "9c82d2ab5ae10ecf7a27456ab6efbe60127198733bdf537c993402ded6dd0d88",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R01b-r1",
+      "unitId": "S3-05-en-R01b-r1",
+      "locale": "en",
+      "semanticGroup": "R01b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "A tomato crop generally uses more water as its canopy develops and fruit forms than at the small-seedling stage under comparable conditions. Actual demand still depends on weather, stage, growing-period length and variety; a broad table cannot settle a particular field’s timing or amount.",
+          "sha256": "0042efd81000eba5f98455e09e96d9ace2f61205171ce86e841e9daaf82ec458"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/3",
+          "text": "The root-zone goal is to maintain suitable moisture from field capacity toward a crop- and condition-specific stress threshold, intervening before harmful stress. Permanent wilting point is not the target trigger. Actual measurements and safe drainage matter.",
+          "sha256": "9033684d5fe422ea93bab8206e57cdfad0b59bd7196a16b1973f003a1ff1ccc0"
+        }
+      ],
+      "scientificMeaning": "A tomato crop generally uses more water as its canopy develops and fruit forms than at the small-seedling stage under comparable conditions. Actual demand still depends on weather, stage, growing-period length and variety; a broad table cannot settle a particular field’s timing or amount.\n\nThe root-zone goal is to maintain suitable moisture from field capacity toward a crop- and condition-specific stress threshold, intervening before harmful stress. Permanent wilting point is not the target trigger. Actual measurements and safe drainage matter.",
+      "displayText": "A tomato crop generally uses more water as its canopy develops and fruit forms than at the small-seedling stage under comparable conditions. Actual demand still depends on weather, stage, growing-period length and variety; a broad table cannot settle a particular field’s timing or amount.\n\nThe root-zone goal is to maintain suitable moisture from field capacity toward a crop- and condition-specific stress threshold, intervening before harmful stress. Permanent wilting point is not the target trigger. Actual measurements and safe drainage matter.",
+      "captionText": "A tomato crop generally uses more water as its canopy develops and fruit forms than at the small-seedling stage under comparable conditions. Actual demand still depends on weather, stage, growing-period length and variety; a broad table cannot settle a particular field’s timing or amount.\n\nThe root-zone goal is to maintain suitable moisture from field capacity toward a crop- and condition-specific stress threshold, intervening before harmful stress. Permanent wilting point is not the target trigger. Actual measurements and safe drainage matter.",
+      "spokenText": "A tomato crop generally uses more water as its canopy develops and fruit forms than at the small-seedling stage under comparable conditions. Actual demand still depends on weather, stage, growing-period length and variety; a broad table cannot settle a particular field’s timing or amount.\n\nThe root-zone goal is to maintain suitable moisture from field capacity toward a crop- and condition-specific stress threshold, intervening before harmful stress. Permanent wilting point is not the target trigger. Actual measurements and safe drainage matter.",
+      "spokenTextSHA256": "b7756e4e39dc75fdbe6e02b2f1a26300e3535149f4e21a334a862eae4549e38a",
+      "spokenTextSha256": "b7756e4e39dc75fdbe6e02b2f1a26300e3535149f4e21a334a862eae4549e38a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6ef3849612f7a77b7c37f6efbc122a7a7cc4dd64cc05ed5eb4efa48709b8960a",
+      "requestFingerprintSha256": "6ef3849612f7a77b7c37f6efbc122a7a7cc4dd64cc05ed5eb4efa48709b8960a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R02-r1",
+      "unitId": "S3-05-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at 350–500 mm for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+          "sha256": "d3f5858cbc6988053fd0bea52a8fdeae0a45a7adfe2a338e855770ce0c7144b3"
+        }
+      ],
+      "scientificMeaning": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at 350–500 mm for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+      "displayText": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at 350–500 mm for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+      "captionText": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at 350–500 mm for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+      "spokenText": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at three hundred fifty to five hundred millimetres for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+      "spokenTextSHA256": "8a2f05ff84f7d679e84bb68a62f19f9f87ee07ccb20258e594da507d9d463cc6",
+      "spokenTextSha256": "8a2f05ff84f7d679e84bb68a62f19f9f87ee07ccb20258e594da507d9d463cc6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at 350–500 mm for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+          "spoken": "No single seasonal value safely represents all leafy crops. Cabbage is a specific documented example at three hundred fifty to five hundred millimetres for the season. A leafy vegetable with another season length or climate can differ. Do not use any table range as the amount for a single watering.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exactmillimetres/seasontiming/notperwateringdose,350–500cabbage/500–800maize,criticalyieldformingstages/nonreproductiveorgans,conditionalrecovery/methodefficiency/sitefit/equipment/waterquality/safeapplicationschedulingrequirements retained. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "07e2f4373afbff91f32544ca40498f56ac92e9db4c96ccbb890fb439cf6a9d60",
+      "requestFingerprintSha256": "07e2f4373afbff91f32544ca40498f56ac92e9db4c96ccbb890fb439cf6a9d60",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R03-r1",
+      "unitId": "S3-05-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Compare the sensitive stages: maize tasseling/silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.",
+          "sha256": "8818472de9fe08732cf9ceb28b61b4eb486f96d5946065cbd8785f47202a114f"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "How much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+          "sha256": "2b548b8296b4a01ca462866c9495a9503080109ddd4e574d7c6ce9dafaf2ec9b"
+        }
+      ],
+      "scientificMeaning": "Compare the sensitive stages: maize tasseling/silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+      "displayText": "Compare the sensitive stages: maize tasseling/silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+      "captionText": "Compare the sensitive stages: maize tasseling/silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+      "spokenText": "Compare the sensitive stages: maize tasseling, silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+      "spokenTextSHA256": "c9dc6c4e63ba424de6cb8b4c70355ad05d4b5973a053ef50476881a7ba20c983",
+      "spokenTextSha256": "c9dc6c4e63ba424de6cb8b4c70355ad05d4b5973a053ef50476881a7ba20c983",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Compare the sensitive stages: maize tasseling/silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+          "spoken": "Compare the sensitive stages: maize tasseling, silking and grain filling; wheat flowering and grain filling; tomato flowering and fruit development; potato tuber formation and enlargement; onion bulb formation; and cabbage head development. The common idea is that stress near yield formation can reduce harvest quantity or quality. Potato tubers and onion bulbs are yield-forming organs, not reproductive stages, so do not call every listed stage reproductive.\n\nHow much of a loss can recover depends on severity, duration, stage, crop and subsequent conditions. It is inaccurate to promise that every loss is irreversible. Use local observations and a validated schedule to reduce risk at sensitive times.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exactmillimetres/seasontiming/notperwateringdose,350–500cabbage/500–800maize,criticalyieldformingstages/nonreproductiveorgans,conditionalrecovery/methodefficiency/sitefit/equipment/waterquality/safeapplicationschedulingrequirements retained. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7f3bb22d9c62ff328b607346683ac06e5e296e8338a0c43811c2cd48e97dc335",
+      "requestFingerprintSha256": "7f3bb22d9c62ff328b607346683ac06e5e296e8338a0c43811c2cd48e97dc335",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R04-r1",
+      "unitId": "S3-05-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Pipes and emitters deliver small flows near plants' root zones. Drip can suit row vegetables and orchards, particularly where water is limited or the soil stores little plant-available water. A well designed and maintained system may reduce soil-surface evaporation and wet fewer spaces between rows, limiting some weed growth.",
+          "sha256": "e7d6b09c007275f118a6d1714439eb8e1d7a7b3f71a515f01f17b6dd159e1a9b"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "The method needs initial investment, suitable filtration for water quality, pressure and uniformity checks, and inspection for blocked emitters or leaks. Too much water can still move below shallow roots in sandy soil. 'Drip' alone does not guarantee a high measured application efficiency or a correct watering interval.",
+          "sha256": "70cc3045f8bdbe7677f9bc0c7957bf5d37c9b1c40bdae544757b1a311e841c16"
+        }
+      ],
+      "scientificMeaning": "Pipes and emitters deliver small flows near plants' root zones. Drip can suit row vegetables and orchards, particularly where water is limited or the soil stores little plant-available water. A well designed and maintained system may reduce soil-surface evaporation and wet fewer spaces between rows, limiting some weed growth.\n\nThe method needs initial investment, suitable filtration for water quality, pressure and uniformity checks, and inspection for blocked emitters or leaks. Too much water can still move below shallow roots in sandy soil. 'Drip' alone does not guarantee a high measured application efficiency or a correct watering interval.",
+      "displayText": "Pipes and emitters deliver small flows near plants' root zones. Drip can suit row vegetables and orchards, particularly where water is limited or the soil stores little plant-available water. A well designed and maintained system may reduce soil-surface evaporation and wet fewer spaces between rows, limiting some weed growth.\n\nThe method needs initial investment, suitable filtration for water quality, pressure and uniformity checks, and inspection for blocked emitters or leaks. Too much water can still move below shallow roots in sandy soil. 'Drip' alone does not guarantee a high measured application efficiency or a correct watering interval.",
+      "captionText": "Pipes and emitters deliver small flows near plants' root zones. Drip can suit row vegetables and orchards, particularly where water is limited or the soil stores little plant-available water. A well designed and maintained system may reduce soil-surface evaporation and wet fewer spaces between rows, limiting some weed growth.\n\nThe method needs initial investment, suitable filtration for water quality, pressure and uniformity checks, and inspection for blocked emitters or leaks. Too much water can still move below shallow roots in sandy soil. 'Drip' alone does not guarantee a high measured application efficiency or a correct watering interval.",
+      "spokenText": "Pipes and emitters deliver small flows near plants' root zones. Drip can suit row vegetables and orchards, particularly where water is limited or the soil stores little plant-available water. A well designed and maintained system may reduce soil-surface evaporation and wet fewer spaces between rows, limiting some weed growth.\n\nThe method needs initial investment, suitable filtration for water quality, pressure and uniformity checks, and inspection for blocked emitters or leaks. Too much water can still move below shallow roots in sandy soil. 'Drip' alone does not guarantee a high measured application efficiency or a correct watering interval.",
+      "spokenTextSHA256": "bddc225adc312395f9a35e1ddd45f3d03d3d854bf33a19ec8886169210552464",
+      "spokenTextSha256": "bddc225adc312395f9a35e1ddd45f3d03d3d854bf33a19ec8886169210552464",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "75cce7be7cc2327ce87c78e3b55bc17e1acfd238d41ae6097ef47da115e2f9b5",
+      "requestFingerprintSha256": "75cce7be7cc2327ce87c78e3b55bc17e1acfd238d41ae6097ef47da115e2f9b5",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R05-r1",
+      "unitId": "S3-05-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "sha256": "2f7f190c130c8475de962c8a35f9797b7c7b3932b3b5a7a7ad1de9c94a143643"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Sprinklers can serve maize and wheat, sandy soils and uneven land where rate, pressure and infiltration are suitable. These examples do not override wind, uniformity or crop checks.",
+          "sha256": "8eb3c8f9e7184ff1c259bbbf00cc13798c7be727295f4dab036a69949ec5b7de"
+        }
+      ],
+      "scientificMeaning": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.\n\nSprinklers can serve maize and wheat, sandy soils and uneven land where rate, pressure and infiltration are suitable. These examples do not override wind, uniformity or crop checks.",
+      "displayText": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.\n\nSprinklers can serve maize and wheat, sandy soils and uneven land where rate, pressure and infiltration are suitable. These examples do not override wind, uniformity or crop checks.",
+      "captionText": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.\n\nSprinklers can serve maize and wheat, sandy soils and uneven land where rate, pressure and infiltration are suitable. These examples do not override wind, uniformity or crop checks.",
+      "spokenText": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.\n\nSprinklers can serve maize and wheat, sandy soils and uneven land where rate, pressure and infiltration are suitable. These examples do not override wind, uniformity or crop checks.",
+      "spokenTextSHA256": "f909aef2573b7143f8767d21eff08321b95bf792b9881dbba6293c57e4ade741",
+      "spokenTextSha256": "f909aef2573b7143f8767d21eff08321b95bf792b9881dbba6293c57e4ade741",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8a849d1bc0e2846be2b6b24b482a09cd5385d97c274228192d4149d1506e7b4e",
+      "requestFingerprintSha256": "8a849d1bc0e2846be2b6b24b482a09cd5385d97c274228192d4149d1506e7b4e",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R06-r1",
+      "unitId": "S3-05-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Surface irrigation uses gravity to move water over land. Basins, borders and furrows are different layouts; surface irrigation is not identical to flooding every square metre. Rice paddies are a basin example, while furrows can serve row crops. Land grade, intake rate, crop tolerance of wet soil, labour, inflow control and drainage govern suitability.",
+          "sha256": "35ca1f7ee6f317c2fa34ce1b5edadc5f43efdd271a03652ebdd062cd26298c98"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Some systems have lower installation costs or simpler equipment, but labour, levelling and water distribution may cost more. Poor design or operation can cause runoff or deep percolation; well managed furrows with suitable cutoff and return-flow reuse can improve performance. Calling every surface system 'very low efficiency' hides these differences.",
+          "sha256": "ff6c2e8781e38f78558a24ec845fd57cae60f341007ac3e52ff2bc96a8f236e9"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Some gravity-fed surface layouts can have low initial equipment and pumping-energy requirements. Levelling, labour, pumps or tailwater reuse can change total costs and energy, so compare the actual installation.",
+          "sha256": "74a26bd29e1441af48d820bc905906dab24d23d80a30bc6c2bcd1a4eaaa49476"
+        }
+      ],
+      "scientificMeaning": "Surface irrigation uses gravity to move water over land. Basins, borders and furrows are different layouts; surface irrigation is not identical to flooding every square metre. Rice paddies are a basin example, while furrows can serve row crops. Land grade, intake rate, crop tolerance of wet soil, labour, inflow control and drainage govern suitability.\n\nSome systems have lower installation costs or simpler equipment, but labour, levelling and water distribution may cost more. Poor design or operation can cause runoff or deep percolation; well managed furrows with suitable cutoff and return-flow reuse can improve performance. Calling every surface system 'very low efficiency' hides these differences.\n\nSome gravity-fed surface layouts can have low initial equipment and pumping-energy requirements. Levelling, labour, pumps or tailwater reuse can change total costs and energy, so compare the actual installation.",
+      "displayText": "Surface irrigation uses gravity to move water over land. Basins, borders and furrows are different layouts; surface irrigation is not identical to flooding every square metre. Rice paddies are a basin example, while furrows can serve row crops. Land grade, intake rate, crop tolerance of wet soil, labour, inflow control and drainage govern suitability.\n\nSome systems have lower installation costs or simpler equipment, but labour, levelling and water distribution may cost more. Poor design or operation can cause runoff or deep percolation; well managed furrows with suitable cutoff and return-flow reuse can improve performance. Calling every surface system 'very low efficiency' hides these differences.\n\nSome gravity-fed surface layouts can have low initial equipment and pumping-energy requirements. Levelling, labour, pumps or tailwater reuse can change total costs and energy, so compare the actual installation.",
+      "captionText": "Surface irrigation uses gravity to move water over land. Basins, borders and furrows are different layouts; surface irrigation is not identical to flooding every square metre. Rice paddies are a basin example, while furrows can serve row crops. Land grade, intake rate, crop tolerance of wet soil, labour, inflow control and drainage govern suitability.\n\nSome systems have lower installation costs or simpler equipment, but labour, levelling and water distribution may cost more. Poor design or operation can cause runoff or deep percolation; well managed furrows with suitable cutoff and return-flow reuse can improve performance. Calling every surface system 'very low efficiency' hides these differences.\n\nSome gravity-fed surface layouts can have low initial equipment and pumping-energy requirements. Levelling, labour, pumps or tailwater reuse can change total costs and energy, so compare the actual installation.",
+      "spokenText": "Surface irrigation uses gravity to move water over land. Basins, borders and furrows are different layouts; surface irrigation is not identical to flooding every square metre. Rice paddies are a basin example, while furrows can serve row crops. Land grade, intake rate, crop tolerance of wet soil, labour, inflow control and drainage govern suitability.\n\nSome systems have lower installation costs or simpler equipment, but labour, levelling and water distribution may cost more. Poor design or operation can cause runoff or deep percolation; well managed furrows with suitable cutoff and return-flow reuse can improve performance. Calling every surface system 'very low efficiency' hides these differences.\n\nSome gravity-fed surface layouts can have low initial equipment and pumping-energy requirements. Levelling, labour, pumps or tailwater reuse can change total costs and energy, so compare the actual installation.",
+      "spokenTextSHA256": "e30d06389230431bcd5f9d0fa074ded6dcbf62ba1052d0add02d03ad1d880410",
+      "spokenTextSha256": "e30d06389230431bcd5f9d0fa074ded6dcbf62ba1052d0add02d03ad1d880410",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "621b8486042cad1aae98ec8e44448b8cf9c4bb01829cebb9047b83750d188035",
+      "requestFingerprintSha256": "621b8486042cad1aae98ec8e44448b8cf9c4bb01829cebb9047b83750d188035",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R07-r1",
+      "unitId": "S3-05-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "The original case is a small vegetable plot with sandy soil, hot windy weather, and expensive limited water. Drip is a defensible starting recommendation because near-root delivery avoids wind-drift of spray and can be managed in short, monitored applications. Sprinklers need special attention to wind and uniformity; a surface layout may be feasible if its grade, intake, labour and water supply permit it, but high sand infiltration can complicate control.",
+          "sha256": "2966c9d1beed84f92c1b858dc55513ec6872fa140748dbb39a9137d2341fe385"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Before buying a system, check water quality and filtration, price and repairs, pressure and power, expected crop return, measured root-zone storage, wind, application uniformity and possible leaching. If the farmer cannot maintain the emitters or afford the system, compare practical alternatives and costs rather than asserting that one method is always best.",
+          "sha256": "163d8d0e66e952631600339dee4cc0bc003f07cf7b238ea984e3c2d4b067a29f"
+        }
+      ],
+      "scientificMeaning": "The original case is a small vegetable plot with sandy soil, hot windy weather, and expensive limited water. Drip is a defensible starting recommendation because near-root delivery avoids wind-drift of spray and can be managed in short, monitored applications. Sprinklers need special attention to wind and uniformity; a surface layout may be feasible if its grade, intake, labour and water supply permit it, but high sand infiltration can complicate control.\n\nBefore buying a system, check water quality and filtration, price and repairs, pressure and power, expected crop return, measured root-zone storage, wind, application uniformity and possible leaching. If the farmer cannot maintain the emitters or afford the system, compare practical alternatives and costs rather than asserting that one method is always best.",
+      "displayText": "The original case is a small vegetable plot with sandy soil, hot windy weather, and expensive limited water. Drip is a defensible starting recommendation because near-root delivery avoids wind-drift of spray and can be managed in short, monitored applications. Sprinklers need special attention to wind and uniformity; a surface layout may be feasible if its grade, intake, labour and water supply permit it, but high sand infiltration can complicate control.\n\nBefore buying a system, check water quality and filtration, price and repairs, pressure and power, expected crop return, measured root-zone storage, wind, application uniformity and possible leaching. If the farmer cannot maintain the emitters or afford the system, compare practical alternatives and costs rather than asserting that one method is always best.",
+      "captionText": "The original case is a small vegetable plot with sandy soil, hot windy weather, and expensive limited water. Drip is a defensible starting recommendation because near-root delivery avoids wind-drift of spray and can be managed in short, monitored applications. Sprinklers need special attention to wind and uniformity; a surface layout may be feasible if its grade, intake, labour and water supply permit it, but high sand infiltration can complicate control.\n\nBefore buying a system, check water quality and filtration, price and repairs, pressure and power, expected crop return, measured root-zone storage, wind, application uniformity and possible leaching. If the farmer cannot maintain the emitters or afford the system, compare practical alternatives and costs rather than asserting that one method is always best.",
+      "spokenText": "The original case is a small vegetable plot with sandy soil, hot windy weather, and expensive limited water. Drip is a defensible starting recommendation because near-root delivery avoids wind-drift of spray and can be managed in short, monitored applications. Sprinklers need special attention to wind and uniformity; a surface layout may be feasible if its grade, intake, labour and water supply permit it, but high sand infiltration can complicate control.\n\nBefore buying a system, check water quality and filtration, price and repairs, pressure and power, expected crop return, measured root-zone storage, wind, application uniformity and possible leaching. If the farmer cannot maintain the emitters or afford the system, compare practical alternatives and costs rather than asserting that one method is always best.",
+      "spokenTextSHA256": "5c7382f887964929a372745d00ea6bf3dbbe822ee75619271d96d4d737f6060c",
+      "spokenTextSha256": "5c7382f887964929a372745d00ea6bf3dbbe822ee75619271d96d4d737f6060c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "43e46155cb1d68bf246dc360e0e9b3c5f0b0f63e8a4abf959d89b4e6d1d6c6be",
+      "requestFingerprintSha256": "43e46155cb1d68bf246dc360e0e9b3c5f0b0f63e8a4abf959d89b4e6d1d6c6be",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-R08-r1",
+      "unitId": "S3-05-en-R08-r1",
+      "locale": "en",
+      "semanticGroup": "R08",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/7/paragraphs/0",
+          "text": "A seasonal 500–800 mm maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity/efficiency, water quality and the site's safe application rate.",
+          "sha256": "5f629618c1d1a06b508c17fd86b98d780bf3d00f9978d7c7270b6fe2d8ee6129"
+        },
+        {
+          "pointer": "/reading/7/paragraphs/1",
+          "text": "A trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+          "sha256": "430038f24cd94dcfeed88ddf6231b063cfdfa3eaba8e8b82e2aed71d8a9d646e"
+        }
+      ],
+      "scientificMeaning": "A seasonal 500–800 mm maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity/efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+      "displayText": "A seasonal 500–800 mm maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity/efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+      "captionText": "A seasonal 500–800 mm maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity/efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+      "spokenText": "A seasonal five hundred to eight hundred millimetres maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity, efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+      "spokenTextSHA256": "07f5310a32894d3ad1cfe0efe8e99945bd59d7f43e8e9ee7c4954b4594017c53",
+      "spokenTextSha256": "07f5310a32894d3ad1cfe0efe8e99945bd59d7f43e8e9ee7c4954b4594017c53",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A seasonal 500–800 mm maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity/efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+          "spoken": "A seasonal five hundred to eight hundred millimetres maize range, for example, cannot be divided by an arbitrary number of days to prescribe tomorrow's dose. Obtain weather-based evapotranspiration, the crop and its current growth stage, forecast and effective rain, effective rooting depth, soil water holding capacity and current measured depletion, irrigation uniformity, efficiency, water quality and the site's safe application rate.\n\nA trainer can then demonstrate a site-specific calculation with real measurements and a suitable method. This step tests the decision logic, not a field-certified irrigation programme.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful coherentwholeparagraph narration. Exactmillimetres/seasontiming/notperwateringdose,350–500cabbage/500–800maize,criticalyieldformingstages/nonreproductiveorgans,conditionalrecovery/methodefficiency/sitefit/equipment/waterquality/safeapplicationschedulingrequirements retained. Source/display/canonicalreadonly."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9ac5bb2245a69c9f2c4aecf558e97cd6740095054607d090582105de3318f1a9",
+      "requestFingerprintSha256": "9ac5bb2245a69c9f2c4aecf558e97cd6740095054607d090582105de3318f1a9",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
