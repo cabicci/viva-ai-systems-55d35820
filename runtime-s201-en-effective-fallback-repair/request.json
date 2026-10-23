@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "scope": "RUNTIME_S201_EN_EFFECTIVE_FALLBACK_REPAIR",
+  "stepId": "S2-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-runtime-s201-en-effective-fallback-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-01-en-effective-fallback-repair-r1",
+      "unitId": "S2-01-en-effective-fallback-repair-r1",
+      "locale": "en",
+      "semanticGroup": "runtime-s201-en-effective-fallback-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/fallback",
+          "text": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "sha256": "d43dbf11a6929a6afba32c175da757c2d4ae7297d08da4747520a4c04a069c25"
+        }
+      ],
+      "scientificMeaning": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "displayText": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "captionText": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "spokenText": "Use the formula buttons and matching controls.",
+      "spokenTextSHA256": "177143cf5cc59aaed9cfe456b4615f0e91643a35cd58c303d36c3bc60129cb7c",
+      "spokenTextSha256": "177143cf5cc59aaed9cfe456b4615f0e91643a35cd58c303d36c3bc60129cb7c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "spoken": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "spoken": "Use the formula buttons and matching controls.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "40e252c420d4b50e4c52661bd3a1439944dce777ccf84b041fc212851871c1b4",
+      "requestFingerprintSha256": "40e252c420d4b50e4c52661bd3a1439944dce777ccf84b041fc212851871c1b4",
+      "sourcePlanSha256": "7f0bcaabcfd2d00bf8e99d193e0600a980ce9a80e0fd0298abc76f33901d2113",
+      "exactSentenceBefore": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/fallback",
+        "original": "3D unavailable; use the equivalent formula buttons and matching controls.",
+        "effective": "Use the formula buttons and matching controls.",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-01-en-effective-fallback-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

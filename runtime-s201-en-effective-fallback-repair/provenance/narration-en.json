@@ -1,0 +1,74 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-en.json",
+    "sha256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+    "bytes": 23519
+  },
+  "units": [
+    {
+      "id": "S2-01-en-effective-fallback-repair-r1",
+      "unitId": "S2-01-en-effective-fallback-repair-r1",
+      "locale": "en",
+      "semanticGroup": "runtime-s201-en-effective-fallback-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/fallback",
+          "text": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "sha256": "d43dbf11a6929a6afba32c175da757c2d4ae7297d08da4747520a4c04a069c25"
+        }
+      ],
+      "scientificMeaning": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "displayText": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "captionText": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "spokenText": "Use the formula buttons and matching controls.",
+      "spokenTextSHA256": "177143cf5cc59aaed9cfe456b4615f0e91643a35cd58c303d36c3bc60129cb7c",
+      "spokenTextSha256": "177143cf5cc59aaed9cfe456b4615f0e91643a35cd58c303d36c3bc60129cb7c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "spoken": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "3D unavailable; use the equivalent formula buttons and matching controls.",
+          "spoken": "Use the formula buttons and matching controls.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "40e252c420d4b50e4c52661bd3a1439944dce777ccf84b041fc212851871c1b4",
+      "requestFingerprintSha256": "40e252c420d4b50e4c52661bd3a1439944dce777ccf84b041fc212851871c1b4",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "3D unavailable; use the equivalent formula buttons and matching controls.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/fallback",
+        "original": "3D unavailable; use the equivalent formula buttons and matching controls.",
+        "effective": "Use the formula buttons and matching controls.",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
