@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S305_S3_05_EN_R05_CLARITY_REPAIR",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s305-s3-05-en-r05-clarity-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-en-R05-clarity-repair-r1",
+      "unitId": "S3-05-en-R05-clarity-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-s305-s3-05-en-r05-clarity-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "sha256": "2f7f190c130c8475de962c8a35f9797b7c7b3932b3b5a7a7ad1de9c94a143643"
+        }
+      ],
+      "scientificMeaning": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+      "displayText": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+      "captionText": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+      "spokenText": "A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+      "spokenTextSHA256": "eddea338d894d87688932987f078f2e6aa4de3fb046f02764272ea2f73aa56a7",
+      "spokenTextSha256": "eddea338d894d87688932987f078f2e6aa4de3fb046f02764272ea2f73aa56a7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sprinklers distribute water through the air like rainfall and can cover large or uneven fields, including many field crops. Nozzles, pressure and application rate must suit the field's infiltration and crop. Strong wind can shift the spray and spoil uniformity; evaporation and repeated leaf wetness can be concerns, including disease risk for some crops and conditions. A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "spoken": "A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "spoken": "A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "10aa31826483bac7cb2e1e0b3c90dc1b86a681aabedaee5ac625caf019252f37",
+      "requestFingerprintSha256": "10aa31826483bac7cb2e1e0b3c90dc1b86a681aabedaee5ac625caf019252f37",
+      "sourcePlanSha256": "2c3e93574195b816661eed2cae9f7de6539d426b838216552203212ee20298d2",
+      "exactSentenceBefore": "A sprinkler can still be a reasonable option in another site or at a suitable time of day.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s305-seven-repairs-root-authority-r1.json",
+        "authoritySHA256": "b04a2d2bfcea4de1e33a405324845a4ca77456c56f26c9fdaacf7f772a6e296a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S3-05-en-R05-clarity-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
