@@ -1,0 +1,31 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S1-02-ar-EG-reflection-sentence-repair-r1",
+      "contextWavSHA256": "ab75ed2b9c06dbcfd1aa135d4a9a6fbc323d42f5158e5e65958403661d76ef75",
+      "contextPCMSHA256": "a4b40a735f19a5a7cb0ab54d8b4d7c8623c3abb32e565df3ed15889d9dd493aa",
+      "frames": 100800,
+      "sampleRate": 24000,
+      "durationSeconds": 4.2,
+      "originalWavSHA256": "4981bd67d04824c3bd5e6f9b5267f40e7fd0225ff6bd30b84850d0d8f792af63",
+      "originalPCMSHA256": "a4b40a735f19a5a7cb0ab54d8b4d7c8623c3abb32e565df3ed15889d9dd493aa",
+      "originalFrames": 100800,
+      "sourceFirstSample": 0,
+      "sourceEndSampleExclusive": 100800,
+      "sourceOffsetSeconds": 0,
+      "sourceEndSeconds": 4.2,
+      "endsAtOriginalRecordingEnd": true,
+      "boundaryFact": "This is the entire source recording from its exact beginning to its exact end.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_REPLACEMENT_PROVIDER_ORIGINAL_PRIOR_WHOLE_BLIND_PARSE_FAILED"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNMODIFIED_REPLACEMENT_PROVIDER_ORIGINAL_PRIOR_WHOLE_BLIND_PARSE_FAILED",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
