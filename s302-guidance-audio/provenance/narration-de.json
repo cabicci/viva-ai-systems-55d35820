@@ -1,0 +1,388 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-de.json",
+    "sha256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+    "bytes": 32038
+  },
+  "units": [
+    {
+      "id": "S3-02-de-model-hypotheses-r1",
+      "unitId": "S3-02-de-model-hypotheses-r1",
+      "locale": "de",
+      "semanticGroup": "model-hypotheses",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/modelHelp",
+          "text": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Kein gemessenes Profil, hydraulisches Modell oder Reparaturanweisung.",
+          "sha256": "d5b7bcf165a93b473bbaffc6200a08dd686f0c7b99262c9f7ee98170df7e5c40"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/0",
+          "text": "Feine Körnung",
+          "sha256": "990922a93da2df52c9b9f0595df05840d4d515d1cb4099e8f965c4acc79a97ec"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/0",
+          "text": "Bodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.",
+          "sha256": "5528f16af5d5b70a760758c41bf5c501aa1ab711ca4f113b1d746f0b6c1ca618"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/1",
+          "text": "Verdichtung",
+          "sha256": "a0b7f294bad81e4f0e66c51694b6669c12ad3db3c8209662cc68d1e27a8a7dc3"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/1",
+          "text": "Gefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.",
+          "sha256": "aa57464a9d80b2bca0a145b63e983ec76f408e5443c8a9df762dfe990c5a6f62"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/2",
+          "text": "Sperrende Schicht",
+          "sha256": "f48397b6168f67445de60315159066e2924eaba9c23cba8a927fd85ad5e21baf"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/2",
+          "text": "Profil untersuchen; Oberflächenfoto belegt keine Sperrschicht.",
+          "sha256": "f6b7cd906b1e0032485a62eeb27ebcc82f8b7ee750e46bb51d9d24ef3176a0cd"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/3",
+          "text": "Hoher Grundwasserstand",
+          "sha256": "56d155b60805f0f5fd01d809c84ed5faeda4451905ab9bf0089ba02670f07b82"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/3",
+          "text": "Grundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.",
+          "sha256": "d63f59656aa3671f76f64e4a43728519252ef5b19b9d0417cd5013c8d43fb099"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/4",
+          "text": "Verstopfter Abfluss",
+          "sha256": "1778b0a268d9827170b897f59c56a02987e15e9c5014be32a4408bac349c66fa"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/4",
+          "text": "Zulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+          "sha256": "888a09a07a1adae728c09f56e0968896291346d356b06c7834d59882b0dd6cb0"
+        }
+      ],
+      "scientificMeaning": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Kein gemessenes Profil, hydraulisches Modell oder Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+      "displayText": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Kein gemessenes Profil, hydraulisches Modell oder Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+      "captionText": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Kein gemessenes Profil, hydraulisches Modell oder Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+      "spokenText": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Das ist weder ein gemessenes Profil noch ein hydraulisches Modell noch eine Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+      "spokenTextSHA256": "e9a3edd066554bc251583f88cc323f84fd00e0f8ba98f5bbb1b3e815e3e341f9",
+      "spokenTextSha256": "e9a3edd066554bc251583f88cc323f84fd00e0f8ba98f5bbb1b3e815e3e341f9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Kein gemessenes Profil, hydraulisches Modell oder Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+          "spoken": "Hypothese wählen und schematische Lage betrachten. Stauwasser beweist keine Ursache. Das ist weder ein gemessenes Profil noch ein hydraulisches Modell noch eine Reparaturanweisung.\n\nFeine Körnung\n\nBodenart und Profil prüfen; feine Körnung möglich, nicht bestätigt.\n\nVerdichtung\n\nGefüge, Tiefe und Feuchte nach Betreuerprotokoll untersuchen.\n\nSperrende Schicht\n\nProfil untersuchen; Oberflächenfoto belegt keine Sperrschicht.\n\nHoher Grundwasserstand\n\nGrundwassertiefe und zeitlichen Verlauf mit geeigneten Feldbeobachtungen untersuchen.\n\nVerstopfter Abfluss\n\nZulässigen Abfluss und wirklichen Wasserweg prüfen; Modell beweist keine Blockade.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "521881773bfd675d5c5ef07ec4c0a719a45354a03943b2df37945a394ec1c155",
+      "requestFingerprintSha256": "521881773bfd675d5c5ef07ec4c0a719a45354a03943b2df37945a394ec1c155",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-candidate-record-r1",
+      "unitId": "S3-02-de-candidate-record-r1",
+      "locale": "de",
+      "semanticGroup": "candidate-record",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/candidates",
+          "text": "Mindestens zwei verschiedene Kandidaten je Gruppe",
+          "sha256": "698c3371f9e139702c0996568df797d6c083b41d72dd055a42d518940d1fb6c3"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/0",
+          "text": "Kulturname",
+          "sha256": "718662a364d067741eedff20b41c2114d14e7926f7dc135220a7af5af651762f"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/1",
+          "text": "Kulturspezifischer Grund für mögliche Eignung",
+          "sha256": "251c722f8bd4a451395a208b67d31e7b7be57f25d6b5269cbe5640d23faf4ae1"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/2",
+          "text": "Offene Bedingung oder Begrenzung",
+          "sha256": "a58c046c8fe50a5e0140c464ea7c5a9f9d08813d9e34c15dfc208a27ae887a37"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/3",
+          "text": "Belegung, Anlage und Beendigung",
+          "sha256": "ba2e98601dfe99fd3afd9e345be2c249fb1efd2656d0c6fe85baf088c2666e57"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/4",
+          "text": "Benötigter Beleg oder Quelle",
+          "sha256": "59ecf0350693e64fa011dda6f205e5d095149d173475143c721d5fbeff1f49de"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateHelp",
+          "text": "Bedingte Alternativen in die Analyse einbeziehen. Zwei Zeilen je Gruppe sind Minimum, keine Obergrenze. Speichern oder Textvollständigkeit bestätigt keine Eignung.",
+          "sha256": "4bce265b6e7ac20ca0f3ed7856b76312a70d8fa46972d8611562d76f260ba28a"
+        }
+      ],
+      "scientificMeaning": "Mindestens zwei verschiedene Kandidaten je Gruppe\n\nKulturname\n\nKulturspezifischer Grund für mögliche Eignung\n\nOffene Bedingung oder Begrenzung\n\nBelegung, Anlage und Beendigung\n\nBenötigter Beleg oder Quelle\n\nBedingte Alternativen in die Analyse einbeziehen. Zwei Zeilen je Gruppe sind Minimum, keine Obergrenze. Speichern oder Textvollständigkeit bestätigt keine Eignung.",
+      "displayText": "Mindestens zwei verschiedene Kandidaten je Gruppe\n\nKulturname\n\nKulturspezifischer Grund für mögliche Eignung\n\nOffene Bedingung oder Begrenzung\n\nBelegung, Anlage und Beendigung\n\nBenötigter Beleg oder Quelle\n\nBedingte Alternativen in die Analyse einbeziehen. Zwei Zeilen je Gruppe sind Minimum, keine Obergrenze. Speichern oder Textvollständigkeit bestätigt keine Eignung.",
+      "captionText": "Mindestens zwei verschiedene Kandidaten je Gruppe\n\nKulturname\n\nKulturspezifischer Grund für mögliche Eignung\n\nOffene Bedingung oder Begrenzung\n\nBelegung, Anlage und Beendigung\n\nBenötigter Beleg oder Quelle\n\nBedingte Alternativen in die Analyse einbeziehen. Zwei Zeilen je Gruppe sind Minimum, keine Obergrenze. Speichern oder Textvollständigkeit bestätigt keine Eignung.",
+      "spokenText": "Mindestens zwei verschiedene Kandidaten je Gruppe\n\nKulturname\n\nKulturspezifischer Grund für mögliche Eignung\n\nOffene Bedingung oder Begrenzung\n\nBelegung, Anlage und Beendigung\n\nBenötigter Beleg oder Quelle\n\nBedingte Alternativen in die Analyse einbeziehen. Zwei Zeilen je Gruppe sind Minimum, keine Obergrenze. Speichern oder Textvollständigkeit bestätigt keine Eignung.",
+      "spokenTextSHA256": "d8746e98b6301594370d7c18b89f16bcde73b61175e425e5300e021c13039175",
+      "spokenTextSha256": "d8746e98b6301594370d7c18b89f16bcde73b61175e425e5300e021c13039175",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "630ee10c56f3528e7f7c279f01f76a4beef11cb6819f0c68d9b5ed249c5f9658",
+      "requestFingerprintSha256": "630ee10c56f3528e7f7c279f01f76a4beef11cb6819f0c68d9b5ed249c5f9658",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-year-local-records-r1",
+      "unitId": "S3-02-de-year-local-records-r1",
+      "locale": "de",
+      "semanticGroup": "year-local-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/year",
+          "text": "Bedingte Empfehlung für Jahr eins",
+          "sha256": "137fc5af460a43fceee75ef0f82add8f64556ddc0b3efc2296ce6eb995933b7b"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/0",
+          "text": "Gruppe und Kandidat",
+          "sha256": "68cd73d433572c41a5350a80c661dce30b68589cdd1d1ae1db954093e7c2e6ad"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/1",
+          "text": "Zweck und Flächenbelegung",
+          "sha256": "b1eec4e07c6f1fdc70c53cac9f5724170318386c1eaf271895bbe71d11b812b9"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/2",
+          "text": "Erwarteter Vorteil und ungeklärte Ertragsursache",
+          "sha256": "8a98ba8f7252d02be8a2c9c3c0dc0682b9be8e1b9ce0e37a4c45c01e70cc16a0"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/3",
+          "text": "Vorprüfung1",
+          "sha256": "a9866319640d805f0f5cd261efea8837f14cc9b88c69fc7b17525fad91956bcc"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/4",
+          "text": "Vorprüfung2",
+          "sha256": "490297da5b4aa3105d6cca7808e6d779fa2b83dcce4b07555e4b2e15688c08d8"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/5",
+          "text": "Vorprüfung3",
+          "sha256": "a048cc7225a424b371697a90fa0b1e86f56ddc7e7b1fb2ec91f9598298c83919"
+        },
+        {
+          "pointer": "/siteMatch/ui/local",
+          "text": "Getrennte Belege für ägyptischen Standort",
+          "sha256": "44eb982eda30689617ca67a3b782b6f0a5fc5bd794cddbacb02b74a338d35b11"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/0",
+          "text": "Tatsächlicher Ort und Beobachtungs-/Quelldatum",
+          "sha256": "54a0a129898e498057e85b6dbcbcb1dda2900886f9839317b39acf7455fe04d7"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/1",
+          "text": "Klima- und Temperaturbelege",
+          "sha256": "80b94265c151d98c0592df91baffd75d58d530cefb9473e2dd730c4a756e9d40"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/2",
+          "text": "Saison und Kultur-/Sortenansprüche",
+          "sha256": "bf7cbea64940862c8e711c4d915e1468ff1329945d0e5d44c49f7e65bd858c77"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/3",
+          "text": "Verlässlicher Regen/Bewässerung und Wassergrenzen",
+          "sha256": "ab5dec22fc6cdc5363dcafce1d059aa080b28b72b8312e9e86b1214658db21cc"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/4",
+          "text": "Boden, Profil, Drainage, pH, Nährstoffe und Salz",
+          "sha256": "149feb4e76203f8bcb1e30feefb0fadd0d9eba902b24e35272f21de8e3187a22"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/5",
+          "text": "Tatsächliches Licht und Tageslänge",
+          "sha256": "6577dc8996a81613b6d7bca4b853d5606e8ba8f3fb98dba92430307031be50a3"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/6",
+          "text": "Kultur-, Schaderregergeschichte und Diagnosebelege",
+          "sha256": "38fa2678b27feabe8794bfb0080217c95875dc1ae2413b981d8b202f8fffa048"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/7",
+          "text": "Geräte, Markt und Unbekanntes",
+          "sha256": "eae9e9f315b3225026e4729f4b4823feca1646bab9f5163fe5f3535c24e4ffc6"
+        },
+        {
+          "pointer": "/siteMatch/ui/boundary",
+          "text": "Nur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+          "sha256": "8943e5d76b3c553b3b2622fede6606029eebfe9b9c1bfd8b3db0b67934c405b8"
+        }
+      ],
+      "scientificMeaning": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung1\n\nVorprüfung2\n\nVorprüfung3\n\nGetrennte Belege für ägyptischen Standort\n\nTatsächlicher Ort und Beobachtungs-/Quelldatum\n\nKlima- und Temperaturbelege\n\nSaison und Kultur-/Sortenansprüche\n\nVerlässlicher Regen/Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, pH, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nKultur-, Schaderregergeschichte und Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+      "displayText": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung1\n\nVorprüfung2\n\nVorprüfung3\n\nGetrennte Belege für ägyptischen Standort\n\nTatsächlicher Ort und Beobachtungs-/Quelldatum\n\nKlima- und Temperaturbelege\n\nSaison und Kultur-/Sortenansprüche\n\nVerlässlicher Regen/Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, pH, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nKultur-, Schaderregergeschichte und Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+      "captionText": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung1\n\nVorprüfung2\n\nVorprüfung3\n\nGetrennte Belege für ägyptischen Standort\n\nTatsächlicher Ort und Beobachtungs-/Quelldatum\n\nKlima- und Temperaturbelege\n\nSaison und Kultur-/Sortenansprüche\n\nVerlässlicher Regen/Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, pH, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nKultur-, Schaderregergeschichte und Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+      "spokenText": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung eins\n\nVorprüfung zwei\n\nVorprüfung drei\n\nGetrennte Belege für ägyptischen Standort\n\nDer tatsächliche Ort und das Datum der Beobachtung oder der Quelle\n\nKlima- und Temperaturbelege\n\nSaison sowie die Ansprüche der Kultur und der Sorte\n\nVerlässlicher Regen, Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, Pe Ha, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nGeschichte der Kulturen und Schaderreger sowie Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+      "spokenTextSHA256": "e07480a58bf7c6544cb576ee437dc45550960f215bb1a9f206520850b363f6f5",
+      "spokenTextSha256": "e07480a58bf7c6544cb576ee437dc45550960f215bb1a9f206520850b363f6f5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung1\n\nVorprüfung2\n\nVorprüfung3\n\nGetrennte Belege für ägyptischen Standort\n\nTatsächlicher Ort und Beobachtungs-/Quelldatum\n\nKlima- und Temperaturbelege\n\nSaison und Kultur-/Sortenansprüche\n\nVerlässlicher Regen/Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, pH, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nKultur-, Schaderregergeschichte und Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+          "spoken": "Bedingte Empfehlung für Jahr eins\n\nGruppe und Kandidat\n\nZweck und Flächenbelegung\n\nErwarteter Vorteil und ungeklärte Ertragsursache\n\nVorprüfung eins\n\nVorprüfung zwei\n\nVorprüfung drei\n\nGetrennte Belege für ägyptischen Standort\n\nDer tatsächliche Ort und das Datum der Beobachtung oder der Quelle\n\nKlima- und Temperaturbelege\n\nSaison sowie die Ansprüche der Kultur und der Sorte\n\nVerlässlicher Regen, Bewässerung und Wassergrenzen\n\nBoden, Profil, Drainage, Pe Ha, Nährstoffe und Salz\n\nTatsächliches Licht und Tageslänge\n\nGeschichte der Kulturen und Schaderreger sowie Diagnosebelege\n\nGeräte, Markt und Unbekanntes\n\nNur Wissen und Begründung; keine echte Standorteignung, Verordnung, praktische Kompetenz oder Betreuerfreigabe bescheinigt.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "71f6c2b27ec8800f2a61edbc0b5991c0ae3e03267f1e789a942b659bc12bd9f1",
+      "requestFingerprintSha256": "71f6c2b27ec8800f2a61edbc0b5991c0ae3e03267f1e789a942b659bc12bd9f1",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-02-de-conditional-support-r1",
+      "unitId": "S3-02-de-conditional-support-r1",
+      "locale": "de",
+      "semanticGroup": "conditional-support",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/scaffoldTitle",
+          "text": "Sechs bedingte Hilfskarten",
+          "sha256": "b2549e7091285199becee2d754e3d1e1f2c6c1553a78c527a9fd210ef85c2076"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/0",
+          "text": "Mais: N und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.",
+          "sha256": "727051df07a4b78b3dd9d48a0e3826862833ca153693e62c64f22f279a293a29"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/1",
+          "text": "Gerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer N-Bedarf nicht allgemeingültig.",
+          "sha256": "f5aeb8bfd3d471314171db1f98f4e26faec8e1ed682bde6b540983d7cb1052f0"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/2",
+          "text": "Soja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.",
+          "sha256": "262a9ced3e5dccb86839095fb82b1aa0685b600eb47b785f70aa9744375272b6"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/3",
+          "text": "Klee: Art, Zweck, Standdauer und Beendigung bestimmen.",
+          "sha256": "b1a4dece8b05e1084850f97f13740e9f4ac5423e6635416c95a92b0ce942a618"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/4",
+          "text": "Karotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.",
+          "sha256": "ff25d0b1fdda3ed36672777788acdcb8f73d76e4c00e2f5c8a006986c966b871"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/5",
+          "text": "Erdbeere: pH, Drainage, Sorte, Klima und dauernde Pflege prüfen.",
+          "sha256": "a4275f9c8a06b521695a05956bea5f94d11bbece76f632ddf11b3a53fb87834a"
+        },
+        {
+          "pointer": "/siteMatch/ui/reason",
+          "text": "Vor dem Mustervergleich eine eigene Begründung schreiben.",
+          "sha256": "ff6f0f8c0ea53435c8aeb8bf6922b51babca49904df9f160f6dacab81897f9e3"
+        },
+        {
+          "pointer": "/siteMatch/ui/reasonBoundary",
+          "text": "Begründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+          "sha256": "a31a3fb8673f1c4b016f57fe428ce026f01970056915d42a4bb47e5b9c1299c3"
+        }
+      ],
+      "scientificMeaning": "Sechs bedingte Hilfskarten\n\nMais: N und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer N-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: pH, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+      "displayText": "Sechs bedingte Hilfskarten\n\nMais: N und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer N-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: pH, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+      "captionText": "Sechs bedingte Hilfskarten\n\nMais: N und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer N-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: pH, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+      "spokenText": "Sechs bedingte Hilfskarten\n\nMais: Stickstoff und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer Stickstoff-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: Pe Ha, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+      "spokenTextSHA256": "97d2bebddef1be319002895583ba12715a4d2592dbc5cdf395a22502efdd9151",
+      "spokenTextSha256": "97d2bebddef1be319002895583ba12715a4d2592dbc5cdf395a22502efdd9151",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sechs bedingte Hilfskarten\n\nMais: N und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer N-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: pH, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+          "spoken": "Sechs bedingte Hilfskarten\n\nMais: Stickstoff und Ertragsursache prüfen; Bodenart garantiert keinen Erfolg.\n\nGerste: Sorte, Saison, Wasser und Nährstoffe prüfen; geringerer Stickstoff-Bedarf nicht allgemeingültig.\n\nSoja: Standort, wirksame Knöllchen, Wasser und Erntereste prüfen.\n\nKlee: Art, Zweck, Standdauer und Beendigung bestimmen.\n\nKarotte: Wurzelraum, Drainage, Wasser, Nährstoffe und Saison prüfen.\n\nErdbeere: Pe Ha, Drainage, Sorte, Klima und dauernde Pflege prüfen.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6357cb4d3a3a97dbb86c7c7c38e4932a3fc5b4bdbb3582b6cff0aa269fafe530",
+      "requestFingerprintSha256": "6357cb4d3a3a97dbb86c7c7c38e4932a3fc5b4bdbb3582b6cff0aa269fafe530",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

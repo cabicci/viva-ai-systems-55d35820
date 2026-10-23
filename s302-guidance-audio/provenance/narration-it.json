@@ -1,0 +1,381 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-it.json",
+    "sha256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+    "bytes": 31956
+  },
+  "units": [
+    {
+      "id": "S3-02-it-model-hypotheses-r1",
+      "unitId": "S3-02-it-model-hypotheses-r1",
+      "locale": "it",
+      "semanticGroup": "model-hypotheses",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/modelHelp",
+          "text": "Seleziona un’ipotesi per mostrarne la posizione schematica. Il ristagno non dimostra nessuna causa. Non è profilo misurato, simulazione idraulica o istruzione di riparazione.",
+          "sha256": "e80f00d58e3b736124a573220ec276cbd3d2b794667991459b9673e109b3bfbb"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/0",
+          "text": "Tessitura fine",
+          "sha256": "232f0a1f2f1479877b634611066f5779c821f948b60bc77552a2217ae10f63d0"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/0",
+          "text": "Verificare tessitura e profilo; tessitura fine possibile, non diagnosi certa.",
+          "sha256": "d71a192a5559d3a9c10e14711fb2cc10ed458360807152a5d5a2302ec05c66db"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/1",
+          "text": "Compattazione",
+          "sha256": "21133c372c9c17519130b94b46ef71c7cde01410514aa3097be5d23b0b470707"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/1",
+          "text": "Indagare struttura, profondità e umidità secondo il protocollo del formatore.",
+          "sha256": "854845821dc239dba227b86e6f25d6bd7c8035d440e16c4dace03a39a012552e"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/2",
+          "text": "Strato limitante",
+          "sha256": "830aeba15ffda74cba11a0ab3d0a2efc68d7d79a3834bf2534d9bd6ca4422bf5"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/2",
+          "text": "Esaminare il profilo; una fotografia superficiale non dimostra uno strato limitante.",
+          "sha256": "c07810839bfdd3687353448266c2773e79fe17782a2f1dda9a313205bdeed47a"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/3",
+          "text": "Falda alta",
+          "sha256": "be3017359966f804946ec454461990dc593670fc23b10979d7ac243620faebb2"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/3",
+          "text": "Rilevare profondità e tempi della falda con osservazioni appropriate.",
+          "sha256": "ca89ea926527b74a1069c8c56115484097dd0528e27fda5d883c8dcc0111c0e2"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/4",
+          "text": "Scarico ostruito",
+          "sha256": "27b15fbe0a747f07f5acacd48e7d17b7d066b3da2d29611f0cd907327da9c6c2"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/4",
+          "text": "Controllare scarico consentito e percorso reale; il modello non prova un’ostruzione.",
+          "sha256": "d14d8f867ae1fb75e9e2a18e504271b2141829e7d57e1342fb0df0e3fa8f1b82"
+        }
+      ],
+      "scientificMeaning": "Seleziona un’ipotesi per mostrarne la posizione schematica. Il ristagno non dimostra nessuna causa. Non è profilo misurato, simulazione idraulica o istruzione di riparazione.\n\nTessitura fine\n\nVerificare tessitura e profilo; tessitura fine possibile, non diagnosi certa.\n\nCompattazione\n\nIndagare struttura, profondità e umidità secondo il protocollo del formatore.\n\nStrato limitante\n\nEsaminare il profilo; una fotografia superficiale non dimostra uno strato limitante.\n\nFalda alta\n\nRilevare profondità e tempi della falda con osservazioni appropriate.\n\nScarico ostruito\n\nControllare scarico consentito e percorso reale; il modello non prova un’ostruzione.",
+      "displayText": "Seleziona un’ipotesi per mostrarne la posizione schematica. Il ristagno non dimostra nessuna causa. Non è profilo misurato, simulazione idraulica o istruzione di riparazione.\n\nTessitura fine\n\nVerificare tessitura e profilo; tessitura fine possibile, non diagnosi certa.\n\nCompattazione\n\nIndagare struttura, profondità e umidità secondo il protocollo del formatore.\n\nStrato limitante\n\nEsaminare il profilo; una fotografia superficiale non dimostra uno strato limitante.\n\nFalda alta\n\nRilevare profondità e tempi della falda con osservazioni appropriate.\n\nScarico ostruito\n\nControllare scarico consentito e percorso reale; il modello non prova un’ostruzione.",
+      "captionText": "Seleziona un’ipotesi per mostrarne la posizione schematica. Il ristagno non dimostra nessuna causa. Non è profilo misurato, simulazione idraulica o istruzione di riparazione.\n\nTessitura fine\n\nVerificare tessitura e profilo; tessitura fine possibile, non diagnosi certa.\n\nCompattazione\n\nIndagare struttura, profondità e umidità secondo il protocollo del formatore.\n\nStrato limitante\n\nEsaminare il profilo; una fotografia superficiale non dimostra uno strato limitante.\n\nFalda alta\n\nRilevare profondità e tempi della falda con osservazioni appropriate.\n\nScarico ostruito\n\nControllare scarico consentito e percorso reale; il modello non prova un’ostruzione.",
+      "spokenText": "Seleziona un’ipotesi per mostrarne la posizione schematica. Il ristagno non dimostra nessuna causa. Non è profilo misurato, simulazione idraulica o istruzione di riparazione.\n\nTessitura fine\n\nVerificare tessitura e profilo; tessitura fine possibile, non diagnosi certa.\n\nCompattazione\n\nIndagare struttura, profondità e umidità secondo il protocollo del formatore.\n\nStrato limitante\n\nEsaminare il profilo; una fotografia superficiale non dimostra uno strato limitante.\n\nFalda alta\n\nRilevare profondità e tempi della falda con osservazioni appropriate.\n\nScarico ostruito\n\nControllare scarico consentito e percorso reale; il modello non prova un’ostruzione.",
+      "spokenTextSHA256": "2de37319133fc5920726749d430c624ee6e2d02508a731ab9f93162af1e2da81",
+      "spokenTextSha256": "2de37319133fc5920726749d430c624ee6e2d02508a731ab9f93162af1e2da81",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0c70365ef965c546de07afa52eff681c680ac5d9597009f8d97aea2f096897f1",
+      "requestFingerprintSha256": "0c70365ef965c546de07afa52eff681c680ac5d9597009f8d97aea2f096897f1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-candidate-record-r1",
+      "unitId": "S3-02-it-candidate-record-r1",
+      "locale": "it",
+      "semanticGroup": "candidate-record",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/candidates",
+          "text": "Almeno due candidati distinti per gruppo",
+          "sha256": "67a08822229188f18928e75e54dc095a3bee052ccb7a7204ee46932b9d197ff1"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/0",
+          "text": "Nome della coltura",
+          "sha256": "521ade379d60e8f8efe2668bfdc2ecf8628b89211f36289d5d0b940147ba9c7c"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/1",
+          "text": "Motivo specifico del possibile abbinamento",
+          "sha256": "320a15f955353b1a558d1b6490b08d118366ff4a2448b4a780193af0db44a4c9"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/2",
+          "text": "Vincolo o condizione irrisolta",
+          "sha256": "872f15756530b9fdd43e5eae81eca0cc570316c7717ca050e9d0c9bcee522281"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/3",
+          "text": "Durata, avvio e terminazione",
+          "sha256": "90f28ff3c78a49400dd7487b1ba1a8c88176619cc8bc02f3b4746a8cddd757f1"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/4",
+          "text": "Prova o fonte necessaria",
+          "sha256": "f63df20902c2277e20f1fb472100ad9c4530bad16a91076ff7882e7fc2b16f39"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateHelp",
+          "text": "Alternative condizionate da includere nell’analisi. Due righe per gruppo sono il minimo, non il limite. Salvataggio o completezza del testo non convalidano idoneità.",
+          "sha256": "095fb6839d9b5bcb22b04df4ecde35b32b2c392fb8e312d774679c1f70f55889"
+        }
+      ],
+      "scientificMeaning": "Almeno due candidati distinti per gruppo\n\nNome della coltura\n\nMotivo specifico del possibile abbinamento\n\nVincolo o condizione irrisolta\n\nDurata, avvio e terminazione\n\nProva o fonte necessaria\n\nAlternative condizionate da includere nell’analisi. Due righe per gruppo sono il minimo, non il limite. Salvataggio o completezza del testo non convalidano idoneità.",
+      "displayText": "Almeno due candidati distinti per gruppo\n\nNome della coltura\n\nMotivo specifico del possibile abbinamento\n\nVincolo o condizione irrisolta\n\nDurata, avvio e terminazione\n\nProva o fonte necessaria\n\nAlternative condizionate da includere nell’analisi. Due righe per gruppo sono il minimo, non il limite. Salvataggio o completezza del testo non convalidano idoneità.",
+      "captionText": "Almeno due candidati distinti per gruppo\n\nNome della coltura\n\nMotivo specifico del possibile abbinamento\n\nVincolo o condizione irrisolta\n\nDurata, avvio e terminazione\n\nProva o fonte necessaria\n\nAlternative condizionate da includere nell’analisi. Due righe per gruppo sono il minimo, non il limite. Salvataggio o completezza del testo non convalidano idoneità.",
+      "spokenText": "Almeno due candidati distinti per gruppo\n\nNome della coltura\n\nMotivo specifico del possibile abbinamento\n\nVincolo o condizione irrisolta\n\nDurata, avvio e terminazione\n\nProva o fonte necessaria\n\nAlternative condizionate da includere nell’analisi. Due righe per gruppo sono il minimo, non il limite. Salvataggio o completezza del testo non convalidano idoneità.",
+      "spokenTextSHA256": "85a65db3f4cafc0b474e8333d4248eafdb8fca5d1abb9e64224142d93f79fc42",
+      "spokenTextSha256": "85a65db3f4cafc0b474e8333d4248eafdb8fca5d1abb9e64224142d93f79fc42",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86611e40d64867ce30387b2d54f9c5b04a23bd3fefb91c584991583cf38ccc66",
+      "requestFingerprintSha256": "86611e40d64867ce30387b2d54f9c5b04a23bd3fefb91c584991583cf38ccc66",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-year-local-records-r1",
+      "unitId": "S3-02-it-year-local-records-r1",
+      "locale": "it",
+      "semanticGroup": "year-local-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/year",
+          "text": "Nota condizionata per il primo anno",
+          "sha256": "94aaeb114b1563b31fcc03927b2fb38a2cf4d412872ac19c55c53aa121d8318e"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/0",
+          "text": "Gruppo e candidato",
+          "sha256": "f967b4a6b5a83f1692dcee69da3b016e5ff793ae85ddb38123d1f3612ac8ea60"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/1",
+          "text": "Scopo e durata di occupazione",
+          "sha256": "b0747c38f8d8ea4802645d66ba5049734e9735364fa5cdea73fcca22f52d0353"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/2",
+          "text": "Beneficio atteso e incertezza sulla resa",
+          "sha256": "755f292aeebdd9c1f606d9a80b130eaf854a45bbf28aa43bbb761549d29fa108"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/3",
+          "text": "Controllo preliminare 1",
+          "sha256": "11091c0f9a4317f86e1f8fe16565360a1ed32aac97b07148f10bb6ae9cdf23f5"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/4",
+          "text": "Controllo preliminare 2",
+          "sha256": "f579524312d444b5429016f316219e83818c0b6cd039edfcc798698aacae1df5"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/5",
+          "text": "Controllo preliminare 3",
+          "sha256": "8c248b5324e21a80fe6e15417d9d4616966bd54d73304f9acbab713ccc6c870e"
+        },
+        {
+          "pointer": "/siteMatch/ui/local",
+          "text": "Prove separate per una località egiziana",
+          "sha256": "c8ab9ab58ebe9bd147671a406bbf0a99ade49361dca37bbe3d26ab0c9e93376c"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/0",
+          "text": "Località reale e data di osservazione/fonte",
+          "sha256": "b94ad8ca035f241a1d25be8fe5e7ba23e3d983e739723da55bbecbcf131dbbf5"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/1",
+          "text": "Prove climatiche e termiche",
+          "sha256": "6cf586e9ee813b478813776ccc3d4fc8f27fcca2417e73d779c03f35da3131fe"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/2",
+          "text": "Stagione e requisiti di coltura/varietà",
+          "sha256": "40161d4b06f075b479df9b5ab56370fdc0a57209e45b9db10b03a4a55633727e"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/3",
+          "text": "Pioggia affidabile, irrigazione e vincoli idrici",
+          "sha256": "5e62aa31f77e6dc6c1cea5beec677739e9336f4ef56cdef2f7ac98cae0402ce9"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/4",
+          "text": "Suolo, profilo, drenaggio, pH, nutrienti e salinità",
+          "sha256": "afd9e387c976c8e04a22a7391bfe66557a7e024a1a86527e65f6976b6fc226e0"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/5",
+          "text": "Luce e fotoperiodo effettivi",
+          "sha256": "fcfd7975fb70cab084e114782857739f0d622454b8278d697c992f6570284dc8"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/6",
+          "text": "Storia colturale, presenza di parassiti e malattie e prove diagnostiche",
+          "sha256": "6db60c8c39962a2d6d9a08443608e0480bd2a5e3e63478e598b60b86f892f7d8"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/7",
+          "text": "Attrezzature, mercato e incognite",
+          "sha256": "0085aa212dc8b128cd2b728360329151f1436bdcaf90b1bc07d617089d429698"
+        },
+        {
+          "pointer": "/siteMatch/ui/boundary",
+          "text": "Solo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+          "sha256": "5d272ec8b44418edaa1aedf94aa0f7fced17d12c36c18ab690fc344b94777b63"
+        }
+      ],
+      "scientificMeaning": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare 1\n\nControllo preliminare 2\n\nControllo preliminare 3\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione/fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura/varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pH, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+      "displayText": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare 1\n\nControllo preliminare 2\n\nControllo preliminare 3\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione/fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura/varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pH, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+      "captionText": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare 1\n\nControllo preliminare 2\n\nControllo preliminare 3\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione/fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura/varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pH, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+      "spokenText": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare uno\n\nControllo preliminare due\n\nControllo preliminare tre\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione, fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura, varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pi acca, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+      "spokenTextSHA256": "74bd34829f7065e827de1dd8622fd487954c90f7b42ed3ee85fdee5a5758f550",
+      "spokenTextSha256": "74bd34829f7065e827de1dd8622fd487954c90f7b42ed3ee85fdee5a5758f550",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare 1\n\nControllo preliminare 2\n\nControllo preliminare 3\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione/fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura/varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pH, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+          "spoken": "Nota condizionata per il primo anno\n\nGruppo e candidato\n\nScopo e durata di occupazione\n\nBeneficio atteso e incertezza sulla resa\n\nControllo preliminare uno\n\nControllo preliminare due\n\nControllo preliminare tre\n\nProve separate per una località egiziana\n\nLocalità reale e data di osservazione, fonte\n\nProve climatiche e termiche\n\nStagione e requisiti di coltura, varietà\n\nPioggia affidabile, irrigazione e vincoli idrici\n\nSuolo, profilo, drenaggio, pi acca, nutrienti e salinità\n\nLuce e fotoperiodo effettivi\n\nStoria colturale, presenza di parassiti e malattie e prove diagnostiche\n\nAttrezzature, mercato e incognite\n\nSolo conoscenza e ragionamento; nessuna idoneità reale, prescrizione, competenza fisica o approvazione certificata.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "11879945b640495ce1aabf2cc0addb21e9eadface9ecf13efded3b7d08c9530d",
+      "requestFingerprintSha256": "11879945b640495ce1aabf2cc0addb21e9eadface9ecf13efded3b7d08c9530d",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-02-it-conditional-support-r1",
+      "unitId": "S3-02-it-conditional-support-r1",
+      "locale": "it",
+      "semanticGroup": "conditional-support",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/scaffoldTitle",
+          "text": "Sei schede di supporto condizionato",
+          "sha256": "20be4b64b6229f752fa1942213f0600ead420c6f464d1e2d35dc2af21a01a4f1"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/0",
+          "text": "Mais: indagare N e resa; tessitura non garantisce successo.",
+          "sha256": "7ba8662c10519ad88c0d1f88205140f82e9174e6a10ae90dcfdc6aa5c5bb9810"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/1",
+          "text": "Orzo: verificare varietà, stagione, acqua e nutrienti; N inferiore non è regola universale.",
+          "sha256": "36c7dc6824d8fad3a0668c5336f51070d7d3d2ee85a75fc3f2e3c243cc549fce"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/2",
+          "text": "Soia: verificare idoneità, noduli compatibili, acqua e residui/raccolto.",
+          "sha256": "be1597f336dbed9589f046f7d8a7b43f051ffbf15e954b2f144a20e8b31db9b7"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/3",
+          "text": "Trifoglio: specificare specie, scopo, durata e terminazione.",
+          "sha256": "bc9aa865f5a1cf0c59cf37f0332161eef778e877fac4c3400c9493522a497cd9"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/4",
+          "text": "Carota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.",
+          "sha256": "0f874542f205e1da4c4e87e34d722bcba51eb366ee1ac4ce7c5bf957c4df12af"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/5",
+          "text": "Fragola: verificare pH, drenaggio, varietà, clima e gestione continuativa.",
+          "sha256": "be923d715db8a93d2cd1f96a1d032464f1a0eedaa874a11f053e8aa34fe8749a"
+        },
+        {
+          "pointer": "/siteMatch/ui/reason",
+          "text": "Scrivi la spiegazione prima di confrontarla con il ragionamento svolto.",
+          "sha256": "821f02b9b97039b5982504e40f25257cb8d048164340b3768d50e124e40c2c49"
+        },
+        {
+          "pointer": "/siteMatch/ui/reasonBoundary",
+          "text": "Confronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+          "sha256": "3db185262f01db522d31550862562fd0e88e94f7735ec5c75938ade792d1f424"
+        }
+      ],
+      "scientificMeaning": "Sei schede di supporto condizionato\n\nMais: indagare N e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; N inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui/raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pH, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+      "displayText": "Sei schede di supporto condizionato\n\nMais: indagare N e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; N inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui/raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pH, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+      "captionText": "Sei schede di supporto condizionato\n\nMais: indagare N e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; N inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui/raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pH, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+      "spokenText": "Sei schede di supporto condizionato\n\nMais: indagare azoto e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; azoto inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui, raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pi acca, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+      "spokenTextSHA256": "68de9c592b7f2ea1dc69fe280c368fbfb3446653653b173d7b6d217269bf385d",
+      "spokenTextSha256": "68de9c592b7f2ea1dc69fe280c368fbfb3446653653b173d7b6d217269bf385d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sei schede di supporto condizionato\n\nMais: indagare N e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; N inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui/raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pH, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+          "spoken": "Sei schede di supporto condizionato\n\nMais: indagare azoto e resa; tessitura non garantisce successo.\n\nOrzo: verificare varietà, stagione, acqua e nutrienti; azoto inferiore non è regola universale.\n\nSoia: verificare idoneità, noduli compatibili, acqua e residui, raccolto.\n\nTrifoglio: specificare specie, scopo, durata e terminazione.\n\nCarota: controllare spazio radicale, drenaggio, acqua, nutrienti e stagione.\n\nFragola: verificare pi acca, drenaggio, varietà, clima e gestione continuativa.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f90a7351900474a4a7505306af1c3b3be85ace15ef07978b285968ddcf5de893",
+      "requestFingerprintSha256": "f90a7351900474a4a7505306af1c3b3be85ace15ef07978b285968ddcf5de893",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

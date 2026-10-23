@@ -1,0 +1,381 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-en.json",
+    "sha256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+    "bytes": 32131
+  },
+  "units": [
+    {
+      "id": "S3-02-en-model-hypotheses-r1",
+      "unitId": "S3-02-en-model-hypotheses-r1",
+      "locale": "en",
+      "semanticGroup": "model-hypotheses",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/modelHelp",
+          "text": "Select a hypothesis to reveal its schematic location. Standing water alone proves none of them. The model is not a measured profile, drainage simulation or repair instruction.",
+          "sha256": "89c35bd94240cb2593c244fef7e8c67d60851d435b675eff1924b549f0f1f0c9"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/0",
+          "text": "Fine texture",
+          "sha256": "2befb852861a8d7bcf2286f4189b23eb55cfc4c2260ddf32c92bbf517bef3273"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/0",
+          "text": "Test actual texture and profile; fine texture is possible, not a confirmed diagnosis.",
+          "sha256": "c04e34334820b7caf908f91717a9464ff8675db5885f1d807835d4cd52982fcb"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/1",
+          "text": "Compaction",
+          "sha256": "a0ade140bc8e408639e51492b949bc4d31641625ef070015b5d4a5e92ef0edb0"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/1",
+          "text": "Investigate structure, depth and moisture using the trainer’s site protocol.",
+          "sha256": "43c5cfa9f5bf98d428b301779e36c7226c0174761e2ccdd01d4335dfbe46e525"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/2",
+          "text": "Restrictive horizon",
+          "sha256": "ef335212372e86395d6486b5d065f6b8e9a3f000dce6fa1894df2cae18366150"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/2",
+          "text": "Inspect the profile for a limiting horizon rather than inferring one from a surface photograph.",
+          "sha256": "38d8c6ed58b591384c9cc37d2b64e31be7f1214d5044990955bacbe21640d337"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/3",
+          "text": "High water table",
+          "sha256": "3c91c18e1b1dd8f66662706fb588b4566987d1bf29630f3f6e535669a2fa0329"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/3",
+          "text": "Investigate water-table depth and timing with appropriate field observations.",
+          "sha256": "49f6c04217b1eabc85c0421ec3643eeea6929e29ee38b1f2079d715280d68bd9"
+        },
+        {
+          "pointer": "/siteMatch/ui/causes/4",
+          "text": "Blocked outlet",
+          "sha256": "23b1ec7330ad3744c75eaacf2d9269328e1353e3069f2bd2a3e043b46e023e22"
+        },
+        {
+          "pointer": "/siteMatch/ui/causeDetails/4",
+          "text": "Inspect the actual permitted outlet and flow route; do not assume a blockage from this model.",
+          "sha256": "4757df5f4cb666cceacee578c514bd871d5d9f2a7528b6144213051d628ba575"
+        }
+      ],
+      "scientificMeaning": "Select a hypothesis to reveal its schematic location. Standing water alone proves none of them. The model is not a measured profile, drainage simulation or repair instruction.\n\nFine texture\n\nTest actual texture and profile; fine texture is possible, not a confirmed diagnosis.\n\nCompaction\n\nInvestigate structure, depth and moisture using the trainer’s site protocol.\n\nRestrictive horizon\n\nInspect the profile for a limiting horizon rather than inferring one from a surface photograph.\n\nHigh water table\n\nInvestigate water-table depth and timing with appropriate field observations.\n\nBlocked outlet\n\nInspect the actual permitted outlet and flow route; do not assume a blockage from this model.",
+      "displayText": "Select a hypothesis to reveal its schematic location. Standing water alone proves none of them. The model is not a measured profile, drainage simulation or repair instruction.\n\nFine texture\n\nTest actual texture and profile; fine texture is possible, not a confirmed diagnosis.\n\nCompaction\n\nInvestigate structure, depth and moisture using the trainer’s site protocol.\n\nRestrictive horizon\n\nInspect the profile for a limiting horizon rather than inferring one from a surface photograph.\n\nHigh water table\n\nInvestigate water-table depth and timing with appropriate field observations.\n\nBlocked outlet\n\nInspect the actual permitted outlet and flow route; do not assume a blockage from this model.",
+      "captionText": "Select a hypothesis to reveal its schematic location. Standing water alone proves none of them. The model is not a measured profile, drainage simulation or repair instruction.\n\nFine texture\n\nTest actual texture and profile; fine texture is possible, not a confirmed diagnosis.\n\nCompaction\n\nInvestigate structure, depth and moisture using the trainer’s site protocol.\n\nRestrictive horizon\n\nInspect the profile for a limiting horizon rather than inferring one from a surface photograph.\n\nHigh water table\n\nInvestigate water-table depth and timing with appropriate field observations.\n\nBlocked outlet\n\nInspect the actual permitted outlet and flow route; do not assume a blockage from this model.",
+      "spokenText": "Select a hypothesis to reveal its schematic location. Standing water alone proves none of them. The model is not a measured profile, drainage simulation or repair instruction.\n\nFine texture\n\nTest actual texture and profile; fine texture is possible, not a confirmed diagnosis.\n\nCompaction\n\nInvestigate structure, depth and moisture using the trainer’s site protocol.\n\nRestrictive horizon\n\nInspect the profile for a limiting horizon rather than inferring one from a surface photograph.\n\nHigh water table\n\nInvestigate water-table depth and timing with appropriate field observations.\n\nBlocked outlet\n\nInspect the actual permitted outlet and flow route; do not assume a blockage from this model.",
+      "spokenTextSHA256": "37ef196424e96d024cf0da235a14975039dcc90fae175ebbd15a381d554a3e51",
+      "spokenTextSha256": "37ef196424e96d024cf0da235a14975039dcc90fae175ebbd15a381d554a3e51",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5e77358d2ccbe67ab786c5346e92202af292986168ece08b0e20bdd89c98b039",
+      "requestFingerprintSha256": "5e77358d2ccbe67ab786c5346e92202af292986168ece08b0e20bdd89c98b039",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-candidate-record-r1",
+      "unitId": "S3-02-en-candidate-record-r1",
+      "locale": "en",
+      "semanticGroup": "candidate-record",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/candidates",
+          "text": "At least two distinct candidates in each group",
+          "sha256": "5a05e5fc314de353875498d197489cebf534a1f21b1f49eb952c98e91f3b3178"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/0",
+          "text": "Crop name",
+          "sha256": "fcdb6d39e7e7b57228330a95832ba38c2155a7dc65c893f2cfe4a3635d792f1b"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/1",
+          "text": "Crop-specific reason it might fit",
+          "sha256": "2d9640e276e2cb24c8ebf747ae90bf6b5acc4a501020c14eabdbf5d4f5fb178d"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/2",
+          "text": "Unmet condition or limiting factor",
+          "sha256": "7b34563e9eb0fe8266e131c867d387bf5a11f52938c1e68a58d19e9d10a7e45b"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/3",
+          "text": "Occupancy duration, establishment and termination",
+          "sha256": "1f6a4cd4d42f1c1f48c38ae6a53c1ec6b06dca65e5cce4752289e256a9e77136"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateFields/4",
+          "text": "Evidence or source needed to decide",
+          "sha256": "0b48a1650cd69b67784d046f8227d37711e1eb87e08aa27d09e8738f43243671"
+        },
+        {
+          "pointer": "/siteMatch/ui/candidateHelp",
+          "text": "These alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+          "sha256": "67b3af9a51ff6b206674d46952747bc9d7a7ce98b9409d49a210f73935a2690d"
+        }
+      ],
+      "scientificMeaning": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "displayText": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "captionText": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "spokenText": "At least two distinct candidates in each group\n\nCrop name\n\nCrop-specific reason it might fit\n\nUnmet condition or limiting factor\n\nOccupancy duration, establishment and termination\n\nEvidence or source needed to decide\n\nThese alternatives are conditional; include the named possibilities in your analysis. Two rows per group are a minimum, not a limit. A saved row or completeness count does not validate suitability.",
+      "spokenTextSHA256": "57277a191be33fe5afdb8454508557da706a2d3209d499e7370ab0c0e773833c",
+      "spokenTextSha256": "57277a191be33fe5afdb8454508557da706a2d3209d499e7370ab0c0e773833c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "718e480e22d25998b7492ba481d7007b8f1d7b6c439628b00aa0be99c31d32aa",
+      "requestFingerprintSha256": "718e480e22d25998b7492ba481d7007b8f1d7b6c439628b00aa0be99c31d32aa",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-year-local-records-r1",
+      "unitId": "S3-02-en-year-local-records-r1",
+      "locale": "en",
+      "semanticGroup": "year-local-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/year",
+          "text": "Conditional year-one note",
+          "sha256": "4f46bff58137940d600190c2e3e54a81fa926ac9f04952a5f807ac117ece3adf"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/0",
+          "text": "Crop group and candidate",
+          "sha256": "1e7bad5d7da79f92c09f939c23ae52b7211dbb11849169d696ab2f6abc28b919"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/1",
+          "text": "Purpose and land-occupancy duration",
+          "sha256": "fda5035a909fa5983d6a557a7e582cbb17b162772ee273a4a2a403187c2fc55b"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/2",
+          "text": "Expected benefit and remaining yield-cause uncertainty",
+          "sha256": "7dc71d864572cc81199fb1058cccbfd5f84b2ee456e10283afe9739aa5feb568"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/3",
+          "text": "Pre-advice check 1",
+          "sha256": "3583fdbca99abda19027a61576b10e0301b03438493957ec19395e3fb4d985d8"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/4",
+          "text": "Pre-advice check 2",
+          "sha256": "0fce504786ee104ce4841e628aba1b737182d7b5a69e0e2b70d2700dcfc4fd3f"
+        },
+        {
+          "pointer": "/siteMatch/ui/yearFields/5",
+          "text": "Pre-advice check 3",
+          "sha256": "a96beb7c51b85cac169018d08c95d3d47f993fe8aeffef34cfd4daf3aa6ad094"
+        },
+        {
+          "pointer": "/siteMatch/ui/local",
+          "text": "Separate Egyptian-locality evidence",
+          "sha256": "4ff986c1faf0e30436519820b42fb716c3a87b5cbf43c77ccb9e04d4b5566bda"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/0",
+          "text": "Actual locality and observation/source date",
+          "sha256": "b56b143ce4686c530d9f2b7c31f6e97785448b2c3b69d5e70abdead514c9f715"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/1",
+          "text": "Climate and temperature evidence",
+          "sha256": "1b6149b21916527838a06329d7816fc0c7982b3b6c895ddd3acfc85023994e05"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/2",
+          "text": "Season and crop/variety requirements",
+          "sha256": "c990c2fffd9aac5a5987149bf5311801b6a6ad672dc6da80e6c4c1bc7ad68f40"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/3",
+          "text": "Reliable rainfall/irrigation and water constraints",
+          "sha256": "42f6e7f19bc1015d20f6279876a5a51f92aab581f41e4824df6c04cce44652a9"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/4",
+          "text": "Soil, profile, drainage, pH, nutrients and salinity evidence",
+          "sha256": "8f4578c77872c429d1e7d3cb9e6a91104b730047b3f12441d528a6a303861e91"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/5",
+          "text": "Measured light/day-length context",
+          "sha256": "b098e0cfb17fd397b224487e3f4475a5f1fb6deafcec96431a9a504132cb5938"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/6",
+          "text": "Crop/pest/disease history and diagnosis evidence",
+          "sha256": "af4922598d82d60044dac2dc29dc23d2b9df38d8fe1e15d9495ed33e2b583114"
+        },
+        {
+          "pointer": "/siteMatch/ui/localFields/7",
+          "text": "Equipment/market constraints and remaining unknowns",
+          "sha256": "b76dd6c0099a055ce98c138cdb6d6adff4de6eaaf8787dc22e192b249e82637b"
+        },
+        {
+          "pointer": "/siteMatch/ui/boundary",
+          "text": "Knowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+          "sha256": "f498654a7bf8d2b0bdc418d5f138b9503ab3309e1006891ef69fd45c5f40e65e"
+        }
+      ],
+      "scientificMeaning": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check 1\n\nPre-advice check 2\n\nPre-advice check 3\n\nSeparate Egyptian-locality evidence\n\nActual locality and observation/source date\n\nClimate and temperature evidence\n\nSeason and crop/variety requirements\n\nReliable rainfall/irrigation and water constraints\n\nSoil, profile, drainage, pH, nutrients and salinity evidence\n\nMeasured light/day-length context\n\nCrop/pest/disease history and diagnosis evidence\n\nEquipment/market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+      "displayText": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check 1\n\nPre-advice check 2\n\nPre-advice check 3\n\nSeparate Egyptian-locality evidence\n\nActual locality and observation/source date\n\nClimate and temperature evidence\n\nSeason and crop/variety requirements\n\nReliable rainfall/irrigation and water constraints\n\nSoil, profile, drainage, pH, nutrients and salinity evidence\n\nMeasured light/day-length context\n\nCrop/pest/disease history and diagnosis evidence\n\nEquipment/market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+      "captionText": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check 1\n\nPre-advice check 2\n\nPre-advice check 3\n\nSeparate Egyptian-locality evidence\n\nActual locality and observation/source date\n\nClimate and temperature evidence\n\nSeason and crop/variety requirements\n\nReliable rainfall/irrigation and water constraints\n\nSoil, profile, drainage, pH, nutrients and salinity evidence\n\nMeasured light/day-length context\n\nCrop/pest/disease history and diagnosis evidence\n\nEquipment/market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+      "spokenText": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check one\n\nPre-advice check two\n\nPre-advice check three\n\nSeparate Egyptian-locality evidence\n\nActual locality and the date of the observation or source\n\nClimate and temperature evidence\n\nSeason and crop, variety requirements\n\nReliable rainfall, irrigation and water constraints\n\nSoil, profile, drainage, P H, nutrients and salinity evidence\n\nMeasured light, day-length context\n\nCrop, pest, disease history and diagnosis evidence\n\nEquipment, market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+      "spokenTextSHA256": "272d3f72393c6b5ead64992312dd5b09179fab83a4371f99a602e1d811e47843",
+      "spokenTextSha256": "272d3f72393c6b5ead64992312dd5b09179fab83a4371f99a602e1d811e47843",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check 1\n\nPre-advice check 2\n\nPre-advice check 3\n\nSeparate Egyptian-locality evidence\n\nActual locality and observation/source date\n\nClimate and temperature evidence\n\nSeason and crop/variety requirements\n\nReliable rainfall/irrigation and water constraints\n\nSoil, profile, drainage, pH, nutrients and salinity evidence\n\nMeasured light/day-length context\n\nCrop/pest/disease history and diagnosis evidence\n\nEquipment/market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+          "spoken": "Conditional year-one note\n\nCrop group and candidate\n\nPurpose and land-occupancy duration\n\nExpected benefit and remaining yield-cause uncertainty\n\nPre-advice check one\n\nPre-advice check two\n\nPre-advice check three\n\nSeparate Egyptian-locality evidence\n\nActual locality and the date of the observation or source\n\nClimate and temperature evidence\n\nSeason and crop, variety requirements\n\nReliable rainfall, irrigation and water constraints\n\nSoil, profile, drainage, P H, nutrients and salinity evidence\n\nMeasured light, day-length context\n\nCrop, pest, disease history and diagnosis evidence\n\nEquipment, market constraints and remaining unknowns\n\nKnowledge and reasoning only; no actual field suitability, crop prescription, physical skill or trainer approval is certified here.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "30a42bb14a52546b67f9385e534c23c18355d9e2dbc79d3ca8c1bbdbadcbc4b4",
+      "requestFingerprintSha256": "30a42bb14a52546b67f9385e534c23c18355d9e2dbc79d3ca8c1bbdbadcbc4b4",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-conditional-support-r1",
+      "unitId": "S3-02-en-conditional-support-r1",
+      "locale": "en",
+      "semanticGroup": "conditional-support",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/siteMatch/ui/scaffoldTitle",
+          "text": "Six conditional support cards",
+          "sha256": "c3e14ac860dcef179617d5f64c85f89985a8bdb56930eeeaef5706dedb953691"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/0",
+          "text": "Maize: investigate N supply and declining yield; do not promise success from texture.",
+          "sha256": "414bb30b24c026f6ac052506caa70b06ccf7267e9655d30e59d6aaa0bb217ac2"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/1",
+          "text": "Barley: verify variety, season, water and nutrient plan; no universal lower-N rule.",
+          "sha256": "01d1a435048183763c61f1a3d6f2e61033611749700115da4eb5af11048be89b"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/2",
+          "text": "Soybean: verify crop fit, compatible nodules, water and harvest/residue use.",
+          "sha256": "37a6807f9fccfa21724d2817fd57abe2d79ec6b764997fcda770a49059cb2740"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/3",
+          "text": "Clover: specify species, cover/forage purpose, duration and termination.",
+          "sha256": "b8e27f5385af5381fd67167d96cfade4e1f47eb043cca7f8cd6df9bc455a600c"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/4",
+          "text": "Carrot: check unobstructed rooting, drainage, water, nutrients and season.",
+          "sha256": "0c0b2272a179bac6750ecfd554a6b901e87ad24dfe093502d539a70bb156f5e2"
+        },
+        {
+          "pointer": "/siteMatch/ui/scaffold/5",
+          "text": "Strawberry: check pH, drainage, variety, climate and continuing management.",
+          "sha256": "9eab433375852482c10ed1e030d6ea171aa9de6a2a5541267d922c4744b8c747"
+        },
+        {
+          "pointer": "/siteMatch/ui/reason",
+          "text": "Write your explanation before comparing with the worked reasoning.",
+          "sha256": "bd0ed57c5628a29d8fe4a3235d72a9017121df09eb69b1dba9fcdcb4d111d4b3"
+        },
+        {
+          "pointer": "/siteMatch/ui/reasonBoundary",
+          "text": "Compare your argument and revise it. This button does not grade meaning or award a criterion.",
+          "sha256": "9001597a4291df30dcc1978fd65188cc2836b7c2592fe1b9bfc2699adfabfd44"
+        }
+      ],
+      "scientificMeaning": "Six conditional support cards\n\nMaize: investigate N supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-N rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest/residue use.\n\nClover: specify species, cover/forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check pH, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+      "displayText": "Six conditional support cards\n\nMaize: investigate N supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-N rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest/residue use.\n\nClover: specify species, cover/forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check pH, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+      "captionText": "Six conditional support cards\n\nMaize: investigate N supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-N rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest/residue use.\n\nClover: specify species, cover/forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check pH, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+      "spokenText": "Six conditional support cards\n\nMaize: investigate nitrogen supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-nitrogen rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest, residue use.\n\nClover: specify the species, the cover or forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check P H, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+      "spokenTextSHA256": "1e194cc4642f0dd8eba85800568eeeab4e9523380dccec22a1020725e8448a4e",
+      "spokenTextSha256": "1e194cc4642f0dd8eba85800568eeeab4e9523380dccec22a1020725e8448a4e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Six conditional support cards\n\nMaize: investigate N supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-N rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest/residue use.\n\nClover: specify species, cover/forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check pH, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+          "spoken": "Six conditional support cards\n\nMaize: investigate nitrogen supply and declining yield; do not promise success from texture.\n\nBarley: verify variety, season, water and nutrient plan; no universal lower-nitrogen rule.\n\nSoybean: verify crop fit, compatible nodules, water and harvest, residue use.\n\nClover: specify the species, the cover or forage purpose, duration and termination.\n\nCarrot: check unobstructed rooting, drainage, water, nutrients and season.\n\nStrawberry: check P H, drainage, variety, climate and continuing management.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful non-key guidance; naturalspokentermexpansions/Arabicgrammar and transparentGerman date/crop-pestcompound grammar. Sourceclassification,5hypothesesnotdiagnoses, fielddata/locality/unknowns/sixconditionalcards and noonlinephysicalapproval intact. Source/displayunchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "35f818765373b72a5791b7b5af28ea59f2687c5869106ac9e916e41190e7c9ec",
+      "requestFingerprintSha256": "35f818765373b72a5791b7b5af28ea59f2687c5869106ac9e916e41190e7c9ec",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
