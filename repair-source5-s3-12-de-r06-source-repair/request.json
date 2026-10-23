@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_SOURCE5_S3_12_DE_R06_SOURCE_REPAIR",
+  "stepId": "S3-12",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-source5-s3-12-de-r06-source-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-12-de-R06-source-repair-r1",
+      "unitId": "S3-12-de-R06-source-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair-source5-s3-12-de-r06-source-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Der Kunde in der Quelle wünscht ein gut entwässertes, leicht saures und phosphorreiches Substrat. Das sind im Fall genannte Ziele, keine gemessenen Eigenschaften oder ein bestätigter Phosphorbedarf dieses Produkts. Die Abschlusskarte beschreibt einen Kunden mit schwerem Ton und ungefähr 5 kg Topfsubstrat oder Verbesserungsmischung aus bereitgestelltem gesiebtem Kompost, Perlit und Knochenmehl. Sechs Punkte: genehmigte Auswahl, begründete dokumentierte Anteile, gemessene Masse nahe 5 kg, gleichmäßige Mischung, passender sicher verschlossener Sack und klares Etikett „Tomato Potting Mix“ mit echten Zutaten. „Viel“, „mittel“ und „weniger“ in der Vorlage sind keine Zahlen; Rezept, Gewichtstoleranz, Analysen und ob Feldton in den Sack gehört fehlen. Diese Werte liefert nur die dokumentierte Lehrkraftvorgabe.",
+          "sha256": "bb0a96a8f49bd63489995fbbc60724cbf67d3e2291cf024f193acab20cdd944a"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Die Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+          "sha256": "6063229ff7bed04ea4a986486ffd0c8526041574108b12189273b051f67e9d67"
+        }
+      ],
+      "scientificMeaning": "Der Kunde in der Quelle wünscht ein gut entwässertes, leicht saures und phosphorreiches Substrat. Das sind im Fall genannte Ziele, keine gemessenen Eigenschaften oder ein bestätigter Phosphorbedarf dieses Produkts. Die Abschlusskarte beschreibt einen Kunden mit schwerem Ton und ungefähr 5 kg Topfsubstrat oder Verbesserungsmischung aus bereitgestelltem gesiebtem Kompost, Perlit und Knochenmehl. Sechs Punkte: genehmigte Auswahl, begründete dokumentierte Anteile, gemessene Masse nahe 5 kg, gleichmäßige Mischung, passender sicher verschlossener Sack und klares Etikett „Tomato Potting Mix“ mit echten Zutaten. „Viel“, „mittel“ und „weniger“ in der Vorlage sind keine Zahlen; Rezept, Gewichtstoleranz, Analysen und ob Feldton in den Sack gehört fehlen. Diese Werte liefert nur die dokumentierte Lehrkraftvorgabe.\n\nDie Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+      "displayText": "Der Kunde in der Quelle wünscht ein gut entwässertes, leicht saures und phosphorreiches Substrat. Das sind im Fall genannte Ziele, keine gemessenen Eigenschaften oder ein bestätigter Phosphorbedarf dieses Produkts. Die Abschlusskarte beschreibt einen Kunden mit schwerem Ton und ungefähr 5 kg Topfsubstrat oder Verbesserungsmischung aus bereitgestelltem gesiebtem Kompost, Perlit und Knochenmehl. Sechs Punkte: genehmigte Auswahl, begründete dokumentierte Anteile, gemessene Masse nahe 5 kg, gleichmäßige Mischung, passender sicher verschlossener Sack und klares Etikett „Tomato Potting Mix“ mit echten Zutaten. „Viel“, „mittel“ und „weniger“ in der Vorlage sind keine Zahlen; Rezept, Gewichtstoleranz, Analysen und ob Feldton in den Sack gehört fehlen. Diese Werte liefert nur die dokumentierte Lehrkraftvorgabe.\n\nDie Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+      "captionText": "Der Kunde in der Quelle wünscht ein gut entwässertes, leicht saures und phosphorreiches Substrat. Das sind im Fall genannte Ziele, keine gemessenen Eigenschaften oder ein bestätigter Phosphorbedarf dieses Produkts. Die Abschlusskarte beschreibt einen Kunden mit schwerem Ton und ungefähr 5 kg Topfsubstrat oder Verbesserungsmischung aus bereitgestelltem gesiebtem Kompost, Perlit und Knochenmehl. Sechs Punkte: genehmigte Auswahl, begründete dokumentierte Anteile, gemessene Masse nahe 5 kg, gleichmäßige Mischung, passender sicher verschlossener Sack und klares Etikett „Tomato Potting Mix“ mit echten Zutaten. „Viel“, „mittel“ und „weniger“ in der Vorlage sind keine Zahlen; Rezept, Gewichtstoleranz, Analysen und ob Feldton in den Sack gehört fehlen. Diese Werte liefert nur die dokumentierte Lehrkraftvorgabe.\n\nDie Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+      "spokenText": "Die Lehrkraft prüft den Zweck, die zulässigen Zutaten, die Anteilsbasis, den Feuchtezustand, die Toleranz, den Phosphorbedarf sowie Sack und Etikett.",
+      "spokenTextSHA256": "fd72999054caf624f74719a30d7fd883d82532360fbed177c54b1ae39c9f6c26",
+      "spokenTextSha256": "fd72999054caf624f74719a30d7fd883d82532360fbed177c54b1ae39c9f6c26",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Der Kunde in der Quelle wünscht ein gut entwässertes, leicht saures und phosphorreiches Substrat. Das sind im Fall genannte Ziele, keine gemessenen Eigenschaften oder ein bestätigter Phosphorbedarf dieses Produkts. Die Abschlusskarte beschreibt einen Kunden mit schwerem Ton und ungefähr 5 kg Topfsubstrat oder Verbesserungsmischung aus bereitgestelltem gesiebtem Kompost, Perlit und Knochenmehl. Sechs Punkte: genehmigte Auswahl, begründete dokumentierte Anteile, gemessene Masse nahe 5 kg, gleichmäßige Mischung, passender sicher verschlossener Sack und klares Etikett „Tomato Potting Mix“ mit echten Zutaten. „Viel“, „mittel“ und „weniger“ in der Vorlage sind keine Zahlen; Rezept, Gewichtstoleranz, Analysen und ob Feldton in den Sack gehört fehlen. Diese Werte liefert nur die dokumentierte Lehrkraftvorgabe.\n\nDie Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+          "spoken": "Die Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Die Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett.",
+          "spoken": "Die Lehrkraft prüft den Zweck, die zulässigen Zutaten, die Anteilsbasis, den Feuchtezustand, die Toleranz, den Phosphorbedarf sowie Sack und Etikett.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "8736129851d94d1961bf345efa276f76362569d538220c0aaba182e037744ce0",
+      "requestFingerprintSha256": "8736129851d94d1961bf345efa276f76362569d538220c0aaba182e037744ce0",
+      "sourcePlanSha256": "ea8127d0b3f12bef0949863555facf2e800b86c180ec31b55490da9d71dfdf9a",
+      "exactSentenceBefore": "Die Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/4/paragraphs/1",
+        "sourceText": "Die Lehrkraft prüft Zweck, zulässige Zutaten, Anteilsbasis, Feuchtezustand, Toleranz, P-Bedarf und Sack/Etikett. Der Lernende berechnet und wiegt jeden Anteil, mischt gründlich und kontrolliert die Masse. Das Etikett nennt tatsächliche Zutaten und gemessenes Nettogewicht; „leicht sauer“ oder sichere Tomatenleistung sind ohne Messung nicht erlaubt. Produktname und Verwendung müssen gemäß dokumentierter Vorgabe zwischen vollständigem Topfsubstrat und Bodenverbesserungsmittel unterscheiden. Ton-Lehrgefäß und Tomatenprodukt bleiben zwei getrennte Bewertungen.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-12-de-R06-source-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
