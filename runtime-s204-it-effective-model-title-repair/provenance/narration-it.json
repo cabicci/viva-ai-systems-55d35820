@@ -1,0 +1,74 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-it.json",
+    "sha256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+    "bytes": 25888
+  },
+  "units": [
+    {
+      "id": "S2-04-it-effective-model-title-repair-r1",
+      "unitId": "S2-04-it-effective-model-title-repair-r1",
+      "locale": "it",
+      "semanticGroup": "runtime-s204-it-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/ui/modelTitle",
+          "text": "Scala pH · modello didattico3D",
+          "sha256": "6718117a48457ca3fe5eed1e727103093687cf21421536552afedbfbb0e433b1"
+        }
+      ],
+      "scientificMeaning": "Scala pH · modello didattico3D",
+      "displayText": "Scala pH · modello didattico3D",
+      "captionText": "Scala pH · modello didattico3D",
+      "spokenText": "Scala P H · schema didattico interattivo",
+      "spokenTextSHA256": "35d50965c1bf87467b417046d1f0549d1c0501da1d8a9d701436e6ec86428c1a",
+      "spokenTextSha256": "35d50965c1bf87467b417046d1f0549d1c0501da1d8a9d701436e6ec86428c1a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Scala pH · modello didattico3D",
+          "spoken": "Scala pH · modello didattico3D",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Scala pH · modello didattico3D",
+          "spoken": "Scala P H · schema didattico interattivo",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "5479a608812c1726796cf8d0a41e5b401eff43faebe2f155c2370955b7c298b1",
+      "requestFingerprintSha256": "5479a608812c1726796cf8d0a41e5b401eff43faebe2f155c2370955b7c298b1",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Scala pH · modello didattico3D",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/phPractice/ui/modelTitle",
+        "original": "Scala pH · modello didattico3D",
+        "effective": "Scala pH · schema didattico interattivo",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}

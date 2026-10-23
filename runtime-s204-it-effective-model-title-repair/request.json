@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "scope": "RUNTIME_S204_IT_EFFECTIVE_MODEL_TITLE_REPAIR",
+  "stepId": "S2-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-runtime-s204-it-effective-model-title-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-04-it-effective-model-title-repair-r1",
+      "unitId": "S2-04-it-effective-model-title-repair-r1",
+      "locale": "it",
+      "semanticGroup": "runtime-s204-it-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/ui/modelTitle",
+          "text": "Scala pH · modello didattico3D",
+          "sha256": "6718117a48457ca3fe5eed1e727103093687cf21421536552afedbfbb0e433b1"
+        }
+      ],
+      "scientificMeaning": "Scala pH · modello didattico3D",
+      "displayText": "Scala pH · modello didattico3D",
+      "captionText": "Scala pH · modello didattico3D",
+      "spokenText": "Scala P H · schema didattico interattivo",
+      "spokenTextSHA256": "35d50965c1bf87467b417046d1f0549d1c0501da1d8a9d701436e6ec86428c1a",
+      "spokenTextSha256": "35d50965c1bf87467b417046d1f0549d1c0501da1d8a9d701436e6ec86428c1a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Scala pH · modello didattico3D",
+          "spoken": "Scala pH · modello didattico3D",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Scala pH · modello didattico3D",
+          "spoken": "Scala P H · schema didattico interattivo",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "5479a608812c1726796cf8d0a41e5b401eff43faebe2f155c2370955b7c298b1",
+      "requestFingerprintSha256": "5479a608812c1726796cf8d0a41e5b401eff43faebe2f155c2370955b7c298b1",
+      "sourcePlanSha256": "46f6915ccfc717c573972566351d5bf4f91f836ffcf2abf02376f8ee2f766848",
+      "exactSentenceBefore": "Scala pH · modello didattico3D",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/phPractice/ui/modelTitle",
+        "original": "Scala pH · modello didattico3D",
+        "effective": "Scala pH · schema didattico interattivo",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-04-it-effective-model-title-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
