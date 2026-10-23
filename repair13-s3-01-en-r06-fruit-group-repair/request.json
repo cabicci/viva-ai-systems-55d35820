@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR13_S3_01_EN_R06_FRUIT_GROUP_REPAIR",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair13-s3-01-en-r06-fruit-group-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-en-R06-fruit-group-repair-r1",
+      "unitId": "S3-01-en-R06-fruit-group-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair13-s3-01-en-r06-fruit-group-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Examples include apple, orange, grape, strawberry, blueberry and banana. A fruit in botanical terms develops from a flower; the practical fruit-crop group is about production and use. Many orchard trees and vines stay in the ground for years, but these six examples do not all share the same plant form or management cycle. Strawberry and banana especially show why 'every fruit is a tree or bush' is false.",
+          "sha256": "d72102a9d164a617812f9f4157b3ed3f44133ddb4a6637f1c1ec8cf6349b9387"
+        }
+      ],
+      "scientificMeaning": "Examples include apple, orange, grape, strawberry, blueberry and banana. A fruit in botanical terms develops from a flower; the practical fruit-crop group is about production and use. Many orchard trees and vines stay in the ground for years, but these six examples do not all share the same plant form or management cycle. Strawberry and banana especially show why 'every fruit is a tree or bush' is false.",
+      "displayText": "Examples include apple, orange, grape, strawberry, blueberry and banana. A fruit in botanical terms develops from a flower; the practical fruit-crop group is about production and use. Many orchard trees and vines stay in the ground for years, but these six examples do not all share the same plant form or management cycle. Strawberry and banana especially show why 'every fruit is a tree or bush' is false.",
+      "captionText": "Examples include apple, orange, grape, strawberry, blueberry and banana. A fruit in botanical terms develops from a flower; the practical fruit-crop group is about production and use. Many orchard trees and vines stay in the ground for years, but these six examples do not all share the same plant form or management cycle. Strawberry and banana especially show why 'every fruit is a tree or bush' is false.",
+      "spokenText": "This practical fruit group is based on production and use.",
+      "spokenTextSHA256": "e5439ec381e63723b2603f7c6bc0816c64361aebacc7ec80bcd7a153b805e51e",
+      "spokenTextSha256": "e5439ec381e63723b2603f7c6bc0816c64361aebacc7ec80bcd7a153b805e51e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Examples include apple, orange, grape, strawberry, blueberry and banana. A fruit in botanical terms develops from a flower; the practical fruit-crop group is about production and use. Many orchard trees and vines stay in the ground for years, but these six examples do not all share the same plant form or management cycle. Strawberry and banana especially show why 'every fruit is a tree or bush' is false.",
+          "spoken": "the practical fruit-crop group is about production and use.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "the practical fruit-crop group is about production and use.",
+          "spoken": "This practical fruit group is based on production and use.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "f74bef6d882de57151096796f751aae0cf18c7dbc90ef99e042c3845b30477ae",
+      "requestFingerprintSha256": "f74bef6d882de57151096796f751aae0cf18c7dbc90ef99e042c3845b30477ae",
+      "sourcePlanSha256": "b2d9837cc0058035d0609a4b72752673a69939764aac2489d75699bc16e49920",
+      "exactSentenceBefore": "the practical fruit-crop group is about production and use.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S3-01-en-R06-fruit-group-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
