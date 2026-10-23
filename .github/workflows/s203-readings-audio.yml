@@ -1,0 +1,2743 @@
+name: S203 complete28 reading passages four concurrent locale lanes
+'on':
+  push:
+    branches:
+    - work/soil-s203-readings-audio-20261023-r1
+    paths:
+    - s203-readings-audio/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s203-readings-audio-86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31
+  cancel-in-progress: false
+env:
+  PACKAGE: s203-readings-audio
+  REQUEST_SHA: 86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31
+  WORKER_SHA: f2a87ae2fda5ecdc7104b5cd9d652d09b740d93f7b6366c293f9ae47b8b08f18
+  FREEZE_SHA: 64579d547cc4aa6ba0045c349b04534c41dc67661e1a5c4fc3b29a260ae2b2ee
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_ar:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s203-readings-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: ar-EG
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R01-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R01-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R01-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R01-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R02-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R02-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R02-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R02-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R03-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R03-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R03-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R03-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R04-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R04-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R04-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R04-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R04-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R04-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R05-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R05-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R05-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R05-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R05-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R05-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R06-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R06-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R06-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R06-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R06-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R06-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-ar-EG-R07-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-ar-EG-R07-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-ar-EG-R07-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R07-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-ar-EG-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-ar-EG-R07-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-ar-EG-R07-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: blind-review S2-03-ar-EG-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R01-r1
+
+        '
+    - name: compare S2-03-ar-EG-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R01-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R01-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R01-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R01-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R02-r1
+
+        '
+    - name: compare S2-03-ar-EG-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R02-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R02-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R02-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R02-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R03-r1
+
+        '
+    - name: compare S2-03-ar-EG-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R03-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R03-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R03-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R03-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R04-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R04-r1
+
+        '
+    - name: compare S2-03-ar-EG-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R04-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R04-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R04-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R04-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R04-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R05-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R05-r1
+
+        '
+    - name: compare S2-03-ar-EG-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R05-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R05-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R05-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R05-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R05-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R06-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R06-r1
+
+        '
+    - name: compare S2-03-ar-EG-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R06-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R06-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R06-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R06-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R06-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-ar-EG-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-ar-EG-R07-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-ar-EG-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-ar-EG-R07-r1
+
+        '
+    - name: compare S2-03-ar-EG-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-ar-EG-R07-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-ar-EG-R07-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-ar-EG-R07-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-ar-EG-R07-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-ar-EG-R07-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-ar-EG-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-ar-EG-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s203-readings-audio.yml'
+  narrate_en:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s203-readings-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: en
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S2-03-en-R01-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R01-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R01-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R01-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R02-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R02-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R02-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R02-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R03-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R03-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R03-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R03-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R04-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R04-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R04-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R04-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R04-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R04-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R05-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R05-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R05-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R05-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R05-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R05-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R06-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R06-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R06-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R06-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R06-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R06-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-en-R07-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-en-R07-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-en-R07-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R07-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-en-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-en-R07-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-en-R07-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: blind-review S2-03-en-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R01-r1
+
+        '
+    - name: compare S2-03-en-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R01-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R01-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R01-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R01-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R02-r1
+
+        '
+    - name: compare S2-03-en-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R02-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R02-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R02-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R02-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R03-r1
+
+        '
+    - name: compare S2-03-en-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R03-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R03-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R03-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R03-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R04-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R04-r1
+
+        '
+    - name: compare S2-03-en-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R04-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R04-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R04-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R04-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R04-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R05-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R05-r1
+
+        '
+    - name: compare S2-03-en-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R05-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R05-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R05-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R05-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R05-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R06-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R06-r1
+
+        '
+    - name: compare S2-03-en-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R06-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R06-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R06-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R06-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R06-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-en-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-en-R07-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-en-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-en-R07-r1
+
+        '
+    - name: compare S2-03-en-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-en-R07-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-en-R07-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-en-R07-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-en-R07-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-en-R07-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-en-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-en-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s203-readings-audio.yml'
+  narrate_it:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s203-readings-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: it
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S2-03-it-R01-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R01-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R01-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R01-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R02-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R02-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R02-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R02-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R03-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R03-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R03-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R03-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R04-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R04-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R04-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R04-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R04-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R04-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R05-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R05-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R05-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R05-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R05-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R05-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R06-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R06-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R06-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R06-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R06-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R06-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-it-R07-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-it-R07-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-it-R07-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R07-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-it-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-it-R07-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-it-R07-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: blind-review S2-03-it-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R01-r1
+
+        '
+    - name: compare S2-03-it-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R01-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R01-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R01-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R01-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R02-r1
+
+        '
+    - name: compare S2-03-it-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R02-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R02-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R02-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R02-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R03-r1
+
+        '
+    - name: compare S2-03-it-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R03-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R03-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R03-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R03-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R04-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R04-r1
+
+        '
+    - name: compare S2-03-it-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R04-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R04-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R04-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R04-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R04-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R05-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R05-r1
+
+        '
+    - name: compare S2-03-it-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R05-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R05-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R05-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R05-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R05-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R06-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R06-r1
+
+        '
+    - name: compare S2-03-it-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R06-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R06-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R06-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R06-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R06-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-it-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-it-R07-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-it-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-it-R07-r1
+
+        '
+    - name: compare S2-03-it-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-it-R07-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-it-R07-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-it-R07-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-it-R07-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-it-R07-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-it-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-it-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s203-readings-audio.yml'
+  narrate_de:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s203-readings-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: de
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S2-03-de-R01-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R01-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R01-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R01-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R02-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R02-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R02-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R02-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R03-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R03-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R03-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R03-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R04-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R04-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R04-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R04-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R04-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R04-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R05-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R05-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R05-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R05-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R05-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R05-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R06-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R06-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R06-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R06-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R06-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R06-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S2-03-de-R07-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-03-de-R07-r1
+
+        '
+    - name: Upload full immutable audio once S2-03-de-R07-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R07-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-03-de-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-03-de-R07-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-03-de-R07-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: blind-review S2-03-de-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R01-r1
+
+        '
+    - name: compare S2-03-de-R01-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R01-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R01-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R01-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R01-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R02-r1
+
+        '
+    - name: compare S2-03-de-R02-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R02-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R02-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R02-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R02-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R03-r1
+
+        '
+    - name: compare S2-03-de-R03-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R03-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R03-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R03-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R03-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R04-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R04-r1
+
+        '
+    - name: compare S2-03-de-R04-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R04-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R04-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R04-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R04-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R04-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R04-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R05-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R05-r1
+
+        '
+    - name: compare S2-03-de-R05-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R05-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R05-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R05-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R05-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R05-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R05-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R06-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R06-r1
+
+        '
+    - name: compare S2-03-de-R06-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R06-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R06-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R06-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R06-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R06-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R06-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S2-03-de-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-03-de-R07-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-03-de-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-03-de-R07-r1
+
+        '
+    - name: compare S2-03-de-R07-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-03-de-R07-r1
+
+        '
+    - name: Stage thin diagnostics S2-03-de-R07-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-03-de-R07-r1
+
+        '
+    - name: Preserve thin diagnostics S2-03-de-R07-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-S2-03-de-R07-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-03-de-R07-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s203-readings-r1-de-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s203-readings-audio.yml'

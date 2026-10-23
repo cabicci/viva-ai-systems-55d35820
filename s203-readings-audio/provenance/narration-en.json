@@ -1,0 +1,333 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-03-en.json",
+    "sha256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+    "bytes": 25406
+  },
+  "units": [
+    {
+      "id": "S2-03-en-R01-r1",
+      "unitId": "S2-03-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Chlorosis means a loss of normal green colour, often seen as yellowing. A deficiency means an inadequate supply or use of a required nutrient; a yellow leaf by itself does not prove one. A leaf margin is its outer edge; the midrib is its central vein. Stunted means smaller or slower-growing than expected for the crop and stage.",
+          "sha256": "03ba285846452add5c459044e58c7001b6199b265b1ab87d1cdc0e5a5096a9b4"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "First name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+          "sha256": "9bad027e1e963b9f453703af17f72517049adcd225daad16b6320b4d1ffbeb4b"
+        }
+      ],
+      "scientificMeaning": "Chlorosis means a loss of normal green colour, often seen as yellowing. A deficiency means an inadequate supply or use of a required nutrient; a yellow leaf by itself does not prove one. A leaf margin is its outer edge; the midrib is its central vein. Stunted means smaller or slower-growing than expected for the crop and stage.\n\nFirst name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "displayText": "Chlorosis means a loss of normal green colour, often seen as yellowing. A deficiency means an inadequate supply or use of a required nutrient; a yellow leaf by itself does not prove one. A leaf margin is its outer edge; the midrib is its central vein. Stunted means smaller or slower-growing than expected for the crop and stage.\n\nFirst name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "captionText": "Chlorosis means a loss of normal green colour, often seen as yellowing. A deficiency means an inadequate supply or use of a required nutrient; a yellow leaf by itself does not prove one. A leaf margin is its outer edge; the midrib is its central vein. Stunted means smaller or slower-growing than expected for the crop and stage.\n\nFirst name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "spokenText": "Chlorosis means a loss of normal green colour, often seen as yellowing. A deficiency means an inadequate supply or use of a required nutrient; a yellow leaf by itself does not prove one. A leaf margin is its outer edge; the midrib is its central vein. Stunted means smaller or slower-growing than expected for the crop and stage.\n\nFirst name the crop and growth stage. Compare affected and apparently healthy plants. Record whether the sign begins on older, lower leaves or on newer growth; whether the colour follows the midrib, outer margin or spaces between veins; and whether stems and roots look normal. Then offer a likely explanation and what might disprove it. Photograph lighting and leaf position can mislead.",
+      "spokenTextSHA256": "5f4e203579aafb64ae82ac2e3833da5314d19a96922825ec4459becfe196ed9f",
+      "spokenTextSha256": "5f4e203579aafb64ae82ac2e3833da5314d19a96922825ec4459becfe196ed9f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4ef0c6fa6f11e5ca9f0cca99f999ce4c33d733d1e044d7e08cb417490b49acf2",
+      "requestFingerprintSha256": "4ef0c6fa6f11e5ca9f0cca99f999ce4c33d733d1e044d7e08cb417490b49acf2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R02-r1",
+      "unitId": "S2-03-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Nitrogen, phosphorus and potassium can be redistributed inside a plant from older tissue toward newer growth when supply is limiting. Their shortage signs therefore often appear first on older, lower leaves. This is movement within the plant after uptake, different from how ions travel through soil toward the root.",
+          "sha256": "2c1db937075af2a69374270b1aea4483c724c7fcd2e6b7c92343bd3d18e4424f"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "This is a tendency, not a universal rule. Calcium is poorly mobile and sulfur has limited to moderate mobility; their deficiency patterns may appear on newer growth, depending on crop and conditions. A yellow new leaf is not automatically a calcium or sulfur deficiency. Crop, age, root health, weather, disease and other stresses still matter.",
+          "sha256": "f802375a7d6b25988ba39a405f08db4a537d59fbe12be3c8ceb88c87663be339"
+        }
+      ],
+      "scientificMeaning": "Nitrogen, phosphorus and potassium can be redistributed inside a plant from older tissue toward newer growth when supply is limiting. Their shortage signs therefore often appear first on older, lower leaves. This is movement within the plant after uptake, different from how ions travel through soil toward the root.\n\nThis is a tendency, not a universal rule. Calcium is poorly mobile and sulfur has limited to moderate mobility; their deficiency patterns may appear on newer growth, depending on crop and conditions. A yellow new leaf is not automatically a calcium or sulfur deficiency. Crop, age, root health, weather, disease and other stresses still matter.",
+      "displayText": "Nitrogen, phosphorus and potassium can be redistributed inside a plant from older tissue toward newer growth when supply is limiting. Their shortage signs therefore often appear first on older, lower leaves. This is movement within the plant after uptake, different from how ions travel through soil toward the root.\n\nThis is a tendency, not a universal rule. Calcium is poorly mobile and sulfur has limited to moderate mobility; their deficiency patterns may appear on newer growth, depending on crop and conditions. A yellow new leaf is not automatically a calcium or sulfur deficiency. Crop, age, root health, weather, disease and other stresses still matter.",
+      "captionText": "Nitrogen, phosphorus and potassium can be redistributed inside a plant from older tissue toward newer growth when supply is limiting. Their shortage signs therefore often appear first on older, lower leaves. This is movement within the plant after uptake, different from how ions travel through soil toward the root.\n\nThis is a tendency, not a universal rule. Calcium is poorly mobile and sulfur has limited to moderate mobility; their deficiency patterns may appear on newer growth, depending on crop and conditions. A yellow new leaf is not automatically a calcium or sulfur deficiency. Crop, age, root health, weather, disease and other stresses still matter.",
+      "spokenText": "Nitrogen, phosphorus and potassium can be redistributed inside a plant from older tissue toward newer growth when supply is limiting. Their shortage signs therefore often appear first on older, lower leaves. This is movement within the plant after uptake, different from how ions travel through soil toward the root.\n\nThis is a tendency, not a universal rule. Calcium is poorly mobile and sulfur has limited to moderate mobility; their deficiency patterns may appear on newer growth, depending on crop and conditions. A yellow new leaf is not automatically a calcium or sulfur deficiency. Crop, age, root health, weather, disease and other stresses still matter.",
+      "spokenTextSHA256": "569231f4facfc175e1248a2f2c389ee0e74605933b991a4363925a3ca764ff7c",
+      "spokenTextSha256": "569231f4facfc175e1248a2f2c389ee0e74605933b991a4363925a3ca764ff7c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f235294e122c50a0b9d0b50132767ed985c637ae1813596e89a54c698a893f71",
+      "requestFingerprintSha256": "f235294e122c50a0b9d0b50132767ed985c637ae1813596e89a54c698a893f71",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R03-r1",
+      "unitId": "S2-03-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "N helps form proteins and chlorophyll and supports leafy growth. With inadequate N, plants may be pale and stunted and older leaves may yellow first. In maize, a characteristic yellow V begins at the leaf tip and follows the midrib toward the base. Look for the affected older, lower leaf and its centre line; describe the pattern before naming N as a possibility.",
+          "sha256": "ce8758ab682f1dfb61ea18b72f7b5e18d72b2ccb09b8fb61785782c1d4f87405"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Inspect a flat older maize leaf with its central V clearly visible and compare it with a healthy leaf. Wilting or rolling is a different visible sign and does not establish an N centre-V pattern. Water problems, damaged roots and other stresses can also make plants pale or weak; an image alone cannot confirm N deficiency.",
+          "sha256": "87247b1e1d645275a3bbfd65639f89edf999e8ce929ac7843ced4dade4daae8c"
+        }
+      ],
+      "scientificMeaning": "N helps form proteins and chlorophyll and supports leafy growth. With inadequate N, plants may be pale and stunted and older leaves may yellow first. In maize, a characteristic yellow V begins at the leaf tip and follows the midrib toward the base. Look for the affected older, lower leaf and its centre line; describe the pattern before naming N as a possibility.\n\nInspect a flat older maize leaf with its central V clearly visible and compare it with a healthy leaf. Wilting or rolling is a different visible sign and does not establish an N centre-V pattern. Water problems, damaged roots and other stresses can also make plants pale or weak; an image alone cannot confirm N deficiency.",
+      "displayText": "N helps form proteins and chlorophyll and supports leafy growth. With inadequate N, plants may be pale and stunted and older leaves may yellow first. In maize, a characteristic yellow V begins at the leaf tip and follows the midrib toward the base. Look for the affected older, lower leaf and its centre line; describe the pattern before naming N as a possibility.\n\nInspect a flat older maize leaf with its central V clearly visible and compare it with a healthy leaf. Wilting or rolling is a different visible sign and does not establish an N centre-V pattern. Water problems, damaged roots and other stresses can also make plants pale or weak; an image alone cannot confirm N deficiency.",
+      "captionText": "N helps form proteins and chlorophyll and supports leafy growth. With inadequate N, plants may be pale and stunted and older leaves may yellow first. In maize, a characteristic yellow V begins at the leaf tip and follows the midrib toward the base. Look for the affected older, lower leaf and its centre line; describe the pattern before naming N as a possibility.\n\nInspect a flat older maize leaf with its central V clearly visible and compare it with a healthy leaf. Wilting or rolling is a different visible sign and does not establish an N centre-V pattern. Water problems, damaged roots and other stresses can also make plants pale or weak; an image alone cannot confirm N deficiency.",
+      "spokenText": "N helps form proteins and chlorophyll and supports leafy growth. With inadequate N, plants may be pale and stunted and older leaves may yellow first. In maize, a characteristic yellow V begins at the leaf tip and follows the midrib toward the base. Look for the affected older, lower leaf and its centre line; describe the pattern before naming N as a possibility.\n\nInspect a flat older maize leaf with its central V clearly visible and compare it with a healthy leaf. Wilting or rolling is a different visible sign and does not establish an N centre-V pattern. Water problems, damaged roots and other stresses can also make plants pale or weak; an image alone cannot confirm N deficiency.",
+      "spokenTextSHA256": "bb718ff41f7df2e2ec940dc45246031f531be58b57dd9465c0f221911261eff7",
+      "spokenTextSha256": "bb718ff41f7df2e2ec940dc45246031f531be58b57dd9465c0f221911261eff7",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "773d4764ad923224c8144d93c0209b30aa783e50fa9fbe8a5472e16ed5ba5bea",
+      "requestFingerprintSha256": "773d4764ad923224c8144d93c0209b30aa783e50fa9fbe8a5472e16ed5ba5bea",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R04-r1",
+      "unitId": "S2-03-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "P supports energy transfer and root development. Short supply can accompany poor growth, a darker green appearance and, in young maize, purpling that can be seen on lower leaves. The pattern is crop- and stage-dependent: some truly P-limited plants do not turn purple, and purple colour alone is not proof of a soil P shortage.",
+          "sha256": "13c7267c595a15c43d48b43f3f57c48f97cebe023a7555fa28f0c9bd1502936c"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Cold or wet soil can slow roots and reduce P uptake even when soil contains sufficient P. If a young purple maize plant appears after a cold spell, inspect soil temperature and moisture, rooting and field history before recommending an amendment. A suitably interpreted soil test, and tissue analysis where appropriate, can help distinguish low soil supply from temporary uptake restriction.",
+          "sha256": "ccfb5f24d595690b21f62273524b0253c94b353f45cd4acd4da6de4d08804c95"
+        }
+      ],
+      "scientificMeaning": "P supports energy transfer and root development. Short supply can accompany poor growth, a darker green appearance and, in young maize, purpling that can be seen on lower leaves. The pattern is crop- and stage-dependent: some truly P-limited plants do not turn purple, and purple colour alone is not proof of a soil P shortage.\n\nCold or wet soil can slow roots and reduce P uptake even when soil contains sufficient P. If a young purple maize plant appears after a cold spell, inspect soil temperature and moisture, rooting and field history before recommending an amendment. A suitably interpreted soil test, and tissue analysis where appropriate, can help distinguish low soil supply from temporary uptake restriction.",
+      "displayText": "P supports energy transfer and root development. Short supply can accompany poor growth, a darker green appearance and, in young maize, purpling that can be seen on lower leaves. The pattern is crop- and stage-dependent: some truly P-limited plants do not turn purple, and purple colour alone is not proof of a soil P shortage.\n\nCold or wet soil can slow roots and reduce P uptake even when soil contains sufficient P. If a young purple maize plant appears after a cold spell, inspect soil temperature and moisture, rooting and field history before recommending an amendment. A suitably interpreted soil test, and tissue analysis where appropriate, can help distinguish low soil supply from temporary uptake restriction.",
+      "captionText": "P supports energy transfer and root development. Short supply can accompany poor growth, a darker green appearance and, in young maize, purpling that can be seen on lower leaves. The pattern is crop- and stage-dependent: some truly P-limited plants do not turn purple, and purple colour alone is not proof of a soil P shortage.\n\nCold or wet soil can slow roots and reduce P uptake even when soil contains sufficient P. If a young purple maize plant appears after a cold spell, inspect soil temperature and moisture, rooting and field history before recommending an amendment. A suitably interpreted soil test, and tissue analysis where appropriate, can help distinguish low soil supply from temporary uptake restriction.",
+      "spokenText": "P supports energy transfer and root development. Short supply can accompany poor growth, a darker green appearance and, in young maize, purpling that can be seen on lower leaves. The pattern is crop- and stage-dependent: some truly P-limited plants do not turn purple, and purple colour alone is not proof of a soil P shortage.\n\nCold or wet soil can slow roots and reduce P uptake even when soil contains sufficient P. If a young purple maize plant appears after a cold spell, inspect soil temperature and moisture, rooting and field history before recommending an amendment. A suitably interpreted soil test, and tissue analysis where appropriate, can help distinguish low soil supply from temporary uptake restriction.",
+      "spokenTextSHA256": "da7b7f26aae2269978155b25e289e5ebc7e41e8274008b030fb241110ec7b22f",
+      "spokenTextSha256": "da7b7f26aae2269978155b25e289e5ebc7e41e8274008b030fb241110ec7b22f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d6b5382d2812c0885edce30bb76a63a4991f3e0cc13ddec951f9b347b7d4fef0",
+      "requestFingerprintSha256": "d6b5382d2812c0885edce30bb76a63a4991f3e0cc13ddec951f9b347b7d4fef0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R05-r1",
+      "unitId": "S2-03-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "K contributes to water regulation and normal stress response; it does not make a crop immune to disease. When K supply is inadequate in maize, yellowing can start at the tip of an older, lower leaf and extend along its outer margins while the central area remains greener. Brown scorching may follow, and severe shortage can accompany weak stalks or lodging.",
+          "sha256": "966c3b42aec205e882d6e1926f4b68e5ea3391cf859c42919a744398f9aeb962"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Contrast the route of the yellowing: N often runs back along the midrib in a V, while K advances along the edges. Both can affect older leaves because both are mobile within the plant. Edge yellowing makes K a reasonable hypothesis in the exit-ticket case, not a confirmed diagnosis or a fertilizer dose.",
+          "sha256": "61e8312a6643d513bbd3775d4ac12038bb8175d867e379033530aa1bd4787841"
+        }
+      ],
+      "scientificMeaning": "K contributes to water regulation and normal stress response; it does not make a crop immune to disease. When K supply is inadequate in maize, yellowing can start at the tip of an older, lower leaf and extend along its outer margins while the central area remains greener. Brown scorching may follow, and severe shortage can accompany weak stalks or lodging.\n\nContrast the route of the yellowing: N often runs back along the midrib in a V, while K advances along the edges. Both can affect older leaves because both are mobile within the plant. Edge yellowing makes K a reasonable hypothesis in the exit-ticket case, not a confirmed diagnosis or a fertilizer dose.",
+      "displayText": "K contributes to water regulation and normal stress response; it does not make a crop immune to disease. When K supply is inadequate in maize, yellowing can start at the tip of an older, lower leaf and extend along its outer margins while the central area remains greener. Brown scorching may follow, and severe shortage can accompany weak stalks or lodging.\n\nContrast the route of the yellowing: N often runs back along the midrib in a V, while K advances along the edges. Both can affect older leaves because both are mobile within the plant. Edge yellowing makes K a reasonable hypothesis in the exit-ticket case, not a confirmed diagnosis or a fertilizer dose.",
+      "captionText": "K contributes to water regulation and normal stress response; it does not make a crop immune to disease. When K supply is inadequate in maize, yellowing can start at the tip of an older, lower leaf and extend along its outer margins while the central area remains greener. Brown scorching may follow, and severe shortage can accompany weak stalks or lodging.\n\nContrast the route of the yellowing: N often runs back along the midrib in a V, while K advances along the edges. Both can affect older leaves because both are mobile within the plant. Edge yellowing makes K a reasonable hypothesis in the exit-ticket case, not a confirmed diagnosis or a fertilizer dose.",
+      "spokenText": "K contributes to water regulation and normal stress response; it does not make a crop immune to disease. When K supply is inadequate in maize, yellowing can start at the tip of an older, lower leaf and extend along its outer margins while the central area remains greener. Brown scorching may follow, and severe shortage can accompany weak stalks or lodging.\n\nContrast the route of the yellowing: N often runs back along the midrib in a V, while K advances along the edges. Both can affect older leaves because both are mobile within the plant. Edge yellowing makes K a reasonable hypothesis in the exit-ticket case, not a confirmed diagnosis or a fertilizer dose.",
+      "spokenTextSHA256": "5266cc92943307c97c7921cdcf069de3719e3d45b0fadbf5e7ed40c250931b6b",
+      "spokenTextSha256": "5266cc92943307c97c7921cdcf069de3719e3d45b0fadbf5e7ed40c250931b6b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fed14a985ff89b91cd4b903f8f9d8ef2ecde96412f2f205f5f1e0684837f13fb",
+      "requestFingerprintSha256": "fed14a985ff89b91cd4b903f8f9d8ef2ecde96412f2f205f5f1e0684837f13fb",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R06-r1",
+      "unitId": "S2-03-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card NPK sort.",
+          "sha256": "b00e4857ec12e45ca9b4fa468a4512437206fb3a18cc2561e5ab73955f85774a"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Other injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+          "sha256": "79cca581eee61aa92b0430e01df4015474394151ed12cf174f2413e15fc4a1ac"
+        }
+      ],
+      "scientificMeaning": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card NPK sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+      "displayText": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card NPK sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+      "captionText": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card NPK sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+      "spokenText": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card N P K sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+      "spokenTextSHA256": "bc312cdad99bdef4e5bb06336a2fba9155e3304ab0ffd24fb51791a59e6ce616",
+      "spokenTextSha256": "bc312cdad99bdef4e5bb06336a2fba9155e3304ab0ffd24fb51791a59e6ce616",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card NPK sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+          "spoken": "Mg is a constituent of chlorophyll and is mobile inside the plant. In maize, a possible shortage can show as lengthwise yellow bands between veins of older, lower leaves while veins stay green. This interveinal striping is different from K's outer-margin yellowing and from N's centre V. It is an enrichment example, not a fourth set in the nine-card N P K sort.\n\nOther injuries and nutrient problems can create similar colours. Check the age and pattern, field conditions and roots; use crop-appropriate soil and/or tissue testing when the result will guide a decision. Follow the sampling instructions of the laboratory for crop, stage and plant part.",
+          "occurrences": 1,
+          "purpose": "One simultaneous exact scientific notation expansion preserving element symbols, atom counts and ionic charges; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0d3f67c3aacc8f5eab943f0fe23d188f19aa6416e4d61885e90ff7d300021f35",
+      "requestFingerprintSha256": "0d3f67c3aacc8f5eab943f0fe23d188f19aa6416e4d61885e90ff7d300021f35",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-R07-r1",
+      "unitId": "S2-03-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Use a four-column field note: visible observation, position and age, likely explanation with reasons, and next check. A provisional N/P/K label is useful only if it follows what is visible and if an alternative explanation remains open. Do not silently turn an answer-key example into proof that all similar crops share the same cause.",
+          "sha256": "a7c45890cf15b128e2895717bee8fd906e5dc9452223e4932be01f2e10da1587"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Check weather, soil moisture and temperature, root restriction or damage, field pattern and recent management. Use representative soil sampling and a suitable tissue test when appropriate; soil and tissue results answer related but different questions. Interpret each with crop, growth stage and local laboratory guidance. Never infer a nutrient rate from an image.",
+          "sha256": "9a441be6882b6d255ddf5e344e8d50f788e788b47328b496568e4e4413fafa02"
+        }
+      ],
+      "scientificMeaning": "Use a four-column field note: visible observation, position and age, likely explanation with reasons, and next check. A provisional N/P/K label is useful only if it follows what is visible and if an alternative explanation remains open. Do not silently turn an answer-key example into proof that all similar crops share the same cause.\n\nCheck weather, soil moisture and temperature, root restriction or damage, field pattern and recent management. Use representative soil sampling and a suitable tissue test when appropriate; soil and tissue results answer related but different questions. Interpret each with crop, growth stage and local laboratory guidance. Never infer a nutrient rate from an image.",
+      "displayText": "Use a four-column field note: visible observation, position and age, likely explanation with reasons, and next check. A provisional N/P/K label is useful only if it follows what is visible and if an alternative explanation remains open. Do not silently turn an answer-key example into proof that all similar crops share the same cause.\n\nCheck weather, soil moisture and temperature, root restriction or damage, field pattern and recent management. Use representative soil sampling and a suitable tissue test when appropriate; soil and tissue results answer related but different questions. Interpret each with crop, growth stage and local laboratory guidance. Never infer a nutrient rate from an image.",
+      "captionText": "Use a four-column field note: visible observation, position and age, likely explanation with reasons, and next check. A provisional N/P/K label is useful only if it follows what is visible and if an alternative explanation remains open. Do not silently turn an answer-key example into proof that all similar crops share the same cause.\n\nCheck weather, soil moisture and temperature, root restriction or damage, field pattern and recent management. Use representative soil sampling and a suitable tissue test when appropriate; soil and tissue results answer related but different questions. Interpret each with crop, growth stage and local laboratory guidance. Never infer a nutrient rate from an image.",
+      "spokenText": "Use a four-column field note: visible observation, position and age, likely explanation with reasons, and next check. A provisional N, P or K label is useful only if it follows what is visible and if an alternative explanation remains open. Do not silently turn an answer-key example into proof that all similar crops share the same cause.\n\nCheck weather, soil moisture and temperature, root restriction or damage, field pattern and recent management. Use representative soil sampling and a suitable tissue test when appropriate; soil and tissue results answer related but different questions. Interpret each with crop, growth stage and local laboratory guidance. Never infer a nutrient rate from an image.",
+      "spokenTextSHA256": "0fe5118f80bd7137ce59ade4bf76cab6413990b824de3b9d2e79b7a09fec81ad",
+      "spokenTextSha256": "0fe5118f80bd7137ce59ade4bf76cab6413990b824de3b9d2e79b7a09fec81ad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "N/P/K",
+          "spoken": "N, P or K",
+          "occurrences": 1,
+          "purpose": "Faithful natural nutrient-label conjunction, or disambiguation of Egyptian conditional إن from spoken N symbol in current nitrogen-shortage hypothesis; no source/scientific/display change"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f478aa6254e383dc5e464a6ed07781eca248dde9044219440b1111f3d265fbbd",
+      "requestFingerprintSha256": "f478aa6254e383dc5e464a6ed07781eca248dde9044219440b1111f3d265fbbd",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
