@@ -1,0 +1,1 @@
+One approved21word English explicit yellowouteredges K/centralV N hypothesis sentence only, originalCharon/currentmodel/delivery.1TTS1blind1ASR2GET0retry;exact measured quietcuts/source/prefixsuffixproof; outsidePCM/display immutable. No automaticjoin/postjoin; root selects actual candidate.

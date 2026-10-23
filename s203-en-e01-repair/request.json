@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S203_EN_E01_ONE_CORROBORATED_SENTENCE_REPAIR",
+  "stepId": "S2-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s203-en-e01-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-03-en-E01-sentence-repair-r1",
+      "unitId": "S2-03-en-E01-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s203-en-e01-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+          "sha256": "b21d4501a862d3a4c7b7d9510b8a723741bd70181ebe62dd6ee59fcb3442bf09"
+        }
+      ],
+      "scientificMeaning": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+      "displayText": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+      "captionText": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+      "spokenText": "K is the stronger hypothesis for the leaf with yellow outer edges; N for the leaf with a yellow central V.",
+      "spokenTextSHA256": "b2d8447eceef4b89736fb1ef9438290e7d38aeafa2c1e976d4a408e661abccb6",
+      "spokenTextSha256": "b2d8447eceef4b89736fb1ef9438290e7d38aeafa2c1e976d4a408e661abccb6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+          "spoken": "K is the stronger hypothesis for the first leaf; N for the second.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "K is the stronger hypothesis for the first leaf; N for the second.",
+          "spoken": "K is the stronger hypothesis for the leaf with yellow outer edges; N for the leaf with a yellow central V.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_EXPLICIT_LEAF_PATTERN_HYPOTHESES"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "ced1e5e575a5f1aa262ba5c06a494eb79e009f205dde72b6a65aceea882ea6f9",
+      "requestFingerprintSha256": "ced1e5e575a5f1aa262ba5c06a494eb79e009f205dde72b6a65aceea882ea6f9",
+      "sourcePlanSha256": "e359157fba73602cc18b36e00cc8d41764adaa4b291495658a483557c10aedb1",
+      "exactSentenceBefore": "K is the stronger hypothesis for the first leaf; N for the second.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-03-en-E01-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
