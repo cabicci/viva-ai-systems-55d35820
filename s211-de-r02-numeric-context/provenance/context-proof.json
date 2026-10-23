@@ -1,0 +1,31 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S2-11-de-R02-r1",
+      "contextWavSHA256": "abde99f560a8827fb063b216aec6cb6df9d59cc6ecb7458e5467769ee681e97c",
+      "contextPCMSHA256": "ba6c7ea6e068657e24421be259102a4955088c994a9bc36b55cd6a09a121fe20",
+      "frames": 158400,
+      "sampleRate": 24000,
+      "durationSeconds": 6.6,
+      "originalWavSHA256": "4d230c9c7119545e425e7c73f9a42e1547410046b6282c585b7e391814b1db5f",
+      "originalPCMSHA256": "da111ddad9d2d27663f34258d49c3766eada984c6ee77b24af07669e9e2d862d",
+      "originalFrames": 1814400,
+      "sourceFirstSample": 432000,
+      "sourceEndSampleExclusive": 590400,
+      "sourceOffsetSeconds": 18.0,
+      "sourceEndSeconds": 24.6,
+      "endsAtOriginalRecordingEnd": false,
+      "boundaryFact": "The excerpt begins and ends at intentional interior cut points; do not mistake these boundaries for defects in the source recording.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
