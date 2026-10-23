@@ -1,0 +1,309 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-en.json",
+    "sha256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+    "bytes": 31414
+  },
+  "units": [
+    {
+      "id": "S3-01-en-model-guidance-r1",
+      "unitId": "S3-01-en-model-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.",
+          "sha256": "f91e33d1f0565bd1fbe08f66bec8bf898840b32af8b7ad76d687b446cae74342"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Cereal: many branching fibrous roots; residue effects depend on management.",
+          "sha256": "15fc79b7f812aec38a8ad200b87297f4e4c087ed3438649462c89cbe32b7c7d8"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Legume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.",
+          "sha256": "785108c1adc203803107a4a64e67eeafbb4cf4cdf320cc153d9429eef805eabb"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Carrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.",
+          "sha256": "91c73d09a6f5eb35e4616b2aec759f34fd9f5c9190c072f3f2877c2802487fee"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Strawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.",
+          "sha256": "11bd5969dbd026824212906dc6a2fd020c6a52cec5b2071f4e2872218e0c65f0"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Explain what the model shows and what it cannot prove",
+          "sha256": "f084202c361e5f97a70cd2a2f59e9593967802ca79944f9664c42221441a6efd"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Describe cereal roots, a possible legume nodule and the carrot taproot.",
+          "sha256": "2fe2edf42fce911b9ed20eac3ab4414267ae0e048a73395e89f639f15537dfac"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Give one site-suitability or measured-depth claim this model cannot prove.",
+          "sha256": "701f644da407c7891ae500b76e5cc59ffff9a2cd389b1cdb23757d4f933e5929"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Recognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+          "sha256": "d46bdd4e620cc0119192f2d5d5b0454f4ab1429aa5540356155259ee0a6f3d8c"
+        }
+      ],
+      "scientificMeaning": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "displayText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "captionText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "spokenText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "spokenTextSHA256": "0035eaaf00c7bf05c9833616715ad623889ae80942febb4c86f311a701c05050",
+      "spokenTextSha256": "0035eaaf00c7bf05c9833616715ad623889ae80942febb4c86f311a701c05050",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b39d4f31f6781896656c4b590d5450d79bb7318106ed7245b3c33b58bf3abbf0",
+      "requestFingerprintSha256": "b39d4f31f6781896656c4b590d5450d79bb7318106ed7245b3c33b58bf3abbf0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-local-records-r1",
+      "unitId": "S3-01-en-local-records-r1",
+      "locale": "en",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Four local crop records",
+          "sha256": "e789899789ac70a791e77145bd6938ae5d4a4e1f489defa8d8c3be3e8fba6c74"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Crop name and practical group",
+          "sha256": "e4356d16fd40455fdacb2914298132dca0ba5a90c048a28daad73985061f9244"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Place and observation date, or explicitly unknown",
+          "sha256": "95dff6ea80f78b60b8549f901a98255bffba11b479230b046946b8f912aa4de1"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Observation or credible documentary source",
+          "sha256": "b1eff0f8117828a70112a2ae850d65c95508fc2f0bcb72ee3152400591f52017"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Why the group fits; what remains unverified about suitability",
+          "sha256": "27a926b4bcda81b3baa4ac6abd324fffd0a4a82d162e00577228ee4b0b92548b"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Start with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.",
+          "sha256": "ad984e9ef62d34ed0b8ff19483f3c35bfec10e3d5a4477059c42f73373c78be7"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "A named crop without local evidence remains an example, not a verified local recommendation.",
+          "sha256": "88dd597aca9baceefae839d1ac3ecdceef67f14042f1fc7e6f4bdd51b984a1e9"
+        }
+      ],
+      "scientificMeaning": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "displayText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "captionText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "spokenText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "spokenTextSHA256": "379ce65ad70960c74ec69911be63230e85013b7e8f57206b6893083fa265bc87",
+      "spokenTextSha256": "379ce65ad70960c74ec69911be63230e85013b7e8f57206b6893083fa265bc87",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ebc201d497a45d695c6c72601791a1950f0a87c991e42de9ec9c0659a471332",
+      "requestFingerprintSha256": "1ebc201d497a45d695c6c72601791a1950f0a87c991e42de9ec9c0659a471332",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-discussion-r1",
+      "unitId": "S3-01-en-discussion-r1",
+      "locale": "en",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Think, pair, share — then revise independently",
+          "sha256": "4d4e3a70de5ece631c4737f4ee0b8ad47606e38d95b50349d8289d99306180c9"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Initial answer: why can two maize fields differ?",
+          "sha256": "0272ffcf713804cd83110a5fd9d83c08bcba9daf154d66f124827cd6d811889c"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Initial answer: why might a grower change the crop sequence?",
+          "sha256": "331a0f7a7d90a866b4356fdd3b48d280bc285a8144c17a23cb38aeb817044edc"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Partner or discussion reference (unknown if unavailable)",
+          "sha256": "9dd49a1e1c52bbdc5c7868dd709999c76b1d267865c83c2815f7acd6b18602cd"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Your revised maize-field explanation and evidence",
+          "sha256": "5ae3a9cffbe210d2a9ea273286ed7ff52579d86f66f8b47387d78f897893077e"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Your revised crop-sequence explanation and evidence",
+          "sha256": "169881eaf2f00942298759cd41bf8b10ac09b8b4916bca92b1713768bb170b9a"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "Start with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.",
+          "sha256": "15d08bc44eca27d18fd46c1c145234a0bbf45b42cabd531ca9d7c3e8c311d44c"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "The group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.",
+          "sha256": "18473fac0d8e9988a0b3f553035c8e6b5ac72fffe8eb82f951334a357f7b2314"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Write your explanation before comparing with the worked reasoning.",
+          "sha256": "bd0ed57c5628a29d8fe4a3235d72a9017121df09eb69b1dba9fcdcb4d111d4b3"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Compare your argument and revise it. This button does not grade meaning or award a criterion.",
+          "sha256": "9001597a4291df30dcc1978fd65188cc2836b7c2592fe1b9bfc2699adfabfd44"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Knowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "sha256": "d9c4e9d6ff6328c76ef0adf3a62fc3f7f01b6a89d8daa11fe060b73941a33243"
+        }
+      ],
+      "scientificMeaning": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "displayText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "captionText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "spokenText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the five-minute food opener. Then think alone for one minute, discuss in pairs for two minutes and share for two minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "spokenTextSHA256": "2b6dddef6c140f646c5d9c95b1b4454387813ea48f5e1b19b11ef051e0896ccc",
+      "spokenTextSha256": "2b6dddef6c140f646c5d9c95b1b4454387813ea48f5e1b19b11ef051e0896ccc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "spoken": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the five-minute food opener. Then think alone for one minute, discuss in pairs for two minutes and share for two minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2155deeafcfe6adf471f8265d373f474c3fedbdad6f1987913846aec92867abc",
+      "requestFingerprintSha256": "2155deeafcfe6adf471f8265d373f474c3fedbdad6f1987913846aec92867abc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-01-en-nutrition-r1",
+      "unitId": "S3-01-en-nutrition-r1",
+      "locale": "en",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.",
+          "sha256": "76f86fd902406257544df2a622003c726286413658b1f56323e51eab9db66652"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Vegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.",
+          "sha256": "f457df698d2d26cc67fe776e82240f18379a972be9dc4038b98b9c9af56ce2a4"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+          "sha256": "bd49ab9dff238f139090720b982e25c97835428d1dc85e63d68edb5cc423677f"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Another classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+          "sha256": "8338fd532fb7019856b2317298270c226cc00ea0890572881f924723ec63ce0b"
+        }
+      ],
+      "scientificMeaning": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "displayText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "captionText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "spokenText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "spokenTextSHA256": "8b523caaf9cd998837afac756325ce4d8330a83c925ccf205fe217212136e679",
+      "spokenTextSha256": "8b523caaf9cd998837afac756325ce4d8330a83c925ccf205fe217212136e679",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e31b12664a1cb32bd003e90e4631a665cd068f4daac106bb510e178c626863d2",
+      "requestFingerprintSha256": "e31b12664a1cb32bd003e90e4631a665cd068f4daac106bb510e178c626863d2",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

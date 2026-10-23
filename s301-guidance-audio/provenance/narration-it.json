@@ -1,0 +1,316 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-it.json",
+    "sha256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+    "bytes": 31630
+  },
+  "units": [
+    {
+      "id": "S3-01-it-model-guidance-r1",
+      "unitId": "S3-01-it-model-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.",
+          "sha256": "c505287b3fc025cafac09a005135fa81a6388e0d3b92c8ae26e32c4539b41a66"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Cereale: radici fibrose ramificate; effetto dei residui secondo gestione.",
+          "sha256": "76d2a8f8134f05755fe977ae02e623b1d71b823b31bf908de8f43fd9f25be40d"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Leguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.",
+          "sha256": "d8afc45da777da0e10a222aa0896353ede05e68fddf570a1eaffcd5704591de0"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Carota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.",
+          "sha256": "00ec562da7487cca9a5fd87aad792a256178e4607a7411621802adfb79fde68b"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Fragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.",
+          "sha256": "6d7d160481b759fba926018b1ea4df0fa57f3b8a9a68d6b862ff3bcfef9ac60c"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Spiega cosa mostra e cosa non dimostra il modello",
+          "sha256": "5fe1f335a7232f67696952962a4bc8797809ba03d16f1686952ed85f23492f16"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Descrivi radici del cereale, possibile nodulo e fittone della carota.",
+          "sha256": "549757fe315433356e28e720b8a31a9cfa5944ddac3b100942f58b3779a895c1"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Indica una pretesa su idoneità o profondità misurata che il modello non dimostra.",
+          "sha256": "a80197aaf2fe49ccd3324b34041fbc8bc68552e676615740766ab02226c3bc11"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Riconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "sha256": "86088d6968e9c8464d5cd7458ce74e0d34b5e30a3af8c3516fbbbb525fe43c5c"
+        }
+      ],
+      "scientificMeaning": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "displayText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "captionText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "spokenText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di enne. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "spokenTextSHA256": "c9c951bc8f8f47c244df9402352f858bb822ee02c5c4f68521b0765865711812",
+      "spokenTextSha256": "c9c951bc8f8f47c244df9402352f858bb822ee02c5c4f68521b0765865711812",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "spoken": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di enne. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "61da852027ef123b8cff08c858f7e4900a958008f821613bf7baffe8bef0aa38",
+      "requestFingerprintSha256": "61da852027ef123b8cff08c858f7e4900a958008f821613bf7baffe8bef0aa38",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-01-it-local-records-r1",
+      "unitId": "S3-01-it-local-records-r1",
+      "locale": "it",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Quattro registrazioni di colture locali",
+          "sha256": "ce0b66e4c5e2c24c2b9ca39b6acfcaf050b82bda4a5ea5955dc94d8d7383a1f0"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Nome e gruppo pratico",
+          "sha256": "eedbfc90173624643fd5c9a787a4ad25b4186e96cb42e754a9a0937c8616cd4b"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Luogo e data di osservazione, oppure esplicitamente ignoti",
+          "sha256": "6a6085e306859821b2c13233d010020e7dd24f63b020f3d533169570f6d48f0e"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Osservazione o fonte documentale attendibile",
+          "sha256": "552c70ca038189c32552df71a6c12fffb6221b3ee4c6bffa2ecc3044d1643bb6"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Motivo del gruppo e idoneità ancora non verificata",
+          "sha256": "3b55da4b7bf870f119f379e0475de4ab85e4752d6e0eadec261cf3704fe2a787"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Parti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.",
+          "sha256": "c8818225346d4bfefbd470858eb974c1e3d71113f28a31bd88ee7b6ca53a2600"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "Senza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+          "sha256": "466ba639c833c01a9bb9f463687df2345cf1d4f735fb852944f378a4abc30aa8"
+        }
+      ],
+      "scientificMeaning": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "displayText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "captionText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "spokenText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "spokenTextSHA256": "b45713b06724e0b7455388e2ca6979a38076c7588243af61fac435a05981b1e9",
+      "spokenTextSha256": "b45713b06724e0b7455388e2ca6979a38076c7588243af61fac435a05981b1e9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3c3735ed180f388e931f39a2ce3cf5df46244974b7ac6df8aad20af312d73701",
+      "requestFingerprintSha256": "3c3735ed180f388e931f39a2ce3cf5df46244974b7ac6df8aad20af312d73701",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-01-it-discussion-r1",
+      "unitId": "S3-01-it-discussion-r1",
+      "locale": "it",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Pensa, confronta, condividi; poi rivedi individualmente",
+          "sha256": "9991004121a5767bc65d3214f14b0b0e62a5f48c3372afaad241502b011e1e4e"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Prima risposta: perché due campi di mais differiscono?",
+          "sha256": "1b02c35954313cce9d484d5711effc86765e2af0c0df3fd82b9b8c558a4aa642"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Prima risposta: perché cambiare sequenza colturale?",
+          "sha256": "b5eee6a09ee710198a14ad081ca5e853d374c14cb2d57cf151caf615033bad04"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Riferimento al compagno o dialogo, ignoto se assente",
+          "sha256": "9ffc3cbd6d8641470e547b985644168c937614e1fe0349ade01768b91b210f14"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Spiegazione rivista dei campi e prove",
+          "sha256": "dfb10e721722209dfecf1c4cac2e6badf615320b52b6c16aac0cd4af0fbcbad4"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Spiegazione rivista della sequenza e prove",
+          "sha256": "605106c63c1eaf35dbedb9d03fdfc6084556e2214dcd5a6f9758ce6263f2f85f"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "Avvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.",
+          "sha256": "a73d0131027b168fc49a2bc8a795fcae0cd866f434f0abd636a6e24c31e61791"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "Il dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.",
+          "sha256": "e148721543bf573cbe40ddf9cc1d6de89d6dfca4e3acc23d307bf5e05ce01f3c"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Scrivi la spiegazione prima di confrontarla con il ragionamento svolto.",
+          "sha256": "821f02b9b97039b5982504e40f25257cb8d048164340b3768d50e124e40c2c49"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Confronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+          "sha256": "3db185262f01db522d31550862562fd0e88e94f7735ec5c75938ade792d1f424"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Solo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "sha256": "31d771d6f281c940b5f27d0fc8df53f727a8bf02b1029c75b0e056c8af588dcf"
+        }
+      ],
+      "scientificMeaning": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "displayText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "captionText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "spokenText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di cinque minuti. Poi un minuto individuale, due a coppie e due di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "spokenTextSHA256": "b6227f44281735aaf250833795c15a6ffc72b4fe794501b10a971877d9acecad",
+      "spokenTextSha256": "b6227f44281735aaf250833795c15a6ffc72b4fe794501b10a971877d9acecad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "spoken": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di cinque minuti. Poi un minuto individuale, due a coppie e due di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7123b02e8a7c2e8dee7d7ca973f1b8ed582ce6aa2608d4f6af59675fee6c6388",
+      "requestFingerprintSha256": "7123b02e8a7c2e8dee7d7ca973f1b8ed582ce6aa2608d4f6af59675fee6c6388",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-01-it-nutrition-r1",
+      "unitId": "S3-01-it-nutrition-r1",
+      "locale": "it",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.",
+          "sha256": "d478abf6d31db0c85aaae7fbb5aec52bd7f9a16f893073b5b25fbc9132af95ba"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Le verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.",
+          "sha256": "c14dd93c2e86a69ae69ef93cbf184000ef6a68c4c04a1e1c7dacf742d73b90a5"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Molte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.",
+          "sha256": "f72056167ee1a20e8216b9618d4acc57db93ed08e3c0c06e831b5cf528309060"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Un’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "sha256": "745710deab5b38019382fc6aff79978a4fae7fa9e5940f19b58edc1cc7c6024a"
+        }
+      ],
+      "scientificMeaning": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "displayText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "captionText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "spokenText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "spokenTextSHA256": "f17fe349d3decdcb8b73561f9d4811d62dae211d9e1b153f37eba85985dd33e5",
+      "spokenTextSha256": "f17fe349d3decdcb8b73561f9d4811d62dae211d9e1b153f37eba85985dd33e5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9d7380783dbe4604bce795f206ac4883185ac3939dfbffaf7ed5117b23a0a7a9",
+      "requestFingerprintSha256": "9d7380783dbe4604bce795f206ac4883185ac3939dfbffaf7ed5117b23a0a7a9",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

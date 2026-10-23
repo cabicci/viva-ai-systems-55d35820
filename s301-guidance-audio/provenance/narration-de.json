@@ -1,0 +1,316 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-de.json",
+    "sha256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+    "bytes": 32589
+  },
+  "units": [
+    {
+      "id": "S3-01-de-model-guidance-r1",
+      "unitId": "S3-01-de-model-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.",
+          "sha256": "9123dd389a791083c4178616e6e2d7ed39b6abb468ed52567233e2013bf6bb6a"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Getreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.",
+          "sha256": "78c2edd80df2352f626d1c9870aa4bb9e227f8e89a4ef720828c7e4a9e43d7d9"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Leguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.",
+          "sha256": "51d3cadea510edb1054b8f9a057c22915d8bef55f834b7411c8bbb95ae492d2f"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Karotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.",
+          "sha256": "5efcdaf9ed6bac7e2236349a93c05503c98165bea3957f8d208df0c8ae6d9e8e"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Erdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.",
+          "sha256": "4a217640087316e579c4d5f676d402060de0395fbe70cd9ccccae3e765758a86"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Erklären, was das Modell zeigt und nicht belegt",
+          "sha256": "ab782d809980108ce2ed6250254b7771c76c1c3c5046fefd3c82b06ab0e42cb1"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Getreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.",
+          "sha256": "f01ae1ea75cf222fce173b5eb65012efba2d949aa934e6cf84a1ff9f349ddc5b"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Eine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.",
+          "sha256": "0edf439f265aff3274ccf67c0e18c4ed945b3099a9ba26ceed143ff01f590fb7"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Erkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "sha256": "075ee14534e57b9a155e41c8ad7e4511b4bea34f1973ca21de20ba1c5c53b767"
+        }
+      ],
+      "scientificMeaning": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "displayText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "captionText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "spokenText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder En-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "spokenTextSHA256": "fddd670442887b40d30c35028b50564202067c424f749920f128f811a211d4a3",
+      "spokenTextSha256": "fddd670442887b40d30c35028b50564202067c424f749920f128f811a211d4a3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "spoken": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder En-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0bac42accee794ba3a8757cd7538c01f99927afc72f47c5b0b4a37b8404cb14c",
+      "requestFingerprintSha256": "0bac42accee794ba3a8757cd7538c01f99927afc72f47c5b0b4a37b8404cb14c",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-01-de-local-records-r1",
+      "unitId": "S3-01-de-local-records-r1",
+      "locale": "de",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Vier örtliche Kulturaufzeichnungen",
+          "sha256": "a73419b08b937996f8a6b687281ac160d86e142fb9e12a29e1c6917c3068be00"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Kultur und praktische Gruppe",
+          "sha256": "492615e746612fca3571b6204b3d3d2e1f58ac2145d292c4b03acabb9606214d"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Ort und Beobachtungsdatum oder ausdrücklich unbekannt",
+          "sha256": "d3dd29fd3450f0568d32037a49caa3f89418a952779ce53e5e42ecbc78027849"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Beobachtung oder glaubwürdige dokumentierte Quelle",
+          "sha256": "ace0cfe4ba85511980cb38b7becd0618b3f6a10a715211338b23fd178a245033"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Grund der Gruppe und ungeprüfte Eignungsfragen",
+          "sha256": "7922a1b6a821006a0e11661c38080bb8629d031d7c550c470c4ec61b03dec303"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Mit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.",
+          "sha256": "98834ed3d745b6af1ad8ca4957ee0a36eb7c0d2caf7f6dd20fb8509e9a7b8796"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "Ohne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+          "sha256": "8a37c9992a58648ec1572826d780c5585437e24e92ab738a18c5ef67a025f055"
+        }
+      ],
+      "scientificMeaning": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "displayText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "captionText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "spokenText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "spokenTextSHA256": "017850e3da7dc2c76e3724cde2c426a9e6c7d7c897292e6f5147c8309ca2cfeb",
+      "spokenTextSha256": "017850e3da7dc2c76e3724cde2c426a9e6c7d7c897292e6f5147c8309ca2cfeb",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f95d961f69c16296625bd01f71e0ef7b52fe1a0bb2587076b973d1e339defdbb",
+      "requestFingerprintSha256": "f95d961f69c16296625bd01f71e0ef7b52fe1a0bb2587076b973d1e339defdbb",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-01-de-discussion-r1",
+      "unitId": "S3-01-de-discussion-r1",
+      "locale": "de",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten",
+          "sha256": "dbe35c073a3592afbf1ea61890f596556d780f60116ce6bdc58d7fd4e6026349"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Erste Antwort: Warum unterscheiden sich zwei Maisfelder?",
+          "sha256": "b1d91344bc3f8a542167c6f3d0e5f99d62304c7ed60c85f525d4994a685def7f"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Erste Antwort: Warum die Kulturfolge verändern?",
+          "sha256": "2eeca6ac9e1d4de43ed66e837a570d443fffa70771ac90520f802018aa97a3a8"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Partner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar",
+          "sha256": "71592280d0a05318dadc3db820310be77dff8b348162f42554721756b337cfb2"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Überarbeitete Felderklärung mit Belegen",
+          "sha256": "4e38b7aae71265a32871012da6a1cda8e7768bc8be1fbc18aaceeb6194101e2a"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Überarbeitete Folgeerklärung mit Belegen",
+          "sha256": "767d13c2235ec84e89be2c638f5706a419105b4c0e6d9c06ef308f2cc462f042"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.",
+          "sha256": "50991a4d8b81c46a91c388dc626b6d9bbc34c2a5a49066fa4a0e7839c8cfd674"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "Der Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.",
+          "sha256": "cf64e62506d3b23e13ff1d1fa898d1e82839358a222996e69b87bafa7b34ae59"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Vor dem Mustervergleich eine eigene Begründung schreiben.",
+          "sha256": "ff6f0f8c0ea53435c8aeb8bf6922b51babca49904df9f160f6dacab81897f9e3"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Begründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+          "sha256": "a31a3fb8673f1c4b016f57fe428ce026f01970056915d42a4bb47e5b9c1299c3"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Nur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "sha256": "a852d0541a3b839ac554955ee00610c16f5c06c845e3deeffa88be04c08b20b5"
+        }
+      ],
+      "scientificMeaning": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "displayText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "captionText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "spokenText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\nfünf Minuten Einstieg über Nahrung. Dann eine Minute allein, zwei zu zweit, zwei teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "spokenTextSHA256": "4b62e1a56d6c45522fab70000417eeeb0f337cecb719e1ffb592ea45659462d7",
+      "spokenTextSha256": "4b62e1a56d6c45522fab70000417eeeb0f337cecb719e1ffb592ea45659462d7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "spoken": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\nfünf Minuten Einstieg über Nahrung. Dann eine Minute allein, zwei zu zweit, zwei teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd03685bfd28d633e89d384364429c229dc5551d01185c6b0e2ee42289c14327",
+      "requestFingerprintSha256": "fd03685bfd28d633e89d384364429c229dc5551d01185c6b0e2ee42289c14327",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-01-de-nutrition-r1",
+      "unitId": "S3-01-de-nutrition-r1",
+      "locale": "de",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.",
+          "sha256": "4110a351d7059422fe0e0b88f97a0ebc3bede1579cc9fd6df5ca8003597a3315"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Gemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.",
+          "sha256": "f608b156cdb8f56fbdf27c960f03224b6308aedd9b9685915dcc43d185618c08"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Viele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.",
+          "sha256": "5f40c428ff25e139e7c1f29d1d7674a056be6ab275cb6f2a3827bf5c1620b082"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Eine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+          "sha256": "823ca375c8f01c7b18edf2e83e3acc37c7680afa40d40f8b941a1418cffa0754"
+        }
+      ],
+      "scientificMeaning": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "displayText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "captionText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "spokenText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "spokenTextSHA256": "91106a744e3d5c90291ee8695bf5f284410b21296b4bac943130867efd509c38",
+      "spokenTextSha256": "91106a744e3d5c90291ee8695bf5f284410b21296b4bac943130867efd509c38",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "021eac3c63898114481001c4c5c814301d1ca5664ad0c11b66f8458a9a925eed",
+      "requestFingerprintSha256": "021eac3c63898114481001c4c5c814301d1ca5664ad0c11b66f8458a9a925eed",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

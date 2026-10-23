@@ -1,0 +1,1834 @@
+{
+  "schemaVersion": 1,
+  "scope": "S301_SIXTEEN_NON_KEY_GUIDANCE_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s301-guidance-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-ar-EG-model-guidance-r1",
+      "unitId": "S3-01-ar-EG-model-guidance-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "نماذج تعليمية مكبّرة: جذور حبوب ليفية، وعقد محتملة لبقولي، وجذر جزر وتدي متضخم، ونبات فراولة. مفيش مقياس أو عمق مقاس أو قوام تربة إجباري أو تشخيص نوع أو كمية نيتروجين. كل المعلومات مكتوبة تحت كمان.",
+          "sha256": "ca5beb07cfae249f21bdbe406b8c0345566d48022bea1e0ac8dfd2c335e557f6"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "الحبوب: جذور ليفية متفرعة؛ أثر البقايا مرتبط بإدارتها.",
+          "sha256": "56b9254deb8fc23a1fbe4bebd95a87c1fad8bf92100c6a2fbf3845a430aff1bb"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "البقولي: عقد مكبّرة على جذور جانبية للتوضيح؛ وجودها لوحده ما يقيسش التثبيت.",
+          "sha256": "d98d44f6719e82489a29353f244c1511e22f578698ce87e431c8c82781662751"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "الجزر: جذر وتدي متضخم بيتاكل، ومحتاج مساحة نمو مناسبة من غير عوائق؛ مفيش قوام إجباري واحد.",
+          "sha256": "9f8e084cc40af6abc054ceb7bbbc36d50cf0fe68bde30c74f221b232ed254982"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "الفراولة: نبات فاكهة عشبي قصير، مش شجرة؛ ملاءمة الموقع والصرف محتاجة دليل.",
+          "sha256": "e7c5c26b304823baf44ff803179bd9876562fdbf9e7eb614521d6a5d8b73e966"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "اشرح النموذج بيبيّن إيه وما يثبتش إيه",
+          "sha256": "13af1f25440646a82c1be689fdcff49deb20ac9aee6d8fe3c5d522c979bd7f20"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "اوصف جذور الحبوب وعقدة بقولي محتملة وجذر الجزر الوتدي.",
+          "sha256": "f7a26bb7a35dace739d2fcabd58293d763674f303cac4eaa581c65aff69ad142"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "اذكر ادعاء عن ملاءمة الحقل أو عمق مقاس النموذج ما يقدرش يثبته.",
+          "sha256": "d72bc487e8d36e4892c5439a65542d99ef010b43eff8fa992722cd95a230dbbc"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "اعرف التراكيب التلاتة، لكن ما تستنتجش إن الحبوب لازم تنمو في الرمل أو الفاكهة في الطين.",
+          "sha256": "23c1ca07a9965d235b3a21efb1a8a576903d12d7dbc16180dd1b986f69892df5"
+        }
+      ],
+      "scientificMeaning": "نماذج تعليمية مكبّرة: جذور حبوب ليفية، وعقد محتملة لبقولي، وجذر جزر وتدي متضخم، ونبات فراولة. مفيش مقياس أو عمق مقاس أو قوام تربة إجباري أو تشخيص نوع أو كمية نيتروجين. كل المعلومات مكتوبة تحت كمان.\n\nالحبوب: جذور ليفية متفرعة؛ أثر البقايا مرتبط بإدارتها.\n\nالبقولي: عقد مكبّرة على جذور جانبية للتوضيح؛ وجودها لوحده ما يقيسش التثبيت.\n\nالجزر: جذر وتدي متضخم بيتاكل، ومحتاج مساحة نمو مناسبة من غير عوائق؛ مفيش قوام إجباري واحد.\n\nالفراولة: نبات فاكهة عشبي قصير، مش شجرة؛ ملاءمة الموقع والصرف محتاجة دليل.\n\nاشرح النموذج بيبيّن إيه وما يثبتش إيه\n\nاوصف جذور الحبوب وعقدة بقولي محتملة وجذر الجزر الوتدي.\n\nاذكر ادعاء عن ملاءمة الحقل أو عمق مقاس النموذج ما يقدرش يثبته.\n\nاعرف التراكيب التلاتة، لكن ما تستنتجش إن الحبوب لازم تنمو في الرمل أو الفاكهة في الطين.",
+      "displayText": "نماذج تعليمية مكبّرة: جذور حبوب ليفية، وعقد محتملة لبقولي، وجذر جزر وتدي متضخم، ونبات فراولة. مفيش مقياس أو عمق مقاس أو قوام تربة إجباري أو تشخيص نوع أو كمية نيتروجين. كل المعلومات مكتوبة تحت كمان.\n\nالحبوب: جذور ليفية متفرعة؛ أثر البقايا مرتبط بإدارتها.\n\nالبقولي: عقد مكبّرة على جذور جانبية للتوضيح؛ وجودها لوحده ما يقيسش التثبيت.\n\nالجزر: جذر وتدي متضخم بيتاكل، ومحتاج مساحة نمو مناسبة من غير عوائق؛ مفيش قوام إجباري واحد.\n\nالفراولة: نبات فاكهة عشبي قصير، مش شجرة؛ ملاءمة الموقع والصرف محتاجة دليل.\n\nاشرح النموذج بيبيّن إيه وما يثبتش إيه\n\nاوصف جذور الحبوب وعقدة بقولي محتملة وجذر الجزر الوتدي.\n\nاذكر ادعاء عن ملاءمة الحقل أو عمق مقاس النموذج ما يقدرش يثبته.\n\nاعرف التراكيب التلاتة، لكن ما تستنتجش إن الحبوب لازم تنمو في الرمل أو الفاكهة في الطين.",
+      "captionText": "نماذج تعليمية مكبّرة: جذور حبوب ليفية، وعقد محتملة لبقولي، وجذر جزر وتدي متضخم، ونبات فراولة. مفيش مقياس أو عمق مقاس أو قوام تربة إجباري أو تشخيص نوع أو كمية نيتروجين. كل المعلومات مكتوبة تحت كمان.\n\nالحبوب: جذور ليفية متفرعة؛ أثر البقايا مرتبط بإدارتها.\n\nالبقولي: عقد مكبّرة على جذور جانبية للتوضيح؛ وجودها لوحده ما يقيسش التثبيت.\n\nالجزر: جذر وتدي متضخم بيتاكل، ومحتاج مساحة نمو مناسبة من غير عوائق؛ مفيش قوام إجباري واحد.\n\nالفراولة: نبات فاكهة عشبي قصير، مش شجرة؛ ملاءمة الموقع والصرف محتاجة دليل.\n\nاشرح النموذج بيبيّن إيه وما يثبتش إيه\n\nاوصف جذور الحبوب وعقدة بقولي محتملة وجذر الجزر الوتدي.\n\nاذكر ادعاء عن ملاءمة الحقل أو عمق مقاس النموذج ما يقدرش يثبته.\n\nاعرف التراكيب التلاتة، لكن ما تستنتجش إن الحبوب لازم تنمو في الرمل أو الفاكهة في الطين.",
+      "spokenText": "نماذج تعليمية مكبّرة: جذور حبوب ليفية، وعقد محتملة لبقولي، وجذر جزر وتدي متضخم، ونبات فراولة. مفيش مقياس أو عمق مقاس أو قوام تربة إجباري أو تشخيص نوع أو كمية نيتروجين. كل المعلومات مكتوبة تحت كمان.\n\nالحبوب: جذور ليفية متفرعة؛ أثر البقايا مرتبط بإدارتها.\n\nالبقولي: عقد مكبّرة على جذور جانبية للتوضيح؛ وجودها لوحده ما يقيسش التثبيت.\n\nالجزر: جذر وتدي متضخم بيتاكل، ومحتاج مساحة نمو مناسبة من غير عوائق؛ مفيش قوام إجباري واحد.\n\nالفراولة: نبات فاكهة عشبي قصير، مش شجرة؛ ملاءمة الموقع والصرف محتاجة دليل.\n\nاشرح النموذج بيبيّن إيه وما يثبتش إيه\n\nاوصف جذور الحبوب وعقدة بقولي محتملة وجذر الجزر الوتدي.\n\nاذكر ادعاء عن ملاءمة الحقل أو عمق مقاس النموذج ما يقدرش يثبته.\n\nاعرف التراكيب التلاتة، لكن ما تستنتجش إن الحبوب لازم تنمو في الرمل أو الفاكهة في الطين.",
+      "spokenTextSHA256": "ebf9b8888de31ed42deec3d387691ada575d395443e01930c8bcb7f34ace93d6",
+      "spokenTextSha256": "ebf9b8888de31ed42deec3d387691ada575d395443e01930c8bcb7f34ace93d6",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "69541f9545ca801410221f114c85a75c8d40931508efe2d945c577f135529cbe",
+      "requestFingerprintSha256": "69541f9545ca801410221f114c85a75c8d40931508efe2d945c577f135529cbe",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "cb5d760d9676699bb19d1c0abd6d17316e7c801d654cc96349090c401fb85623"
+    },
+    {
+      "id": "S3-01-ar-EG-local-records-r1",
+      "unitId": "S3-01-ar-EG-local-records-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "أربع سجلات لمحاصيل من منطقتك",
+          "sha256": "054bccda5f6d68a4299b3cc165b9f10921f8782650c5de872339857f8f81888e"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "اسم المحصول ومجموعة استخدامه",
+          "sha256": "04edfb82f58435d0da40e6d83dc9cc4720138e2df8b9a4d9076e9da713048d9b"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "المكان وتاريخ الملاحظة، أو وضّح اللي مش معروف",
+          "sha256": "4ab42e3cca7d68876c2e69730722002c2fb259311ca5bcfdad7c488d50803385"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "الملاحظة أو مصدر التوثيق الموثوق",
+          "sha256": "d7fe496250abd04b309e05e911e373b12d0e2ed27158ff5b6db7a832416ef324"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "ليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة",
+          "sha256": "e9aaab59bc0b3f286f3cd116487630ff37fc92f202995d85907968f41dd166a8"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "ابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.",
+          "sha256": "a4cc7c674e98ab8471fbdcda057a7ea17dcab8fe4becab0776fd24b7663312c3"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "اسم المحصول من غير دليل محلي يفضل مثالًا، مش توصية محلية مؤكدة.",
+          "sha256": "ec0aef4f1768608922cc158d4c7d2ac39465a9a5f51f48308c276e09d6bf9294"
+        }
+      ],
+      "scientificMeaning": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثالًا، مش توصية محلية مؤكدة.",
+      "displayText": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثالًا، مش توصية محلية مؤكدة.",
+      "captionText": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثالًا، مش توصية محلية مؤكدة.",
+      "spokenText": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثال، مش توصية محلية مؤكدة.",
+      "spokenTextSHA256": "b8026a27739db5c427fe9b5d346094ba368aaa091e4074d7ae1193b72215e52b",
+      "spokenTextSha256": "b8026a27739db5c427fe9b5d346094ba368aaa091e4074d7ae1193b72215e52b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثالًا، مش توصية محلية مؤكدة.",
+          "spoken": "أربع سجلات لمحاصيل من منطقتك\n\nاسم المحصول ومجموعة استخدامه\n\nالمكان وتاريخ الملاحظة، أو وضّح اللي مش معروف\n\nالملاحظة أو مصدر التوثيق الموثوق\n\nليه التصنيف مناسب، وإيه اللي لسه مش متحقق عن الملاءمة\n\nابدأ بدليلك أنت. اسم أو ملاحظة محفوظة مش إثبات إن المحصول بيتزرع محليًا ولا توصية زراعة ولا اعتماد مدرّب.\n\nاسم المحصول من غير دليل محلي يفضل مثال، مش توصية محلية مؤكدة.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3d1ae07ed8afffe7b8c0990432d250f2532c9535fbae496f557ed888fa2170ea",
+      "requestFingerprintSha256": "3d1ae07ed8afffe7b8c0990432d250f2532c9535fbae496f557ed888fa2170ea",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "cb5d760d9676699bb19d1c0abd6d17316e7c801d654cc96349090c401fb85623"
+    },
+    {
+      "id": "S3-01-ar-EG-discussion-r1",
+      "unitId": "S3-01-ar-EG-discussion-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت",
+          "sha256": "4d5849fd0bcdce7d03a7d237de6c927619760bb93e87e5d13ffb56b3dcc2b091"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "إجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟",
+          "sha256": "913eaf3e455cd7671f24a21c519443af37d8720a871db7a5af3ec287c412d0e8"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "إجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟",
+          "sha256": "c352c297b303dccd46898b1553dc08feacb648f222116c3f65a12a6dd7370ff7"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "مرجع المناقشة أو الزميل، ووضّح لو مش متاح",
+          "sha256": "b9352bf13a9e8eda49f22fcbe3a952960a4520aff4f0856c3205505c4d0e3190"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "تفسيرك المعدّل لاختلاف حقلي الذرة والدليل",
+          "sha256": "1cce1b55c9bf0c086237dbb3c51cc2d36ff6977852f48981edb82262426f4dab"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "تفسيرك المعدّل لترتيب المحاصيل والدليل",
+          "sha256": "41627168f3d385878b0624390e058b56e93617623379b4a898e5a8ccd65e1686"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "ابدأ بتمهيد الأكل لمدة 5 دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.",
+          "sha256": "271fd4eaad3366ea54a32ff8a3a87b96120be6bdee4ac32d51d5d2f9cd72b09b"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "نقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.",
+          "sha256": "6b59335bf347d18f90c9f0894709c77b080f2d2fc061032c5265e3fe4b846620"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "اكتب تفسيرك قبل ما تقارنه بالحل المشروح.",
+          "sha256": "6c93bf31a11d073c6bae34bd6da3619c45d0130b287aeeecd33319a012d847d4"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "قارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.",
+          "sha256": "54047e548e1bf447f7fce14e8d3384b61f99fe35f4073e8363c9fc4c1ea2e654"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "المعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+          "sha256": "9b70e3b84ed74c2737fa6c61a7799d3c614cb3eeb697fdf1642344b3438b0e24"
+        }
+      ],
+      "scientificMeaning": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة 5 دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+      "displayText": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة 5 دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+      "captionText": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة 5 دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+      "spokenText": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة خمسة دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+      "spokenTextSHA256": "2ddc57b2ff60da348c0832f6a22c76f0d584fc0f3b28c738ba26fc11f78670ea",
+      "spokenTextSha256": "2ddc57b2ff60da348c0832f6a22c76f0d584fc0f3b28c738ba26fc11f78670ea",
+      "spokenAdaptationChanges": [
+        {
+          "written": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة 5 دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+          "spoken": "فكّر واتناقش وشارك، وبعدين عدّل إجابتك أنت\n\nإجابتك الأولى: ليه حقلين ذرة ممكن يختلفوا؟\n\nإجابتك الأولى: ليه المزارع ممكن يغيّر ترتيب المحاصيل؟\n\nمرجع المناقشة أو الزميل، ووضّح لو مش متاح\n\nتفسيرك المعدّل لاختلاف حقلي الذرة والدليل\n\nتفسيرك المعدّل لترتيب المحاصيل والدليل\n\nابدأ بتمهيد الأكل لمدة خمسة دقايق. بعده فكّر لوحدك دقيقة، واتناقش مع زميل دقيقتين، وشارك دقيقتين. ارجع للسؤالين بعد الشرح؛ كل طالب يكتب تعديله بنفسه. خطة الدورة الزراعية التفصيلية جاية بعدين.\n\nنقاش المجموعة يساعد في التعلم، لكن كل طالب يقدّم تفسيره الشخصي. خطة الدورة الزراعية التفصيلية في خطوات لاحقة.\n\nاكتب تفسيرك قبل ما تقارنه بالحل المشروح.\n\nقارن تبريرك وعدّله. الزر مش بيصحّح المعنى أو بيدي اجتياز للمعيار.\n\nالمعايير هنا معرفة وتفسير. الملاحظة المحلية ممكن تبقى تحت إشراف، لكن الشغل أونلاين ما يثبتش مهارة فعلية. مفيش ملاحظة مدرّب أو توقيع مسجّل.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5d5f8ec390823664a6f137e3da4a6a1322900071e21f160862851d0473c68f5f",
+      "requestFingerprintSha256": "5d5f8ec390823664a6f137e3da4a6a1322900071e21f160862851d0473c68f5f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "cb5d760d9676699bb19d1c0abd6d17316e7c801d654cc96349090c401fb85623"
+    },
+    {
+      "id": "S3-01-ar-EG-nutrition-r1",
+      "unitId": "S3-01-ar-EG-nutrition-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.",
+          "sha256": "94192839f3ba444e57f1a319617b137ae06b2fc4f0ee8efdf1c7a86099438f5c"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "الخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.",
+          "sha256": "e39f65c0e116c2c4f5db4ba20a2436a8209ca898bfc946d746000acf599f9443"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "محاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.",
+          "sha256": "342f11b9a765bdee9924153b8c211ca52eb0658a915d247fb0e8b990cfd4bc24"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "في تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيًا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+          "sha256": "f178fdbe86a91303bbade5c413c51a3b40372e936551eea14652e7a68953a2eb"
+        }
+      ],
+      "scientificMeaning": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيًا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+      "displayText": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيًا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+      "captionText": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيًا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+      "spokenText": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+      "spokenTextSHA256": "6f5101e3f4770274a78fac4fafe20d2e47440130c89084603ae9c9d7bc2f7f7e",
+      "spokenTextSha256": "6f5101e3f4770274a78fac4fafe20d2e47440130c89084603ae9c9d7bc2f7f7e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيًا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+          "spoken": "محاصيل بقولية كتير قيمتها الغذائية مرتبطة بالبروتين. ومع كده الاستخدام بيفرق بين البقول الجافة والبقوليات الزيتية والعلفية.\n\nالخضار بيوفّر فيتامينات ومعادن وألياف، ودورة النمو والاحتياج للمغذيات بيختلفوا من محصول للتاني.\n\nمحاصيل فاكهة كتير بنقدّر فيها الطعم الحلو والفيتامينات ومضادات الأكسدة. القيمة الغذائية وطريقة الإدارة بتختلف بالمحصول.\n\nفي تقسيم تاني ممكن نجمع الجزر والبطاطس والبنجر تحت عنوان خضار الجذور والدرنات. ده تجميع حسب الجزء اللي بيتحصد واستخدامه، مش معناه إن الأجزاء التلاتة جذور نباتيا. المثال بيوضح زاوية تصنيف مختلفة، ومش قائمة تنظيمية مصرية.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "13c6510bae350a5b06d5ab2a4552bbd6bba74dc51130ed69fddb41af43af4eaf",
+      "requestFingerprintSha256": "13c6510bae350a5b06d5ab2a4552bbd6bba74dc51130ed69fddb41af43af4eaf",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "cb5d760d9676699bb19d1c0abd6d17316e7c801d654cc96349090c401fb85623"
+    },
+    {
+      "id": "S3-01-en-model-guidance-r1",
+      "unitId": "S3-01-en-model-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.",
+          "sha256": "f91e33d1f0565bd1fbe08f66bec8bf898840b32af8b7ad76d687b446cae74342"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Cereal: many branching fibrous roots; residue effects depend on management.",
+          "sha256": "15fc79b7f812aec38a8ad200b87297f4e4c087ed3438649462c89cbe32b7c7d8"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Legume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.",
+          "sha256": "785108c1adc203803107a4a64e67eeafbb4cf4cdf320cc153d9429eef805eabb"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Carrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.",
+          "sha256": "91c73d09a6f5eb35e4616b2aec759f34fd9f5c9190c072f3f2877c2802487fee"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Strawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.",
+          "sha256": "11bd5969dbd026824212906dc6a2fd020c6a52cec5b2071f4e2872218e0c65f0"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Explain what the model shows and what it cannot prove",
+          "sha256": "f084202c361e5f97a70cd2a2f59e9593967802ca79944f9664c42221441a6efd"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Describe cereal roots, a possible legume nodule and the carrot taproot.",
+          "sha256": "2fe2edf42fce911b9ed20eac3ab4414267ae0e048a73395e89f639f15537dfac"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Give one site-suitability or measured-depth claim this model cannot prove.",
+          "sha256": "701f644da407c7891ae500b76e5cc59ffff9a2cd389b1cdb23757d4f933e5929"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Recognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+          "sha256": "d46bdd4e620cc0119192f2d5d5b0454f4ab1429aa5540356155259ee0a6f3d8c"
+        }
+      ],
+      "scientificMeaning": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "displayText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "captionText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "spokenText": "Enlarged teaching models: cereal fibrous roots, possible legume nodules, carrot storage taproot and a strawberry plant. No scale, measured depth, fixed soil texture, species identification or nitrogen amount is represented. All information is also written below.\n\nCereal: many branching fibrous roots; residue effects depend on management.\n\nLegume: enlarged example nodules on lateral roots; their presence alone does not measure fixation.\n\nCarrot: enlarged edible taproot with a sufficiently loose rooting space; no mandatory texture.\n\nStrawberry: low herbaceous fruit crop, not a tree; site and drainage still need evidence.\n\nExplain what the model shows and what it cannot prove\n\nDescribe cereal roots, a possible legume nodule and the carrot taproot.\n\nGive one site-suitability or measured-depth claim this model cannot prove.\n\nRecognize the three structures but do not infer grains must grow in sand or fruit in clay.",
+      "spokenTextSHA256": "0035eaaf00c7bf05c9833616715ad623889ae80942febb4c86f311a701c05050",
+      "spokenTextSha256": "0035eaaf00c7bf05c9833616715ad623889ae80942febb4c86f311a701c05050",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b39d4f31f6781896656c4b590d5450d79bb7318106ed7245b3c33b58bf3abbf0",
+      "requestFingerprintSha256": "b39d4f31f6781896656c4b590d5450d79bb7318106ed7245b3c33b58bf3abbf0",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "32f2d02696c93c60215fbd541ff26fade1fe28a3bbe4d89a0fa8af5abb690d2c"
+    },
+    {
+      "id": "S3-01-en-local-records-r1",
+      "unitId": "S3-01-en-local-records-r1",
+      "locale": "en",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Four local crop records",
+          "sha256": "e789899789ac70a791e77145bd6938ae5d4a4e1f489defa8d8c3be3e8fba6c74"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Crop name and practical group",
+          "sha256": "e4356d16fd40455fdacb2914298132dca0ba5a90c048a28daad73985061f9244"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Place and observation date, or explicitly unknown",
+          "sha256": "95dff6ea80f78b60b8549f901a98255bffba11b479230b046946b8f912aa4de1"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Observation or credible documentary source",
+          "sha256": "b1eff0f8117828a70112a2ae850d65c95508fc2f0bcb72ee3152400591f52017"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Why the group fits; what remains unverified about suitability",
+          "sha256": "27a926b4bcda81b3baa4ac6abd324fffd0a4a82d162e00577228ee4b0b92548b"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Start with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.",
+          "sha256": "ad984e9ef62d34ed0b8ff19483f3c35bfec10e3d5a4477059c42f73373c78be7"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "A named crop without local evidence remains an example, not a verified local recommendation.",
+          "sha256": "88dd597aca9baceefae839d1ac3ecdceef67f14042f1fc7e6f4bdd51b984a1e9"
+        }
+      ],
+      "scientificMeaning": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "displayText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "captionText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "spokenText": "Four local crop records\n\nCrop name and practical group\n\nPlace and observation date, or explicitly unknown\n\nObservation or credible documentary source\n\nWhy the group fits; what remains unverified about suitability\n\nStart with your own evidence. A name or saved note is not verified local cultivation, a crop recommendation or trainer approval.\n\nA named crop without local evidence remains an example, not a verified local recommendation.",
+      "spokenTextSHA256": "379ce65ad70960c74ec69911be63230e85013b7e8f57206b6893083fa265bc87",
+      "spokenTextSha256": "379ce65ad70960c74ec69911be63230e85013b7e8f57206b6893083fa265bc87",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ebc201d497a45d695c6c72601791a1950f0a87c991e42de9ec9c0659a471332",
+      "requestFingerprintSha256": "1ebc201d497a45d695c6c72601791a1950f0a87c991e42de9ec9c0659a471332",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "32f2d02696c93c60215fbd541ff26fade1fe28a3bbe4d89a0fa8af5abb690d2c"
+    },
+    {
+      "id": "S3-01-en-discussion-r1",
+      "unitId": "S3-01-en-discussion-r1",
+      "locale": "en",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Think, pair, share — then revise independently",
+          "sha256": "4d4e3a70de5ece631c4737f4ee0b8ad47606e38d95b50349d8289d99306180c9"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Initial answer: why can two maize fields differ?",
+          "sha256": "0272ffcf713804cd83110a5fd9d83c08bcba9daf154d66f124827cd6d811889c"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Initial answer: why might a grower change the crop sequence?",
+          "sha256": "331a0f7a7d90a866b4356fdd3b48d280bc285a8144c17a23cb38aeb817044edc"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Partner or discussion reference (unknown if unavailable)",
+          "sha256": "9dd49a1e1c52bbdc5c7868dd709999c76b1d267865c83c2815f7acd6b18602cd"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Your revised maize-field explanation and evidence",
+          "sha256": "5ae3a9cffbe210d2a9ea273286ed7ff52579d86f66f8b47387d78f897893077e"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Your revised crop-sequence explanation and evidence",
+          "sha256": "169881eaf2f00942298759cd41bf8b10ac09b8b4916bca92b1713768bb170b9a"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "Start with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.",
+          "sha256": "15d08bc44eca27d18fd46c1c145234a0bbf45b42cabd531ca9d7c3e8c311d44c"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "The group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.",
+          "sha256": "18473fac0d8e9988a0b3f553035c8e6b5ac72fffe8eb82f951334a357f7b2314"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Write your explanation before comparing with the worked reasoning.",
+          "sha256": "bd0ed57c5628a29d8fe4a3235d72a9017121df09eb69b1dba9fcdcb4d111d4b3"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Compare your argument and revise it. This button does not grade meaning or award a criterion.",
+          "sha256": "9001597a4291df30dcc1978fd65188cc2836b7c2592fe1b9bfc2699adfabfd44"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Knowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "sha256": "d9c4e9d6ff6328c76ef0adf3a62fc3f7f01b6a89d8daa11fe060b73941a33243"
+        }
+      ],
+      "scientificMeaning": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "displayText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "captionText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "spokenText": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the five-minute food opener. Then think alone for one minute, discuss in pairs for two minutes and share for two minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+      "spokenTextSHA256": "2b6dddef6c140f646c5d9c95b1b4454387813ea48f5e1b19b11ef051e0896ccc",
+      "spokenTextSha256": "2b6dddef6c140f646c5d9c95b1b4454387813ea48f5e1b19b11ef051e0896ccc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the 5-minute food opener. Then think alone for 1 minute, discuss in pairs for 2 minutes and share for 2 minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "spoken": "Think, pair, share — then revise independently\n\nInitial answer: why can two maize fields differ?\n\nInitial answer: why might a grower change the crop sequence?\n\nPartner or discussion reference (unknown if unavailable)\n\nYour revised maize-field explanation and evidence\n\nYour revised crop-sequence explanation and evidence\n\nStart with the five-minute food opener. Then think alone for one minute, discuss in pairs for two minutes and share for two minutes. Revisit both questions after learning; each learner records their own revision. A detailed rotation plan follows later.\n\nThe group exchange supports learning; every student submits a separate explanation. The detailed rotation plan belongs to later steps.\n\nWrite your explanation before comparing with the worked reasoning.\n\nCompare your argument and revise it. This button does not grade meaning or award a criterion.\n\nKnowledge and reasoning only. Local observation may be supervised, but online work does not certify physical competence. Trainer observation and signature remain absent.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2155deeafcfe6adf471f8265d373f474c3fedbdad6f1987913846aec92867abc",
+      "requestFingerprintSha256": "2155deeafcfe6adf471f8265d373f474c3fedbdad6f1987913846aec92867abc",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "32f2d02696c93c60215fbd541ff26fade1fe28a3bbe4d89a0fa8af5abb690d2c"
+    },
+    {
+      "id": "S3-01-en-nutrition-r1",
+      "unitId": "S3-01-en-nutrition-r1",
+      "locale": "en",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.",
+          "sha256": "76f86fd902406257544df2a622003c726286413658b1f56323e51eab9db66652"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Vegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.",
+          "sha256": "f457df698d2d26cc67fe776e82240f18379a972be9dc4038b98b9c9af56ce2a4"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+          "sha256": "bd49ab9dff238f139090720b982e25c97835428d1dc85e63d68edb5cc423677f"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Another classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+          "sha256": "8338fd532fb7019856b2317298270c226cc00ea0890572881f924723ec63ce0b"
+        }
+      ],
+      "scientificMeaning": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "displayText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "captionText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "spokenText": "Legumes are valued as protein-rich food crops; the crop’s use still distinguishes dry pulses, oilseed and forage legumes.\n\nVegetables contribute vitamins, minerals and fibre; crop cycles and nutrient needs vary widely.\n\nMany fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.\n\nAnother classification can group carrots, potatoes and beets as root and tuber vegetables. That is a grouping by harvested parts and use, not a claim that all three are botanical roots. It illustrates a different classification lens; it is not an Egyptian regulatory list.",
+      "spokenTextSHA256": "8b523caaf9cd998837afac756325ce4d8330a83c925ccf205fe217212136e679",
+      "spokenTextSha256": "8b523caaf9cd998837afac756325ce4d8330a83c925ccf205fe217212136e679",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e31b12664a1cb32bd003e90e4631a665cd068f4daac106bb510e178c626863d2",
+      "requestFingerprintSha256": "e31b12664a1cb32bd003e90e4631a665cd068f4daac106bb510e178c626863d2",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "32f2d02696c93c60215fbd541ff26fade1fe28a3bbe4d89a0fa8af5abb690d2c"
+    },
+    {
+      "id": "S3-01-it-model-guidance-r1",
+      "unitId": "S3-01-it-model-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.",
+          "sha256": "c505287b3fc025cafac09a005135fa81a6388e0d3b92c8ae26e32c4539b41a66"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Cereale: radici fibrose ramificate; effetto dei residui secondo gestione.",
+          "sha256": "76d2a8f8134f05755fe977ae02e623b1d71b823b31bf908de8f43fd9f25be40d"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Leguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.",
+          "sha256": "d8afc45da777da0e10a222aa0896353ede05e68fddf570a1eaffcd5704591de0"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Carota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.",
+          "sha256": "00ec562da7487cca9a5fd87aad792a256178e4607a7411621802adfb79fde68b"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Fragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.",
+          "sha256": "6d7d160481b759fba926018b1ea4df0fa57f3b8a9a68d6b862ff3bcfef9ac60c"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Spiega cosa mostra e cosa non dimostra il modello",
+          "sha256": "5fe1f335a7232f67696952962a4bc8797809ba03d16f1686952ed85f23492f16"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Descrivi radici del cereale, possibile nodulo e fittone della carota.",
+          "sha256": "549757fe315433356e28e720b8a31a9cfa5944ddac3b100942f58b3779a895c1"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Indica una pretesa su idoneità o profondità misurata che il modello non dimostra.",
+          "sha256": "a80197aaf2fe49ccd3324b34041fbc8bc68552e676615740766ab02226c3bc11"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Riconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "sha256": "86088d6968e9c8464d5cd7458ce74e0d34b5e30a3af8c3516fbbbb525fe43c5c"
+        }
+      ],
+      "scientificMeaning": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "displayText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "captionText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "spokenText": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di enne. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+      "spokenTextSHA256": "c9c951bc8f8f47c244df9402352f858bb822ee02c5c4f68521b0765865711812",
+      "spokenTextSha256": "c9c951bc8f8f47c244df9402352f858bb822ee02c5c4f68521b0765865711812",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di N. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "spoken": "Modelli ingranditi: radici fibrose, possibili noduli, fittone della carota e pianta di fragola. Nessuna scala, profondità misurata, tessitura obbligatoria, identificazione di specie o quantità di enne. Tutto è descritto anche sotto.\n\nCereale: radici fibrose ramificate; effetto dei residui secondo gestione.\n\nLeguminosa: noduli illustrativi ingranditi su radici laterali; presenza non misura fissazione.\n\nCarota: fittone ingrossato commestibile; spazio radicale adeguato, non una sola tessitura obbligatoria.\n\nFragola: coltura erbacea bassa, non albero; sito e drenaggio richiedono prove.\n\nSpiega cosa mostra e cosa non dimostra il modello\n\nDescrivi radici del cereale, possibile nodulo e fittone della carota.\n\nIndica una pretesa su idoneità o profondità misurata che il modello non dimostra.\n\nRiconosci le tre strutture senza dedurre cereali obbligatoriamente in sabbia o fruttiferi in argilla.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "61da852027ef123b8cff08c858f7e4900a958008f821613bf7baffe8bef0aa38",
+      "requestFingerprintSha256": "61da852027ef123b8cff08c858f7e4900a958008f821613bf7baffe8bef0aa38",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "e6d04c89c2a08116cb5cabc3d50bfdc239ab93df132352e10fa607b01b608dcb"
+    },
+    {
+      "id": "S3-01-it-local-records-r1",
+      "unitId": "S3-01-it-local-records-r1",
+      "locale": "it",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Quattro registrazioni di colture locali",
+          "sha256": "ce0b66e4c5e2c24c2b9ca39b6acfcaf050b82bda4a5ea5955dc94d8d7383a1f0"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Nome e gruppo pratico",
+          "sha256": "eedbfc90173624643fd5c9a787a4ad25b4186e96cb42e754a9a0937c8616cd4b"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Luogo e data di osservazione, oppure esplicitamente ignoti",
+          "sha256": "6a6085e306859821b2c13233d010020e7dd24f63b020f3d533169570f6d48f0e"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Osservazione o fonte documentale attendibile",
+          "sha256": "552c70ca038189c32552df71a6c12fffb6221b3ee4c6bffa2ecc3044d1643bb6"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Motivo del gruppo e idoneità ancora non verificata",
+          "sha256": "3b55da4b7bf870f119f379e0475de4ab85e4752d6e0eadec261cf3704fe2a787"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Parti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.",
+          "sha256": "c8818225346d4bfefbd470858eb974c1e3d71113f28a31bd88ee7b6ca53a2600"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "Senza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+          "sha256": "466ba639c833c01a9bb9f463687df2345cf1d4f735fb852944f378a4abc30aa8"
+        }
+      ],
+      "scientificMeaning": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "displayText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "captionText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "spokenText": "Quattro registrazioni di colture locali\n\nNome e gruppo pratico\n\nLuogo e data di osservazione, oppure esplicitamente ignoti\n\nOsservazione o fonte documentale attendibile\n\nMotivo del gruppo e idoneità ancora non verificata\n\nParti dalle tue prove. Un nome o una nota salvata non verificano coltivazione locale, raccomandazione o approvazione.\n\nSenza prova locale il nome resta un esempio, non una raccomandazione verificata.",
+      "spokenTextSHA256": "b45713b06724e0b7455388e2ca6979a38076c7588243af61fac435a05981b1e9",
+      "spokenTextSha256": "b45713b06724e0b7455388e2ca6979a38076c7588243af61fac435a05981b1e9",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3c3735ed180f388e931f39a2ce3cf5df46244974b7ac6df8aad20af312d73701",
+      "requestFingerprintSha256": "3c3735ed180f388e931f39a2ce3cf5df46244974b7ac6df8aad20af312d73701",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "e6d04c89c2a08116cb5cabc3d50bfdc239ab93df132352e10fa607b01b608dcb"
+    },
+    {
+      "id": "S3-01-it-discussion-r1",
+      "unitId": "S3-01-it-discussion-r1",
+      "locale": "it",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Pensa, confronta, condividi; poi rivedi individualmente",
+          "sha256": "9991004121a5767bc65d3214f14b0b0e62a5f48c3372afaad241502b011e1e4e"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Prima risposta: perché due campi di mais differiscono?",
+          "sha256": "1b02c35954313cce9d484d5711effc86765e2af0c0df3fd82b9b8c558a4aa642"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Prima risposta: perché cambiare sequenza colturale?",
+          "sha256": "b5eee6a09ee710198a14ad081ca5e853d374c14cb2d57cf151caf615033bad04"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Riferimento al compagno o dialogo, ignoto se assente",
+          "sha256": "9ffc3cbd6d8641470e547b985644168c937614e1fe0349ade01768b91b210f14"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Spiegazione rivista dei campi e prove",
+          "sha256": "dfb10e721722209dfecf1c4cac2e6badf615320b52b6c16aac0cd4af0fbcbad4"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Spiegazione rivista della sequenza e prove",
+          "sha256": "605106c63c1eaf35dbedb9d03fdfc6084556e2214dcd5a6f9758ce6263f2f85f"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "Avvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.",
+          "sha256": "a73d0131027b168fc49a2bc8a795fcae0cd866f434f0abd636a6e24c31e61791"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "Il dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.",
+          "sha256": "e148721543bf573cbe40ddf9cc1d6de89d6dfca4e3acc23d307bf5e05ce01f3c"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Scrivi la spiegazione prima di confrontarla con il ragionamento svolto.",
+          "sha256": "821f02b9b97039b5982504e40f25257cb8d048164340b3768d50e124e40c2c49"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Confronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.",
+          "sha256": "3db185262f01db522d31550862562fd0e88e94f7735ec5c75938ade792d1f424"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Solo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "sha256": "31d771d6f281c940b5f27d0fc8df53f727a8bf02b1029c75b0e056c8af588dcf"
+        }
+      ],
+      "scientificMeaning": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "displayText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "captionText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "spokenText": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di cinque minuti. Poi un minuto individuale, due a coppie e due di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+      "spokenTextSHA256": "b6227f44281735aaf250833795c15a6ffc72b4fe794501b10a971877d9acecad",
+      "spokenTextSha256": "b6227f44281735aaf250833795c15a6ffc72b4fe794501b10a971877d9acecad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di 5 minuti. Poi 1 minuto individuale, 2 a coppie e 2 di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "spoken": "Pensa, confronta, condividi; poi rivedi individualmente\n\nPrima risposta: perché due campi di mais differiscono?\n\nPrima risposta: perché cambiare sequenza colturale?\n\nRiferimento al compagno o dialogo, ignoto se assente\n\nSpiegazione rivista dei campi e prove\n\nSpiegazione rivista della sequenza e prove\n\nAvvio sul cibo di cinque minuti. Poi un minuto individuale, due a coppie e due di condivisione. Riprendi le domande dopo lo studio; ciascuno registra la propria revisione. Il piano di rotazione dettagliato segue più avanti.\n\nIl dialogo aiuta a imparare, ma ciascuno consegna la propria spiegazione. Il piano dettagliato di rotazione appartiene ai passi successivi.\n\nScrivi la spiegazione prima di confrontarla con il ragionamento svolto.\n\nConfronta e correggi il ragionamento. Il pulsante non valuta significato o superamento.\n\nSolo conoscenza e ragionamento. Possibile osservazione supervisionata, ma nessuna certificazione pratica online. Osservazione e firma del formatore assenti.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7123b02e8a7c2e8dee7d7ca973f1b8ed582ce6aa2608d4f6af59675fee6c6388",
+      "requestFingerprintSha256": "7123b02e8a7c2e8dee7d7ca973f1b8ed582ce6aa2608d4f6af59675fee6c6388",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "e6d04c89c2a08116cb5cabc3d50bfdc239ab93df132352e10fa607b01b608dcb"
+    },
+    {
+      "id": "S3-01-it-nutrition-r1",
+      "unitId": "S3-01-it-nutrition-r1",
+      "locale": "it",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.",
+          "sha256": "d478abf6d31db0c85aaae7fbb5aec52bd7f9a16f893073b5b25fbc9132af95ba"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Le verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.",
+          "sha256": "c14dd93c2e86a69ae69ef93cbf184000ef6a68c4c04a1e1c7dacf742d73b90a5"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Molte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.",
+          "sha256": "f72056167ee1a20e8216b9618d4acc57db93ed08e3c0c06e831b5cf528309060"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Un’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "sha256": "745710deab5b38019382fc6aff79978a4fae7fa9e5940f19b58edc1cc7c6024a"
+        }
+      ],
+      "scientificMeaning": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "displayText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "captionText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "spokenText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "spokenTextSHA256": "f17fe349d3decdcb8b73561f9d4811d62dae211d9e1b153f37eba85985dd33e5",
+      "spokenTextSha256": "f17fe349d3decdcb8b73561f9d4811d62dae211d9e1b153f37eba85985dd33e5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9d7380783dbe4604bce795f206ac4883185ac3939dfbffaf7ed5117b23a0a7a9",
+      "requestFingerprintSha256": "9d7380783dbe4604bce795f206ac4883185ac3939dfbffaf7ed5117b23a0a7a9",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "e6d04c89c2a08116cb5cabc3d50bfdc239ab93df132352e10fa607b01b608dcb"
+    },
+    {
+      "id": "S3-01-de-model-guidance-r1",
+      "unitId": "S3-01-de-model-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "model-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/modelHelp",
+          "text": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.",
+          "sha256": "9123dd389a791083c4178616e6e2d7ed39b6abb468ed52567233e2013bf6bb6a"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/0",
+          "text": "Getreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.",
+          "sha256": "78c2edd80df2352f626d1c9870aa4bb9e227f8e89a4ef720828c7e4a9e43d7d9"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/1",
+          "text": "Leguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.",
+          "sha256": "51d3cadea510edb1054b8f9a057c22915d8bef55f834b7411c8bbb95ae492d2f"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/2",
+          "text": "Karotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.",
+          "sha256": "5efcdaf9ed6bac7e2236349a93c05503c98165bea3957f8d208df0c8ae6d9e8e"
+        },
+        {
+          "pointer": "/cropGroups/ui/modelDetails/3",
+          "text": "Erdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.",
+          "sha256": "4a217640087316e579c4d5f676d402060de0395fbe70cd9ccccae3e765758a86"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagram",
+          "text": "Erklären, was das Modell zeigt und nicht belegt",
+          "sha256": "ab782d809980108ce2ed6250254b7771c76c1c3c5046fefd3c82b06ab0e42cb1"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/0",
+          "text": "Getreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.",
+          "sha256": "f01ae1ea75cf222fce173b5eb65012efba2d949aa934e6cf84a1ff9f349ddc5b"
+        },
+        {
+          "pointer": "/cropGroups/ui/diagramFields/1",
+          "text": "Eine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.",
+          "sha256": "0edf439f265aff3274ccf67c0e18c4ed945b3099a9ba26ceed143ff01f590fb7"
+        },
+        {
+          "pointer": "/cropGroups/training/1/feedbackRule",
+          "text": "Erkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "sha256": "075ee14534e57b9a155e41c8ad7e4511b4bea34f1973ca21de20ba1c5c53b767"
+        }
+      ],
+      "scientificMeaning": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "displayText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "captionText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "spokenText": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder En-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+      "spokenTextSHA256": "fddd670442887b40d30c35028b50564202067c424f749920f128f811a211d4a3",
+      "spokenTextSha256": "fddd670442887b40d30c35028b50564202067c424f749920f128f811a211d4a3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder N-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "spoken": "Vergrößerte Lehrmodelle: Faserwurzeln, mögliche Knöllchen, Karotten-Pfahlwurzel und Erdbeerpflanze. Kein Maßstab, Messwert, feste Bodenart, Artbestimmung oder En-Menge. Alle Informationen stehen auch im Text.\n\nGetreide: verzweigte Faserwurzeln; Reststoffwirkung hängt von Bewirtschaftung ab.\n\nLeguminose: vergrößerte Beispielknöllchen an Seitenwurzeln; Vorhandensein misst keine Fixierung.\n\nKarotte: verdickte essbare Pfahlwurzel, geeigneter ungehinderter Wurzelraum; keine zwingende Bodenart.\n\nErdbeere: niedrige krautige Obstpflanze, kein Baum; Standort und Entwässerung brauchen Belege.\n\nErklären, was das Modell zeigt und nicht belegt\n\nGetreidewurzeln, mögliches Knöllchen und Karotten-Pfahlwurzel beschreiben.\n\nEine unbelegte Aussage zu Standorteignung oder gemessener Tiefe nennen.\n\nErkenne die drei Strukturen, ohne Getreide zwingend Sand oder Obst zwingend Ton zuzuordnen.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0bac42accee794ba3a8757cd7538c01f99927afc72f47c5b0b4a37b8404cb14c",
+      "requestFingerprintSha256": "0bac42accee794ba3a8757cd7538c01f99927afc72f47c5b0b4a37b8404cb14c",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cc95deb3dc307959791b259c5f0cb669fd02c791826396bd1682e211c86fb291"
+    },
+    {
+      "id": "S3-01-de-local-records-r1",
+      "unitId": "S3-01-de-local-records-r1",
+      "locale": "de",
+      "semanticGroup": "local-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/local",
+          "text": "Vier örtliche Kulturaufzeichnungen",
+          "sha256": "a73419b08b937996f8a6b687281ac160d86e142fb9e12a29e1c6917c3068be00"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/0",
+          "text": "Kultur und praktische Gruppe",
+          "sha256": "492615e746612fca3571b6204b3d3d2e1f58ac2145d292c4b03acabb9606214d"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/1",
+          "text": "Ort und Beobachtungsdatum oder ausdrücklich unbekannt",
+          "sha256": "d3dd29fd3450f0568d32037a49caa3f89418a952779ce53e5e42ecbc78027849"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/2",
+          "text": "Beobachtung oder glaubwürdige dokumentierte Quelle",
+          "sha256": "ace0cfe4ba85511980cb38b7becd0618b3f6a10a715211338b23fd178a245033"
+        },
+        {
+          "pointer": "/cropGroups/ui/localFields/3",
+          "text": "Grund der Gruppe und ungeprüfte Eignungsfragen",
+          "sha256": "7922a1b6a821006a0e11661c38080bb8629d031d7c550c470c4ec61b03dec303"
+        },
+        {
+          "pointer": "/cropGroups/ui/localHelp",
+          "text": "Mit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.",
+          "sha256": "98834ed3d745b6af1ad8ca4957ee0a36eb7c0d2caf7f6dd20fb8509e9a7b8796"
+        },
+        {
+          "pointer": "/cropGroups/training/2/feedbackRule",
+          "text": "Ohne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+          "sha256": "8a37c9992a58648ec1572826d780c5585437e24e92ab738a18c5ef67a025f055"
+        }
+      ],
+      "scientificMeaning": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "displayText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "captionText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "spokenText": "Vier örtliche Kulturaufzeichnungen\n\nKultur und praktische Gruppe\n\nOrt und Beobachtungsdatum oder ausdrücklich unbekannt\n\nBeobachtung oder glaubwürdige dokumentierte Quelle\n\nGrund der Gruppe und ungeprüfte Eignungsfragen\n\nMit eigenen Belegen beginnen. Name oder gespeicherte Notiz prüfen weder örtlichen Anbau noch Empfehlung oder Freigabe.\n\nOhne örtlichen Beleg bleibt der Name ein Beispiel, keine geprüfte Anbauempfehlung.",
+      "spokenTextSHA256": "017850e3da7dc2c76e3724cde2c426a9e6c7d7c897292e6f5147c8309ca2cfeb",
+      "spokenTextSha256": "017850e3da7dc2c76e3724cde2c426a9e6c7d7c897292e6f5147c8309ca2cfeb",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f95d961f69c16296625bd01f71e0ef7b52fe1a0bb2587076b973d1e339defdbb",
+      "requestFingerprintSha256": "f95d961f69c16296625bd01f71e0ef7b52fe1a0bb2587076b973d1e339defdbb",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cc95deb3dc307959791b259c5f0cb669fd02c791826396bd1682e211c86fb291"
+    },
+    {
+      "id": "S3-01-de-discussion-r1",
+      "unitId": "S3-01-de-discussion-r1",
+      "locale": "de",
+      "semanticGroup": "discussion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/discussion",
+          "text": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten",
+          "sha256": "dbe35c073a3592afbf1ea61890f596556d780f60116ce6bdc58d7fd4e6026349"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/0",
+          "text": "Erste Antwort: Warum unterscheiden sich zwei Maisfelder?",
+          "sha256": "b1d91344bc3f8a542167c6f3d0e5f99d62304c7ed60c85f525d4994a685def7f"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/1",
+          "text": "Erste Antwort: Warum die Kulturfolge verändern?",
+          "sha256": "2eeca6ac9e1d4de43ed66e837a570d443fffa70771ac90520f802018aa97a3a8"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/2",
+          "text": "Partner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar",
+          "sha256": "71592280d0a05318dadc3db820310be77dff8b348162f42554721756b337cfb2"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/3",
+          "text": "Überarbeitete Felderklärung mit Belegen",
+          "sha256": "4e38b7aae71265a32871012da6a1cda8e7768bc8be1fbc18aaceeb6194101e2a"
+        },
+        {
+          "pointer": "/cropGroups/ui/discussionFields/4",
+          "text": "Überarbeitete Folgeerklärung mit Belegen",
+          "sha256": "767d13c2235ec84e89be2c638f5706a419105b4c0e6d9c06ef308f2cc462f042"
+        },
+        {
+          "pointer": "/cropGroups/ui/timing",
+          "text": "5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.",
+          "sha256": "50991a4d8b81c46a91c388dc626b6d9bbc34c2a5a49066fa4a0e7839c8cfd674"
+        },
+        {
+          "pointer": "/cropGroups/training/3/feedbackRule",
+          "text": "Der Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.",
+          "sha256": "cf64e62506d3b23e13ff1d1fa898d1e82839358a222996e69b87bafa7b34ae59"
+        },
+        {
+          "pointer": "/cropGroups/ui/reason",
+          "text": "Vor dem Mustervergleich eine eigene Begründung schreiben.",
+          "sha256": "ff6f0f8c0ea53435c8aeb8bf6922b51babca49904df9f160f6dacab81897f9e3"
+        },
+        {
+          "pointer": "/cropGroups/ui/reasonBoundary",
+          "text": "Begründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.",
+          "sha256": "a31a3fb8673f1c4b016f57fe428ce026f01970056915d42a4bb47e5b9c1299c3"
+        },
+        {
+          "pointer": "/cropGroups/ui/boundary",
+          "text": "Nur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "sha256": "a852d0541a3b839ac554955ee00610c16f5c06c845e3deeffa88be04c08b20b5"
+        }
+      ],
+      "scientificMeaning": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "displayText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "captionText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "spokenText": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\nfünf Minuten Einstieg über Nahrung. Dann eine Minute allein, zwei zu zweit, zwei teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+      "spokenTextSHA256": "4b62e1a56d6c45522fab70000417eeeb0f337cecb719e1ffb592ea45659462d7",
+      "spokenTextSha256": "4b62e1a56d6c45522fab70000417eeeb0f337cecb719e1ffb592ea45659462d7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\n5 Minuten Einstieg über Nahrung. Dann 1 Minute allein, 2 zu zweit, 2 teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "spoken": "Denken, zu zweit besprechen, teilen; dann selbst überarbeiten\n\nErste Antwort: Warum unterscheiden sich zwei Maisfelder?\n\nErste Antwort: Warum die Kulturfolge verändern?\n\nPartner- oder Gesprächsbezug, unbekannt wenn nicht verfügbar\n\nÜberarbeitete Felderklärung mit Belegen\n\nÜberarbeitete Folgeerklärung mit Belegen\n\nfünf Minuten Einstieg über Nahrung. Dann eine Minute allein, zwei zu zweit, zwei teilen. Nach dem Lernen beide Fragen erneut beantworten; jede Person hält ihre eigene Überarbeitung fest. Ein genauer Fruchtfolgeplan folgt später.\n\nDer Austausch unterstützt das Lernen; jede Person gibt ihre eigene Erklärung ab. Der genaue Fruchtfolgeplan gehört in spätere Schritte.\n\nVor dem Mustervergleich eine eigene Begründung schreiben.\n\nBegründung vergleichen und ändern. Der Knopf bewertet weder Bedeutung noch Bestehen.\n\nNur Wissen und Begründung. Örtliche Beobachtung kann betreut werden; Onlinearbeit bescheinigt keine praktische Kompetenz. Betreuerbeobachtung und Unterschrift fehlen.",
+          "occurrences": 1,
+          "purpose": "Sourcefaithful naturalspoken notation/case-ending adaptation; exacttimevalues andallscale/depth/site/Nfixation/own-evidence/physicalcompetence limits retained. Source/displayuntouched; no3Dtitle/workedkeys/quizsolution included."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd03685bfd28d633e89d384364429c229dc5551d01185c6b0e2ee42289c14327",
+      "requestFingerprintSha256": "fd03685bfd28d633e89d384364429c229dc5551d01185c6b0e2ee42289c14327",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cc95deb3dc307959791b259c5f0cb669fd02c791826396bd1682e211c86fb291"
+    },
+    {
+      "id": "S3-01-de-nutrition-r1",
+      "unitId": "S3-01-de-nutrition-r1",
+      "locale": "de",
+      "semanticGroup": "nutrition",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6a110cde38916fb3c4822b7807458c1b2d558ac1c704583eb8e28dde730947a9",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.",
+          "sha256": "4110a351d7059422fe0e0b88f97a0ebc3bede1579cc9fd6df5ca8003597a3315"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Gemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.",
+          "sha256": "f608b156cdb8f56fbdf27c960f03224b6308aedd9b9685915dcc43d185618c08"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Viele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.",
+          "sha256": "5f40c428ff25e139e7c1f29d1d7674a056be6ab275cb6f2a3827bf5c1620b082"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Eine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+          "sha256": "823ca375c8f01c7b18edf2e83e3acc37c7680afa40d40f8b941a1418cffa0754"
+        }
+      ],
+      "scientificMeaning": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "displayText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "captionText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "spokenText": "Leguminosen werden als proteinreiche Nahrung geschätzt; die Nutzung unterscheidet trockene Hülsenfrüchte, Ölsaaten und Futter.\n\nGemüse liefert Vitamine, Mineralstoffe und Ballaststoffe; Wachstumszyklen und Bedarf unterscheiden sich stark.\n\nViele Obstkulturen sind wegen Süße, Vitaminen und Antioxidantien geschätzt; Eigenschaften und Pflege unterscheiden sich.\n\nEine andere Einteilung kann Karotten, Kartoffeln und Rote Bete als Wurzel- und Knollengemüse gruppieren. Sie ordnet Ernteorgane und Nutzung, erklärt aber nicht alle drei zu botanischen Wurzeln. Dies veranschaulicht eine andere Perspektive, keine ägyptische Rechtsliste.",
+      "spokenTextSHA256": "91106a744e3d5c90291ee8695bf5f284410b21296b4bac943130867efd509c38",
+      "spokenTextSha256": "91106a744e3d5c90291ee8695bf5f284410b21296b4bac943130867efd509c38",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "021eac3c63898114481001c4c5c814301d1ca5664ad0c11b66f8458a9a925eed",
+      "requestFingerprintSha256": "021eac3c63898114481001c4c5c814301d1ca5664ad0c11b66f8458a9a925eed",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "cc95deb3dc307959791b259c5f0cb669fd02c791826396bd1682e211c86fb291"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-01-ar-EG-model-guidance-r1",
+      "S3-01-ar-EG-local-records-r1",
+      "S3-01-ar-EG-discussion-r1",
+      "S3-01-ar-EG-nutrition-r1"
+    ],
+    "en": [
+      "S3-01-en-model-guidance-r1",
+      "S3-01-en-local-records-r1",
+      "S3-01-en-discussion-r1",
+      "S3-01-en-nutrition-r1"
+    ],
+    "it": [
+      "S3-01-it-model-guidance-r1",
+      "S3-01-it-local-records-r1",
+      "S3-01-it-discussion-r1",
+      "S3-01-it-nutrition-r1"
+    ],
+    "de": [
+      "S3-01-de-model-guidance-r1",
+      "S3-01-de-local-records-r1",
+      "S3-01-de-discussion-r1",
+      "S3-01-de-nutrition-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
