@@ -1,0 +1,298 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-02-en.json",
+    "sha256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+    "bytes": 32131
+  },
+  "units": [
+    {
+      "id": "S3-02-en-opening-r1",
+      "unitId": "S3-02-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.",
+          "sha256": "a08053b1b76b19300ee9c20f76297c1a826f7ade5032b76ce41ce0363441718a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Screen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.",
+          "sha256": "50b5c64b4ad8adff997414db7287a0bcc757ab859cd0a29fb9bbb9954f581ac2"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Connect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.",
+          "sha256": "4d762060e4e4292ad826d2d6d92db68d60ccf21fd00e8e088e305196c5388761"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Distinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+          "sha256": "b11eb89c51a9abf98f8d4aa9e5e9ef453475c82a281c9c7d3175764a379662a7"
+        }
+      ],
+      "scientificMeaning": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "displayText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "captionText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "spokenText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given ten-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, P H, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific P H matter to a plan.",
+      "spokenTextSHA256": "f74083e931216e9a94baf2138f3614e9db50482b2c2ce200a43cf76e329e6146",
+      "spokenTextSha256": "f74083e931216e9a94baf2138f3614e9db50482b2c2ce200a43cf76e329e6146",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+          "spoken": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given ten-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, P H, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific P H matter to a plan.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bf267ccfb3d83d6239f7b6e72dbf9de9ab5fb3a56e0011cef0e9b960fe014a0c",
+      "requestFingerprintSha256": "bf267ccfb3d83d6239f7b6e72dbf9de9ab5fb3a56e0011cef0e9b960fe014a0c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-guided-practice-r1",
+      "unitId": "S3-02-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.",
+          "sha256": "0eda95afa2689bc232f32597cea51d6a964bf334f3ed49e7046958902f45f268"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Enter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.",
+          "sha256": "7eb3c9946c11a88899e63b3716a0cc358ed2d5219133205fb879ae72a98b034e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Write a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.",
+          "sha256": "5c742b062e44d575dae71aadf8d64779c57f17d7a1e8025aea6290dac1f0a416"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "If this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.",
+          "sha256": "3ca645c439daed32d5320a6b2bf884bbefbae33d60240c3bb32ae9b4b52f429f"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Exact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.",
+          "sha256": "2f56a9c2510539a07d9016bbf439b4e4d55ebab5e60a96c3413e552598a3c55e"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "A trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+          "sha256": "f8ee001e75751627514a7621e474b3609279e746c71573d09159900030e78f19"
+        }
+      ],
+      "scientificMeaning": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "displayText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "captionText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "spokenText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop, fertiliser prescription for a real farm.",
+      "spokenTextSHA256": "4fb77693ed8549c9d27ecbc755458cd9af0ddd40526ee87098aa833550eef426",
+      "spokenTextSha256": "4fb77693ed8549c9d27ecbc755458cd9af0ddd40526ee87098aa833550eef426",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+          "spoken": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop, fertiliser prescription for a real farm.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7eb55825cdcd4af1ef1485f84ea4844ce9d474ab2a27003fb217e49795aa4bb4",
+      "requestFingerprintSha256": "7eb55825cdcd4af1ef1485f84ea4844ce9d474ab2a27003fb217e49795aa4bb4",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-reflection-r1",
+      "unitId": "S3-02-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Match crops to soil and climate conditions in the local environment.",
+          "sha256": "d92199c7a21ac66f84a023c1036accf7a1672a0eaa535a5cec9ea8c85c479801"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment wording and response order; not a pass.",
+          "sha256": "aa606c596b1afd9d37beff2c0f9896eab4f6d617a63dd0513c12759293cf6514"
+        }
+      ],
+      "scientificMeaning": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "displayText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "captionText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenTextSHA256": "e7c63a33b46c7086567f45db3dc57cb170874c1da3c243db478a83047e1f9c9e",
+      "spokenTextSha256": "e7c63a33b46c7086567f45db3dc57cb170874c1da3c243db478a83047e1f9c9e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6f5acfd62a79e3e007053425ee4418a8043222f1f80ae6b7df311c47aeb53b89",
+      "requestFingerprintSha256": "6f5acfd62a79e3e007053425ee4418a8043222f1f80ae6b7df311c47aeb53b89",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-02-en-glossary-r1",
+      "unitId": "S3-02-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "crop suitability",
+          "sha256": "e00b286f88901e84fe50c8f94cdbdf6fd96fd5cee14b45324de45aea446e40f3"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.",
+          "sha256": "12ceb72232d9f1d3d10ed73026071bae7b23c97e50a9729d9840bec951fdc088"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "sandy loam",
+          "sha256": "7f7fbf1cbbd46ad404152dc02c6fb2caed2f46bcebe2f99348593c6bb2d180aa"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.",
+          "sha256": "a1137d75be56aa0c82f47249deaaf4b56ed72991ae6e41b209cfb92482ad0292"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "soil pH",
+          "sha256": "320e342f4844d7f36039b8b62d4846bb82e24bb5854fd0b337e5fa170c9a0105"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.",
+          "sha256": "ce9b556535ca5799a7b3f0f4388a56a8b18434c269440486d725a30342875349"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "drainage",
+          "sha256": "6b9b4cf9d162f4d14a89a50406b53a686ce01b8b246196c97c4d44efa500500f"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Movement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.",
+          "sha256": "5889f9901d2c51c97554eda24c1d9d12eff597486f124a272e74669b49467141"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "perennial",
+          "sha256": "34806d25581b27da07c87882d3e3afd695d7e7ca39b13f14db5631cf30a88d96"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.",
+          "sha256": "f27c5d0660a50cde512f121f84933d3d5d7b2999b6d73623b667f05c1463139a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "cover crop",
+          "sha256": "3337c22f2eaa0588fa7a84069b2839082d06d5aa3dbac0a823b3ff246bd112f8"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.",
+          "sha256": "b2eb68bf7e1abbc538bc8b1c8345dd8c05b2c3a5bab4fd79b928e43de3122c78"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "photoperiod",
+          "sha256": "cefdae77bde30957d583890b49a80f2a265045ec57a8568fbad7ae491c2e44a4"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "The duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "sha256": "7d25756375201a983dd8342ffe9f54145a3886793d111bb22b2a3f948bcbb5cf"
+        }
+      ],
+      "scientificMeaning": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "displayText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "captionText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "spokenText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil P H\n\nA measure of acidity or alkalinity; P H seven is neutral and P H six point two is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "spokenTextSHA256": "4ca7b2e610defadcb6cdaba6d24558ddf636d750468d400cb6e16c88ecbf31d8",
+      "spokenTextSha256": "4ca7b2e610defadcb6cdaba6d24558ddf636d750468d400cb6e16c88ecbf31d8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "spoken": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil P H\n\nA measure of acidity or alkalinity; P H seven is neutral and P H six point two is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "304fdfe5ce6157356921a69e3f31dc33ff541228211e41521174776cf6b01a4d",
+      "requestFingerprintSha256": "304fdfe5ce6157356921a69e3f31dc33ff541228211e41521174776cf6b01a4d",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

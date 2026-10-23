@@ -1,0 +1,1746 @@
+{
+  "schemaVersion": 1,
+  "scope": "S302_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s302-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-02-ar-EG-opening-r1",
+      "unitId": "S3-02-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "مجموعة المحصول بتساعدك تبدأ قائمة اختيارات، لكن التوصية محتاجة دليل من الحقل نفسه والموسم والمياه واحتياجات النبات. هنتدرب على حالة تعليمية بمناخ معتدل، وبعدها نحدد إيه البيانات الجديدة اللازمة قبل أي نصيحة لمزرعة مصرية.",
+          "sha256": "07341447bed9ec09e4ddc600785eb4290beb2be353ee1f7467442828e482353c"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تحلل محصولين مرشحين على الأقل من كل مجموعة عملية في حالة العشرة هكتارات، وتكتب لكل محصول سبب وشرط وبيانات ناقصة، بدل ما تعتبر الثمانية مناسبين تلقائيًا.",
+          "sha256": "8f974247cf1e4a0d772e347109ff4ffa6239d9976259f85b724eb090459653a5"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "تربط قوام التربة والصرف ودرجة الحموضة وتحليل العناصر والمياه والحرارة والموسم والضوء بتوصية مبررة للسنة الأولى، وتفصل بين مناخ المثال المعتدل وبيانات موقع مصري حقيقي.",
+          "sha256": "faad749ba1a0f592809fce7411ab79c88f521a8f8c87eec04938712835645674"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "تميّز المحصول الموسمي من الزراعة اللي هتفضل أكتر من سنة، وتشرح أثر مدة شغل الأرض والصرف ودرجة الحموضة المناسبة لكل محصول على الخطة.",
+          "sha256": "f13222c335a4225f6cb5ce13075e18927e040597282f2fb47aab3cf6b6f3a386"
+        }
+      ],
+      "scientificMeaning": "مجموعة المحصول بتساعدك تبدأ قائمة اختيارات، لكن التوصية محتاجة دليل من الحقل نفسه والموسم والمياه واحتياجات النبات. هنتدرب على حالة تعليمية بمناخ معتدل، وبعدها نحدد إيه البيانات الجديدة اللازمة قبل أي نصيحة لمزرعة مصرية.\n\nتحلل محصولين مرشحين على الأقل من كل مجموعة عملية في حالة العشرة هكتارات، وتكتب لكل محصول سبب وشرط وبيانات ناقصة، بدل ما تعتبر الثمانية مناسبين تلقائيًا.\n\nتربط قوام التربة والصرف ودرجة الحموضة وتحليل العناصر والمياه والحرارة والموسم والضوء بتوصية مبررة للسنة الأولى، وتفصل بين مناخ المثال المعتدل وبيانات موقع مصري حقيقي.\n\nتميّز المحصول الموسمي من الزراعة اللي هتفضل أكتر من سنة، وتشرح أثر مدة شغل الأرض والصرف ودرجة الحموضة المناسبة لكل محصول على الخطة.",
+      "displayText": "مجموعة المحصول بتساعدك تبدأ قائمة اختيارات، لكن التوصية محتاجة دليل من الحقل نفسه والموسم والمياه واحتياجات النبات. هنتدرب على حالة تعليمية بمناخ معتدل، وبعدها نحدد إيه البيانات الجديدة اللازمة قبل أي نصيحة لمزرعة مصرية.\n\nتحلل محصولين مرشحين على الأقل من كل مجموعة عملية في حالة العشرة هكتارات، وتكتب لكل محصول سبب وشرط وبيانات ناقصة، بدل ما تعتبر الثمانية مناسبين تلقائيًا.\n\nتربط قوام التربة والصرف ودرجة الحموضة وتحليل العناصر والمياه والحرارة والموسم والضوء بتوصية مبررة للسنة الأولى، وتفصل بين مناخ المثال المعتدل وبيانات موقع مصري حقيقي.\n\nتميّز المحصول الموسمي من الزراعة اللي هتفضل أكتر من سنة، وتشرح أثر مدة شغل الأرض والصرف ودرجة الحموضة المناسبة لكل محصول على الخطة.",
+      "captionText": "مجموعة المحصول بتساعدك تبدأ قائمة اختيارات، لكن التوصية محتاجة دليل من الحقل نفسه والموسم والمياه واحتياجات النبات. هنتدرب على حالة تعليمية بمناخ معتدل، وبعدها نحدد إيه البيانات الجديدة اللازمة قبل أي نصيحة لمزرعة مصرية.\n\nتحلل محصولين مرشحين على الأقل من كل مجموعة عملية في حالة العشرة هكتارات، وتكتب لكل محصول سبب وشرط وبيانات ناقصة، بدل ما تعتبر الثمانية مناسبين تلقائيًا.\n\nتربط قوام التربة والصرف ودرجة الحموضة وتحليل العناصر والمياه والحرارة والموسم والضوء بتوصية مبررة للسنة الأولى، وتفصل بين مناخ المثال المعتدل وبيانات موقع مصري حقيقي.\n\nتميّز المحصول الموسمي من الزراعة اللي هتفضل أكتر من سنة، وتشرح أثر مدة شغل الأرض والصرف ودرجة الحموضة المناسبة لكل محصول على الخطة.",
+      "spokenText": "مجموعة المحصول بتساعدك تبدأ قائمة اختيارات، لكن التوصية محتاجة دليل من الحقل نفسه والموسم والمياه واحتياجات النبات. هنتدرب على حالة تعليمية بمناخ معتدل، وبعدها نحدد إيه البيانات الجديدة اللازمة قبل أي نصيحة لمزرعة مصرية.\n\nتحلل محصولين مرشحين على الأقل من كل مجموعة عملية في حالة العشرة هكتارات، وتكتب لكل محصول سبب وشرط وبيانات ناقصة، بدل ما تعتبر الثمانية مناسبين تلقائيًا.\n\nتربط قوام التربة والصرف ودرجة الحموضة وتحليل العناصر والمياه والحرارة والموسم والضوء بتوصية مبررة للسنة الأولى، وتفصل بين مناخ المثال المعتدل وبيانات موقع مصري حقيقي.\n\nتميّز المحصول الموسمي من الزراعة اللي هتفضل أكتر من سنة، وتشرح أثر مدة شغل الأرض والصرف ودرجة الحموضة المناسبة لكل محصول على الخطة.",
+      "spokenTextSHA256": "b98e2adeaf7d105e1917779067d98722cf4fd93b9bcdbc965353ebd511c4c2be",
+      "spokenTextSha256": "b98e2adeaf7d105e1917779067d98722cf4fd93b9bcdbc965353ebd511c4c2be",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "580576c94303bb63de6b28d97a7c6596743f64c3cdf36f52298487fcec43115e",
+      "requestFingerprintSha256": "580576c94303bb63de6b28d97a7c6596743f64c3cdf36f52298487fcec43115e",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "eb2bb5f10a42d73a737fc806ea30eae71a83c04e27d52d466cdd59cf156c7778"
+    },
+    {
+      "id": "S3-02-ar-EG-guided-practice-r1",
+      "unitId": "S3-02-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "اعمل بطاقة للموقع فيها الحقائق الست المذكورة بالحرف، وافصل عنها الصرف ومصدر المياه والموسم والملوحة والصنف والآفات غير المذكورين. ما تملأش الفراغ بالتخمين.",
+          "sha256": "aee814dd37d02051dae886418228b781d3f511c86b37b3c001fa656f7636dcf5"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "اكتب محصولين على الأقل لكل مجموعة، ولكل واحد سبب محتمل وشرط ناقص أو مقيد ومدة شغل الأرض والبيانات اللازمة. احتفظ ببدائل نموذج الحل المسماة بدل استبدالها من غير تفسير.",
+          "sha256": "c5e08fa9641bae71231de77cf6817ba3a618badde717cb055216e5848d0a0105"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "اكتب توصية مشروطة لمجموعة ومحصول للسنة الأولى، وغرضه وفائدته المتوقعة، وتلات فحوص لازمة قبل نصيحة المزارع.",
+          "sha256": "5e6f6876ed9992febfb42e95437ccdb2e1bb5a6877df278eb965024bb1d75272"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "لو هنحوّل المثال لمكان محدد في مصر، اكتب بيانات المناخ والمياه والتربة والموسم اللي لازم تتجمع قبل توصية جديدة. سيب النموذج الأصلي موسوم إنه معتدل.",
+          "sha256": "70e22602349ec403fdce468630491b496d26807014d3fd2dc4e1219e65848ebb"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "أرقام النموذج تفضل منفصلة عن ملاحظات حقل مصري؛ كل مجهول يتسجل للفحص.",
+          "sha256": "01fa408ee8f006f038e2c167323729b7c6ac4330ccacb61cd18ed831a97d40e4"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "المدرّب ممكن يشرف على قراءة بطاقة موقع حقيقي أو ملاحظة حقل ويناقش افتراضات الحالة. الخطوة دي بتقيم التفكير أونلاين؛ ما تثبتش مهارة عملية شوهدت ولا تجيز وصف محصول أو سماد لمزرعة حقيقية.",
+          "sha256": "470d40fd3d150a61f2efaff690bb8c3ec49cf8daa8a1a2756808964c1a849c19"
+        }
+      ],
+      "scientificMeaning": "اعمل بطاقة للموقع فيها الحقائق الست المذكورة بالحرف، وافصل عنها الصرف ومصدر المياه والموسم والملوحة والصنف والآفات غير المذكورين. ما تملأش الفراغ بالتخمين.\n\nاكتب محصولين على الأقل لكل مجموعة، ولكل واحد سبب محتمل وشرط ناقص أو مقيد ومدة شغل الأرض والبيانات اللازمة. احتفظ ببدائل نموذج الحل المسماة بدل استبدالها من غير تفسير.\n\nاكتب توصية مشروطة لمجموعة ومحصول للسنة الأولى، وغرضه وفائدته المتوقعة، وتلات فحوص لازمة قبل نصيحة المزارع.\n\nلو هنحوّل المثال لمكان محدد في مصر، اكتب بيانات المناخ والمياه والتربة والموسم اللي لازم تتجمع قبل توصية جديدة. سيب النموذج الأصلي موسوم إنه معتدل.\n\nأرقام النموذج تفضل منفصلة عن ملاحظات حقل مصري؛ كل مجهول يتسجل للفحص.\n\nالمدرّب ممكن يشرف على قراءة بطاقة موقع حقيقي أو ملاحظة حقل ويناقش افتراضات الحالة. الخطوة دي بتقيم التفكير أونلاين؛ ما تثبتش مهارة عملية شوهدت ولا تجيز وصف محصول أو سماد لمزرعة حقيقية.",
+      "displayText": "اعمل بطاقة للموقع فيها الحقائق الست المذكورة بالحرف، وافصل عنها الصرف ومصدر المياه والموسم والملوحة والصنف والآفات غير المذكورين. ما تملأش الفراغ بالتخمين.\n\nاكتب محصولين على الأقل لكل مجموعة، ولكل واحد سبب محتمل وشرط ناقص أو مقيد ومدة شغل الأرض والبيانات اللازمة. احتفظ ببدائل نموذج الحل المسماة بدل استبدالها من غير تفسير.\n\nاكتب توصية مشروطة لمجموعة ومحصول للسنة الأولى، وغرضه وفائدته المتوقعة، وتلات فحوص لازمة قبل نصيحة المزارع.\n\nلو هنحوّل المثال لمكان محدد في مصر، اكتب بيانات المناخ والمياه والتربة والموسم اللي لازم تتجمع قبل توصية جديدة. سيب النموذج الأصلي موسوم إنه معتدل.\n\nأرقام النموذج تفضل منفصلة عن ملاحظات حقل مصري؛ كل مجهول يتسجل للفحص.\n\nالمدرّب ممكن يشرف على قراءة بطاقة موقع حقيقي أو ملاحظة حقل ويناقش افتراضات الحالة. الخطوة دي بتقيم التفكير أونلاين؛ ما تثبتش مهارة عملية شوهدت ولا تجيز وصف محصول أو سماد لمزرعة حقيقية.",
+      "captionText": "اعمل بطاقة للموقع فيها الحقائق الست المذكورة بالحرف، وافصل عنها الصرف ومصدر المياه والموسم والملوحة والصنف والآفات غير المذكورين. ما تملأش الفراغ بالتخمين.\n\nاكتب محصولين على الأقل لكل مجموعة، ولكل واحد سبب محتمل وشرط ناقص أو مقيد ومدة شغل الأرض والبيانات اللازمة. احتفظ ببدائل نموذج الحل المسماة بدل استبدالها من غير تفسير.\n\nاكتب توصية مشروطة لمجموعة ومحصول للسنة الأولى، وغرضه وفائدته المتوقعة، وتلات فحوص لازمة قبل نصيحة المزارع.\n\nلو هنحوّل المثال لمكان محدد في مصر، اكتب بيانات المناخ والمياه والتربة والموسم اللي لازم تتجمع قبل توصية جديدة. سيب النموذج الأصلي موسوم إنه معتدل.\n\nأرقام النموذج تفضل منفصلة عن ملاحظات حقل مصري؛ كل مجهول يتسجل للفحص.\n\nالمدرّب ممكن يشرف على قراءة بطاقة موقع حقيقي أو ملاحظة حقل ويناقش افتراضات الحالة. الخطوة دي بتقيم التفكير أونلاين؛ ما تثبتش مهارة عملية شوهدت ولا تجيز وصف محصول أو سماد لمزرعة حقيقية.",
+      "spokenText": "اعمل بطاقة للموقع فيها الحقائق الست المذكورة بالحرف، وافصل عنها الصرف ومصدر المياه والموسم والملوحة والصنف والآفات غير المذكورين. ما تملأش الفراغ بالتخمين.\n\nاكتب محصولين على الأقل لكل مجموعة، ولكل واحد سبب محتمل وشرط ناقص أو مقيد ومدة شغل الأرض والبيانات اللازمة. احتفظ ببدائل نموذج الحل المسماة بدل استبدالها من غير تفسير.\n\nاكتب توصية مشروطة لمجموعة ومحصول للسنة الأولى، وغرضه وفائدته المتوقعة، وتلات فحوص لازمة قبل نصيحة المزارع.\n\nلو هنحوّل المثال لمكان محدد في مصر، اكتب بيانات المناخ والمياه والتربة والموسم اللي لازم تتجمع قبل توصية جديدة. سيب النموذج الأصلي موسوم إنه معتدل.\n\nأرقام النموذج تفضل منفصلة عن ملاحظات حقل مصري؛ كل مجهول يتسجل للفحص.\n\nالمدرّب ممكن يشرف على قراءة بطاقة موقع حقيقي أو ملاحظة حقل ويناقش افتراضات الحالة. الخطوة دي بتقيم التفكير أونلاين؛ ما تثبتش مهارة عملية شوهدت ولا تجيز وصف محصول أو سماد لمزرعة حقيقية.",
+      "spokenTextSHA256": "914148d57ad6313944e599436989bcacba797021bcaabe217a8e8b63d4d59376",
+      "spokenTextSha256": "914148d57ad6313944e599436989bcacba797021bcaabe217a8e8b63d4d59376",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3d3db83ec97b7e2813cc54eac6309810f505d69426066a05a3a12702fbaee4dc",
+      "requestFingerprintSha256": "3d3db83ec97b7e2813cc54eac6309810f505d69426066a05a3a12702fbaee4dc",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "eb2bb5f10a42d73a737fc806ea30eae71a83c04e27d52d466cdd59cf156c7778"
+    },
+    {
+      "id": "S3-02-ar-EG-reflection-r1",
+      "unitId": "S3-02-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "اربط المحاصيل بالتربة والمناخ المناسبين في البيئة المحلية.",
+          "sha256": "854a6a5051fda99fab35924ba24adb5b2c63e90631f659885ed6a3792aa2fed7"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "نفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+          "sha256": "3c47661f957aebb6767e4ae420bb0d5a978f0929dd5846918879a631d29d37e0"
+        }
+      ],
+      "scientificMeaning": "اربط المحاصيل بالتربة والمناخ المناسبين في البيئة المحلية.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "displayText": "اربط المحاصيل بالتربة والمناخ المناسبين في البيئة المحلية.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "captionText": "اربط المحاصيل بالتربة والمناخ المناسبين في البيئة المحلية.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "spokenText": "اربط المحاصيل بالتربة والمناخ المناسبين في البيئة المحلية.\n\nنفس مطلب التقييم الذاتي وترتيب اختياراته؛ مش اجتياز.",
+      "spokenTextSHA256": "d6a13380180e7d84c7857664e18dea5c6c7481f1abeaf821aea12b902e49d66d",
+      "spokenTextSha256": "d6a13380180e7d84c7857664e18dea5c6c7481f1abeaf821aea12b902e49d66d",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "063af15f232d541c5c27297616066de4f6b15355e7665419ee0efd163de07645",
+      "requestFingerprintSha256": "063af15f232d541c5c27297616066de4f6b15355e7665419ee0efd163de07645",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "eb2bb5f10a42d73a737fc806ea30eae71a83c04e27d52d466cdd59cf156c7778"
+    },
+    {
+      "id": "S3-02-ar-EG-glossary-r1",
+      "unitId": "S3-02-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5365444c5d14c57ae2810baff7962eab400573b502d72ac1f0faa12d9f901ddc",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "ملاءمة المحصول",
+          "sha256": "367cee40eaa7142e563c0af870318cb6e54312ff40da014e9d165a4dae341eab"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "حكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.",
+          "sha256": "4b3920d8865987c39658eb4736c8028ab247f4073482c10f02e0e1c3ad8e1cb4"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "لوم رملي",
+          "sha256": "ea58b62ab2386b42a2ef5ee9c3163cf01e1523901447d24428b523d9a74f7130"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "قوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.",
+          "sha256": "796be12c0d364b358ee71ab4d3fc52b472917cf0294eca614a0bc15dad6c9152"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "pH التربة",
+          "sha256": "766ea9628385ca767e564043ab9217b4aaba897278a9f7ba140f48646908ab10"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "مقياس الحموضة أو القلوية؛ 7 متعادل و6.2 حمضي قليلًا.",
+          "sha256": "26e9016b50e9c83ee2974e7b38ec2d98abdf5a78992e0344f25c402ae75e8966"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "الصرف",
+          "sha256": "d92a9a58c3f510d8d70bafcfb7ea91c269abd2548dcfee27ae9dc068b20c51c4"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "حركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.",
+          "sha256": "33747e145887f033eafe52fb4e41e055da0a85bd2cde1ca8f3ccf8bc38127213"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "نبات معمّر",
+          "sha256": "7c63d5acb70207693942278ef223d1a0fdbf1cb777b415f01414727724acc7bb"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "نبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.",
+          "sha256": "37633721a18cffa619c9924ca4dc1ca29c27df4de63d98cd64ad1f5a90df3eef"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "محصول غطاء",
+          "sha256": "75d29bb98d65f3087b922c30f94208dc51310c3985346663e8aec0cf563e459e"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "محصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.",
+          "sha256": "4be9576b3e8d72a3041aa4075cc97edb4b168372b00a0b7e2e8dbad84190343e"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "الفترة الضوئية",
+          "sha256": "6030e8d09e541475136b65420392b4d50f1cd8649a1b5b3a25e85416158a938c"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "مدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+          "sha256": "989c1cdc8f894113ff09b32a5888142752ec20cb9da8ee3a0b820bc1b083c2ba"
+        }
+      ],
+      "scientificMeaning": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\npH التربة\n\nمقياس الحموضة أو القلوية؛ 7 متعادل و6.2 حمضي قليلًا.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+      "displayText": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\npH التربة\n\nمقياس الحموضة أو القلوية؛ 7 متعادل و6.2 حمضي قليلًا.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+      "captionText": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\npH التربة\n\nمقياس الحموضة أو القلوية؛ 7 متعادل و6.2 حمضي قليلًا.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+      "spokenText": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\nبي إتش التربة\n\nمقياس الحموضة أو القلوية؛ سبعة متعادل وستة فاصلة اتنين حمضي شوية.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+      "spokenTextSHA256": "7b052e33b28879dc30d72f3636afc110333822c134eab5d16788e40655864f29",
+      "spokenTextSha256": "7b052e33b28879dc30d72f3636afc110333822c134eab5d16788e40655864f29",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\npH التربة\n\nمقياس الحموضة أو القلوية؛ 7 متعادل و6.2 حمضي قليلًا.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+          "spoken": "ملاءمة المحصول\n\nحكم مبني على دليل إن احتياجات محصول محدد ممكن تتوفر في موقع وإدارة محددين، مع توضيح ما لسه مجهول.\n\nلوم رملي\n\nقوام تربة معدنية فيه رمل أكتر من كثير من أنواع اللوم، ومعاه حبيبات أدق تميزه عن الرمل وحده؛ الاسم ما يثبتش الصرف.\n\nبي إتش التربة\n\nمقياس الحموضة أو القلوية؛ سبعة متعادل وستة فاصلة اتنين حمضي شوية.\n\nالصرف\n\nحركة وإزالة المياه الزائدة من منطقة الجذور، وتتأثر بالقوام والبناء وقطاع التربة ومخرج المياه.\n\nنبات معمّر\n\nنبات دورة حياته ممكن تستمر أكتر من سنتين؛ مدة زراعته الفعلية ممكن تقصر لو اتنهى بقصد.\n\nمحصول غطاء\n\nمحصول بنزرعه أساسًا لتغطية التربة وإدارتها بدل حصاد منتجه التجاري الأساسي؛ أثره يتوقف على النوع وطريقة الإدارة.\n\nالفترة الضوئية\n\nمدة ساعات النهار، وممكن تأثر في النمو والتزهير والنضج حسب المحصول والصنف.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b82fc8a877eb2879f30700642f8b2d45b4206fa4049a9a2eaf917080937c5170",
+      "requestFingerprintSha256": "b82fc8a877eb2879f30700642f8b2d45b4206fa4049a9a2eaf917080937c5170",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "eb2bb5f10a42d73a737fc806ea30eae71a83c04e27d52d466cdd59cf156c7778"
+    },
+    {
+      "id": "S3-02-en-opening-r1",
+      "unitId": "S3-02-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.",
+          "sha256": "a08053b1b76b19300ee9c20f76297c1a826f7ade5032b76ce41ce0363441718a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Screen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.",
+          "sha256": "50b5c64b4ad8adff997414db7287a0bcc757ab859cd0a29fb9bbb9954f581ac2"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Connect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.",
+          "sha256": "4d762060e4e4292ad826d2d6d92db68d60ccf21fd00e8e088e305196c5388761"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Distinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+          "sha256": "b11eb89c51a9abf98f8d4aa9e5e9ef453475c82a281c9c7d3175764a379662a7"
+        }
+      ],
+      "scientificMeaning": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "displayText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "captionText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+      "spokenText": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given ten-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, P H, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific P H matter to a plan.",
+      "spokenTextSHA256": "f74083e931216e9a94baf2138f3614e9db50482b2c2ce200a43cf76e329e6146",
+      "spokenTextSha256": "f74083e931216e9a94baf2138f3614e9db50482b2c2ce200a43cf76e329e6146",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given 10-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, pH, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific pH matter to a plan.",
+          "spoken": "A crop group helps you make a shortlist. A recommendation needs evidence about the particular field, season, water supply and crop. Practise with a clearly labelled temperate teaching case, then state what must change before advising an Egyptian farm.\n\nScreen at least two candidate crops from each practical group for the given ten-hectare case, stating a reason, a condition and any missing data for each rather than asserting eight proven matches.\n\nConnect soil texture, drainage, P H, nutrient results, water, temperature, season and light to a reasoned year-one recommendation; keep the case's temperate climate separate from an evidence-based Egyptian locality.\n\nDistinguish annual or seasonal field crops from multi-year plantings and explain why investment duration, drainage and crop-specific P H matter to a plan.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bf267ccfb3d83d6239f7b6e72dbf9de9ab5fb3a56e0011cef0e9b960fe014a0c",
+      "requestFingerprintSha256": "bf267ccfb3d83d6239f7b6e72dbf9de9ab5fb3a56e0011cef0e9b960fe014a0c",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "8be195bae1b4f41a88157e262c00361e59d6f6c8800c27b386b9344809bd293d"
+    },
+    {
+      "id": "S3-02-en-guided-practice-r1",
+      "unitId": "S3-02-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.",
+          "sha256": "0eda95afa2689bc232f32597cea51d6a964bf334f3ed49e7046958902f45f268"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Enter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.",
+          "sha256": "7eb3c9946c11a88899e63b3716a0cc358ed2d5219133205fb879ae72a98b034e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Write a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.",
+          "sha256": "5c742b062e44d575dae71aadf8d64779c57f17d7a1e8025aea6290dac1f0a416"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "If this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.",
+          "sha256": "3ca645c439daed32d5320a6b2bf884bbefbae33d60240c3bb32ae9b4b52f429f"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Exact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.",
+          "sha256": "2f56a9c2510539a07d9016bbf439b4e4d55ebab5e60a96c3413e552598a3c55e"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "A trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+          "sha256": "f8ee001e75751627514a7621e474b3609279e746c71573d09159900030e78f19"
+        }
+      ],
+      "scientificMeaning": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "displayText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "captionText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+      "spokenText": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop, fertiliser prescription for a real farm.",
+      "spokenTextSHA256": "4fb77693ed8549c9d27ecbc755458cd9af0ddd40526ee87098aa833550eef426",
+      "spokenTextSha256": "4fb77693ed8549c9d27ecbc755458cd9af0ddd40526ee87098aa833550eef426",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop/fertiliser prescription for a real farm.",
+          "spoken": "Build a site card with the six exact supplied facts, and separate unprovided drainage, water supply, season, salinity, cultivar and pest evidence. Do not fill unknowns by guesswork.\n\nEnter at least two crops per group with one plausible match, one limiting or missing condition, likely occupancy duration and the data needed to decide. Include the named model alternatives rather than replacing them silently.\n\nWrite a year-one crop-group recommendation, one candidate crop, its purpose, the expected benefit and three checks before advising the farmer.\n\nIf this teaching case were moved to a named Egyptian locality, list the climate, water, soil and season data you would gather before writing a new recommendation. Keep the original temperate model labelled.\n\nExact model values stay separate from an Egyptian field observation; every unknown must be marked for verification.\n\nA trainer can supervise reading a local site card or field observation and discuss case assumptions. This step assesses reasoning online; it does not certify an observed physical skill or authorize a crop, fertiliser prescription for a real farm.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7eb55825cdcd4af1ef1485f84ea4844ce9d474ab2a27003fb217e49795aa4bb4",
+      "requestFingerprintSha256": "7eb55825cdcd4af1ef1485f84ea4844ce9d474ab2a27003fb217e49795aa4bb4",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "8be195bae1b4f41a88157e262c00361e59d6f6c8800c27b386b9344809bd293d"
+    },
+    {
+      "id": "S3-02-en-reflection-r1",
+      "unitId": "S3-02-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Match crops to soil and climate conditions in the local environment.",
+          "sha256": "d92199c7a21ac66f84a023c1036accf7a1672a0eaa535a5cec9ea8c85c479801"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment wording and response order; not a pass.",
+          "sha256": "aa606c596b1afd9d37beff2c0f9896eab4f6d617a63dd0513c12759293cf6514"
+        }
+      ],
+      "scientificMeaning": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "displayText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "captionText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenText": "Match crops to soil and climate conditions in the local environment.\n\nOriginal self-assessment wording and response order; not a pass.",
+      "spokenTextSHA256": "e7c63a33b46c7086567f45db3dc57cb170874c1da3c243db478a83047e1f9c9e",
+      "spokenTextSha256": "e7c63a33b46c7086567f45db3dc57cb170874c1da3c243db478a83047e1f9c9e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6f5acfd62a79e3e007053425ee4418a8043222f1f80ae6b7df311c47aeb53b89",
+      "requestFingerprintSha256": "6f5acfd62a79e3e007053425ee4418a8043222f1f80ae6b7df311c47aeb53b89",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "8be195bae1b4f41a88157e262c00361e59d6f6c8800c27b386b9344809bd293d"
+    },
+    {
+      "id": "S3-02-en-glossary-r1",
+      "unitId": "S3-02-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d8de8476ea7abc99f5a7f21fc50d306c4750170485564c19adf971704664dcfd",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "crop suitability",
+          "sha256": "e00b286f88901e84fe50c8f94cdbdf6fd96fd5cee14b45324de45aea446e40f3"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.",
+          "sha256": "12ceb72232d9f1d3d10ed73026071bae7b23c97e50a9729d9840bec951fdc088"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "sandy loam",
+          "sha256": "7f7fbf1cbbd46ad404152dc02c6fb2caed2f46bcebe2f99348593c6bb2d180aa"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.",
+          "sha256": "a1137d75be56aa0c82f47249deaaf4b56ed72991ae6e41b209cfb92482ad0292"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "soil pH",
+          "sha256": "320e342f4844d7f36039b8b62d4846bb82e24bb5854fd0b337e5fa170c9a0105"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.",
+          "sha256": "ce9b556535ca5799a7b3f0f4388a56a8b18434c269440486d725a30342875349"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "drainage",
+          "sha256": "6b9b4cf9d162f4d14a89a50406b53a686ce01b8b246196c97c4d44efa500500f"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Movement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.",
+          "sha256": "5889f9901d2c51c97554eda24c1d9d12eff597486f124a272e74669b49467141"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "perennial",
+          "sha256": "34806d25581b27da07c87882d3e3afd695d7e7ca39b13f14db5631cf30a88d96"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.",
+          "sha256": "f27c5d0660a50cde512f121f84933d3d5d7b2999b6d73623b667f05c1463139a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "cover crop",
+          "sha256": "3337c22f2eaa0588fa7a84069b2839082d06d5aa3dbac0a823b3ff246bd112f8"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.",
+          "sha256": "b2eb68bf7e1abbc538bc8b1c8345dd8c05b2c3a5bab4fd79b928e43de3122c78"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "photoperiod",
+          "sha256": "cefdae77bde30957d583890b49a80f2a265045ec57a8568fbad7ae491c2e44a4"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "The duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "sha256": "7d25756375201a983dd8342ffe9f54145a3886793d111bb22b2a3f948bcbb5cf"
+        }
+      ],
+      "scientificMeaning": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "displayText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "captionText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "spokenText": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil P H\n\nA measure of acidity or alkalinity; P H seven is neutral and P H six point two is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+      "spokenTextSHA256": "4ca7b2e610defadcb6cdaba6d24558ddf636d750468d400cb6e16c88ecbf31d8",
+      "spokenTextSha256": "4ca7b2e610defadcb6cdaba6d24558ddf636d750468d400cb6e16c88ecbf31d8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil pH\n\nA measure of acidity or alkalinity; pH 7 is neutral and pH 6.2 is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "spoken": "crop suitability\n\nA judgement that a specified crop's needs can be met by a specific site and management system, with stated evidence and remaining uncertainty.\n\nsandy loam\n\nA mineral soil texture class with more sand than many loams but enough finer particles to differ from pure sand; it does not alone describe drainage.\n\nsoil P H\n\nA measure of acidity or alkalinity; P H seven is neutral and P H six point two is slightly acidic.\n\ndrainage\n\nMovement and removal of excess water from the root zone; affected by texture, structure, profile and water outlet.\n\nperennial\n\nA plant whose life cycle can continue for more than two years; actual cropping duration may be shorter if deliberately terminated.\n\ncover crop\n\nA crop grown primarily to cover and manage soil rather than to harvest its main market product; species and management determine its effects.\n\nphotoperiod\n\nThe duration of daylight, which can affect growth, flowering and maturity depending on crop and variety.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "304fdfe5ce6157356921a69e3f31dc33ff541228211e41521174776cf6b01a4d",
+      "requestFingerprintSha256": "304fdfe5ce6157356921a69e3f31dc33ff541228211e41521174776cf6b01a4d",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "8be195bae1b4f41a88157e262c00361e59d6f6c8800c27b386b9344809bd293d"
+    },
+    {
+      "id": "S3-02-it-opening-r1",
+      "unitId": "S3-02-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.",
+          "sha256": "8bff2ae856354df82540aba1c2b17519de3f78563fa149eb621bea0833843762"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Esaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di 10 ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.",
+          "sha256": "406b4a5002461fd1b85d024eeaac44658877fce9e6ca66a55a2750a93f8a3c93"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Collegare tessitura, drenaggio, pH, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.",
+          "sha256": "582a0e8a9ed6309bec0bcaed1fc2cba6db8c9de429bc55db023b50ec51f08a4f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Distinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pH specifico incidono sul piano.",
+          "sha256": "d080370d74085c8f5b3edd77dfdfdef5c9940458655f0e3cbdfa435399987d6b"
+        }
+      ],
+      "scientificMeaning": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di 10 ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pH, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pH specifico incidono sul piano.",
+      "displayText": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di 10 ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pH, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pH specifico incidono sul piano.",
+      "captionText": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di 10 ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pH, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pH specifico incidono sul piano.",
+      "spokenText": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di dieci ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pi acca, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pi acca specifico incidono sul piano.",
+      "spokenTextSHA256": "68d343150bac0d12c389e7b8ce64a1fb6d9ea90df9717ad93e9d18cc8da53970",
+      "spokenTextSha256": "68d343150bac0d12c389e7b8ce64a1fb6d9ea90df9717ad93e9d18cc8da53970",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di 10 ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pH, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pH specifico incidono sul piano.",
+          "spoken": "Il gruppo colturale serve a preparare una rosa di candidati. Per consigliare una coltura servono dati del campo, della stagione, dell’acqua e delle esigenze della specie. Lavoriamo su un caso didattico dichiaratamente temperato, poi distinguiamo ciò che andrebbe misurato in una località egiziana.\n\nEsaminare almeno due colture candidate per ciascuno dei quattro gruppi nel caso di dieci ettari, indicando per ognuna una ragione, una condizione e i dati mancanti, senza presentare otto scelte come sicuramente idonee.\n\nCollegare tessitura, drenaggio, pi acca, risultati nutrizionali, acqua, temperatura, stagione e luce a una raccomandazione motivata per il primo anno; distinguere il clima temperato del caso dai dati di una località egiziana.\n\nDistinguere le colture stagionali dagli impianti pluriennali e spiegare perché durata dell’occupazione, drenaggio e pi acca specifico incidono sul piano.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1eea94424562969d189c7fa14b7fbfb85c7e1b6c4597583f0fd7d529a15d97ac",
+      "requestFingerprintSha256": "1eea94424562969d189c7fa14b7fbfb85c7e1b6c4597583f0fd7d529a15d97ac",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "5518e9f7bac3caf8495c17a636995601ce8512e36eaa0b9d8e5fcc5d0c0e1ee4"
+    },
+    {
+      "id": "S3-02-it-guided-practice-r1",
+      "unitId": "S3-02-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Preparare una scheda del sito con i sei fatti forniti esattamente e separare drenaggio, fonte idrica, stagione, salinità, varietà e dati sugli organismi nocivi non forniti. Non riempire i vuoti per supposizione.",
+          "sha256": "08c38f357cb3db5ddbb3a07aebfac0a9735c33d9bfbdeb09f7f6eca330ce6343"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Inserire almeno due colture per gruppo con motivo plausibile, vincolo o condizione mancante, durata di occupazione e dati necessari. Conservare le alternative nominate dal modello invece di sostituirle tacitamente.",
+          "sha256": "a27ddd4614e59fbd5f0b2b036d301dc0686a9b2dc59a0de7ece184c356c24f7e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Scrivere gruppo e coltura raccomandati con condizioni per il primo anno, scopo, beneficio atteso e tre controlli prima di consigliare il coltivatore.",
+          "sha256": "9833eb61f5a48330db16fe325e80216555b9904dfbe06845b1dca370fce0f8e2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Se il caso venisse spostato in una località egiziana nominata, elencare dati climatici, idrici, del suolo e stagionali necessari prima di un nuovo consiglio. Mantenere temperata l’etichetta originale.",
+          "sha256": "79fc61e9648ad658e33f5f34d302b6e0d74a7951cf56971d59bc8ef4ae553afc"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "I valori del modello restano separati dalle osservazioni di un campo egiziano; ogni incognita va segnata per la verifica.",
+          "sha256": "473677f07c47337e4444609350c46f0ca3ff0a7ef2b3eb7709520684e6a4d5b2"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore può supervisionare la lettura di una scheda locale o l’osservazione del campo e discutere le ipotesi. Questa tappa valuta il ragionamento online, non certifica abilità fisiche osservate né autorizza prescrizioni reali di coltura o concime.",
+          "sha256": "8d1fabe3296b258753ee8d6657c2d0f8b4886470cb1b6b74aaff90dab393b6dc"
+        }
+      ],
+      "scientificMeaning": "Preparare una scheda del sito con i sei fatti forniti esattamente e separare drenaggio, fonte idrica, stagione, salinità, varietà e dati sugli organismi nocivi non forniti. Non riempire i vuoti per supposizione.\n\nInserire almeno due colture per gruppo con motivo plausibile, vincolo o condizione mancante, durata di occupazione e dati necessari. Conservare le alternative nominate dal modello invece di sostituirle tacitamente.\n\nScrivere gruppo e coltura raccomandati con condizioni per il primo anno, scopo, beneficio atteso e tre controlli prima di consigliare il coltivatore.\n\nSe il caso venisse spostato in una località egiziana nominata, elencare dati climatici, idrici, del suolo e stagionali necessari prima di un nuovo consiglio. Mantenere temperata l’etichetta originale.\n\nI valori del modello restano separati dalle osservazioni di un campo egiziano; ogni incognita va segnata per la verifica.\n\nIl formatore può supervisionare la lettura di una scheda locale o l’osservazione del campo e discutere le ipotesi. Questa tappa valuta il ragionamento online, non certifica abilità fisiche osservate né autorizza prescrizioni reali di coltura o concime.",
+      "displayText": "Preparare una scheda del sito con i sei fatti forniti esattamente e separare drenaggio, fonte idrica, stagione, salinità, varietà e dati sugli organismi nocivi non forniti. Non riempire i vuoti per supposizione.\n\nInserire almeno due colture per gruppo con motivo plausibile, vincolo o condizione mancante, durata di occupazione e dati necessari. Conservare le alternative nominate dal modello invece di sostituirle tacitamente.\n\nScrivere gruppo e coltura raccomandati con condizioni per il primo anno, scopo, beneficio atteso e tre controlli prima di consigliare il coltivatore.\n\nSe il caso venisse spostato in una località egiziana nominata, elencare dati climatici, idrici, del suolo e stagionali necessari prima di un nuovo consiglio. Mantenere temperata l’etichetta originale.\n\nI valori del modello restano separati dalle osservazioni di un campo egiziano; ogni incognita va segnata per la verifica.\n\nIl formatore può supervisionare la lettura di una scheda locale o l’osservazione del campo e discutere le ipotesi. Questa tappa valuta il ragionamento online, non certifica abilità fisiche osservate né autorizza prescrizioni reali di coltura o concime.",
+      "captionText": "Preparare una scheda del sito con i sei fatti forniti esattamente e separare drenaggio, fonte idrica, stagione, salinità, varietà e dati sugli organismi nocivi non forniti. Non riempire i vuoti per supposizione.\n\nInserire almeno due colture per gruppo con motivo plausibile, vincolo o condizione mancante, durata di occupazione e dati necessari. Conservare le alternative nominate dal modello invece di sostituirle tacitamente.\n\nScrivere gruppo e coltura raccomandati con condizioni per il primo anno, scopo, beneficio atteso e tre controlli prima di consigliare il coltivatore.\n\nSe il caso venisse spostato in una località egiziana nominata, elencare dati climatici, idrici, del suolo e stagionali necessari prima di un nuovo consiglio. Mantenere temperata l’etichetta originale.\n\nI valori del modello restano separati dalle osservazioni di un campo egiziano; ogni incognita va segnata per la verifica.\n\nIl formatore può supervisionare la lettura di una scheda locale o l’osservazione del campo e discutere le ipotesi. Questa tappa valuta il ragionamento online, non certifica abilità fisiche osservate né autorizza prescrizioni reali di coltura o concime.",
+      "spokenText": "Preparare una scheda del sito con i sei fatti forniti esattamente e separare drenaggio, fonte idrica, stagione, salinità, varietà e dati sugli organismi nocivi non forniti. Non riempire i vuoti per supposizione.\n\nInserire almeno due colture per gruppo con motivo plausibile, vincolo o condizione mancante, durata di occupazione e dati necessari. Conservare le alternative nominate dal modello invece di sostituirle tacitamente.\n\nScrivere gruppo e coltura raccomandati con condizioni per il primo anno, scopo, beneficio atteso e tre controlli prima di consigliare il coltivatore.\n\nSe il caso venisse spostato in una località egiziana nominata, elencare dati climatici, idrici, del suolo e stagionali necessari prima di un nuovo consiglio. Mantenere temperata l’etichetta originale.\n\nI valori del modello restano separati dalle osservazioni di un campo egiziano; ogni incognita va segnata per la verifica.\n\nIl formatore può supervisionare la lettura di una scheda locale o l’osservazione del campo e discutere le ipotesi. Questa tappa valuta il ragionamento online, non certifica abilità fisiche osservate né autorizza prescrizioni reali di coltura o concime.",
+      "spokenTextSHA256": "7d1c92860aec6ddbd66abb781fd70efa29eb21a353338feb6c8bd3b070e14b7c",
+      "spokenTextSha256": "7d1c92860aec6ddbd66abb781fd70efa29eb21a353338feb6c8bd3b070e14b7c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86a8f9fa627946a29f53177a588c3de0c6ad319f0f72d03c05542aad4e8b3cbf",
+      "requestFingerprintSha256": "86a8f9fa627946a29f53177a588c3de0c6ad319f0f72d03c05542aad4e8b3cbf",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "5518e9f7bac3caf8495c17a636995601ce8512e36eaa0b9d8e5fcc5d0c0e1ee4"
+    },
+    {
+      "id": "S3-02-it-reflection-r1",
+      "unitId": "S3-02-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Abbinare le colture alle condizioni di suolo e clima dell’ambiente locale.",
+          "sha256": "95a02f8c67e55119dd149cf14f51671e23c87f649ccd0d3aca33d9490b5af3dc"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Richiesta e ordine originali dell’autovalutazione; non un esito.",
+          "sha256": "c40b0c24a7f058ff4d33c97f853735dc53555d258f51ce19f6a21337af6d82a5"
+        }
+      ],
+      "scientificMeaning": "Abbinare le colture alle condizioni di suolo e clima dell’ambiente locale.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "displayText": "Abbinare le colture alle condizioni di suolo e clima dell’ambiente locale.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "captionText": "Abbinare le colture alle condizioni di suolo e clima dell’ambiente locale.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "spokenText": "Abbinare le colture alle condizioni di suolo e clima dell’ambiente locale.\n\nRichiesta e ordine originali dell’autovalutazione; non un esito.",
+      "spokenTextSHA256": "ee7949e93fd46636b04657493218e7e72223461c5b6203a9c37dc291b897139f",
+      "spokenTextSha256": "ee7949e93fd46636b04657493218e7e72223461c5b6203a9c37dc291b897139f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4092e90b1f0f6beb63098f218c17eadc72e4fa54705f2d22467b6716ce5b6069",
+      "requestFingerprintSha256": "4092e90b1f0f6beb63098f218c17eadc72e4fa54705f2d22467b6716ce5b6069",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "5518e9f7bac3caf8495c17a636995601ce8512e36eaa0b9d8e5fcc5d0c0e1ee4"
+    },
+    {
+      "id": "S3-02-it-glossary-r1",
+      "unitId": "S3-02-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4a7c0ad2f44d96031972511bd7847eb18c26c3a93248500aec13451b5603ee8a",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "idoneità colturale",
+          "sha256": "8983adbea93ec96fb412d8d0d38b4af829a9d358bb5cfde5db6baf355bddacca"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Giudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.",
+          "sha256": "0743c75fabd5fa28cb7a0ddf5cfd56fde2c5bb97a41e5222ebd835fcec0ac1e2"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "franco-sabbioso",
+          "sha256": "1f843dd6bbe811901160157913cea33600ad2238a64a4ab9df5f2249171501b0"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Classe tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.",
+          "sha256": "264b8312b6c52c66647d55da41fd2cc6ac9f722c41efb54ad3c5779a008d0bdb"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "pH del suolo",
+          "sha256": "c1a4d8d7e7de17cfe6973affbd16e450d9994748d44e9e333596763d7cf61197"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Misura di acidità o alcalinità; pH 7 è neutro e pH 6,2 è lievemente acido.",
+          "sha256": "1eda6bbb73d56bc80d20280cbdea2f53185f2d3d46525ad123d4b00d0eef14ac"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "drenaggio",
+          "sha256": "1dbe520ecca866849bc9a6f24934f0a610fe116d2fedcf2b1744453c5e9a6a4e"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Movimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.",
+          "sha256": "565c2163786e955fa420d93e676250947a4605eceaa428f6bc0eaf6dcdbec628"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "perenne",
+          "sha256": "28f913b6b7780b1f8444b3a43430e0a608a76f41fef98541edc2f05afd6f9f11"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Pianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.",
+          "sha256": "8f8703e455b01fa02014b07c39bdb18c934fca6d24f5d7a0dddf10d080586a6d"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "coltura di copertura",
+          "sha256": "7546097de063cd0298767773711f86172868e8f3e823c59634c08c6924cabf0f"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Coltura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.",
+          "sha256": "dc138a6c45032fe08ef6f9c34d369eb925a4211c203da7a5bc3b286b14a1c039"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "fotoperiodo",
+          "sha256": "6d0e4e836be9ab27dd3e322a660be9cdef1b13408337b30487766c746ab70a38"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Durata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+          "sha256": "c7275274a527a2e13b1cd119904dc2d01f704109e9df06f845dce0ab3c169d6b"
+        }
+      ],
+      "scientificMeaning": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npH del suolo\n\nMisura di acidità o alcalinità; pH 7 è neutro e pH 6,2 è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+      "displayText": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npH del suolo\n\nMisura di acidità o alcalinità; pH 7 è neutro e pH 6,2 è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+      "captionText": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npH del suolo\n\nMisura di acidità o alcalinità; pH 7 è neutro e pH 6,2 è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+      "spokenText": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npi acca del suolo\n\nMisura di acidità o alcalinità; pi acca sette è neutro e pi acca sei virgola due è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+      "spokenTextSHA256": "9e74a90ebd713d8bf77244217b80d94eaea0956f7f3c26807332d3424b8a9c5b",
+      "spokenTextSha256": "9e74a90ebd713d8bf77244217b80d94eaea0956f7f3c26807332d3424b8a9c5b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npH del suolo\n\nMisura di acidità o alcalinità; pH 7 è neutro e pH 6,2 è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+          "spoken": "idoneità colturale\n\nGiudizio, con prove e incertezze, che un sito e una gestione soddisfino le esigenze di una coltura specifica.\n\nfranco-sabbioso\n\nClasse tessiturale con più sabbia di molti franchi ma abbastanza particelle fini da differire dalla sola sabbia; non descrive da sola il drenaggio.\n\npi acca del suolo\n\nMisura di acidità o alcalinità; pi acca sette è neutro e pi acca sei virgola due è lievemente acido.\n\ndrenaggio\n\nMovimento e smaltimento dell’acqua in eccesso nella zona delle radici, influenzato da tessitura, struttura, profilo e scarico.\n\nperenne\n\nPianta con ciclo vitale superiore a due anni; la permanenza colturale può essere abbreviata con terminazione deliberata.\n\ncoltura di copertura\n\nColtura coltivata soprattutto per coprire e gestire il suolo, non per raccogliere il prodotto principale; effetti secondo specie e gestione.\n\nfotoperiodo\n\nDurata della luce diurna, che può influire su crescita, fioritura e maturazione secondo coltura e varietà.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1daee3369cd1675f7f460bb499ac94d80ec901613380ea1dd3a9fa734ef7a279",
+      "requestFingerprintSha256": "1daee3369cd1675f7f460bb499ac94d80ec901613380ea1dd3a9fa734ef7a279",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "5518e9f7bac3caf8495c17a636995601ce8512e36eaa0b9d8e5fcc5d0c0e1ee4"
+    },
+    {
+      "id": "S3-02-de-opening-r1",
+      "unitId": "S3-02-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.",
+          "sha256": "80dce53976694c3a916fe3bb336ada651f97645766dd1735931f95c3f67d25a7"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Im 10-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.",
+          "sha256": "a81eb781e6cdcaba4c7729a64e5af4257f0fbbbf451137d9bb7b40d97419bfd3"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Bodenart, Struktur, Drainage, pH, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.",
+          "sha256": "031cc3b9f8d3efa72db8d500e914f69c729819a4a9b158da996b7737224d35e8"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Einjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer pH den Plan beeinflussen.",
+          "sha256": "9a3c0c4d069ca1256664a88473275201b71daa8623da02e03f400374c2cbcdd5"
+        }
+      ],
+      "scientificMeaning": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm 10-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, pH, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer pH den Plan beeinflussen.",
+      "displayText": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm 10-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, pH, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer pH den Plan beeinflussen.",
+      "captionText": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm 10-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, pH, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer pH den Plan beeinflussen.",
+      "spokenText": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm zehn-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, Pe Ha, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer Pe Ha den Plan beeinflussen.",
+      "spokenTextSHA256": "7dc9ae720a4707c44a6db15700825ee4ccf17fbb71467ba74e88543e956d5ce6",
+      "spokenTextSha256": "7dc9ae720a4707c44a6db15700825ee4ccf17fbb71467ba74e88543e956d5ce6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm 10-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, pH, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer pH den Plan beeinflussen.",
+          "spoken": "Eine Kulturgruppe hilft bei der Vorauswahl. Eine Empfehlung braucht Daten über das konkrete Feld, die Jahreszeit, das Wasserangebot und die Anforderungen der Kultur. Wir arbeiten mit einem ausdrücklich gemäßigten Lehrfall und klären anschließend, welche neuen Daten für einen ägyptischen Betrieb nötig wären.\n\nIm zehn-Hektar-Fall mindestens zwei mögliche Kulturen aus jeder der vier Nutzungsgruppen prüfen und für jede einen Grund, eine Bedingung und fehlende Daten nennen, statt acht gesicherte Standorttreffer zu behaupten.\n\nBodenart, Struktur, Drainage, Pe Ha, Nährstoffbefunde, Wasser, Temperatur, Saison und Licht mit einer begründeten Empfehlung für Jahr eins verknüpfen; das gemäßigte Fallklima von einer nachgewiesenen ägyptischen Ortslage trennen.\n\nEinjährige beziehungsweise saisonale Kulturen von mehrjährigen Pflanzungen unterscheiden und erklären, wie Flächennutzungsdauer, Drainage und artspezifischer Pe Ha den Plan beeinflussen.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8ccc6a02f1708ad70263ffd13a1fe403fe65de89cb4b556c103ce28b0fbfd957",
+      "requestFingerprintSha256": "8ccc6a02f1708ad70263ffd13a1fe403fe65de89cb4b556c103ce28b0fbfd957",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c64c1b1c1b1ddc98e9792cbffa6725e64b7611e71a025f31bb843a8539bf89d0"
+    },
+    {
+      "id": "S3-02-de-guided-practice-r1",
+      "unitId": "S3-02-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Eine Standortkarte mit den sechs genau gegebenen Fakten erstellen und unbekannte Drainage, Wasserversorgung, Saison, Salz, Sorte und Schaderreger getrennt aufführen. Lücken nicht erraten.",
+          "sha256": "50b2c561601d4e62d8c581b13e796484ddbbbd708f53ce6458707eb207851812"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Mindestens zwei Kulturen je Gruppe mit plausiblem Grund, Begrenzung oder offener Bedingung, Belegungsdauer und benötigten Daten eintragen. Benannte Musterkandidaten nicht stillschweigend ersetzen.",
+          "sha256": "0750280beebe9066d8f4cd549a67dc2b0c3ee55b38bad507ae3f97488f525994"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Für Jahr eins Kulturgruppe und konkrete Kultur unter Vorbehalt, Nutzungszweck, erwarteten Vorteil und drei Prüfungen vor einer Beratung aufschreiben.",
+          "sha256": "719567201d8363ad475e83eb3c9fbbe078fb46fe35e1f15f949186d9c981cf5c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Bei Übertragung in einen benannten ägyptischen Ort die benötigten Klima-, Wasser-, Boden- und Saisondaten vor neuer Empfehlung nennen. Den ursprünglichen Fall als gemäßigt kennzeichnen.",
+          "sha256": "7f5cc84ebeba9527eac674c7441050bb257b0c452af37c26a8bd6ea4776337e1"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Werte des Lehrmodells bleiben von Beobachtungen eines ägyptischen Feldes getrennt; jede Unbekannte ist zur Prüfung zu markieren.",
+          "sha256": "f49e0151fc866c63ba41bead1933cfa852b379601296908d0653777a8c73f9e3"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Die Lehrkraft kann eine örtliche Standortkarte oder Feldbeobachtung begleiten und Fallannahmen besprechen. Dieser Schritt prüft Online-Begründung; er bescheinigt keine beobachtete praktische Fertigkeit und erlaubt keine reale Kultur- oder Düngeempfehlung.",
+          "sha256": "44f7b8c720b11b735bbfcba398a2d5f933fe4670d8260bdcdf58819769ab418a"
+        }
+      ],
+      "scientificMeaning": "Eine Standortkarte mit den sechs genau gegebenen Fakten erstellen und unbekannte Drainage, Wasserversorgung, Saison, Salz, Sorte und Schaderreger getrennt aufführen. Lücken nicht erraten.\n\nMindestens zwei Kulturen je Gruppe mit plausiblem Grund, Begrenzung oder offener Bedingung, Belegungsdauer und benötigten Daten eintragen. Benannte Musterkandidaten nicht stillschweigend ersetzen.\n\nFür Jahr eins Kulturgruppe und konkrete Kultur unter Vorbehalt, Nutzungszweck, erwarteten Vorteil und drei Prüfungen vor einer Beratung aufschreiben.\n\nBei Übertragung in einen benannten ägyptischen Ort die benötigten Klima-, Wasser-, Boden- und Saisondaten vor neuer Empfehlung nennen. Den ursprünglichen Fall als gemäßigt kennzeichnen.\n\nWerte des Lehrmodells bleiben von Beobachtungen eines ägyptischen Feldes getrennt; jede Unbekannte ist zur Prüfung zu markieren.\n\nDie Lehrkraft kann eine örtliche Standortkarte oder Feldbeobachtung begleiten und Fallannahmen besprechen. Dieser Schritt prüft Online-Begründung; er bescheinigt keine beobachtete praktische Fertigkeit und erlaubt keine reale Kultur- oder Düngeempfehlung.",
+      "displayText": "Eine Standortkarte mit den sechs genau gegebenen Fakten erstellen und unbekannte Drainage, Wasserversorgung, Saison, Salz, Sorte und Schaderreger getrennt aufführen. Lücken nicht erraten.\n\nMindestens zwei Kulturen je Gruppe mit plausiblem Grund, Begrenzung oder offener Bedingung, Belegungsdauer und benötigten Daten eintragen. Benannte Musterkandidaten nicht stillschweigend ersetzen.\n\nFür Jahr eins Kulturgruppe und konkrete Kultur unter Vorbehalt, Nutzungszweck, erwarteten Vorteil und drei Prüfungen vor einer Beratung aufschreiben.\n\nBei Übertragung in einen benannten ägyptischen Ort die benötigten Klima-, Wasser-, Boden- und Saisondaten vor neuer Empfehlung nennen. Den ursprünglichen Fall als gemäßigt kennzeichnen.\n\nWerte des Lehrmodells bleiben von Beobachtungen eines ägyptischen Feldes getrennt; jede Unbekannte ist zur Prüfung zu markieren.\n\nDie Lehrkraft kann eine örtliche Standortkarte oder Feldbeobachtung begleiten und Fallannahmen besprechen. Dieser Schritt prüft Online-Begründung; er bescheinigt keine beobachtete praktische Fertigkeit und erlaubt keine reale Kultur- oder Düngeempfehlung.",
+      "captionText": "Eine Standortkarte mit den sechs genau gegebenen Fakten erstellen und unbekannte Drainage, Wasserversorgung, Saison, Salz, Sorte und Schaderreger getrennt aufführen. Lücken nicht erraten.\n\nMindestens zwei Kulturen je Gruppe mit plausiblem Grund, Begrenzung oder offener Bedingung, Belegungsdauer und benötigten Daten eintragen. Benannte Musterkandidaten nicht stillschweigend ersetzen.\n\nFür Jahr eins Kulturgruppe und konkrete Kultur unter Vorbehalt, Nutzungszweck, erwarteten Vorteil und drei Prüfungen vor einer Beratung aufschreiben.\n\nBei Übertragung in einen benannten ägyptischen Ort die benötigten Klima-, Wasser-, Boden- und Saisondaten vor neuer Empfehlung nennen. Den ursprünglichen Fall als gemäßigt kennzeichnen.\n\nWerte des Lehrmodells bleiben von Beobachtungen eines ägyptischen Feldes getrennt; jede Unbekannte ist zur Prüfung zu markieren.\n\nDie Lehrkraft kann eine örtliche Standortkarte oder Feldbeobachtung begleiten und Fallannahmen besprechen. Dieser Schritt prüft Online-Begründung; er bescheinigt keine beobachtete praktische Fertigkeit und erlaubt keine reale Kultur- oder Düngeempfehlung.",
+      "spokenText": "Eine Standortkarte mit den sechs genau gegebenen Fakten erstellen und unbekannte Drainage, Wasserversorgung, Saison, Salz, Sorte und Schaderreger getrennt aufführen. Lücken nicht erraten.\n\nMindestens zwei Kulturen je Gruppe mit plausiblem Grund, Begrenzung oder offener Bedingung, Belegungsdauer und benötigten Daten eintragen. Benannte Musterkandidaten nicht stillschweigend ersetzen.\n\nFür Jahr eins Kulturgruppe und konkrete Kultur unter Vorbehalt, Nutzungszweck, erwarteten Vorteil und drei Prüfungen vor einer Beratung aufschreiben.\n\nBei Übertragung in einen benannten ägyptischen Ort die benötigten Klima-, Wasser-, Boden- und Saisondaten vor neuer Empfehlung nennen. Den ursprünglichen Fall als gemäßigt kennzeichnen.\n\nWerte des Lehrmodells bleiben von Beobachtungen eines ägyptischen Feldes getrennt; jede Unbekannte ist zur Prüfung zu markieren.\n\nDie Lehrkraft kann eine örtliche Standortkarte oder Feldbeobachtung begleiten und Fallannahmen besprechen. Dieser Schritt prüft Online-Begründung; er bescheinigt keine beobachtete praktische Fertigkeit und erlaubt keine reale Kultur- oder Düngeempfehlung.",
+      "spokenTextSHA256": "de7af6358c51fb9db3b6c72717905ca29eb796478c2430a63e6f606406bc1b1f",
+      "spokenTextSha256": "de7af6358c51fb9db3b6c72717905ca29eb796478c2430a63e6f606406bc1b1f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9fd40bcc8a7e247f60b2207d3eb93bb13650be014d2e2129c1e6906edbe25cc8",
+      "requestFingerprintSha256": "9fd40bcc8a7e247f60b2207d3eb93bb13650be014d2e2129c1e6906edbe25cc8",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c64c1b1c1b1ddc98e9792cbffa6725e64b7611e71a025f31bb843a8539bf89d0"
+    },
+    {
+      "id": "S3-02-de-reflection-r1",
+      "unitId": "S3-02-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kulturen den Boden- und Klimabedingungen der örtlichen Umwelt zuordnen.",
+          "sha256": "42f4cb8417ae55244e2aa92d3e5bcaf47cef46759e6cbbb5244f0c165afd4991"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Ursprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+          "sha256": "9717b97862b45031706d41ef2fcd0b3735a39b5491bf6980e9d1c619fcb0fb67"
+        }
+      ],
+      "scientificMeaning": "Kulturen den Boden- und Klimabedingungen der örtlichen Umwelt zuordnen.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "displayText": "Kulturen den Boden- und Klimabedingungen der örtlichen Umwelt zuordnen.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "captionText": "Kulturen den Boden- und Klimabedingungen der örtlichen Umwelt zuordnen.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "spokenText": "Kulturen den Boden- und Klimabedingungen der örtlichen Umwelt zuordnen.\n\nUrsprüngliche Aufgabe und Antwortreihenfolge der Selbsteinschätzung; kein Bestehen.",
+      "spokenTextSHA256": "daf2093e08e4db3d3ff65efb451d8fe01ffa29d5c93b87568582835a9c347d15",
+      "spokenTextSha256": "daf2093e08e4db3d3ff65efb451d8fe01ffa29d5c93b87568582835a9c347d15",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b4a14278e118a8d12e5caa75b415a8ef99a578d0a38bb82b8cca88d492ee3803",
+      "requestFingerprintSha256": "b4a14278e118a8d12e5caa75b415a8ef99a578d0a38bb82b8cca88d492ee3803",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c64c1b1c1b1ddc98e9792cbffa6725e64b7611e71a025f31bb843a8539bf89d0"
+    },
+    {
+      "id": "S3-02-de-glossary-r1",
+      "unitId": "S3-02-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4b8629dd676dd42ad9396d7d6ed6def25ef8656ed9d3847c336034567764077d",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Standorteignung einer Kultur",
+          "sha256": "9a4f436bdb576b811729a5c0bb320e9017bfdfcb11b885046254b75a63f0c1f4"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Belegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.",
+          "sha256": "08e139951ca5e6e909aca2071b1ff5484210e67e6c57ddf5f2712630017c9874"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "sandiger Lehm",
+          "sha256": "4756f1e0c12baf3e5155b5a96e9899af347421b7be45ba5f3ca66b25e5a1b8ef"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Mineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.",
+          "sha256": "b2082f01ffab480a80200d1c0a09aa2eebafb7efcb3a6a71dc41e42d8f776b3a"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Boden-pH",
+          "sha256": "c12a1437796c45fcb6e6cad187595ea8ea5e460e4cf93a97fe8acaf850ae9eeb"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Maß für Säure oder Alkalität; pH 7 ist neutral und 6,2 leicht sauer.",
+          "sha256": "71772530f982557d6bd52530da50c21bfd48e706cc72dd205a5e3e1b7146c39d"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Drainage",
+          "sha256": "9f08c6973b8ba8c36cf8849ab71ccc26ad3029b0f759a5ec22380c526336b5d3"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Bewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.",
+          "sha256": "260e3d8f411310ef20d634bfd9b56ae6af436464c78680d75f52855e9d8827a8"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "mehrjährige Pflanze",
+          "sha256": "b6dbdf2d2d3bdae0215d3cefbfa100dcad3966a9e5ba10552aafe2931545af39"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Pflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.",
+          "sha256": "30e080cebe816836211e16487f2ea88f2263c59cdbf2b36c2851f9542ef0f4d7"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Deckfrucht",
+          "sha256": "9e8ccce15f123e8fe0f412c89d57af226a2bed0ccd6fce94d94eef417600c6d3"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Kultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.",
+          "sha256": "e0babd500baa83b0e532e9f7613aee1ed9f66cb397610f865dc1ce952587d8c8"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Photoperiode",
+          "sha256": "5c0b0b1ba7422be3058883b8aea8e58bb5e2c6dcf23a1c13f816fe3fb59b70cf"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Dauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+          "sha256": "6ae190593d359989f1026348fca468cc4234f83c169b77c3304af3ffd29ee04a"
+        }
+      ],
+      "scientificMeaning": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-pH\n\nMaß für Säure oder Alkalität; pH 7 ist neutral und 6,2 leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+      "displayText": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-pH\n\nMaß für Säure oder Alkalität; pH 7 ist neutral und 6,2 leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+      "captionText": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-pH\n\nMaß für Säure oder Alkalität; pH 7 ist neutral und 6,2 leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+      "spokenText": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-Pe Ha\n\nMaß für Säure oder Alkalität; Pe Ha sieben ist neutral und sechs Komma zwei leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+      "spokenTextSHA256": "3fb66a5ee0f7a8749b343f59786ade4eb7d0894b8bc3dc7c4db02f9305dc8022",
+      "spokenTextSha256": "3fb66a5ee0f7a8749b343f59786ade4eb7d0894b8bc3dc7c4db02f9305dc8022",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-pH\n\nMaß für Säure oder Alkalität; pH 7 ist neutral und 6,2 leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+          "spoken": "Standorteignung einer Kultur\n\nBelegtes Urteil, ob Bedürfnisse einer bestimmten Kultur an einem konkreten Standort mit gegebener Bewirtschaftung erfüllbar sind; Unsicherheit wird benannt.\n\nsandiger Lehm\n\nMineralische Bodenart mit mehr Sand als viele Lehmböden, aber genügend feineren Teilchen, um sich von reinem Sand zu unterscheiden; beschreibt Drainage nicht allein.\n\nBoden-Pe Ha\n\nMaß für Säure oder Alkalität; Pe Ha sieben ist neutral und sechs Komma zwei leicht sauer.\n\nDrainage\n\nBewegung und Abführung überschüssigen Wassers aus dem Wurzelraum; beeinflusst durch Bodenart, Struktur, Profil und Abfluss.\n\nmehrjährige Pflanze\n\nPflanze mit einem Lebenszyklus von mehr als zwei Jahren; die tatsächliche Anbaudauer kann durch bewusste Beendigung kürzer sein.\n\nDeckfrucht\n\nKultur hauptsächlich für Bodenbedeckung und -management statt Ernte des Hauptprodukts; Wirkung hängt von Art und Bewirtschaftung ab.\n\nPhotoperiode\n\nDauer des Tageslichts, die je nach Kultur und Sorte Wachstum, Blüte oder Reife beeinflussen kann.",
+          "occurrences": 1,
+          "purpose": "Complete source-faithful connected narration with numerals/decimalcomma/acronyms/ha notation and naturalEgyptian adaptation. Exact10ha/atleast2per4group/pH7neutral6.2slightlyacid/perennialmorethan2years retained. Canonical/display unchanged; no workedkeys/3DUIclaim or site-fact invented."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "17be9f63cde6c7acb0424ec90e9888d5ac63313b8e9279684be450421f8f1a57",
+      "requestFingerprintSha256": "17be9f63cde6c7acb0424ec90e9888d5ac63313b8e9279684be450421f8f1a57",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "c64c1b1c1b1ddc98e9792cbffa6725e64b7611e71a025f31bb843a8539bf89d0"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-02-ar-EG-opening-r1",
+      "S3-02-ar-EG-guided-practice-r1",
+      "S3-02-ar-EG-reflection-r1",
+      "S3-02-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-02-en-opening-r1",
+      "S3-02-en-guided-practice-r1",
+      "S3-02-en-reflection-r1",
+      "S3-02-en-glossary-r1"
+    ],
+    "it": [
+      "S3-02-it-opening-r1",
+      "S3-02-it-guided-practice-r1",
+      "S3-02-it-reflection-r1",
+      "S3-02-it-glossary-r1"
+    ],
+    "de": [
+      "S3-02-de-opening-r1",
+      "S3-02-de-guided-practice-r1",
+      "S3-02-de-reflection-r1",
+      "S3-02-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
