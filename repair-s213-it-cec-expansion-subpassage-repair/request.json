@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S213_IT_CEC_EXPANSION_SUBPASSAGE_REPAIR",
+  "stepId": "S2-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s213-it-cec-expansion-subpassage-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-13-it-cec-expansion-subpassage-repair-r1",
+      "unitId": "S2-13-it-cec-expansion-subpassage-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s213-it-cec-expansion-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+          "sha256": "d0c2e9772eb4545d79b53638daceb02fe7a31fed1a368d7e901772453a3a9001"
+        }
+      ],
+      "scientificMeaning": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+      "displayText": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+      "captionText": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+      "spokenText": "Per un approfondimento facoltativo, cerca un laboratorio o servizio di estensione attendibile per la capacità di scambio cationico, o per l’acqua disponibile alle piante in centimetri per metro.",
+      "spokenTextSHA256": "c4deb651caf1c982e8ab49b0553a8950d077633c0f96217a81c3b67e2ae5a447",
+      "spokenTextSha256": "c4deb651caf1c982e8ab49b0553a8950d077633c0f96217a81c3b67e2ae5a447",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+          "spoken": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro.",
+          "spoken": "Per un approfondimento facoltativo, cerca un laboratorio o servizio di estensione attendibile per la capacità di scambio cationico, o per l’acqua disponibile alle piante in centimetri per metro.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_CEC_EXPANSION_SENTENCE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "8502f66a4ccc4f194edac28203089460d3466cc4ebb3605f137fc9cbfa43e7aa",
+      "requestFingerprintSha256": "8502f66a4ccc4f194edac28203089460d3466cc4ebb3605f137fc9cbfa43e7aa",
+      "sourcePlanSha256": "fd766bbb9bdc4723b9b0004a1e73d37ecfe340ee41d626c24dd3de2b389838f9",
+      "exactSentenceBefore": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/5/paragraphs/1",
+        "original": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+        "effective": "Per un approfondimento facoltativo cerca un laboratorio o servizio di estensione attendibile per CEC o acqua disponibile alle piante in cm per metro. Registra fonte, tessitura o orizzonte, metodo e unità. Spiega perché un intervallo pubblicato non è il valore misurato del tuo campo. Non cercare di far 'diventare franco' un modello argilloso cambiando sulla carta le percentuali delle particelle.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s213-it-cec-root-repair-decision-r1.json",
+        "rootSelectedAuthoritySHA256": "a9559d922733e8bdc10fd3053c7c9f63ca5011852a1c1ead617a52aecfe82925"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-13-it-cec-expansion-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
