@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S305_S3_05_IT_R01A_CLARITY_REPAIR",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s305-s3-05-it-r01a-clarity-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-it-R01a-clarity-repair-r1",
+      "unitId": "S3-05-it-R01a-clarity-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s305-s3-05-it-r01a-clarity-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Irrigare significa applicare acqua per sostenere la produzione. Il volume da distribuire non coincide automaticamente con il bisogno colturale: contano pioggia efficace, riserva radicale, perdite ed efficienza dell’impianto. Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+          "sha256": "97adc6cb7e3037aa240cb69b32758e3bd216ed2c48c5c1e71250c09e39bd19ff"
+        }
+      ],
+      "scientificMeaning": "Irrigare significa applicare acqua per sostenere la produzione. Il volume da distribuire non coincide automaticamente con il bisogno colturale: contano pioggia efficace, riserva radicale, perdite ed efficienza dell’impianto. Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+      "displayText": "Irrigare significa applicare acqua per sostenere la produzione. Il volume da distribuire non coincide automaticamente con il bisogno colturale: contano pioggia efficace, riserva radicale, perdite ed efficienza dell’impianto. Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+      "captionText": "Irrigare significa applicare acqua per sostenere la produzione. Il volume da distribuire non coincide automaticamente con il bisogno colturale: contano pioggia efficace, riserva radicale, perdite ed efficienza dell’impianto. Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+      "spokenText": "Controllare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+      "spokenTextSHA256": "e43551483d856fb7d26ebaa546e87489bb8f260e804c4f7477be6410b2674989",
+      "spokenTextSha256": "e43551483d856fb7d26ebaa546e87489bb8f260e804c4f7477be6410b2674989",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Irrigare significa applicare acqua per sostenere la produzione. Il volume da distribuire non coincide automaticamente con il bisogno colturale: contano pioggia efficace, riserva radicale, perdite ed efficienza dell’impianto. Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+          "spoken": "Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+          "spoken": "Controllare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "a023c468237da1a391fe95699d4f6b4987996c21a5d7476f3fc49faebf7074e5",
+      "requestFingerprintSha256": "a023c468237da1a391fe95699d4f6b4987996c21a5d7476f3fc49faebf7074e5",
+      "sourcePlanSha256": "a4e9aacc8a46ea1a638d8c2d2cade290d59bc073a76bc05a42b285a94008379a",
+      "exactSentenceBefore": "Monitorare prima dello stress dannoso, senza aspettare soltanto l’appassimento visibile.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s305-seven-repairs-root-authority-r1.json",
+        "authoritySHA256": "b04a2d2bfcea4de1e33a405324845a4ca77456c56f26c9fdaacf7f772a6e296a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-05-it-R01a-clarity-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
