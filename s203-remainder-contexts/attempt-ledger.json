@@ -1,0 +1,236 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C04": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C05": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C06": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C07": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C08": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C09": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C10": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C11": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C12": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 12,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationID": "s203-remainder-contexts",
+    "reservationSHA256": "110ecb6e2df6359f19186993c559f4441b78325b4797513172d52f8ce4fe2ea5",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 50,
+    "globalConservativelyReservedOrConsumed": 62,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S2-03-ar-EG-E01-r1",
+        "wavSHA256": "54796b65e90608cc333c003a373de639c3ef01323b3314f6016cf1160884cfbc",
+        "firstSample": 600000,
+        "endSampleExclusive": 744000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S2-03-ar-EG-knowledge-completion-r1",
+        "wavSHA256": "86386c1d1609f2475b49c7ed6993b64a0e7a2a0e07dde2dc12ddd6d5eb5cf380",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C03",
+        "sourceUnitId": "S2-03-ar-EG-knowledge-completion-r1",
+        "wavSHA256": "86386c1d1609f2475b49c7ed6993b64a0e7a2a0e07dde2dc12ddd6d5eb5cf380",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C04",
+        "sourceUnitId": "S2-03-en-E01-r1",
+        "wavSHA256": "84fc88e3695b8fa4e4ff6c75074624a4f07fe7359331653cd81bb4132833b94e",
+        "firstSample": 336000,
+        "endSampleExclusive": 480000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C05",
+        "sourceUnitId": "S2-03-en-guided-practice-r1",
+        "wavSHA256": "b54947c4a425b39a89d29f26dd56d935b1a722c34c017f4e9e2b6142a7211651",
+        "firstSample": 632640,
+        "endSampleExclusive": 776640,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C06",
+        "sourceUnitId": "S2-03-it-opening-r1",
+        "wavSHA256": "9b0771ce6ca4aa5a94ffea4d846d10b1886000e5e575d09dfb740f8df034e4fc",
+        "firstSample": 1315200,
+        "endSampleExclusive": 1459200,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C07",
+        "sourceUnitId": "S2-03-it-comparison-r1",
+        "wavSHA256": "3ce6208c2cbaf8e47ab9d0fbead44622fc04a849b1013397f4eb3e7226ba40db",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C08",
+        "sourceUnitId": "S2-03-it-comparison-r1",
+        "wavSHA256": "3ce6208c2cbaf8e47ab9d0fbead44622fc04a849b1013397f4eb3e7226ba40db",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C09",
+        "sourceUnitId": "S2-03-it-station-workflow-r1",
+        "wavSHA256": "004d61cd4e8e35acd4071d992d5a503dd70fa403ae59740551b800114b21a37f",
+        "firstSample": 1342080,
+        "endSampleExclusive": 1486080,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C10",
+        "sourceUnitId": "S2-03-it-knowledge-completion-r1",
+        "wavSHA256": "1c86df68dfb3eca9283e57da839c66967628b1eb327a89e05d2608b984c86919",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C11",
+        "sourceUnitId": "S2-03-de-opening-r1",
+        "wavSHA256": "65a5e6bd393741c932610a88413f9e835f46241c5b67bebf74a2a3b12a60838e",
+        "firstSample": 624000,
+        "endSampleExclusive": 768000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C12",
+        "sourceUnitId": "S2-03-de-opening-r1",
+        "wavSHA256": "65a5e6bd393741c932610a88413f9e835f46241c5b67bebf74a2a3b12a60838e",
+        "firstSample": 1351680,
+        "endSampleExclusive": 1495680,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}
