@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "S214_DE_P_TEST",
+  "stepId": "S2-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s214-de-p-test-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-14-de-phosphorus-test-subpassage-repair-r1",
+      "unitId": "S2-14-de-phosphorus-test-subpassage-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s214-de-p-test-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+          "sha256": "2b54d25263ea332ca1a0c2a88aa36843ebd3ada61032d31a8fa7249776202397"
+        }
+      ],
+      "scientificMeaning": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+      "displayText": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+      "captionText": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+      "spokenText": "Prüfe vor der Wahl eines Mittels oder einer Menge die Analyse und Qualität des Materials, den Salzgehalt, die Nährstoffbilanz, das Verfahren für den Phosphortest, die Kulturhinweise, das Umweltrisiko und den Kalkbedarf.",
+      "spokenTextSHA256": "84f0833863b27ef7eb199feb5e41d7f6ac9b570c1e86072f8a443d543e233d25",
+      "spokenTextSha256": "84f0833863b27ef7eb199feb5e41d7f6ac9b570c1e86072f8a443d543e233d25",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+          "spoken": "Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf.",
+          "spoken": "Prüfe vor der Wahl eines Mittels oder einer Menge die Analyse und Qualität des Materials, den Salzgehalt, die Nährstoffbilanz, das Verfahren für den Phosphortest, die Kulturhinweise, das Umweltrisiko und den Kalkbedarf.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "1f8b02b2d9b3457b9e7d6d06dd6510a0656bada7ee639c44ac6923c2f9b77f86",
+      "requestFingerprintSha256": "1f8b02b2d9b3457b9e7d6d06dd6510a0656bada7ee639c44ac6923c2f9b77f86",
+      "sourcePlanSha256": "5c2a687af2553de7dd3562548ad575e0e13643ca968fad20b885a4cc29273f84",
+      "exactSentenceBefore": "Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/5/paragraphs/1",
+        "original": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+        "effective": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reading/5/paragraphs/1",
+            "text": "Das Muster schlägt 2–3 Zoll Kompost oder gut verrotteten Mist eingearbeitet in die oberen 6 Zoll und ein phosphorreiches Produkt wie Knochenmehl oder 10-20-10 vor. Diese Zahlen und Produkte sind historische Unterrichtsbeispiele, keine geprüfte Verordnung für Feld 3. Prüfe vor Mittel oder Menge Analyse und Qualität des Materials, Salzgehalt, Nährstoffbilanz, P-Methode, Kulturhinweise, Umweltrisiko und Kalkbedarf. Besprich, warum eigener pH und eigene Textur vom Muster abweichen können und weshalb die Begründung mehr zählt als die Übereinstimmung mit einer Musterzahl. Eine Selbstreflexion hilft der Planung, beweist aber keine praktische Fertigkeit.",
+            "sha256": "2b54d25263ea332ca1a0c2a88aa36843ebd3ada61032d31a8fa7249776202397"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-four-postcontext-root-repairs-r1.json",
+        "rootSelectedAuthoritySHA256": "510932912c883cc82ecb189a03c81c3438082ccdad50a2ff3c304de3a3b53b20"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-14-de-phosphorus-test-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
