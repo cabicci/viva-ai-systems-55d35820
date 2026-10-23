@@ -1,0 +1,303 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-en.json",
+    "sha256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+    "bytes": 40361
+  },
+  "units": [
+    {
+      "id": "S2-13-en-R01-r1",
+      "unitId": "S2-13-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "The source compares sandy, loamy and clay-rich material on five dimensions: water infiltration, water-holding capacity, nutrient-holding capacity, aeration and workability. Under otherwise comparable conditions, the larger pores often associated with sand allow faster water movement but less retention. Fine particles can retain more water and positively charged nutrients, yet a dense or wet clay-rich soil may drain and aerate slowly and be sticky when wet or hard when dry.",
+          "sha256": "3a4ac404678527e30937327e2fdc593a3683b3bfa7850476051f30a6c6db5872"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Use these as tendencies, not a field measurement. Aggregation, compaction, cracks, horizons, organic matter, slope and water table can alter the outcome. Loam can provide a useful balance when its structure and drainage are sound; its name alone does not make a field ideal for every crop.",
+          "sha256": "ca91fa3a653154ea0c73511fee55957a664e66e5d27820ba640743c56c1c3b6e"
+        }
+      ],
+      "scientificMeaning": "The source compares sandy, loamy and clay-rich material on five dimensions: water infiltration, water-holding capacity, nutrient-holding capacity, aeration and workability. Under otherwise comparable conditions, the larger pores often associated with sand allow faster water movement but less retention. Fine particles can retain more water and positively charged nutrients, yet a dense or wet clay-rich soil may drain and aerate slowly and be sticky when wet or hard when dry.\n\nUse these as tendencies, not a field measurement. Aggregation, compaction, cracks, horizons, organic matter, slope and water table can alter the outcome. Loam can provide a useful balance when its structure and drainage are sound; its name alone does not make a field ideal for every crop.",
+      "displayText": "The source compares sandy, loamy and clay-rich material on five dimensions: water infiltration, water-holding capacity, nutrient-holding capacity, aeration and workability. Under otherwise comparable conditions, the larger pores often associated with sand allow faster water movement but less retention. Fine particles can retain more water and positively charged nutrients, yet a dense or wet clay-rich soil may drain and aerate slowly and be sticky when wet or hard when dry.\n\nUse these as tendencies, not a field measurement. Aggregation, compaction, cracks, horizons, organic matter, slope and water table can alter the outcome. Loam can provide a useful balance when its structure and drainage are sound; its name alone does not make a field ideal for every crop.",
+      "captionText": "The source compares sandy, loamy and clay-rich material on five dimensions: water infiltration, water-holding capacity, nutrient-holding capacity, aeration and workability. Under otherwise comparable conditions, the larger pores often associated with sand allow faster water movement but less retention. Fine particles can retain more water and positively charged nutrients, yet a dense or wet clay-rich soil may drain and aerate slowly and be sticky when wet or hard when dry.\n\nUse these as tendencies, not a field measurement. Aggregation, compaction, cracks, horizons, organic matter, slope and water table can alter the outcome. Loam can provide a useful balance when its structure and drainage are sound; its name alone does not make a field ideal for every crop.",
+      "spokenText": "The source compares sandy, loamy and clay-rich material on five dimensions: water infiltration, water-holding capacity, nutrient-holding capacity, aeration and workability. Under otherwise comparable conditions, the larger pores often associated with sand allow faster water movement but less retention. Fine particles can retain more water and positively charged nutrients, yet a dense or wet clay-rich soil may drain and aerate slowly and be sticky when wet or hard when dry.\n\nUse these as tendencies, not a field measurement. Aggregation, compaction, cracks, horizons, organic matter, slope and water table can alter the outcome. Loam can provide a useful balance when its structure and drainage are sound; its name alone does not make a field ideal for every crop.",
+      "spokenTextSHA256": "470bae55931cbb25a5d445f8f1f0a8c7a50702be908808f4978b74b0be7e3336",
+      "spokenTextSha256": "470bae55931cbb25a5d445f8f1f0a8c7a50702be908808f4978b74b0be7e3336",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "28110e14262735c2120ce399367e2393056f5027e282b02b37d7d6bb8314dd31",
+      "requestFingerprintSha256": "28110e14262735c2120ce399367e2393056f5027e282b02b37d7d6bb8314dd31",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-R02-r1",
+      "unitId": "S2-13-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or CEC, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so CEC is not a direct reading of texture or pH.",
+          "sha256": "9628e5eb60cb555eaf7dee104d4c5bd7d4a74497cbd9e66a5fb5b60eb908c69a"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Clay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in cm per metre without measured site data and a stated method.",
+          "sha256": "351f7b0178fac4bfba53f839ba734f32c9e8f78cfd79a4410813180bf2547517"
+        }
+      ],
+      "scientificMeaning": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or CEC, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so CEC is not a direct reading of texture or pH.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in cm per metre without measured site data and a stated method.",
+      "displayText": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or CEC, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so CEC is not a direct reading of texture or pH.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in cm per metre without measured site data and a stated method.",
+      "captionText": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or CEC, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so CEC is not a direct reading of texture or pH.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in cm per metre without measured site data and a stated method.",
+      "spokenText": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or C E C, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so C E C is not a direct reading of texture or P H.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in centimetres per metre without measured site data and a stated method.",
+      "spokenTextSHA256": "d138b9159834b598a96eaef1853c47d8afed3b632bb50d40469204ce4ff18269",
+      "spokenTextSha256": "d138b9159834b598a96eaef1853c47d8afed3b632bb50d40469204ce4ff18269",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or CEC, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so CEC is not a direct reading of texture or pH.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in cm per metre without measured site data and a stated method.",
+          "spoken": "Rapid movement through a sandy soil can leach soluble nutrients, especially when water and nutrient management are poorly matched. Clay surfaces commonly carry negative charge and can hold positively charged nutrient ions such as calcium and potassium. Cation exchange capacity, or C E C, describes a soil's capacity to retain exchangeable cations; clay type and organic matter also matter, so C E C is not a direct reading of texture or P H.\n\nClay-rich soil can contain more total water while some is held too tightly for plant uptake. Plant-available water depends on the water held between field capacity and the permanent wilting point, and is affected by the profile, salinity, roots and management. Therefore do not translate a texture label into an exact irrigation interval or a water-storage number in centimetres per metre without measured site data and a stated method.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/USDA/NRCS/unit/D name/numeral expansions plus natural Egyptian spoken grammar; preserve all sourcequantity/negation/uncertainty/method/individualevidence meaning, no display edits."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b63aada02901fefbbd7b72e9336497fd0a317d23735cc93dd8615ddedfb0af47",
+      "requestFingerprintSha256": "b63aada02901fefbbd7b72e9336497fd0a317d23735cc93dd8615ddedfb0af47",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-R03-r1",
+      "unitId": "S2-13-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Suitable, tested organic material may help sandy soil retain water and may improve aggregation and workability in a clay-rich soil over time. Its quality, salinity, maturity, rate and the field's drainage need checking. Adding compost changes the soil's condition; it does not turn clay-sized mineral particles into sand or guarantee drainage.",
+          "sha256": "cb521d32c2425c098dbbf5309fd318daea75f21a80ea162723ba574ad9fd77f2"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Do not prescribe gypsum just because a field is clay-rich. Gypsum can be part of reclaiming a diagnosed sodic soil, where calcium replaces exchangeable sodium and displaced sodium must be leached under suitable drainage. Texture, sodicity, salinity and a blocked drain are different problems. Ask the trainer for a soil and water assessment before any field amendment recommendation.",
+          "sha256": "c5227f1ee7cfd2756a69fea7c4eb3d7e16df0e455b80f62cc85cb5e12455741d"
+        }
+      ],
+      "scientificMeaning": "Suitable, tested organic material may help sandy soil retain water and may improve aggregation and workability in a clay-rich soil over time. Its quality, salinity, maturity, rate and the field's drainage need checking. Adding compost changes the soil's condition; it does not turn clay-sized mineral particles into sand or guarantee drainage.\n\nDo not prescribe gypsum just because a field is clay-rich. Gypsum can be part of reclaiming a diagnosed sodic soil, where calcium replaces exchangeable sodium and displaced sodium must be leached under suitable drainage. Texture, sodicity, salinity and a blocked drain are different problems. Ask the trainer for a soil and water assessment before any field amendment recommendation.",
+      "displayText": "Suitable, tested organic material may help sandy soil retain water and may improve aggregation and workability in a clay-rich soil over time. Its quality, salinity, maturity, rate and the field's drainage need checking. Adding compost changes the soil's condition; it does not turn clay-sized mineral particles into sand or guarantee drainage.\n\nDo not prescribe gypsum just because a field is clay-rich. Gypsum can be part of reclaiming a diagnosed sodic soil, where calcium replaces exchangeable sodium and displaced sodium must be leached under suitable drainage. Texture, sodicity, salinity and a blocked drain are different problems. Ask the trainer for a soil and water assessment before any field amendment recommendation.",
+      "captionText": "Suitable, tested organic material may help sandy soil retain water and may improve aggregation and workability in a clay-rich soil over time. Its quality, salinity, maturity, rate and the field's drainage need checking. Adding compost changes the soil's condition; it does not turn clay-sized mineral particles into sand or guarantee drainage.\n\nDo not prescribe gypsum just because a field is clay-rich. Gypsum can be part of reclaiming a diagnosed sodic soil, where calcium replaces exchangeable sodium and displaced sodium must be leached under suitable drainage. Texture, sodicity, salinity and a blocked drain are different problems. Ask the trainer for a soil and water assessment before any field amendment recommendation.",
+      "spokenText": "Suitable, tested organic material may help sandy soil retain water and may improve aggregation and workability in a clay-rich soil over time. Its quality, salinity, maturity, rate and the field's drainage need checking. Adding compost changes the soil's condition; it does not turn clay-sized mineral particles into sand or guarantee drainage.\n\nDo not prescribe gypsum just because a field is clay-rich. Gypsum can be part of reclaiming a diagnosed sodic soil, where calcium replaces exchangeable sodium and displaced sodium must be leached under suitable drainage. Texture, sodicity, salinity and a blocked drain are different problems. Ask the trainer for a soil and water assessment before any field amendment recommendation.",
+      "spokenTextSHA256": "ac3cad065b9135b56f626cf8533bf01e5cd874eca7cf4716625bdaf764c8ac75",
+      "spokenTextSha256": "ac3cad065b9135b56f626cf8533bf01e5cd874eca7cf4716625bdaf764c8ac75",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3474ccf474ad80e7ec2fa6dbd95056b81082ee00f15e2622d938e07b90e91963",
+      "requestFingerprintSha256": "3474ccf474ad80e7ec2fa6dbd95056b81082ee00f15e2622d938e07b90e91963",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-R04-r1",
+      "unitId": "S2-13-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Hypothetical teaching profile D, separate from the supplied A/B/C model and from your own jars: sand layer 50 mm, silt layer 30 mm and clay layer 20 mm; total 100 mm. Calculate each percentage as layer height ÷ total height × 100: 50% sand, 30% silt and 20% clay. On the USDA-NRCS basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.",
+          "sha256": "b07f7a72fb8b63a28debec8c42cbdbdd625422267bbedfdc754e76790f91007a"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "A loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, pH, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A/B/C profiles before comparing their complete model answer; D does not supply their classifications.",
+          "sha256": "dff1a57daa64191f0c4d53c19b164b72cfed598632f25de435d6ee1bb4ee7b06"
+        }
+      ],
+      "scientificMeaning": "Hypothetical teaching profile D, separate from the supplied A/B/C model and from your own jars: sand layer 50 mm, silt layer 30 mm and clay layer 20 mm; total 100 mm. Calculate each percentage as layer height ÷ total height × 100: 50% sand, 30% silt and 20% clay. On the USDA-NRCS basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, pH, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A/B/C profiles before comparing their complete model answer; D does not supply their classifications.",
+      "displayText": "Hypothetical teaching profile D, separate from the supplied A/B/C model and from your own jars: sand layer 50 mm, silt layer 30 mm and clay layer 20 mm; total 100 mm. Calculate each percentage as layer height ÷ total height × 100: 50% sand, 30% silt and 20% clay. On the USDA-NRCS basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, pH, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A/B/C profiles before comparing their complete model answer; D does not supply their classifications.",
+      "captionText": "Hypothetical teaching profile D, separate from the supplied A/B/C model and from your own jars: sand layer 50 mm, silt layer 30 mm and clay layer 20 mm; total 100 mm. Calculate each percentage as layer height ÷ total height × 100: 50% sand, 30% silt and 20% clay. On the USDA-NRCS basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, pH, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A/B/C profiles before comparing their complete model answer; D does not supply their classifications.",
+      "spokenText": "Hypothetical teaching profile D, separate from the supplied A, B, and C model and from your own jars: sand layer fifty millimetres, silt layer thirty millimetres and clay layer twenty millimetres; total one hundred millimetres. Calculate each percentage as layer height divided by total height multiplied by one hundred: fifty percent sand, thirty percent silt and twenty percent clay. On the U S D A-N R C S basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, P H, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A, B, and C profiles before comparing their complete model answer; D does not supply their classifications.",
+      "spokenTextSHA256": "79862aded71b32f86d0edca190a8f2340044fcc0b3628447f5dbbb3d69f1c09d",
+      "spokenTextSha256": "79862aded71b32f86d0edca190a8f2340044fcc0b3628447f5dbbb3d69f1c09d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Hypothetical teaching profile D, separate from the supplied A/B/C model and from your own jars: sand layer 50 mm, silt layer 30 mm and clay layer 20 mm; total 100 mm. Calculate each percentage as layer height ÷ total height × 100: 50% sand, 30% silt and 20% clay. On the USDA-NRCS basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, pH, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A/B/C profiles before comparing their complete model answer; D does not supply their classifications.",
+          "spoken": "Hypothetical teaching profile D, separate from the supplied A, B, and C model and from your own jars: sand layer fifty millimetres, silt layer thirty millimetres and clay layer twenty millimetres; total one hundred millimetres. Calculate each percentage as layer height divided by total height multiplied by one hundred: fifty percent sand, thirty percent silt and twenty percent clay. On the U S D A-N R C S basic texture triangle this point is loam. These invented teaching inputs are not observations of a real sample.\n\nA loam may offer useful workability and a water-air balance when structure and drainage are sound. Check compaction, horizons, water table, climate, P H, salinity and crop requirements before selecting a crop or management option. In the examples or training tab, attempt the three supplied A, B, and C profiles before comparing their complete model answer; D does not supply their classifications.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/USDA/NRCS/unit/D name/numeral expansions plus natural Egyptian spoken grammar; preserve all sourcequantity/negation/uncertainty/method/individualevidence meaning, no display edits."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba8b0460485885f77f771b660ffcc76914950a29fb79e8b73fa8618177be8ecb",
+      "requestFingerprintSha256": "ba8b0460485885f77f771b660ffcc76914950a29fb79e8b73fa8618177be8ecb",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-R05-r1",
+      "unitId": "S2-13-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.",
+          "sha256": "d2dac685ec48b920c137031aeda6ddb18eae6b413b5bb556b30c1565786da699"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "For each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A/B/C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+          "sha256": "65aa7c84e6b38061746756c0ac6ef4dc8c8b4680a9dcb651ca6b43753bb8c450"
+        }
+      ],
+      "scientificMeaning": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A/B/C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+      "displayText": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A/B/C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+      "captionText": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A/B/C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+      "spokenText": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A, B, and C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+      "spokenTextSHA256": "07b627ad6becd2d1862309f459fc8ba031183284db966013152bb1fd0a54631c",
+      "spokenTextSha256": "07b627ad6becd2d1862309f459fc8ba031183284db966013152bb1fd0a54631c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A/B/C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+          "spoken": "A clay-classified field may be difficult to work when wet and may have low aeration or waterlogging if its structure or drainage is poor. One advantage can be greater retention of exchangeable cations; it may also store more total water, although not all of it is available. State which two challenges and one advantage you expect, why, and which on-site observation or test could confirm them.\n\nFor each real sample, record only existing measured evidence and its limits; leave unavailable observations blank. Separately attempt the supplied A, B, and C interpretation exercise before comparing its complete model. A teaching-model comparison is not a practical result.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/USDA/NRCS/unit/D name/numeral expansions plus natural Egyptian spoken grammar; preserve all sourcequantity/negation/uncertainty/method/individualevidence meaning, no display edits."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "840789a0c439d9a2c8368940d031a7324e1dc78cbace3cf2a60c62a6d8d420f8",
+      "requestFingerprintSha256": "840789a0c439d9a2c8368940d031a7324e1dc78cbace3cf2a60c62a6d8d420f8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-R06-r1",
+      "unitId": "S2-13-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.",
+          "sha256": "889ec912b225a6c7abdfba0035058020853f630de035483c5542b81ea7d97372"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "For an optional extension, find a reputable laboratory or extension source for CEC or plant-available water in cm per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+          "sha256": "99f126b5820307c66f75595aa38f0bcd27e357d981dc423dc456f1b70d923e79"
+        }
+      ],
+      "scientificMeaning": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for CEC or plant-available water in cm per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+      "displayText": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for CEC or plant-available water in cm per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+      "captionText": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for CEC or plant-available water in cm per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+      "spokenText": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for C E C or plant-available water in centimetres per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+      "spokenTextSHA256": "7ccd12c625321955936645dc3e15660f602f87251e4b58198c6975d311a861f1",
+      "spokenTextSha256": "7ccd12c625321955936645dc3e15660f602f87251e4b58198c6975d311a861f1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for CEC or plant-available water in cm per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+          "spoken": "If the trainer supplies a pre-filled table, use it for calculation and interpretation practice only. It cannot replace the measurements and observations you make for your own jars in the previous steps. A group may discuss one sample, but each learner must show their own interpretation.\n\nFor an optional extension, find a reputable laboratory or extension source for C E C or plant-available water in centimetres per metre. Record the source, texture or horizon, method and units. Explain why a published range cannot be asserted as the measured value for your field. Do not try to make a clay model 'become loam' by changing its particle percentages on paper.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/USDA/NRCS/unit/D name/numeral expansions plus natural Egyptian spoken grammar; preserve all sourcequantity/negation/uncertainty/method/individualevidence meaning, no display edits."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd9d04391a1a7978ba8a61926849782c01675c2283295d9505e4957a076a0c8e",
+      "requestFingerprintSha256": "fd9d04391a1a7978ba8a61926849782c01675c2283295d9505e4957a076a0c8e",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
