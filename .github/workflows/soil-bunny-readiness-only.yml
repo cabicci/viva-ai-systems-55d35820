@@ -1,0 +1,35 @@
+name: Existing twelve Soil Bunny GUID readiness only
+'on':
+  push:
+    branches: ['work/soil-bunny-batch01-readiness-20261023-r1']
+    paths: ['readiness/manifest.json']
+permissions:
+  contents: read
+concurrency:
+  group: soil-bunny-batch01-existing-guid-readiness-r1
+  cancel-in-progress: false
+jobs:
+  check:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Twelve existing GUID metadata reads without mutation
+        env:
+          MANIFEST_SHA: f2818aa6b054ca562f6c74c8176f49b4192862229aa08a4d146468f972156ec1
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: |
+          cd readiness
+          echo "b5c39f9deb631fe309dadc67a600b4e4a0e3eb2b7485d886de919b062068d684  readiness.py" | sha256sum --check --strict
+          python3 readiness.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bunny-batch01-existing-guid-readiness
+          path: readiness/output/*.json
+          if-no-files-found: error
+          retention-days: 30
