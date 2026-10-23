@@ -1,0 +1,85 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-02-ar-EG.json",
+    "sha256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+    "bytes": 46471
+  },
+  "scope": "One root-approved route sentence only; all other original PCM retained.",
+  "units": [
+    {
+      "id": "S1-02-ar-EG-reflection-sentence-repair-r1",
+      "unitId": "S1-02-ar-EG-reflection-sentence-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection-heat-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/note",
+          "text": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+          "sha256": "062e3b5b1f51e0bcfb0103ca4381da633b2f2d3d4b98d20cb2e7265ce7ffc049"
+        }
+      ],
+      "scientificMeaning": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "displayText": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "captionText": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "spokenText": "الخطوة دي عن الإصابات والإجهاد الحراري وضربة الشمس.",
+      "spokenTextSHA256": "323343e09867042f69d466f7bfabb572999ea20bed2df88cb461e8578be84b84",
+      "spokenTextSha256": "323343e09867042f69d466f7bfabb572999ea20bed2df88cb461e8578be84b84",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+          "spoken": "الخطوة دي للإصابات والحر.",
+          "occurrences": 1,
+          "purpose": "EXACT_INDEPENDENT_CLAUSE_EXTRACTION_ALL_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "الخطوة دي للإصابات والحر.",
+          "spoken": "الخطوة دي عن الإصابات والإجهاد الحراري وضربة الشمس.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ROUTE_DESCRIPTION_FOR_CORROBORATED_W_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "a99856d8b53874b3ced0f17627f97e36685da765694bcdcc898372ba81f7cc75",
+      "requestFingerprintSha256": "a99856d8b53874b3ced0f17627f97e36685da765694bcdcc898372ba81f7cc75",
+      "sourcePlanSha256": "ee0ed6e6e3cb36c37a5b517f01355f655b0872924aed1a94dc9e24ff4c8e1d68",
+      "exactSentenceBefore": "الخطوة دي للإصابات والحر.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "supportingCurrentSourceBindings": [
+    {
+      "sourcePath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-02-ar-EG.json",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "pointer": "/reading/3/paragraphs/1",
+      "text": "الإجهاد الحراري ممكن يسبب عرق غزير، وجلد شاحب وبارد أو رطب، وصداع وغثيان ودوخة وضعف. انقل الشخص بعيد عن الحر لمكان أبرد وفيه ضِل لو النقل آمن، وفكّ اللبس الزيادة، وبرّده بفوط مبلولة وتهوية، ورتّب له تقييم طبي. لو واعي تمامًا ويقدر يبلع بأمان، ممكن ياخد رشفات صغيرة ومتكررة من مَيّه باردة. خليك معاه وراقب لو حالته بتسوء.",
+      "sha256": "5682c21b7ac0d50a410d33632acdeccbc834cad9c8fcff2a7c1757b6ddf19cf4",
+      "scope": "Current written heat-exhaustion and heatstroke teaching supports the approved reflection wording; no medical advice expansion."
+    },
+    {
+      "sourcePath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-02-ar-EG.json",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "pointer": "/reading/3/paragraphs/2",
+      "text": "ضربة الشمس طارئ طبي. لو شخص اتعرّض للحر وظهر عليه تشوش، تصرّف غير معتاد، كلام متلخبط، تشنج أو فقدان وعي، لازم تتحرك فورًا. جسمه ممكن يبقى سخن جدًا ونبضه سريع. جلده ممكن يبقى محمر وجاف، وممكن كمان يكون لسه بيعرق بغزارة. ما تستناش العرق يوقف أو تقيس الحرارة عشان تطلب المساعدة.",
+      "sha256": "baa7b0571b1e68d451648db19c3a5d34ff4b10c46b94fb159267b43171b30a0a",
+      "scope": "Current written heat-exhaustion and heatstroke teaching supports the approved reflection wording; no medical advice expansion."
+    }
+  ]
+}

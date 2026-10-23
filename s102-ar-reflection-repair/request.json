@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S102_AR_REFLECTION_ONE_CORROBORATED_SENTENCE_REPAIR_ONLY",
+  "stepId": "S1-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s102-ar-reflection-sentence-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_AR_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-02-ar-EG-reflection-sentence-repair-r1",
+      "unitId": "S1-02-ar-EG-reflection-sentence-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection-heat-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/note",
+          "text": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+          "sha256": "062e3b5b1f51e0bcfb0103ca4381da633b2f2d3d4b98d20cb2e7265ce7ffc049"
+        }
+      ],
+      "scientificMeaning": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "displayText": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "captionText": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+      "spokenText": "الخطوة دي عن الإصابات والإجهاد الحراري وضربة الشمس.",
+      "spokenTextSHA256": "323343e09867042f69d466f7bfabb572999ea20bed2df88cb461e8578be84b84",
+      "spokenTextSha256": "323343e09867042f69d466f7bfabb572999ea20bed2df88cb461e8578be84b84",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الخطوة دي للإصابات والحر. كمّل خطوة الانسكاب والإخلاء لباقي الاستعداد للطوارئ. تقييمك لنفسك مش شهادة باجتياز المهارة العملية.",
+          "spoken": "الخطوة دي للإصابات والحر.",
+          "occurrences": 1,
+          "purpose": "EXACT_INDEPENDENT_CLAUSE_EXTRACTION_ALL_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "الخطوة دي للإصابات والحر.",
+          "spoken": "الخطوة دي عن الإصابات والإجهاد الحراري وضربة الشمس.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ROUTE_DESCRIPTION_FOR_CORROBORATED_W_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "a99856d8b53874b3ced0f17627f97e36685da765694bcdcc898372ba81f7cc75",
+      "requestFingerprintSha256": "a99856d8b53874b3ced0f17627f97e36685da765694bcdcc898372ba81f7cc75",
+      "sourcePlanSha256": "8d4f7a5b900b3ec0d35fd841badd88312bc2853070fce6ab5accb24168afd3f0",
+      "exactSentenceBefore": "الخطوة دي للإصابات والحر.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S1-02-ar-EG-reflection-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
