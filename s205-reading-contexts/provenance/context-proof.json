@@ -1,0 +1,53 @@
+{
+  "clips": [
+    {
+      "id": "C01",
+      "inputPath": "inputs/C01.wav",
+      "sourceUnitId": "S2-05-it-R01-r1",
+      "contextWavSHA256": "a3246c8e5a912a8f96db296357aaa14aa9207fe1fbf8dd18e0c8a6edb8894ad5",
+      "contextPCMSHA256": "b002706c3dc24fe852cdf0c923c548e1b174144c82c77b75136c340a91c8244e",
+      "frames": 144000,
+      "sampleRate": 24000,
+      "durationSeconds": 6.0,
+      "originalWavSHA256": "0ec933f5f72d4aab9f44722f71989f94441f0e5ca90d96df18a2e79920530438",
+      "originalPCMSHA256": "a1ada52f5fe6293a4f330fbeb36505c88239864cb97991704acf197b1addedf4",
+      "originalFrames": 1968960,
+      "sourceFirstSample": 1368000,
+      "sourceEndSampleExclusive": 1512000,
+      "sourceOffsetSeconds": 57,
+      "sourceEndSeconds": 63,
+      "endsAtOriginalRecordingEnd": false,
+      "boundaryFact": "The excerpt begins and ends at intentional interior cut points; do not mistake these boundaries for defects in the source recording.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    },
+    {
+      "id": "C02",
+      "inputPath": "inputs/C02.wav",
+      "sourceUnitId": "S2-05-it-R02-r1",
+      "contextWavSHA256": "618a074e200bc742ffbe19c5c09cb69cbf8e49e4b1bf98a87784f4352910c035",
+      "contextPCMSHA256": "a7131e618e7fb596a55cb695e4740bcfd4bea6bad25858a37452e47d803af9d4",
+      "frames": 144000,
+      "sampleRate": 24000,
+      "durationSeconds": 6.0,
+      "originalWavSHA256": "0dc4c41a57271e0a9db00350cba59ba74f93b54a57681ea54c96e75296f6ef54",
+      "originalPCMSHA256": "4bc4aeb2d8f4f23eb8e084c43971d6372b598232fff3de65f80fa8dfaaf7ef57",
+      "originalFrames": 2738880,
+      "sourceFirstSample": 2052000,
+      "sourceEndSampleExclusive": 2196000,
+      "sourceOffsetSeconds": 85.5,
+      "sourceEndSeconds": 91.5,
+      "endsAtOriginalRecordingEnd": false,
+      "boundaryFact": "The excerpt begins and ends at intentional interior cut points; do not mistake these boundaries for defects in the source recording.",
+      "maximumAdditionalReviewCalls": 1,
+      "priorIdenticalContextCalls": 0,
+      "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL"
+    }
+  ],
+  "exactSourcePCMSubsetVerified": true,
+  "sourceAudioKind": "UNMODIFIED_PROVIDER_ORIGINAL",
+  "originalSourceFilesUnmodified": true,
+  "newTTS": 0,
+  "filteringResamplingPitchOrSpeedChange": false
+}
