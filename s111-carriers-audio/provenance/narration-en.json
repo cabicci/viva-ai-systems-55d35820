@@ -1,0 +1,202 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-11-en.json",
+    "sha256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+    "bytes": 17477
+  },
+  "units": [
+    {
+      "id": "S1-11-en-field-sheet-r1",
+      "unitId": "S1-11-en-field-sheet-r1",
+      "locale": "en",
+      "semanticGroup": "field-sheet",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+      "sourceBindings": [
+        {
+          "pointer": "/fieldSheet/dailyFields/0",
+          "text": "Project name/number",
+          "sha256": "880a7a74664edfa3d8043bb891e92416517213c46a0b2ffc4a83a82c82bba22c"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/1",
+          "text": "Date",
+          "sha256": "99c40ab405926cb5ad1def9cff4d7ce624f8f8abfff4e85f655347fcb949d08e"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/2",
+          "text": "Team members' full names",
+          "sha256": "377635bd5127dd1243f2c556fc3a96492635b7b46a4edddb3e408670a2196c0b"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/3",
+          "text": "General site location/address/map or coordinates",
+          "sha256": "04ef3a5695d9d668a35d1df33cb0ea177f6bc84f426467d65f06e6a9f55d6304"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/4",
+          "text": "Weather and recent conditions, with data source",
+          "sha256": "35a4b0b6b0f6f67890c510f6e1e5d7584391f4c864a7f3cabc2c8aa70f8e9bc9"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/0",
+          "text": "Unique sample ID matching container",
+          "sha256": "72bbb7ea3d09dbeaa20f67b1fc2a3daff627ac9aab8841ff15fb8a412190fd33"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/1",
+          "text": "Collection date/time",
+          "sha256": "13bbc2108b9d36d4a5810c045c6581780dad4c8115deb1899b50a5ef0f6bd609"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/2",
+          "text": "Specific location/coordinates/sketch and distance basis",
+          "sha256": "b4bc38816450f69d9d86eb7f23d58f16d8c37a7bcf5ffe8d6cb27ff8913d9915"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/3",
+          "text": "Method and tool",
+          "sha256": "275294e92f6fb3acbec9076af1cfaa638bdf3129d95542dd1196d0ad5bedea83"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/4",
+          "text": "Depth interval with units",
+          "sha256": "4cb3f5a7cf8d8658b02592365df312aa3ed328a581e48e9ed819aa22c5f66efb"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/5",
+          "text": "Colour and moisture state when described",
+          "sha256": "8fe321f22027a50c3054dc8b92213ada3152d70bdf1903ba058871e1654c0b92"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/6",
+          "text": "Observed gritty/smooth/sticky feel",
+          "sha256": "5f5ac3475f93bd66c66d173f11145eb7367926ed33604d8d62a2bede648268e9"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/7",
+          "text": "Texture classification and its test/evidence",
+          "sha256": "b1381ddbaab3da77928f5f38f45ac796e0fb49546693b65839f434df3380d4e0"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/8",
+          "text": "Moisture description",
+          "sha256": "f0bcf6eb45e4e0f91585631a17fe7cff26999be6edcbbd47ffbcbf847494ec88"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/9",
+          "text": "Structure/aggregate description",
+          "sha256": "d99ebeb0ebff629213994bf9710f4a406ae86c35994ff555e273744b28d1656e"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/10",
+          "text": "Topography",
+          "sha256": "443356c2738ee6023a2d053b9e920df9065a5bfe7d2747e9e754d8b0007731c3"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/11",
+          "text": "Vegetation",
+          "sha256": "f264931efbf44cb98ee0f8770a9e575a353794e83b0d54db1d36e357c216cd69"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/12",
+          "text": "Unusual observations and safety response",
+          "sha256": "2140639422d393973ee5c71a219415174144fdf15b61ddac3c218df46dcc761b"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/13",
+          "text": "Data status: observed/measured/supplied scenario/not available",
+          "sha256": "eda6ca85a53fdd8ed7aa36a591eebb7f3e43344f62214ac69b3d9692b76ac28f"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/14",
+          "text": "Recorder and correction history",
+          "sha256": "6bcfb3b5a6357d0b5987e9f06400bd8ccda0601f198a85bb1770438b6e00b76f"
+        }
+      ],
+      "scientificMeaning": "Project name/number\n\nDate\n\nTeam members' full names\n\nGeneral site location/address/map or coordinates\n\nWeather and recent conditions, with data source\n\nUnique sample ID matching container\n\nCollection date/time\n\nSpecific location/coordinates/sketch and distance basis\n\nMethod and tool\n\nDepth interval with units\n\nColour and moisture state when described\n\nObserved gritty/smooth/sticky feel\n\nTexture classification and its test/evidence\n\nMoisture description\n\nStructure/aggregate description\n\nTopography\n\nVegetation\n\nUnusual observations and safety response\n\nData status: observed/measured/supplied scenario/not available\n\nRecorder and correction history",
+      "displayText": "Project name/number\n\nDate\n\nTeam members' full names\n\nGeneral site location/address/map or coordinates\n\nWeather and recent conditions, with data source\n\nUnique sample ID matching container\n\nCollection date/time\n\nSpecific location/coordinates/sketch and distance basis\n\nMethod and tool\n\nDepth interval with units\n\nColour and moisture state when described\n\nObserved gritty/smooth/sticky feel\n\nTexture classification and its test/evidence\n\nMoisture description\n\nStructure/aggregate description\n\nTopography\n\nVegetation\n\nUnusual observations and safety response\n\nData status: observed/measured/supplied scenario/not available\n\nRecorder and correction history",
+      "captionText": "Project name/number\n\nDate\n\nTeam members' full names\n\nGeneral site location/address/map or coordinates\n\nWeather and recent conditions, with data source\n\nUnique sample ID matching container\n\nCollection date/time\n\nSpecific location/coordinates/sketch and distance basis\n\nMethod and tool\n\nDepth interval with units\n\nColour and moisture state when described\n\nObserved gritty/smooth/sticky feel\n\nTexture classification and its test/evidence\n\nMoisture description\n\nStructure/aggregate description\n\nTopography\n\nVegetation\n\nUnusual observations and safety response\n\nData status: observed/measured/supplied scenario/not available\n\nRecorder and correction history",
+      "spokenText": "Project name/number\n\nDate\n\nTeam members' full names\n\nGeneral site location/address/map or coordinates\n\nWeather and recent conditions, with data source\n\nUnique sample ID matching container\n\nCollection date/time\n\nSpecific location/coordinates/sketch and distance basis\n\nMethod and tool\n\nDepth interval with units\n\nColour and moisture state when described\n\nObserved gritty/smooth/sticky feel\n\nTexture classification and its test/evidence\n\nMoisture description\n\nStructure/aggregate description\n\nTopography\n\nVegetation\n\nUnusual observations and safety response\n\nData status: observed/measured/supplied scenario/not available\n\nRecorder and correction history",
+      "spokenTextSHA256": "5a82f38b050b6882d8131652426d82370139a2ca6edd0ab42266721cbb6f6621",
+      "spokenTextSha256": "5a82f38b050b6882d8131652426d82370139a2ca6edd0ab42266721cbb6f6621",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e889e5f5d66c58b79313242b5025c08d470040ac19fa6c10cb3177c1081555e6",
+      "requestFingerprintSha256": "e889e5f5d66c58b79313242b5025c08d470040ac19fa6c10cb3177c1081555e6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-11-en-reflection-r1",
+      "unitId": "S1-11-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "aedbf20ac88516bed7d3b8344fce5111fa99b2bb36ece321ac79808a28c5d3b9",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I keep a clear record and use it to explain the method and result?",
+          "sha256": "5b3cbd8cef8783beb3ccaa0014b880ed71c6d0ef85c59aa19fc897732d0141be"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "The matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+          "sha256": "a57eed1d7669eb7da16c2c3bbca9299cd3467d750c800d4135bf2c904dd71bb0"
+        }
+      ],
+      "scientificMeaning": "Can I keep a clear record and use it to explain the method and result?\n\nThe matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "displayText": "Can I keep a clear record and use it to explain the method and result?\n\nThe matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "captionText": "Can I keep a clear record and use it to explain the method and result?\n\nThe matched field record and objective observations are items 6 and 7 of the shared S1-10 collection card. Other items remain open until each learner's actual work is checked by the trainer; the report continues S1-12.",
+      "spokenText": "Can I keep a clear record and use it to explain the method and result?\n\nThe matched field record and objective observations are items 6 and 7 of the shared collection card from step ten in station one. Other items remain open until each learner's actual work is checked by the trainer; the report continues in step twelve in station one.",
+      "spokenTextSHA256": "4a87d61fe8ee00d4fc112ef2066740998642bfcda752f1a326d7957e82b52e03",
+      "spokenTextSha256": "4a87d61fe8ee00d4fc112ef2066740998642bfcda752f1a326d7957e82b52e03",
+      "spokenAdaptationChanges": [
+        {
+          "written": "of the shared S1-10 collection card",
+          "spoken": "of the shared collection card from step ten in station one",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "the report continues S1-12",
+          "spoken": "the report continues in step twelve in station one",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4785580c4fac93430e403dca264846ef57e30921822062553fa4b345b4bd7089",
+      "requestFingerprintSha256": "4785580c4fac93430e403dca264846ef57e30921822062553fa4b345b4bd7089",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

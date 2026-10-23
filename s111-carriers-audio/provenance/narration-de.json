@@ -1,0 +1,202 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-11-de.json",
+    "sha256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88",
+    "bytes": 17953
+  },
+  "units": [
+    {
+      "id": "S1-11-de-field-sheet-r1",
+      "unitId": "S1-11-de-field-sheet-r1",
+      "locale": "de",
+      "semanticGroup": "field-sheet",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88",
+      "sourceBindings": [
+        {
+          "pointer": "/fieldSheet/dailyFields/0",
+          "text": "Projektname und -nummer",
+          "sha256": "f18eac799fb5542819bdb51cbf19400af7f546de0b3e5158b45c4288f4883285"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/1",
+          "text": "Datum",
+          "sha256": "9135882d323cd839a5239648d28440a256c299c08d108c1b09fc4b9872efcc3a"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/2",
+          "text": "Vollständige Namen des Teams",
+          "sha256": "6a56b147b3ac3759457b7cf852d88848bb1ada082828423d272539b77658ebab"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/3",
+          "text": "Allgemeiner Standort: Adresse, Kartenbezug oder Koordinaten",
+          "sha256": "85328aa16c62adad8de2fe8db9aef2b89d3e1d99cfb7244db56d0ab00ec9c357"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/4",
+          "text": "Wetter und jüngste Bedingungen mit Datenquelle",
+          "sha256": "8d1ff06d1b0acf1adf0369616f73dabe93acb358fd1b4a82fdaaf5efcf14cf00"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/0",
+          "text": "Eindeutige ID passend zum Behälter",
+          "sha256": "a3c96cd72877e27452f600e9e20c298341e11079038cad96872ef188092e6d36"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/1",
+          "text": "Entnahmedatum und -uhrzeit",
+          "sha256": "ed6443f01de89bc2fbd29b56f5cf496b391a8b7ef72a6fe4179f573d5ac149f6"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/2",
+          "text": "Genaue Lage, Koordinaten oder Skizze und Grundlage der Entfernung",
+          "sha256": "1a733d7718d3b24dbabc0fb75cff4e08411d6c8542ed71fb332a0e6bd48fc78a"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/3",
+          "text": "Methode und Werkzeug",
+          "sha256": "58c25f0e0973ff2e87d2f80edf0d0ab3fd9cf50237ab4335ebe225fbbfab8237"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/4",
+          "text": "Tiefenintervall mit Einheit",
+          "sha256": "05b09e11b1a05278c817201ef0ab351da95fef70b9a5f77e18520b50998fc952"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/5",
+          "text": "Farbe und Feuchtezustand bei Beschreibung",
+          "sha256": "9bcac5701e87c3d3bd5e02f3ee38a22b39bc1ea563ef1a6932ee36bbbed97143"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/6",
+          "text": "Beobachtetes körniges, glattes oder klebriges Gefühl",
+          "sha256": "c75474fd2681bd9c580b2b9c1c2e073a20a0409d2781524dd2646cfd1f7702d6"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/7",
+          "text": "Texturklasse und ihre Prüfung oder Belege",
+          "sha256": "884e43c5f22703a5111bb2f70c3638c3bfeb6bf51177777ebcf3918147418ffa"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/8",
+          "text": "Feuchtebeschreibung",
+          "sha256": "bdd97be735de52ee4dda80a610c30a03abcdc4fdc64ebcc28d498a1117301861"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/9",
+          "text": "Gefüge und Aggregate",
+          "sha256": "c753eb56be966578d3f8521adfdfbc9b804c589c4d3714cb0cb522e1d13eabe6"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/10",
+          "text": "Geländeform",
+          "sha256": "1fdecf36a66a11bbca323902008256f4e368bcc83993e8d8e9709a0b2cc34c15"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/11",
+          "text": "Vegetation",
+          "sha256": "f264931efbf44cb98ee0f8770a9e575a353794e83b0d54db1d36e357c216cd69"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/12",
+          "text": "Auffälligkeiten und Sicherheitsreaktion",
+          "sha256": "189f36911ccc0b979c3201ff1f2492e302d551e402378f04648ba64f6789ebef"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/13",
+          "text": "Datenstatus: beobachtet, gemessen, Szenariowert oder nicht verfügbar",
+          "sha256": "fdf4d12838d08c30066e7196aaa19bd971c2c2e7284c20f4fb418c189ff37843"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/14",
+          "text": "Protokollierende Person und Korrekturverlauf",
+          "sha256": "e62716f2e28aec0e0b47ab400c1f5a338b6184436ce90548b1511aa8dcefd43c"
+        }
+      ],
+      "scientificMeaning": "Projektname und -nummer\n\nDatum\n\nVollständige Namen des Teams\n\nAllgemeiner Standort: Adresse, Kartenbezug oder Koordinaten\n\nWetter und jüngste Bedingungen mit Datenquelle\n\nEindeutige ID passend zum Behälter\n\nEntnahmedatum und -uhrzeit\n\nGenaue Lage, Koordinaten oder Skizze und Grundlage der Entfernung\n\nMethode und Werkzeug\n\nTiefenintervall mit Einheit\n\nFarbe und Feuchtezustand bei Beschreibung\n\nBeobachtetes körniges, glattes oder klebriges Gefühl\n\nTexturklasse und ihre Prüfung oder Belege\n\nFeuchtebeschreibung\n\nGefüge und Aggregate\n\nGeländeform\n\nVegetation\n\nAuffälligkeiten und Sicherheitsreaktion\n\nDatenstatus: beobachtet, gemessen, Szenariowert oder nicht verfügbar\n\nProtokollierende Person und Korrekturverlauf",
+      "displayText": "Projektname und -nummer\n\nDatum\n\nVollständige Namen des Teams\n\nAllgemeiner Standort: Adresse, Kartenbezug oder Koordinaten\n\nWetter und jüngste Bedingungen mit Datenquelle\n\nEindeutige ID passend zum Behälter\n\nEntnahmedatum und -uhrzeit\n\nGenaue Lage, Koordinaten oder Skizze und Grundlage der Entfernung\n\nMethode und Werkzeug\n\nTiefenintervall mit Einheit\n\nFarbe und Feuchtezustand bei Beschreibung\n\nBeobachtetes körniges, glattes oder klebriges Gefühl\n\nTexturklasse und ihre Prüfung oder Belege\n\nFeuchtebeschreibung\n\nGefüge und Aggregate\n\nGeländeform\n\nVegetation\n\nAuffälligkeiten und Sicherheitsreaktion\n\nDatenstatus: beobachtet, gemessen, Szenariowert oder nicht verfügbar\n\nProtokollierende Person und Korrekturverlauf",
+      "captionText": "Projektname und -nummer\n\nDatum\n\nVollständige Namen des Teams\n\nAllgemeiner Standort: Adresse, Kartenbezug oder Koordinaten\n\nWetter und jüngste Bedingungen mit Datenquelle\n\nEindeutige ID passend zum Behälter\n\nEntnahmedatum und -uhrzeit\n\nGenaue Lage, Koordinaten oder Skizze und Grundlage der Entfernung\n\nMethode und Werkzeug\n\nTiefenintervall mit Einheit\n\nFarbe und Feuchtezustand bei Beschreibung\n\nBeobachtetes körniges, glattes oder klebriges Gefühl\n\nTexturklasse und ihre Prüfung oder Belege\n\nFeuchtebeschreibung\n\nGefüge und Aggregate\n\nGeländeform\n\nVegetation\n\nAuffälligkeiten und Sicherheitsreaktion\n\nDatenstatus: beobachtet, gemessen, Szenariowert oder nicht verfügbar\n\nProtokollierende Person und Korrekturverlauf",
+      "spokenText": "Projektname und -nummer\n\nDatum\n\nVollständige Namen des Teams\n\nAllgemeiner Standort: Adresse, Kartenbezug oder Koordinaten\n\nWetter und jüngste Bedingungen mit Datenquelle\n\nEindeutige ID passend zum Behälter\n\nEntnahmedatum und -uhrzeit\n\nGenaue Lage, Koordinaten oder Skizze und Grundlage der Entfernung\n\nMethode und Werkzeug\n\nTiefenintervall mit Einheit\n\nFarbe und Feuchtezustand bei Beschreibung\n\nBeobachtetes körniges, glattes oder klebriges Gefühl\n\nTexturklasse und ihre Prüfung oder Belege\n\nFeuchtebeschreibung\n\nGefüge und Aggregate\n\nGeländeform\n\nVegetation\n\nAuffälligkeiten und Sicherheitsreaktion\n\nDatenstatus: beobachtet, gemessen, Szenariowert oder nicht verfügbar\n\nProtokollierende Person und Korrekturverlauf",
+      "spokenTextSHA256": "b91c734d929b54937252b8be1a2080bfa5313ebd16f23ffaf973e2e8994e395f",
+      "spokenTextSha256": "b91c734d929b54937252b8be1a2080bfa5313ebd16f23ffaf973e2e8994e395f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "20ab3bb308a0e3caed7c4ac374e4179d76d79f9e4921b846e07f24315d57f15d",
+      "requestFingerprintSha256": "20ab3bb308a0e3caed7c4ac374e4179d76d79f9e4921b846e07f24315d57f15d",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-11-de-reflection-r1",
+      "unitId": "S1-11-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "312ee5b9f6db818cbe6cc0bd89d9f77cec07f628b175b658daa51abb1c14ee88",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kann ich ein klares Protokoll führen und damit Methode und Ergebnis erklären?",
+          "sha256": "7a89de39c1cf651e294bdd572b7a8df9f2f9e9a3a2340aeeb5faee505bbfcb18"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+          "sha256": "4a8a403e64cb7b07d19b0dbeb402f2effc353761d6b6206e9f5f4b7471f4814f"
+        }
+      ],
+      "scientificMeaning": "Kann ich ein klares Protokoll führen und damit Methode und Ergebnis erklären?\n\nAbgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "displayText": "Kann ich ein klares Protokoll führen und damit Methode und Ergebnis erklären?\n\nAbgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "captionText": "Kann ich ein klares Protokoll führen und damit Methode und Ergebnis erklären?\n\nAbgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in S1-12.",
+      "spokenText": "Kann ich ein klares Protokoll führen und damit Methode und Ergebnis erklären?\n\nAbgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen Sammelkarte aus Schritt zehn in Station eins. Die übrigen Punkte bleiben offen, bis die Lehrkraft jede reale Arbeit prüft; der Bericht folgt in Schritt zwölf in Station eins.",
+      "spokenTextSHA256": "20fe6099eeb3276c2ee1868b4bd701d3d90e2a117b3656f610b9ff6ed80c472c",
+      "spokenTextSha256": "20fe6099eeb3276c2ee1868b4bd701d3d90e2a117b3656f610b9ff6ed80c472c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen S1-10-Sammelkarte.",
+          "spoken": "Abgeglichenes Feldblatt und objektive Beobachtungen sind Punkte 6 und 7 der gemeinsamen Sammelkarte aus Schritt zehn in Station eins.",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "S1-12",
+          "spoken": "Schritt zwölf in Station eins",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2592652255a4356586581850dcec1c92f0d45d391728fba447a318622949a8d7",
+      "requestFingerprintSha256": "2592652255a4356586581850dcec1c92f0d45d391728fba447a318622949a8d7",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

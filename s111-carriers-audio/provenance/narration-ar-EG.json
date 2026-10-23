@@ -1,0 +1,215 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-11-ar-EG.json",
+    "sha256": "f1866149fa072fec26f652fc570708cb4e9f6208861d8471c20da70dafbe756b",
+    "bytes": 23265
+  },
+  "units": [
+    {
+      "id": "S1-11-ar-EG-field-sheet-r1",
+      "unitId": "S1-11-ar-EG-field-sheet-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "field-sheet",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f1866149fa072fec26f652fc570708cb4e9f6208861d8471c20da70dafbe756b",
+      "sourceBindings": [
+        {
+          "pointer": "/fieldSheet/dailyFields/0",
+          "text": "اسم المشروع ورقمه",
+          "sha256": "93ff2521fb8feba42041c9b60dde64621601159b1c90152807832014c192cf18"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/1",
+          "text": "التاريخ",
+          "sha256": "d90c384199acedcac5bba8019d614cf32813767d8a5f05aa1c20d21d9305a3fe"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/2",
+          "text": "الأسماء الكاملة لأفراد الفريق",
+          "sha256": "6456b879f5354336d16dc597753123852554560d5063f7602a8ac30ab0497f07"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/3",
+          "text": "موقع العمل العام: عنوان أو مرجع خريطة أو إحداثيات",
+          "sha256": "43809ea8a8b4a009a279f20ef86d61edc1d9d3ec57d5d90630eb3bb4ddb4feee"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/4",
+          "text": "الطقس والظروف الأخيرة مع مصدر المعلومة",
+          "sha256": "423514ff988e99949a92d2c356ed1e45bc385cb44eb6566542d409cd40fb8c1a"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/0",
+          "text": "معرّف عينة فريد ومطابق للحاوية",
+          "sha256": "6074ff27094e00e030740999f3f1b5a4557268cb0338de4fcd6ff2fb93b415ea"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/1",
+          "text": "تاريخ ووقت الجمع",
+          "sha256": "44a040180d36ab8a42803ef8a1bed0eed68051252725ad3685ef59e88ba45051"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/2",
+          "text": "مكان محدد أو إحداثيات أو رسمة وأساس قياس المسافة",
+          "sha256": "ebc9fb4b16e69cab11d7a361cb75636fb91e9e0a2a8cb854e13a5b1b432b09d2"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/3",
+          "text": "طريقة الجمع والأداة",
+          "sha256": "fbeac899ab55ad33d00bfe1ff298f79232d0595d55104c98ae7340a2fe30e2e6"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/4",
+          "text": "بداية ونهاية عمق العينة مع الوحدات",
+          "sha256": "29a9288e07e98c4260900e05773aa35a17e6ec85c43a74dd293a7ab3cb42af87"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/5",
+          "text": "اللون وحالة الرطوبة عند الوصف",
+          "sha256": "f02b090c904548694efa204fb6bd354c3e35322da05040bade77c7dae3c4861c"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/6",
+          "text": "ملمس خشن أو ناعم أو لزج حسب الملاحظة",
+          "sha256": "10a5486295948ce99fc3189c33c1d38456d3c58fcd2deee56da4defd67bc1e7a"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/7",
+          "text": "تصنيف القوام والاختبار أو الدليل عليه",
+          "sha256": "dc64bf12332270de139e0aa649fe8e2a9a658c9c7e39b862af63f7dca2584b35"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/8",
+          "text": "وصف الرطوبة",
+          "sha256": "6842c470767395f5086a17dd5ccef12537a36fab84c88ebda4698d73814a1887"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/9",
+          "text": "وصف بنية التربة والتكتلات",
+          "sha256": "fa13039a01f35b4407b34a28c487dfc503258908c85a5d601b21bf14583908f4"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/10",
+          "text": "شكل سطح الموقع",
+          "sha256": "f902b2e6ee420d87c73790cdba0f7ec426eda3d69d2f65f0e74d44a6f3c6aed2"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/11",
+          "text": "الغطاء النباتي",
+          "sha256": "ab06b59283f9bc625728161db49ec829acc5afc1cf12f923b5ef1a58921526db"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/12",
+          "text": "ملاحظات غير معتادة والاستجابة للسلامة",
+          "sha256": "855e972f2d0de74a0b27f41ed175367c4a8835328d53275c5b3645103a98d390"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/13",
+          "text": "حالة البيانات: شوفتها أو قستها أو مذكورة في السيناريو أو غير متاحة",
+          "sha256": "431e86d1c1af3bc362f3f5a9d31d0ce4a787acf5670acf8580f2335c73b366bd"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/14",
+          "text": "اسم اللي سجّل وتاريخ التصحيحات",
+          "sha256": "b39299b9810e8d06eeebdda9c53e5bc8f07c0384b5690ae06980c5c583ec3051"
+        }
+      ],
+      "scientificMeaning": "اسم المشروع ورقمه\n\nالتاريخ\n\nالأسماء الكاملة لأفراد الفريق\n\nموقع العمل العام: عنوان أو مرجع خريطة أو إحداثيات\n\nالطقس والظروف الأخيرة مع مصدر المعلومة\n\nمعرّف عينة فريد ومطابق للحاوية\n\nتاريخ ووقت الجمع\n\nمكان محدد أو إحداثيات أو رسمة وأساس قياس المسافة\n\nطريقة الجمع والأداة\n\nبداية ونهاية عمق العينة مع الوحدات\n\nاللون وحالة الرطوبة عند الوصف\n\nملمس خشن أو ناعم أو لزج حسب الملاحظة\n\nتصنيف القوام والاختبار أو الدليل عليه\n\nوصف الرطوبة\n\nوصف بنية التربة والتكتلات\n\nشكل سطح الموقع\n\nالغطاء النباتي\n\nملاحظات غير معتادة والاستجابة للسلامة\n\nحالة البيانات: شوفتها أو قستها أو مذكورة في السيناريو أو غير متاحة\n\nاسم اللي سجّل وتاريخ التصحيحات",
+      "displayText": "اسم المشروع ورقمه\n\nالتاريخ\n\nالأسماء الكاملة لأفراد الفريق\n\nموقع العمل العام: عنوان أو مرجع خريطة أو إحداثيات\n\nالطقس والظروف الأخيرة مع مصدر المعلومة\n\nمعرّف عينة فريد ومطابق للحاوية\n\nتاريخ ووقت الجمع\n\nمكان محدد أو إحداثيات أو رسمة وأساس قياس المسافة\n\nطريقة الجمع والأداة\n\nبداية ونهاية عمق العينة مع الوحدات\n\nاللون وحالة الرطوبة عند الوصف\n\nملمس خشن أو ناعم أو لزج حسب الملاحظة\n\nتصنيف القوام والاختبار أو الدليل عليه\n\nوصف الرطوبة\n\nوصف بنية التربة والتكتلات\n\nشكل سطح الموقع\n\nالغطاء النباتي\n\nملاحظات غير معتادة والاستجابة للسلامة\n\nحالة البيانات: شوفتها أو قستها أو مذكورة في السيناريو أو غير متاحة\n\nاسم اللي سجّل وتاريخ التصحيحات",
+      "captionText": "اسم المشروع ورقمه\n\nالتاريخ\n\nالأسماء الكاملة لأفراد الفريق\n\nموقع العمل العام: عنوان أو مرجع خريطة أو إحداثيات\n\nالطقس والظروف الأخيرة مع مصدر المعلومة\n\nمعرّف عينة فريد ومطابق للحاوية\n\nتاريخ ووقت الجمع\n\nمكان محدد أو إحداثيات أو رسمة وأساس قياس المسافة\n\nطريقة الجمع والأداة\n\nبداية ونهاية عمق العينة مع الوحدات\n\nاللون وحالة الرطوبة عند الوصف\n\nملمس خشن أو ناعم أو لزج حسب الملاحظة\n\nتصنيف القوام والاختبار أو الدليل عليه\n\nوصف الرطوبة\n\nوصف بنية التربة والتكتلات\n\nشكل سطح الموقع\n\nالغطاء النباتي\n\nملاحظات غير معتادة والاستجابة للسلامة\n\nحالة البيانات: شوفتها أو قستها أو مذكورة في السيناريو أو غير متاحة\n\nاسم اللي سجّل وتاريخ التصحيحات",
+      "spokenText": "اسم المشروع ورقمه\n\nالتاريخ\n\nالأسماء الكاملة لأفراد الفريق\n\nموقع العمل العام: عنوان أو مرجع خريطة أو إحداثيات\n\nالطقس والظروف الأخيرة مع مصدر المعلومة\n\nمُعرّف عينة فريد ومطابق للحاوية\n\nتاريخ ووقت الجمع\n\nمكان محدد أو إحداثيات أو رسمة وأساس قياس المسافة\n\nطريقة الجمع والأداة\n\nبداية ونهاية عمق العينة مع الوحدات\n\nاللون وحالة الرطوبة عند الوصف\n\nملمس خشن أو ناعم أو لزج حسب الملاحظة\n\nتصنيف القوام والاختبار أو الدليل عليه\n\nوصف الرطوبة\n\nوصف بنية التربة والتكتلات\n\nشكل سطح الموقع\n\nالغطاء النباتي\n\nملاحظات غير معتادة والاستجابة للسلامة\n\nحالة البيانات: شوفتها أو قستها أو مذكورة في السيناريو أو غير متاحة\n\nاسم اللي سجّل وتاريخ التصحيحات",
+      "spokenTextSHA256": "ce960990620ce8cd7a9551a6b5cc30c78cfbf3d5d4d804cc341ce99b65a75a70",
+      "spokenTextSha256": "ce960990620ce8cd7a9551a6b5cc30c78cfbf3d5d4d804cc341ce99b65a75a70",
+      "spokenAdaptationChanges": [
+        {
+          "written": "معرّف",
+          "spoken": "مُعرّف",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1f1388562a2c4dc2b511f05842f74c7b066f9f01673d312d7a753d2f0c3bcc0f",
+      "requestFingerprintSha256": "1f1388562a2c4dc2b511f05842f74c7b066f9f01673d312d7a753d2f0c3bcc0f",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S1-11-ar-EG-reflection-r1",
+      "unitId": "S1-11-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f1866149fa072fec26f652fc570708cb4e9f6208861d8471c20da70dafbe756b",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أقدر أحتفظ بسجل واضح وأستخدمه لشرح طريقة الشغل والنتيجة؟",
+          "sha256": "65a9ea87241639dcedf361d3b9080cdd0144f234d8c88aedf57b836f8064cac2"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "السجل المطابق للعينة والملاحظات الموضوعية هم البندان ٦ و٧ من بطاقة الجمع المشتركة مع الخطوة ١٠. باقي البنود تفضل مفتوحة لحد ما المدرّب يفحص شغل كل طالب الفعلي؛ التقرير بيكمل في الخطوة ١٢.",
+          "sha256": "699382be924225519009c5e8b009e796c6a58d134ac658eb4201ed1828cec17b"
+        }
+      ],
+      "scientificMeaning": "أقدر أحتفظ بسجل واضح وأستخدمه لشرح طريقة الشغل والنتيجة؟\n\nالسجل المطابق للعينة والملاحظات الموضوعية هم البندان ٦ و٧ من بطاقة الجمع المشتركة مع الخطوة ١٠. باقي البنود تفضل مفتوحة لحد ما المدرّب يفحص شغل كل طالب الفعلي؛ التقرير بيكمل في الخطوة ١٢.",
+      "displayText": "أقدر أحتفظ بسجل واضح وأستخدمه لشرح طريقة الشغل والنتيجة؟\n\nالسجل المطابق للعينة والملاحظات الموضوعية هم البندان ٦ و٧ من بطاقة الجمع المشتركة مع الخطوة ١٠. باقي البنود تفضل مفتوحة لحد ما المدرّب يفحص شغل كل طالب الفعلي؛ التقرير بيكمل في الخطوة ١٢.",
+      "captionText": "أقدر أحتفظ بسجل واضح وأستخدمه لشرح طريقة الشغل والنتيجة؟\n\nالسجل المطابق للعينة والملاحظات الموضوعية هم البندان ٦ و٧ من بطاقة الجمع المشتركة مع الخطوة ١٠. باقي البنود تفضل مفتوحة لحد ما المدرّب يفحص شغل كل طالب الفعلي؛ التقرير بيكمل في الخطوة ١٢.",
+      "spokenText": "أقدر أحتفظ بسجل واضح وأستخدمه لشرح طريقة الشغل والنتيجة؟\n\nالسجل المطابق للعينة والملاحظات الموضوعية هما البندان ستة وسبعة من بطاقة الجمع المشتركة مع الخطوة عشرة. باقي البنود تفضل مفتوحة لحد ما المدرّب يفحص شغل كل طالب الفعلي؛ التقرير بيكمل في الخطوة اتناشر.",
+      "spokenTextSHA256": "296b217a87b935e29cf9aadef4f8d3813c5012e82057239c6e80cd3323a549b9",
+      "spokenTextSha256": "296b217a87b935e29cf9aadef4f8d3813c5012e82057239c6e80cd3323a549b9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "هم البندان ٦ و٧",
+          "spoken": "هما البندان ستة وسبعة",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "الخطوة ١٠",
+          "spoken": "الخطوة عشرة",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "الخطوة ١٢",
+          "spoken": "الخطوة اتناشر",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a6fa6b12858142cb7605fd0f2970fe0b48d5f5bf0a71e1131eb3af086090d1ac",
+      "requestFingerprintSha256": "a6fa6b12858142cb7605fd0f2970fe0b48d5f5bf0a71e1131eb3af086090d1ac",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

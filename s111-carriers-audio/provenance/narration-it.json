@@ -1,0 +1,202 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-11-it.json",
+    "sha256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+    "bytes": 17397
+  },
+  "units": [
+    {
+      "id": "S1-11-it-field-sheet-r1",
+      "unitId": "S1-11-it-field-sheet-r1",
+      "locale": "it",
+      "semanticGroup": "field-sheet",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+      "sourceBindings": [
+        {
+          "pointer": "/fieldSheet/dailyFields/0",
+          "text": "Nome e numero del progetto",
+          "sha256": "e2c22a2a690b705a40c2803b5009d677577e20e7f6e7f5417bea77d2a5cb64d5"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/1",
+          "text": "Data",
+          "sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/2",
+          "text": "Nomi completi del gruppo",
+          "sha256": "d5610ea21132e3d478114260efaad9fef2842b3d1049718d273e28bb62599f7c"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/3",
+          "text": "Posizione generale: indirizzo, mappa o coordinate",
+          "sha256": "7e03e0cdd1b8bbd9aec04d6f8d2d1f70f91716648db4421ef32a228d0fb15c7a"
+        },
+        {
+          "pointer": "/fieldSheet/dailyFields/4",
+          "text": "Meteo e condizioni recenti, con fonte",
+          "sha256": "666621577176c5e863b5642b05668876bc7d40327a91993c92de9c638ab41b76"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/0",
+          "text": "ID univoco corrispondente al contenitore",
+          "sha256": "069631ddb0b7d409be315fb9ce3e32a03661bbaedb7e8b51a397e079821ba053"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/1",
+          "text": "Data e ora del prelievo",
+          "sha256": "235326669b7688566fd6c18985d8be134406a825e15d550a926ab63f01ca96d0"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/2",
+          "text": "Posizione precisa, coordinate o schizzo e base della distanza",
+          "sha256": "4ba15efa14a897bbda64575a519e53b79646abbdc785c0fc92476da523d63210"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/3",
+          "text": "Metodo e strumento",
+          "sha256": "4bac0bb82569a3bbeb91f90322376e0074355cd210aaa09360fb6ce4c692f155"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/4",
+          "text": "Intervallo di profondità con unità",
+          "sha256": "e8758eef2be9746f7945750c62b7fb351358b3668b2089cd719fe5c4823d16ef"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/5",
+          "text": "Colore e stato di umidità quando descritti",
+          "sha256": "cb9f0437960cc18627e66ce861a3849a74fe466a53225dded71a9b67d2169b61"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/6",
+          "text": "Sensazione granulosa, liscia o appiccicosa osservata",
+          "sha256": "6633c685d470db8592f8e914186679f4d1027d379c7f79e5efecdd1309949f8a"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/7",
+          "text": "Classe tessiturale con prova o evidenza",
+          "sha256": "caaedbba8b91704afe15ef8a49ad64558fe9c01969b5352519c2f24e240f68a9"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/8",
+          "text": "Descrizione dell'umidità",
+          "sha256": "847efa0e50de71588cc66cd158e758bb917942136082c6015b50527c852dc2f8"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/9",
+          "text": "Descrizione di struttura e aggregati",
+          "sha256": "efa8bfc9477919ce220d9d8110c67f290f64653a0a5809d27c12c892c373bd42"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/10",
+          "text": "Topografia",
+          "sha256": "36829adcd62925384bc661acb62d4e653dd4e9d0aedc57aa3fd27eb29cf3c709"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/11",
+          "text": "Vegetazione",
+          "sha256": "551ed855294e651887333f35827853444b9689a875c45ca306d67f3016715869"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/12",
+          "text": "Osservazioni insolite e risposta di sicurezza",
+          "sha256": "4a8905fc4ffea7e1fa66d5b3c2f2d41360b5de570c4efa0011e0a2e03843c50f"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/13",
+          "text": "Stato del dato: osservato, misurato, dato dello scenario o non disponibile",
+          "sha256": "80d8fc03516ef239e275fb4d228c3edba4c4e51506835659ee8eca7af0716826"
+        },
+        {
+          "pointer": "/fieldSheet/sampleFields/14",
+          "text": "Autore e storia delle correzioni",
+          "sha256": "16d165ea94e3618f0ae7a6d606ce18f1d2dd7494c2f73c777b406e44ca4ebdc1"
+        }
+      ],
+      "scientificMeaning": "Nome e numero del progetto\n\nData\n\nNomi completi del gruppo\n\nPosizione generale: indirizzo, mappa o coordinate\n\nMeteo e condizioni recenti, con fonte\n\nID univoco corrispondente al contenitore\n\nData e ora del prelievo\n\nPosizione precisa, coordinate o schizzo e base della distanza\n\nMetodo e strumento\n\nIntervallo di profondità con unità\n\nColore e stato di umidità quando descritti\n\nSensazione granulosa, liscia o appiccicosa osservata\n\nClasse tessiturale con prova o evidenza\n\nDescrizione dell'umidità\n\nDescrizione di struttura e aggregati\n\nTopografia\n\nVegetazione\n\nOsservazioni insolite e risposta di sicurezza\n\nStato del dato: osservato, misurato, dato dello scenario o non disponibile\n\nAutore e storia delle correzioni",
+      "displayText": "Nome e numero del progetto\n\nData\n\nNomi completi del gruppo\n\nPosizione generale: indirizzo, mappa o coordinate\n\nMeteo e condizioni recenti, con fonte\n\nID univoco corrispondente al contenitore\n\nData e ora del prelievo\n\nPosizione precisa, coordinate o schizzo e base della distanza\n\nMetodo e strumento\n\nIntervallo di profondità con unità\n\nColore e stato di umidità quando descritti\n\nSensazione granulosa, liscia o appiccicosa osservata\n\nClasse tessiturale con prova o evidenza\n\nDescrizione dell'umidità\n\nDescrizione di struttura e aggregati\n\nTopografia\n\nVegetazione\n\nOsservazioni insolite e risposta di sicurezza\n\nStato del dato: osservato, misurato, dato dello scenario o non disponibile\n\nAutore e storia delle correzioni",
+      "captionText": "Nome e numero del progetto\n\nData\n\nNomi completi del gruppo\n\nPosizione generale: indirizzo, mappa o coordinate\n\nMeteo e condizioni recenti, con fonte\n\nID univoco corrispondente al contenitore\n\nData e ora del prelievo\n\nPosizione precisa, coordinate o schizzo e base della distanza\n\nMetodo e strumento\n\nIntervallo di profondità con unità\n\nColore e stato di umidità quando descritti\n\nSensazione granulosa, liscia o appiccicosa osservata\n\nClasse tessiturale con prova o evidenza\n\nDescrizione dell'umidità\n\nDescrizione di struttura e aggregati\n\nTopografia\n\nVegetazione\n\nOsservazioni insolite e risposta di sicurezza\n\nStato del dato: osservato, misurato, dato dello scenario o non disponibile\n\nAutore e storia delle correzioni",
+      "spokenText": "Nome e numero del progetto\n\nData\n\nNomi completi del gruppo\n\nPosizione generale: indirizzo, mappa o coordinate\n\nMeteo e condizioni recenti, con fonte\n\nID univoco corrispondente al contenitore\n\nData e ora del prelievo\n\nPosizione precisa, coordinate o schizzo e base della distanza\n\nMetodo e strumento\n\nIntervallo di profondità con unità\n\nColore e stato di umidità quando descritti\n\nSensazione granulosa, liscia o appiccicosa osservata\n\nClasse tessiturale con prova o evidenza\n\nDescrizione dell'umidità\n\nDescrizione di struttura e aggregati\n\nTopografia\n\nVegetazione\n\nOsservazioni insolite e risposta di sicurezza\n\nStato del dato: osservato, misurato, dato dello scenario o non disponibile\n\nAutore e storia delle correzioni",
+      "spokenTextSHA256": "088b68fcda2ab9f0cdd43480087fff2cbcba744ddb4ef2f84e096c4a568e87e2",
+      "spokenTextSha256": "088b68fcda2ab9f0cdd43480087fff2cbcba744ddb4ef2f84e096c4a568e87e2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e30e8a7b89d583b4c44d69eb5a0fda2a011f1645469959050f849b83d4b96aa7",
+      "requestFingerprintSha256": "e30e8a7b89d583b4c44d69eb5a0fda2a011f1645469959050f849b83d4b96aa7",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-11-it-reflection-r1",
+      "unitId": "S1-11-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05e88e21eb97c21f66009a1a8f126435c4d03e96de33f2103355c095ebb6f6b4",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So mantenere un registro chiaro e usarlo per spiegare metodo e risultato?",
+          "sha256": "95186305ec1a53ad42e5b4548906417abaa0e7996e524de3d718c4f3cacb7911"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Il registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+          "sha256": "6d5ea6480adc1d09a70b9d849ad0d3dcddd67d2b42129862184d138696744036"
+        }
+      ],
+      "scientificMeaning": "So mantenere un registro chiaro e usarlo per spiegare metodo e risultato?\n\nIl registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "displayText": "So mantenere un registro chiaro e usarlo per spiegare metodo e risultato?\n\nIl registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "captionText": "So mantenere un registro chiaro e usarlo per spiegare metodo e risultato?\n\nIl registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune con S1-10. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua in S1-12.",
+      "spokenText": "So mantenere un registro chiaro e usarlo per spiegare metodo e risultato?\n\nIl registro abbinato e le osservazioni oggettive sono i punti 6 e 7 della scheda comune col passaggio dieci della prima stazione. Gli altri punti restano aperti finché il formatore non verifica il lavoro reale di ciascuno; il rapporto continua nel passaggio dodici della prima stazione.",
+      "spokenTextSHA256": "6af7e9e1c80e46699c06d4aa9a029a541b64c5430ab617786976a8458fd4a361",
+      "spokenTextSha256": "6af7e9e1c80e46699c06d4aa9a029a541b64c5430ab617786976a8458fd4a361",
+      "spokenAdaptationChanges": [
+        {
+          "written": "con S1-10",
+          "spoken": "col passaggio dieci della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "continua in S1-12",
+          "spoken": "continua nel passaggio dodici della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_MISSING_TEACHING_CARRIER_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "35db028b96427cd1ff0d6ae3c8257868ae125bdd90e58854ecd0e6bf088075e3",
+      "requestFingerprintSha256": "35db028b96427cd1ff0d6ae3c8257868ae125bdd90e58854ecd0e6bf088075e3",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

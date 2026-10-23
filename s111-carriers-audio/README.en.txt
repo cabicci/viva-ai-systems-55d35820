@@ -1,0 +1,1 @@
+Eight new current S111 true missing carriers: all5daily+15sample fields and reflection/question/shared6and7 boundary, two per locale. Existing40current3.8 originals retained; no hiddenanswers/nativeinputs/sourceedits. 8TTS8blind8ASR8GET0retry, same finiteengine.
