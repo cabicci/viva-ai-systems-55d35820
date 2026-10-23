@@ -1,0 +1,72 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-ar-EG.json",
+    "sha256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+    "bytes": 38491
+  },
+  "units": [
+    {
+      "id": "S3-05-ar-EG-R06-ending-repair-r1",
+      "unitId": "S3-05-ar-EG-R06-ending-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s305-s3-05-ar-r06-ending-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+          "sha256": "9519e6be50efa4813db0d6e16390cec5ebfc9255199715fb4ad045197481f92d"
+        }
+      ],
+      "scientificMeaning": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "displayText": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "captionText": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "spokenText": "قارن على أساس النظام الموجود في المزرعة.",
+      "spokenTextSHA256": "5502ea7e1c10cade02ea8785cb930b4e881088e827b394862d823f50658a39b1",
+      "spokenTextSha256": "5502ea7e1c10cade02ea8785cb930b4e881088e827b394862d823f50658a39b1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+          "spoken": "قارن التركيب الفعلي.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "قارن التركيب الفعلي.",
+          "spoken": "قارن على أساس النظام الموجود في المزرعة.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "b6b63ce37f52ceb520c00975bdbbf86a390334934dbdf8428100aa2d404ed4da",
+      "requestFingerprintSha256": "b6b63ce37f52ceb520c00975bdbbf86a390334934dbdf8428100aa2d404ed4da",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "قارن التركيب الفعلي.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s305-ar-ending-wording-repair-r2-authority.json",
+        "authoritySHA256": "653e106a4ccd4b07d03aec2f398d0ea137894ea76a413dce29430c02bb321aa2"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
