@@ -1,0 +1,218 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C04": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C05": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C06": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C07": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C08": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C09": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C10": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C11": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 11,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationID": "s206-teaching-contexts",
+    "reservationSHA256": "39718449d860c6cdb95f5b537f54441db4d0c56d6da5d1f61028ffe425deba6e",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 80,
+    "globalConservativelyReservedOrConsumed": 91,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S2-06-ar-EG-guided-practice-r1",
+        "wavSHA256": "a05dfd7f8abcc66fec120f6db158973275d256d6068f84724c352a1412ba685a",
+        "firstSample": 912000,
+        "endSampleExclusive": 1056000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S2-06-ar-EG-glossary-r1",
+        "wavSHA256": "67088e98ced817492f79f3357a19969af63f9026f43c969816c4515cad8a17ea",
+        "firstSample": 648960,
+        "endSampleExclusive": 792960,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C03",
+        "sourceUnitId": "S2-06-it-E01-r1",
+        "wavSHA256": "af0ffe4da783aa59a9862b89f5e523547134212b97a0e875bb54a715205c73d6",
+        "firstSample": 592320,
+        "endSampleExclusive": 736320,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C04",
+        "sourceUnitId": "S2-06-it-E02-r1",
+        "wavSHA256": "b9125f668a024386ab718d12c8d401ffc3eed77dc388ace7e58f378979e02c50",
+        "firstSample": 0,
+        "endSampleExclusive": 144000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C05",
+        "sourceUnitId": "S2-06-it-comparison-r1",
+        "wavSHA256": "202ece68326541ade014ea490a004fd4dd1513a956381e1e3920c9b131714e90",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C06",
+        "sourceUnitId": "S2-06-it-comparison-r1",
+        "wavSHA256": "202ece68326541ade014ea490a004fd4dd1513a956381e1e3920c9b131714e90",
+        "firstSample": 1044480,
+        "endSampleExclusive": 1188480,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C07",
+        "sourceUnitId": "S2-06-ar-EG-record-and-method-guidance-r1",
+        "wavSHA256": "eda0a139eb437d819c9575b9f3e70f4b95a0c950ae94d74cb1c358b9099555c9",
+        "firstSample": 2032320,
+        "endSampleExclusive": 2176320,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C08",
+        "sourceUnitId": "S2-06-it-supervised-stages-r1",
+        "wavSHA256": "48c1a893260665a858940ed40d41973471c9ee203c14270fe7f8859d13685e93",
+        "firstSample": 1656000,
+        "endSampleExclusive": 1800000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C09",
+        "sourceUnitId": "S2-06-it-supervised-stages-r1",
+        "wavSHA256": "48c1a893260665a858940ed40d41973471c9ee203c14270fe7f8859d13685e93",
+        "firstSample": 2088000,
+        "endSampleExclusive": 2232000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C10",
+        "sourceUnitId": "S2-06-it-practical-completion-r1",
+        "wavSHA256": "ce809c2e264e260c54d03d56279a473d5237dd6352a6330d620453c87ac6ff65",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C11",
+        "sourceUnitId": "S2-06-de-card-scope-r1",
+        "wavSHA256": "0e4573371cf009b2bc25dca23c96d23c7cbfbc55cd86e309c3e554cfe7a158d4",
+        "firstSample": 1032000,
+        "endSampleExclusive": 1176000,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}
