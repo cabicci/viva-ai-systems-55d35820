@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_SOURCE5_S3_13_IT_R07_SOURCE_REPAIR",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-source5-s3-13-it-r07-source-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-it-R07-source-repair-r1",
+      "unitId": "S3-13-it-R07-source-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-source5-s3-13-it-r07-source-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Prima di consigliare SER confronta distanza fra file e zona radicale con rotore reale e spazio di sicurezza; controlla pietre, fili, pendio, bagnato, visibilità, persone, protezioni, formazione, sito adatto all’aperto ed esposizione al monossido di carbonio. Una motozappa larga può non stare fra file fitte anche se la fonte la chiama mezzo per file strette. Scegli estirpazione manuale, attrezzo più adatto o rinvio se rischio o danno alla coltura superano il beneficio.",
+          "sha256": "6b1b15dbfcb9e74cc6a9cc5b9f79acf4715b81013dfc8106e495e0edd075b5ce"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "L’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.",
+          "sha256": "e940e031ea2329e50a2fc9d1289fa00a7ac8843873a19725e655e9c41c56f375"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Il costruttore avverte che i gas di scarico possono accumularsi in spazi confinati e persino parzialmente chiusi. Non far funzionare la motozappa a benzina in uno spazio confinato dove il monossido di carbonio può accumularsi. Un esempio in serra non autorizza l’uso al chiuso e un ventilatore o una soluzione di scarico proposti non dimostrano la sicurezza.",
+          "sha256": "21d66fbac6e84fe2b66dc27d79338a62c9fb6f497f5b38b8cf90b3ec3d597774"
+        }
+      ],
+      "scientificMeaning": "Prima di consigliare SER confronta distanza fra file e zona radicale con rotore reale e spazio di sicurezza; controlla pietre, fili, pendio, bagnato, visibilità, persone, protezioni, formazione, sito adatto all’aperto ed esposizione al monossido di carbonio. Una motozappa larga può non stare fra file fitte anche se la fonte la chiama mezzo per file strette. Scegli estirpazione manuale, attrezzo più adatto o rinvio se rischio o danno alla coltura superano il beneficio.\n\nL’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.\n\nIl costruttore avverte che i gas di scarico possono accumularsi in spazi confinati e persino parzialmente chiusi. Non far funzionare la motozappa a benzina in uno spazio confinato dove il monossido di carbonio può accumularsi. Un esempio in serra non autorizza l’uso al chiuso e un ventilatore o una soluzione di scarico proposti non dimostrano la sicurezza.",
+      "displayText": "Prima di consigliare SER confronta distanza fra file e zona radicale con rotore reale e spazio di sicurezza; controlla pietre, fili, pendio, bagnato, visibilità, persone, protezioni, formazione, sito adatto all’aperto ed esposizione al monossido di carbonio. Una motozappa larga può non stare fra file fitte anche se la fonte la chiama mezzo per file strette. Scegli estirpazione manuale, attrezzo più adatto o rinvio se rischio o danno alla coltura superano il beneficio.\n\nL’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.\n\nIl costruttore avverte che i gas di scarico possono accumularsi in spazi confinati e persino parzialmente chiusi. Non far funzionare la motozappa a benzina in uno spazio confinato dove il monossido di carbonio può accumularsi. Un esempio in serra non autorizza l’uso al chiuso e un ventilatore o una soluzione di scarico proposti non dimostrano la sicurezza.",
+      "captionText": "Prima di consigliare SER confronta distanza fra file e zona radicale con rotore reale e spazio di sicurezza; controlla pietre, fili, pendio, bagnato, visibilità, persone, protezioni, formazione, sito adatto all’aperto ed esposizione al monossido di carbonio. Una motozappa larga può non stare fra file fitte anche se la fonte la chiama mezzo per file strette. Scegli estirpazione manuale, attrezzo più adatto o rinvio se rischio o danno alla coltura superano il beneficio.\n\nL’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.\n\nIl costruttore avverte che i gas di scarico possono accumularsi in spazi confinati e persino parzialmente chiusi. Non far funzionare la motozappa a benzina in uno spazio confinato dove il monossido di carbonio può accumularsi. Un esempio in serra non autorizza l’uso al chiuso e un ventilatore o una soluzione di scarico proposti non dimostrano la sicurezza.",
+      "spokenText": "L’operatore deve leggere e seguire il manuale.",
+      "spokenTextSHA256": "769b4b0598163f444d600ebabc23f1a466d3cb87fc15ff881710239b506e403c",
+      "spokenTextSha256": "769b4b0598163f444d600ebabc23f1a466d3cb87fc15ff881710239b506e403c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Prima di consigliare SER confronta distanza fra file e zona radicale con rotore reale e spazio di sicurezza; controlla pietre, fili, pendio, bagnato, visibilità, persone, protezioni, formazione, sito adatto all’aperto ed esposizione al monossido di carbonio. Una motozappa larga può non stare fra file fitte anche se la fonte la chiama mezzo per file strette. Scegli estirpazione manuale, attrezzo più adatto o rinvio se rischio o danno alla coltura superano il beneficio.\n\nL’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.\n\nIl costruttore avverte che i gas di scarico possono accumularsi in spazi confinati e persino parzialmente chiusi. Non far funzionare la motozappa a benzina in uno spazio confinato dove il monossido di carbonio può accumularsi. Un esempio in serra non autorizza l’uso al chiuso e un ventilatore o una soluzione di scarico proposti non dimostrano la sicurezza.",
+          "spoken": "L’operatore deve leggere e seguire il manuale.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "L’operatore deve leggere e seguire il manuale.",
+          "spoken": "L’operatore deve leggere e seguire il manuale.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "3a10a18dfad36ccbe2b83ff4a21d21101200a4034e96c2b931f2a06191f21545",
+      "requestFingerprintSha256": "3a10a18dfad36ccbe2b83ff4a21d21101200a4034e96c2b931f2a06191f21545",
+      "sourcePlanSha256": "dd3edd7a47c86201b430068614cfcbdac9a4970e8b4f1821e73e3bb04a244216",
+      "exactSentenceBefore": "L’operatore deve leggere e seguire il manuale.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/5/paragraphs/1",
+        "sourceText": "L’operatore deve leggere e seguire il manuale. Arresta e impedisci avvio involontario prima di ispezionare i denti, tieni lontane persone e non far funzionare il motore a benzina in una serra chiusa o in un altro spazio confinato, come vietato dal manuale. Questa fase non abilita a usare il mezzo. S3-14 copre controlli e funzionamento supervisionati e S3-15 manutenzione/guasti.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-13-it-R07-source-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
