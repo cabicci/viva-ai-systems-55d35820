@@ -1,0 +1,348 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-en.json",
+    "sha256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+    "bytes": 47884
+  },
+  "units": [
+    {
+      "id": "S3-10-en-opening-r1",
+      "unitId": "S3-10-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, pH, water and climate before recommending a crop or claiming an economic benefit.",
+          "sha256": "09731b9e342347fe279923444b3209b909d9bdad7cac88e9170fad5519970cfe"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Examine three unlabelled, suitably moistened real soil samples; record gritty/sticky/smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.",
+          "sha256": "0f6f3f599f38617f9e237dfe0199b3e8c250256edaee579611b8639fe5ce8cfc"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Give three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable/one-risky-crop chart for each of three soil reports, naming the missing local evidence.",
+          "sha256": "b8a661eaa724526c12d86c3fe5690ffda78e9d7364a927d9cdec9ab1683f52ca"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain how a better crop/soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+          "sha256": "38214e46ee022eb4ff16e9075d784eae04eafc381d3e10048c13b08ebf625903"
+        }
+      ],
+      "scientificMeaning": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, pH, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty/sticky/smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable/one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop/soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+      "displayText": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, pH, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty/sticky/smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable/one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop/soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+      "captionText": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, pH, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty/sticky/smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable/one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop/soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+      "spokenText": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, p H, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty, sticky, smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable, one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop, soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+      "spokenTextSHA256": "f4df82b1ee4d9175feb5f3141a8502cd292c42dc6a5b39d2a9dfabfec919138b",
+      "spokenTextSha256": "f4df82b1ee4d9175feb5f3141a8502cd292c42dc6a5b39d2a9dfabfec919138b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, pH, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty/sticky/smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable/one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop/soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+          "spoken": "A crop list is a starting hypothesis. Examine the three real samples, record what you observed, then check drainage, fertility, p H, water and climate before recommending a crop or claiming an economic benefit.\n\nExamine three unlabelled, suitably moistened real soil samples; record gritty, sticky, smooth feel, shape and ribbon evidence before a tentative texture-group identification, and separate texture from measured drainage and fertility.\n\nGive three justified crop candidates for each of sandy, clay and loamy samples, then make a separate two-suitable, one-risky-crop chart for each of three soil reports, naming the missing local evidence.\n\nExplain how a better crop, soil match may support roots, water and nutrient uptake and reduce some costs or risks, while using a reasoned alternative and avoiding guaranteed yield, profit or disease immunity.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3e6fcdfa39544326d63743f2b1dbfd2adc8a22b1136163d9f63f369c021f596b",
+      "requestFingerprintSha256": "3e6fcdfa39544326d63743f2b1dbfd2adc8a22b1136163d9f63f369c021f596b",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-guided-practice-r1",
+      "unitId": "S3-10-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Under a trainer, inspect three real unlabelled samples in about 5 minutes. Write each sample's feel/ball/ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.",
+          "sha256": "531deb33e4cdad45fc80cbaa19d48ac8dd439b5ebc42aa7ded764e22ad2a8a01"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "In about 15 minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.",
+          "sha256": "5c4005aa6408b0aadd46799cf1cab10e39914fad3e1f60a24cf024074c013511"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "In about 15 minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.",
+          "sha256": "7bb02e21600351827552eac8b2d9a2660dfcfffceea16ef06fb82a207c6ac289"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Spend about 10 minutes explaining one client path to a partner; then complete the original sandy-soil one-crop/one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a 10 × 10 foot bed with explicit local prices.",
+          "sha256": "f034cc99d4565a48731a62ef481673869bb1fcc74b554090a8d8a9dd6dd3216e"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "The trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.",
+          "sha256": "e1071a26532f719257c2676e5e06b09be77c56f3c231106e548725e93621be41"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+          "sha256": "12856e6636e4502e37c56947d912d6de61d369ce4eb59ada791b68f28f056c3e"
+        }
+      ],
+      "scientificMeaning": "Under a trainer, inspect three real unlabelled samples in about 5 minutes. Write each sample's feel/ball/ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about 15 minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about 15 minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about 10 minutes explaining one client path to a partner; then complete the original sandy-soil one-crop/one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a 10 × 10 foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+      "displayText": "Under a trainer, inspect three real unlabelled samples in about 5 minutes. Write each sample's feel/ball/ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about 15 minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about 15 minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about 10 minutes explaining one client path to a partner; then complete the original sandy-soil one-crop/one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a 10 × 10 foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+      "captionText": "Under a trainer, inspect three real unlabelled samples in about 5 minutes. Write each sample's feel/ball/ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about 15 minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about 15 minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about 10 minutes explaining one client path to a partner; then complete the original sandy-soil one-crop/one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a 10 × 10 foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+      "spokenText": "Under a trainer, inspect three real unlabelled samples in about five minutes. Write each sample's feel, ball, ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about fifteen minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about fifteen minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about ten minutes explaining one client path to a partner; then complete the original sandy-soil one-crop, one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a ten multiplied by ten foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+      "spokenTextSHA256": "b9ec5a18f9b132c2aa3a9eb00842ecd00e189532104e138c7652ce9cca326d82",
+      "spokenTextSha256": "b9ec5a18f9b132c2aa3a9eb00842ecd00e189532104e138c7652ce9cca326d82",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Under a trainer, inspect three real unlabelled samples in about 5 minutes. Write each sample's feel/ball/ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about 15 minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about 15 minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about 10 minutes explaining one client path to a partner; then complete the original sandy-soil one-crop/one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a 10 × 10 foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+          "spoken": "Under a trainer, inspect three real unlabelled samples in about five minutes. Write each sample's feel, ball, ribbon observations before proposing a sandy, clay or loamy group; name a test for a more precise class.\n\nIn about fifteen minutes put at least three distinct source-list crops under each of sandy, clay and loamy groups, one reason and one limiting condition for each.\n\nIn about fifteen minutes advise the compacted-clay carrot client with one management path and a separate alternative-crop path; explain root, water, cost and test needs.\n\nSpend about ten minutes explaining one client path to a partner; then complete the original sandy-soil one-crop, one-action exit ticket and state why it is narrower than the full challenge. Optional: budget a ten multiplied by ten foot bed with explicit local prices.\n\nThe trainer compares the learner's individual observations with the actual samples; do not pre-reveal labels or auto-pass.\n\nThis is a planning rehearsal. Screen models do not identify today's real samples or certify tactile skill. Real observation and the trainer's signature remain unrecorded.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9f9645937d693a1e61c85f73cd66b8ed4a8b8bc9f3a834aac1f5e7a1fca8465e",
+      "requestFingerprintSha256": "9f9645937d693a1e61c85f73cd66b8ed4a8b8bc9f3a834aac1f5e7a1fca8465e",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-reflection-r1",
+      "unitId": "S3-10-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "I can identify which crops are plausible candidates for sandy, clay and loamy soils, with stated conditions.",
+          "sha256": "d84051142a926d16ebe25023c869f35dd8c19cd51527fcbe8792931795fb93bc"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-assessment is separate from the trainer-observed sample criterion and the full crop-reasoning review.",
+          "sha256": "1fe2b580043f8e9513eee776a486121a7c7093bd791fb0979ac4bf39880f2b52"
+        }
+      ],
+      "scientificMeaning": "I can identify which crops are plausible candidates for sandy, clay and loamy soils, with stated conditions.\n\nSelf-assessment is separate from the trainer-observed sample criterion and the full crop-reasoning review.",
+      "displayText": "I can identify which crops are plausible candidates for sandy, clay and loamy soils, with stated conditions.\n\nSelf-assessment is separate from the trainer-observed sample criterion and the full crop-reasoning review.",
+      "captionText": "I can identify which crops are plausible candidates for sandy, clay and loamy soils, with stated conditions.\n\nSelf-assessment is separate from the trainer-observed sample criterion and the full crop-reasoning review.",
+      "spokenText": "I can identify which crops are plausible candidates for sandy, clay and loamy soils, with stated conditions.\n\nSelf-assessment is separate from the trainer-observed sample criterion and the full crop-reasoning review.",
+      "spokenTextSHA256": "d68282c037a0d7647a46ebc7da080a6e0010a6b90d0aa12833eed4f7c3dada9e",
+      "spokenTextSha256": "d68282c037a0d7647a46ebc7da080a6e0010a6b90d0aa12833eed4f7c3dada9e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "34842e6c045fd05d70df2ea7cb6cb9d738db1ca0564fb49e63bfeb05f055c7cc",
+      "requestFingerprintSha256": "34842e6c045fd05d70df2ea7cb6cb9d738db1ca0564fb49e63bfeb05f055c7cc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-glossary-r1",
+      "unitId": "S3-10-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "soil texture",
+          "sha256": "1d72aeb6339fd7180af1fb88ae417efb6553efb103a3a6030c21e083fbfd825e"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "The relative percentages of sand, silt and clay in the fine-earth mineral fraction.",
+          "sha256": "64678012310e527092dd147db2cec10b07b918aff096e647de37f612d6ff7206"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "sand",
+          "sha256": "f79d7d24558304d8bce3b1a7622fd4084d9708daa9477124a70e89472b68a465"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "The coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.",
+          "sha256": "8c48e6be6faf046b67f0191adb5740acae1995c04be6e65c2cfaa07ba6807a25"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "silt",
+          "sha256": "fb3187ec695ce9f374f80c3641d7d08aa09530c2c97c40802de721f0485875a9"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "The intermediate-size mineral fraction, often smooth/flour-like when dry, not a synonym for wet mud.",
+          "sha256": "472be1f8784d1f62d4e3671c63e0ad2eca09c6afc6231437ff2b00aa626ea468"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "clay",
+          "sha256": "06363555054de198a87c4c743572dd5113a5fa5d298b9478a30c29ebb9d38b97"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "The finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.",
+          "sha256": "2c66564fb4b5d592e48a9f5ec54f77aa13ba7f042ffd98287699612e6ef79438"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "loam",
+          "sha256": "7c91b7fa1a5d79ffec95fe1e4ec4bd20d1971c802865d59d449533d2b758ec55"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A USDA texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.",
+          "sha256": "64681799c896403ea593cf5ed7568ea186d4fb5b03c8aa7e8484a47b920e9837"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "ribbon test",
+          "sha256": "a6479f15641308c9c9521ee9225c7f3c787deef1bdbb1d70c349225867d61128"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.",
+          "sha256": "02f695d2f85a682a2e035cc3f56aee080e2dd863b17117b4fd933d5c9d18546b"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "compaction",
+          "sha256": "96847128a59a0bfa3bf9526873a325465149ff3e11f00a19d102643e6c37af47"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Dense soil structure that can impede roots, air and water movement even when the particle texture is suitable.",
+          "sha256": "e88e1b359ebc5de770a5ac51c21bd18cc540a005c69daa1a72b90bb69f56df12"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "drainage",
+          "sha256": "6b9b4cf9d162f4d14a89a50406b53a686ce01b8b246196c97c4d44efa500500f"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Movement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.",
+          "sha256": "1bf8c63117913de7c7194273ce92d73580e00aa18798a45329cbe5b3210d7f57"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "nutrient retention",
+          "sha256": "2f0516e598beae383b5fe87f7d7c093b94213dde70f6524b64c514bfc09b0de1"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "Capacity to hold nutrient ions, distinct from the measured amount currently available to a crop.",
+          "sha256": "265b38c06f9ba7207f24d4489b17a9a331d4527b94e60761b83c8878c99e6b44"
+        },
+        {
+          "pointer": "/glossary/9/0",
+          "text": "potato tuber",
+          "sha256": "a9cb3e1f821d3bd815a6682ca0ab48e8dd83eb319750c13209d8a5e56f1d89ec"
+        },
+        {
+          "pointer": "/glossary/9/1",
+          "text": "An enlarged underground stem used for potato storage.",
+          "sha256": "d71d3160c53f22d74b53eab4eec8564fe07e526b8db12ae08bc9a97cb766750d"
+        },
+        {
+          "pointer": "/glossary/10/0",
+          "text": "sweet-potato storage root",
+          "sha256": "008c840c0ad241a02717b8dc47177f5cdefb39dcb7ed80970d3c2d955c489dc1"
+        },
+        {
+          "pointer": "/glossary/10/1",
+          "text": "An enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.",
+          "sha256": "99d31ba108a1904a613a5ad4e8a86bcecf4847262f261a3fca0bead6f6d82067"
+        },
+        {
+          "pointer": "/glossary/11/0",
+          "text": "crop suitability",
+          "sha256": "e00b286f88901e84fe50c8f94cdbdf6fd96fd5cee14b45324de45aea446e40f3"
+        },
+        {
+          "pointer": "/glossary/11/1",
+          "text": "A reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+          "sha256": "af0e95c28e4410658ca23b56270f163ba612dcb6530d1dd80c9642026beccc60"
+        }
+      ],
+      "scientificMeaning": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth/flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA USDA texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+      "displayText": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth/flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA USDA texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+      "captionText": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth/flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA USDA texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+      "spokenText": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth, flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA U S D A texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+      "spokenTextSHA256": "f717d6f792760ab7fb55ba9132b4ac7775fbb7300fdedaac706ff72ac036d018",
+      "spokenTextSha256": "f717d6f792760ab7fb55ba9132b4ac7775fbb7300fdedaac706ff72ac036d018",
+      "spokenAdaptationChanges": [
+        {
+          "written": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth/flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA USDA texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+          "spoken": "soil texture\n\nThe relative percentages of sand, silt and clay in the fine-earth mineral fraction.\n\nsand\n\nThe coarser of the three named fine-earth particle-size fractions; a sandy feel alone is only a field clue.\n\nsilt\n\nThe intermediate-size mineral fraction, often smooth, flour-like when dry, not a synonym for wet mud.\n\nclay\n\nThe finest named mineral fraction; clay-rich field material often feels sticky and ribbons when suitably moist.\n\nloam\n\nA U S D A texture class with a particular range of sand, silt and clay proportions, not a synonym for fertile soil.\n\nribbon test\n\nA field texture clue based on the length and behaviour of a moist soil ribbon; it needs other feel clues and may need laboratory confirmation.\n\ncompaction\n\nDense soil structure that can impede roots, air and water movement even when the particle texture is suitable.\n\ndrainage\n\nMovement and removal of excess water through and away from the root zone; texture is not a direct measurement of it.\n\nnutrient retention\n\nCapacity to hold nutrient ions, distinct from the measured amount currently available to a crop.\n\npotato tuber\n\nAn enlarged underground stem used for potato storage.\n\nsweet-potato storage root\n\nAn enlarged root used for sweet-potato storage, botanically different from a potato stem tuber.\n\ncrop suitability\n\nA reasoned fit between a crop and measured site conditions, season and management rather than texture alone.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1e2c6a80c6d839cac7af5b91365624bb1368d49c310ee50b54bae9a5955187d8",
+      "requestFingerprintSha256": "1e2c6a80c6d839cac7af5b91365624bb1368d49c310ee50b54bae9a5955187d8",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
