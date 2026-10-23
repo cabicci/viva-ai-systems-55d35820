@@ -1,0 +1,368 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-ar-EG.json",
+    "sha256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+    "bytes": 38491
+  },
+  "units": [
+    {
+      "id": "S3-05-ar-EG-seasonal-table-r1",
+      "unitId": "S3-05-ar-EG-seasonal-table-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "ست محاصيل: المدى والفترة والمرحلة الحساسة",
+          "sha256": "563fc2e1e3fc12073f70b8c5231b33a0eb72ff33ae51325c2aafc07284ed9db2"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "مليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري",
+          "sha256": "5d2a1ba4c8cba2b4fc860d300b68d7cc3dd7b0eeba9b78fdbdf1c38fa36f51bc"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "عالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.",
+          "sha256": "cde341325c92ee6d83c80b1dec0dc10287a7a49193fc672f92f9fd4cc77e31e1"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "الذرة",
+          "sha256": "5fa0a3f4bf455374ad1bbfe738b3795f65126b32ebe1e6aeac16bbf6e0225443"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "ظهور الشرابة والحرير وامتلاء الحبوب",
+          "sha256": "a8d0138564fc96307e13c31641cee2ef452d3572d528e242fd029f7ad9eae319"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "القمح",
+          "sha256": "524f3e414a261d6d581576189f167184a68ef94543c3b143720ef411484fdaf4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "التزهير وامتلاء الحبوب",
+          "sha256": "f23cb518077ac15766e6596f2b4897debd52b35541d6a7603b9b1b890ba00627"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "الطماطم",
+          "sha256": "608772b6c873633f154b37a294315871231e07dc0766eead927456e201a5acdc"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "التزهير ونمو الثمرة",
+          "sha256": "c4db261dcdef17d03de3c1a542942048258dad1d6c57bd03d5453b17b320f53b"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "البطاطس",
+          "sha256": "b174659ca31b3034e9dc8bf8061886f63040451ba1c5803ae0fa4bb6b9a39612"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "تكوين الدرنات وكبرها",
+          "sha256": "e2031b051a29a54436e217f26b177fb8d151d2dd45297e975ce8847a713dac28"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "البصل",
+          "sha256": "301d7805cc2b6ef0f1c7a4b270146fcff8c628ab73e448041aa168d16488761d"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "تكوين البصلة",
+          "sha256": "57eaba849510c8866bea975b4e633332b579497e21a2f676b22ec4661ebab647"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "الكرنب (مثال موثق لمحصول ورقي)",
+          "sha256": "28309e54a04e6e8641cc1cf09435ddbfb666551c475d5006fb982a9745a1cc8e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا",
+          "sha256": "fb10bc55e2af72393bee9342ea7b6aa0cb2b91c089d796bf349a0acfea01696b"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "متوسط",
+          "sha256": "42a5dadf6e45148828c93cea39741b4230c27afab0e5b4b31c5f7882003a0c9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "متوسط",
+          "sha256": "42a5dadf6e45148828c93cea39741b4230c27afab0e5b4b31c5f7882003a0c9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "مثال محدد موثّق",
+          "sha256": "2b2756c2f3837635e08d4a6b0f423636def08bb4bb3f82add4d9909aea6c0726"
+        }
+      ],
+      "scientificMeaning": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "displayText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "captionText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "spokenText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة. خمسمية إلى تمانمية ملليمتر خلال موسم النمو كله. ظهور الشرابة والحرير وامتلاء الحبوب. عالي.\n\nالقمح. ربعمية وخمسين إلى ستمية وخمسين ملليمتر خلال موسم النمو كله. التزهير وامتلاء الحبوب. متوسط.\n\nالطماطم. ربعمية إلى تمانمية ملليمتر خلال موسم النمو كله. التزهير ونمو الثمرة. عالي.\n\nالبطاطس. خمسمية إلى سبعمية ملليمتر خلال موسم النمو كله. تكوين الدرنات وكبرها. عالي.\n\nالبصل. تلتمية وخمسين إلى خمسمية وخمسين ملليمتر خلال موسم النمو كله. تكوين البصلة. متوسط.\n\nالكرنب (مثال موثق لمحصول ورقي). تلتمية وخمسين إلى خمسمية ملليمتر خلال موسم النمو كله. الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا. مثال محدد موثّق.",
+      "spokenTextSHA256": "33555030ccf9495bc9b6833e68e1778098745d52ac177716220e3f29271f47d3",
+      "spokenTextSha256": "33555030ccf9495bc9b6833e68e1778098745d52ac177716220e3f29271f47d3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+          "spoken": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة. خمسمية إلى تمانمية ملليمتر خلال موسم النمو كله. ظهور الشرابة والحرير وامتلاء الحبوب. عالي.\n\nالقمح. ربعمية وخمسين إلى ستمية وخمسين ملليمتر خلال موسم النمو كله. التزهير وامتلاء الحبوب. متوسط.\n\nالطماطم. ربعمية إلى تمانمية ملليمتر خلال موسم النمو كله. التزهير ونمو الثمرة. عالي.\n\nالبطاطس. خمسمية إلى سبعمية ملليمتر خلال موسم النمو كله. تكوين الدرنات وكبرها. عالي.\n\nالبصل. تلتمية وخمسين إلى خمسمية وخمسين ملليمتر خلال موسم النمو كله. تكوين البصلة. متوسط.\n\nالكرنب (مثال موثق لمحصول ورقي). تلتمية وخمسين إلى خمسمية ملليمتر خلال موسم النمو كله. الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا. مثال محدد موثّق.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "02f8d116e901c0c405831a630101754381cfa682ee9cba7ebe1bfadb7372dd85",
+      "requestFingerprintSha256": "02f8d116e901c0c405831a630101754381cfa682ee9cba7ebe1bfadb7372dd85",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-05-ar-EG-field-records-r1",
+      "unitId": "S3-05-ar-EG-field-records-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "ترشيحك المشروط لقطعة الخضار",
+          "sha256": "3cdef7dd961c4b3c64724bd4737627e3c77cec8cb53f0b29903e51db067deed8"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "الطريقة المقترحة وشروطها",
+          "sha256": "fb877c2cc1852d202814b64b1aea061b433ecf5d88f4b60f7fed3f444adab94e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "ليه الرش مناسب أو مش مناسب هنا",
+          "sha256": "228b02007ad070c2691c9efc4c4520aa178ee9bfac630a937cf440e85ab56efe"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "أنهي مسار سطحي بتقارنه وليه",
+          "sha256": "66ba86cc015c3d145340c9b3919bc865e23b8b817314e9da849de9fa1d0c3f7d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "تكلفة البداية والقدرة على الصيانة",
+          "sha256": "d67db13ba06a57d8a954ab830bfc376c0c4147faa1db5ccb393007245abb8db3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "جودة المياه والترشيح ودليل أداء النظام",
+          "sha256": "d75ffd6baa71d40707a52c6b81abba2705363791167c80682aeb0f9a8fbc5df3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "مرحلة المحصول والجذور وقياسات مياه التربة",
+          "sha256": "d32e620ab1177fd0438d161acf5109c537a783637b90e9566e39b14374099fd3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "الطقس والبخر والنتح والمطر الفعال الناقصين",
+          "sha256": "8ae4d9f6e4c02fe4591b6400ed2266853a274b52468f1cdf12db0576d50edae1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "إيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة",
+          "sha256": "2e22ccb4e5f51ebe3d8314defb9cebcaad51d7e33ffe1dcf742f8e96b66857bf"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "ملاحظات معدات فعلية تحت إشراف المدرّب",
+          "sha256": "1363cdf97620309775e0b8678a5fbceee59744c921d474a37a17cbbf7e0f0915"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "التاريخ والمكان والمعدات اللي اتشافت فعلًا",
+          "sha256": "262fd7c01fd228b021ace434cd99aedf92cbb6a00c9fb9797d58fd7530a2cc87"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "ملاحظة المرشح والنقاطة",
+          "sha256": "c7a5772aed2df451c7561334627b37351e20206737ba4b3c8b323bb3e15ecc69"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "ملاحظة الرشاش والرياح",
+          "sha256": "63dc8f1835f3414cfa51f5a478e9ea9209db4cc630573c56b7d150bc7dce91a2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "ملاحظة الخطوط أو الحوض",
+          "sha256": "325481a8e4609268bb4dbc97a321fbc6431b2210c534f91cb5ba4d7891db1640"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "المقاس فعلًا مقابل الاستنتاج والبيانات الناقصة",
+          "sha256": "9e643ce51b0f6aee251f1c1a274db3ae4425cdd68b979b0a4347d7dae0c9aa5f"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "مناقشة المدرّب والمتابعة؛ مش اجتياز مهارة",
+          "sha256": "1bf46258b2a9a6810c885bb43eb66fb77d4bab412e7947bdedd116baaa730c63"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "لسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.",
+          "sha256": "9870a75017d5af8beee0bdde895ce55f5386853e344ce0b27e186e4c67e0cd38"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "إيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+          "sha256": "b576827ac832c862760931a6aca5e28f94bc7aa745e110cdb453f531aaf7fc23"
+        }
+      ],
+      "scientificMeaning": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "displayText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "captionText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "spokenText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "spokenTextSHA256": "4932d98e5c74eac690ffde16f7c8cb3bdeb9dc2104265706241ac975dd208d38",
+      "spokenTextSha256": "4932d98e5c74eac690ffde16f7c8cb3bdeb9dc2104265706241ac975dd208d38",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c3dec52d217581f7e58effc465b07250fde7d7108f2d572797f889a62e11c3d4",
+      "requestFingerprintSha256": "c3dec52d217581f7e58effc465b07250fde7d7108f2d572797f889a62e11c3d4",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

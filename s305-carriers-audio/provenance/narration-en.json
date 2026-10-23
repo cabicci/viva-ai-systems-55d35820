@@ -1,0 +1,375 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-en.json",
+    "sha256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+    "bytes": 29547
+  },
+  "units": [
+    {
+      "id": "S3-05-en-seasonal-table-r1",
+      "unitId": "S3-05-en-seasonal-table-r1",
+      "locale": "en",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Six crops: range, time basis and sensitive stage",
+          "sha256": "8be4e9fc156e8fd6c4a4cdf24e980cbe50e8bb67e17f5caf03b292132ef69919"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm of crop water need per total growing season, indicative",
+          "sha256": "4838b54a705feaf59afce7d4ef69230f1f2f224ae61dbc56159d3b5a3ac930b6"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "High/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.",
+          "sha256": "17d19a2b58e386bedc52ca997d1fc51c4e5ecf26188d3026f9a34f37001cadcb"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Maize (corn)",
+          "sha256": "8caf40f2b78aac3ef468e9f9fc4bb7a7782a95c91395d5093d05a22be173dd81"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Tasseling, silking and grain filling",
+          "sha256": "10245e2bcab77023dd878f35f292b4d2004ec7aeb3e948040a2617a817123548"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Wheat",
+          "sha256": "cca303e99f5f821dfd9d74b81b18be6a03a7ee271123158a9d6a7092f326b1bf"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Flowering and grain filling",
+          "sha256": "c42465eb29fb9a474807af7084fabe97a87c875f896f73b98beefd9f2a75a7b5"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Tomato",
+          "sha256": "8289a9844fd5125f9ecc55b600da78766f44f8477d0a908e2962fbd77eb78372"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Flowering and fruit development",
+          "sha256": "f4529de61d631fed36d5f1bdc9dea9ec57c1989fd7f1f01f496452fd865247a2"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Potato",
+          "sha256": "6d61374da4b4df53c6f8fbf4c9b05576d647a07da7498b400abaf7e1f4f44124"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Tuber formation and growth",
+          "sha256": "51503d2720945a9bead178df0448cce3fb8678fd8a2793ae7f265569aceccec7"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Onion",
+          "sha256": "cc278ed65b2d4d792808abde8bcf79848ad5c13f4f9f540eb4cfef3d74902029"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Bulb formation",
+          "sha256": "d9724f7ff60c1bbb098e25462704962655b059ac9b66fd85659004f69053509e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Cabbage (documented leafy-crop example)",
+          "sha256": "7cdbe9db9c5bcb0b32d7c3d09d4b731bd7f6cba4c7c21b70f9ea71a254385218"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Maintain suitable moisture through head development; timing must be checked locally",
+          "sha256": "fecbcbc2d095f5c4b383e57e2c80f00f9e2d55215bcf26249e25feaa0a270339"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Medium",
+          "sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Medium",
+          "sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Specific documented example",
+          "sha256": "e88b4e620946a573cdfd3e526d738db6b77ce85899e6fa908b5abd1f55eb5de3"
+        }
+      ],
+      "scientificMeaning": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "displayText": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "captionText": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "spokenText": "Six crops: range, time basis and sensitive stage\n\nmillimetres of crop water need per total growing season, indicative\n\nHigh, Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High, Medium category is assigned to it.\n\nMaize (corn). five hundred to eight hundred millimetres over the whole growing season. Tasseling, silking and grain filling. High.\n\nWheat. four hundred fifty to six hundred fifty millimetres over the whole growing season. Flowering and grain filling. Medium.\n\nTomato. four hundred to eight hundred millimetres over the whole growing season. Flowering and fruit development. High.\n\nPotato. five hundred to seven hundred millimetres over the whole growing season. Tuber formation and growth. High.\n\nOnion. three hundred fifty to five hundred fifty millimetres over the whole growing season. Bulb formation. Medium.\n\nCabbage (documented leafy-crop example). three hundred fifty to five hundred millimetres over the whole growing season. Maintain suitable moisture through head development; timing must be checked locally. Specific documented example.",
+      "spokenTextSHA256": "2958ba1c40b4320ed71679c4472e97281d6c1967c7f9f03a0b82cce64cb0b113",
+      "spokenTextSha256": "2958ba1c40b4320ed71679c4472e97281d6c1967c7f9f03a0b82cce64cb0b113",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+          "spoken": "Six crops: range, time basis and sensitive stage\n\nmillimetres of crop water need per total growing season, indicative\n\nHigh, Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High, Medium category is assigned to it.\n\nMaize (corn). five hundred to eight hundred millimetres over the whole growing season. Tasseling, silking and grain filling. High.\n\nWheat. four hundred fifty to six hundred fifty millimetres over the whole growing season. Flowering and grain filling. Medium.\n\nTomato. four hundred to eight hundred millimetres over the whole growing season. Flowering and fruit development. High.\n\nPotato. five hundred to seven hundred millimetres over the whole growing season. Tuber formation and growth. High.\n\nOnion. three hundred fifty to five hundred fifty millimetres over the whole growing season. Bulb formation. Medium.\n\nCabbage (documented leafy-crop example). three hundred fifty to five hundred millimetres over the whole growing season. Maintain suitable moisture through head development; timing must be checked locally. Specific documented example.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5413f6fb5ecf0141ecbdcc3e660d1455de6c07473c138068a351367b14352d67",
+      "requestFingerprintSha256": "5413f6fb5ecf0141ecbdcc3e660d1455de6c07473c138068a351367b14352d67",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-field-records-r1",
+      "unitId": "S3-05-en-field-records-r1",
+      "locale": "en",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Your conditional plot recommendation",
+          "sha256": "b776f581260d30a5360d5a6827a075af755530832978922cc359b97250982e29"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Recommendation and conditions",
+          "sha256": "e80e2eb788f5d2df7dd6f1874e459ea4dcbbd7f811d07d41477ff6ca94500b9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Why sprinkler is or is not suitable here",
+          "sha256": "d1ea65512e9b33ddd7872465e065f4c9017be73fc16ceaed02a780c0de9b36e2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Which surface layout you compare and why",
+          "sha256": "e7509b329e031e5113d176bd98618d15bcedfa4574b6195bef120bbc35cf4864"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investment and ability to maintain",
+          "sha256": "e22413abe05a9be5e7d7f0c366d28ecb37f4a0f4688e30311d4919a7d7911adf"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Water quality, filtration and system evidence",
+          "sha256": "e534c788df4c079813cf62ba25d37bd7223a60b51dd8f2a2459f78afa8d3ec09"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Crop stage, roots and measured soil-water data",
+          "sha256": "d4f19b6aff7dc91cf83d16cc6a75933db2b90d86d81f0abb9a99ba505be4d9f2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Weather/ET and effective rain still required",
+          "sha256": "7079507bbeef8e75bc2fe483d670021570d4e251480f478e7c495351d283f87b"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "What would change your recommendation; no fixed dose",
+          "sha256": "f85d0ac39a25308381c896a5f7980dcacf4c367f61a01d82dd9bb4abdb8fe65c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Actual supervised equipment observations",
+          "sha256": "758dcd05687e73f928a19f0f284e04912b626843efe92ecc68475426a1734ddd"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Date, site and equipment actually observed",
+          "sha256": "9c19b0b81d9614630bf11a4a7ecc761291057669b28b479e8a0ddef71f3cc9b1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filter/emitter observation",
+          "sha256": "3bc6dc855998b3c529ce861b131771fd038a0d1e0da62bcb1a5bd71eff01d092"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Sprinkler and wind observation",
+          "sha256": "19b294d3562970e24c256d7113ced597f645c731addf8755b2f13eddedea6adb"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Furrow or basin observation",
+          "sha256": "c5a9ef57e5647ea458f65e4f20faceefdab0492538c62b96f9fdb0731b11b9f5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Measured facts versus inference and missing values",
+          "sha256": "e5587d949368017a3dc6238e5cf92724c49d5d952ee7163bab2aa0f73bb89154"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Trainer discussion and follow-up; no competence pass",
+          "sha256": "57986c9547254437ab0d52196d25b19151284e0d63782fb02b178341329bca3a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "No observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "sha256": "6ca8a96fc44a59a84fac7df98b039d7c665c93aa7313a210a71b71160e3a4704"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Which crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "sha256": "c9cb9122971cd659a8ce062da0604e07cc6baa7e624a71c47e7e2a120754f310"
+        }
+      ],
+      "scientificMeaning": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "displayText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "captionText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "spokenText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather, evapotranspiration and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter, emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "spokenTextSHA256": "c6d52ea18503723988dcbea41c634c48fa00ff84d5eccae403935e11d2a85cd8",
+      "spokenTextSha256": "c6d52ea18503723988dcbea41c634c48fa00ff84d5eccae403935e11d2a85cd8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "spoken": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather, evapotranspiration and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter, emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6e9463e606586ea60b19aface1a24c269a2815e9c4ec6cbc1ae105719a5df300",
+      "requestFingerprintSha256": "6e9463e606586ea60b19aface1a24c269a2815e9c4ec6cbc1ae105719a5df300",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

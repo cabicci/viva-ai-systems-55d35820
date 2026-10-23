@@ -1,0 +1,375 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-it.json",
+    "sha256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+    "bytes": 29327
+  },
+  "units": [
+    {
+      "id": "S3-05-it-seasonal-table-r1",
+      "unitId": "S3-05-it-seasonal-table-r1",
+      "locale": "it",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Sei colture: intervallo, periodo e fase sensibile",
+          "sha256": "f41fe2488b694b60513226b1c6d00270a80f25822a43c8783763070a4fcef956"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita",
+          "sha256": "433fc4c26122d7158d159e102552e441e88b1edf98727bc0ead3af2133c257f5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "Alto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.",
+          "sha256": "b75a972519f01812d7a58d8ad9b4b7055ab9873c0fbc9568e3cad8d6f9a6bcc3"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Mais",
+          "sha256": "962d86dfa1c5d9b119ebc139c077e4494477b25f2fd3c26deee4caec76034b64"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Emissione del pennacchio, sete e riempimento dei chicchi",
+          "sha256": "fcb3a74d64328c8f0d60964b28ca52c41878937cc9e160930c8fb6fe2f4cbe80"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Frumento",
+          "sha256": "be31eb448248a29d4300ccfce7bfdf54e589b56e29bd2f14c1103714aa5be8a4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Fioritura e riempimento dei chicchi",
+          "sha256": "828b743a9a17b7b74934a3fed1026460fbabd0040a3e7669b05bfc4fe0c6605e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Pomodoro",
+          "sha256": "002bdac82a6316a73240808698ce90359058af85c9fa56c950332ac92b596b54"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Fioritura e sviluppo dei frutti",
+          "sha256": "1b4e677fbf55a1786a70fca38e3364c013717ae95deb5fdfd8b7f25ddb93a975"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Patata",
+          "sha256": "0cae58ab02970f792b8b75150604a4bfa70b7fc6c40026f684a67aaeedffe8d1"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Formazione e crescita dei tuberi",
+          "sha256": "d9e0e5e09471d0c31d3f241e87780da3742d6ccee0ab962611ff76659e0644a8"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Cipolla",
+          "sha256": "a05a89b9c9511119d91f5e5e415e400a030b8fd895d67426bdd3b6d1d4f4a55a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Formazione del bulbo",
+          "sha256": "908c48084174480f22bfea2189ae9079d0cd018fae464836cbd4da866ae0a3e6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Cavolo (esempio documentato di verdura a foglia)",
+          "sha256": "0f2e136ac2ca8ce76711a965a0716080e555c86f4809fb80ef2c2c4fd8f9e7ce"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente",
+          "sha256": "cf2fdb6240b6a9cd179c8f02114955b5c893791942f30565cf421bb1bf0a0ff7"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Medio",
+          "sha256": "da26d4f11244518e356cd45724d7e4bd2095275d2a26fd7786890400238a997c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Medio",
+          "sha256": "da26d4f11244518e356cd45724d7e4bd2095275d2a26fd7786890400238a997c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Esempio specifico documentato",
+          "sha256": "49544ee212789268bfefb4ecf32067653c971ad1d558fc49bf44fbf5b6b2cb44"
+        }
+      ],
+      "scientificMeaning": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "displayText": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "captionText": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "spokenText": "Sei colture: intervallo, periodo e fase sensibile\n\nmillimetri indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto, Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto, Medio gli è assegnata.\n\nMais. cinquecento a ottocento millimetri per l’intera stagione di crescita. Emissione del pennacchio, sete e riempimento dei chicchi. Alto.\n\nFrumento. quattrocentocinquanta a seicentocinquanta millimetri per l’intera stagione di crescita. Fioritura e riempimento dei chicchi. Medio.\n\nPomodoro. quattrocento a ottocento millimetri per l’intera stagione di crescita. Fioritura e sviluppo dei frutti. Alto.\n\nPatata. cinquecento a settecento millimetri per l’intera stagione di crescita. Formazione e crescita dei tuberi. Alto.\n\nCipolla. trecentocinquanta a cinquecentocinquanta millimetri per l’intera stagione di crescita. Formazione del bulbo. Medio.\n\nCavolo (esempio documentato di verdura a foglia). trecentocinquanta a cinquecento millimetri per l’intera stagione di crescita. Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente. Esempio specifico documentato.",
+      "spokenTextSHA256": "53ac208b121a1affb8fed44fcfed528a52ad2ef01911a8757e05678843c11b28",
+      "spokenTextSha256": "53ac208b121a1affb8fed44fcfed528a52ad2ef01911a8757e05678843c11b28",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+          "spoken": "Sei colture: intervallo, periodo e fase sensibile\n\nmillimetri indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto, Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto, Medio gli è assegnata.\n\nMais. cinquecento a ottocento millimetri per l’intera stagione di crescita. Emissione del pennacchio, sete e riempimento dei chicchi. Alto.\n\nFrumento. quattrocentocinquanta a seicentocinquanta millimetri per l’intera stagione di crescita. Fioritura e riempimento dei chicchi. Medio.\n\nPomodoro. quattrocento a ottocento millimetri per l’intera stagione di crescita. Fioritura e sviluppo dei frutti. Alto.\n\nPatata. cinquecento a settecento millimetri per l’intera stagione di crescita. Formazione e crescita dei tuberi. Alto.\n\nCipolla. trecentocinquanta a cinquecentocinquanta millimetri per l’intera stagione di crescita. Formazione del bulbo. Medio.\n\nCavolo (esempio documentato di verdura a foglia). trecentocinquanta a cinquecento millimetri per l’intera stagione di crescita. Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente. Esempio specifico documentato.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "14d8928e6f530c348751e85f42a8115b70f55660fa62dbfb224ff2444a4b411e",
+      "requestFingerprintSha256": "14d8928e6f530c348751e85f42a8115b70f55660fa62dbfb224ff2444a4b411e",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-05-it-field-records-r1",
+      "unitId": "S3-05-it-field-records-r1",
+      "locale": "it",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Raccomandazione condizionata per l’orto",
+          "sha256": "a905fc1656f9dbfc66e5844d0cc5a91c22f3ec52bee63c77dbc6edce794af976"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Raccomandazione e condizioni",
+          "sha256": "a1526307b27b938fa7f6667db2938687a49704276d9cb69cb4574e7825dc39d9"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Idoneità o limiti dell’aspersione qui",
+          "sha256": "ced0142198d2187a596f26a0e465da4f36f6dad19c8ea8e0054c2ed6235b5c9d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Quale superficie si confronta e perché",
+          "sha256": "7d8ce66376b58b9c1210aa59922f01dd1e2638460616f159c3fe7089be46b202"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investimento e manutenzione possibile",
+          "sha256": "83e42e26ed27e32dfa0bf6db09989fcd1ced0ab00119426cc512bb9b0d2d4105"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Qualità, filtro e prove d’impianto",
+          "sha256": "a1a7706cd4908487756650ec9a0f5157129d883e2c28b184fa868bc88ac7901f"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Stadio, radici e acqua misurata",
+          "sha256": "2e25337f1ff78cf3a58d9027a7449182b0a6e70e835fe128465ac8d26a33ddff"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Meteo/ET e pioggia efficace mancanti",
+          "sha256": "ef693e003e512d728d08952345717fd877bef2b77cd2136a775db0dd45d4162e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "Cosa cambierebbe la scelta; nessuna dose fissa",
+          "sha256": "766443cbd068f90a60190bdb25d68813007649dfd3fc3f6e914e1fe3973d3b91"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Osservazioni reali supervisionate",
+          "sha256": "7103c833d08a9d918b51ae8fd481ad5c3580114514e2f4765dc8da25cb72ad84"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Data, sito e attrezzatura osservata",
+          "sha256": "1a62387797bf9cc958bb120010e4c54f24463189484f542bc3acb589bcbd793e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filtro e gocciolatore",
+          "sha256": "c8b0bd7f7b920b4651f90c047ee499c7481a9af8216ea593bcb0787791d541b5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Irrigatore e vento",
+          "sha256": "9e85bfcbcc21e83aca8f2de7625c71b3581924666ee00ac85f90bac304f43d04"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Solco o bacino",
+          "sha256": "cddee00a60754e15a155f1ed0b1ed091a6ac6fc92f5776d09457b10ff851dd41"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Fatti misurati contro inferenze e dati mancanti",
+          "sha256": "8ebf7564e1c192e61448a213a8126dad170449cbb2e45e2b36f399f3ec7f3799"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Discussione e seguito; nessun superamento pratico",
+          "sha256": "44866f21194c044febb91aaf9198d2dbf8df2baa58867b9236f3a72938895dea"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "Nessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "sha256": "4a522e832c103528797170b4d5108df44a57cdd46a152441df263dae68dd409c"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Quali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "sha256": "f9f9bce981c2bf2c57e72920b24490a0337b591d1311bdc292f6ffc6279a3eef"
+        }
+      ],
+      "scientificMeaning": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "displayText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "captionText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "spokenText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo, evapotraspirazione e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "spokenTextSHA256": "9bc7dc5591ac01ab21e2113a443d56d49ed6cb340f3e8b2c2f7371550c49fd08",
+      "spokenTextSha256": "9bc7dc5591ac01ab21e2113a443d56d49ed6cb340f3e8b2c2f7371550c49fd08",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "spoken": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo, evapotraspirazione e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "36c12e94fcb80f6ea2a03631c88937619b0884305c121b072b1c464580108e08",
+      "requestFingerprintSha256": "36c12e94fcb80f6ea2a03631c88937619b0884305c121b072b1c464580108e08",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

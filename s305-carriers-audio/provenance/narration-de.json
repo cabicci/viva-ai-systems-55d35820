@@ -1,0 +1,375 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-de.json",
+    "sha256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+    "bytes": 29182
+  },
+  "units": [
+    {
+      "id": "S3-05-de-seasonal-table-r1",
+      "unitId": "S3-05-de-seasonal-table-r1",
+      "locale": "de",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase",
+          "sha256": "65767228839f41b7929f7209eb834122183ad20d720e0456260288f2b4809a06"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit",
+          "sha256": "0199ad8eda7b1087933148a5aaa58a87ea97a65dfe65b0ada8358aa63e1c23a0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "Hoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.",
+          "sha256": "0926464e7a16789670277d1b9b86b4951b3bd2b7d561ec9594a6ee732ea80886"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Mais",
+          "sha256": "962d86dfa1c5d9b119ebc139c077e4494477b25f2fd3c26deee4caec76034b64"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Fahnen- und Narbenfadenbildung sowie Kornfüllung",
+          "sha256": "71a425e521bec5640400a4dc5a8bd91c6a836b580374eeed7caffe32faaef6e0"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Weizen",
+          "sha256": "5de5fdf7f8a2b5d82cb54135dd95029bd5bb38ed8d55bc037a64ec9c3059e956"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Blüte und Kornfüllung",
+          "sha256": "098e4b7fb9253ccde2a677ca40a17710b21d66f5e28045721e032459daeb2e9e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Tomate",
+          "sha256": "96eaefafc3db56ca49863a066b13a6a3c8139d28b49f083673c219bbd81f294e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Blüte und Fruchtentwicklung",
+          "sha256": "93269fde18fd81392dcc49f2eff6cab53a7907ecb6d56c81a90e83fa53521b44"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Kartoffel",
+          "sha256": "5e940ecd0c6ac6c8570691c03ece39c2f11a70ac2fec877140cfd795a4dbef1f"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Knollenbildung und -wachstum",
+          "sha256": "908151cf2daccc64aa85f13576efd9b341462fba2065b60726c6856c1a0ea081"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Zwiebel",
+          "sha256": "e99bdba8e3e9465977f0a09e9dbe944fad4f804d15c4a4970a09b1c7f9bd4240"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Zwiebelbildung",
+          "sha256": "bc79983aadc50a6970e1a18a8047a76c2108c22edad320bbd478c6c9e7133fac"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Kopfkohl (dokumentiertes Blattgemüsebeispiel)",
+          "sha256": "551f68a6e27b847be025126955666a287c54e6ea7cd7d72ee1064b6d75ed13e4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen",
+          "sha256": "9749b7d073a6be1c68544b18451b6b6754cdca78c677db98592ab21d0a3f75a7"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Mittel",
+          "sha256": "6604277e642c958b99778c690e526c1126c19c7f3b0030590a4a0b92eac62d68"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Mittel",
+          "sha256": "6604277e642c958b99778c690e526c1126c19c7f3b0030590a4a0b92eac62d68"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Spezifisch belegtes Beispiel",
+          "sha256": "5c7798ac1e9e1f5410073fe6d64e3f4d70ddd6ad2e2f8c45799a347929c5e054"
+        }
+      ],
+      "scientificMeaning": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "displayText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "captionText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "spokenText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nMillimeter Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch, Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch, Mittel-Klasse.\n\nMais. fünfhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Fahnen- und Narbenfadenbildung sowie Kornfüllung. Hoch.\n\nWeizen. vierhundertfünfzig bis sechshundertfünfzig Millimeter für die gesamte Wachstumszeit. Blüte und Kornfüllung. Mittel.\n\nTomate. vierhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Blüte und Fruchtentwicklung. Hoch.\n\nKartoffel. fünfhundert bis siebenhundert Millimeter für die gesamte Wachstumszeit. Knollenbildung und -wachstum. Hoch.\n\nZwiebel. dreihundertfünfzig bis fünfhundertfünfzig Millimeter für die gesamte Wachstumszeit. Zwiebelbildung. Mittel.\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel). dreihundertfünfzig bis fünfhundert Millimeter für die gesamte Wachstumszeit. Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen. Spezifisch belegtes Beispiel.",
+      "spokenTextSHA256": "54a68990ba9767c48d9b82fb051a5057c9094bb14c386cae11e9fc37f0b17771",
+      "spokenTextSha256": "54a68990ba9767c48d9b82fb051a5057c9094bb14c386cae11e9fc37f0b17771",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+          "spoken": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nMillimeter Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch, Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch, Mittel-Klasse.\n\nMais. fünfhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Fahnen- und Narbenfadenbildung sowie Kornfüllung. Hoch.\n\nWeizen. vierhundertfünfzig bis sechshundertfünfzig Millimeter für die gesamte Wachstumszeit. Blüte und Kornfüllung. Mittel.\n\nTomate. vierhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Blüte und Fruchtentwicklung. Hoch.\n\nKartoffel. fünfhundert bis siebenhundert Millimeter für die gesamte Wachstumszeit. Knollenbildung und -wachstum. Hoch.\n\nZwiebel. dreihundertfünfzig bis fünfhundertfünfzig Millimeter für die gesamte Wachstumszeit. Zwiebelbildung. Mittel.\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel). dreihundertfünfzig bis fünfhundert Millimeter für die gesamte Wachstumszeit. Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen. Spezifisch belegtes Beispiel.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7742d95049687f590fb4ee355e19f758d2eeaf6dd3f6f266ec63cc419fc30bfc",
+      "requestFingerprintSha256": "7742d95049687f590fb4ee355e19f758d2eeaf6dd3f6f266ec63cc419fc30bfc",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-05-de-field-records-r1",
+      "unitId": "S3-05-de-field-records-r1",
+      "locale": "de",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Bedingte Empfehlung für das Gemüsefeld",
+          "sha256": "e08689e5ec4812f81e57513a2d0ad1ecd1f6f054bb092081cb2c701b0a6be851"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Empfehlung und Bedingungen",
+          "sha256": "a19ddc65ef9f8abc405b883e022e9ac11e9d95be8d31c4be85302740989dadb8"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Beregnungseignung oder Grenzen hier",
+          "sha256": "2b9228e58e6fc86fcf9786c2f979cd055a00d14669f66b29b9c6f4f5e0bbd71d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Verglichene Oberflächenform und Begründung",
+          "sha256": "752bf4f785a29816c25931312531670ce24719b586f1704691b0982dbb006575"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investition und mögliche Wartung",
+          "sha256": "856f527497fb31b2ed074b106c871c93ee849d68b1acab896db862beaef99fed"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Wasserqualität, Filter und Anlagenbelege",
+          "sha256": "5d98506251f19f3ff759341011b280a4cc934fd1da7ffd11ccaa7c7f91a19918"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Stadium, Wurzeln und gemessenes Bodenwasser",
+          "sha256": "d05ce2de8562d3865f70522946baa9dc89b2802d78f6a164682858450af23757"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Fehlendes Wetter/ET und wirksamer Regen",
+          "sha256": "9d7e169d3779e44f0323ad0427351dd4fe9e61585dad769fbc2f7e6a98d288e0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "Was die Empfehlung ändert; keine feste Gabe",
+          "sha256": "832f3f3ab06a181b6658c67b9f78380f06233908543a347826e91d82b93700cc"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Echte betreute Anlagenbeobachtung",
+          "sha256": "3d813b060b77b88f782bf1187f23108c851837f8bfc7be72c8e13baf018fec07"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Datum, Ort und tatsächlich beobachtete Geräte",
+          "sha256": "b928ce65a3bed2ddd31f7f94297bdf89a6c2cf8bf776c5479292a48d8c689588"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filter und Tropfer",
+          "sha256": "86db2194574a0b0b0b5598d1cca85f7c9a1aec1a7f97dc42f663a564596d97c0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Regner und Wind",
+          "sha256": "1fb9fccc975dc6023b1922aecdc44f9f99be5dd27917339a2555f9ca497e0e21"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Furche oder Becken",
+          "sha256": "2ffe69817d5bc219200d94312a999f7048c31b61734c7fa2f8ebd0bfba72a0ff"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Messfakten gegenüber Schluss und Datenlücke",
+          "sha256": "6c411f9ed032ad104e8db886f9edea06610a574a9823fb32c5413b7f6be4266e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Lehrkraftgespräch und Folgeschritt; kein praktisches Bestehen",
+          "sha256": "8b32ad7e9ee78054beb2577ac19b1edf6c6d772a40545b0f500548650f5372df"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "Noch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "sha256": "b52420721e5c599400f3d45039fb8ca6d281c87de1f99529fe04972a8cf9366a"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Welche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "sha256": "c58979c0c0f146bcb78efd3e8ecc676ec1861ac21056b391695d6553efccda87"
+        }
+      ],
+      "scientificMeaning": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "displayText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "captionText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "spokenText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter, Evapotranspiration und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "spokenTextSHA256": "0556155bcfeaa0f228d836f6ce4b7c086c9b75b1ba146f4924f32da8f7e7876b",
+      "spokenTextSha256": "0556155bcfeaa0f228d836f6ce4b7c086c9b75b1ba146f4924f32da8f7e7876b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "spoken": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter, Evapotranspiration und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a7eba4cdd47432936243ab8bd4af9df2cd63dc6e281c18eaa0a474f6a8d603f3",
+      "requestFingerprintSha256": "a7eba4cdd47432936243ab8bd4af9df2cd63dc6e281c18eaa0a474f6a8d603f3",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

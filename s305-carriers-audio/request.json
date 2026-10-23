@@ -1,0 +1,2143 @@
+{
+  "schemaVersion": 1,
+  "scope": "S305_EIGHT_TYPED_CARRIERS_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s305-carriers-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 8,
+  "maximumBlindAudioReviewCalls": 8,
+  "maximumASRInvocations": 8,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-ar-EG-seasonal-table-r1",
+      "unitId": "S3-05-ar-EG-seasonal-table-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "ست محاصيل: المدى والفترة والمرحلة الحساسة",
+          "sha256": "563fc2e1e3fc12073f70b8c5231b33a0eb72ff33ae51325c2aafc07284ed9db2"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "مليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري",
+          "sha256": "5d2a1ba4c8cba2b4fc860d300b68d7cc3dd7b0eeba9b78fdbdf1c38fa36f51bc"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "عالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.",
+          "sha256": "cde341325c92ee6d83c80b1dec0dc10287a7a49193fc672f92f9fd4cc77e31e1"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "الذرة",
+          "sha256": "5fa0a3f4bf455374ad1bbfe738b3795f65126b32ebe1e6aeac16bbf6e0225443"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "ظهور الشرابة والحرير وامتلاء الحبوب",
+          "sha256": "a8d0138564fc96307e13c31641cee2ef452d3572d528e242fd029f7ad9eae319"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "القمح",
+          "sha256": "524f3e414a261d6d581576189f167184a68ef94543c3b143720ef411484fdaf4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "التزهير وامتلاء الحبوب",
+          "sha256": "f23cb518077ac15766e6596f2b4897debd52b35541d6a7603b9b1b890ba00627"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "الطماطم",
+          "sha256": "608772b6c873633f154b37a294315871231e07dc0766eead927456e201a5acdc"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "التزهير ونمو الثمرة",
+          "sha256": "c4db261dcdef17d03de3c1a542942048258dad1d6c57bd03d5453b17b320f53b"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "البطاطس",
+          "sha256": "b174659ca31b3034e9dc8bf8061886f63040451ba1c5803ae0fa4bb6b9a39612"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "تكوين الدرنات وكبرها",
+          "sha256": "e2031b051a29a54436e217f26b177fb8d151d2dd45297e975ce8847a713dac28"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "البصل",
+          "sha256": "301d7805cc2b6ef0f1c7a4b270146fcff8c628ab73e448041aa168d16488761d"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "تكوين البصلة",
+          "sha256": "57eaba849510c8866bea975b4e633332b579497e21a2f676b22ec4661ebab647"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "الكرنب (مثال موثق لمحصول ورقي)",
+          "sha256": "28309e54a04e6e8641cc1cf09435ddbfb666551c475d5006fb982a9745a1cc8e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا",
+          "sha256": "fb10bc55e2af72393bee9342ea7b6aa0cb2b91c089d796bf349a0acfea01696b"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "متوسط",
+          "sha256": "42a5dadf6e45148828c93cea39741b4230c27afab0e5b4b31c5f7882003a0c9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "عالي",
+          "sha256": "d5d871437b8b6e9695fce2f90de69ce0023005b728c62b459cd1cca35463c874"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "متوسط",
+          "sha256": "42a5dadf6e45148828c93cea39741b4230c27afab0e5b4b31c5f7882003a0c9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "مثال محدد موثّق",
+          "sha256": "2b2756c2f3837635e08d4a6b0f423636def08bb4bb3f82add4d9909aea6c0726"
+        }
+      ],
+      "scientificMeaning": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "displayText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "captionText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+      "spokenText": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة. خمسمية إلى تمانمية ملليمتر خلال موسم النمو كله. ظهور الشرابة والحرير وامتلاء الحبوب. عالي.\n\nالقمح. ربعمية وخمسين إلى ستمية وخمسين ملليمتر خلال موسم النمو كله. التزهير وامتلاء الحبوب. متوسط.\n\nالطماطم. ربعمية إلى تمانمية ملليمتر خلال موسم النمو كله. التزهير ونمو الثمرة. عالي.\n\nالبطاطس. خمسمية إلى سبعمية ملليمتر خلال موسم النمو كله. تكوين الدرنات وكبرها. عالي.\n\nالبصل. تلتمية وخمسين إلى خمسمية وخمسين ملليمتر خلال موسم النمو كله. تكوين البصلة. متوسط.\n\nالكرنب (مثال موثق لمحصول ورقي). تلتمية وخمسين إلى خمسمية ملليمتر خلال موسم النمو كله. الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا. مثال محدد موثّق.",
+      "spokenTextSHA256": "33555030ccf9495bc9b6833e68e1778098745d52ac177716220e3f29271f47d3",
+      "spokenTextSha256": "33555030ccf9495bc9b6833e68e1778098745d52ac177716220e3f29271f47d3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة\n\nظهور الشرابة والحرير وامتلاء الحبوب\n\nالقمح\n\nالتزهير وامتلاء الحبوب\n\nالطماطم\n\nالتزهير ونمو الثمرة\n\nالبطاطس\n\nتكوين الدرنات وكبرها\n\nالبصل\n\nتكوين البصلة\n\nالكرنب (مثال موثق لمحصول ورقي)\n\nالحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا\n\nعالي\n\nمتوسط\n\nعالي\n\nعالي\n\nمتوسط\n\nمثال محدد موثّق",
+          "spoken": "ست محاصيل: المدى والفترة والمرحلة الحساسة\n\nمليمترات من احتياج مياه المحصول خلال موسم النمو كله، تقديري\n\nعالي ومتوسط أوصاف تقريبية للمقارنة دي، مش ترتيب ثابت لكل الظروف ولا تصنيف تحمل الجفاف. المديات بتتداخل. الكرنب مثال محدد بدل تعميم كل الورقيات، ومن غير إضافة تصنيف عالي أو متوسط له.\n\nالذرة. خمسمية إلى تمانمية ملليمتر خلال موسم النمو كله. ظهور الشرابة والحرير وامتلاء الحبوب. عالي.\n\nالقمح. ربعمية وخمسين إلى ستمية وخمسين ملليمتر خلال موسم النمو كله. التزهير وامتلاء الحبوب. متوسط.\n\nالطماطم. ربعمية إلى تمانمية ملليمتر خلال موسم النمو كله. التزهير ونمو الثمرة. عالي.\n\nالبطاطس. خمسمية إلى سبعمية ملليمتر خلال موسم النمو كله. تكوين الدرنات وكبرها. عالي.\n\nالبصل. تلتمية وخمسين إلى خمسمية وخمسين ملليمتر خلال موسم النمو كله. تكوين البصلة. متوسط.\n\nالكرنب (مثال موثق لمحصول ورقي). تلتمية وخمسين إلى خمسمية ملليمتر خلال موسم النمو كله. الحفاظ على رطوبة مناسبة أثناء تكوين الرأس، مع تحقق المواعيد محليًا. مثال محدد موثّق.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "02f8d116e901c0c405831a630101754381cfa682ee9cba7ebe1bfadb7372dd85",
+      "requestFingerprintSha256": "02f8d116e901c0c405831a630101754381cfa682ee9cba7ebe1bfadb7372dd85",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "119c431aa457c98e6bab1a0152471e4c8b3593089e66c2c610112e3c8a06e891"
+    },
+    {
+      "id": "S3-05-ar-EG-field-records-r1",
+      "unitId": "S3-05-ar-EG-field-records-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "ترشيحك المشروط لقطعة الخضار",
+          "sha256": "3cdef7dd961c4b3c64724bd4737627e3c77cec8cb53f0b29903e51db067deed8"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "الطريقة المقترحة وشروطها",
+          "sha256": "fb877c2cc1852d202814b64b1aea061b433ecf5d88f4b60f7fed3f444adab94e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "ليه الرش مناسب أو مش مناسب هنا",
+          "sha256": "228b02007ad070c2691c9efc4c4520aa178ee9bfac630a937cf440e85ab56efe"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "أنهي مسار سطحي بتقارنه وليه",
+          "sha256": "66ba86cc015c3d145340c9b3919bc865e23b8b817314e9da849de9fa1d0c3f7d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "تكلفة البداية والقدرة على الصيانة",
+          "sha256": "d67db13ba06a57d8a954ab830bfc376c0c4147faa1db5ccb393007245abb8db3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "جودة المياه والترشيح ودليل أداء النظام",
+          "sha256": "d75ffd6baa71d40707a52c6b81abba2705363791167c80682aeb0f9a8fbc5df3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "مرحلة المحصول والجذور وقياسات مياه التربة",
+          "sha256": "d32e620ab1177fd0438d161acf5109c537a783637b90e9566e39b14374099fd3"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "الطقس والبخر والنتح والمطر الفعال الناقصين",
+          "sha256": "8ae4d9f6e4c02fe4591b6400ed2266853a274b52468f1cdf12db0576d50edae1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "إيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة",
+          "sha256": "2e22ccb4e5f51ebe3d8314defb9cebcaad51d7e33ffe1dcf742f8e96b66857bf"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "ملاحظات معدات فعلية تحت إشراف المدرّب",
+          "sha256": "1363cdf97620309775e0b8678a5fbceee59744c921d474a37a17cbbf7e0f0915"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "التاريخ والمكان والمعدات اللي اتشافت فعلًا",
+          "sha256": "262fd7c01fd228b021ace434cd99aedf92cbb6a00c9fb9797d58fd7530a2cc87"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "ملاحظة المرشح والنقاطة",
+          "sha256": "c7a5772aed2df451c7561334627b37351e20206737ba4b3c8b323bb3e15ecc69"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "ملاحظة الرشاش والرياح",
+          "sha256": "63dc8f1835f3414cfa51f5a478e9ea9209db4cc630573c56b7d150bc7dce91a2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "ملاحظة الخطوط أو الحوض",
+          "sha256": "325481a8e4609268bb4dbc97a321fbc6431b2210c534f91cb5ba4d7891db1640"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "المقاس فعلًا مقابل الاستنتاج والبيانات الناقصة",
+          "sha256": "9e643ce51b0f6aee251f1c1a274db3ae4425cdd68b979b0a4347d7dae0c9aa5f"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "مناقشة المدرّب والمتابعة؛ مش اجتياز مهارة",
+          "sha256": "1bf46258b2a9a6810c885bb43eb66fb77d4bab412e7947bdedd116baaa730c63"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "لسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.",
+          "sha256": "9870a75017d5af8beee0bdde895ce55f5386853e344ce0b27e186e4c67e0cd38"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "إيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+          "sha256": "b576827ac832c862760931a6aca5e28f94bc7aa745e110cdb453f531aaf7fc23"
+        }
+      ],
+      "scientificMeaning": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "displayText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "captionText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "spokenText": "ترشيحك المشروط لقطعة الخضار\n\nالطريقة المقترحة وشروطها\n\nليه الرش مناسب أو مش مناسب هنا\n\nأنهي مسار سطحي بتقارنه وليه\n\nتكلفة البداية والقدرة على الصيانة\n\nجودة المياه والترشيح ودليل أداء النظام\n\nمرحلة المحصول والجذور وقياسات مياه التربة\n\nالطقس والبخر والنتح والمطر الفعال الناقصين\n\nإيه اللي يغيّر ترشيحك؛ من غير جرعة ثابتة\n\nملاحظات معدات فعلية تحت إشراف المدرّب\n\nالتاريخ والمكان والمعدات اللي اتشافت فعلًا\n\nملاحظة المرشح والنقاطة\n\nملاحظة الرشاش والرياح\n\nملاحظة الخطوط أو الحوض\n\nالمقاس فعلًا مقابل الاستنتاج والبيانات الناقصة\n\nمناقشة المدرّب والمتابعة؛ مش اجتياز مهارة\n\nلسه مفيش ملاحظة أو قرار مدرّب أو توقيع متسجل. يتكتبوا بعد شغل فعلي تحت الإشراف.\n\nإيه قياسات مرحلة المحصول ومياه التربة اللي هتطلبها قبل ما تنصح بالري في قطعة التدريب المحلية؟",
+      "spokenTextSHA256": "4932d98e5c74eac690ffde16f7c8cb3bdeb9dc2104265706241ac975dd208d38",
+      "spokenTextSha256": "4932d98e5c74eac690ffde16f7c8cb3bdeb9dc2104265706241ac975dd208d38",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c3dec52d217581f7e58effc465b07250fde7d7108f2d572797f889a62e11c3d4",
+      "requestFingerprintSha256": "c3dec52d217581f7e58effc465b07250fde7d7108f2d572797f889a62e11c3d4",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "119c431aa457c98e6bab1a0152471e4c8b3593089e66c2c610112e3c8a06e891"
+    },
+    {
+      "id": "S3-05-en-seasonal-table-r1",
+      "unitId": "S3-05-en-seasonal-table-r1",
+      "locale": "en",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Six crops: range, time basis and sensitive stage",
+          "sha256": "8be4e9fc156e8fd6c4a4cdf24e980cbe50e8bb67e17f5caf03b292132ef69919"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm of crop water need per total growing season, indicative",
+          "sha256": "4838b54a705feaf59afce7d4ef69230f1f2f224ae61dbc56159d3b5a3ac930b6"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "High/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.",
+          "sha256": "17d19a2b58e386bedc52ca997d1fc51c4e5ecf26188d3026f9a34f37001cadcb"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Maize (corn)",
+          "sha256": "8caf40f2b78aac3ef468e9f9fc4bb7a7782a95c91395d5093d05a22be173dd81"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Tasseling, silking and grain filling",
+          "sha256": "10245e2bcab77023dd878f35f292b4d2004ec7aeb3e948040a2617a817123548"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Wheat",
+          "sha256": "cca303e99f5f821dfd9d74b81b18be6a03a7ee271123158a9d6a7092f326b1bf"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Flowering and grain filling",
+          "sha256": "c42465eb29fb9a474807af7084fabe97a87c875f896f73b98beefd9f2a75a7b5"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Tomato",
+          "sha256": "8289a9844fd5125f9ecc55b600da78766f44f8477d0a908e2962fbd77eb78372"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Flowering and fruit development",
+          "sha256": "f4529de61d631fed36d5f1bdc9dea9ec57c1989fd7f1f01f496452fd865247a2"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Potato",
+          "sha256": "6d61374da4b4df53c6f8fbf4c9b05576d647a07da7498b400abaf7e1f4f44124"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Tuber formation and growth",
+          "sha256": "51503d2720945a9bead178df0448cce3fb8678fd8a2793ae7f265569aceccec7"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Onion",
+          "sha256": "cc278ed65b2d4d792808abde8bcf79848ad5c13f4f9f540eb4cfef3d74902029"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Bulb formation",
+          "sha256": "d9724f7ff60c1bbb098e25462704962655b059ac9b66fd85659004f69053509e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Cabbage (documented leafy-crop example)",
+          "sha256": "7cdbe9db9c5bcb0b32d7c3d09d4b731bd7f6cba4c7c21b70f9ea71a254385218"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Maintain suitable moisture through head development; timing must be checked locally",
+          "sha256": "fecbcbc2d095f5c4b383e57e2c80f00f9e2d55215bcf26249e25feaa0a270339"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Medium",
+          "sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "High",
+          "sha256": "c4ebc6d4a5832cd9415f906ad03661110c705a72381c8b8b145761d02e2dd23a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Medium",
+          "sha256": "8e588cd187741f1cd76f5fab77b7208782a8c21d764ce7d7a4cf3ac4e0968873"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Specific documented example",
+          "sha256": "e88b4e620946a573cdfd3e526d738db6b77ce85899e6fa908b5abd1f55eb5de3"
+        }
+      ],
+      "scientificMeaning": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "displayText": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "captionText": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+      "spokenText": "Six crops: range, time basis and sensitive stage\n\nmillimetres of crop water need per total growing season, indicative\n\nHigh, Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High, Medium category is assigned to it.\n\nMaize (corn). five hundred to eight hundred millimetres over the whole growing season. Tasseling, silking and grain filling. High.\n\nWheat. four hundred fifty to six hundred fifty millimetres over the whole growing season. Flowering and grain filling. Medium.\n\nTomato. four hundred to eight hundred millimetres over the whole growing season. Flowering and fruit development. High.\n\nPotato. five hundred to seven hundred millimetres over the whole growing season. Tuber formation and growth. High.\n\nOnion. three hundred fifty to five hundred fifty millimetres over the whole growing season. Bulb formation. Medium.\n\nCabbage (documented leafy-crop example). three hundred fifty to five hundred millimetres over the whole growing season. Maintain suitable moisture through head development; timing must be checked locally. Specific documented example.",
+      "spokenTextSHA256": "2958ba1c40b4320ed71679c4472e97281d6c1967c7f9f03a0b82cce64cb0b113",
+      "spokenTextSha256": "2958ba1c40b4320ed71679c4472e97281d6c1967c7f9f03a0b82cce64cb0b113",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Six crops: range, time basis and sensitive stage\n\nmm of crop water need per total growing season, indicative\n\nHigh/Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High/Medium category is assigned to it.\n\nMaize (corn)\n\nTasseling, silking and grain filling\n\nWheat\n\nFlowering and grain filling\n\nTomato\n\nFlowering and fruit development\n\nPotato\n\nTuber formation and growth\n\nOnion\n\nBulb formation\n\nCabbage (documented leafy-crop example)\n\nMaintain suitable moisture through head development; timing must be checked locally\n\nHigh\n\nMedium\n\nHigh\n\nHigh\n\nMedium\n\nSpecific documented example",
+          "spoken": "Six crops: range, time basis and sensitive stage\n\nmillimetres of crop water need per total growing season, indicative\n\nHigh, Medium are approximate comparison labels in this example, not universal rankings or drought-sensitivity categories. Ranges overlap. Cabbage replaces the broad leafy-crop rule; no High, Medium category is assigned to it.\n\nMaize (corn). five hundred to eight hundred millimetres over the whole growing season. Tasseling, silking and grain filling. High.\n\nWheat. four hundred fifty to six hundred fifty millimetres over the whole growing season. Flowering and grain filling. Medium.\n\nTomato. four hundred to eight hundred millimetres over the whole growing season. Flowering and fruit development. High.\n\nPotato. five hundred to seven hundred millimetres over the whole growing season. Tuber formation and growth. High.\n\nOnion. three hundred fifty to five hundred fifty millimetres over the whole growing season. Bulb formation. Medium.\n\nCabbage (documented leafy-crop example). three hundred fifty to five hundred millimetres over the whole growing season. Maintain suitable moisture through head development; timing must be checked locally. Specific documented example.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5413f6fb5ecf0141ecbdcc3e660d1455de6c07473c138068a351367b14352d67",
+      "requestFingerprintSha256": "5413f6fb5ecf0141ecbdcc3e660d1455de6c07473c138068a351367b14352d67",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "022662113333490922d5db7b4c6e5d43058c7febac11de898f9aead2c0c873ec"
+    },
+    {
+      "id": "S3-05-en-field-records-r1",
+      "unitId": "S3-05-en-field-records-r1",
+      "locale": "en",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Your conditional plot recommendation",
+          "sha256": "b776f581260d30a5360d5a6827a075af755530832978922cc359b97250982e29"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Recommendation and conditions",
+          "sha256": "e80e2eb788f5d2df7dd6f1874e459ea4dcbbd7f811d07d41477ff6ca94500b9a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Why sprinkler is or is not suitable here",
+          "sha256": "d1ea65512e9b33ddd7872465e065f4c9017be73fc16ceaed02a780c0de9b36e2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Which surface layout you compare and why",
+          "sha256": "e7509b329e031e5113d176bd98618d15bcedfa4574b6195bef120bbc35cf4864"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investment and ability to maintain",
+          "sha256": "e22413abe05a9be5e7d7f0c366d28ecb37f4a0f4688e30311d4919a7d7911adf"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Water quality, filtration and system evidence",
+          "sha256": "e534c788df4c079813cf62ba25d37bd7223a60b51dd8f2a2459f78afa8d3ec09"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Crop stage, roots and measured soil-water data",
+          "sha256": "d4f19b6aff7dc91cf83d16cc6a75933db2b90d86d81f0abb9a99ba505be4d9f2"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Weather/ET and effective rain still required",
+          "sha256": "7079507bbeef8e75bc2fe483d670021570d4e251480f478e7c495351d283f87b"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "What would change your recommendation; no fixed dose",
+          "sha256": "f85d0ac39a25308381c896a5f7980dcacf4c367f61a01d82dd9bb4abdb8fe65c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Actual supervised equipment observations",
+          "sha256": "758dcd05687e73f928a19f0f284e04912b626843efe92ecc68475426a1734ddd"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Date, site and equipment actually observed",
+          "sha256": "9c19b0b81d9614630bf11a4a7ecc761291057669b28b479e8a0ddef71f3cc9b1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filter/emitter observation",
+          "sha256": "3bc6dc855998b3c529ce861b131771fd038a0d1e0da62bcb1a5bd71eff01d092"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Sprinkler and wind observation",
+          "sha256": "19b294d3562970e24c256d7113ced597f645c731addf8755b2f13eddedea6adb"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Furrow or basin observation",
+          "sha256": "c5a9ef57e5647ea458f65e4f20faceefdab0492538c62b96f9fdb0731b11b9f5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Measured facts versus inference and missing values",
+          "sha256": "e5587d949368017a3dc6238e5cf92724c49d5d952ee7163bab2aa0f73bb89154"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Trainer discussion and follow-up; no competence pass",
+          "sha256": "57986c9547254437ab0d52196d25b19151284e0d63782fb02b178341329bca3a"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "No observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "sha256": "6ca8a96fc44a59a84fac7df98b039d7c665c93aa7313a210a71b71160e3a4704"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Which crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "sha256": "c9cb9122971cd659a8ce062da0604e07cc6baa7e624a71c47e7e2a120754f310"
+        }
+      ],
+      "scientificMeaning": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "displayText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "captionText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "spokenText": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather, evapotranspiration and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter, emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+      "spokenTextSHA256": "c6d52ea18503723988dcbea41c634c48fa00ff84d5eccae403935e11d2a85cd8",
+      "spokenTextSha256": "c6d52ea18503723988dcbea41c634c48fa00ff84d5eccae403935e11d2a85cd8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather/ET and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter/emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "spoken": "Your conditional plot recommendation\n\nRecommendation and conditions\n\nWhy sprinkler is or is not suitable here\n\nWhich surface layout you compare and why\n\nInvestment and ability to maintain\n\nWater quality, filtration and system evidence\n\nCrop stage, roots and measured soil-water data\n\nWeather, evapotranspiration and effective rain still required\n\nWhat would change your recommendation; no fixed dose\n\nActual supervised equipment observations\n\nDate, site and equipment actually observed\n\nFilter, emitter observation\n\nSprinkler and wind observation\n\nFurrow or basin observation\n\nMeasured facts versus inference and missing values\n\nTrainer discussion and follow-up; no competence pass\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nWhich crop-stage and soil-water measurements would you request before advising irrigation on your local training plot?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6e9463e606586ea60b19aface1a24c269a2815e9c4ec6cbc1ae105719a5df300",
+      "requestFingerprintSha256": "6e9463e606586ea60b19aface1a24c269a2815e9c4ec6cbc1ae105719a5df300",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "022662113333490922d5db7b4c6e5d43058c7febac11de898f9aead2c0c873ec"
+    },
+    {
+      "id": "S3-05-it-seasonal-table-r1",
+      "unitId": "S3-05-it-seasonal-table-r1",
+      "locale": "it",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Sei colture: intervallo, periodo e fase sensibile",
+          "sha256": "f41fe2488b694b60513226b1c6d00270a80f25822a43c8783763070a4fcef956"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita",
+          "sha256": "433fc4c26122d7158d159e102552e441e88b1edf98727bc0ead3af2133c257f5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "Alto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.",
+          "sha256": "b75a972519f01812d7a58d8ad9b4b7055ab9873c0fbc9568e3cad8d6f9a6bcc3"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Mais",
+          "sha256": "962d86dfa1c5d9b119ebc139c077e4494477b25f2fd3c26deee4caec76034b64"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Emissione del pennacchio, sete e riempimento dei chicchi",
+          "sha256": "fcb3a74d64328c8f0d60964b28ca52c41878937cc9e160930c8fb6fe2f4cbe80"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Frumento",
+          "sha256": "be31eb448248a29d4300ccfce7bfdf54e589b56e29bd2f14c1103714aa5be8a4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Fioritura e riempimento dei chicchi",
+          "sha256": "828b743a9a17b7b74934a3fed1026460fbabd0040a3e7669b05bfc4fe0c6605e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Pomodoro",
+          "sha256": "002bdac82a6316a73240808698ce90359058af85c9fa56c950332ac92b596b54"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Fioritura e sviluppo dei frutti",
+          "sha256": "1b4e677fbf55a1786a70fca38e3364c013717ae95deb5fdfd8b7f25ddb93a975"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Patata",
+          "sha256": "0cae58ab02970f792b8b75150604a4bfa70b7fc6c40026f684a67aaeedffe8d1"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Formazione e crescita dei tuberi",
+          "sha256": "d9e0e5e09471d0c31d3f241e87780da3742d6ccee0ab962611ff76659e0644a8"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Cipolla",
+          "sha256": "a05a89b9c9511119d91f5e5e415e400a030b8fd895d67426bdd3b6d1d4f4a55a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Formazione del bulbo",
+          "sha256": "908c48084174480f22bfea2189ae9079d0cd018fae464836cbd4da866ae0a3e6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Cavolo (esempio documentato di verdura a foglia)",
+          "sha256": "0f2e136ac2ca8ce76711a965a0716080e555c86f4809fb80ef2c2c4fd8f9e7ce"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente",
+          "sha256": "cf2fdb6240b6a9cd179c8f02114955b5c893791942f30565cf421bb1bf0a0ff7"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Medio",
+          "sha256": "da26d4f11244518e356cd45724d7e4bd2095275d2a26fd7786890400238a997c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "Alto",
+          "sha256": "85e2adef7edee9e0bc96d3d04ec60799093f6363be6acde0aacec77587b3f952"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Medio",
+          "sha256": "da26d4f11244518e356cd45724d7e4bd2095275d2a26fd7786890400238a997c"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Esempio specifico documentato",
+          "sha256": "49544ee212789268bfefb4ecf32067653c971ad1d558fc49bf44fbf5b6b2cb44"
+        }
+      ],
+      "scientificMeaning": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "displayText": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "captionText": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+      "spokenText": "Sei colture: intervallo, periodo e fase sensibile\n\nmillimetri indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto, Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto, Medio gli è assegnata.\n\nMais. cinquecento a ottocento millimetri per l’intera stagione di crescita. Emissione del pennacchio, sete e riempimento dei chicchi. Alto.\n\nFrumento. quattrocentocinquanta a seicentocinquanta millimetri per l’intera stagione di crescita. Fioritura e riempimento dei chicchi. Medio.\n\nPomodoro. quattrocento a ottocento millimetri per l’intera stagione di crescita. Fioritura e sviluppo dei frutti. Alto.\n\nPatata. cinquecento a settecento millimetri per l’intera stagione di crescita. Formazione e crescita dei tuberi. Alto.\n\nCipolla. trecentocinquanta a cinquecentocinquanta millimetri per l’intera stagione di crescita. Formazione del bulbo. Medio.\n\nCavolo (esempio documentato di verdura a foglia). trecentocinquanta a cinquecento millimetri per l’intera stagione di crescita. Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente. Esempio specifico documentato.",
+      "spokenTextSHA256": "53ac208b121a1affb8fed44fcfed528a52ad2ef01911a8757e05678843c11b28",
+      "spokenTextSha256": "53ac208b121a1affb8fed44fcfed528a52ad2ef01911a8757e05678843c11b28",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sei colture: intervallo, periodo e fase sensibile\n\nmm indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto/Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto/Medio gli è assegnata.\n\nMais\n\nEmissione del pennacchio, sete e riempimento dei chicchi\n\nFrumento\n\nFioritura e riempimento dei chicchi\n\nPomodoro\n\nFioritura e sviluppo dei frutti\n\nPatata\n\nFormazione e crescita dei tuberi\n\nCipolla\n\nFormazione del bulbo\n\nCavolo (esempio documentato di verdura a foglia)\n\nMantenere umidità adatta durante la formazione della testa; verificare i tempi localmente\n\nAlto\n\nMedio\n\nAlto\n\nAlto\n\nMedio\n\nEsempio specifico documentato",
+          "spoken": "Sei colture: intervallo, periodo e fase sensibile\n\nmillimetri indicativi di fabbisogno idrico della coltura per l’intera stagione di crescita\n\nAlto, Medio sono etichette indicative di confronto, non classifiche universali né sensibilità alla siccità. Gli intervalli si sovrappongono. Il cavolo sostituisce la regola generale sulle foglie; nessuna classe Alto, Medio gli è assegnata.\n\nMais. cinquecento a ottocento millimetri per l’intera stagione di crescita. Emissione del pennacchio, sete e riempimento dei chicchi. Alto.\n\nFrumento. quattrocentocinquanta a seicentocinquanta millimetri per l’intera stagione di crescita. Fioritura e riempimento dei chicchi. Medio.\n\nPomodoro. quattrocento a ottocento millimetri per l’intera stagione di crescita. Fioritura e sviluppo dei frutti. Alto.\n\nPatata. cinquecento a settecento millimetri per l’intera stagione di crescita. Formazione e crescita dei tuberi. Alto.\n\nCipolla. trecentocinquanta a cinquecentocinquanta millimetri per l’intera stagione di crescita. Formazione del bulbo. Medio.\n\nCavolo (esempio documentato di verdura a foglia). trecentocinquanta a cinquecento millimetri per l’intera stagione di crescita. Mantenere umidità adatta durante la formazione della testa; verificare i tempi localmente. Esempio specifico documentato.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "14d8928e6f530c348751e85f42a8115b70f55660fa62dbfb224ff2444a4b411e",
+      "requestFingerprintSha256": "14d8928e6f530c348751e85f42a8115b70f55660fa62dbfb224ff2444a4b411e",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "252f44a4b183a0090716d31f34b0d7884d6b451d2b989ebaa747aa5c5750c629"
+    },
+    {
+      "id": "S3-05-it-field-records-r1",
+      "unitId": "S3-05-it-field-records-r1",
+      "locale": "it",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Raccomandazione condizionata per l’orto",
+          "sha256": "a905fc1656f9dbfc66e5844d0cc5a91c22f3ec52bee63c77dbc6edce794af976"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Raccomandazione e condizioni",
+          "sha256": "a1526307b27b938fa7f6667db2938687a49704276d9cb69cb4574e7825dc39d9"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Idoneità o limiti dell’aspersione qui",
+          "sha256": "ced0142198d2187a596f26a0e465da4f36f6dad19c8ea8e0054c2ed6235b5c9d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Quale superficie si confronta e perché",
+          "sha256": "7d8ce66376b58b9c1210aa59922f01dd1e2638460616f159c3fe7089be46b202"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investimento e manutenzione possibile",
+          "sha256": "83e42e26ed27e32dfa0bf6db09989fcd1ced0ab00119426cc512bb9b0d2d4105"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Qualità, filtro e prove d’impianto",
+          "sha256": "a1a7706cd4908487756650ec9a0f5157129d883e2c28b184fa868bc88ac7901f"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Stadio, radici e acqua misurata",
+          "sha256": "2e25337f1ff78cf3a58d9027a7449182b0a6e70e835fe128465ac8d26a33ddff"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Meteo/ET e pioggia efficace mancanti",
+          "sha256": "ef693e003e512d728d08952345717fd877bef2b77cd2136a775db0dd45d4162e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "Cosa cambierebbe la scelta; nessuna dose fissa",
+          "sha256": "766443cbd068f90a60190bdb25d68813007649dfd3fc3f6e914e1fe3973d3b91"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Osservazioni reali supervisionate",
+          "sha256": "7103c833d08a9d918b51ae8fd481ad5c3580114514e2f4765dc8da25cb72ad84"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Data, sito e attrezzatura osservata",
+          "sha256": "1a62387797bf9cc958bb120010e4c54f24463189484f542bc3acb589bcbd793e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filtro e gocciolatore",
+          "sha256": "c8b0bd7f7b920b4651f90c047ee499c7481a9af8216ea593bcb0787791d541b5"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Irrigatore e vento",
+          "sha256": "9e85bfcbcc21e83aca8f2de7625c71b3581924666ee00ac85f90bac304f43d04"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Solco o bacino",
+          "sha256": "cddee00a60754e15a155f1ed0b1ed091a6ac6fc92f5776d09457b10ff851dd41"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Fatti misurati contro inferenze e dati mancanti",
+          "sha256": "8ebf7564e1c192e61448a213a8126dad170449cbb2e45e2b36f399f3ec7f3799"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Discussione e seguito; nessun superamento pratico",
+          "sha256": "44866f21194c044febb91aaf9198d2dbf8df2baa58867b9236f3a72938895dea"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "Nessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "sha256": "4a522e832c103528797170b4d5108df44a57cdd46a152441df263dae68dd409c"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Quali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "sha256": "f9f9bce981c2bf2c57e72920b24490a0337b591d1311bdc292f6ffc6279a3eef"
+        }
+      ],
+      "scientificMeaning": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "displayText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "captionText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "spokenText": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo, evapotraspirazione e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+      "spokenTextSHA256": "9bc7dc5591ac01ab21e2113a443d56d49ed6cb340f3e8b2c2f7371550c49fd08",
+      "spokenTextSha256": "9bc7dc5591ac01ab21e2113a443d56d49ed6cb340f3e8b2c2f7371550c49fd08",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo/ET e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "spoken": "Raccomandazione condizionata per l’orto\n\nRaccomandazione e condizioni\n\nIdoneità o limiti dell’aspersione qui\n\nQuale superficie si confronta e perché\n\nInvestimento e manutenzione possibile\n\nQualità, filtro e prove d’impianto\n\nStadio, radici e acqua misurata\n\nMeteo, evapotraspirazione e pioggia efficace mancanti\n\nCosa cambierebbe la scelta; nessuna dose fissa\n\nOsservazioni reali supervisionate\n\nData, sito e attrezzatura osservata\n\nFiltro e gocciolatore\n\nIrrigatore e vento\n\nSolco o bacino\n\nFatti misurati contro inferenze e dati mancanti\n\nDiscussione e seguito; nessun superamento pratico\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nQuali misure della fase colturale e dell’acqua del suolo chiederesti prima di consigliare l’irrigazione nell’appezzamento locale di formazione?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "36c12e94fcb80f6ea2a03631c88937619b0884305c121b072b1c464580108e08",
+      "requestFingerprintSha256": "36c12e94fcb80f6ea2a03631c88937619b0884305c121b072b1c464580108e08",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "252f44a4b183a0090716d31f34b0d7884d6b451d2b989ebaa747aa5c5750c629"
+    },
+    {
+      "id": "S3-05-de-seasonal-table-r1",
+      "unitId": "S3-05-de-seasonal-table-r1",
+      "locale": "de",
+      "semanticGroup": "seasonal-table",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/table",
+          "text": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase",
+          "sha256": "65767228839f41b7929f7209eb834122183ad20d720e0456260288f2b4809a06"
+        },
+        {
+          "pointer": "/irrigationPractice/unit",
+          "text": "mm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit",
+          "sha256": "0199ad8eda7b1087933148a5aaa58a87ea97a65dfe65b0ada8358aa63e1c23a0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classNote",
+          "text": "Hoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.",
+          "sha256": "0926464e7a16789670277d1b9b86b4951b3bd2b7d561ec9594a6ee732ea80886"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/crop",
+          "text": "Mais",
+          "sha256": "962d86dfa1c5d9b119ebc139c077e4494477b25f2fd3c26deee4caec76034b64"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/criticalStages",
+          "text": "Fahnen- und Narbenfadenbildung sowie Kornfüllung",
+          "sha256": "71a425e521bec5640400a4dc5a8bd91c6a836b580374eeed7caffe32faaef6e0"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/crop",
+          "text": "Weizen",
+          "sha256": "5de5fdf7f8a2b5d82cb54135dd95029bd5bb38ed8d55bc037a64ec9c3059e956"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/criticalStages",
+          "text": "Blüte und Kornfüllung",
+          "sha256": "098e4b7fb9253ccde2a677ca40a17710b21d66f5e28045721e032459daeb2e9e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/crop",
+          "text": "Tomate",
+          "sha256": "96eaefafc3db56ca49863a066b13a6a3c8139d28b49f083673c219bbd81f294e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/criticalStages",
+          "text": "Blüte und Fruchtentwicklung",
+          "sha256": "93269fde18fd81392dcc49f2eff6cab53a7907ecb6d56c81a90e83fa53521b44"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/crop",
+          "text": "Kartoffel",
+          "sha256": "5e940ecd0c6ac6c8570691c03ece39c2f11a70ac2fec877140cfd795a4dbef1f"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/criticalStages",
+          "text": "Knollenbildung und -wachstum",
+          "sha256": "908151cf2daccc64aa85f13576efd9b341462fba2065b60726c6856c1a0ea081"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/crop",
+          "text": "Zwiebel",
+          "sha256": "e99bdba8e3e9465977f0a09e9dbe944fad4f804d15c4a4970a09b1c7f9bd4240"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/criticalStages",
+          "text": "Zwiebelbildung",
+          "sha256": "bc79983aadc50a6970e1a18a8047a76c2108c22edad320bbd478c6c9e7133fac"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/crop",
+          "text": "Kopfkohl (dokumentiertes Blattgemüsebeispiel)",
+          "sha256": "551f68a6e27b847be025126955666a287c54e6ea7cd7d72ee1064b6d75ed13e4"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/criticalStages",
+          "text": "Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen",
+          "sha256": "9749b7d073a6be1c68544b18451b6b6754cdca78c677db98592ab21d0a3f75a7"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/0",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/1",
+          "text": "Mittel",
+          "sha256": "6604277e642c958b99778c690e526c1126c19c7f3b0030590a4a0b92eac62d68"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/2",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/3",
+          "text": "Hoch",
+          "sha256": "5f9d45fa2f0b9372a2083664c9f08707e3359fa85b5ce05971d4692bbf2434d1"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/4",
+          "text": "Mittel",
+          "sha256": "6604277e642c958b99778c690e526c1126c19c7f3b0030590a4a0b92eac62d68"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/classes/5",
+          "text": "Spezifisch belegtes Beispiel",
+          "sha256": "5c7798ac1e9e1f5410073fe6d64e3f4d70ddd6ad2e2f8c45799a347929c5e054"
+        }
+      ],
+      "scientificMeaning": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "displayText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "captionText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+      "spokenText": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nMillimeter Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch, Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch, Mittel-Klasse.\n\nMais. fünfhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Fahnen- und Narbenfadenbildung sowie Kornfüllung. Hoch.\n\nWeizen. vierhundertfünfzig bis sechshundertfünfzig Millimeter für die gesamte Wachstumszeit. Blüte und Kornfüllung. Mittel.\n\nTomate. vierhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Blüte und Fruchtentwicklung. Hoch.\n\nKartoffel. fünfhundert bis siebenhundert Millimeter für die gesamte Wachstumszeit. Knollenbildung und -wachstum. Hoch.\n\nZwiebel. dreihundertfünfzig bis fünfhundertfünfzig Millimeter für die gesamte Wachstumszeit. Zwiebelbildung. Mittel.\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel). dreihundertfünfzig bis fünfhundert Millimeter für die gesamte Wachstumszeit. Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen. Spezifisch belegtes Beispiel.",
+      "spokenTextSHA256": "54a68990ba9767c48d9b82fb051a5057c9094bb14c386cae11e9fc37f0b17771",
+      "spokenTextSha256": "54a68990ba9767c48d9b82fb051a5057c9094bb14c386cae11e9fc37f0b17771",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nmm Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch/Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch/Mittel-Klasse.\n\nMais\n\nFahnen- und Narbenfadenbildung sowie Kornfüllung\n\nWeizen\n\nBlüte und Kornfüllung\n\nTomate\n\nBlüte und Fruchtentwicklung\n\nKartoffel\n\nKnollenbildung und -wachstum\n\nZwiebel\n\nZwiebelbildung\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel)\n\nAngemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen\n\nHoch\n\nMittel\n\nHoch\n\nHoch\n\nMittel\n\nSpezifisch belegtes Beispiel",
+          "spoken": "Sechs Kulturen: Bereich, Zeitbasis und empfindliche Phase\n\nMillimeter Richtwert des Kulturwasserbedarfs für die gesamte Vegetationszeit\n\nHoch, Mittel sind ungefähre Vergleichsangaben, keine allgemeine Rangfolge oder Dürreempfindlichkeit. Bereiche überschneiden sich. Kohl ersetzt die allgemeine Blattgemüseregel, ohne neue Hoch, Mittel-Klasse.\n\nMais. fünfhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Fahnen- und Narbenfadenbildung sowie Kornfüllung. Hoch.\n\nWeizen. vierhundertfünfzig bis sechshundertfünfzig Millimeter für die gesamte Wachstumszeit. Blüte und Kornfüllung. Mittel.\n\nTomate. vierhundert bis achthundert Millimeter für die gesamte Wachstumszeit. Blüte und Fruchtentwicklung. Hoch.\n\nKartoffel. fünfhundert bis siebenhundert Millimeter für die gesamte Wachstumszeit. Knollenbildung und -wachstum. Hoch.\n\nZwiebel. dreihundertfünfzig bis fünfhundertfünfzig Millimeter für die gesamte Wachstumszeit. Zwiebelbildung. Mittel.\n\nKopfkohl (dokumentiertes Blattgemüsebeispiel). dreihundertfünfzig bis fünfhundert Millimeter für die gesamte Wachstumszeit. Angemessene Feuchte bei Kopfbildung; Zeitpunkt örtlich prüfen. Spezifisch belegtes Beispiel.",
+          "occurrences": 1,
+          "purpose": "Source-faithful coherent narration of exact text cells plus separately typed numeric crop range bindings; every min/max is joined to its own crop/stage/class. No fake numeric textsource, no source/schema change; ordinary table disclosed upfront."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7742d95049687f590fb4ee355e19f758d2eeaf6dd3f6f266ec63cc419fc30bfc",
+      "requestFingerprintSha256": "7742d95049687f590fb4ee355e19f758d2eeaf6dd3f6f266ec63cc419fc30bfc",
+      "sourceNumericBindings": [
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/0/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/0",
+          "jsonType": "integer",
+          "value": 450,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "83151157c10d85af7c84657c71c3e3603d955160f0526fce672481da83a2e090"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/1/rangeMm/1",
+          "jsonType": "integer",
+          "value": 650,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "2099a9b5f777e242d1f9e19d27e232cc71e2fa7964fc988a319fce5671ca7f73"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/0",
+          "jsonType": "integer",
+          "value": 400,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "26d228663f13a88592a12d16cf9587caab0388b262d6d9f126ed62f9333aca94"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/2/rangeMm/1",
+          "jsonType": "integer",
+          "value": 800,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "1a1cf797fabe7f95836fabeca626907c77b3e6c9aff7c2290b396a238c69362e"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/0",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/3/rangeMm/1",
+          "jsonType": "integer",
+          "value": 700,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "99ee50221221864d50c60baea6f14d8ac2e235cc6e78be6088cd40cc97fca394"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/4/rangeMm/1",
+          "jsonType": "integer",
+          "value": 550,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "f89f8d0e735a91c5269ab08d72fa27670d000e7561698d6e664e7b603f5c4e40"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/0",
+          "jsonType": "integer",
+          "value": 350,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "deeeb5df3f2cee6bf4e597a8a3a878a6ce49b932b9e90b416922d4499f54fae6"
+        },
+        {
+          "pointer": "/irrigationPractice/crops/5/rangeMm/1",
+          "jsonType": "integer",
+          "value": 500,
+          "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+          "canonicalJSONSHA256": "0604cd3138feed202ef293e062da2f4720f77a05d25ee036a7a01c9cfcdd1f0a"
+        }
+      ],
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "8515d10b082366846a77aed1736ed747051bcf37833df03fff38919947ca7f8f"
+    },
+    {
+      "id": "S3-05-de-field-records-r1",
+      "unitId": "S3-05-de-field-records-r1",
+      "locale": "de",
+      "semanticGroup": "field-records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/irrigationPractice/ui/site",
+          "text": "Bedingte Empfehlung für das Gemüsefeld",
+          "sha256": "e08689e5ec4812f81e57513a2d0ad1ecd1f6f054bb092081cb2c701b0a6be851"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/0",
+          "text": "Empfehlung und Bedingungen",
+          "sha256": "a19ddc65ef9f8abc405b883e022e9ac11e9d95be8d31c4be85302740989dadb8"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/1",
+          "text": "Beregnungseignung oder Grenzen hier",
+          "sha256": "2b9228e58e6fc86fcf9786c2f979cd055a00d14669f66b29b9c6f4f5e0bbd71d"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/2",
+          "text": "Verglichene Oberflächenform und Begründung",
+          "sha256": "752bf4f785a29816c25931312531670ce24719b586f1704691b0982dbb006575"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/3",
+          "text": "Investition und mögliche Wartung",
+          "sha256": "856f527497fb31b2ed074b106c871c93ee849d68b1acab896db862beaef99fed"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/4",
+          "text": "Wasserqualität, Filter und Anlagenbelege",
+          "sha256": "5d98506251f19f3ff759341011b280a4cc934fd1da7ffd11ccaa7c7f91a19918"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/5",
+          "text": "Stadium, Wurzeln und gemessenes Bodenwasser",
+          "sha256": "d05ce2de8562d3865f70522946baa9dc89b2802d78f6a164682858450af23757"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/6",
+          "text": "Fehlendes Wetter/ET und wirksamer Regen",
+          "sha256": "9d7e169d3779e44f0323ad0427351dd4fe9e61585dad769fbc2f7e6a98d288e0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/siteFields/7",
+          "text": "Was die Empfehlung ändert; keine feste Gabe",
+          "sha256": "832f3f3ab06a181b6658c67b9f78380f06233908543a347826e91d82b93700cc"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observation",
+          "text": "Echte betreute Anlagenbeobachtung",
+          "sha256": "3d813b060b77b88f782bf1187f23108c851837f8bfc7be72c8e13baf018fec07"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/0",
+          "text": "Datum, Ort und tatsächlich beobachtete Geräte",
+          "sha256": "b928ce65a3bed2ddd31f7f94297bdf89a6c2cf8bf776c5479292a48d8c689588"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/1",
+          "text": "Filter und Tropfer",
+          "sha256": "86db2194574a0b0b0b5598d1cca85f7c9a1aec1a7f97dc42f663a564596d97c0"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/2",
+          "text": "Regner und Wind",
+          "sha256": "1fb9fccc975dc6023b1922aecdc44f9f99be5dd27917339a2555f9ca497e0e21"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/3",
+          "text": "Furche oder Becken",
+          "sha256": "2ffe69817d5bc219200d94312a999f7048c31b61734c7fa2f8ebd0bfba72a0ff"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/4",
+          "text": "Messfakten gegenüber Schluss und Datenlücke",
+          "sha256": "6c411f9ed032ad104e8db886f9edea06610a574a9823fb32c5413b7f6be4266e"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/observationFields/5",
+          "text": "Lehrkraftgespräch und Folgeschritt; kein praktisches Bestehen",
+          "sha256": "8b32ad7e9ee78054beb2577ac19b1edf6c6d772a40545b0f500548650f5372df"
+        },
+        {
+          "pointer": "/irrigationPractice/ui/notes",
+          "text": "Noch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "sha256": "b52420721e5c599400f3d45039fb8ca6d281c87de1f99529fe04972a8cf9366a"
+        },
+        {
+          "pointer": "/irrigationPractice/addedReflection",
+          "text": "Welche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "sha256": "c58979c0c0f146bcb78efd3e8ecc676ec1861ac21056b391695d6553efccda87"
+        }
+      ],
+      "scientificMeaning": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "displayText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "captionText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "spokenText": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter, Evapotranspiration und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+      "spokenTextSHA256": "0556155bcfeaa0f228d836f6ce4b7c086c9b75b1ba146f4924f32da8f7e7876b",
+      "spokenTextSha256": "0556155bcfeaa0f228d836f6ce4b7c086c9b75b1ba146f4924f32da8f7e7876b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter/ET und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "spoken": "Bedingte Empfehlung für das Gemüsefeld\n\nEmpfehlung und Bedingungen\n\nBeregnungseignung oder Grenzen hier\n\nVerglichene Oberflächenform und Begründung\n\nInvestition und mögliche Wartung\n\nWasserqualität, Filter und Anlagenbelege\n\nStadium, Wurzeln und gemessenes Bodenwasser\n\nFehlendes Wetter, Evapotranspiration und wirksamer Regen\n\nWas die Empfehlung ändert; keine feste Gabe\n\nEchte betreute Anlagenbeobachtung\n\nDatum, Ort und tatsächlich beobachtete Geräte\n\nFilter und Tropfer\n\nRegner und Wind\n\nFurche oder Becken\n\nMessfakten gegenüber Schluss und Datenlücke\n\nLehrkraftgespräch und Folgeschritt; kein praktisches Bestehen\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nWelche Messungen zu Kulturstadium und Bodenwasser würdest du vor einem Bewässerungsrat für das örtliche Übungsfeld verlangen?",
+          "occurrences": 1,
+          "purpose": "Exact typedcropminmax/range-stage-classbindings and sourceequivalentETexpansion/grammar; source/displayunchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a7eba4cdd47432936243ab8bd4af9df2cd63dc6e281c18eaa0a474f6a8d603f3",
+      "requestFingerprintSha256": "a7eba4cdd47432936243ab8bd4af9df2cd63dc6e281c18eaa0a474f6a8d603f3",
+      "sourceNumericBindings": [],
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "8515d10b082366846a77aed1736ed747051bcf37833df03fff38919947ca7f8f"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 2,
+    "blind": 2,
+    "asr": 2,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-05-ar-EG-seasonal-table-r1",
+      "S3-05-ar-EG-field-records-r1"
+    ],
+    "en": [
+      "S3-05-en-seasonal-table-r1",
+      "S3-05-en-field-records-r1"
+    ],
+    "it": [
+      "S3-05-it-seasonal-table-r1",
+      "S3-05-it-field-records-r1"
+    ],
+    "de": [
+      "S3-05-de-seasonal-table-r1",
+      "S3-05-de-field-records-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
