@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "scope": "RUNTIME_S202_DE_EFFECTIVE_MODEL_TITLE_REPAIR",
+  "stepId": "S2-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-runtime-s202-de-effective-model-title-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-02-de-effective-model-title-repair-r1",
+      "unitId": "S2-02-de-effective-model-title-repair-r1",
+      "locale": "de",
+      "semanticGroup": "runtime-s202-de-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/transportPractice/ui/scene",
+          "text": "Wurzel und Bodenwasser · 3D-Schema",
+          "sha256": "8320745689183998fecd010b827d3f38165f9065d59fc564249cc3ee4e1d3ab0"
+        }
+      ],
+      "scientificMeaning": "Wurzel und Bodenwasser · 3D-Schema",
+      "displayText": "Wurzel und Bodenwasser · 3D-Schema",
+      "captionText": "Wurzel und Bodenwasser · 3D-Schema",
+      "spokenText": "Wurzel und Bodenwasser · interaktives Schema",
+      "spokenTextSHA256": "4d785ebefe1a5cf1fe8719f4ed23c452471c266d861079815d665742320893f2",
+      "spokenTextSha256": "4d785ebefe1a5cf1fe8719f4ed23c452471c266d861079815d665742320893f2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Wurzel und Bodenwasser · 3D-Schema",
+          "spoken": "Wurzel und Bodenwasser · 3D-Schema",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Wurzel und Bodenwasser · 3D-Schema",
+          "spoken": "Wurzel und Bodenwasser · interaktives Schema",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "4eec929c347432ce36da1c43a12517ffc28fcc997b6b29af558d78a1f8b62af6",
+      "requestFingerprintSha256": "4eec929c347432ce36da1c43a12517ffc28fcc997b6b29af558d78a1f8b62af6",
+      "sourcePlanSha256": "de1a61390e7b3cc917f94e624a48fb7ca228251e98f04cbb5568193f01817131",
+      "exactSentenceBefore": "Wurzel und Bodenwasser · 3D-Schema",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/transportPractice/ui/scene",
+        "original": "Wurzel und Bodenwasser · 3D-Schema",
+        "effective": "Wurzel und Bodenwasser · interaktives Schema",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-02-de-effective-model-title-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
