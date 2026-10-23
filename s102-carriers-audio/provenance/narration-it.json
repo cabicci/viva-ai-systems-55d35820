@@ -1,0 +1,208 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Deliverables\\New-method-source-corrections-r1\\S1-02-it-effective.json",
+    "sha256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+    "bytes": 39765
+  },
+  "units": [
+    {
+      "id": "S1-02-it-heat-comparison-r1",
+      "unitId": "S1-02-it-heat-comparison-r1",
+      "locale": "it",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Cosa osservare",
+          "sha256": "4d3bcc829fe5ea803cba2a03975b8c01d75c97e1ade2a52584f531ad5c206284"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Esaurimento da calore",
+          "sha256": "610370eb4f302bc7524fcc6603698f7e2a7938e68bc73660de3fa6b9f7b28c33"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Possibile colpo di calore",
+          "sha256": "cbe564107eb957659b9f879f26d4d488282d9f72aa3c27573ebbafed32aa7fe2"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Segni comuni",
+          "sha256": "bf2d0b66a74f521cbfa702bd3cd1151a973a1f906d2ada902919df3241074ef4"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.",
+          "sha256": "02ff5517990f080edafae59c35ce05c8636760db06ade935186e1f95757ddc8e"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.",
+          "sha256": "4dd4c8bde6dce943dfb6a4d2740c469d6da9b7abfd53a5aac6e7f10454cec176"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Sudorazione",
+          "sha256": "eeebdff24680edacc406f8ccd948c40531a684935e698227975e374cb4f8493c"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Spesso abbondante.",
+          "sha256": "9526215b4feeaa801686c332094aed4012413f1d5dbcad8447277ce0ade1a684"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.",
+          "sha256": "6a0daad407c5b417ef96a3ade5fc44d24f219366db2c5bbce57806b960972fb8"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Risposta immediata",
+          "sha256": "edd13a0f8238db111c9483050618b9c88eb36a537c56ee6027557a959af40d89"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.",
+          "sha256": "633d338b65b86a980c1e725aa41f5e5ae4e59bf142295f369bb11ab282cd4cb8"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Chiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.",
+          "sha256": "632782eaf058359eee224df628b1ad6fbb4854b639e3b08189f0ae26a0236465"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Quando chiedere aiuto urgente",
+          "sha256": "d22e9edf2510232019966fe26869b33dfeb6e56468b2d0f493342180d4b48685"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.",
+          "sha256": "b5f310d64e1feebe8185e91cb55860900225d8e4ec6752ac2530f9169b53ae8b"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "sha256": "0bb61dd83092cfdffb25dac0f3ec9735ade48919014bdb5cda2ee7d3d6681490"
+        }
+      ],
+      "scientificMeaning": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "displayText": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "captionText": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "spokenText": "Cosa osservare. Segni comuni. Esaurimento da calore: Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza. Possibile colpo di calore: Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido. Sudorazione. Esaurimento da calore: Spesso abbondante. Possibile colpo di calore: Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore. Risposta immediata. Esaurimento da calore: Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica. Possibile colpo di calore: Chiama il numero uno due tre; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati. Quando chiedere aiuto urgente. Esaurimento da calore: Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata. Possibile colpo di calore: Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "spokenTextSHA256": "2ce9683751b33ab4fa0094a1560d46c55f477be45522559340a64c7b3fb8b17c",
+      "spokenTextSha256": "2ce9683751b33ab4fa0094a1560d46c55f477be45522559340a64c7b3fb8b17c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "spoken": "Cosa osservare. Segni comuni. Esaurimento da calore: Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza. Possibile colpo di calore: Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido. Sudorazione. Esaurimento da calore: Spesso abbondante. Possibile colpo di calore: Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore. Risposta immediata. Esaurimento da calore: Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica. Possibile colpo di calore: Chiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati. Quando chiedere aiuto urgente. Esaurimento da calore: Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata. Possibile colpo di calore: Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "uno due tre",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "il uno due tre",
+          "spoken": "il numero uno due tre",
+          "occurrences": 1,
+          "purpose": "Natural spoken punctuation/article with numbered emergency contact; no scientific change"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "631f15621dee6c74443585622f6fddc42ae3994b66fca054fa52e6a3983fd6a9",
+      "requestFingerprintSha256": "631f15621dee6c74443585622f6fddc42ae3994b66fca054fa52e6a3983fd6a9",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-02-it-report-five-r1",
+      "unitId": "S1-02-it-report-five-r1",
+      "locale": "it",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Prepara una comunicazione d'emergenza in cinque parti",
+          "sha256": "672b95a50fb6eb38144fac15ebba27bbc9c9fd295437c8e42e2c02bc2d606a12"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Luogo esatto e accesso",
+          "sha256": "af5f3c247004e7f354a0074f0b208d3c6024a5dbbb26191b60bc3a25df797a65"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "Che cosa è successo",
+          "sha256": "c1d5ddaaef07d7b23e00a068d41ca97aefc549c25d5d40515c9eb120c7576a51"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Numero di persone coinvolte",
+          "sha256": "88615460a6566426f4ff1fa2f3fddace8598642354453deb0b94f10e86b13b17"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Condizioni osservate",
+          "sha256": "c45f1b7db96a6d3d306adbd5767de2ded3bb1d9b3aa455b8c1515fac3aa09769"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Pericoli presenti o informazioni incerte",
+          "sha256": "2a3dbe768f672163d88269c052b610a077dd87d828905e1b92c23e369fdccff9"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Scrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+          "sha256": "37a15df3dc31bfdb48174f0f9f199ac163917b792f5341ad7e332233fcb813aa"
+        }
+      ],
+      "scientificMeaning": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "displayText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "captionText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "spokenText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "spokenTextSHA256": "23cfa1cffd3704df4fd4843899f21b34e89df6c42f16ab05e985be7f34b14b35",
+      "spokenTextSha256": "23cfa1cffd3704df4fd4843899f21b34e89df6c42f16ab05e985be7f34b14b35",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "647730f83517c1122a127872de74bc10ba2b1912dce3fc808ccfdc6d21665bef",
+      "requestFingerprintSha256": "647730f83517c1122a127872de74bc10ba2b1912dce3fc808ccfdc6d21665bef",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

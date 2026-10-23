@@ -1,0 +1,208 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-02-de.json",
+    "sha256": "47c5679a59135a55e9bd13a5fe3252f264fb83ff5432363f8a7cba76396fdff1",
+    "bytes": 40404
+  },
+  "units": [
+    {
+      "id": "S1-02-de-heat-comparison-r1",
+      "unitId": "S1-02-de-heat-comparison-r1",
+      "locale": "de",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "47c5679a59135a55e9bd13a5fe3252f264fb83ff5432363f8a7cba76396fdff1",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Worauf achten?",
+          "sha256": "b6d238a914d944c3ecf81ef346b7c545e5ecf9b7202a1e4e72972075d5eb335e"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Hitzeerschöpfung",
+          "sha256": "b92a0da43b98a8a6b7087a499879320627ee4a3dc7ed0ac783573054503c7c79"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Möglicher Hitzschlag",
+          "sha256": "e663d4afac93c2dfc8d8fd23ea264ec841c4aea72f804039b698d9a7599cde03"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Häufige Anzeichen",
+          "sha256": "cefa0a4001b1dc9a4f8d969ffcdb87b8ac50a0286518be958f654cf58f38a4e9"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.",
+          "sha256": "3fbaa64b6687a797b6f208e3c745a23d05445c4c9150fa5aebf9afa823b5c56c"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.",
+          "sha256": "da661108c666fa167201fd6b3cdcee616adb45635d38f98cd070bf4785a2e4af"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Schwitzen",
+          "sha256": "a26c15b2cd84385dce994e83acad1a3bf754e9cb7735854ee0cfcbc26330abbc"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Oft starkes Schwitzen.",
+          "sha256": "243e469536e859a5d6e1faa19c73b484907ef9c90651d45cfd48731daefabb2b"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.",
+          "sha256": "31d28bef55bf4e78987ae3a17fe95840cef43b9237d2768bbe9b0349f05bbf90"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Sofortige Reaktion",
+          "sha256": "32a24cdf7b5490e7dee12789d619d9e534186ced18dda1942bc7eb4cd3b3ebf5"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.",
+          "sha256": "5206838546851e67de6dba35899bb4d46ee3df6577077f813874cc8b9d4ab0b4"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.",
+          "sha256": "20e652d395596279a70dd701ba7e8ee960bcae74d4c0f9a0c46476ede602dd80"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Dringlichkeit",
+          "sha256": "a66529a1b0d6dd16fa30b424bf39c7f6d6e0d2db16f44081e6796c5bf5a59260"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.",
+          "sha256": "29fdc8a90d09af6a906f68c4a47d75c38196e60eb38b536b74516801344d6a88"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "sha256": "495d004f5f30feaa94f40b2432df7f81b7855304bf664de9ecef5cac3d9cca8d"
+        }
+      ],
+      "scientificMeaning": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "displayText": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "captionText": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "spokenText": "Worauf achten? Häufige Anzeichen. Hitzeerschöpfung: Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche. Möglicher Hitzschlag: Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls. Schwitzen. Hitzeerschöpfung: Oft starkes Schwitzen. Möglicher Hitzschlag: Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus. Sofortige Reaktion. Hitzeerschöpfung: Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren. Möglicher Hitzschlag: eins zwei drei anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen. Dringlichkeit. Hitzeerschöpfung: Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe. Möglicher Hitzschlag: Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "spokenTextSHA256": "54ef608815bac916dbe54d35d81446bb8e913a33107fb69f8731fee59b29edd9",
+      "spokenTextSha256": "54ef608815bac916dbe54d35d81446bb8e913a33107fb69f8731fee59b29edd9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "spoken": "Worauf achten?. Häufige Anzeichen. Hitzeerschöpfung: Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche. Möglicher Hitzschlag: Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls. Schwitzen. Hitzeerschöpfung: Oft starkes Schwitzen. Möglicher Hitzschlag: Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus. Sofortige Reaktion. Hitzeerschöpfung: Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren. Möglicher Hitzschlag: 123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen. Dringlichkeit. Hitzeerschöpfung: Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe. Möglicher Hitzschlag: Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "eins zwei drei",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "?.",
+          "spoken": "?",
+          "occurrences": 1,
+          "purpose": "Natural spoken punctuation/article with numbered emergency contact; no scientific change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cebd603625445134383195bd0cf39f84e239743cdded5f1362c7aaa156501948",
+      "requestFingerprintSha256": "cebd603625445134383195bd0cf39f84e239743cdded5f1362c7aaa156501948",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-02-de-report-five-r1",
+      "unitId": "S1-02-de-report-five-r1",
+      "locale": "de",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "47c5679a59135a55e9bd13a5fe3252f264fb83ff5432363f8a7cba76396fdff1",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Eine sachliche Notfallmeldung in fünf Teilen erstellen",
+          "sha256": "9b841b09d3776f7e6c3c8565754f3e37981624d632cef43c3f683b1595590f07"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Genauer Ort und Zugang",
+          "sha256": "46e3bf2971fb994b23c17d8e5618d53f1ef949bb5442d3830f6ac2252bd970e7"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "Was geschehen ist",
+          "sha256": "fc7322304b0dacdacb9fbad9414c815dd568aa60a5022e424c29e27ce5c4b5fd"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Zahl der Betroffenen",
+          "sha256": "e526f45a5682ec8ccc79d4a0331f3c691fd2bab09d1f38008c0c49a2bac1618b"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Beobachteter Zustand",
+          "sha256": "dd8be1170248088ce5c2be5e5d3186e704cb0ca337de28b7f99e9765ae19197d"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Bestehende Gefahren oder unbekannte Angaben",
+          "sha256": "062732f10eb55a81e3b96971c26468439fa21dd01cf707688d42b8dbec5b37ac"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Nur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+          "sha256": "0e7bffc63ab46623d99b08032294d6c88d759c2c945eba51cf03c7a2567cf231"
+        }
+      ],
+      "scientificMeaning": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "displayText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "captionText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "spokenText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "spokenTextSHA256": "6887ba4c2bb109789ede5c1dc9413d07a28701e6b0ac881e7f854a266f1acf74",
+      "spokenTextSha256": "6887ba4c2bb109789ede5c1dc9413d07a28701e6b0ac881e7f854a266f1acf74",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "40cba155061b1d944f4ab0d49cb95d23cf951b67e20aeeadb713298af1ebdbfe",
+      "requestFingerprintSha256": "40cba155061b1d944f4ab0d49cb95d23cf951b67e20aeeadb713298af1ebdbfe",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

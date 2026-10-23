@@ -1,0 +1,940 @@
+{
+  "schemaVersion": 1,
+  "scope": "S102_EIGHT_CARRIER_CURRENT_TEACHING_GROUPS_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S1-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s102-carriers-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 8,
+  "maximumBlindAudioReviewCalls": 8,
+  "maximumASRInvocations": 8,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_TWO_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-02-ar-EG-heat-comparison-r1",
+      "unitId": "S1-02-ar-EG-heat-comparison-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "إيه اللي تلاحظه؟",
+          "sha256": "e038982c14a0f35ebfe56f1a54137a6f98939d66dd2bf79471d75e95f997618b"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "إجهاد حراري",
+          "sha256": "65f88f4403243b4e4b179557f1e4559ecf84920752a11af532077a1929ada9fb"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "اشتباه في ضربة شمس",
+          "sha256": "52b83d3eba99d9ae3e9960766db7b215e36c09ef8a4bef28aed087eba9bdffc4"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "علامات ممكن تظهر",
+          "sha256": "01444fa9306007769a8c519641a7d9b4b2f6f994b398a66e08388500776ca5eb"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "عرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف.",
+          "sha256": "c7bd1aee5ecde0d247853211dfc32e9ceb032e607f0e9ddff1e969c95e73b2e8"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "الجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع.",
+          "sha256": "ca8f269df52e8334779e7a11134bb5f496cd1a6d5c0615bbb2c1d67e64ebc519"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "العرق",
+          "sha256": "53a13036fc995f940c0eae2a59c3440a501ea7e40bee7ab32a1b84b060cfc55b"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "غالبًا عرق غزير.",
+          "sha256": "592c926e49cabbebf4c86f8381603180397cdf8a81c701765bfbd92def2b455e"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "الجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس.",
+          "sha256": "27e1747bbaf5a257dd94eae4ea80ff24c93360e63afc0497ce49e104a6d0fc5e"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "التصرف الفوري",
+          "sha256": "30cc922eb706024333688eb21dfaf4fcf02c101032a471635a8e633cb2c65e75"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "وقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا.",
+          "sha256": "b4c247d9d01683fa7fd77ab49c8cd1bfa4fe7acf6bff71d5c44fd86a658d9ee0"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "اتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب.",
+          "sha256": "1854db2c06035f936cfa465c0dc1bb5982a5db4453f76642b3ee25c653673f73"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "إمتى تصعّد؟",
+          "sha256": "4c3bf4cb0e283ffdc73e34c76a89c03c54f91d0674633076f9544a5275ddff0e"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "التشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة.",
+          "sha256": "b9f8cea42eb9b720a14a707defe36c0d617061e3f88dc891458e9ac8e23f2bb9"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "ما تستناش العرق يوقف أو كل العلامات تظهر.",
+          "sha256": "ec0032900b3d9c6ae9b56324d9b6ff5785828c5d5bf7344c5571eb98134c3aea"
+        }
+      ],
+      "scientificMeaning": "إيه اللي تلاحظه؟\n\nإجهاد حراري\n\nاشتباه في ضربة شمس\n\nعلامات ممكن تظهر\n\nعرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف.\n\nالجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع.\n\nالعرق\n\nغالبًا عرق غزير.\n\nالجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس.\n\nالتصرف الفوري\n\nوقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا.\n\nاتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب.\n\nإمتى تصعّد؟\n\nالتشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة.\n\nما تستناش العرق يوقف أو كل العلامات تظهر.",
+      "displayText": "إيه اللي تلاحظه؟\n\nإجهاد حراري\n\nاشتباه في ضربة شمس\n\nعلامات ممكن تظهر\n\nعرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف.\n\nالجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع.\n\nالعرق\n\nغالبًا عرق غزير.\n\nالجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس.\n\nالتصرف الفوري\n\nوقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا.\n\nاتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب.\n\nإمتى تصعّد؟\n\nالتشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة.\n\nما تستناش العرق يوقف أو كل العلامات تظهر.",
+      "captionText": "إيه اللي تلاحظه؟\n\nإجهاد حراري\n\nاشتباه في ضربة شمس\n\nعلامات ممكن تظهر\n\nعرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف.\n\nالجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع.\n\nالعرق\n\nغالبًا عرق غزير.\n\nالجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس.\n\nالتصرف الفوري\n\nوقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا.\n\nاتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب.\n\nإمتى تصعّد؟\n\nالتشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة.\n\nما تستناش العرق يوقف أو كل العلامات تظهر.",
+      "spokenText": "إيه اللي تلاحظه؟. علامات ممكن تظهر. إجهاد حراري: عرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف. اشتباه في ضربة شمس: الجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع. العرق. إجهاد حراري: غالبًا عرق غزير. اشتباه في ضربة شمس: الجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس. التصرف الفوري. إجهاد حراري: وقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييم طبي. اشتباه في ضربة شمس: اتصل بالإسعاف على واحد، اتنين، تلاتة، وابدأ تبريد سريع وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب. إمتى تصعّد؟. إجهاد حراري: التشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة. اشتباه في ضربة شمس: ما تستناش العرق يوقف أو كل العلامات تظهر.",
+      "spokenTextSHA256": "db30011cdbf123470dfaf7a890e0f8f6d89244815f57b84523c7446ee033445e",
+      "spokenTextSha256": "db30011cdbf123470dfaf7a890e0f8f6d89244815f57b84523c7446ee033445e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "إيه اللي تلاحظه؟\n\nإجهاد حراري\n\nاشتباه في ضربة شمس\n\nعلامات ممكن تظهر\n\nعرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف.\n\nالجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع.\n\nالعرق\n\nغالبًا عرق غزير.\n\nالجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس.\n\nالتصرف الفوري\n\nوقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا.\n\nاتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب.\n\nإمتى تصعّد؟\n\nالتشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة.\n\nما تستناش العرق يوقف أو كل العلامات تظهر.",
+          "spoken": "إيه اللي تلاحظه؟. علامات ممكن تظهر. إجهاد حراري: عرق غزير؛ جلد شاحب وبارد أو رطب؛ صداع وغثيان ودوخة وضعف. اشتباه في ضربة شمس: الجسم سخن جدًا؛ الجلد ممكن يبقى محمر؛ تشوش أو تصرف غريب؛ احتمال تشنج أو فقدان وعي؛ وممكن النبض يبقى سريع. العرق. إجهاد حراري: غالبًا عرق غزير. اشتباه في ضربة شمس: الجلد ممكن يبقى جاف، وممكن يستمر العرق الغزير. وجود العرق ما يستبعدش ضربة الشمس. التصرف الفوري. إجهاد حراري: وقّف النشاط، برّد الشخص وراقبه؛ رشفات صغيرة بس لو واعي تمامًا وبيبلع بأمان؛ ونظّم تقييمًا طبيًا. اشتباه في ضربة شمس: اتصل بالإسعاف على ١٢٣، وابدأ تبريدًا سريعًا وخليك مع الشخص واتبع توجيهات فريق الطوارئ المدرّب. إمتى تصعّد؟. إجهاد حراري: التشوش أو الانهيار المفاجئ أو تدهور الحالة يحتاج مساعدة إسعاف عاجلة. اشتباه في ضربة شمس: ما تستناش العرق يوقف أو كل العلامات تظهر.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "١٢٣",
+          "spoken": "واحد، اتنين، تلاتة",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "تبريدًا",
+          "spoken": "تبريد",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "سريعًا",
+          "spoken": "سريع",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "تقييمًا طبيًا",
+          "spoken": "تقييم طبي",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5e3b64a47bf2271044585b69bab624518976b6df49112fd7662340b154d0b455",
+      "requestFingerprintSha256": "5e3b64a47bf2271044585b69bab624518976b6df49112fd7662340b154d0b455",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "65f7a1acb7a4d8d96ac81df0ab38beccd687f6795e415d324171f07f6b0fd934"
+    },
+    {
+      "id": "S1-02-ar-EG-report-five-r1",
+      "unitId": "S1-02-ar-EG-report-five-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4476169edbf292b37a52d4cbaad6028178a22607d4aa345e2734abafb1999821",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "كوّن بلاغ طوارئ واقعي من خمس نقاط",
+          "sha256": "c3104a2d07b82e38fd704d81aabfa4cdefb07277ae8155734b72ad61f7f9b093"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "المكان الدقيق وطريق الوصول",
+          "sha256": "46793e9d033f2f0cf59a261978e1635947513f184c07e05c0d552b2bb680e259"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "إيه اللي حصل",
+          "sha256": "c6229ee29251c88fff3d3e3fbbafc1eefe8639829bbb0bee82cce2301ec47912"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "عدد المتأثرين",
+          "sha256": "fc8c9e47a44e2742316c643a46db92f0de41f43b999473da88917374e4dfd03a"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "الحالة اللي لاحظتها",
+          "sha256": "35d2fc07ad8d1e9818f065dec3f0067597285e27c9dbed45558e6085d85e3b61"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "الخطر المستمر أو معلومة مش متأكد منها",
+          "sha256": "2ddfe4a64be5cc1ac8fcf89e0c6c8f9d51d34c4a5a873a846bd969adbde1933e"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "اكتب الحقائق اللي في الموقف بس، وقول لما معلومة تكون مش معروفة. ده تدريب، مش اتصال إسعاف حقيقي ولا اجتياز عند المدرّب.",
+          "sha256": "d8d1322c03de9c19623616f27fe99cace47d30a8baf571fd8c4aa22a0b80093e"
+        }
+      ],
+      "scientificMeaning": "كوّن بلاغ طوارئ واقعي من خمس نقاط\n\nالمكان الدقيق وطريق الوصول\n\nإيه اللي حصل\n\nعدد المتأثرين\n\nالحالة اللي لاحظتها\n\nالخطر المستمر أو معلومة مش متأكد منها\n\nاكتب الحقائق اللي في الموقف بس، وقول لما معلومة تكون مش معروفة. ده تدريب، مش اتصال إسعاف حقيقي ولا اجتياز عند المدرّب.",
+      "displayText": "كوّن بلاغ طوارئ واقعي من خمس نقاط\n\nالمكان الدقيق وطريق الوصول\n\nإيه اللي حصل\n\nعدد المتأثرين\n\nالحالة اللي لاحظتها\n\nالخطر المستمر أو معلومة مش متأكد منها\n\nاكتب الحقائق اللي في الموقف بس، وقول لما معلومة تكون مش معروفة. ده تدريب، مش اتصال إسعاف حقيقي ولا اجتياز عند المدرّب.",
+      "captionText": "كوّن بلاغ طوارئ واقعي من خمس نقاط\n\nالمكان الدقيق وطريق الوصول\n\nإيه اللي حصل\n\nعدد المتأثرين\n\nالحالة اللي لاحظتها\n\nالخطر المستمر أو معلومة مش متأكد منها\n\nاكتب الحقائق اللي في الموقف بس، وقول لما معلومة تكون مش معروفة. ده تدريب، مش اتصال إسعاف حقيقي ولا اجتياز عند المدرّب.",
+      "spokenText": "كوّن بلاغ طوارئ واقعي من خمس نقاط\n\nالمكان الدقيق وطريق الوصول\n\nإيه اللي حصل\n\nعدد المتأثرين\n\nالحالة اللي لاحظتها\n\nالخطر المستمر أو معلومة مش متأكد منها\n\nاكتب الحقائق اللي في الموقف بس، وقول لما معلومة تكون مش معروفة. ده تدريب، مش اتصال إسعاف حقيقي ولا اجتياز عند المدرّب.",
+      "spokenTextSHA256": "32d31726c1b7eaeb98a204e9bba9fef803cd075f4ccab80d508a1a721755cb90",
+      "spokenTextSha256": "32d31726c1b7eaeb98a204e9bba9fef803cd075f4ccab80d508a1a721755cb90",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c1fbf329a5a805b70fa3744c73f770f1c8de4421e489c1a028f4c25ee9fd107c",
+      "requestFingerprintSha256": "c1fbf329a5a805b70fa3744c73f770f1c8de4421e489c1a028f4c25ee9fd107c",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "65f7a1acb7a4d8d96ac81df0ab38beccd687f6795e415d324171f07f6b0fd934"
+    },
+    {
+      "id": "S1-02-en-heat-comparison-r1",
+      "unitId": "S1-02-en-heat-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "What to notice",
+          "sha256": "ce58d60924729595b9229de0de1060ce7dad5995554602f798f6a1fc32683364"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Heat exhaustion",
+          "sha256": "46f20f16bf1884eff69888748c5a226fb483b0874b40407d1f915c5d1b0ead22"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Possible heatstroke",
+          "sha256": "d6d112d643190e46930455497c0578c77d4401f70736d44b45fe41f65d55e848"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Common signs",
+          "sha256": "69c86030dc71116f837863b7b737f0b954ed4530abc68c1a87765c0af850deec"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.",
+          "sha256": "c290f0687834dc386ed93bae0a4f79cd5532e0138b11395c20bc4a6a24e8f641"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.",
+          "sha256": "43eba5bd34e69c5cdff2f108c1fcac5fa6ddbc2202cdd64b4ac0caef2637c517"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Sweating",
+          "sha256": "4e89b8283e873e8ac01bea7ae6a0ca8c36ca0684ef5908ce769eb399e7cc5364"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Often heavy sweating.",
+          "sha256": "acd3c90ab5d1bd6da40dd0723c79b17207ecc76be3a2ba873fcbf235b43a3c24"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Dry skin OR continued heavy sweating. Sweating does not rule it out.",
+          "sha256": "c926e2083c04c68cb4defa8da144f02b77c6d4413fcaf91ca299019602a296bf"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Immediate response",
+          "sha256": "9aaf373440b1c689f20c8b3c5d71d80d7df89465b377dbb91713d392018b12b7"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.",
+          "sha256": "491af0fb05d488bbc74f579d57786a976f353041d4548b8394926e381e3e4afe"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Call 123; begin rapid cooling and stay with the person while following trained emergency guidance.",
+          "sha256": "3ffe5a26110769987469463a4411b8981b089c76e946fee52bee905c88f9ca99"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Escalation",
+          "sha256": "35615b824542ec093d6cccb71e83ecf5c16b955a5c6a9febfd29b615c6df690b"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Confusion, collapse or worsening condition requires urgent emergency help.",
+          "sha256": "6fb4492564ab20c92f352c88b587a2126e80076951966fc687a477d1f84aa4f1"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Do not wait for sweating to stop or for every listed symptom to appear.",
+          "sha256": "39e91c57ef37042931e55f055ab767ef61726961648a4e0d85ec422d37ca9355"
+        }
+      ],
+      "scientificMeaning": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "displayText": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "captionText": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "spokenText": "What to notice. Common signs. Heat exhaustion: Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness. Possible heatstroke: Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur. Sweating. Heat exhaustion: Often heavy sweating. Possible heatstroke: Dry skin OR continued heavy sweating. Sweating does not rule it out. Immediate response. Heat exhaustion: Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment. Possible heatstroke: Call one two three; begin rapid cooling and stay with the person while following trained emergency guidance. Escalation. Heat exhaustion: Confusion, collapse or worsening condition requires urgent emergency help. Possible heatstroke: Do not wait for sweating to stop or for every listed symptom to appear.",
+      "spokenTextSHA256": "73be10e6924ee078e18357b5fde44bcf1985c77938e6cdd1adc2963eddda76c2",
+      "spokenTextSha256": "73be10e6924ee078e18357b5fde44bcf1985c77938e6cdd1adc2963eddda76c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+          "spoken": "What to notice. Common signs. Heat exhaustion: Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness. Possible heatstroke: Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur. Sweating. Heat exhaustion: Often heavy sweating. Possible heatstroke: Dry skin OR continued heavy sweating. Sweating does not rule it out. Immediate response. Heat exhaustion: Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment. Possible heatstroke: Call 123; begin rapid cooling and stay with the person while following trained emergency guidance. Escalation. Heat exhaustion: Confusion, collapse or worsening condition requires urgent emergency help. Possible heatstroke: Do not wait for sweating to stop or for every listed symptom to appear.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "one two three",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aef304f02e0215948dfc12473bda84c59106906b387b60b9b33da5ceadd53805",
+      "requestFingerprintSha256": "aef304f02e0215948dfc12473bda84c59106906b387b60b9b33da5ceadd53805",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "1465d7c4a10bd7a73e29275133a5ce61e4fdd4ba10edba4985cee1dece9d188c"
+    },
+    {
+      "id": "S1-02-en-report-five-r1",
+      "unitId": "S1-02-en-report-five-r1",
+      "locale": "en",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Build a factual five-part emergency report",
+          "sha256": "716721c41eabb93adb7a6b9bcea71269d57930477f27ec28d87dcba361bfb82d"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Exact location and access",
+          "sha256": "4252671de4add05d14c6812ee342ce8948ce377c1a0d45f0cf360d10be6d9161"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "What happened",
+          "sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Number of people affected",
+          "sha256": "c31186555b2174b5dab033f80a21a23a50b4973ce2ccb736d2c10b5afe9a3878"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Observed condition",
+          "sha256": "19de2f0f046ff03ce0ac998c2fee78037fa1ceeb13d40df9ee5add5398000093"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Ongoing hazards or uncertainty",
+          "sha256": "f004e8e190c898be1b36817c9bddadac4cb5e01dc79ec1b757c4e242d0fe5b21"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Write only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+          "sha256": "e11375b66141f675a871aec4257a9870bd99e9c2231fed656f36a55cab9a218c"
+        }
+      ],
+      "scientificMeaning": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "displayText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "captionText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "spokenText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "spokenTextSHA256": "e0fd03ee76fd75442b6846a7e19681b13b2c0873d55ee222e34e1f4441994b89",
+      "spokenTextSha256": "e0fd03ee76fd75442b6846a7e19681b13b2c0873d55ee222e34e1f4441994b89",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e90cda3eb86e8d7a27829df0558a4e4076bee625f084198a227b23aa7f50b1db",
+      "requestFingerprintSha256": "e90cda3eb86e8d7a27829df0558a4e4076bee625f084198a227b23aa7f50b1db",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "1465d7c4a10bd7a73e29275133a5ce61e4fdd4ba10edba4985cee1dece9d188c"
+    },
+    {
+      "id": "S1-02-it-heat-comparison-r1",
+      "unitId": "S1-02-it-heat-comparison-r1",
+      "locale": "it",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Cosa osservare",
+          "sha256": "4d3bcc829fe5ea803cba2a03975b8c01d75c97e1ade2a52584f531ad5c206284"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Esaurimento da calore",
+          "sha256": "610370eb4f302bc7524fcc6603698f7e2a7938e68bc73660de3fa6b9f7b28c33"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Possibile colpo di calore",
+          "sha256": "cbe564107eb957659b9f879f26d4d488282d9f72aa3c27573ebbafed32aa7fe2"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Segni comuni",
+          "sha256": "bf2d0b66a74f521cbfa702bd3cd1151a973a1f906d2ada902919df3241074ef4"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.",
+          "sha256": "02ff5517990f080edafae59c35ce05c8636760db06ade935186e1f95757ddc8e"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.",
+          "sha256": "4dd4c8bde6dce943dfb6a4d2740c469d6da9b7abfd53a5aac6e7f10454cec176"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Sudorazione",
+          "sha256": "eeebdff24680edacc406f8ccd948c40531a684935e698227975e374cb4f8493c"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Spesso abbondante.",
+          "sha256": "9526215b4feeaa801686c332094aed4012413f1d5dbcad8447277ce0ade1a684"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.",
+          "sha256": "6a0daad407c5b417ef96a3ade5fc44d24f219366db2c5bbce57806b960972fb8"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Risposta immediata",
+          "sha256": "edd13a0f8238db111c9483050618b9c88eb36a537c56ee6027557a959af40d89"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.",
+          "sha256": "633d338b65b86a980c1e725aa41f5e5ae4e59bf142295f369bb11ab282cd4cb8"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Chiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.",
+          "sha256": "632782eaf058359eee224df628b1ad6fbb4854b639e3b08189f0ae26a0236465"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Quando chiedere aiuto urgente",
+          "sha256": "d22e9edf2510232019966fe26869b33dfeb6e56468b2d0f493342180d4b48685"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.",
+          "sha256": "b5f310d64e1feebe8185e91cb55860900225d8e4ec6752ac2530f9169b53ae8b"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "sha256": "0bb61dd83092cfdffb25dac0f3ec9735ade48919014bdb5cda2ee7d3d6681490"
+        }
+      ],
+      "scientificMeaning": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "displayText": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "captionText": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "spokenText": "Cosa osservare. Segni comuni. Esaurimento da calore: Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza. Possibile colpo di calore: Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido. Sudorazione. Esaurimento da calore: Spesso abbondante. Possibile colpo di calore: Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore. Risposta immediata. Esaurimento da calore: Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica. Possibile colpo di calore: Chiama il numero uno due tre; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati. Quando chiedere aiuto urgente. Esaurimento da calore: Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata. Possibile colpo di calore: Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+      "spokenTextSHA256": "2ce9683751b33ab4fa0094a1560d46c55f477be45522559340a64c7b3fb8b17c",
+      "spokenTextSha256": "2ce9683751b33ab4fa0094a1560d46c55f477be45522559340a64c7b3fb8b17c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Cosa osservare\n\nEsaurimento da calore\n\nPossibile colpo di calore\n\nSegni comuni\n\nSudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza.\n\nCorpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido.\n\nSudorazione\n\nSpesso abbondante.\n\nPelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore.\n\nRisposta immediata\n\nInterrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica.\n\nChiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati.\n\nQuando chiedere aiuto urgente\n\nConfusione, collasso o peggioramento richiedono assistenza d'emergenza immediata.\n\nNon aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "spoken": "Cosa osservare. Segni comuni. Esaurimento da calore: Sudorazione abbondante; pelle pallida, fresca o umida; mal di testa, nausea, capogiri e debolezza. Possibile colpo di calore: Corpo molto caldo; pelle forse arrossata; confusione o comportamento insolito; possibili convulsioni o perdita di coscienza; può comparire un battito rapido. Sudorazione. Esaurimento da calore: Spesso abbondante. Possibile colpo di calore: Pelle asciutta OPPURE sudorazione ancora abbondante. Sudare non esclude il colpo di calore. Risposta immediata. Esaurimento da calore: Interrompi l'attività; raffredda e osserva; piccoli sorsi solo se la persona è pienamente vigile e deglutisce senza rischio; organizza una valutazione medica. Possibile colpo di calore: Chiama il 123; inizia subito a raffreddare rapidamente e resta con la persona seguendo le indicazioni dei soccorritori formati. Quando chiedere aiuto urgente. Esaurimento da calore: Confusione, collasso o peggioramento richiedono assistenza d'emergenza immediata. Possibile colpo di calore: Non aspettare che la sudorazione si fermi o che compaiano tutti i sintomi elencati.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "uno due tre",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "il uno due tre",
+          "spoken": "il numero uno due tre",
+          "occurrences": 1,
+          "purpose": "Natural spoken punctuation/article with numbered emergency contact; no scientific change"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "631f15621dee6c74443585622f6fddc42ae3994b66fca054fa52e6a3983fd6a9",
+      "requestFingerprintSha256": "631f15621dee6c74443585622f6fddc42ae3994b66fca054fa52e6a3983fd6a9",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "f3d2e2a31b9f91a0109a5820ea918e3f98863c6a21e1aabf928eab171b14484d"
+    },
+    {
+      "id": "S1-02-it-report-five-r1",
+      "unitId": "S1-02-it-report-five-r1",
+      "locale": "it",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "588714ecb2f116a55d98f566995bfe7d831fc396e296e9f0ac6a9593b0d1fcf1",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Prepara una comunicazione d'emergenza in cinque parti",
+          "sha256": "672b95a50fb6eb38144fac15ebba27bbc9c9fd295437c8e42e2c02bc2d606a12"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Luogo esatto e accesso",
+          "sha256": "af5f3c247004e7f354a0074f0b208d3c6024a5dbbb26191b60bc3a25df797a65"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "Che cosa è successo",
+          "sha256": "c1d5ddaaef07d7b23e00a068d41ca97aefc549c25d5d40515c9eb120c7576a51"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Numero di persone coinvolte",
+          "sha256": "88615460a6566426f4ff1fa2f3fddace8598642354453deb0b94f10e86b13b17"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Condizioni osservate",
+          "sha256": "c45f1b7db96a6d3d306adbd5767de2ded3bb1d9b3aa455b8c1515fac3aa09769"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Pericoli presenti o informazioni incerte",
+          "sha256": "2a3dbe768f672163d88269c052b610a077dd87d828905e1b92c23e369fdccff9"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Scrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+          "sha256": "37a15df3dc31bfdb48174f0f9f199ac163917b792f5341ad7e332233fcb813aa"
+        }
+      ],
+      "scientificMeaning": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "displayText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "captionText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "spokenText": "Prepara una comunicazione d'emergenza in cinque parti\n\nLuogo esatto e accesso\n\nChe cosa è successo\n\nNumero di persone coinvolte\n\nCondizioni osservate\n\nPericoli presenti o informazioni incerte\n\nScrivi solo i fatti forniti dallo scenario e indica ciò che non è noto. È una simulazione, non una vera chiamata né una prova pratica superata.",
+      "spokenTextSHA256": "23cfa1cffd3704df4fd4843899f21b34e89df6c42f16ab05e985be7f34b14b35",
+      "spokenTextSha256": "23cfa1cffd3704df4fd4843899f21b34e89df6c42f16ab05e985be7f34b14b35",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "647730f83517c1122a127872de74bc10ba2b1912dce3fc808ccfdc6d21665bef",
+      "requestFingerprintSha256": "647730f83517c1122a127872de74bc10ba2b1912dce3fc808ccfdc6d21665bef",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "f3d2e2a31b9f91a0109a5820ea918e3f98863c6a21e1aabf928eab171b14484d"
+    },
+    {
+      "id": "S1-02-de-heat-comparison-r1",
+      "unitId": "S1-02-de-heat-comparison-r1",
+      "locale": "de",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "47c5679a59135a55e9bd13a5fe3252f264fb83ff5432363f8a7cba76396fdff1",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Worauf achten?",
+          "sha256": "b6d238a914d944c3ecf81ef346b7c545e5ecf9b7202a1e4e72972075d5eb335e"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Hitzeerschöpfung",
+          "sha256": "b92a0da43b98a8a6b7087a499879320627ee4a3dc7ed0ac783573054503c7c79"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Möglicher Hitzschlag",
+          "sha256": "e663d4afac93c2dfc8d8fd23ea264ec841c4aea72f804039b698d9a7599cde03"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Häufige Anzeichen",
+          "sha256": "cefa0a4001b1dc9a4f8d969ffcdb87b8ac50a0286518be958f654cf58f38a4e9"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.",
+          "sha256": "3fbaa64b6687a797b6f208e3c745a23d05445c4c9150fa5aebf9afa823b5c56c"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.",
+          "sha256": "da661108c666fa167201fd6b3cdcee616adb45635d38f98cd070bf4785a2e4af"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Schwitzen",
+          "sha256": "a26c15b2cd84385dce994e83acad1a3bf754e9cb7735854ee0cfcbc26330abbc"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Oft starkes Schwitzen.",
+          "sha256": "243e469536e859a5d6e1faa19c73b484907ef9c90651d45cfd48731daefabb2b"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.",
+          "sha256": "31d28bef55bf4e78987ae3a17fe95840cef43b9237d2768bbe9b0349f05bbf90"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Sofortige Reaktion",
+          "sha256": "32a24cdf7b5490e7dee12789d619d9e534186ced18dda1942bc7eb4cd3b3ebf5"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.",
+          "sha256": "5206838546851e67de6dba35899bb4d46ee3df6577077f813874cc8b9d4ab0b4"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.",
+          "sha256": "20e652d395596279a70dd701ba7e8ee960bcae74d4c0f9a0c46476ede602dd80"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Dringlichkeit",
+          "sha256": "a66529a1b0d6dd16fa30b424bf39c7f6d6e0d2db16f44081e6796c5bf5a59260"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.",
+          "sha256": "29fdc8a90d09af6a906f68c4a47d75c38196e60eb38b536b74516801344d6a88"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "sha256": "495d004f5f30feaa94f40b2432df7f81b7855304bf664de9ecef5cac3d9cca8d"
+        }
+      ],
+      "scientificMeaning": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "displayText": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "captionText": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "spokenText": "Worauf achten? Häufige Anzeichen. Hitzeerschöpfung: Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche. Möglicher Hitzschlag: Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls. Schwitzen. Hitzeerschöpfung: Oft starkes Schwitzen. Möglicher Hitzschlag: Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus. Sofortige Reaktion. Hitzeerschöpfung: Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren. Möglicher Hitzschlag: eins zwei drei anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen. Dringlichkeit. Hitzeerschöpfung: Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe. Möglicher Hitzschlag: Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+      "spokenTextSHA256": "54ef608815bac916dbe54d35d81446bb8e913a33107fb69f8731fee59b29edd9",
+      "spokenTextSha256": "54ef608815bac916dbe54d35d81446bb8e913a33107fb69f8731fee59b29edd9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Worauf achten?\n\nHitzeerschöpfung\n\nMöglicher Hitzschlag\n\nHäufige Anzeichen\n\nStarkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche.\n\nSehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls.\n\nSchwitzen\n\nOft starkes Schwitzen.\n\nTrockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus.\n\nSofortige Reaktion\n\nArbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren.\n\n123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen.\n\nDringlichkeit\n\nVerwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe.\n\nWarten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "spoken": "Worauf achten?. Häufige Anzeichen. Hitzeerschöpfung: Starkes Schwitzen; blasse, kühle oder feuchte Haut; Kopfschmerzen, Übelkeit, Schwindel und Schwäche. Möglicher Hitzschlag: Sehr heißer Körper; möglicherweise gerötete Haut; Verwirrtheit oder ungewöhnliches Verhalten; mögliche Krämpfe oder Bewusstlosigkeit; eventuell schneller Puls. Schwitzen. Hitzeerschöpfung: Oft starkes Schwitzen. Möglicher Hitzschlag: Trockene Haut ODER weiterhin starkes Schwitzen. Schwitzen schließt einen Hitzschlag nicht aus. Sofortige Reaktion. Hitzeerschöpfung: Arbeit beenden, kühlen und beobachten; kleine Schlucke nur bei vollem Bewusstsein und sicherem Schlucken; medizinische Beurteilung organisieren. Möglicher Hitzschlag: 123 anrufen, rasch kühlen und bei der Person bleiben; Anweisungen geschulter Einsatzkräfte befolgen. Dringlichkeit. Hitzeerschöpfung: Verwirrtheit, Zusammenbruch oder Verschlechterung erfordern sofortige Notfallhilfe. Möglicher Hitzschlag: Warten Sie nicht darauf, dass das Schwitzen endet oder alle aufgeführten Symptome auftreten.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "eins zwei drei",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        },
+        {
+          "written": "?.",
+          "spoken": "?",
+          "occurrences": 1,
+          "purpose": "Natural spoken punctuation/article with numbered emergency contact; no scientific change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cebd603625445134383195bd0cf39f84e239743cdded5f1362c7aaa156501948",
+      "requestFingerprintSha256": "cebd603625445134383195bd0cf39f84e239743cdded5f1362c7aaa156501948",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "d5c71f41b0233de9a5c5d7ca456d04765eed5e8e3f14c786b65b2932182fb1fa"
+    },
+    {
+      "id": "S1-02-de-report-five-r1",
+      "unitId": "S1-02-de-report-five-r1",
+      "locale": "de",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "47c5679a59135a55e9bd13a5fe3252f264fb83ff5432363f8a7cba76396fdff1",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Eine sachliche Notfallmeldung in fünf Teilen erstellen",
+          "sha256": "9b841b09d3776f7e6c3c8565754f3e37981624d632cef43c3f683b1595590f07"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Genauer Ort und Zugang",
+          "sha256": "46e3bf2971fb994b23c17d8e5618d53f1ef949bb5442d3830f6ac2252bd970e7"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "Was geschehen ist",
+          "sha256": "fc7322304b0dacdacb9fbad9414c815dd568aa60a5022e424c29e27ce5c4b5fd"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Zahl der Betroffenen",
+          "sha256": "e526f45a5682ec8ccc79d4a0331f3c691fd2bab09d1f38008c0c49a2bac1618b"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Beobachteter Zustand",
+          "sha256": "dd8be1170248088ce5c2be5e5d3186e704cb0ca337de28b7f99e9765ae19197d"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Bestehende Gefahren oder unbekannte Angaben",
+          "sha256": "062732f10eb55a81e3b96971c26468439fa21dd01cf707688d42b8dbec5b37ac"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Nur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+          "sha256": "0e7bffc63ab46623d99b08032294d6c88d759c2c945eba51cf03c7a2567cf231"
+        }
+      ],
+      "scientificMeaning": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "displayText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "captionText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "spokenText": "Eine sachliche Notfallmeldung in fünf Teilen erstellen\n\nGenauer Ort und Zugang\n\nWas geschehen ist\n\nZahl der Betroffenen\n\nBeobachteter Zustand\n\nBestehende Gefahren oder unbekannte Angaben\n\nNur bekannte Fakten aus dem Szenario eintragen und Unbekanntes benennen. Dies ist eine Übung, kein echter Notruf oder bestandener Praxisnachweis.",
+      "spokenTextSHA256": "6887ba4c2bb109789ede5c1dc9413d07a28701e6b0ac881e7f854a266f1acf74",
+      "spokenTextSha256": "6887ba4c2bb109789ede5c1dc9413d07a28701e6b0ac881e7f854a266f1acf74",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "40cba155061b1d944f4ab0d49cb95d23cf951b67e20aeeadb713298af1ebdbfe",
+      "requestFingerprintSha256": "40cba155061b1d944f4ab0d49cb95d23cf951b67e20aeeadb713298af1ebdbfe",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "d5c71f41b0233de9a5c5d7ca456d04765eed5e8e3f14c786b65b2932182fb1fa"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 2,
+    "blind": 2,
+    "asr": 2,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S1-02-ar-EG-heat-comparison-r1",
+      "S1-02-ar-EG-report-five-r1"
+    ],
+    "en": [
+      "S1-02-en-heat-comparison-r1",
+      "S1-02-en-report-five-r1"
+    ],
+    "it": [
+      "S1-02-it-heat-comparison-r1",
+      "S1-02-it-report-five-r1"
+    ],
+    "de": [
+      "S1-02-de-heat-comparison-r1",
+      "S1-02-de-report-five-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

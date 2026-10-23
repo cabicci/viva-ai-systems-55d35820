@@ -1,0 +1,1 @@
+Eight new current S102 teaching carriers: full heat-comparison cells with explicit condition labels, and five-part factual-report labels/boundary, two per locale. 8TTS8blind8ASR8GET0retry. Same exact source/voice/finite four-lane thin-artifact engine. No hidden answers, diagnosis or new medical advice; no existing PCM regenerated.

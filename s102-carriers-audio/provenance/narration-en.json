@@ -1,0 +1,202 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-02-en.json",
+    "sha256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+    "bytes": 36033
+  },
+  "units": [
+    {
+      "id": "S1-02-en-heat-comparison-r1",
+      "unitId": "S1-02-en-heat-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "heat-comparison",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "What to notice",
+          "sha256": "ce58d60924729595b9229de0de1060ce7dad5995554602f798f6a1fc32683364"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Heat exhaustion",
+          "sha256": "46f20f16bf1884eff69888748c5a226fb483b0874b40407d1f915c5d1b0ead22"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Possible heatstroke",
+          "sha256": "d6d112d643190e46930455497c0578c77d4401f70736d44b45fe41f65d55e848"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Common signs",
+          "sha256": "69c86030dc71116f837863b7b737f0b954ed4530abc68c1a87765c0af850deec"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.",
+          "sha256": "c290f0687834dc386ed93bae0a4f79cd5532e0138b11395c20bc4a6a24e8f641"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.",
+          "sha256": "43eba5bd34e69c5cdff2f108c1fcac5fa6ddbc2202cdd64b4ac0caef2637c517"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Sweating",
+          "sha256": "4e89b8283e873e8ac01bea7ae6a0ca8c36ca0684ef5908ce769eb399e7cc5364"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Often heavy sweating.",
+          "sha256": "acd3c90ab5d1bd6da40dd0723c79b17207ecc76be3a2ba873fcbf235b43a3c24"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Dry skin OR continued heavy sweating. Sweating does not rule it out.",
+          "sha256": "c926e2083c04c68cb4defa8da144f02b77c6d4413fcaf91ca299019602a296bf"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Immediate response",
+          "sha256": "9aaf373440b1c689f20c8b3c5d71d80d7df89465b377dbb91713d392018b12b7"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.",
+          "sha256": "491af0fb05d488bbc74f579d57786a976f353041d4548b8394926e381e3e4afe"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Call 123; begin rapid cooling and stay with the person while following trained emergency guidance.",
+          "sha256": "3ffe5a26110769987469463a4411b8981b089c76e946fee52bee905c88f9ca99"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Escalation",
+          "sha256": "35615b824542ec093d6cccb71e83ecf5c16b955a5c6a9febfd29b615c6df690b"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Confusion, collapse or worsening condition requires urgent emergency help.",
+          "sha256": "6fb4492564ab20c92f352c88b587a2126e80076951966fc687a477d1f84aa4f1"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Do not wait for sweating to stop or for every listed symptom to appear.",
+          "sha256": "39e91c57ef37042931e55f055ab767ef61726961648a4e0d85ec422d37ca9355"
+        }
+      ],
+      "scientificMeaning": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "displayText": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "captionText": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+      "spokenText": "What to notice. Common signs. Heat exhaustion: Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness. Possible heatstroke: Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur. Sweating. Heat exhaustion: Often heavy sweating. Possible heatstroke: Dry skin OR continued heavy sweating. Sweating does not rule it out. Immediate response. Heat exhaustion: Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment. Possible heatstroke: Call one two three; begin rapid cooling and stay with the person while following trained emergency guidance. Escalation. Heat exhaustion: Confusion, collapse or worsening condition requires urgent emergency help. Possible heatstroke: Do not wait for sweating to stop or for every listed symptom to appear.",
+      "spokenTextSHA256": "73be10e6924ee078e18357b5fde44bcf1985c77938e6cdd1adc2963eddda76c2",
+      "spokenTextSha256": "73be10e6924ee078e18357b5fde44bcf1985c77938e6cdd1adc2963eddda76c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "What to notice\n\nHeat exhaustion\n\nPossible heatstroke\n\nCommon signs\n\nHeavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness.\n\nVery hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur.\n\nSweating\n\nOften heavy sweating.\n\nDry skin OR continued heavy sweating. Sweating does not rule it out.\n\nImmediate response\n\nStop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment.\n\nCall 123; begin rapid cooling and stay with the person while following trained emergency guidance.\n\nEscalation\n\nConfusion, collapse or worsening condition requires urgent emergency help.\n\nDo not wait for sweating to stop or for every listed symptom to appear.",
+          "spoken": "What to notice. Common signs. Heat exhaustion: Heavy sweating; pale, cool or clammy skin; headache, nausea, dizziness and weakness. Possible heatstroke: Very hot body; skin may look flushed; confusion or unusual behaviour; possible seizure or unconsciousness; rapid pulse may occur. Sweating. Heat exhaustion: Often heavy sweating. Possible heatstroke: Dry skin OR continued heavy sweating. Sweating does not rule it out. Immediate response. Heat exhaustion: Stop activity; cool and observe; small sips only if fully alert and swallowing safely; arrange medical assessment. Possible heatstroke: Call 123; begin rapid cooling and stay with the person while following trained emergency guidance. Escalation. Heat exhaustion: Confusion, collapse or worsening condition requires urgent emergency help. Possible heatstroke: Do not wait for sweating to stop or for every listed symptom to appear.",
+          "occurrences": 1,
+          "purpose": "Read each comparison row with its exact source column labels repeated to distinguish the two medical conditions; every cell retained, no diagnosis or new advice"
+        },
+        {
+          "written": "123",
+          "spoken": "one two three",
+          "occurrences": 1,
+          "purpose": "Natural spoken numeral/range or Egyptianform only, unchanged medicalconditions/qualifiers; identifiers/displaycurrenteffective source preserved"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aef304f02e0215948dfc12473bda84c59106906b387b60b9b33da5ceadd53805",
+      "requestFingerprintSha256": "aef304f02e0215948dfc12473bda84c59106906b387b60b9b33da5ceadd53805",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-02-en-report-five-r1",
+      "unitId": "S1-02-en-report-five-r1",
+      "locale": "en",
+      "semanticGroup": "report-five",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a7749007283a9f0fe956d1e18125e96fd44f052d4b4d8d28721336f1aebe11f2",
+      "sourceBindings": [
+        {
+          "pointer": "/reportFive/title",
+          "text": "Build a factual five-part emergency report",
+          "sha256": "716721c41eabb93adb7a6b9bcea71269d57930477f27ec28d87dcba361bfb82d"
+        },
+        {
+          "pointer": "/reportFive/labels/0",
+          "text": "Exact location and access",
+          "sha256": "4252671de4add05d14c6812ee342ce8948ce377c1a0d45f0cf360d10be6d9161"
+        },
+        {
+          "pointer": "/reportFive/labels/1",
+          "text": "What happened",
+          "sha256": "483bd49023ae2bfb08da43eea2757a0e5490f7b0fe2964f49273cc25215d61f4"
+        },
+        {
+          "pointer": "/reportFive/labels/2",
+          "text": "Number of people affected",
+          "sha256": "c31186555b2174b5dab033f80a21a23a50b4973ce2ccb736d2c10b5afe9a3878"
+        },
+        {
+          "pointer": "/reportFive/labels/3",
+          "text": "Observed condition",
+          "sha256": "19de2f0f046ff03ce0ac998c2fee78037fa1ceeb13d40df9ee5add5398000093"
+        },
+        {
+          "pointer": "/reportFive/labels/4",
+          "text": "Ongoing hazards or uncertainty",
+          "sha256": "f004e8e190c898be1b36817c9bddadac4cb5e01dc79ec1b757c4e242d0fe5b21"
+        },
+        {
+          "pointer": "/reportFive/boundary",
+          "text": "Write only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+          "sha256": "e11375b66141f675a871aec4257a9870bd99e9c2231fed656f36a55cab9a218c"
+        }
+      ],
+      "scientificMeaning": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "displayText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "captionText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "spokenText": "Build a factual five-part emergency report\n\nExact location and access\n\nWhat happened\n\nNumber of people affected\n\nObserved condition\n\nOngoing hazards or uncertainty\n\nWrite only what the scenario supplies; say when a detail is unknown. This rehearsal is not a real emergency call or a trainer pass.",
+      "spokenTextSHA256": "e0fd03ee76fd75442b6846a7e19681b13b2c0873d55ee222e34e1f4441994b89",
+      "spokenTextSha256": "e0fd03ee76fd75442b6846a7e19681b13b2c0873d55ee222e34e1f4441994b89",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e90cda3eb86e8d7a27829df0558a4e4076bee625f084198a227b23aa7f50b1db",
+      "requestFingerprintSha256": "e90cda3eb86e8d7a27829df0558a4e4076bee625f084198a227b23aa7f50b1db",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
