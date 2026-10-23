@@ -1,0 +1,376 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-05-en.json",
+    "sha256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+    "bytes": 31087
+  },
+  "units": [
+    {
+      "id": "S2-05-en-supervised-stages-r1",
+      "unitId": "S2-05-en-supervised-stages-r1",
+      "locale": "en",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/stages/0/task",
+          "text": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant SDS and choose compatible PPE before touching the sample.",
+          "sha256": "e82c823f350a96522d7cb5b93e3cd377a18df9b06c383f574fe34766f386e405"
+        },
+        {
+          "pointer": "/labPractice/stages/0/evidence",
+          "text": "Trainer records each learner's demonstration and any correction.",
+          "sha256": "5006308fa23fed07cf922f2d6ab10c7f81b28e6dacd33e24fed60010f3277925"
+        },
+        {
+          "pointer": "/labPractice/stages/1/task",
+          "text": "Read source label against field record and record the full sample ID, collection date, location/depth and collector.",
+          "sha256": "ac6fd51c73be8e5166b52357fa1376205940ce458f77e5c1f651c2e24019d743"
+        },
+        {
+          "pointer": "/labPractice/stages/1/evidence",
+          "text": "Trainer signs identity match.",
+          "sha256": "5f1e6565b08a5d0c1bf8a4a45436ccd339839fb973a430ea01dc7c2f9560a54a"
+        },
+        {
+          "pointer": "/labPractice/stages/2/task",
+          "text": "Confirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.",
+          "sha256": "f68d57cd2c31f301b79c8eec0ccea29a2886ec2e3eb30bf758c244d5eee54977"
+        },
+        {
+          "pointer": "/labPractice/stages/2/evidence",
+          "text": "Trainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.",
+          "sha256": "b92ca04815d63c73c6f333ab41079e740222583df26174dac58bbe7171377a6a"
+        },
+        {
+          "pointer": "/labPractice/stages/3/task",
+          "text": "Gently break dry aggregates without grinding stones; pass through the required 2 mm sieve and retain the correct identified fine-earth fraction.",
+          "sha256": "720e819824c9b607162a7a7a3ec1deba6105cf863c3d3c7956ae2fe6e4d4fbcf"
+        },
+        {
+          "pointer": "/labPractice/stages/3/evidence",
+          "text": "Trainer observes tool choice, cleaning and material separation.",
+          "sha256": "48f739217e8fecd85ef50d62ab082bd3d0e6712acb6e7a7724c96b908edf1fb3"
+        },
+        {
+          "pointer": "/labPractice/stages/4/task",
+          "text": "Weigh and seal the assessment-card 450–550 g final product, check the complete matching label and explain a test for which drying would be inappropriate.",
+          "sha256": "8b47010d67394ec70ef1b19414170ec0d000d804489d4a13269167986acd0bd8"
+        },
+        {
+          "pointer": "/labPractice/stages/4/evidence",
+          "text": "Trainer checks all product criteria and records actual learner performance.",
+          "sha256": "515852dfc1f06c0f100d9500c62c9a746d62c4c3724e8bb18f47905e45513e7f"
+        }
+      ],
+      "scientificMeaning": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant SDS and choose compatible PPE before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required 2 mm sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card 450–550 g final product, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+      "displayText": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant SDS and choose compatible PPE before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required 2 mm sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card 450–550 g final product, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+      "captionText": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant SDS and choose compatible PPE before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required 2 mm sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card 450–550 g final product, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+      "spokenText": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant S D S and choose compatible P P E before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required two-millimetre sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card final product weighing four hundred and fifty to five hundred and fifty grams, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+      "spokenTextSHA256": "aa2783866c7c6f1891df0485f35b1c00f432294ff84beae679a649bfd78aed2a",
+      "spokenTextSha256": "aa2783866c7c6f1891df0485f35b1c00f432294ff84beae679a649bfd78aed2a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2 mm sieve",
+          "spoken": "two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "assessment-card 450–550 g final product",
+          "spoken": "assessment-card final product weighing450–550 g",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant SDS and choose compatible PPE before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required two-millimetre sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card final product weighing450–550 g, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+          "spoken": "Point to site-specific exit, eye-wash, shower, fire extinguisher and waste containers; show relevant S D S and choose compatible P P E before touching the sample.\n\nTrainer records each learner's demonstration and any correction.\n\nRead source label against field record and record the full sample ID, collection date, location/depth and collector.\n\nTrainer signs identity match.\n\nConfirm the requested analysis. If this protocol calls for drying, spread a thin labelled layer in a clean ventilated place away from direct sun; log start, observation and actual completion time.\n\nTrainer observes the learner's preparation and completion across stages; pre-dried sample cannot earn this evidence.\n\nGently break dry aggregates without grinding stones; pass through the required two-millimetre sieve and retain the correct identified fine-earth fraction.\n\nTrainer observes tool choice, cleaning and material separation.\n\nWeigh and seal the assessment-card final product weighingfour hundred and fifty to five hundred and fifty grams, check the complete matching label and explain a test for which drying would be inappropriate.\n\nTrainer checks all product criteria and records actual learner performance.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        },
+        {
+          "written": "weighingfour hundred",
+          "spoken": "weighing four hundred",
+          "occurrences": 1,
+          "purpose": "Prelaunch spoken range preposition/spacing grammar only; exact450–550 bounds/source qualification unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d034f8a413a49bb1eecdfc1651b23ce7697843fd74448018c22c51d01991f915",
+      "requestFingerprintSha256": "d034f8a413a49bb1eecdfc1651b23ce7697843fd74448018c22c51d01991f915",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-practical-completion-r1",
+      "unitId": "S2-05-en-practical-completion-r1",
+      "locale": "en",
+      "semanticGroup": "practical-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/passChecks/0/evidence",
+          "text": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/SDS; select task- and chemical-compatible PPE; match beaker, graduated cylinder, sieve, mortar/pestle, balance, pH device and colorimeter to their intended roles.",
+          "sha256": "6a9823adb088fedca4738676e9cca7757ffb35bc7c246573c6d10fd77a69115c"
+        },
+        {
+          "pointer": "/labPractice/passChecks/0/decision",
+          "text": "Pass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.",
+          "sha256": "22b4670df3b1f0743a2111d0e46120fd869ec454572704037e9c6a927f9843c8"
+        },
+        {
+          "pointer": "/labPractice/passChecks/1/evidence",
+          "text": "Trainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, 2 mm sieve use where appropriate and retained sample identity.",
+          "sha256": "00ca2ba70b056904e34e15437496620c37cae26446dbbef143bff1a82970770b"
+        },
+        {
+          "pointer": "/labPractice/passChecks/1/decision",
+          "text": "Pass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.",
+          "sha256": "0c26c9bb41de3315008a68edf27655973979c08fa94944ac28b5aee2f8532f16"
+        },
+        {
+          "pointer": "/labPractice/passChecks/2/evidence",
+          "text": "Trainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured 450–550 g, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.",
+          "sha256": "5b38d5ee577961ddb351e6f0833f19562e701c19dec5774b90f09da02298e2c1"
+        },
+        {
+          "pointer": "/labPractice/passChecks/2/decision",
+          "text": "Pass only if all product criteria and individual process evidence are present; the 450–550 g tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+          "sha256": "78af597e4693a875fc930c283403acd29d8fbd7837f19b02cfda23810330796e"
+        }
+      ],
+      "scientificMeaning": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/SDS; select task- and chemical-compatible PPE; match beaker, graduated cylinder, sieve, mortar/pestle, balance, pH device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, 2 mm sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured 450–550 g, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the 450–550 g tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+      "displayText": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/SDS; select task- and chemical-compatible PPE; match beaker, graduated cylinder, sieve, mortar/pestle, balance, pH device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, 2 mm sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured 450–550 g, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the 450–550 g tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+      "captionText": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/SDS; select task- and chemical-compatible PPE; match beaker, graduated cylinder, sieve, mortar/pestle, balance, pH device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, 2 mm sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured 450–550 g, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the 450–550 g tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+      "spokenText": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/S D S; select task- and chemical-compatible P P E; match beaker, graduated cylinder, sieve, mortar/pestle, balance, P H device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, two-millimetre sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured four hundred and fifty to five hundred and fifty grams, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the four hundred and fifty to five hundred and fifty-gram tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+      "spokenTextSHA256": "d9d0e8ea854133439e304b39ad37bf9ccb2a1abaa2d7c9aff6f3962afb4e0f98",
+      "spokenTextSha256": "d9d0e8ea854133439e304b39ad37bf9ccb2a1abaa2d7c9aff6f3962afb4e0f98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2 mm sieve",
+          "spoken": "two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "450–550 g tolerance",
+          "spoken": "450–550-gram tolerance",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/SDS; select task- and chemical-compatible PPE; match beaker, graduated cylinder, sieve, mortar/pestle, balance, pH device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, two-millimetre sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured 450–550 g, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the 450–550-gram tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+          "spoken": "Trainer observes the learner identify the eye-wash, shower, exit, extinguisher and designated waste route; use the applicable label/S D S; select task- and chemical-compatible P P E; match beaker, graduated cylinder, sieve, mortar/pestle, balance, P H device and colorimeter to their intended roles.\n\nPass only with individual, safe demonstration and recorded trainer evidence. A quiz, group action or photograph of equipment is insufficient; unsafe actions pause the practice and require remediation.\n\nTrainer records sample ID at receipt, pre-drying condition, method requested, learner's own drying start/end or other protocol-specific handling, clean thin-layer tray away from sun/contamination, gentle aggregate breakdown, two-millimetre sieve use where appropriate and retained sample identity.\n\nPass only when the learner personally performs every required stage over actual elapsed time and the trainer records it. A pre-dried supplied sample permits crush/sieve assessment only and cannot prove drying skill.\n\nTrainer checks no visible stones/roots/leaves, appropriately dry crumbly sample for this assessment task, uniform sieved material, measured four hundred and fifty to five hundred and fifty grams, securely sealed bag, accurate date, Field ID, sample depth and collector's name matching the full field record, plus the learner's explanation of method exceptions.\n\nPass only if all product criteria and individual process evidence are present; the four hundred and fifty to five hundred and fifty-gram tolerance belongs to this assessment card, not every laboratory. A correct final bag does not prove who dried it.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "32f470e2bda679fe77e55bd4069cf58c92a21094cf176b60898bffbadeae0948",
+      "requestFingerprintSha256": "32f470e2bda679fe77e55bd4069cf58c92a21094cf176b60898bffbadeae0948",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-card-scope-r1",
+      "unitId": "S2-05-en-card-scope-r1",
+      "locale": "en",
+      "semanticGroup": "card-scope",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/cards/0/scope",
+          "text": "This nine-action observation card spans sample preparation and the later pH step. The actions assessed here are PPE, gentle aggregate breakup and 2 mm sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s 20 g / 20 mL / 1 minute / 15 minutes and calibrated stable reading belong to the later pH teaching scenario and remain subject to its protocol.",
+          "sha256": "4b5147ac5cff95755e4f587c65202e5892b46c614634b7f747ad22817bca3742"
+        },
+        {
+          "pointer": "/labPractice/cards/1/scope",
+          "text": "Trainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; 450–550 g; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+          "sha256": "425d554735b0a9777caf2a3722b6083e570550e6819e167151833d49b2f57d11"
+        }
+      ],
+      "scientificMeaning": "This nine-action observation card spans sample preparation and the later pH step. The actions assessed here are PPE, gentle aggregate breakup and 2 mm sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s 20 g / 20 mL / 1 minute / 15 minutes and calibrated stable reading belong to the later pH teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; 450–550 g; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+      "displayText": "This nine-action observation card spans sample preparation and the later pH step. The actions assessed here are PPE, gentle aggregate breakup and 2 mm sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s 20 g / 20 mL / 1 minute / 15 minutes and calibrated stable reading belong to the later pH teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; 450–550 g; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+      "captionText": "This nine-action observation card spans sample preparation and the later pH step. The actions assessed here are PPE, gentle aggregate breakup and 2 mm sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s 20 g / 20 mL / 1 minute / 15 minutes and calibrated stable reading belong to the later pH teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; 450–550 g; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+      "spokenText": "This nine-action observation card spans sample preparation and the later P H step. The actions assessed here are P P E, gentle aggregate breakup and two-millimetre sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s twenty grams / twenty millilitres / one minute / fifteen minutes and calibrated stable reading belong to the later P H teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; four hundred and fifty to five hundred and fifty grams; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+      "spokenTextSHA256": "516c141b5015db1371c278e701fb0969c739aaae69fa16795eee783efb16424a",
+      "spokenTextSha256": "516c141b5015db1371c278e701fb0969c739aaae69fa16795eee783efb16424a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2 mm sieving",
+          "spoken": "two-millimetre sieving",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "This nine-action observation card spans sample preparation and the later pH step. The actions assessed here are PPE, gentle aggregate breakup and two-millimetre sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s 20 g / 20 mL / 1 minute / 15 minutes and calibrated stable reading belong to the later pH teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; 450–550 g; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+          "spoken": "This nine-action observation card spans sample preparation and the later P H step. The actions assessed here are P P E, gentle aggregate breakup and two-millimetre sieving. The supplied sample is already air-dried, so this activity does not demonstrate your drying skill. The card’s twenty grams / twenty millilitres / one minute / fifteen minutes and calibrated stable reading belong to the later P H teaching scenario and remain subject to its protocol.\n\nTrainer checks six product criteria: no visible debris; appropriately air-dried crumbly condition; gently crushed and sieved uniform texture; four hundred and fifty to five hundred and fifty grams; secure seal; legible matching date, Field ID, depth and collector name. Observe individual drying and preparation separately so the product is not mistaken for process proof.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ae3ec9d9233154490a311449af71358a3eb4e74d9d3869f297eb4d46221c2cc0",
+      "requestFingerprintSha256": "ae3ec9d9233154490a311449af71358a3eb4e74d9d3869f297eb4d46221c2cc0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-record-and-product-guidance-r1",
+      "unitId": "S2-05-en-record-and-product-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-and-product-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/ui/massHelp",
+          "text": "This card targets about 500 g, with 450–550 g allowed. Mass alone does not satisfy all six product criteria.",
+          "sha256": "541771ee1562f43dcbf831e4d64d4a1ed6d7d119b6532aeb1ac86dc70ca045f2"
+        },
+        {
+          "pointer": "/labPractice/ui/logHelp",
+          "text": "Use training notes only. This local record is not a trainer signature or a real laboratory submission.",
+          "sha256": "bded30735c1966dc21e4d6bc5a1d19fda56524a270e5cf344b00e6cdb0ec5c03"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/0",
+          "text": "Sample ID / field",
+          "sha256": "6c493a1cd1abc66ec212cb898b8071ffcbd4c1026f7c048b79b84b6a5376f7b9"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/1",
+          "text": "Collection date",
+          "sha256": "dd4bcd848fafef9c0a06599a5803eaec3131fddfe1ecbe8f4e3e786fad9e9367"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/2",
+          "text": "Sampling depth",
+          "sha256": "bfcac09267a1d7252a028a2d9859f3a1bb4548333b277831324d4731e5b4a963"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/3",
+          "text": "Collector",
+          "sha256": "9d0081a4f3d631b3cff603f69b3619ae1103b522cd908f64a07e5b702f68b1e0"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/4",
+          "text": "Requested analysis / method",
+          "sha256": "d68b0c4156153d34397f949868729aa41d2aa26db2d100d73d1df7a6003e9386"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/5",
+          "text": "Drying start, if required",
+          "sha256": "f72fff49579f39c9ded2efd27e1b28a609d3382b12b6e810c9e259484dc2e406"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/6",
+          "text": "Dated observations / condition",
+          "sha256": "960543613ac400881c3e46bafa600c85ca57236dd9e0a0e734a247e6fb9ba3d3"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/7",
+          "text": "Actual drying end / condition, if observed",
+          "sha256": "67de017796f54de8dac20c79f836ee2f32796947f2b38a72b653c502c29543f7"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/8",
+          "text": "Tool cleaning / sieve fraction / mass",
+          "sha256": "7494df8f684e04043d584a53e6db69203c97095b585b40a56e06278916166c17"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/9",
+          "text": "What the trainer must still observe",
+          "sha256": "f2ddf9b608061633b9b78333a7ab2446b321f806ece93277517da65838621fb2"
+        },
+        {
+          "pointer": "/finalCardRecords/localOnly",
+          "text": "Use actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.",
+          "sha256": "c38df3ed0160aeb65930e47e80304af2e5e25d30d701fa4382443ceabbbdef6c"
+        },
+        {
+          "pointer": "/finalCardRecords/controls/boundary",
+          "text": "This blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.",
+          "sha256": "afe5028c211ca68033e7cf3e2a73e5f74fe6d7cc508ed94118b5af5b4dc1e6b2"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Sample preparation worksheet",
+          "sha256": "850b56a836f3128e826dc8d76d07ce7b888ca77a2a841b7ad5654d1bab57f5c2"
+        }
+      ],
+      "scientificMeaning": "This card targets about 500 g, with 450–550 g allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+      "displayText": "This card targets about 500 g, with 450–550 g allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+      "captionText": "This card targets about 500 g, with 450–550 g allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+      "spokenText": "This card targets about five hundred grams, with four hundred and fifty to five hundred and fifty grams allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/S O P; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+      "spokenTextSHA256": "c7cd2ea4ad160594fe82af08e71c4208b90fe7b85819addc0bf7fc0577e5c5e3",
+      "spokenTextSha256": "c7cd2ea4ad160594fe82af08e71c4208b90fe7b85819addc0bf7fc0577e5c5e3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "This card targets about 500 g, with 450–550 g allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/SOP; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+          "spoken": "This card targets about five hundred grams, with four hundred and fifty to five hundred and fifty grams allowed. Mass alone does not satisfy all six product criteria.\n\nUse training notes only. This local record is not a trainer signature or a real laboratory submission.\n\nSample ID / field\n\nCollection date\n\nSampling depth\n\nCollector\n\nRequested analysis / method\n\nDrying start, if required\n\nDated observations / condition\n\nActual drying end / condition, if observed\n\nTool cleaning / sieve fraction / mass\n\nWhat the trainer must still observe\n\nUse actual evidence only. Local entries and typed names are unsigned notes, not authenticated trainer decisions or signatures. Product review does not prove who performed preparation; process actions need individual observation. Kit-specific rows refer to the documented teaching example and require the actual matching manual/S O P; otherwise leave them unassessed.\n\nThis blank record is not an observation or a pass. Leave decisions and actual data blank until the trainer actually observes or reviews the individual requirement.\n\nSample preparation worksheet",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "93854a9839832ae980524c37fbc26294b782b2dc2cb660b47c8d4ebc1598626e",
+      "requestFingerprintSha256": "93854a9839832ae980524c37fbc26294b782b2dc2cb660b47c8d4ebc1598626e",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

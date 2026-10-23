@@ -1,0 +1,352 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-05-de.json",
+    "sha256": "64c79dff5ade1025921dd9f3fe48973726893b486acdf20876e04730483dcd63",
+    "bytes": 33220
+  },
+  "units": [
+    {
+      "id": "S2-05-de-supervised-stages-r1",
+      "unitId": "S2-05-de-supervised-stages-r1",
+      "locale": "de",
+      "semanticGroup": "supervised-stages",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "64c79dff5ade1025921dd9f3fe48973726893b486acdf20876e04730483dcd63",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/stages/0/task",
+          "text": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante SDS vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.",
+          "sha256": "a3742261f09eb553eaae92a99eb248f7c685921fbb9050b3149a50b383eecadc"
+        },
+        {
+          "pointer": "/labPractice/stages/0/evidence",
+          "text": "Die Lehrkraft erfasst jede individuelle Vorführung und Korrektur.",
+          "sha256": "20d96085ec0bfe8422883a4b0630e3b7921ac1fb53e5d750dd521b6283ee3149"
+        },
+        {
+          "pointer": "/labPractice/stages/1/task",
+          "text": "Gleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.",
+          "sha256": "68984175f5e521f4b81ac2c7f02c50cbabe773996f8a340b686389b557b413bf"
+        },
+        {
+          "pointer": "/labPractice/stages/1/evidence",
+          "text": "Die Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.",
+          "sha256": "d5615aed4c996d2a7e52a644a03714ffdb88005171312fd7e2510ca7a9a0db14"
+        },
+        {
+          "pointer": "/labPractice/stages/2/task",
+          "text": "Bestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.",
+          "sha256": "6ddf5eeb6d4b638c74d3e8c58c9ed89eba9fbc5cb91249e92518199ae8aa514b"
+        },
+        {
+          "pointer": "/labPractice/stages/2/evidence",
+          "text": "Die Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.",
+          "sha256": "22a9a7c6213bbf9ccdeb707df885c26ddc8484cf9fdf719f7d59c035250dc7cd"
+        },
+        {
+          "pointer": "/labPractice/stages/3/task",
+          "text": "Löse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte 2-mm-Sieb und behalte die gekennzeichnete Feinbodenfraktion.",
+          "sha256": "57b617224e92087ef475d3c0b70444508647571b4d19e19ccde0f5807b0ee8cb"
+        },
+        {
+          "pointer": "/labPractice/stages/3/evidence",
+          "text": "Die Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.",
+          "sha256": "212e8e2aee2bdb84953524917ec03e1d7a41a36004a72563f3ffe9c2146c69fd"
+        },
+        {
+          "pointer": "/labPractice/stages/4/task",
+          "text": "Wiege und verschließe das Produkt der Bewertungskarte mit 450–550 g, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.",
+          "sha256": "0b97801106e266365ebcc1a715ab206da41f81c62dce5f674491fe97f6bf4740"
+        },
+        {
+          "pointer": "/labPractice/stages/4/evidence",
+          "text": "Die Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+          "sha256": "cf03d33079fbaf0a74def2fc24838a9c4517f9b4f9ba128744376893590c7bb7"
+        }
+      ],
+      "scientificMeaning": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante SDS vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte 2-mm-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit 450–550 g, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+      "displayText": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante SDS vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte 2-mm-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit 450–550 g, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+      "captionText": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante SDS vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte 2-mm-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit 450–550 g, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+      "spokenText": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante S D S vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte Zwei-Millimeter-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit vierhundertfünfzig bis fünfhundertfünfzig Gramm, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+      "spokenTextSHA256": "266b059b9cff4b4ddd7d6d476d7fd4313c07a884a64feeb36aedd6c384557633",
+      "spokenTextSha256": "266b059b9cff4b4ddd7d6d476d7fd4313c07a884a64feeb36aedd6c384557633",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2-mm-",
+          "spoken": "Zwei-Millimeter-",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante SDS vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte Zwei-Millimeter-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit 450–550 g, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+          "spoken": "Zeige Ausgang, Augendusche, Notdusche, Feuerlöscher und Abfallbehälter am Standort; lege das relevante S D S vor und wähle vor dem Anfassen der Probe kompatiblen Schutz.\n\nDie Lehrkraft erfasst jede individuelle Vorführung und Korrektur.\n\nGleiche Etikett und Feldprotokoll ab; erfasse vollständige Kennung, Entnahmedatum, Ort, Tiefe und sammelnde Person.\n\nDie Lehrkraft bestätigt die Übereinstimmung der Kennung mit ihrer Unterschrift.\n\nBestätige die Analyse. Verlangt sie Trocknung, verteile eine dünne gekennzeichnete Schicht sauber und belüftet ohne direkte Sonne; dokumentiere Beginn, Kontrollen und tatsächliches Ende.\n\nDie Lehrkraft beobachtet Vorbereitung und Abschluss über mehrere Phasen; eine schon trockene Probe belegt diese Fertigkeit nicht.\n\nLöse trockene Klumpen vorsichtig ohne Steine zu zermahlen; nutze das verlangte Zwei-Millimeter-Sieb und behalte die gekennzeichnete Feinbodenfraktion.\n\nDie Lehrkraft beobachtet Gerätewahl, Reinigung und Materialtrennung.\n\nWiege und verschließe das Produkt der Bewertungskarte mit vierhundertfünfzig bis fünfhundertfünfzig Gramm, prüfe das vollständige Etikett und erkläre eine Analyse, für die Trocknen ungeeignet wäre.\n\nDie Lehrkraft kontrolliert sämtliche Produktkriterien und dokumentiert die tatsächliche Leistung der lernenden Person.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "37d19b34d65dba1304127db9963c3e2fcc676691d8cfde70cf014d5cbc7f7d9a",
+      "requestFingerprintSha256": "37d19b34d65dba1304127db9963c3e2fcc676691d8cfde70cf014d5cbc7f7d9a",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-05-de-practical-completion-r1",
+      "unitId": "S2-05-de-practical-completion-r1",
+      "locale": "de",
+      "semanticGroup": "practical-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "64c79dff5ade1025921dd9f3fe48973726893b486acdf20876e04730483dcd63",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/passChecks/0/evidence",
+          "text": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem SDS; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, pH-Gerät und Kolorimeter.",
+          "sha256": "a0da00bcf565bff0fcb1d26274f341cad5c0c165076722e29df741282350a7d3"
+        },
+        {
+          "pointer": "/labPractice/passChecks/0/decision",
+          "text": "Bestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.",
+          "sha256": "a2fdaf040e1c4c67cdd53b551aa9ba15544df40956502cd37da12f4163c999d7"
+        },
+        {
+          "pointer": "/labPractice/passChecks/1/evidence",
+          "text": "Die Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls 2-mm-Sieb und durchgehende Kennzeichnung fest.",
+          "sha256": "f841d3f92b6d9b1cb2c1041639184ac4e4e2536e4bf9b53bea90fc018f54bb25"
+        },
+        {
+          "pointer": "/labPractice/passChecks/1/decision",
+          "text": "Bestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.",
+          "sha256": "954f3e078eb42b20474d20e9ff27fd7fe26c2b7bb51fb69c2062949e5f56e811"
+        },
+        {
+          "pointer": "/labPractice/passChecks/2/evidence",
+          "text": "Die Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; 450–550 g; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.",
+          "sha256": "ab13a56faca04613ab53371258f8707c1cf1c4137a83611709b9af0d39792480"
+        },
+        {
+          "pointer": "/labPractice/passChecks/2/decision",
+          "text": "Alle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. 450–550 g gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+          "sha256": "ea087ce8a28680c31b36ecd1111efd34a21d6913cbc9d0391874a1ffe84050ee"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem SDS; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, pH-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls 2-mm-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; 450–550 g; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. 450–550 g gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+      "displayText": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem SDS; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, pH-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls 2-mm-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; 450–550 g; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. 450–550 g gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+      "captionText": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem SDS; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, pH-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls 2-mm-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; 450–550 g; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. 450–550 g gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+      "spokenText": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem S D S; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, P H-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls Zwei-Millimeter-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; vierhundertfünfzig bis fünfhundertfünfzig Gramm; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. vierhundertfünfzig bis fünfhundertfünfzig Gramm gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+      "spokenTextSHA256": "1902e5f4ed8dcfdfe0706fc8f5b00a93f106abe9535bfaba843333cbc507f466",
+      "spokenTextSha256": "1902e5f4ed8dcfdfe0706fc8f5b00a93f106abe9535bfaba843333cbc507f466",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2-mm-",
+          "spoken": "Zwei-Millimeter-",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/unit compound, original scientific conditions/numbers and source unchanged"
+        },
+        {
+          "written": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem SDS; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, pH-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls Zwei-Millimeter-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; 450–550 g; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. 450–550 g gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+          "spoken": "Die Lehrkraft beobachtet jede lernende Person beim Auffinden von Augendusche, Notdusche, Ausgang, Feuerlöscher und vorgesehenem Entsorgungsweg; beim Lesen von Etikett und zutreffendem S D S; bei der Wahl chemikalien- und tätigkeitsgeeigneter Schutzausrüstung; und bei der Zuordnung von Becherglas, Messzylinder, Sieb, Mörser/Stößel, Waage, P H-Gerät und Kolorimeter.\n\nBestanden nur nach sicherer individueller Vorführung mit dokumentierter Beobachtung. Quiz, Gruppenleistung oder Gerätefoto genügen nicht. Unsicheres Handeln unterbricht diese Praxisstation bis zur Korrektur.\n\nDie Lehrkraft hält Probenkennung bei Annahme, Zustand vor der Trocknung, verlangte Methode, Beginn und Ende der von der lernenden Person ausgeführten Trocknung oder andere vorgeschriebene Behandlung, sauberes dünn belegtes Tablett ohne Sonne und Verunreinigung, vorsichtiges Lösen der Klumpen, gegebenenfalls Zwei-Millimeter-Sieb und durchgehende Kennzeichnung fest.\n\nBestanden nur, wenn die lernende Person jede erforderliche Phase selbst über die tatsächliche Zeit ausführt und die Lehrkraft sie erfasst. Eine schon trocken ausgegebene Probe erlaubt nur die Bewertung von Zerkleinern der Klumpen und Sieben, nicht des Trocknens.\n\nDie Lehrkraft prüft auf sichtbare Steine, Wurzeln und Blätter; für diese Aufgabe passenden trockenen, krümeligen Zustand; gleichmäßiges Siebgut; vierhundertfünfzig bis fünfhundertfünfzig Gramm; dichten Verschluss; lesbare und mit dem Feldprotokoll übereinstimmende Angaben zu Datum, Feldkennung, Tiefe und sammelnder Person sowie die Erklärung methodischer Ausnahmen.\n\nAlle sechs ursprünglichen Produktkriterien und der Nachweis der eigenen Arbeit sind erforderlich. vierhundertfünfzig bis fünfhundertfünfzig Gramm gelten nur für diese Bewertungskarte, nicht für jedes Labor. Ein korrektes Endprodukt beweist nicht, wer es getrocknet hat.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "77314da4c011e0b1c2c4568985ad938eb15e04d0bb17ad62d0f1ce24b3c663e3",
+      "requestFingerprintSha256": "77314da4c011e0b1c2c4568985ad938eb15e04d0bb17ad62d0f1ce24b3c663e3",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-05-de-card-scope-r1",
+      "unitId": "S2-05-de-card-scope-r1",
+      "locale": "de",
+      "semanticGroup": "card-scope",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "64c79dff5ade1025921dd9f3fe48973726893b486acdf20876e04730483dcd63",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/cards/0/scope",
+          "text": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren pH-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit 2 mm bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben 20 g / 20 mL / 1 Minute / 15 Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren pH-Lernszenario nach dessen Protokoll.",
+          "sha256": "70fb1160be7f0445011ea8f2f21dc94f0e4d4dd226b12e49891a1c099e2f5bcc"
+        },
+        {
+          "pointer": "/labPractice/cards/1/scope",
+          "text": "Die Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, 450–550 g, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+          "sha256": "fca979663f6ed5486699810df4ada5ce7a38ca5d67e64293f0aa29d776df4120"
+        }
+      ],
+      "scientificMeaning": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren pH-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit 2 mm bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben 20 g / 20 mL / 1 Minute / 15 Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren pH-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, 450–550 g, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+      "displayText": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren pH-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit 2 mm bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben 20 g / 20 mL / 1 Minute / 15 Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren pH-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, 450–550 g, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+      "captionText": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren pH-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit 2 mm bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben 20 g / 20 mL / 1 Minute / 15 Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren pH-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, 450–550 g, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+      "spokenText": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren P H-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit zwei Millimeter bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben zwanzig Gramm / zwanzig Milliliter / eine Minute / fünfzehn Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren P H-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, vierhundertfünfzig bis fünfhundertfünfzig Gramm, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+      "spokenTextSHA256": "8fd57b51e8a20ed9136bb72837d0b7adfe32d037867e92210b6d26ff84787a2e",
+      "spokenTextSha256": "8fd57b51e8a20ed9136bb72837d0b7adfe32d037867e92210b6d26ff84787a2e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren pH-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit 2 mm bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben 20 g / 20 mL / 1 Minute / 15 Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren pH-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, 450–550 g, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+          "spoken": "Diese Beobachtungskarte umfasst neun Handlungen über die Probenvorbereitung und den späteren P H-Schritt. Hier werden Schutz, vorsichtiges Lösen der Aggregate und Sieben mit zwei Millimeter bewertet. Die ausgegebene Probe ist bereits trocken; diese Aktivität weist deshalb nicht deine eigene Trocknungsleistung nach. Die Kartenangaben zwanzig Gramm / zwanzig Milliliter / eine Minute / fünfzehn Minuten sowie Kalibrierung und stabiler Messwert gehören zum späteren P H-Lernszenario nach dessen Protokoll.\n\nDie Lehrkraft prüft sechs ursprüngliche Produktkriterien: keine sichtbaren Rückstände, passend trocken-krümelig, nach Lösen und Sieben gleichmäßig, vierhundertfünfzig bis fünfhundertfünfzig Gramm, dicht verschlossen sowie lesbares, zum Feldprotokoll passendes Datum, Feldkennung, Tiefe und Name. Individuelle Trocknung und Vorbereitung werden getrennt beobachtet, weil das Produkt den Prozess allein nicht beweist.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "df6d44950b70ecf716358d2df18abf364ea2f3ac89ea0041f59cd623519b43e6",
+      "requestFingerprintSha256": "df6d44950b70ecf716358d2df18abf364ea2f3ac89ea0041f59cd623519b43e6",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-05-de-record-and-product-guidance-r1",
+      "unitId": "S2-05-de-record-and-product-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-and-product-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "64c79dff5ade1025921dd9f3fe48973726893b486acdf20876e04730483dcd63",
+      "sourceBindings": [
+        {
+          "pointer": "/labPractice/ui/massHelp",
+          "text": "Dieses Produkt hat etwa 500 g als Ziel, zulässig sind 450–550 g. Masse allein erfüllt nicht alle sechs Kriterien.",
+          "sha256": "454c936d426a087127a85bec6f0695b4095c57de64d187d59a85d549b1d75f85"
+        },
+        {
+          "pointer": "/labPractice/ui/logHelp",
+          "text": "Nur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.",
+          "sha256": "8fea2952e7e64e3a0f2ac046ff6e202c0560b4102a8712a4d884a2fe94a71d35"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/0",
+          "text": "Probenkennung / Feld",
+          "sha256": "3e0727529ecd29f6457db8aad1f38cd6be5660d9b1016ce7dc94c077baa5da45"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/1",
+          "text": "Entnahmedatum",
+          "sha256": "7067b40f08afcadd174aa8982af801a9228be9424f6755e2074dcc7131cc023c"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/2",
+          "text": "Entnahmetiefe",
+          "sha256": "3b19e165b2c2df244e2a71e62d028fe1f9eb43245b5860245a2945e4cbb18da6"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/3",
+          "text": "Sammelnde Person",
+          "sha256": "4644a0828903774336b0c1404e98331aa4dcc7f9beb381ff09f280c131cfe356"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/4",
+          "text": "Analyse / Methode",
+          "sha256": "7dfac85ec1d8cbfad8cfa890f29c0b00c47a9dcb8ce1df340ad6ca36e2dc9544"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/5",
+          "text": "Trocknungsbeginn, falls nötig",
+          "sha256": "13596c712913517d0dd4aeb24586a2eb820d4c0ecfaa74a8e1c07745978b4ecf"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/6",
+          "text": "Datierte Beobachtungen / Zustand",
+          "sha256": "fbc9b6e07e6472b3faa46532c6e5324b73fc5fca235b56fa56c919816cecdde5"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/7",
+          "text": "Tatsächliches Ende / Zustand, falls beobachtet",
+          "sha256": "92378bfde3bfbc4363361c09f4136dd5dc5089c4c385b82bb3a450ef09d3f269"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/8",
+          "text": "Reinigung / Siebfraktion / Masse",
+          "sha256": "46f5a1596abcbbf767d0db323727d25d46fa1104ca5561245fd9042c0870902e"
+        },
+        {
+          "pointer": "/labPractice/ui/fields/9",
+          "text": "Was muss die Lehrkraft noch beobachten",
+          "sha256": "00cd410dadbd6fb4298aa75b1cf95d8c3bdfeb87aeb201c048054eb6a66d8160"
+        },
+        {
+          "pointer": "/finalCardRecords/localOnly",
+          "text": "Nur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.",
+          "sha256": "453af05b283ddafe6e4aab0f9ee603f712a29b345bffa4ffddcc9bb7be5181e7"
+        },
+        {
+          "pointer": "/finalCardRecords/controls/boundary",
+          "text": "Dieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.",
+          "sha256": "71be3509e222fa6c78f7cd11cfdf71447450c9c632fc7c2980f9094879eed709"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt Probenvorbereitung",
+          "sha256": "6c3f03cef0f3037a08caf3b0cbe4d5beef62237156cae7984501f82f88dc9e4a"
+        }
+      ],
+      "scientificMeaning": "Dieses Produkt hat etwa 500 g als Ziel, zulässig sind 450–550 g. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+      "displayText": "Dieses Produkt hat etwa 500 g als Ziel, zulässig sind 450–550 g. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+      "captionText": "Dieses Produkt hat etwa 500 g als Ziel, zulässig sind 450–550 g. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+      "spokenText": "Dieses Produkt hat etwa fünfhundert Gramm als Ziel, zulässig sind vierhundertfünfzig bis fünfhundertfünfzig Gramm. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/S O P; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+      "spokenTextSHA256": "0ad36166f3d521df15e0903cf8558678674063436b6fdda09d1f127e6c3f5e03",
+      "spokenTextSha256": "0ad36166f3d521df15e0903cf8558678674063436b6fdda09d1f127e6c3f5e03",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Dieses Produkt hat etwa 500 g als Ziel, zulässig sind 450–550 g. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/SOP; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+          "spoken": "Dieses Produkt hat etwa fünfhundert Gramm als Ziel, zulässig sind vierhundertfünfzig bis fünfhundertfünfzig Gramm. Masse allein erfüllt nicht alle sechs Kriterien.\n\nNur lokale Übungsnotizen, keine Unterschrift und kein echter Laborauftrag.\n\nProbenkennung / Feld\n\nEntnahmedatum\n\nEntnahmetiefe\n\nSammelnde Person\n\nAnalyse / Methode\n\nTrocknungsbeginn, falls nötig\n\nDatierte Beobachtungen / Zustand\n\nTatsächliches Ende / Zustand, falls beobachtet\n\nReinigung / Siebfraktion / Masse\n\nWas muss die Lehrkraft noch beobachten\n\nNur tatsächliche Nachweise verwenden. Lokale Eingaben und getippte Namen sind unsignierte Notizen, keine authentifizierten Entscheidungen oder Unterschriften der Lehrkraft. Produktprüfung belegt nicht, wer die Vorbereitung ausführte; Verfahren benötigen Einzelbeobachtung. Gerätespezifische Zeilen beziehen sich auf das dokumentierte Lehrbeispiel und erfordern passende tatsächliche Anleitung/S O P; andernfalls bleiben sie ungeprüft.\n\nDieses leere Protokoll belegt keine Beobachtung und kein Bestehen. Entscheidungen und tatsächliche Daten bleiben leer, bis die Lehrkraft die individuelle Anforderung wirklich beobachtet oder geprüft hat.\n\nArbeitsblatt Probenvorbereitung",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous units/SDS/PPE/SOP and numbers20mL/500g/450–550g/2mm/1min/15min spoken expansion, not ratio or universal protocol change"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dffe08546485996b4f2a7694d573e3698162a1fa2fbba922a48ba75d6c8ad839",
+      "requestFingerprintSha256": "dffe08546485996b4f2a7694d573e3698162a1fa2fbba922a48ba75d6c8ad839",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
