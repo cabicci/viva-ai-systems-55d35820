@@ -1,0 +1,57 @@
+name: Masaarat accounting ad Gemini voice audition
+run-name: Masaarat ad Egyptian voice audition 20261023
+on:
+  push:
+    branches: [codex/masaarat-ad-gemini-audition-20261023-01a156]
+    paths:
+      - scripts/production-review/masaarat-ad-gemini-sample.py
+      - .github/workflows/egyptian-voice-review.yml
+permissions:
+  contents: read
+concurrency:
+  group: masaarat-ad-gemini-audition-20261023
+  cancel-in-progress: false
+jobs:
+  audition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            scripts/production-review/masaarat-ad-gemini-sample.py
+            .github/workflows/egyptian-voice-review.yml
+      - name: Verify selected model on configured service without generation
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/production-review/masaarat-ad-gemini-sample.py --probe
+      - name: Record Charon once
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/production-review/masaarat-ad-gemini-sample.py --voice Charon
+      - name: Preserve Charon immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: masaarat-ad-Charon
+          path: |
+            masaarat-ad-output/*Charon*
+            masaarat-ad-output/model-availability.json
+          if-no-files-found: error
+          retention-days: 14
+      - name: Record Kore once
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/production-review/masaarat-ad-gemini-sample.py --voice Kore
+      - name: Preserve Kore immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: masaarat-ad-Kore
+          path: |
+            masaarat-ad-output/*Kore*
+            masaarat-ad-output/model-availability.json
+          if-no-files-found: warn
+          retention-days: 14
