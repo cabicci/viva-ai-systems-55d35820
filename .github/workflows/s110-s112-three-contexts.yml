@@ -1,0 +1,128 @@
+name: s110-s112-three-contexts bounded audio diagnostics
+'on':
+  push:
+    branches:
+    - work/soil-s110-s112-three-contexts-20261023-r1
+    paths:
+    - s110-s112-three-contexts/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s110-s112-three-contexts-18b02f90596ab9c0a3467b7601c770d0a4eb74a16f9562698831ee73c84ae467
+  cancel-in-progress: false
+env:
+  PACKAGE: s110-s112-three-contexts
+  REQUEST_SHA: 18b02f90596ab9c0a3467b7601c770d0a4eb74a16f9562698831ee73c84ae467
+  WORKER_SHA: 5dc260715400f6a43d71778b98d08093aff57f4bb67e150e694bac9e9655e8aa
+  FREEZE_SHA: 1d40fb17dc52bb84ffb1c28591868c75ff41c9f3274367f7401f78ff25959c89
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s110-s112-three-contexts-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify exact original sixsecond PCM and finitebudget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Preserve exact context before onlyreview
+      id: audio
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-s112-three-contexts-r1-inputs
+        path: ${{ env.PACKAGE }}/inputs/
+        if-no-files-found: error
+        retention-days: 30
+    - name: Record immutable context upload
+      id: receipt
+      env:
+        AID: ${{ steps.audio.outputs.artifact-id }}
+        DIGEST: ${{ steps.audio.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One unhinted review C01
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C01
+
+        '
+    - name: One unhinted review C02
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C02
+
+        '
+    - name: One unhinted review C03
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C03
+
+        '
+    - name: Preserve all exact payload and partial outcomes
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-s112-three-contexts-r1-evidence
+        retention-days: 30
+        include-hidden-files: true
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/attempt-ledger.json
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/prompts/blind.txt
+
+          ${{ env.PACKAGE }}/provenance/model-availability.json
+
+          ${{ env.PACKAGE }}/provenance/context-proof.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/inputs/C01.wav
+
+          ${{ env.PACKAGE }}/inputs/C02.wav
+
+          ${{ env.PACKAGE }}/inputs/C03.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s110-s112-three-contexts.yml'
