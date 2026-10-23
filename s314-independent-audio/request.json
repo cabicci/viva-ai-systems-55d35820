@@ -1,0 +1,1971 @@
+{
+  "schemaVersion": 1,
+  "scope": "S314_TWELVE_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s314-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 12,
+  "maximumBlindAudioReviewCalls": 12,
+  "maximumASRInvocations": 12,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-14-ar-EG-opening-r1",
+      "unitId": "S3-14-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل FJ500-SER كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.",
+          "sha256": "c5b3547dc841822136949d3556b76dba4ca039f882e8202e42fac957e39be4ba"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "رتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.",
+          "sha256": "d6dc7ac42e8b93d2ffe156244239ce53bdcb5dcc487c4889930014db9d04cd3b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "لو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.",
+          "sha256": "927f4fc840d00cbff666fbde9e88c6ff3e64005262a0aa359c3e5f7a3e1d5660"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "لو الأهلية والظروف تسمح، ينفذ بنفسه مرور ٣٠ متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+          "sha256": "f32e3fab303ab268690aa033bad6049a64663d1ed529a11bcbacd802cdd94ba5"
+        }
+      ],
+      "scientificMeaning": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل FJ500-SER كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور ٣٠ متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+      "displayText": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل FJ500-SER كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور ٣٠ متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+      "captionText": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل FJ500-SER كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور ٣٠ متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+      "spokenText": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل إف جي خمسمية-اس إي آر كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور تلاتين متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+      "spokenTextSHA256": "cdb381edd8cbd1dfc58df800d3df22fc8232c76dee3740a6d013375236ce9f37",
+      "spokenTextSha256": "cdb381edd8cbd1dfc58df800d3df22fc8232c76dee3740a6d013375236ce9f37",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل FJ500-SER كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور ٣٠ متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+          "spoken": "اتعلم إمتى لازم توقف قبل ما تتعلم البدء. بنستخدم دليل إف جي خمسمية-اس إي آر كمثال، لكن المدرّب لازم يحدد الجهاز الفعلي وملحقه وأهلية المتدرب وموقع التدريب الأول. ولا نشاط على الشاشة يسمح بتشغيله.\n\nرتّب فحص الدليل المطابق، وبدء التشغيل الآمن، والعمل، والإيقاف الطارئ والعادي، وحدد إمتى ممنوع البدء، ومنها مشغّل غير مؤهل أو طفل.\n\nلو المتدرب مؤهل والجهاز والموقع وافق عليهم المدرّب، ينفذ ويشرح بنفسه فحص ما قبل الاستخدام والبدء والإيقاف طبقًا لدليل الجهاز، مع الحواجز سليمة والقابض مفصول والناقل على الحياد قبل البدء.\n\nلو الأهلية والظروف تسمح، ينفذ بنفسه مرور تلاتين متر آمن، ويحافظ على المحصول، ويقيّم إزالة الحشائش وحالة السطح، ويوقف ويبلغ عن أي خطر أو صوت أو اهتزاز غير عادي.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "96ae07913b211ae48a274d88040ab28a11e745e96213f2e35aee3b2696372cfa",
+      "requestFingerprintSha256": "96ae07913b211ae48a274d88040ab28a11e745e96213f2e35aee3b2696372cfa",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "21391fb84567ed74f2ca660dc06625fcbdf295cc6753842e3fd52f646d7da7c5"
+    },
+    {
+      "id": "S3-14-ar-EG-guided-practice-r1",
+      "unitId": "S3-14-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "رتّب بوابات الفحص والبدء الآمن SER والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.",
+          "sha256": "7ef4310142d7ca4abbe1da74c0e6a332a6a48296ae8c9c6b725e24a902dc277f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "بعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع وPPE، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.",
+          "sha256": "a255c49784038efd4689e310d3617df598320622f0d6af34743903d99b8a91d1"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "للمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد ٣٠ متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.",
+          "sha256": "f94c04e85a1ad47b565b6dd44777fd860ea584ba3cb10337ab38dd00891fc6b6"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "أي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.",
+          "sha256": "5afe8949590856550e57ed67f873311b461b27acfe020306131716ed0c00d64d"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "قراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+          "sha256": "861e600544f1a1aa73a906bd2da5e890e02ab315af238eb0bdecd06182795bbd"
+        }
+      ],
+      "scientificMeaning": "رتّب بوابات الفحص والبدء الآمن SER والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع وPPE، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد ٣٠ متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+      "displayText": "رتّب بوابات الفحص والبدء الآمن SER والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع وPPE، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد ٣٠ متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+      "captionText": "رتّب بوابات الفحص والبدء الآمن SER والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع وPPE، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد ٣٠ متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+      "spokenText": "رتّب بوابات الفحص والبدء الآمن اس إي آر والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع ومعدات الوقاية الشخصية، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد تلاتين متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+      "spokenTextSHA256": "b82a71433940b782f0fefff4a91cfafbc75d3c303fcca8e8d3328e7e23f89cb0",
+      "spokenTextSha256": "b82a71433940b782f0fefff4a91cfafbc75d3c303fcca8e8d3328e7e23f89cb0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "رتّب بوابات الفحص والبدء الآمن SER والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع وPPE، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد ٣٠ متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+          "spoken": "رتّب بوابات الفحص والبدء الآمن اس إي آر والطوارئ والإيقاف العادي على رسم ثابت مش آلة شغالة. علّم ستة أسباب تمنع البدء على الأقل، واشرح جملة الأصل المتعارضة عن المحرك.\n\nبعد ما المدرّب يتحقق من الأهلية والموديل والدليل والموقع ومعدات الوقاية الشخصية، نفّذ بنفسك فحص دليل الجهاز الكامل والبدء والإيقاف تحت إشراف. لو الشروط ناقصة استخدم نموذجًا متوقفًا ومعزولًا وخلي التطبيق معلقًا.\n\nللمتدرب اللي المدرّب اتحقق من أهليته بس: نفّذ مرور واحد تلاتين متر تحت إشراف، في مساحة مناسبة للجهاز وخالية من العوائق، ووقّف فورًا لو فيه خطر. قبل الفحص من قريب أو شيل أي بقايا، أوقف حسب دليل الجهاز الفعلي، واستنى الأسنان تقف تمامًا، واتبع خطوات منع البدء. بعدها افحص إزالة الحشائش وحالة التربة والمحصول، وناقش مشاكل التحكم أو الموتور والتعديلات الآمنة الممكنة، وبلّغ المدرّب بالنتائج.\n\nأي بوابة ناقصة أو إجابة غير آمنة ترجع لمراجعة موجهة؛ الشاشة للفهم فقط.\n\nقراراتك أونلاين وتعبية الخانات ما بيدّوش إذن بدء التشغيل، ولا بينجّحوا أي معيار عملي. صاحب المشروع أكد إن المتدربين المخطط لهم مستوفين شرط السن؛ والمدرّب لسه لازم يتحقق من الجهاز الفعلي ودليله، والتدريب، والمكان، وأداء كل واحد لوحده.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b054febd6255d96de859298cbb07a42d2cf926ab65c1783441acffd726446555",
+      "requestFingerprintSha256": "b054febd6255d96de859298cbb07a42d2cf926ab65c1783441acffd726446555",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "21391fb84567ed74f2ca660dc06625fcbdf295cc6753842e3fd52f646d7da7c5"
+    },
+    {
+      "id": "S3-14-ar-EG-glossary-r1",
+      "unitId": "S3-14-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "فحص قبل التشغيل",
+          "sha256": "4f92082bce0ffe05e316c29227dd1e573857e87f941d227c03ec97952e76d89e"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "مراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.",
+          "sha256": "6a33cb60aaf28c975733fa81ee9d62cdc2ff086941478bbcd85cfade6e9b5234"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "حياد",
+          "sha256": "7869bbcfa6e755dc9ea59bb0cf74d5d722876b8f51ece88f5e43d3105a48662e"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "وضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.",
+          "sha256": "2885b49161743000cf1c9af35891667a05b4c32d8a8644a84128bad3261acf2e"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "قابض مفصول",
+          "sha256": "bbcc5b7e670b18b062e7116815b4dcad172caa8a35c1806529181ef46e28a53b"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "في مثال SER، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.",
+          "sha256": "ff7681b7b32e6a5356fef42f623098c8801a5ec962244e06a8bba33a3fa8d51c"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "منع بدء غير مقصود",
+          "sha256": "9e33d32b2ebc34645db45aca189c348b36202b575089fb20431db2b65b8822bf"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "خطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.",
+          "sha256": "3695e90576fab5e3135fe503098d55f107e540231cc3ac443d013a9e53304897"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "إيقاف طوارئ",
+          "sha256": "f4908c47ec5ad33f5225173319683748e160559fd14767f0a251a76cb8a9aae3"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "فعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.",
+          "sha256": "89bd6f1f1608202dd916376e94407c75450bdc8cb93aa8925fc820bbe762e983"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "مشغّل مؤهل",
+          "sha256": "bdc8a5b3eb878d5a4a93826642abae97d8c957e1f299815426313ca44f2442c9"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "شخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.",
+          "sha256": "603533ed1e827ec495e170beceeb874caba4737e210f6299ecb71faf1a92b16a"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "أول أكسيد الكربون",
+          "sha256": "e30259d335401632e86a1079bcca6b79b6b7b2bffd3b5341da2ac0729268c9e9"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "غاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+          "sha256": "007d48170007d9ade3c1a403fa28b02dfb3944fce513706ebae8569566ab952f"
+        }
+      ],
+      "scientificMeaning": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال SER، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+      "displayText": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال SER، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+      "captionText": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال SER، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+      "spokenText": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال اس إي آر، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+      "spokenTextSHA256": "19e9b252458a37ae9240c25260eaaf3e850885ecbc064c563904a2508ba94519",
+      "spokenTextSha256": "19e9b252458a37ae9240c25260eaaf3e850885ecbc064c563904a2508ba94519",
+      "spokenAdaptationChanges": [
+        {
+          "written": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال SER، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+          "spoken": "فحص قبل التشغيل\n\nمراجعة الجهاز والتحكم والزيوت والأجزاء العاملة والموقع بدليل المصنع المطابق قبل قرار البدء.\n\nحياد\n\nوضع الناقل بلا حركة أمامية أو خلفية مختارة وقت بدء المحرك.\n\nقابض مفصول\n\nفي مثال اس إي آر، القابض بيكون مفصول لما تسيب ذراعه، وده الوضع المطلوب قبل بدء الموتور حسب الدليل.\n\nمنع بدء غير مقصود\n\nخطوات المصنع لمنع حركة المحرك أو الأسنان أثناء الفحص والتنظيف.\n\nإيقاف طوارئ\n\nفعل المصنع الفوري لوقف المحرك عند الخطر، مختلف عن ترتيب الإيقاف العادي.\n\nمشغّل مؤهل\n\nشخص الدليل والقواعد المطبقة بتسمح له بالتشغيل، واتدرّب، والمدرّب بيشرف عليه مباشرة أثناء التطبيق؛ الاختبار ما بيدّيش أهلية التشغيل.\n\nأول أكسيد الكربون\n\nغاز سام مالوش لون ولا ريحة، موجود في عادم الموتور وممكن يتجمع بشكل خطر في مكان مقفول أو مقفول جزئيًا.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a1d32efd59b7eeb0684489d00e65fac2be71fb3849c2676fcb6fa124fc44fa54",
+      "requestFingerprintSha256": "a1d32efd59b7eeb0684489d00e65fac2be71fb3849c2676fcb6fa124fc44fa54",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "21391fb84567ed74f2ca660dc06625fcbdf295cc6753842e3fd52f646d7da7c5"
+    },
+    {
+      "id": "S3-14-en-opening-r1",
+      "unitId": "S3-14-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Learn the stop conditions before the start procedure. This lesson uses FJ500-SER manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.",
+          "sha256": "66208b75c28f8a7680ee70dde660a86ccb10f1bbb17a511a6f052114778b1215"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Put the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.",
+          "sha256": "5cce90dac336517132ff96fd6b4517c994242da4e21c2399e8961f0174faf7d1"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "If eligible and the real machine/site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.",
+          "sha256": "0b0f12439feaf819d05147a1125d758ca8ebe23cebc644fd1a93e170536647f2"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "If eligible and conditions permit, individually make the designated 30 m pass safely, protect crop rows, evaluate weed removal and surface result, and stop/report any hazard, abnormal sound or vibration.",
+          "sha256": "9989272ad53411a31ee68c66270376c349120115bbbbb90d6d16f7ba7f8af291"
+        }
+      ],
+      "scientificMeaning": "Learn the stop conditions before the start procedure. This lesson uses FJ500-SER manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine/site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated 30 m pass safely, protect crop rows, evaluate weed removal and surface result, and stop/report any hazard, abnormal sound or vibration.",
+      "displayText": "Learn the stop conditions before the start procedure. This lesson uses FJ500-SER manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine/site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated 30 m pass safely, protect crop rows, evaluate weed removal and surface result, and stop/report any hazard, abnormal sound or vibration.",
+      "captionText": "Learn the stop conditions before the start procedure. This lesson uses FJ500-SER manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine/site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated 30 m pass safely, protect crop rows, evaluate weed removal and surface result, and stop/report any hazard, abnormal sound or vibration.",
+      "spokenText": "Learn the stop conditions before the start procedure. This lesson uses F J five hundred-S E R manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine, site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated thirty metres pass safely, protect crop rows, evaluate weed removal and surface result, and stop, report any hazard, abnormal sound or vibration.",
+      "spokenTextSHA256": "f84d8089ba2edcb9d426915af214ab2048e32ba9d3a96c3dd450484840a17b10",
+      "spokenTextSha256": "f84d8089ba2edcb9d426915af214ab2048e32ba9d3a96c3dd450484840a17b10",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Learn the stop conditions before the start procedure. This lesson uses FJ500-SER manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine/site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated 30 m pass safely, protect crop rows, evaluate weed removal and surface result, and stop/report any hazard, abnormal sound or vibration.",
+          "spoken": "Learn the stop conditions before the start procedure. This lesson uses F J five hundred-S E R manual evidence for an example; a trainer must first identify the actual machine, attachment, operator eligibility and training site. No screen activity grants permission to start it.\n\nPut the matched manual's inspection, safe-start, operation, emergency-stop and normal-stop decisions in order, and identify conditions that prohibit starting, including unqualified or child operation.\n\nIf eligible and the real machine, site are trainer-approved, individually perform and explain the full pre-use inspection, supervised start and stop according to that machine's manual, with guards intact, clutch released and neutral selected before start.\n\nIf eligible and conditions permit, individually make the designated thirty metres pass safely, protect crop rows, evaluate weed removal and surface result, and stop, report any hazard, abnormal sound or vibration.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "32d07842623e1c1bcd35efee1589579cac3dcb7217e99f1d96f8bcaeac6b58c4",
+      "requestFingerprintSha256": "32d07842623e1c1bcd35efee1589579cac3dcb7217e99f1d96f8bcaeac6b58c4",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "bee834fb34421a258a17c25eba157bad9c6d03a56e13fb635a4f5eee60b26853"
+    },
+    {
+      "id": "S3-14-en-guided-practice-r1",
+      "unitId": "S3-14-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Put the official pre-use, SER safe-start and emergency/normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.",
+          "sha256": "2d73a97bec7f0420d6d3ff86d1bddd453f249011f6e5d7d3677cecaec6f8a0df"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Only after trainer verification of eligibility, model/manual, site and PPE, individually carry out complete actual-manual pre-use and supervised start/stop; otherwise use a stopped isolated model and mark practical pending.",
+          "sha256": "ce08c043006f55cc1fbc5449b7568fd8067ae0171933da8822bcf8e6427296f6"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "For a verified eligible learner only, complete one supervised 30 m pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.",
+          "sha256": "ff16fbee137c65411878a42a37ae9a5f376b06e551373fef4b1a340bf430ec3e"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Unsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.",
+          "sha256": "8165d0d6d67b6441d29555444b0135a316ad421e08f4f0e738c582d71e98d4e7"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Online decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine/manual, instruction, site and each individual performance.",
+          "sha256": "2744f950e45de8be791cabe98bdda320873871e8bae5046ef0de6a89f127fde6"
+        }
+      ],
+      "scientificMeaning": "Put the official pre-use, SER safe-start and emergency/normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model/manual, site and PPE, individually carry out complete actual-manual pre-use and supervised start/stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised 30 m pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine/manual, instruction, site and each individual performance.",
+      "displayText": "Put the official pre-use, SER safe-start and emergency/normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model/manual, site and PPE, individually carry out complete actual-manual pre-use and supervised start/stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised 30 m pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine/manual, instruction, site and each individual performance.",
+      "captionText": "Put the official pre-use, SER safe-start and emergency/normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model/manual, site and PPE, individually carry out complete actual-manual pre-use and supervised start/stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised 30 m pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine/manual, instruction, site and each individual performance.",
+      "spokenText": "Put the official pre-use, S E R safe-start and emergency, normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model, manual, site and P P E, individually carry out complete actual-manual pre-use and supervised start, stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised thirty metres pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine, manual, instruction, site and each individual performance.",
+      "spokenTextSHA256": "742f034ddfc2472fd751fc76a01c48e6653ecf486776ec16bbceb40aed541a11",
+      "spokenTextSha256": "742f034ddfc2472fd751fc76a01c48e6653ecf486776ec16bbceb40aed541a11",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Put the official pre-use, SER safe-start and emergency/normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model/manual, site and PPE, individually carry out complete actual-manual pre-use and supervised start/stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised 30 m pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine/manual, instruction, site and each individual performance.",
+          "spoken": "Put the official pre-use, S E R safe-start and emergency, normal stop gates in order on a non-operating diagram. Mark at least six no-go conditions and explain the original contradictory engine-running warning.\n\nOnly after trainer verification of eligibility, model, manual, site and P P E, individually carry out complete actual-manual pre-use and supervised start, stop; otherwise use a stopped isolated model and mark practical pending.\n\nFor a verified eligible learner only, complete one supervised thirty metres pass in a matched, cleared plot, stopping immediately if unsafe. Before close inspection or debris work, stop by the matched manual, wait for complete tine standstill and apply its anti-start precautions. Then examine weed removal, soil and crop condition, discuss handling or engine issues and possible safe adjustments, and report findings to the trainer.\n\nUnsafe or omitted gate triggers targeted review; a correct screen response is knowledge only.\n\nOnline decisions and completed fields do not authorize a start or pass a practical criterion. The owner has confirmed the planned trainees meet the age condition; the trainer still checks the actual machine, manual, instruction, site and each individual performance.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ba031e410b20fe1500a3b8ae4e5939962d7f249f5cee34499acc8defba73b3d0",
+      "requestFingerprintSha256": "ba031e410b20fe1500a3b8ae4e5939962d7f249f5cee34499acc8defba73b3d0",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "bee834fb34421a258a17c25eba157bad9c6d03a56e13fb635a4f5eee60b26853"
+    },
+    {
+      "id": "S3-14-en-glossary-r1",
+      "unitId": "S3-14-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pre-use check",
+          "sha256": "35a320e8f1ab8841e5aa9c49bd6e9e0cafac216f303d70999201cda5e1a8223b"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Manufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.",
+          "sha256": "2df9d2912cfcfed26cb4f45bdbe48ce3bea8a66db438b9b5aaa2d133262670e6"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "neutral",
+          "sha256": "7e2372f4115c43bac7248772d891df3dbc830a85aa27eeed933688f61c44226c"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Transmission state not selecting forward or reverse movement at engine start.",
+          "sha256": "2444869488147aa8c6ca66cdc841cd482b03a26109ad491eed2ae96dc519b57c"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "disengaged clutch",
+          "sha256": "c24afa715c7c58f73bfd84c20f9b40149ba49e729ebca4f7e44cfb706fdea1af"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Power-transfer control released as the documented example manual requires before start.",
+          "sha256": "c749626d953f9effb85102ca66197cde96d8c16f6cff61e2ca77f2f8f0146458"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "anti-start isolation",
+          "sha256": "30dfa3676ca822cdbe59f78218765c238889bf2b47de406384f9de4ee8cb59dd"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Manufacturer-prescribed steps preventing unintended engine or tine movement during inspection/cleaning.",
+          "sha256": "659562c0e8c6f75de90b2234e2c83aad5ba50de72bac2c1a4a91d144cc3d6944"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "emergency stop",
+          "sha256": "c1150206da0b21ee0eba564514aa0f0320adbaa7688db405b0f4739536f5708e"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Immediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.",
+          "sha256": "2129902ab86e5d6faacec9812283ee84661cc0d2b31aed700562879b582672f4"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "eligible operator",
+          "sha256": "75e911f081940d8f9819a985eae0209818a41eb04f0e9e7e00a140566a932f42"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.",
+          "sha256": "c18deac30c28e2b1f6eb5eb3a1ae90420357c5a52f01d1072eb188db29064389"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "carbon monoxide",
+          "sha256": "9c182c4b8abdfed29faee909922ff4c25c0d44e372160745a42349022ad62df9"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Poisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+          "sha256": "f0e0e16bc8a0f8f9a00c02ea4fe7e92ff975c3ad2fba7751231267d37c90fb53"
+        }
+      ],
+      "scientificMeaning": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection/cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+      "displayText": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection/cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+      "captionText": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection/cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+      "spokenText": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection, cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+      "spokenTextSHA256": "7269a8e1e35f669035bfd37fa5cb7350daa297aea158f398d97bf5e305925135",
+      "spokenTextSha256": "7269a8e1e35f669035bfd37fa5cb7350daa297aea158f398d97bf5e305925135",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection/cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+          "spoken": "pre-use check\n\nManufacturer-matched examination of machine, controls, fluids, working parts and area before a start decision.\n\nneutral\n\nTransmission state not selecting forward or reverse movement at engine start.\n\ndisengaged clutch\n\nPower-transfer control released as the documented example manual requires before start.\n\nanti-start isolation\n\nManufacturer-prescribed steps preventing unintended engine or tine movement during inspection, cleaning.\n\nemergency stop\n\nImmediate manufacturer-defined action to halt the engine in danger, distinct from normal shutdown sequence.\n\neligible operator\n\nA person permitted by the actual manual and applicable rules, trained and directly supervised for the practical; a quiz does not confer eligibility.\n\ncarbon monoxide\n\nPoisonous, colourless, odourless gas in engine exhaust; it can accumulate dangerously in enclosed or partially enclosed spaces.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "823d3784f7c12d58738871059ed81be08acf728db0e4914966c1c491ea1b6959",
+      "requestFingerprintSha256": "823d3784f7c12d58738871059ed81be08acf728db0e4914966c1c491ea1b6959",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "bee834fb34421a258a17c25eba157bad9c6d03a56e13fb635a4f5eee60b26853"
+    },
+    {
+      "id": "S3-14-it-opening-r1",
+      "unitId": "S3-14-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda FJ500-SER è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.",
+          "sha256": "830ce5b9f67ec725a8fdab86e6c658096e60cf67bc0b34867397bf5f2a6b42f1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Mettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.",
+          "sha256": "784e4a3afd06f7237619a539eeb69499d452e905f84c117b22961ddc55d8dde6"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Se idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.",
+          "sha256": "ca30be7ba1772ce4bacd87a010077c726c9bdb54091082d8f76c9def824ba459"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Se idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di 30 m, proteggere le colture, valutare erbe e superficie e fermarsi/segnalare rumore, vibrazione o altro pericolo.",
+          "sha256": "c2d86a41507ca30a1c4192d883f67c5f907d46aa844c260e6d862827e52561d1"
+        }
+      ],
+      "scientificMeaning": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda FJ500-SER è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di 30 m, proteggere le colture, valutare erbe e superficie e fermarsi/segnalare rumore, vibrazione o altro pericolo.",
+      "displayText": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda FJ500-SER è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di 30 m, proteggere le colture, valutare erbe e superficie e fermarsi/segnalare rumore, vibrazione o altro pericolo.",
+      "captionText": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda FJ500-SER è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di 30 m, proteggere le colture, valutare erbe e superficie e fermarsi/segnalare rumore, vibrazione o altro pericolo.",
+      "spokenText": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda effe i lunga cinquecento-esse e erre è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di trenta metri, proteggere le colture, valutare erbe e superficie e fermarsi, segnalare rumore, vibrazione o altro pericolo.",
+      "spokenTextSHA256": "6262957af3282f8475f0ccfdeb7ade8691c10ed4dfced3d122267cbf9efeb838",
+      "spokenTextSha256": "6262957af3282f8475f0ccfdeb7ade8691c10ed4dfced3d122267cbf9efeb838",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda FJ500-SER è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di 30 m, proteggere le colture, valutare erbe e superficie e fermarsi/segnalare rumore, vibrazione o altro pericolo.",
+          "spoken": "Prima di imparare ad avviare, riconosci quando devi fermarti. La Honda effe i lunga cinquecento-esse e erre è un esempio documentato: il formatore deve prima identificare macchina effettiva, accessorio, manuale, idoneità dell’operatore e sito. Nessuna attività sullo schermo autorizza l’avvio.\n\nMettere in ordine ispezione del manuale pertinente, avvio sicuro, lavoro, arresto di emergenza e normale; riconoscere quando non si può avviare, incluso un operatore non idoneo o un bambino.\n\nSe idoneo e con macchina e sito approvati dal formatore, eseguire personalmente il controllo completo, l’avvio e l’arresto secondo il manuale effettivo, con protezioni integre, frizione disinnestata e cambio in folle prima dell’avvio.\n\nSe idoneo e in condizioni sicure, eseguire personalmente un passaggio sorvegliato di trenta metri, proteggere le colture, valutare erbe e superficie e fermarsi, segnalare rumore, vibrazione o altro pericolo.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "283640213e8a37e07c4b3d15e8db439505b9454df5977aadd3308988e8c16c71",
+      "requestFingerprintSha256": "283640213e8a37e07c4b3d15e8db439505b9454df5977aadd3308988e8c16c71",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "f59b0245a11d777da94f77872d3a28f13511fa3e9fc6734dc531cac59af8ad37"
+    },
+    {
+      "id": "S3-14-it-guided-practice-r1",
+      "unitId": "S3-14-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ordina su un disegno di macchina ferma i controlli, l’avvio SER e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.",
+          "sha256": "022a0910d6eacedf7e08836ccb7b68bd39d7ef5816ef10ebedc60d9dd82b508a"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Solo dopo verifica di idoneità, modello/manuale, sito e DPI da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.",
+          "sha256": "8051b6dd232e9f93f5cd623490f51357cb6cf2fa74e1e5cfcd73defeb6372869"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Soltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di 30 m su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.",
+          "sha256": "dc3cf3397daa5102f51d986dedbb167f8fdbc67aa48a5d7189ad3470bd6fcebd"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Una condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.",
+          "sha256": "3ff38ad515f4a44cc5b3a77b5d72c6ef87f2f922eef623e67087bca4f99396e7"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Le decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+          "sha256": "e2e77e2f0cae89c36fb5325102c9c4834e6d0e9f82e0acf189abdbf541cfeb84"
+        }
+      ],
+      "scientificMeaning": "Ordina su un disegno di macchina ferma i controlli, l’avvio SER e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello/manuale, sito e DPI da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di 30 m su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+      "displayText": "Ordina su un disegno di macchina ferma i controlli, l’avvio SER e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello/manuale, sito e DPI da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di 30 m su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+      "captionText": "Ordina su un disegno di macchina ferma i controlli, l’avvio SER e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello/manuale, sito e DPI da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di 30 m su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+      "spokenText": "Ordina su un disegno di macchina ferma i controlli, l’avvio esse e erre e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello, manuale, sito e di pi i da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di trenta metri su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+      "spokenTextSHA256": "2f70eeebb63d7bad2e9bd9ea3f0868e9e54b2b9dffe522b068d8d2686e735598",
+      "spokenTextSha256": "2f70eeebb63d7bad2e9bd9ea3f0868e9e54b2b9dffe522b068d8d2686e735598",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ordina su un disegno di macchina ferma i controlli, l’avvio SER e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello/manuale, sito e DPI da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di 30 m su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+          "spoken": "Ordina su un disegno di macchina ferma i controlli, l’avvio esse e erre e gli arresti normale e d’emergenza. Indica almeno sei divieti di partenza e spiega la frase contraddittoria della fonte.\n\nSolo dopo verifica di idoneità, modello, manuale, sito e di pi i da parte del formatore, esegui individualmente i controlli completi, avvio e arresto. Altrimenti usa modello spento e isolato e segna pratica sospesa.\n\nSoltanto dopo la verifica dell'idoneità, esegui un unico passaggio sorvegliato di trenta metri su una parcella adatta alla macchina e sgombra; interrompi subito in caso di pericolo. Prima di un'ispezione ravvicinata o della rimozione di residui, arresta secondo il manuale pertinente, attendi il completo arresto delle zappe e applica le precauzioni antiavvio. Poi valuta erbe rimosse, suolo e colture, discuti problemi di guida o motore e possibili regolazioni sicure e riferisci al formatore.\n\nUna condizione di sicurezza omessa o non soddisfatta richiede un ripasso mirato; una risposta corretta sullo schermo dimostra soltanto conoscenza.\n\nLe decisioni online e i campi compilati non autorizzano l'avvio né il superamento di un criterio pratico. Il proprietario ha confermato che i partecipanti previsti soddisfano il requisito di età; il formatore deve comunque verificare macchina e manuale effettivi, istruzione ricevuta, sito e prestazione individuale.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e1c0cc4fe4ef1cc2faaebdd5ffed65ff80feeb2058a493e23c3f397c3ffcbc40",
+      "requestFingerprintSha256": "e1c0cc4fe4ef1cc2faaebdd5ffed65ff80feeb2058a493e23c3f397c3ffcbc40",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "f59b0245a11d777da94f77872d3a28f13511fa3e9fc6734dc531cac59af8ad37"
+    },
+    {
+      "id": "S3-14-it-glossary-r1",
+      "unitId": "S3-14-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Controllo prima dell’uso",
+          "sha256": "69ac7f959206febeaa1e55c7324cd7cb3b0f7d2ab41b89029a4bbe433d5e156a"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Verifica della macchina, comandi, oli, organi e sito secondo il manuale pertinente.",
+          "sha256": "f0fdf9839a3485ceaca53fc137aab74b77e0324ece2dc20338194807f4b62957"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Folle",
+          "sha256": "b923a19453e3eb551eafb1552cfdeb85db88661d7629028090387f46db7e9040"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Cambio senza marcia avanti o retromarcia selezionata all’avvio.",
+          "sha256": "f719d43b782c958025b3a44e82ce442a29ffc68dfe6402828f463886e4daa798"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Frizione disinnestata",
+          "sha256": "a36431bc45cd75283eee3188096910906fc62956695357683d74f56649cbc642"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Trasmissione di potenza scollegata come prescrive il manuale di esempio prima dell’avvio.",
+          "sha256": "4be7f2ec353117c67f389a7464d8a156bbe7d69f29dd0b2a1a41e3277c17e584"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Isolamento antiavvio",
+          "sha256": "44cceffb342d7adb525aca7fb1bede912caec588bd4ff5d4251d7ba5f583fd4e"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Misure del costruttore per impedire un avvio durante ispezione o pulizia.",
+          "sha256": "ae4afc948c420bc575e1372feb223aa073abea4c13178c6cfc7980069e4c276a"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Arresto di emergenza",
+          "sha256": "68d1c017306b83b756a045ed8171d231db2125d4228e77bb619d138d3a6dd6dc"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Azione immediata prescritta per fermare il motore davanti a un pericolo; distinta dall’arresto normale.",
+          "sha256": "7671aed192b56a8e21208a527d431a1d240835eae2166106400bb3687293f55d"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Operatore idoneo",
+          "sha256": "3cf0dd20594f1639652610730c2ef12ad312a2bf9378a4ce2870e9e02b6959ed"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Persona autorizzata da manuale e norme, formata e osservata; il quiz non conferisce idoneità.",
+          "sha256": "cb080dc2be6435740243cbf1e25109f7f907f415535492034187e4995d6a2702"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Monossido di carbonio",
+          "sha256": "8d49e3f18e541a4d3bbcb274c14d4fe1cb17c607e2514794cdb0fdbef1a8c380"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Gas tossico, incolore e inodore presente nello scarico del motore; può accumularsi pericolosamente in spazi chiusi o parzialmente chiusi.",
+          "sha256": "fd4c896b4565fc5768658a5cf350c7e0bfe40c572e425303475616f7a4cceb1b"
+        }
+      ],
+      "scientificMeaning": "Controllo prima dell’uso\n\nVerifica della macchina, comandi, oli, organi e sito secondo il manuale pertinente.\n\nFolle\n\nCambio senza marcia avanti o retromarcia selezionata all’avvio.\n\nFrizione disinnestata\n\nTrasmissione di potenza scollegata come prescrive il manuale di esempio prima dell’avvio.\n\nIsolamento antiavvio\n\nMisure del costruttore per impedire un avvio durante ispezione o pulizia.\n\nArresto di emergenza\n\nAzione immediata prescritta per fermare il motore davanti a un pericolo; distinta dall’arresto normale.\n\nOperatore idoneo\n\nPersona autorizzata da manuale e norme, formata e osservata; il quiz non conferisce idoneità.\n\nMonossido di carbonio\n\nGas tossico, incolore e inodore presente nello scarico del motore; può accumularsi pericolosamente in spazi chiusi o parzialmente chiusi.",
+      "displayText": "Controllo prima dell’uso\n\nVerifica della macchina, comandi, oli, organi e sito secondo il manuale pertinente.\n\nFolle\n\nCambio senza marcia avanti o retromarcia selezionata all’avvio.\n\nFrizione disinnestata\n\nTrasmissione di potenza scollegata come prescrive il manuale di esempio prima dell’avvio.\n\nIsolamento antiavvio\n\nMisure del costruttore per impedire un avvio durante ispezione o pulizia.\n\nArresto di emergenza\n\nAzione immediata prescritta per fermare il motore davanti a un pericolo; distinta dall’arresto normale.\n\nOperatore idoneo\n\nPersona autorizzata da manuale e norme, formata e osservata; il quiz non conferisce idoneità.\n\nMonossido di carbonio\n\nGas tossico, incolore e inodore presente nello scarico del motore; può accumularsi pericolosamente in spazi chiusi o parzialmente chiusi.",
+      "captionText": "Controllo prima dell’uso\n\nVerifica della macchina, comandi, oli, organi e sito secondo il manuale pertinente.\n\nFolle\n\nCambio senza marcia avanti o retromarcia selezionata all’avvio.\n\nFrizione disinnestata\n\nTrasmissione di potenza scollegata come prescrive il manuale di esempio prima dell’avvio.\n\nIsolamento antiavvio\n\nMisure del costruttore per impedire un avvio durante ispezione o pulizia.\n\nArresto di emergenza\n\nAzione immediata prescritta per fermare il motore davanti a un pericolo; distinta dall’arresto normale.\n\nOperatore idoneo\n\nPersona autorizzata da manuale e norme, formata e osservata; il quiz non conferisce idoneità.\n\nMonossido di carbonio\n\nGas tossico, incolore e inodore presente nello scarico del motore; può accumularsi pericolosamente in spazi chiusi o parzialmente chiusi.",
+      "spokenText": "Controllo prima dell’uso\n\nVerifica della macchina, comandi, oli, organi e sito secondo il manuale pertinente.\n\nFolle\n\nCambio senza marcia avanti o retromarcia selezionata all’avvio.\n\nFrizione disinnestata\n\nTrasmissione di potenza scollegata come prescrive il manuale di esempio prima dell’avvio.\n\nIsolamento antiavvio\n\nMisure del costruttore per impedire un avvio durante ispezione o pulizia.\n\nArresto di emergenza\n\nAzione immediata prescritta per fermare il motore davanti a un pericolo; distinta dall’arresto normale.\n\nOperatore idoneo\n\nPersona autorizzata da manuale e norme, formata e osservata; il quiz non conferisce idoneità.\n\nMonossido di carbonio\n\nGas tossico, incolore e inodore presente nello scarico del motore; può accumularsi pericolosamente in spazi chiusi o parzialmente chiusi.",
+      "spokenTextSHA256": "0f2b71d0682977a775b05bfc73055a2d1a480abdbbee76d6df1f8ba3c3650550",
+      "spokenTextSha256": "0f2b71d0682977a775b05bfc73055a2d1a480abdbbee76d6df1f8ba3c3650550",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "83946364de7a57ebd4866e31b54e2de430d495a7878021c0fd44577c255457fd",
+      "requestFingerprintSha256": "83946364de7a57ebd4866e31b54e2de430d495a7878021c0fd44577c255457fd",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "f59b0245a11d777da94f77872d3a28f13511fa3e9fc6734dc531cac59af8ad37"
+    },
+    {
+      "id": "S3-14-de-opening-r1",
+      "unitId": "S3-14-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c80467b9af1571807868c4bf1255d42148be3bee5b711a52a1e9d7e49b3b2a",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda FJ500-SER dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.",
+          "sha256": "98183984848e9a2c888e79f5519d493b6b197ba5aeaa6f07175991f40b41209b"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Prüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.",
+          "sha256": "e1db2fd538038ce3914f8452357bf4c2c238a302ea781669990821d584bcf766"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Wenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.",
+          "sha256": "a853a92bf02da8c5357eeff3594c1b14a9f3e6d50fa14acb6f1ae1cbf58860b2"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Wenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte 30-m-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+          "sha256": "ac7ff6e4ea9f0fb4ebf216e2618d2904e6c04d8c32ce5e3b40f4187860dc3b29"
+        }
+      ],
+      "scientificMeaning": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda FJ500-SER dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte 30-m-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+      "displayText": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda FJ500-SER dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte 30-m-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+      "captionText": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda FJ500-SER dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte 30-m-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+      "spokenText": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda Ef Jot fünfhundert-Es E Er dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte dreißig-Meter-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+      "spokenTextSHA256": "d5d292881d36e226df8b83b093e926d0018e35f7f93673e5887588933d3229f7",
+      "spokenTextSha256": "d5d292881d36e226df8b83b093e926d0018e35f7f93673e5887588933d3229f7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda FJ500-SER dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte 30-m-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+          "spoken": "Bevor du das Starten lernst, erkenne, wann du die Arbeit abbrechen musst. Die Honda Ef Jot fünfhundert-Es E Er dient als belegtes Beispiel. Vor motorisierter Praxis muss die Lehrkraft das tatsächliche Gerät, Anbaugerät, seine Anleitung, die Eignung jeder Person und den Ort prüfen. Keine Bildschirmaktivität erteilt eine Startfreigabe.\n\nPrüfung nach passender Anleitung, sicheren Start, Betrieb sowie Not- und Normalstopp in Reihenfolge bringen und Startverbote einschließlich ungeeigneter oder kindlicher Bedienung erkennen.\n\nWenn Person, tatsächliches Gerät und Ort von der Lehrkraft freigegeben sind, Vorprüfung, Start und Stopp einzeln nach Geräteanleitung vorführen: Schutzvorrichtungen intakt, Kupplung gelöst und Schaltung vor Start im Leerlauf.\n\nWenn alle Voraussetzungen erfüllt sind, eine beaufsichtigte dreißig-Meter-Fahrt selbst durchführen, Kulturpflanzen schützen, Unkraut- und Bodenbild bewerten und bei Gefahr, ungewöhnlichem Geräusch oder Vibration stoppen und melden.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4373f4dad9eb532be16cdaf7a5c78dfcb933c1b6514909f0dfbcf2a8642fa882",
+      "requestFingerprintSha256": "4373f4dad9eb532be16cdaf7a5c78dfcb933c1b6514909f0dfbcf2a8642fa882",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "46001d1ddbf4428f87213c1cfd82329303b66c3be1065bf1b66346391eb0a62f"
+    },
+    {
+      "id": "S3-14-de-guided-practice-r1",
+      "unitId": "S3-14-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c80467b9af1571807868c4bf1255d42148be3bee5b711a52a1e9d7e49b3b2a",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, SER-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.",
+          "sha256": "30c78eb59f1f069abc7ccc71342798cb2380b4cb011777531955395d0314eef8"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Erst nach Prüfung von Eignung, Modell/Anleitung, Ort und PSA durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.",
+          "sha256": "826c30d6780b8f4a1c796739742a3887eb3e26bb4ac6b4e0f1738716d3f4266f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Nur nach bestätigter Eignung eine beaufsichtigte 30-m-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.",
+          "sha256": "512c8618589c274a9446c39ec9a8cda486811ddd9d011634fd70e3e6a8342ccb"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Unsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.",
+          "sha256": "b7ec2622b827800759eb058f64361e092c38c88503333ddd4e04bf72b751e437"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Online-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+          "sha256": "89dada0fb2c1051abe270a75d860541a8ad361f7b591424eb81ee20d10cadcc1"
+        }
+      ],
+      "scientificMeaning": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, SER-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell/Anleitung, Ort und PSA durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte 30-m-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+      "displayText": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, SER-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell/Anleitung, Ort und PSA durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte 30-m-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+      "captionText": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, SER-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell/Anleitung, Ort und PSA durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte 30-m-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+      "spokenText": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, Es E Er-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell, Anleitung, Ort und Pe Es A durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte dreißig-Meter-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+      "spokenTextSHA256": "1a88b96393c12db63f9541337ab0af99628de571b6a2d7d1efb74d2730843fea",
+      "spokenTextSha256": "1a88b96393c12db63f9541337ab0af99628de571b6a2d7d1efb74d2730843fea",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, SER-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell/Anleitung, Ort und PSA durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte 30-m-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+          "spoken": "Auf einem Schema einer stillgesetzten Maschine Vorprüfung, Es E Er-Start, Not- und Normalstopp ordnen. Mindestens sechs Startverbote markieren und den widersprüchlichen Motorsatz erläutern.\n\nErst nach Prüfung von Eignung, Modell, Anleitung, Ort und Pe Es A durch die Lehrkraft persönlich vollständige Vorprüfung, Start und Stopp ausführen; sonst isoliertes stilles Modell nutzen und Praxis offen lassen.\n\nNur nach bestätigter Eignung eine beaufsichtigte dreißig-Meter-Fahrt auf einer zum Gerät passenden, geräumten Fläche durchführen; bei Gefahr sofort abbrechen. Vor genauer Prüfung oder Entfernen von Rückständen nach passender Anleitung stoppen, vollständigen Messerstillstand abwarten und gegen unbeabsichtigten Start sichern. Danach Unkrautentfernung, Boden und Kultur beurteilen, Lenk- oder Motorprobleme und mögliche sichere Anpassungen besprechen und der Lehrkraft berichten.\n\nUnsichere oder ausgelassene Bedingung führt zur gezielten Wiederholung; Bildschirmerfolg belegt nur Wissen.\n\nOnline-Entscheidungen und ausgefüllte Felder erteilen keine Startfreigabe und erfüllen kein praktisches Kriterium. Der Eigentümer hat bestätigt, dass die vorgesehenen Teilnehmenden die Altersbedingung erfüllen; die Lehrkraft prüft weiterhin tatsächliches Gerät und Anleitung, Unterweisung, Ort und jede individuelle Leistung.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d2ff245ac35404e474800b9f07ef15b164fecdc68b56a1d50508cbce4bd5e4e7",
+      "requestFingerprintSha256": "d2ff245ac35404e474800b9f07ef15b164fecdc68b56a1d50508cbce4bd5e4e7",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "46001d1ddbf4428f87213c1cfd82329303b66c3be1065bf1b66346391eb0a62f"
+    },
+    {
+      "id": "S3-14-de-glossary-r1",
+      "unitId": "S3-14-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c80467b9af1571807868c4bf1255d42148be3bee5b711a52a1e9d7e49b3b2a",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Vorprüfung",
+          "sha256": "8a0e55c46ccaeff77661a575d8afc386f86a61f88efc2a24d592d176ef9d651b"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Kontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.",
+          "sha256": "03be130e8cfb749b680556ae07d8c5d858e9ec64913c1e5b8301839a459b3db8"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Neutralstellung (Getriebeleerlauf)",
+          "sha256": "05ea38268158c787e7836a6d2e1bf99c5f98933f548e597e780cc043036d23ca"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Keine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.",
+          "sha256": "2f7d56261192d54d95126de263ca974c5083936953a3fe55681f7b726164f432"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Gelöste Kupplung",
+          "sha256": "41b13daa88204b1d033482e13ddacc1ebe7182ac680ad8597207a3ac330fa8e4"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Kraftübertragung vor Start nach Beispielanleitung getrennt.",
+          "sha256": "74969e3ffcf5a3757cd76200e266ee9e5091d09b4fcd3c29d7c6ac1ae49ed49a"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Sicherung gegen Start",
+          "sha256": "dad6d94eb9149524a34d21a33ce0d3ae2f5b3c5e911cd3d7fd14c044a09e0ea5"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Herstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung/Reinigung.",
+          "sha256": "dd6df2c56195adfbab32d592f250de11d6fd3f319b4991e849cdde87b7b78940"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Notstopp",
+          "sha256": "09dc06d5c371578f848355f4dd24b814de834e2694da1fea69c7226310eda291"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Unmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.",
+          "sha256": "5ff561817c9ee77451d3e534676ecabab0c0f43127f974959f25d180d2b1a570"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Geeignete Bedienperson",
+          "sha256": "ab3a7cfe697d1d5d79ddbddbf216324e2ee4e36dc9a2cb24959207b01a759542"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Nach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.",
+          "sha256": "d21cac456e4bf10f2ba5affd5036ddf4c5b7e7228b62dcde67b317209015818c"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Kohlenmonoxid",
+          "sha256": "98a66cdccacc3272201d956d2b3095803200f240150e476734dbfb7cab8aaad8"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Giftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+          "sha256": "8302020acac34e7df4fa8aaad8403149930742215615834ae524d95181d9733c"
+        }
+      ],
+      "scientificMeaning": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung/Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+      "displayText": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung/Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+      "captionText": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung/Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+      "spokenText": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung, Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+      "spokenTextSHA256": "debf1c4167b1b41cb5291ade7f5f0700ea37880a514618fd251b248106afefbb",
+      "spokenTextSha256": "debf1c4167b1b41cb5291ade7f5f0700ea37880a514618fd251b248106afefbb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung/Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+          "spoken": "Vorprüfung\n\nKontrolle von Maschine, Steuerung, Öl, Arbeitsteilen und Ort nach passender Herstelleranleitung.\n\nNeutralstellung (Getriebeleerlauf)\n\nKeine Vorwärts- oder Rückwärtsstufe beim Motorstart gewählt.\n\nGelöste Kupplung\n\nKraftübertragung vor Start nach Beispielanleitung getrennt.\n\nSicherung gegen Start\n\nHerstellermaßnahmen gegen unerwarteten Motor- oder Messeranlauf bei Prüfung, Reinigung.\n\nNotstopp\n\nUnmittelbare Herstellerhandlung zum Abstellen bei Gefahr, anders als normaler Stopp.\n\nGeeignete Bedienperson\n\nNach Anleitung und Regeln erlaubte, unterwiesene und beobachtete Person; ein Quiz verleiht keine Eignung.\n\nKohlenmonoxid\n\nGiftiges, farb- und geruchloses Gas im Motorabgas; es kann sich in geschlossenen oder teilweise geschlossenen Räumen gefährlich ansammeln.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "686c856299041dfd397a1138d119d5cc6569b12ffb2d1e92aa0896f4bd7a115c",
+      "requestFingerprintSha256": "686c856299041dfd397a1138d119d5cc6569b12ffb2d1e92aa0896f4bd7a115c",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "46001d1ddbf4428f87213c1cfd82329303b66c3be1065bf1b66346391eb0a62f"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 3,
+    "asr": 3,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-14-ar-EG-opening-r1",
+      "S3-14-ar-EG-guided-practice-r1",
+      "S3-14-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-14-en-opening-r1",
+      "S3-14-en-guided-practice-r1",
+      "S3-14-en-glossary-r1"
+    ],
+    "it": [
+      "S3-14-it-opening-r1",
+      "S3-14-it-guided-practice-r1",
+      "S3-14-it-glossary-r1"
+    ],
+    "de": [
+      "S3-14-de-opening-r1",
+      "S3-14-de-guided-practice-r1",
+      "S3-14-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-candidate-record-closure-repair-job-r1\\request.json",
+      "sha256": "a3e56e37875bfed27648c2280d0e24aa04059334fd21859f729b6a8692ad5e68"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-r06-closure-repair-job-r1\\request.json",
+      "sha256": "f605213d21621e400e1088aed2df7386a53e0ba0b1766814f3cddb8494c5d23f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-10-it-opening-closure-repair-job-r1\\request.json",
+      "sha256": "0f8ab7afd344a648fce030a9a01a86b5599dc1119c0b36650c94ff5e38782e8d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-01-it-nutrition-lexical-r2-job-r1\\request.json",
+      "sha256": "a45eb036d48398878a4b8f0d5260ac8b4b1a16bcb4540265c7d1a47cd0a6bc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-de-r04-lexical-r2-job-r1\\request.json",
+      "sha256": "f79bc519052ad3fc2d097f1f94e04ca1ee796d49a27b2017416c5c0442f322e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-en-r03-lexical-r2-job-r1\\request.json",
+      "sha256": "5f98929250f32aad0cc26febaeeff77a9cc66a503474201b9f470fdb11459cca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical4-s3-10-it-r07-expanded-repair-job-r1\\request.json",
+      "sha256": "de3b48c1d82482893cee3438a119ebb4788767fdf07cc4c68d6145e3d3c41e54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-de-second-sentence-job-r1\\request.json",
+      "sha256": "fe6d8c4bbe8b993e037b774eeabc767e3d5b641dc1a9c653283dd134c1651c15"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-ar-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "22eba5bfcc27354feccf3a14381e30f9e36b5af235e67f054904b1e614155fe1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-de-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "dfb0ec4d6581b6aee483b24bcf5d3c1b8a2eafd59c75b2f4aca7bb40b676f53f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-en-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "5d08fa0c2a4bc7f978d596d28690c54abe781b8a799193d7037cf37c9cf208a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "fa082acaf0c62a0d1bfaced90ecc9f7bf224695aa85de4f9f78e66c6d5aae7df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s311-neun-s3-11-de-r07-neun-repair-job-r1\\request.json",
+      "sha256": "114901f6509835e9a1698fbc2c5bd7d468e57d085bf94ebd4b71290074f8f5c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-11-it-r06-source-repair-job-r1\\request.json",
+      "sha256": "917c257d285d1a7e021df7bbcd5120f0f17ec1c17e8c2b2a65958d3b9f269af7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-12-de-r06-source-repair-job-r1\\request.json",
+      "sha256": "094827d9ffbf46fe78d3ec157861c8943600f4d5a30be73a1eff7c97ef85286c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r02-source-repair-job-r1\\request.json",
+      "sha256": "ff77099939f9aeb4e1a5a99670296c51917b56d2d71e2d824097f7d7e61daf7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r04-source-repair-job-r1\\request.json",
+      "sha256": "ab3102d19bb361f8bd29eb3767f7077118fd7e4137be66e00af90253ed93ec11"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r07-source-repair-job-r1\\request.json",
+      "sha256": "74610a88dbda63921c30a34b032121d3a9314a1ba22828404e9c101a4682bcd5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r2\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r3\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "a6f9bba236cdd1797fb64537c82d77d8fd61fcd5d34e390560ba58713b9fbf29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-gated-job-r1\\request.json",
+      "sha256": "9116f963721c807bcb22b086ceb9629fdc1f28cf15b9ba4f00359304c234904f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-gated-job-r1\\request.json",
+      "sha256": "c82e9b6ddea157c21a010e37be0ab2d6a2933e80ecd83354263f8b7968812045"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-gated-job-r1\\request.json",
+      "sha256": "c9d616b9dae9d7c01cecc1b48e652b3f2d5683059b9779c7f413921661a7ae65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-gated-job-r1\\request.json",
+      "sha256": "95255e891d93bdea54e9416e41e9f0d4f9f014f66768fd704b249e573b68fcf9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-gated-job-r1\\request.json",
+      "sha256": "b0458c83904316f55b941698f8e89dccc538ff0a3e9d938d620ad137773342aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-independent-job-r1\\request.json",
+      "sha256": "a443eee33191f213b2c0404155c4f54b5d4387d62cebe93fbefde784e59cc0a9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-reading-job-r1\\request.json",
+      "sha256": "b3063d5cf960b6dac5aae290314893823f11f0ed57ca34bdbada7de39275a649"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-independent-job-r1\\request.json",
+      "sha256": "a8e8f1ecb06992e78730c174fcbd53cd4af1111d98d09c0e0945e7594ce30675"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-reading-job-r1\\request.json",
+      "sha256": "c7b05806b2dff56c529949e8d1d663b587f3a0d68297f9836774624a610163d8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-de-recovery-job-r1\\request.json",
+      "sha256": "8a33c9d71852d036ba8671480867c96ecde2f6669e549c110b2fa15b344d99fc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-independent-job-r1\\request.json",
+      "sha256": "843cb802e7a64c1e9a7903d94d655844a22197449ddc0a2d4fd61fd35c393dc1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-reading-job-r1\\request.json",
+      "sha256": "8f17ceb195b70f4a30799d371bd212d534401532d5c6791d68467522542391a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s313-reading-job-r1\\request.json",
+      "sha256": "bff5d424a4502b7996495794c7e500b8bef418bbc83b547d8a598dd1d5c1d4a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r1\\request.json",
+      "sha256": "cc5821b84eaa06884426033ff2698130523d5a1ad4282ddf6f18338c707444df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r2\\request.json",
+      "sha256": "9544949e628fe4b1d0ba188e14761e98e3114447d4a32f9ede67a8a9b386dbba"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r1\\request.json",
+      "sha256": "949c35e95ec0f57eaf57366f24a528ea9d1558182f682f5aa8112d541e919f94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r2\\request.json",
+      "sha256": "7f4c8d2be10dd5e3f7b8b85797d448e4a4731c7eab089b1bb30e4ff912af2e8e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s316-reading-job-r1\\request.json",
+      "sha256": "bd21152d411fab7d837fe8be80a8b6b6199fd07be84ba750237ced4b704efdfb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s317-reading-job-r1\\request.json",
+      "sha256": "10ba76dbb5ab98e02403aaa2b9fde51a1a399ce513aaa3496eca4fcb31052023"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
