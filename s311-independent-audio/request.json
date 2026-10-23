@@ -1,0 +1,2200 @@
+{
+  "schemaVersion": 1,
+  "scope": "S311_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-11",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s311-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-11-ar-EG-opening-r1",
+      "unitId": "S3-11-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.",
+          "sha256": "8de4384b1b67801590dfe08ff2bec87f42d87b86587bab57c8dda1ed4e2a7ac8"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "لعميل يريد جزرًا في طين مدكوك، قارن مسار تحسين مبنيًا على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.",
+          "sha256": "aaba9600a3406f97260d6d5d5cd09459e5b0649c64e5afa23bb94d819cd1e978"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "اكتب خطة ثلاث مراحل خلال ٣–٦ شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.",
+          "sha256": "0bed48d99179ab4b333cec522043aaa73231c6d3e6df4fb022cf69d813e14893"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "برّر استخدامًا أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+          "sha256": "3f70696975bae1c9a1c6d8dc27a823da1d5bd6a8cbbd00f807efcb034ef2cd12"
+        }
+      ],
+      "scientificMeaning": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل يريد جزرًا في طين مدكوك، قارن مسار تحسين مبنيًا على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال ٣–٦ شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدامًا أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+      "displayText": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل يريد جزرًا في طين مدكوك، قارن مسار تحسين مبنيًا على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال ٣–٦ شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدامًا أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+      "captionText": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل يريد جزرًا في طين مدكوك، قارن مسار تحسين مبنيًا على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال ٣–٦ شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدامًا أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+      "spokenText": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل عايز يزرع جزر في طين مدكوك، قارن مسار تحسين مبني على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال تلاتة إلى ستة شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدام أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+      "spokenTextSHA256": "aeda090a2cb13c3fac979225276af23a5dcde6c23f249c2bfda07b39141afd3b",
+      "spokenTextSha256": "aeda090a2cb13c3fac979225276af23a5dcde6c23f249c2bfda07b39141afd3b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل يريد جزرًا في طين مدكوك، قارن مسار تحسين مبنيًا على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال ٣–٦ شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدامًا أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+          "spoken": "أولًا شخّص اللي بيحد الجذور وحركة الماء. بعدين قارن بين إدارة التربة ومحصول بديل واستخدام مختلف للأرض. أي علاج احتمال مش وصفة تنطبق على كل حقل.\n\nلعميل عايز يزرع جزر في طين مدكوك، قارن مسار تحسين مبني على دليل بمسار محصول بديل منفصل بعد فحص عمق الدمك والصرف وبلل التربة.\n\nاكتب خطة ثلاث مراحل خلال تلاتة إلى ستة شهور لممر آلات مدكوك وقليل المادة العضوية، وقارن الكمبوست بالسماد المعدني في سرعة إمداد العناصر وأثرهما الأطول على التربة، من غير ضمان الإصلاح.\n\nبرّر استخدام أقل تعرية لمنحدر صخري تربته ضحلة، واشرح إمتى قلة الحرث وبقاء المخلفات على السطح ممكن يساعدوا وحدودهم حسب الموقع.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "365676dcb16669c95472ddb6f5520cc6e32bcc8fb84a389ec6c37e42109f742f",
+      "requestFingerprintSha256": "365676dcb16669c95472ddb6f5520cc6e32bcc8fb84a389ec6c37e42109f742f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "6e96e96cc74e367604478ad2b9b9ff9eb43e7241c73bdf82f2bd85a773402e40"
+    },
+    {
+      "id": "S3-11-ar-EG-guided-practice-r1",
+      "unitId": "S3-11-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "استخدم ترتيب النشاط الأصلي ٥/١٥/١٥/١٠ دقائق مع S3-10 للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض ١٠ × ١٠ قدم بأسعار وافتراضات واضحة.",
+          "sha256": "b061709373a81fa9914eac3b3a1566eccf51d86019efdf8908ecef2be6557cfd"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "لممر الآلات قليل OM في البنك، اكتب فحصًا وتدخلًا مشروطًا وإعادة فحص خلال ٣–٦ شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.",
+          "sha256": "28ad5ebf0c24e69b21d8ea530dcc0e00617e8f79a8bccf069d511e33ba6599bf"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "رتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح ما الذي تفعله المخلفات والزراعة من غير حرث وما لا تفعله.",
+          "sha256": "62afadf033cf59e27ec6747de1eb73403f8864f2d34ee95e7ecf066c69a9f5c2"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "قيّم الأسباب والفحوص لا التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.",
+          "sha256": "66770983299e9861d55a088fb6832c376404fdf04bcdaea3fed375d29d32b125"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "الخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+          "sha256": "eaca98f138c9cf413111b86ae73e25215b402cc83325b150bdbfe931bb89a38a"
+        }
+      ],
+      "scientificMeaning": "استخدم ترتيب النشاط الأصلي ٥/١٥/١٥/١٠ دقائق مع S3-10 للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض ١٠ × ١٠ قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل OM في البنك، اكتب فحصًا وتدخلًا مشروطًا وإعادة فحص خلال ٣–٦ شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح ما الذي تفعله المخلفات والزراعة من غير حرث وما لا تفعله.\n\nقيّم الأسباب والفحوص لا التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+      "displayText": "استخدم ترتيب النشاط الأصلي ٥/١٥/١٥/١٠ دقائق مع S3-10 للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض ١٠ × ١٠ قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل OM في البنك، اكتب فحصًا وتدخلًا مشروطًا وإعادة فحص خلال ٣–٦ شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح ما الذي تفعله المخلفات والزراعة من غير حرث وما لا تفعله.\n\nقيّم الأسباب والفحوص لا التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+      "captionText": "استخدم ترتيب النشاط الأصلي ٥/١٥/١٥/١٠ دقائق مع S3-10 للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض ١٠ × ١٠ قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل OM في البنك، اكتب فحصًا وتدخلًا مشروطًا وإعادة فحص خلال ٣–٦ شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح ما الذي تفعله المخلفات والزراعة من غير حرث وما لا تفعله.\n\nقيّم الأسباب والفحوص لا التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+      "spokenText": "استخدم ترتيب النشاط الأصلي خمسة، خمستاشر، خمستاشر، عشر دقايق مع الخطوة إس تلاتة عشرة للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض عشرة مضروب في عشرة قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل المادة العضوية في البنك، اكتب فحص وتدخل مشروط وإعادة فحص خلال تلاتة إلى ستة شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح إيه اللي بتعمله المخلفات والزراعة من غير حرث وإيه اللي ما بتعملوش.\n\nقيّم الأسباب والفحوص مش التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+      "spokenTextSHA256": "9f0d3479290eb09dc8750382584b41b7c8d83703eca83ab929c174ebfd085901",
+      "spokenTextSha256": "9f0d3479290eb09dc8750382584b41b7c8d83703eca83ab929c174ebfd085901",
+      "spokenAdaptationChanges": [
+        {
+          "written": "استخدم ترتيب النشاط الأصلي ٥/١٥/١٥/١٠ دقائق مع S3-10 للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض ١٠ × ١٠ قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل OM في البنك، اكتب فحصًا وتدخلًا مشروطًا وإعادة فحص خلال ٣–٦ شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح ما الذي تفعله المخلفات والزراعة من غير حرث وما لا تفعله.\n\nقيّم الأسباب والفحوص لا التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+          "spoken": "استخدم ترتيب النشاط الأصلي خمسة، خمستاشر، خمستاشر، عشر دقايق مع الخطوة إس تلاتة عشرة للعينات والمحاصيل. لعميل الجزر، اكتب مسار لتحسين التربة بشروط، ومسار تاني لاختيار محصول مختلف فعلًا، واشرح واحد لزميل. جاوب سؤال الخروج الخاص بالتربة الرملية بشكل منفصل: محصول واحد وإجراء واحد. اختياريًا اعمل ميزانية تعليمية لحوض عشرة مضروب في عشرة قدم بأسعار وافتراضات واضحة.\n\nلممر الآلات قليل المادة العضوية في البنك، اكتب فحص وتدخل مشروط وإعادة فحص خلال تلاتة إلى ستة شهور؛ قارن الكمبوست والسماد المعدني في العناصر السريعة وأثر التربة الأطول.\n\nرتّب اختيارات البنك الأربعة لاستخدام المنحدر الصخري الضحل، وعلل الخيار الأقل تعرية واشرح إيه اللي بتعمله المخلفات والزراعة من غير حرث وإيه اللي ما بتعملوش.\n\nقيّم الأسباب والفحوص مش التشابه مع اسم محصول النموذج أو جرعة كمبوست اعتباطية.\n\nالخطوة دي بتقيّم المعرفة والتفكير. حفظ خطة أو عرض نموذج على الشاشة مش دليل على تعافي الحقل، ولا توقيع مدرّب، ولا ضمان لمحصول، ولا اجتياز لمهارة عملية.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "967db59cad3b5b8ba5b7eaa55d682ac3085673b7278119d37c26de4c5416ca92",
+      "requestFingerprintSha256": "967db59cad3b5b8ba5b7eaa55d682ac3085673b7278119d37c26de4c5416ca92",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "6e96e96cc74e367604478ad2b9b9ff9eb43e7241c73bdf82f2bd85a773402e40"
+    },
+    {
+      "id": "S3-11-ar-EG-reflection-r1",
+      "unitId": "S3-11-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أقدر أختار محاصيل بديلة أو طرق لإدارة الأرض لما ظروف التربة تكون ضعيفة، وأشرح حدود كل اختيار.",
+          "sha256": "1c3091528eacdfa1fef58200713565ade9dc47ba6f6ff617eaf3c9ee04831269"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "التقييم الذاتي منفصل عن تقييم التفكير وعن أي ملاحظة حقلية. سيب السجلات الفعلية فاضية لحد الشغل الحقيقي.",
+          "sha256": "c6f89cc2ed30c88b52eb06cbb212aa93d4249248fc44d0f56249ad1f67a0d15e"
+        }
+      ],
+      "scientificMeaning": "أقدر أختار محاصيل بديلة أو طرق لإدارة الأرض لما ظروف التربة تكون ضعيفة، وأشرح حدود كل اختيار.\n\nالتقييم الذاتي منفصل عن تقييم التفكير وعن أي ملاحظة حقلية. سيب السجلات الفعلية فاضية لحد الشغل الحقيقي.",
+      "displayText": "أقدر أختار محاصيل بديلة أو طرق لإدارة الأرض لما ظروف التربة تكون ضعيفة، وأشرح حدود كل اختيار.\n\nالتقييم الذاتي منفصل عن تقييم التفكير وعن أي ملاحظة حقلية. سيب السجلات الفعلية فاضية لحد الشغل الحقيقي.",
+      "captionText": "أقدر أختار محاصيل بديلة أو طرق لإدارة الأرض لما ظروف التربة تكون ضعيفة، وأشرح حدود كل اختيار.\n\nالتقييم الذاتي منفصل عن تقييم التفكير وعن أي ملاحظة حقلية. سيب السجلات الفعلية فاضية لحد الشغل الحقيقي.",
+      "spokenText": "أقدر أختار محاصيل بديلة أو طرق لإدارة الأرض لما ظروف التربة تكون ضعيفة، وأشرح حدود كل اختيار.\n\nالتقييم الذاتي منفصل عن تقييم التفكير وعن أي ملاحظة حقلية. سيب السجلات الفعلية فاضية لحد الشغل الحقيقي.",
+      "spokenTextSHA256": "db2257c1bc2a846d1e6c44589853d3cc606fbb654bda0d9aed8d478255cdceb6",
+      "spokenTextSha256": "db2257c1bc2a846d1e6c44589853d3cc606fbb654bda0d9aed8d478255cdceb6",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "251d2266996cc0c3f77619280c5e6c29a36bb98413e3601199026885a3da507b",
+      "requestFingerprintSha256": "251d2266996cc0c3f77619280c5e6c29a36bb98413e3601199026885a3da507b",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "6e96e96cc74e367604478ad2b9b9ff9eb43e7241c73bdf82f2bd85a773402e40"
+    },
+    {
+      "id": "S3-11-ar-EG-glossary-r1",
+      "unitId": "S3-11-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "قوام معدني",
+          "sha256": "6ea9f7b7dbd19e64c6bc7b394c0b9d49015ccf3add00d4f4a6a8e8f68ec89205"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "نسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.",
+          "sha256": "847020c2a8e156356a3ecf427839a0d9a65e29011515e190f49e01569ef6e237"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "بناء التربة",
+          "sha256": "09a6c1d218a3cc1b6b166e6b1510c90792bc6e42a7f593651b7e6bae5a734444"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "طريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة قد تغيره والقوام يبقى.",
+          "sha256": "e5b0a8c4ef1a75d8d670ecfe67bab0cb1fdba1fee6660c0035d51345839478c8"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "دمك",
+          "sha256": "a6b840c5bb8c884f1573175dc1823a3b7636c9121edc24ef8a0809a6ab410381"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "تربة كثيفة تعوق الجذور والهواء والماء؛ يلزم تشخيص عمقها وسببها ورطوبتها.",
+          "sha256": "8a6369c5c0b4c7d748ea3c53c895d6f79cd0de6fc5275501755ec51b2899cbdf"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "محسن عضوي",
+          "sha256": "da333378b98df14e83d8c40a80473e150da1aa46d424b50e4cc92b0ae24ad377"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "مادة مثل كمبوست مفحوص قد تضيف OM وعناصر متغيرة، مع فحص معدلها وأملاحها.",
+          "sha256": "83ca66b4ddaa9d62970f46e6db4a702406433493ab4e98b8d6870ac521a3a52d"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "حوض مرتفع",
+          "sha256": "2a12867aa1962c99d94968b20dcf14f919afde36eeafaee971e827025465a1cd"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "منطقة زراعة عالية مصممة تحتاج وسطًا مناسبًا وعمق جذور ومخرج ماء.",
+          "sha256": "0ca7fb83f22b2aa3827989ba1a005e37e27a1883fbea3deb21062d552ee3be37"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "محصول تغطية",
+          "sha256": "e427a5c8061df999918012492e53df1f773f74b4531971240ef795f6180be401"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "محصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.",
+          "sha256": "a63ccac4f8c3fe5dc5ff7a7d3a41ab860e54c9a7272ec887734f80b523cdad2e"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "تثبيت نيتروجين",
+          "sha256": "45911fbf84c1a5b6895b224217d39630b7d361c5434a8df66b7eeb49742e6bfe"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "تحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.",
+          "sha256": "317a5628a3314153755c541a18907c21e346898cbfacc116785ffbb91bdafd5f"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "زراعة من غير حرث (no-till)",
+          "sha256": "6369be779e4b565063bf78ac8260bdea3848d6fed8da78723fbb85c53ca48fcd"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "نظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.",
+          "sha256": "efb2384580faf902c7c8ba3bda061cc348d98b097e997e5074710601abfa572e"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "صودية",
+          "sha256": "8a979e6237c656f39b0ad288717b500ed59461a897bd2e04580ee18391adf827"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "زيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+          "sha256": "f5d239e0444ad8d4f947ecf47d358fbc511b16f047d3da04e931071eda772049"
+        }
+      ],
+      "scientificMeaning": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة قد تغيره والقوام يبقى.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ يلزم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص قد تضيف OM وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسطًا مناسبًا وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+      "displayText": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة قد تغيره والقوام يبقى.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ يلزم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص قد تضيف OM وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسطًا مناسبًا وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+      "captionText": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة قد تغيره والقوام يبقى.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ يلزم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص قد تضيف OM وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسطًا مناسبًا وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+      "spokenText": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة ممكن تغيره مع إن القوام يفضل زي ما هو.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ لازم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص ممكن تضيف المادة العضوية وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسط مناسب وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+      "spokenTextSHA256": "21db4ca5ea457681013dac3de741ee278c90e8e7c75f2f2ebe2c5b8b718b3dd2",
+      "spokenTextSha256": "21db4ca5ea457681013dac3de741ee278c90e8e7c75f2f2ebe2c5b8b718b3dd2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة قد تغيره والقوام يبقى.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ يلزم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص قد تضيف OM وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسطًا مناسبًا وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+          "spoken": "قوام معدني\n\nنسب الرمل والسلت والطين المعدنية، غير الدمك الحالي أو تركيز العناصر.\n\nبناء التربة\n\nطريقة تجمع الحبيبات وتوزيع المسام؛ الإدارة ممكن تغيره مع إن القوام يفضل زي ما هو.\n\nدمك\n\nتربة كثيفة تعوق الجذور والهواء والماء؛ لازم تشخيص عمقها وسببها ورطوبتها.\n\nمحسن عضوي\n\nمادة مثل كمبوست مفحوص ممكن تضيف المادة العضوية وعناصر متغيرة، مع فحص معدلها وأملاحها.\n\nحوض مرتفع\n\nمنطقة زراعة عالية مصممة تحتاج وسط مناسب وعمق جذور ومخرج ماء.\n\nمحصول تغطية\n\nمحصول يزرع جزئيًا لحماية التربة وتزويدها بمخلفات أو وظائف أخرى خارج المحصول النقدي.\n\nتثبيت نيتروجين\n\nتحويل نيتروجين الجو بواسطة ميكروبات نشطة مناسبة للبقول؛ مش مضمون لكل فاصوليا أو برسيم.\n\nزراعة من غير حرث (no-till)\n\nنظام زراعة من غير حرث، بيقلل اضطراب التربة وغالبًا بيخلّي مخلفات المحصول على السطح، وله فوائد وحدود بتتغير حسب الموقع.\n\nصودية\n\nزيادة صوديوم متبادل قد تفرق حبيبات التربة؛ تشخيصها غير مجرد وجود طين.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ce6257cba3635257ccfef9f7bc055d064b407d2a4378d1d586597dbc3703e6db",
+      "requestFingerprintSha256": "ce6257cba3635257ccfef9f7bc055d064b407d2a4378d1d586597dbc3703e6db",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "6e96e96cc74e367604478ad2b9b9ff9eb43e7241c73bdf82f2bd85a773402e40"
+    },
+    {
+      "id": "S3-11-en-opening-r1",
+      "unitId": "S3-11-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.",
+          "sha256": "f88c0ce71b11f6d0276f0da8c43d454f4a62d4b88335d7d50d5afd3cd4ed9a21"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "For a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.",
+          "sha256": "b584935065c76a7d2df8af9349a13277e90cb130ad1185a3e53fa4ee88bb2acc"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Write a three-stage, 3–6 month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.",
+          "sha256": "03d89190ba67d9d0ef531f479e965a98bea9e3c78805278a9598c4a6233c396b"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Justify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+          "sha256": "c6eda90850992ef916e2501cd8db50fcc11c4bdaaaaa94577db39b8dae4174f8"
+        }
+      ],
+      "scientificMeaning": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, 3–6 month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+      "displayText": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, 3–6 month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+      "captionText": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, 3–6 month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+      "spokenText": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, three to six month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+      "spokenTextSHA256": "3751ed95c909a5bd7ca1be4682c2d5f17e23d6cc0fd95a6729f7e9207b7fc4dc",
+      "spokenTextSha256": "3751ed95c909a5bd7ca1be4682c2d5f17e23d6cc0fd95a6729f7e9207b7fc4dc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, 3–6 month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+          "spoken": "First diagnose what limits roots and water. Then compare soil management, a different crop and a different land use. A treatment is a conditional option, not a universal prescription.\n\nFor a carrot client with compacted clay, compare an evidence-based soil-management path with a separate crop-alternative path after checking compaction depth, drainage and wetness.\n\nWrite a three-stage, three to six month plan for a compacted low-organic-matter machinery path and compare compost with mineral fertilizer in near-term nutrient supply and longer-term soil-health effects without guaranteed recovery.\n\nJustify a lower-erosion use of shallow rocky sloping land, and describe how reduced disturbance and surface residue may help, including their site limits.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b509933f9d18e5b9c9a873cf5730ab9e46b7fcfd20152b315f3450416a5ead6c",
+      "requestFingerprintSha256": "b509933f9d18e5b9c9a873cf5730ab9e46b7fcfd20152b315f3450416a5ead6c",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "f570b8da4a8842c8851005906ae4990e89648fb841ede72d6d5b69a700d31a42"
+    },
+    {
+      "id": "S3-11-en-guided-practice-r1",
+      "unitId": "S3-11-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Use the original 5/15/15/10-minute workshop sequence with S3-10 for sample/crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop/one-action sandy exit ticket separately. Optional educational budget: 10 × 10 foot bed with stated assumptions and prices.",
+          "sha256": "0c5e407659446dab407e9cbfed3a90a7a4b36e9cba14b14eb44bb6cb3b35ada5"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "For the bank's low-OM machinery path, write diagnosis, conditional intervention and recheck phases over 3–6 months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.",
+          "sha256": "1056f9dc0d0cc22df2ad45b3e8097aa3d92d70115a02e4e0f6bff2660e193263"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Rank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue/no-till can and cannot do.",
+          "sha256": "f8f1d51eff96448e27597d918f7ee1894606f036bac1348a954861b4b60aca25"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Judge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.",
+          "sha256": "ace45dd797b4cec49facbe8a2f8643583995039d0a8ddabe5de5ec3f378f4352"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+          "sha256": "d786747fe54790e475ced2b8004a49ea97e7539983d7fadfdaf567e6e1397813"
+        }
+      ],
+      "scientificMeaning": "Use the original 5/15/15/10-minute workshop sequence with S3-10 for sample/crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop/one-action sandy exit ticket separately. Optional educational budget: 10 × 10 foot bed with stated assumptions and prices.\n\nFor the bank's low-OM machinery path, write diagnosis, conditional intervention and recheck phases over 3–6 months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue/no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+      "displayText": "Use the original 5/15/15/10-minute workshop sequence with S3-10 for sample/crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop/one-action sandy exit ticket separately. Optional educational budget: 10 × 10 foot bed with stated assumptions and prices.\n\nFor the bank's low-OM machinery path, write diagnosis, conditional intervention and recheck phases over 3–6 months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue/no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+      "captionText": "Use the original 5/15/15/10-minute workshop sequence with S3-10 for sample/crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop/one-action sandy exit ticket separately. Optional educational budget: 10 × 10 foot bed with stated assumptions and prices.\n\nFor the bank's low-OM machinery path, write diagnosis, conditional intervention and recheck phases over 3–6 months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue/no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+      "spokenText": "Use the original five, fifteen, fifteen, ten-minute workshop sequence with step S three ten for sample, crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop, one-action sandy exit ticket separately. Optional educational budget: ten multiplied by ten foot bed with stated assumptions and prices.\n\nFor the bank's low-organic matter machinery path, write diagnosis, conditional intervention and recheck phases over three to six months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue, no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+      "spokenTextSHA256": "d9ac28f8e7d117c5deb6858a7e8901ae7255822ed25c5d54900754478771433c",
+      "spokenTextSha256": "d9ac28f8e7d117c5deb6858a7e8901ae7255822ed25c5d54900754478771433c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the original 5/15/15/10-minute workshop sequence with S3-10 for sample/crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop/one-action sandy exit ticket separately. Optional educational budget: 10 × 10 foot bed with stated assumptions and prices.\n\nFor the bank's low-OM machinery path, write diagnosis, conditional intervention and recheck phases over 3–6 months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue/no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+          "spoken": "Use the original five, fifteen, fifteen, ten-minute workshop sequence with step S three ten for sample, crop work. For the carrot client, write one conditional soil-management path and one truly different crop choice; explain one to a partner. Complete the one-crop, one-action sandy exit ticket separately. Optional educational budget: ten multiplied by ten foot bed with stated assumptions and prices.\n\nFor the bank's low-organic matter machinery path, write diagnosis, conditional intervention and recheck phases over three to six months; compare compost and mineral fertilizer on near-term nutrients and longer-term soil condition.\n\nRank the four bank land-use options on a shallow rocky hillside, justify the lower-erosion option and explain what residue, no-till can and cannot do.\n\nJudge reasons and diagnostic conditions, not agreement with one model crop or arbitrary compost dose.\n\nThis step assesses knowledge and reasoning. A saved plan or screen model is not a field recovery, trainer signature, crop guarantee or physical-skill pass.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d42c4d9e1c08ca5dcc8dc0ef197abf14b0b08a907ab6e3eb6f53ac0a5a082ec5",
+      "requestFingerprintSha256": "d42c4d9e1c08ca5dcc8dc0ef197abf14b0b08a907ab6e3eb6f53ac0a5a082ec5",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "f570b8da4a8842c8851005906ae4990e89648fb841ede72d6d5b69a700d31a42"
+    },
+    {
+      "id": "S3-11-en-reflection-r1",
+      "unitId": "S3-11-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "I can choose alternative crops or management practices when soil conditions are poor, explaining their limits.",
+          "sha256": "b2f32160fce527f507ee3b0184b2533b7aeecf4d9fcdd8cc8a298b2f825b0915"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-assessment is separate from reasoning assessment and field observation. Leave actual records blank until real work.",
+          "sha256": "2acfab8435fdbc1720075b0ae98ad9ed5e200e43501bc66202b762ec6ad22277"
+        }
+      ],
+      "scientificMeaning": "I can choose alternative crops or management practices when soil conditions are poor, explaining their limits.\n\nSelf-assessment is separate from reasoning assessment and field observation. Leave actual records blank until real work.",
+      "displayText": "I can choose alternative crops or management practices when soil conditions are poor, explaining their limits.\n\nSelf-assessment is separate from reasoning assessment and field observation. Leave actual records blank until real work.",
+      "captionText": "I can choose alternative crops or management practices when soil conditions are poor, explaining their limits.\n\nSelf-assessment is separate from reasoning assessment and field observation. Leave actual records blank until real work.",
+      "spokenText": "I can choose alternative crops or management practices when soil conditions are poor, explaining their limits.\n\nSelf-assessment is separate from reasoning assessment and field observation. Leave actual records blank until real work.",
+      "spokenTextSHA256": "54853ca1af34bed8516d10cd7f6bbdd63546b3461ba4f973a8ddabd65b34c4af",
+      "spokenTextSha256": "54853ca1af34bed8516d10cd7f6bbdd63546b3461ba4f973a8ddabd65b34c4af",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "20a27d5242d75efca6b0afd76a55521f5df2cddc0cde7cc8c16ef35827816ac6",
+      "requestFingerprintSha256": "20a27d5242d75efca6b0afd76a55521f5df2cddc0cde7cc8c16ef35827816ac6",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "f570b8da4a8842c8851005906ae4990e89648fb841ede72d6d5b69a700d31a42"
+    },
+    {
+      "id": "S3-11-en-glossary-r1",
+      "unitId": "S3-11-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "mineral texture",
+          "sha256": "6986f01d71903827285718be1258cc466e1f4027cc6203eb89ad37a2366b8352"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "The relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.",
+          "sha256": "9dae168091b7be5b2cd2cdb2db815c131c72f186e08d16d631d9e609ec3ce540"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "soil structure",
+          "sha256": "2e487987a314d21373636e9dc5b21eb856b86461140b9588e111f8f286623f98"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "How soil particles and pores are arranged into aggregates; can change with management while texture remains.",
+          "sha256": "52996b8ccee937be4710a928a0bee2ff5c112c5d1f7c7f1f9528c083a7b4f7f6"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "compaction",
+          "sha256": "96847128a59a0bfa3bf9526873a325465149ff3e11f00a19d102643e6c37af47"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Dense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.",
+          "sha256": "36e85aa22876048bad6665aa3ce35887c14d5279303d96effc368451110b38f6"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "organic amendment",
+          "sha256": "5a145d03f634823be21c33c849b3067ff7c1ac394b82fccda764584cc22009ed"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "A material such as tested compost that can add organic matter and variable nutrients, with rate and salt/nutrient checks.",
+          "sha256": "72fea370739d490d2ac2b2d57b5e83849ae25afce882b7f0d21774a3b40df204"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "raised bed",
+          "sha256": "be6717f2bee4461bcbbd120ddfa12ae3a710dd4b24ac87bafbfa358f51b8344c"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "An elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.",
+          "sha256": "433013f7473d0519f334b2ade4f658e8dc0da44f19be6c3fab3957764834955a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "cover crop",
+          "sha256": "3337c22f2eaa0588fa7a84069b2839082d06d5aa3dbac0a823b3ff246bd112f8"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "A crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.",
+          "sha256": "29257934b1c52120929079836efe5178fc496604b7b04e816545822b40e82843"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "nitrogen fixation",
+          "sha256": "ce4cc643756c294f8b805a6d1a9036c0375234215842858c6c748f8e735921d6"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Conversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.",
+          "sha256": "c7ecf05fdecb022117224818e4ce3265e2ebd61e75295809edf27089dabbfc31"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "no-till",
+          "sha256": "b5e2d1874c81ad2501071caee063230d0ad203209780d7fb1dc12f9f84e9bf36"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "A low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.",
+          "sha256": "c9e160feeed2fad6b18d74f03960b4420e57a3e52b3c031de8849a00ff332dbe"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "sodicity",
+          "sha256": "006b729dedd49ae057c6346418b352747abad9a5b7476f3dcb63a9ca5ecd7b46"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "Excess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+          "sha256": "bb8949a657a0327bb7041aaf858d3c2ecf8aa8cbe55f7aa450e22e0aafe4b7ba"
+        }
+      ],
+      "scientificMeaning": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt/nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+      "displayText": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt/nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+      "captionText": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt/nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+      "spokenText": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt, nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+      "spokenTextSHA256": "444a5aa095a9ba92db899ff396d08223e1ac8149f4e9c76e5d5d42524c163c35",
+      "spokenTextSha256": "444a5aa095a9ba92db899ff396d08223e1ac8149f4e9c76e5d5d42524c163c35",
+      "spokenAdaptationChanges": [
+        {
+          "written": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt/nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+          "spoken": "mineral texture\n\nThe relative proportions of mineral sand, silt and clay, not current compaction or nutrient concentration.\n\nsoil structure\n\nHow soil particles and pores are arranged into aggregates; can change with management while texture remains.\n\ncompaction\n\nDense soil that restricts roots, air or water movement; its depth, cause and moisture must be diagnosed.\n\norganic amendment\n\nA material such as tested compost that can add organic matter and variable nutrients, with rate and salt, nutrient checks.\n\nraised bed\n\nAn elevated, designed growing zone requiring suitable medium, sufficient root depth and a water exit.\n\ncover crop\n\nA crop grown partly to cover and protect soil or supply residues and other functions outside the cash crop.\n\nnitrogen fixation\n\nConversion of atmospheric nitrogen by compatible active microbes associated with a legume; not guaranteed for every bean or clover stand.\n\nno-till\n\nA low-disturbance planting system often keeping residues on the surface, with context-specific benefits and tradeoffs.\n\nsodicity\n\nExcess exchangeable sodium that can disperse soil; diagnosis differs from simply having clay texture.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bac944e585a511f2352719300353cbc5b264730fb8695e56af43554d1d12fc3d",
+      "requestFingerprintSha256": "bac944e585a511f2352719300353cbc5b264730fb8695e56af43554d1d12fc3d",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "f570b8da4a8842c8851005906ae4990e89648fb841ede72d6d5b69a700d31a42"
+    },
+    {
+      "id": "S3-11-it-opening-r1",
+      "unitId": "S3-11-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05b37520b7de0fd21f31bc997532a7332fee9f619b8e6c2046fb81f8e77a066e",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.",
+          "sha256": "d5aa1893d213eca08a95ba1b7da727693794ca43c44db31306a336cf20537eaf"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Per un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.",
+          "sha256": "9d1e029577312159e2263381a7c3a14548b92500eff3177647351bd4397b1a33"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Prepara tre fasi nell’arco di 3–6 mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.",
+          "sha256": "547481b67f9567295af5fade9b97f2bb978fa6dfcc2663d606006db28b899265"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Giustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+          "sha256": "aa63e9be5b96eed1b1c9dc96ee3bfec8b74909877f0dd3c94630d613e8961d30"
+        }
+      ],
+      "scientificMeaning": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di 3–6 mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+      "displayText": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di 3–6 mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+      "captionText": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di 3–6 mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+      "spokenText": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di tre a sei mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+      "spokenTextSHA256": "d5b93402fc0acd013ff6a832a4913d2eb29c723eb853a940a12ad64f207d78ee",
+      "spokenTextSha256": "d5b93402fc0acd013ff6a832a4913d2eb29c723eb853a940a12ad64f207d78ee",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di 3–6 mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+          "spoken": "Prima diagnostica ciò che limita radici e movimento dell’acqua. Poi confronta gestione del suolo, coltura alternativa e diverso uso del terreno. Ogni intervento è condizionato, non una ricetta universale.\n\nPer un cliente che vuole carote in argilla compattata, confronta una gestione del suolo fondata su prove con una scelta colturale alternativa, dopo controlli di profondità, drenaggio e umidità.\n\nPrepara tre fasi nell’arco di tre a sei mesi per un percorso di macchine compattato e povero di sostanza organica; confronta compost e concime minerale per nutrienti immediati ed effetti più lunghi sul suolo, senza garantire il recupero.\n\nGiustifica un uso meno erosivo di un pendio roccioso con suolo poco profondo; spiega benefici possibili e limiti della ridotta lavorazione e dei residui in superficie.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7d9d864228dc5989f4026e5558ae5233ff18f57611ebc7378e01c678e02d4c7d",
+      "requestFingerprintSha256": "7d9d864228dc5989f4026e5558ae5233ff18f57611ebc7378e01c678e02d4c7d",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "6ff3793a120321268e029e04c3a25f61d777a3c7374b7e5ec4453678062c5c44"
+    },
+    {
+      "id": "S3-11-it-guided-practice-r1",
+      "unitId": "S3-11-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05b37520b7de0fd21f31bc997532a7332fee9f619b8e6c2046fb81f8e77a066e",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Segui 5/15/15/10 minuti con S3-10 per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola 10 × 10 piedi con prezzi e ipotesi dichiarati.",
+          "sha256": "71b58c49cad58145a54cc972bc3e11da1c84703b4ae0ab47d7098709b75f30fc"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Per il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in 3–6 mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.",
+          "sha256": "163d15e39b5c6368ca38145da68485a233021176ba5cae390c15cb0b3e92abba"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Ordina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.",
+          "sha256": "8c0f912cd7334842ebec308b73d2172cfc688a28ad5b6a5f48503d5b4c099b35"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Valuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.",
+          "sha256": "d20a9d27b12f438811868061b6be9e393daf07bbed2a15530e62ec1fa9bab134"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Questo passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+          "sha256": "4ca44aac323376df50489b86dce3a27a65102294d803af56cb24f20127a6554b"
+        }
+      ],
+      "scientificMeaning": "Segui 5/15/15/10 minuti con S3-10 per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola 10 × 10 piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in 3–6 mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+      "displayText": "Segui 5/15/15/10 minuti con S3-10 per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola 10 × 10 piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in 3–6 mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+      "captionText": "Segui 5/15/15/10 minuti con S3-10 per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola 10 × 10 piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in 3–6 mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+      "spokenText": "Segui cinque, quindici, quindici, dieci minuti con passo esse tre dieci per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola dieci moltiplicato per dieci piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in tre a sei mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+      "spokenTextSHA256": "8c1ad5d9e16256b8926c16bd0fc227e278645250b7ab14ab139573b2a3c51280",
+      "spokenTextSha256": "8c1ad5d9e16256b8926c16bd0fc227e278645250b7ab14ab139573b2a3c51280",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Segui 5/15/15/10 minuti con S3-10 per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola 10 × 10 piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in 3–6 mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+          "spoken": "Segui cinque, quindici, quindici, dieci minuti con passo esse tre dieci per campioni e colture. Per le carote scrivi una gestione condizionata e una coltura davvero diversa, poi spiegane una a un compagno. Completa separatamente il biglietto sabbia: una coltura e un’azione. Facoltativo: budget didattico per aiuola dieci moltiplicato per dieci piedi con prezzi e ipotesi dichiarati.\n\nPer il percorso povero di sostanza organica scrivi diagnosi, azione condizionata e nuova verifica in tre a sei mesi; confronta compost e concime minerale per nutrienti rapidi ed effetti più lunghi.\n\nOrdina i quattro usi del banco per un pendio roccioso sottile, motivando quello meno erosivo e ciò che residui e non lavorazione possono e non possono fare.\n\nValuta motivi e controlli, non coincidenza con un solo nome del modello né una dose arbitraria di compost.\n\nQuesto passo valuta conoscenze e ragionamento. Un piano salvato o un modello sullo schermo non dimostrano il recupero del campo, non equivalgono alla firma del formatore, non garantiscono una coltura e non attestano un’abilità pratica.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "03c8804cd14eaf9d0de9525e85f24613a4573abf1501622d7c684f9ed4981982",
+      "requestFingerprintSha256": "03c8804cd14eaf9d0de9525e85f24613a4573abf1501622d7c684f9ed4981982",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "6ff3793a120321268e029e04c3a25f61d777a3c7374b7e5ec4453678062c5c44"
+    },
+    {
+      "id": "S3-11-it-reflection-r1",
+      "unitId": "S3-11-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05b37520b7de0fd21f31bc997532a7332fee9f619b8e6c2046fb81f8e77a066e",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So scegliere colture alternative o pratiche di gestione quando le condizioni del suolo sono sfavorevoli, spiegandone i limiti.",
+          "sha256": "97e4a63cfe7d1c9127e25e127eb57d00a961ae63fbe21c374fedd9112c67c29f"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "L’autovalutazione è distinta dalla valutazione del ragionamento e da qualsiasi osservazione in campo. Lascia vuoti i registri effettivi fino al lavoro reale.",
+          "sha256": "e89858d1b1eada3ff597e581b8da068837df1381a64432e47f55e3a0b5772f85"
+        }
+      ],
+      "scientificMeaning": "So scegliere colture alternative o pratiche di gestione quando le condizioni del suolo sono sfavorevoli, spiegandone i limiti.\n\nL’autovalutazione è distinta dalla valutazione del ragionamento e da qualsiasi osservazione in campo. Lascia vuoti i registri effettivi fino al lavoro reale.",
+      "displayText": "So scegliere colture alternative o pratiche di gestione quando le condizioni del suolo sono sfavorevoli, spiegandone i limiti.\n\nL’autovalutazione è distinta dalla valutazione del ragionamento e da qualsiasi osservazione in campo. Lascia vuoti i registri effettivi fino al lavoro reale.",
+      "captionText": "So scegliere colture alternative o pratiche di gestione quando le condizioni del suolo sono sfavorevoli, spiegandone i limiti.\n\nL’autovalutazione è distinta dalla valutazione del ragionamento e da qualsiasi osservazione in campo. Lascia vuoti i registri effettivi fino al lavoro reale.",
+      "spokenText": "So scegliere colture alternative o pratiche di gestione quando le condizioni del suolo sono sfavorevoli, spiegandone i limiti.\n\nL’autovalutazione è distinta dalla valutazione del ragionamento e da qualsiasi osservazione in campo. Lascia vuoti i registri effettivi fino al lavoro reale.",
+      "spokenTextSHA256": "d70087244846aa34090e9e91de0fb8ede78be0ab88d643a5467aa981b073ea3b",
+      "spokenTextSha256": "d70087244846aa34090e9e91de0fb8ede78be0ab88d643a5467aa981b073ea3b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c9f43db89b162ac674dc05cba3abcf6205c2cb390202c1c7a11df74b21fa6be7",
+      "requestFingerprintSha256": "c9f43db89b162ac674dc05cba3abcf6205c2cb390202c1c7a11df74b21fa6be7",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "6ff3793a120321268e029e04c3a25f61d777a3c7374b7e5ec4453678062c5c44"
+    },
+    {
+      "id": "S3-11-it-glossary-r1",
+      "unitId": "S3-11-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "05b37520b7de0fd21f31bc997532a7332fee9f619b8e6c2046fb81f8e77a066e",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "tessitura minerale",
+          "sha256": "81447f9e6372b1860db63b68f4720bf242fc40bca44dd4f4d85a4f18436081a6"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Proporzioni relative di sabbia, limo e argilla, distinte da compattazione e nutrienti.",
+          "sha256": "5dfaa998bfd06aaeae5b3a5bf28a6e87ae387816504ffbb6eb587b8e2c028e9d"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "struttura del suolo",
+          "sha256": "82f0c49a4744c3cf9265e6ca6bac64e160a67f46736f2708620ac38cfe6d3a1b"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Organizzazione di particelle e pori in aggregati; la gestione può modificarla senza cambiare la tessitura.",
+          "sha256": "adb31d60676f2c62c88d14efee1dbff7bb511b9e65ccef11e8d01dd089f08a21"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "compattazione",
+          "sha256": "2312be1d82be15096ad2b1dbb2b9cea9b6c6a7dc0df15839eb2887dbd02db93c"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Suolo denso che limita radici, aria o acqua; occorre diagnosticarne profondità, causa e umidità.",
+          "sha256": "5f062a71a3549b2b54b27577d47737f184a23604013179e7987d3002c38bbdb6"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "ammendante organico",
+          "sha256": "4580120da5b5e237f232dda8552174489c92d88f5991f3b9531ebbe42bdb1c64"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Materiale come compost testato che può fornire sostanza organica e nutrienti variabili, previa verifica di dose e sali.",
+          "sha256": "50e1c84824c3a01f142ce02b7059b820c902f6b68524f1bec6a542491831f326"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "aiuola rialzata",
+          "sha256": "b6d719ff6584af6409e45a4d123705304a60dfcb65cce1f0c4aec28dd48387c5"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Zona coltivata elevata e progettata con substrato, profondità radicale e uscita dell’acqua adeguati.",
+          "sha256": "0aec3a0be8db0e1c5ffc8060b7fcacb7ab18edc25305c47f869c84be800d7537"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "coltura di copertura",
+          "sha256": "7546097de063cd0298767773711f86172868e8f3e823c59634c08c6924cabf0f"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Coltura che protegge il suolo o fornisce residui e altre funzioni al di fuori della coltura da reddito.",
+          "sha256": "43649a976c53021d2687fd2edad1944efaada374e6d5c28debf23a6b30ce0791"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "fissazione dell’azoto",
+          "sha256": "c6e1a3cfacedb6cc49cefdcda6d0dcf576629f9c0a8f47aaaaa0d0b4cfd4fb24"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Conversione dell’azoto atmosferico da microbi compatibili e attivi con leguminose; non garantita per ogni pianta.",
+          "sha256": "d8ce1f0b891f78ecb5ed34696db0086d6721fd71234b066c1e18c87d0d345342"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "non lavorazione",
+          "sha256": "ff6929601005943ceaf1d2e602dc2fcc9386390a7eb2bee42a0e77c0e8d433ca"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Sistema a basso disturbo che spesso mantiene residui in superficie, con vantaggi e limiti locali.",
+          "sha256": "2dbdee88b47d548ea0021717696f0ffa3df26ee8c3008e094a0e053e6f61d8b1"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "sodicità",
+          "sha256": "842c4a20b1687dd6244de9b7ca694146f2148a0964176b485fd43e1e670654b0"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "Eccesso di sodio scambiabile che può disperdere il suolo; non equivale alla sola tessitura argillosa.",
+          "sha256": "4623489649cd520a09a925cec0118300e842dd6dd7bd239f23b6b45deed1e91a"
+        }
+      ],
+      "scientificMeaning": "tessitura minerale\n\nProporzioni relative di sabbia, limo e argilla, distinte da compattazione e nutrienti.\n\nstruttura del suolo\n\nOrganizzazione di particelle e pori in aggregati; la gestione può modificarla senza cambiare la tessitura.\n\ncompattazione\n\nSuolo denso che limita radici, aria o acqua; occorre diagnosticarne profondità, causa e umidità.\n\nammendante organico\n\nMateriale come compost testato che può fornire sostanza organica e nutrienti variabili, previa verifica di dose e sali.\n\naiuola rialzata\n\nZona coltivata elevata e progettata con substrato, profondità radicale e uscita dell’acqua adeguati.\n\ncoltura di copertura\n\nColtura che protegge il suolo o fornisce residui e altre funzioni al di fuori della coltura da reddito.\n\nfissazione dell’azoto\n\nConversione dell’azoto atmosferico da microbi compatibili e attivi con leguminose; non garantita per ogni pianta.\n\nnon lavorazione\n\nSistema a basso disturbo che spesso mantiene residui in superficie, con vantaggi e limiti locali.\n\nsodicità\n\nEccesso di sodio scambiabile che può disperdere il suolo; non equivale alla sola tessitura argillosa.",
+      "displayText": "tessitura minerale\n\nProporzioni relative di sabbia, limo e argilla, distinte da compattazione e nutrienti.\n\nstruttura del suolo\n\nOrganizzazione di particelle e pori in aggregati; la gestione può modificarla senza cambiare la tessitura.\n\ncompattazione\n\nSuolo denso che limita radici, aria o acqua; occorre diagnosticarne profondità, causa e umidità.\n\nammendante organico\n\nMateriale come compost testato che può fornire sostanza organica e nutrienti variabili, previa verifica di dose e sali.\n\naiuola rialzata\n\nZona coltivata elevata e progettata con substrato, profondità radicale e uscita dell’acqua adeguati.\n\ncoltura di copertura\n\nColtura che protegge il suolo o fornisce residui e altre funzioni al di fuori della coltura da reddito.\n\nfissazione dell’azoto\n\nConversione dell’azoto atmosferico da microbi compatibili e attivi con leguminose; non garantita per ogni pianta.\n\nnon lavorazione\n\nSistema a basso disturbo che spesso mantiene residui in superficie, con vantaggi e limiti locali.\n\nsodicità\n\nEccesso di sodio scambiabile che può disperdere il suolo; non equivale alla sola tessitura argillosa.",
+      "captionText": "tessitura minerale\n\nProporzioni relative di sabbia, limo e argilla, distinte da compattazione e nutrienti.\n\nstruttura del suolo\n\nOrganizzazione di particelle e pori in aggregati; la gestione può modificarla senza cambiare la tessitura.\n\ncompattazione\n\nSuolo denso che limita radici, aria o acqua; occorre diagnosticarne profondità, causa e umidità.\n\nammendante organico\n\nMateriale come compost testato che può fornire sostanza organica e nutrienti variabili, previa verifica di dose e sali.\n\naiuola rialzata\n\nZona coltivata elevata e progettata con substrato, profondità radicale e uscita dell’acqua adeguati.\n\ncoltura di copertura\n\nColtura che protegge il suolo o fornisce residui e altre funzioni al di fuori della coltura da reddito.\n\nfissazione dell’azoto\n\nConversione dell’azoto atmosferico da microbi compatibili e attivi con leguminose; non garantita per ogni pianta.\n\nnon lavorazione\n\nSistema a basso disturbo che spesso mantiene residui in superficie, con vantaggi e limiti locali.\n\nsodicità\n\nEccesso di sodio scambiabile che può disperdere il suolo; non equivale alla sola tessitura argillosa.",
+      "spokenText": "tessitura minerale\n\nProporzioni relative di sabbia, limo e argilla, distinte da compattazione e nutrienti.\n\nstruttura del suolo\n\nOrganizzazione di particelle e pori in aggregati; la gestione può modificarla senza cambiare la tessitura.\n\ncompattazione\n\nSuolo denso che limita radici, aria o acqua; occorre diagnosticarne profondità, causa e umidità.\n\nammendante organico\n\nMateriale come compost testato che può fornire sostanza organica e nutrienti variabili, previa verifica di dose e sali.\n\naiuola rialzata\n\nZona coltivata elevata e progettata con substrato, profondità radicale e uscita dell’acqua adeguati.\n\ncoltura di copertura\n\nColtura che protegge il suolo o fornisce residui e altre funzioni al di fuori della coltura da reddito.\n\nfissazione dell’azoto\n\nConversione dell’azoto atmosferico da microbi compatibili e attivi con leguminose; non garantita per ogni pianta.\n\nnon lavorazione\n\nSistema a basso disturbo che spesso mantiene residui in superficie, con vantaggi e limiti locali.\n\nsodicità\n\nEccesso di sodio scambiabile che può disperdere il suolo; non equivale alla sola tessitura argillosa.",
+      "spokenTextSHA256": "2640a32c968d8e7480d055ec9689c5f4963f853ac6186c1eaf29ef9154dd20b7",
+      "spokenTextSha256": "2640a32c968d8e7480d055ec9689c5f4963f853ac6186c1eaf29ef9154dd20b7",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "46f37fa561fef75c4705bdadab3298b8126f649ab6a83991e1fcf566197a3b9a",
+      "requestFingerprintSha256": "46f37fa561fef75c4705bdadab3298b8126f649ab6a83991e1fcf566197a3b9a",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "6ff3793a120321268e029e04c3a25f61d777a3c7374b7e5ec4453678062c5c44"
+    },
+    {
+      "id": "S3-11-de-opening-r1",
+      "unitId": "S3-11-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.",
+          "sha256": "ae03794a5546ea1a3f45fac0c8bd582863b209b9b84832ba38530aa22dc99d8b"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Für einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.",
+          "sha256": "b6ce4cc8179143ff1e23a28051081f1fdd76b542c0dbabb887ac008fd05c8ca8"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Erstelle drei Phasen über 3–6 Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.",
+          "sha256": "f48364b630ec71fb5e79d1a2f895e9ededc543b08fdeec57c6b41635000425b3"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Begründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+          "sha256": "9354a5c86033a1c2294ac63e0896e95fb08cd77d08ea8060726545d61bb7874e"
+        }
+      ],
+      "scientificMeaning": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über 3–6 Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+      "displayText": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über 3–6 Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+      "captionText": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über 3–6 Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+      "spokenText": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über drei bis sechs Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+      "spokenTextSHA256": "1ccd0807cc1a26d64cb5484bdad436a881cf1faa598174cf36567db5261ca280",
+      "spokenTextSha256": "1ccd0807cc1a26d64cb5484bdad436a881cf1faa598174cf36567db5261ca280",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über 3–6 Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+          "spoken": "Zuerst untersuchst du, was Wurzeln und Wasserbewegung begrenzt. Dann vergleichst du Bodenbewirtschaftung, eine andere Kultur und eine andere Flächennutzung. Jede Maßnahme ist eine bedingte Möglichkeit, kein allgemeines Rezept.\n\nFür einen Möhrenkunden mit verdichtetem Ton vergleichst du einen belegten Weg der Bodenbewirtschaftung mit einer anderen Kultur, nachdem Verdichtungstiefe, Entwässerung und Feuchte geprüft wurden.\n\nErstelle drei Phasen über drei bis sechs Monate für eine verdichtete, humusarme Maschinenfahrspur. Vergleiche Kompost und Mineraldünger bei kurzfristiger Nährstoffzufuhr und längerfristigem Bodenzustand ohne Sanierungsgarantie.\n\nBegründe eine weniger erosionsgefährdete Nutzung für einen flachgründigen steinigen Hang und erkläre mögliche Wirkungen und Standortgrenzen von geringer Bodenbearbeitung und Oberflächenresten.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7d2351e897b963f33623f998cbde263760bff5564afe720c6419c8592b7adb87",
+      "requestFingerprintSha256": "7d2351e897b963f33623f998cbde263760bff5564afe720c6419c8592b7adb87",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "91fd8ef8f7b83108afe21cb237d8b22ae8030ddff3386553474e0c5ee7f3d8a6"
+    },
+    {
+      "id": "S3-11-de-guided-practice-r1",
+      "unitId": "S3-11-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.",
+          "sha256": "50cfaa5feb1066b8af67e451bbc8127fcbc23568d03f8837d561f8677d6e7529"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Für die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.",
+          "sha256": "4d58c95e888c2db60c4f0fe8268cd30b9fcf6b861319a3fce710a12676785574"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Ordne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.",
+          "sha256": "54220b59973abb7ae66ce4d15502a933c85ec9a8386f05092f8df62d228fde61"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Bewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.",
+          "sha256": "cf028e46391ecce4a0c2304c7d2e9d9450fc13f1b392fc56a443aa5c50112478"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Dieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+          "sha256": "7d80a84ee8f54f82fa04040c22a476ada4be156c98cc22e10e1c62dd7925ae84"
+        }
+      ],
+      "scientificMeaning": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "displayText": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "captionText": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "spokenText": "Nutze den ursprünglichen Ablauf fünf, fünfzehn, fünfzehn, zehn Minuten zusammen mit Schritt Es drei zehn für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet zehn mal zehn Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in drei bis sechs Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "spokenTextSHA256": "9980a044351fba09be51e160f763202421605a852dab103a11141ac75d977af4",
+      "spokenTextSha256": "9980a044351fba09be51e160f763202421605a852dab103a11141ac75d977af4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+          "spoken": "Nutze den ursprünglichen Ablauf fünf, fünfzehn, fünfzehn, zehn Minuten zusammen mit Schritt Es drei zehn für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet zehn mal zehn Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in drei bis sechs Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4b75d7c38a50c17bafda02fe1fee35e39ad06ccaaab840f2af26ac018f613988",
+      "requestFingerprintSha256": "4b75d7c38a50c17bafda02fe1fee35e39ad06ccaaab840f2af26ac018f613988",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "91fd8ef8f7b83108afe21cb237d8b22ae8030ddff3386553474e0c5ee7f3d8a6"
+    },
+    {
+      "id": "S3-11-de-reflection-r1",
+      "unitId": "S3-11-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Ich kann bei ungünstigen Bodenbedingungen alternative Kulturen oder Bewirtschaftungsweisen wählen und ihre Grenzen erklären.",
+          "sha256": "02d912763460c7da3f82530c71a0adabc3e1ae09bb04d4aca6b50209bad76ef4"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Die Selbsteinschätzung ist von der Bewertung der Begründung und jeder Feldbeobachtung getrennt. Tatsächliche Aufzeichnungen bis zur realen Arbeit leer lassen.",
+          "sha256": "df8465fd8d1375662d003b93d0e07679e625c4dc8ff31d2468ec2dce70c02ad4"
+        }
+      ],
+      "scientificMeaning": "Ich kann bei ungünstigen Bodenbedingungen alternative Kulturen oder Bewirtschaftungsweisen wählen und ihre Grenzen erklären.\n\nDie Selbsteinschätzung ist von der Bewertung der Begründung und jeder Feldbeobachtung getrennt. Tatsächliche Aufzeichnungen bis zur realen Arbeit leer lassen.",
+      "displayText": "Ich kann bei ungünstigen Bodenbedingungen alternative Kulturen oder Bewirtschaftungsweisen wählen und ihre Grenzen erklären.\n\nDie Selbsteinschätzung ist von der Bewertung der Begründung und jeder Feldbeobachtung getrennt. Tatsächliche Aufzeichnungen bis zur realen Arbeit leer lassen.",
+      "captionText": "Ich kann bei ungünstigen Bodenbedingungen alternative Kulturen oder Bewirtschaftungsweisen wählen und ihre Grenzen erklären.\n\nDie Selbsteinschätzung ist von der Bewertung der Begründung und jeder Feldbeobachtung getrennt. Tatsächliche Aufzeichnungen bis zur realen Arbeit leer lassen.",
+      "spokenText": "Ich kann bei ungünstigen Bodenbedingungen alternative Kulturen oder Bewirtschaftungsweisen wählen und ihre Grenzen erklären.\n\nDie Selbsteinschätzung ist von der Bewertung der Begründung und jeder Feldbeobachtung getrennt. Tatsächliche Aufzeichnungen bis zur realen Arbeit leer lassen.",
+      "spokenTextSHA256": "8c298de43402bcac7defbd7bdd108ab7ca5d4db7c10359fa576e6d0ff5699ec1",
+      "spokenTextSha256": "8c298de43402bcac7defbd7bdd108ab7ca5d4db7c10359fa576e6d0ff5699ec1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "22ac4da93ef5aa179e04862e75b6272ffbd7496003f99ff3baa608b1ad9fdce8",
+      "requestFingerprintSha256": "22ac4da93ef5aa179e04862e75b6272ffbd7496003f99ff3baa608b1ad9fdce8",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "91fd8ef8f7b83108afe21cb237d8b22ae8030ddff3386553474e0c5ee7f3d8a6"
+    },
+    {
+      "id": "S3-11-de-glossary-r1",
+      "unitId": "S3-11-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "mineralische Körnung",
+          "sha256": "e691be3fe3d25efc32be555a48d3920fa12388d888b7b9175aae8bf83c10cc53"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Anteile von Sand, Schluff und Ton; nicht gleich heutiger Verdichtung oder Nährstoffkonzentration.",
+          "sha256": "1725dd7bee86b571a6e1babb87565c637ca202829fc1f9ba9dc2bc3b4b2f7116"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Bodengefüge",
+          "sha256": "791796661aec5d25852199f94e0491dacba83187f6996b15a7a13b59deb79a3b"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Anordnung von Teilchen und Poren in Aggregaten; Bewirtschaftung kann es ändern, die Körnung bleibt.",
+          "sha256": "a4a02bd80fd6931e47489547acf394171625d4d4a27878f317222a98b0762e0d"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "Verdichtung",
+          "sha256": "a0b7f294bad81e4f0e66c51694b6669c12ad3db3c8209662cc68d1e27a8a7dc3"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Dichter Boden, der Wurzeln, Luft oder Wasser behindert; Tiefe, Ursache und Feuchte erfordern Diagnose.",
+          "sha256": "a9850bfd7c46656645639aab57b73336d835c79ad893487ac9cb961b8c974003"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "organischer Bodenzusatz",
+          "sha256": "16a11ac44107a114381f19c2020e3a8954ad84e80f9e9e20c30972bf6cff781d"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Zum Beispiel geprüfter Kompost mit organischer Substanz und variablen Nährstoffen; Mengen und Salz prüfen.",
+          "sha256": "235afe018dca9becc53ff8fabeed6e38dc16253c52566868447db6b3cb84d0a6"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Hochbeet",
+          "sha256": "f138b57695a00e0528d98c234f8934a1511ce3968ee3225bedfd133845178ea4"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Erhöhte geplante Wurzelzone mit geeignetem Substrat, Tiefe und Wasserablauf.",
+          "sha256": "6344145f62a00fbea2677b48981c4a095fcc5058985b32f390f60569c99f42ff"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Zwischenfrucht",
+          "sha256": "84cf1ceea2d9fc1cac7f7270dac9c5b5ff370275bb939e95236fdddeff2c9a4d"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Kultur zum Bodenschutz, für Rückstände und weitere Funktionen außerhalb der Hauptfrucht.",
+          "sha256": "229b60234bae4dd08961fb2643e1dc05f288d608f7de3c4e5b3b92d42051e95e"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Stickstoffbindung",
+          "sha256": "23cac61bfd1d266ec635d84758071e66d289023f6001d3eaf8ad0d0d19b7711e"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Umwandlung von Luftstickstoff durch passende aktive Mikroben bei Leguminosen; nicht für jede Bohne garantiert.",
+          "sha256": "4dd3e0925d02e90852dfbeb068ba4161c1bce36318d3a9d814aeec63fd8ddf89"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Direktsaat",
+          "sha256": "7333eeddf0ced10f5efe4ab6567ba5d4f2948b0ecb321752db3b5c8b411c56ed"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Pflanzsystem mit geringer Bodenstörung und häufig Oberflächenresten; örtliche Vor- und Nachteile.",
+          "sha256": "84260a24e2ebd12a56e88935660e20f72a42d4e7d779afb104233b71d9a67bca"
+        },
+        {
+          "pointer": "/glossary/8/0",
+          "text": "Sodizität",
+          "sha256": "4952cec46935da976537c5b13b8ccaf50a7644cc272effd26e689f57222932f2"
+        },
+        {
+          "pointer": "/glossary/8/1",
+          "text": "Zu viel austauschbares Natrium kann Boden dispergieren; nicht dasselbe wie Tongehalt.",
+          "sha256": "caa5fadcaa284e7b3bf3cc92729c1870d793492403ba7738025d2e5ec44b94d6"
+        }
+      ],
+      "scientificMeaning": "mineralische Körnung\n\nAnteile von Sand, Schluff und Ton; nicht gleich heutiger Verdichtung oder Nährstoffkonzentration.\n\nBodengefüge\n\nAnordnung von Teilchen und Poren in Aggregaten; Bewirtschaftung kann es ändern, die Körnung bleibt.\n\nVerdichtung\n\nDichter Boden, der Wurzeln, Luft oder Wasser behindert; Tiefe, Ursache und Feuchte erfordern Diagnose.\n\norganischer Bodenzusatz\n\nZum Beispiel geprüfter Kompost mit organischer Substanz und variablen Nährstoffen; Mengen und Salz prüfen.\n\nHochbeet\n\nErhöhte geplante Wurzelzone mit geeignetem Substrat, Tiefe und Wasserablauf.\n\nZwischenfrucht\n\nKultur zum Bodenschutz, für Rückstände und weitere Funktionen außerhalb der Hauptfrucht.\n\nStickstoffbindung\n\nUmwandlung von Luftstickstoff durch passende aktive Mikroben bei Leguminosen; nicht für jede Bohne garantiert.\n\nDirektsaat\n\nPflanzsystem mit geringer Bodenstörung und häufig Oberflächenresten; örtliche Vor- und Nachteile.\n\nSodizität\n\nZu viel austauschbares Natrium kann Boden dispergieren; nicht dasselbe wie Tongehalt.",
+      "displayText": "mineralische Körnung\n\nAnteile von Sand, Schluff und Ton; nicht gleich heutiger Verdichtung oder Nährstoffkonzentration.\n\nBodengefüge\n\nAnordnung von Teilchen und Poren in Aggregaten; Bewirtschaftung kann es ändern, die Körnung bleibt.\n\nVerdichtung\n\nDichter Boden, der Wurzeln, Luft oder Wasser behindert; Tiefe, Ursache und Feuchte erfordern Diagnose.\n\norganischer Bodenzusatz\n\nZum Beispiel geprüfter Kompost mit organischer Substanz und variablen Nährstoffen; Mengen und Salz prüfen.\n\nHochbeet\n\nErhöhte geplante Wurzelzone mit geeignetem Substrat, Tiefe und Wasserablauf.\n\nZwischenfrucht\n\nKultur zum Bodenschutz, für Rückstände und weitere Funktionen außerhalb der Hauptfrucht.\n\nStickstoffbindung\n\nUmwandlung von Luftstickstoff durch passende aktive Mikroben bei Leguminosen; nicht für jede Bohne garantiert.\n\nDirektsaat\n\nPflanzsystem mit geringer Bodenstörung und häufig Oberflächenresten; örtliche Vor- und Nachteile.\n\nSodizität\n\nZu viel austauschbares Natrium kann Boden dispergieren; nicht dasselbe wie Tongehalt.",
+      "captionText": "mineralische Körnung\n\nAnteile von Sand, Schluff und Ton; nicht gleich heutiger Verdichtung oder Nährstoffkonzentration.\n\nBodengefüge\n\nAnordnung von Teilchen und Poren in Aggregaten; Bewirtschaftung kann es ändern, die Körnung bleibt.\n\nVerdichtung\n\nDichter Boden, der Wurzeln, Luft oder Wasser behindert; Tiefe, Ursache und Feuchte erfordern Diagnose.\n\norganischer Bodenzusatz\n\nZum Beispiel geprüfter Kompost mit organischer Substanz und variablen Nährstoffen; Mengen und Salz prüfen.\n\nHochbeet\n\nErhöhte geplante Wurzelzone mit geeignetem Substrat, Tiefe und Wasserablauf.\n\nZwischenfrucht\n\nKultur zum Bodenschutz, für Rückstände und weitere Funktionen außerhalb der Hauptfrucht.\n\nStickstoffbindung\n\nUmwandlung von Luftstickstoff durch passende aktive Mikroben bei Leguminosen; nicht für jede Bohne garantiert.\n\nDirektsaat\n\nPflanzsystem mit geringer Bodenstörung und häufig Oberflächenresten; örtliche Vor- und Nachteile.\n\nSodizität\n\nZu viel austauschbares Natrium kann Boden dispergieren; nicht dasselbe wie Tongehalt.",
+      "spokenText": "mineralische Körnung\n\nAnteile von Sand, Schluff und Ton; nicht gleich heutiger Verdichtung oder Nährstoffkonzentration.\n\nBodengefüge\n\nAnordnung von Teilchen und Poren in Aggregaten; Bewirtschaftung kann es ändern, die Körnung bleibt.\n\nVerdichtung\n\nDichter Boden, der Wurzeln, Luft oder Wasser behindert; Tiefe, Ursache und Feuchte erfordern Diagnose.\n\norganischer Bodenzusatz\n\nZum Beispiel geprüfter Kompost mit organischer Substanz und variablen Nährstoffen; Mengen und Salz prüfen.\n\nHochbeet\n\nErhöhte geplante Wurzelzone mit geeignetem Substrat, Tiefe und Wasserablauf.\n\nZwischenfrucht\n\nKultur zum Bodenschutz, für Rückstände und weitere Funktionen außerhalb der Hauptfrucht.\n\nStickstoffbindung\n\nUmwandlung von Luftstickstoff durch passende aktive Mikroben bei Leguminosen; nicht für jede Bohne garantiert.\n\nDirektsaat\n\nPflanzsystem mit geringer Bodenstörung und häufig Oberflächenresten; örtliche Vor- und Nachteile.\n\nSodizität\n\nZu viel austauschbares Natrium kann Boden dispergieren; nicht dasselbe wie Tongehalt.",
+      "spokenTextSHA256": "704a3e9f4e37831fd1eb14f7a430daf1dd09a45a55e3e043be5d157ff491542f",
+      "spokenTextSha256": "704a3e9f4e37831fd1eb14f7a430daf1dd09a45a55e3e043be5d157ff491542f",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "47e89ecbea83ffe42e313054ab8fa4059250ee2e76da1a98375f08c67c7bf2e5",
+      "requestFingerprintSha256": "47e89ecbea83ffe42e313054ab8fa4059250ee2e76da1a98375f08c67c7bf2e5",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "91fd8ef8f7b83108afe21cb237d8b22ae8030ddff3386553474e0c5ee7f3d8a6"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-11-ar-EG-opening-r1",
+      "S3-11-ar-EG-guided-practice-r1",
+      "S3-11-ar-EG-reflection-r1",
+      "S3-11-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-11-en-opening-r1",
+      "S3-11-en-guided-practice-r1",
+      "S3-11-en-reflection-r1",
+      "S3-11-en-glossary-r1"
+    ],
+    "it": [
+      "S3-11-it-opening-r1",
+      "S3-11-it-guided-practice-r1",
+      "S3-11-it-reflection-r1",
+      "S3-11-it-glossary-r1"
+    ],
+    "de": [
+      "S3-11-de-opening-r1",
+      "S3-11-de-guided-practice-r1",
+      "S3-11-de-reflection-r1",
+      "S3-11-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-candidate-record-closure-repair-job-r1\\request.json",
+      "sha256": "a3e56e37875bfed27648c2280d0e24aa04059334fd21859f729b6a8692ad5e68"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-r06-closure-repair-job-r1\\request.json",
+      "sha256": "f605213d21621e400e1088aed2df7386a53e0ba0b1766814f3cddb8494c5d23f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-10-it-opening-closure-repair-job-r1\\request.json",
+      "sha256": "0f8ab7afd344a648fce030a9a01a86b5599dc1119c0b36650c94ff5e38782e8d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-01-it-nutrition-lexical-r2-job-r1\\request.json",
+      "sha256": "a45eb036d48398878a4b8f0d5260ac8b4b1a16bcb4540265c7d1a47cd0a6bc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-de-r04-lexical-r2-job-r1\\request.json",
+      "sha256": "f79bc519052ad3fc2d097f1f94e04ca1ee796d49a27b2017416c5c0442f322e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-en-r03-lexical-r2-job-r1\\request.json",
+      "sha256": "5f98929250f32aad0cc26febaeeff77a9cc66a503474201b9f470fdb11459cca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical4-s3-10-it-r07-expanded-repair-job-r1\\request.json",
+      "sha256": "de3b48c1d82482893cee3438a119ebb4788767fdf07cc4c68d6145e3d3c41e54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-de-second-sentence-job-r1\\request.json",
+      "sha256": "fe6d8c4bbe8b993e037b774eeabc767e3d5b641dc1a9c653283dd134c1651c15"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-ar-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "22eba5bfcc27354feccf3a14381e30f9e36b5af235e67f054904b1e614155fe1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-de-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "dfb0ec4d6581b6aee483b24bcf5d3c1b8a2eafd59c75b2f4aca7bb40b676f53f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-en-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "5d08fa0c2a4bc7f978d596d28690c54abe781b8a799193d7037cf37c9cf208a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "fa082acaf0c62a0d1bfaced90ecc9f7bf224695aa85de4f9f78e66c6d5aae7df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s311-neun-s3-11-de-r07-neun-repair-job-r1\\request.json",
+      "sha256": "114901f6509835e9a1698fbc2c5bd7d468e57d085bf94ebd4b71290074f8f5c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r2\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r3\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "a6f9bba236cdd1797fb64537c82d77d8fd61fcd5d34e390560ba58713b9fbf29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-gated-job-r1\\request.json",
+      "sha256": "9116f963721c807bcb22b086ceb9629fdc1f28cf15b9ba4f00359304c234904f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-gated-job-r1\\request.json",
+      "sha256": "c82e9b6ddea157c21a010e37be0ab2d6a2933e80ecd83354263f8b7968812045"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-gated-job-r1\\request.json",
+      "sha256": "c9d616b9dae9d7c01cecc1b48e652b3f2d5683059b9779c7f413921661a7ae65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-gated-job-r1\\request.json",
+      "sha256": "95255e891d93bdea54e9416e41e9f0d4f9f014f66768fd704b249e573b68fcf9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-gated-job-r1\\request.json",
+      "sha256": "b0458c83904316f55b941698f8e89dccc538ff0a3e9d938d620ad137773342aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-independent-job-r1\\request.json",
+      "sha256": "a443eee33191f213b2c0404155c4f54b5d4387d62cebe93fbefde784e59cc0a9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-reading-job-r1\\request.json",
+      "sha256": "b3063d5cf960b6dac5aae290314893823f11f0ed57ca34bdbada7de39275a649"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-reading-job-r1\\request.json",
+      "sha256": "c7b05806b2dff56c529949e8d1d663b587f3a0d68297f9836774624a610163d8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-de-recovery-job-r1\\request.json",
+      "sha256": "8a33c9d71852d036ba8671480867c96ecde2f6669e549c110b2fa15b344d99fc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-reading-job-r1\\request.json",
+      "sha256": "8f17ceb195b70f4a30799d371bd212d534401532d5c6791d68467522542391a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s313-reading-job-r1\\request.json",
+      "sha256": "bff5d424a4502b7996495794c7e500b8bef418bbc83b547d8a598dd1d5c1d4a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r1\\request.json",
+      "sha256": "cc5821b84eaa06884426033ff2698130523d5a1ad4282ddf6f18338c707444df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r2\\request.json",
+      "sha256": "9544949e628fe4b1d0ba188e14761e98e3114447d4a32f9ede67a8a9b386dbba"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r1\\request.json",
+      "sha256": "949c35e95ec0f57eaf57366f24a528ea9d1558182f682f5aa8112d541e919f94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r2\\request.json",
+      "sha256": "7f4c8d2be10dd5e3f7b8b85797d448e4a4731c7eab089b1bb30e4ff912af2e8e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s316-reading-job-r1\\request.json",
+      "sha256": "bd21152d411fab7d837fe8be80a8b6b6199fd07be84ba750237ced4b704efdfb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s317-reading-job-r1\\request.json",
+      "sha256": "10ba76dbb5ab98e02403aaa2b9fde51a1a399ce513aaa3496eca4fcb31052023"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
