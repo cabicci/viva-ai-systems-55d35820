@@ -1,0 +1,3391 @@
+name: S110 remaining36 teachinggroups four fixed concurrent lanes
+'on':
+  push:
+    branches:
+    - work/soil-s110-remainder-audio-20261023-r1
+    paths:
+    - s110-remainder-audio/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s110-remainder-audio-328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9
+  cancel-in-progress: false
+env:
+  PACKAGE: s110-remainder-audio
+  REQUEST_SHA: 328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9
+  WORKER_SHA: 4d2dc42f45ddbe424ccbf277848d7a3c809ba2b7fde5f94a50ede6023b1f1a65
+  FREEZE_SHA: 76a2dbae1486c04d05823b2789a1bc45cfe01f8f7e8202c442202aa37e672b1b
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_ar:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s110-remainder-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: ar-EG
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-opening-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-opening-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-opening-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-opening-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-opening-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-opening-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-E01-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-E01-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-E01-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-E01-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-E01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-E02-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-E02-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-E02-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-E02-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-E02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-E03-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-E03-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-E03-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-E03-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-E03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-guided-practice-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-guided-practice-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-guided-practice-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-guided-practice-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-guided-practice-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-guided-practice-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-reflection-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-reflection-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-reflection-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-reflection-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-reflection-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-reflection-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-label-template-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-label-template-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-label-template-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-label-template-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-label-template-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-label-template-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-custody-r1
+      id: tts_08
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-custody-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-custody-r1
+      id: upload_08
+      if: always() && steps.tts_08.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-custody-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-custody-r1
+      id: receipt_08
+      if: always() && steps.upload_08.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_08.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_08.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-custody-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-ar-EG-worksheet-r1
+      id: tts_09
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-ar-EG-worksheet-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-ar-EG-worksheet-r1
+      id: upload_09
+      if: always() && steps.tts_09.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-worksheet-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-ar-EG-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-ar-EG-worksheet-r1
+      id: receipt_09
+      if: always() && steps.upload_09.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_09.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_09.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-ar-EG-worksheet-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S1-10-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-opening-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-opening-r1
+
+        '
+    - name: compare S1-10-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-opening-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-opening-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-opening-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-opening-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-opening-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-E01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-E01-r1
+
+        '
+    - name: compare S1-10-ar-EG-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-E01-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-E01-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-E01-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-E01-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-E02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-E02-r1
+
+        '
+    - name: compare S1-10-ar-EG-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-E02-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-E02-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-E02-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-E02-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-E03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-E03-r1
+
+        '
+    - name: compare S1-10-ar-EG-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-E03-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-E03-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-E03-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-E03-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-E03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-guided-practice-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-guided-practice-r1
+
+        '
+    - name: compare S1-10-ar-EG-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-guided-practice-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-guided-practice-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-guided-practice-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-guided-practice-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-guided-practice-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-reflection-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-reflection-r1
+
+        '
+    - name: compare S1-10-ar-EG-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-reflection-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-reflection-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-reflection-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-reflection-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-reflection-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-label-template-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-label-template-r1
+
+        '
+    - name: compare S1-10-ar-EG-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-label-template-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-label-template-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-label-template-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-label-template-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-label-template-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-custody-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-custody-r1
+
+        '
+    - name: compare S1-10-ar-EG-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-custody-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-custody-r1
+      id: stage_08
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-custody-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-custody-r1
+      if: always() && steps.stage_08.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-custody-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-ar-EG-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-ar-EG-worksheet-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-ar-EG-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-ar-EG-worksheet-r1
+
+        '
+    - name: compare S1-10-ar-EG-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-ar-EG-worksheet-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-ar-EG-worksheet-r1
+      id: stage_09
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-ar-EG-worksheet-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-ar-EG-worksheet-r1
+      if: always() && steps.stage_09.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-ar-EG-worksheet-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-ar-EG-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-ar-EG-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s110-remainder-audio.yml'
+  narrate_en:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s110-remainder-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: en
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S1-10-en-opening-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-opening-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-opening-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-opening-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-opening-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-opening-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-E01-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-E01-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-E01-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-E01-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-E01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-E02-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-E02-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-E02-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-E02-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-E02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-E03-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-E03-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-E03-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-E03-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-E03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-guided-practice-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-guided-practice-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-guided-practice-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-guided-practice-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-guided-practice-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-guided-practice-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-reflection-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-reflection-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-reflection-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-reflection-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-reflection-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-reflection-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-label-template-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-label-template-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-label-template-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-label-template-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-label-template-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-label-template-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-custody-r1
+      id: tts_08
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-custody-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-custody-r1
+      id: upload_08
+      if: always() && steps.tts_08.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-custody-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-custody-r1
+      id: receipt_08
+      if: always() && steps.upload_08.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_08.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_08.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-custody-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-en-worksheet-r1
+      id: tts_09
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-en-worksheet-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-en-worksheet-r1
+      id: upload_09
+      if: always() && steps.tts_09.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-worksheet-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-en-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-en-worksheet-r1
+      id: receipt_09
+      if: always() && steps.upload_09.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_09.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_09.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-en-worksheet-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S1-10-en-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-opening-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-opening-r1
+
+        '
+    - name: compare S1-10-en-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-opening-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-opening-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-opening-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-opening-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-opening-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-E01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-E01-r1
+
+        '
+    - name: compare S1-10-en-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-E01-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-E01-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-E01-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-E01-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-E02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-E02-r1
+
+        '
+    - name: compare S1-10-en-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-E02-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-E02-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-E02-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-E02-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-E03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-E03-r1
+
+        '
+    - name: compare S1-10-en-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-E03-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-E03-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-E03-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-E03-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-E03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-guided-practice-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-guided-practice-r1
+
+        '
+    - name: compare S1-10-en-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-guided-practice-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-guided-practice-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-guided-practice-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-guided-practice-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-guided-practice-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-reflection-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-reflection-r1
+
+        '
+    - name: compare S1-10-en-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-reflection-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-reflection-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-reflection-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-reflection-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-reflection-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-label-template-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-label-template-r1
+
+        '
+    - name: compare S1-10-en-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-label-template-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-label-template-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-label-template-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-label-template-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-label-template-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-custody-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-custody-r1
+
+        '
+    - name: compare S1-10-en-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-custody-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-custody-r1
+      id: stage_08
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-custody-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-custody-r1
+      if: always() && steps.stage_08.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-custody-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-en-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-en-worksheet-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-en-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-en-worksheet-r1
+
+        '
+    - name: compare S1-10-en-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-en-worksheet-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-en-worksheet-r1
+      id: stage_09
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-en-worksheet-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-en-worksheet-r1
+      if: always() && steps.stage_09.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-en-worksheet-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-en-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-en-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s110-remainder-audio.yml'
+  narrate_it:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s110-remainder-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: it
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S1-10-it-opening-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-opening-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-opening-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-opening-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-opening-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-opening-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-E01-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-E01-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-E01-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-E01-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-E01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-E02-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-E02-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-E02-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-E02-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-E02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-E03-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-E03-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-E03-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-E03-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-E03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-guided-practice-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-guided-practice-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-guided-practice-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-guided-practice-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-guided-practice-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-guided-practice-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-reflection-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-reflection-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-reflection-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-reflection-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-reflection-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-reflection-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-label-template-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-label-template-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-label-template-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-label-template-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-label-template-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-label-template-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-custody-r1
+      id: tts_08
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-custody-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-custody-r1
+      id: upload_08
+      if: always() && steps.tts_08.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-custody-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-custody-r1
+      id: receipt_08
+      if: always() && steps.upload_08.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_08.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_08.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-custody-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-it-worksheet-r1
+      id: tts_09
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-it-worksheet-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-it-worksheet-r1
+      id: upload_09
+      if: always() && steps.tts_09.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-worksheet-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-it-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-it-worksheet-r1
+      id: receipt_09
+      if: always() && steps.upload_09.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_09.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_09.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-it-worksheet-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S1-10-it-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-opening-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-opening-r1
+
+        '
+    - name: compare S1-10-it-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-opening-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-opening-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-opening-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-opening-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-opening-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-E01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-E01-r1
+
+        '
+    - name: compare S1-10-it-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-E01-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-E01-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-E01-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-E01-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-E02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-E02-r1
+
+        '
+    - name: compare S1-10-it-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-E02-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-E02-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-E02-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-E02-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-E03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-E03-r1
+
+        '
+    - name: compare S1-10-it-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-E03-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-E03-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-E03-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-E03-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-E03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-guided-practice-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-guided-practice-r1
+
+        '
+    - name: compare S1-10-it-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-guided-practice-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-guided-practice-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-guided-practice-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-guided-practice-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-guided-practice-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-reflection-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-reflection-r1
+
+        '
+    - name: compare S1-10-it-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-reflection-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-reflection-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-reflection-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-reflection-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-reflection-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-label-template-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-label-template-r1
+
+        '
+    - name: compare S1-10-it-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-label-template-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-label-template-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-label-template-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-label-template-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-label-template-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-custody-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-custody-r1
+
+        '
+    - name: compare S1-10-it-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-custody-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-custody-r1
+      id: stage_08
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-custody-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-custody-r1
+      if: always() && steps.stage_08.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-custody-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-it-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-it-worksheet-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-it-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-it-worksheet-r1
+
+        '
+    - name: compare S1-10-it-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-it-worksheet-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-it-worksheet-r1
+      id: stage_09
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-it-worksheet-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-it-worksheet-r1
+      if: always() && steps.stage_09.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-it-worksheet-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-it-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-it-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s110-remainder-audio.yml'
+  narrate_de:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s110-remainder-audio-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: de
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S1-10-de-opening-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-opening-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-opening-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-opening-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-opening-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-opening-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-E01-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-E01-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-E01-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E01-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-E01-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-E01-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-E02-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-E02-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-E02-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E02-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-E02-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-E02-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-E03-r1
+      id: tts_04
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-E03-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-E03-r1
+      id: upload_04
+      if: always() && steps.tts_04.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E03-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-E03-r1
+      id: receipt_04
+      if: always() && steps.upload_04.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_04.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_04.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-E03-r1 --artifact-id "$AID" --artifact-digest
+        "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-guided-practice-r1
+      id: tts_05
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-guided-practice-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-guided-practice-r1
+      id: upload_05
+      if: always() && steps.tts_05.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-guided-practice-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-guided-practice-r1
+      id: receipt_05
+      if: always() && steps.upload_05.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_05.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_05.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-guided-practice-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-reflection-r1
+      id: tts_06
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-reflection-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-reflection-r1
+      id: upload_06
+      if: always() && steps.tts_06.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-reflection-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-reflection-r1
+      id: receipt_06
+      if: always() && steps.upload_06.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_06.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_06.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-reflection-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-label-template-r1
+      id: tts_07
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-label-template-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-label-template-r1
+      id: upload_07
+      if: always() && steps.tts_07.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-label-template-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-label-template-r1
+      id: receipt_07
+      if: always() && steps.upload_07.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_07.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_07.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-label-template-r1 --artifact-id
+        "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-custody-r1
+      id: tts_08
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-custody-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-custody-r1
+      id: upload_08
+      if: always() && steps.tts_08.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-custody-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-custody-r1
+      id: receipt_08
+      if: always() && steps.upload_08.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_08.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_08.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-custody-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S1-10-de-worksheet-r1
+      id: tts_09
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S1-10-de-worksheet-r1
+
+        '
+    - name: Upload full immutable audio once S1-10-de-worksheet-r1
+      id: upload_09
+      if: always() && steps.tts_09.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-worksheet-r1-audio
+        path: ${{ env.PACKAGE }}/output/S1-10-de-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S1-10-de-worksheet-r1
+      id: receipt_09
+      if: always() && steps.upload_09.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_09.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_09.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S1-10-de-worksheet-r1 --artifact-id "$AID"
+        --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S1-10-de-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-opening-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-opening-r1
+
+        '
+    - name: compare S1-10-de-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome
+        == 'success' && steps.receipt_01.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-opening-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-opening-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-opening-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-opening-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-opening-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-E01-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-E01-r1
+
+        '
+    - name: compare S1-10-de-E01-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome
+        == 'success' && steps.receipt_02.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-E01-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-E01-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-E01-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-E01-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E01-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-E01-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-E02-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-E02-r1
+
+        '
+    - name: compare S1-10-de-E02-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome
+        == 'success' && steps.receipt_03.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-E02-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-E02-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-E02-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-E02-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E02-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-E02-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-E03-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-E03-r1
+
+        '
+    - name: compare S1-10-de-E03-r1
+      if: always() && steps.tts_04.outcome == 'success' && steps.upload_04.outcome
+        == 'success' && steps.receipt_04.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-E03-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-E03-r1
+      id: stage_04
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-E03-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-E03-r1
+      if: always() && steps.stage_04.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-E03-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-E03-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-guided-practice-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-guided-practice-r1
+
+        '
+    - name: compare S1-10-de-guided-practice-r1
+      if: always() && steps.tts_05.outcome == 'success' && steps.upload_05.outcome
+        == 'success' && steps.receipt_05.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-guided-practice-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-guided-practice-r1
+      id: stage_05
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-guided-practice-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-guided-practice-r1
+      if: always() && steps.stage_05.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-guided-practice-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-reflection-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-reflection-r1
+
+        '
+    - name: compare S1-10-de-reflection-r1
+      if: always() && steps.tts_06.outcome == 'success' && steps.upload_06.outcome
+        == 'success' && steps.receipt_06.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-reflection-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-reflection-r1
+      id: stage_06
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-reflection-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-reflection-r1
+      if: always() && steps.stage_06.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-reflection-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-reflection-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-label-template-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-label-template-r1
+
+        '
+    - name: compare S1-10-de-label-template-r1
+      if: always() && steps.tts_07.outcome == 'success' && steps.upload_07.outcome
+        == 'success' && steps.receipt_07.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-label-template-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-label-template-r1
+      id: stage_07
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-label-template-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-label-template-r1
+      if: always() && steps.stage_07.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-label-template-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-label-template-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-custody-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-custody-r1
+
+        '
+    - name: compare S1-10-de-custody-r1
+      if: always() && steps.tts_08.outcome == 'success' && steps.upload_08.outcome
+        == 'success' && steps.receipt_08.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-custody-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-custody-r1
+      id: stage_08
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-custody-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-custody-r1
+      if: always() && steps.stage_08.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-custody-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-custody-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S1-10-de-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S1-10-de-worksheet-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S1-10-de-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S1-10-de-worksheet-r1
+
+        '
+    - name: compare S1-10-de-worksheet-r1
+      if: always() && steps.tts_09.outcome == 'success' && steps.upload_09.outcome
+        == 'success' && steps.receipt_09.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S1-10-de-worksheet-r1
+
+        '
+    - name: Stage thin diagnostics S1-10-de-worksheet-r1
+      id: stage_09
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S1-10-de-worksheet-r1
+
+        '
+    - name: Preserve thin diagnostics S1-10-de-worksheet-r1
+      if: always() && steps.stage_09.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-S1-10-de-worksheet-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S1-10-de-worksheet-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s110-remainder-r1-de-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s110-remainder-audio.yml'

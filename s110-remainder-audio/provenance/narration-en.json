@@ -1,0 +1,729 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-10-en.json",
+    "sha256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+    "bytes": 19199
+  },
+  "units": [
+    {
+      "id": "S1-10-en-opening-r1",
+      "unitId": "S1-10-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A carefully collected sample loses much of its value if nobody can establish where it came from or how it was handled. Protect its identity and follow the preservation method for the actual analysis.",
+          "sha256": "d8b5147d79156c1cb4f69fa23451a955478bc0978743363bfb57d6829e65ea21"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Make a durable, readable container label with all required identity fields and match it to the record.",
+          "sha256": "16de780617abf9891706f37d908a8ffe173c99b6da51bf36c7fd506730007cc9"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Choose the container, preservation and transfer timing from the stated laboratory instructions rather than a universal rule.",
+          "sha256": "575349a2bdb144d154cf1d0e9baf75f5f9339d1cd02cc51fe286ff0268783951"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Record sample handovers and prevent identity mix-ups and cross-contamination.",
+          "sha256": "f6fd0f4b52dafdfa30623c7948ac4140359720a8c62c63d2ac33c236f8f2a7dd"
+        }
+      ],
+      "scientificMeaning": "A carefully collected sample loses much of its value if nobody can establish where it came from or how it was handled. Protect its identity and follow the preservation method for the actual analysis.\n\nMake a durable, readable container label with all required identity fields and match it to the record.\n\nChoose the container, preservation and transfer timing from the stated laboratory instructions rather than a universal rule.\n\nRecord sample handovers and prevent identity mix-ups and cross-contamination.",
+      "displayText": "A carefully collected sample loses much of its value if nobody can establish where it came from or how it was handled. Protect its identity and follow the preservation method for the actual analysis.\n\nMake a durable, readable container label with all required identity fields and match it to the record.\n\nChoose the container, preservation and transfer timing from the stated laboratory instructions rather than a universal rule.\n\nRecord sample handovers and prevent identity mix-ups and cross-contamination.",
+      "captionText": "A carefully collected sample loses much of its value if nobody can establish where it came from or how it was handled. Protect its identity and follow the preservation method for the actual analysis.\n\nMake a durable, readable container label with all required identity fields and match it to the record.\n\nChoose the container, preservation and transfer timing from the stated laboratory instructions rather than a universal rule.\n\nRecord sample handovers and prevent identity mix-ups and cross-contamination.",
+      "spokenText": "A carefully collected sample loses much of its value if nobody can establish where it came from or how it was handled. Protect its identity and follow the preservation method for the actual analysis.\n\nMake a durable, readable container label with all required identity fields and match it to the record.\n\nChoose the container, preservation and transfer timing from the stated laboratory instructions rather than a universal rule.\n\nRecord sample handovers and prevent identity mix-ups and cross-contamination.",
+      "spokenTextSHA256": "78e9d3973f0aefee830d3cb8f58bd82b5b53f80418d42fa480ba86600e31cdbf",
+      "spokenTextSha256": "78e9d3973f0aefee830d3cb8f58bd82b5b53f80418d42fa480ba86600e31cdbf",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cc94da884eda85e568bdb1db240ca9a75ab486d699feac5c4ea82db3bddc600f",
+      "requestFingerprintSha256": "cc94da884eda85e568bdb1db240ca9a75ab486d699feac5c4ea82db3bddc600f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-E01-r1",
+      "unitId": "S1-10-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Only the lids carry the identifiers and they have been removed together.",
+          "sha256": "abc22cd5688325fc95e15e782138605947fd98bc7d446133fd93b209c262ff06"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The link between container and sample identity is uncertain.",
+          "sha256": "a6111ba9850d2ee21cbe99082e5942312472811bb8f2059d127caea782d1a089"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Stop guessing; inspect the contemporaneous record and report the discrepancy.",
+          "sha256": "bf15c49a221cc0dfe2e92bfb406357d7682596ff00c4368010d9ba067b3aa433"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "In future, label the container body and check it at each handover.",
+          "sha256": "27d782183da32b38753f7028f9ab35823ac1a081c56fb3ec33ce85120a206677"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A lid alone is not a dependable sample identifier.",
+          "sha256": "98b5337076824133cafffae334333265826ac927479f8b36ddc63e084d1210b9"
+        }
+      ],
+      "scientificMeaning": "Only the lids carry the identifiers and they have been removed together.\n\nThe link between container and sample identity is uncertain.\n\nStop guessing; inspect the contemporaneous record and report the discrepancy.\n\nIn future, label the container body and check it at each handover.\n\nA lid alone is not a dependable sample identifier.",
+      "displayText": "Only the lids carry the identifiers and they have been removed together.\n\nThe link between container and sample identity is uncertain.\n\nStop guessing; inspect the contemporaneous record and report the discrepancy.\n\nIn future, label the container body and check it at each handover.\n\nA lid alone is not a dependable sample identifier.",
+      "captionText": "Only the lids carry the identifiers and they have been removed together.\n\nThe link between container and sample identity is uncertain.\n\nStop guessing; inspect the contemporaneous record and report the discrepancy.\n\nIn future, label the container body and check it at each handover.\n\nA lid alone is not a dependable sample identifier.",
+      "spokenText": "Only the lids carry the identifiers and they have been removed together.\n\nThe link between container and sample identity is uncertain.\n\nStop guessing; inspect the contemporaneous record and report the discrepancy.\n\nIn future, label the container body and check it at each handover.\n\nA lid alone is not a dependable sample identifier.",
+      "spokenTextSHA256": "fc2f9751ae7ebeadad5b24847088bad49334c91d82103fe2b6f03a66a227b944",
+      "spokenTextSha256": "fc2f9751ae7ebeadad5b24847088bad49334c91d82103fe2b6f03a66a227b944",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d2a4358ad35c9f07fc7a0085ef9e60d6ac0adc3ebd23a4a981d401110aa5fe64",
+      "requestFingerprintSha256": "d2a4358ad35c9f07fc7a0085ef9e60d6ac0adc3ebd23a4a981d401110aa5fe64",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-E02-r1",
+      "unitId": "S1-10-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Card A specifies air drying for a routine fertility submission. Card B specifies fresh cooled soil in an approved sealed container.",
+          "sha256": "7119a954e2bd9acb5383ee4af158f99e8fe094b57693d6a9175326eb876a8f8f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Keep A and B separately identified.",
+          "sha256": "c5579bd992e942c5af986cd7f349e478736345c038b9e92774ca5146b52f4fcd"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Follow each card's preparation, quantity and timing.",
+          "sha256": "3eb251d8721d425a552e20cb9261b44bed9563fd1ae857a9f2ba9360b25dd2c1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Do not seal A indefinitely because B needs moisture retained, or dry B because A needs drying.",
+          "sha256": "cffcdbf3554cb79631ed343d072e644ed61cc99fc45175843d4493259dc00670"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "The analysis method determines preservation.",
+          "sha256": "9557670f99fa0e2c9b5a48f2d7d65dbea82ef9d1c822779661b7b3b1c1c1ca6f"
+        }
+      ],
+      "scientificMeaning": "Card A specifies air drying for a routine fertility submission. Card B specifies fresh cooled soil in an approved sealed container.\n\nKeep A and B separately identified.\n\nFollow each card's preparation, quantity and timing.\n\nDo not seal A indefinitely because B needs moisture retained, or dry B because A needs drying.\n\nThe analysis method determines preservation.",
+      "displayText": "Card A specifies air drying for a routine fertility submission. Card B specifies fresh cooled soil in an approved sealed container.\n\nKeep A and B separately identified.\n\nFollow each card's preparation, quantity and timing.\n\nDo not seal A indefinitely because B needs moisture retained, or dry B because A needs drying.\n\nThe analysis method determines preservation.",
+      "captionText": "Card A specifies air drying for a routine fertility submission. Card B specifies fresh cooled soil in an approved sealed container.\n\nKeep A and B separately identified.\n\nFollow each card's preparation, quantity and timing.\n\nDo not seal A indefinitely because B needs moisture retained, or dry B because A needs drying.\n\nThe analysis method determines preservation.",
+      "spokenText": "Card A specifies air drying for a routine fertility submission. Card B specifies fresh cooled soil in an approved sealed container.\n\nKeep A and B separately identified.\n\nFollow each card's preparation, quantity and timing.\n\nDo not seal A indefinitely because B needs moisture retained, or dry B because A needs drying.\n\nThe analysis method determines preservation.",
+      "spokenTextSHA256": "119bbfb7e76168818d2ede7d27d1eb70316556da131b4f710f15ae3c4386af4a",
+      "spokenTextSha256": "119bbfb7e76168818d2ede7d27d1eb70316556da131b4f710f15ae3c4386af4a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3235d76e8934173acaf41498668d3030f14e6792a9d4f4c6af1e32673a91b296",
+      "requestFingerprintSha256": "3235d76e8934173acaf41498668d3030f14e6792a9d4f4c6af1e32673a91b296",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-E03-r1",
+      "unitId": "S1-10-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A sample required to remain cooled is found in a hot vehicle after several hours.",
+          "sha256": "1c865f31db5ae2a4866a5bad7b10be8b068d62090aea5840999c2a405ad5f75f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Record the known interval, condition and any measured temperature without inventing missing readings.",
+          "sha256": "aadad04659d1d05a4d9201add1ead85e1b6c5254009b83ab2531a6e46b1f7b7e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Report the deviation for a method-specific acceptance or resampling decision.",
+          "sha256": "150174ecd14d49b27ba92023d1cc91ad239b870242957835a88d9e51790a6d4c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Do not erase the history by recording only the final cooled temperature.",
+          "sha256": "8fa9f343424bcd10c339b9ea3d499ee32cce0e224f08f5cd36ced5dc60dabe00"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A truthful deviation record is better than an invented uninterrupted cold chain.",
+          "sha256": "0a21ff62bd94e3bf9db7b11948bbd3e0348726c74735f5c7308b4474803cae14"
+        }
+      ],
+      "scientificMeaning": "A sample required to remain cooled is found in a hot vehicle after several hours.\n\nRecord the known interval, condition and any measured temperature without inventing missing readings.\n\nReport the deviation for a method-specific acceptance or resampling decision.\n\nDo not erase the history by recording only the final cooled temperature.\n\nA truthful deviation record is better than an invented uninterrupted cold chain.",
+      "displayText": "A sample required to remain cooled is found in a hot vehicle after several hours.\n\nRecord the known interval, condition and any measured temperature without inventing missing readings.\n\nReport the deviation for a method-specific acceptance or resampling decision.\n\nDo not erase the history by recording only the final cooled temperature.\n\nA truthful deviation record is better than an invented uninterrupted cold chain.",
+      "captionText": "A sample required to remain cooled is found in a hot vehicle after several hours.\n\nRecord the known interval, condition and any measured temperature without inventing missing readings.\n\nReport the deviation for a method-specific acceptance or resampling decision.\n\nDo not erase the history by recording only the final cooled temperature.\n\nA truthful deviation record is better than an invented uninterrupted cold chain.",
+      "spokenText": "A sample required to remain cooled is found in a hot vehicle after several hours.\n\nRecord the known interval, condition and any measured temperature without inventing missing readings.\n\nReport the deviation for a method-specific acceptance or resampling decision.\n\nDo not erase the history by recording only the final cooled temperature.\n\nA truthful deviation record is better than an invented uninterrupted cold chain.",
+      "spokenTextSHA256": "f75e75a2ffb791fa60c4fcf73a6771ec248a39fbffe9eebcf4bf202e52e1a138",
+      "spokenTextSha256": "f75e75a2ffb791fa60c4fcf73a6771ec248a39fbffe9eebcf4bf202e52e1a138",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3f4f47cb50caa73e8e13cc94ed3c9c7394e20762b5746ac70d91251f91d44ca1",
+      "requestFingerprintSha256": "3f4f47cb50caa73e8e13cc94ed3c9c7394e20762b5746ac70d91251f91d44ca1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-guided-practice-r1",
+      "unitId": "S1-10-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Two lids were swapped, two laboratory method cards require different sample conditions, and one cooled sample spent hours in a hot vehicle. Decide what can be trusted, recorded or corrected before transfer.",
+          "sha256": "319540c4c41229cde1ed0406df2c56c970897108da633931425855456291c497"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Build a readable body label and match its unique ID to the field record.",
+          "sha256": "f0b99d509f236a125347f0f1abea6b9eee4402ddf2c147c04b5adb8c99cde722"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Select dry or fresh-cooled handling from each stated laboratory card, without applying one universal preservation rule.",
+          "sha256": "b8876ee9b83bc186ba8385148a6130cf917c2b2dfecb8bfba5f65dd8649ff532"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Document each handover and the known deviation; mark the missing temperature or interval as unknown if it was not recorded.",
+          "sha256": "6e044f61591cb61144eb65bb37b19e6b58c5fb7e2d1086952b3b76bbb1830c59"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Flag an identity mismatch for investigation rather than guessing from soil colour.",
+          "sha256": "cb03b7dcf404820853f8398c1ba68acfce5c825692f61e3a959d36956b5bac7d"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Creating and checking the real label, container, timing and transfer record remains trainer-observed.",
+          "sha256": "cc57683bc1673a8457f59c46a4d0e52ace976f20db5780cd9faf02070604aace"
+        }
+      ],
+      "scientificMeaning": "Two lids were swapped, two laboratory method cards require different sample conditions, and one cooled sample spent hours in a hot vehicle. Decide what can be trusted, recorded or corrected before transfer.\n\nBuild a readable body label and match its unique ID to the field record.\n\nSelect dry or fresh-cooled handling from each stated laboratory card, without applying one universal preservation rule.\n\nDocument each handover and the known deviation; mark the missing temperature or interval as unknown if it was not recorded.\n\nFlag an identity mismatch for investigation rather than guessing from soil colour.\n\nCreating and checking the real label, container, timing and transfer record remains trainer-observed.",
+      "displayText": "Two lids were swapped, two laboratory method cards require different sample conditions, and one cooled sample spent hours in a hot vehicle. Decide what can be trusted, recorded or corrected before transfer.\n\nBuild a readable body label and match its unique ID to the field record.\n\nSelect dry or fresh-cooled handling from each stated laboratory card, without applying one universal preservation rule.\n\nDocument each handover and the known deviation; mark the missing temperature or interval as unknown if it was not recorded.\n\nFlag an identity mismatch for investigation rather than guessing from soil colour.\n\nCreating and checking the real label, container, timing and transfer record remains trainer-observed.",
+      "captionText": "Two lids were swapped, two laboratory method cards require different sample conditions, and one cooled sample spent hours in a hot vehicle. Decide what can be trusted, recorded or corrected before transfer.\n\nBuild a readable body label and match its unique ID to the field record.\n\nSelect dry or fresh-cooled handling from each stated laboratory card, without applying one universal preservation rule.\n\nDocument each handover and the known deviation; mark the missing temperature or interval as unknown if it was not recorded.\n\nFlag an identity mismatch for investigation rather than guessing from soil colour.\n\nCreating and checking the real label, container, timing and transfer record remains trainer-observed.",
+      "spokenText": "Two lids were swapped, two laboratory method cards require different sample conditions, and one cooled sample spent hours in a hot vehicle. Decide what can be trusted, recorded or corrected before transfer.\n\nBuild a readable body label and match its unique ID to the field record.\n\nSelect dry or fresh-cooled handling from each stated laboratory card, without applying one universal preservation rule.\n\nDocument each handover and the known deviation; mark the missing temperature or interval as unknown if it was not recorded.\n\nFlag an identity mismatch for investigation rather than guessing from soil colour.\n\nCreating and checking the real label, container, timing and transfer record remains trainer-observed.",
+      "spokenTextSHA256": "5c9bf4e88063a273b0a3187f458a5342a51f274817680fd62c2cf0987dfb62d2",
+      "spokenTextSha256": "5c9bf4e88063a273b0a3187f458a5342a51f274817680fd62c2cf0987dfb62d2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2d7ca9c573d605620558268aa16269a7b3bc86997337c1b35598c17987af37f6",
+      "requestFingerprintSha256": "2d7ca9c573d605620558268aa16269a7b3bc86997337c1b35598c17987af37f6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-reflection-r1",
+      "unitId": "S1-10-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I label and preserve the specified sample and explain its handling history?",
+          "sha256": "ee66975b6c6e48fc764d573fb9cd9f2ab5ded2160d990527b071155fc5382af6"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "The eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+          "sha256": "efe8ef5dbe8c6670cec02d60511ccf47eb08b5f9cc313c46a545cca80055cc67"
+        }
+      ],
+      "scientificMeaning": "Can I label and preserve the specified sample and explain its handling history?\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "displayText": "Can I label and preserve the specified sample and explain its handling history?\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "captionText": "Can I label and preserve the specified sample and explain its handling history?\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "spokenText": "Can I label and preserve the specified sample and explain its handling history?\n\nThe eight-item collection card continues into step eleven in station one: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "spokenTextSHA256": "6d2cc02d6bad12f363ae843e5d9cfab3a1c72af1ec4ae63a8a5aa5cf8d3cb431",
+      "spokenTextSha256": "6d2cc02d6bad12f363ae843e5d9cfab3a1c72af1ec4ae63a8a5aa5cf8d3cb431",
+      "spokenAdaptationChanges": [
+        {
+          "written": "S1-11",
+          "spoken": "step eleven in station one",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "71335ea36b1ad13dc07a8dfaa20fe6f84a9ab8368e695805eb8c20d89d4fae9c",
+      "requestFingerprintSha256": "71335ea36b1ad13dc07a8dfaa20fe6f84a9ab8368e695805eb8c20d89d4fae9c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-label-template-r1",
+      "unitId": "S1-10-en-label-template-r1",
+      "locale": "en",
+      "semanticGroup": "label-template",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/labelTemplate/requiredGroups/0",
+          "text": "Unique sample ID",
+          "sha256": "bbc8e0eac5afe6d57e4c7a5d6e51c2350ee4325a6f83b72b9483a50f722df61b"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/1",
+          "text": "Project name/number",
+          "sha256": "880a7a74664edfa3d8043bb891e92416517213c46a0b2ffc4a83a82c82bba22c"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/2",
+          "text": "Site location, including field and zone",
+          "sha256": "676e732d0f3e8d5abf098e32086d2d1c9a6a6c6ab748ae462765233db43cac4c"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/3",
+          "text": "Collection date and time",
+          "sha256": "dbfad1a0260b66fdfe31fb0a230a2167efa3b3de372587a7ca87cf67bda83685"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/4",
+          "text": "Collector initials/name with identity record",
+          "sha256": "fc6ce7b13d43dabcbb82a93da00de744718a5b9229f25336f56dbc4e8ea40ba5"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/5",
+          "text": "Depth interval with units or identified horizon",
+          "sha256": "fb1c2b2876d21a097806724caa1a01af0d3a5a4948497496bf01bb9b4a0b2d8c"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/0",
+          "text": "Learner/group",
+          "sha256": "d152a5399d80e35bd059968aac8b7f2ae8bd0efa041128e65b20abfc841b861e"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/1",
+          "text": "Field",
+          "sha256": "f45fc1dfdc96db2761a434542f105c04d1e15cf96f410656460051efd33ea5b6"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/2",
+          "text": "Zone",
+          "sha256": "a8a06e4a5695553c674ef4cf83caa357f4ea25167fe957b3761e7834c94f88cb"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/3",
+          "text": "Requested analysis",
+          "sha256": "b884601605f6eb51d71b761b22ec181187c99d5157ed62a02fa1f51ee96586b3"
+        },
+        {
+          "pointer": "/labelTemplate/example/id",
+          "text": "PROJ1-SITEA-SS01",
+          "sha256": "596554767352f193516dd61b0761212164cf5babf8c3eb1a632be60ac709c0b2"
+        },
+        {
+          "pointer": "/labelTemplate/example/project",
+          "text": "Greenfield Farm Nutrient Study",
+          "sha256": "2c09574467c395f50ec8645785f689b5dcd5e9e5c444bad5bce1016116ce2448"
+        },
+        {
+          "pointer": "/labelTemplate/example/site",
+          "text": "North Paddock",
+          "sha256": "7ab1e84c7880d22bac23f08c6d7a54a3930a16ca56b2a540ba8e7125563d4a63"
+        },
+        {
+          "pointer": "/labelTemplate/example/date",
+          "text": "2024-10-26",
+          "sha256": "73493884afd15dc3b93541005d9068ab7e6754b98693df725aa9a97ee422b7d5"
+        },
+        {
+          "pointer": "/labelTemplate/example/time",
+          "text": "10:30",
+          "sha256": "b90e3a3de552ac608eeb9c69f44aded8e5cc55ca34fef8d05d37f85d25dd2080"
+        },
+        {
+          "pointer": "/labelTemplate/example/collector",
+          "text": "JD",
+          "sha256": "d77bbe315fafa4a6321f4b14a42deefb6ea86a678639c0ac8c52b56d42e05e9c"
+        },
+        {
+          "pointer": "/labelTemplate/example/depth",
+          "text": "0–15 cm",
+          "sha256": "2dff030c5d6a02067ea2b4b6737023fb4d26c05e77cfd54eb3d7ac0a5fb9e45e"
+        },
+        {
+          "pointer": "/labelTemplate/example/status",
+          "text": "fictional teaching example",
+          "sha256": "c1ee46fd798d0dba6ca50975fcc57a6389a6549b0e0e45a1f551942e4bee5d49"
+        }
+      ],
+      "scientificMeaning": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nLearner/group\n\nField\n\nZone\n\nRequested analysis\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nutrient Study\n\nNorth Paddock\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nfictional teaching example",
+      "displayText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nLearner/group\n\nField\n\nZone\n\nRequested analysis\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nutrient Study\n\nNorth Paddock\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nfictional teaching example",
+      "captionText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nLearner/group\n\nField\n\nZone\n\nRequested analysis\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nutrient Study\n\nNorth Paddock\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nfictional teaching example",
+      "spokenText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nLearner/group\n\nField\n\nZone\n\nRequested analysis\n\nP R O J one, dash, S I T E A, dash, S S zero one\n\nGreenfield Farm Nutrient Study\n\nNorth Paddock\n\ntwenty-sixth October twenty twenty-four\n\nten thirty\n\nJ D\n\nzero to fifteen centimetres\n\nfictional teaching example",
+      "spokenTextSHA256": "7a44351f480161ce169509ab8914a2c8baa1f2caea258becc3812e3d362d9097",
+      "spokenTextSha256": "7a44351f480161ce169509ab8914a2c8baa1f2caea258becc3812e3d362d9097",
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "PROJ1-SITEA-SS01",
+          "spoken": "P R O J one, dash, S I T E A, dash, S S zero one",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "2024-10-26",
+          "spoken": "twenty-sixth October twenty twenty-four",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "10:30",
+          "spoken": "ten thirty",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "JD",
+          "spoken": "J D",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "89fe60ed94b78be540f3f3fd455bdb3e15abf5c8d5673cd453a55d59d8cea183",
+      "requestFingerprintSha256": "89fe60ed94b78be540f3f3fd455bdb3e15abf5c8d5673cd453a55d59d8cea183",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-custody-r1",
+      "unitId": "S1-10-en-custody-r1",
+      "locale": "en",
+      "semanticGroup": "custody",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/custodyPractical/title",
+          "text": "Collect, label and document the training sample",
+          "sha256": "0ecc95f2252c675843dd8b482ce6e0599ea57dabaf06e957703cbc7428baf2e9"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/project",
+          "text": "Riverside Park Expansion",
+          "sha256": "5f892103865409409a0895834e57c1f834754c342679740bfd40c66eb18a208b"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/site",
+          "text": "Site 3 – Proposed Playground",
+          "sha256": "63c89f433688c1e39f093eea3a1d6772b6b76de9e460c41be843455447a243bf"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/dateTime",
+          "text": "Use actual collection date/time for real practice; mark a simulated date/time as scenario data.",
+          "sha256": "a68b4a631c648c775cde33e7438463e3c6eed96ab4cbe599900809edff43391f"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/preservation",
+          "text": "Demonstration card specifies an approved sealed bag and cooler with ice packs. Actual analyte, container and timing require the receiving laboratory's instructions; no collection from a potentially contaminated playground is authorized.",
+          "sha256": "22e4b483b508e05e224d7ee07481f215cd903c783b7c9c818c71e71d54e3b3bf"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/0",
+          "text": "Select the specified stainless steel trowel, approved sample bag, permanent marker, cooler and Field Data Sheet, plus task protection and a means to check quantity/conditions as required.",
+          "sha256": "9e865916fda23350ab0c2d2ecac81211700af0aeca5f0fc8d13aed5a3b627916"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/1",
+          "text": "Clean the trowel before collecting and prevent cross-contamination.",
+          "sha256": "a51ffeebeac0166f65c28c491cbf5bc05e1813e17f9e270f3a3297d7cfa31680"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/2",
+          "text": "Collect approximately 500 g from the specified 0–15 cm layer at the authorized safe training point, recording actual quantity/depth rather than equating a cup to 500 g.",
+          "sha256": "503556dffe8bea9a6743b7c44876931bc34ad13a089f04a2275b9d1acd936d78"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/3",
+          "text": "Place the material in the approved bag and seal it as required by this cooled-sample scenario.",
+          "sha256": "05d767e46f8ba79c9a083dcefbaadba987affc8efeb9f3d2f49c6c5e3b2c3a96"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/4",
+          "text": "Label the container body with all six information groups and retained field/group/zone information.",
+          "sha256": "134880fdf798d4dcad37705aae5b128bf3c0dd02ac7ee5f1aa9e34aa24dc993b"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/5",
+          "text": "Complete the matched Field Data Sheet; retain individual observation evidence from S1-11.",
+          "sha256": "8a5f51b28bd4f6dd2db49025932fb052273a7bd75211fabc46ceb358243f39fa"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/6",
+          "text": "Record objective colour, texture/feel, moisture and site observations; this shared item is assessed in S1-11.",
+          "sha256": "2fcdda201fbc582210b30aff9342877e63110fd095f019f2b0abae70de1bc7c1"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/7",
+          "text": "Place the labeled sealed sample in the cooler as this scenario requires, and record the prescribed preservation check.",
+          "sha256": "a67481c1a7a2884d38a35270d9bd6fe64f685f842e1f9c9d26a9d3309ea68db5"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/0",
+          "text": "Make a transfer entry with sample ID, giver, receiver, date/time and condition.",
+          "sha256": "27c987b870a78ebce65239138c3f9c9e805f8872099e00ca3939433178584e0f"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/1",
+          "text": "Check identity and condition with the receiving person and record any discrepancy.",
+          "sha256": "ff8a95ac8ace7a61cb3cfa06682de882190e9d5d2dbe6f577303e0f41a001a8c"
+        },
+        {
+          "pointer": "/custodyPractical/boundary",
+          "text": "The eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+          "sha256": "efe8ef5dbe8c6670cec02d60511ccf47eb08b5f9cc313c46a545cca80055cc67"
+        }
+      ],
+      "scientificMeaning": "Collect, label and document the training sample\n\nRiverside Park Expansion\n\nSite 3 – Proposed Playground\n\nUse actual collection date/time for real practice; mark a simulated date/time as scenario data.\n\nDemonstration card specifies an approved sealed bag and cooler with ice packs. Actual analyte, container and timing require the receiving laboratory's instructions; no collection from a potentially contaminated playground is authorized.\n\nSelect the specified stainless steel trowel, approved sample bag, permanent marker, cooler and Field Data Sheet, plus task protection and a means to check quantity/conditions as required.\n\nClean the trowel before collecting and prevent cross-contamination.\n\nCollect approximately 500 g from the specified 0–15 cm layer at the authorized safe training point, recording actual quantity/depth rather than equating a cup to 500 g.\n\nPlace the material in the approved bag and seal it as required by this cooled-sample scenario.\n\nLabel the container body with all six information groups and retained field/group/zone information.\n\nComplete the matched Field Data Sheet; retain individual observation evidence from S1-11.\n\nRecord objective colour, texture/feel, moisture and site observations; this shared item is assessed in S1-11.\n\nPlace the labeled sealed sample in the cooler as this scenario requires, and record the prescribed preservation check.\n\nMake a transfer entry with sample ID, giver, receiver, date/time and condition.\n\nCheck identity and condition with the receiving person and record any discrepancy.\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "displayText": "Collect, label and document the training sample\n\nRiverside Park Expansion\n\nSite 3 – Proposed Playground\n\nUse actual collection date/time for real practice; mark a simulated date/time as scenario data.\n\nDemonstration card specifies an approved sealed bag and cooler with ice packs. Actual analyte, container and timing require the receiving laboratory's instructions; no collection from a potentially contaminated playground is authorized.\n\nSelect the specified stainless steel trowel, approved sample bag, permanent marker, cooler and Field Data Sheet, plus task protection and a means to check quantity/conditions as required.\n\nClean the trowel before collecting and prevent cross-contamination.\n\nCollect approximately 500 g from the specified 0–15 cm layer at the authorized safe training point, recording actual quantity/depth rather than equating a cup to 500 g.\n\nPlace the material in the approved bag and seal it as required by this cooled-sample scenario.\n\nLabel the container body with all six information groups and retained field/group/zone information.\n\nComplete the matched Field Data Sheet; retain individual observation evidence from S1-11.\n\nRecord objective colour, texture/feel, moisture and site observations; this shared item is assessed in S1-11.\n\nPlace the labeled sealed sample in the cooler as this scenario requires, and record the prescribed preservation check.\n\nMake a transfer entry with sample ID, giver, receiver, date/time and condition.\n\nCheck identity and condition with the receiving person and record any discrepancy.\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "captionText": "Collect, label and document the training sample\n\nRiverside Park Expansion\n\nSite 3 – Proposed Playground\n\nUse actual collection date/time for real practice; mark a simulated date/time as scenario data.\n\nDemonstration card specifies an approved sealed bag and cooler with ice packs. Actual analyte, container and timing require the receiving laboratory's instructions; no collection from a potentially contaminated playground is authorized.\n\nSelect the specified stainless steel trowel, approved sample bag, permanent marker, cooler and Field Data Sheet, plus task protection and a means to check quantity/conditions as required.\n\nClean the trowel before collecting and prevent cross-contamination.\n\nCollect approximately 500 g from the specified 0–15 cm layer at the authorized safe training point, recording actual quantity/depth rather than equating a cup to 500 g.\n\nPlace the material in the approved bag and seal it as required by this cooled-sample scenario.\n\nLabel the container body with all six information groups and retained field/group/zone information.\n\nComplete the matched Field Data Sheet; retain individual observation evidence from S1-11.\n\nRecord objective colour, texture/feel, moisture and site observations; this shared item is assessed in S1-11.\n\nPlace the labeled sealed sample in the cooler as this scenario requires, and record the prescribed preservation check.\n\nMake a transfer entry with sample ID, giver, receiver, date/time and condition.\n\nCheck identity and condition with the receiving person and record any discrepancy.\n\nThe eight-item collection card continues into S1-11: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "spokenText": "Collect, label and document the training sample\n\nRiverside Park Expansion\n\nSite 3 – Proposed Playground\n\nUse actual collection date/time for real practice; mark a simulated date/time as scenario data.\n\nDemonstration card specifies an approved sealed bag and cooler with ice packs. Actual analyte, container and timing require the receiving laboratory's instructions; no collection from a potentially contaminated playground is authorized.\n\nSelect the specified stainless steel trowel, approved sample bag, permanent marker, cooler and Field Data Sheet, plus task protection and a means to check quantity/conditions as required.\n\nClean the trowel before collecting and prevent cross-contamination.\n\nCollect approximately five hundred grams from the specified zero to fifteen centimetres layer at the authorized safe training point, recording actual quantity/depth rather than equating a cup to five hundred grams.\n\nPlace the material in the approved bag and seal it as required by this cooled-sample scenario.\n\nLabel the container body with all six information groups and retained field/group/zone information.\n\nComplete the matched Field Data Sheet; retain individual observation evidence from step eleven in station one.\n\nRecord objective colour, texture/feel, moisture and site observations; this shared item is assessed in step eleven in station one.\n\nPlace the labeled sealed sample in the cooler as this scenario requires, and record the prescribed preservation check.\n\nMake a transfer entry with sample ID, giver, receiver, date/time and condition.\n\nCheck identity and condition with the receiving person and record any discrepancy.\n\nThe eight-item collection card continues into step eleven in station one: each learner's real label, transfer and field observations require trainer evidence. Use only authorized safe training material and the receiving laboratory's actual instructions.",
+      "spokenTextSHA256": "59ad664cd05da724f199570a37343b9697386d3835b93b2cc5fde767332a7274",
+      "spokenTextSha256": "59ad664cd05da724f199570a37343b9697386d3835b93b2cc5fde767332a7274",
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "500 g",
+          "spoken": "five hundred grams",
+          "occurrences": 2,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "S1-11",
+          "spoken": "step eleven in station one",
+          "occurrences": 3,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b8f9bf4020aeb0968a776bc2a18f111a4f20528b9bf2a15a25877dd571c325c",
+      "requestFingerprintSha256": "6b8f9bf4020aeb0968a776bc2a18f111a4f20528b9bf2a15a25877dd571c325c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-10-en-worksheet-r1",
+      "unitId": "S1-10-en-worksheet-r1",
+      "locale": "en",
+      "semanticGroup": "worksheet",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4223137975626bc3e7c76e73fd76464c9b7c1bd8900454aa8ebd2d41447ef58e",
+      "sourceBindings": [
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Label and handover record",
+          "sha256": "b75bfe186fb66149ce5efe1d3c487bce81f5dc19d9e2e5eb46ba386ac489f3ad"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/0",
+          "text": "Six label groups",
+          "sha256": "a0939a4a0fca754fa1a8dcdadd85555ccfc66e811d806be7d9173dae498793bd"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/1",
+          "text": "Learner/group, field and zone",
+          "sha256": "a0c3f14900a4be2572b292adcbcd38ac3af0651fd9a02924427b0aeb6836dff0"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/2",
+          "text": "Requested analysis and method card",
+          "sha256": "2ec1a4473bd697c0ac849e4bc98d984d1638d72fc8bad97572941a705c208c70"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/3",
+          "text": "Container and quantity",
+          "sha256": "ef717377fd05dff0f50d97772c6b04211244b8a811c8c74bac3bcb9f9ea75938"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/4",
+          "text": "Preservation target and measured check",
+          "sha256": "3b27e7aadfe48b3f080c33fd6dd86f42dc1a211a6dc3a1bdbf8e3b414e782feb"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/5",
+          "text": "Date/time released and received",
+          "sha256": "68ea20952195829cfda10637545ed9fbe7cb44e6c4447eab70f17a1f9cf19bb1"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/6",
+          "text": "Giver and receiver",
+          "sha256": "018566a61b6b57e79c9caea49d1b6b588a8f26caaf64815aa03f574ce04c2a1c"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/7",
+          "text": "Condition/deviation",
+          "sha256": "7dcc9420860f2be19a7c04fcc2374985a694e6ec9522513e5b477c16f44f4df2"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/8",
+          "text": "Action taken",
+          "sha256": "da6b3a8bc93a3b57d9109b85828a60ea525a4287e2efcac0a03d55b58b1d5ea1"
+        }
+      ],
+      "scientificMeaning": "Label and handover record\n\nSix label groups\n\nLearner/group, field and zone\n\nRequested analysis and method card\n\nContainer and quantity\n\nPreservation target and measured check\n\nDate/time released and received\n\nGiver and receiver\n\nCondition/deviation\n\nAction taken",
+      "displayText": "Label and handover record\n\nSix label groups\n\nLearner/group, field and zone\n\nRequested analysis and method card\n\nContainer and quantity\n\nPreservation target and measured check\n\nDate/time released and received\n\nGiver and receiver\n\nCondition/deviation\n\nAction taken",
+      "captionText": "Label and handover record\n\nSix label groups\n\nLearner/group, field and zone\n\nRequested analysis and method card\n\nContainer and quantity\n\nPreservation target and measured check\n\nDate/time released and received\n\nGiver and receiver\n\nCondition/deviation\n\nAction taken",
+      "spokenText": "Label and handover record\n\nSix label groups\n\nLearner/group, field and zone\n\nRequested analysis and method card\n\nContainer and quantity\n\nPreservation target and measured check\n\nDate/time released and received\n\nGiver and receiver\n\nCondition/deviation\n\nAction taken",
+      "spokenTextSHA256": "36a6be4a095a18da1bb37e6d3fef252f57352bef2f2d0c0352d71139d9ce702c",
+      "spokenTextSha256": "36a6be4a095a18da1bb37e6d3fef252f57352bef2f2d0c0352d71139d9ce702c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c61cfb86d338a86d086894f9b3853c6a45ac0fd794ba48183cf810027f8ee1a4",
+      "requestFingerprintSha256": "c61cfb86d338a86d086894f9b3853c6a45ac0fd794ba48183cf810027f8ee1a4",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

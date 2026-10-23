@@ -1,0 +1,735 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-10-de.json",
+    "sha256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+    "bytes": 19654
+  },
+  "units": [
+    {
+      "id": "S1-10-de-opening-r1",
+      "unitId": "S1-10-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Eine gute Probe ohne Beschriftung und Übergabeprotokoll kann ihren Sinn verlieren. Verbinde jede Probe gemäß den Anweisungen des zuständigen Labors mit Ort, Lagerung und Personen, die sie übernommen haben.",
+          "sha256": "23bbd190612c276c449d66baf8dffdad284b520becb94744212e1328c8b136b7"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Ein dauerhaft lesbares Behälteretikett mit allen Identitätsfeldern herstellen und mit dem Protokoll abgleichen.",
+          "sha256": "e3ff90a95bd1ff3e037c624f764c65951363ef9673d08a1461f530ba33d3d62b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Behälter, Aufbewahrung und Übergabezeit nach den konkreten Laboranweisungen statt nach einer allgemeinen Regel wählen.",
+          "sha256": "ab499a23437a1c88c67e53da8260a9729b2a6c51d12dee3d258cf88dae69d15f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Probenübergaben dokumentieren und Verwechslung sowie Verschleppung zwischen Proben vermeiden.",
+          "sha256": "70ceac7f2a8a65c7110a97c8c32d92815cc2293e2dc730c1587393a9c9f632b6"
+        }
+      ],
+      "scientificMeaning": "Eine gute Probe ohne Beschriftung und Übergabeprotokoll kann ihren Sinn verlieren. Verbinde jede Probe gemäß den Anweisungen des zuständigen Labors mit Ort, Lagerung und Personen, die sie übernommen haben.\n\nEin dauerhaft lesbares Behälteretikett mit allen Identitätsfeldern herstellen und mit dem Protokoll abgleichen.\n\nBehälter, Aufbewahrung und Übergabezeit nach den konkreten Laboranweisungen statt nach einer allgemeinen Regel wählen.\n\nProbenübergaben dokumentieren und Verwechslung sowie Verschleppung zwischen Proben vermeiden.",
+      "displayText": "Eine gute Probe ohne Beschriftung und Übergabeprotokoll kann ihren Sinn verlieren. Verbinde jede Probe gemäß den Anweisungen des zuständigen Labors mit Ort, Lagerung und Personen, die sie übernommen haben.\n\nEin dauerhaft lesbares Behälteretikett mit allen Identitätsfeldern herstellen und mit dem Protokoll abgleichen.\n\nBehälter, Aufbewahrung und Übergabezeit nach den konkreten Laboranweisungen statt nach einer allgemeinen Regel wählen.\n\nProbenübergaben dokumentieren und Verwechslung sowie Verschleppung zwischen Proben vermeiden.",
+      "captionText": "Eine gute Probe ohne Beschriftung und Übergabeprotokoll kann ihren Sinn verlieren. Verbinde jede Probe gemäß den Anweisungen des zuständigen Labors mit Ort, Lagerung und Personen, die sie übernommen haben.\n\nEin dauerhaft lesbares Behälteretikett mit allen Identitätsfeldern herstellen und mit dem Protokoll abgleichen.\n\nBehälter, Aufbewahrung und Übergabezeit nach den konkreten Laboranweisungen statt nach einer allgemeinen Regel wählen.\n\nProbenübergaben dokumentieren und Verwechslung sowie Verschleppung zwischen Proben vermeiden.",
+      "spokenText": "Eine gute Probe ohne Beschriftung und Übergabeprotokoll kann ihren Sinn verlieren. Verbinde jede Probe gemäß den Anweisungen des zuständigen Labors mit Ort, Lagerung und Personen, die sie übernommen haben.\n\nEin dauerhaft lesbares Behälteretikett mit allen Identitätsfeldern herstellen und mit dem Protokoll abgleichen.\n\nBehälter, Aufbewahrung und Übergabezeit nach den konkreten Laboranweisungen statt nach einer allgemeinen Regel wählen.\n\nProbenübergaben dokumentieren und Verwechslung sowie Verschleppung zwischen Proben vermeiden.",
+      "spokenTextSHA256": "10cd27cdd24756b69abd91017deeda057b49da55e32b6c517881bd4704cd2010",
+      "spokenTextSha256": "10cd27cdd24756b69abd91017deeda057b49da55e32b6c517881bd4704cd2010",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b88429528db93db515406a12c036f00a748c87ec8b7ddb73ada0e470589a3115",
+      "requestFingerprintSha256": "b88429528db93db515406a12c036f00a748c87ec8b7ddb73ada0e470589a3115",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-E01-r1",
+      "unitId": "S1-10-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Nur die Deckel tragen IDs; beide wurden gleichzeitig abgenommen.",
+          "sha256": "9f981ec5139fb9e6f3ef12035757185f2ff3c30e255f91eb887b4e2158f83760"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Die Zuordnung von Behälter und Identität ist unsicher.",
+          "sha256": "7d29f030f7691d6150532978a27491d302873d02515e988f6e28dbe448fa234b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Nicht raten: zeitnahes Protokoll prüfen und Abweichung melden.",
+          "sha256": "e304dd5c618e7d630ce0faa90f486928beb41f1d7840f05dc577f0f359f2f410"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Künftig den Behälter selbst beschriften und bei jeder Übergabe die ID prüfen.",
+          "sha256": "13d8b60a6f87714a39b8e2218007acd6ddc4c095b828b6793f829426fddd3c11"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Ein Deckel allein identifiziert die Probe nicht zuverlässig.",
+          "sha256": "cfd2759376168e799cfa8d25ca218123b3950e3b6aa237eb678dbbce88c93df7"
+        }
+      ],
+      "scientificMeaning": "Nur die Deckel tragen IDs; beide wurden gleichzeitig abgenommen.\n\nDie Zuordnung von Behälter und Identität ist unsicher.\n\nNicht raten: zeitnahes Protokoll prüfen und Abweichung melden.\n\nKünftig den Behälter selbst beschriften und bei jeder Übergabe die ID prüfen.\n\nEin Deckel allein identifiziert die Probe nicht zuverlässig.",
+      "displayText": "Nur die Deckel tragen IDs; beide wurden gleichzeitig abgenommen.\n\nDie Zuordnung von Behälter und Identität ist unsicher.\n\nNicht raten: zeitnahes Protokoll prüfen und Abweichung melden.\n\nKünftig den Behälter selbst beschriften und bei jeder Übergabe die ID prüfen.\n\nEin Deckel allein identifiziert die Probe nicht zuverlässig.",
+      "captionText": "Nur die Deckel tragen IDs; beide wurden gleichzeitig abgenommen.\n\nDie Zuordnung von Behälter und Identität ist unsicher.\n\nNicht raten: zeitnahes Protokoll prüfen und Abweichung melden.\n\nKünftig den Behälter selbst beschriften und bei jeder Übergabe die ID prüfen.\n\nEin Deckel allein identifiziert die Probe nicht zuverlässig.",
+      "spokenText": "Nur die Deckel tragen IDs; beide wurden gleichzeitig abgenommen.\n\nDie Zuordnung von Behälter und Identität ist unsicher.\n\nNicht raten: zeitnahes Protokoll prüfen und Abweichung melden.\n\nKünftig den Behälter selbst beschriften und bei jeder Übergabe die ID prüfen.\n\nEin Deckel allein identifiziert die Probe nicht zuverlässig.",
+      "spokenTextSHA256": "77cabd9de3fd3ce1102d4de4129309ca205b1cddc1f00fba0f4abfa9bc42f5e3",
+      "spokenTextSha256": "77cabd9de3fd3ce1102d4de4129309ca205b1cddc1f00fba0f4abfa9bc42f5e3",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c7f967241d114944b650053957e0387397cb4df5530e0a4561137019d9422fe8",
+      "requestFingerprintSha256": "c7f967241d114944b650053957e0387397cb4df5530e0a4561137019d9422fe8",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-E02-r1",
+      "unitId": "S1-10-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Karte A fordert Lufttrocknung für eine übliche Fruchtbarkeitsanalyse; Karte B verlangt frischen, gekühlten Boden im zugelassenen verschlossenen Behälter.",
+          "sha256": "84a0f53836c0ddf206a5bbfb4ecf13aa9cea7012c38c708b723d3ba98c8b5325"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identitäten A und B getrennt halten.",
+          "sha256": "083be50937a2fb48758633253b3230b559a797db036581a337b82ca4195ef134"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Vorbereitung, Menge und Frist jeder eigenen Karte entnehmen.",
+          "sha256": "a4dbe384b7c559082aca34fc79bcc46dc5ab07f42cabe4eb3345b7c8c73360e7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "A nicht dauerhaft feucht versiegeln, nur weil B feucht bleiben muss; B nicht trocknen, nur weil A trocknen soll.",
+          "sha256": "a3b8c20c03bf6279d7185c3f979c98e52fcb8949ed293f3dda0d029934a6166c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Die jeweilige Labormethode bestimmt die Aufbewahrung.",
+          "sha256": "e3e4bba1b200672a5d591ba8ab2397a2d7828c39a71c6a912bef1630ae9c061a"
+        }
+      ],
+      "scientificMeaning": "Karte A fordert Lufttrocknung für eine übliche Fruchtbarkeitsanalyse; Karte B verlangt frischen, gekühlten Boden im zugelassenen verschlossenen Behälter.\n\nIdentitäten A und B getrennt halten.\n\nVorbereitung, Menge und Frist jeder eigenen Karte entnehmen.\n\nA nicht dauerhaft feucht versiegeln, nur weil B feucht bleiben muss; B nicht trocknen, nur weil A trocknen soll.\n\nDie jeweilige Labormethode bestimmt die Aufbewahrung.",
+      "displayText": "Karte A fordert Lufttrocknung für eine übliche Fruchtbarkeitsanalyse; Karte B verlangt frischen, gekühlten Boden im zugelassenen verschlossenen Behälter.\n\nIdentitäten A und B getrennt halten.\n\nVorbereitung, Menge und Frist jeder eigenen Karte entnehmen.\n\nA nicht dauerhaft feucht versiegeln, nur weil B feucht bleiben muss; B nicht trocknen, nur weil A trocknen soll.\n\nDie jeweilige Labormethode bestimmt die Aufbewahrung.",
+      "captionText": "Karte A fordert Lufttrocknung für eine übliche Fruchtbarkeitsanalyse; Karte B verlangt frischen, gekühlten Boden im zugelassenen verschlossenen Behälter.\n\nIdentitäten A und B getrennt halten.\n\nVorbereitung, Menge und Frist jeder eigenen Karte entnehmen.\n\nA nicht dauerhaft feucht versiegeln, nur weil B feucht bleiben muss; B nicht trocknen, nur weil A trocknen soll.\n\nDie jeweilige Labormethode bestimmt die Aufbewahrung.",
+      "spokenText": "Karte A fordert Lufttrocknung für eine übliche Fruchtbarkeitsanalyse; Karte B verlangt frischen, gekühlten Boden im zugelassenen verschlossenen Behälter.\n\nIdentitäten A und B getrennt halten.\n\nVorbereitung, Menge und Frist jeder eigenen Karte entnehmen.\n\nA nicht dauerhaft feucht versiegeln, nur weil B feucht bleiben muss; B nicht trocknen, nur weil A trocknen soll.\n\nDie jeweilige Labormethode bestimmt die Aufbewahrung.",
+      "spokenTextSHA256": "a96ac483c9b74b7757a0d734624db0ea613fb039ac958fa5c6d5056662c3b98e",
+      "spokenTextSha256": "a96ac483c9b74b7757a0d734624db0ea613fb039ac958fa5c6d5056662c3b98e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4458312243246fd528a5ff58fc0c169477a284c940b80461b9adc4b2348d78a4",
+      "requestFingerprintSha256": "4458312243246fd528a5ff58fc0c169477a284c940b80461b9adc4b2348d78a4",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-E03-r1",
+      "unitId": "S1-10-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Eine kalt zu haltende Probe lag mehrere Stunden in einem heißen Fahrzeug.",
+          "sha256": "46fe6b689c75171ea16dc26733674dd79a142ad2635066bf9ead81f22ca83260"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tatsächlich bekannte Dauer, Zustand und gemessene Temperatur notieren, fehlende Messwerte nicht erfinden.",
+          "sha256": "e666e091f1fb6abcecc6b77cac5512c5eea88ba33d805984803418722aa54a99"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Abweichung melden; das Labor entscheidet methodenspezifisch über Annahme oder neue Entnahme.",
+          "sha256": "93c22ae0085e0a361bb569bb7fb28b150cc65ef82fd95d450fb9bb7a223b6223"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Den Verlauf nicht durch einen Eintrag nur der späteren kalten Temperatur verdecken.",
+          "sha256": "3601537132948ddd603fd1099302416d8c49c1726d1bb0940b2d2cfe8bd0a04a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Eine ehrlich dokumentierte Abweichung ist besser als eine erfundene Kühlkette.",
+          "sha256": "2edcf33d8253c7c1107a93175e79a851bb27bd244447ae374d767013ec442f8a"
+        }
+      ],
+      "scientificMeaning": "Eine kalt zu haltende Probe lag mehrere Stunden in einem heißen Fahrzeug.\n\nTatsächlich bekannte Dauer, Zustand und gemessene Temperatur notieren, fehlende Messwerte nicht erfinden.\n\nAbweichung melden; das Labor entscheidet methodenspezifisch über Annahme oder neue Entnahme.\n\nDen Verlauf nicht durch einen Eintrag nur der späteren kalten Temperatur verdecken.\n\nEine ehrlich dokumentierte Abweichung ist besser als eine erfundene Kühlkette.",
+      "displayText": "Eine kalt zu haltende Probe lag mehrere Stunden in einem heißen Fahrzeug.\n\nTatsächlich bekannte Dauer, Zustand und gemessene Temperatur notieren, fehlende Messwerte nicht erfinden.\n\nAbweichung melden; das Labor entscheidet methodenspezifisch über Annahme oder neue Entnahme.\n\nDen Verlauf nicht durch einen Eintrag nur der späteren kalten Temperatur verdecken.\n\nEine ehrlich dokumentierte Abweichung ist besser als eine erfundene Kühlkette.",
+      "captionText": "Eine kalt zu haltende Probe lag mehrere Stunden in einem heißen Fahrzeug.\n\nTatsächlich bekannte Dauer, Zustand und gemessene Temperatur notieren, fehlende Messwerte nicht erfinden.\n\nAbweichung melden; das Labor entscheidet methodenspezifisch über Annahme oder neue Entnahme.\n\nDen Verlauf nicht durch einen Eintrag nur der späteren kalten Temperatur verdecken.\n\nEine ehrlich dokumentierte Abweichung ist besser als eine erfundene Kühlkette.",
+      "spokenText": "Eine kalt zu haltende Probe lag mehrere Stunden in einem heißen Fahrzeug.\n\nTatsächlich bekannte Dauer, Zustand und gemessene Temperatur notieren, fehlende Messwerte nicht erfinden.\n\nAbweichung melden; das Labor entscheidet methodenspezifisch über Annahme oder neue Entnahme.\n\nDen Verlauf nicht durch einen Eintrag nur der späteren kalten Temperatur verdecken.\n\nEine ehrlich dokumentierte Abweichung ist besser als eine erfundene Kühlkette.",
+      "spokenTextSHA256": "3e015077a7949588449fa87f0ac4af7ab04c46d863e68d3e29a2ec9503f0d6ac",
+      "spokenTextSha256": "3e015077a7949588449fa87f0ac4af7ab04c46d863e68d3e29a2ec9503f0d6ac",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d581afa41066b7f626636749bcd684622eae8117d99aae71b24363b2e928945c",
+      "requestFingerprintSha256": "d581afa41066b7f626636749bcd684622eae8117d99aae71b24363b2e928945c",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-guided-practice-r1",
+      "unitId": "S1-10-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Zwei Deckel wurden vertauscht, zwei Laborkarten verlangen verschiedene Lagerbedingungen, und eine zu kühlende Probe lag Stunden in einem heißen Fahrzeug. Entscheide, was vor der Übergabe verlässlich ist, was zu dokumentieren und was zu korrigieren ist.",
+          "sha256": "44b787c8a8c4a904502f7a044705e945cc7cbdf00a76c15942786744b6b9bc81"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Ein lesbares Etikett am Behälterkörper anbringen und die eindeutige ID mit dem Feldblatt abgleichen.",
+          "sha256": "79841318d7857ad544c3007291aef6072e15e8e23e7802f11a2aff81d557cf62"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Lufttrocknung oder frisch-gekühlte Aufbewahrung aus der jeweiligen Karte wählen statt eine pauschale Regel anzuwenden.",
+          "sha256": "8ccb3381f40374f43f5871de4f87ce49aa1153c352e5fc9fbd0bedbb057df3b0"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Jede Übergabe und die bekannte Abweichung dokumentieren; nicht aufgezeichnete Temperaturen oder Zeitspannen ausdrücklich als unbekannt kennzeichnen.",
+          "sha256": "5d472014e4e4007a1c5fbe2c061f4fbe1c76621d99e4a6442a53db44246ee278"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Eine widersprüchliche Identität zur Klärung melden, nicht anhand der Farbe erraten.",
+          "sha256": "a29ce9356b9036cc4589112cd5c8401dc95ce2d9e5383c685fe0b325761d3e8b"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Herstellen und Prüfen des echten Etiketts, Behälters, der Zeiten und des Verzeichnisses werden durch die Lehrkraft beobachtet.",
+          "sha256": "d6740a2be825f3507b2883c023912e95f50c6545646ccab3c5427c9f99060811"
+        }
+      ],
+      "scientificMeaning": "Zwei Deckel wurden vertauscht, zwei Laborkarten verlangen verschiedene Lagerbedingungen, und eine zu kühlende Probe lag Stunden in einem heißen Fahrzeug. Entscheide, was vor der Übergabe verlässlich ist, was zu dokumentieren und was zu korrigieren ist.\n\nEin lesbares Etikett am Behälterkörper anbringen und die eindeutige ID mit dem Feldblatt abgleichen.\n\nLufttrocknung oder frisch-gekühlte Aufbewahrung aus der jeweiligen Karte wählen statt eine pauschale Regel anzuwenden.\n\nJede Übergabe und die bekannte Abweichung dokumentieren; nicht aufgezeichnete Temperaturen oder Zeitspannen ausdrücklich als unbekannt kennzeichnen.\n\nEine widersprüchliche Identität zur Klärung melden, nicht anhand der Farbe erraten.\n\nHerstellen und Prüfen des echten Etiketts, Behälters, der Zeiten und des Verzeichnisses werden durch die Lehrkraft beobachtet.",
+      "displayText": "Zwei Deckel wurden vertauscht, zwei Laborkarten verlangen verschiedene Lagerbedingungen, und eine zu kühlende Probe lag Stunden in einem heißen Fahrzeug. Entscheide, was vor der Übergabe verlässlich ist, was zu dokumentieren und was zu korrigieren ist.\n\nEin lesbares Etikett am Behälterkörper anbringen und die eindeutige ID mit dem Feldblatt abgleichen.\n\nLufttrocknung oder frisch-gekühlte Aufbewahrung aus der jeweiligen Karte wählen statt eine pauschale Regel anzuwenden.\n\nJede Übergabe und die bekannte Abweichung dokumentieren; nicht aufgezeichnete Temperaturen oder Zeitspannen ausdrücklich als unbekannt kennzeichnen.\n\nEine widersprüchliche Identität zur Klärung melden, nicht anhand der Farbe erraten.\n\nHerstellen und Prüfen des echten Etiketts, Behälters, der Zeiten und des Verzeichnisses werden durch die Lehrkraft beobachtet.",
+      "captionText": "Zwei Deckel wurden vertauscht, zwei Laborkarten verlangen verschiedene Lagerbedingungen, und eine zu kühlende Probe lag Stunden in einem heißen Fahrzeug. Entscheide, was vor der Übergabe verlässlich ist, was zu dokumentieren und was zu korrigieren ist.\n\nEin lesbares Etikett am Behälterkörper anbringen und die eindeutige ID mit dem Feldblatt abgleichen.\n\nLufttrocknung oder frisch-gekühlte Aufbewahrung aus der jeweiligen Karte wählen statt eine pauschale Regel anzuwenden.\n\nJede Übergabe und die bekannte Abweichung dokumentieren; nicht aufgezeichnete Temperaturen oder Zeitspannen ausdrücklich als unbekannt kennzeichnen.\n\nEine widersprüchliche Identität zur Klärung melden, nicht anhand der Farbe erraten.\n\nHerstellen und Prüfen des echten Etiketts, Behälters, der Zeiten und des Verzeichnisses werden durch die Lehrkraft beobachtet.",
+      "spokenText": "Zwei Deckel wurden vertauscht, zwei Laborkarten verlangen verschiedene Lagerbedingungen, und eine zu kühlende Probe lag Stunden in einem heißen Fahrzeug. Entscheide, was vor der Übergabe verlässlich ist, was zu dokumentieren und was zu korrigieren ist.\n\nEin lesbares Etikett am Behälterkörper anbringen und die eindeutige ID mit dem Feldblatt abgleichen.\n\nLufttrocknung oder frisch-gekühlte Aufbewahrung aus der jeweiligen Karte wählen statt eine pauschale Regel anzuwenden.\n\nJede Übergabe und die bekannte Abweichung dokumentieren; nicht aufgezeichnete Temperaturen oder Zeitspannen ausdrücklich als unbekannt kennzeichnen.\n\nEine widersprüchliche Identität zur Klärung melden, nicht anhand der Farbe erraten.\n\nHerstellen und Prüfen des echten Etiketts, Behälters, der Zeiten und des Verzeichnisses werden durch die Lehrkraft beobachtet.",
+      "spokenTextSHA256": "65bdd26887b3c1aab9b8442696d183fd44d1d1d609410aad3331e1c8c905077a",
+      "spokenTextSha256": "65bdd26887b3c1aab9b8442696d183fd44d1d1d609410aad3331e1c8c905077a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "59740ad30abf05aa7fd7e0c726ff77a21c9cad32abf94ce832ba06af9cba3232",
+      "requestFingerprintSha256": "59740ad30abf05aa7fd7e0c726ff77a21c9cad32abf94ce832ba06af9cba3232",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-reflection-r1",
+      "unitId": "S1-10-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Kann ich die verlangte Probe richtig kennzeichnen und aufbewahren und ihren Umgangsverlauf erklären?",
+          "sha256": "bbe5967fd377bb0441e693adeafe1aacf6205d91b34abfdf92e50eaa144472ed"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Die achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+          "sha256": "0fe8fc0d3debf21b4b8a44e179e2d7722530c4b98be478e353d0c75401eef61f"
+        }
+      ],
+      "scientificMeaning": "Kann ich die verlangte Probe richtig kennzeichnen und aufbewahren und ihren Umgangsverlauf erklären?\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "displayText": "Kann ich die verlangte Probe richtig kennzeichnen und aufbewahren und ihren Umgangsverlauf erklären?\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "captionText": "Kann ich die verlangte Probe richtig kennzeichnen und aufbewahren und ihren Umgangsverlauf erklären?\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "spokenText": "Kann ich die verlangte Probe richtig kennzeichnen und aufbewahren und ihren Umgangsverlauf erklären?\n\nDie achtteilige Sammelkarte wird in Schritt elf der ersten Station fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "spokenTextSHA256": "5a815c6ff8d4a49d9ae6cbb833a6ddd0d615f8cd7a77f5f2d25ffb11a7a75092",
+      "spokenTextSha256": "5a815c6ff8d4a49d9ae6cbb833a6ddd0d615f8cd7a77f5f2d25ffb11a7a75092",
+      "spokenAdaptationChanges": [
+        {
+          "written": "in S1-11",
+          "spoken": "in Schritt elf der ersten Station",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3733984b98f0b9829515207f932e8c1db20b1da40902302d17eb707aa72dcc15",
+      "requestFingerprintSha256": "3733984b98f0b9829515207f932e8c1db20b1da40902302d17eb707aa72dcc15",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-label-template-r1",
+      "unitId": "S1-10-de-label-template-r1",
+      "locale": "de",
+      "semanticGroup": "label-template",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/labelTemplate/requiredGroups/0",
+          "text": "Eindeutige Proben-ID",
+          "sha256": "3133bc74b1bc309803b10cbda574f5fcc9032021fe4f9cb52142db8ae455a9d4"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/1",
+          "text": "Projektname oder -nummer",
+          "sha256": "a0b7cc7a295547bea8161ff8016aa53b197d66dbb5aa998147f7a392dc547805"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/2",
+          "text": "Standort mit Feld und Zone",
+          "sha256": "6d28f6f3da4b0eb54fa555b103a24a9d7aeb5ae8196286d52c9455a401d763e5"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/3",
+          "text": "Datum und Uhrzeit der Entnahme",
+          "sha256": "e9613bea355c009ddbb6e6511183ab58c57a5e13b8d5112a2ded95cc62d82cc9"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/4",
+          "text": "Name oder Initialen der sammelnden Person mit Identitätsverzeichnis",
+          "sha256": "93cbbcdca272509cda6d04d4fd557b5ccda38bb6849166feb735f64ac18e81eb"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/5",
+          "text": "Tiefenintervall und Einheit oder bestimmter Horizont",
+          "sha256": "8b52c06359bddb5e051f26614219da1e73fd03d7d8410a72af56ce7bb76754fc"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/0",
+          "text": "Lernende/Gruppe",
+          "sha256": "62550ab1768b02f488dab9ff4b42738cb6362e972cd3f014ca243fa8b4c06128"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/1",
+          "text": "Feld",
+          "sha256": "1dbe99d0e423f99a6c63b28592145218f8a1ec21ac42f8d043ffaaab3e7f2e3f"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/2",
+          "text": "Zone",
+          "sha256": "a8a06e4a5695553c674ef4cf83caa357f4ea25167fe957b3761e7834c94f88cb"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/3",
+          "text": "Gewünschte Analyse",
+          "sha256": "3d4b871e0e83729597052eeb6fae25ae5fa7f4aadd46d98c4007417baa1b1965"
+        },
+        {
+          "pointer": "/labelTemplate/example/id",
+          "text": "PROJ1-SITEA-SS01",
+          "sha256": "596554767352f193516dd61b0761212164cf5babf8c3eb1a632be60ac709c0b2"
+        },
+        {
+          "pointer": "/labelTemplate/example/project",
+          "text": "Greenfield Farm Nährstoffstudie",
+          "sha256": "62d51457b9e333086cd596ce828cf7c20698eaafc09a13a7090f8532e60fe63a"
+        },
+        {
+          "pointer": "/labelTemplate/example/site",
+          "text": "Nördliche Weide",
+          "sha256": "42e3fe80c3cdb93220ec185fd2862c4e52a2240a04d6e662b9935a8e11964827"
+        },
+        {
+          "pointer": "/labelTemplate/example/date",
+          "text": "2024-10-26",
+          "sha256": "73493884afd15dc3b93541005d9068ab7e6754b98693df725aa9a97ee422b7d5"
+        },
+        {
+          "pointer": "/labelTemplate/example/time",
+          "text": "10:30",
+          "sha256": "b90e3a3de552ac608eeb9c69f44aded8e5cc55ca34fef8d05d37f85d25dd2080"
+        },
+        {
+          "pointer": "/labelTemplate/example/collector",
+          "text": "JD",
+          "sha256": "d77bbe315fafa4a6321f4b14a42deefb6ea86a678639c0ac8c52b56d42e05e9c"
+        },
+        {
+          "pointer": "/labelTemplate/example/depth",
+          "text": "0–15 cm",
+          "sha256": "2dff030c5d6a02067ea2b4b6737023fb4d26c05e77cfd54eb3d7ac0a5fb9e45e"
+        },
+        {
+          "pointer": "/labelTemplate/example/status",
+          "text": "Erfundene Lehrbeispieldaten",
+          "sha256": "8407fff7364a86e2c87518420fa3a06ec07f86881f43d3e2d22e7cbece8c71f6"
+        }
+      ],
+      "scientificMeaning": "Eindeutige Proben-ID\n\nProjektname oder -nummer\n\nStandort mit Feld und Zone\n\nDatum und Uhrzeit der Entnahme\n\nName oder Initialen der sammelnden Person mit Identitätsverzeichnis\n\nTiefenintervall und Einheit oder bestimmter Horizont\n\nLernende/Gruppe\n\nFeld\n\nZone\n\nGewünschte Analyse\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nährstoffstudie\n\nNördliche Weide\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nErfundene Lehrbeispieldaten",
+      "displayText": "Eindeutige Proben-ID\n\nProjektname oder -nummer\n\nStandort mit Feld und Zone\n\nDatum und Uhrzeit der Entnahme\n\nName oder Initialen der sammelnden Person mit Identitätsverzeichnis\n\nTiefenintervall und Einheit oder bestimmter Horizont\n\nLernende/Gruppe\n\nFeld\n\nZone\n\nGewünschte Analyse\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nährstoffstudie\n\nNördliche Weide\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nErfundene Lehrbeispieldaten",
+      "captionText": "Eindeutige Proben-ID\n\nProjektname oder -nummer\n\nStandort mit Feld und Zone\n\nDatum und Uhrzeit der Entnahme\n\nName oder Initialen der sammelnden Person mit Identitätsverzeichnis\n\nTiefenintervall und Einheit oder bestimmter Horizont\n\nLernende/Gruppe\n\nFeld\n\nZone\n\nGewünschte Analyse\n\nPROJ1-SITEA-SS01\n\nGreenfield Farm Nährstoffstudie\n\nNördliche Weide\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nErfundene Lehrbeispieldaten",
+      "spokenText": "Eindeutige Proben-ID\n\nProjektname oder -nummer\n\nStandort mit Feld und Zone\n\nDatum und Uhrzeit der Entnahme\n\nName oder Initialen der sammelnden Person mit Identitätsverzeichnis\n\nTiefenintervall und Einheit oder bestimmter Horizont\n\nLernende/Gruppe\n\nFeld\n\nZone\n\nGewünschte Analyse\n\nP R O J eins, Bindestrich, S I T E A, Bindestrich, S S null eins\n\nGreenfield Farm Nährstoffstudie\n\nNördliche Weide\n\nsechsundzwanzigster Oktober zweitausendvierundzwanzig\n\nzehn Uhr dreißig\n\nJ D\n\nnull bis fünfzehn Zentimeter\n\nErfundene Lehrbeispieldaten",
+      "spokenTextSHA256": "c683940f45fc290efe73bf2f8d62a307c752c69bdb4a81f38af9cdb0c7c004bc",
+      "spokenTextSha256": "c683940f45fc290efe73bf2f8d62a307c752c69bdb4a81f38af9cdb0c7c004bc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "null bis fünfzehn Zentimeter",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "PROJ1-SITEA-SS01",
+          "spoken": "P R O J eins, Bindestrich, S I T E A, Bindestrich, S S null eins",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "2024-10-26",
+          "spoken": "sechsundzwanzigster Oktober zweitausendvierundzwanzig",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "10:30",
+          "spoken": "zehn Uhr dreißig",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "JD",
+          "spoken": "J D",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2274aab11bbc8248650988ca69256df54b27ee9d67aac18cfe8c8c16b0c302ec",
+      "requestFingerprintSha256": "2274aab11bbc8248650988ca69256df54b27ee9d67aac18cfe8c8c16b0c302ec",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-custody-r1",
+      "unitId": "S1-10-de-custody-r1",
+      "locale": "de",
+      "semanticGroup": "custody",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/custodyPractical/title",
+          "text": "Lehrprobe entnehmen, beschriften und dokumentieren",
+          "sha256": "caefb7d07c934c40f66455cfb9bff6028eebafb8bda093a984f18bff1dc84fce"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/project",
+          "text": "Erweiterung des Riverside Park",
+          "sha256": "3e120c4a82908ef4cb6502d87c0ff49ddcb2aa1a98b2b3e09763e529969e92a7"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/site",
+          "text": "Standort 3 – vorgesehener Spielplatz",
+          "sha256": "0336c026c4d3fad3b54a4e86df201ae6b9a3a5223ad28596789e5788d6d9f115"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/dateTime",
+          "text": "Für eine reale Übung tatsächliches Datum und Uhrzeit verwenden; simulierte Daten ausdrücklich als Szenario kennzeichnen.",
+          "sha256": "3b6cb8c0dd7c1bcbe920072abd7466257f8c43f48ff946e6c2bb5255ab980464"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/preservation",
+          "text": "Die Vorführkarte sieht einen zugelassenen verschlossenen Beutel und eine Kühlbox mit Kühlakkus vor. Wirkliche Analyten, Behälter und Fristen bestimmt das empfangende Labor; dies erlaubt keine Entnahme möglicherweise kontaminierten Spielplatzbodens.",
+          "sha256": "e2f0cd9f03e0f326af20c7bf618057eb6738b03c5d0a11544b91f4aaddf532a8"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/0",
+          "text": "Edelstahlkelle, zugelassenen Beutel, Permanentmarker, Kühlbox und Feldblatt sowie passenden Schutz und nötige Messmittel für Menge und Zustand bereitlegen.",
+          "sha256": "55c32c887c9efa35da1ad1ef3a995a2acbaf2b42984da5f7159bbd517fea35e4"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/1",
+          "text": "Kelle vor der Entnahme reinigen und Kreuzkontamination verhindern.",
+          "sha256": "0a65d8cab27ecd345a5356d826269241bc3a6da86b01219ec462714fc2a5064d"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/2",
+          "text": "Etwa 500 g aus 0–15 cm an einem sicheren, genehmigten Übungsort entnehmen; wirkliche Menge und Tiefe aufzeichnen und eine Tasse nicht mit 500 g gleichsetzen.",
+          "sha256": "36ac4f9e4da0179ebc55e594fa2c0ad3c6960f522423f718755957383a636b3d"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/3",
+          "text": "Material in den zugelassenen Beutel geben und für dieses gekühlte Szenario verschließen.",
+          "sha256": "9b44e42f584985c3d132f9f3cafc7254dbd558a915d33e65e10c0753e8b4eee0"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/4",
+          "text": "Den Behälterkörper mit allen sechs Informationsgruppen und den beibehaltenen Angaben zu Feld, Gruppe und Zone beschriften.",
+          "sha256": "dbdfd07bcd58a7d46d386350c109d23abfc0cb6f3c0590ecb19fc767dcf358fe"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/5",
+          "text": "Feldblatt mit exakt gleicher ID ausfüllen; die eigene Beobachtungsleistung ist mit S1-11 verknüpft.",
+          "sha256": "91d311b8603aba2a4e36f454e31792ebf3e007d8ff7af21f6e8c56abb71213f4"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/6",
+          "text": "Objektive Beobachtungen zu Farbe, Textur/Gefühl, Feuchte und Standort notieren; dieser gemeinsame Punkt wird in S1-11 beurteilt.",
+          "sha256": "e7fb74e73b12f6cd8d228cd3afd1cd47ba6996ae6262ca66761d42b42bff3700"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/7",
+          "text": "Den beschrifteten verschlossenen Beutel wie in der Szenariokarte verlangt in die Kühlbox legen und die vorgeschriebene Lagerprüfung notieren.",
+          "sha256": "3648449c0f5d539495af730ad83bb3f3352ebed6e254fdbe5a678da146f25a11"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/0",
+          "text": "Eine Übergabe mit ID, abgebender und empfangender Person, Datum/Uhrzeit und Zustand protokollieren.",
+          "sha256": "62abc54e43608c9ea3029d8fb616df56d4fe483bd6bc9cf1470273e04a153975"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/1",
+          "text": "Identität und Zustand mit der empfangenden Person abgleichen und jede Abweichung dokumentieren.",
+          "sha256": "3515ebae2ba9c537e5d9582ce40121d610a7e33f1bb3d5a80a962ab52256751d"
+        },
+        {
+          "pointer": "/custodyPractical/boundary",
+          "text": "Die achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+          "sha256": "0fe8fc0d3debf21b4b8a44e179e2d7722530c4b98be478e353d0c75401eef61f"
+        }
+      ],
+      "scientificMeaning": "Lehrprobe entnehmen, beschriften und dokumentieren\n\nErweiterung des Riverside Park\n\nStandort 3 – vorgesehener Spielplatz\n\nFür eine reale Übung tatsächliches Datum und Uhrzeit verwenden; simulierte Daten ausdrücklich als Szenario kennzeichnen.\n\nDie Vorführkarte sieht einen zugelassenen verschlossenen Beutel und eine Kühlbox mit Kühlakkus vor. Wirkliche Analyten, Behälter und Fristen bestimmt das empfangende Labor; dies erlaubt keine Entnahme möglicherweise kontaminierten Spielplatzbodens.\n\nEdelstahlkelle, zugelassenen Beutel, Permanentmarker, Kühlbox und Feldblatt sowie passenden Schutz und nötige Messmittel für Menge und Zustand bereitlegen.\n\nKelle vor der Entnahme reinigen und Kreuzkontamination verhindern.\n\nEtwa 500 g aus 0–15 cm an einem sicheren, genehmigten Übungsort entnehmen; wirkliche Menge und Tiefe aufzeichnen und eine Tasse nicht mit 500 g gleichsetzen.\n\nMaterial in den zugelassenen Beutel geben und für dieses gekühlte Szenario verschließen.\n\nDen Behälterkörper mit allen sechs Informationsgruppen und den beibehaltenen Angaben zu Feld, Gruppe und Zone beschriften.\n\nFeldblatt mit exakt gleicher ID ausfüllen; die eigene Beobachtungsleistung ist mit S1-11 verknüpft.\n\nObjektive Beobachtungen zu Farbe, Textur/Gefühl, Feuchte und Standort notieren; dieser gemeinsame Punkt wird in S1-11 beurteilt.\n\nDen beschrifteten verschlossenen Beutel wie in der Szenariokarte verlangt in die Kühlbox legen und die vorgeschriebene Lagerprüfung notieren.\n\nEine Übergabe mit ID, abgebender und empfangender Person, Datum/Uhrzeit und Zustand protokollieren.\n\nIdentität und Zustand mit der empfangenden Person abgleichen und jede Abweichung dokumentieren.\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "displayText": "Lehrprobe entnehmen, beschriften und dokumentieren\n\nErweiterung des Riverside Park\n\nStandort 3 – vorgesehener Spielplatz\n\nFür eine reale Übung tatsächliches Datum und Uhrzeit verwenden; simulierte Daten ausdrücklich als Szenario kennzeichnen.\n\nDie Vorführkarte sieht einen zugelassenen verschlossenen Beutel und eine Kühlbox mit Kühlakkus vor. Wirkliche Analyten, Behälter und Fristen bestimmt das empfangende Labor; dies erlaubt keine Entnahme möglicherweise kontaminierten Spielplatzbodens.\n\nEdelstahlkelle, zugelassenen Beutel, Permanentmarker, Kühlbox und Feldblatt sowie passenden Schutz und nötige Messmittel für Menge und Zustand bereitlegen.\n\nKelle vor der Entnahme reinigen und Kreuzkontamination verhindern.\n\nEtwa 500 g aus 0–15 cm an einem sicheren, genehmigten Übungsort entnehmen; wirkliche Menge und Tiefe aufzeichnen und eine Tasse nicht mit 500 g gleichsetzen.\n\nMaterial in den zugelassenen Beutel geben und für dieses gekühlte Szenario verschließen.\n\nDen Behälterkörper mit allen sechs Informationsgruppen und den beibehaltenen Angaben zu Feld, Gruppe und Zone beschriften.\n\nFeldblatt mit exakt gleicher ID ausfüllen; die eigene Beobachtungsleistung ist mit S1-11 verknüpft.\n\nObjektive Beobachtungen zu Farbe, Textur/Gefühl, Feuchte und Standort notieren; dieser gemeinsame Punkt wird in S1-11 beurteilt.\n\nDen beschrifteten verschlossenen Beutel wie in der Szenariokarte verlangt in die Kühlbox legen und die vorgeschriebene Lagerprüfung notieren.\n\nEine Übergabe mit ID, abgebender und empfangender Person, Datum/Uhrzeit und Zustand protokollieren.\n\nIdentität und Zustand mit der empfangenden Person abgleichen und jede Abweichung dokumentieren.\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "captionText": "Lehrprobe entnehmen, beschriften und dokumentieren\n\nErweiterung des Riverside Park\n\nStandort 3 – vorgesehener Spielplatz\n\nFür eine reale Übung tatsächliches Datum und Uhrzeit verwenden; simulierte Daten ausdrücklich als Szenario kennzeichnen.\n\nDie Vorführkarte sieht einen zugelassenen verschlossenen Beutel und eine Kühlbox mit Kühlakkus vor. Wirkliche Analyten, Behälter und Fristen bestimmt das empfangende Labor; dies erlaubt keine Entnahme möglicherweise kontaminierten Spielplatzbodens.\n\nEdelstahlkelle, zugelassenen Beutel, Permanentmarker, Kühlbox und Feldblatt sowie passenden Schutz und nötige Messmittel für Menge und Zustand bereitlegen.\n\nKelle vor der Entnahme reinigen und Kreuzkontamination verhindern.\n\nEtwa 500 g aus 0–15 cm an einem sicheren, genehmigten Übungsort entnehmen; wirkliche Menge und Tiefe aufzeichnen und eine Tasse nicht mit 500 g gleichsetzen.\n\nMaterial in den zugelassenen Beutel geben und für dieses gekühlte Szenario verschließen.\n\nDen Behälterkörper mit allen sechs Informationsgruppen und den beibehaltenen Angaben zu Feld, Gruppe und Zone beschriften.\n\nFeldblatt mit exakt gleicher ID ausfüllen; die eigene Beobachtungsleistung ist mit S1-11 verknüpft.\n\nObjektive Beobachtungen zu Farbe, Textur/Gefühl, Feuchte und Standort notieren; dieser gemeinsame Punkt wird in S1-11 beurteilt.\n\nDen beschrifteten verschlossenen Beutel wie in der Szenariokarte verlangt in die Kühlbox legen und die vorgeschriebene Lagerprüfung notieren.\n\nEine Übergabe mit ID, abgebender und empfangender Person, Datum/Uhrzeit und Zustand protokollieren.\n\nIdentität und Zustand mit der empfangenden Person abgleichen und jede Abweichung dokumentieren.\n\nDie achtteilige Sammelkarte wird in S1-11 fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "spokenText": "Lehrprobe entnehmen, beschriften und dokumentieren\n\nErweiterung des Riverside Park\n\nStandort 3 – vorgesehener Spielplatz\n\nFür eine reale Übung tatsächliches Datum und Uhrzeit verwenden; simulierte Daten ausdrücklich als Szenario kennzeichnen.\n\nDie Vorführkarte sieht einen zugelassenen verschlossenen Beutel und eine Kühlbox mit Kühlakkus vor. Wirkliche Analyten, Behälter und Fristen bestimmt das empfangende Labor; dies erlaubt keine Entnahme möglicherweise kontaminierten Spielplatzbodens.\n\nEdelstahlkelle, zugelassenen Beutel, Permanentmarker, Kühlbox und Feldblatt sowie passenden Schutz und nötige Messmittel für Menge und Zustand bereitlegen.\n\nKelle vor der Entnahme reinigen und Kreuzkontamination verhindern.\n\nEtwa fünfhundert Gramm aus null bis fünfzehn Zentimetern an einem sicheren, genehmigten Übungsort entnehmen; wirkliche Menge und Tiefe aufzeichnen und eine Tasse nicht mit fünfhundert Gramm gleichsetzen.\n\nMaterial in den zugelassenen Beutel geben und für dieses gekühlte Szenario verschließen.\n\nDen Behälterkörper mit allen sechs Informationsgruppen und den beibehaltenen Angaben zu Feld, Gruppe und Zone beschriften.\n\nFeldblatt mit exakt gleicher ID ausfüllen; die eigene Beobachtungsleistung ist mit Schritt elf der ersten Station verknüpft.\n\nObjektive Beobachtungen zu Farbe, Textur/Gefühl, Feuchte und Standort notieren; dieser gemeinsame Punkt wird in Schritt elf der ersten Station beurteilt.\n\nDen beschrifteten verschlossenen Beutel wie in der Szenariokarte verlangt in die Kühlbox legen und die vorgeschriebene Lagerprüfung notieren.\n\nEine Übergabe mit ID, abgebender und empfangender Person, Datum/Uhrzeit und Zustand protokollieren.\n\nIdentität und Zustand mit der empfangenden Person abgleichen und jede Abweichung dokumentieren.\n\nDie achtteilige Sammelkarte wird in Schritt elf der ersten Station fortgeführt: Echtes Etikett, Übergabe und Feldbeobachtungen jeder Person benötigen den Nachweis der Lehrkraft. Nur sicheres, genehmigtes Übungsmaterial und die tatsächlichen Vorgaben des empfangenden Labors verwenden.",
+      "spokenTextSHA256": "360eec5116c0ee85605615a23e2a4b7b19a54f662925d30fdd0b7c8d3a11fa67",
+      "spokenTextSha256": "360eec5116c0ee85605615a23e2a4b7b19a54f662925d30fdd0b7c8d3a11fa67",
+      "spokenAdaptationChanges": [
+        {
+          "written": "aus 0–15 cm",
+          "spoken": "aus null bis fünfzehn Zentimetern",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "in S1-11",
+          "spoken": "in Schritt elf der ersten Station",
+          "occurrences": 2,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "mit S1-11",
+          "spoken": "mit Schritt elf der ersten Station",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "500 g",
+          "spoken": "fünfhundert Gramm",
+          "occurrences": 2,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dc4034a473ed54c70c420ff159d91068370227b2e9456ea78e2dd6340d0c6853",
+      "requestFingerprintSha256": "dc4034a473ed54c70c420ff159d91068370227b2e9456ea78e2dd6340d0c6853",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S1-10-de-worksheet-r1",
+      "unitId": "S1-10-de-worksheet-r1",
+      "locale": "de",
+      "semanticGroup": "worksheet",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "e9cca4ff19997b9192e7d51985501b5caff3e2536f47756e6236276d0ca85597",
+      "sourceBindings": [
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Probenetikett und Übergabeverzeichnis",
+          "sha256": "509fe6baa270f0cc3fa3d618a326b322983313d0a928b497ac191f4cb2e09c12"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/0",
+          "text": "Sechs Informationsgruppen des Etiketts",
+          "sha256": "ef98c34eaeff05838fac9c7c79dbe4de8a3c206c1823bed96c7f69a792fe2bd1"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/1",
+          "text": "Lernende/Gruppe, Feld und Zone",
+          "sha256": "2f0dcb1047524830227af731101bd155ac56682c3f8833e8693f96a2c5feae41"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/2",
+          "text": "Gewünschte Analyse und Methodenkarte",
+          "sha256": "dc242ac6d48303dd0b177fabecd046d6da716dca8d765f2f6c22a42fe6745b5f"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/3",
+          "text": "Behälter und Menge",
+          "sha256": "82b5c358d3736dc0e35c68130fc5bb10fb9d5fe3690bbdd211c4d903948068ee"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/4",
+          "text": "Lagerzustand und gemessene Prüfung",
+          "sha256": "1539693461641d2a28202f20ca7deb0f238d14e26e6038e7450ab2d0fe2a5ce7"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/5",
+          "text": "Datum/Uhrzeit der Abgabe und Annahme",
+          "sha256": "68a71fbc6b429880f05cd651f64fafc9c39806961867e30945618ea0f32ee5ae"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/6",
+          "text": "Abgebende und empfangende Person",
+          "sha256": "11bd8eb840a339dfc0666fa8cd7d9bd8e4ee9c702dd85b9da88ae0a07367fbe3"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/7",
+          "text": "Zustand oder Abweichung",
+          "sha256": "8cc3a6c74f2ec5dcbe6d65155cbb3e0935b198bfb52a41af5d492b349f263782"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/8",
+          "text": "Ergriffene Maßnahme",
+          "sha256": "6ac551b15b5c1a19341972ef138d9c55333e692f77452052de6ecef10e984ff3"
+        }
+      ],
+      "scientificMeaning": "Probenetikett und Übergabeverzeichnis\n\nSechs Informationsgruppen des Etiketts\n\nLernende/Gruppe, Feld und Zone\n\nGewünschte Analyse und Methodenkarte\n\nBehälter und Menge\n\nLagerzustand und gemessene Prüfung\n\nDatum/Uhrzeit der Abgabe und Annahme\n\nAbgebende und empfangende Person\n\nZustand oder Abweichung\n\nErgriffene Maßnahme",
+      "displayText": "Probenetikett und Übergabeverzeichnis\n\nSechs Informationsgruppen des Etiketts\n\nLernende/Gruppe, Feld und Zone\n\nGewünschte Analyse und Methodenkarte\n\nBehälter und Menge\n\nLagerzustand und gemessene Prüfung\n\nDatum/Uhrzeit der Abgabe und Annahme\n\nAbgebende und empfangende Person\n\nZustand oder Abweichung\n\nErgriffene Maßnahme",
+      "captionText": "Probenetikett und Übergabeverzeichnis\n\nSechs Informationsgruppen des Etiketts\n\nLernende/Gruppe, Feld und Zone\n\nGewünschte Analyse und Methodenkarte\n\nBehälter und Menge\n\nLagerzustand und gemessene Prüfung\n\nDatum/Uhrzeit der Abgabe und Annahme\n\nAbgebende und empfangende Person\n\nZustand oder Abweichung\n\nErgriffene Maßnahme",
+      "spokenText": "Probenetikett und Übergabeverzeichnis\n\nSechs Informationsgruppen des Etiketts\n\nLernende/Gruppe, Feld und Zone\n\nGewünschte Analyse und Methodenkarte\n\nBehälter und Menge\n\nLagerzustand und gemessene Prüfung\n\nDatum/Uhrzeit der Abgabe und Annahme\n\nAbgebende und empfangende Person\n\nZustand oder Abweichung\n\nErgriffene Maßnahme",
+      "spokenTextSHA256": "8bc50fcbbf3927bc0aac6c566a32e25ab6b3bbb1c589731731e1ff3e359b298e",
+      "spokenTextSha256": "8bc50fcbbf3927bc0aac6c566a32e25ab6b3bbb1c589731731e1ff3e359b298e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d298eb97749dc5fef61d30a0bd8451042beb696578d410747d9ab9b09715ac14",
+      "requestFingerprintSha256": "d298eb97749dc5fef61d30a0bd8451042beb696578d410747d9ab9b09715ac14",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

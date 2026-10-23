@@ -1,0 +1,741 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-10-it.json",
+    "sha256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+    "bytes": 19272
+  },
+  "units": [
+    {
+      "id": "S1-10-it-opening-r1",
+      "unitId": "S1-10-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Un campione corretto senza etichetta e registro di consegna può perdere il proprio significato. Collega ogni campione al luogo, al metodo di conservazione e a chi lo ha ricevuto, secondo le istruzioni del laboratorio richiesto.",
+          "sha256": "97de40f2ccdc69d0f4a12d8c4379b61bf399a1cfb399529213e3b821506acc8a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Preparare un'etichetta durevole e leggibile sul corpo del contenitore con tutti i campi d'identità richiesti e farla coincidere col registro.",
+          "sha256": "a2c806ca6cfe1af22b5044cebafa455462294bc3d2b69c0f035397822e81665f"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Scegliere contenitore, conservazione e tempi di trasferimento dalle istruzioni del laboratorio specifico, non da una regola universale.",
+          "sha256": "ca606db9c8ea9a4e6b056758bf88ac1d315093f53762aad41ac69a1beb1f0369"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Registrare i passaggi di consegna ed evitare scambi d'identità e contaminazione incrociata.",
+          "sha256": "9b1001cb8b9a5e76f4349468399552960ab8d3aa003283a5ef62e938c1d3667c"
+        }
+      ],
+      "scientificMeaning": "Un campione corretto senza etichetta e registro di consegna può perdere il proprio significato. Collega ogni campione al luogo, al metodo di conservazione e a chi lo ha ricevuto, secondo le istruzioni del laboratorio richiesto.\n\nPreparare un'etichetta durevole e leggibile sul corpo del contenitore con tutti i campi d'identità richiesti e farla coincidere col registro.\n\nScegliere contenitore, conservazione e tempi di trasferimento dalle istruzioni del laboratorio specifico, non da una regola universale.\n\nRegistrare i passaggi di consegna ed evitare scambi d'identità e contaminazione incrociata.",
+      "displayText": "Un campione corretto senza etichetta e registro di consegna può perdere il proprio significato. Collega ogni campione al luogo, al metodo di conservazione e a chi lo ha ricevuto, secondo le istruzioni del laboratorio richiesto.\n\nPreparare un'etichetta durevole e leggibile sul corpo del contenitore con tutti i campi d'identità richiesti e farla coincidere col registro.\n\nScegliere contenitore, conservazione e tempi di trasferimento dalle istruzioni del laboratorio specifico, non da una regola universale.\n\nRegistrare i passaggi di consegna ed evitare scambi d'identità e contaminazione incrociata.",
+      "captionText": "Un campione corretto senza etichetta e registro di consegna può perdere il proprio significato. Collega ogni campione al luogo, al metodo di conservazione e a chi lo ha ricevuto, secondo le istruzioni del laboratorio richiesto.\n\nPreparare un'etichetta durevole e leggibile sul corpo del contenitore con tutti i campi d'identità richiesti e farla coincidere col registro.\n\nScegliere contenitore, conservazione e tempi di trasferimento dalle istruzioni del laboratorio specifico, non da una regola universale.\n\nRegistrare i passaggi di consegna ed evitare scambi d'identità e contaminazione incrociata.",
+      "spokenText": "Un campione corretto senza etichetta e registro di consegna può perdere il proprio significato. Collega ogni campione al luogo, al metodo di conservazione e a chi lo ha ricevuto, secondo le istruzioni del laboratorio richiesto.\n\nPreparare un'etichetta durevole e leggibile sul corpo del contenitore con tutti i campi d'identità richiesti e farla coincidere col registro.\n\nScegliere contenitore, conservazione e tempi di trasferimento dalle istruzioni del laboratorio specifico, non da una regola universale.\n\nRegistrare i passaggi di consegna ed evitare scambi d'identità e contaminazione incrociata.",
+      "spokenTextSHA256": "0a41c16861b54cb874b102701560f8fcbebe9dc4702caab68966a2c88a47b0d1",
+      "spokenTextSha256": "0a41c16861b54cb874b102701560f8fcbebe9dc4702caab68966a2c88a47b0d1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8afc1c12c146790784cf9c5675f25cbc984809ba88b0a3a4bcecc549c6474c8b",
+      "requestFingerprintSha256": "8afc1c12c146790784cf9c5675f25cbc984809ba88b0a3a4bcecc549c6474c8b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-E01-r1",
+      "unitId": "S1-10-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Solo i coperchi portano gli ID e sono stati tolti insieme.",
+          "sha256": "9c3500340059c57bc47b06dc94978b8350d0c533f9fa91650c3116edad4efe10"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Il collegamento fra contenitore e identità è incerto.",
+          "sha256": "d9a822aeb165a48e547a4ba182c0deef885c0a70568bf7ee351ef5d9a9ca96f8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Non indovinare: consulta il registro compilato al momento del prelievo e segnala la discrepanza.",
+          "sha256": "c230291cee656796baf13bfc6bfb2eb318f622e240564061791da76172179d76"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "In futuro etichetta il corpo e controlla l'identità a ogni passaggio.",
+          "sha256": "aaa5bec570693c426c0d924163a9dcd90fa84553a6216f070d680ad624686051"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Il solo coperchio non identifica in modo affidabile un campione.",
+          "sha256": "ffb6573bc0ca80fe82d7eb64cb3b81f3f1f5ab7236de99ef0bd40c7d086b26a6"
+        }
+      ],
+      "scientificMeaning": "Solo i coperchi portano gli ID e sono stati tolti insieme.\n\nIl collegamento fra contenitore e identità è incerto.\n\nNon indovinare: consulta il registro compilato al momento del prelievo e segnala la discrepanza.\n\nIn futuro etichetta il corpo e controlla l'identità a ogni passaggio.\n\nIl solo coperchio non identifica in modo affidabile un campione.",
+      "displayText": "Solo i coperchi portano gli ID e sono stati tolti insieme.\n\nIl collegamento fra contenitore e identità è incerto.\n\nNon indovinare: consulta il registro compilato al momento del prelievo e segnala la discrepanza.\n\nIn futuro etichetta il corpo e controlla l'identità a ogni passaggio.\n\nIl solo coperchio non identifica in modo affidabile un campione.",
+      "captionText": "Solo i coperchi portano gli ID e sono stati tolti insieme.\n\nIl collegamento fra contenitore e identità è incerto.\n\nNon indovinare: consulta il registro compilato al momento del prelievo e segnala la discrepanza.\n\nIn futuro etichetta il corpo e controlla l'identità a ogni passaggio.\n\nIl solo coperchio non identifica in modo affidabile un campione.",
+      "spokenText": "Solo i coperchi portano gli ID e sono stati tolti insieme.\n\nIl collegamento fra contenitore e identità è incerto.\n\nNon indovinare: consulta il registro compilato al momento del prelievo e segnala la discrepanza.\n\nIn futuro etichetta il corpo e controlla l'identità a ogni passaggio.\n\nIl solo coperchio non identifica in modo affidabile un campione.",
+      "spokenTextSHA256": "da69d80b696737e1655930807c2a47b414d483300de4a5bd59f701f7c633a12d",
+      "spokenTextSha256": "da69d80b696737e1655930807c2a47b414d483300de4a5bd59f701f7c633a12d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f59dadbc5ed8601c676eaf206368576d63f416a18e78a3610edca0c7c0962424",
+      "requestFingerprintSha256": "f59dadbc5ed8601c676eaf206368576d63f416a18e78a3610edca0c7c0962424",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-E02-r1",
+      "unitId": "S1-10-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "La scheda A chiede asciugatura all'aria per un'analisi di fertilità ordinaria; B vuole suolo fresco raffreddato in contenitore sigillato approvato.",
+          "sha256": "bae714e2d3922d5a4bb63ccdcddf060ae3da8cc5634ec4bc068c959a330988e1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Tieni distinte le identità A e B.",
+          "sha256": "e16a7d5638c211007b5b241de3305a34aed350641cb1d7cf79c7030b55e5f907"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Segui preparazione, quantità e tempi di ciascuna scheda.",
+          "sha256": "e87c4cfdd0a7345c3fb6986b1bbeb7c328e61d249220a28d775e2ba0a8881f89"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Non sigillare A umido a tempo indeterminato perché B deve restare umido, né asciugare B perché A va asciugato.",
+          "sha256": "dfe04ffc303a8e360e875d4b802ab4567749e936f74c355ef22d9d4f23b78396"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Il metodo analitico determina la conservazione.",
+          "sha256": "0418e2038705e585caf178fb113e4e73e789d0216aa76a08d407156aa09cd7e4"
+        }
+      ],
+      "scientificMeaning": "La scheda A chiede asciugatura all'aria per un'analisi di fertilità ordinaria; B vuole suolo fresco raffreddato in contenitore sigillato approvato.\n\nTieni distinte le identità A e B.\n\nSegui preparazione, quantità e tempi di ciascuna scheda.\n\nNon sigillare A umido a tempo indeterminato perché B deve restare umido, né asciugare B perché A va asciugato.\n\nIl metodo analitico determina la conservazione.",
+      "displayText": "La scheda A chiede asciugatura all'aria per un'analisi di fertilità ordinaria; B vuole suolo fresco raffreddato in contenitore sigillato approvato.\n\nTieni distinte le identità A e B.\n\nSegui preparazione, quantità e tempi di ciascuna scheda.\n\nNon sigillare A umido a tempo indeterminato perché B deve restare umido, né asciugare B perché A va asciugato.\n\nIl metodo analitico determina la conservazione.",
+      "captionText": "La scheda A chiede asciugatura all'aria per un'analisi di fertilità ordinaria; B vuole suolo fresco raffreddato in contenitore sigillato approvato.\n\nTieni distinte le identità A e B.\n\nSegui preparazione, quantità e tempi di ciascuna scheda.\n\nNon sigillare A umido a tempo indeterminato perché B deve restare umido, né asciugare B perché A va asciugato.\n\nIl metodo analitico determina la conservazione.",
+      "spokenText": "La scheda A chiede asciugatura all'aria per un'analisi di fertilità ordinaria; B vuole suolo fresco raffreddato in contenitore sigillato approvato.\n\nTieni distinte le identità A e B.\n\nSegui preparazione, quantità e tempi di ciascuna scheda.\n\nNon sigillare A umido a tempo indeterminato perché B deve restare umido, né asciugare B perché A va asciugato.\n\nIl metodo analitico determina la conservazione.",
+      "spokenTextSHA256": "9ccb5decd11329cfe76aec5b9edff82dd44ca564407db5c45fde2cc1baf732c8",
+      "spokenTextSha256": "9ccb5decd11329cfe76aec5b9edff82dd44ca564407db5c45fde2cc1baf732c8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f4e2655350e04d38eb6c8f3d0642bcfd8f1793247fe6a938ce759d72fb3c581b",
+      "requestFingerprintSha256": "f4e2655350e04d38eb6c8f3d0642bcfd8f1793247fe6a938ce759d72fb3c581b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-E03-r1",
+      "unitId": "S1-10-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un campione da mantenere freddo viene trovato in un veicolo caldo dopo varie ore.",
+          "sha256": "d04e41b645a2d81d7da58ef30b6d98f63fdee0b3db8be9a47e627dfbd1d39b3a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Registra intervallo, condizione e temperatura effettivamente misurati senza inventare valori mancanti.",
+          "sha256": "c34c48fea5cfaaf6e47c074b3e0b19dd9934630c8f46663724b2cff19c4a6aa0"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Segnala la deviazione per decidere accettazione o nuovo prelievo secondo il metodo.",
+          "sha256": "a40c00fc52a1234317315c4fd6f6c632e8c42be9d5b9e952f2453ca4e0f16c3b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Non cancellare la storia registrando solo la temperatura finale fredda.",
+          "sha256": "2e04b0ba5b68b9e6621740ff79c9f22ca774776bbabee676bfa69e044ca2cced"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Un'anomalia descritta con sincerità vale più di una catena del freddo inventata.",
+          "sha256": "cbc2218fa8863f92007e936bc787d996a61cf34299ee71bf6b7e02da5210c144"
+        }
+      ],
+      "scientificMeaning": "Un campione da mantenere freddo viene trovato in un veicolo caldo dopo varie ore.\n\nRegistra intervallo, condizione e temperatura effettivamente misurati senza inventare valori mancanti.\n\nSegnala la deviazione per decidere accettazione o nuovo prelievo secondo il metodo.\n\nNon cancellare la storia registrando solo la temperatura finale fredda.\n\nUn'anomalia descritta con sincerità vale più di una catena del freddo inventata.",
+      "displayText": "Un campione da mantenere freddo viene trovato in un veicolo caldo dopo varie ore.\n\nRegistra intervallo, condizione e temperatura effettivamente misurati senza inventare valori mancanti.\n\nSegnala la deviazione per decidere accettazione o nuovo prelievo secondo il metodo.\n\nNon cancellare la storia registrando solo la temperatura finale fredda.\n\nUn'anomalia descritta con sincerità vale più di una catena del freddo inventata.",
+      "captionText": "Un campione da mantenere freddo viene trovato in un veicolo caldo dopo varie ore.\n\nRegistra intervallo, condizione e temperatura effettivamente misurati senza inventare valori mancanti.\n\nSegnala la deviazione per decidere accettazione o nuovo prelievo secondo il metodo.\n\nNon cancellare la storia registrando solo la temperatura finale fredda.\n\nUn'anomalia descritta con sincerità vale più di una catena del freddo inventata.",
+      "spokenText": "Un campione da mantenere freddo viene trovato in un veicolo caldo dopo varie ore.\n\nRegistra intervallo, condizione e temperatura effettivamente misurati senza inventare valori mancanti.\n\nSegnala la deviazione per decidere accettazione o nuovo prelievo secondo il metodo.\n\nNon cancellare la storia registrando solo la temperatura finale fredda.\n\nUn'anomalia descritta con sincerità vale più di una catena del freddo inventata.",
+      "spokenTextSHA256": "496959a0feb93408bad524f7fa60d0428a3f02809866ce84973a81ed99f2b324",
+      "spokenTextSha256": "496959a0feb93408bad524f7fa60d0428a3f02809866ce84973a81ed99f2b324",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d47c4b65938f8c9e3537bb5cb342e401f93a5d2c720a40290b1ae500ca96ef18",
+      "requestFingerprintSha256": "d47c4b65938f8c9e3537bb5cb342e401f93a5d2c720a40290b1ae500ca96ef18",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-guided-practice-r1",
+      "unitId": "S1-10-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Due coperchi si sono scambiati, due schede di laboratorio impongono condizioni diverse e un campione da raffreddare è stato ore in un veicolo caldo. Decidi cosa puoi considerare affidabile, registrare o correggere prima della consegna.",
+          "sha256": "326fd72a4fd69bb80119cf6b96f1e33a37783d6188fdbc8a6c30ed5e299fd332"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Prepara un'etichetta leggibile sul corpo e confronta l'ID univoco con la scheda di campo.",
+          "sha256": "7594aadbaa17e1a4329e090bb7efec7478eb63a1604d8ccd823ab1e958f1405c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Scegli asciugatura o fresco-raffreddato dalla scheda specifica senza una regola universale.",
+          "sha256": "1456a6a0c348f0645b3f9d5ae8c3b86606f40027ae0b5c6901f3ee065b3c5bb2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Documenta ogni consegna e la deviazione nota; segna come ignote temperatura o durata mai registrate.",
+          "sha256": "0096dc3f0d752d8c9f46af64a1ea683b8bffcf6cedb0a2922e46905a4adbe933"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Segnala l'identità incoerente per indagine, non indovinarla dal colore.",
+          "sha256": "ef723fb339e04a637b61ea54e67a02ba3c714adeaf68e3860174915351aded42"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Creazione e controllo di etichetta reale, contenitore, tempi e registro restano sotto osservazione del formatore.",
+          "sha256": "bae8a753b46c9ec037b80158e2c961088c9c56914ebd756ebef5ec699a18eea1"
+        }
+      ],
+      "scientificMeaning": "Due coperchi si sono scambiati, due schede di laboratorio impongono condizioni diverse e un campione da raffreddare è stato ore in un veicolo caldo. Decidi cosa puoi considerare affidabile, registrare o correggere prima della consegna.\n\nPrepara un'etichetta leggibile sul corpo e confronta l'ID univoco con la scheda di campo.\n\nScegli asciugatura o fresco-raffreddato dalla scheda specifica senza una regola universale.\n\nDocumenta ogni consegna e la deviazione nota; segna come ignote temperatura o durata mai registrate.\n\nSegnala l'identità incoerente per indagine, non indovinarla dal colore.\n\nCreazione e controllo di etichetta reale, contenitore, tempi e registro restano sotto osservazione del formatore.",
+      "displayText": "Due coperchi si sono scambiati, due schede di laboratorio impongono condizioni diverse e un campione da raffreddare è stato ore in un veicolo caldo. Decidi cosa puoi considerare affidabile, registrare o correggere prima della consegna.\n\nPrepara un'etichetta leggibile sul corpo e confronta l'ID univoco con la scheda di campo.\n\nScegli asciugatura o fresco-raffreddato dalla scheda specifica senza una regola universale.\n\nDocumenta ogni consegna e la deviazione nota; segna come ignote temperatura o durata mai registrate.\n\nSegnala l'identità incoerente per indagine, non indovinarla dal colore.\n\nCreazione e controllo di etichetta reale, contenitore, tempi e registro restano sotto osservazione del formatore.",
+      "captionText": "Due coperchi si sono scambiati, due schede di laboratorio impongono condizioni diverse e un campione da raffreddare è stato ore in un veicolo caldo. Decidi cosa puoi considerare affidabile, registrare o correggere prima della consegna.\n\nPrepara un'etichetta leggibile sul corpo e confronta l'ID univoco con la scheda di campo.\n\nScegli asciugatura o fresco-raffreddato dalla scheda specifica senza una regola universale.\n\nDocumenta ogni consegna e la deviazione nota; segna come ignote temperatura o durata mai registrate.\n\nSegnala l'identità incoerente per indagine, non indovinarla dal colore.\n\nCreazione e controllo di etichetta reale, contenitore, tempi e registro restano sotto osservazione del formatore.",
+      "spokenText": "Due coperchi si sono scambiati, due schede di laboratorio impongono condizioni diverse e un campione da raffreddare è stato ore in un veicolo caldo. Decidi cosa puoi considerare affidabile, registrare o correggere prima della consegna.\n\nPrepara un'etichetta leggibile sul corpo e confronta l'ID univoco con la scheda di campo.\n\nScegli asciugatura o fresco-raffreddato dalla scheda specifica senza una regola universale.\n\nDocumenta ogni consegna e la deviazione nota; segna come ignote temperatura o durata mai registrate.\n\nSegnala l'identità incoerente per indagine, non indovinarla dal colore.\n\nCreazione e controllo di etichetta reale, contenitore, tempi e registro restano sotto osservazione del formatore.",
+      "spokenTextSHA256": "44273ed711bf29f6702c342fb7c2b1656d116abaf0f51520fc92aa01d03a0693",
+      "spokenTextSha256": "44273ed711bf29f6702c342fb7c2b1656d116abaf0f51520fc92aa01d03a0693",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f50f8cd37405d03bb8a19f0aa6bf8a5ec7c5247ec08e7b9d84e1f0947957a370",
+      "requestFingerprintSha256": "f50f8cd37405d03bb8a19f0aa6bf8a5ec7c5247ec08e7b9d84e1f0947957a370",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-reflection-r1",
+      "unitId": "S1-10-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So etichettare e conservare il campione indicato e spiegare la sua cronologia di trattamento?",
+          "sha256": "bbfe96fdf05cd2b16ff356e2990d09ffa2e5dbcebd879016b10b6d8841db4cb1"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "La scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+          "sha256": "e8759d3fb9cf57baca1805d2bf3581fbe35077a6cd837e41abf9b297a25b2281"
+        }
+      ],
+      "scientificMeaning": "So etichettare e conservare il campione indicato e spiegare la sua cronologia di trattamento?\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "displayText": "So etichettare e conservare il campione indicato e spiegare la sua cronologia di trattamento?\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "captionText": "So etichettare e conservare il campione indicato e spiegare la sua cronologia di trattamento?\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "spokenText": "So etichettare e conservare il campione indicato e spiegare la sua cronologia di trattamento?\n\nLa scheda di raccolta in otto punti prosegue nel passaggio undici della prima stazione: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "spokenTextSHA256": "e7fa0ed761bc78b5b962de721f127bb229c8cdef79589e99c3b367da6b7be8ef",
+      "spokenTextSha256": "e7fa0ed761bc78b5b962de721f127bb229c8cdef79589e99c3b367da6b7be8ef",
+      "spokenAdaptationChanges": [
+        {
+          "written": "prosegue in S1-11",
+          "spoken": "prosegue nel passaggio undici della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b43e379c0bca31c1504cd95821403cb877a1f86333ba9554f89d2c5a22c3ce67",
+      "requestFingerprintSha256": "b43e379c0bca31c1504cd95821403cb877a1f86333ba9554f89d2c5a22c3ce67",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-label-template-r1",
+      "unitId": "S1-10-it-label-template-r1",
+      "locale": "it",
+      "semanticGroup": "label-template",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/labelTemplate/requiredGroups/0",
+          "text": "ID univoco del campione",
+          "sha256": "f0d9dd4dc25fcd37a7defc8a80888dfd022a468473fb05c28097ecc9a813d329"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/1",
+          "text": "Nome o numero del progetto",
+          "sha256": "42e940f1d491b1ccc8c696e7f859ab69ac6e8b45ec8895cb515474035b3ef895"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/2",
+          "text": "Luogo inclusi campo e zona",
+          "sha256": "7a2c548cc8178e01ed0877be2215f7b7ac9a83a60f32d4a6d20e91ca4414abb5"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/3",
+          "text": "Data e ora del prelievo",
+          "sha256": "235326669b7688566fd6c18985d8be134406a825e15d550a926ab63f01ca96d0"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/4",
+          "text": "Iniziali/nome del raccoglitore con registro identificativo",
+          "sha256": "7fd88c690be1b2979494bd6ec2a4888cb8f7ec77d403200f787c9d59d35ae54f"
+        },
+        {
+          "pointer": "/labelTemplate/requiredGroups/5",
+          "text": "Intervallo di profondità e unità o orizzonte identificato",
+          "sha256": "ee3e7c4024f18bcc0863c5532c06aa68d3b1b4e97bde4f14171d9ca1efa87054"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/0",
+          "text": "Studente/gruppo",
+          "sha256": "a1cdb9ddd3a7fa42a445e959d6f9c21014ad0fd2b229010e1c06f0282c03f42c"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/1",
+          "text": "Campo",
+          "sha256": "45789cc13c6b10348264ec831117353dbe5eb6dac245a547aedd2bfad528cfae"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/2",
+          "text": "Zona",
+          "sha256": "3f687906e4120d6bb44739170df17860ba759b1008ca7b49bc79c45005c3d964"
+        },
+        {
+          "pointer": "/labelTemplate/retainedFields/3",
+          "text": "Analisi richiesta",
+          "sha256": "2101ba44da2a8d2f1838f60a37d1264f604b25a16e3571403a93cfe318a12391"
+        },
+        {
+          "pointer": "/labelTemplate/example/id",
+          "text": "PROJ1-SITEA-SS01",
+          "sha256": "596554767352f193516dd61b0761212164cf5babf8c3eb1a632be60ac709c0b2"
+        },
+        {
+          "pointer": "/labelTemplate/example/project",
+          "text": "Studio nutritivo della fattoria Greenfield",
+          "sha256": "8cd9c330d55fc61760813c9a217ac0c6a4d2cf1a7cc8ae4d8f3138d1837c250d"
+        },
+        {
+          "pointer": "/labelTemplate/example/site",
+          "text": "Pascolo settentrionale",
+          "sha256": "078f144be23932c3e7a10274c9fbf82a1ca7a38cf13ffc60ae0f0b2ab7ac1c29"
+        },
+        {
+          "pointer": "/labelTemplate/example/date",
+          "text": "2024-10-26",
+          "sha256": "73493884afd15dc3b93541005d9068ab7e6754b98693df725aa9a97ee422b7d5"
+        },
+        {
+          "pointer": "/labelTemplate/example/time",
+          "text": "10:30",
+          "sha256": "b90e3a3de552ac608eeb9c69f44aded8e5cc55ca34fef8d05d37f85d25dd2080"
+        },
+        {
+          "pointer": "/labelTemplate/example/collector",
+          "text": "JD",
+          "sha256": "d77bbe315fafa4a6321f4b14a42deefb6ea86a678639c0ac8c52b56d42e05e9c"
+        },
+        {
+          "pointer": "/labelTemplate/example/depth",
+          "text": "0–15 cm",
+          "sha256": "2dff030c5d6a02067ea2b4b6737023fb4d26c05e77cfd54eb3d7ac0a5fb9e45e"
+        },
+        {
+          "pointer": "/labelTemplate/example/status",
+          "text": "Esempio didattico inventato",
+          "sha256": "5827ac8a784e9c154a941a06cd1cece1abc774954cfe0b78ba3f6a96a250f30a"
+        }
+      ],
+      "scientificMeaning": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nStudente/gruppo\n\nCampo\n\nZona\n\nAnalisi richiesta\n\nPROJ1-SITEA-SS01\n\nStudio nutritivo della fattoria Greenfield\n\nPascolo settentrionale\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nEsempio didattico inventato",
+      "displayText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nStudente/gruppo\n\nCampo\n\nZona\n\nAnalisi richiesta\n\nPROJ1-SITEA-SS01\n\nStudio nutritivo della fattoria Greenfield\n\nPascolo settentrionale\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nEsempio didattico inventato",
+      "captionText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nStudente/gruppo\n\nCampo\n\nZona\n\nAnalisi richiesta\n\nPROJ1-SITEA-SS01\n\nStudio nutritivo della fattoria Greenfield\n\nPascolo settentrionale\n\n2024-10-26\n\n10:30\n\nJD\n\n0–15 cm\n\nEsempio didattico inventato",
+      "spokenText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nStudente/gruppo\n\nCampo\n\nZona\n\nAnalisi richiesta\n\npi erre o i lunga uno, trattino, esse i ti e a, trattino, esse esse zero uno\n\nStudio nutritivo della fattoria Greenfield\n\nPascolo settentrionale\n\nventisei ottobre duemilaventiquattro\n\ndieci e trenta\n\ni lunga di\n\nda zero a quindici centimetri\n\nEsempio didattico inventato",
+      "spokenTextSHA256": "4ea5a0415638a523afe730cac3036495016e158b3b7c452e67a12bb3b5cf9843",
+      "spokenTextSha256": "4ea5a0415638a523afe730cac3036495016e158b3b7c452e67a12bb3b5cf9843",
+      "spokenAdaptationChanges": [
+        {
+          "written": "PROJ1-SITEA-SS01",
+          "spoken": "pi erre o i lunga uno, trattino, esse i ti e a, trattino, esse esse zero uno",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "2024-10-26",
+          "spoken": "ventisei ottobre duemilaventiquattro",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "10:30",
+          "spoken": "dieci e trenta",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "JD",
+          "spoken": "i lunga di",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "430e6890ac17042a41902fb825aaa25c4831d2f76973de4cee9a38a8ea3a6c13",
+      "requestFingerprintSha256": "430e6890ac17042a41902fb825aaa25c4831d2f76973de4cee9a38a8ea3a6c13",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-custody-r1",
+      "unitId": "S1-10-it-custody-r1",
+      "locale": "it",
+      "semanticGroup": "custody",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/custodyPractical/title",
+          "text": "Raccogli, etichetta e documenta il campione didattico",
+          "sha256": "7b8128ceac93c81dbfa4a671e57b937ee183fc19583ba2ff9129eb77f9a969d9"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/project",
+          "text": "Ampliamento del Riverside Park",
+          "sha256": "cd75dce7c7a46f2feb83c005496d9f0648b97e38bdab082634e9bfb44c1223f9"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/site",
+          "text": "Sito 3 – Parco giochi proposto",
+          "sha256": "151ffe27d312f3c26853287a0d873de7c0faeff0f0dbc62bef9e8d01e4f3ab45"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/dateTime",
+          "text": "Per pratica reale usa data e ora effettive; dichiara come dati di scenario date e ore simulate.",
+          "sha256": "b9f65ed0b84a9f2726311cff397e691ce2134492992cceaf26df4d7cacd4d41f"
+        },
+        {
+          "pointer": "/custodyPractical/scenario/preservation",
+          "text": "La scheda dimostrativa prevede un sacchetto sigillato approvato e borsa termica con mattonelle fredde. Analita, contenitore e tempi reali richiedono istruzioni del laboratorio ricevente; non è autorizzato raccogliere suolo da un parco giochi potenzialmente contaminato.",
+          "sha256": "551c915550570c3e16639e70bc244d5b39751d7ebab1748025103c2eec371850"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/0",
+          "text": "Scegli paletta in acciaio inox, sacchetto approvato, pennarello permanente, borsa termica e scheda di campo, oltre a protezione adeguata e strumenti per verificare quantità e condizioni se richiesti.",
+          "sha256": "89e019a0d427c5b868755e36010b87d0800baf4b52b97d62b0b4ce21881c2159"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/1",
+          "text": "Pulisci la paletta prima del prelievo e previeni contaminazione incrociata.",
+          "sha256": "c5da752b81232eaa52137fa87655fb7b24888c6a0135cb89fb308248a3745644"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/2",
+          "text": "Raccogli circa 500 g dallo strato 0–15 cm in un punto didattico sicuro e autorizzato, registrando quantità e profondità effettive senza equiparare una tazza a 500 g.",
+          "sha256": "51d1f8bb0711aa92f0de26c9b7d07dcc9cb14c6e876db9b0627a7c2230905af6"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/3",
+          "text": "Metti il materiale nel sacchetto approvato e sigillalo secondo questo scenario raffreddato.",
+          "sha256": "4398a9fd30ca68923ec702cc9cd75c9e11d2b98a3b3b76cf2b9a6e4bf5c128f3"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/4",
+          "text": "Etichetta il corpo con tutti i sei gruppi e conserva informazioni di campo, gruppo e zona.",
+          "sha256": "18e9e2bd6e93f823c00d2d169cbd47aa4ba84762d0b1a77a0bd700712b9e9702"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/5",
+          "text": "Completa la scheda di campo con ID esattamente coincidente; la prova individuale delle osservazioni è collegata a S1-11.",
+          "sha256": "7ec839ce81fa1818075141408edcbe61f506e7f5b492acd458fbb150c2c186de"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/6",
+          "text": "Registra osservazioni oggettive di colore, tessitura/tatto, umidità e sito; questo punto condiviso è valutato in S1-11.",
+          "sha256": "1b3568b0a2e7f4417bdc9a6e308f875c9773673202e62974c501b02501c41708"
+        },
+        {
+          "pointer": "/custodyPractical/checklist/7",
+          "text": "Metti il sacchetto etichettato e sigillato nella borsa termica come chiede lo scenario e annota il controllo di conservazione prescritto.",
+          "sha256": "ab0a5d09aaa03e838408148a1abd47e437c89b8a339f5cb7f8b4c8e2901febb8"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/0",
+          "text": "Registra una consegna con ID, cedente, ricevente, data/ora e condizione.",
+          "sha256": "bdc5bfa750ba2294ce323efb948c014c74d722e1819e4b0ddafe6e6e696e0b32"
+        },
+        {
+          "pointer": "/custodyPractical/additionalCustodyEvidence/1",
+          "text": "Controlla identità e condizioni col ricevente e segnala discrepanze.",
+          "sha256": "2dc0e2ec1a0df6a50b588ccfead22b0966b37c0b154491b6d7d3275313001b5c"
+        },
+        {
+          "pointer": "/custodyPractical/boundary",
+          "text": "La scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+          "sha256": "e8759d3fb9cf57baca1805d2bf3581fbe35077a6cd837e41abf9b297a25b2281"
+        }
+      ],
+      "scientificMeaning": "Raccogli, etichetta e documenta il campione didattico\n\nAmpliamento del Riverside Park\n\nSito 3 – Parco giochi proposto\n\nPer pratica reale usa data e ora effettive; dichiara come dati di scenario date e ore simulate.\n\nLa scheda dimostrativa prevede un sacchetto sigillato approvato e borsa termica con mattonelle fredde. Analita, contenitore e tempi reali richiedono istruzioni del laboratorio ricevente; non è autorizzato raccogliere suolo da un parco giochi potenzialmente contaminato.\n\nScegli paletta in acciaio inox, sacchetto approvato, pennarello permanente, borsa termica e scheda di campo, oltre a protezione adeguata e strumenti per verificare quantità e condizioni se richiesti.\n\nPulisci la paletta prima del prelievo e previeni contaminazione incrociata.\n\nRaccogli circa 500 g dallo strato 0–15 cm in un punto didattico sicuro e autorizzato, registrando quantità e profondità effettive senza equiparare una tazza a 500 g.\n\nMetti il materiale nel sacchetto approvato e sigillalo secondo questo scenario raffreddato.\n\nEtichetta il corpo con tutti i sei gruppi e conserva informazioni di campo, gruppo e zona.\n\nCompleta la scheda di campo con ID esattamente coincidente; la prova individuale delle osservazioni è collegata a S1-11.\n\nRegistra osservazioni oggettive di colore, tessitura/tatto, umidità e sito; questo punto condiviso è valutato in S1-11.\n\nMetti il sacchetto etichettato e sigillato nella borsa termica come chiede lo scenario e annota il controllo di conservazione prescritto.\n\nRegistra una consegna con ID, cedente, ricevente, data/ora e condizione.\n\nControlla identità e condizioni col ricevente e segnala discrepanze.\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "displayText": "Raccogli, etichetta e documenta il campione didattico\n\nAmpliamento del Riverside Park\n\nSito 3 – Parco giochi proposto\n\nPer pratica reale usa data e ora effettive; dichiara come dati di scenario date e ore simulate.\n\nLa scheda dimostrativa prevede un sacchetto sigillato approvato e borsa termica con mattonelle fredde. Analita, contenitore e tempi reali richiedono istruzioni del laboratorio ricevente; non è autorizzato raccogliere suolo da un parco giochi potenzialmente contaminato.\n\nScegli paletta in acciaio inox, sacchetto approvato, pennarello permanente, borsa termica e scheda di campo, oltre a protezione adeguata e strumenti per verificare quantità e condizioni se richiesti.\n\nPulisci la paletta prima del prelievo e previeni contaminazione incrociata.\n\nRaccogli circa 500 g dallo strato 0–15 cm in un punto didattico sicuro e autorizzato, registrando quantità e profondità effettive senza equiparare una tazza a 500 g.\n\nMetti il materiale nel sacchetto approvato e sigillalo secondo questo scenario raffreddato.\n\nEtichetta il corpo con tutti i sei gruppi e conserva informazioni di campo, gruppo e zona.\n\nCompleta la scheda di campo con ID esattamente coincidente; la prova individuale delle osservazioni è collegata a S1-11.\n\nRegistra osservazioni oggettive di colore, tessitura/tatto, umidità e sito; questo punto condiviso è valutato in S1-11.\n\nMetti il sacchetto etichettato e sigillato nella borsa termica come chiede lo scenario e annota il controllo di conservazione prescritto.\n\nRegistra una consegna con ID, cedente, ricevente, data/ora e condizione.\n\nControlla identità e condizioni col ricevente e segnala discrepanze.\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "captionText": "Raccogli, etichetta e documenta il campione didattico\n\nAmpliamento del Riverside Park\n\nSito 3 – Parco giochi proposto\n\nPer pratica reale usa data e ora effettive; dichiara come dati di scenario date e ore simulate.\n\nLa scheda dimostrativa prevede un sacchetto sigillato approvato e borsa termica con mattonelle fredde. Analita, contenitore e tempi reali richiedono istruzioni del laboratorio ricevente; non è autorizzato raccogliere suolo da un parco giochi potenzialmente contaminato.\n\nScegli paletta in acciaio inox, sacchetto approvato, pennarello permanente, borsa termica e scheda di campo, oltre a protezione adeguata e strumenti per verificare quantità e condizioni se richiesti.\n\nPulisci la paletta prima del prelievo e previeni contaminazione incrociata.\n\nRaccogli circa 500 g dallo strato 0–15 cm in un punto didattico sicuro e autorizzato, registrando quantità e profondità effettive senza equiparare una tazza a 500 g.\n\nMetti il materiale nel sacchetto approvato e sigillalo secondo questo scenario raffreddato.\n\nEtichetta il corpo con tutti i sei gruppi e conserva informazioni di campo, gruppo e zona.\n\nCompleta la scheda di campo con ID esattamente coincidente; la prova individuale delle osservazioni è collegata a S1-11.\n\nRegistra osservazioni oggettive di colore, tessitura/tatto, umidità e sito; questo punto condiviso è valutato in S1-11.\n\nMetti il sacchetto etichettato e sigillato nella borsa termica come chiede lo scenario e annota il controllo di conservazione prescritto.\n\nRegistra una consegna con ID, cedente, ricevente, data/ora e condizione.\n\nControlla identità e condizioni col ricevente e segnala discrepanze.\n\nLa scheda di raccolta in otto punti prosegue in S1-11: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "spokenText": "Raccogli, etichetta e documenta il campione didattico\n\nAmpliamento del Riverside Park\n\nSito 3 – Parco giochi proposto\n\nPer pratica reale usa data e ora effettive; dichiara come dati di scenario date e ore simulate.\n\nLa scheda dimostrativa prevede un sacchetto sigillato approvato e borsa termica con mattonelle fredde. Analita, contenitore e tempi reali richiedono istruzioni del laboratorio ricevente; non è autorizzato raccogliere suolo da un parco giochi potenzialmente contaminato.\n\nScegli paletta in acciaio inox, sacchetto approvato, pennarello permanente, borsa termica e scheda di campo, oltre a protezione adeguata e strumenti per verificare quantità e condizioni se richiesti.\n\nPulisci la paletta prima del prelievo e previeni contaminazione incrociata.\n\nRaccogli circa cinquecento grammi dallo strato da zero a quindici centimetri in un punto didattico sicuro e autorizzato, registrando quantità e profondità effettive senza equiparare una tazza a cinquecento grammi.\n\nMetti il materiale nel sacchetto approvato e sigillalo secondo questo scenario raffreddato.\n\nEtichetta il corpo con tutti i sei gruppi e conserva informazioni di campo, gruppo e zona.\n\nCompleta la scheda di campo con ID esattamente coincidente; la prova individuale delle osservazioni è collegata al passaggio undici della prima stazione.\n\nRegistra osservazioni oggettive di colore, tessitura/tatto, umidità e sito; questo punto condiviso è valutato nel passaggio undici della prima stazione.\n\nMetti il sacchetto etichettato e sigillato nella borsa termica come chiede lo scenario e annota il controllo di conservazione prescritto.\n\nRegistra una consegna con ID, cedente, ricevente, data/ora e condizione.\n\nControlla identità e condizioni col ricevente e segnala discrepanze.\n\nLa scheda di raccolta in otto punti prosegue nel passaggio undici della prima stazione: etichetta, trasferimento e osservazioni reali di ciascuno richiedono prove verificate dal formatore. Usa solo materiale formativo sicuro e autorizzato e le istruzioni effettive del laboratorio ricevente.",
+      "spokenTextSHA256": "fa831bdc0ce6f91dd814f4b4252db415345bd4f0ce9226e475437ada5aea0a56",
+      "spokenTextSha256": "fa831bdc0ce6f91dd814f4b4252db415345bd4f0ce9226e475437ada5aea0a56",
+      "spokenAdaptationChanges": [
+        {
+          "written": "prosegue in S1-11",
+          "spoken": "prosegue nel passaggio undici della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "collegata a S1-11",
+          "spoken": "collegata al passaggio undici della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "valutato in S1-11",
+          "spoken": "valutato nel passaggio undici della prima stazione",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "500 g",
+          "spoken": "cinquecento grammi",
+          "occurrences": 2,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Natural grammatical speech expansion preserving exact range/quantity; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ac0f4640e1c33aa896396262fd7212cfab71345ec18de861828184eab6d7e7f2",
+      "requestFingerprintSha256": "ac0f4640e1c33aa896396262fd7212cfab71345ec18de861828184eab6d7e7f2",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-10-it-worksheet-r1",
+      "unitId": "S1-10-it-worksheet-r1",
+      "locale": "it",
+      "semanticGroup": "worksheet",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bbd6dea2daf873871cfa5b0c0b47ee6ba689980e6d84b3eeab256c5fcf44148b",
+      "sourceBindings": [
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Etichetta e registro delle consegne",
+          "sha256": "6e319513f77a5c9c03112a208eed743462fad55ebde0d4666b6a89e6f838b19e"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/0",
+          "text": "Sei gruppi di dati dell'etichetta",
+          "sha256": "1272546b426f5f7d93162ec71c58c23dde2553dbe153412b8fa3081de1282077"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/1",
+          "text": "Studente/gruppo, campo e zona",
+          "sha256": "4b7f9d16f743bc0c13777af9351a7677839bd168c3e6a2c1e9091bed38a6a197"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/2",
+          "text": "Analisi richiesta e scheda del metodo",
+          "sha256": "f03fbf552a877eef46d636563945532a1d79fdaedc3a47863e33db792bd3bb97"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/3",
+          "text": "Contenitore e quantità",
+          "sha256": "8d4bce98a3a38f11aa7cb657218eb28159e92b232510616ec443278242be9458"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/4",
+          "text": "Condizione di conservazione e controllo misurato",
+          "sha256": "02ab65e8d35e2f130773a69da9858b8acad8e9c3398d2c5cccd5844e8facb7b2"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/5",
+          "text": "Data/ora di cessione e ricezione",
+          "sha256": "a5fffa9c2d8ed7e859c046a10bdf22e376af781df09f6be4bf13585cee2837d6"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/6",
+          "text": "Cedente e ricevente",
+          "sha256": "dfa7bf15de4fd6e0c93ee1beedd07dbf6f88b87d225b8f36d9b9b353b1dfb47a"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/7",
+          "text": "Condizione o anomalia",
+          "sha256": "edc8a1e4b91f865c0f3aa33034fcd741c0d6835ad75262538ad080a7a6eb45b9"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/8",
+          "text": "Azione intrapresa",
+          "sha256": "7ff4a0b1a97f7155e34aa46ef25305b8bb621f9e2ca8838c66669867eca4493c"
+        }
+      ],
+      "scientificMeaning": "Etichetta e registro delle consegne\n\nSei gruppi di dati dell'etichetta\n\nStudente/gruppo, campo e zona\n\nAnalisi richiesta e scheda del metodo\n\nContenitore e quantità\n\nCondizione di conservazione e controllo misurato\n\nData/ora di cessione e ricezione\n\nCedente e ricevente\n\nCondizione o anomalia\n\nAzione intrapresa",
+      "displayText": "Etichetta e registro delle consegne\n\nSei gruppi di dati dell'etichetta\n\nStudente/gruppo, campo e zona\n\nAnalisi richiesta e scheda del metodo\n\nContenitore e quantità\n\nCondizione di conservazione e controllo misurato\n\nData/ora di cessione e ricezione\n\nCedente e ricevente\n\nCondizione o anomalia\n\nAzione intrapresa",
+      "captionText": "Etichetta e registro delle consegne\n\nSei gruppi di dati dell'etichetta\n\nStudente/gruppo, campo e zona\n\nAnalisi richiesta e scheda del metodo\n\nContenitore e quantità\n\nCondizione di conservazione e controllo misurato\n\nData/ora di cessione e ricezione\n\nCedente e ricevente\n\nCondizione o anomalia\n\nAzione intrapresa",
+      "spokenText": "Etichetta e registro delle consegne\n\nSei gruppi di dati dell'etichetta\n\nStudente/gruppo, campo e zona\n\nAnalisi richiesta e scheda del metodo\n\nContenitore e quantità\n\nCondizione di conservazione e controllo misurato\n\nData/ora di cessione e ricezione\n\nCedente e ricevente\n\nCondizione o anomalia\n\nAzione intrapresa",
+      "spokenTextSHA256": "eb038d7631c2a6029ca9db1fb72d1d2287d869383fbc7d97b9d45bae31361667",
+      "spokenTextSha256": "eb038d7631c2a6029ca9db1fb72d1d2287d869383fbc7d97b9d45bae31361667",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5bd7aa48e1d8305c139a746b9bef7143913ecf48f2a4a8998cc09b43b7a33ad6",
+      "requestFingerprintSha256": "5bd7aa48e1d8305c139a746b9bef7143913ecf48f2a4a8998cc09b43b7a33ad6",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
