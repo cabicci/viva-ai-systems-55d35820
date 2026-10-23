@@ -1,0 +1,5 @@
+from pathlib import Path
+import json,hashlib
+p=Path(__file__).resolve().parent
+f=['.gitignore', 'README.en.txt', 'freeze_package.py', 'offline_check.py', 'owner-authority.json', 'cumulative-attempt-ledger.json', 'cache-live-audit.json', 'expected-criteria.NOT-FOR-MODEL.json', 'provenance/worker-derivation.json', 'request.json', 'runtime.json', 'vendor/course/manifest.json', 'vendor/pipeline-engine.py', 'worker.py', 'provenance/narration-de.json', 'thin_artifacts.py', 'import-plan.json', 'original-request.json', 'original-worker.py', 'imported_audio_support.py', 'inputs/original-de-complete.zip', 'inputs/S3-12-de-R01-r1-audio.zip', 'inputs/S3-12-de-R02-r1-audio.zip', 'inputs/S3-12-de-R03-r1-audio.zip', 'inputs/S3-12-de-R04-r1-audio.zip', 'inputs/S3-12-de-R05-r1-audio.zip', 'inputs/S3-12-de-R06-r1-audio.zip', 'inputs/S3-12-de-R07-r1-audio.zip']
+p.joinpath('freeze.json').write_text(json.dumps({'sha256':{n:hashlib.sha256(p.joinpath(n).read_bytes()).hexdigest()for n in f}},indent=2)+'\n','utf8')

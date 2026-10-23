@@ -1,0 +1,1 @@
+Seven already generated German S312 recordings: exact immutable original imports, zero TTS; seven blind plus seven ASR diagnostics, max two availability GET, no automatic retry. R01 blind explicit additional attempt after old503, six others and all ASR previously uncalled. Original artifacts/call ledgers/source text preserved.
