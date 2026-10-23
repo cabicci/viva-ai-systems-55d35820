@@ -1,0 +1,122 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-06-en.json",
+    "sha256": "f9793eaa4b7da0ca2e42b04a103abd36dd950d5baaf107d3a4ed17efa528b205",
+    "bytes": 28055
+  },
+  "units": [
+    {
+      "id": "S1-06-en-P01-sentence-repair-r1",
+      "unitId": "S1-06-en-P01-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "P01-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9793eaa4b7da0ca2e42b04a103abd36dd950d5baaf107d3a4ed17efa528b205",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/0/checklist/5",
+          "text": "Thoroughly mix all subsamples to create the composite.",
+          "sha256": "88ae59fe05edac5fe57b16a637c3e07273464bf1a2b1ad768d90539e13ffdde2"
+        }
+      ],
+      "scientificMeaning": "Thoroughly mix all subsamples to create the composite.",
+      "displayText": "Thoroughly mix all subsamples to create the composite.",
+      "captionText": "Thoroughly mix all subsamples to create the composite.",
+      "spokenText": "Mix all the subsamples together well to create the composite.",
+      "spokenTextSHA256": "21a1a828d4286dbc4be5b6af5ad5c96e2d2abff31f1c62d241149215e0bc8fff",
+      "spokenTextSha256": "21a1a828d4286dbc4be5b6af5ad5c96e2d2abff31f1c62d241149215e0bc8fff",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Thoroughly mix all subsamples to create the composite.",
+          "spoken": "Thoroughly mix all subsamples to create the composite.",
+          "occurrences": 1,
+          "purpose": "REPAIR_ONLY_EXACT_SENTENCE_EXTRACTION_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "Thoroughly mix all subsamples to create the composite.",
+          "spoken": "Mix all the subsamples together well to create the composite.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ENGLISH_SENTENCE_FOR_CORROBORATED_ARTICULATION_OR_NUMERAL_AMBIGUITY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "exactSentenceBefore": "Thoroughly mix all subsamples to create the composite.",
+      "requestFingerprintSHA256": "06bbc5ddc12306007f3ebd705d543fccfe6a225d2fc6475f62733deba6b13899",
+      "requestFingerprintSha256": "06bbc5ddc12306007f3ebd705d543fccfe6a225d2fc6475f62733deba6b13899",
+      "sourcePlanSha256": "a094a49288f4a743be5a0f35e45eb8de04cc6ae27903464cf10cc9627d590f83"
+    },
+    {
+      "id": "S1-06-en-P03-sentence-repair-r1",
+      "unitId": "S1-06-en-P03-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "P03-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f9793eaa4b7da0ca2e42b04a103abd36dd950d5baaf107d3a4ed17efa528b205",
+      "sourceBindings": [
+        {
+          "pointer": "/practicalTasks/2/scenario",
+          "text": "Use the trainer-approved hand auger on the safe designated plot. The source example allowed 8–10 subsamples; use the same ten-point, 0–15 cm card here. Do not substitute a push-probe motion for the actual auger technique.",
+          "sha256": "546e7f1d06afbf82861541a7d11e2c2992d0f6a2ac11b7357ccf95da7a717049"
+        }
+      ],
+      "scientificMeaning": "Use the trainer-approved hand auger on the safe designated plot. The source example allowed 8–10 subsamples; use the same ten-point, 0–15 cm card here. Do not substitute a push-probe motion for the actual auger technique.",
+      "displayText": "Use the trainer-approved hand auger on the safe designated plot. The source example allowed 8–10 subsamples; use the same ten-point, 0–15 cm card here. Do not substitute a push-probe motion for the actual auger technique.",
+      "captionText": "Use the trainer-approved hand auger on the safe designated plot. The source example allowed 8–10 subsamples; use the same ten-point, 0–15 cm card here. Do not substitute a push-probe motion for the actual auger technique.",
+      "spokenText": "Use the same card: ten sampling points, with soil collected from zero to fifteen centimetres.",
+      "spokenTextSHA256": "585b3f566c039158fa145ecd1ab058d3288ef024b8ccdb0d1185d33e035972b9",
+      "spokenTextSha256": "585b3f566c039158fa145ecd1ab058d3288ef024b8ccdb0d1185d33e035972b9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the trainer-approved hand auger on the safe designated plot. The source example allowed 8–10 subsamples; use the same ten-point, 0–15 cm card here. Do not substitute a push-probe motion for the actual auger technique.",
+          "spoken": "use the same ten-point, 0–15 cm card here.",
+          "occurrences": 1,
+          "purpose": "REPAIR_ONLY_EXACT_SENTENCE_EXTRACTION_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "use the same ten-point, 0–15 cm card here.",
+          "spoken": "Use the same card: ten sampling points, with soil collected from zero to fifteen centimetres.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ENGLISH_SENTENCE_FOR_CORROBORATED_ARTICULATION_OR_NUMERAL_AMBIGUITY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "exactSentenceBefore": "use the same ten-point, 0–15 cm card here.",
+      "requestFingerprintSHA256": "ec5c1cfeb48d4ba3d075bd1b964efdd913faeb46bf908fb65cca6daad32422e5",
+      "requestFingerprintSha256": "ec5c1cfeb48d4ba3d075bd1b964efdd913faeb46bf908fb65cca6daad32422e5",
+      "sourcePlanSha256": "a094a49288f4a743be5a0f35e45eb8de04cc6ae27903464cf10cc9627d590f83"
+    }
+  ],
+  "scope": "EXACT_TWO_ROOT_APPROVED_SENTENCE_REPAIRS_OTHER_PCM_REUSED"
+}

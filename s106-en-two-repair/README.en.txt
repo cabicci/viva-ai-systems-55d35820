@@ -1,0 +1,1 @@
+Exactly two source-equivalent English sentence repairs. All surrounding source PCM stays unchanged. One TTS/blind/ASR per sentence, two model GET, zero retry/rerun. Candidate joins require independent selection, not automatic integration.
