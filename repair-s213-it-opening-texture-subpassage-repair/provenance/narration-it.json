@@ -1,0 +1,82 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-it.json",
+    "sha256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+    "bytes": 41167
+  },
+  "units": [
+    {
+      "id": "S2-13-it-opening-texture-subpassage-repair-r1",
+      "unitId": "S2-13-it-opening-texture-subpassage-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s213-it-opening-texture-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+          "sha256": "254ba306046cd1a878335c7c53059283f084b5b5f18e4b6d17df57d736e46d51"
+        }
+      ],
+      "scientificMeaning": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+      "displayText": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+      "captionText": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+      "spokenText": "Una classe di tessitura dà indizi su acqua, nutrienti e lavorabilità. Da sola non prova il drenaggio, la salinità, l’idoneità colturale o il fabbisogno di ammendante di un campo.",
+      "spokenTextSHA256": "3b2836c5d24a4827f6e9a9bfec73ba9d2131b598cc9b6509e8b127b060a7b4d1",
+      "spokenTextSha256": "3b2836c5d24a4827f6e9a9bfec73ba9d2131b598cc9b6509e8b127b060a7b4d1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+          "spoken": "Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+          "spoken": "Una classe di tessitura dà indizi su acqua, nutrienti e lavorabilità. Da sola non prova il drenaggio, la salinità, l’idoneità colturale o il fabbisogno di ammendante di un campo.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "9768b8b2c14948fc749922b03360c580441710b220c20339bea9e5428b739353",
+      "requestFingerprintSha256": "9768b8b2c14948fc749922b03360c580441710b220c20339bea9e5428b739353",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/intro",
+        "original": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+        "effective": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/intro",
+            "text": "Usa i tre risultati reali dei passi precedenti oppure modelli numerici chiaramente indicati come esercizio. Una classe tessiturale dà indizi su acqua, nutrienti e lavorabilità; da sola non prova il drenaggio, la salinità, l'idoneità colturale o il fabbisogno di ammendante di un campo.",
+            "sha256": "254ba306046cd1a878335c7c53059283f084b5b5f18e4b6d17df57d736e46d51"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s213-four-bounded-subpassage-root-decisions-r2.json",
+        "rootSelectedAuthoritySHA256": "5b8000205667d306d3163082076a9b13ed0cb6e87566ae2e1b9bf7172e02a662"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
