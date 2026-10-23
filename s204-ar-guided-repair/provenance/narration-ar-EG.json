@@ -1,0 +1,66 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-ar-EG.json",
+    "sha256": "4151b8854ffab83e4dcf59ac0a787709756a763a6054d836d43cc7fb685564e5",
+    "bytes": 31834
+  },
+  "units": [
+    {
+      "id": "S2-04-ar-EG-guided-practice-sentence-repair-r1",
+      "unitId": "S2-04-ar-EG-guided-practice-sentence-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "s204-ar-guided-repair-sentence",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4151b8854ffab83e4dcf59ac0a787709756a763a6054d836d43cc7fb685564e5",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "صنّف pH ‏5.0 و6.8 و8.0 على رسم نوعي محوره منتظم. عند 5 حدّد احتمال قلة إتاحة P وزيادة خطر Al الذائب، وعند 8 احتمال قلة إتاحة Fe. بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+          "sha256": "0a27fbd31a8daa73c87940695d3259ce16446560ca4cae6f19b09a91b3e97d92"
+        }
+      ],
+      "scientificMeaning": "صنّف pH ‏5.0 و6.8 و8.0 على رسم نوعي محوره منتظم. عند 5 حدّد احتمال قلة إتاحة P وزيادة خطر Al الذائب، وعند 8 احتمال قلة إتاحة Fe. بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+      "displayText": "صنّف pH ‏5.0 و6.8 و8.0 على رسم نوعي محوره منتظم. عند 5 حدّد احتمال قلة إتاحة P وزيادة خطر Al الذائب، وعند 8 احتمال قلة إتاحة Fe. بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+      "captionText": "صنّف pH ‏5.0 و6.8 و8.0 على رسم نوعي محوره منتظم. عند 5 حدّد احتمال قلة إتاحة P وزيادة خطر Al الذائب، وعند 8 احتمال قلة إتاحة Fe. بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+      "spokenText": "بعد كده احسب نسبة نشاط أيونات الهيدروجين واتجاه المقارنة، بين خمسة وستة، وبين خمسة وسبعة، وبين أربعة فاصلة خمسة وخمسة فاصلة خمسة؛ واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+      "spokenTextSHA256": "f4dc2421bb8736a29a41e07703b810225ddfee3c95dcb37ee9e10df51d45cf03",
+      "spokenTextSha256": "f4dc2421bb8736a29a41e07703b810225ddfee3c95dcb37ee9e10df51d45cf03",
+      "spokenAdaptationChanges": [
+        {
+          "written": "صنّف pH ‏5.0 و6.8 و8.0 على رسم نوعي محوره منتظم. عند 5 حدّد احتمال قلة إتاحة P وزيادة خطر Al الذائب، وعند 8 احتمال قلة إتاحة Fe. بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+          "spoken": "بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+          "spoken": "بعد كده احسب نسبة نشاط أيونات الهيدروجين واتجاه المقارنة، بين خمسة وستة، وبين خمسة وسبعة، وبين أربعة فاصلة خمسة وخمسة فاصلة خمسة؛ واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_NUMERIC_DIRECTION_AND_CHEMICAL_IDENTITY_SENTENCE"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "07bd0af914f49a73adc1e1146f5f28879f4d82dcd94cbaecc3006e01a23ba2b6",
+      "requestFingerprintSha256": "07bd0af914f49a73adc1e1146f5f28879f4d82dcd94cbaecc3006e01a23ba2b6",
+      "sourcePlanSha256": "d84f9859e088f7ae4c0655e08cc985f7356d82831bafcb262387fcbd73bbeae0",
+      "exactSentenceBefore": "بعد كده احسب نسبة نشاط أيون الهيدروجين واتجاهها للمقارنات 5/6 و5/7 و4.5/5.5، واذكر ليه الرسم ما يحددش جرعة سماد أو جير.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}
