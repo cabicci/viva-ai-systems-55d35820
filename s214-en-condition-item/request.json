@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "S214_EN_CONDITION_ITEM",
+  "stepId": "S2-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s214-en-condition-item-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-14-en-conditional-actions-item-repair-r1",
+      "unitId": "S2-14-en-conditional-actions-item-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s214-en-condition-item-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3d9467b8fe69baccbaad6470066f91a4800855d3bf233744dc029a67d6e7a204",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/sections/3",
+          "text": "4. Two conditional actions and one priority",
+          "sha256": "2e6497ab258ad6f3a20f0cf87d29f894ec920759c47568039779627dddffb162"
+        }
+      ],
+      "scientificMeaning": "4. Two conditional actions and one priority",
+      "displayText": "4. Two conditional actions and one priority",
+      "captionText": "4. Two conditional actions and one priority",
+      "spokenText": "Four. Two actions that depend on the evidence, and one priority.",
+      "spokenTextSHA256": "c732f03f2cc3b2ce7f1415b4d0a57edb8a0eec30337329d0cc7e4d9c24b69054",
+      "spokenTextSha256": "c732f03f2cc3b2ce7f1415b4d0a57edb8a0eec30337329d0cc7e4d9c24b69054",
+      "spokenAdaptationChanges": [
+        {
+          "written": "4. Two conditional actions and one priority",
+          "spoken": "4. Two conditional actions and one priority",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "4. Two conditional actions and one priority",
+          "spoken": "Four. Two actions that depend on the evidence, and one priority.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "191197523e621f476ef2fcb0396668729571f5b520a7d60c6a663a8e5d43b2c3",
+      "requestFingerprintSha256": "191197523e621f476ef2fcb0396668729571f5b520a7d60c6a663a8e5d43b2c3",
+      "sourcePlanSha256": "1b873c5fc06e7685f5e7e7a7f6762744bdb582ed214b5c2ab607f15d7c9dfc6d",
+      "exactSentenceBefore": "4. Two conditional actions and one priority",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reportPractice/ui/sections/3",
+        "original": "4. Two conditional actions and one priority",
+        "effective": "4. Two conditional actions and one priority",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reportPractice/ui/sections/3",
+            "text": "4. Two conditional actions and one priority",
+            "sha256": "2e6497ab258ad6f3a20f0cf87d29f894ec920759c47568039779627dddffb162"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-final-four-distinct-root-repairs-r1.json",
+        "rootSelectedAuthoritySHA256": "697c101833c9b3dfe94caac2a21dfa110032bee715dd5a79aee374002d76ac39"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-14-en-conditional-actions-item-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
