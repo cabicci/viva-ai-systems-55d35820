@@ -1,0 +1,952 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-12-en.json",
+    "sha256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+    "bytes": 26008
+  },
+  "units": [
+    {
+      "id": "S1-12-en-opening-r1",
+      "unitId": "S1-12-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Bring the label, field sheet and method paragraph together. A reader should be able to see what you did, why you did it and how the sample was handled, without filling gaps with guesses.",
+          "sha256": "170efec71b2789d90868a021d8ece771f777591b851972140bce0446fe1678a2"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Write the objective, sampling design, collection procedure and handling clearly enough for another person to understand and repeat the method.",
+          "sha256": "2cfead8c85793c87daab2b893ea31f95b38724e8109a2db4985b95a5e0133f63"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Produce a consistent label, field sheet and report that meet every documentation-kit criterion.",
+          "sha256": "099960d1408fb348df2769cdeca30d7da19ccaf8f12e7c927bbd5ffcb9afead5"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Review a missing or inconsistent record, ask precise follow-up questions and give useful feedback.",
+          "sha256": "23bc838c0f010dd4b365a603667caac30e6d76c37910c35f878b67f2a4be7795"
+        }
+      ],
+      "scientificMeaning": "Bring the label, field sheet and method paragraph together. A reader should be able to see what you did, why you did it and how the sample was handled, without filling gaps with guesses.\n\nWrite the objective, sampling design, collection procedure and handling clearly enough for another person to understand and repeat the method.\n\nProduce a consistent label, field sheet and report that meet every documentation-kit criterion.\n\nReview a missing or inconsistent record, ask precise follow-up questions and give useful feedback.",
+      "displayText": "Bring the label, field sheet and method paragraph together. A reader should be able to see what you did, why you did it and how the sample was handled, without filling gaps with guesses.\n\nWrite the objective, sampling design, collection procedure and handling clearly enough for another person to understand and repeat the method.\n\nProduce a consistent label, field sheet and report that meet every documentation-kit criterion.\n\nReview a missing or inconsistent record, ask precise follow-up questions and give useful feedback.",
+      "captionText": "Bring the label, field sheet and method paragraph together. A reader should be able to see what you did, why you did it and how the sample was handled, without filling gaps with guesses.\n\nWrite the objective, sampling design, collection procedure and handling clearly enough for another person to understand and repeat the method.\n\nProduce a consistent label, field sheet and report that meet every documentation-kit criterion.\n\nReview a missing or inconsistent record, ask precise follow-up questions and give useful feedback.",
+      "spokenText": "Bring the label, field sheet and method paragraph together. A reader should be able to see what you did, why you did it and how the sample was handled, without filling gaps with guesses.\n\nWrite the objective, sampling design, collection procedure and handling clearly enough for another person to understand and repeat the method.\n\nProduce a consistent label, field sheet and report that meet every documentation-kit criterion.\n\nReview a missing or inconsistent record, ask precise follow-up questions and give useful feedback.",
+      "spokenTextSHA256": "f7b24620a4a25c189bfa3b024951613e352a447f367414072e5813bf62bc69a5",
+      "spokenTextSha256": "f7b24620a4a25c189bfa3b024951613e352a447f367414072e5813bf62bc69a5",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7d49393cc5f76c1efce92ca35c4a72070c266a00ae2c6c46be28ffaa2c3bc7a1",
+      "requestFingerprintSha256": "7d49393cc5f76c1efce92ca35c4a72070c266a00ae2c6c46be28ffaa2c3bc7a1",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-E01-r1",
+      "unitId": "S1-12-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Only a GPS coordinate appears on a sample bag.",
+          "sha256": "601a3a25af7de8ec1d31c409b5879bea0e78a269020b30b8cc58228c7abb1605"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Ask for sample ID/project and connect them to the record.",
+          "sha256": "321068422491412ad38e152849c0c7d5c21ff0aba130589feabf8d30fdd90652"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Ask what layer was sampled and with which method/tool.",
+          "sha256": "5bd59fa2420a44f1084834a25114ec781227488625183ef89b175c59a8600127"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Ask when it was collected and how it has been preserved and transferred.",
+          "sha256": "5aef72fc26da0d63e1891599be2bf5a6e344b9beec24c96d1479e714ff9982ec"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A location alone cannot establish sample identity, method or condition.",
+          "sha256": "d033a825658efa32d8b874689f77a03568a3ffa2fd2d0b6526cf8874abe8faa8"
+        }
+      ],
+      "scientificMeaning": "Only a GPS coordinate appears on a sample bag.\n\nAsk for sample ID/project and connect them to the record.\n\nAsk what layer was sampled and with which method/tool.\n\nAsk when it was collected and how it has been preserved and transferred.\n\nA location alone cannot establish sample identity, method or condition.",
+      "displayText": "Only a GPS coordinate appears on a sample bag.\n\nAsk for sample ID/project and connect them to the record.\n\nAsk what layer was sampled and with which method/tool.\n\nAsk when it was collected and how it has been preserved and transferred.\n\nA location alone cannot establish sample identity, method or condition.",
+      "captionText": "Only a GPS coordinate appears on a sample bag.\n\nAsk for sample ID/project and connect them to the record.\n\nAsk what layer was sampled and with which method/tool.\n\nAsk when it was collected and how it has been preserved and transferred.\n\nA location alone cannot establish sample identity, method or condition.",
+      "spokenText": "Only a GPS coordinate appears on a sample bag.\n\nAsk for sample ID/project and connect them to the record.\n\nAsk what layer was sampled and with which method/tool.\n\nAsk when it was collected and how it has been preserved and transferred.\n\nA location alone cannot establish sample identity, method or condition.",
+      "spokenTextSHA256": "16b8f08f9d170872ada65cb6837ffef000db16ab535df6e61f9641afea96ae62",
+      "spokenTextSha256": "16b8f08f9d170872ada65cb6837ffef000db16ab535df6e61f9641afea96ae62",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c8593bc4c41d1f011903fdeeab9ab111136892056fd8b562d630e53aa5e967e9",
+      "requestFingerprintSha256": "c8593bc4c41d1f011903fdeeab9ab111136892056fd8b562d630e53aa5e967e9",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-E02-r1",
+      "unitId": "S1-12-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The bags and field sheet identify five topographic locations, but the paragraph says a single composite sample.",
+          "sha256": "bf10c67fc7e3ce03877af2e468db048e207983fbfb907937d2518d8faaaf7507"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identify the contradiction before using the results.",
+          "sha256": "3734c66d87086a12cd06b3de86be2fb073760bee9d1fe92d107de09cd35204e1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Check the actual collection record and correct the paragraph or flag uncertain sample identity.",
+          "sha256": "f79066ad7059a482bcf91615ec129b56755eb2a5beaf7fb50a78b75cba6884a9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Retain five separate identities if the work was conducted as the stated five-location design.",
+          "sha256": "0e8a95c389679d035dde76350ba25bf38ddb8529899bfa6510d8de8c75548947"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "The report must describe the work done, not a familiar template.",
+          "sha256": "adc91313fd8f5c8b65425183c0d99d4e405c7db43e3a96e58f5b9839b08d54fd"
+        }
+      ],
+      "scientificMeaning": "The bags and field sheet identify five topographic locations, but the paragraph says a single composite sample.\n\nIdentify the contradiction before using the results.\n\nCheck the actual collection record and correct the paragraph or flag uncertain sample identity.\n\nRetain five separate identities if the work was conducted as the stated five-location design.\n\nThe report must describe the work done, not a familiar template.",
+      "displayText": "The bags and field sheet identify five topographic locations, but the paragraph says a single composite sample.\n\nIdentify the contradiction before using the results.\n\nCheck the actual collection record and correct the paragraph or flag uncertain sample identity.\n\nRetain five separate identities if the work was conducted as the stated five-location design.\n\nThe report must describe the work done, not a familiar template.",
+      "captionText": "The bags and field sheet identify five topographic locations, but the paragraph says a single composite sample.\n\nIdentify the contradiction before using the results.\n\nCheck the actual collection record and correct the paragraph or flag uncertain sample identity.\n\nRetain five separate identities if the work was conducted as the stated five-location design.\n\nThe report must describe the work done, not a familiar template.",
+      "spokenText": "The bags and field sheet identify five topographic locations, but the paragraph says a single composite sample.\n\nIdentify the contradiction before using the results.\n\nCheck the actual collection record and correct the paragraph or flag uncertain sample identity.\n\nRetain five separate identities if the work was conducted as the stated five-location design.\n\nThe report must describe the work done, not a familiar template.",
+      "spokenTextSHA256": "4af1cea99be17d9c28dff26c7c79c28284ef08350ea15d49da07ee97210d1109",
+      "spokenTextSha256": "4af1cea99be17d9c28dff26c7c79c28284ef08350ea15d49da07ee97210d1109",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "239b606bae7b7bf6a95bc66e19fe2d5b6ae04841513ccab80d1b53e8520c3a74",
+      "requestFingerprintSha256": "239b606bae7b7bf6a95bc66e19fe2d5b6ae04841513ccab80d1b53e8520c3a74",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-guided-practice-r1",
+      "unitId": "S1-12-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "A bag lists only a coordinate while five separate topographic samples are described in the report as one composite. Find the breaks in the evidence chain and propose a repair that states what really happened.",
+          "sha256": "e682ca52b3dd1d5f7224ec66a6faab45e5e6fb4f203f16788daa6e23e4f8030f"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "List the missing sample ID, objective, selected locations, depth, date/time, collection tool and handling facts that must be checked.",
+          "sha256": "348daaf55229607c71da7b65cc26950579542f05f2a81fbc1cedac2de018aef9"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Compare container labels, field sheet and paragraph for matching IDs and number of samples.",
+          "sha256": "10db301cf507f34be047ca821a23f9974499ede62919b4d1b51e5c8c0d1a598e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Rewrite the design and collection description from the contemporaneous record, retaining uncertainty where it cannot be resolved.",
+          "sha256": "b6ea869148155c8a0025b36dc248f3227ef23e42e23255ba0704d2709644ef33"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Give the collector precise follow-up questions and useful feedback rather than inventing a complete method.",
+          "sha256": "b55c130c59f3b7bf489ad32e550d8fec5add80fa9407cb5886ae28dd895feacf"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The final documentation kit is checked against the trainer's real rubric and records; online practice is formative.",
+          "sha256": "534e2256a0083c343ae8edd49ac878daacdb911e5244ceb963ff0df14397adf3"
+        }
+      ],
+      "scientificMeaning": "A bag lists only a coordinate while five separate topographic samples are described in the report as one composite. Find the breaks in the evidence chain and propose a repair that states what really happened.\n\nList the missing sample ID, objective, selected locations, depth, date/time, collection tool and handling facts that must be checked.\n\nCompare container labels, field sheet and paragraph for matching IDs and number of samples.\n\nRewrite the design and collection description from the contemporaneous record, retaining uncertainty where it cannot be resolved.\n\nGive the collector precise follow-up questions and useful feedback rather than inventing a complete method.\n\nThe final documentation kit is checked against the trainer's real rubric and records; online practice is formative.",
+      "displayText": "A bag lists only a coordinate while five separate topographic samples are described in the report as one composite. Find the breaks in the evidence chain and propose a repair that states what really happened.\n\nList the missing sample ID, objective, selected locations, depth, date/time, collection tool and handling facts that must be checked.\n\nCompare container labels, field sheet and paragraph for matching IDs and number of samples.\n\nRewrite the design and collection description from the contemporaneous record, retaining uncertainty where it cannot be resolved.\n\nGive the collector precise follow-up questions and useful feedback rather than inventing a complete method.\n\nThe final documentation kit is checked against the trainer's real rubric and records; online practice is formative.",
+      "captionText": "A bag lists only a coordinate while five separate topographic samples are described in the report as one composite. Find the breaks in the evidence chain and propose a repair that states what really happened.\n\nList the missing sample ID, objective, selected locations, depth, date/time, collection tool and handling facts that must be checked.\n\nCompare container labels, field sheet and paragraph for matching IDs and number of samples.\n\nRewrite the design and collection description from the contemporaneous record, retaining uncertainty where it cannot be resolved.\n\nGive the collector precise follow-up questions and useful feedback rather than inventing a complete method.\n\nThe final documentation kit is checked against the trainer's real rubric and records; online practice is formative.",
+      "spokenText": "A bag lists only a coordinate while five separate topographic samples are described in the report as one composite. Find the breaks in the evidence chain and propose a repair that states what really happened.\n\nList the missing sample ID, objective, selected locations, depth, date/time, collection tool and handling facts that must be checked.\n\nCompare container labels, field sheet and paragraph for matching IDs and number of samples.\n\nRewrite the design and collection description from the contemporaneous record, retaining uncertainty where it cannot be resolved.\n\nGive the collector precise follow-up questions and useful feedback rather than inventing a complete method.\n\nThe final documentation kit is checked against the trainer's real rubric and records; online practice is formative.",
+      "spokenTextSHA256": "66eae716d69edd8350c883be77249de1b0b8471030138a9eb28747e4a6db4c51",
+      "spokenTextSha256": "66eae716d69edd8350c883be77249de1b0b8471030138a9eb28747e4a6db4c51",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b70b7be81b6e63d9ec2289c5c10efee021932227b26b351591871599d3f2e5bc",
+      "requestFingerprintSha256": "b70b7be81b6e63d9ec2289c5c10efee021932227b26b351591871599d3f2e5bc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-reflection-r1",
+      "unitId": "S1-12-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Which part was hardest: labeling, recording observations or writing the method? What evidence or practice do I need next?",
+          "sha256": "4192eac287080520b37ab3cd0b9c99ec158394337caac4668e4e49fd0841dad5"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "All ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+          "sha256": "7963b89fc6afa821de8510f519d13363f47ace0f277ee8264f678b465ffb2205"
+        }
+      ],
+      "scientificMeaning": "Which part was hardest: labeling, recording observations or writing the method? What evidence or practice do I need next?\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+      "displayText": "Which part was hardest: labeling, recording observations or writing the method? What evidence or practice do I need next?\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+      "captionText": "Which part was hardest: labeling, recording observations or writing the method? What evidence or practice do I need next?\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+      "spokenText": "Which part was hardest: labeling, recording observations or writing the method? What evidence or practice do I need next?\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+      "spokenTextSHA256": "abeced6c4463bf5294676ef713a54e526519789e475560570d8dbaa42bc7d9a3",
+      "spokenTextSha256": "abeced6c4463bf5294676ef713a54e526519789e475560570d8dbaa42bc7d9a3",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e4cb72b2249578755f614904015dab5bc8c938701716d90f8a2428648da6641a",
+      "requestFingerprintSha256": "e4cb72b2249578755f614904015dab5bc8c938701716d90f8a2428648da6641a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-model-five-r1",
+      "unitId": "S1-12-en-model-five-r1",
+      "locale": "en",
+      "semanticGroup": "model-five",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/models/0/title",
+          "text": "Five separate locations: model method",
+          "sha256": "23e1745449e525a779d855bc31ba3e270f41c2083cf89e91e12126100f496d81"
+        },
+        {
+          "pointer": "/documentationKit/models/0/status",
+          "text": "Fictional teaching example; not a record of work performed by the learner",
+          "sha256": "4e25fc63416451f7ed30920493bf443d32174b760672d8a90fcb86dea1535704"
+        },
+        {
+          "pointer": "/documentationKit/models/0/text",
+          "text": "On 26 October 2024, five separate soil samples were collected for baseline nutrient assessment at Greenfield Farm, North Paddock. The design selected one crest, two mid-slope and two low-lying locations. At each identified location, surface litter was removed without discarding the intended soil layer, and a cleaned stainless steel hand auger was used to collect approximately 500 g from 0–15 cm. Samples were kept separate in new approved polyethylene bags bearing unique IDs, project and location, collection date/time, collector identity and depth, matched to the field sheet. Under this example's specified handling protocol, the bags were cooled to approximately 4°C and transferred to the laboratory within six hours; the accompanying record identifies custody and preservation checks.",
+          "sha256": "b32e6ff7543b8c6975a8c86e0cdebcdce2e6c3507fa290582586b0c74e02a471"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/0/label",
+          "text": "Purpose",
+          "sha256": "d4e8830a71c73edffe0115b8abad16b0b5cb2e121047c64cd01995203cfad062"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/0/value",
+          "text": "baseline nutrient assessment",
+          "sha256": "fd585ff23d4b39a29ec3572f8948df499f26a2e4ad0787c26d7bd9f585725e5f"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/1/label",
+          "text": "Location and design",
+          "sha256": "f9898a8dfeccfbf2f668303fd18dfe059000b672d6731c00f3372f56c6f9a9e5"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/1/value",
+          "text": "one crest, two mid-slope, two low-lying locations",
+          "sha256": "bd31e46d18216a40c16061556965b7d04002a39a63cf5cfa7c30a2cad5d7e094"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/2/label",
+          "text": "Tool",
+          "sha256": "2e53bdcd0740867b597599e733c04a994f55fb17c89a61595183a001742e5705"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/2/value",
+          "text": "cleaned stainless steel hand auger",
+          "sha256": "c8683cb45cbdc3d62ee1bacc63d071a12dc9f4c0f4f2a63ab482623ccfc22c5c"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/3/label",
+          "text": "Depth and quantity",
+          "sha256": "7131201bb73e428f2fddf91a4c54c638cb8e6007d2dd16d0921d83e86d234af5"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/3/value",
+          "text": "0–15 cm; approximately 500 g at each location",
+          "sha256": "7b95a878c43bdd59fd1ffa5bd6b93c4f1ea0b644899220d5d49789a7edfd2667"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/4/label",
+          "text": "Handling",
+          "sha256": "90e9482cff0318928d15971e409f201897cc4d01abffeb49e453db0947eeb016"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/4/value",
+          "text": "separate labeled approved bags; example-specific cooled transfer",
+          "sha256": "e6c0018ba2de064bc9db0b6dd4fb5d915e23a017c7537c91d4aa39df3d2f4106"
+        }
+      ],
+      "scientificMeaning": "Five separate locations: model method\n\nFictional teaching example; not a record of work performed by the learner\n\nOn 26 October 2024, five separate soil samples were collected for baseline nutrient assessment at Greenfield Farm, North Paddock. The design selected one crest, two mid-slope and two low-lying locations. At each identified location, surface litter was removed without discarding the intended soil layer, and a cleaned stainless steel hand auger was used to collect approximately 500 g from 0–15 cm. Samples were kept separate in new approved polyethylene bags bearing unique IDs, project and location, collection date/time, collector identity and depth, matched to the field sheet. Under this example's specified handling protocol, the bags were cooled to approximately 4°C and transferred to the laboratory within six hours; the accompanying record identifies custody and preservation checks.\n\nPurpose\n\nbaseline nutrient assessment\n\nLocation and design\n\none crest, two mid-slope, two low-lying locations\n\nTool\n\ncleaned stainless steel hand auger\n\nDepth and quantity\n\n0–15 cm; approximately 500 g at each location\n\nHandling\n\nseparate labeled approved bags; example-specific cooled transfer",
+      "displayText": "Five separate locations: model method\n\nFictional teaching example; not a record of work performed by the learner\n\nOn 26 October 2024, five separate soil samples were collected for baseline nutrient assessment at Greenfield Farm, North Paddock. The design selected one crest, two mid-slope and two low-lying locations. At each identified location, surface litter was removed without discarding the intended soil layer, and a cleaned stainless steel hand auger was used to collect approximately 500 g from 0–15 cm. Samples were kept separate in new approved polyethylene bags bearing unique IDs, project and location, collection date/time, collector identity and depth, matched to the field sheet. Under this example's specified handling protocol, the bags were cooled to approximately 4°C and transferred to the laboratory within six hours; the accompanying record identifies custody and preservation checks.\n\nPurpose\n\nbaseline nutrient assessment\n\nLocation and design\n\none crest, two mid-slope, two low-lying locations\n\nTool\n\ncleaned stainless steel hand auger\n\nDepth and quantity\n\n0–15 cm; approximately 500 g at each location\n\nHandling\n\nseparate labeled approved bags; example-specific cooled transfer",
+      "captionText": "Five separate locations: model method\n\nFictional teaching example; not a record of work performed by the learner\n\nOn 26 October 2024, five separate soil samples were collected for baseline nutrient assessment at Greenfield Farm, North Paddock. The design selected one crest, two mid-slope and two low-lying locations. At each identified location, surface litter was removed without discarding the intended soil layer, and a cleaned stainless steel hand auger was used to collect approximately 500 g from 0–15 cm. Samples were kept separate in new approved polyethylene bags bearing unique IDs, project and location, collection date/time, collector identity and depth, matched to the field sheet. Under this example's specified handling protocol, the bags were cooled to approximately 4°C and transferred to the laboratory within six hours; the accompanying record identifies custody and preservation checks.\n\nPurpose\n\nbaseline nutrient assessment\n\nLocation and design\n\none crest, two mid-slope, two low-lying locations\n\nTool\n\ncleaned stainless steel hand auger\n\nDepth and quantity\n\n0–15 cm; approximately 500 g at each location\n\nHandling\n\nseparate labeled approved bags; example-specific cooled transfer",
+      "spokenText": "Five separate locations: model method\n\nFictional teaching example; not a record of work performed by the learner\n\nOn 26 October 2024, five separate soil samples were collected for baseline nutrient assessment at Greenfield Farm, North Paddock. The design selected one crest, two mid-slope and two low-lying locations. At each identified location, surface litter was removed without discarding the intended soil layer, and a cleaned stainless steel hand auger was used to collect approximately five hundred grams from zero to fifteen centimetres. Samples were kept separate in new approved polyethylene bags bearing unique IDs, project and location, collection date/time, collector identity and depth, matched to the field sheet. Under this example's specified handling protocol, the bags were cooled to approximately four degrees Celsius and transferred to the laboratory within six hours; the accompanying record identifies custody and preservation checks.\n\nPurpose\n\nbaseline nutrient assessment\n\nLocation and design\n\none crest, two mid-slope, two low-lying locations\n\nTool\n\ncleaned stainless steel hand auger\n\nDepth and quantity\n\nzero to fifteen centimetres; approximately five hundred grams at each location\n\nHandling\n\nseparate labeled approved bags; example-specific cooled transfer",
+      "spokenTextSHA256": "82a2b2db3461bb671916b84d54b5f13a74701978bef67d38700ea5ba349dd013",
+      "spokenTextSha256": "82a2b2db3461bb671916b84d54b5f13a74701978bef67d38700ea5ba349dd013",
+      "spokenAdaptationChanges": [
+        {
+          "written": "500 g",
+          "spoken": "five hundred grams",
+          "occurrences": 2,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "four degrees Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 2,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6cf0eb769601c3bede369f0eb3659f6078c1423ecaf53afb05bc097fff180846",
+      "requestFingerprintSha256": "6cf0eb769601c3bede369f0eb3659f6078c1423ecaf53afb05bc097fff180846",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-model-rpe-r1",
+      "unitId": "S1-12-en-model-rpe-r1",
+      "locale": "en",
+      "semanticGroup": "model-rpe",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/models/1/title",
+          "text": "RPE: simulated method",
+          "sha256": "42b4add8d727f4b1d850e73a78645719722ed64126520efc98edfb969d35d515"
+        },
+        {
+          "pointer": "/documentationKit/models/1/status",
+          "text": "Model wording for the supplied simulation; placeholders require an actual exercise entry",
+          "sha256": "1b18ae08bbd39b4942e7a3319ab535a6c107d01692f39553e9a7c37b939ff924"
+        },
+        {
+          "pointer": "/documentationKit/models/1/text",
+          "text": "On [scenario date], one simulated surface-soil sample, RPE-S3-01, was documented for the Riverside Park Expansion background heavy-metal study at Site 3 – Proposed Playground. The scenario gives a collection time of 11:00, a flat grassy site, a 0–15 cm layer and collection with a decontaminated stainless steel trowel. Dark brown colour and slight stickiness are supplied observations; clay loam is the scenario's stated classification, not established by those observations alone. The model sample is placed in the scenario-approved new labeled bag and transferred in the specified cooler with ice packs, accompanied by its field and custody records. No measured temperature, arrival time or weather is invented where the scenario does not provide it.",
+          "sha256": "d55894029f6231c2688077c020f07baa5357eed95896919500fad5de31a71fa6"
+        }
+      ],
+      "scientificMeaning": "RPE: simulated method\n\nModel wording for the supplied simulation; placeholders require an actual exercise entry\n\nOn [scenario date], one simulated surface-soil sample, RPE-S3-01, was documented for the Riverside Park Expansion background heavy-metal study at Site 3 – Proposed Playground. The scenario gives a collection time of 11:00, a flat grassy site, a 0–15 cm layer and collection with a decontaminated stainless steel trowel. Dark brown colour and slight stickiness are supplied observations; clay loam is the scenario's stated classification, not established by those observations alone. The model sample is placed in the scenario-approved new labeled bag and transferred in the specified cooler with ice packs, accompanied by its field and custody records. No measured temperature, arrival time or weather is invented where the scenario does not provide it.",
+      "displayText": "RPE: simulated method\n\nModel wording for the supplied simulation; placeholders require an actual exercise entry\n\nOn [scenario date], one simulated surface-soil sample, RPE-S3-01, was documented for the Riverside Park Expansion background heavy-metal study at Site 3 – Proposed Playground. The scenario gives a collection time of 11:00, a flat grassy site, a 0–15 cm layer and collection with a decontaminated stainless steel trowel. Dark brown colour and slight stickiness are supplied observations; clay loam is the scenario's stated classification, not established by those observations alone. The model sample is placed in the scenario-approved new labeled bag and transferred in the specified cooler with ice packs, accompanied by its field and custody records. No measured temperature, arrival time or weather is invented where the scenario does not provide it.",
+      "captionText": "RPE: simulated method\n\nModel wording for the supplied simulation; placeholders require an actual exercise entry\n\nOn [scenario date], one simulated surface-soil sample, RPE-S3-01, was documented for the Riverside Park Expansion background heavy-metal study at Site 3 – Proposed Playground. The scenario gives a collection time of 11:00, a flat grassy site, a 0–15 cm layer and collection with a decontaminated stainless steel trowel. Dark brown colour and slight stickiness are supplied observations; clay loam is the scenario's stated classification, not established by those observations alone. The model sample is placed in the scenario-approved new labeled bag and transferred in the specified cooler with ice packs, accompanied by its field and custody records. No measured temperature, arrival time or weather is invented where the scenario does not provide it.",
+      "spokenText": "R P E: simulated method\n\nModel wording for the supplied simulation; placeholders require an actual exercise entry\n\nOn [scenario date], one simulated surface-soil sample, R P E, dash, S three, dash, zero one, was documented for the Riverside Park Expansion background heavy-metal study at Site 3 – Proposed Playground. The scenario gives a collection time of eleven o’clock, a flat grassy site, a zero-to-fifteen-centimetre layer and collection with a decontaminated stainless steel trowel. Dark brown colour and slight stickiness are supplied observations; clay loam is the scenario's stated classification, not established by those observations alone. The model sample is placed in the scenario-approved new labeled bag and transferred in the specified cooler with ice packs, accompanied by its field and custody records. No measured temperature, arrival time or weather is invented where the scenario does not provide it.",
+      "spokenTextSHA256": "49c6d85c4a5d3074391f7e3516d35694de9caa2a765b4991dc8cfc9361952e17",
+      "spokenTextSha256": "49c6d85c4a5d3074391f7e3516d35694de9caa2a765b4991dc8cfc9361952e17",
+      "spokenAdaptationChanges": [
+        {
+          "written": "RPE-S3-01",
+          "spoken": "R P E, dash, S three, dash, zero one",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "RPE",
+          "spoken": "R P E",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "11:00",
+          "spoken": "eleven o’clock",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "a zero to fifteen centimetres layer",
+          "spoken": "a zero-to-fifteen-centimetre layer",
+          "occurrences": 1,
+          "purpose": "Prelaunch grammatical connected-speech correction; exact quantities/qualifications/source unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd0f690081292175ab5167df7fa3fb81820e921c1637062ffde30bf518af3ac2",
+      "requestFingerprintSha256": "fd0f690081292175ab5167df7fa3fb81820e921c1637062ffde30bf518af3ac2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-documentation-scenario-r1",
+      "unitId": "S1-12-en-documentation-scenario-r1",
+      "locale": "en",
+      "semanticGroup": "documentation-scenario",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/scenarioRows/0/label",
+          "text": "Teaching scenario",
+          "sha256": "b7062e04e75a2e1ee70cbbb9b6030bbd97308b4e652991bbefdd175aaae56c63"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/0/value",
+          "text": "Supplied fictional assessment scenario; safe sample or empty labeled training bag",
+          "sha256": "c43546380269d60c1483757acdcd9c9dbe851a7339879083e2041316117462d8"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/1/label",
+          "text": "Project",
+          "sha256": "985959785319747668373cc6dee294b11db782b03cdd90a2851fbdc0637c6b7b"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/1/value",
+          "text": "Green Valley Estate Soil Survey",
+          "sha256": "b4e5448b3a413af9827c5eaf2d4ad99aa53b138efd00c5b2381b6769cee983c0"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/2/label",
+          "text": "Project code",
+          "sha256": "b12d1bc0acc6b98f9a88f97a6b3c0ba1a124706841cede232694fdbc1622e4ab"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/2/value",
+          "text": "GVES",
+          "sha256": "029b1963a6973e001ae584786c48c0d662164b027b48dd1f362a53ba58341b83"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/3/label",
+          "text": "Example sample ID",
+          "sha256": "32313e2148120be0ee4e5b08d4ef7f2472e79266587d4395f47b037797376b3c"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/3/value",
+          "text": "GVES-P7B-S01",
+          "sha256": "a9604c490c3ed1a493dd09aad673ee4b4630209045b293b54d4df427ed2c4e41"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/4/label",
+          "text": "Location",
+          "sha256": "15b61974b2707a7b3d4201385e0f01f4ff5eb1f17c5639d98788ee5add2025cd"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/4/value",
+          "text": "Plot 7B – Lowland Area",
+          "sha256": "1230645b9425e17422bcb7029ca464a522234f8e680063b06c33be9e5c8acff3"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/5/label",
+          "text": "Purpose",
+          "sha256": "d4e8830a71c73edffe0115b8abad16b0b5cb2e121047c64cd01995203cfad062"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/5/value",
+          "text": "Nutrient-level testing",
+          "sha256": "b4d2e40716a7d5034fe53e42b77e3b6c81d06f83e11df0e5ccf65da61b18e888"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/6/label",
+          "text": "Date",
+          "sha256": "99c40ab405926cb5ad1def9cff4d7ce624f8f8abfff4e85f655347fcb949d08e"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/6/value",
+          "text": "Today's exercise date, identified as scenario date",
+          "sha256": "e8f1ad5ae197e101d9328e56cdf671ab289eb86af0773bacdfc83b7c55ec9dfa"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/7/label",
+          "text": "Time",
+          "sha256": "33b93476cf597a3330653b66a658983d892ac264b5d6029a2dc642b9b1f30870"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/7/value",
+          "text": "09:45",
+          "sha256": "c2a42e81ac6a76952b2f84a499c681d6f6c8100a373a187d20de772252fc79df"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/8/label",
+          "text": "Depth",
+          "sha256": "f1dbc33978a95b952b19bfc0da8f928e8e3958930810988de2f6e4bd8b27ce01"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/8/value",
+          "text": "0–15 cm",
+          "sha256": "2dff030c5d6a02067ea2b4b6737023fb4d26c05e77cfd54eb3d7ac0a5fb9e45e"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/9/label",
+          "text": "Tool",
+          "sha256": "2e53bdcd0740867b597599e733c04a994f55fb17c89a61595183a001742e5705"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/9/value",
+          "text": "Stainless steel trowel",
+          "sha256": "3ac260ce706e78ee2a94f864aa5e9bd6c7ab19207f2bdb57f0d9eb44fe96d282"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/label",
+          "text": "Observations",
+          "sha256": "f87558869bcf88160fa9759243c01390751a4a5ae7ae28ebf760a4c416351bac"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/0",
+          "text": "Moist",
+          "sha256": "04624e44577eb80b8029250561386f7d99b5b089a70572ef4228695ea524de8f"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/1",
+          "text": "Dark grey",
+          "sha256": "8bb9d60178b9eb05c56639c6d983369d8748de1b7c52dc7bd3417561a8a2064d"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/2",
+          "text": "Slightly gritty",
+          "sha256": "c0c05867a9c41bfab3b4715afa024022e5da3c85806d52118e72e67af82c62bc"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/3",
+          "text": "Signs of poor drainage",
+          "sha256": "e263129ad64fce8c6c4bf15adc9ec8d7325a7e4fd9e11553b91987180a883c13"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/11/label",
+          "text": "Supplied classification",
+          "sha256": "bdda6b9c17cb2b13c780b39c3b11d509f1f3ec2b9487645698353e33dfdb470b"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/11/value",
+          "text": "Sandy clay; supplied in the scenario and not proved by slight grittiness alone",
+          "sha256": "577e8eea57ed8d522a1887414945d1c03202f962730b839925134525d5f48b92"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/12/label",
+          "text": "Preservation",
+          "sha256": "9ca6fa0d8440abbca9060a1171352e63c6c6da19cd1d4cfec3291675beeab390"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/12/value",
+          "text": "Scenario states cooling at 4°C. Retain as supplied data; real nutrient-test handling follows the laboratory method.",
+          "sha256": "31630c1366cb56fedc7b7ecfaef546ac35d4f476ccfbc9883af6dc2734f49956"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/label",
+          "text": "Not supplied",
+          "sha256": "8b427d8a72e0ff8cd95689dcf4490f55ce50169cc6ef9797fe1a31dacbc3b397"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/0",
+          "text": "Weather",
+          "sha256": "a0bba638124664064545edb48049c05385d1542084b2b79bb6ec0cfea6d636c9"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/1",
+          "text": "GPS coordinates",
+          "sha256": "af9649a41b73d74a0f93c5bb24841e7e2c9eedec2e0904094d50c3f3607e10c0"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/2",
+          "text": "Measured mass",
+          "sha256": "893a2428d974353a2dae071c5565dadccf8b4f2812c05dd0e383dc9002bc1183"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/3",
+          "text": "Transfer arrival time",
+          "sha256": "3fc0c8f4c2b434c801d994afe364b422e7ae0981eb4e8aeadef9c023a735f6ff"
+        }
+      ],
+      "scientificMeaning": "Teaching scenario\n\nSupplied fictional assessment scenario; safe sample or empty labeled training bag\n\nProject\n\nGreen Valley Estate Soil Survey\n\nProject code\n\nGVES\n\nExample sample ID\n\nGVES-P7B-S01\n\nLocation\n\nPlot 7B – Lowland Area\n\nPurpose\n\nNutrient-level testing\n\nDate\n\nToday's exercise date, identified as scenario date\n\nTime\n\n09:45\n\nDepth\n\n0–15 cm\n\nTool\n\nStainless steel trowel\n\nObservations\n\nMoist\n\nDark grey\n\nSlightly gritty\n\nSigns of poor drainage\n\nSupplied classification\n\nSandy clay; supplied in the scenario and not proved by slight grittiness alone\n\nPreservation\n\nScenario states cooling at 4°C. Retain as supplied data; real nutrient-test handling follows the laboratory method.\n\nNot supplied\n\nWeather\n\nGPS coordinates\n\nMeasured mass\n\nTransfer arrival time",
+      "displayText": "Teaching scenario\n\nSupplied fictional assessment scenario; safe sample or empty labeled training bag\n\nProject\n\nGreen Valley Estate Soil Survey\n\nProject code\n\nGVES\n\nExample sample ID\n\nGVES-P7B-S01\n\nLocation\n\nPlot 7B – Lowland Area\n\nPurpose\n\nNutrient-level testing\n\nDate\n\nToday's exercise date, identified as scenario date\n\nTime\n\n09:45\n\nDepth\n\n0–15 cm\n\nTool\n\nStainless steel trowel\n\nObservations\n\nMoist\n\nDark grey\n\nSlightly gritty\n\nSigns of poor drainage\n\nSupplied classification\n\nSandy clay; supplied in the scenario and not proved by slight grittiness alone\n\nPreservation\n\nScenario states cooling at 4°C. Retain as supplied data; real nutrient-test handling follows the laboratory method.\n\nNot supplied\n\nWeather\n\nGPS coordinates\n\nMeasured mass\n\nTransfer arrival time",
+      "captionText": "Teaching scenario\n\nSupplied fictional assessment scenario; safe sample or empty labeled training bag\n\nProject\n\nGreen Valley Estate Soil Survey\n\nProject code\n\nGVES\n\nExample sample ID\n\nGVES-P7B-S01\n\nLocation\n\nPlot 7B – Lowland Area\n\nPurpose\n\nNutrient-level testing\n\nDate\n\nToday's exercise date, identified as scenario date\n\nTime\n\n09:45\n\nDepth\n\n0–15 cm\n\nTool\n\nStainless steel trowel\n\nObservations\n\nMoist\n\nDark grey\n\nSlightly gritty\n\nSigns of poor drainage\n\nSupplied classification\n\nSandy clay; supplied in the scenario and not proved by slight grittiness alone\n\nPreservation\n\nScenario states cooling at 4°C. Retain as supplied data; real nutrient-test handling follows the laboratory method.\n\nNot supplied\n\nWeather\n\nGPS coordinates\n\nMeasured mass\n\nTransfer arrival time",
+      "spokenText": "Teaching scenario\n\nSupplied fictional assessment scenario; safe sample or empty labeled training bag\n\nProject\n\nGreen Valley Estate Soil Survey\n\nProject code\n\nG V E S\n\nExample sample ID\n\nG V E S, dash, P seven B, dash, S zero one\n\nLocation\n\nPlot seven B – Lowland Area\n\nPurpose\n\nNutrient-level testing\n\nDate\n\nToday's exercise date, identified as scenario date\n\nTime\n\nnine forty-five in the morning\n\nDepth\n\nzero to fifteen centimetres\n\nTool\n\nStainless steel trowel\n\nObservations\n\nMoist\n\nDark grey\n\nSlightly gritty\n\nSigns of poor drainage\n\nSupplied classification\n\nSandy clay; supplied in the scenario and not proved by slight grittiness alone\n\nPreservation\n\nScenario states cooling at four degrees Celsius. Retain as supplied data; real nutrient-test handling follows the laboratory method.\n\nNot supplied\n\nWeather\n\nGPS coordinates\n\nMeasured mass\n\nTransfer arrival time",
+      "spokenTextSHA256": "8da13aa167460af1adf779467cdf123785194eee8b1b7c24797b96acd7000e95",
+      "spokenTextSha256": "8da13aa167460af1adf779467cdf123785194eee8b1b7c24797b96acd7000e95",
+      "spokenAdaptationChanges": [
+        {
+          "written": "GVES-P7B-S01",
+          "spoken": "G V E S, dash, P seven B, dash, S zero one",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "GVES",
+          "spoken": "G V E S",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "7B",
+          "spoken": "seven B",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "09:45",
+          "spoken": "nine forty-five in the morning",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "four degrees Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4783448040f6e88b5ee0fd13ebfd89daeaa9120348821cddac323a8c57cdcadd",
+      "requestFingerprintSha256": "4783448040f6e88b5ee0fd13ebfd89daeaa9120348821cddac323a8c57cdcadd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-documentation-rubric-r1",
+      "unitId": "S1-12-en-documentation-rubric-r1",
+      "locale": "en",
+      "semanticGroup": "documentation-rubric",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/productTitle",
+          "text": "Prepare a complete field sample documentation kit",
+          "sha256": "f0f2ee304b7779cf13cffb775246d4fcb1e1a97374d0039fe810caa204bdab59"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/0",
+          "text": "Durable labeled training bag",
+          "sha256": "b3b315394e6d6f237d11d3f5ce7f87274dbdfdb0b2cfba7471a8ed8a40c12693"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/1",
+          "text": "Field Data Sheet",
+          "sha256": "fc742dffa46738cb556626eceda09590e5ad739d7471bc23724fbb4530249cfa"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/2",
+          "text": "Concise method paragraph",
+          "sha256": "1d8e958a05a24d085a1f2c6ed19fc0ac49ebe5757273f3e340cfce54453fb7b7"
+        },
+        {
+          "pointer": "/documentationKit/checklist/0",
+          "text": "Use a durable waterproof label or indelible marker on the sample bag.",
+          "sha256": "cc099abcf2611a209a065ee13f332ef9b459f44bf30114573951c606570cc616"
+        },
+        {
+          "pointer": "/documentationKit/checklist/1",
+          "text": "Provide a unique correctly formatted sample ID, for example GVES-P7B-S01 if unused.",
+          "sha256": "506dfccfe444b8305133067db103aece8ca6862570eb83a48f76abc160b38560"
+        },
+        {
+          "pointer": "/documentationKit/checklist/2",
+          "text": "Include all six label groups: ID, project, location, date/time, collector and depth.",
+          "sha256": "2619e6bbe6df45eecf06529590376e475f893be5c88cee8577400fc61e056b2d"
+        },
+        {
+          "pointer": "/documentationKit/checklist/3",
+          "text": "Match the field-sheet sample ID exactly to the bag.",
+          "sha256": "02a93aa5795f66094a7f3c3787688f0158a40a18b7d75d536e64f11a5a290ca9"
+        },
+        {
+          "pointer": "/documentationKit/checklist/4",
+          "text": "Complete relevant metadata from the supplied scenario and mark absent information honestly.",
+          "sha256": "521bcbbca7564b97024f6d7bec482b11a238952a2f7468880c58ba0638bc3c9a"
+        },
+        {
+          "pointer": "/documentationKit/checklist/5",
+          "text": "Keep the soil description objective; distinguish supplied sandy-clay classification from observed dark-grey colour and gritty feel.",
+          "sha256": "17fa8d29aafcd396138d58a9f07bb79115a152de0afda2b0785f0c0843698113"
+        },
+        {
+          "pointer": "/documentationKit/checklist/6",
+          "text": "Start the method paragraph with the sampling objective.",
+          "sha256": "54bfa142dc182fd06f2ed1c6186c081501518776b2d1adcef3c6caceeeb2fed9"
+        },
+        {
+          "pointer": "/documentationKit/checklist/7",
+          "text": "Describe the specified trowel and 0–15 cm interval accurately without inventing a mass.",
+          "sha256": "9f91fbfad789c985575b1752dd3c0973273e0dd0183717be95168c6d18f32488"
+        },
+        {
+          "pointer": "/documentationKit/checklist/8",
+          "text": "Explain the scenario's bagging, labeling and cooling, without claiming every nutrient sample requires 4°C.",
+          "sha256": "77d74eefb9d6ebdcf33af16afd6ac76f05311ceb5422e0367d59b003e94e8a52"
+        },
+        {
+          "pointer": "/documentationKit/checklist/9",
+          "text": "Make the bag, field sheet and paragraph consistent and traceable.",
+          "sha256": "f218da1a21101d7cb89ef3b20930b556750d8635c2fe4fcef962bba0821b066f"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/knowledge",
+          "text": "Explain the three-part method and identify missing or contradictory information, including the GPS-only case.",
+          "sha256": "e59a482d43988e2d3e631b974cedea5f1c655bc15f1dc98fb80effeac0a056af"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/practical",
+          "text": "All ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.",
+          "sha256": "7963b89fc6afa821de8510f519d13363f47ace0f277ee8264f678b465ffb2205"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/retry",
+          "text": "Unlimited targeted corrections with prior records preserved; the planning time is not a pass/fail threshold.",
+          "sha256": "bea03e195794f10a3c5d50fff121e947b71f0b6b49dda9097edc85474f295578"
+        }
+      ],
+      "scientificMeaning": "Prepare a complete field sample documentation kit\n\nDurable labeled training bag\n\nField Data Sheet\n\nConcise method paragraph\n\nUse a durable waterproof label or indelible marker on the sample bag.\n\nProvide a unique correctly formatted sample ID, for example GVES-P7B-S01 if unused.\n\nInclude all six label groups: ID, project, location, date/time, collector and depth.\n\nMatch the field-sheet sample ID exactly to the bag.\n\nComplete relevant metadata from the supplied scenario and mark absent information honestly.\n\nKeep the soil description objective; distinguish supplied sandy-clay classification from observed dark-grey colour and gritty feel.\n\nStart the method paragraph with the sampling objective.\n\nDescribe the specified trowel and 0–15 cm interval accurately without inventing a mass.\n\nExplain the scenario's bagging, labeling and cooling, without claiming every nutrient sample requires 4°C.\n\nMake the bag, field sheet and paragraph consistent and traceable.\n\nExplain the three-part method and identify missing or contradictory information, including the GPS-only case.\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.\n\nUnlimited targeted corrections with prior records preserved; the planning time is not a pass/fail threshold.",
+      "displayText": "Prepare a complete field sample documentation kit\n\nDurable labeled training bag\n\nField Data Sheet\n\nConcise method paragraph\n\nUse a durable waterproof label or indelible marker on the sample bag.\n\nProvide a unique correctly formatted sample ID, for example GVES-P7B-S01 if unused.\n\nInclude all six label groups: ID, project, location, date/time, collector and depth.\n\nMatch the field-sheet sample ID exactly to the bag.\n\nComplete relevant metadata from the supplied scenario and mark absent information honestly.\n\nKeep the soil description objective; distinguish supplied sandy-clay classification from observed dark-grey colour and gritty feel.\n\nStart the method paragraph with the sampling objective.\n\nDescribe the specified trowel and 0–15 cm interval accurately without inventing a mass.\n\nExplain the scenario's bagging, labeling and cooling, without claiming every nutrient sample requires 4°C.\n\nMake the bag, field sheet and paragraph consistent and traceable.\n\nExplain the three-part method and identify missing or contradictory information, including the GPS-only case.\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.\n\nUnlimited targeted corrections with prior records preserved; the planning time is not a pass/fail threshold.",
+      "captionText": "Prepare a complete field sample documentation kit\n\nDurable labeled training bag\n\nField Data Sheet\n\nConcise method paragraph\n\nUse a durable waterproof label or indelible marker on the sample bag.\n\nProvide a unique correctly formatted sample ID, for example GVES-P7B-S01 if unused.\n\nInclude all six label groups: ID, project, location, date/time, collector and depth.\n\nMatch the field-sheet sample ID exactly to the bag.\n\nComplete relevant metadata from the supplied scenario and mark absent information honestly.\n\nKeep the soil description objective; distinguish supplied sandy-clay classification from observed dark-grey colour and gritty feel.\n\nStart the method paragraph with the sampling objective.\n\nDescribe the specified trowel and 0–15 cm interval accurately without inventing a mass.\n\nExplain the scenario's bagging, labeling and cooling, without claiming every nutrient sample requires 4°C.\n\nMake the bag, field sheet and paragraph consistent and traceable.\n\nExplain the three-part method and identify missing or contradictory information, including the GPS-only case.\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.\n\nUnlimited targeted corrections with prior records preserved; the planning time is not a pass/fail threshold.",
+      "spokenText": "Prepare a complete field sample documentation kit\n\nDurable labeled training bag\n\nField Data Sheet\n\nConcise method paragraph\n\nUse a durable waterproof label or indelible marker on the sample bag.\n\nProvide a unique correctly formatted sample ID, for example G V E S, dash, P seven B, dash, S zero one if unused.\n\nInclude all six label groups: ID, project, location, date/time, collector and depth.\n\nMatch the field-sheet sample ID exactly to the bag.\n\nComplete relevant metadata from the supplied scenario and mark absent information honestly.\n\nKeep the soil description objective; distinguish supplied sandy-clay classification from observed dark-grey colour and gritty feel.\n\nStart the method paragraph with the sampling objective.\n\nDescribe the specified trowel and zero to fifteen centimetres interval accurately without inventing a mass.\n\nExplain the scenario's bagging, labeling and cooling, without claiming every nutrient sample requires four degrees Celsius.\n\nMake the bag, field sheet and paragraph consistent and traceable.\n\nExplain the three-part method and identify missing or contradictory information, including the GPS-only case.\n\nAll ten documentation-kit criteria require attributable observed evidence and consistent products. A confidence score or group submission alone is insufficient.\n\nUnlimited targeted corrections with prior records preserved; the planning time is not a pass/fail threshold.",
+      "spokenTextSHA256": "4d779c0a5b6852dca3855a4cd84373af15251c30957b5928f9880a8a3f9b6039",
+      "spokenTextSha256": "4d779c0a5b6852dca3855a4cd84373af15251c30957b5928f9880a8a3f9b6039",
+      "spokenAdaptationChanges": [
+        {
+          "written": "GVES-P7B-S01",
+          "spoken": "G V E S, dash, P seven B, dash, S zero one",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "four degrees Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "zero to fifteen centimetres",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8901ede837c4ba245b3821e2e9291238cff8a6dd46b04f37176c48272165e55c",
+      "requestFingerprintSha256": "8901ede837c4ba245b3821e2e9291238cff8a6dd46b04f37176c48272165e55c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-12-en-label-and-scaffold-r1",
+      "unitId": "S1-12-en-label-and-scaffold-r1",
+      "locale": "en",
+      "semanticGroup": "label-and-scaffold",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "427b6fd9541d730bf2dd29acdcca526e92ebe19e4f776e02361475cc058c1d31",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/labelGroups/0",
+          "text": "Unique sample ID",
+          "sha256": "bbc8e0eac5afe6d57e4c7a5d6e51c2350ee4325a6f83b72b9483a50f722df61b"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/1",
+          "text": "Project name/number",
+          "sha256": "880a7a74664edfa3d8043bb891e92416517213c46a0b2ffc4a83a82c82bba22c"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/2",
+          "text": "Site location, including field and zone",
+          "sha256": "676e732d0f3e8d5abf098e32086d2d1c9a6a6c6ab748ae462765233db43cac4c"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/3",
+          "text": "Collection date and time",
+          "sha256": "dbfad1a0260b66fdfe31fb0a230a2167efa3b3de372587a7ca87cf67bda83685"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/4",
+          "text": "Collector initials/name with identity record",
+          "sha256": "fc6ce7b13d43dabcbb82a93da00de744718a5b9229f25336f56dbc4e8ea40ba5"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/5",
+          "text": "Depth interval with units or identified horizon",
+          "sha256": "fb1c2b2876d21a097806724caa1a01af0d3a5a4948497496bf01bb9b4a0b2d8c"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/0",
+          "text": "Objective and sampling design",
+          "sha256": "30d51d176d0cef87069becf9181787c365ec79f8013c7fedc4c68cd00c499997"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/1",
+          "text": "Collection procedure",
+          "sha256": "aada75bfa88a58c159f464778d7c1f217b13abe281e3c23a7e8d6c3b7de1b1ec"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/2",
+          "text": "Handling and traceability",
+          "sha256": "ad7935f553e2f38143818acef56d74ad5f8269b8a128ede0f6451519c414a4b8"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/3",
+          "text": "Specific peer feedback / correction history",
+          "sha256": "fff3ae384c8926fc751ba75b71fd662a7b38e6a53365e2d206b28bf7eeec9395"
+        }
+      ],
+      "scientificMeaning": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nObjective and sampling design\n\nCollection procedure\n\nHandling and traceability\n\nSpecific peer feedback / correction history",
+      "displayText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nObjective and sampling design\n\nCollection procedure\n\nHandling and traceability\n\nSpecific peer feedback / correction history",
+      "captionText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nObjective and sampling design\n\nCollection procedure\n\nHandling and traceability\n\nSpecific peer feedback / correction history",
+      "spokenText": "Unique sample ID\n\nProject name/number\n\nSite location, including field and zone\n\nCollection date and time\n\nCollector initials/name with identity record\n\nDepth interval with units or identified horizon\n\nObjective and sampling design\n\nCollection procedure\n\nHandling and traceability\n\nSpecific peer feedback / correction history",
+      "spokenTextSHA256": "cfa47466e72469648a92532db9bd01982a92a4be603f97d27d2680929b587822",
+      "spokenTextSha256": "cfa47466e72469648a92532db9bd01982a92a4be603f97d27d2680929b587822",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "756db4e970a3692603221a8c3f6eeadc5683696e5aafcdf9515c43cb5abefb39",
+      "requestFingerprintSha256": "756db4e970a3692603221a8c3f6eeadc5683696e5aafcdf9515c43cb5abefb39",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

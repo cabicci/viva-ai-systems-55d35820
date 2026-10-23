@@ -1,0 +1,958 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-12-it.json",
+    "sha256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+    "bytes": 25873
+  },
+  "units": [
+    {
+      "id": "S1-12-it-opening-r1",
+      "unitId": "S1-12-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Collega etichetta, scheda di campo e paragrafo metodologico. Chi legge deve capire cosa hai fatto, perché e come hai trattato il campione, senza colmare lacune con supposizioni.",
+          "sha256": "448b7a4b144bb25be2acfd57c4ed29ff64e52989da3347db4754580f6d4a78f7"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Descrivere obiettivo, disegno di campionamento, raccolta e trattamento in modo che un'altra persona capisca e possa ripetere il metodo dichiarato.",
+          "sha256": "7d413675fa8950e01f163a854d49c1a98fe930143af2471ce7b522aa7577c022"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Produrre etichetta, scheda e relazione coerenti che soddisfino tutti i criteri del fascicolo.",
+          "sha256": "7606d70e1b6dc465a8b130d3f1e880cd9af47e7f8ff1b45611f5a641179f3e43"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Esaminare dati mancanti o contraddittori, fare domande precise e dare un riscontro utile a un compagno.",
+          "sha256": "517542ad223c4e628d296e7cac18fc83cab45aa044fad2c3cadd2aabf92b96b2"
+        }
+      ],
+      "scientificMeaning": "Collega etichetta, scheda di campo e paragrafo metodologico. Chi legge deve capire cosa hai fatto, perché e come hai trattato il campione, senza colmare lacune con supposizioni.\n\nDescrivere obiettivo, disegno di campionamento, raccolta e trattamento in modo che un'altra persona capisca e possa ripetere il metodo dichiarato.\n\nProdurre etichetta, scheda e relazione coerenti che soddisfino tutti i criteri del fascicolo.\n\nEsaminare dati mancanti o contraddittori, fare domande precise e dare un riscontro utile a un compagno.",
+      "displayText": "Collega etichetta, scheda di campo e paragrafo metodologico. Chi legge deve capire cosa hai fatto, perché e come hai trattato il campione, senza colmare lacune con supposizioni.\n\nDescrivere obiettivo, disegno di campionamento, raccolta e trattamento in modo che un'altra persona capisca e possa ripetere il metodo dichiarato.\n\nProdurre etichetta, scheda e relazione coerenti che soddisfino tutti i criteri del fascicolo.\n\nEsaminare dati mancanti o contraddittori, fare domande precise e dare un riscontro utile a un compagno.",
+      "captionText": "Collega etichetta, scheda di campo e paragrafo metodologico. Chi legge deve capire cosa hai fatto, perché e come hai trattato il campione, senza colmare lacune con supposizioni.\n\nDescrivere obiettivo, disegno di campionamento, raccolta e trattamento in modo che un'altra persona capisca e possa ripetere il metodo dichiarato.\n\nProdurre etichetta, scheda e relazione coerenti che soddisfino tutti i criteri del fascicolo.\n\nEsaminare dati mancanti o contraddittori, fare domande precise e dare un riscontro utile a un compagno.",
+      "spokenText": "Collega etichetta, scheda di campo e paragrafo metodologico. Chi legge deve capire cosa hai fatto, perché e come hai trattato il campione, senza colmare lacune con supposizioni.\n\nDescrivere obiettivo, disegno di campionamento, raccolta e trattamento in modo che un'altra persona capisca e possa ripetere il metodo dichiarato.\n\nProdurre etichetta, scheda e relazione coerenti che soddisfino tutti i criteri del fascicolo.\n\nEsaminare dati mancanti o contraddittori, fare domande precise e dare un riscontro utile a un compagno.",
+      "spokenTextSHA256": "18e4d5e277d88fb302d15466f46b56d7a5b8357a77a4175b3f7c07e88004261a",
+      "spokenTextSha256": "18e4d5e277d88fb302d15466f46b56d7a5b8357a77a4175b3f7c07e88004261a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "27cecc021ff86e6f67a9207ac7462276eb5e23f18592339d484e1be95c5fb33d",
+      "requestFingerprintSha256": "27cecc021ff86e6f67a9207ac7462276eb5e23f18592339d484e1be95c5fb33d",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-E01-r1",
+      "unitId": "S1-12-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Sul sacchetto compare solo una coordinata GPS.",
+          "sha256": "e8d11cdd075cc0fba1f563e711047df5ee4e33908f1936dabf10fd210177d733"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Chiedi ID e progetto e collegali al registro.",
+          "sha256": "340b35d3385e6cd3e5ce6aec8f8a3745a434fcd4fb16cc3a12b013cb60e3eaca"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Chiedi strato, metodo e attrezzo di prelievo.",
+          "sha256": "b66911724d150de19cf6ad255af88c3040245913f907dc96fef6dec3404e73cc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Chiedi quando è stato raccolto e come conservato e trasferito.",
+          "sha256": "860d63bb4e032180a25301ca891790c26e0071edb1f0411f64ff66997b2f869c"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "La posizione da sola non dimostra identità, metodo o condizione.",
+          "sha256": "8765775ec10dcdecc02dbb00125d6641e90179d40964ccebdf7de66356c659c6"
+        }
+      ],
+      "scientificMeaning": "Sul sacchetto compare solo una coordinata GPS.\n\nChiedi ID e progetto e collegali al registro.\n\nChiedi strato, metodo e attrezzo di prelievo.\n\nChiedi quando è stato raccolto e come conservato e trasferito.\n\nLa posizione da sola non dimostra identità, metodo o condizione.",
+      "displayText": "Sul sacchetto compare solo una coordinata GPS.\n\nChiedi ID e progetto e collegali al registro.\n\nChiedi strato, metodo e attrezzo di prelievo.\n\nChiedi quando è stato raccolto e come conservato e trasferito.\n\nLa posizione da sola non dimostra identità, metodo o condizione.",
+      "captionText": "Sul sacchetto compare solo una coordinata GPS.\n\nChiedi ID e progetto e collegali al registro.\n\nChiedi strato, metodo e attrezzo di prelievo.\n\nChiedi quando è stato raccolto e come conservato e trasferito.\n\nLa posizione da sola non dimostra identità, metodo o condizione.",
+      "spokenText": "Sul sacchetto compare solo una coordinata GPS.\n\nChiedi ID e progetto e collegali al registro.\n\nChiedi strato, metodo e attrezzo di prelievo.\n\nChiedi quando è stato raccolto e come conservato e trasferito.\n\nLa posizione da sola non dimostra identità, metodo o condizione.",
+      "spokenTextSHA256": "b7fdbc6d89514b87bfbb6dff38a618ce94178b8653899308db403336eeca3c19",
+      "spokenTextSha256": "b7fdbc6d89514b87bfbb6dff38a618ce94178b8653899308db403336eeca3c19",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d93ed55206f77fa0467030d251f2c23bac8472773e55513b99f2e139937ed72e",
+      "requestFingerprintSha256": "d93ed55206f77fa0467030d251f2c23bac8472773e55513b99f2e139937ed72e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-E02-r1",
+      "unitId": "S1-12-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Sacchetti e scheda mostrano cinque punti topografici, ma il paragrafo parla di un unico campione composito.",
+          "sha256": "3c872acfbff183c99a3aa9b64940c3db9e4be4c7760892e50ddffb73436e149c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Rileva la contraddizione prima di usare i risultati.",
+          "sha256": "46e75aa39b80515174abfc3cb2bf2061e4a72b5fe358dd8db7274f8c06d9b6c8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Controlla il registro effettivo e correggi il paragrafo o dichiara l'identità incerta.",
+          "sha256": "aebfd06d3e41aa601175635b4326a270d1102b838911e24472b2df51e05a7319"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Mantieni cinque identità se la raccolta ha davvero seguito quel disegno.",
+          "sha256": "1176b3e9647f7d5f5e7eb9089255a8997431e025cb297d478c7022603fd957c6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Il rapporto descrive il lavoro svolto, non un modello familiare.",
+          "sha256": "04e6ed15c9b3d9e818f8df9f2b9c78010a02f4622fe5a26282d398974f166fd0"
+        }
+      ],
+      "scientificMeaning": "Sacchetti e scheda mostrano cinque punti topografici, ma il paragrafo parla di un unico campione composito.\n\nRileva la contraddizione prima di usare i risultati.\n\nControlla il registro effettivo e correggi il paragrafo o dichiara l'identità incerta.\n\nMantieni cinque identità se la raccolta ha davvero seguito quel disegno.\n\nIl rapporto descrive il lavoro svolto, non un modello familiare.",
+      "displayText": "Sacchetti e scheda mostrano cinque punti topografici, ma il paragrafo parla di un unico campione composito.\n\nRileva la contraddizione prima di usare i risultati.\n\nControlla il registro effettivo e correggi il paragrafo o dichiara l'identità incerta.\n\nMantieni cinque identità se la raccolta ha davvero seguito quel disegno.\n\nIl rapporto descrive il lavoro svolto, non un modello familiare.",
+      "captionText": "Sacchetti e scheda mostrano cinque punti topografici, ma il paragrafo parla di un unico campione composito.\n\nRileva la contraddizione prima di usare i risultati.\n\nControlla il registro effettivo e correggi il paragrafo o dichiara l'identità incerta.\n\nMantieni cinque identità se la raccolta ha davvero seguito quel disegno.\n\nIl rapporto descrive il lavoro svolto, non un modello familiare.",
+      "spokenText": "Sacchetti e scheda mostrano cinque punti topografici, ma il paragrafo parla di un unico campione composito.\n\nRileva la contraddizione prima di usare i risultati.\n\nControlla il registro effettivo e correggi il paragrafo o dichiara l'identità incerta.\n\nMantieni cinque identità se la raccolta ha davvero seguito quel disegno.\n\nIl rapporto descrive il lavoro svolto, non un modello familiare.",
+      "spokenTextSHA256": "8393efe84e7ef7221e23c71243daba32e03c3158c91469a8c03436ece43297ae",
+      "spokenTextSha256": "8393efe84e7ef7221e23c71243daba32e03c3158c91469a8c03436ece43297ae",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e222148bbc69e00d3e9eb16170b09027195ce265633cb498b6eb7278a87f5189",
+      "requestFingerprintSha256": "e222148bbc69e00d3e9eb16170b09027195ce265633cb498b6eb7278a87f5189",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-guided-practice-r1",
+      "unitId": "S1-12-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Un sacchetto mostra solo coordinate, mentre cinque campioni topografici separati sono descritti nel rapporto come uno composito. Trova le rotture della catena e proponi una correzione che dica cosa è successo davvero.",
+          "sha256": "67d028093db42c09abc3917dfbf6f47138cee141bc28b121be74be94719e0896"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Elenca ID, obiettivo, scelta dei punti, profondità, data/ora, strumento e gestione da verificare.",
+          "sha256": "d5370220ed032f22cfbd6ff44f42b4451bfbc46233a377970400ce44e5deb17e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Confronta etichette, scheda e paragrafo per ID e numero di campioni.",
+          "sha256": "2e1a6fd7a7620a9a85489602003515e7b95bf2b88159f2867631694aa3797333"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Riscrivi disegno e raccolta dal registro contemporaneo mantenendo l'incertezza irrisolta.",
+          "sha256": "223de07bb30e90f2f513b94964348d180c05aa8fc3ec2b7573f192327ca2e34c"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Fai domande precise al raccoglitore e dai indicazioni utili senza inventare un metodo completo.",
+          "sha256": "683be98d6a47aa09e53f0dcdafb67b0bc722d20ce11847d1e9b04c29b1a9cb9b"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore verifica il fascicolo finale contro rubriche e registri reali; la prova online è formativa.",
+          "sha256": "15318ecdb44f9b448243ee888288c18efc477a4c8d0a81b8b15a95324632e69f"
+        }
+      ],
+      "scientificMeaning": "Un sacchetto mostra solo coordinate, mentre cinque campioni topografici separati sono descritti nel rapporto come uno composito. Trova le rotture della catena e proponi una correzione che dica cosa è successo davvero.\n\nElenca ID, obiettivo, scelta dei punti, profondità, data/ora, strumento e gestione da verificare.\n\nConfronta etichette, scheda e paragrafo per ID e numero di campioni.\n\nRiscrivi disegno e raccolta dal registro contemporaneo mantenendo l'incertezza irrisolta.\n\nFai domande precise al raccoglitore e dai indicazioni utili senza inventare un metodo completo.\n\nIl formatore verifica il fascicolo finale contro rubriche e registri reali; la prova online è formativa.",
+      "displayText": "Un sacchetto mostra solo coordinate, mentre cinque campioni topografici separati sono descritti nel rapporto come uno composito. Trova le rotture della catena e proponi una correzione che dica cosa è successo davvero.\n\nElenca ID, obiettivo, scelta dei punti, profondità, data/ora, strumento e gestione da verificare.\n\nConfronta etichette, scheda e paragrafo per ID e numero di campioni.\n\nRiscrivi disegno e raccolta dal registro contemporaneo mantenendo l'incertezza irrisolta.\n\nFai domande precise al raccoglitore e dai indicazioni utili senza inventare un metodo completo.\n\nIl formatore verifica il fascicolo finale contro rubriche e registri reali; la prova online è formativa.",
+      "captionText": "Un sacchetto mostra solo coordinate, mentre cinque campioni topografici separati sono descritti nel rapporto come uno composito. Trova le rotture della catena e proponi una correzione che dica cosa è successo davvero.\n\nElenca ID, obiettivo, scelta dei punti, profondità, data/ora, strumento e gestione da verificare.\n\nConfronta etichette, scheda e paragrafo per ID e numero di campioni.\n\nRiscrivi disegno e raccolta dal registro contemporaneo mantenendo l'incertezza irrisolta.\n\nFai domande precise al raccoglitore e dai indicazioni utili senza inventare un metodo completo.\n\nIl formatore verifica il fascicolo finale contro rubriche e registri reali; la prova online è formativa.",
+      "spokenText": "Un sacchetto mostra solo coordinate, mentre cinque campioni topografici separati sono descritti nel rapporto come uno composito. Trova le rotture della catena e proponi una correzione che dica cosa è successo davvero.\n\nElenca ID, obiettivo, scelta dei punti, profondità, data/ora, strumento e gestione da verificare.\n\nConfronta etichette, scheda e paragrafo per ID e numero di campioni.\n\nRiscrivi disegno e raccolta dal registro contemporaneo mantenendo l'incertezza irrisolta.\n\nFai domande precise al raccoglitore e dai indicazioni utili senza inventare un metodo completo.\n\nIl formatore verifica il fascicolo finale contro rubriche e registri reali; la prova online è formativa.",
+      "spokenTextSHA256": "df65b9ad523a5cbc1eaa77212ce4c39bfb56eb6c4cef4a86c2fe6344a55ad884",
+      "spokenTextSha256": "df65b9ad523a5cbc1eaa77212ce4c39bfb56eb6c4cef4a86c2fe6344a55ad884",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b82b667f6a37bd731afda571518350df3126ea1fb78dbc3b0bc9a70f6b6c805",
+      "requestFingerprintSha256": "6b82b667f6a37bd731afda571518350df3126ea1fb78dbc3b0bc9a70f6b6c805",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-reflection-r1",
+      "unitId": "S1-12-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Quale parte è stata più difficile: etichetta, osservazioni o metodo? Di quale prova o esercizio hai ancora bisogno?",
+          "sha256": "b9ffed20a05599a26d1cb89358a7347d6085271ea04530fa7318929eded3e222"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Tutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+          "sha256": "326c91f18422987cb04212853f6c600f17e1350e9527748e7348c26019d88d68"
+        }
+      ],
+      "scientificMeaning": "Quale parte è stata più difficile: etichetta, osservazioni o metodo? Di quale prova o esercizio hai ancora bisogno?\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+      "displayText": "Quale parte è stata più difficile: etichetta, osservazioni o metodo? Di quale prova o esercizio hai ancora bisogno?\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+      "captionText": "Quale parte è stata più difficile: etichetta, osservazioni o metodo? Di quale prova o esercizio hai ancora bisogno?\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+      "spokenText": "Quale parte è stata più difficile: etichetta, osservazioni o metodo? Di quale prova o esercizio hai ancora bisogno?\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+      "spokenTextSHA256": "ef68f41ec7ae9390e6fa0e5996f848558f622589a48775a5a6cd228d4acd002c",
+      "spokenTextSha256": "ef68f41ec7ae9390e6fa0e5996f848558f622589a48775a5a6cd228d4acd002c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "55c5e759fd832c892ec7337ba4fd080d7f505b8e1854f62ce2e2e79c825d998e",
+      "requestFingerprintSha256": "55c5e759fd832c892ec7337ba4fd080d7f505b8e1854f62ce2e2e79c825d998e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-model-five-r1",
+      "unitId": "S1-12-it-model-five-r1",
+      "locale": "it",
+      "semanticGroup": "model-five",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/models/0/title",
+          "text": "Cinque punti separati: metodo modello",
+          "sha256": "7015f425e63f95668176d1ec34942ec54170c5d81698531e139f9933546c45b8"
+        },
+        {
+          "pointer": "/documentationKit/models/0/status",
+          "text": "Esempio didattico inventato, non registrazione del lavoro dello studente",
+          "sha256": "5460dfe1b6deac66d54f2e7305cc58675e826f9a91a64ac350e47b6806c6f8cd"
+        },
+        {
+          "pointer": "/documentationKit/models/0/text",
+          "text": "Il 26 ottobre 2024 sono stati raccolti cinque campioni distinti per valutare i nutrienti di base nella proprietà Greenfield Farm, pascolo settentrionale. Il disegno ha scelto un punto sul crinale, due a metà pendio e due in basso. In ogni punto identificato, i residui vegetali superficiali sono stati rimossi senza eliminare lo strato di suolo destinato all'analisi; una trivella manuale pulita in acciaio inox ha raccolto circa 500 g da 0–15 cm. I campioni sono rimasti separati in nuovi sacchetti approvati di polietilene con ID univoco, progetto, posizione, data/ora, raccoglitore e profondità, corrispondenti alla scheda. Secondo il protocollo specifico di questo esempio, sono stati raffreddati a circa 4°C e trasferiti al laboratorio entro sei ore; il registro accompagnatore indica consegne e controlli di conservazione.",
+          "sha256": "87fde815e6487bb46ebe86a5e76459114ba02b32be089c1d185d054e8264ddaa"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/0/label",
+          "text": "Scopo",
+          "sha256": "4e2c6615c66a59895fc5821c582f10e05fc9404c8792fb65a11ae9a27ed90472"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/0/value",
+          "text": "Valutazione iniziale dei nutrienti",
+          "sha256": "863231c179b53f166ef1e099b75a227887dc5973044e5ff77dabf423243d4151"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/1/label",
+          "text": "Luogo e disegno",
+          "sha256": "4218016feccbb95b58c5641e4da0a15431ee4f2043e820ea5701f07dbeb03e3d"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/1/value",
+          "text": "Un crinale, due punti a metà pendio, due in zona bassa",
+          "sha256": "911b5ab5ed093349f97a0700139a92a357e87f956a1b8e4a618f4cc523a7f9fa"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/2/label",
+          "text": "Strumento",
+          "sha256": "942e714d7599dfefee96b369aa5ff3379f04edaf67eb62e54a7da0d2df1217fa"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/2/value",
+          "text": "Trivella manuale pulita in acciaio inox",
+          "sha256": "79d6c2eac2782167200139ab0b2739bab0693ff25a69c4c72d30f06aa5e68f16"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/3/label",
+          "text": "Profondità e quantità",
+          "sha256": "8e060fbbc85351f2e4d9ae3cbf0d63aff4d94c4acef9a4597861c6b128dff2c2"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/3/value",
+          "text": "0–15 cm; circa 500 g per punto",
+          "sha256": "ca417310c2751284df6c4a6309b7ecda152fec0735e0b37d91cf36e906797c4e"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/4/label",
+          "text": "Gestione",
+          "sha256": "b861d09dac6a08942dd693e6fa3cf3dbf1e4eb7be63034266c5f744bd9f5991b"
+        },
+        {
+          "pointer": "/documentationKit/models/0/annotations/4/value",
+          "text": "Sacchetti approvati separati e identificati; trasporto freddo previsto dall'esempio",
+          "sha256": "9dfc7a582f55abb42ff4c155b951788e1bffd96b755183d26e1c264d1684ede6"
+        }
+      ],
+      "scientificMeaning": "Cinque punti separati: metodo modello\n\nEsempio didattico inventato, non registrazione del lavoro dello studente\n\nIl 26 ottobre 2024 sono stati raccolti cinque campioni distinti per valutare i nutrienti di base nella proprietà Greenfield Farm, pascolo settentrionale. Il disegno ha scelto un punto sul crinale, due a metà pendio e due in basso. In ogni punto identificato, i residui vegetali superficiali sono stati rimossi senza eliminare lo strato di suolo destinato all'analisi; una trivella manuale pulita in acciaio inox ha raccolto circa 500 g da 0–15 cm. I campioni sono rimasti separati in nuovi sacchetti approvati di polietilene con ID univoco, progetto, posizione, data/ora, raccoglitore e profondità, corrispondenti alla scheda. Secondo il protocollo specifico di questo esempio, sono stati raffreddati a circa 4°C e trasferiti al laboratorio entro sei ore; il registro accompagnatore indica consegne e controlli di conservazione.\n\nScopo\n\nValutazione iniziale dei nutrienti\n\nLuogo e disegno\n\nUn crinale, due punti a metà pendio, due in zona bassa\n\nStrumento\n\nTrivella manuale pulita in acciaio inox\n\nProfondità e quantità\n\n0–15 cm; circa 500 g per punto\n\nGestione\n\nSacchetti approvati separati e identificati; trasporto freddo previsto dall'esempio",
+      "displayText": "Cinque punti separati: metodo modello\n\nEsempio didattico inventato, non registrazione del lavoro dello studente\n\nIl 26 ottobre 2024 sono stati raccolti cinque campioni distinti per valutare i nutrienti di base nella proprietà Greenfield Farm, pascolo settentrionale. Il disegno ha scelto un punto sul crinale, due a metà pendio e due in basso. In ogni punto identificato, i residui vegetali superficiali sono stati rimossi senza eliminare lo strato di suolo destinato all'analisi; una trivella manuale pulita in acciaio inox ha raccolto circa 500 g da 0–15 cm. I campioni sono rimasti separati in nuovi sacchetti approvati di polietilene con ID univoco, progetto, posizione, data/ora, raccoglitore e profondità, corrispondenti alla scheda. Secondo il protocollo specifico di questo esempio, sono stati raffreddati a circa 4°C e trasferiti al laboratorio entro sei ore; il registro accompagnatore indica consegne e controlli di conservazione.\n\nScopo\n\nValutazione iniziale dei nutrienti\n\nLuogo e disegno\n\nUn crinale, due punti a metà pendio, due in zona bassa\n\nStrumento\n\nTrivella manuale pulita in acciaio inox\n\nProfondità e quantità\n\n0–15 cm; circa 500 g per punto\n\nGestione\n\nSacchetti approvati separati e identificati; trasporto freddo previsto dall'esempio",
+      "captionText": "Cinque punti separati: metodo modello\n\nEsempio didattico inventato, non registrazione del lavoro dello studente\n\nIl 26 ottobre 2024 sono stati raccolti cinque campioni distinti per valutare i nutrienti di base nella proprietà Greenfield Farm, pascolo settentrionale. Il disegno ha scelto un punto sul crinale, due a metà pendio e due in basso. In ogni punto identificato, i residui vegetali superficiali sono stati rimossi senza eliminare lo strato di suolo destinato all'analisi; una trivella manuale pulita in acciaio inox ha raccolto circa 500 g da 0–15 cm. I campioni sono rimasti separati in nuovi sacchetti approvati di polietilene con ID univoco, progetto, posizione, data/ora, raccoglitore e profondità, corrispondenti alla scheda. Secondo il protocollo specifico di questo esempio, sono stati raffreddati a circa 4°C e trasferiti al laboratorio entro sei ore; il registro accompagnatore indica consegne e controlli di conservazione.\n\nScopo\n\nValutazione iniziale dei nutrienti\n\nLuogo e disegno\n\nUn crinale, due punti a metà pendio, due in zona bassa\n\nStrumento\n\nTrivella manuale pulita in acciaio inox\n\nProfondità e quantità\n\n0–15 cm; circa 500 g per punto\n\nGestione\n\nSacchetti approvati separati e identificati; trasporto freddo previsto dall'esempio",
+      "spokenText": "Cinque punti separati: metodo modello\n\nEsempio didattico inventato, non registrazione del lavoro dello studente\n\nIl 26 ottobre 2024 sono stati raccolti cinque campioni distinti per valutare i nutrienti di base nella proprietà Greenfield Farm, pascolo settentrionale. Il disegno ha scelto un punto sul crinale, due a metà pendio e due in basso. In ogni punto identificato, i residui vegetali superficiali sono stati rimossi senza eliminare lo strato di suolo destinato all'analisi; una trivella manuale pulita in acciaio inox ha raccolto circa cinquecento grammi da zero a quindici centimetri. I campioni sono rimasti separati in nuovi sacchetti approvati di polietilene con ID univoco, progetto, posizione, data/ora, raccoglitore e profondità, corrispondenti alla scheda. Secondo il protocollo specifico di questo esempio, sono stati raffreddati a circa quattro gradi Celsius e trasferiti al laboratorio entro sei ore; il registro accompagnatore indica consegne e controlli di conservazione.\n\nScopo\n\nValutazione iniziale dei nutrienti\n\nLuogo e disegno\n\nUn crinale, due punti a metà pendio, due in zona bassa\n\nStrumento\n\nTrivella manuale pulita in acciaio inox\n\nProfondità e quantità\n\nda zero a quindici centimetri; circa cinquecento grammi per punto\n\nGestione\n\nSacchetti approvati separati e identificati; trasporto freddo previsto dall'esempio",
+      "spokenTextSHA256": "426de51090dea156f899eb51bc0ffcd47be209b3b65e14279f6ab4e5a497310a",
+      "spokenTextSha256": "426de51090dea156f899eb51bc0ffcd47be209b3b65e14279f6ab4e5a497310a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 2,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "500 g",
+          "spoken": "cinquecento grammi",
+          "occurrences": 2,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "quattro gradi Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "da da zero a quindici centimetri",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Prelaunch grammatical connected-speech correction; exact quantities/qualifications/source unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "680f174011f2de15e5fe04232a00ea12c11d47b786259fd30bc5a89bfa2081d9",
+      "requestFingerprintSha256": "680f174011f2de15e5fe04232a00ea12c11d47b786259fd30bc5a89bfa2081d9",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-model-rpe-r1",
+      "unitId": "S1-12-it-model-rpe-r1",
+      "locale": "it",
+      "semanticGroup": "model-rpe",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/models/1/title",
+          "text": "RPE: metodo simulato",
+          "sha256": "58fdde1e8046e246e0452957af7f5dd38d992f5420633814764708a19f126cb0"
+        },
+        {
+          "pointer": "/documentationKit/models/1/status",
+          "text": "Testo modello per la simulazione; le parentesi richiedono una vera registrazione d'esercizio",
+          "sha256": "2d81cd80612f693edb1ee5e8c522287e0b1bcdec98849ee8441b24c18e162ba6"
+        },
+        {
+          "pointer": "/documentationKit/models/1/text",
+          "text": "Il [giorno dello scenario], un campione simulato di suolo superficiale RPE-S3-01 è stato documentato per lo studio di fondo sui metalli pesanti di Riverside Park Expansion al Sito 3 – area gioco proposta. Lo scenario fornisce ora 11:00, zona piana erbosa, strato 0–15 cm e raccolta con paletta in acciaio inox decontaminata. Il colore bruno scuro e la lieve appiccicosità sono osservazioni date; 'franco argilloso' è una classificazione dichiarata nello scenario, non provata da quelle sole osservazioni. Il campione modello entra nel nuovo sacchetto approvato e identificato e viaggia nella borsa termica con mattonelle fredde, con scheda e registro delle consegne. Non vengono inventati temperatura misurata, ora di arrivo o meteo assenti.",
+          "sha256": "dfcf464a5b2aee26e4a056c18369d587790e5bfa4eb39888263ef10db30387e4"
+        }
+      ],
+      "scientificMeaning": "RPE: metodo simulato\n\nTesto modello per la simulazione; le parentesi richiedono una vera registrazione d'esercizio\n\nIl [giorno dello scenario], un campione simulato di suolo superficiale RPE-S3-01 è stato documentato per lo studio di fondo sui metalli pesanti di Riverside Park Expansion al Sito 3 – area gioco proposta. Lo scenario fornisce ora 11:00, zona piana erbosa, strato 0–15 cm e raccolta con paletta in acciaio inox decontaminata. Il colore bruno scuro e la lieve appiccicosità sono osservazioni date; 'franco argilloso' è una classificazione dichiarata nello scenario, non provata da quelle sole osservazioni. Il campione modello entra nel nuovo sacchetto approvato e identificato e viaggia nella borsa termica con mattonelle fredde, con scheda e registro delle consegne. Non vengono inventati temperatura misurata, ora di arrivo o meteo assenti.",
+      "displayText": "RPE: metodo simulato\n\nTesto modello per la simulazione; le parentesi richiedono una vera registrazione d'esercizio\n\nIl [giorno dello scenario], un campione simulato di suolo superficiale RPE-S3-01 è stato documentato per lo studio di fondo sui metalli pesanti di Riverside Park Expansion al Sito 3 – area gioco proposta. Lo scenario fornisce ora 11:00, zona piana erbosa, strato 0–15 cm e raccolta con paletta in acciaio inox decontaminata. Il colore bruno scuro e la lieve appiccicosità sono osservazioni date; 'franco argilloso' è una classificazione dichiarata nello scenario, non provata da quelle sole osservazioni. Il campione modello entra nel nuovo sacchetto approvato e identificato e viaggia nella borsa termica con mattonelle fredde, con scheda e registro delle consegne. Non vengono inventati temperatura misurata, ora di arrivo o meteo assenti.",
+      "captionText": "RPE: metodo simulato\n\nTesto modello per la simulazione; le parentesi richiedono una vera registrazione d'esercizio\n\nIl [giorno dello scenario], un campione simulato di suolo superficiale RPE-S3-01 è stato documentato per lo studio di fondo sui metalli pesanti di Riverside Park Expansion al Sito 3 – area gioco proposta. Lo scenario fornisce ora 11:00, zona piana erbosa, strato 0–15 cm e raccolta con paletta in acciaio inox decontaminata. Il colore bruno scuro e la lieve appiccicosità sono osservazioni date; 'franco argilloso' è una classificazione dichiarata nello scenario, non provata da quelle sole osservazioni. Il campione modello entra nel nuovo sacchetto approvato e identificato e viaggia nella borsa termica con mattonelle fredde, con scheda e registro delle consegne. Non vengono inventati temperatura misurata, ora di arrivo o meteo assenti.",
+      "spokenText": "erre pi e: metodo simulato\n\nTesto modello per la simulazione; le parentesi richiedono una vera registrazione d'esercizio\n\nIl [giorno dello scenario], un campione simulato di suolo superficiale erre pi e, trattino, esse tre, trattino, zero uno è stato documentato per lo studio di fondo sui metalli pesanti di Riverside Park Expansion al Sito 3 – area gioco proposta. Lo scenario fornisce ora undici, zona piana erbosa, strato da zero a quindici centimetri e raccolta con paletta in acciaio inox decontaminata. Il colore bruno scuro e la lieve appiccicosità sono osservazioni date; 'franco argilloso' è una classificazione dichiarata nello scenario, non provata da quelle sole osservazioni. Il campione modello entra nel nuovo sacchetto approvato e identificato e viaggia nella borsa termica con mattonelle fredde, con scheda e registro delle consegne. Non vengono inventati temperatura misurata, ora di arrivo o meteo assenti.",
+      "spokenTextSHA256": "60c4f76147e8283e595b3a2df0c6a36dc01e24f3fa9f0b5cf1f7420f507c0ca1",
+      "spokenTextSha256": "60c4f76147e8283e595b3a2df0c6a36dc01e24f3fa9f0b5cf1f7420f507c0ca1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "RPE-S3-01",
+          "spoken": "erre pi e, trattino, esse tre, trattino, zero uno",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "RPE",
+          "spoken": "erre pi e",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "11:00",
+          "spoken": "undici",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b7642c6ad6a2e08a1928b53da94fab2112d608ef84f1197495767e31eda85ef5",
+      "requestFingerprintSha256": "b7642c6ad6a2e08a1928b53da94fab2112d608ef84f1197495767e31eda85ef5",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-documentation-scenario-r1",
+      "unitId": "S1-12-it-documentation-scenario-r1",
+      "locale": "it",
+      "semanticGroup": "documentation-scenario",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/scenarioRows/0/label",
+          "text": "Scenario didattico",
+          "sha256": "58a58e2633340852d3b65654a1a9f834bccf269b9581f8f4a1f0805934263e65"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/0/value",
+          "text": "Scenario di valutazione inventato; campione sicuro o sacchetto didattico vuoto ed etichettato",
+          "sha256": "5bdbfbd0742839c1408a742d9d6b8cd669777109d27c3acf030a385ff990d887"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/1/label",
+          "text": "Progetto",
+          "sha256": "b7700d71d0ce4a31fa59f98c76ce5931fa88405e617aba9aec5b41684a4e6b61"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/1/value",
+          "text": "Indagine del suolo Green Valley Estate",
+          "sha256": "7e9f82848a4d291d89fabc8f967e3bc1ba1c9ccc7ff3a995026244261b2d3f8a"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/2/label",
+          "text": "Codice progetto",
+          "sha256": "0b07f763a5104eb4b6c5cdf33c85d5ac2a137b6766cfaf5e0642b914a81a9fe7"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/2/value",
+          "text": "GVES",
+          "sha256": "029b1963a6973e001ae584786c48c0d662164b027b48dd1f362a53ba58341b83"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/3/label",
+          "text": "Esempio di ID",
+          "sha256": "287abb84ed52108a1bff093927ebc82d74ab243ef6e0dbb36235dc75a305de3a"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/3/value",
+          "text": "GVES-P7B-S01",
+          "sha256": "a9604c490c3ed1a493dd09aad673ee4b4630209045b293b54d4df427ed2c4e41"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/4/label",
+          "text": "Luogo",
+          "sha256": "e7ee91e452f6c886000ff9cd79f668f9ab84d7c4ff4806b33878048c8cc6379e"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/4/value",
+          "text": "Parcella 7B – zona bassa",
+          "sha256": "244106500d93816f8021c3dba2d457abf18a57b02a2356226fd85fcdc5ab2e42"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/5/label",
+          "text": "Obiettivo",
+          "sha256": "16a31b48a21e77f13922289fe15b23295b1436c1baad20b59df5b51ca66a5bac"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/5/value",
+          "text": "Analisi dei livelli di nutrienti",
+          "sha256": "1e39ff570478511d13181c4ba67de2000951c83f4ae5910446d5ba3eaeffdc65"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/6/label",
+          "text": "Data",
+          "sha256": "cec3a9b89b2e391393d0f68e4bc12a9fa6cf358b3cdf79496dc442d52b8dd528"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/6/value",
+          "text": "Data dell'esercizio, dichiarata come data di scenario",
+          "sha256": "251a2ed1d2db080dfd91ca76e305466e6a209e1abeeffc4d42c412e0918b6add"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/7/label",
+          "text": "Ora",
+          "sha256": "ae89c1f2c1781e29549c54765adc6ada3c6ec1eb543332780a739d2fb67d434e"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/7/value",
+          "text": "09:45",
+          "sha256": "c2a42e81ac6a76952b2f84a499c681d6f6c8100a373a187d20de772252fc79df"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/8/label",
+          "text": "Profondità",
+          "sha256": "d2855e3adca9a759231dfeccb0be2adf01de5d7a43262d02cd1cc67ecdb0822a"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/8/value",
+          "text": "0–15 cm",
+          "sha256": "2dff030c5d6a02067ea2b4b6737023fb4d26c05e77cfd54eb3d7ac0a5fb9e45e"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/9/label",
+          "text": "Strumento",
+          "sha256": "942e714d7599dfefee96b369aa5ff3379f04edaf67eb62e54a7da0d2df1217fa"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/9/value",
+          "text": "Paletta in acciaio inox",
+          "sha256": "65ba03d1dd0cdddb8105b7753cddeb7b19a1fb8beddd58f2dc190939e1462b0f"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/label",
+          "text": "Osservazioni",
+          "sha256": "86be8dbd3ce0c538fe37c444b8e393e02a4438844d1307e7cce120aa3036cda2"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/0",
+          "text": "Umido",
+          "sha256": "7eca268cbd3da4761fc02566ea1e2f31cdd2045ae2f08c7d98ff67fbfc6ef1dd"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/1",
+          "text": "Grigio scuro",
+          "sha256": "d90c8226763b5326074f62c32f05bde17f480c5aa18a41b1affbe415ce5262d8"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/2",
+          "text": "Leggermente granuloso",
+          "sha256": "60a12eebad3d74fae7d2ccecd0435dc6ec09bad06a670fd84f88e06c72d807ea"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/10/value/3",
+          "text": "Segni di scarso drenaggio",
+          "sha256": "8304324e4fd96fa32df37f0612014d5f4e0fbf70dc92390fc745d6474932b1b9"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/11/label",
+          "text": "Classificazione fornita",
+          "sha256": "40ef7ad32b8618a42418935bbe3db83deeace5d2bcbaba20a2a8a4f9f757da47"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/11/value",
+          "text": "Argilla sabbiosa: classificazione fornita, non dimostrata dalla sola lieve granulosità",
+          "sha256": "cebbe804618afc42a136378b18fc2f0aff75d0629e0443c28ca335cbdf1458bf"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/12/label",
+          "text": "Conservazione",
+          "sha256": "d6c7ebd85d51c53e370d4dafb5ec8dd9f5b77b5efbe9523921fac5448c4d5a51"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/12/value",
+          "text": "Lo scenario dice raffreddamento a 4°C: trattalo come dato fornito. Un'analisi vera dei nutrienti segue il metodo del laboratorio ricevente.",
+          "sha256": "b023b5eeb1f026eb2ae29e1fb420cc71ef2647da88e2113c85b9f85b0fb4905f"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/label",
+          "text": "Dati non forniti",
+          "sha256": "e391542f9d767559d18fb89ccf1fb8e7815b3136a5c3274683c83ce94df5ae63"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/0",
+          "text": "Meteo",
+          "sha256": "eda054c915822b6c95806e7a949ae849e99a0f5c48437445291a3ac4f3f4d7c6"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/1",
+          "text": "Coordinate GPS",
+          "sha256": "f47d50f0663823a6c7b9ccc9831b6bac81cd370304bd40a965c88052344ee2f2"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/2",
+          "text": "Massa misurata",
+          "sha256": "61ae9d284ae2e712b3179eb7081c3f96cf551a92bb5ce24dc5e644221b461059"
+        },
+        {
+          "pointer": "/documentationKit/scenarioRows/13/value/3",
+          "text": "Ora di arrivo del trasferimento",
+          "sha256": "7b08b1dcb50f235f14c5ee2bda29d42d7b98e37cd160dbbb95b59b68e7feae5b"
+        }
+      ],
+      "scientificMeaning": "Scenario didattico\n\nScenario di valutazione inventato; campione sicuro o sacchetto didattico vuoto ed etichettato\n\nProgetto\n\nIndagine del suolo Green Valley Estate\n\nCodice progetto\n\nGVES\n\nEsempio di ID\n\nGVES-P7B-S01\n\nLuogo\n\nParcella 7B – zona bassa\n\nObiettivo\n\nAnalisi dei livelli di nutrienti\n\nData\n\nData dell'esercizio, dichiarata come data di scenario\n\nOra\n\n09:45\n\nProfondità\n\n0–15 cm\n\nStrumento\n\nPaletta in acciaio inox\n\nOsservazioni\n\nUmido\n\nGrigio scuro\n\nLeggermente granuloso\n\nSegni di scarso drenaggio\n\nClassificazione fornita\n\nArgilla sabbiosa: classificazione fornita, non dimostrata dalla sola lieve granulosità\n\nConservazione\n\nLo scenario dice raffreddamento a 4°C: trattalo come dato fornito. Un'analisi vera dei nutrienti segue il metodo del laboratorio ricevente.\n\nDati non forniti\n\nMeteo\n\nCoordinate GPS\n\nMassa misurata\n\nOra di arrivo del trasferimento",
+      "displayText": "Scenario didattico\n\nScenario di valutazione inventato; campione sicuro o sacchetto didattico vuoto ed etichettato\n\nProgetto\n\nIndagine del suolo Green Valley Estate\n\nCodice progetto\n\nGVES\n\nEsempio di ID\n\nGVES-P7B-S01\n\nLuogo\n\nParcella 7B – zona bassa\n\nObiettivo\n\nAnalisi dei livelli di nutrienti\n\nData\n\nData dell'esercizio, dichiarata come data di scenario\n\nOra\n\n09:45\n\nProfondità\n\n0–15 cm\n\nStrumento\n\nPaletta in acciaio inox\n\nOsservazioni\n\nUmido\n\nGrigio scuro\n\nLeggermente granuloso\n\nSegni di scarso drenaggio\n\nClassificazione fornita\n\nArgilla sabbiosa: classificazione fornita, non dimostrata dalla sola lieve granulosità\n\nConservazione\n\nLo scenario dice raffreddamento a 4°C: trattalo come dato fornito. Un'analisi vera dei nutrienti segue il metodo del laboratorio ricevente.\n\nDati non forniti\n\nMeteo\n\nCoordinate GPS\n\nMassa misurata\n\nOra di arrivo del trasferimento",
+      "captionText": "Scenario didattico\n\nScenario di valutazione inventato; campione sicuro o sacchetto didattico vuoto ed etichettato\n\nProgetto\n\nIndagine del suolo Green Valley Estate\n\nCodice progetto\n\nGVES\n\nEsempio di ID\n\nGVES-P7B-S01\n\nLuogo\n\nParcella 7B – zona bassa\n\nObiettivo\n\nAnalisi dei livelli di nutrienti\n\nData\n\nData dell'esercizio, dichiarata come data di scenario\n\nOra\n\n09:45\n\nProfondità\n\n0–15 cm\n\nStrumento\n\nPaletta in acciaio inox\n\nOsservazioni\n\nUmido\n\nGrigio scuro\n\nLeggermente granuloso\n\nSegni di scarso drenaggio\n\nClassificazione fornita\n\nArgilla sabbiosa: classificazione fornita, non dimostrata dalla sola lieve granulosità\n\nConservazione\n\nLo scenario dice raffreddamento a 4°C: trattalo come dato fornito. Un'analisi vera dei nutrienti segue il metodo del laboratorio ricevente.\n\nDati non forniti\n\nMeteo\n\nCoordinate GPS\n\nMassa misurata\n\nOra di arrivo del trasferimento",
+      "spokenText": "Scenario didattico\n\nScenario di valutazione inventato; campione sicuro o sacchetto didattico vuoto ed etichettato\n\nProgetto\n\nIndagine del suolo Green Valley Estate\n\nCodice progetto\n\ngi vi e esse\n\nEsempio di ID\n\ngi vi e esse, trattino, pi sette bi, trattino, esse zero uno\n\nLuogo\n\nParcella sette bi – zona bassa\n\nObiettivo\n\nAnalisi dei livelli di nutrienti\n\nData\n\nData dell'esercizio, dichiarata come data di scenario\n\nOra\n\nnove e quarantacinque\n\nProfondità\n\nda zero a quindici centimetri\n\nStrumento\n\nPaletta in acciaio inox\n\nOsservazioni\n\nUmido\n\nGrigio scuro\n\nLeggermente granuloso\n\nSegni di scarso drenaggio\n\nClassificazione fornita\n\nArgilla sabbiosa: classificazione fornita, non dimostrata dalla sola lieve granulosità\n\nConservazione\n\nLo scenario dice raffreddamento a quattro gradi Celsius: trattalo come dato fornito. Un'analisi vera dei nutrienti segue il metodo del laboratorio ricevente.\n\nDati non forniti\n\nMeteo\n\nCoordinate GPS\n\nMassa misurata\n\nOra di arrivo del trasferimento",
+      "spokenTextSHA256": "e11cc2a20cb3a059459c3645aff262a71773e169e54a72abfc3f94dd460db1ca",
+      "spokenTextSha256": "e11cc2a20cb3a059459c3645aff262a71773e169e54a72abfc3f94dd460db1ca",
+      "spokenAdaptationChanges": [
+        {
+          "written": "GVES-P7B-S01",
+          "spoken": "gi vi e esse, trattino, pi sette bi, trattino, esse zero uno",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "GVES",
+          "spoken": "gi vi e esse",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "7B",
+          "spoken": "sette bi",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "09:45",
+          "spoken": "nove e quarantacinque",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "quattro gradi Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "39c12b03f9cdd09edb7b2a793c37ef4aac0014108791a77661bffc4f3654b43a",
+      "requestFingerprintSha256": "39c12b03f9cdd09edb7b2a793c37ef4aac0014108791a77661bffc4f3654b43a",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-documentation-rubric-r1",
+      "unitId": "S1-12-it-documentation-rubric-r1",
+      "locale": "it",
+      "semanticGroup": "documentation-rubric",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/productTitle",
+          "text": "Prepara il fascicolo completo di un campione di campo",
+          "sha256": "38b17efbe6874b16148bfcc9d78e337ed2ce2f971479f5bc40cb76ef058ee213"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/0",
+          "text": "Sacchetto didattico con etichetta durevole",
+          "sha256": "4f363ea22cb7d4acb8c788fc6f10cde1c231241a25668904de9b1c1bb6fdede6"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/1",
+          "text": "Scheda dati di campo",
+          "sha256": "a1e4e16a2c306a92e95250e38f780390ec670f9ff62ec7e17e025eae9f8f89d9"
+        },
+        {
+          "pointer": "/documentationKit/deliverables/2",
+          "text": "Paragrafo metodologico conciso",
+          "sha256": "baa4e8ea558f607821e8adf7f5bf2e12a5e01d2876b48a1ddc6568305ab7311d"
+        },
+        {
+          "pointer": "/documentationKit/checklist/0",
+          "text": "Usa sul sacchetto etichetta impermeabile durevole o pennarello indelebile.",
+          "sha256": "1f968ceb951922b6b5162ea774cf74c5071461f9b7b45758301140670adfdc6a"
+        },
+        {
+          "pointer": "/documentationKit/checklist/1",
+          "text": "Assegna ID univoco nel formato corretto, per esempio GVES-P7B-S01 se disponibile.",
+          "sha256": "3538eb377e8ee7ba0fa4dbff9d07800c3576bc1217ce9bf427beb777e92e641c"
+        },
+        {
+          "pointer": "/documentationKit/checklist/2",
+          "text": "Includi tutti i sei gruppi: ID, progetto, luogo, data/ora, raccoglitore e profondità.",
+          "sha256": "43b0c7df3eb0c9b0055f3182c65d8bbe4d6ff611b411f81d25c3f4e53e08939a"
+        },
+        {
+          "pointer": "/documentationKit/checklist/3",
+          "text": "L'ID sulla scheda coincide esattamente con quello sul sacchetto.",
+          "sha256": "1bb5ad5a551dbc4c6da887e26184ed32f5b370768d1fb1c7180c03472d6e396b"
+        },
+        {
+          "pointer": "/documentationKit/checklist/4",
+          "text": "Completa i metadati forniti e indica con onestà ciò che manca.",
+          "sha256": "7a90a4fbcb5f51c98c7c2fd7dc927bdef9562898dd542c6ea89bf4341db76d84"
+        },
+        {
+          "pointer": "/documentationKit/checklist/5",
+          "text": "Descrivi oggettivamente il suolo, distinguendo argilla sabbiosa dichiarata dal colore grigio scuro e dalla sensazione granulosa riportati.",
+          "sha256": "6089d06ffc4677997fb7f5a850e8945ceaea000573f2acc5353c8ef2ffe64ce9"
+        },
+        {
+          "pointer": "/documentationKit/checklist/6",
+          "text": "Apri il paragrafo con l'obiettivo.",
+          "sha256": "0c4f0f79f08835c9c12d85e2c829ff2bb83446114af17be59f7e810b9222499e"
+        },
+        {
+          "pointer": "/documentationKit/checklist/7",
+          "text": "Descrivi correttamente paletta e 0–15 cm senza inventare una massa.",
+          "sha256": "d36cb14b72de816c5adbd36b6fbe38baca64deb5e943e96b770e29f7d3a2fb65"
+        },
+        {
+          "pointer": "/documentationKit/checklist/8",
+          "text": "Spiega insacchettamento, etichetta e raffreddamento dello scenario senza rendere 4°C regola per tutte le analisi dei nutrienti.",
+          "sha256": "d18caac5955dcfa165d42db0edbe3901278256874b299177eaee184f84f899cb"
+        },
+        {
+          "pointer": "/documentationKit/checklist/9",
+          "text": "Mantieni sacchetto, scheda e paragrafo coerenti e rintracciabili.",
+          "sha256": "7f21c72d9ccbe58c76b954efea720f68433875dad2a164247fc374ee230fee3b"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/knowledge",
+          "text": "Spiega il metodo in tre parti e riconosci lacune o contraddizioni, compreso il caso di sole coordinate GPS.",
+          "sha256": "2e43760c144dcfc1c6b1c78875a79cd8e4b26af9799e033521a95abea12e7035"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/practical",
+          "text": "Tutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.",
+          "sha256": "326c91f18422987cb04212853f6c600f17e1350e9527748e7348c26019d88d68"
+        },
+        {
+          "pointer": "/documentationKit/completionPolicy/retry",
+          "text": "Correzioni mirate illimitate con i registri precedenti conservati; il tempo programmato non è una soglia di superamento.",
+          "sha256": "bfe4a7a26a3eee36d2fc7e7f01e6fe25449b968bfad81135b724a81897ced2a7"
+        }
+      ],
+      "scientificMeaning": "Prepara il fascicolo completo di un campione di campo\n\nSacchetto didattico con etichetta durevole\n\nScheda dati di campo\n\nParagrafo metodologico conciso\n\nUsa sul sacchetto etichetta impermeabile durevole o pennarello indelebile.\n\nAssegna ID univoco nel formato corretto, per esempio GVES-P7B-S01 se disponibile.\n\nIncludi tutti i sei gruppi: ID, progetto, luogo, data/ora, raccoglitore e profondità.\n\nL'ID sulla scheda coincide esattamente con quello sul sacchetto.\n\nCompleta i metadati forniti e indica con onestà ciò che manca.\n\nDescrivi oggettivamente il suolo, distinguendo argilla sabbiosa dichiarata dal colore grigio scuro e dalla sensazione granulosa riportati.\n\nApri il paragrafo con l'obiettivo.\n\nDescrivi correttamente paletta e 0–15 cm senza inventare una massa.\n\nSpiega insacchettamento, etichetta e raffreddamento dello scenario senza rendere 4°C regola per tutte le analisi dei nutrienti.\n\nMantieni sacchetto, scheda e paragrafo coerenti e rintracciabili.\n\nSpiega il metodo in tre parti e riconosci lacune o contraddizioni, compreso il caso di sole coordinate GPS.\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.\n\nCorrezioni mirate illimitate con i registri precedenti conservati; il tempo programmato non è una soglia di superamento.",
+      "displayText": "Prepara il fascicolo completo di un campione di campo\n\nSacchetto didattico con etichetta durevole\n\nScheda dati di campo\n\nParagrafo metodologico conciso\n\nUsa sul sacchetto etichetta impermeabile durevole o pennarello indelebile.\n\nAssegna ID univoco nel formato corretto, per esempio GVES-P7B-S01 se disponibile.\n\nIncludi tutti i sei gruppi: ID, progetto, luogo, data/ora, raccoglitore e profondità.\n\nL'ID sulla scheda coincide esattamente con quello sul sacchetto.\n\nCompleta i metadati forniti e indica con onestà ciò che manca.\n\nDescrivi oggettivamente il suolo, distinguendo argilla sabbiosa dichiarata dal colore grigio scuro e dalla sensazione granulosa riportati.\n\nApri il paragrafo con l'obiettivo.\n\nDescrivi correttamente paletta e 0–15 cm senza inventare una massa.\n\nSpiega insacchettamento, etichetta e raffreddamento dello scenario senza rendere 4°C regola per tutte le analisi dei nutrienti.\n\nMantieni sacchetto, scheda e paragrafo coerenti e rintracciabili.\n\nSpiega il metodo in tre parti e riconosci lacune o contraddizioni, compreso il caso di sole coordinate GPS.\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.\n\nCorrezioni mirate illimitate con i registri precedenti conservati; il tempo programmato non è una soglia di superamento.",
+      "captionText": "Prepara il fascicolo completo di un campione di campo\n\nSacchetto didattico con etichetta durevole\n\nScheda dati di campo\n\nParagrafo metodologico conciso\n\nUsa sul sacchetto etichetta impermeabile durevole o pennarello indelebile.\n\nAssegna ID univoco nel formato corretto, per esempio GVES-P7B-S01 se disponibile.\n\nIncludi tutti i sei gruppi: ID, progetto, luogo, data/ora, raccoglitore e profondità.\n\nL'ID sulla scheda coincide esattamente con quello sul sacchetto.\n\nCompleta i metadati forniti e indica con onestà ciò che manca.\n\nDescrivi oggettivamente il suolo, distinguendo argilla sabbiosa dichiarata dal colore grigio scuro e dalla sensazione granulosa riportati.\n\nApri il paragrafo con l'obiettivo.\n\nDescrivi correttamente paletta e 0–15 cm senza inventare una massa.\n\nSpiega insacchettamento, etichetta e raffreddamento dello scenario senza rendere 4°C regola per tutte le analisi dei nutrienti.\n\nMantieni sacchetto, scheda e paragrafo coerenti e rintracciabili.\n\nSpiega il metodo in tre parti e riconosci lacune o contraddizioni, compreso il caso di sole coordinate GPS.\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.\n\nCorrezioni mirate illimitate con i registri precedenti conservati; il tempo programmato non è una soglia di superamento.",
+      "spokenText": "Prepara il fascicolo completo di un campione di campo\n\nSacchetto didattico con etichetta durevole\n\nScheda dati di campo\n\nParagrafo metodologico conciso\n\nUsa sul sacchetto etichetta impermeabile durevole o pennarello indelebile.\n\nAssegna ID univoco nel formato corretto, per esempio gi vi e esse, trattino, pi sette bi, trattino, esse zero uno se disponibile.\n\nIncludi tutti i sei gruppi: ID, progetto, luogo, data/ora, raccoglitore e profondità.\n\nL'ID sulla scheda coincide esattamente con quello sul sacchetto.\n\nCompleta i metadati forniti e indica con onestà ciò che manca.\n\nDescrivi oggettivamente il suolo, distinguendo argilla sabbiosa dichiarata dal colore grigio scuro e dalla sensazione granulosa riportati.\n\nApri il paragrafo con l'obiettivo.\n\nDescrivi correttamente paletta e l’intervallo da zero a quindici centimetri senza inventare una massa.\n\nSpiega insacchettamento, etichetta e raffreddamento dello scenario senza rendere quattro gradi Celsius regola per tutte le analisi dei nutrienti.\n\nMantieni sacchetto, scheda e paragrafo coerenti e rintracciabili.\n\nSpiega il metodo in tre parti e riconosci lacune o contraddizioni, compreso il caso di sole coordinate GPS.\n\nTutti i dieci criteri del fascicolo richiedono prove osservate e attribuibili e prodotti coerenti. Una autovalutazione o consegna di gruppo da sola non basta.\n\nCorrezioni mirate illimitate con i registri precedenti conservati; il tempo programmato non è una soglia di superamento.",
+      "spokenTextSHA256": "041a34bea80f84f822961e6c4bc9995b9168639f9b5dc94f813d31f9387a9447",
+      "spokenTextSha256": "041a34bea80f84f822961e6c4bc9995b9168639f9b5dc94f813d31f9387a9447",
+      "spokenAdaptationChanges": [
+        {
+          "written": "GVES-P7B-S01",
+          "spoken": "gi vi e esse, trattino, pi sette bi, trattino, esse zero uno",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "0–15 cm",
+          "spoken": "da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "4°C",
+          "spoken": "quattro gradi Celsius",
+          "occurrences": 1,
+          "purpose": "Faithful spoken localization or exact identifier/value expansion; source/display unchanged"
+        },
+        {
+          "written": "paletta e da zero a quindici centimetri",
+          "spoken": "paletta e l’intervallo da zero a quindici centimetri",
+          "occurrences": 1,
+          "purpose": "Prelaunch grammatical connected-speech correction; exact quantities/qualifications/source unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "64cf64d1fa5fb53b83869be2793318cc00b76140d7019acda58e644275e1241e",
+      "requestFingerprintSha256": "64cf64d1fa5fb53b83869be2793318cc00b76140d7019acda58e644275e1241e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S1-12-it-label-and-scaffold-r1",
+      "unitId": "S1-12-it-label-and-scaffold-r1",
+      "locale": "it",
+      "semanticGroup": "label-and-scaffold",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "21fb887624171eee016a80bf9d3a09d1d7c378ead08c04da67b94fa52ec2b20f",
+      "sourceBindings": [
+        {
+          "pointer": "/documentationKit/labelGroups/0",
+          "text": "ID univoco del campione",
+          "sha256": "f0d9dd4dc25fcd37a7defc8a80888dfd022a468473fb05c28097ecc9a813d329"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/1",
+          "text": "Nome o numero del progetto",
+          "sha256": "42e940f1d491b1ccc8c696e7f859ab69ac6e8b45ec8895cb515474035b3ef895"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/2",
+          "text": "Luogo inclusi campo e zona",
+          "sha256": "7a2c548cc8178e01ed0877be2215f7b7ac9a83a60f32d4a6d20e91ca4414abb5"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/3",
+          "text": "Data e ora del prelievo",
+          "sha256": "235326669b7688566fd6c18985d8be134406a825e15d550a926ab63f01ca96d0"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/4",
+          "text": "Iniziali/nome del raccoglitore con registro identificativo",
+          "sha256": "7fd88c690be1b2979494bd6ec2a4888cb8f7ec77d403200f787c9d59d35ae54f"
+        },
+        {
+          "pointer": "/documentationKit/labelGroups/5",
+          "text": "Intervallo di profondità e unità o orizzonte identificato",
+          "sha256": "ee3e7c4024f18bcc0863c5532c06aa68d3b1b4e97bde4f14171d9ca1efa87054"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/0",
+          "text": "Obiettivo e disegno di campionamento",
+          "sha256": "a9a382c2369f1b93149eccb0ebc67712d55caa9d782e3bcd3be58aa193babc35"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/1",
+          "text": "Procedura di raccolta",
+          "sha256": "a5523e06017262091f76da72a6d7b19006c272707465eec2127d932af670dde7"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/2",
+          "text": "Gestione e tracciabilità",
+          "sha256": "a03a46b0bca8a105d390a56a6041efde6b9ab8de68bbdbf8d388bc2db696801f"
+        },
+        {
+          "pointer": "/documentationKit/ui/scaffold/3",
+          "text": "Feedback preciso / cronologia delle correzioni",
+          "sha256": "b13ad43df81db0386a4da603dbcdfe9a8a60d8a0abc7ce1b982700fdc329d58b"
+        }
+      ],
+      "scientificMeaning": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nObiettivo e disegno di campionamento\n\nProcedura di raccolta\n\nGestione e tracciabilità\n\nFeedback preciso / cronologia delle correzioni",
+      "displayText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nObiettivo e disegno di campionamento\n\nProcedura di raccolta\n\nGestione e tracciabilità\n\nFeedback preciso / cronologia delle correzioni",
+      "captionText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nObiettivo e disegno di campionamento\n\nProcedura di raccolta\n\nGestione e tracciabilità\n\nFeedback preciso / cronologia delle correzioni",
+      "spokenText": "ID univoco del campione\n\nNome o numero del progetto\n\nLuogo inclusi campo e zona\n\nData e ora del prelievo\n\nIniziali/nome del raccoglitore con registro identificativo\n\nIntervallo di profondità e unità o orizzonte identificato\n\nObiettivo e disegno di campionamento\n\nProcedura di raccolta\n\nGestione e tracciabilità\n\nFeedback preciso / cronologia delle correzioni",
+      "spokenTextSHA256": "171c4c9e6d0520ebe302c7dce90a503abc6b28134e221f9a61e4ab3b73259b5c",
+      "spokenTextSha256": "171c4c9e6d0520ebe302c7dce90a503abc6b28134e221f9a61e4ab3b73259b5c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_TEACHING_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d4b9301a0a0db8816904b6edae024ad7d260d6287a9664b0a61a3d12c7d44edc",
+      "requestFingerprintSha256": "d4b9301a0a0db8816904b6edae024ad7d260d6287a9664b0a61a3d12c7d44edc",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
