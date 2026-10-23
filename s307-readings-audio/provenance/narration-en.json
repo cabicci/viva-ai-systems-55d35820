@@ -1,0 +1,490 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-en.json",
+    "sha256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+    "bytes": 40383
+  },
+  "units": [
+    {
+      "id": "S3-07-en-R01a-r1",
+      "unitId": "S3-07-en-R01a-r1",
+      "locale": "en",
+      "semanticGroup": "R01a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.",
+          "sha256": "34bbc71231fd26e62ed769225894bc2baeceb06d8654d96cfc2fd66d12987db8"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "The original topic is 90 minutes: 45 minutes of instruction/discussion and a 45-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+          "sha256": "24da836ace72611d10157960ba6a9383edce4aa2802f6dbca7e043f75e7ae6cf"
+        }
+      ],
+      "scientificMeaning": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is 90 minutes: 45 minutes of instruction/discussion and a 45-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+      "displayText": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is 90 minutes: 45 minutes of instruction/discussion and a 45-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+      "captionText": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is 90 minutes: 45 minutes of instruction/discussion and a 45-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+      "spokenText": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is ninety minutes: forty-five minutes of instruction, discussion and a forty-five-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+      "spokenTextSHA256": "4e19f3b6a289786dd1c4ba8ab84e3cf7f388d8b2bf60d757abbd4a474da48921",
+      "spokenTextSha256": "4e19f3b6a289786dd1c4ba8ab84e3cf7f388d8b2bf60d757abbd4a474da48921",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is 90 minutes: 45 minutes of instruction/discussion and a 45-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+          "spoken": "A drooping houseplant or a yellow field leaf starts a question; it does not finish a diagnosis. Describe the symptom, its location on old or new tissue, when it appeared, the soil texture and moisture, weather, drainage and root condition. Then form competing hypotheses and choose observations or tests that distinguish them. Revisit the hypothesis when the evidence arrives.\n\nThe original topic is ninety minutes: forty-five minutes of instruction, discussion and a forty-five-minute field-diagnosis workshop. Its water and irrigation foundations are introduced in earlier steps; this step applies them with the nutrient concepts. The workshop is a structured case exercise, not proof that a student has physically diagnosed a farmer's field.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "78372ea17472a4ef436f184dcca2d8a579960640c2f9ab2a8e0037850e173670",
+      "requestFingerprintSha256": "78372ea17472a4ef436f184dcca2d8a579960640c2f9ab2a8e0037850e173670",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R01b-r1",
+      "unitId": "S3-07-en-R01b-r1",
+      "locale": "en",
+      "semanticGroup": "R01b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board/flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+          "sha256": "476706944bcb46bc296c5ad14a0cb628db76fe85e7d523f09519730ba2638fa6"
+        }
+      ],
+      "scientificMeaning": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board/flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+      "displayText": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board/flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+      "captionText": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board/flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+      "spokenText": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board, flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+      "spokenTextSHA256": "0c31448d382fbb8120c693363722c9bc2e4cd9f497f6b1555a23376142cf4372",
+      "spokenTextSha256": "0c31448d382fbb8120c693363722c9bc2e4cd9f497f6b1555a23376142cf4372",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board/flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+          "spoken": "Begin with the five-minute houseplant hook: think of an unhealthy plant, discuss its appearance and possible causes with a partner for one minute, then share. The parent topic uses a board, flipchart, markers, projector and prepared cards; soil jars and coloured-water celery are optional demonstrations already covered earlier.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cad90d921a049c6ba7c9bd6c79a7445adb5a8b6583444d255caddca419f083d8",
+      "requestFingerprintSha256": "cad90d921a049c6ba7c9bd6c79a7445adb5a8b6583444d255caddca419f083d8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R02-r1",
+      "unitId": "S3-07-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow/brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.",
+          "sha256": "e93cc3b52f842021b4a8da746be9e1ac82edd986a208f7a0026efc2c25b9b39f"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Afternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+          "sha256": "8059b26e6a055549a63393d855c921136cd981d79c5fd6a1dfe25afc569466b3"
+        }
+      ],
+      "scientificMeaning": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow/brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+      "displayText": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow/brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+      "captionText": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow/brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+      "spokenText": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow, brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+      "spokenTextSHA256": "fce9b6933d1f876f08140d083ee3d7e9d2a89c09944d0fd84a0fc7203f8b5a11",
+      "spokenTextSha256": "fce9b6933d1f876f08140d083ee3d7e9d2a89c09944d0fd84a0fc7203f8b5a11",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow/brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+          "spoken": "Wilting or drooping reflects lost turgor; some plants roll leaves in heat or wind. Dull blue-green or grey colour, later yellow, brown brittleness and reduced growth can occur with prolonged stress. A comparison with a turgid maize leaf helps locate the sign. The same signs can also arise from waterlogging, root damage, disease, heat or other causes; a picture alone cannot prove drought.\n\nAfternoon wilting followed by morning recovery can occur when transpiration temporarily exceeds root uptake on a hot day. It does not by itself show that soil has reached a drying threshold or needs immediate irrigation. Check root-zone moisture at relevant depths, recent rain, root health and the morning condition before making a recommendation.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fbad8e9354ff91608fd331b65d5cb2580ed4d47603a6e70f33234c9ed7ed0a00",
+      "requestFingerprintSha256": "fbad8e9354ff91608fd331b65d5cb2580ed4d47603a6e70f33234c9ed7ed0a00",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R03a-r1",
+      "unitId": "S3-07-en-R03a-r1",
+      "locale": "en",
+      "semanticGroup": "R03a",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "The major nutrients N, P and K are often called the big three; calcium (Ca), magnesium (Mg) and sulfur (S) are also macronutrients. Iron (Fe), manganese (Mn) and zinc (Zn) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is Mg, never K; K is potassium.",
+          "sha256": "51b0f37d079cf94583b77dd347223a872bde8f5517fc621043bdc557b476c1f8"
+        }
+      ],
+      "scientificMeaning": "The major nutrients N, P and K are often called the big three; calcium (Ca), magnesium (Mg) and sulfur (S) are also macronutrients. Iron (Fe), manganese (Mn) and zinc (Zn) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is Mg, never K; K is potassium.",
+      "displayText": "The major nutrients N, P and K are often called the big three; calcium (Ca), magnesium (Mg) and sulfur (S) are also macronutrients. Iron (Fe), manganese (Mn) and zinc (Zn) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is Mg, never K; K is potassium.",
+      "captionText": "The major nutrients N, P and K are often called the big three; calcium (Ca), magnesium (Mg) and sulfur (S) are also macronutrients. Iron (Fe), manganese (Mn) and zinc (Zn) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is Mg, never K; K is potassium.",
+      "spokenText": "The major nutrients N, P and K are often called the big three; calcium (C A), magnesium (M G) and sulfur (S) are also macronutrients. Iron (F E), manganese (M N) and zinc (Z N) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is M G, never K; K is potassium.",
+      "spokenTextSHA256": "b136ef20c08f77ca89e02c39e362de5cc26ec0c1815f6d1ae21f29f08eb923a5",
+      "spokenTextSha256": "b136ef20c08f77ca89e02c39e362de5cc26ec0c1815f6d1ae21f29f08eb923a5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The major nutrients N, P and K are often called the big three; calcium (Ca), magnesium (Mg) and sulfur (S) are also macronutrients. Iron (Fe), manganese (Mn) and zinc (Zn) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is Mg, never K; K is potassium.",
+          "spoken": "The major nutrients N, P and K are often called the big three; calcium (C A), magnesium (M G) and sulfur (S) are also macronutrients. Iron (F E), manganese (M N) and zinc (Z N) are micronutrients needed in smaller amounts, not less important. The symbol for magnesium is M G, never K; K is potassium.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "51afe9b301651d781ac587644516696e12ecf10bd650bbd84844c99f7bd99909",
+      "requestFingerprintSha256": "51afe9b301651d781ac587644516696e12ecf10bd650bbd84844c99f7bd99909",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R03b-r1",
+      "unitId": "S3-07-en-R03b-r1",
+      "locale": "en",
+      "semanticGroup": "R03b",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "A shortage of mobile nitrogen may first appear as general yellowing of older, lower leaves. Phosphorus stress can show stunting and purple tones in young maize, often on older tissue, especially when cold soil limits uptake. Potassium deficiency can show marginal yellowing or scorch on older leaves. Because N, P and K can move within a plant, older leaves are a useful clue, but symptoms differ by crop and may have other causes. Use the memory cues 'N: older leaves lose green', 'P: purple can appear', and 'K: older leaf edges' as prompts for testing, not a colour-only diagnosis. In the maize K-margin pattern, the middle of the leaf can remain green; this contrast is still a clue, not a diagnosis.",
+          "sha256": "94176d390db2af31c5d28159f8ed50c8a44c883f35b42f571b1ef88e31ce19f8"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "Phosphorus participates in energy transfer and root development; potassium supports water regulation and plant function. An older maize leaf can suggest N, P or K trouble, but leaf age, pattern, roots and conditions must be checked together.",
+          "sha256": "592aa7a149b3e06f6001c85be048e2a70c33ca0d04aa490987ceaade1df426d9"
+        }
+      ],
+      "scientificMeaning": "A shortage of mobile nitrogen may first appear as general yellowing of older, lower leaves. Phosphorus stress can show stunting and purple tones in young maize, often on older tissue, especially when cold soil limits uptake. Potassium deficiency can show marginal yellowing or scorch on older leaves. Because N, P and K can move within a plant, older leaves are a useful clue, but symptoms differ by crop and may have other causes. Use the memory cues 'N: older leaves lose green', 'P: purple can appear', and 'K: older leaf edges' as prompts for testing, not a colour-only diagnosis. In the maize K-margin pattern, the middle of the leaf can remain green; this contrast is still a clue, not a diagnosis.\n\nPhosphorus participates in energy transfer and root development; potassium supports water regulation and plant function. An older maize leaf can suggest N, P or K trouble, but leaf age, pattern, roots and conditions must be checked together.",
+      "displayText": "A shortage of mobile nitrogen may first appear as general yellowing of older, lower leaves. Phosphorus stress can show stunting and purple tones in young maize, often on older tissue, especially when cold soil limits uptake. Potassium deficiency can show marginal yellowing or scorch on older leaves. Because N, P and K can move within a plant, older leaves are a useful clue, but symptoms differ by crop and may have other causes. Use the memory cues 'N: older leaves lose green', 'P: purple can appear', and 'K: older leaf edges' as prompts for testing, not a colour-only diagnosis. In the maize K-margin pattern, the middle of the leaf can remain green; this contrast is still a clue, not a diagnosis.\n\nPhosphorus participates in energy transfer and root development; potassium supports water regulation and plant function. An older maize leaf can suggest N, P or K trouble, but leaf age, pattern, roots and conditions must be checked together.",
+      "captionText": "A shortage of mobile nitrogen may first appear as general yellowing of older, lower leaves. Phosphorus stress can show stunting and purple tones in young maize, often on older tissue, especially when cold soil limits uptake. Potassium deficiency can show marginal yellowing or scorch on older leaves. Because N, P and K can move within a plant, older leaves are a useful clue, but symptoms differ by crop and may have other causes. Use the memory cues 'N: older leaves lose green', 'P: purple can appear', and 'K: older leaf edges' as prompts for testing, not a colour-only diagnosis. In the maize K-margin pattern, the middle of the leaf can remain green; this contrast is still a clue, not a diagnosis.\n\nPhosphorus participates in energy transfer and root development; potassium supports water regulation and plant function. An older maize leaf can suggest N, P or K trouble, but leaf age, pattern, roots and conditions must be checked together.",
+      "spokenText": "A shortage of mobile nitrogen may first appear as general yellowing of older, lower leaves. Phosphorus stress can show stunting and purple tones in young maize, often on older tissue, especially when cold soil limits uptake. Potassium deficiency can show marginal yellowing or scorch on older leaves. Because N, P and K can move within a plant, older leaves are a useful clue, but symptoms differ by crop and may have other causes. Use the memory cues 'N: older leaves lose green', 'P: purple can appear', and 'K: older leaf edges' as prompts for testing, not a colour-only diagnosis. In the maize K-margin pattern, the middle of the leaf can remain green; this contrast is still a clue, not a diagnosis.\n\nPhosphorus participates in energy transfer and root development; potassium supports water regulation and plant function. An older maize leaf can suggest N, P or K trouble, but leaf age, pattern, roots and conditions must be checked together.",
+      "spokenTextSHA256": "d1b487ea6b7ef76a0395756e1785c3ad98c95fa8542ce6fec39141a7a29eaa82",
+      "spokenTextSha256": "d1b487ea6b7ef76a0395756e1785c3ad98c95fa8542ce6fec39141a7a29eaa82",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6df673f5e46a38976c60b6af3f916cdd740182011dfc34d5cce8a410f95a6ad2",
+      "requestFingerprintSha256": "6df673f5e46a38976c60b6af3f916cdd740182011dfc34d5cce8a410f95a6ad2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R04-r1",
+      "unitId": "S3-07-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "A water plan considers crop, soil, climate and stage. A sandy tomato plot in hot wind may favour a maintained drip system, but the interval and amount require weather demand, root depth, measured soil water, effective rain and equipment performance. Daily watering is one possible site-specific result, not a rule. A wet clay wheat field with standing water needs drainage and root-condition assessment first; do not add irrigation while it is waterlogged.",
+          "sha256": "088c0925abe535bebb80a777ee2c2ee9626e99bb32a751ec3e7aaf4f75f83052"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "A leafy crop in loam with limited supply may also suit drip, but 'short frequent cycles' need measurement. At maize tasseling and grain filling, water stress can strongly matter, yet one cannot guarantee zero deficit or prescribe volume from the stage name alone. Avoid both drought and persistent saturation.",
+          "sha256": "2d64e1b21ff1746f7d29299e284194bc08d8a7df663dde5b0a596a62ef2b6b0c"
+        }
+      ],
+      "scientificMeaning": "A water plan considers crop, soil, climate and stage. A sandy tomato plot in hot wind may favour a maintained drip system, but the interval and amount require weather demand, root depth, measured soil water, effective rain and equipment performance. Daily watering is one possible site-specific result, not a rule. A wet clay wheat field with standing water needs drainage and root-condition assessment first; do not add irrigation while it is waterlogged.\n\nA leafy crop in loam with limited supply may also suit drip, but 'short frequent cycles' need measurement. At maize tasseling and grain filling, water stress can strongly matter, yet one cannot guarantee zero deficit or prescribe volume from the stage name alone. Avoid both drought and persistent saturation.",
+      "displayText": "A water plan considers crop, soil, climate and stage. A sandy tomato plot in hot wind may favour a maintained drip system, but the interval and amount require weather demand, root depth, measured soil water, effective rain and equipment performance. Daily watering is one possible site-specific result, not a rule. A wet clay wheat field with standing water needs drainage and root-condition assessment first; do not add irrigation while it is waterlogged.\n\nA leafy crop in loam with limited supply may also suit drip, but 'short frequent cycles' need measurement. At maize tasseling and grain filling, water stress can strongly matter, yet one cannot guarantee zero deficit or prescribe volume from the stage name alone. Avoid both drought and persistent saturation.",
+      "captionText": "A water plan considers crop, soil, climate and stage. A sandy tomato plot in hot wind may favour a maintained drip system, but the interval and amount require weather demand, root depth, measured soil water, effective rain and equipment performance. Daily watering is one possible site-specific result, not a rule. A wet clay wheat field with standing water needs drainage and root-condition assessment first; do not add irrigation while it is waterlogged.\n\nA leafy crop in loam with limited supply may also suit drip, but 'short frequent cycles' need measurement. At maize tasseling and grain filling, water stress can strongly matter, yet one cannot guarantee zero deficit or prescribe volume from the stage name alone. Avoid both drought and persistent saturation.",
+      "spokenText": "A water plan considers crop, soil, climate and stage. A sandy tomato plot in hot wind may favour a maintained drip system, but the interval and amount require weather demand, root depth, measured soil water, effective rain and equipment performance. Daily watering is one possible site-specific result, not a rule. A wet clay wheat field with standing water needs drainage and root-condition assessment first; do not add irrigation while it is waterlogged.\n\nA leafy crop in loam with limited supply may also suit drip, but 'short frequent cycles' need measurement. At maize tasseling and grain filling, water stress can strongly matter, yet one cannot guarantee zero deficit or prescribe volume from the stage name alone. Avoid both drought and persistent saturation.",
+      "spokenTextSHA256": "4d9ab6bbd76339efac04dd296fc4c1c89b1bf357c9815e4c687b9d5482dff3cb",
+      "spokenTextSha256": "4d9ab6bbd76339efac04dd296fc4c1c89b1bf357c9815e4c687b9d5482dff3cb",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9152f287308e03a4f15902d9c28f645828d22095fb8401695bb5993a426bc5ff",
+      "requestFingerprintSha256": "9152f287308e03a4f15902d9c28f645828d22095fb8401695bb5993a426bc5ff",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R05a-r1",
+      "unitId": "S3-07-en-R05a-r1",
+      "locale": "en",
+      "semanticGroup": "R05a",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.",
+          "sha256": "578bb95acbbd79afcd062174b2a47bbd6500ede0277850e7c46521a8b99dbad7"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Right time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The 4Rs support crop performance while reducing avoidable nutrient loss and runoff.",
+          "sha256": "c8a009f7589cc0771da988193ecf345c5451d96bfd686fb2bbc1abd653bec384"
+        }
+      ],
+      "scientificMeaning": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The 4Rs support crop performance while reducing avoidable nutrient loss and runoff.",
+      "displayText": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The 4Rs support crop performance while reducing avoidable nutrient loss and runoff.",
+      "captionText": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The 4Rs support crop performance while reducing avoidable nutrient loss and runoff.",
+      "spokenText": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The four R principles support crop performance while reducing avoidable nutrient loss and runoff.",
+      "spokenTextSHA256": "3ae3348e34bbdc023059489e0d02a4c83d6ca309627846436982cc88b60c290d",
+      "spokenTextSha256": "3ae3348e34bbdc023059489e0d02a4c83d6ca309627846436982cc88b60c290d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The 4Rs support crop performance while reducing avoidable nutrient loss and runoff.",
+          "spoken": "Right source: match the nutrient actually needed and a compatible product to the crop, soil test and circumstances. Urea and ammonium nitrate supply nitrogen; they are examples, not automatic cures for any yellow leaf. Right rate: use appropriate soil or tissue evidence, crop demand, existing nutrient supply and locally validated guidance. Too little may fail; too much wastes money and can harm plants or water quality.\n\nRight time: match crop uptake and avoid high loss conditions such as waterlogged or heavily raining periods. Some nitrogen programmes split applications; 'all at planting' and 'every week' are not universal. Right place: put nutrients where roots can access them without harming seed or foliage; a band can help relatively immobile phosphorus under suitable placement, but broadcast or other methods may be appropriate in different conditions. Check product label, local handling rules and seed-safety limits. The four R principles support crop performance while reducing avoidable nutrient loss and runoff.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3cc5bf4c2bc54e093701ba93edbad2af19536170d3f9ac632ab433212d80d498",
+      "requestFingerprintSha256": "3cc5bf4c2bc54e093701ba93edbad2af19536170d3f9ac632ab433212d80d498",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R05b-r1",
+      "unitId": "S3-07-en-R05b-r1",
+      "locale": "en",
+      "semanticGroup": "R05b",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "Challenge: why might band placement help phosphorus uptake? P moves relatively little in soil; suitable placement can improve contact with young roots. That does not make every band superior to broadcast, nor permit seed-damaging contact. Product, soil, crop and safe placement determine the choice.",
+          "sha256": "2d45e6c43ce2edcde582135c465538f48c3d43239bb2293641856bf2257e7b15"
+        }
+      ],
+      "scientificMeaning": "Challenge: why might band placement help phosphorus uptake? P moves relatively little in soil; suitable placement can improve contact with young roots. That does not make every band superior to broadcast, nor permit seed-damaging contact. Product, soil, crop and safe placement determine the choice.",
+      "displayText": "Challenge: why might band placement help phosphorus uptake? P moves relatively little in soil; suitable placement can improve contact with young roots. That does not make every band superior to broadcast, nor permit seed-damaging contact. Product, soil, crop and safe placement determine the choice.",
+      "captionText": "Challenge: why might band placement help phosphorus uptake? P moves relatively little in soil; suitable placement can improve contact with young roots. That does not make every band superior to broadcast, nor permit seed-damaging contact. Product, soil, crop and safe placement determine the choice.",
+      "spokenText": "Challenge: why might band placement help phosphorus uptake? P moves relatively little in soil; suitable placement can improve contact with young roots. That does not make every band superior to broadcast, nor permit seed-damaging contact. Product, soil, crop and safe placement determine the choice.",
+      "spokenTextSHA256": "2d45e6c43ce2edcde582135c465538f48c3d43239bb2293641856bf2257e7b15",
+      "spokenTextSha256": "2d45e6c43ce2edcde582135c465538f48c3d43239bb2293641856bf2257e7b15",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a7c94836f6ab250323a0bc0c8116eff742e5528b281ed3bc799839b552dc2c52",
+      "requestFingerprintSha256": "a7c94836f6ab250323a0bc0c8116eff742e5528b281ed3bc799839b552dc2c52",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R06-r1",
+      "unitId": "S3-07-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (DAP), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.",
+          "sha256": "deb85110610d61a7c5a3b6c8726ab4c0ae99be8a8ebe66395ae9908f83b447ba"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "If a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying DAP immediately and in direct seed contact is not a universal response.",
+          "sha256": "59a14915c39f7b8776a0e57953ed5061f39719ba6d0d4b301064782d14300572"
+        }
+      ],
+      "scientificMeaning": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (DAP), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying DAP immediately and in direct seed contact is not a universal response.",
+      "displayText": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (DAP), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying DAP immediately and in direct seed contact is not a universal response.",
+      "captionText": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (DAP), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying DAP immediately and in direct seed contact is not a universal response.",
+      "spokenText": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (D A P), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying D A P immediately and in direct seed contact is not a universal response.",
+      "spokenTextSHA256": "fe45d848d6399f80cea39fa45c0bbf5997469e3cb364aac64bb64a158859294c",
+      "spokenTextSha256": "fe45d848d6399f80cea39fa45c0bbf5997469e3cb364aac64bb64a158859294c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (DAP), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying DAP immediately and in direct seed contact is not a universal response.",
+          "spoken": "The source example suggests phosphorus shortage and a starter such as diammonium phosphate (D A P), but purple leaves plus cold, heavy soil are not proof that more P is needed. Cold or wet soil can restrict uptake even when soil P tests adequate. Check soil temperature, drainage, roots, growth stage, a suitable soil P test and local advice; observe whether growth improves as soil warms.\n\nIf a deficit is confirmed, a locally appropriate P source and rate can be planned, with timing and safe placement near the young root zone. A band must follow the product and seed-separation instructions; applying D A P immediately and in direct seed contact is not a universal response.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "94bd1702fd201f07c56eb854ae8bc58ca0ea55753b4a8c1ed8a1e00b77da6ae8",
+      "requestFingerprintSha256": "94bd1702fd201f07c56eb854ae8bc58ca0ea55753b4a8c1ed8a1e00b77da6ae8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-R07-r1",
+      "unitId": "S3-07-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional 4R plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.",
+          "sha256": "60dfc18f8974721a35d7c2b99d3cc3898187f7deb522916e58f376ab700bc2f2"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Use the source timing: 2 minutes to explain and group, 25 minutes for two-case analysis, 15 minutes for three group presentations and discussion (about 5 minutes each), and 3 minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.",
+          "sha256": "8a9da0778b7fac4d8979cf8f8d2c2d8f51f58510864568bd0bbff4384ad0bd06"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/2",
+          "text": "The source summary25minutes work +20minutes discussion describes the same45-minute workshop as2+25+15+3, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+          "sha256": "c635ab7b46f4810cd770cc93cf65e2ce2576bc0bfb31f371ee10904198e03ecc"
+        }
+      ],
+      "scientificMeaning": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional 4R plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: 2 minutes to explain and group, 25 minutes for two-case analysis, 15 minutes for three group presentations and discussion (about 5 minutes each), and 3 minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary25minutes work +20minutes discussion describes the same45-minute workshop as2+25+15+3, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+      "displayText": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional 4R plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: 2 minutes to explain and group, 25 minutes for two-case analysis, 15 minutes for three group presentations and discussion (about 5 minutes each), and 3 minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary25minutes work +20minutes discussion describes the same45-minute workshop as2+25+15+3, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+      "captionText": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional 4R plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: 2 minutes to explain and group, 25 minutes for two-case analysis, 15 minutes for three group presentations and discussion (about 5 minutes each), and 3 minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary25minutes work +20minutes discussion describes the same45-minute workshop as2+25+15+3, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+      "spokenText": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional four R principles plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: two minutes to explain and group, twenty-five minutes for two-case analysis, fifteen minutes for three group presentations and discussion (about five minutes each), and three minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary twenty-five minutes work plus twenty minutes discussion describes the same forty-five-minute workshop as two plus twenty-five plus fifteen plus three, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+      "spokenTextSHA256": "74b746889f38b20666fd4f8b9f647f6218ae2baf2fd03b70371c2538edf9a71c",
+      "spokenTextSha256": "74b746889f38b20666fd4f8b9f647f6218ae2baf2fd03b70371c2538edf9a71c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional 4R plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: 2 minutes to explain and group, 25 minutes for two-case analysis, 15 minutes for three group presentations and discussion (about 5 minutes each), and 3 minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary25minutes work +20minutes discussion describes the same45-minute workshop as2+25+15+3, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+          "spoken": "The trainer prepares three or four cards with crop, soil, weather and visible symptoms. In groups of three or four, take two different cards. For each, list observations, location and age of affected leaves, competing hypotheses, evidence to collect, water priority and a conditional four R principles plan. Prepare one case for presentation. A simple checklist helps novices; an advanced case can add two overlapping stresses or pest damage and ask about cost. Images or diagrams may support explanation without determining the answer.\n\nUse the source timing: two minutes to explain and group, twenty-five minutes for two-case analysis, fifteen minutes for three group presentations and discussion (about five minutes each), and three minutes for wrap-up and an exit ticket. Exit prompts ask for the typical K margin pattern and a reasoned method for very sandy soil. Each student submits an individual reasoning record; group presentation alone does not certify the individual criterion.\n\nThe source summary twenty-five minutes work plus twenty minutes discussion describes the same forty-five-minute workshop as two plus twenty-five plus fifteen plus three, not another activity. Keep two distinct case records and one defended explanation. No real field data or trainer sign-off is prefilled.",
+          "occurrences": 1,
+          "purpose": "Full18sourceparagraphs40coherentgroups, allnumeric/symbol/timing/coldP/4R/sourceguard facts preserved; symbolMg pronouncedletters andneverK; naturalEgyptiangrammar/no sourcechanges."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d9fb86238d905c83998005bdbfefd1352a84d8a9365a0469f9ebb9f420547b5a",
+      "requestFingerprintSha256": "d9fb86238d905c83998005bdbfefd1352a84d8a9365a0469f9ebb9f420547b5a",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
