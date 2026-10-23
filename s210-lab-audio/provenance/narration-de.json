@@ -1,0 +1,345 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-10-de.json",
+    "sha256": "20e16b797ec1fbf537f301d82f3a403bbdc0f41fd36afff06e6a8f6b543199a7",
+    "bytes": 30585
+  },
+  "units": [
+    {
+      "id": "S2-10-de-demonstration-guidance-r1",
+      "unitId": "S2-10-de-demonstration-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "demonstration-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "20e16b797ec1fbf537f301d82f3a403bbdc0f41fd36afff06e6a8f6b543199a7",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/ui/modelHelp",
+          "text": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.",
+          "sha256": "43f10e58921b536d250d609a19ce341c37e825a14522fa5da929f39b89179017"
+        },
+        {
+          "pointer": "/loiPractice/physical",
+          "text": "Eine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.",
+          "sha256": "e1ee4142b1d89fe514e8095fc1dc2a1cce3fb706892bf8ae251a3fa476f127b9"
+        },
+        {
+          "pointer": "/loiPractice/ui/steps/0",
+          "text": "Sauberen, trockenen, leeren Tiegel erfassen: C",
+          "sha256": "1e6c3d812970d0d09119557df4b47d484422f8bb6de4d704d3eeab3b415c921b"
+        },
+        {
+          "pointer": "/loiPractice/ui/steps/1",
+          "text": "Ofentrockenen Boden zugeben und Gesamtmasse erfassen: D",
+          "sha256": "cbbf543a1a498acfcd22a0c5bcee6d0a3187d8be2d16776ab883a7724bc18785"
+        },
+        {
+          "pointer": "/loiPractice/ui/steps/2",
+          "text": "Qualifizierte Fachkraft glüht nach dem Laborverfahren",
+          "sha256": "809625f20ad8b8bbe81cfdc7ed85e69569058284d414d5a9a35df5da44195f8f"
+        },
+        {
+          "pointer": "/loiPractice/ui/steps/3",
+          "text": "Qualifizierte Fachkraft beendet kontrollierte Abkühlung",
+          "sha256": "f410d9ca88adc0a8b2ab100134e290b0fb4219ada60126cdeedfd1f09d491e75"
+        },
+        {
+          "pointer": "/loiPractice/ui/steps/4",
+          "text": "Abgekühlten Tiegel mit Rückstand erfassen: I",
+          "sha256": "831247a2047b843ac3d2e2cda2d4f9b205d5a1e647d83129b7fc20447e7ec191"
+        },
+        {
+          "pointer": "/loiPractice/ui/orderGood",
+          "text": "Reihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.",
+          "sha256": "3af1a1ed8ef0ee995b03b7a5599f00879401282f01b899dc29bdf8b9a30ff440"
+        },
+        {
+          "pointer": "/loiPractice/accessibility",
+          "text": "Änderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+          "sha256": "057d0744c892454a0c8a2b7cfb45ee54d006d620d5edd64698c72b3db084a2f0"
+        }
+      ],
+      "scientificMeaning": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: C\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: D\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+      "displayText": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: C\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: D\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+      "captionText": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: C\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: D\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+      "spokenText": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: Ce\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: De\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+      "spokenTextSHA256": "f2ff34066f2bbc15252a9a0ff3a29e6d71158abd9f58f4e670c1a5af95f6d844",
+      "spokenTextSha256": "f2ff34066f2bbc15252a9a0ff3a29e6d71158abd9f58f4e670c1a5af95f6d844",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: C\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: D\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+          "spoken": "Derselbe schematische Tiegel wechselt zwischen Waage, geschlossenem Ofen und kontrollierter Abkühlung. Inhalt und Größe sind nur anschaulich, keine kalibrierte Probe oder Arbeitsanweisung. Keine echten Temperatur-, Zeit- oder Ofenbedienelemente.\n\nEine qualifizierte Lehrkraft führt echtes Trocknen, Glühen, Abkühlen und Wiegen gemäß örtlichem Laborverfahren durch. Lernende beobachten, notieren genannte Massen und erklären die Rechnung. Die Online-Übung nutzt erfundene Massen und vermittelt keine eigenständige Befähigung für heiße Geräte.\n\nSauberen, trockenen, leeren Tiegel erfassen: Ce\n\nOfentrockenen Boden zugeben und Gesamtmasse erfassen: De\n\nQualifizierte Fachkraft glüht nach dem Laborverfahren\n\nQualifizierte Fachkraft beendet kontrollierte Abkühlung\n\nAbgekühlten Tiegel mit Rückstand erfassen: I\n\nReihenfolge stimmt. Das Labor liefert das vollständige Verfahren; Zuschauen befähigt nicht zum Umgang mit heißen Geräten.\n\nÄnderbare kontrastreiche Massenwerte, Formel als Text, per Tastatur bedienbare Sortierung und gesprochene Symbole ohne Abhängigkeit von Farben.",
+          "occurrences": 1,
+          "purpose": "Exact source C/D/I identities, grouped arithmetic and decimal/unit/range quantities expanded; full source safety/method/fiction/unknown/qualification retained. Arabic connected acronym and grammar localized, no source/display edits."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ed05d3c36c27cfbd4593b1812c0ccf76b35c07148fabfad041e5ee2c096f4f6f",
+      "requestFingerprintSha256": "ed05d3c36c27cfbd4593b1812c0ccf76b35c07148fabfad041e5ee2c096f4f6f",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-10-de-formula-guidance-r1",
+      "unitId": "S2-10-de-formula-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "formula-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "20e16b797ec1fbf537f301d82f3a403bbdc0f41fd36afff06e6a8f6b543199a7",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/formula/variables/C",
+          "text": "leerer trockener Tiegel, g",
+          "sha256": "33c9f532a8ef65dacb8bf4efd6565dc910e9e95292fdc7348d7ce3f9fd2021a9"
+        },
+        {
+          "pointer": "/loiPractice/formula/variables/D",
+          "text": "Tiegel mit ofentrockenem Boden vor dem Glühen, g",
+          "sha256": "9a2dffefac1130fba5c94c3dc878e632a442082b0b7438379c0b40ef9c5d657e"
+        },
+        {
+          "pointer": "/loiPractice/formula/variables/I",
+          "text": "abgekühlter Tiegel mit Rückstand nach dem Glühen, g",
+          "sha256": "24351a7cd7d4698b706731c813429c96f3ef4814f2d4925dd8e59211baa747c5"
+        },
+        {
+          "pointer": "/loiPractice/formula/expression",
+          "text": "LOI% = 100 × (D − I) / (D − C)",
+          "sha256": "a6df7c6c311bb90603b1b7863541065438d9cb42887622902d4038bd72af30eb"
+        },
+        {
+          "pointer": "/loiPractice/formula/example/provenance",
+          "text": "erfundene Rechenübung, weder Quellenwert noch Bodenmessung",
+          "sha256": "6a4a6009a464c9393119857929e60cc4661c76269b0d9c567e1a0ae9f79513b6"
+        },
+        {
+          "pointer": "/loiPractice/formula/methodBoundary",
+          "text": "Prozentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen",
+          "sha256": "80fc35790105a28a3a9a2ee6e8b5709fc98148aea97ec43656f5b66ca99c7250"
+        },
+        {
+          "pointer": "/loiPractice/ui/fiction",
+          "text": "Alle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.",
+          "sha256": "ddda5fa2cfd268669d00bb11d42bfc273ef626b123dbc42e95430c76d14946e1"
+        },
+        {
+          "pointer": "/loiPractice/ui/rounding",
+          "text": "Übungsgenauigkeit: Massen auf 0.01 g und LOI auf 0.1 Prozentpunkt. Keine Laborspezifikation.",
+          "sha256": "c5ee40d797904430404c5f1fabfcd2c3202558e004f2a900961723a922c2a5b9"
+        }
+      ],
+      "scientificMeaning": "leerer trockener Tiegel, g\n\nTiegel mit ofentrockenem Boden vor dem Glühen, g\n\nabgekühlter Tiegel mit Rückstand nach dem Glühen, g\n\nLOI% = 100 × (D − I) / (D − C)\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf 0.01 g und LOI auf 0.1 Prozentpunkt. Keine Laborspezifikation.",
+      "displayText": "leerer trockener Tiegel, g\n\nTiegel mit ofentrockenem Boden vor dem Glühen, g\n\nabgekühlter Tiegel mit Rückstand nach dem Glühen, g\n\nLOI% = 100 × (D − I) / (D − C)\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf 0.01 g und LOI auf 0.1 Prozentpunkt. Keine Laborspezifikation.",
+      "captionText": "leerer trockener Tiegel, g\n\nTiegel mit ofentrockenem Boden vor dem Glühen, g\n\nabgekühlter Tiegel mit Rückstand nach dem Glühen, g\n\nLOI% = 100 × (D − I) / (D − C)\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf 0.01 g und LOI auf 0.1 Prozentpunkt. Keine Laborspezifikation.",
+      "spokenText": "Ce: leerer trockener Tiegel, Gramm\n\nDe: Tiegel mit ofentrockenem Boden vor dem Glühen, Gramm\n\nI: abgekühlter Tiegel mit Rückstand nach dem Glühen, Gramm\n\nEl O I Prozent gleich einhundert mal die Differenz De minus I, geteilt durch die Differenz De minus Ce\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf null Komma null eins Gramm und El O I auf null Komma eins Prozentpunkt. Keine Laborspezifikation.",
+      "spokenTextSHA256": "6b231a6355e2028e1ca9989fb0d9d14e39c4d453cdc934f30451a84d224fa5c8",
+      "spokenTextSha256": "6b231a6355e2028e1ca9989fb0d9d14e39c4d453cdc934f30451a84d224fa5c8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "leerer trockener Tiegel, g\n\nTiegel mit ofentrockenem Boden vor dem Glühen, g\n\nabgekühlter Tiegel mit Rückstand nach dem Glühen, g\n\nLOI% = 100 × (D − I) / (D − C)\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf 0.01 g und LOI auf 0.1 Prozentpunkt. Keine Laborspezifikation.",
+          "spoken": "Ce: leerer trockener Tiegel, Gramm\n\nDe: Tiegel mit ofentrockenem Boden vor dem Glühen, Gramm\n\nI: abgekühlter Tiegel mit Rückstand nach dem Glühen, Gramm\n\nEl O I Prozent gleich einhundert mal die Differenz De minus I, geteilt durch die Differenz De minus Ce\n\nerfundene Rechenübung, weder Quellenwert noch Bodenmessung\n\nProzentualen Verlust bezogen auf ofentrockenen Boden mit genanntem Laborverfahren berichten; nicht bedingungslos mit exakter organischer Substanz gleichsetzen\n\nAlle hier eingegebenen Zahlen sind erfundene Übungsdaten. Änderungen messen keinen Boden und wählen kein Laborverfahren.\n\nÜbungsgenauigkeit: Massen auf null Komma null eins Gramm und El O I auf null Komma eins Prozentpunkt. Keine Laborspezifikation.",
+          "occurrences": 1,
+          "purpose": "Exact source C/D/I identities, grouped arithmetic and decimal/unit/range quantities expanded; full source safety/method/fiction/unknown/qualification retained. Arabic connected acronym and grammar localized, no source/display edits."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "61a07d8bb4c58ca36d9f24b3f60977c025154effaeb8e70422705c5eec7e3072",
+      "requestFingerprintSha256": "61a07d8bb4c58ca36d9f24b3f60977c025154effaeb8e70422705c5eec7e3072",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-10-de-knowledge-completion-r1",
+      "unitId": "S2-10-de-knowledge-completion-r1",
+      "locale": "de",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "20e16b797ec1fbf537f301d82f3a403bbdc0f41fd36afff06e6a8f6b543199a7",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/passChecks/0/evidence",
+          "text": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.",
+          "sha256": "1166742c8619d6098529fb2147b180f3cf7be935c273ed6b8f41eaf2298bb557"
+        },
+        {
+          "pointer": "/loiPractice/passChecks/0/decision",
+          "text": "Bestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.",
+          "sha256": "3ca66d87131df43a13e8bdea9fb7008e610c2adf971c0a79cb3af93a9fb9bcf5"
+        },
+        {
+          "pointer": "/loiPractice/passChecks/1/evidence",
+          "text": "Die lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: (35.00−34.75)/(35.00−30.00)×100 = 5.0% LOI.",
+          "sha256": "4eb1bfcfe89eb7b057e2a60173d2818af040221dba49aa119d5b93345828ff38"
+        },
+        {
+          "pointer": "/loiPractice/passChecks/1/decision",
+          "text": "Nur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.",
+          "sha256": "99fa81436787ee0f3bcd43406db9b89642bf17e9831bc40893761522e878ecde"
+        },
+        {
+          "pointer": "/loiPractice/passChecks/2/evidence",
+          "text": "Die lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode LOI beeinflussen können; sie betrachtet 3–6% nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.",
+          "sha256": "7b940a8604e034e0ebce44053648a195b044c83e41d5d2cfc36bc0afb5761d31"
+        },
+        {
+          "pointer": "/loiPractice/passChecks/2/decision",
+          "text": "Bestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von 3–6% seien ungesund, ist falsch.",
+          "sha256": "8f7f0f9ee4c3b5ff89ddeb847610e0041052726069e106999aacca31184b7309"
+        }
+      ],
+      "scientificMeaning": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: (35.00−34.75)/(35.00−30.00)×100 = 5.0% LOI.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode LOI beeinflussen können; sie betrachtet 3–6% nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von 3–6% seien ungesund, ist falsch.",
+      "displayText": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: (35.00−34.75)/(35.00−30.00)×100 = 5.0% LOI.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode LOI beeinflussen können; sie betrachtet 3–6% nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von 3–6% seien ungesund, ist falsch.",
+      "captionText": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: (35.00−34.75)/(35.00−30.00)×100 = 5.0% LOI.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode LOI beeinflussen können; sie betrachtet 3–6% nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von 3–6% seien ungesund, ist falsch.",
+      "spokenText": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: die Differenz fünfunddreißig Komma null null minus vierunddreißig Komma sieben fünf, geteilt durch die Differenz fünfunddreißig Komma null null minus dreißig Komma null null, das Ergebnis mal einhundert gleich fünf Komma null Prozent El O I.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode El O I beeinflussen können; sie betrachtet drei bis sechs Prozent nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von drei bis sechs Prozent seien ungesund, ist falsch.",
+      "spokenTextSHA256": "aea8e1a1ffc2cece8565f007d059b189e723b5419b8e25ac63872f25807fe376",
+      "spokenTextSha256": "aea8e1a1ffc2cece8565f007d059b189e723b5419b8e25ac63872f25807fe376",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: (35.00−34.75)/(35.00−30.00)×100 = 5.0% LOI.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode LOI beeinflussen können; sie betrachtet 3–6% nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von 3–6% seien ungesund, ist falsch.",
+          "spoken": "Die lernende Person ordnet und erklärt den leeren Tiegel, Tiegel mit ofentrockenem Boden, kontrolliertes Glühen, sicheres kontrolliertes Abkühlen und Schlusswägung und benennt das örtliche Verfahren sowie qualifiziertes Personal als Voraussetzung.\n\nBestanden bei richtiger Erklärung und klarer Sicherheitsgrenze; das Beobachten der Vorführung bescheinigt keine Befähigung, den Ofen zu bedienen.\n\nDie lernende Person ermittelt Trockenbodenmasse und Glühverlust unter Abzug der Tiegelmasse und teilt den Verlust durch die Trockenbodenmasse. Im gekennzeichneten Beispiel: die Differenz fünfunddreißig Komma null null minus vierunddreißig Komma sieben fünf, geteilt durch die Differenz fünfunddreißig Komma null null minus dreißig Komma null null, das Ergebnis mal einhundert gleich fünf Komma null Prozent El O I.\n\nNur bestanden mit richtigem Nenner, Rechenweg, Prozentangabe und Kennzeichnung als erfundene Beispieldaten; ein Prozentsatz ohne Verfahren und Massen genügt nicht.\n\nDie lernende Person nennt, dass Restfeuchte, in Tonmineralen gebundenes Wasser oder andere anorganische Massenverluste je nach Boden und Methode El O I beeinflussen können; sie betrachtet drei bis sechs Prozent nur als Unterrichtsbeispiel und fragt nach Standort- und Laborkontext.\n\nBestanden mit mindestens einem richtigen Störfaktor und einer standort- oder verfahrensbezogenen Grenze. Die Aussage, das Ergebnis sei exakt organische Substanz oder alle Böden außerhalb von drei bis sechs Prozent seien ungesund, ist falsch.",
+          "occurrences": 1,
+          "purpose": "Exact source C/D/I identities, grouped arithmetic and decimal/unit/range quantities expanded; full source safety/method/fiction/unknown/qualification retained. Arabic connected acronym and grammar localized, no source/display edits."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f9878d44bfeb5abf7713d6631b17e45bd701ccd211a7cb182f5785279eb94d28",
+      "requestFingerprintSha256": "f9878d44bfeb5abf7713d6631b17e45bd701ccd211a7cb182f5785279eb94d28",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-10-de-record-guidance-r1",
+      "unitId": "S2-10-de-record-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "20e16b797ec1fbf537f301d82f3a403bbdc0f41fd36afff06e6a8f6b543199a7",
+      "sourceBindings": [
+        {
+          "pointer": "/loiPractice/ui/recordHelp",
+          "text": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.",
+          "sha256": "96ee0b875efd85ca6b5edc7f289a7738230bebd3bb42ba62e3ba26bbd8649866"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/0",
+          "text": "Echte Proben- und Tiegelkennung",
+          "sha256": "fd674de5cc536498a3dd531ae86fc12bad0602cb8e8ded19f27510ec11c8a0b6"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/1",
+          "text": "Laborverfahren/SOP und qualifizierte Fachkraft",
+          "sha256": "27ba86ad2b7c71154a045c4f3e84836ff53b540cbdb29d15553a23c226dcaa11"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/2",
+          "text": "Bestätigte Trockenbasis und Waagenkontrollen",
+          "sha256": "e2017b3568729bb7cc9d46cb12461b9eb0ddb23b591058489befa2ab7d3bca29"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/3",
+          "text": "Von Lehrkraft genannte Glüh- und Abkühlbedingungen",
+          "sha256": "9159784823187dc7aed7a4ba9d2b3c0fa737cf5af7d1c5cc4adc071b8529612f"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/4",
+          "text": "Erfasste C-, D- und I-Massen mit Einheit; Unbekanntes bleibt leer",
+          "sha256": "a58186d4966b29fe4b5980ba2c2d496e8fedb8a48e53ff71078d8d9be674e47b"
+        },
+        {
+          "pointer": "/loiPractice/ui/fields/5",
+          "text": "Möglicher anorganischer Verlust und örtliche Deutungshilfe",
+          "sha256": "2a2e4bdb4640da0d042a0322cc5d3d815a9056a2472e705e288b575f3809bfee"
+        },
+        {
+          "pointer": "/loiPractice/ui/saved",
+          "text": "Lokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.",
+          "sha256": "e2d01ad0810b05294c20db0fb827b99ae0ee0f09041648c1e5a96fdd3172dac6"
+        },
+        {
+          "pointer": "/loiPractice/ui/reasonBoundary",
+          "text": "Modell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.",
+          "sha256": "96498c193c05d1a3c946c0e2a582823af1f9d633d6f10d0e743dde37c0d8b4f8"
+        },
+        {
+          "pointer": "/loiPractice/ui/tableWarning",
+          "text": "Nur historisches Lehrbeispiel: <2%, 3–6%, >6%. Lücke 2–3% bleibt; kein einheitlicher Zielwert für alle Böden.",
+          "sha256": "026cff505d92772851fa82424a1e48bc8cdf92b54fbcd96217edf67e1446ae3b"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt LOI-Berechnung",
+          "sha256": "f58cd984253e19199e20258b09315b643cada9c8b4e993d15742e8b46942f4bf"
+        }
+      ],
+      "scientificMeaning": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren/SOP und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste C-, D- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: <2%, 3–6%, >6%. Lücke 2–3% bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt LOI-Berechnung",
+      "displayText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren/SOP und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste C-, D- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: <2%, 3–6%, >6%. Lücke 2–3% bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt LOI-Berechnung",
+      "captionText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren/SOP und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste C-, D- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: <2%, 3–6%, >6%. Lücke 2–3% bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt LOI-Berechnung",
+      "spokenText": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren, Es O Pe und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste Ce-, De- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: kleiner als zwei Prozent, drei bis sechs Prozent, größer als sechs Prozent. Lücke zwei bis drei Prozent bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt El O I-Berechnung",
+      "spokenTextSHA256": "759810cb33a52c16c93d9e60b5e34f3ed11f6b9ab06e6defdcfe15a2eac8e049",
+      "spokenTextSha256": "759810cb33a52c16c93d9e60b5e34f3ed11f6b9ab06e6defdcfe15a2eac8e049",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren/SOP und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste C-, D- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: <2%, 3–6%, >6%. Lücke 2–3% bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt LOI-Berechnung",
+          "spoken": "Nur gekennzeichnete Übungsdaten oder von der Lehrkraft bereitgestellte Beobachtungen. Unbekanntes leer lassen; Text beweist keine Messung.\n\nEchte Proben- und Tiegelkennung\n\nLaborverfahren, Es O Pe und qualifizierte Fachkraft\n\nBestätigte Trockenbasis und Waagenkontrollen\n\nVon Lehrkraft genannte Glüh- und Abkühlbedingungen\n\nErfasste Ce-, De- und I-Massen mit Einheit; Unbekanntes bleibt leer\n\nMöglicher anorganischer Verlust und örtliche Deutungshilfe\n\nLokal gespeichert. Kein praktisches Ergebnis und keine Unterschrift bestätigt.\n\nModell nach dem Versuch: keine semantische Bewertung oder Bescheinigung praktischer Kompetenz.\n\nNur historisches Lehrbeispiel: kleiner als zwei Prozent, drei bis sechs Prozent, größer als sechs Prozent. Lücke zwei bis drei Prozent bleibt; kein einheitlicher Zielwert für alle Böden.\n\nArbeitsblatt El O I-Berechnung",
+          "occurrences": 1,
+          "purpose": "Exact source C/D/I identities, grouped arithmetic and decimal/unit/range quantities expanded; full source safety/method/fiction/unknown/qualification retained. Arabic connected acronym and grammar localized, no source/display edits."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "301dda2d2fb995ac289b25df86ebf6def5c91485ec4c91727ec27390aad77007",
+      "requestFingerprintSha256": "301dda2d2fb995ac289b25df86ebf6def5c91485ec4c91727ec27390aad77007",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
