@@ -1,0 +1,74 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-ar-EG.json",
+    "sha256": "480cc33952b5db53883f3d2e318e9aa8722f60e7e8347f054b742ffd01c12498",
+    "bytes": 30296
+  },
+  "units": [
+    {
+      "id": "S2-01-ar-EG-effective-fallback-repair-r1",
+      "unitId": "S2-01-ar-EG-effective-fallback-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "runtime-s201-ar-effective-fallback-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "480cc33952b5db53883f3d2e318e9aa8722f60e7e8347f054b742ffd01c12498",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/fallback",
+          "text": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+          "sha256": "025ec1f1516062938fd040a93f1fb471a1d8b8c4dc1825031dbba6ee2020c60c"
+        }
+      ],
+      "scientificMeaning": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+      "displayText": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+      "captionText": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+      "spokenText": "استخدم أزرار الصيغ وخانات المطابقة.",
+      "spokenTextSHA256": "a8865c8a04e157d95e300e192cc127a7139a84f765eca506abedd0f7799b736d",
+      "spokenTextSha256": "a8865c8a04e157d95e300e192cc127a7139a84f765eca506abedd0f7799b736d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+          "spoken": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+          "spoken": "استخدم أزرار الصيغ وخانات المطابقة.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "8196c7ba0fd4d54a73709d09bc39ff63238cef4063d7af5bedba6160fd43d198",
+      "requestFingerprintSha256": "8196c7ba0fd4d54a73709d09bc39ff63238cef4063d7af5bedba6160fd43d198",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/fallback",
+        "original": "عرض 3D مش متاح؛ استخدم أزرار الصيغ وخانات المطابقة البديلة.",
+        "effective": "استخدم أزرار الصيغ وخانات المطابقة.",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
