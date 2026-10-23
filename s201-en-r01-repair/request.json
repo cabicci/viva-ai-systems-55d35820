@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S201_EN_R01_REPAIR_ONE_APPROVED_SENTENCE_ONLY",
+  "stepId": "S2-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s201-en-r01-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-01-en-R01-sentence-repair-r1",
+      "unitId": "S2-01-en-R01-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s201-en-r01-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+          "sha256": "edf95578931a8ff1efc29b25984e4251286c075956c0ec219bcb5797b73a5ec5"
+        }
+      ],
+      "scientificMeaning": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "displayText": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "captionText": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "spokenText": "Carbon is C, hydrogen is H, and oxygen is O. Together they make up much of a plant's mass and come chiefly from air and water.",
+      "spokenTextSHA256": "d7006b34f0f29d086fdcd8a98e5667214d70d1dbc7e321cc6eda653c57d4705f",
+      "spokenTextSha256": "d7006b34f0f29d086fdcd8a98e5667214d70d1dbc7e321cc6eda653c57d4705f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+          "spoken": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+          "spoken": "Carbon is C, hydrogen is H, and oxygen is O. Together they make up much of a plant's mass and come chiefly from air and water.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_COOLER_CANNOT_PROVE_FOUR_C_AND_NO_FREEZING"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "abd15486476d8cad1571a3133f037e8415b29688ad24b1c7fc9aeebbbadfdbd8",
+      "requestFingerprintSha256": "abd15486476d8cad1571a3133f037e8415b29688ad24b1c7fc9aeebbbadfdbd8",
+      "sourcePlanSha256": "1b4615008feb985cbce10354ac3f01f301d3492d6de09c61e0301feac6f032ab",
+      "exactSentenceBefore": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-01-en-R01-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

@@ -1,0 +1,67 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-en.json",
+    "sha256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+    "bytes": 23519
+  },
+  "scope": "One approved26word source-equivalent cooler-proof/no-freezing sentence; exact originalprefix/suffix remain, measuredquietcuts37.49–45.25, no automaticjoin.",
+  "units": [
+    {
+      "id": "S2-01-en-R01-sentence-repair-r1",
+      "unitId": "S2-01-en-R01-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s201-en-r01-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b0719bc25b96a03f1de3179ec74885e7dc7fea4077cf97fcd0c71071d592559c",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+          "sha256": "edf95578931a8ff1efc29b25984e4251286c075956c0ec219bcb5797b73a5ec5"
+        }
+      ],
+      "scientificMeaning": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "displayText": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "captionText": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+      "spokenText": "Carbon is C, hydrogen is H, and oxygen is O. Together they make up much of a plant's mass and come chiefly from air and water.",
+      "spokenTextSHA256": "d7006b34f0f29d086fdcd8a98e5667214d70d1dbc7e321cc6eda653c57d4705f",
+      "spokenTextSha256": "d7006b34f0f29d086fdcd8a98e5667214d70d1dbc7e321cc6eda653c57d4705f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A plant needs 17 essential elements to complete its life cycle. Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water. The other essential elements are obtained mainly as mineral nutrients through the growing medium. None of the essentials can simply be ignored because another is plentiful.",
+          "spoken": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+          "spoken": "Carbon is C, hydrogen is H, and oxygen is O. Together they make up much of a plant's mass and come chiefly from air and water.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_COOLER_CANNOT_PROVE_FOUR_C_AND_NO_FREEZING"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "abd15486476d8cad1571a3133f037e8415b29688ad24b1c7fc9aeebbbadfdbd8",
+      "requestFingerprintSha256": "abd15486476d8cad1571a3133f037e8415b29688ad24b1c7fc9aeebbbadfdbd8",
+      "sourcePlanSha256": "cd1bccd373a99fabf5e611e929b163320ed21bffda07c6b768fddb296b95cb9c",
+      "exactSentenceBefore": "Carbon (C), hydrogen (H) and oxygen (O) make up much of its mass and come chiefly from air and water.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}
