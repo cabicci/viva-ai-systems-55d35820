@@ -1,0 +1,67 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-09-it.json",
+    "sha256": "b147a6dcf37766ba5c2c6d49b515280908eefe5e94e37f3af054825e08018b04",
+    "bytes": 20609
+  },
+  "scope": "One approved14word sentence; original37.04seconds suffix after4.68s retained, no automaticjoin.",
+  "units": [
+    {
+      "id": "S1-09-it-opening-sentence-repair-r1",
+      "unitId": "S1-09-it-opening-sentence-repair-r1",
+      "locale": "it",
+      "semanticGroup": "texture-result-first-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b147a6dcf37766ba5c2c6d49b515280908eefe5e94e37f3af054825e08018b04",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Il risultato tessiturale aiuta a porre domande migliori su una coltura. Prima di consigliarla, uniscilo alle prove su drenaggio, acqua, nutrienti e condizioni locali di crescita.",
+          "sha256": "b3b4b657571b01487968686b00c34e84e7b89122cefc0346a4b51dd35d042ca7"
+        }
+      ],
+      "scientificMeaning": "Il risultato tessiturale aiuta a porre domande migliori su una coltura. Prima di consigliarla, uniscilo alle prove su drenaggio, acqua, nutrienti e condizioni locali di crescita.",
+      "displayText": "Il risultato tessiturale aiuta a porre domande migliori su una coltura. Prima di consigliarla, uniscilo alle prove su drenaggio, acqua, nutrienti e condizioni locali di crescita.",
+      "captionText": "Il risultato tessiturale aiuta a porre domande migliori su una coltura. Prima di consigliarla, uniscilo alle prove su drenaggio, acqua, nutrienti e condizioni locali di crescita.",
+      "spokenText": "Il risultato del test di tessitura aiuta a porre domande migliori su una coltura.",
+      "spokenTextSHA256": "c403491423fce9c20af7e6006b57b2e19d8ff31f22b08855b491c628ede87236",
+      "spokenTextSha256": "c403491423fce9c20af7e6006b57b2e19d8ff31f22b08855b491c628ede87236",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il risultato tessiturale aiuta a porre domande migliori su una coltura. Prima di consigliarla, uniscilo alle prove su drenaggio, acqua, nutrienti e condizioni locali di crescita.",
+          "spoken": "Il risultato tessiturale aiuta a porre domande migliori su una coltura.",
+          "occurrences": 1,
+          "purpose": "EXACT_FIRST_COMPLETE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Il risultato tessiturale aiuta a porre domande migliori su una coltura.",
+          "spoken": "Il risultato del test di tessitura aiuta a porre domande migliori su una coltura.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_PLAIN_TEXTURE_TEST_RESULT_PHRASE_RETAINS_MASCULINE_RESULT_AND_UNISCILO"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "a80d8da110bfa34143bd3cc585bb35180b76c51f06615f5181741a5452bdd488",
+      "requestFingerprintSha256": "a80d8da110bfa34143bd3cc585bb35180b76c51f06615f5181741a5452bdd488",
+      "sourcePlanSha256": "cd1bccd373a99fabf5e611e929b163320ed21bffda07c6b768fddb296b95cb9c",
+      "exactSentenceBefore": "Il risultato tessiturale aiuta a porre domande migliori su una coltura.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+One approved14wordItaliantexture-test-result firstsentence only; masculine result keeps following uniscilo agreement.1TTS1blind1ASR2GET0retry, exactoriginalKore/delivery. Preservealloriginalsuffix/current source/display; no automaticjoin/postjoin.
