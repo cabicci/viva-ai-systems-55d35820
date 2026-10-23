@@ -1,0 +1,73 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-de.json",
+    "sha256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+    "bytes": 46487
+  },
+  "units": [
+    {
+      "id": "S2-15-de-R04-illustrative-bands-repair-r1",
+      "unitId": "S2-15-de-R04-illustrative-bands-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair13-s215-de-r04-illustrative-bands-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Die Lehrtabelle zeigt pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm. Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm. Bewahre diese Angaben als Lehrbeispiel: Eine andere Tabelle widerspricht und die Labormethode fehlt. Jede reale Ergebniszeile braucht Parameter, Wert, Einheit, Quelle/Methode, anwendbare Referenz und Bewertung; ohne Grundlage „ungeklärt“. Einheiten wie mg/L, µg/L und mg/kg benennen allein keinen gemessenen Stoff. Übernimm Zeilen ohne benannten Stoff nicht als Bodennährstoffergebnisse.",
+          "sha256": "f3cfcd6f2a31601da5e81ba4529a0338547169c2a15a779af4971fd8d3bfb8cc"
+        }
+      ],
+      "scientificMeaning": "Die Lehrtabelle zeigt pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm. Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm. Bewahre diese Angaben als Lehrbeispiel: Eine andere Tabelle widerspricht und die Labormethode fehlt. Jede reale Ergebniszeile braucht Parameter, Wert, Einheit, Quelle/Methode, anwendbare Referenz und Bewertung; ohne Grundlage „ungeklärt“. Einheiten wie mg/L, µg/L und mg/kg benennen allein keinen gemessenen Stoff. Übernimm Zeilen ohne benannten Stoff nicht als Bodennährstoffergebnisse.",
+      "displayText": "Die Lehrtabelle zeigt pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm. Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm. Bewahre diese Angaben als Lehrbeispiel: Eine andere Tabelle widerspricht und die Labormethode fehlt. Jede reale Ergebniszeile braucht Parameter, Wert, Einheit, Quelle/Methode, anwendbare Referenz und Bewertung; ohne Grundlage „ungeklärt“. Einheiten wie mg/L, µg/L und mg/kg benennen allein keinen gemessenen Stoff. Übernimm Zeilen ohne benannten Stoff nicht als Bodennährstoffergebnisse.",
+      "captionText": "Die Lehrtabelle zeigt pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm. Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm. Bewahre diese Angaben als Lehrbeispiel: Eine andere Tabelle widerspricht und die Labormethode fehlt. Jede reale Ergebniszeile braucht Parameter, Wert, Einheit, Quelle/Methode, anwendbare Referenz und Bewertung; ohne Grundlage „ungeklärt“. Einheiten wie mg/L, µg/L und mg/kg benennen allein keinen gemessenen Stoff. Übernimm Zeilen ohne benannten Stoff nicht als Bodennährstoffergebnisse.",
+      "spokenText": "Die beispielhaften Bereiche sind: ein pH-Wert von sechs Komma null bis sieben Komma null; organische Substanz von drei Komma null bis fünf Komma null Prozent; Stickstoff optimal; dreißig bis fünfzig Teile pro Million bei Phosphor und einhundertfünfzig bis zweihundertfünfzig Teile pro Million bei Kalium.",
+      "spokenTextSHA256": "b21b972886a72ef791ec9212b1fbb1b199ace5071a52e043a29424f21383a081",
+      "spokenTextSha256": "b21b972886a72ef791ec9212b1fbb1b199ace5071a52e043a29424f21383a081",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Lehrtabelle zeigt pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm. Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm. Bewahre diese Angaben als Lehrbeispiel: Eine andere Tabelle widerspricht und die Labormethode fehlt. Jede reale Ergebniszeile braucht Parameter, Wert, Einheit, Quelle/Methode, anwendbare Referenz und Bewertung; ohne Grundlage „ungeklärt“. Einheiten wie mg/L, µg/L und mg/kg benennen allein keinen gemessenen Stoff. Übernimm Zeilen ohne benannten Stoff nicht als Bodennährstoffergebnisse.",
+          "spoken": "Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm.",
+          "spoken": "Die beispielhaften Bereiche sind: ein pH-Wert von sechs Komma null bis sieben Komma null; organische Substanz von drei Komma null bis fünf Komma null Prozent; Stickstoff optimal; dreißig bis fünfzig Teile pro Million bei Phosphor und einhundertfünfzig bis zweihundertfünfzig Teile pro Million bei Kalium.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "ebfc72fb71aeec9efee26d175687729526ee604b7169bcc9eadbfb48aca6de32",
+      "requestFingerprintSha256": "ebfc72fb71aeec9efee26d175687729526ee604b7169bcc9eadbfb48aca6de32",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Ihre Beispielbereiche sind pH 6.0–7.0, organische Substanz 3.0–5.0%, N „Optimal“, P 30–50 ppm, K 150–250 ppm.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
