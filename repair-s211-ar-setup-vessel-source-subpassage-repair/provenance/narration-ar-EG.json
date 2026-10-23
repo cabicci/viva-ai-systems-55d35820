@@ -1,0 +1,75 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-11-ar-EG.json",
+    "sha256": "cf805d864719506b1f21f828b1997b232456418e51f34a9c60a383db0a4c8320",
+    "bytes": 52275
+  },
+  "units": [
+    {
+      "id": "S2-11-ar-EG-setup-vessel-source-subpassage-repair-r1",
+      "unitId": "S2-11-ar-EG-setup-vessel-source-subpassage-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s211-ar-setup-vessel-source-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cf805d864719506b1f21f828b1997b232456418e51f34a9c60a383db0a4c8320",
+      "sourceBindings": [
+        {
+          "pointer": "/jarPractice/practical/0/conditions",
+          "text": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "sha256": "51aa5e5a69eb49d26dd61b99bba4ab7bcec7e45df6c506d5b9eaeb46e55cc1c4"
+        }
+      ],
+      "scientificMeaning": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "displayText": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "captionText": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "spokenText": "تفاصيل الوعاء والصابون في بطاقة المصدر مجرد سيناريو تعليمي محدد.",
+      "spokenTextSHA256": "a8f47f3765f67bc3b19827a43e0c5072f1ab80ab49d213025dacb2a60176552c",
+      "spokenTextSha256": "a8f47f3765f67bc3b19827a43e0c5072f1ab80ab49d213025dacb2a60176552c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "spoken": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "spoken": "تفاصيل الوعاء والصابون في بطاقة المصدر مجرد سيناريو تعليمي محدد.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "18919dd4b1cffc60d40c6b2bb9a95c19b1742ad2cd91a2b15568154b9d815d5a",
+      "requestFingerprintSha256": "18919dd4b1cffc60d40c6b2bb9a95c19b1742ad2cd91a2b15568154b9d815d5a",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/jarPractice/practical/0/conditions",
+        "original": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+        "effective": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s211-ar-setup-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "a9e0fcd53fc811c1d2019be2ea4cf0dd576c22aeb44da198409537253eba21e1"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}

@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S211_AR_SETUP_VESSEL_SOURCE_SUBPASSAGE_REPAIR",
+  "stepId": "S2-11",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s211-ar-setup-vessel-source-subpassage-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-11-ar-EG-setup-vessel-source-subpassage-repair-r1",
+      "unitId": "S2-11-ar-EG-setup-vessel-source-subpassage-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s211-ar-setup-vessel-source-subpassage-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cf805d864719506b1f21f828b1997b232456418e51f34a9c60a383db0a4c8320",
+      "sourceBindings": [
+        {
+          "pointer": "/jarPractice/practical/0/conditions",
+          "text": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "sha256": "51aa5e5a69eb49d26dd61b99bba4ab7bcec7e45df6c506d5b9eaeb46e55cc1c4"
+        }
+      ],
+      "scientificMeaning": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "displayText": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "captionText": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "spokenText": "تفاصيل الوعاء والصابون في بطاقة المصدر مجرد سيناريو تعليمي محدد.",
+      "spokenTextSHA256": "a8f47f3765f67bc3b19827a43e0c5072f1ab80ab49d213025dacb2a60176552c",
+      "spokenTextSha256": "a8f47f3765f67bc3b19827a43e0c5072f1ab80ab49d213025dacb2a60176552c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "spoken": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+          "spoken": "تفاصيل الوعاء والصابون في بطاقة المصدر مجرد سيناريو تعليمي محدد.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S210_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "18919dd4b1cffc60d40c6b2bb9a95c19b1742ad2cd91a2b15568154b9d815d5a",
+      "requestFingerprintSha256": "18919dd4b1cffc60d40c6b2bb9a95c19b1742ad2cd91a2b15568154b9d815d5a",
+      "sourcePlanSha256": "e96449168573dda709fd4fb5a507cbb1a26376c17704971ec6e23e01c0041a5b",
+      "exactSentenceBefore": "كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/jarPractice/practical/0/conditions",
+        "original": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+        "effective": "المدرّب يعلن الوعاء الفعلي والمنتج المُفكك وكميته وملء التربة والميه المقاس وطريقة الرجّ الآمنة والجدول قبل الملاحظة. كميات الزجاج والصابون في بطاقة المصدر مجرد سيناريو معرّف.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s211-ar-setup-two-subpassage-root-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "a9e0fcd53fc811c1d2019be2ea4cf0dd576c22aeb44da198409537253eba21e1"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-11-ar-EG-setup-vessel-source-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
