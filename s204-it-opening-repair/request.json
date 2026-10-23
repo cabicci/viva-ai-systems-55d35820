@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S204_IT_OPENING_REPAIR_ONE_SELECTED_SENTENCE",
+  "stepId": "S2-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s204-it-opening-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_IT_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-04-it-opening-sentence-repair-r1",
+      "unitId": "S2-04-it-opening-sentence-repair-r1",
+      "locale": "it",
+      "semanticGroup": "s204-it-opening-repair-sentence",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+      "sourceBindings": [
+        {
+          "pointer": "/goals/1",
+          "text": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "sha256": "e80fadcb68d6bf68643e08f056fceb45e9fa9979a8f8f87de4ece2b26cfb961d"
+        }
+      ],
+      "scientificMeaning": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "displayText": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "captionText": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "spokenText": "Leggere una figura qualitativa scientificamente corretta vicino a pH cinque, vicino all’intervallo da sei a sette, e vicino a pH otto; spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "spokenTextSHA256": "89e75b5e6c3f1e66aff16d03e7026f1b047c2f092e31834cd125a20a155798f1",
+      "spokenTextSha256": "89e75b5e6c3f1e66aff16d03e7026f1b047c2f092e31834cd125a20a155798f1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "spoken": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "spoken": "Leggere una figura qualitativa scientificamente corretta vicino a pH cinque, vicino all’intervallo da sei a sette, e vicino a pH otto; spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_NUMERIC_DIRECTION_AND_CHEMICAL_IDENTITY_SENTENCE"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "667e63fec0defcc905b2c25c297e43a5bd29a2a8e5f37b52c49bd41601a03f5f",
+      "requestFingerprintSha256": "667e63fec0defcc905b2c25c297e43a5bd29a2a8e5f37b52c49bd41601a03f5f",
+      "sourcePlanSha256": "e4b22465b1811d0104a50ac5eeea5ddf2fd1c1d02cec7f4c1b1b16bc709a43b6",
+      "exactSentenceBefore": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-04-it-opening-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

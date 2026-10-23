@@ -1,0 +1,66 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-it.json",
+    "sha256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+    "bytes": 25888
+  },
+  "units": [
+    {
+      "id": "S2-04-it-opening-sentence-repair-r1",
+      "unitId": "S2-04-it-opening-sentence-repair-r1",
+      "locale": "it",
+      "semanticGroup": "s204-it-opening-repair-sentence",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+      "sourceBindings": [
+        {
+          "pointer": "/goals/1",
+          "text": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "sha256": "e80fadcb68d6bf68643e08f056fceb45e9fa9979a8f8f87de4ece2b26cfb961d"
+        }
+      ],
+      "scientificMeaning": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "displayText": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "captionText": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "spokenText": "Leggere una figura qualitativa scientificamente corretta vicino a pH cinque, vicino all’intervallo da sei a sette, e vicino a pH otto; spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "spokenTextSHA256": "89e75b5e6c3f1e66aff16d03e7026f1b047c2f092e31834cd125a20a155798f1",
+      "spokenTextSha256": "89e75b5e6c3f1e66aff16d03e7026f1b047c2f092e31834cd125a20a155798f1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "spoken": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "spoken": "Leggere una figura qualitativa scientificamente corretta vicino a pH cinque, vicino all’intervallo da sei a sette, e vicino a pH otto; spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_NUMERIC_DIRECTION_AND_CHEMICAL_IDENTITY_SENTENCE"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "667e63fec0defcc905b2c25c297e43a5bd29a2a8e5f37b52c49bd41601a03f5f",
+      "requestFingerprintSha256": "667e63fec0defcc905b2c25c297e43a5bd29a2a8e5f37b52c49bd41601a03f5f",
+      "sourcePlanSha256": "ff43d4219a45e85a0ba936f93f55f63832936b4947a8de3ed05dfd7536c13730",
+      "exactSentenceBefore": "Leggere una figura qualitativa scientificamente corretta vicino a pH 5, 6–7 e 8 e spiegare almeno due possibili effetti degli elementi sia nel lato acido sia in quello alcalino, senza certezza indebita.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}
