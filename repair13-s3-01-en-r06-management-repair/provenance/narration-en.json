@@ -1,0 +1,73 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-01-en.json",
+    "sha256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+    "bytes": 31414
+  },
+  "units": [
+    {
+      "id": "S3-01-en-R06-management-repair-r1",
+      "unitId": "S3-01-en-R06-management-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair13-s3-01-en-r06-management-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "27fd433a4fdd956db6d780e7dec42bcde88c92916e77cc59e24caeec32612605",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+          "sha256": "bd49ab9dff238f139090720b982e25c97835428d1dc85e63d68edb5cc423677f"
+        }
+      ],
+      "scientificMeaning": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+      "displayText": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+      "captionText": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+      "spokenText": "Nutritional traits and management differ from one crop to another.",
+      "spokenTextSHA256": "e59b31a1145f7cc84e89351390a6858ee3be2bc839b1d72a5a83baede31bad53",
+      "spokenTextSha256": "e59b31a1145f7cc84e89351390a6858ee3be2bc839b1d72a5a83baede31bad53",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Many fruit crops are valued for sweetness, vitamins and antioxidants. Nutritional and management characteristics vary by crop.",
+          "spoken": "Nutritional and management characteristics vary by crop.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Nutritional and management characteristics vary by crop.",
+          "spoken": "Nutritional traits and management differ from one crop to another.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "58463c32b87b937e660a5434eba0e590f3d0fc2d245a1757200d8eb94b49813c",
+      "requestFingerprintSha256": "58463c32b87b937e660a5434eba0e590f3d0fc2d245a1757200d8eb94b49813c",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Nutritional and management characteristics vary by crop.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
