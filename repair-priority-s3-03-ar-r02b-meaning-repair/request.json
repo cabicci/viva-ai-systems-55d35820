@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_PRIORITY_S3_03_AR_R02B_MEANING_REPAIR",
+  "stepId": "S3-03",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-priority-s3-03-ar-r02b-meaning-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-03-ar-EG-R02b-meaning-repair-r1",
+      "unitId": "S3-03-ar-EG-R02b-meaning-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-priority-s3-03-ar-r02b-meaning-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "c4a4017cfafa4b2c4ca01e44fdf30132e1404460672d080e24116290e350e844",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/3",
+          "text": "ما تساويش كل النيتروجين اللي فول الصويا ثبّته بكمية السماد اللي الذرة بعده ممكن تستغنى عنها. الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده. تقدير الرصيد لازم بطريقة مناسبة للمكان، مش رقم ثابت من اسم المحصول.",
+          "sha256": "7648643c09176136ef01cc0b9186e08457a052c9b00b33b9db8414d6d87cc4ed"
+        }
+      ],
+      "scientificMeaning": "ما تساويش كل النيتروجين اللي فول الصويا ثبّته بكمية السماد اللي الذرة بعده ممكن تستغنى عنها. الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده. تقدير الرصيد لازم بطريقة مناسبة للمكان، مش رقم ثابت من اسم المحصول.",
+      "displayText": "ما تساويش كل النيتروجين اللي فول الصويا ثبّته بكمية السماد اللي الذرة بعده ممكن تستغنى عنها. الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده. تقدير الرصيد لازم بطريقة مناسبة للمكان، مش رقم ثابت من اسم المحصول.",
+      "captionText": "ما تساويش كل النيتروجين اللي فول الصويا ثبّته بكمية السماد اللي الذرة بعده ممكن تستغنى عنها. الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده. تقدير الرصيد لازم بطريقة مناسبة للمكان، مش رقم ثابت من اسم المحصول.",
+      "spokenText": "الحبوب اللي بنحصدها بتاخد معاها نيتروجين. وتركيب البقايا وطريقة إدارتها ليهم تأثير على النيتروجين المتاح للمحصول اللي بعده.",
+      "spokenTextSHA256": "3469c0d41d075e001941fb3229fbf7cae6e59f8b17faab33163f859ad14c2213",
+      "spokenTextSha256": "3469c0d41d075e001941fb3229fbf7cae6e59f8b17faab33163f859ad14c2213",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ما تساويش كل النيتروجين اللي فول الصويا ثبّته بكمية السماد اللي الذرة بعده ممكن تستغنى عنها. الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده. تقدير الرصيد لازم بطريقة مناسبة للمكان، مش رقم ثابت من اسم المحصول.",
+          "spoken": "الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده.",
+          "spoken": "الحبوب اللي بنحصدها بتاخد معاها نيتروجين. وتركيب البقايا وطريقة إدارتها ليهم تأثير على النيتروجين المتاح للمحصول اللي بعده.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "60ef2be42821c05dda67dbef7ecc3f88a42457db41f9753792915ade451241cd",
+      "requestFingerprintSha256": "60ef2be42821c05dda67dbef7ecc3f88a42457db41f9753792915ade451241cd",
+      "sourcePlanSha256": "c0002a7742f2ecfcd937ee0be4d0f37de86f1e31140cefc8c378cf9144766a80",
+      "exactSentenceBefore": "الحبوب المحصودة بتخرج نيتروجين، وتركيب البقايا وإدارتها بيأثروا على المتاح للمحصول اللي بعده.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\five-meaning-priority-repairs-root-authority-r1.json",
+        "authoritySHA256": "f720d03b66fba9da2c37a833d87476dd4c4084ba6228817e29e60d09e798ea91"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-03-ar-EG-R02b-meaning-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
