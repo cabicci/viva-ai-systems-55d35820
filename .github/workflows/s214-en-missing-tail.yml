@@ -1,0 +1,211 @@
+name: One selected effective course phrase S2-14 en
+'on':
+  push:
+    branches:
+    - work/soil-s214-en-missing-tail-20261023-r1
+    paths:
+    - s214-en-missing-tail/request.json
+permissions:
+  contents: read
+concurrency:
+  group: s214-en-missing-tail-fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674
+  cancel-in-progress: false
+env:
+  PACKAGE: s214-en-missing-tail
+  REQUEST_SHA: fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674
+  WORKER_SHA: 49d902ca573984a36404bf3277f7ba39d93df2bdbcc6e7367ac86bebeccf61a0
+  FREEZE_SHA: f1e15fe5904bb9079e2ebae8f41ff00617b5efc5ed87d2663276f73c0e5f776a
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_ar:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository
+      == 'cabicci/viva-ai-systems-55d35820' && github.ref == 'refs/heads/work/soil-s214-en-missing-tail-20261023-r1'
+      && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+      && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: en
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json
+        wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S2-14-en-missing-knowledge-tail-repair-r1
+      id: tts1
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome
+        == 'success' && steps.runtime.outcome == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S2-14-en-missing-knowledge-tail-repair-r1
+
+        '
+    - name: Upload full immutable audio once S2-14-en-missing-knowledge-tail-repair-r1
+      id: upload1
+      if: always() && steps.tts1.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s214-en-missing-tail-r1-S2-14-en-missing-knowledge-tail-repair-r1-audio
+        path: ${{ env.PACKAGE }}/output/S2-14-en-missing-knowledge-tail-repair-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S2-14-en-missing-knowledge-tail-repair-r1
+      id: receipt1
+      if: always() && steps.upload1.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload1.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload1.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S2-14-en-missing-knowledge-tail-repair-r1
+        --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S2-14-en-missing-knowledge-tail-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S2-14-en-missing-knowledge-tail-repair-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S2-14-en-missing-knowledge-tail-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S2-14-en-missing-knowledge-tail-repair-r1
+
+        '
+    - name: compare S2-14-en-missing-knowledge-tail-repair-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome ==
+        'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S2-14-en-missing-knowledge-tail-repair-r1
+
+        '
+    - name: Stage thin diagnostics S2-14-en-missing-knowledge-tail-repair-r1
+      id: stage1
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S2-14-en-missing-knowledge-tail-repair-r1
+
+        '
+    - name: Preserve thin diagnostics S2-14-en-missing-knowledge-tail-repair-r1
+      if: always() && steps.stage1.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s214-en-missing-tail-r1-S2-14-en-missing-knowledge-tail-repair-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S2-14-en-missing-knowledge-tail-repair-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s214-en-missing-tail-r1-en-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/s214-en-missing-tail.yml'

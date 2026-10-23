@@ -1,0 +1,34 @@
+{
+  "sourceWorkerSHA256": "bac8b28d5eda37a46aa5df27e1697d923c532d5ab8902d16e72d985f936c15a9",
+  "unchangedOperationalMethod": "Reviewed single phrase finite engine; only exact unit/step/locale/lane/source extraction/effective wording and truthful description changed",
+  "effectiveSourceCorrection": {
+    "pointer": "/reportPractice/passChecks/1/evidence",
+    "original": "Treats source ranges as illustrative, spots OM 2.1% in the 2–3% gap and P/K gaps, and conditions pH/P/K interpretations on test method, crop and regional laboratory calibration; does not assign a final class to an unsupported value.",
+    "effective": "Treats source ranges as illustrative, spots OM 2.1% in the 2–3% gap and P/K gaps, and conditions pH/P/K interpretations on test method, crop and regional laboratory calibration; does not assign a final class to an unsupported value.",
+    "allExactSourceBindings": [
+      {
+        "pointer": "/reportPractice/passChecks/1/evidence",
+        "text": "Treats source ranges as illustrative, spots OM 2.1% in the 2–3% gap and P/K gaps, and conditions pH/P/K interpretations on test method, crop and regional laboratory calibration; does not assign a final class to an unsupported value.",
+        "sha256": "9d474293c398804873301955f6a07f8660c2620480cbccefdf6abdce30279200"
+      },
+      {
+        "pointer": "/reportPractice/passChecks/1/decision",
+        "text": "Pass when each class is tied to a suitable stated reference or marked unresolved. Repeating the model's unsupported OM label is insufficient.",
+        "sha256": "d489b47d860c45be12e1f33d02d4b040cdc7f8ce6968b013d150fa79ea66a37e"
+      },
+      {
+        "pointer": "/reportPractice/passChecks/2/evidence",
+        "text": "For the actual or distinctly supplied tomato case, proposes two feasible next actions with rationale, a defensible priority, and missing data such as lime requirement, P extraction, amendment analysis, site/crop plan and nutrient credits; gives no guessed lime or fertilizer rate.",
+        "sha256": "4d377d5e6eabe6535ea748402ee81da8fa7a62f3124d81cee5d52ac96a476137"
+      },
+      {
+        "pointer": "/reportPractice/passChecks/2/decision",
+        "text": "Pass when action and priority follow the case evidence and limits; fixed 2–3-inch compost, fertilizer or lime rates without a site-specific basis require review and retry.",
+        "sha256": "7647cf04d7c2e86fa65c3e7fb349c5eeed633c9401abfaea985111aad1ae2d00"
+      }
+    ],
+    "spokenOnly": true,
+    "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-final-four-distinct-root-repairs-r1.json",
+    "rootSelectedAuthoritySHA256": "697c101833c9b3dfe94caac2a21dfa110032bee715dd5a79aee374002d76ac39"
+  }
+}
