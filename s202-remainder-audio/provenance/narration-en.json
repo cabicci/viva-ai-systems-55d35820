@@ -1,0 +1,676 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-02-en.json",
+    "sha256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+    "bytes": 24960
+  },
+  "units": [
+    {
+      "id": "S2-02-en-opening-r1",
+      "unitId": "S2-02-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.",
+          "sha256": "3858706c111846003978cce302afe91af8badaf4509cd9224e7899a90284994a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Explain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.",
+          "sha256": "3683eb6d50765b4d32e2160490a9b21b63a8ab5391afaedfdf4b58ca243bfe8e"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Distinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.",
+          "sha256": "5927e0040417c179c9ecfc30ae88884ed12cc7952a7a1ef5ab13bb889ec92f00"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Predict how water, root growth, soil structure or pH can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+          "sha256": "c1646d7670d50111de2f4c54da71bd603d4e2fe89ba8c6cf123150c69860b3ef"
+        }
+      ],
+      "scientificMeaning": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or pH can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+      "displayText": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or pH can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+      "captionText": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or pH can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+      "spokenText": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or P H can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+      "spokenTextSHA256": "f903a4892e9af11c33b2d68b2cdef3f48849cd47b738530d635117b5db9d0d46",
+      "spokenTextSha256": "f903a4892e9af11c33b2d68b2cdef3f48849cd47b738530d635117b5db9d0d46",
+      "spokenAdaptationChanges": [
+        {
+          "written": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or pH can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+          "spoken": "An old maize leaf falls onto the soil. How could some of its nitrogen eventually reach a new maize root? Follow the nutrient through a living soil, then distinguish that journey from movement between leaves inside the plant.\n\nExplain mass flow, diffusion and root interception, identify the direction of each on an accurate root diagram, and give a qualified example for each.\n\nDistinguish movement toward the root in soil from redistribution within the plant, and explain why mobile N, P and K deficiencies often appear first on older leaves.\n\nPredict how water, root growth, soil structure or P H can affect availability without treating all nutrients as moving by the same route or roots as swallowing soil.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous chemical notation expansion, preserves every atom count/charge and scientific role; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e7b5e2f020312ffb496d71b2a5851a316a7abb1f5eac2f7d0b51f02b5b143809",
+      "requestFingerprintSha256": "e7b5e2f020312ffb496d71b2a5851a316a7abb1f5eac2f7d0b51f02b5b143809",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-E01-r1",
+      "unitId": "S2-02-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Old maize leaves are returned to the field. A new maize plant begins to grow after the residues start decomposing.",
+          "sha256": "1057330f228bce52eab9b5c9ae9252c1d2fff2f349b83c567af590f689443970"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Microbes break down some organic material and may mineralize N; other microbes may temporarily immobilize it.",
+          "sha256": "39601eb02d9ae5e344edbfca41e91f60b566824f518e9dff138e8cdd16c82490"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Usable N ions, including nitrate, can enter soil water. Water movement can carry nitrate toward roots by mass flow.",
+          "sha256": "e2ddd1758eceddc6415b7ab24e5e5ecfcfcdd4b175633fb141fbd30efa683da0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "The root absorbs suitable ions from the solution; neither the whole leaf nor soil particles are swallowed.",
+          "sha256": "2144a99504ca556ceb30e4788cae10b8ae5390d86014c26f1a09b329aa55af07"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Nutrient cycling, travel to the root and membrane uptake are related but different stages.",
+          "sha256": "0f4f667c1d94835659da842c65c76f1cf444b6de79bbbf9a1b73d203f9c5b5d0"
+        }
+      ],
+      "scientificMeaning": "Old maize leaves are returned to the field. A new maize plant begins to grow after the residues start decomposing.\n\nMicrobes break down some organic material and may mineralize N; other microbes may temporarily immobilize it.\n\nUsable N ions, including nitrate, can enter soil water. Water movement can carry nitrate toward roots by mass flow.\n\nThe root absorbs suitable ions from the solution; neither the whole leaf nor soil particles are swallowed.\n\nNutrient cycling, travel to the root and membrane uptake are related but different stages.",
+      "displayText": "Old maize leaves are returned to the field. A new maize plant begins to grow after the residues start decomposing.\n\nMicrobes break down some organic material and may mineralize N; other microbes may temporarily immobilize it.\n\nUsable N ions, including nitrate, can enter soil water. Water movement can carry nitrate toward roots by mass flow.\n\nThe root absorbs suitable ions from the solution; neither the whole leaf nor soil particles are swallowed.\n\nNutrient cycling, travel to the root and membrane uptake are related but different stages.",
+      "captionText": "Old maize leaves are returned to the field. A new maize plant begins to grow after the residues start decomposing.\n\nMicrobes break down some organic material and may mineralize N; other microbes may temporarily immobilize it.\n\nUsable N ions, including nitrate, can enter soil water. Water movement can carry nitrate toward roots by mass flow.\n\nThe root absorbs suitable ions from the solution; neither the whole leaf nor soil particles are swallowed.\n\nNutrient cycling, travel to the root and membrane uptake are related but different stages.",
+      "spokenText": "Old maize leaves are returned to the field. A new maize plant begins to grow after the residues start decomposing.\n\nMicrobes break down some organic material and may mineralize N; other microbes may temporarily immobilize it.\n\nUsable N ions, including nitrate, can enter soil water. Water movement can carry nitrate toward roots by mass flow.\n\nThe root absorbs suitable ions from the solution; neither the whole leaf nor soil particles are swallowed.\n\nNutrient cycling, travel to the root and membrane uptake are related but different stages.",
+      "spokenTextSHA256": "7668723d6c17848c1887662260e0de453962bea3f4c255d2a5841d1e514a3823",
+      "spokenTextSha256": "7668723d6c17848c1887662260e0de453962bea3f4c255d2a5841d1e514a3823",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a5b512dddcbaa0d37adba6fa32e6a6c0d38f98f11aa88583d04c607eda1cd439",
+      "requestFingerprintSha256": "a5b512dddcbaa0d37adba6fa32e6a6c0d38f98f11aa88583d04c607eda1cd439",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-E02-r1",
+      "unitId": "S2-02-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Phosphate concentration is lower immediately beside an active root than farther away in moist soil.",
+          "sha256": "94ca4cfecf89e2049d09bd74e27b2901fd60721a1fdc543ae3c0f711a4487231"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Identify the concentration gradient from the higher concentration farther out to the lower concentration at the root.",
+          "sha256": "064d2cdc772f2b77a3e8d47e2dcc732fd2403df4d781e5dca77dedf41f0c9e79"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Draw the net diffusion arrow toward the root through connected soil water. Explain that dry or disconnected water films slow the process.",
+          "sha256": "e8d87db2744d82c5c1eb5eaa3b19ec035b7ae559ea78abbb64b4b005aba1773e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Diffusion follows a gradient and is not a claim that all phosphate in the soil is immediately available.",
+          "sha256": "656f039353df4e2d21e825c19bbaf26886ee5d4dea32b895e275c1b14f2d7da7"
+        }
+      ],
+      "scientificMeaning": "Phosphate concentration is lower immediately beside an active root than farther away in moist soil.\n\nIdentify the concentration gradient from the higher concentration farther out to the lower concentration at the root.\n\nDraw the net diffusion arrow toward the root through connected soil water. Explain that dry or disconnected water films slow the process.\n\nDiffusion follows a gradient and is not a claim that all phosphate in the soil is immediately available.",
+      "displayText": "Phosphate concentration is lower immediately beside an active root than farther away in moist soil.\n\nIdentify the concentration gradient from the higher concentration farther out to the lower concentration at the root.\n\nDraw the net diffusion arrow toward the root through connected soil water. Explain that dry or disconnected water films slow the process.\n\nDiffusion follows a gradient and is not a claim that all phosphate in the soil is immediately available.",
+      "captionText": "Phosphate concentration is lower immediately beside an active root than farther away in moist soil.\n\nIdentify the concentration gradient from the higher concentration farther out to the lower concentration at the root.\n\nDraw the net diffusion arrow toward the root through connected soil water. Explain that dry or disconnected water films slow the process.\n\nDiffusion follows a gradient and is not a claim that all phosphate in the soil is immediately available.",
+      "spokenText": "Phosphate concentration is lower immediately beside an active root than farther away in moist soil.\n\nIdentify the concentration gradient from the higher concentration farther out to the lower concentration at the root.\n\nDraw the net diffusion arrow toward the root through connected soil water. Explain that dry or disconnected water films slow the process.\n\nDiffusion follows a gradient and is not a claim that all phosphate in the soil is immediately available.",
+      "spokenTextSHA256": "cb523154096730326e374183e1aba1656421f48be99e75f7de1923abe83437dd",
+      "spokenTextSha256": "cb523154096730326e374183e1aba1656421f48be99e75f7de1923abe83437dd",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5c97715472a8115816693023c3963be110b7fba8712e1d35d1f468a5f00a9599",
+      "requestFingerprintSha256": "5c97715472a8115816693023c3963be110b7fba8712e1d35d1f468a5f00a9599",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-E03-r1",
+      "unitId": "S2-02-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.",
+          "sha256": "4eb5f759b2f014baf5b66194e3d6777a59c072f07421491b7b8cceadcf7b5597"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Limited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.",
+          "sha256": "cced235c9bcebab0a96c5e0ba32db32ac75f08c30fabe77cabadc8d18fa8b5a5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Check roots, soil moisture, pH, crop stage and the test's available-nutrient interpretation before choosing a treatment.",
+          "sha256": "9323bc593aa2afc5ab6f8adfa7b23735d9f4fd4e1056508bc7932e49ec2bded3"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Do not recommend more fertilizer only because the crop looks weak.",
+          "sha256": "7fe5f5fc413523c24edb9b03acf8d79be1deab90effffd0e5e6dc0e7e1327f0f"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Presence, supply to the root and uptake are separate questions.",
+          "sha256": "0225c653ce6eebd9fc4937c9126cf2990997f95070825fad3a8422761e91e98c"
+        }
+      ],
+      "scientificMeaning": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, pH, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+      "displayText": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, pH, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+      "captionText": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, pH, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+      "spokenText": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, P H, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+      "spokenTextSHA256": "03c1e98a6b151f08c8535124256bc4b036fd6173b2c2ad112327380cd9c6d046",
+      "spokenTextSha256": "03c1e98a6b151f08c8535124256bc4b036fd6173b2c2ad112327380cd9c6d046",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, pH, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+          "spoken": "A soil report detects nutrients, but the topsoil is dry and compacted and roots are short.\n\nLimited water can reduce mass flow and diffusion, while compaction restricts root extension and interception.\n\nCheck roots, soil moisture, P H, crop stage and the test's available-nutrient interpretation before choosing a treatment.\n\nDo not recommend more fertilizer only because the crop looks weak.\n\nPresence, supply to the root and uptake are separate questions.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous chemical notation expansion, preserves every atom count/charge and scientific role; source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b3c26d021adcf2ba96010ed5d4327064a84b56de180166558473953c16e3f07d",
+      "requestFingerprintSha256": "b3c26d021adcf2ba96010ed5d4327064a84b56de180166558473953c16e3f07d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-guided-practice-r1",
+      "unitId": "S2-02-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "On a blank root-in-soil cross-section, place three numbered arrow groups: (1) water plus dissolved ions toward the root for mass flow; (2) dissolved ions from higher to lower concentration toward the root for diffusion; (3) a root tip extending outward toward a nutrient-containing zone for interception. Add one sentence explaining why a root does not swallow soil.",
+          "sha256": "7a6e97954e27520373e8d53f1ade822be8420b4acf85f0550dc8ef8825869903"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+          "sha256": "e78fc4130ce221280eaa6561bdb8d4fe09bf1b753adb7bd6043cd8b7b67f9360"
+        }
+      ],
+      "scientificMeaning": "On a blank root-in-soil cross-section, place three numbered arrow groups: (1) water plus dissolved ions toward the root for mass flow; (2) dissolved ions from higher to lower concentration toward the root for diffusion; (3) a root tip extending outward toward a nutrient-containing zone for interception. Add one sentence explaining why a root does not swallow soil.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "displayText": "On a blank root-in-soil cross-section, place three numbered arrow groups: (1) water plus dissolved ions toward the root for mass flow; (2) dissolved ions from higher to lower concentration toward the root for diffusion; (3) a root tip extending outward toward a nutrient-containing zone for interception. Add one sentence explaining why a root does not swallow soil.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "captionText": "On a blank root-in-soil cross-section, place three numbered arrow groups: (1) water plus dissolved ions toward the root for mass flow; (2) dissolved ions from higher to lower concentration toward the root for diffusion; (3) a root tip extending outward toward a nutrient-containing zone for interception. Add one sentence explaining why a root does not swallow soil.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "spokenText": "On a blank root-in-soil cross-section, place three numbered arrow groups: (1) water plus dissolved ions toward the root for mass flow; (2) dissolved ions from higher to lower concentration toward the root for diffusion; (3) a root tip extending outward toward a nutrient-containing zone for interception. Add one sentence explaining why a root does not swallow soil.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "spokenTextSHA256": "3342c54f818ae4df53fb0d644063006f69b3f8f594eb79a033b439951ef1637d",
+      "spokenTextSha256": "3342c54f818ae4df53fb0d644063006f69b3f8f594eb79a033b439951ef1637d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b747b849b8efcd835c0323bfe89ec0e3c88898c876aa3320bd0f39930039f4ab",
+      "requestFingerprintSha256": "b747b849b8efcd835c0323bfe89ec0e3c88898c876aa3320bd0f39930039f4ab",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-reflection-r1",
+      "unitId": "S2-02-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can you draw the three correct arrows, explain how each differs, and separate soil movement from movement between old and new leaves? Mark what still needs practice.",
+          "sha256": "e9da9ebcbd23cb70b3a6cc6e75c0eada197ba116c653ef0150eb45e3f1535f37"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "This diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+          "sha256": "e78fc4130ce221280eaa6561bdb8d4fe09bf1b753adb7bd6043cd8b7b67f9360"
+        }
+      ],
+      "scientificMeaning": "Can you draw the three correct arrows, explain how each differs, and separate soil movement from movement between old and new leaves? Mark what still needs practice.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "displayText": "Can you draw the three correct arrows, explain how each differs, and separate soil movement from movement between old and new leaves? Mark what still needs practice.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "captionText": "Can you draw the three correct arrows, explain how each differs, and separate soil movement from movement between old and new leaves? Mark what still needs practice.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "spokenText": "Can you draw the three correct arrows, explain how each differs, and separate soil movement from movement between old and new leaves? Mark what still needs practice.\n\nThis diagram practice does not diagnose a field or certify fertilizer treatment. Explain your reasoning as well as choosing arrows.",
+      "spokenTextSHA256": "a1ca0e321fee00c6bf45b038473e170ced33258b5c714c91fa229ddad507d7fc",
+      "spokenTextSha256": "a1ca0e321fee00c6bf45b038473e170ced33258b5c714c91fa229ddad507d7fc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "051d01ac96fec4f857edda43c620810c90c8219902c94951c9f3d5051c53aec8",
+      "requestFingerprintSha256": "051d01ac96fec4f857edda43c620810c90c8219902c94951c9f3d5051c53aec8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-comparison-r1",
+      "unitId": "S2-02-en-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "comparison",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/comparisonLabel",
+          "text": "Nutrient transport to roots and within plants",
+          "sha256": "47b7c87321225e2b7fd2500125ba04e4c3872898eb9a78f81297f470eff76f18"
+        },
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Question",
+          "sha256": "289aff12b04274cb04b8f7dbf486ba8b3528c6fd16b60b9a31d31ce23b339236"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Soil-to-root transport",
+          "sha256": "a43fd66a9a4f80d512eee8b7acd1728cfc31f82bcecf716901ed1c0c5ec10fa5"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Within-plant redistribution",
+          "sha256": "6d8db1264fe59828c4771fe9fa01f0af6ceaf1fd46b5744cb83dab1b44eeb87b"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Where?",
+          "sha256": "91f45115c34f7dcf6eb244ea679ade1f3ff13bf8215b007449b7624d67b19858"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Through soil water or growing root contact to the root surface",
+          "sha256": "e243b1acc4cbaf0feabf664df1594e482101da4ee5ec9202d1e297588da298cc"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Between older and newer tissues after uptake",
+          "sha256": "d236b9c5a4312f7eccd99c0c6d02a67e0574746c2b69395d9bbad10012403ed4"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Main mechanisms taught here",
+          "sha256": "130008d906a20028e37f39d034bda25d774f81f3b6d20e474413b577c5a2dc02"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Mass flow, diffusion and root interception",
+          "sha256": "e02e4333bb9cf17e06eccd0bbacc49dc389b76eb10cf00c524b6153490289448"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Remobilization of N, P and K from older tissue when supply is limiting",
+          "sha256": "603756ef2bb2a7f37f5f44bc0185ebd4aa4967ee46d7a49b8e6ce7336c944f90"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Diagnostic use",
+          "sha256": "1c4ae7d2df1a725ff8ea0b3142e6990aea7203358ec33d9e00b6388b24db628e"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Explains why supply can fail despite nutrient presence",
+          "sha256": "d8751d167c9e613586e23c67ffabf39d3eee0f50ec1b72b7f9c265eceede3e8a"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Helps decide which leaves to inspect first; does not prove the cause",
+          "sha256": "c56f06f5fc14a63cd3ef4895664a47c75ceddbe370720120b934852c89620ce6"
+        }
+      ],
+      "scientificMeaning": "Nutrient transport to roots and within plants\n\nQuestion\n\nSoil-to-root transport\n\nWithin-plant redistribution\n\nWhere?\n\nThrough soil water or growing root contact to the root surface\n\nBetween older and newer tissues after uptake\n\nMain mechanisms taught here\n\nMass flow, diffusion and root interception\n\nRemobilization of N, P and K from older tissue when supply is limiting\n\nDiagnostic use\n\nExplains why supply can fail despite nutrient presence\n\nHelps decide which leaves to inspect first; does not prove the cause",
+      "displayText": "Nutrient transport to roots and within plants\n\nQuestion\n\nSoil-to-root transport\n\nWithin-plant redistribution\n\nWhere?\n\nThrough soil water or growing root contact to the root surface\n\nBetween older and newer tissues after uptake\n\nMain mechanisms taught here\n\nMass flow, diffusion and root interception\n\nRemobilization of N, P and K from older tissue when supply is limiting\n\nDiagnostic use\n\nExplains why supply can fail despite nutrient presence\n\nHelps decide which leaves to inspect first; does not prove the cause",
+      "captionText": "Nutrient transport to roots and within plants\n\nQuestion\n\nSoil-to-root transport\n\nWithin-plant redistribution\n\nWhere?\n\nThrough soil water or growing root contact to the root surface\n\nBetween older and newer tissues after uptake\n\nMain mechanisms taught here\n\nMass flow, diffusion and root interception\n\nRemobilization of N, P and K from older tissue when supply is limiting\n\nDiagnostic use\n\nExplains why supply can fail despite nutrient presence\n\nHelps decide which leaves to inspect first; does not prove the cause",
+      "spokenText": "Nutrient transport to roots and within plants\n\nQuestion\n\nSoil-to-root transport\n\nWithin-plant redistribution\n\nWhere?\n\nThrough soil water or growing root contact to the root surface\n\nBetween older and newer tissues after uptake\n\nMain mechanisms taught here\n\nMass flow, diffusion and root interception\n\nRemobilization of N, P and K from older tissue when supply is limiting\n\nDiagnostic use\n\nExplains why supply can fail despite nutrient presence\n\nHelps decide which leaves to inspect first; does not prove the cause",
+      "spokenTextSHA256": "525209d3ff01cf0170186528903303d32b6c84c452ff66a10c227512b460543b",
+      "spokenTextSha256": "525209d3ff01cf0170186528903303d32b6c84c452ff66a10c227512b460543b",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6074af810708ae1f2e1ab179cd393265833275ecb88faae44d2c3d5acba34316",
+      "requestFingerprintSha256": "6074af810708ae1f2e1ab179cd393265833275ecb88faae44d2c3d5acba34316",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-glossary-r1",
+      "unitId": "S2-02-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "mass flow",
+          "sha256": "fe6034391be3d0d8a1674eba069f0d7aeee0fc7645a0b5695ff57a9e9c35023b"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Transport of dissolved nutrient ions with water moving through soil toward roots.",
+          "sha256": "27dffbf49575df7378a397ffa20e3a229ab7ad19585210e548644fdd031c7f62"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "diffusion",
+          "sha256": "151014a3ae7fe440df23dcf42f6fa94bee0868c77a5bfa0122b509dd79bfab55"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Net movement of dissolved ions down a concentration gradient, for example toward a depleted root surface.",
+          "sha256": "ec137df69d52ec2e215f35445f61d1afb45a247236f3dc969b9c935ed2e5a7a1"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "root interception",
+          "sha256": "a311ee8bea2b657da35eb6bb1c8ec260b16e86210544e5099656bf6fb6a7c368"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Contact with new soil regions as a root grows; it does not mean swallowing soil.",
+          "sha256": "3e2da09f1192ce6572d509389339538604e877b50ba3bcd6810865ea77a4d704"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "mineralization",
+          "sha256": "2ec63c2cad035b565fc0fd652daafc619a9815b0abb20a6f8808fddf87e27232"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Microbial conversion of organic-bound nutrient into mineral forms that may become plant-available.",
+          "sha256": "f74c040fa077ced5ac4638eaf45e20c010420e4b5ca14655c5b259029d77bc2d"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "internal remobilization",
+          "sha256": "096e352a7f6b142883cc45544989f6ef3e98a5f1dac9cc33e36cd7972c671381"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Movement of a nutrient from older plant tissues toward newer tissues when supply is limiting.",
+          "sha256": "279dcf4e3613862997483f246e8a08d06da56151c8da1651ebc5d8df142d472a"
+        }
+      ],
+      "scientificMeaning": "mass flow\n\nTransport of dissolved nutrient ions with water moving through soil toward roots.\n\ndiffusion\n\nNet movement of dissolved ions down a concentration gradient, for example toward a depleted root surface.\n\nroot interception\n\nContact with new soil regions as a root grows; it does not mean swallowing soil.\n\nmineralization\n\nMicrobial conversion of organic-bound nutrient into mineral forms that may become plant-available.\n\ninternal remobilization\n\nMovement of a nutrient from older plant tissues toward newer tissues when supply is limiting.",
+      "displayText": "mass flow\n\nTransport of dissolved nutrient ions with water moving through soil toward roots.\n\ndiffusion\n\nNet movement of dissolved ions down a concentration gradient, for example toward a depleted root surface.\n\nroot interception\n\nContact with new soil regions as a root grows; it does not mean swallowing soil.\n\nmineralization\n\nMicrobial conversion of organic-bound nutrient into mineral forms that may become plant-available.\n\ninternal remobilization\n\nMovement of a nutrient from older plant tissues toward newer tissues when supply is limiting.",
+      "captionText": "mass flow\n\nTransport of dissolved nutrient ions with water moving through soil toward roots.\n\ndiffusion\n\nNet movement of dissolved ions down a concentration gradient, for example toward a depleted root surface.\n\nroot interception\n\nContact with new soil regions as a root grows; it does not mean swallowing soil.\n\nmineralization\n\nMicrobial conversion of organic-bound nutrient into mineral forms that may become plant-available.\n\ninternal remobilization\n\nMovement of a nutrient from older plant tissues toward newer tissues when supply is limiting.",
+      "spokenText": "mass flow\n\nTransport of dissolved nutrient ions with water moving through soil toward roots.\n\ndiffusion\n\nNet movement of dissolved ions down a concentration gradient, for example toward a depleted root surface.\n\nroot interception\n\nContact with new soil regions as a root grows; it does not mean swallowing soil.\n\nmineralization\n\nMicrobial conversion of organic-bound nutrient into mineral forms that may become plant-available.\n\ninternal remobilization\n\nMovement of a nutrient from older plant tissues toward newer tissues when supply is limiting.",
+      "spokenTextSHA256": "0ecb6cc3455ed3e58983517a944defdc6e2abe177248ca96492d8956ee26fce2",
+      "spokenTextSha256": "0ecb6cc3455ed3e58983517a944defdc6e2abe177248ca96492d8956ee26fce2",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7eb1564bfc4177a1f5de17654905c5982b128cac12a91cee5d4bd4a094c8ddaf",
+      "requestFingerprintSha256": "7eb1564bfc4177a1f5de17654905c5982b128cac12a91cee5d4bd4a094c8ddaf",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-model-and-workbook-guidance-r1",
+      "unitId": "S2-02-en-model-and-workbook-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "model-and-workbook-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/transportPractice/ui/title",
+          "text": "Place the three directions",
+          "sha256": "fb719880629cac865842e21ecfab38b6df7d0e45a76d5d5aab158ce79ca6c485"
+        },
+        {
+          "pointer": "/transportPractice/ui/scene",
+          "text": "Root and soil water · schematic 3D",
+          "sha256": "5b0057fc4eacacf1a6afacc1b60647b7abb22dbfe0b414067f8118d8f621c367"
+        },
+        {
+          "pointer": "/transportPractice/ui/help",
+          "text": "Enlarged shapes and water channels are schematic, not measured concentrations or molecular scale. Select a route, then answer before its correct arrow is shown. The model does not show membrane uptake.",
+          "sha256": "a73d2cd3e97e302521182e48092e4387286efd8303cc93d88b3fb8f10dec8239"
+        },
+        {
+          "pointer": "/transportPractice/ui/fallback",
+          "text": "Use the equivalent direction and cause controls below.",
+          "sha256": "252e638a70734568af194cc11c91827630dc0eb54be396a7b5224a11aaeb09b3"
+        },
+        {
+          "pointer": "/transportPractice/ui/explain",
+          "text": "Explain why the root does not swallow soil particles.",
+          "sha256": "f9e6d71d6020b647da764e874292f7688e7d8316f8271b2c079e93e85aacd016"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Three nutrient routes worksheet",
+          "sha256": "0856e8e871ee42100af8c4f093ce2f2f2ab896c0245678ca351ca4f15e58c0d1"
+        }
+      ],
+      "scientificMeaning": "Place the three directions\n\nRoot and soil water · schematic 3D\n\nEnlarged shapes and water channels are schematic, not measured concentrations or molecular scale. Select a route, then answer before its correct arrow is shown. The model does not show membrane uptake.\n\nUse the equivalent direction and cause controls below.\n\nExplain why the root does not swallow soil particles.\n\nThree nutrient routes worksheet",
+      "displayText": "Place the three directions\n\nRoot and soil water · schematic 3D\n\nEnlarged shapes and water channels are schematic, not measured concentrations or molecular scale. Select a route, then answer before its correct arrow is shown. The model does not show membrane uptake.\n\nUse the equivalent direction and cause controls below.\n\nExplain why the root does not swallow soil particles.\n\nThree nutrient routes worksheet",
+      "captionText": "Place the three directions\n\nRoot and soil water · schematic 3D\n\nEnlarged shapes and water channels are schematic, not measured concentrations or molecular scale. Select a route, then answer before its correct arrow is shown. The model does not show membrane uptake.\n\nUse the equivalent direction and cause controls below.\n\nExplain why the root does not swallow soil particles.\n\nThree nutrient routes worksheet",
+      "spokenText": "Place the three directions\n\nRoot and soil water · schematic three dimensional\n\nEnlarged shapes and water channels are schematic, not measured concentrations or molecular scale. Select a route, then answer before its correct arrow is shown. The model does not show membrane uptake.\n\nUse the equivalent direction and cause controls below.\n\nExplain why the root does not swallow soil particles.\n\nThree nutrient routes worksheet",
+      "spokenTextSHA256": "d88aadee8c68c3cf642ef54562a318ccc450a7616f905bde9b1f58d49366896d",
+      "spokenTextSha256": "d88aadee8c68c3cf642ef54562a318ccc450a7616f905bde9b1f58d49366896d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3D",
+          "spoken": "three dimensional",
+          "occurrences": 1,
+          "purpose": "Faithful spoken number/unit/notation or natural grammar only"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "edb628b6f617ef575ab55eb4a1ec8923cba48707c615fdac5da4533842824761",
+      "requestFingerprintSha256": "edb628b6f617ef575ab55eb4a1ec8923cba48707c615fdac5da4533842824761",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-02-en-knowledge-completion-r1",
+      "unitId": "S2-02-en-knowledge-completion-r1",
+      "locale": "en",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fe846b86677c6393321dc335963a6fabeaac803555ce93dd303bcc88527ed875",
+      "sourceBindings": [
+        {
+          "pointer": "/transportPractice/passChecks/0/evidence",
+          "text": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.",
+          "sha256": "a3163c9af522360746214c96d43a820f55ee86e05dceb7d355b305b558b8f012"
+        },
+        {
+          "pointer": "/transportPractice/passChecks/0/decision",
+          "text": "Pass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.",
+          "sha256": "3c855c15ac42b7ddc9fefb3c618cba63179c1a43fbb02ea04afe709350410c9e"
+        },
+        {
+          "pointer": "/transportPractice/passChecks/1/evidence",
+          "text": "Learner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.",
+          "sha256": "24e49664e8a404d1895c68c409e3aae4573c9d5ae399d4458dd0f8c4d740858f"
+        },
+        {
+          "pointer": "/transportPractice/passChecks/1/decision",
+          "text": "Pass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.",
+          "sha256": "343787b93baf87a0447b7c8841b03fbf3f271c59874d2d7ce3e8c9323f85113b"
+        },
+        {
+          "pointer": "/transportPractice/passChecks/2/evidence",
+          "text": "Given a dry or compacted soil, damaged root, or unsuitable pH, learner explains the plausible effect on nutrient supply and states what evidence is still needed.",
+          "sha256": "eff66e0e58d4e2fc01bdd725eea8da3e98e39dd7d6035b93d34fdc7b5c89ae0f"
+        },
+        {
+          "pointer": "/transportPractice/passChecks/2/decision",
+          "text": "Pass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic pH number does not pass.",
+          "sha256": "4aa3da919f22a9e328398db0b8f117d174336443b708ad2cbb10298439701764"
+        }
+      ],
+      "scientificMeaning": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable pH, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic pH number does not pass.",
+      "displayText": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable pH, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic pH number does not pass.",
+      "captionText": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable pH, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic pH number does not pass.",
+      "spokenText": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P and K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N, P and K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable P H, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic P H number does not pass.",
+      "spokenTextSHA256": "58f1029d2cbabb6a60bf13d7ede438c38ebddc2503f3bda472afb74a88849a78",
+      "spokenTextSha256": "58f1029d2cbabb6a60bf13d7ede438c38ebddc2503f3bda472afb74a88849a78",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable pH, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic pH number does not pass.",
+          "spoken": "Learner labels all three routes and their directions on a root cross-section; explains water-carried mass flow, concentration-driven diffusion and growth-driven root interception with nitrate, P/K and new root contact as qualified examples.\n\nPass only when all three mechanisms and arrows are correct and no route is claimed universal; otherwise targeted review and open retry.\n\nLearner identifies soil-to-root transport and within-plant remobilization as different processes; explains older-leaf tendency for mobile N/P/K and contrasts, cautiously, with newer-growth symptoms of poorly mobile nutrients.\n\nPass when both locations and the reason for the older-leaf pattern are correct, without making leaf position a stand-alone diagnosis.\n\nGiven a dry or compacted soil, damaged root, or unsuitable P H, learner explains the plausible effect on nutrient supply and states what evidence is still needed.\n\nPass when the mechanism and uncertainty are justified; recommending fertilizer solely from a visible sign or a generic P H number does not pass.",
+          "occurrences": 1,
+          "purpose": "Exact simultaneous chemical notation expansion, preserves every atom count/charge and scientific role; source/display unchanged"
+        },
+        {
+          "written": "N/P/K",
+          "spoken": "N, P and K",
+          "occurrences": 1,
+          "purpose": "Faithful spoken group conjunction or grammatical model heading; scientific meaning and source/display unchanged"
+        },
+        {
+          "written": "P/K",
+          "spoken": "P and K",
+          "occurrences": 1,
+          "purpose": "Faithful spoken group conjunction or grammatical model heading; scientific meaning and source/display unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "50688e04396c29820d24d076fa5475d3f1a2cf0b864b8954c3a638ef10779ab1",
+      "requestFingerprintSha256": "50688e04396c29820d24d076fa5475d3f1a2cf0b864b8954c3a638ef10779ab1",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
