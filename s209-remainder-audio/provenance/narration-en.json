@@ -1,0 +1,740 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-09-en.json",
+    "sha256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+    "bytes": 31046
+  },
+  "units": [
+    {
+      "id": "S2-09-en-opening-r1",
+      "unitId": "S2-09-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.",
+          "sha256": "1f1e7c8298ee67985923306d37845701385723eb2bae3492978b4703b55a8723"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Put extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.",
+          "sha256": "3ebaaae85cc2f44c9b26360dcd6415045fe1945f0bb96177fb5b0df9de596269"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Read pH, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.",
+          "sha256": "c264ff655c108503a5c466c59bd0139770590d72477377f48a2a381a9932a7fe"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Identify the missing method, local interpretation, crop, field and product information that prevents a universal NPK class or amount; leave X and Y as unknowns until supported.",
+          "sha256": "f0b2406654fbc0e6f004938cf57d4aee354d329fcccff0ce1c0a893bee286ff6"
+        }
+      ],
+      "scientificMeaning": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead pH, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal NPK class or amount; leave X and Y as unknowns until supported.",
+      "displayText": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead pH, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal NPK class or amount; leave X and Y as unknowns until supported.",
+      "captionText": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead pH, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal NPK class or amount; leave X and Y as unknowns until supported.",
+      "spokenText": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead P H, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal N P K class or amount; leave X and Y as unknowns until supported.",
+      "spokenTextSHA256": "dcc6c1b5d0a39577b68100ef93ab9b86b3d778873580731ed7d222d53384fe34",
+      "spokenTextSha256": "dcc6c1b5d0a39577b68100ef93ab9b86b3d778873580731ed7d222d53384fe34",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead pH, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal NPK class or amount; leave X and Y as unknowns until supported.",
+          "spoken": "A colour or number from a soil test is useful only when you know what was extracted, how it was measured, its unit and the crop-specific interpretation. Watch the trainer's demonstration, then explain the evidence and the missing information before considering a fertilizer recommendation.\n\nPut extraction, filtration, reagent reaction and reading in order, and explain what the demonstrated method can and cannot measure.\n\nRead P H, organic-matter percentage and nutrient results with their units, methods and crop-specific reference; distinguish an extracted test index from total soil reserves and a fertilizer rate.\n\nIdentify the missing method, local interpretation, crop, field and product information that prevents a universal N P K class or amount; leave X and Y as unknowns until supported.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6e9ad017840d1622690d4f8dc762b7aeb6fc5b6d200102fa29d3420f5abab475",
+      "requestFingerprintSha256": "6e9ad017840d1622690d4f8dc762b7aeb6fc5b6d200102fa29d3420f5abab475",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-E01-r1",
+      "unitId": "S2-09-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A trainer shows a rapid P kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all P in the field.",
+          "sha256": "68da57027ad59f38ba175d16fa11527f08032153bf7fcd8a73e8680e8e8a23c0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Put the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.",
+          "sha256": "9e67a40b9b0e6e76d8d4865dd9772096de8a0146003c355f2417a15ce82bd093"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "The colour or instrument represents the fraction and response defined by that method, not total P in the soil.",
+          "sha256": "b78ed756c87d160e24decf00a008655f28ab506189b829b12deb15ee7afe7a7f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "A crop decision also needs the kit or laboratory's calibrated interpretation and field context.",
+          "sha256": "c2106ac2453d3d37fc14324ffbf18a0827a7bc049c4facb2d8c3941653bd0119"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A test index acquires meaning through its method and calibration.",
+          "sha256": "6a7069f16f2fe4a27498cd013aa5a1188df604e25e397c5b07c021544d089f7a"
+        }
+      ],
+      "scientificMeaning": "A trainer shows a rapid P kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all P in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total P in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+      "displayText": "A trainer shows a rapid P kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all P in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total P in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+      "captionText": "A trainer shows a rapid P kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all P in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total P in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+      "spokenText": "A trainer shows a rapid phosphorus kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all phosphorus in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total phosphorus in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+      "spokenTextSHA256": "bf4ea718f2c314d3f1add2c0cf033c4fc248c1fe46bbba24555d16fd1c40f71e",
+      "spokenTextSha256": "bf4ea718f2c314d3f1add2c0cf033c4fc248c1fe46bbba24555d16fd1c40f71e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A trainer shows a rapid P kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all P in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total P in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+          "spoken": "A trainer shows a rapid phosphorus kit: measured soil is mixed with extractant, filtered, reacted and read against its chart. A learner says the colour measures all phosphorus in the field.\n\nPut the four stages in their observed order and name the method-specific quantities and reagent from the kit instructions, rather than inventing them.\n\nThe colour or instrument represents the fraction and response defined by that method, not total phosphorus in the soil.\n\nA crop decision also needs the kit or laboratory's calibrated interpretation and field context.\n\nA test index acquires meaning through its method and calibration.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3c27ed05b780585d6923aad25ee5fe2ae34cb17a14be0a29ad2243abfea18673",
+      "requestFingerprintSha256": "3c27ed05b780585d6923aad25ee5fe2ae34cb17a14be0a29ad2243abfea18673",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-E02-r1",
+      "unitId": "S2-09-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A classroom report shows pH 5.5 and P 12 ppm. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.",
+          "sha256": "7b81d1fe256b1703221726077039e3b3af6a75f50571402d5039c32462a068be"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Under that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.",
+          "sha256": "9f53dc0c856f08ed5f1f2644e8661474d4d68825a7b528f76d7eb8c480d30387"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Ask for crop target and lime requirement, and for the P extraction method and suitable local recommendation.",
+          "sha256": "c7cad8b34146276b6354e0896711f9540a31e78a92d5c8656b8f153e8373ca2d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Keep X and Y blank until those inputs, product analyses and application conditions are known.",
+          "sha256": "5901a357c9c341b7ea7b696c2f5d75d6b42ea6efdbc8f1865e35e9fdd606ef4e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "A classroom class is not a field application rate.",
+          "sha256": "2988e6d5bd1c2f6ae67da712d95e0b5f8132165d1bd319a0572d40834f61be0c"
+        }
+      ],
+      "scientificMeaning": "A classroom report shows pH 5.5 and P 12 ppm. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the P extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+      "displayText": "A classroom report shows pH 5.5 and P 12 ppm. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the P extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+      "captionText": "A classroom report shows pH 5.5 and P 12 ppm. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the P extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+      "spokenText": "A classroom report shows P H five point five and phosphorus twelve parts per million. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the phosphorus extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+      "spokenTextSHA256": "86e5bd2836c9035ae051a251d3f42cd62226960e0a1fa753518bc1acb7ad1081",
+      "spokenTextSha256": "86e5bd2836c9035ae051a251d3f42cd62226960e0a1fa753518bc1acb7ad1081",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A classroom report shows pH 5.5 and P 12 ppm. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the P extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+          "spoken": "A classroom report shows P H five point five and phosphorus twelve parts per million. Someone copies the example table and writes 'apply X lime and Y fertilizer' without knowing either amount.\n\nUnder that table, the values fall in its low rows. Say 'under that table' because the table has no method or regional calibration.\n\nAsk for crop target and lime requirement, and for the phosphorus extraction method and suitable local recommendation.\n\nKeep X and Y blank until those inputs, product analyses and application conditions are known.\n\nA classroom class is not a field application rate.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "16ef7f64d435c3432b0fa4821b822ccb39e02b7dd2791b3ec02242a38981802c",
+      "requestFingerprintSha256": "16ef7f64d435c3432b0fa4821b822ccb39e02b7dd2791b3ec02242a38981802c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-E03-r1",
+      "unitId": "S2-09-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A report says only 'P 18 ppm' and a learner labels it Low using the classroom table.",
+          "sha256": "8d2d5cd5a60f90cbe94479143ede516073005ecf7fe340514def11fc1f21adbd"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "18 falls in the table's 15–20 ppm gap, so the example provides no category even on its own terms.",
+          "sha256": "fa186d9edcc9d823b5d26b430565d2d10da9e6c9e74c58c5dcb1e823cb150439"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "The extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.",
+          "sha256": "5f7e810c523a9704a84f1e8a40763a4ee9e57f07f0a598263af3f518d49a799e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Request the laboratory's interpretation; do not choose a P fertilizer or amount from this number alone.",
+          "sha256": "83f6e35a74003775ca759e751b16526de92cacfdfe3877b9b107028fbeaaabbc"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "An honest 'unclassified with this evidence' is more useful than a confident guess.",
+          "sha256": "0423c016f87696600eecb9b4a825d83d475ebce4f21ef645612369cdc04199b7"
+        }
+      ],
+      "scientificMeaning": "A report says only 'P 18 ppm' and a learner labels it Low using the classroom table.\n\n18 falls in the table's 15–20 ppm gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a P fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+      "displayText": "A report says only 'P 18 ppm' and a learner labels it Low using the classroom table.\n\n18 falls in the table's 15–20 ppm gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a P fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+      "captionText": "A report says only 'P 18 ppm' and a learner labels it Low using the classroom table.\n\n18 falls in the table's 15–20 ppm gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a P fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+      "spokenText": "A report says only 'phosphorus eighteen parts per million' and a learner labels it Low using the classroom table.\n\neighteen falls in the table's fifteen to twenty parts per million gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a phosphorus fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+      "spokenTextSHA256": "9eddac0a4ddb315d5e5ea8644bb3f911a4fd60b7cc51faa4ce11d0d069b15091",
+      "spokenTextSha256": "9eddac0a4ddb315d5e5ea8644bb3f911a4fd60b7cc51faa4ce11d0d069b15091",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A report says only 'P 18 ppm' and a learner labels it Low using the classroom table.\n\n18 falls in the table's 15–20 ppm gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a P fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+          "spoken": "A report says only 'phosphorus eighteen parts per million' and a learner labels it Low using the classroom table.\n\neighteen falls in the table's fifteen to twenty parts per million gap, so the example provides no category even on its own terms.\n\nThe extraction method, sample basis, crop and regional guide are absent, so a different table cannot be borrowed casually.\n\nRequest the laboratory's interpretation; do not choose a phosphorus fertilizer or amount from this number alone.\n\nAn honest 'unclassified with this evidence' is more useful than a confident guess.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ce312e9c5a95b8508c478d4e9880382df520ddc5e157a0e05f048aa8382912a",
+      "requestFingerprintSha256": "1ce312e9c5a95b8508c478d4e9880382df520ddc5e157a0e05f048aa8382912a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-E04-r1",
+      "unitId": "S2-09-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A learner sees a P soil-test result of 12 ppm and a bag labelled 11-52-0. They claim the bag will add 52 ppm of soil P.",
+          "sha256": "a58be0a5c59c5ce7c52e1375e81cdf81b399c42761e043dc094173ed2ea19e51"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "The soil report's ppm result has a method and sample basis; it is not a product percentage.",
+          "sha256": "b27528be14c60e43120dac46e651c41fbe90cb4f3d455c6f160d40d5dfd88d8f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "11-52-0 gives percentages of N, P2O5 and K2O in the product, not a direct change in soil-test P.",
+          "sha256": "661e520706491ac8788f096cc9cf5b7c53a4d78f360bc9adafc0eab03d6910f8"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Rate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.",
+          "sha256": "81dc6015d438616cd949f21350d0a59be0ea9db2b0da389a4fea6080a6984678"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Keep soil-test units and fertilizer-product analysis separate.",
+          "sha256": "a5b5f959955e1d40762ddf6814257182f0b96f4c3197b056c681b21c863c23ee"
+        }
+      ],
+      "scientificMeaning": "A learner sees a P soil-test result of 12 ppm and a bag labelled 11-52-0. They claim the bag will add 52 ppm of soil P.\n\nThe soil report's ppm result has a method and sample basis; it is not a product percentage.\n\n11-52-0 gives percentages of N, P2O5 and K2O in the product, not a direct change in soil-test P.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+      "displayText": "A learner sees a P soil-test result of 12 ppm and a bag labelled 11-52-0. They claim the bag will add 52 ppm of soil P.\n\nThe soil report's ppm result has a method and sample basis; it is not a product percentage.\n\n11-52-0 gives percentages of N, P2O5 and K2O in the product, not a direct change in soil-test P.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+      "captionText": "A learner sees a P soil-test result of 12 ppm and a bag labelled 11-52-0. They claim the bag will add 52 ppm of soil P.\n\nThe soil report's ppm result has a method and sample basis; it is not a product percentage.\n\n11-52-0 gives percentages of N, P2O5 and K2O in the product, not a direct change in soil-test P.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+      "spokenText": "A learner sees a phosphorus soil-test result of twelve parts per million and a bag labelled eleven, fifty-two, zero. They claim the bag will add fifty-two parts per million of soil phosphorus.\n\nThe soil report's parts per million result has a method and sample basis; it is not a product percentage.\n\neleven, fifty-two, zero gives percentages of nitrogen, P two O five and K two O in the product, not a direct change in soil-test phosphorus.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+      "spokenTextSHA256": "8fc11f4fbfd064e4b8f64bf44751db59b7aaebc05089fdc281e66686baf20cdb",
+      "spokenTextSha256": "8fc11f4fbfd064e4b8f64bf44751db59b7aaebc05089fdc281e66686baf20cdb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A learner sees a P soil-test result of 12 ppm and a bag labelled 11-52-0. They claim the bag will add 52 ppm of soil P.\n\nThe soil report's ppm result has a method and sample basis; it is not a product percentage.\n\n11-52-0 gives percentages of N, P2O5 and K2O in the product, not a direct change in soil-test P.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+          "spoken": "A learner sees a phosphorus soil-test result of twelve parts per million and a bag labelled eleven, fifty-two, zero. They claim the bag will add fifty-two parts per million of soil phosphorus.\n\nThe soil report's parts per million result has a method and sample basis; it is not a product percentage.\n\neleven, fifty-two, zero gives percentages of nitrogen, P two O five and K two O in the product, not a direct change in soil-test phosphorus.\n\nRate requires a calibrated crop nutrient recommendation, product content, area and application method, with any credits and limits.\n\nKeep soil-test units and fertilizer-product analysis separate.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9e9d45f40f7b3c89befd7f41e0a8d5bfa1936d128d2c6f4221b4a02e781cc6a3",
+      "requestFingerprintSha256": "9e9d45f40f7b3c89befd7f41e0a8d5bfa1936d128d2c6f4221b4a02e781cc6a3",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-guided-practice-r1",
+      "unitId": "S2-09-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.",
+          "sha256": "135543ae05bf999d39e90dfbc40492e9786787dcf3ddf1ed9e23d41bce1a7649"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Trainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+          "sha256": "11256e6b475186326c881cd6c4f368223ffe4b5c55cd8132186ae519fac69e28"
+        }
+      ],
+      "scientificMeaning": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+      "displayText": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+      "captionText": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+      "spokenText": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include P H five point five, phosphorus twelve parts per million, phosphorus eighteen parts per million and eleven, fifty-two, zero. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+      "spokenTextSHA256": "c0ed9df15516f9ac16703ba46439ab0747e0e99f01770dbb2df1cb891a4759df",
+      "spokenTextSha256": "c0ed9df15516f9ac16703ba46439ab0747e0e99f01770dbb2df1cb891a4759df",
+      "spokenAdaptationChanges": [
+        {
+          "written": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include pH 5.5, P 12 ppm, P 18 ppm and 11-52-0. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+          "spoken": "First arrange extraction, filtration, reagent reaction and readout. Then tag each of four cards as soil-test unit, product label, teaching-table class or missing evidence. Cards include P H five point five, phosphorus twelve parts per million, phosphorus eighteen parts per million and eleven, fifty-two, zero. For each card state the method or crop information still needed; leave X/Y application amounts blank.\n\nTrainer demonstrates with actual kit/manual or a recorded lab example; learner explains the observed order and interpretation. No student chemical handling or independent-operation pass is recorded.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "10c14d7a1042b38ee7489e2e21c1176bc242eb4118fdca3c2bef6bd900e2ef0f",
+      "requestFingerprintSha256": "10c14d7a1042b38ee7489e2e21c1176bc242eb4118fdca3c2bef6bd900e2ef0f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-reflection-r1",
+      "unitId": "S2-09-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about NPK extraction, units, method, interpretation and missing evidence before a fertilizer amount?",
+          "sha256": "8b260ccbd2d6c22528d0c7f1fee4921a77acae3f9f5c96fcd575aa2b9ce3aa64"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-check only",
+          "sha256": "8df4058508d32bca77a3167818ff4a1c69d8acd4eace5f323cd99db21008562e"
+        }
+      ],
+      "scientificMeaning": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about NPK extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+      "displayText": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about NPK extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+      "captionText": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about NPK extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+      "spokenText": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about N P K extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+      "spokenTextSHA256": "0810788b423931bf22a1a249105b38852360a5ab538a53b7c6e6ba3db449f0e8",
+      "spokenTextSha256": "0810788b423931bf22a1a249105b38852360a5ab538a53b7c6e6ba3db449f0e8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about NPK extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+          "spoken": "Can I prepare and identify a sample as instructed for the stated common test, then explain what the trainer demonstrated about N P K extraction, units, method, interpretation and missing evidence before a fertilizer amount?\n\nSelf-check only",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "46233a9fe3e1841fe240a59cb054d4516c55384075abf3918195ba2da060307d",
+      "requestFingerprintSha256": "46233a9fe3e1841fe240a59cb054d4516c55384075abf3918195ba2da060307d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-comparison-r1",
+      "unitId": "S2-09-en-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "comparison",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/comparisonLabel",
+          "text": "Historic classroom example only; not a universal laboratory or field recommendation",
+          "sha256": "33bfb7f2ee893e46fc04fb1aa794c226608c2ed555b4223dbafab1dff9bf1494"
+        },
+        {
+          "pointer": "/comparisonWarning",
+          "text": "The historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.",
+          "sha256": "ed1f4b2de2cf2a1998380d702c851ca9ed3b3ac550b2ea2290bc4e3efe113aed"
+        },
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Parameter",
+          "sha256": "dd066ec1bf1d4485d3597f93a32c2f64b88ccdb6c555428ac4af3d17bf691cc2"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Example low",
+          "sha256": "120209475bb4bf91289947fee9cc4eac0fbfaf4153449b191d528f7712a720cd"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Example optimum",
+          "sha256": "ecf17705432ec9b0050a59d9b51fe02e21464f6cd2dfecbf96d8e5731912f377"
+        },
+        {
+          "pointer": "/comparison/columns/3",
+          "text": "Example high",
+          "sha256": "06dbbbbc9df4c392d894073ce9a547cb21e1008a5b0b702766d2cb611f817361"
+        },
+        {
+          "pointer": "/comparison/columns/4",
+          "text": "Conditional classroom direction",
+          "sha256": "2525f600a4a856738fae9ecbe59a36be94b5d19ddebe29d533f1bead5460b10a"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "< 6.0",
+          "sha256": "df7adc1e010988af2be8c742b54c0c013d7b32eafd82b229966c15cc181b2599"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "6.0–7.5",
+          "sha256": "fb73ec9ab8674ea6a710f0557d1c8cd3539a029fcd17df8a3c5b9187f9f67d43"
+        },
+        {
+          "pointer": "/comparison/rows/0/3",
+          "text": "> 7.5",
+          "sha256": "4de59233a37ace89d46381809cd73da8f998144445962b7df22b70142bfbfcde"
+        },
+        {
+          "pointer": "/comparison/rows/0/4",
+          "text": "Low: investigate lime for the crop; high: assess feasibility and chemistry before any acidification",
+          "sha256": "83be1b650303e6273bcb2155382320ed9fb6fead6913b3519bc7bae6dc97911a"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Organic matter",
+          "sha256": "024c7e4e39b8e4089fe6490f6492cecd6e1cba02a7f949ec5a179fefbc2f4618"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "< 2%",
+          "sha256": "ae74e30e0a53fac35ee774c080c1092bd5010704568b69333f2eba6ccf77ce7f"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "3–6%",
+          "sha256": "5a381cc53443579569be8860ef6ce258c83e159a80913d88c4efbd496c42e386"
+        },
+        {
+          "pointer": "/comparison/rows/1/3",
+          "text": "> 6%",
+          "sha256": "69d80010a7faa8bbf6daa3fc32daf08e7e587e23975a1174b872d5aa9b0a71e8"
+        },
+        {
+          "pointer": "/comparison/rows/1/4",
+          "text": "Low: assess suitable compost, manure or cover crops; percentage depends on method and site",
+          "sha256": "7e629cddb2ca5962ec2aa3c1e67582c0923edc16bf6b879b6685cee0e3ec67eb"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "P",
+          "sha256": "5c62e091b8c0565f1bafad0dad5934276143ae2ccef7a5381e8ada5b1a8d26d2"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "< 15 ppm",
+          "sha256": "e8e33a5e440c49831865261fcc233ebb8cb7d9ee5e1d7a11a98db076797d981e"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "20–40 ppm",
+          "sha256": "70bddee40c598920613f918d35c765549fd2bc9b186dfebd5c47b1eb97144c02"
+        },
+        {
+          "pointer": "/comparison/rows/2/3",
+          "text": "> 50 ppm",
+          "sha256": "322ec7662176f1582104639cceb6760bffc2cbb11b6328e81a1eb195dfbc96f6"
+        },
+        {
+          "pointer": "/comparison/rows/2/4",
+          "text": "Low: seek calibrated P guidance; high: avoid automatic additional P",
+          "sha256": "8437f50217b9d21831e241cd4e7ede455faab09a64b930576e4bf23b81f5bdac"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "K",
+          "sha256": "86be9a55762d316a3026c2836d044f5fc76e34da10e1b45feee5f18be7edb177"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "< 100 ppm",
+          "sha256": "a3038039cc201b44c5d5c1c86f6f48231be40a036d17d1a6520ba3a6577c12db"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "120–200 ppm",
+          "sha256": "cbcca54aaae42cca10dcc43d50ea98512fc09dbf62ec576329d6cbe5cf7b12da"
+        },
+        {
+          "pointer": "/comparison/rows/3/3",
+          "text": "> 250 ppm",
+          "sha256": "c40043636fca30e013185030a5652310bccff44a632207ec438c32ede8f7b53f"
+        },
+        {
+          "pointer": "/comparison/rows/3/4",
+          "text": "Low: seek calibrated K guidance; high: avoid automatic additional K",
+          "sha256": "bc084ea5beff99951c214c4c0227e36174e8c4790a0cb9bd991b68471a386bc6"
+        },
+        {
+          "pointer": "/comparison/rows/4/0",
+          "text": "N",
+          "sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b"
+        },
+        {
+          "pointer": "/comparison/rows/4/1",
+          "text": "< 10 ppm",
+          "sha256": "fa9ddd3510fb9e8716d6d8f1ade4cb5167419ef4e25a573ab9f3a2a46ac389dd"
+        },
+        {
+          "pointer": "/comparison/rows/4/2",
+          "text": "varies greatly",
+          "sha256": "80129b59d63c1b66cd951ecd2eeb0b5fcc2e1456d566b2e45ed9e46065d44451"
+        },
+        {
+          "pointer": "/comparison/rows/4/3",
+          "text": "varies greatly",
+          "sha256": "80129b59d63c1b66cd951ecd2eeb0b5fcc2e1456d566b2e45ed9e46065d44451"
+        },
+        {
+          "pointer": "/comparison/rows/4/4",
+          "text": "Plan from crop demand, timing, credits and local method; no universal cutoff",
+          "sha256": "3fed59db0c9c299836a52b3394e9390af9b7266f8848f51459fbc9e23f3f3e5e"
+        }
+      ],
+      "scientificMeaning": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\npH\n\n< 6.0\n\n6.0–7.5\n\n> 7.5\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\n< 2%\n\n3–6%\n\n> 6%\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nP\n\n< 15 ppm\n\n20–40 ppm\n\n> 50 ppm\n\nLow: seek calibrated P guidance; high: avoid automatic additional P\n\nK\n\n< 100 ppm\n\n120–200 ppm\n\n> 250 ppm\n\nLow: seek calibrated K guidance; high: avoid automatic additional K\n\nN\n\n< 10 ppm\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+      "displayText": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\npH\n\n< 6.0\n\n6.0–7.5\n\n> 7.5\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\n< 2%\n\n3–6%\n\n> 6%\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nP\n\n< 15 ppm\n\n20–40 ppm\n\n> 50 ppm\n\nLow: seek calibrated P guidance; high: avoid automatic additional P\n\nK\n\n< 100 ppm\n\n120–200 ppm\n\n> 250 ppm\n\nLow: seek calibrated K guidance; high: avoid automatic additional K\n\nN\n\n< 10 ppm\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+      "captionText": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\npH\n\n< 6.0\n\n6.0–7.5\n\n> 7.5\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\n< 2%\n\n3–6%\n\n> 6%\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nP\n\n< 15 ppm\n\n20–40 ppm\n\n> 50 ppm\n\nLow: seek calibrated P guidance; high: avoid automatic additional P\n\nK\n\n< 100 ppm\n\n120–200 ppm\n\n> 250 ppm\n\nLow: seek calibrated K guidance; high: avoid automatic additional K\n\nN\n\n< 10 ppm\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+      "spokenText": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\nP H\n\nless than  six point zero\n\nsix point zero to seven point five\n\ngreater than  seven point five\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\nless than  two percent\n\nthree to six percent\n\ngreater than  six percent\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nphosphorus\n\nless than  fifteen parts per million\n\ntwenty to forty parts per million\n\ngreater than  fifty parts per million\n\nLow: seek calibrated phosphorus guidance; high: avoid automatic additional phosphorus\n\npotassium\n\nless than  one hundred parts per million\n\none hundred twenty to two hundred parts per million\n\ngreater than  two hundred fifty parts per million\n\nLow: seek calibrated potassium guidance; high: avoid automatic additional potassium\n\nnitrogen\n\nless than  ten parts per million\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+      "spokenTextSHA256": "1fddf4b9c548c8b0f85a46d19e5c1c6bc584dbaf677323da8c6fd610ee6a123d",
+      "spokenTextSha256": "1fddf4b9c548c8b0f85a46d19e5c1c6bc584dbaf677323da8c6fd610ee6a123d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\npH\n\n< 6.0\n\n6.0–7.5\n\n> 7.5\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\n< 2%\n\n3–6%\n\n> 6%\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nP\n\n< 15 ppm\n\n20–40 ppm\n\n> 50 ppm\n\nLow: seek calibrated P guidance; high: avoid automatic additional P\n\nK\n\n< 100 ppm\n\n120–200 ppm\n\n> 250 ppm\n\nLow: seek calibrated K guidance; high: avoid automatic additional K\n\nN\n\n< 10 ppm\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+          "spoken": "Historic classroom example only; not a universal laboratory or field recommendation\n\nThe historic table provides no extraction method, region, crop, sample basis or full category rules. Never use it as a universal diagnostic or fertilizer-rate chart.\n\nParameter\n\nExample low\n\nExample optimum\n\nExample high\n\nConditional classroom direction\n\nP H\n\nless than  six point zero\n\nsix point zero to seven point five\n\ngreater than  seven point five\n\nLow: investigate lime for the crop; high: assess feasibility and chemistry before any acidification\n\nOrganic matter\n\nless than  two percent\n\nthree to six percent\n\ngreater than  six percent\n\nLow: assess suitable compost, manure or cover crops; percentage depends on method and site\n\nphosphorus\n\nless than  fifteen parts per million\n\ntwenty to forty parts per million\n\ngreater than  fifty parts per million\n\nLow: seek calibrated phosphorus guidance; high: avoid automatic additional phosphorus\n\npotassium\n\nless than  one hundred parts per million\n\none hundred twenty to two hundred parts per million\n\ngreater than  two hundred fifty parts per million\n\nLow: seek calibrated potassium guidance; high: avoid automatic additional potassium\n\nnitrogen\n\nless than  ten parts per million\n\nvaries greatly\n\nvaries greatly\n\nPlan from crop demand, timing, credits and local method; no universal cutoff",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "de9030a104ca428f65507583d00ca5c5432e877e8a855cf79d5688849a2fa725",
+      "requestFingerprintSha256": "de9030a104ca428f65507583d00ca5c5432e877e8a855cf79d5688849a2fa725",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-09-en-glossary-r1",
+      "unitId": "S2-09-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "extractant",
+          "sha256": "4dfb6d34fae968bb57a332d87e7be226915d4e509d833a2cdf827a9e149ebd50"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A solution specified by a test method to release a defined fraction of a soil constituent for measurement.",
+          "sha256": "9143ea47d9e35cce943bc6847513f52c4fd1fa205a4d0e151a5c1bf1f3dd097b"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "filtrate",
+          "sha256": "479ad2deb7883dc2e60fb0fb35a4f9067debf7681060db16314e4428a3257467"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "The liquid obtained after separating particles from the soil suspension in the stated method.",
+          "sha256": "004f536167e4b8ba92d6d3a88d378a924e095b48efb558c33bcddc43fc817e41"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "colour reaction",
+          "sha256": "35a5088353cb659d1e6e3516e63a3ecac1aef7b72cced2badfb4e76e6b9cfa46"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.",
+          "sha256": "c39f6daf951cf18c5a09e4a7e49a411fafff0300dbde2156095288a4abb232e5"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "ppm",
+          "sha256": "616c1af8cc7f4556975b7cbe50bce072e87a5e5c4c14b3ccb87575fc547b3167"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Parts per million on the report's stated mass or volume basis; ask whether the result is mg/kg soil, mg/L solution or another declared basis.",
+          "sha256": "286a1e69c9c54effac97a58fd2c1fd68103b2a51eea4ae8498e857dfec920c0a"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "calibration",
+          "sha256": "e152337e4e85aa3e81482f0ce329aec7bfad531413fe53fef84f1f0d4165caee"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "The method- and region-specific link between a test index and crop response or category.",
+          "sha256": "e1c563b78cb3b43715a532b5e7ccb929cddd8bcf19cf7759f31bd5e5124ba0df"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "N-P-K label",
+          "sha256": "98b4c9d35f00afdc59d7754135846d2b43c544a5db7632e8afa026f1f4c2cfd6"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Fertilizer percentages of N, phosphate as P2O5 and potash as K2O; not the soil-test ppm values.",
+          "sha256": "739c8f0addce1f8ed026c4f974e2a4f6e0018fe5dad3dffec2a56843ceacced4"
+        }
+      ],
+      "scientificMeaning": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nppm\n\nParts per million on the report's stated mass or volume basis; ask whether the result is mg/kg soil, mg/L solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nN-P-K label\n\nFertilizer percentages of N, phosphate as P2O5 and potash as K2O; not the soil-test ppm values.",
+      "displayText": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nppm\n\nParts per million on the report's stated mass or volume basis; ask whether the result is mg/kg soil, mg/L solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nN-P-K label\n\nFertilizer percentages of N, phosphate as P2O5 and potash as K2O; not the soil-test ppm values.",
+      "captionText": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nppm\n\nParts per million on the report's stated mass or volume basis; ask whether the result is mg/kg soil, mg/L solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nN-P-K label\n\nFertilizer percentages of N, phosphate as P2O5 and potash as K2O; not the soil-test ppm values.",
+      "spokenText": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nparts per million\n\nParts per million on the report's stated mass or volume basis; ask whether the result is milligrams per kilogram soil, milligrams per litre solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nnitrogen-phosphorus-potassium label\n\nFertilizer percentages of nitrogen, phosphate as P two O five and potash as K two O; not the soil-test parts per million values.",
+      "spokenTextSHA256": "2808297155571a017fc04c7c8de1afe5df9e2dcc1e8bb92be6fe8615b4abc7ec",
+      "spokenTextSha256": "2808297155571a017fc04c7c8de1afe5df9e2dcc1e8bb92be6fe8615b4abc7ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nppm\n\nParts per million on the report's stated mass or volume basis; ask whether the result is mg/kg soil, mg/L solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nN-P-K label\n\nFertilizer percentages of N, phosphate as P2O5 and potash as K2O; not the soil-test ppm values.",
+          "spoken": "extractant\n\nA solution specified by a test method to release a defined fraction of a soil constituent for measurement.\n\nfiltrate\n\nThe liquid obtained after separating particles from the soil suspension in the stated method.\n\ncolour reaction\n\nA method-specific reagent reaction whose colour can be compared with a chart or measured by a suitable instrument.\n\nparts per million\n\nParts per million on the report's stated mass or volume basis; ask whether the result is milligrams per kilogram soil, milligrams per litre solution or another declared basis.\n\ncalibration\n\nThe method- and region-specific link between a test index and crop response or category.\n\nnitrogen-phosphorus-potassium label\n\nFertilizer percentages of nitrogen, phosphate as P two O five and potash as K two O; not the soil-test parts per million values.",
+          "occurrences": 1,
+          "purpose": "Exact element/formula/percentage/ppm/units/strictinequalities andbothrangeendpoints expanded; natural source-equivalent grammar. Historic-table-only scope, allconditions/negations/unknowns preserved; no source/display or scientific edit."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2f8c6e8fcf82d80ad6ee41afcdb3ca36640aa1d6dc8c93c44db0fb99d8678f66",
+      "requestFingerprintSha256": "2f8c6e8fcf82d80ad6ee41afcdb3ca36640aa1d6dc8c93c44db0fb99d8678f66",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
