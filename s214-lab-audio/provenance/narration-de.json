@@ -1,0 +1,527 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-14-de.json",
+    "sha256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+    "bytes": 39414
+  },
+  "units": [
+    {
+      "id": "S2-14-de-report-sequence-r1",
+      "unitId": "S2-14-de-report-sequence-r1",
+      "locale": "de",
+      "semanticGroup": "report-sequence",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/boundary",
+          "text": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung/SDS und individuelle Beobachtung bestimmen die Praxis.",
+          "sha256": "2d791578e4c0624911af9e19be452b77be18cc97c6184bf67623178779f8c8db"
+        },
+        {
+          "pointer": "/reportPractice/ui/modelHelp",
+          "text": "Die Blöcke zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.",
+          "sha256": "5dae9353a3265bec7deaa5be3450c5da3ec9dd071ab96cea97696ab8ce4dbdb5"
+        },
+        {
+          "pointer": "/reportPractice/sequence/0",
+          "text": "Sortiere jeden Feld-3-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.",
+          "sha256": "c31a6007749fc08dcd4eb0a388e6c787d2e6281ba95905c8f7b1b8a1e89fcbc1"
+        },
+        {
+          "pointer": "/reportPractice/sequence/1",
+          "text": "Vergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz 2.1% und andere Lücken bleiben offen.",
+          "sha256": "e92de9fdd353cb61a2de01be4eda75ecf3dc1c1a3ed6224aaffa4ab20e1784c8"
+        },
+        {
+          "pointer": "/reportPractice/sequence/2",
+          "text": "Schreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+          "sha256": "adc96d1bfaf0b7db11abfe0f25eae1f64035a4ed601c2b160ee3cbada76a51c9"
+        }
+      ],
+      "scientificMeaning": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung/SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Blöcke zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-3-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz 2.1% und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+      "displayText": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung/SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Blöcke zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-3-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz 2.1% und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+      "captionText": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung/SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Blöcke zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-3-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz 2.1% und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+      "spokenText": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung, SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Bänder zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-drei-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz zwei Komma eins Prozent und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+      "spokenTextSHA256": "2694462537a7785dac030b996ae63d5e205f610ad2b2c475d337857e97c0af42",
+      "spokenTextSha256": "2694462537a7785dac030b996ae63d5e205f610ad2b2c475d337857e97c0af42",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung/SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Blöcke zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-3-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz 2.1% und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+          "spoken": "Die Simulation misst keinen Boden und bestätigt keinen Reagenzumgang. Echtes Set, Anleitung, SDS und individuelle Beobachtung bestimmen die Praxis.\n\nDie Bänder zeigen nur die beispielhafte Lehrtabelle. Zwischenräume bleiben bewusst unklassifiziert. Keine kulturspezifische Laborskala, Mengenberechnung oder Bodensimulation.\n\nSortiere jeden Feld-drei-Wert nach Herkunft: selbst gemessen, von der Fachkraft erhalten, vorgeführt oder fehlend; ergänze Verfahren und Einheiten.\n\nVergib für einen Tabellenwert nur mit gültiger einschlägiger Referenz eine Klasse; organische Substanz zwei Komma eins Prozent und andere Lücken bleiben offen.\n\nSchreibe zwei bedingte Schritte für Tomaten und wähle eine Priorität samt noch nötigen Labor- oder Standortdaten.",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1e72a652bd37e357cb0e51bb54af2e7a4f001e69dc2c9cf5caf0933ea5a52a60",
+      "requestFingerprintSha256": "1e72a652bd37e357cb0e51bb54af2e7a4f001e69dc2c9cf5caf0933ea5a52a60",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-14-de-knowledge-completion-r1",
+      "unitId": "S2-14-de-knowledge-completion-r1",
+      "locale": "de",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/passChecks/0/evidence",
+          "text": "Nennt Auftraggeber, Feld 3, Proben-ID und Datum; trennt eigenen pH und eigene Textur von den bereitgestellten Werten organische Substanz 2.1%, P 12 ppm und K 185 ppm, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen N-Wert.",
+          "sha256": "bba468adff81edbf5278abef0e841885e35891aa7fae6303135ac0f0963cffd9"
+        },
+        {
+          "pointer": "/reportPractice/passChecks/0/decision",
+          "text": "Bestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige NPK/OM-Analysen führen zu gezielter Wiederholung.",
+          "sha256": "6745ec553844007e641f011a4fc72351f98c8f1f5066e09c2b3b1bb825099e1b"
+        },
+        {
+          "pointer": "/reportPractice/passChecks/1/evidence",
+          "text": "Behandelt die Tabellenwerte als Beispiele, erkennt 2.1% organische Substanz in der Lücke 2–3% sowie P/K-Lücken und bindet pH/P/K-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.",
+          "sha256": "a1c4df0470e6683d30947a988b86a8f95bbbd5da00acd7444391d4f8c230b455"
+        },
+        {
+          "pointer": "/reportPractice/passChecks/1/decision",
+          "text": "Bestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte OM-Etikette des Musters zu wiederholen reicht nicht.",
+          "sha256": "cbabdbb8bc7ebea1f84bd309ae9001fbc1217c1acd31bb78dd4fd72a05ce84f0"
+        },
+        {
+          "pointer": "/reportPractice/passChecks/2/evidence",
+          "text": "Schlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, P-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.",
+          "sha256": "2fa599de414e624c91d7fb1d786773c1ada067cca5c3579b91abb19ac559af56"
+        },
+        {
+          "pointer": "/reportPractice/passChecks/2/decision",
+          "text": "Bestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+          "sha256": "5b5fe849c7c82d93c80aa9dcae61cecdc4b1172fb13cec11e58b562b6cb262b2"
+        }
+      ],
+      "scientificMeaning": "Nennt Auftraggeber, Feld 3, Proben-ID und Datum; trennt eigenen pH und eigene Textur von den bereitgestellten Werten organische Substanz 2.1%, P 12 ppm und K 185 ppm, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen N-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige NPK/OM-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt 2.1% organische Substanz in der Lücke 2–3% sowie P/K-Lücken und bindet pH/P/K-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte OM-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, P-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+      "displayText": "Nennt Auftraggeber, Feld 3, Proben-ID und Datum; trennt eigenen pH und eigene Textur von den bereitgestellten Werten organische Substanz 2.1%, P 12 ppm und K 185 ppm, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen N-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige NPK/OM-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt 2.1% organische Substanz in der Lücke 2–3% sowie P/K-Lücken und bindet pH/P/K-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte OM-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, P-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+      "captionText": "Nennt Auftraggeber, Feld 3, Proben-ID und Datum; trennt eigenen pH und eigene Textur von den bereitgestellten Werten organische Substanz 2.1%, P 12 ppm und K 185 ppm, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen N-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige NPK/OM-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt 2.1% organische Substanz in der Lücke 2–3% sowie P/K-Lücken und bindet pH/P/K-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte OM-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, P-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+      "spokenText": "Nennt Auftraggeber, Feld drei, Proben-ID und Datum; trennt eigenen Pe Ha und eigene Textur von den bereitgestellten Werten organische Substanz zwei Komma eins Prozent, Pe zwölf Teile pro Million und Ka einhundertfünfundachtzig Teile pro Million, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen En-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige En Pe Ka, organische Substanz-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt zwei Komma eins Prozent organische Substanz in der Lücke zwei bis drei Prozent sowie Pe, Ka-Lücken und bindet Pe Ha, Pe, Ka-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte organische Substanz-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, Pe-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+      "spokenTextSHA256": "6b1a57795a6c46277220e328bdbccd318fa33f379733c05e83494a086db88388",
+      "spokenTextSha256": "6b1a57795a6c46277220e328bdbccd318fa33f379733c05e83494a086db88388",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nennt Auftraggeber, Feld 3, Proben-ID und Datum; trennt eigenen pH und eigene Textur von den bereitgestellten Werten organische Substanz 2.1%, P 12 ppm und K 185 ppm, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen N-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige NPK/OM-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt 2.1% organische Substanz in der Lücke 2–3% sowie P/K-Lücken und bindet pH/P/K-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte OM-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, P-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+          "spoken": "Nennt Auftraggeber, Feld drei, Proben-ID und Datum; trennt eigenen Pe Ha und eigene Textur von den bereitgestellten Werten organische Substanz zwei Komma eins Prozent, Pe zwölf Teile pro Million und Ka einhundertfünfundachtzig Teile pro Million, dokumentiert Einheiten und Verfahren oder deren Fehlen und erfindet keinen En-Wert.\n\nBestanden bei korrekter Herkunft und Einheit sowie klar markierter fehlender Methode; kopierte Musterwerte oder behauptete eigenständige En Pe Ka, organische Substanz-Analysen führen zu gezielter Wiederholung.\n\nBehandelt die Tabellenwerte als Beispiele, erkennt zwei Komma eins Prozent organische Substanz in der Lücke zwei bis drei Prozent sowie Pe, Ka-Lücken und bindet Pe Ha, Pe, Ka-Deutung an Verfahren, Kultur und regionale Laborkalibrierung; vergibt keine unbelegte endgültige Klasse.\n\nBestanden, wenn jede Klasse auf einer geeigneten benannten Referenz beruht oder offen bleibt. Die unbelegte organische Substanz-Etikette des Musters zu wiederholen reicht nicht.\n\nSchlägt für einen echten oder ausdrücklich vorgegebenen Tomatenfall zwei plausible nächste Schritte mit Gründen vor, wählt eine Priorität und nennt fehlende Daten wie Kalkbedarf, Pe-Extraktion, Analyse des Bodenverbesserungsmittels, Kulturplan und frühere Nährstoffgaben; keine erfundene Menge.\n\nBestanden, wenn Maßnahme und Vorrang aus Fall und Unsicherheit folgen; pauschale Kalk-, Kompost- oder Düngermengen ohne Standortgrundlage erfordern Wiederholung.",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3c7880fadefce6ab3af314906d455dee99861eca0ec06194c63c7fcd26fe513f",
+      "requestFingerprintSha256": "3c7880fadefce6ab3af314906d455dee99861eca0ec06194c63c7fcd26fe513f",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-14-de-record-guidance-r1",
+      "unitId": "S2-14-de-record-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/recordHelp",
+          "text": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.",
+          "sha256": "2b637d47d62e016c08af40b4079b4787f54139b96b823bc877ba221e424785da"
+        },
+        {
+          "pointer": "/reportPractice/ui/sections/0",
+          "text": "1. Auftraggeber und Probe",
+          "sha256": "8a4fab1797ded71216d05f44c63774e2cdd83ec3bc482f84bca862a5746452e7"
+        },
+        {
+          "pointer": "/reportPractice/ui/sections/1",
+          "text": "2. Ergebnisse und Herkunft",
+          "sha256": "3b33d1ef77a2bc467249d632123ae312f820b470c1b31036d4f039adb7ff871a"
+        },
+        {
+          "pointer": "/reportPractice/ui/sections/2",
+          "text": "3. Deutung und Referenz",
+          "sha256": "ce717677a5b29adc90765be844eb98013871ad69693a8ab32d0b81e47495035a"
+        },
+        {
+          "pointer": "/reportPractice/ui/sections/3",
+          "text": "4. Zwei bedingte Schritte und eine Priorität",
+          "sha256": "3d853faa4f3a77b2c14d4373ef99c988cb4eabd8765fa7b9497c41a31eb3b800"
+        },
+        {
+          "pointer": "/reportPractice/ui/sections/4",
+          "text": "5. Anmerkungen und fehlende Belege",
+          "sha256": "e2ebc22e5827905b0c2c612f3cd9247c51a14f6c43f74dc7a588d8a8961c5013"
+        },
+        {
+          "pointer": "/reportPractice/ui/identityFields/0",
+          "text": "Auftraggeber / Feld / Proben-ID",
+          "sha256": "32afd25d7b79b4b99679cc25de69d519eaf51603a32956c7ed64fb5bca6f1639"
+        },
+        {
+          "pointer": "/reportPractice/ui/identityFields/1",
+          "text": "Entnahme-/Testdaten / Standort / Kultur",
+          "sha256": "d53ef9191c9818c5e2f142168327cec5688d96ebd59008303f93286a9f89d865"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultColumns/0",
+          "text": "Parameter",
+          "sha256": "dd066ec1bf1d4485d3597f93a32c2f64b88ccdb6c555428ac4af3d17bf691cc2"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultColumns/1",
+          "text": "Tatsächlicher Wert oder leer",
+          "sha256": "d9be1d5993fb79ae938f2e02c4d34f01a0772badda9d93f361f24b4c338ba457"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultColumns/2",
+          "text": "Verfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten",
+          "sha256": "57792e26e38045d59d3b31abb2b282ec64433d448b798dc9f8602a139057fe41"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/0",
+          "text": "Eigener pH (einheitenlos)",
+          "sha256": "c8eb71b0fe935c9157976e2d97016e789df04d165f8d20e296d5b043286b575e"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/1",
+          "text": "Eigene Sand-/Schluff-/Tonanteile und Klasse",
+          "sha256": "18ae7d76c570485cec781548a79706c2f273b8cbe679c22e2f3b282776bf36b9"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/2",
+          "text": "Bereitgestellte OM 2.1%",
+          "sha256": "38ec7c7eb31fcbe8ef7dcf95009097547277bdef6eb954d9e4e2216db2b07fb3"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/3",
+          "text": "Bereitgestelltes P 12 ppm",
+          "sha256": "784793bed4b7a6af4b7077e4022f73af0b52bafc89e0d163a498686da5b53cdd"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/4",
+          "text": "Bereitgestelltes K 185 ppm",
+          "sha256": "8cb32e8593b88512742e1aac60b92da6bf4505c12aacf4f1ef40a5e3d95474ac"
+        },
+        {
+          "pointer": "/reportPractice/ui/resultNames/5",
+          "text": "N: nicht bereitgestellt",
+          "sha256": "f729940afb45a19d245b0b78faab04f5250566d050d73827fa15524c771ed819"
+        },
+        {
+          "pointer": "/reportPractice/ui/reportFields/0",
+          "text": "Jeden Befund mit Referenz deuten oder als offen begründen",
+          "sha256": "896dfc7409774dae9c7e75adfef3ec1e2288a7c0605eec1884102272949124ff"
+        },
+        {
+          "pointer": "/reportPractice/ui/reportFields/1",
+          "text": "Erster bedingter Schritt und Beleg",
+          "sha256": "deb37123012328e3c87b9ec1f3d32fd1c94dfa6465802608593cafd5d255953d"
+        },
+        {
+          "pointer": "/reportPractice/ui/reportFields/2",
+          "text": "Zweiter bedingter Schritt und Beleg",
+          "sha256": "1ab56b802a92c3c0f1af62686c46680fcb23f9976522b6ccc93eac9741ed7dd0"
+        },
+        {
+          "pointer": "/reportPractice/ui/reportFields/3",
+          "text": "Eine Priorität, Grund und mögliche Änderung",
+          "sha256": "92392eb1989e60a0f4e0dfd23b6a631f95da5e21b1725ac0f11994f14174ceda"
+        },
+        {
+          "pointer": "/reportPractice/ui/reportFields/4",
+          "text": "Anmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)",
+          "sha256": "226feb8b08d41274e35dcd544d6103d0c248682a973995a765a827ade829cfb7"
+        },
+        {
+          "pointer": "/reportPractice/ui/knowledgeOnly",
+          "text": "Berichtsübung; tatsächliche Praxisbeobachtung getrennt",
+          "sha256": "a46ae98687d918f79381e4f1272850b3a8694aa3daf5da7923ff1bd270f8cf84"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt integrierter Bericht",
+          "sha256": "ddc26aee5d5ef70cf84921ca9ea3b62b355eca7248f1f6a01711b4248bcaba1c"
+        }
+      ],
+      "scientificMeaning": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\n1. Auftraggeber und Probe\n\n2. Ergebnisse und Herkunft\n\n3. Deutung und Referenz\n\n4. Zwei bedingte Schritte und eine Priorität\n\n5. Anmerkungen und fehlende Belege\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+      "displayText": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\n1. Auftraggeber und Probe\n\n2. Ergebnisse und Herkunft\n\n3. Deutung und Referenz\n\n4. Zwei bedingte Schritte und eine Priorität\n\n5. Anmerkungen und fehlende Belege\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+      "captionText": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\n1. Auftraggeber und Probe\n\n2. Ergebnisse und Herkunft\n\n3. Deutung und Referenz\n\n4. Zwei bedingte Schritte und eine Priorität\n\n5. Anmerkungen und fehlende Belege\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+      "spokenText": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\neins. Auftraggeber und Probe\n\nzwei. Ergebnisse und Herkunft\n\ndrei. Deutung und Referenz\n\nvier. Zwei bedingte Schritte und eine Priorität\n\nfünf. Anmerkungen und fehlende Belege\n\nAuftraggeber, Feld, Proben-ID\n\nEntnahme-, Testdaten, Standort, Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren, Einheit, Herkunft, Protokoll, Grund fehlender Daten\n\nEigener Pe Ha (einheitenlos)\n\nEigene Sand-, Schluff-, Tonanteile und Klasse\n\nBereitgestellte organische Substanz zwei Komma eins Prozent \n\nBereitgestelltes Pe zwölf Teile pro Million\n\nBereitgestelltes Ka einhundertfünfundachtzig Teile pro Million\n\nEn: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+      "spokenTextSHA256": "1e56c3214e0f5d7a2dd6c90d3292b7b4125fb7cc36b0acff4ec00b0305ffcb1e",
+      "spokenTextSha256": "1e56c3214e0f5d7a2dd6c90d3292b7b4125fb7cc36b0acff4ec00b0305ffcb1e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\n1. Auftraggeber und Probe\n\n2. Ergebnisse und Herkunft\n\n3. Deutung und Referenz\n\n4. Zwei bedingte Schritte und eine Priorität\n\n5. Anmerkungen und fehlende Belege\n\nAuftraggeber / Feld / Proben-ID\n\nEntnahme-/Testdaten / Standort / Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren / Einheit / Herkunft / Protokoll / Grund fehlender Daten\n\nEigener pH (einheitenlos)\n\nEigene Sand-/Schluff-/Tonanteile und Klasse\n\nBereitgestellte OM 2.1%\n\nBereitgestelltes P 12 ppm\n\nBereitgestelltes K 185 ppm\n\nN: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+          "spoken": "Unbekanntes leer lassen und begründen. Speichern bestätigt weder Befund, Deutung, Reihenfolge noch Praxis. Vorgegebene Zahlen sind Lehrdaten, kein Nachweis einer echten Ergebnisübergabe.\n\neins. Auftraggeber und Probe\n\nzwei. Ergebnisse und Herkunft\n\ndrei. Deutung und Referenz\n\nvier. Zwei bedingte Schritte und eine Priorität\n\nfünf. Anmerkungen und fehlende Belege\n\nAuftraggeber, Feld, Proben-ID\n\nEntnahme-, Testdaten, Standort, Kultur\n\nParameter\n\nTatsächlicher Wert oder leer\n\nVerfahren, Einheit, Herkunft, Protokoll, Grund fehlender Daten\n\nEigener Pe Ha (einheitenlos)\n\nEigene Sand-, Schluff-, Tonanteile und Klasse\n\nBereitgestellte organische Substanz zwei Komma eins Prozent \n\nBereitgestelltes Pe zwölf Teile pro Million\n\nBereitgestelltes Ka einhundertfünfundachtzig Teile pro Million\n\nEn: nicht bereitgestellt\n\nJeden Befund mit Referenz deuten oder als offen begründen\n\nErster bedingter Schritt und Beleg\n\nZweiter bedingter Schritt und Beleg\n\nEine Priorität, Grund und mögliche Änderung\n\nAnmerkungen, offene Daten und Rückmeldung (bis Erhalt leer)\n\nBerichtsübung; tatsächliche Praxisbeobachtung getrennt\n\nArbeitsblatt integrierter Bericht",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2ddd7c816d9170be660f326419c7db33e9a5e9a652e2b27b3ec8326e5d662637",
+      "requestFingerprintSha256": "2ddd7c816d9170be660f326419c7db33e9a5e9a652e2b27b3ec8326e5d662637",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-14-de-provenance-guidance-r1",
+      "unitId": "S2-14-de-provenance-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "provenance-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/provenance",
+          "text": "Woher stammt jeder Feld-3-Wert?",
+          "sha256": "9f2c2f0894d48a87e85c71282b84139070837b36969befd58133ac182ec8767c"
+        },
+        {
+          "pointer": "/reportPractice/ui/originOptions/0",
+          "text": "Eigene praktische Messung in Stufen; hier noch nicht vorhanden",
+          "sha256": "ee16f68f80f94c50eba0bc6ae9c0a4cfe0f11b3bb2dde5d707b50ffbd972b2db"
+        },
+        {
+          "pointer": "/reportPractice/ui/originOptions/1",
+          "text": "Von der Fachkraft bereitgestellt; Verfahren noch nötig",
+          "sha256": "c03dbc39b57fe9dfe204b0ab0fbe7d65b591c0e0a57d92452b0cb906420e9fef"
+        },
+        {
+          "pointer": "/reportPractice/ui/originOptions/2",
+          "text": "Kein Befund bereitgestellt; fehlend heißt nicht null",
+          "sha256": "38312c1da179c3843ef75aa156614dc0685a382fd64427af917edf156cba58eb"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/0",
+          "text": "Eigenes pH-Protokoll",
+          "sha256": "b58cae19f28123fd6f990ba8aadd1f2b28740a4d68bd8ef9ea00e165512b38cf"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/1",
+          "text": "Eigenes Texturprotokoll",
+          "sha256": "6b458b190aac13d6fd987df10884006cc175ed8c84533c1ad7e8b34e50158b2d"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/2",
+          "text": "OM 2.1%",
+          "sha256": "57f6e579b45cfbb59a3973c3d125b00a7d041e0ce75f961c2972655c9b428067"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/3",
+          "text": "P 12 ppm",
+          "sha256": "2193ffa7f88a437472263dc576428fc4fbb128cb9e2ca4bc5012e6c253ad21fc"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/4",
+          "text": "K 185 ppm",
+          "sha256": "19b282b87b3e1599410293386ebeb48169f7a7e027b8c74f5acd3d756815e7de"
+        },
+        {
+          "pointer": "/reportPractice/ui/originRows/5",
+          "text": "N: keine Zahl",
+          "sha256": "7e396ffd6103b394fc5b6d21be241999858b45a999086049b00ec68a6634fa54"
+        },
+        {
+          "pointer": "/reportPractice/ui/originGood",
+          "text": "Herkunft stimmt: eigene pH-/Texturwerte bis zur Messung leer; OM/P/K bereitgestellt; N fehlt.",
+          "sha256": "db2d7aa0ed930a19f81219c4c825583405e0adbc39ac2bf40dd80fff7c2233b8"
+        },
+        {
+          "pointer": "/reportPractice/ui/originBad",
+          "text": "Prüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes N ist nicht null.",
+          "sha256": "5eb9298f8572a192a38d86bd7c643c4123c1051b670fe5ccdb5b48fe9eac000b"
+        }
+      ],
+      "scientificMeaning": "Woher stammt jeder Feld-3-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes pH-Protokoll\n\nEigenes Texturprotokoll\n\nOM 2.1%\n\nP 12 ppm\n\nK 185 ppm\n\nN: keine Zahl\n\nHerkunft stimmt: eigene pH-/Texturwerte bis zur Messung leer; OM/P/K bereitgestellt; N fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes N ist nicht null.",
+      "displayText": "Woher stammt jeder Feld-3-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes pH-Protokoll\n\nEigenes Texturprotokoll\n\nOM 2.1%\n\nP 12 ppm\n\nK 185 ppm\n\nN: keine Zahl\n\nHerkunft stimmt: eigene pH-/Texturwerte bis zur Messung leer; OM/P/K bereitgestellt; N fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes N ist nicht null.",
+      "captionText": "Woher stammt jeder Feld-3-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes pH-Protokoll\n\nEigenes Texturprotokoll\n\nOM 2.1%\n\nP 12 ppm\n\nK 185 ppm\n\nN: keine Zahl\n\nHerkunft stimmt: eigene pH-/Texturwerte bis zur Messung leer; OM/P/K bereitgestellt; N fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes N ist nicht null.",
+      "spokenText": "Woher stammt jeder Feld-drei-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes Pe Ha-Protokoll\n\nEigenes Texturprotokoll\n\norganische Substanz zwei Komma eins Prozent \n\nPe zwölf Teile pro Million\n\nKa einhundertfünfundachtzig Teile pro Million\n\nEn: keine Zahl\n\nHerkunft stimmt: eigene Pe Ha-, Texturwerte bis zur Messung leer; organische Substanz, Pe, Ka bereitgestellt; En fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes En ist nicht null.",
+      "spokenTextSHA256": "79c76c9ebd790366031116775266b9953c5cd2dada19d94ff07d90f452f15fa5",
+      "spokenTextSha256": "79c76c9ebd790366031116775266b9953c5cd2dada19d94ff07d90f452f15fa5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Woher stammt jeder Feld-3-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes pH-Protokoll\n\nEigenes Texturprotokoll\n\nOM 2.1%\n\nP 12 ppm\n\nK 185 ppm\n\nN: keine Zahl\n\nHerkunft stimmt: eigene pH-/Texturwerte bis zur Messung leer; OM/P/K bereitgestellt; N fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes N ist nicht null.",
+          "spoken": "Woher stammt jeder Feld-drei-Wert?\n\nEigene praktische Messung in Stufen; hier noch nicht vorhanden\n\nVon der Fachkraft bereitgestellt; Verfahren noch nötig\n\nKein Befund bereitgestellt; fehlend heißt nicht null\n\nEigenes Pe Ha-Protokoll\n\nEigenes Texturprotokoll\n\norganische Substanz zwei Komma eins Prozent \n\nPe zwölf Teile pro Million\n\nKa einhundertfünfundachtzig Teile pro Million\n\nEn: keine Zahl\n\nHerkunft stimmt: eigene Pe Ha-, Texturwerte bis zur Messung leer; organische Substanz, Pe, Ka bereitgestellt; En fehlt.\n\nPrüfe die Herkunft: ein Muster ist keine eigene Beobachtung, fehlendes En ist nicht null.",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "07dafdb561051103e09a0eb3560ba206f518b4ada2ec33896e53978a9f4a6270",
+      "requestFingerprintSha256": "07dafdb561051103e09a0eb3560ba206f518b4ada2ec33896e53978a9f4a6270",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-14-de-facilitation-r1",
+      "unitId": "S2-14-de-facilitation-r1",
+      "locale": "de",
+      "semanticGroup": "facilitation",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/facilitation",
+          "text": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+          "sha256": "b0c1793ff12559b9f006208fdebd5cae3ed575732ee1f56dbd7bf5d4dac67cd5"
+        }
+      ],
+      "scientificMeaning": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "displayText": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "captionText": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "spokenText": "Aktivplan: fünfundneunzig Minuten gleich fünf plus fünfunddreißig plus zehn plus fünfundvierzig. Feld drei: vierzig Minuten plus fünf Austausch, darin vorgeschlagene aktive Stufen zwanzig plus zwanzig. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt organische Substanz, Pe, Ka nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das organische Substanz, Pe, Ka-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "spokenTextSHA256": "cdf4cd6e7a23d39d1f029484e9e3f143bc66375e5d8059508172858c4dd74bac",
+      "spokenTextSha256": "cdf4cd6e7a23d39d1f029484e9e3f143bc66375e5d8059508172858c4dd74bac",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+          "spoken": "Aktivplan: fünfundneunzig Minuten gleich fünf plus fünfunddreißig plus zehn plus fünfundvierzig. Feld drei: vierzig Minuten plus fünf Austausch, darin vorgeschlagene aktive Stufen zwanzig plus zwanzig. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt organische Substanz, Pe, Ka nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das organische Substanz, Pe, Ka-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9239ed2168c0821252c7122a6b530b11207f60ed927482302219969bbb776ac1",
+      "requestFingerprintSha256": "9239ed2168c0821252c7122a6b530b11207f60ed927482302219969bbb776ac1",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-14-de-scaffold-and-disclosure-r1",
+      "unitId": "S2-14-de-scaffold-and-disclosure-r1",
+      "locale": "de",
+      "semanticGroup": "scaffold-and-disclosure",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/starter",
+          "text": "Satzanfang: „Weil [Ergebnis] nach [benannter Referenz] [Deutung] bedeutet, folgt [Schritt], sofern [fehlender Beleg/Voraussetzung].“",
+          "sha256": "7e69ff5c15250df3902c900c53a5b328f097d237d868cdac7c66c1ae15011221"
+        },
+        {
+          "pointer": "/reportPractice/ui/reason",
+          "text": "Vor dem Vergleich selbst begründen",
+          "sha256": "26a2d8da1b0e71a571029fbb15e8fad1fb3b18a0d37568d406d10a22dc0142ff"
+        },
+        {
+          "pointer": "/reportPractice/ui/empty",
+          "text": "Zuerst eigenen Versuch schreiben.",
+          "sha256": "14a738aac649d1b1301a28f0494c7f729b5113562671591340e748e12b396e20"
+        },
+        {
+          "pointer": "/reportPractice/ui/reasonBoundary",
+          "text": "Der Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.",
+          "sha256": "29b8fe9b75c0b1d2a5def9c75f7dbd41952c0a418d47a4ab1744485d65146a0c"
+        },
+        {
+          "pointer": "/reportPractice/ui/need",
+          "text": "Probenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.",
+          "sha256": "ecb23faf3638a1bc2dc57263f10f785be6654e6bbfa79e7f16065a11df295448"
+        },
+        {
+          "pointer": "/reportPractice/ui/notes",
+          "text": "Beobachtung / Rückmeldung / Datum / Unterschrift: bis Beobachtung leer",
+          "sha256": "3c3c6e4fdeda4f70ad20b129feaf384101df6712d1984cf4c45d2a6704689c84"
+        }
+      ],
+      "scientificMeaning": "Satzanfang: „Weil [Ergebnis] nach [benannter Referenz] [Deutung] bedeutet, folgt [Schritt], sofern [fehlender Beleg/Voraussetzung].“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung / Rückmeldung / Datum / Unterschrift: bis Beobachtung leer",
+      "displayText": "Satzanfang: „Weil [Ergebnis] nach [benannter Referenz] [Deutung] bedeutet, folgt [Schritt], sofern [fehlender Beleg/Voraussetzung].“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung / Rückmeldung / Datum / Unterschrift: bis Beobachtung leer",
+      "captionText": "Satzanfang: „Weil [Ergebnis] nach [benannter Referenz] [Deutung] bedeutet, folgt [Schritt], sofern [fehlender Beleg/Voraussetzung].“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung / Rückmeldung / Datum / Unterschrift: bis Beobachtung leer",
+      "spokenText": "Satzanfang: „Weil Ergebnis nach benannter Referenz Deutung bedeutet, folgt Schritt, sofern fehlender Beleg, Voraussetzung.“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung, Rückmeldung, Datum, Unterschrift: bis Beobachtung leer",
+      "spokenTextSHA256": "d26c9e89d1bbaecca998e51d55aded58cc2512a358f57f6ee1b86820351fe96b",
+      "spokenTextSha256": "d26c9e89d1bbaecca998e51d55aded58cc2512a358f57f6ee1b86820351fe96b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Satzanfang: „Weil [Ergebnis] nach [benannter Referenz] [Deutung] bedeutet, folgt [Schritt], sofern [fehlender Beleg/Voraussetzung].“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung / Rückmeldung / Datum / Unterschrift: bis Beobachtung leer",
+          "spoken": "Satzanfang: „Weil Ergebnis nach benannter Referenz Deutung bedeutet, folgt Schritt, sofern fehlender Beleg, Voraussetzung.“\n\nVor dem Vergleich selbst begründen\n\nZuerst eigenen Versuch schreiben.\n\nDer Vergleich bewertet keine Freitextbedeutung und bestätigt keine praktische Leistung.\n\nProbenkennung und Kommentar zu fehlenden Belegen eintragen. Nicht verfügbare Ergebnisse leer lassen.\n\nBeobachtung, Rückmeldung, Datum, Unterschrift: bis Beobachtung leer",
+          "occurrences": 1,
+          "purpose": "Complete current source quantities/units/nutrient notation/grammar plus root-selected truthful band descriptor for actual2D runtime. Exact scientific facts and full following qualification unchanged; source/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7863faa9468763d8d127817dc5200416c1b8f218fce3a158002a3b0eaffe0a5a",
+      "requestFingerprintSha256": "7863faa9468763d8d127817dc5200416c1b8f218fce3a158002a3b0eaffe0a5a",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
