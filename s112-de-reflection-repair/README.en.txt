@@ -1,0 +1,1 @@
+One approved11word Germanfirstreflectionquestion only; allthreechoices/followingquestion and criteria preserved.1TTS1blind1ASR2GET0retry, exactoriginalKore/delivery. Preservealloriginalsuffix/current source/display; no automaticjoin/postjoin.

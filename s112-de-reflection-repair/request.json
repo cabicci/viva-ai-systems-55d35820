@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "S112_DE_REFLECTION_FIRST_QUESTION_CORROBORATED_WORD_REPAIR_ONLY",
+  "stepId": "S1-12",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s112-de-reflection-sentence-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_DE_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S1-12-de-reflection-sentence-repair-r1",
+      "unitId": "S1-12-de-reflection-sentence-repair-r1",
+      "locale": "de",
+      "semanticGroup": "reflection-first-question-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "77ad78974571eae63b7b679dd1b8855d8d41e7b9fcf70adce26d56be08c3f792",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz? Welche Belege oder Übung brauchst du noch?",
+          "sha256": "02e94dfabf599cdc10cb6f1a2955714f2c030b6bb6922f4520c02dcfa46285e3"
+        }
+      ],
+      "scientificMeaning": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz? Welche Belege oder Übung brauchst du noch?",
+      "displayText": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz? Welche Belege oder Übung brauchst du noch?",
+      "captionText": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz? Welche Belege oder Übung brauchst du noch?",
+      "spokenText": "Welcher Teil war für dich am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz?",
+      "spokenTextSHA256": "694d1ca4301ef8b7f822d2a4ffa9b84b8b6b5c7b22a95dee3f0838bbe475d7e1",
+      "spokenTextSha256": "694d1ca4301ef8b7f822d2a4ffa9b84b8b6b5c7b22a95dee3f0838bbe475d7e1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz? Welche Belege oder Übung brauchst du noch?",
+          "spoken": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz?",
+          "occurrences": 1,
+          "purpose": "EXACT_FIRST_COMPLETE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz?",
+          "spoken": "Welcher Teil war für dich am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz?",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_FIRST_REFLECTION_QUESTION_PRESERVES_THREE_CHOICES_AND_FOLLOWING_QUESTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "72dc4be9b93770e6cdf234463e85ea4e041db93166a9ab73d818d62d5873c732",
+      "requestFingerprintSha256": "72dc4be9b93770e6cdf234463e85ea4e041db93166a9ab73d818d62d5873c732",
+      "sourcePlanSha256": "ad3259587dab3d6b602463b69dd0e79f76ab81c4ae1672a56b41dbb67e30d8f9",
+      "exactSentenceBefore": "Was war am schwierigsten: Etikett, Beobachtungen oder Methodenabsatz?",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S1-12-de-reflection-sentence-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
