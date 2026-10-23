@@ -1,0 +1,1 @@
+One six-word source-equivalent Egyptian Arabic third-sample classification sentence only. One TTS, one blind review, one ASR, two model metadata GET, no retry. Preserve original A/B/C sequence and all outside PCM. No automatic join or further calls.
