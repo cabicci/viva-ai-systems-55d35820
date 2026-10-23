@@ -1,0 +1,146 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C04": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C05": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C06": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C07": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 7,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationID": "s201-reading-contexts",
+    "reservationSHA256": "c209538e62c1505be1f4ed38a119cb7ee88b3b051f35cf10329570c100dadcb1",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 34,
+    "globalConservativelyReservedOrConsumed": 41,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S2-01-ar-EG-R01-r1",
+        "wavSHA256": "10a129e03bf403c8f0f3460f839a77b7384e75f31654a8946f99c9535d88740e",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S2-01-ar-EG-R01-r1",
+        "wavSHA256": "10a129e03bf403c8f0f3460f839a77b7384e75f31654a8946f99c9535d88740e",
+        "firstSample": 2109120,
+        "endSampleExclusive": 2253120,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C03",
+        "sourceUnitId": "S2-01-ar-EG-R04-r1",
+        "wavSHA256": "5fb282fe3fb7977c245b72795cda982294be61784c250bdd3953fe02ef7d2d80",
+        "firstSample": 2047680,
+        "endSampleExclusive": 2191680,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C04",
+        "sourceUnitId": "S2-01-en-R01-r1",
+        "wavSHA256": "62dd3f3c8baf8bb075eff07ed09b53b098e872d4c119014591ac3ba4e388e179",
+        "firstSample": 72000,
+        "endSampleExclusive": 240000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C05",
+        "sourceUnitId": "S2-01-it-R02-r1",
+        "wavSHA256": "03f2668b01d0c1734cfc78d5cb8a53159314f3e5913f1bab0308847029a2375c",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C06",
+        "sourceUnitId": "S2-01-it-R04-r1",
+        "wavSHA256": "651488afc7f3ef0eeb49b49e20cbca11c792d2c5bba1185492230a3dfe6342ef",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C07",
+        "sourceUnitId": "S2-01-it-R04-r1",
+        "wavSHA256": "651488afc7f3ef0eeb49b49e20cbca11c792d2c5bba1185492230a3dfe6342ef",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}
