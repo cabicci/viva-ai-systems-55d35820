@@ -1,0 +1,386 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-05-en.json",
+    "sha256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+    "bytes": 31087
+  },
+  "units": [
+    {
+      "id": "S2-05-en-R01-r1",
+      "unitId": "S2-05-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.",
+          "sha256": "acdf298197553982ff850f4bfa9734fc3692a58f89d8872dcc02fe143e0fd5a0"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "The 95-minute teaching topic includes 5 minutes of introduction, 35 minutes of instruction, 10 minutes of interpretation/report discussion and 45 minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, pH, nutrient interpretation and the integrated report. In this course, NPK and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.",
+          "sha256": "44c11ec5ee76759bed4c02aa746acab37dec261f17376ede6db66427d1ff4514"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/2",
+          "text": "A report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore PPE, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+          "sha256": "76728ee74bbb2c0c71d66d58ca777cdb7b4245f6179b1eefc931041874af075f"
+        }
+      ],
+      "scientificMeaning": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe 95-minute teaching topic includes 5 minutes of introduction, 35 minutes of instruction, 10 minutes of interpretation/report discussion and 45 minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, pH, nutrient interpretation and the integrated report. In this course, NPK and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore PPE, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+      "displayText": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe 95-minute teaching topic includes 5 minutes of introduction, 35 minutes of instruction, 10 minutes of interpretation/report discussion and 45 minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, pH, nutrient interpretation and the integrated report. In this course, NPK and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore PPE, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+      "captionText": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe 95-minute teaching topic includes 5 minutes of introduction, 35 minutes of instruction, 10 minutes of interpretation/report discussion and 45 minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, pH, nutrient interpretation and the integrated report. In this course, NPK and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore PPE, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+      "spokenText": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe ninety-five-minute teaching topic includes five minutes of introduction, thirty-five minutes of instruction, ten minutes of interpretation/report discussion and forty-five minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, P H, nutrient interpretation and the integrated report. In this course, N P K and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore P P E, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+      "spokenTextSHA256": "359a3a4741d05c49203c4d3c53b08c20c5ff3cc3ad7c02fe34bb65342443b6c3",
+      "spokenTextSha256": "359a3a4741d05c49203c4d3c53b08c20c5ff3cc3ad7c02fe34bb65342443b6c3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "NPK",
+          "spoken": "N P K",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "PPE",
+          "spoken": "P P E",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe 95-minute teaching topic includes 5 minutes of introduction, 35 minutes of instruction, 10 minutes of interpretation/report discussion and 45 minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, P H, nutrient interpretation and the integrated report. In this course, N P K and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore P P E, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+          "spoken": "A mechanic would inspect a faulty engine before replacing parts. Soil testing follows a similar logic: obtain a representative sample, use the specified analysis, interpret results for the crop, and then recommend action. Guessing can waste money, reduce yield or harm the environment. The analogy does not guarantee an 'exact' fix from one test.\n\nThe ninety-five-minute teaching topic includes five minutes of introduction, thirty-five minutes of instruction, ten minutes of interpretation/report discussion and forty-five minutes of activity. Air-drying and long settling take actual elapsed time across stages; they do not disappear because a live session is shorter. This step covers safe preparation and tool choice. Later steps cover texture, P H, nutrient interpretation and the integrated report. In this course, N P K and organic-matter tests are trainer demonstrations for understanding and interpretation, not learner-performed wet-chemistry requirements.\n\nA report can show that the learner organized and interpreted numbers, but cannot by itself prove that the same learner wore P P E, prepared a sample or ran a meter. Record those observations separately under trainer supervision.",
+          "occurrences": 1,
+          "purpose": "Exact teachingtime5/35/10/45=95 and24–48hour range,2mmaperture spoken forms; condition/test exceptions untouched"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "21eb33bf5821e7884f4d11b964bf60f02264d4fbb176a6686f4fd3a0ad2dcde2",
+      "requestFingerprintSha256": "21eb33bf5821e7884f4d11b964bf60f02264d4fbb176a6686f4fd3a0ad2dcde2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-R02-r1",
+      "unitId": "S2-05-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Before work, identify the exit, eye-wash, safety shower, fire extinguisher, local alarm and the trainer responsible for incidents. Locate the labelled containers for used soil and each chemical-waste stream. Keep food, drink and chewing gum outside the laboratory and keep the bench orderly. An unknown, visibly contaminated or leaking sample is a stop-and-report condition, not a normal practice sample.",
+          "sha256": "7c3b38d6c71037b19c1325f51bd09b5a89c672c6e186780f586bee0ef86db696"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Read each reagent label and its current Safety Data Sheet (SDS, formerly MSDS). Its hazard, first-aid, accidental-release, handling, exposure-control/PPE and disposal sections inform the local procedure. Wear suitable eye protection for soil dust and possible splashes, an appropriate lab coat or apron and gloves selected for the actual chemical and task. Nitrile or latex is not universally compatible; check the SDS and allergies. A face shield may supplement, not replace, the eye protection specified for a splash risk.",
+          "sha256": "4c09213b60b7b5e3e38af8579403a7264a87621c981cec161b35d55ebcbbb78f"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Never eat, drink or chew gum at the bench. Do not mix or dilute an acid independently. If an approved task requires dilution, trained and authorized staff follow the SDS and site procedure, adding acid to water rather than water to acid with the specified equipment and protection. Do not clean an unknown spill yourself; withdraw, warn others and notify the trainer under the local emergency plan. Segregate waste as labelled; do not pour reagents into a drain or combine waste streams without authorization. Trainer observes putting on and removing PPE and safe waste choice.",
+          "sha256": "454861cdc97a32ff55893132cb802f4483872c6d37685991f0b28dbde713e86f"
+        }
+      ],
+      "scientificMeaning": "Before work, identify the exit, eye-wash, safety shower, fire extinguisher, local alarm and the trainer responsible for incidents. Locate the labelled containers for used soil and each chemical-waste stream. Keep food, drink and chewing gum outside the laboratory and keep the bench orderly. An unknown, visibly contaminated or leaking sample is a stop-and-report condition, not a normal practice sample.\n\nRead each reagent label and its current Safety Data Sheet (SDS, formerly MSDS). Its hazard, first-aid, accidental-release, handling, exposure-control/PPE and disposal sections inform the local procedure. Wear suitable eye protection for soil dust and possible splashes, an appropriate lab coat or apron and gloves selected for the actual chemical and task. Nitrile or latex is not universally compatible; check the SDS and allergies. A face shield may supplement, not replace, the eye protection specified for a splash risk.\n\nNever eat, drink or chew gum at the bench. Do not mix or dilute an acid independently. If an approved task requires dilution, trained and authorized staff follow the SDS and site procedure, adding acid to water rather than water to acid with the specified equipment and protection. Do not clean an unknown spill yourself; withdraw, warn others and notify the trainer under the local emergency plan. Segregate waste as labelled; do not pour reagents into a drain or combine waste streams without authorization. Trainer observes putting on and removing PPE and safe waste choice.",
+      "displayText": "Before work, identify the exit, eye-wash, safety shower, fire extinguisher, local alarm and the trainer responsible for incidents. Locate the labelled containers for used soil and each chemical-waste stream. Keep food, drink and chewing gum outside the laboratory and keep the bench orderly. An unknown, visibly contaminated or leaking sample is a stop-and-report condition, not a normal practice sample.\n\nRead each reagent label and its current Safety Data Sheet (SDS, formerly MSDS). Its hazard, first-aid, accidental-release, handling, exposure-control/PPE and disposal sections inform the local procedure. Wear suitable eye protection for soil dust and possible splashes, an appropriate lab coat or apron and gloves selected for the actual chemical and task. Nitrile or latex is not universally compatible; check the SDS and allergies. A face shield may supplement, not replace, the eye protection specified for a splash risk.\n\nNever eat, drink or chew gum at the bench. Do not mix or dilute an acid independently. If an approved task requires dilution, trained and authorized staff follow the SDS and site procedure, adding acid to water rather than water to acid with the specified equipment and protection. Do not clean an unknown spill yourself; withdraw, warn others and notify the trainer under the local emergency plan. Segregate waste as labelled; do not pour reagents into a drain or combine waste streams without authorization. Trainer observes putting on and removing PPE and safe waste choice.",
+      "captionText": "Before work, identify the exit, eye-wash, safety shower, fire extinguisher, local alarm and the trainer responsible for incidents. Locate the labelled containers for used soil and each chemical-waste stream. Keep food, drink and chewing gum outside the laboratory and keep the bench orderly. An unknown, visibly contaminated or leaking sample is a stop-and-report condition, not a normal practice sample.\n\nRead each reagent label and its current Safety Data Sheet (SDS, formerly MSDS). Its hazard, first-aid, accidental-release, handling, exposure-control/PPE and disposal sections inform the local procedure. Wear suitable eye protection for soil dust and possible splashes, an appropriate lab coat or apron and gloves selected for the actual chemical and task. Nitrile or latex is not universally compatible; check the SDS and allergies. A face shield may supplement, not replace, the eye protection specified for a splash risk.\n\nNever eat, drink or chew gum at the bench. Do not mix or dilute an acid independently. If an approved task requires dilution, trained and authorized staff follow the SDS and site procedure, adding acid to water rather than water to acid with the specified equipment and protection. Do not clean an unknown spill yourself; withdraw, warn others and notify the trainer under the local emergency plan. Segregate waste as labelled; do not pour reagents into a drain or combine waste streams without authorization. Trainer observes putting on and removing PPE and safe waste choice.",
+      "spokenText": "Before work, identify the exit, eye-wash, safety shower, fire extinguisher, local alarm and the trainer responsible for incidents. Locate the labelled containers for used soil and each chemical-waste stream. Keep food, drink and chewing gum outside the laboratory and keep the bench orderly. An unknown, visibly contaminated or leaking sample is a stop-and-report condition, not a normal practice sample.\n\nRead each reagent label and its current Safety Data Sheet (S D S, formerly M S D S). Its hazard, first-aid, accidental-release, handling, exposure-control/P P E and disposal sections inform the local procedure. Wear suitable eye protection for soil dust and possible splashes, an appropriate lab coat or apron and gloves selected for the actual chemical and task. Nitrile or latex is not universally compatible; check the S D S and allergies. A face shield may supplement, not replace, the eye protection specified for a splash risk.\n\nNever eat, drink or chew gum at the bench. Do not mix or dilute an acid independently. If an approved task requires dilution, trained and authorized staff follow the S D S and site procedure, adding acid to water rather than water to acid with the specified equipment and protection. Do not clean an unknown spill yourself; withdraw, warn others and notify the trainer under the local emergency plan. Segregate waste as labelled; do not pour reagents into a drain or combine waste streams without authorization. Trainer observes putting on and removing P P E and safe waste choice.",
+      "spokenTextSHA256": "eb394ef9a1e073357083044f0f76bfa160a590d207c62c48a791d34fb6bbd88b",
+      "spokenTextSha256": "eb394ef9a1e073357083044f0f76bfa160a590d207c62c48a791d34fb6bbd88b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "MSDS",
+          "spoken": "M S D S",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "SDS",
+          "spoken": "S D S",
+          "occurrences": 3,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "PPE",
+          "spoken": "P P E",
+          "occurrences": 2,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "68495e2e3068a1729c2c18ef7cfb3df36cb857ba3df166328ce307ad83815263",
+      "requestFingerprintSha256": "68495e2e3068a1729c2c18ef7cfb3df36cb857ba3df166328ce307ad83815263",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-R03-r1",
+      "unitId": "S2-05-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Beakers or flasks hold and mix soil-water suspensions; their graduations are not the substitute for a suitable graduated cylinder when the method requires a measured volume in millilitres (mL). A balance measures mass in grams (g). A sieve separates the specified particle-size fraction; the teaching sample-preparation protocol uses a 2 mm opening. A mortar and pestle gently break dried aggregates, not rocks.",
+          "sha256": "a0b876850063249e46f759e6283e763667a894e421072fdf6e5cc3cb40c20b48"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "A pH meter or suitable pH strip measures or estimates acidity according to its method. A colorimeter measures light/colour response in some nutrient kits and requires an appropriate procedure and calibration. Naming a tool does not authorize using it without supervision or mean it is required for every soil test. Match instrument, unit and purpose before handling a sample.",
+          "sha256": "334639391aaeede0b62f45c4e872ad9e8b180039179715bc9b21febfd074102d"
+        }
+      ],
+      "scientificMeaning": "Beakers or flasks hold and mix soil-water suspensions; their graduations are not the substitute for a suitable graduated cylinder when the method requires a measured volume in millilitres (mL). A balance measures mass in grams (g). A sieve separates the specified particle-size fraction; the teaching sample-preparation protocol uses a 2 mm opening. A mortar and pestle gently break dried aggregates, not rocks.\n\nA pH meter or suitable pH strip measures or estimates acidity according to its method. A colorimeter measures light/colour response in some nutrient kits and requires an appropriate procedure and calibration. Naming a tool does not authorize using it without supervision or mean it is required for every soil test. Match instrument, unit and purpose before handling a sample.",
+      "displayText": "Beakers or flasks hold and mix soil-water suspensions; their graduations are not the substitute for a suitable graduated cylinder when the method requires a measured volume in millilitres (mL). A balance measures mass in grams (g). A sieve separates the specified particle-size fraction; the teaching sample-preparation protocol uses a 2 mm opening. A mortar and pestle gently break dried aggregates, not rocks.\n\nA pH meter or suitable pH strip measures or estimates acidity according to its method. A colorimeter measures light/colour response in some nutrient kits and requires an appropriate procedure and calibration. Naming a tool does not authorize using it without supervision or mean it is required for every soil test. Match instrument, unit and purpose before handling a sample.",
+      "captionText": "Beakers or flasks hold and mix soil-water suspensions; their graduations are not the substitute for a suitable graduated cylinder when the method requires a measured volume in millilitres (mL). A balance measures mass in grams (g). A sieve separates the specified particle-size fraction; the teaching sample-preparation protocol uses a 2 mm opening. A mortar and pestle gently break dried aggregates, not rocks.\n\nA pH meter or suitable pH strip measures or estimates acidity according to its method. A colorimeter measures light/colour response in some nutrient kits and requires an appropriate procedure and calibration. Naming a tool does not authorize using it without supervision or mean it is required for every soil test. Match instrument, unit and purpose before handling a sample.",
+      "spokenText": "Beakers or flasks hold and mix soil-water suspensions; their graduations are not the substitute for a suitable graduated cylinder when the method requires a measured volume in millilitres (m L). A balance measures mass in grams with symbol g. A sieve separates the specified particle-size fraction; the teaching sample-preparation protocol uses a two-millimetre opening. A mortar and pestle gently break dried aggregates, not rocks.\n\nA P H meter or suitable P H strip measures or estimates acidity according to its method. A colorimeter measures light/colour response in some nutrient kits and requires an appropriate procedure and calibration. Naming a tool does not authorize using it without supervision or mean it is required for every soil test. Match instrument, unit and purpose before handling a sample.",
+      "spokenTextSHA256": "8fce075da6cc29a64f1cef528503d598a29066df6b243360032d414ea0c30b75",
+      "spokenTextSha256": "8fce075da6cc29a64f1cef528503d598a29066df6b243360032d414ea0c30b75",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH",
+          "spoken": "P H",
+          "occurrences": 2,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "2 mm",
+          "spoken": "two millimetres",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "mL",
+          "spoken": "m L",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "(g)",
+          "spoken": "with symbol g",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "a two millimetres opening",
+          "spoken": "a two-millimetre opening",
+          "occurrences": 1,
+          "purpose": "Grammatical spoken measured-aperture adjective or duration-range inflection; exact2mm/24–48hours estimateandprotocol-condition unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "94f970bbe6f17c2273a2b17357330d891328a66da73d5540d2476d927e5d8d22",
+      "requestFingerprintSha256": "94f970bbe6f17c2273a2b17357330d891328a66da73d5540d2476d927e5d8d22",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-R04-r1",
+      "unitId": "S2-05-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.",
+          "sha256": "2930eefa07eb0cfd34983bfc8d11d66f9385678a094deaaff408a4d668322bd6"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "When this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about 24–48 hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+          "sha256": "c54bac489dfcbbfbdcc8f7db5d804ae147efd2b0b979ab1dcffb55da16202961"
+        }
+      ],
+      "scientificMeaning": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about 24–48 hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+      "displayText": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about 24–48 hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+      "captionText": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about 24–48 hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+      "spokenText": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about twenty-four to forty-eight hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+      "spokenTextSHA256": "c5b80bd58429c70c43e507071419d2b471b408487a0e49c233574ea0f7bdf7c4",
+      "spokenTextSha256": "c5b80bd58429c70c43e507071419d2b471b408487a0e49c233574ea0f7bdf7c4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about 24–48 hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+          "spoken": "For many routine agronomic analyses, air-drying can make soil easier to mix, sieve and weigh reproducibly. It is not a universal preparation rule. Some analyses need fresh/moist soil, chilled handling or other preservation; volatile contaminants in particular can be lost by drying. The receiving laboratory's test-specific instructions decide. If instructions or the target analyte are unknown, stop and ask before changing the sample.\n\nWhen this teaching protocol requires air-drying, spread soil in a thin layer on a clean, labelled tray or heavy clean paper in a dry, ventilated area away from direct sun and contamination. Record the start, checks and end; about twenty-four to forty-eight hours is a teaching estimate, not permission to stop before the protocol's condition is reached. The goal here is a dry, crumbly, non-clumping condition specified by the activity. Keep the sample ID with the tray throughout.",
+          "occurrences": 1,
+          "purpose": "Exact teachingtime5/35/10/45=95 and24–48hour range,2mmaperture spoken forms; condition/test exceptions untouched"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0764ea683993743345f214e465486b15f158c23ba2fc6804d61cf4cdc511624d",
+      "requestFingerprintSha256": "0764ea683993743345f214e465486b15f158c23ba2fc6804d61cf4cdc511624d",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-R05-r1",
+      "unitId": "S2-05-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Once the required drying state is reached, use a clean mortar and pestle or suitable roller to gently break soil clods. Do not grind stones into artificial sand or alter the natural particle composition. Pass soil through the 2 mm sieve for this routine agronomic teaching protocol. The material that passes is the prepared fine-earth fraction; separate stones, roots, leaves and other debris retained above the sieve according to the laboratory method.",
+          "sha256": "30028b9fc015dd892db6c3b39c490cf95fdf542178990f50bdf7fe9aef602bc4"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Clean tools and tray between samples so one field's material does not enter another's. Moist clumps, crushed rock, contaminated tools or a mixed-up label can each change what a result represents. They are possible causes of error, not proof that every unexpected result is the student's fault. The flow is received raw sample → test-specific handling and, if required, drying → gentle aggregate breakup → specified sieve → labelled prepared sample.",
+          "sha256": "956d9c70883002291dc5f137db2633ad675cf990038e6ebac180774a2e136880"
+        }
+      ],
+      "scientificMeaning": "Once the required drying state is reached, use a clean mortar and pestle or suitable roller to gently break soil clods. Do not grind stones into artificial sand or alter the natural particle composition. Pass soil through the 2 mm sieve for this routine agronomic teaching protocol. The material that passes is the prepared fine-earth fraction; separate stones, roots, leaves and other debris retained above the sieve according to the laboratory method.\n\nClean tools and tray between samples so one field's material does not enter another's. Moist clumps, crushed rock, contaminated tools or a mixed-up label can each change what a result represents. They are possible causes of error, not proof that every unexpected result is the student's fault. The flow is received raw sample → test-specific handling and, if required, drying → gentle aggregate breakup → specified sieve → labelled prepared sample.",
+      "displayText": "Once the required drying state is reached, use a clean mortar and pestle or suitable roller to gently break soil clods. Do not grind stones into artificial sand or alter the natural particle composition. Pass soil through the 2 mm sieve for this routine agronomic teaching protocol. The material that passes is the prepared fine-earth fraction; separate stones, roots, leaves and other debris retained above the sieve according to the laboratory method.\n\nClean tools and tray between samples so one field's material does not enter another's. Moist clumps, crushed rock, contaminated tools or a mixed-up label can each change what a result represents. They are possible causes of error, not proof that every unexpected result is the student's fault. The flow is received raw sample → test-specific handling and, if required, drying → gentle aggregate breakup → specified sieve → labelled prepared sample.",
+      "captionText": "Once the required drying state is reached, use a clean mortar and pestle or suitable roller to gently break soil clods. Do not grind stones into artificial sand or alter the natural particle composition. Pass soil through the 2 mm sieve for this routine agronomic teaching protocol. The material that passes is the prepared fine-earth fraction; separate stones, roots, leaves and other debris retained above the sieve according to the laboratory method.\n\nClean tools and tray between samples so one field's material does not enter another's. Moist clumps, crushed rock, contaminated tools or a mixed-up label can each change what a result represents. They are possible causes of error, not proof that every unexpected result is the student's fault. The flow is received raw sample → test-specific handling and, if required, drying → gentle aggregate breakup → specified sieve → labelled prepared sample.",
+      "spokenText": "Once the required drying state is reached, use a clean mortar and pestle or suitable roller to gently break soil clods. Do not grind stones into artificial sand or alter the natural particle composition. Pass soil through the two-millimetre sieve for this routine agronomic teaching protocol. The material that passes is the prepared fine-earth fraction; separate stones, roots, leaves and other debris retained above the sieve according to the laboratory method.\n\nClean tools and tray between samples so one field's material does not enter another's. Moist clumps, crushed rock, contaminated tools or a mixed-up label can each change what a result represents. They are possible causes of error, not proof that every unexpected result is the student's fault. The flow is received raw sample , then, test-specific handling and, if required, drying , then, gentle aggregate breakup , then, specified sieve , then, labelled prepared sample.",
+      "spokenTextSHA256": "b366aa9e06595b893b5369502f7974702fae016f127b094754f92e8dd90c5b83",
+      "spokenTextSha256": "b366aa9e06595b893b5369502f7974702fae016f127b094754f92e8dd90c5b83",
+      "spokenAdaptationChanges": [
+        {
+          "written": "2 mm",
+          "spoken": "two millimetres",
+          "occurrences": 1,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "→",
+          "spoken": ", then,",
+          "occurrences": 4,
+          "purpose": "Faithful SDS/PPE/unit/symbol and written process-sequence narration, or natural Egyptian grammar; no safety/qualification/source changes"
+        },
+        {
+          "written": "the two millimetres sieve",
+          "spoken": "the two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Grammatical spoken measured-aperture adjective or duration-range inflection; exact2mm/24–48hours estimateandprotocol-condition unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4bfe4baebc9a03de66e175f3d9dc12010af004f9e1972e488d97ce3ab79359b2",
+      "requestFingerprintSha256": "4bfe4baebc9a03de66e175f3d9dc12010af004f9e1972e488d97ce3ab79359b2",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-05-en-R06-r1",
+      "unitId": "S2-05-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "fd0008d27d1dbc74029d80f353e8abc12972cdaf46af5b3fe8778a65dc66e6dd",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "At receipt, compare the bag to the full field record. Preserve the sample ID, collection date, field/location, sampling depth and collector's name. An abbreviated 'ID, date and initials' is a memory aid, not a sufficient final submission label. Match each tray, sieve batch, subsample and final bag to the same record; never rely on its position on a bench.",
+          "sha256": "5100347cbf4eb0ab12cdd6f0032150cc0459e6544adf8c8d9777b2f7aa7b6cfa"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "A trainer may hand a learner a previously dried and sieved sample to keep a short activity moving. That allows subsequent tests and reporting but cannot count as evidence the learner dried or sieved it. The trainer records the actual step personally observed and the completed product separately. This protects the credibility of the practical assessment.",
+          "sha256": "3a42d0c4a1266810ead809301db6f290f3d3bc1075a6210d5d8c7e72e54159fb"
+        }
+      ],
+      "scientificMeaning": "At receipt, compare the bag to the full field record. Preserve the sample ID, collection date, field/location, sampling depth and collector's name. An abbreviated 'ID, date and initials' is a memory aid, not a sufficient final submission label. Match each tray, sieve batch, subsample and final bag to the same record; never rely on its position on a bench.\n\nA trainer may hand a learner a previously dried and sieved sample to keep a short activity moving. That allows subsequent tests and reporting but cannot count as evidence the learner dried or sieved it. The trainer records the actual step personally observed and the completed product separately. This protects the credibility of the practical assessment.",
+      "displayText": "At receipt, compare the bag to the full field record. Preserve the sample ID, collection date, field/location, sampling depth and collector's name. An abbreviated 'ID, date and initials' is a memory aid, not a sufficient final submission label. Match each tray, sieve batch, subsample and final bag to the same record; never rely on its position on a bench.\n\nA trainer may hand a learner a previously dried and sieved sample to keep a short activity moving. That allows subsequent tests and reporting but cannot count as evidence the learner dried or sieved it. The trainer records the actual step personally observed and the completed product separately. This protects the credibility of the practical assessment.",
+      "captionText": "At receipt, compare the bag to the full field record. Preserve the sample ID, collection date, field/location, sampling depth and collector's name. An abbreviated 'ID, date and initials' is a memory aid, not a sufficient final submission label. Match each tray, sieve batch, subsample and final bag to the same record; never rely on its position on a bench.\n\nA trainer may hand a learner a previously dried and sieved sample to keep a short activity moving. That allows subsequent tests and reporting but cannot count as evidence the learner dried or sieved it. The trainer records the actual step personally observed and the completed product separately. This protects the credibility of the practical assessment.",
+      "spokenText": "At receipt, compare the bag to the full field record. Preserve the sample ID, collection date, field/location, sampling depth and collector's name. An abbreviated 'ID, date and initials' is a memory aid, not a sufficient final submission label. Match each tray, sieve batch, subsample and final bag to the same record; never rely on its position on a bench.\n\nA trainer may hand a learner a previously dried and sieved sample to keep a short activity moving. That allows subsequent tests and reporting but cannot count as evidence the learner dried or sieved it. The trainer records the actual step personally observed and the completed product separately. This protects the credibility of the practical assessment.",
+      "spokenTextSHA256": "60276eaec1cd06d650ed342a3e29cd138dff1417e98bb54619c52d4a808a5545",
+      "spokenTextSha256": "60276eaec1cd06d650ed342a3e29cd138dff1417e98bb54619c52d4a808a5545",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ac3a0fecbf6cd75bdf05e305b6cedbe693f7573a05132b08051d1049a2fe562d",
+      "requestFingerprintSha256": "ac3a0fecbf6cd75bdf05e305b6cedbe693f7573a05132b08051d1049a2fe562d",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
