@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXCEPTION_S209_AR_R05_SOURCE_PHRASE_REPAIR",
+  "stepId": "S2-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-exception-s209-ar-r05-source-phrase-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-09-ar-EG-R05-source-phrase-repair-r1",
+      "unitId": "S2-09-ar-EG-R05-source-phrase-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "exception-s209-ar-r05-source-phrase-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "30c7fc846103549cbff0b0ddf7c4967c8055f333822c77d61933093ffb8dbdb2",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+          "sha256": "91bb3769e32f87091c6832d28df1ff5c9df02d7b763523ec1510aec76cdc43c4"
+        }
+      ],
+      "scientificMeaning": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+      "displayText": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+      "captionText": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+      "spokenText": "الإجراءات المبسطة في الجدول بتطرح أسئلة للتوصية المحلية، مش أوامر تلقائية: هل الجير مناسب لما بي إتش يكون منخفض للمحصول؟ وهل إضافة الفوسفور أو البوتاسيوم مناسبة لما يثبت نقصهم؟ وهل فيه احتياج لمواد عضوية؟",
+      "spokenTextSHA256": "823fb5355d0c38822fd520e57d456db6d9b51b60efbb701fae79d73f0b39d2d8",
+      "spokenTextSha256": "823fb5355d0c38822fd520e57d456db6d9b51b60efbb701fae79d73f0b39d2d8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+          "spoken": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية.",
+          "spoken": "الإجراءات المبسطة في الجدول بتطرح أسئلة للتوصية المحلية، مش أوامر تلقائية: هل الجير مناسب لما بي إتش يكون منخفض للمحصول؟ وهل إضافة الفوسفور أو البوتاسيوم مناسبة لما يثبت نقصهم؟ وهل فيه احتياج لمواد عضوية؟",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "8d39ae2d83266d80d6e04cf4faa099e68cab609f7adb3fe7417c383db11521d5",
+      "requestFingerprintSha256": "8d39ae2d83266d80d6e04cf4faa099e68cab609f7adb3fe7417c383db11521d5",
+      "sourcePlanSha256": "9604e1b7569355a210ee25a540ec1c2e9b2ac20ad0f08a17a520559e232a8350",
+      "exactSentenceBefore": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/4/paragraphs/1",
+        "original": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+        "effective": "الإجراءات المبسطة في الجدول — فحص جدوى الجير لما pH منخفض للمحصول، أو بحث إضافة P أو K مناسبة لما يثبت نقصهما، أو مواد عضوية عند الحاجة — أسئلة للتوصية المحلية، مش أوامر تلقائية. pH المرتفع لا يعني كبريتًا تلقائيًا في الأرض الجيرية، وقراءة N منخفضة في وقت واحد ما تثبتش وحدها جرعة نيتروجين ثابتة.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-09-ar-EG-R05-source-phrase-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
