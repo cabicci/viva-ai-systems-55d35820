@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-06",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "sandy-loam-sample",
+      "title": "Vorgegebene Feuchteantwort nicht übernehmen",
+      "situation": "Die Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.",
+      "reasoning": [
+        "Notiere die wirklichen Befunde, Textur, Stelle und Tiefe.",
+        "Vergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.",
+        "Schreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert."
+      ],
+      "takeaway": "Die Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor."
+    },
+    {
+      "id": "wet-clay",
+      "title": "Mehr Wasser bedeutet keinen Fortschritt",
+      "situation": "Nach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.",
+      "reasoning": [
+        "Beende die Zugabe und notiere den Nässebefund.",
+        "Tonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.",
+        "Die Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung."
+      ],
+      "takeaway": "Kein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe."
+    },
+    {
+      "id": "line-layout",
+      "title": "Drei Pflanzen, drei Tropfer",
+      "situation": "Drei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.",
+      "reasoning": [
+        "Miss den Schlauch und markiere die Pflanzen vor dem Lochen.",
+        "Prüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.",
+        "Nach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung."
+      ],
+      "takeaway": "Richtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände."
+    }
+  ]
+}

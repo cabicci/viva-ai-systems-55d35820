@@ -1,0 +1,246 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-en.json",
+    "sha256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+    "bytes": 25136
+  },
+  "units": [
+    {
+      "id": "S3-06-en-E01-r1",
+      "unitId": "S3-06-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Do not accept a prewritten moisture answer",
+          "sha256": "7a9950f0c1a9f052ffd178d33f7a4b2d627408c265065bde8d67a8dfe7944092"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.",
+          "sha256": "51c09d3a0b01b69b980e1e3b568c17ff5bebdf4a68436fdc3d2a93049640cf97"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Record those actual observations and the texture, place and depth.",
+          "sha256": "dd968fbc36fb42db5cc8b0553bf58c77a5a3bb8adf59acab777f9325caa187a4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Compare with the texture-specific guide and perhaps another root-zone sample.",
+          "sha256": "fb5f1204f8f7a7d4ff6d37cac72e4bbce452187ef01565d1f13bb39e37ca8065"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Do not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.",
+          "sha256": "82c4b23a3334261597ddbc938b9392ef8d57beec19ad6de896655dd8bf39255a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "The moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+          "sha256": "c6df7704ba81e3f6eb4413ab625a911590e39375d952d5bb1fb29ac51661aeff"
+        }
+      ],
+      "scientificMeaning": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+      "displayText": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+      "captionText": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+      "spokenText": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real sandy-loam sample from a depth of twelve centimetres is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+      "spokenTextSHA256": "0c2526c0d19a3ca69c3d35483c23d92d2e8f1753261b9851f62e9866ae548a65",
+      "spokenTextSha256": "0c2526c0d19a3ca69c3d35483c23d92d2e8f1753261b9851f62e9866ae548a65",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+          "spoken": "Do not accept a prewritten moisture answer\n\nA planter-box process card predicts 'too dry', but a real sandy-loam sample from a depth of twelve centimetres is darker, feels cool and makes a weak ball.\n\nRecord those actual observations and the texture, place and depth.\n\nCompare with the texture-specific guide and perhaps another root-zone sample.\n\nDo not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage.\n\nThe moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c44b93e7a28555ceb0acec9ccdccea269d6d0243772bda786c03125b932acda8",
+      "requestFingerprintSha256": "c44b93e7a28555ceb0acec9ccdccea269d6d0243772bda786c03125b932acda8",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "sandy-loam-sample",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-E02-r1",
+      "unitId": "S3-06-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Too much water is not progress",
+          "sha256": "eb1107e80d99a0aa6ba6cec1bd27a8673b22293326cb89d9c0349ff84299b209"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "After a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.",
+          "sha256": "d266d9f57ca2224e8fe376eb17527ef543b2354237fbc440ff7014ff7971d618"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Stop water addition and record the wet observation.",
+          "sha256": "1fbb5533f9ddf5a8ce8690720e2032f38b5755c6ad2110df1cbfba8fb4fbccfc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "A clay ribbon or firm ball is not one universal moisture target.",
+          "sha256": "0d9ec2806ec4770ac58bd1b585045b392e412a863bda785a7237cb5a375d4490"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "The trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging.",
+          "sha256": "98372147ec40e0e4319a891cf430faec3fff5ca9bddce71db8c0e684450bdbf6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "No extra water or invented optimal percentage; describe and compare the actual sample.",
+          "sha256": "0746533fb498631fd16d5ae854756d7856492d5300507aeb54a1f47925ec58c9"
+        }
+      ],
+      "scientificMeaning": "Too much water is not progress\n\nAfter a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.\n\nStop water addition and record the wet observation.\n\nA clay ribbon or firm ball is not one universal moisture target.\n\nThe trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging.\n\nNo extra water or invented optimal percentage; describe and compare the actual sample.",
+      "displayText": "Too much water is not progress\n\nAfter a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.\n\nStop water addition and record the wet observation.\n\nA clay ribbon or firm ball is not one universal moisture target.\n\nThe trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging.\n\nNo extra water or invented optimal percentage; describe and compare the actual sample.",
+      "captionText": "Too much water is not progress\n\nAfter a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.\n\nStop water addition and record the wet observation.\n\nA clay ribbon or firm ball is not one universal moisture target.\n\nThe trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging.\n\nNo extra water or invented optimal percentage; describe and compare the actual sample.",
+      "spokenText": "Too much water is not progress\n\nAfter a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.\n\nStop water addition and record the wet observation.\n\nA clay ribbon or firm ball is not one universal moisture target.\n\nThe trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging.\n\nNo extra water or invented optimal percentage; describe and compare the actual sample.",
+      "spokenTextSHA256": "34e85e5a459450044e483683a20a3c66ce4b9141e401c1a9ee5c0f8a248b7ca6",
+      "spokenTextSha256": "34e85e5a459450044e483683a20a3c66ce4b9141e401c1a9ee5c0f8a248b7ca6",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "390a9c20701f3d54a626ae49532444208eb2d58f5508e77ccabe0f6c41c5d955",
+      "requestFingerprintSha256": "390a9c20701f3d54a626ae49532444208eb2d58f5508e77ccabe0f6c41c5d955",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-clay",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-E03-r1",
+      "unitId": "S3-06-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Three plants, three emitters",
+          "sha256": "2680f341bce70a16c45010826a37ae70faeeccf4eb9648a7669f3096b91ec121"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Three seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.",
+          "sha256": "553c6391ccc17e3529b0b617c424ff2b6c23fd38821ceadf92035e55525dff3f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Measure the tube and mark each plant position before punching.",
+          "sha256": "241ed02f8efa9b50200c15e777d4afc8e50faa2932137964674d2b196cf0449b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Check tube, punch and emitter compatibility and keep the system unpressurised during assembly.",
+          "sha256": "b712eeb5bee72f40f6cdc22795fcffa2bc8ce681d0ccfed5b9a95033d083e480"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "After kit-approved connection, test all three outlets and every joint under trainer supervision.",
+          "sha256": "16bf1469093a3451fecb2ff0045094fdd82287882f4a8bba1a70bbf72b117023"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Correct positions and a leak-free, flowing test matter more than blindly equal hole spacing.",
+          "sha256": "959b4ea819d17e6c5ca8591c60141235d1e770b925ded9d57e69a8b728be5bd5"
+        }
+      ],
+      "scientificMeaning": "Three plants, three emitters\n\nThree seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.\n\nMeasure the tube and mark each plant position before punching.\n\nCheck tube, punch and emitter compatibility and keep the system unpressurised during assembly.\n\nAfter kit-approved connection, test all three outlets and every joint under trainer supervision.\n\nCorrect positions and a leak-free, flowing test matter more than blindly equal hole spacing.",
+      "displayText": "Three plants, three emitters\n\nThree seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.\n\nMeasure the tube and mark each plant position before punching.\n\nCheck tube, punch and emitter compatibility and keep the system unpressurised during assembly.\n\nAfter kit-approved connection, test all three outlets and every joint under trainer supervision.\n\nCorrect positions and a leak-free, flowing test matter more than blindly equal hole spacing.",
+      "captionText": "Three plants, three emitters\n\nThree seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.\n\nMeasure the tube and mark each plant position before punching.\n\nCheck tube, punch and emitter compatibility and keep the system unpressurised during assembly.\n\nAfter kit-approved connection, test all three outlets and every joint under trainer supervision.\n\nCorrect positions and a leak-free, flowing test matter more than blindly equal hole spacing.",
+      "spokenText": "Three plants, three emitters\n\nThree seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.\n\nMeasure the tube and mark each plant position before punching.\n\nCheck tube, punch and emitter compatibility and keep the system unpressurised during assembly.\n\nAfter kit-approved connection, test all three outlets and every joint under trainer supervision.\n\nCorrect positions and a leak-free, flowing test matter more than blindly equal hole spacing.",
+      "spokenTextSHA256": "c2f6501872a3ad9238515b9ed51ec9565d42fc88191422b5cd343dad39677d37",
+      "spokenTextSha256": "c2f6501872a3ad9238515b9ed51ec9565d42fc88191422b5cd343dad39677d37",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "86be9784186fbd6ea878b484e64068c00e4a448898937750e7d8ffdf4616ac9e",
+      "requestFingerprintSha256": "86be9784186fbd6ea878b484e64068c00e4a448898937750e7d8ffdf4616ac9e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "line-layout",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

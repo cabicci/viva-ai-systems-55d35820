@@ -1,0 +1,246 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-it.json",
+    "sha256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+    "bytes": 25974
+  },
+  "units": [
+    {
+      "id": "S3-06-it-E01-r1",
+      "unitId": "S3-06-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Non accettare una risposta sull’umidità già scritta",
+          "sha256": "e593eda42869170ae83a75a8196b48129dad835f5875986a8b2c8e0641649843"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "La scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.",
+          "sha256": "a5192155362044d40a7a34ac3287e6528b911bc6df4210e69e55fe5da624a016"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Registra le osservazioni reali, tessitura, posizione e profondità.",
+          "sha256": "07e0b149df1f65735f435279b5d41051aec5df904b04b0a4e815cd83098e5c94"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Confronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.",
+          "sha256": "35856c19282088847eb0a81210da09ab428593764d7c750c5aaa2b58876d9856"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Non indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.",
+          "sha256": "ac6131f9a64d4af5a3318b67e4d38ac5a016fe074b69e5aee05716d77a3c8c52"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Il giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+          "sha256": "58f0e1659e02ad05e0240da8a296dbf4f380186316836d78ea6b6fcf9b25ec1e"
+        }
+      ],
+      "scientificMeaning": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+      "displayText": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+      "captionText": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+      "spokenText": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da dodici centimetri è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+      "spokenTextSHA256": "f2978790d0ad394a5a5b2a9bf71be92d3313dbadd9b0a9b23f63a9dc138649fb",
+      "spokenTextSha256": "f2978790d0ad394a5a5b2a9bf71be92d3313dbadd9b0a9b23f63a9dc138649fb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+          "spoken": "Non accettare una risposta sull’umidità già scritta\n\nLa scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da dodici centimetri è più scuro, fresco al tatto e forma una palla debole.\n\nRegistra le osservazioni reali, tessitura, posizione e profondità.\n\nConfronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.\n\nNon indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale.\n\nIl giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "231712a315f46db9e0166d981e4db04c774c99224c1a3c9a6665fa723e10c918",
+      "requestFingerprintSha256": "231712a315f46db9e0166d981e4db04c774c99224c1a3c9a6665fa723e10c918",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "sandy-loam-sample",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-06-it-E02-r1",
+      "unitId": "S3-06-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Più acqua non significa progresso",
+          "sha256": "51e2b389bd91469763308d45ba501d16c21f09c2458e8aa8826cdeaaabdb74b1"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Dopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.",
+          "sha256": "8706613549bef21daa687bf984484150b1b9829a6795a0b83c5a5698764e980a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Interrompi l’aggiunta e registra l’osservazione di bagnato.",
+          "sha256": "a53fcb3bd7be51a0ebd9a1866215cd85769fa8573080fc0923e2e2a2b7b989d1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Un nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.",
+          "sha256": "5b8c2741365aa0d9a03b6e8849b0f1b37c1dee1340cc7ef803918f79ff40246a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "L’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno.",
+          "sha256": "18045450f93da25c8018fe514db134d659dead48bf6ff7306f472d22b4d5af85"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Niente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale.",
+          "sha256": "df57a5fbd00d0f290ff0e92e4c5c7e5ac0bfa185f3340bc3200a7d6fd9104f4f"
+        }
+      ],
+      "scientificMeaning": "Più acqua non significa progresso\n\nDopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.\n\nInterrompi l’aggiunta e registra l’osservazione di bagnato.\n\nUn nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.\n\nL’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno.\n\nNiente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale.",
+      "displayText": "Più acqua non significa progresso\n\nDopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.\n\nInterrompi l’aggiunta e registra l’osservazione di bagnato.\n\nUn nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.\n\nL’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno.\n\nNiente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale.",
+      "captionText": "Più acqua non significa progresso\n\nDopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.\n\nInterrompi l’aggiunta e registra l’osservazione di bagnato.\n\nUn nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.\n\nL’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno.\n\nNiente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale.",
+      "spokenText": "Più acqua non significa progresso\n\nDopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.\n\nInterrompi l’aggiunta e registra l’osservazione di bagnato.\n\nUn nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.\n\nL’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno.\n\nNiente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale.",
+      "spokenTextSHA256": "72806ae5e364193a73fdf63f14125573cccd52b070db9be190e23324a02d79fe",
+      "spokenTextSha256": "72806ae5e364193a73fdf63f14125573cccd52b070db9be190e23324a02d79fe",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ffd1c362d5071e7473b65d84865b3cdc69b4a69f0a1407398591f7336f6c735",
+      "requestFingerprintSha256": "1ffd1c362d5071e7473b65d84865b3cdc69b4a69f0a1407398591f7336f6c735",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-clay",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-06-it-E03-r1",
+      "unitId": "S3-06-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Tre piante, tre gocciolatori",
+          "sha256": "179fa0eea8869e6d2eab6df5e6de9d221bee7d02acd81086d2d9c6c778f9c4db"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Tre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.",
+          "sha256": "e855033fb2d0cd08189f6179fab5401ece424bccb21875c17fd63a0a1c45ed61"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Misura il tubo e segna le piante prima di forare.",
+          "sha256": "0ad0be21d2ca09f1070741437cfad0fa56c22ebbe2c4e726b7d3aebda3166a00"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Verifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.",
+          "sha256": "517eb26623674eb3b270fc7f98711a242f7369f264156086128cca59a2ae2431"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Dopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore.",
+          "sha256": "d5bfb988a5615bfbc1e2dfb7b88080206c45d3c91783381a542dcaba32328dce"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Posizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti.",
+          "sha256": "0495a58fd2cc10572244e2df60fd93bd32fd91a7697f74b89c0d4a654ac1f835"
+        }
+      ],
+      "scientificMeaning": "Tre piante, tre gocciolatori\n\nTre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.\n\nMisura il tubo e segna le piante prima di forare.\n\nVerifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.\n\nDopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore.\n\nPosizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti.",
+      "displayText": "Tre piante, tre gocciolatori\n\nTre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.\n\nMisura il tubo e segna le piante prima di forare.\n\nVerifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.\n\nDopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore.\n\nPosizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti.",
+      "captionText": "Tre piante, tre gocciolatori\n\nTre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.\n\nMisura il tubo e segna le piante prima di forare.\n\nVerifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.\n\nDopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore.\n\nPosizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti.",
+      "spokenText": "Tre piante, tre gocciolatori\n\nTre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.\n\nMisura il tubo e segna le piante prima di forare.\n\nVerifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.\n\nDopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore.\n\nPosizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti.",
+      "spokenTextSHA256": "896da8634227109577d73db538e7dc4755eaa90bda89d2ceb9d5e7c82618a8b0",
+      "spokenTextSha256": "896da8634227109577d73db538e7dc4755eaa90bda89d2ceb9d5e7c82618a8b0",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "57538e414dc391992d0c67ea2b55de89e610235073312dd53911761e6f407eac",
+      "requestFingerprintSha256": "57538e414dc391992d0c67ea2b55de89e610235073312dd53911761e6f407eac",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "line-layout",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

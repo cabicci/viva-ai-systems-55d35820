@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-06",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "sandy-loam-sample",
+      "title": "Non accettare una risposta sull’umidità già scritta",
+      "situation": "La scheda della fioriera prevede «troppo secco», ma un vero campione franco sabbioso da 12 cm è più scuro, fresco al tatto e forma una palla debole.",
+      "reasoning": [
+        "Registra le osservazioni reali, tessitura, posizione e profondità.",
+        "Confronta con una guida specifica per quella tessitura e, se utile, con un altro campione di suolo della zona radicale.",
+        "Non indicare «troppo secco» per imitare la scheda e non trasformare una palla debole in percentuale."
+      ],
+      "takeaway": "Il giudizio richiede interpretazione per tessitura e confronto con l’istruttore; le prove osservate contano più della previsione stampata."
+    },
+    {
+      "id": "wet-clay",
+      "title": "Più acqua non significa progresso",
+      "situation": "Dopo una piccola aggiunta d’acqua, l’argilla didattica è appiccicosa e lascia una macchia bagnata; uno studente vuole aggiungerne ancora per riempire la barra della simulazione.",
+      "reasoning": [
+        "Interrompi l’aggiunta e registra l’osservazione di bagnato.",
+        "Un nastro d’argilla o una palla salda non rappresenta un obiettivo unico per ogni terreno.",
+        "L’istruttore ripristina il campione con metodo approvato e discute tessitura, drenaggio e possibile ristagno."
+      ],
+      "takeaway": "Niente ulteriore acqua o percentuale ottimale inventata: descrivi e confronta il campione reale."
+    },
+    {
+      "id": "line-layout",
+      "title": "Tre piante, tre gocciolatori",
+      "situation": "Tre piantine non sono equidistanti nella fioriera di un metro; i gocciolatori devono servire la zona radicale di ciascuna pianta prevista.",
+      "reasoning": [
+        "Misura il tubo e segna le piante prima di forare.",
+        "Verifica compatibilità di tubo, punzone e gocciolatori e tieni la linea senza pressione durante il montaggio.",
+        "Dopo il collegamento previsto dalle istruzioni del kit, prova tutti e tre gli sbocchi e ogni giunto sotto la supervisione dell'istruttore."
+      ],
+      "takeaway": "Posizioni corrette e prova senza perdite contano più di fori ciecamente equidistanti."
+    }
+  ]
+}

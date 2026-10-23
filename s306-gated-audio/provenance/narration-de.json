@@ -1,0 +1,246 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-de.json",
+    "sha256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+    "bytes": 26095
+  },
+  "units": [
+    {
+      "id": "S3-06-de-E01-r1",
+      "unitId": "S3-06-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Vorgegebene Feuchteantwort nicht übernehmen",
+          "sha256": "2a123cf68018da7018f9adfb5886e84c6f293a96302ba5a6e23b5cbe1e99db54"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.",
+          "sha256": "86704b85c3a96aff1b0902e254617a22cbc5d33d02b719aafac3f7376a48ec2f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Notiere die wirklichen Befunde, Textur, Stelle und Tiefe.",
+          "sha256": "e5923008c60f5da49cf572e5e8c233419c164adabe31b0e2bab350a933cfb673"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Vergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.",
+          "sha256": "96fd8a67b6e621da0f473fa1fa87c00e6388e9c1bd06e65894523e0d258128e4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Schreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.",
+          "sha256": "1e9fe1491064bd64ca5c124275c74d8cc6e563f33bdefd988de20c992ac4412f"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Die Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+          "sha256": "3d237198aebdb30667ef4f35c1e7397982b49e9469fe8bce2b07de48352e5564"
+        }
+      ],
+      "scientificMeaning": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+      "displayText": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+      "captionText": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+      "spokenText": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus zwölf Zentimetern Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+      "spokenTextSHA256": "0984cb12d371c68457043b9e40f9ca26eed555b677c295d4ad0681a1bed05a09",
+      "spokenTextSha256": "0984cb12d371c68457043b9e40f9ca26eed555b677c295d4ad0681a1bed05a09",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus 12 cm Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+          "spoken": "Vorgegebene Feuchteantwort nicht übernehmen\n\nDie Pflanzkastenkarte erwartet „zu trocken“. Eine wirkliche sandig-lehmige Probe aus zwölf Zentimetern Tiefe ist aber dunkler, kühl und bildet eine schwache Kugel.\n\nNotiere die wirklichen Befunde, Textur, Stelle und Tiefe.\n\nVergleiche mit der texturspezifischen Anleitung und gegebenenfalls mit einer weiteren Bodenprobe aus dem Wurzelraum.\n\nSchreibe nicht „zu trocken“, nur um der Karte zu entsprechen, und mache aus einer schwachen Kugel keinen Prozentwert.\n\nDie Feuchte muss texturbezogen mit der Lehrkraft beurteilt werden; Beobachtungen gehen der gedruckten Erwartung vor.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "926fc869e0210faddbca992be896382ea3bc83735573900fc83ff3137d2d4fff",
+      "requestFingerprintSha256": "926fc869e0210faddbca992be896382ea3bc83735573900fc83ff3137d2d4fff",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "sandy-loam-sample",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-06-de-E02-r1",
+      "unitId": "S3-06-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Mehr Wasser bedeutet keinen Fortschritt",
+          "sha256": "17154c04a71b78ee48e659fac62bfc63ebd9e80d4d92c0ed0c6db2467814094c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Nach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.",
+          "sha256": "eaac39c5747d35197fd5307ea3eb16ffd5da805eee9a762bc7e9923cb77fe606"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Beende die Zugabe und notiere den Nässebefund.",
+          "sha256": "32a1573dbdd84bdb1d73233d10e944fac9993132f8e8fd01f4f4130101c54029"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Tonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.",
+          "sha256": "72b54623c9ca6752ea1bb022fec50c2e333bdcb69705b310052d9bf262339b3f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Die Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung.",
+          "sha256": "f4b8cd501411be0af3486398d484b4d73fc4530b06e1a9623b8c0714750bea77"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Kein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe.",
+          "sha256": "008f932d82473de3260e1583b86d9908a4535cf157f6e58493219e8d1a154925"
+        }
+      ],
+      "scientificMeaning": "Mehr Wasser bedeutet keinen Fortschritt\n\nNach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.\n\nBeende die Zugabe und notiere den Nässebefund.\n\nTonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.\n\nDie Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung.\n\nKein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe.",
+      "displayText": "Mehr Wasser bedeutet keinen Fortschritt\n\nNach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.\n\nBeende die Zugabe und notiere den Nässebefund.\n\nTonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.\n\nDie Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung.\n\nKein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe.",
+      "captionText": "Mehr Wasser bedeutet keinen Fortschritt\n\nNach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.\n\nBeende die Zugabe und notiere den Nässebefund.\n\nTonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.\n\nDie Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung.\n\nKein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe.",
+      "spokenText": "Mehr Wasser bedeutet keinen Fortschritt\n\nNach wenig Wasserzugabe ist eine Ton-Übungsprobe klebrig und hinterlässt einen nassen Fleck. Jemand möchte weitergießen, bis der Simulationsbalken voll ist.\n\nBeende die Zugabe und notiere den Nässebefund.\n\nTonband oder feste Kugel ist kein einheitliches Feuchteziel für alle Böden.\n\nDie Lehrkraft setzt die Probe auf geeignete Weise zurück und bespricht Textur, Entwässerung und mögliche Vernässung.\n\nKein zusätzliches Wasser und kein erfundener Idealwert; beschreibe und vergleiche die echte Probe.",
+      "spokenTextSHA256": "eacbe150002396b5deae33d1b3dd157db924ffe4d468d702593ba5d5c0626ce8",
+      "spokenTextSha256": "eacbe150002396b5deae33d1b3dd157db924ffe4d468d702593ba5d5c0626ce8",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ec712ba25fd825359f55ac018f221e1c810b86dbfa032ec785d7c78c4d16e4b",
+      "requestFingerprintSha256": "1ec712ba25fd825359f55ac018f221e1c810b86dbfa032ec785d7c78c4d16e4b",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-clay",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-06-de-E03-r1",
+      "unitId": "S3-06-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Drei Pflanzen, drei Tropfer",
+          "sha256": "df5afb2697f271a1b63ed663f689bd2db4cdc766043c5ff148373768cf5e367b"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Drei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.",
+          "sha256": "e6bb4d7b21108f6d664125cadbfe89b11a7e084b5ef77f28a6667e666df721bc"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Miss den Schlauch und markiere die Pflanzen vor dem Lochen.",
+          "sha256": "f97ffe45a5e1936a4df4ca49cef3d4cbe1c048693abe08179647d5b0543aaf8d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Prüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.",
+          "sha256": "998262db3de25624f89a86c8606bb0f32b1ce20a1947a87c0974f2455dd2c143"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Nach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung.",
+          "sha256": "fd9fe63d55ffeefb9ec1a858d716f255c5472e41cdfb6c0018d39e408bfdc441"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Richtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände.",
+          "sha256": "76f6991de130d8e8702a2388d0832a493a429028356ae8fb2024eec24ddd6cf8"
+        }
+      ],
+      "scientificMeaning": "Drei Pflanzen, drei Tropfer\n\nDrei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.\n\nMiss den Schlauch und markiere die Pflanzen vor dem Lochen.\n\nPrüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.\n\nNach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung.\n\nRichtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände.",
+      "displayText": "Drei Pflanzen, drei Tropfer\n\nDrei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.\n\nMiss den Schlauch und markiere die Pflanzen vor dem Lochen.\n\nPrüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.\n\nNach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung.\n\nRichtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände.",
+      "captionText": "Drei Pflanzen, drei Tropfer\n\nDrei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.\n\nMiss den Schlauch und markiere die Pflanzen vor dem Lochen.\n\nPrüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.\n\nNach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung.\n\nRichtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände.",
+      "spokenText": "Drei Pflanzen, drei Tropfer\n\nDrei Jungpflanzen stehen im ein Meter langen Kasten nicht gleich weit auseinander; jeder Tropfer muss die vorgesehene Wurzelzone bedienen.\n\nMiss den Schlauch und markiere die Pflanzen vor dem Lochen.\n\nPrüfe die Verträglichkeit von Schlauch, Werkzeug und Tropfern; montiere drucklos.\n\nNach freigegebenem Anschluss teste unter Aufsicht alle drei Auslässe und jede Verbindung.\n\nRichtige Positionen und ein dichter Fließtest sind wichtiger als blind gleiche Lochabstände.",
+      "spokenTextSHA256": "25dfb391c2411e3d9261747b8fb6b2d898181416f3cc6b130efaf4c2d7f9358e",
+      "spokenTextSha256": "25dfb391c2411e3d9261747b8fb6b2d898181416f3cc6b130efaf4c2d7f9358e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a79ca9ac7453723e393de88d64909bb08e79113228c931e3f174eb70dbafc333",
+      "requestFingerprintSha256": "a79ca9ac7453723e393de88d64909bb08e79113228c931e3f174eb70dbafc333",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "line-layout",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

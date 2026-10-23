@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-06",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "sandy-loam-sample",
+      "title": "Do not accept a prewritten moisture answer",
+      "situation": "A planter-box process card predicts 'too dry', but a real 12 cm sandy-loam sample is darker, feels cool and makes a weak ball.",
+      "reasoning": [
+        "Record those actual observations and the texture, place and depth.",
+        "Compare with the texture-specific guide and perhaps another root-zone sample.",
+        "Do not mark 'too dry' merely to match the card, nor turn a weak ball into a percentage."
+      ],
+      "takeaway": "The moisture status needs texture-specific interpretation and trainer review; the observed evidence outranks the printed expectation."
+    },
+    {
+      "id": "wet-clay",
+      "title": "Too much water is not progress",
+      "situation": "After a small water addition, a clay teaching sample is sticky and leaves a wet stain; a student wants to add more until the simulation bar fills.",
+      "reasoning": [
+        "Stop water addition and record the wet observation.",
+        "A clay ribbon or firm ball is not one universal moisture target.",
+        "The trainer resets a sample by an approved method and discusses texture, drainage and possible waterlogging."
+      ],
+      "takeaway": "No extra water or invented optimal percentage; describe and compare the actual sample."
+    },
+    {
+      "id": "line-layout",
+      "title": "Three plants, three emitters",
+      "situation": "Three seedlings are not equally spaced along a one-metre planter box and the emitters have to reach each intended root zone.",
+      "reasoning": [
+        "Measure the tube and mark each plant position before punching.",
+        "Check tube, punch and emitter compatibility and keep the system unpressurised during assembly.",
+        "After kit-approved connection, test all three outlets and every joint under trainer supervision."
+      ],
+      "takeaway": "Correct positions and a leak-free, flowing test matter more than blindly equal hole spacing."
+    }
+  ]
+}
