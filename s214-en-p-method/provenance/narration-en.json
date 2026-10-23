@@ -1,0 +1,82 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-14-en.json",
+    "sha256": "3d9467b8fe69baccbaad6470066f91a4800855d3bf233744dc029a67d6e7a204",
+    "bytes": 37955
+  },
+  "units": [
+    {
+      "id": "S2-14-en-phosphorus-method-subpassage-repair-r1",
+      "unitId": "S2-14-en-phosphorus-method-subpassage-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s214-en-p-method-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3d9467b8fe69baccbaad6470066f91a4800855d3bf233744dc029a67d6e7a204",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+          "sha256": "86c6794ac2a01294d491f9ee1d740ced0aa89eee7e78d2c5cd5e78e78c715f24"
+        }
+      ],
+      "scientificMeaning": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+      "displayText": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+      "captionText": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+      "spokenText": "For example, a phosphorus result of twelve parts per million can be interpreted differently under Bray and Olsen extraction.",
+      "spokenTextSHA256": "9e8508da88dddbba8d8b7e86b0d7f967fd5417a6a828e8dcde78295c06430913",
+      "spokenTextSha256": "9e8508da88dddbba8d8b7e86b0d7f967fd5417a6a828e8dcde78295c06430913",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+          "spoken": "Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction.",
+          "spoken": "For example, a phosphorus result of twelve parts per million can be interpreted differently under Bray and Olsen extraction.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "9fe19ee350b8b5f6c367f4becacf321b2a903ab257c9389ead8faafa4e6bab2c",
+      "requestFingerprintSha256": "9fe19ee350b8b5f6c367f4becacf321b2a903ab257c9389ead8faafa4e6bab2c",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/2/paragraphs/2",
+        "original": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+        "effective": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reading/2/paragraphs/2",
+            "text": "Use the testing laboratory's extraction and measurement methods, units, crop-specific interpretation and regional guidance. Phosphorus 12 ppm, for example, can have different meaning under Bray and Olsen extraction. A single soil nitrogen number is a time-specific clue; crop requirement, prior inputs, nitrogen credits and timing matter. The classroom N meal and P/K pantry analogy helps remember this difference but cannot set a rate.",
+            "sha256": "86c6794ac2a01294d491f9ee1d740ced0aa89eee7e78d2c5cd5e78e78c715f24"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-en-r03-method-interpretation-root-repair-r1.json",
+        "rootSelectedAuthoritySHA256": "c6cc3756b2f6b97a0d6513e974178cd989c3788e75d9c0c9194cf03613f96486"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
