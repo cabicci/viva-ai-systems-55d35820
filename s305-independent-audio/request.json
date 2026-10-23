@@ -1,0 +1,1859 @@
+{
+  "schemaVersion": 1,
+  "scope": "S305_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s305-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-ar-EG-opening-r1",
+      "unitId": "S3-05-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "جدول المحاصيل بيدي تقدير للموسم كله، مش تعليمات ري لبكرة. اقرأ الوحدة وفترة القياس ومرحلة النمو، وقارن طرق الري، وحدد إيه البيانات اللي ناقصة قبل تحديد موعد وكمية المياه.",
+          "sha256": "8c24303a4f98142005d6b04cc71ce682f8ce837c00c94f983a347d139d3208b1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تقرأ ستة أمثلة محاصيل كمدى تقريبي بالمليمتر لاحتياج المياه طول موسم النمو وتحدد المراحل الحساسة، وتستخدم مثال الكرنب الموثق بدل تعميم غير مسنود على كل الورقيات.",
+          "sha256": "b303873d1a4c166458b2858d90688065bdeb6ce1fde79179214cad3efcfc4825"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "تقارن التنقيط والرش والري السطحي وتختار بشروط لقطعة خضار رملية حارة فيها رياح ومياه قليلة، مع تكلفة التأسيس والترشيح والصيانة والرياح واحتمال تسرب المياه تحت الجذور.",
+          "sha256": "063713cea0878e437157cd3751f7610fcc00348cab15999a4d378f3978419a95"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "تسجل الطقس والمطر الفعال ومياه منطقة الجذور والتربة ومرحلة النبات وأداء نظام الري اللازمة للجدولة، وما تقسّمش تقدير الموسم لجرعة يومية ثابتة.",
+          "sha256": "338afd4975fa4efd600982f2f4f0de5128cb297e3b7feee6f11c67da03fca6a0"
+        }
+      ],
+      "scientificMeaning": "جدول المحاصيل بيدي تقدير للموسم كله، مش تعليمات ري لبكرة. اقرأ الوحدة وفترة القياس ومرحلة النمو، وقارن طرق الري، وحدد إيه البيانات اللي ناقصة قبل تحديد موعد وكمية المياه.\n\nتقرأ ستة أمثلة محاصيل كمدى تقريبي بالمليمتر لاحتياج المياه طول موسم النمو وتحدد المراحل الحساسة، وتستخدم مثال الكرنب الموثق بدل تعميم غير مسنود على كل الورقيات.\n\nتقارن التنقيط والرش والري السطحي وتختار بشروط لقطعة خضار رملية حارة فيها رياح ومياه قليلة، مع تكلفة التأسيس والترشيح والصيانة والرياح واحتمال تسرب المياه تحت الجذور.\n\nتسجل الطقس والمطر الفعال ومياه منطقة الجذور والتربة ومرحلة النبات وأداء نظام الري اللازمة للجدولة، وما تقسّمش تقدير الموسم لجرعة يومية ثابتة.",
+      "displayText": "جدول المحاصيل بيدي تقدير للموسم كله، مش تعليمات ري لبكرة. اقرأ الوحدة وفترة القياس ومرحلة النمو، وقارن طرق الري، وحدد إيه البيانات اللي ناقصة قبل تحديد موعد وكمية المياه.\n\nتقرأ ستة أمثلة محاصيل كمدى تقريبي بالمليمتر لاحتياج المياه طول موسم النمو وتحدد المراحل الحساسة، وتستخدم مثال الكرنب الموثق بدل تعميم غير مسنود على كل الورقيات.\n\nتقارن التنقيط والرش والري السطحي وتختار بشروط لقطعة خضار رملية حارة فيها رياح ومياه قليلة، مع تكلفة التأسيس والترشيح والصيانة والرياح واحتمال تسرب المياه تحت الجذور.\n\nتسجل الطقس والمطر الفعال ومياه منطقة الجذور والتربة ومرحلة النبات وأداء نظام الري اللازمة للجدولة، وما تقسّمش تقدير الموسم لجرعة يومية ثابتة.",
+      "captionText": "جدول المحاصيل بيدي تقدير للموسم كله، مش تعليمات ري لبكرة. اقرأ الوحدة وفترة القياس ومرحلة النمو، وقارن طرق الري، وحدد إيه البيانات اللي ناقصة قبل تحديد موعد وكمية المياه.\n\nتقرأ ستة أمثلة محاصيل كمدى تقريبي بالمليمتر لاحتياج المياه طول موسم النمو وتحدد المراحل الحساسة، وتستخدم مثال الكرنب الموثق بدل تعميم غير مسنود على كل الورقيات.\n\nتقارن التنقيط والرش والري السطحي وتختار بشروط لقطعة خضار رملية حارة فيها رياح ومياه قليلة، مع تكلفة التأسيس والترشيح والصيانة والرياح واحتمال تسرب المياه تحت الجذور.\n\nتسجل الطقس والمطر الفعال ومياه منطقة الجذور والتربة ومرحلة النبات وأداء نظام الري اللازمة للجدولة، وما تقسّمش تقدير الموسم لجرعة يومية ثابتة.",
+      "spokenText": "جدول المحاصيل بيدي تقدير للموسم كله، مش تعليمات ري لبكرة. اقرأ الوحدة وفترة القياس ومرحلة النمو، وقارن طرق الري، وحدد إيه البيانات اللي ناقصة قبل تحديد موعد وكمية المياه.\n\nتقرأ ستة أمثلة محاصيل كمدى تقريبي بالمليمتر لاحتياج المياه طول موسم النمو وتحدد المراحل الحساسة، وتستخدم مثال الكرنب الموثق بدل تعميم غير مسنود على كل الورقيات.\n\nتقارن التنقيط والرش والري السطحي وتختار بشروط لقطعة خضار رملية حارة فيها رياح ومياه قليلة، مع تكلفة التأسيس والترشيح والصيانة والرياح واحتمال تسرب المياه تحت الجذور.\n\nتسجل الطقس والمطر الفعال ومياه منطقة الجذور والتربة ومرحلة النبات وأداء نظام الري اللازمة للجدولة، وما تقسّمش تقدير الموسم لجرعة يومية ثابتة.",
+      "spokenTextSHA256": "b47d91a38d8dc54393ee55111522c0b07ef6b94991486473e8ab7a4dea41615f",
+      "spokenTextSha256": "b47d91a38d8dc54393ee55111522c0b07ef6b94991486473e8ab7a4dea41615f",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4bb06595cf4ec7f59e589e1142643a0f96644592e690bee0c00a96ce53eff7bd",
+      "requestFingerprintSha256": "4bb06595cf4ec7f59e589e1142643a0f96644592e690bee0c00a96ce53eff7bd",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "66b51c078151d36569db62f2ce6df9d3f6fb9609dbf20aa8648f65f4d8b92184"
+    },
+    {
+      "id": "S3-05-ar-EG-guided-practice-r1",
+      "unitId": "S3-05-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "طابق المحاصيل الستة مع المدى الموسمي التقريبي والمرحلة الحساسة، واشرح ليه أي مدى مش جرعة رية واحدة.",
+          "sha256": "124e14cdf5b8523c3944585ae7f412643522e6d8b9ee79058c49fe6ade2e673e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "إيه المشترك بين المراحل الحساسة؟ اذكر مرحلة تناسلية وأخرى لتكوين إنتاج غير تناسلية، وحدد شروط أثر الإجهاد.",
+          "sha256": "09b48dc2e1dddf26bbebe5b57f0ea6b317221a24b586e68864735572ae8c9793"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "رتب التنقيط والرش والسطحي بالأحواض أو الخطوط حسب مسار المياه والرياح والتسوية والتكلفة والصيانة، ووضح ليه السطحي مش دائمًا غمر.",
+          "sha256": "b256bf529b3d341eeca7a6abec54a0ad493dfefd26049aa09650ce63af77f02e"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "رشح طريقة لحالة الخضار الرملية الحارة ذات الرياح، وقارن بديلين وحدد البيانات الناقصة لموعد وكمية الري.",
+          "sha256": "076098b3c1683233d149420e9c20e9ec6eeea18447fed3a0682e86b0e37f7a89"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "اعرض اسم المحصول والمليمترات طول موسم النمو والمرحلة الصح؛ خطأ المدة يرجع لأول جزء.",
+          "sha256": "43be001a5540a69a63dbeb53682d6a8f426c0dc6716ad3b985f9be7777b86042"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "المدرّب يقدر يشرف على فحص مرشح ونقاطة للتنقيط ورشاش وخط أو حوض ري سطحي. كل طالب يسجل ملاحظاته. القرار النظري هنا ما يثبتش تشغيل معدات ولا برنامج ري حقيقي.",
+          "sha256": "1499a70b7a50dcb8c162eb4c9aaef2c37a04837e5e7171138586bf5c4026d3d8"
+        }
+      ],
+      "scientificMeaning": "طابق المحاصيل الستة مع المدى الموسمي التقريبي والمرحلة الحساسة، واشرح ليه أي مدى مش جرعة رية واحدة.\n\nإيه المشترك بين المراحل الحساسة؟ اذكر مرحلة تناسلية وأخرى لتكوين إنتاج غير تناسلية، وحدد شروط أثر الإجهاد.\n\nرتب التنقيط والرش والسطحي بالأحواض أو الخطوط حسب مسار المياه والرياح والتسوية والتكلفة والصيانة، ووضح ليه السطحي مش دائمًا غمر.\n\nرشح طريقة لحالة الخضار الرملية الحارة ذات الرياح، وقارن بديلين وحدد البيانات الناقصة لموعد وكمية الري.\n\nاعرض اسم المحصول والمليمترات طول موسم النمو والمرحلة الصح؛ خطأ المدة يرجع لأول جزء.\n\nالمدرّب يقدر يشرف على فحص مرشح ونقاطة للتنقيط ورشاش وخط أو حوض ري سطحي. كل طالب يسجل ملاحظاته. القرار النظري هنا ما يثبتش تشغيل معدات ولا برنامج ري حقيقي.",
+      "displayText": "طابق المحاصيل الستة مع المدى الموسمي التقريبي والمرحلة الحساسة، واشرح ليه أي مدى مش جرعة رية واحدة.\n\nإيه المشترك بين المراحل الحساسة؟ اذكر مرحلة تناسلية وأخرى لتكوين إنتاج غير تناسلية، وحدد شروط أثر الإجهاد.\n\nرتب التنقيط والرش والسطحي بالأحواض أو الخطوط حسب مسار المياه والرياح والتسوية والتكلفة والصيانة، ووضح ليه السطحي مش دائمًا غمر.\n\nرشح طريقة لحالة الخضار الرملية الحارة ذات الرياح، وقارن بديلين وحدد البيانات الناقصة لموعد وكمية الري.\n\nاعرض اسم المحصول والمليمترات طول موسم النمو والمرحلة الصح؛ خطأ المدة يرجع لأول جزء.\n\nالمدرّب يقدر يشرف على فحص مرشح ونقاطة للتنقيط ورشاش وخط أو حوض ري سطحي. كل طالب يسجل ملاحظاته. القرار النظري هنا ما يثبتش تشغيل معدات ولا برنامج ري حقيقي.",
+      "captionText": "طابق المحاصيل الستة مع المدى الموسمي التقريبي والمرحلة الحساسة، واشرح ليه أي مدى مش جرعة رية واحدة.\n\nإيه المشترك بين المراحل الحساسة؟ اذكر مرحلة تناسلية وأخرى لتكوين إنتاج غير تناسلية، وحدد شروط أثر الإجهاد.\n\nرتب التنقيط والرش والسطحي بالأحواض أو الخطوط حسب مسار المياه والرياح والتسوية والتكلفة والصيانة، ووضح ليه السطحي مش دائمًا غمر.\n\nرشح طريقة لحالة الخضار الرملية الحارة ذات الرياح، وقارن بديلين وحدد البيانات الناقصة لموعد وكمية الري.\n\nاعرض اسم المحصول والمليمترات طول موسم النمو والمرحلة الصح؛ خطأ المدة يرجع لأول جزء.\n\nالمدرّب يقدر يشرف على فحص مرشح ونقاطة للتنقيط ورشاش وخط أو حوض ري سطحي. كل طالب يسجل ملاحظاته. القرار النظري هنا ما يثبتش تشغيل معدات ولا برنامج ري حقيقي.",
+      "spokenText": "طابق المحاصيل الستة مع المدى الموسمي التقريبي والمرحلة الحساسة، واشرح ليه أي مدى مش جرعة رية واحدة.\n\nإيه المشترك بين المراحل الحساسة؟ اذكر مرحلة تناسلية وأخرى لتكوين إنتاج غير تناسلية، وحدد شروط أثر الإجهاد.\n\nرتب التنقيط والرش والسطحي بالأحواض أو الخطوط حسب مسار المياه والرياح والتسوية والتكلفة والصيانة، ووضح ليه السطحي مش دائمًا غمر.\n\nرشح طريقة لحالة الخضار الرملية الحارة ذات الرياح، وقارن بديلين وحدد البيانات الناقصة لموعد وكمية الري.\n\nاعرض اسم المحصول والمليمترات طول موسم النمو والمرحلة الصح؛ خطأ المدة يرجع لأول جزء.\n\nالمدرّب يقدر يشرف على فحص مرشح ونقاطة للتنقيط ورشاش وخط أو حوض ري سطحي. كل طالب يسجل ملاحظاته. القرار النظري هنا ما يثبتش تشغيل معدات ولا برنامج ري حقيقي.",
+      "spokenTextSHA256": "3eecd57b6fe7011017d5bb1e853291f9a35ead8c39b69acfdc53462bc2dc6c57",
+      "spokenTextSha256": "3eecd57b6fe7011017d5bb1e853291f9a35ead8c39b69acfdc53462bc2dc6c57",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a1a7bd1ee6d05d52326db5e0421caed0b7d8ae99039c6d33c42d578f7730c147",
+      "requestFingerprintSha256": "a1a7bd1ee6d05d52326db5e0421caed0b7d8ae99039c6d33c42d578f7730c147",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "66b51c078151d36569db62f2ce6df9d3f6fb9609dbf20aa8648f65f4d8b92184"
+    },
+    {
+      "id": "S3-05-ar-EG-reflection-r1",
+      "unitId": "S3-05-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "أقدر أحدد احتياجات محاصيل شائعة للمياه وأساسيات الري؟",
+          "sha256": "555346464a2784344298d926441bdfe3d0346a0f3100d114635825816826ce9d"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "تقييم ذاتي لهدف الموضوع؛ مش اجتياز مهارة فعلية ولا اعتماد جدول ري.",
+          "sha256": "2d95b8e8385bbf22bc0b248c0210d22b9ecbcc775c4875383ee29b73423606e0"
+        }
+      ],
+      "scientificMeaning": "أقدر أحدد احتياجات محاصيل شائعة للمياه وأساسيات الري؟\n\nتقييم ذاتي لهدف الموضوع؛ مش اجتياز مهارة فعلية ولا اعتماد جدول ري.",
+      "displayText": "أقدر أحدد احتياجات محاصيل شائعة للمياه وأساسيات الري؟\n\nتقييم ذاتي لهدف الموضوع؛ مش اجتياز مهارة فعلية ولا اعتماد جدول ري.",
+      "captionText": "أقدر أحدد احتياجات محاصيل شائعة للمياه وأساسيات الري؟\n\nتقييم ذاتي لهدف الموضوع؛ مش اجتياز مهارة فعلية ولا اعتماد جدول ري.",
+      "spokenText": "أقدر أحدد احتياجات محاصيل شائعة للمياه وأساسيات الري؟\n\nتقييم ذاتي لهدف الموضوع؛ مش اجتياز مهارة فعلية ولا اعتماد جدول ري.",
+      "spokenTextSHA256": "49470eec40bfdd83a88029d8f89b078d4d9dd9c0772aa36a62759bff5833ec55",
+      "spokenTextSha256": "49470eec40bfdd83a88029d8f89b078d4d9dd9c0772aa36a62759bff5833ec55",
+      "spokenAdaptationChanges": [],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6bbf0922bb6e460b9471dbdc51c7eafbf507d4f742929fd795a6a47129599c1a",
+      "requestFingerprintSha256": "6bbf0922bb6e460b9471dbdc51c7eafbf507d4f742929fd795a6a47129599c1a",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "66b51c078151d36569db62f2ce6df9d3f6fb9609dbf20aa8648f65f4d8b92184"
+    },
+    {
+      "id": "S3-05-ar-EG-glossary-r1",
+      "unitId": "S3-05-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "احتياج المحصول للمياه",
+          "sha256": "2c7b69a10053e2846706adb61bb940359980deba7f7630d9252c3073d3e2acd4"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "عمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.",
+          "sha256": "62ead9c19afe40140990186b36e58f49c831db4ba0709dcf4049bd932e85d3b8"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "مليمتر مياه",
+          "sha256": "f40489ede6092190a8a9e716f2b0364c81cd21d31ac51723dd1d573cd7ae91b4"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "وحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.",
+          "sha256": "68ed90627ab90422c32a94d300d755396185c4f0d4bcc2f729f2afcf3f8b46be"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "مرحلة حساسة للمياه",
+          "sha256": "103e3bbd3fc5d2f1b6320391ac89c86ed51637e664a9483cc4c77af33ba305a0"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "مرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.",
+          "sha256": "fcceb2c3f469702d7ec7fb74512f779ce59099a68f728135fef76fad6fd6b662"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "احتياج مياه الري",
+          "sha256": "9997a655f1363860a0eb3f2faa946a5bfd60e4020971d6b1d154b2d9775900ad"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "مياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية يتأثر بالفواقد.",
+          "sha256": "aacaad14883c30d0290062bdc5396a3f09b94b40190d9922483728be7a9bde05"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "نقاطة",
+          "sha256": "a2cfca60573eec72ce91a3dbe14abbae3ea1e40b08b585bbfbebc75d0cbc1e7f"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "مخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.",
+          "sha256": "90f473b8cdd5203eb50829ae15eaf583c2e29d6f7bd5f5ebefe1a97f591f8574"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "تجانس الرش",
+          "sha256": "146b7f703089ed85349963f869d84c02da90a1d9c0891cbaaa09e5aa985366c5"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "مدى تساوي توزيع مياه الرش على المساحة المقصودة.",
+          "sha256": "077c2a43cdb0cf84ae9454212d6d59af1c9833bdd6fb0e11ac205b6efb8c3192"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "الري السطحي",
+          "sha256": "e6ac5ed85c7df76d9985f5b5b5d32409927594a0378c971587e0f1c26d498029"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "تحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.",
+          "sha256": "acdb6995d901a006e48cd8bd8cffa69aaa47f93c903efcf5ba1cd420accf37bb"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "التسرب العميق",
+          "sha256": "a2f4936c7781d7bf869b28717a76145d4d63c0522147546ba55bac0ce6223d55"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "نزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+          "sha256": "5c8c8fbc91b72db6db15901300e229006c55ea8dbbcaf708f6e7aabc7f8f10bd"
+        }
+      ],
+      "scientificMeaning": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية يتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+      "displayText": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية يتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+      "captionText": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية يتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+      "spokenText": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية بتتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+      "spokenTextSHA256": "e5857d4ea0f38cf7e779233afe17dae23cea88d20a9ba926d13b4c82250744fe",
+      "spokenTextSha256": "e5857d4ea0f38cf7e779233afe17dae23cea88d20a9ba926d13b4c82250744fe",
+      "spokenAdaptationChanges": [
+        {
+          "written": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية يتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+          "spoken": "احتياج المحصول للمياه\n\nعمق المياه اللي المحصول بيستخدمه بالبخر والنتح في ظروف وفترة محددين؛ مختلف عن كمية المياه اللي النظام بيوصلها.\n\nمليمتر مياه\n\nوحدة عمق فوق مساحة؛ معناها مرتبط بالفترة المذكورة.\n\nمرحلة حساسة للمياه\n\nمرحلة نمو ممكن يأثر فيها الإجهاد المائي بقوة على المحصول المحصود.\n\nاحتياج مياه الري\n\nمياه تكميلية بعد حساب المطر النافع وظروف الموقع؛ كمية الضخ الإجمالية بتتأثر بالفواقد.\n\nنقاطة\n\nمخرج صغير يضيف تدفق مياه مضبوط قرب الصف أو الجذور.\n\nتجانس الرش\n\nمدى تساوي توزيع مياه الرش على المساحة المقصودة.\n\nالري السطحي\n\nتحريك المياه بالجاذبية على الحقل أو خلاله بأحواض أو شرائح أو خطوط.\n\nالتسرب العميق\n\nنزول مياه أسفل العمق اللي الجذور الحالية تقدر تستخدمه.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7685cb25c79113477cb142b7bcaa4a4811ef44025968731c901210eaf50edbe0",
+      "requestFingerprintSha256": "7685cb25c79113477cb142b7bcaa4a4811ef44025968731c901210eaf50edbe0",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "66b51c078151d36569db62f2ce6df9d3f6fb9609dbf20aa8648f65f4d8b92184"
+    },
+    {
+      "id": "S3-05-en-opening-r1",
+      "unitId": "S3-05-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.",
+          "sha256": "4e96ccc14d20b23f155d7c5090b55449247eed8249b9f66f599b484e4e685758"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Read six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.",
+          "sha256": "f0c81972686ddd1b43a6e8396242899c9a8a42bbdace049e135517760abf4159"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Compare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.",
+          "sha256": "a5edafba460cc92ba9723f58f420cc3e9661b62364c244ca8d00492cc894c391"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "List the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+          "sha256": "d7363d18916d0b4588dddad46fc0f1dc9d93ca1ccc472540c9992025913af595"
+        }
+      ],
+      "scientificMeaning": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "displayText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "captionText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "spokenText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "spokenTextSHA256": "a3124b0615082c836c820286915f3e7c456843c570250251a07c1fdf6da48d0e",
+      "spokenTextSha256": "a3124b0615082c836c820286915f3e7c456843c570250251a07c1fdf6da48d0e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a8261ab1f3340fd53302361b98ea8e2267f0ef504c80faea2558572e74147f31",
+      "requestFingerprintSha256": "a8261ab1f3340fd53302361b98ea8e2267f0ef504c80faea2558572e74147f31",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "648801b5648d529d75b6be9259a0e386b2c8eafad4723daa1220629a58426f24"
+    },
+    {
+      "id": "S3-05-en-guided-practice-r1",
+      "unitId": "S3-05-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.",
+          "sha256": "36ce0b6dcebb00fcd40da0cf75069a63c166bfd6001aa6c2d6e5f0c0fb8018db"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "What do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.",
+          "sha256": "c54745668f45823c5164e8f48e8466f57450fdd89f8ac8b649bac0ed6e2e02cd"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Sort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.",
+          "sha256": "baa081fc1185f24e15686ccc50e8790b1b0a4ce55ad2b181ac90aec13b816f5d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Recommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.",
+          "sha256": "acb5b7705459f43bd3a4da0646309b6e4765b3493557be5b037a271116e3f9af"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Show the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.",
+          "sha256": "02819e2d66d8f0d4823ad2c9db6c6056ad1b6e1ec5763ab5af0eff5bf256675c"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "sha256": "5ff5228bbe6a3bab30ef3b8c8a3fbb54712a679c107330fa8b96ac70b466bedf"
+        }
+      ],
+      "scientificMeaning": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "displayText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "captionText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "spokenText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin or furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, millimetres per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "spokenTextSHA256": "bed3a19c0887e56721eaa0742ff480902d4d5ebbd5ea935b5050314c4ae142a1",
+      "spokenTextSha256": "bed3a19c0887e56721eaa0742ff480902d4d5ebbd5ea935b5050314c4ae142a1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "spoken": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin or furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, millimetres per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1f76c15687d80c177393bc1008ef733d702a45591d7b71a11c0c7ab405ade246",
+      "requestFingerprintSha256": "1f76c15687d80c177393bc1008ef733d702a45591d7b71a11c0c7ab405ade246",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "648801b5648d529d75b6be9259a0e386b2c8eafad4723daa1220629a58426f24"
+    },
+    {
+      "id": "S3-05-en-reflection-r1",
+      "unitId": "S3-05-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Identify water requirements for common crops and irrigation basics.",
+          "sha256": "ad25cc3494394b9d846b59caeda877583ca6b2508aeda33e0a05395399b65e8b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+          "sha256": "cd058507be16ae059b385d2c431f150ac6aee520767966b2c39c41b2ce06231d"
+        }
+      ],
+      "scientificMeaning": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "displayText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "captionText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "spokenText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "spokenTextSHA256": "24643207068c85663711fe263c8b93890eb780d03f62f783abd6788f91bfed58",
+      "spokenTextSha256": "24643207068c85663711fe263c8b93890eb780d03f62f783abd6788f91bfed58",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "93138300f162e4d97cdd284556a1b839d36e4c212796f44c5e8848b69a3a12ad",
+      "requestFingerprintSha256": "93138300f162e4d97cdd284556a1b839d36e4c212796f44c5e8848b69a3a12ad",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "648801b5648d529d75b6be9259a0e386b2c8eafad4723daa1220629a58426f24"
+    },
+    {
+      "id": "S3-05-en-glossary-r1",
+      "unitId": "S3-05-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "crop water need",
+          "sha256": "12bddc11ba2f10562aa0e5f647107276ecaaafc1a53cc940879357470fac5e7c"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Water depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.",
+          "sha256": "d9a899a3052c772b5f9f72aab97f41a3cb14bfa265351931cbadc7b16e95c7f4"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "millimetre of water (mm)",
+          "sha256": "66e41136020a0802d751d2825f33d2e942ff277d39cc02162d74886104fc99ff"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A depth unit measured over an area; its meaning depends on the stated time period.",
+          "sha256": "653d86898c977776abd73af4e34c6ad3492e6987ec8c1fc1183e9988d04bd07a"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "critical water stage",
+          "sha256": "5cc0efca905bddd5e86d8e0d2551778addc8f2c55762d024663a55a14adade20"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A growth stage during which water stress can strongly affect the harvested result.",
+          "sha256": "44a30e05532fbf3c8550accb759e5cab35222cda725b6964445328f50d6e2156"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "irrigation water need",
+          "sha256": "6db54d545dbbb43b101c43cc9d9c24e670250133537236c3a654f4cc926b280a"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Supplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.",
+          "sha256": "6119ed4ad944a3abf55de3c91fca641a9251bfb0e73c1d0da859fa9765407276"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "drip emitter",
+          "sha256": "75f1e0bd4259be2d7ecf93724a28b79e72b3eedf59d11bf83217df6987c4ea42"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A small outlet delivering controlled water flow near a plant row or root zone.",
+          "sha256": "e7240cc0dd12fa7baa255abad404509cf893dad56373cc7083d1ee2d46965baf"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "sprinkler uniformity",
+          "sha256": "7bc55bfd02f005ce67639be63eae5242604df80cef8c12238e1dc292c3606d8b"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "How evenly sprayed irrigation water is distributed over the intended area.",
+          "sha256": "73e9445cbb35924ef734cb23bd538beda5eda686c28439603b9e57a5a21fb9c0"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "surface irrigation",
+          "sha256": "7c647e2e94fe73735520d955a3c395858110636519f2dc1964c24609b7939f02"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Gravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.",
+          "sha256": "cd3ad275845a5f027471e3e5acd15e1f365914284d9f1cb3fac6ca6eb743295a"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "deep percolation",
+          "sha256": "5ce41feb302c105477b12fc6044de7195e3ee986883f7284a08cd64d3b90bf42"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Water moving below the depth roots can currently use.",
+          "sha256": "87f26c89594b84991d9f8e19f7c864208503ec16c9639921716d04f88df6f69a"
+        }
+      ],
+      "scientificMeaning": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "displayText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "captionText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "spokenText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "spokenTextSHA256": "50b79aaf7bba752029bb7b347dbf7b155179784acd763e68d64aed5ea7da7c8e",
+      "spokenTextSha256": "50b79aaf7bba752029bb7b347dbf7b155179784acd763e68d64aed5ea7da7c8e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+          "spoken": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "232395577ec0ae397b80ae0d7875ce9828e261c451305f499695c0d6c6bc6020",
+      "requestFingerprintSha256": "232395577ec0ae397b80ae0d7875ce9828e261c451305f499695c0d6c6bc6020",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "648801b5648d529d75b6be9259a0e386b2c8eafad4723daa1220629a58426f24"
+    },
+    {
+      "id": "S3-05-it-opening-r1",
+      "unitId": "S3-05-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Una tabella colturale stima l’intera stagione, non indica quanta acqua dare domani. Leggi unità, periodo e fase, confronta i metodi e individua i dati mancanti prima di stabilire un’irrigazione.",
+          "sha256": "3c9445d0d6ec3268bf5f9604506e434e0c26a76257a9924beecf018821af9ee1"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Leggere sei esempi come millimetri indicativi del bisogno idrico sull’intera stagione e identificarne le fasi sensibili, usando il caso documentato del cavolo anziché una regola non dimostrata per tutte le verdure a foglia.",
+          "sha256": "6929c387de9c4e96e8de98a6a78d1bdd8e7c735a893140bd450064352591c1ab"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Confrontare goccia, aspersione e superficie e scegliere sotto condizioni per un orto sabbioso, caldo, ventoso e con poca acqua, considerando investimento, filtro, manutenzione, vento e percolazione profonda.",
+          "sha256": "804454a53bfd7fab9401fc0110b94a57f6f746ec866496e16d6e3bcfe08fc692"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Elencare meteo, pioggia efficace, acqua nella zona radicale, suolo, fase colturale e dati d’impianto necessari al calendario; non dividere la stima stagionale in una dose giornaliera fissa.",
+          "sha256": "3cbb215dc3a5b47bbd954a6464910d9272371e123d3737302b5046f7df81c2e2"
+        }
+      ],
+      "scientificMeaning": "Una tabella colturale stima l’intera stagione, non indica quanta acqua dare domani. Leggi unità, periodo e fase, confronta i metodi e individua i dati mancanti prima di stabilire un’irrigazione.\n\nLeggere sei esempi come millimetri indicativi del bisogno idrico sull’intera stagione e identificarne le fasi sensibili, usando il caso documentato del cavolo anziché una regola non dimostrata per tutte le verdure a foglia.\n\nConfrontare goccia, aspersione e superficie e scegliere sotto condizioni per un orto sabbioso, caldo, ventoso e con poca acqua, considerando investimento, filtro, manutenzione, vento e percolazione profonda.\n\nElencare meteo, pioggia efficace, acqua nella zona radicale, suolo, fase colturale e dati d’impianto necessari al calendario; non dividere la stima stagionale in una dose giornaliera fissa.",
+      "displayText": "Una tabella colturale stima l’intera stagione, non indica quanta acqua dare domani. Leggi unità, periodo e fase, confronta i metodi e individua i dati mancanti prima di stabilire un’irrigazione.\n\nLeggere sei esempi come millimetri indicativi del bisogno idrico sull’intera stagione e identificarne le fasi sensibili, usando il caso documentato del cavolo anziché una regola non dimostrata per tutte le verdure a foglia.\n\nConfrontare goccia, aspersione e superficie e scegliere sotto condizioni per un orto sabbioso, caldo, ventoso e con poca acqua, considerando investimento, filtro, manutenzione, vento e percolazione profonda.\n\nElencare meteo, pioggia efficace, acqua nella zona radicale, suolo, fase colturale e dati d’impianto necessari al calendario; non dividere la stima stagionale in una dose giornaliera fissa.",
+      "captionText": "Una tabella colturale stima l’intera stagione, non indica quanta acqua dare domani. Leggi unità, periodo e fase, confronta i metodi e individua i dati mancanti prima di stabilire un’irrigazione.\n\nLeggere sei esempi come millimetri indicativi del bisogno idrico sull’intera stagione e identificarne le fasi sensibili, usando il caso documentato del cavolo anziché una regola non dimostrata per tutte le verdure a foglia.\n\nConfrontare goccia, aspersione e superficie e scegliere sotto condizioni per un orto sabbioso, caldo, ventoso e con poca acqua, considerando investimento, filtro, manutenzione, vento e percolazione profonda.\n\nElencare meteo, pioggia efficace, acqua nella zona radicale, suolo, fase colturale e dati d’impianto necessari al calendario; non dividere la stima stagionale in una dose giornaliera fissa.",
+      "spokenText": "Una tabella colturale stima l’intera stagione, non indica quanta acqua dare domani. Leggi unità, periodo e fase, confronta i metodi e individua i dati mancanti prima di stabilire un’irrigazione.\n\nLeggere sei esempi come millimetri indicativi del bisogno idrico sull’intera stagione e identificarne le fasi sensibili, usando il caso documentato del cavolo anziché una regola non dimostrata per tutte le verdure a foglia.\n\nConfrontare goccia, aspersione e superficie e scegliere sotto condizioni per un orto sabbioso, caldo, ventoso e con poca acqua, considerando investimento, filtro, manutenzione, vento e percolazione profonda.\n\nElencare meteo, pioggia efficace, acqua nella zona radicale, suolo, fase colturale e dati d’impianto necessari al calendario; non dividere la stima stagionale in una dose giornaliera fissa.",
+      "spokenTextSHA256": "b25424b39bc936ffb13ef4ff16bffc136a431c53e82bfb9bb5320a0d372648cc",
+      "spokenTextSha256": "b25424b39bc936ffb13ef4ff16bffc136a431c53e82bfb9bb5320a0d372648cc",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "acf1235315a64ec475f3764609e93906fd3578bd4fd9798af1b9080e58dfcc72",
+      "requestFingerprintSha256": "acf1235315a64ec475f3764609e93906fd3578bd4fd9798af1b9080e58dfcc72",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c99256a193551abec95888fc239762f2fb0d1aad338ec57780618dac67cec25b"
+    },
+    {
+      "id": "S3-05-it-guided-practice-r1",
+      "unitId": "S3-05-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.",
+          "sha256": "d2c63f6c41bee9714714158f710b89854ef359d908aa99538544467060149414"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Cosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.",
+          "sha256": "ad2bb9437b961b216f60637c5c6b61ad846d82f0b0f05133a67f5a6d9f6fb013"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Classificare goccia, aspersione e bacino/solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.",
+          "sha256": "41d38cc7eb3885ee6ec646b6a2845be0ac7e51bc27ed19d768db81c006f9a337"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Consigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.",
+          "sha256": "a63a2ac51d48ccc2f9384f0d95ea21ad9e4e19760c985dbfd7dea1b62d5dea7e"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Mostrare coltura, mm per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.",
+          "sha256": "f38d6a912337ec1c810ab55fc79658a2cfad2c901fb5f0e4231e9617e3967544"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "sha256": "8c9a6ef7c5c360ceee662b76fafbc908384d9683e0fbbb4b3f5a76c880ceda5c"
+        }
+      ],
+      "scientificMeaning": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino/solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, mm per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "displayText": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino/solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, mm per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "captionText": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino/solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, mm per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "spokenText": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino o solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, millimetri per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "spokenTextSHA256": "3888e7f2a3be420bdd7177801a6ad0f39e49de201cf87931006e79c16f7164cd",
+      "spokenTextSha256": "3888e7f2a3be420bdd7177801a6ad0f39e49de201cf87931006e79c16f7164cd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino/solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, mm per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "spoken": "Abbinare sei colture al loro intervallo stagionale indicativo e fase sensibile, spiegando perché non sono dosi di una irrigazione.\n\nCosa condividono le fasi critiche? Dare un esempio riproduttivo e uno vegetativo che forma prodotto, qualificando lo stress.\n\nClassificare goccia, aspersione e bacino o solco secondo consegna, vento, livellamento, investimento e manutenzione; spiegare perché superficie non equivale sempre a sommersione.\n\nConsigliare un metodo per l’orto originale sabbioso caldo e ventoso, confrontare due alternative e indicare dati mancanti prima di tempi e volumi.\n\nMostrare coltura, millimetri per tutta la stagione e fase: errore di periodo torna alla prima spiegazione.\n\nIl formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c4a6001353d38fef7ad1180555e7996693ef7ac771cd12e60cfbd086b4cfa1bf",
+      "requestFingerprintSha256": "c4a6001353d38fef7ad1180555e7996693ef7ac771cd12e60cfbd086b4cfa1bf",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c99256a193551abec95888fc239762f2fb0d1aad338ec57780618dac67cec25b"
+    },
+    {
+      "id": "S3-05-it-reflection-r1",
+      "unitId": "S3-05-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Identificare fabbisogni idrici delle colture comuni e basi irrigue.",
+          "sha256": "03661118bff0ad16020c6c46e3d12c913a8b6a6dac851c630eec0d4937716b13"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Autoverifica dell’obiettivo del tema; non competenza fisica né calendario approvato.",
+          "sha256": "55f62359bb6f327be950e0eb4242a80427850cee5733ff06dbe073a92ab48bdb"
+        }
+      ],
+      "scientificMeaning": "Identificare fabbisogni idrici delle colture comuni e basi irrigue.\n\nAutoverifica dell’obiettivo del tema; non competenza fisica né calendario approvato.",
+      "displayText": "Identificare fabbisogni idrici delle colture comuni e basi irrigue.\n\nAutoverifica dell’obiettivo del tema; non competenza fisica né calendario approvato.",
+      "captionText": "Identificare fabbisogni idrici delle colture comuni e basi irrigue.\n\nAutoverifica dell’obiettivo del tema; non competenza fisica né calendario approvato.",
+      "spokenText": "Identificare fabbisogni idrici delle colture comuni e basi irrigue.\n\nAutoverifica dell’obiettivo del tema; non competenza fisica né calendario approvato.",
+      "spokenTextSHA256": "8946fd19cfd2ed833e00d3759a8cec8ecd20a02d5298d5d80d2760b64bb31a15",
+      "spokenTextSha256": "8946fd19cfd2ed833e00d3759a8cec8ecd20a02d5298d5d80d2760b64bb31a15",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "912e8052dae4589b0d66d4be04032a737d8710ca41d859b07004e02274f4e5fb",
+      "requestFingerprintSha256": "912e8052dae4589b0d66d4be04032a737d8710ca41d859b07004e02274f4e5fb",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c99256a193551abec95888fc239762f2fb0d1aad338ec57780618dac67cec25b"
+    },
+    {
+      "id": "S3-05-it-glossary-r1",
+      "unitId": "S3-05-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "fabbisogno idrico colturale",
+          "sha256": "fa847b691bebe9de56c45c42f8e036f1a55bcd0ccc7950a0f771fa5e7dde2ee4"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Profondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.",
+          "sha256": "aa71f64858799ba237f26d666c73c7b5100ff57ad75648cb52be7a4a2ccfe6e9"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "millimetro d’acqua (mm)",
+          "sha256": "827fefdf8639484ed620e2697dba8f78d262a9f1de947171a95f367b943fd480"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Unità di profondità su una superficie, da leggere col periodo indicato.",
+          "sha256": "68a475b7f04fdf1761727fe7eb7fcb33fd74833837a241053f17fe3279202db4"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "fase sensibile all’acqua",
+          "sha256": "24c81d25610955217a55719dde93df310eab997c88130273ca6dd8f10458e87c"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Fase in cui lo stress può influenzare fortemente il prodotto raccolto.",
+          "sha256": "b732bb6e9ae473355ab10fff88b597d9300620744425b6337b1979dbed82cb93"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "fabbisogno irriguo",
+          "sha256": "d42d83eb9295bec8c0bbe22fc3d96b5ee4c328154a73be51d019ef664221dcab"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Acqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.",
+          "sha256": "ee0197b3c04da2d1a1effe49a399bc7667ea8975eb52cc480e14b0a6bda17b3e"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "gocciolatore",
+          "sha256": "656e3707dfd176d94cfae4d96153e76cd3ec4ccf6dad7ac356aedda584135e5d"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Piccolo punto di uscita che regola il flusso vicino alla fila o alle radici.",
+          "sha256": "55fc5d7e103c76d2022be51af3c9222524a643e25119a51224eb327cc696ec96"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "uniformità dell’aspersione",
+          "sha256": "6ac5939f859ca5c4896dfb0b36ee531183860e9b3cbaf7442abd66bd0feb4ca2"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Misura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.",
+          "sha256": "db1a765b935fba143eba68e3833217a84fe0aeddf401e841d37dd3ceebcc7411"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "irrigazione di superficie",
+          "sha256": "f8b120bccab37c2866be9b4c03f2ab9a174b509e760a1db437f1536433f2596c"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Movimento gravitazionale dell’acqua in solchi, strisce o bacini.",
+          "sha256": "40817ac45ab777a386bb72930e04555abbea193e47f8bbb5b1d4c1a1b33e7f14"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "percolazione profonda",
+          "sha256": "4ca2fa1a363bfc3be042bea883d4ddf025e591b129b7654c56a3c8d90a4e31c6"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Acqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+          "sha256": "7c8ac4ff8bf93590bcdaa189c695e785895b69bc67f6bfc13eb422f62866f53a"
+        }
+      ],
+      "scientificMeaning": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua (mm)\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+      "displayText": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua (mm)\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+      "captionText": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua (mm)\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+      "spokenText": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+      "spokenTextSHA256": "c4457979d9c72ecac843df54ba53f6fcd84ccbe8c2270da382fa00d287f9f369",
+      "spokenTextSha256": "c4457979d9c72ecac843df54ba53f6fcd84ccbe8c2270da382fa00d287f9f369",
+      "spokenAdaptationChanges": [
+        {
+          "written": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua (mm)\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+          "spoken": "fabbisogno idrico colturale\n\nProfondità d’acqua usata dalla coltura per evapotraspirazione in condizioni e periodo dichiarati; non coincide con il volume distribuito.\n\nmillimetro d’acqua\n\nUnità di profondità su una superficie, da leggere col periodo indicato.\n\nfase sensibile all’acqua\n\nFase in cui lo stress può influenzare fortemente il prodotto raccolto.\n\nfabbisogno irriguo\n\nAcqua integrativa dopo pioggia utile e condizioni del sito; l’erogazione lorda include perdite.\n\ngocciolatore\n\nPiccolo punto di uscita che regola il flusso vicino alla fila o alle radici.\n\nuniformità dell’aspersione\n\nMisura di quanto uniformemente l’acqua nebulizzata raggiunge la superficie voluta.\n\nirrigazione di superficie\n\nMovimento gravitazionale dell’acqua in solchi, strisce o bacini.\n\npercolazione profonda\n\nAcqua che scende sotto la profondità attualmente sfruttabile dalle radici.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1eab00fd2f0e2a21c47240ff29b9a679b8b48cd0e4e3f38f4faf3224eaab5ac8",
+      "requestFingerprintSha256": "1eab00fd2f0e2a21c47240ff29b9a679b8b48cd0e4e3f38f4faf3224eaab5ac8",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c99256a193551abec95888fc239762f2fb0d1aad338ec57780618dac67cec25b"
+    },
+    {
+      "id": "S3-05-de-opening-r1",
+      "unitId": "S3-05-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Eine Kulturentabelle schätzt den Bedarf für die ganze Saison, nicht für die Bewässerung morgen. Lies Einheit, Zeitraum und Stadium, vergleiche Methoden und benenne fehlende Daten vor der Wasserplanung.",
+          "sha256": "2b94a3413e241509ed180455df8f91f68ba65f6dd80254d076d28210e0e45642"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Sechs Kulturbeispiele als Richtwerte in Millimetern für die gesamte Vegetationszeit und ihre empfindlichen Stadien lesen; das dokumentierte Kohlbeispiel statt einer unbelegten Regel für alles Blattgemüse verwenden.",
+          "sha256": "d9c48d02095d135db944fc20e553b5a4f0579c502a63d0776b6cda7d52f54a37"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Tropf-, Beregnungs- und Oberflächenbewässerung vergleichen und für ein heißes, windiges, sandiges Gemüsefeld mit wenig Wasser unter Vorbehalt wählen, samt Investition, Filtration, Pflege, Wind und Tiefenversickerung.",
+          "sha256": "3af8f680b28629151858ad2913bff9bcede98e67d0a4a65512573ef3ad8bb12a"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Wetter, wirksamen Regen, Wurzelraumwasser, Boden, Kulturstadium und Anlagenleistung als Planungsdaten nennen; saisonalen Richtwert nicht in feste tägliche Gabe teilen.",
+          "sha256": "b8a57bcfc2fbaf42615e8f1544fec23cbd5457fb74a89235a01e0c016b749aac"
+        }
+      ],
+      "scientificMeaning": "Eine Kulturentabelle schätzt den Bedarf für die ganze Saison, nicht für die Bewässerung morgen. Lies Einheit, Zeitraum und Stadium, vergleiche Methoden und benenne fehlende Daten vor der Wasserplanung.\n\nSechs Kulturbeispiele als Richtwerte in Millimetern für die gesamte Vegetationszeit und ihre empfindlichen Stadien lesen; das dokumentierte Kohlbeispiel statt einer unbelegten Regel für alles Blattgemüse verwenden.\n\nTropf-, Beregnungs- und Oberflächenbewässerung vergleichen und für ein heißes, windiges, sandiges Gemüsefeld mit wenig Wasser unter Vorbehalt wählen, samt Investition, Filtration, Pflege, Wind und Tiefenversickerung.\n\nWetter, wirksamen Regen, Wurzelraumwasser, Boden, Kulturstadium und Anlagenleistung als Planungsdaten nennen; saisonalen Richtwert nicht in feste tägliche Gabe teilen.",
+      "displayText": "Eine Kulturentabelle schätzt den Bedarf für die ganze Saison, nicht für die Bewässerung morgen. Lies Einheit, Zeitraum und Stadium, vergleiche Methoden und benenne fehlende Daten vor der Wasserplanung.\n\nSechs Kulturbeispiele als Richtwerte in Millimetern für die gesamte Vegetationszeit und ihre empfindlichen Stadien lesen; das dokumentierte Kohlbeispiel statt einer unbelegten Regel für alles Blattgemüse verwenden.\n\nTropf-, Beregnungs- und Oberflächenbewässerung vergleichen und für ein heißes, windiges, sandiges Gemüsefeld mit wenig Wasser unter Vorbehalt wählen, samt Investition, Filtration, Pflege, Wind und Tiefenversickerung.\n\nWetter, wirksamen Regen, Wurzelraumwasser, Boden, Kulturstadium und Anlagenleistung als Planungsdaten nennen; saisonalen Richtwert nicht in feste tägliche Gabe teilen.",
+      "captionText": "Eine Kulturentabelle schätzt den Bedarf für die ganze Saison, nicht für die Bewässerung morgen. Lies Einheit, Zeitraum und Stadium, vergleiche Methoden und benenne fehlende Daten vor der Wasserplanung.\n\nSechs Kulturbeispiele als Richtwerte in Millimetern für die gesamte Vegetationszeit und ihre empfindlichen Stadien lesen; das dokumentierte Kohlbeispiel statt einer unbelegten Regel für alles Blattgemüse verwenden.\n\nTropf-, Beregnungs- und Oberflächenbewässerung vergleichen und für ein heißes, windiges, sandiges Gemüsefeld mit wenig Wasser unter Vorbehalt wählen, samt Investition, Filtration, Pflege, Wind und Tiefenversickerung.\n\nWetter, wirksamen Regen, Wurzelraumwasser, Boden, Kulturstadium und Anlagenleistung als Planungsdaten nennen; saisonalen Richtwert nicht in feste tägliche Gabe teilen.",
+      "spokenText": "Eine Kulturentabelle schätzt den Bedarf für die ganze Saison, nicht für die Bewässerung morgen. Lies Einheit, Zeitraum und Stadium, vergleiche Methoden und benenne fehlende Daten vor der Wasserplanung.\n\nSechs Kulturbeispiele als Richtwerte in Millimetern für die gesamte Vegetationszeit und ihre empfindlichen Stadien lesen; das dokumentierte Kohlbeispiel statt einer unbelegten Regel für alles Blattgemüse verwenden.\n\nTropf-, Beregnungs- und Oberflächenbewässerung vergleichen und für ein heißes, windiges, sandiges Gemüsefeld mit wenig Wasser unter Vorbehalt wählen, samt Investition, Filtration, Pflege, Wind und Tiefenversickerung.\n\nWetter, wirksamen Regen, Wurzelraumwasser, Boden, Kulturstadium und Anlagenleistung als Planungsdaten nennen; saisonalen Richtwert nicht in feste tägliche Gabe teilen.",
+      "spokenTextSHA256": "1ae1f13ae55a021b3528fda9dee73626163848b9326089ba1777011ad90aac56",
+      "spokenTextSha256": "1ae1f13ae55a021b3528fda9dee73626163848b9326089ba1777011ad90aac56",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8bd643c26a07ceff8cd7377f8e21ce145c49e10b62cf3857d3a5ecc5be1d3b88",
+      "requestFingerprintSha256": "8bd643c26a07ceff8cd7377f8e21ce145c49e10b62cf3857d3a5ecc5be1d3b88",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "5358d1a7c70a50dee7d1b91997649daf5f4462972d3fb8e64c4b70d5f6a83bb2"
+    },
+    {
+      "id": "S3-05-de-guided-practice-r1",
+      "unitId": "S3-05-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.",
+          "sha256": "883c9d861ce1700f81338238908cd01cd0022ea3136e8c7b3085cd932b84db0b"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Was verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.",
+          "sha256": "1f2a27210f8356e650a25a9c645e5118772b8b06396b5eff9637785dcc2142d0"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Tropf, Beregnung und Becken/Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.",
+          "sha256": "9aabed7663233403ff5777818003eb61ba6e24c4d2182460ae8d94e40b9c814d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Für das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt/Menge nennen.",
+          "sha256": "a8838950f6592f981cce0074cf11ba7c644bb11ef2698648afbe011743434021"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Exakte Kultur, mm für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.",
+          "sha256": "f03be7453903dedb0c91b655aa6bb1fccbce2bdfa44ce79fc609796e5d119011"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Die Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+          "sha256": "2ed0443fc6f7d1edf3cb792f9f3dd19884d45d8eb31612afabefd206aa77521a"
+        }
+      ],
+      "scientificMeaning": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken/Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt/Menge nennen.\n\nExakte Kultur, mm für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+      "displayText": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken/Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt/Menge nennen.\n\nExakte Kultur, mm für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+      "captionText": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken/Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt/Menge nennen.\n\nExakte Kultur, mm für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+      "spokenText": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken oder Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt und Menge nennen.\n\nExakte Kultur, Millimeter für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+      "spokenTextSHA256": "0a7ad70ea4652661b73eb58b07f3bee85bef2e6847e21faba2f818a1dcc27343",
+      "spokenTextSha256": "0a7ad70ea4652661b73eb58b07f3bee85bef2e6847e21faba2f818a1dcc27343",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken/Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt/Menge nennen.\n\nExakte Kultur, mm für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+          "spoken": "Jede der sechs Kulturen mit ungefährem Saisonbereich und empfindlichem Stadium verbinden und erklären, warum kein Bereich eine einzelne Gabe ist.\n\nWas verbindet die empfindlichen Phasen? Ein reproduktives und ein vegetatives ertragsbildendes Beispiel nennen und Stresswirkung eingrenzen.\n\nTropf, Beregnung und Becken oder Furche nach Lieferung, Wind, Einebnung, Investition und Pflege sortieren; erklären, warum Oberfläche nicht stets Flutung bedeutet.\n\nFür das ursprüngliche heiße, windige, sandige Gemüsefeld Methode empfehlen, zwei Alternativen vergleichen und fehlende Daten vor Zeitpunkt und Menge nennen.\n\nExakte Kultur, Millimeter für die ganze Saison und Stadium nennen; Periodenfehler zum Anfang zurückführen.\n\nDie Lehrkraft kann einen gefilterten Tropfer, einen Regner und eine Furchen- oder Beckenanordnung zeigen und die Lernenden Beobachtungen notieren lassen. In diesem Schritt wird keine individuelle praktische Kompetenz dokumentiert; ohne Standortdaten wird keine Bewässerung vorgeschrieben.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0014ef2a481a1b9e566171a4b0cf0cd87d3862657fc6335b068115c2bb7f694c",
+      "requestFingerprintSha256": "0014ef2a481a1b9e566171a4b0cf0cd87d3862657fc6335b068115c2bb7f694c",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "5358d1a7c70a50dee7d1b91997649daf5f4462972d3fb8e64c4b70d5f6a83bb2"
+    },
+    {
+      "id": "S3-05-de-reflection-r1",
+      "unitId": "S3-05-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Wasserbedarf häufiger Kulturen und Bewässerungsgrundlagen erkennen.",
+          "sha256": "8cb5a175e78550debb5a05a104ebf2f3e5f0cd58e3187ba3f7de95e2062aab37"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Selbsteinschätzung des Themenziels, keine körperliche Kompetenz oder Planfreigabe.",
+          "sha256": "2b5a442c0d3fd3cee2fd4438e7c24b753be1572aff861c321c0bf23f03559934"
+        }
+      ],
+      "scientificMeaning": "Wasserbedarf häufiger Kulturen und Bewässerungsgrundlagen erkennen.\n\nSelbsteinschätzung des Themenziels, keine körperliche Kompetenz oder Planfreigabe.",
+      "displayText": "Wasserbedarf häufiger Kulturen und Bewässerungsgrundlagen erkennen.\n\nSelbsteinschätzung des Themenziels, keine körperliche Kompetenz oder Planfreigabe.",
+      "captionText": "Wasserbedarf häufiger Kulturen und Bewässerungsgrundlagen erkennen.\n\nSelbsteinschätzung des Themenziels, keine körperliche Kompetenz oder Planfreigabe.",
+      "spokenText": "Wasserbedarf häufiger Kulturen und Bewässerungsgrundlagen erkennen.\n\nSelbsteinschätzung des Themenziels, keine körperliche Kompetenz oder Planfreigabe.",
+      "spokenTextSHA256": "9287ba98845700ccf83b6b7b00684dad3162b05e73f50cc6721652a5125a7c82",
+      "spokenTextSha256": "9287ba98845700ccf83b6b7b00684dad3162b05e73f50cc6721652a5125a7c82",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e01e464e710adf425f44282e3efefb22907e3068ea9f226082ace3dad51ab6bc",
+      "requestFingerprintSha256": "e01e464e710adf425f44282e3efefb22907e3068ea9f226082ace3dad51ab6bc",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "5358d1a7c70a50dee7d1b91997649daf5f4462972d3fb8e64c4b70d5f6a83bb2"
+    },
+    {
+      "id": "S3-05-de-glossary-r1",
+      "unitId": "S3-05-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "887ea4b5f3147a1e83385bf2bec2066451881f7660170153c5309ace7f829ef1",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "Kulturwasserbedarf",
+          "sha256": "c73bb7739525f91d51b0d3519a0a70258f777c961def00db084976debd24f51e"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Wassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.",
+          "sha256": "75b45137baedbd10cfcfbfdc55cf3c125c52d0faa689185539422ae0c4d000ac"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "Millimeter Wasser (mm)",
+          "sha256": "b20f8f22bb9a9a1b10b7020adeacdecaac024bb84e0e8ce0da4c7ecbf7c60330"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Tiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.",
+          "sha256": "c38abd679e577965da84fa1f04e6aa91f51ed4e01cd6b0918a3474b344bd4e0d"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "wasserempfindliches Stadium",
+          "sha256": "3e6b0de5ec485ae164d6d4ba0fa137d52d5ae3c5a0fea7690f072279b7ff5ff3"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Wachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.",
+          "sha256": "71f0094a4a0bf67aa058669aef252a2064d30052c40969a0c75c6c3d83c57c65"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Bewässerungswasserbedarf",
+          "sha256": "59a3500f25980524853a3757cad7c0475365c7b79aa2fff0f615ef9a51213c97"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Zusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.",
+          "sha256": "4d187074543cd3ee5e6fe886d47a11a08aa89c7d44f903581db917205b93950f"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Tropfer",
+          "sha256": "49b7697cce7109674d831db30b87958d87cc3b7d57e5dffef825967583bfb2a5"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Kleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.",
+          "sha256": "dc8c3841877ef532e09109aa2f72fd3eb33a3f2e8904947484d46657c5b7cd54"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Beregnungsgleichmäßigkeit",
+          "sha256": "dfa1627b9280f62d1e618d2aa405fb355355e0400889d344aa735a21f97d3d65"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Wie gleichmäßig das versprühte Wasser die Zielfläche erreicht.",
+          "sha256": "3337a9865ceeb0392976cfb0384ca14fc457a1a9414171aaa8e49dd788343a93"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Oberflächenbewässerung",
+          "sha256": "3868c046559d4a21fb80f514163c64ed053d9b90c522ef4ea0843ac9d1281ca4"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Schwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.",
+          "sha256": "ca4521fe7b50a255c67accf57eb0a60d8fbf1ccf1b29c47ad550cc5074600724"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "Tiefenversickerung",
+          "sha256": "90370141da7d7783a029a6b51baf3e4d50e806953cef861422ad5ceeff2e54f2"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Wasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+          "sha256": "a9ee7691a4c303733a8920faf1b82a1a5e2562806e5a6fbabfeb4e3ab0a51e7b"
+        }
+      ],
+      "scientificMeaning": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser (mm)\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+      "displayText": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser (mm)\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+      "captionText": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser (mm)\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+      "spokenText": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+      "spokenTextSHA256": "79e10bb4b720b64869bc0bb02befb9edb28a0d5ac99b0570a3383a62ddf5ea91",
+      "spokenTextSha256": "79e10bb4b720b64869bc0bb02befb9edb28a0d5ac99b0570a3383a62ddf5ea91",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser (mm)\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+          "spoken": "Kulturwasserbedarf\n\nWassertiefe, die eine Kultur über Evapotranspiration in definierten Bedingungen und Zeitraum nutzt; verschieden von Systemlieferung.\n\nMillimeter Wasser\n\nTiefeneinheit über einer Fläche; nur mit angegebenem Zeitraum sinnvoll.\n\nwasserempfindliches Stadium\n\nWachstumsphase, in der Wassermangel das Ernteergebnis stark beeinflussen kann.\n\nBewässerungswasserbedarf\n\nZusätzlich benötigtes Wasser nach wirksamem Regen und Standortfaktoren; Bruttozufuhr enthält Verluste.\n\nTropfer\n\nKleiner Auslass für geregelten Durchfluss nahe Kulturreihe oder Wurzeln.\n\nBeregnungsgleichmäßigkeit\n\nWie gleichmäßig das versprühte Wasser die Zielfläche erreicht.\n\nOberflächenbewässerung\n\nSchwerkraftbetriebene Wasserbewegung in Furchen, Streifen oder Becken.\n\nTiefenversickerung\n\nWasser unterhalb der aktuell nutzbaren Wurzeltiefe.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "410800db8f95588d93e6407c24c6ff8a69fc083e34ff311be42c72be439cae7d",
+      "requestFingerprintSha256": "410800db8f95588d93e6407c24c6ff8a69fc083e34ff311be42c72be439cae7d",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "5358d1a7c70a50dee7d1b91997649daf5f4462972d3fb8e64c4b70d5f6a83bb2"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-05-ar-EG-opening-r1",
+      "S3-05-ar-EG-guided-practice-r1",
+      "S3-05-ar-EG-reflection-r1",
+      "S3-05-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S3-05-en-opening-r1",
+      "S3-05-en-guided-practice-r1",
+      "S3-05-en-reflection-r1",
+      "S3-05-en-glossary-r1"
+    ],
+    "it": [
+      "S3-05-it-opening-r1",
+      "S3-05-it-guided-practice-r1",
+      "S3-05-it-reflection-r1",
+      "S3-05-it-glossary-r1"
+    ],
+    "de": [
+      "S3-05-de-opening-r1",
+      "S3-05-de-guided-practice-r1",
+      "S3-05-de-reflection-r1",
+      "S3-05-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

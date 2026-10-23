@@ -1,0 +1,301 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-en.json",
+    "sha256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+    "bytes": 29547
+  },
+  "units": [
+    {
+      "id": "S3-05-en-opening-r1",
+      "unitId": "S3-05-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.",
+          "sha256": "4e96ccc14d20b23f155d7c5090b55449247eed8249b9f66f599b484e4e685758"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Read six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.",
+          "sha256": "f0c81972686ddd1b43a6e8396242899c9a8a42bbdace049e135517760abf4159"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Compare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.",
+          "sha256": "a5edafba460cc92ba9723f58f420cc3e9661b62364c244ca8d00492cc894c391"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "List the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+          "sha256": "d7363d18916d0b4588dddad46fc0f1dc9d93ca1ccc472540c9992025913af595"
+        }
+      ],
+      "scientificMeaning": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "displayText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "captionText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "spokenText": "A crop table gives a seasonal estimate, not a watering instruction for tomorrow. Read the unit and growth stage, compare irrigation methods, and explain the information still needed before scheduling water.\n\nRead six crop examples as indicative millimetres of crop water need over a whole growing season, identify their sensitive growth stages, and use the documented cabbage example rather than an unsupported rule for all leafy greens.\n\nCompare drip, sprinkler and surface irrigation, then make a conditional choice for a hot, windy, sandy, water-limited vegetable plot that accounts for investment, filtration, maintenance, wind and possible deep percolation.\n\nList the weather, effective rainfall, root-zone water, soil, crop-stage and system data needed to schedule irrigation; do not divide a seasonal estimate into a fixed daily dose.",
+      "spokenTextSHA256": "a3124b0615082c836c820286915f3e7c456843c570250251a07c1fdf6da48d0e",
+      "spokenTextSha256": "a3124b0615082c836c820286915f3e7c456843c570250251a07c1fdf6da48d0e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a8261ab1f3340fd53302361b98ea8e2267f0ef504c80faea2558572e74147f31",
+      "requestFingerprintSha256": "a8261ab1f3340fd53302361b98ea8e2267f0ef504c80faea2558572e74147f31",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-guided-practice-r1",
+      "unitId": "S3-05-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.",
+          "sha256": "36ce0b6dcebb00fcd40da0cf75069a63c166bfd6001aa6c2d6e5f0c0fb8018db"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "What do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.",
+          "sha256": "c54745668f45823c5164e8f48e8466f57450fdd89f8ac8b649bac0ed6e2e02cd"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Sort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.",
+          "sha256": "baa081fc1185f24e15686ccc50e8790b1b0a4ce55ad2b181ac90aec13b816f5d"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Recommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.",
+          "sha256": "acb5b7705459f43bd3a4da0646309b6e4765b3493557be5b037a271116e3f9af"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Show the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.",
+          "sha256": "02819e2d66d8f0d4823ad2c9db6c6056ad1b6e1ec5763ab5af0eff5bf256675c"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "The trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "sha256": "5ff5228bbe6a3bab30ef3b8c8a3fbb54712a679c107330fa8b96ac70b466bedf"
+        }
+      ],
+      "scientificMeaning": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "displayText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "captionText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "spokenText": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin or furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, millimetres per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+      "spokenTextSHA256": "bed3a19c0887e56721eaa0742ff480902d4d5ebbd5ea935b5050314c4ae142a1",
+      "spokenTextSha256": "bed3a19c0887e56721eaa0742ff480902d4d5ebbd5ea935b5050314c4ae142a1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin/furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, mm per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "spoken": "Match each of the six crops to its indicative seasonal range and sensitive stage, then explain why none is a dose for one irrigation.\n\nWhat do the listed critical stages have in common? Give one reproductive and one non-reproductive yield-forming example, and qualify the effect of stress.\n\nSort drip, sprinkler and basin or furrow surface methods by water delivery, wind sensitivity, levelling, investment and maintenance; explain why surface does not always mean flood.\n\nRecommend a method for the original hot, windy, sandy vegetable plot, compare two alternatives, and list the missing data before setting timing and amount.\n\nShow the exact crop, millimetres per total growing period, and stage; route seasonal-dose mistakes back to the first reading.\n\nThe trainer may show a filtered drip emitter, a sprinkler and a furrow or basin layout and ask students to record observations. Do not record individual physical competence from this step; no irrigation is prescribed without site data.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1f76c15687d80c177393bc1008ef733d702a45591d7b71a11c0c7ab405ade246",
+      "requestFingerprintSha256": "1f76c15687d80c177393bc1008ef733d702a45591d7b71a11c0c7ab405ade246",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-reflection-r1",
+      "unitId": "S3-05-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Identify water requirements for common crops and irrigation basics.",
+          "sha256": "ad25cc3494394b9d846b59caeda877583ca6b2508aeda33e0a05395399b65e8b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Self-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+          "sha256": "cd058507be16ae059b385d2c431f150ac6aee520767966b2c39c41b2ce06231d"
+        }
+      ],
+      "scientificMeaning": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "displayText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "captionText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "spokenText": "Identify water requirements for common crops and irrigation basics.\n\nSelf-assessment of the topic outcome; no physical competence or irrigation-plan approval.",
+      "spokenTextSHA256": "24643207068c85663711fe263c8b93890eb780d03f62f783abd6788f91bfed58",
+      "spokenTextSha256": "24643207068c85663711fe263c8b93890eb780d03f62f783abd6788f91bfed58",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "93138300f162e4d97cdd284556a1b839d36e4c212796f44c5e8848b69a3a12ad",
+      "requestFingerprintSha256": "93138300f162e4d97cdd284556a1b839d36e4c212796f44c5e8848b69a3a12ad",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-05-en-glossary-r1",
+      "unitId": "S3-05-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "45189c67764b443e448cbe99a280a082e462bc72f7915eae54f771ff1cb952b5",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "crop water need",
+          "sha256": "12bddc11ba2f10562aa0e5f647107276ecaaafc1a53cc940879357470fac5e7c"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Water depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.",
+          "sha256": "d9a899a3052c772b5f9f72aab97f41a3cb14bfa265351931cbadc7b16e95c7f4"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "millimetre of water (mm)",
+          "sha256": "66e41136020a0802d751d2825f33d2e942ff277d39cc02162d74886104fc99ff"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "A depth unit measured over an area; its meaning depends on the stated time period.",
+          "sha256": "653d86898c977776abd73af4e34c6ad3492e6987ec8c1fc1183e9988d04bd07a"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "critical water stage",
+          "sha256": "5cc0efca905bddd5e86d8e0d2551778addc8f2c55762d024663a55a14adade20"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "A growth stage during which water stress can strongly affect the harvested result.",
+          "sha256": "44a30e05532fbf3c8550accb759e5cab35222cda725b6964445328f50d6e2156"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "irrigation water need",
+          "sha256": "6db54d545dbbb43b101c43cc9d9c24e670250133537236c3a654f4cc926b280a"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Supplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.",
+          "sha256": "6119ed4ad944a3abf55de3c91fca641a9251bfb0e73c1d0da859fa9765407276"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "drip emitter",
+          "sha256": "75f1e0bd4259be2d7ecf93724a28b79e72b3eedf59d11bf83217df6987c4ea42"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A small outlet delivering controlled water flow near a plant row or root zone.",
+          "sha256": "e7240cc0dd12fa7baa255abad404509cf893dad56373cc7083d1ee2d46965baf"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "sprinkler uniformity",
+          "sha256": "7bc55bfd02f005ce67639be63eae5242604df80cef8c12238e1dc292c3606d8b"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "How evenly sprayed irrigation water is distributed over the intended area.",
+          "sha256": "73e9445cbb35924ef734cb23bd538beda5eda686c28439603b9e57a5a21fb9c0"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "surface irrigation",
+          "sha256": "7c647e2e94fe73735520d955a3c395858110636519f2dc1964c24609b7939f02"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Gravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.",
+          "sha256": "cd3ad275845a5f027471e3e5acd15e1f365914284d9f1cb3fac6ca6eb743295a"
+        },
+        {
+          "pointer": "/glossary/7/0",
+          "text": "deep percolation",
+          "sha256": "5ce41feb302c105477b12fc6044de7195e3ee986883f7284a08cd64d3b90bf42"
+        },
+        {
+          "pointer": "/glossary/7/1",
+          "text": "Water moving below the depth roots can currently use.",
+          "sha256": "87f26c89594b84991d9f8e19f7c864208503ec16c9639921716d04f88df6f69a"
+        }
+      ],
+      "scientificMeaning": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "displayText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "captionText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "spokenText": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+      "spokenTextSHA256": "50b79aaf7bba752029bb7b347dbf7b155179784acd763e68d64aed5ea7da7c8e",
+      "spokenTextSha256": "50b79aaf7bba752029bb7b347dbf7b155179784acd763e68d64aed5ea7da7c8e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water (mm)\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+          "spoken": "crop water need\n\nWater depth a crop uses through evapotranspiration under stated conditions and period; it differs from the water a system must deliver.\n\nmillimetre of water\n\nA depth unit measured over an area; its meaning depends on the stated time period.\n\ncritical water stage\n\nA growth stage during which water stress can strongly affect the harvested result.\n\nirrigation water need\n\nSupplemental water need after accounting for useful rainfall and other site factors; gross system delivery also depends on losses.\n\ndrip emitter\n\nA small outlet delivering controlled water flow near a plant row or root zone.\n\nsprinkler uniformity\n\nHow evenly sprayed irrigation water is distributed over the intended area.\n\nsurface irrigation\n\nGravity-fed movement of water across or along a field by layouts such as furrows, borders or basins.\n\ndeep percolation\n\nWater moving below the depth roots can currently use.",
+          "occurrences": 1,
+          "purpose": "Source-equivalent naturalgrammar/numeralunits, no repeatedabbreviationname; allsourcefacts/conditions preserved."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "232395577ec0ae397b80ae0d7875ce9828e261c451305f499695c0d6c6bc6020",
+      "requestFingerprintSha256": "232395577ec0ae397b80ae0d7875ce9828e261c451305f499695c0d6c6bc6020",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
