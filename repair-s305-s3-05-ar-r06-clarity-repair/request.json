@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S305_S3_05_AR_R06_CLARITY_REPAIR",
+  "stepId": "S3-05",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s305-s3-05-ar-r06-clarity-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-05-ar-EG-R06-clarity-repair-r1",
+      "unitId": "S3-05-ar-EG-R06-clarity-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-s305-s3-05-ar-r06-clarity-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f705075e9f019587b144742d375ae685fabbe5dc9c3129c258990f0955f3deda",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+          "sha256": "9519e6be50efa4813db0d6e16390cec5ebfc9255199715fb4ad045197481f92d"
+        }
+      ],
+      "scientificMeaning": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "displayText": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "captionText": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+      "spokenText": "قارن نظام الري الموجود فعلًا.",
+      "spokenTextSHA256": "970c4fc7bd2834f87fda2c26b7389853b383e578ee6129abb76ae4ea2245be17",
+      "spokenTextSha256": "970c4fc7bd2834f87fda2c26b7389853b383e578ee6129abb76ae4ea2245be17",
+      "spokenAdaptationChanges": [
+        {
+          "written": "بعض مسارات الري السطحي بالجاذبية بتحتاج معدات بداية وطاقة ضخ قليلين. التسوية والعمالة والطلمبات أو تجميع مياه نهاية الخط وإعادة استخدامها ممكن يغيروا التكلفة والطاقة؛ قارن التركيب الفعلي.",
+          "spoken": "قارن التركيب الفعلي.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "قارن التركيب الفعلي.",
+          "spoken": "قارن نظام الري الموجود فعلًا.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "39205db1c8c424e96582ec44c955f19307002e0dbd9d58ace9cf65f2ea7e5baf",
+      "requestFingerprintSha256": "39205db1c8c424e96582ec44c955f19307002e0dbd9d58ace9cf65f2ea7e5baf",
+      "sourcePlanSha256": "90890c52822c63cbe170de30d4a5163e0c5716c82ff0823ac61c1205bd8d9023",
+      "exactSentenceBefore": "قارن التركيب الفعلي.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s305-seven-repairs-root-authority-r1.json",
+        "authoritySHA256": "b04a2d2bfcea4de1e33a405324845a4ca77456c56f26c9fdaacf7f772a6e296a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-05-ar-EG-R06-clarity-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
