@@ -1,0 +1,5 @@
+from pathlib import Path
+import json,hashlib
+p=Path(__file__).resolve().parent
+files=['README.en.txt', 'request.json', 'runtime.json', 'attempt-ledger.json', 'owner-authority.json', 'prompts/blind.txt', 'provenance/model-availability.json', 'provenance/context-proof.json', 'worker.py', 'offline_check.py', 'freeze_package.py', 'inputs/C01.wav', 'inputs/C02.wav', 'inputs/C03.wav', 'inputs/C04.wav', 'inputs/C05.wav', 'inputs/C06.wav', 'inputs/C07.wav', 'inputs/C08.wav', 'inputs/C09.wav', 'inputs/C10.wav', 'inputs/C11.wav', 'inputs/C12.wav', 'inputs/C13.wav', 'inputs/C14.wav', 'inputs/C15.wav', 'inputs/C16.wav', 'inputs/C17.wav', 'inputs/C18.wav', 'inputs/C19.wav', 'inputs/C20.wav', 'inputs/C21.wav', 'inputs/C22.wav', 'inputs/C23.wav']
+p.joinpath('freeze.json').write_text(json.dumps({'sha256':{f:hashlib.sha256(p.joinpath(f).read_bytes()).hexdigest()for f in files}},indent=2)+'\n','utf-8')
