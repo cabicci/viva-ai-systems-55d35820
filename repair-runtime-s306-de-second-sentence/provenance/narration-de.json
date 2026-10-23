@@ -1,0 +1,72 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-de.json",
+    "sha256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+    "bytes": 26095
+  },
+  "units": [
+    {
+      "id": "S3-06-de-R06-runtime-second-sentence-r2",
+      "unitId": "S3-06-de-R06-runtime-second-sentence-r2",
+      "locale": "de",
+      "semanticGroup": "repair-runtime-s306-de-second-sentence-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Eine 3D-Übung hilft beim Platzieren von Bauteilen und beim Entscheiden. Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte. Online kannst du den Vorgang erklären üben; nur die Einzelbeobachtung der Lehrkraft bestätigt Entnahme- und Montagefertigkeiten.",
+          "sha256": "fa84c986b7c80245fc8a3bee45c22e1e2fd1b26b879be7f64d5c71804d93f147"
+        }
+      ],
+      "scientificMeaning": "Eine 3D-Übung hilft beim Platzieren von Bauteilen und beim Entscheiden. Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte. Online kannst du den Vorgang erklären üben; nur die Einzelbeobachtung der Lehrkraft bestätigt Entnahme- und Montagefertigkeiten.",
+      "displayText": "Eine 3D-Übung hilft beim Platzieren von Bauteilen und beim Entscheiden. Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte. Online kannst du den Vorgang erklären üben; nur die Einzelbeobachtung der Lehrkraft bestätigt Entnahme- und Montagefertigkeiten.",
+      "captionText": "Eine 3D-Übung hilft beim Platzieren von Bauteilen und beim Entscheiden. Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte. Online kannst du den Vorgang erklären üben; nur die Einzelbeobachtung der Lehrkraft bestätigt Entnahme- und Montagefertigkeiten.",
+      "spokenText": "Sie ziehen Karten und entscheiden sich für passende Handlungen. Das sind Lernhilfen, keine gemessenen Prozentwerte der Bodenfeuchte.",
+      "spokenTextSHA256": "b9628641757aa605a8d4cc8d6dfa18bdc4e90cbbdf43bbf2c5b7a2b444faaf63",
+      "spokenTextSha256": "b9628641757aa605a8d4cc8d6dfa18bdc4e90cbbdf43bbf2c5b7a2b444faaf63",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Eine 3D-Übung hilft beim Platzieren von Bauteilen und beim Entscheiden. Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte. Online kannst du den Vorgang erklären üben; nur die Einzelbeobachtung der Lehrkraft bestätigt Entnahme- und Montagefertigkeiten.",
+          "spoken": "Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte.",
+          "occurrences": 1,
+          "purpose": "EXTRACT_EXACT_ORIGINAL_CANONICAL_SECOND_SENTENCE_ONLY"
+        },
+        {
+          "written": "Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte.",
+          "spoken": "Sie ziehen Karten und entscheiden sich für passende Handlungen. Das sind Lernhilfen, keine gemessenen Prozentwerte der Bodenfeuchte.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_RUNTIME_SENTENCE_CLARITY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "4b33290d427f2a2424a73a30b167c92a83e3d0675baf92ec3a94f14eba4b48f2",
+      "requestFingerprintSha256": "4b33290d427f2a2424a73a30b167c92a83e3d0675baf92ec3a94f14eba4b48f2",
+      "exactSentenceBefore": "Ein visueller Bereitschaftsbalken oder Klicks zum Wasserhinzufügen sind Simulationssteuerungen, keine gemessenen Feldfeuchte-Prozentwerte.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_RUNTIME_PREFIX_SOURCE_EQUIVALENT_SECOND_SENTENCE",
+        "sourcePointer": "/reading/5/paragraphs/0",
+        "approvedSpoken": "Sie ziehen Karten und entscheiden sich für passende Handlungen. Das sind Lernhilfen, keine gemessenen Prozentwerte der Bodenfeuchte.",
+        "originalCanonicalAndExistingPCMUnchanged": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}

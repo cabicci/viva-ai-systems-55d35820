@@ -1,0 +1,1 @@
+Exactly one root-approved S306 German runtime second-sentence clarification. Preserve clean previous first-sentence PCM and original trainer-observation suffix exactly.1TTS1blind1ASR2metadataGET0retry0postjoin. No wholeunit regeneration or source/display edits; assembled candidate needs root selection.
