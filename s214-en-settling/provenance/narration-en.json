@@ -1,0 +1,82 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-14-en.json",
+    "sha256": "3d9467b8fe69baccbaad6470066f91a4800855d3bf233744dc029a67d6e7a204",
+    "bytes": 37955
+  },
+  "units": [
+    {
+      "id": "S2-14-en-settling-assumption-subpassage-repair-r1",
+      "unitId": "S2-14-en-settling-assumption-subpassage-repair-r1",
+      "locale": "en",
+      "semanticGroup": "s214-en-settling-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3d9467b8fe69baccbaad6470066f91a4800855d3bf233744dc029a67d6e7a204",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+          "sha256": "f0c68bdaa0da4faa1f7508157f045bd47d63a8e7f5352b0602c905fa4d2566e3"
+        }
+      ],
+      "scientificMeaning": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+      "displayText": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+      "captionText": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+      "spokenText": "Final sand, silt and clay percentages cannot be assumed from a new jar that has settled for only fifteen to twenty minutes.",
+      "spokenTextSHA256": "71bc416bab681cf110b49478e2cb3abda0d7eec8170837468b37f4f94048dbc7",
+      "spokenTextSha256": "71bc416bab681cf110b49478e2cb3abda0d7eec8170837468b37f4f94048dbc7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+          "spoken": "a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages.",
+          "spoken": "Final sand, silt and clay percentages cannot be assumed from a new jar that has settled for only fifteen to twenty minutes.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "3667c1e5b9da8570d7e2c22bcecffc16424c36029b9b7fbe6aaccf43365aeb59",
+      "requestFingerprintSha256": "3667c1e5b9da8570d7e2c22bcecffc16424c36029b9b7fbe6aaccf43365aeb59",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/4/paragraphs/0",
+        "original": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+        "effective": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reading/4/paragraphs/0",
+            "text": "For the source's 40-minute practical block and 5-minute discussion, Part 1 is a proposed 20 minutes for PPE, sample inspection, learner pH and texture setup; Part 2 proposes 20 minutes for receiving supplied OM/P/K data, interpretation and report writing. The trainer releases the supplied data after physical measurements. The source acknowledges roughly 24 hours for full jar settling: a new jar that has settled only 15–20 minutes cannot automatically give final sand/silt/clay percentages. Document its provisional layers and return after the validated settling interval, or compare with a clearly labelled pre-settled reference jar of the same soil without claiming its readings as your own.",
+            "sha256": "f0c68bdaa0da4faa1f7508157f045bd47d63a8e7f5352b0602c905fa4d2566e3"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-four-postcontext-root-repairs-r1.json",
+        "rootSelectedAuthoritySHA256": "510932912c883cc82ecb189a03c81c3438082ccdad50a2ff3c304de3a3b53b20"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
