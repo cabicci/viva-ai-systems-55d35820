@@ -1,0 +1,1 @@
+Exactly one root-selected S204 it/knowledge-completion complete source-equivalent sentence,45 whitespacewords, same original voice/currentmodel/delivery.1TTS1blind1ASR2metadataGET0autoretry. Measured source/quietcuts/originalprefixsuffix proof; all otherPCM/display untouched. No automaticjoin/postjoin; root selects actualcandidate after reports.

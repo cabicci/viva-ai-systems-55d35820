@@ -1,0 +1,66 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-it.json",
+    "sha256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+    "bytes": 25888
+  },
+  "units": [
+    {
+      "id": "S2-04-it-knowledge-completion-sentence-repair-r1",
+      "unitId": "S2-04-it-knowledge-completion-sentence-repair-r1",
+      "locale": "it",
+      "semanticGroup": "s204-it-completion-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3aa110ab6a3ca4a64a91c07f778ad30f9caae63f84de20f28f62680c154b49d7",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/passChecks/1/evidence",
+          "text": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+          "sha256": "a2ef9e84a29e74a9e6b4539de7130665a931a8ca5b71fec44de9d9f4369a140d"
+        }
+      ],
+      "scientificMeaning": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+      "displayText": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+      "captionText": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+      "spokenText": "Legge tre zone della figura e cita possibili limitazioni di fosforo, calcio e magnesio e rischi legati ad alluminio e manganese nel suolo sufficientemente acido; nel suolo alcalino cita possibili limitazioni di ferro, manganese, zinco o fosforo, distinguendo il rischio da tossicità o carenza misurata.",
+      "spokenTextSHA256": "92a0fd7e5d8e1cfdb3a4fd539cd3148b94fbb93888689f74a6b15ad63da9a57b",
+      "spokenTextSha256": "92a0fd7e5d8e1cfdb3a4fd539cd3148b94fbb93888689f74a6b15ad63da9a57b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+          "spoken": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+          "spoken": "Legge tre zone della figura e cita possibili limitazioni di fosforo, calcio e magnesio e rischi legati ad alluminio e manganese nel suolo sufficientemente acido; nel suolo alcalino cita possibili limitazioni di ferro, manganese, zinco o fosforo, distinguendo il rischio da tossicità o carenza misurata.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_NUMERIC_DIRECTION_AND_CHEMICAL_IDENTITY_SENTENCE"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "a9b6ffc5498cc0387b24f6070670a7d6255bd83c6b2ed86ae03738f9c2168c7e",
+      "requestFingerprintSha256": "a9b6ffc5498cc0387b24f6070670a7d6255bd83c6b2ed86ae03738f9c2168c7e",
+      "sourcePlanSha256": "ff43d4219a45e85a0ba936f93f55f63832936b4947a8de3ed05dfd7536c13730",
+      "exactSentenceBefore": "Legge tre zone della figura e cita possibili limitazioni di P/Ca/Mg e rischio Al/Mn nel suolo sufficientemente acido e possibili limitazioni di Fe/Mn/Zn o P nel suolo alcalino, distinguendo rischio da tossicità o carenza misurata.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}
