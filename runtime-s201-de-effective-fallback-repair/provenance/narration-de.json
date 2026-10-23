@@ -1,0 +1,74 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-de.json",
+    "sha256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+    "bytes": 24233
+  },
+  "units": [
+    {
+      "id": "S2-01-de-effective-fallback-repair-r1",
+      "unitId": "S2-01-de-effective-fallback-repair-r1",
+      "locale": "de",
+      "semanticGroup": "runtime-s201-de-effective-fallback-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+      "sourceBindings": [
+        {
+          "pointer": "/nutrientPractice/ui/fallback",
+          "text": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+          "sha256": "ee563eccda4d8d2893c5ad3c8b7688dc1f99699eb1472f80e26f9ea556111508"
+        }
+      ],
+      "scientificMeaning": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+      "displayText": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+      "captionText": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+      "spokenText": "Nutze die Formel- und Zuordnungsfelder.",
+      "spokenTextSHA256": "a9df550ad3a7064ef48a6643f1cf0a8dd315e2a5625fec46b995822df8e9faca",
+      "spokenTextSha256": "a9df550ad3a7064ef48a6643f1cf0a8dd315e2a5625fec46b995822df8e9faca",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+          "spoken": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+          "spoken": "Nutze die Formel- und Zuordnungsfelder.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "4dc2f52a8194d195b4db6cc65e22bff37455bb2fa8786a66108da5a7893af0ff",
+      "requestFingerprintSha256": "4dc2f52a8194d195b4db6cc65e22bff37455bb2fa8786a66108da5a7893af0ff",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/nutrientPractice/ui/fallback",
+        "original": "3D nicht verfügbar; gleichwertige Formel- und Auswahlfelder nutzen.",
+        "effective": "Nutze die Formel- und Zuordnungsfelder.",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
