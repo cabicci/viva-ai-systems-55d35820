@@ -1,0 +1,553 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S1-09-en.json",
+    "sha256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+    "bytes": 21009
+  },
+  "units": [
+    {
+      "id": "S1-09-en-opening-r1",
+      "unitId": "S1-09-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A texture result helps you ask better questions about a crop. Combine it with drainage, water, nutrients and local growing conditions before making a recommendation.",
+          "sha256": "ee2aa5ab24ce8aaae43f797d312514484eda78fe06222bad7b36750b3f929cb2"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Compare sandy, clay-rich and loamy soil without confusing nutrient retention with measured nutrient supply.",
+          "sha256": "87e76681995e8cceded9bf4f6bbf0a3a11862f5da95e05bb137704f2e36db699"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Propose at least two justified crop candidates for each tested sample and explain the conditions that still need checking.",
+          "sha256": "955f60f5b7f41eb4744a49cf991402ad6158f53376d4301d9bda67bbd677c2a0"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Explain the heavy-soil carrot case and evaluate a suitable alternative without assuming all clay is waterlogged.",
+          "sha256": "0f15222b3c05477e8851552f0a869352341d44d016683f0d572c558a81c4d9e1"
+        }
+      ],
+      "scientificMeaning": "A texture result helps you ask better questions about a crop. Combine it with drainage, water, nutrients and local growing conditions before making a recommendation.\n\nCompare sandy, clay-rich and loamy soil without confusing nutrient retention with measured nutrient supply.\n\nPropose at least two justified crop candidates for each tested sample and explain the conditions that still need checking.\n\nExplain the heavy-soil carrot case and evaluate a suitable alternative without assuming all clay is waterlogged.",
+      "displayText": "A texture result helps you ask better questions about a crop. Combine it with drainage, water, nutrients and local growing conditions before making a recommendation.\n\nCompare sandy, clay-rich and loamy soil without confusing nutrient retention with measured nutrient supply.\n\nPropose at least two justified crop candidates for each tested sample and explain the conditions that still need checking.\n\nExplain the heavy-soil carrot case and evaluate a suitable alternative without assuming all clay is waterlogged.",
+      "captionText": "A texture result helps you ask better questions about a crop. Combine it with drainage, water, nutrients and local growing conditions before making a recommendation.\n\nCompare sandy, clay-rich and loamy soil without confusing nutrient retention with measured nutrient supply.\n\nPropose at least two justified crop candidates for each tested sample and explain the conditions that still need checking.\n\nExplain the heavy-soil carrot case and evaluate a suitable alternative without assuming all clay is waterlogged.",
+      "spokenText": "A texture result helps you ask better questions about a crop. Combine it with drainage, water, nutrients and local growing conditions before making a recommendation.\n\nCompare sandy, clay-rich and loamy soil without confusing nutrient retention with measured nutrient supply.\n\nPropose at least two justified crop candidates for each tested sample and explain the conditions that still need checking.\n\nExplain the heavy-soil carrot case and evaluate a suitable alternative without assuming all clay is waterlogged.",
+      "spokenTextSHA256": "ac97877a7920249a1d0aee855b100923fb4e78266daff78d617949d91ac13a63",
+      "spokenTextSha256": "ac97877a7920249a1d0aee855b100923fb4e78266daff78d617949d91ac13a63",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "19bb1d26873fde78c51a52c483cd6b22f727bcef7925b94199258d3a36b52a78",
+      "requestFingerprintSha256": "19bb1d26873fde78c51a52c483cd6b22f727bcef7925b94199258d3a36b52a78",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-E01-r1",
+      "unitId": "S1-09-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A grower wants carrots in a compacted bed that stays wet.",
+          "sha256": "e053f4148ed5582b215e4eb84071e9355f922e968efa116d48a2f121c653b8a8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Separate the clay-rich texture from observed compaction and persistent wetness.",
+          "sha256": "3fcc85804e2fcac10b1769bb8ed73075fa99b40e46f4d2c388bfd2d9b0a2d8ac"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Explain possible root-growth and root-health problems.",
+          "sha256": "d4b5ddb14f7e85b5b5cdacd67bbde862a398588b3b1549949f8bf7088c958e84"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Discuss cabbage or broccoli only after adequate drainage and aeration are established; otherwise investigate the site first.",
+          "sha256": "2c38c48cfdf33e04b8f626539a3b49013dc4c359da8d7b42b9ea3668dec4a9e4"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "An alternative crop is not a substitute for solving a drainage problem.",
+          "sha256": "4b5f8dd69b0fa99580195b9d420922dc08eb4e3f119fb5de83e9c45472b3ddbe"
+        }
+      ],
+      "scientificMeaning": "A grower wants carrots in a compacted bed that stays wet.\n\nSeparate the clay-rich texture from observed compaction and persistent wetness.\n\nExplain possible root-growth and root-health problems.\n\nDiscuss cabbage or broccoli only after adequate drainage and aeration are established; otherwise investigate the site first.\n\nAn alternative crop is not a substitute for solving a drainage problem.",
+      "displayText": "A grower wants carrots in a compacted bed that stays wet.\n\nSeparate the clay-rich texture from observed compaction and persistent wetness.\n\nExplain possible root-growth and root-health problems.\n\nDiscuss cabbage or broccoli only after adequate drainage and aeration are established; otherwise investigate the site first.\n\nAn alternative crop is not a substitute for solving a drainage problem.",
+      "captionText": "A grower wants carrots in a compacted bed that stays wet.\n\nSeparate the clay-rich texture from observed compaction and persistent wetness.\n\nExplain possible root-growth and root-health problems.\n\nDiscuss cabbage or broccoli only after adequate drainage and aeration are established; otherwise investigate the site first.\n\nAn alternative crop is not a substitute for solving a drainage problem.",
+      "spokenText": "A grower wants carrots in a compacted bed that stays wet.\n\nSeparate the clay-rich texture from observed compaction and persistent wetness.\n\nExplain possible root-growth and root-health problems.\n\nDiscuss cabbage or broccoli only after adequate drainage and aeration are established; otherwise investigate the site first.\n\nAn alternative crop is not a substitute for solving a drainage problem.",
+      "spokenTextSHA256": "9e2f369ff0ecb41d028b5d2103239ab612889e63d790d3df98e6eaa895609483",
+      "spokenTextSha256": "9e2f369ff0ecb41d028b5d2103239ab612889e63d790d3df98e6eaa895609483",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9196c458ec02eac612bc6d26d7fcdcfd748a5672a7c5209d2e91c99a4f15c724",
+      "requestFingerprintSha256": "9196c458ec02eac612bc6d26d7fcdcfd748a5672a7c5209d2e91c99a4f15c724",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-E02-r1",
+      "unitId": "S1-09-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "One learner chooses corn for a sandy sample and another for loam.",
+          "sha256": "2c3be2767ded220bfcaf04e07129f079e6eb1f0b45097d0f7a6f8e42b348793b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Both may be reasonable candidates under suitable conditions.",
+          "sha256": "a605be9b6ec76c1690fb32a3c22c1af9c685605de94dbeca2677489252f45e55"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "The sandy site may need more careful water and nutrient-retention management.",
+          "sha256": "b8eb6f9ee12a75112e11e7debb0a8cddb92bbf6c7770912e7cb0250ac4bb6216"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Check each justification and site information instead of marking one wrong solely because the same name appears in two lists.",
+          "sha256": "ce2033373301ecee60084fc2007b03667ee80d5a83e4df99c63184abed33e735"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Assess the reason and conditions, not a unique crop-to-soil pairing.",
+          "sha256": "6096d3c654130e38f96b00b0f9c23cbd13a8110a1dc9a434a5dcb88bbfa46235"
+        }
+      ],
+      "scientificMeaning": "One learner chooses corn for a sandy sample and another for loam.\n\nBoth may be reasonable candidates under suitable conditions.\n\nThe sandy site may need more careful water and nutrient-retention management.\n\nCheck each justification and site information instead of marking one wrong solely because the same name appears in two lists.\n\nAssess the reason and conditions, not a unique crop-to-soil pairing.",
+      "displayText": "One learner chooses corn for a sandy sample and another for loam.\n\nBoth may be reasonable candidates under suitable conditions.\n\nThe sandy site may need more careful water and nutrient-retention management.\n\nCheck each justification and site information instead of marking one wrong solely because the same name appears in two lists.\n\nAssess the reason and conditions, not a unique crop-to-soil pairing.",
+      "captionText": "One learner chooses corn for a sandy sample and another for loam.\n\nBoth may be reasonable candidates under suitable conditions.\n\nThe sandy site may need more careful water and nutrient-retention management.\n\nCheck each justification and site information instead of marking one wrong solely because the same name appears in two lists.\n\nAssess the reason and conditions, not a unique crop-to-soil pairing.",
+      "spokenText": "One learner chooses corn for a sandy sample and another for loam.\n\nBoth may be reasonable candidates under suitable conditions.\n\nThe sandy site may need more careful water and nutrient-retention management.\n\nCheck each justification and site information instead of marking one wrong solely because the same name appears in two lists.\n\nAssess the reason and conditions, not a unique crop-to-soil pairing.",
+      "spokenTextSHA256": "23b943041540f33a37253d438e61d39d65258d25ac11f4aa82073d7490e50336",
+      "spokenTextSha256": "23b943041540f33a37253d438e61d39d65258d25ac11f4aa82073d7490e50336",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4e1825f2c910af6d23479021495ee302f711fabc91ccadaa23dc509207b362a8",
+      "requestFingerprintSha256": "4e1825f2c910af6d23479021495ee302f711fabc91ccadaa23dc509207b362a8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-E03-r1",
+      "unitId": "S1-09-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A learner recommends tomatoes because a sample is dark brown.",
+          "sha256": "db5e6771c0f4127d1bd68e4a8f4e7451fca57c39ad9aeb433f1944fef2f40683"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Colour alone does not establish loam or nutrient supply.",
+          "sha256": "d8e3473f8c851157f8fd2d8093d349756db93711e95a4c92829d816012bca0d6"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Use the actual texture observations and relevant soil results.",
+          "sha256": "651073c7aeba9ff9880478e31776cef4a4ed83549b87852df92c5cdb0732d523"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "State the missing season, drainage, water, pH and salinity checks before calling it a planting recommendation.",
+          "sha256": "1ffa5e007f0625a9310ebd0c2d18d0ceef9fcd25e077766ecef3c6b450d4e2d1"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A plausible crop name still needs evidence.",
+          "sha256": "a677eb24eab5388d30a81b609a5a48ba520ce130f167ded2b4e24f3897e49bbd"
+        }
+      ],
+      "scientificMeaning": "A learner recommends tomatoes because a sample is dark brown.\n\nColour alone does not establish loam or nutrient supply.\n\nUse the actual texture observations and relevant soil results.\n\nState the missing season, drainage, water, pH and salinity checks before calling it a planting recommendation.\n\nA plausible crop name still needs evidence.",
+      "displayText": "A learner recommends tomatoes because a sample is dark brown.\n\nColour alone does not establish loam or nutrient supply.\n\nUse the actual texture observations and relevant soil results.\n\nState the missing season, drainage, water, pH and salinity checks before calling it a planting recommendation.\n\nA plausible crop name still needs evidence.",
+      "captionText": "A learner recommends tomatoes because a sample is dark brown.\n\nColour alone does not establish loam or nutrient supply.\n\nUse the actual texture observations and relevant soil results.\n\nState the missing season, drainage, water, pH and salinity checks before calling it a planting recommendation.\n\nA plausible crop name still needs evidence.",
+      "spokenText": "A learner recommends tomatoes because a sample is dark brown.\n\nColour alone does not establish loam or nutrient supply.\n\nUse the actual texture observations and relevant soil results.\n\nState the missing season, drainage, water, pH and salinity checks before calling it a planting recommendation.\n\nA plausible crop name still needs evidence.",
+      "spokenTextSHA256": "69a5fadb28bc471040e413a84c07d716327966c8f037e4c686dd0f7f50771616",
+      "spokenTextSha256": "69a5fadb28bc471040e413a84c07d716327966c8f037e4c686dd0f7f50771616",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "72e0659a7880feffd0e214be08c120c112555bc633311c6f9f637f3aa03d7746",
+      "requestFingerprintSha256": "72e0659a7880feffd0e214be08c120c112555bc633311c6f9f637f3aa03d7746",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-guided-practice-r1",
+      "unitId": "S1-09-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "For each of three tested sandy, clay-rich and loamy samples, choose two possible crops and explain the conditions that would make each reasonable. Then reconsider carrots in a compacted wet bed.",
+          "sha256": "f20031592fbc7a07309611f8ba313f94307e5ed6d57879f37c336f901ce84113"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/0",
+          "text": "Use measured texture and observed drainage, not colour alone, to support each candidate.",
+          "sha256": "890fe55aa69930aa93f3fd467464d982a884c9179ce1a5a0c18bf9ac88eba359"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "State what water, nutrients, pH, salinity, season and local crop information is still missing.",
+          "sha256": "393f669bd9e62b45409c9890a6110605d087f625e39c2125963385b7ca9d57a2"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Explain why a loose rooting zone helps the carrot example and why wet, compacted clay is a management issue rather than a universal ban on a crop.",
+          "sha256": "c166f10aab3281ef1cf128b95cc49543b0b1ce199ed55c8b6334d12f486c2827"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/3",
+          "text": "Compare two learners who choose the same crop for different soils and judge their reasoning rather than insisting on one pairing.",
+          "sha256": "a7ee6da73e2b778b163429f5738104391401543e13b39378be6094660577f6c1"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Use the earlier observed texture evidence; this guided comparison does not certify a new field skill.",
+          "sha256": "c981c030c3965fdee215c9632e0eeeb617c0b6cb79d996f851d4b417b4aa54d1"
+        }
+      ],
+      "scientificMeaning": "For each of three tested sandy, clay-rich and loamy samples, choose two possible crops and explain the conditions that would make each reasonable. Then reconsider carrots in a compacted wet bed.\n\nUse measured texture and observed drainage, not colour alone, to support each candidate.\n\nState what water, nutrients, pH, salinity, season and local crop information is still missing.\n\nExplain why a loose rooting zone helps the carrot example and why wet, compacted clay is a management issue rather than a universal ban on a crop.\n\nCompare two learners who choose the same crop for different soils and judge their reasoning rather than insisting on one pairing.\n\nUse the earlier observed texture evidence; this guided comparison does not certify a new field skill.",
+      "displayText": "For each of three tested sandy, clay-rich and loamy samples, choose two possible crops and explain the conditions that would make each reasonable. Then reconsider carrots in a compacted wet bed.\n\nUse measured texture and observed drainage, not colour alone, to support each candidate.\n\nState what water, nutrients, pH, salinity, season and local crop information is still missing.\n\nExplain why a loose rooting zone helps the carrot example and why wet, compacted clay is a management issue rather than a universal ban on a crop.\n\nCompare two learners who choose the same crop for different soils and judge their reasoning rather than insisting on one pairing.\n\nUse the earlier observed texture evidence; this guided comparison does not certify a new field skill.",
+      "captionText": "For each of three tested sandy, clay-rich and loamy samples, choose two possible crops and explain the conditions that would make each reasonable. Then reconsider carrots in a compacted wet bed.\n\nUse measured texture and observed drainage, not colour alone, to support each candidate.\n\nState what water, nutrients, pH, salinity, season and local crop information is still missing.\n\nExplain why a loose rooting zone helps the carrot example and why wet, compacted clay is a management issue rather than a universal ban on a crop.\n\nCompare two learners who choose the same crop for different soils and judge their reasoning rather than insisting on one pairing.\n\nUse the earlier observed texture evidence; this guided comparison does not certify a new field skill.",
+      "spokenText": "For each of three tested sandy, clay-rich and loamy samples, choose two possible crops and explain the conditions that would make each reasonable. Then reconsider carrots in a compacted wet bed.\n\nUse measured texture and observed drainage, not colour alone, to support each candidate.\n\nState what water, nutrients, pH, salinity, season and local crop information is still missing.\n\nExplain why a loose rooting zone helps the carrot example and why wet, compacted clay is a management issue rather than a universal ban on a crop.\n\nCompare two learners who choose the same crop for different soils and judge their reasoning rather than insisting on one pairing.\n\nUse the earlier observed texture evidence; this guided comparison does not certify a new field skill.",
+      "spokenTextSHA256": "7098090c49632fe2e900cb2133b109dfbbf191a17414cb62b86fd97c6c8b991a",
+      "spokenTextSha256": "7098090c49632fe2e900cb2133b109dfbbf191a17414cb62b86fd97c6c8b991a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ef39d3037cc128e4b1f0eed2755fe4e8498785aa18b9e29e25dcb07ea9d88809",
+      "requestFingerprintSha256": "ef39d3037cc128e4b1f0eed2755fe4e8498785aa18b9e29e25dcb07ea9d88809",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-reflection-r1",
+      "unitId": "S1-09-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Which site evidence would change your candidate choice?",
+          "sha256": "fe50546132e01c3e34ecca78c48fb22639663474bd94981c1d95f3844941f136"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Your own confidence rating is not a crop recommendation or proof of practical competence.",
+          "sha256": "db4621f47655c453c67a4815ece9aa79765da9faa40669027c52ba89dcf4d316"
+        }
+      ],
+      "scientificMeaning": "Which site evidence would change your candidate choice?\n\nYour own confidence rating is not a crop recommendation or proof of practical competence.",
+      "displayText": "Which site evidence would change your candidate choice?\n\nYour own confidence rating is not a crop recommendation or proof of practical competence.",
+      "captionText": "Which site evidence would change your candidate choice?\n\nYour own confidence rating is not a crop recommendation or proof of practical competence.",
+      "spokenText": "Which site evidence would change your candidate choice?\n\nYour own confidence rating is not a crop recommendation or proof of practical competence.",
+      "spokenTextSHA256": "9f680a86bafcd1b10296b519ebdb05e1120cbf04ad14878d41c6cf86661da134",
+      "spokenTextSha256": "9f680a86bafcd1b10296b519ebdb05e1120cbf04ad14878d41c6cf86661da134",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0a737dacb74707a4dfa62d98a1a87eeb0f6200a22f66cff00fd50b27df448fbc",
+      "requestFingerprintSha256": "0a737dacb74707a4dfa62d98a1a87eeb0f6200a22f66cff00fd50b27df448fbc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-comparison-r1",
+      "unitId": "S1-09-en-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "comparison",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/comparisonLabel",
+          "text": "Soil conditions and crop candidates",
+          "sha256": "2939dde24084118d264428c5966b64fe1fe85e05fc5414767dbcc6a59a315bbf"
+        },
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Texture",
+          "sha256": "e28411a3404d21f9fc1679b4464b3dc497333f6140e580d745d52e2522d65c9f"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Original crop examples",
+          "sha256": "4e0cebe65c9cfe374018c298fe49e8ff190e3cca06c9cbc60eefb1b557cb4143"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Opportunity",
+          "sha256": "e969f85c47caa12786cb321a6c0cd7a1427b24553813ca91cf6da1a38f65cd3c"
+        },
+        {
+          "pointer": "/comparison/columns/3",
+          "text": "Still check",
+          "sha256": "dadaa42137febecf6e618ff61d2373bc011a238597b298c14a4542208c334da0"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "Sandy",
+          "sha256": "e42e5767aa6ad0fccf8cd012eefa7715a07840aeae6ec3f162bc8c70f532075b"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Carrots, Potatoes, Radishes, Lettuce, Strawberries, Melons, Corn",
+          "sha256": "24a59078e4e7c547171afbe3730fa834e53f34d8da39aaf4a7ae13fc9b0ac90f"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Drainage and a loose root zone where the actual structure is suitable.",
+          "sha256": "9941896a4c4a43a6c240aa48856afb19502abdbdabfb95cb56ba2950b433b8cc"
+        },
+        {
+          "pointer": "/comparison/rows/0/3",
+          "text": "Water supply, nutrient results and retention, profile restrictions, season, cultivar, pH and salinity.",
+          "sha256": "dfde0635f95d4002ac88aa73ba8786c2e48dd819b524182976091ace335b87e3"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "Clay-rich",
+          "sha256": "5d235b61377f25f48025b2a782be373e6c2406c7f08faceb5f15d3ff27bb7556"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Cabbage, Broccoli, Kale, Wheat, Fruit trees, Beans",
+          "sha256": "b91e87431718562157c5c5a10c5f53681f9e55944896401047c59f1f03811638"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Water and nutrient retention under suitable structure and aeration.",
+          "sha256": "76c1cd2d5901f9a99a773db530d82c8cfab1f7c400a3e36ac005ced2e3c2d02e"
+        },
+        {
+          "pointer": "/comparison/rows/1/3",
+          "text": "Actual drainage and compaction, nutrient availability, species/cultivar/rootstock, season, pH and salinity. No blanket tolerance of waterlogging.",
+          "sha256": "31f73026499e6521600ad8ec3c45a9cc8c2add57f552ddc9a4b145249efbef94"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "Loamy",
+          "sha256": "d7f4bb6878ab871ac4889c08ef546fefdb30b64b42e50908be6dabbaa93ff625"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Tomatoes, Peppers, Cucumbers, Green beans, Corn, Other vegetables, Field crops",
+          "sha256": "e79b0ee3e89b688b357a3172f8cacba44ffedc1ecd749a9a05e12f2836395866"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "A possible balance of aeration, drainage and retention.",
+          "sha256": "3414ea14ec59513e96bdecd001663d38b8f6373e5a312a0b0c245567bfe8b748"
+        },
+        {
+          "pointer": "/comparison/rows/2/3",
+          "text": "Identify the crop; verify structure, water, nutrient results, season, cultivar, pH and salinity. Neither fertility nor organic matter is guaranteed.",
+          "sha256": "8a3c5a90b0963278687ce9093a165e527e39158cd3ecb520825320ccb0d25d12"
+        }
+      ],
+      "scientificMeaning": "Soil conditions and crop candidates\n\nTexture\n\nOriginal crop examples\n\nOpportunity\n\nStill check\n\nSandy\n\nCarrots, Potatoes, Radishes, Lettuce, Strawberries, Melons, Corn\n\nDrainage and a loose root zone where the actual structure is suitable.\n\nWater supply, nutrient results and retention, profile restrictions, season, cultivar, pH and salinity.\n\nClay-rich\n\nCabbage, Broccoli, Kale, Wheat, Fruit trees, Beans\n\nWater and nutrient retention under suitable structure and aeration.\n\nActual drainage and compaction, nutrient availability, species/cultivar/rootstock, season, pH and salinity. No blanket tolerance of waterlogging.\n\nLoamy\n\nTomatoes, Peppers, Cucumbers, Green beans, Corn, Other vegetables, Field crops\n\nA possible balance of aeration, drainage and retention.\n\nIdentify the crop; verify structure, water, nutrient results, season, cultivar, pH and salinity. Neither fertility nor organic matter is guaranteed.",
+      "displayText": "Soil conditions and crop candidates\n\nTexture\n\nOriginal crop examples\n\nOpportunity\n\nStill check\n\nSandy\n\nCarrots, Potatoes, Radishes, Lettuce, Strawberries, Melons, Corn\n\nDrainage and a loose root zone where the actual structure is suitable.\n\nWater supply, nutrient results and retention, profile restrictions, season, cultivar, pH and salinity.\n\nClay-rich\n\nCabbage, Broccoli, Kale, Wheat, Fruit trees, Beans\n\nWater and nutrient retention under suitable structure and aeration.\n\nActual drainage and compaction, nutrient availability, species/cultivar/rootstock, season, pH and salinity. No blanket tolerance of waterlogging.\n\nLoamy\n\nTomatoes, Peppers, Cucumbers, Green beans, Corn, Other vegetables, Field crops\n\nA possible balance of aeration, drainage and retention.\n\nIdentify the crop; verify structure, water, nutrient results, season, cultivar, pH and salinity. Neither fertility nor organic matter is guaranteed.",
+      "captionText": "Soil conditions and crop candidates\n\nTexture\n\nOriginal crop examples\n\nOpportunity\n\nStill check\n\nSandy\n\nCarrots, Potatoes, Radishes, Lettuce, Strawberries, Melons, Corn\n\nDrainage and a loose root zone where the actual structure is suitable.\n\nWater supply, nutrient results and retention, profile restrictions, season, cultivar, pH and salinity.\n\nClay-rich\n\nCabbage, Broccoli, Kale, Wheat, Fruit trees, Beans\n\nWater and nutrient retention under suitable structure and aeration.\n\nActual drainage and compaction, nutrient availability, species/cultivar/rootstock, season, pH and salinity. No blanket tolerance of waterlogging.\n\nLoamy\n\nTomatoes, Peppers, Cucumbers, Green beans, Corn, Other vegetables, Field crops\n\nA possible balance of aeration, drainage and retention.\n\nIdentify the crop; verify structure, water, nutrient results, season, cultivar, pH and salinity. Neither fertility nor organic matter is guaranteed.",
+      "spokenText": "Soil conditions and crop candidates\n\nTexture\n\nOriginal crop examples\n\nOpportunity\n\nStill check\n\nSandy\n\nCarrots, Potatoes, Radishes, Lettuce, Strawberries, Melons, Corn\n\nDrainage and a loose root zone where the actual structure is suitable.\n\nWater supply, nutrient results and retention, profile restrictions, season, cultivar, pH and salinity.\n\nClay-rich\n\nCabbage, Broccoli, Kale, Wheat, Fruit trees, Beans\n\nWater and nutrient retention under suitable structure and aeration.\n\nActual drainage and compaction, nutrient availability, species/cultivar/rootstock, season, pH and salinity. No blanket tolerance of waterlogging.\n\nLoamy\n\nTomatoes, Peppers, Cucumbers, Green beans, Corn, Other vegetables, Field crops\n\nA possible balance of aeration, drainage and retention.\n\nIdentify the crop; verify structure, water, nutrient results, season, cultivar, pH and salinity. Neither fertility nor organic matter is guaranteed.",
+      "spokenTextSHA256": "2434309c4095db9b9f9ab742e53614649b37fdc1f1c75e0aad8e0ff810640512",
+      "spokenTextSha256": "2434309c4095db9b9f9ab742e53614649b37fdc1f1c75e0aad8e0ff810640512",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bf4c4074c042bc853b2d8d1c0a90d2f2b4a8c0d1b28834c9a5b99327a32fa2b6",
+      "requestFingerprintSha256": "bf4c4074c042bc853b2d8d1c0a90d2f2b4a8c0d1b28834c9a5b99327a32fa2b6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S1-09-en-worksheet-r1",
+      "unitId": "S1-09-en-worksheet-r1",
+      "locale": "en",
+      "semanticGroup": "worksheet",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "62c4f27b265df1994b7373c0b40656bad3b7176140eca7d57ec05e597805e435",
+      "sourceBindings": [
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Crop reasoning for samples A, B and C",
+          "sha256": "a12b29a323e474ad37584d8e00b1651e3e43e85687a2329253d1eacec1cb87e1"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/0",
+          "text": "Sample and observed texture",
+          "sha256": "38d1a025319d4fd672e1d7680dfa9df6ae8bc61a1b1c193798e285a20975ce2d"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/1",
+          "text": "Uncertainty in test",
+          "sha256": "e66928f77ef0f5334e0aa556d5cd00d55f7aa082baf9da8b1d5d00cfd783be1a"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/2",
+          "text": "Candidate 1 and soil-related reason",
+          "sha256": "03914ca0ac3ef9142c83b28d943141388ff3b0e9efcb681066db25203a7c2dde"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/3",
+          "text": "Candidate 2 and soil-related reason",
+          "sha256": "dd427b43667b3dfaddfb8c20415d142cf588a7f15ec5cd5f71c0c72e53977bfa"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/4",
+          "text": "Water/drainage/season/cultivar checks",
+          "sha256": "4f41ac40650cf735f378f489cfd7fec1feb09d23854a561bf2a7a2f68858e60a"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/5",
+          "text": "Relevant pH/salinity/nutrient results or missing measurements",
+          "sha256": "5d01e00e66ca2486f28a4fc2eb9e729dfa3914f4da5a29556f4c217df9883ec6"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/6",
+          "text": "Candidate used for shared process-card minimum",
+          "sha256": "e5b68ebd2f29d027d555c004e15e0cb10a80d3529bed3a8517490441dcf94d85"
+        },
+        {
+          "pointer": "/studentDownloads/0/fields/7",
+          "text": "Revision and evidence",
+          "sha256": "839b9748478848ae7b9577f3b583befef25d12bef954f626c1d7e85a84558b8c"
+        },
+        {
+          "pointer": "/sharedProcessBoundary",
+          "text": "The crop reasoning here contributes to the final item of the shared A/B/C process card. The other observations require each learner's real test under trainer supervision; this page does not sign off the whole card.",
+          "sha256": "b623554d69f721ee1b6d3ea264a53f7c0e302306af09dddf134f1bebc4ab6634"
+        }
+      ],
+      "scientificMeaning": "Crop reasoning for samples A, B and C\n\nSample and observed texture\n\nUncertainty in test\n\nCandidate 1 and soil-related reason\n\nCandidate 2 and soil-related reason\n\nWater/drainage/season/cultivar checks\n\nRelevant pH/salinity/nutrient results or missing measurements\n\nCandidate used for shared process-card minimum\n\nRevision and evidence\n\nThe crop reasoning here contributes to the final item of the shared A/B/C process card. The other observations require each learner's real test under trainer supervision; this page does not sign off the whole card.",
+      "displayText": "Crop reasoning for samples A, B and C\n\nSample and observed texture\n\nUncertainty in test\n\nCandidate 1 and soil-related reason\n\nCandidate 2 and soil-related reason\n\nWater/drainage/season/cultivar checks\n\nRelevant pH/salinity/nutrient results or missing measurements\n\nCandidate used for shared process-card minimum\n\nRevision and evidence\n\nThe crop reasoning here contributes to the final item of the shared A/B/C process card. The other observations require each learner's real test under trainer supervision; this page does not sign off the whole card.",
+      "captionText": "Crop reasoning for samples A, B and C\n\nSample and observed texture\n\nUncertainty in test\n\nCandidate 1 and soil-related reason\n\nCandidate 2 and soil-related reason\n\nWater/drainage/season/cultivar checks\n\nRelevant pH/salinity/nutrient results or missing measurements\n\nCandidate used for shared process-card minimum\n\nRevision and evidence\n\nThe crop reasoning here contributes to the final item of the shared A/B/C process card. The other observations require each learner's real test under trainer supervision; this page does not sign off the whole card.",
+      "spokenText": "Crop reasoning for samples A, B and C\n\nSample and observed texture\n\nUncertainty in test\n\nCandidate 1 and soil-related reason\n\nCandidate 2 and soil-related reason\n\nWater/drainage/season/cultivar checks\n\nRelevant pH/salinity/nutrient results or missing measurements\n\nCandidate used for shared process-card minimum\n\nRevision and evidence\n\nThe crop reasoning here contributes to the final item of the shared A/B/C process card. The other observations require each learner's real test under trainer supervision; this page does not sign off the whole card.",
+      "spokenTextSHA256": "185713f01f68f669ac3bf1f04b2194cafcf4fb06a1b6d363a29dda6cfbf5d5ea",
+      "spokenTextSha256": "185713f01f68f669ac3bf1f04b2194cafcf4fb06a1b6d363a29dda6cfbf5d5ea",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_REMAINING_SOURCE_GROUP_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "961cc98f649cdbb8133918c66ea86bda7e38310e7c7f0e6716f6face9e118eb4",
+      "requestFingerprintSha256": "961cc98f649cdbb8133918c66ea86bda7e38310e7c7f0e6716f6face9e118eb4",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
