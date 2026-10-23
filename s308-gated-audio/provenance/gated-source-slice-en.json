@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-08",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "desert-analogy",
+      "title": "Use the beach-sand analogy carefully",
+      "situation": "A student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'",
+      "reasoning": [
+        "The analogy only starts a question about water and nutrient retention.",
+        "Aridisol classification depends on moisture regime and profile features; cold Aridisols exist.",
+        "Texture, organic matter and salts must be measured for the site."
+      ],
+      "takeaway": "Reject the universal claim; propose a texture/profile/OM/EC investigation."
+    },
+    {
+      "id": "plot-report",
+      "title": "Read the pilot-plot report",
+      "situation": "The 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.",
+      "reasoning": [
+        "The area is 100 m²; 0.8% OM is a measured site value.",
+        "Request soil EC preparation, sampling depth/date and the borewell ECw plus ions.",
+        "Only if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies."
+      ],
+      "takeaway": "Mark salinity class and crop choice provisional; preserve all numbers and units without guessing the method."
+    },
+    {
+      "id": "wet-but-stressed",
+      "title": "Water can be present but difficult to use",
+      "situation": "A root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.",
+      "reasoning": [
+        "Physical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.",
+        "Check the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.",
+        "Analyse irrigation water and drainage before adding more water or attempting leaching."
+      ],
+      "takeaway": "Distinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity."
+    },
+    {
+      "id": "hard-layer",
+      "title": "What does a hard layer prove?",
+      "situation": "A spade stops at a hard layer below a dryland plot.",
+      "reasoning": [
+        "A carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.",
+        "Compaction, gypsum-cemented or other horizons may also be hard.",
+        "Examine profile and composition before naming or breaking the layer."
+      ],
+      "takeaway": "Record the obstruction and test its origin; do not label it caliche from resistance alone."
+    }
+  ]
+}

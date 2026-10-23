@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-08",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "cbcad2a68c7068a7a98a64c9a61d1277ceded9e8ab0ddb6489f3e3dddbc9a37c",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "desert-analogy",
+      "title": "Usa con cautela l’analogia della sabbia di spiaggia",
+      "situation": "Uno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».",
+      "reasoning": [
+        "L’analogia apre solo una domanda su acqua e nutrienti.",
+        "La classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.",
+        "Tessitura, organico e sali vanno misurati in sito."
+      ],
+      "takeaway": "Rifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC."
+    },
+    {
+      "id": "plot-report",
+      "title": "Leggi il rapporto del lotto",
+      "situation": "Il franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.",
+      "reasoning": [
+        "L’area è 100 m² e 0,8% è valore misurato del sito.",
+        "Chiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.",
+        "Soltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono."
+      ],
+      "takeaway": "Classe salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo."
+    },
+    {
+      "id": "wet-but-stressed",
+      "title": "Acqua presente ma difficile da assorbire",
+      "situation": "Un campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.",
+      "reasoning": [
+        "Siccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.",
+        "Controlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.",
+        "Analizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare."
+      ],
+      "takeaway": "Distingui ostacolo osmotico da riserva vuota e tossicità diretta."
+    },
+    {
+      "id": "hard-layer",
+      "title": "Che cosa prova uno strato duro?",
+      "situation": "Una vanga si ferma su strato duro sotto un campo arido.",
+      "reasoning": [
+        "Caliche carbonatico cementato è possibile e può fermare radici o drenaggio.",
+        "Compattazione, gesso cementato o altri orizzonti possono esser duri.",
+        "Esamina profilo e composizione prima di chiamarlo caliche o romperlo."
+      ],
+      "takeaway": "Registra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+16 S308 complete source worked cases after corresponding own-case attempt only. Dryland analogy not universal; exact100m2/OM0.8/soilEC3.5 dSm notunknownwaterECw; ECe25C conditional2–4band/cropdependent; osmoticvsiontoxicity; hardlayer notautomaticallycaliche.16TTS16blind16ASR8GET0retry. No source/platform/Bunny changes.

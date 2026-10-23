@@ -1,0 +1,2444 @@
+{
+  "schemaVersion": 1,
+  "scope": "S308_SIXTEEN_SOURCE_GATED_COMPLETE_WORKED_CASES_FOUR_FIXED_LOCALE_LANES",
+  "stepId": "S3-08",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s308-gated-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-08-ar-EG-E01-r1",
+      "unitId": "S3-08-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "استخدم مثال رمل الشاطئ بحذر",
+          "sha256": "affdaf0d4992ba626e376c92e3190521d4d549418abee19ab8e839435e9ae697"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "طالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».",
+          "sha256": "089f9fd6af470cb333b317219b3f732b79978e31235938153efe782a09a65c59"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "المثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.",
+          "sha256": "7848b0685116efe2dfc44fa5030c088d8b92cb04c32cf08e5fa7eefb7dc7a9c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "رتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.",
+          "sha256": "b16f9636f5d5f79af584febb3557912dc00fdd4575bae60ba3a741bd72e24de9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "القوام والمادة العضوية والأملاح لازم تتقاس في الموقع.",
+          "sha256": "2d09dd23249de3d8e0636ffeb509dc21e0e08db3a733bcc804302d75dd57ec69"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "ارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+          "sha256": "ef90d901f3968dd7d7c6e76a44c34c6ff1c8ad7c4ab35fb8c195a55007ac63da"
+        }
+      ],
+      "scientificMeaning": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "displayText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "captionText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "spokenText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من واحد في المية ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة أريديسولز تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع والمادة العضوية وإي سي.",
+      "spokenTextSHA256": "7f7550d2ef63ee28bf17b9adb9c9bd311706db90b9a600d1367d4707db1b354a",
+      "spokenTextSha256": "7f7550d2ef63ee28bf17b9adb9c9bd311706db90b9a600d1367d4707db1b354a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+          "spoken": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من واحد في المية ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة أريديسولز تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع والمادة العضوية وإي سي.",
+          "occurrences": 1,
+          "purpose": "Expand Arabic conjunct-acronym and German grammatical numeral; exact scientific meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4b950032fe4abf059c949978902e39b1e8017e735c71327b46a8ffe3659105d6",
+      "requestFingerprintSha256": "4b950032fe4abf059c949978902e39b1e8017e735c71327b46a8ffe3659105d6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0a6ec3c13171524815ddb5c3fd1906a99ef21f5eb89d3d9a1ee43049f7da3fd6"
+    },
+    {
+      "id": "S3-08-ar-EG-E02-r1",
+      "unitId": "S3-08-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "اقرأ تقرير قطعة التجربة",
+          "sha256": "2944e82b8e87d7f17c236f60b3cf34a9513b7a939632f403b98accb1cb714635"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "قطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.",
+          "sha256": "cf1cf3903bd41bb2775d894d7bd1928a44e958a6230700be131f4cca574c5359"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "المساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.",
+          "sha256": "5025274f06ed1b027799c0e092db6c164db9111067bd4deb0cfe63ed63d83e9a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.",
+          "sha256": "866e954e8f6ed1706f167377c4dfd20132a8d8e2754f48f3b2e1e268257cdf65"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "لو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.",
+          "sha256": "0d45cc8924556713b59f850333b3d711792f02e362171ae7fe1c00f83a852d0e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "خلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "sha256": "d6e575ff20a532189bdec47a2a13b36509e4ef5d5d9d62b6b87af2f7b8fa443a"
+        }
+      ],
+      "scientificMeaning": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "displayText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "captionText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "spokenText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي عشرة متر مضروب في عشرة متر، المادة العضوية صفر فاصلة تمانية في المية وإي سي‏ تلاتة فاصلة خمسة ديسي سيمنز لكل متر وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة مية متر مربع؛ صفر فاصلة تمانية في المية قيمة موقع مقاسة.\n\nاطلب طريقة إي سي للتربة وعمق، تاريخ العينة وإي سي دبليو للبئر والأيونات.\n\nلو ثبت فقط أنه إي سي إي عند خمسة وعشرين درجة مئوية ينفع تفسير جدول اتنين إلى أربعة ديسي سيمنز لكل متر الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "spokenTextSHA256": "5af80c6b2f1619518f08cfedf7596052ca7d9d47d816c3023e7b7677e485e298",
+      "spokenTextSha256": "5af80c6b2f1619518f08cfedf7596052ca7d9d47d816c3023e7b7677e485e298",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "spoken": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي عشرة متر مضروب في عشرة متر، المادة العضوية صفر فاصلة تمانية في المية وإي سي‏ تلاتة فاصلة خمسة ديسي سيمنز لكل متر وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة مية متر مربع؛ صفر فاصلة تمانية في المية قيمة موقع مقاسة.\n\nاطلب طريقة إي سي للتربة وعمق، تاريخ العينة وإي سي دبليو للبئر والأيونات.\n\nلو ثبت فقط أنه إي سي إي عند خمسة وعشرين درجة مئوية ينفع تفسير جدول اتنين إلى أربعة ديسي سيمنز لكل متر الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b114ca2a6eeff42aae9f6b47795632dc788a54c1ed42918323c2c6bf4c3b9867",
+      "requestFingerprintSha256": "b114ca2a6eeff42aae9f6b47795632dc788a54c1ed42918323c2c6bf4c3b9867",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0a6ec3c13171524815ddb5c3fd1906a99ef21f5eb89d3d9a1ee43049f7da3fd6"
+    },
+    {
+      "id": "S3-08-ar-EG-E03-r1",
+      "unitId": "S3-08-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "الماء موجود لكن صعب الامتصاص",
+          "sha256": "90d68940e0eebf3de1cacf58c8b6890e5f6b63a4800b4d8b04182b729dbe4458"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "عينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.",
+          "sha256": "171531fcd4fa8ad0a6ec55d53825c564d78c230dab0a80ce3fc2b12bf03544ee"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "الجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.",
+          "sha256": "c8b2e829a9e168b1a137e2e2504f7a2ebc555b2eb904413fab4ddeda4aa6610c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "افحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.",
+          "sha256": "1d01215a823269636f5853cccf88032e4eaccf55ec33216792ac81a73194c5d4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "حلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.",
+          "sha256": "d4522c10fc7ab5a0552e40799a927f3071e57eaf2f7ec1ca0fc1a17a6dd875a0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "فرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "sha256": "4769b6d23b528d49ad399547f2474d4513c5af217c4d6c0cae7a59865d737c23"
+        }
+      ],
+      "scientificMeaning": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "displayText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "captionText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "spokenText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمال لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض الصوديوم، الكالسيوم، البوتاسيوم أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "spokenTextSHA256": "53a504b74ff91062f15bbc6edb07905012b95d12c81e8a77013389e26064a9cb",
+      "spokenTextSha256": "53a504b74ff91062f15bbc6edb07905012b95d12c81e8a77013389e26064a9cb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "spoken": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمال لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض الصوديوم، الكالسيوم، البوتاسيوم أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "afba4dc8dabeb6cf4fcb58280612001852415f1f0199011c94b2684bff147702",
+      "requestFingerprintSha256": "afba4dc8dabeb6cf4fcb58280612001852415f1f0199011c94b2684bff147702",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0a6ec3c13171524815ddb5c3fd1906a99ef21f5eb89d3d9a1ee43049f7da3fd6"
+    },
+    {
+      "id": "S3-08-ar-EG-E04-r1",
+      "unitId": "S3-08-ar-EG-E04-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "إيه اللي تثبته طبقة صلبة؟",
+          "sha256": "6d7244703e140501603e1abca5533d3f1cbfaa114c021df960dbfd3d3c83501e"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "الكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.",
+          "sha256": "0c1cb39a11d401e5925733afd589912f646523bf188fe2c89742f91db7cd618b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "طبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.",
+          "sha256": "2eb586c678331f39d4d8b2c8ebb03556772705dbc02cfb5cc31eb300215ba896"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "الدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.",
+          "sha256": "3a3c214585b881d1735addbc8ca5841f1a2865f2d80df1e529b622a96a0065cf"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "افحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.",
+          "sha256": "b6c9d6ad8a2f45ffeeff9ae5fe6d281c8dac68c6ebb79bc4cec13a5f66972795"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "سجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "sha256": "0422e635a8c8c1a970dbdeb58a1b54727c3c93c9fab5fcd713b962a1a9867abf"
+        }
+      ],
+      "scientificMeaning": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "displayText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "captionText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "spokenText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وممكن تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق تانية ممكن تكون صلبة برضه.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "spokenTextSHA256": "dc84058b69dbab60092d7ba49b48edb36ee7c0556989ed296de9630cb1c642f0",
+      "spokenTextSha256": "dc84058b69dbab60092d7ba49b48edb36ee7c0556989ed296de9630cb1c642f0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "spoken": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وممكن تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق تانية ممكن تكون صلبة برضه.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "458c9384c6e42ecf6903bfe4565b9b95b105db934230cbb95f2b123cf2c227fe",
+      "requestFingerprintSha256": "458c9384c6e42ecf6903bfe4565b9b95b105db934230cbb95f2b123cf2c227fe",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "0a6ec3c13171524815ddb5c3fd1906a99ef21f5eb89d3d9a1ee43049f7da3fd6"
+    },
+    {
+      "id": "S3-08-en-E01-r1",
+      "unitId": "S3-08-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Use the beach-sand analogy carefully",
+          "sha256": "eefa5f6d3fae4c32200f107a03d781fbab5accabe41cafa71282777e3a44adac"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'",
+          "sha256": "210cadea10f1a4af456ea734c3758dd5abf303be645ea67a7b68f452202e51e4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The analogy only starts a question about water and nutrient retention.",
+          "sha256": "347458b93280d84693636c5b323b4a3e513381593cb02533e506068675b56374"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Aridisol classification depends on moisture regime and profile features; cold Aridisols exist.",
+          "sha256": "9cbad5b6edffc3ada649b043c36e65a224fd263f5e0ae856162d2002a049e4a4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Texture, organic matter and salts must be measured for the site.",
+          "sha256": "dfc742604b6d260d0819f64c37c3dc73b55a8a044f15f626d99e04758ea85f00"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Reject the universal claim; propose a texture/profile/OM/EC investigation.",
+          "sha256": "90b030a0a87df305e2b91ac05b7dcc76124143bd8b13a8db0a283d39d422e27c"
+        }
+      ],
+      "scientificMeaning": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "displayText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "captionText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "spokenText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under one percent organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture, profile, organic matter, E C investigation.",
+      "spokenTextSHA256": "d9cb3e353ee3a411a4f0bb878b080252174755c4afdc8d671e727d2e054cb7ec",
+      "spokenTextSha256": "d9cb3e353ee3a411a4f0bb878b080252174755c4afdc8d671e727d2e054cb7ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+          "spoken": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under one percent organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture, profile, organic matter, E C investigation.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6f475a4bf2e7f6495f585c5dbe1e01837614d0bb1aaf6ec9c5e6815a1d5ea29a",
+      "requestFingerprintSha256": "6f475a4bf2e7f6495f585c5dbe1e01837614d0bb1aaf6ec9c5e6815a1d5ea29a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "0aaa1af8d3bbbfc9a762114795347b3e26f0bbf1c39d904cbb56fbd70b9c0928"
+    },
+    {
+      "id": "S3-08-en-E02-r1",
+      "unitId": "S3-08-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Read the pilot-plot report",
+          "sha256": "9f8747814b7b86854035d9967c12aa77d584a6558e449aaeeeefeccf2bf5caf6"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.",
+          "sha256": "14b744c949c5827089bbeda7d2944a954c6cf0d1438b7b324b3873e5fe33f14f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "The area is 100 m²; 0.8% OM is a measured site value.",
+          "sha256": "46f30048c21973a1c527aeca7ebe92381f01251ac87a167376e41b046df0e15e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Request soil EC preparation, sampling depth/date and the borewell ECw plus ions.",
+          "sha256": "0e13ad791370fc741a2b58ac8f494bd072e94b720932a3c31faed65ef911ddd5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Only if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.",
+          "sha256": "8a0c014db444921dab989bc11956f7f9fb9fea262c8a6ba635a553917b3cc663"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Mark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "sha256": "a8997e291fc2e5112e8e8760815e10a2e9447ed80789822ca4ecc42816d8e138"
+        }
+      ],
+      "scientificMeaning": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "displayText": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "captionText": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "spokenText": "Read the pilot-plot report\n\nThe ten metres multiplied by ten metres sandy-loam plot reports organic matter zero point eight percent, E C three point five decisiemens per metre and 'slightly saline' borewell water with no methods attached.\n\nThe area is one hundred square metres; zero point eight percent organic matter is a measured site value.\n\nRequest soil E C preparation, sampling depth, date and the borewell E C w plus ions.\n\nOnly if the soil value is verified as E C e at twenty-five degrees Celsius can an E C e-specific two to four decisiemens per metre interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "spokenTextSHA256": "9c3d3da66015ab1435d9a13e72500d70a0bab0e872acc65ab931ee70224583f6",
+      "spokenTextSha256": "9c3d3da66015ab1435d9a13e72500d70a0bab0e872acc65ab931ee70224583f6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "spoken": "Read the pilot-plot report\n\nThe ten metres multiplied by ten metres sandy-loam plot reports organic matter zero point eight percent, E C three point five decisiemens per metre and 'slightly saline' borewell water with no methods attached.\n\nThe area is one hundred square metres; zero point eight percent organic matter is a measured site value.\n\nRequest soil E C preparation, sampling depth, date and the borewell E C w plus ions.\n\nOnly if the soil value is verified as E C e at twenty-five degrees Celsius can an E C e-specific two to four decisiemens per metre interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fe6c551d3a8c54a8f1b0a4103c5d1db5dc2d75815c89922d315104c6ce27aa27",
+      "requestFingerprintSha256": "fe6c551d3a8c54a8f1b0a4103c5d1db5dc2d75815c89922d315104c6ce27aa27",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "0aaa1af8d3bbbfc9a762114795347b3e26f0bbf1c39d904cbb56fbd70b9c0928"
+    },
+    {
+      "id": "S3-08-en-E03-r1",
+      "unitId": "S3-08-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Water can be present but difficult to use",
+          "sha256": "2d901333fd63f58a8d96a91f712b55d242b613fb3e02807f5e1949ad05cbdc7f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.",
+          "sha256": "5b0f9a1732bcfc049ce4ebd0265937ab852a9ec9d0075fc1442e87177c2e1d5f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Physical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.",
+          "sha256": "1bd035732d09c0e2c6b111491a8c81ce6893c14f3718aab401ce8647e6d630f9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Check the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.",
+          "sha256": "2c96d0ddbe1a89801d2fdefaaae854dea34e215f7a0dfd837c2e34b8ac7c473e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Analyse irrigation water and drainage before adding more water or attempting leaching.",
+          "sha256": "fd0e6bd10776f8d059bddc58c246226ce67b5b86bbb11f900682fe0840834cf8"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Distinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "sha256": "92553e53007f76801faa657d8c51a024a93a17b79f702ae2636c9c9e661cca64"
+        }
+      ],
+      "scientificMeaning": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "displayText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "captionText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "spokenText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible sodium, calcium, K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "spokenTextSHA256": "2220dc9253ccfdc1f10851bc90226692c7968c9c0c3faf227e5a635cde0bb589",
+      "spokenTextSha256": "2220dc9253ccfdc1f10851bc90226692c7968c9c0c3faf227e5a635cde0bb589",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "spoken": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible sodium, calcium, K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3e2afd65adc0ed84baf7a3b775984baa2610477d06d74f5b5476d6a608a09b98",
+      "requestFingerprintSha256": "3e2afd65adc0ed84baf7a3b775984baa2610477d06d74f5b5476d6a608a09b98",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "0aaa1af8d3bbbfc9a762114795347b3e26f0bbf1c39d904cbb56fbd70b9c0928"
+    },
+    {
+      "id": "S3-08-en-E04-r1",
+      "unitId": "S3-08-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "What does a hard layer prove?",
+          "sha256": "b68f5e68e6a369897c12c7f7b1422543fe1fe315754008588166f60ed1cce418"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A spade stops at a hard layer below a dryland plot.",
+          "sha256": "a9e634a679017923d5ad02c2b61f0eda17a847ccc076d7e46dad4a79db9e3e9d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.",
+          "sha256": "a0642ad48b7ca130f753bba040053e045b3f358aa84d8cc9ec55a57bfd449c8d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Compaction, gypsum-cemented or other horizons may also be hard.",
+          "sha256": "178f206ffc8320ce903d7defe42a6991f11911324d48fba6a2612f24ae83e465"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Examine profile and composition before naming or breaking the layer.",
+          "sha256": "7e8f3d13faa4ca5fa65600a482a24364cffe1bc65b4ddb58975bdbc4ebe8b5ce"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Record the obstruction and test its origin; do not label it caliche from resistance alone.",
+          "sha256": "ec36a15c3cc2155b80922dfd2e65b4d3425e698f023d27d98f71dc943f7c246c"
+        }
+      ],
+      "scientificMeaning": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "displayText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "captionText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "spokenText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "spokenTextSHA256": "8e07342f91d1b47a792a1be12a50a32f71d07d0d8b1b19b19957344e356339d6",
+      "spokenTextSha256": "8e07342f91d1b47a792a1be12a50a32f71d07d0d8b1b19b19957344e356339d6",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2155e73a4ae4856ff40aefdfff4e0e4d05b1fe3a6e4aa04967810487b349c085",
+      "requestFingerprintSha256": "2155e73a4ae4856ff40aefdfff4e0e4d05b1fe3a6e4aa04967810487b349c085",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "0aaa1af8d3bbbfc9a762114795347b3e26f0bbf1c39d904cbb56fbd70b9c0928"
+    },
+    {
+      "id": "S3-08-it-E01-r1",
+      "unitId": "S3-08-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbcad2a68c7068a7a98a64c9a61d1277ceded9e8ab0ddb6489f3e3dddbc9a37c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Usa con cautela l’analogia della sabbia di spiaggia",
+          "sha256": "80799697e64d00f5bb21359dbb99085e690243f23a1ae6b5e1fdb411f588631f"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Uno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».",
+          "sha256": "7d69ed4b6501d1f7b1abc6af3a85ff297e660c8372a2ca18c2eedc96dff99f9f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "L’analogia apre solo una domanda su acqua e nutrienti.",
+          "sha256": "5a37e850b07609a2b254954ab5486b80f7ba2cee01768222e508f8f0c6315754"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "La classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.",
+          "sha256": "1fb4425d13008b369289fef80fb900bb0133fca42714325280ddd4992d8f8e4f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Tessitura, organico e sali vanno misurati in sito.",
+          "sha256": "e96b569d099c81c63c8d57d95f079363f15605821935a568d011e8d91836ef53"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Rifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC.",
+          "sha256": "ef4fc191f14a741d7534fb3f4b7bef18f4cb4380d8e3bfc8e267afec5aa0c60e"
+        }
+      ],
+      "scientificMeaning": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC.",
+      "displayText": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC.",
+      "captionText": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC.",
+      "spokenText": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’uno per cento di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, sostanza organica ed e ci.",
+      "spokenTextSHA256": "f651b37a4a1cc7ad6f0ef50488404933a27bcf6c758e6933a580c4c268e897b6",
+      "spokenTextSha256": "f651b37a4a1cc7ad6f0ef50488404933a27bcf6c758e6933a580c4c268e897b6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’1% di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, OM ed EC.",
+          "spoken": "Usa con cautela l’analogia della sabbia di spiaggia\n\nUno studente afferma: «Ogni suolo desertico è caldo, sabbia pura, con meno dell’uno per cento di organico e salino».\n\nL’analogia apre solo una domanda su acqua e nutrienti.\n\nLa classificazione Aridisol dipende da regime idrico e profilo; esistono Aridisol freddi.\n\nTessitura, organico e sali vanno misurati in sito.\n\nRifiuta la generalizzazione e proponi indagine di profilo, tessitura, sostanza organica ed e ci.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fa3a4b60a5b4e0101f9f4c763f4b07eaf4540631074b95b405a314a8c3c6ded6",
+      "requestFingerprintSha256": "fa3a4b60a5b4e0101f9f4c763f4b07eaf4540631074b95b405a314a8c3c6ded6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "27a6c9d67e860dc2c1e21d7fc8505a7d7fa28bb5cfef67c88dff0410b8499718"
+    },
+    {
+      "id": "S3-08-it-E02-r1",
+      "unitId": "S3-08-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbcad2a68c7068a7a98a64c9a61d1277ceded9e8ab0ddb6489f3e3dddbc9a37c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Leggi il rapporto del lotto",
+          "sha256": "84ae61d85222bfc1e8be08c8778732d70282df4dad667a99cb50f931aff3e64e"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.",
+          "sha256": "04c6aea6024b0b5397b84ba81f205b352acdbcd22f585884940328515e9be9c3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "L’area è 100 m² e 0,8% è valore misurato del sito.",
+          "sha256": "96c80d52c52072f1c801c0ab3053eb7c1549044da54851738f12819d0ecc4589"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Chiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.",
+          "sha256": "c19818fab3da1b3676674e34c4446ae5bc9f40b0a47facc6cad7e366df38f4be"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Soltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono.",
+          "sha256": "7908a9a58d0722f47b15ca34f653873bf86665f2a2f452d30f076801e1dc5bc1"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Classe salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+          "sha256": "ac2343baeb0b39142eb923ad446a1b08dfd84feff68fe69b7a658b08a9c19e2d"
+        }
+      ],
+      "scientificMeaning": "Leggi il rapporto del lotto\n\nIl franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è 100 m² e 0,8% è valore misurato del sito.\n\nChiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.\n\nSoltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+      "displayText": "Leggi il rapporto del lotto\n\nIl franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è 100 m² e 0,8% è valore misurato del sito.\n\nChiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.\n\nSoltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+      "captionText": "Leggi il rapporto del lotto\n\nIl franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è 100 m² e 0,8% è valore misurato del sito.\n\nChiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.\n\nSoltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+      "spokenText": "Leggi il rapporto del lotto\n\nIl franco sabbioso dieci metri moltiplicato per dieci metri ha sostanza organica zero virgola otto per cento, e ci tre virgola cinque decisiemens per metro e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è cento metri quadrati e zero virgola otto per cento è valore misurato del sito.\n\nChiedi preparazione e ci del suolo, profondità, data ed e ci doppia vu e ioni del pozzo.\n\nSoltanto se e ci e a venticinque gradi Celsius si può usare l’interpretazione e ci e due a quattro decisiemens per metro; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+      "spokenTextSHA256": "94173ff449542187a3561b561cfdaade98cbce81aaf82911e45f133901ac011a",
+      "spokenTextSha256": "94173ff449542187a3561b561cfdaade98cbce81aaf82911e45f133901ac011a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Leggi il rapporto del lotto\n\nIl franco sabbioso 10 m × 10 m ha OM 0,8%, EC 3,5 dS/m e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è 100 m² e 0,8% è valore misurato del sito.\n\nChiedi preparazione EC del suolo, profondità/data ed ECw e ioni del pozzo.\n\nSoltanto se ECe a 25°C si può usare l’interpretazione ECe 2–4 dS/m; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+          "spoken": "Leggi il rapporto del lotto\n\nIl franco sabbioso dieci metri moltiplicato per dieci metri ha sostanza organica zero virgola otto per cento, e ci tre virgola cinque decisiemens per metro e acqua di pozzo «leggermente salina» senza metodi indicati.\n\nL’area è cento metri quadrati e zero virgola otto per cento è valore misurato del sito.\n\nChiedi preparazione e ci del suolo, profondità, data ed e ci doppia vu e ioni del pozzo.\n\nSoltanto se e ci e a venticinque gradi Celsius si può usare l’interpretazione e ci e due a quattro decisiemens per metro; le colture differiscono.\n\nClasse salina e coltura restano provvisorie; conserva numeri e unità senza indovinare il metodo.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "553d074e17388bedb7293608383027b64e98f3286ae6c7addcd405133ab7972d",
+      "requestFingerprintSha256": "553d074e17388bedb7293608383027b64e98f3286ae6c7addcd405133ab7972d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "27a6c9d67e860dc2c1e21d7fc8505a7d7fa28bb5cfef67c88dff0410b8499718"
+    },
+    {
+      "id": "S3-08-it-E03-r1",
+      "unitId": "S3-08-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbcad2a68c7068a7a98a64c9a61d1277ceded9e8ab0ddb6489f3e3dddbc9a37c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Acqua presente ma difficile da assorbire",
+          "sha256": "913ec2ae7e159db6eff31d7275ba57f644cd144df5d8348a72d96fbdd231890b"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.",
+          "sha256": "07e5d941eaf74131b4d43199e933c4cb92a6fa4947c0d4f0d64c8fe9f63ae89e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Siccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.",
+          "sha256": "c69aa14ab035f858340a8a69507072a825036708e1125fdd3711796b4ee5b7b0"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Controlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.",
+          "sha256": "65e4a1fa60c557e1628d4e716172df1fee93a7d598245116b8135c3c560974b5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Analizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.",
+          "sha256": "2b0dca0f66bb51d2733bd255d6a81c5ac35f58f2eb8667feba5da47054045c59"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Distingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+          "sha256": "03071eb99bf96d0769fe0dd273dc65632b9bb87db0fbd2839bbeffad1789a0b5"
+        }
+      ],
+      "scientificMeaning": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+      "displayText": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+      "captionText": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+      "spokenText": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri sodio, calcio, cappa o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+      "spokenTextSHA256": "4113a449350e93449c811350ef81d689507b40275b2fe3f227288012e63fe2ed",
+      "spokenTextSha256": "4113a449350e93449c811350ef81d689507b40275b2fe3f227288012e63fe2ed",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri Na/Ca/K o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+          "spoken": "Acqua presente ma difficile da assorbire\n\nUn campione di suolo della zona radicale è umido, ma la coltura appare stressata e un’analisi affidabile del suolo conferma sali elevati.\n\nSiccità fisica meno probabile se acqua davvero disponibile; stress osmotico da sali plausibile.\n\nControlla ioni per possibili squilibri sodio, calcio, cappa o danno da cloruro distinti.\n\nAnalizza acqua irrigua e drenaggio prima di aggiungere acqua o lisciviare.\n\nDistingui ostacolo osmotico da riserva vuota e tossicità diretta.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1941a7d6c52c6eaaf838c3601bf1f9490455a30babfb888c2dd6d8a0e41e04fd",
+      "requestFingerprintSha256": "1941a7d6c52c6eaaf838c3601bf1f9490455a30babfb888c2dd6d8a0e41e04fd",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "27a6c9d67e860dc2c1e21d7fc8505a7d7fa28bb5cfef67c88dff0410b8499718"
+    },
+    {
+      "id": "S3-08-it-E04-r1",
+      "unitId": "S3-08-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbcad2a68c7068a7a98a64c9a61d1277ceded9e8ab0ddb6489f3e3dddbc9a37c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Che cosa prova uno strato duro?",
+          "sha256": "e75b81121b225e8044a8eb8b797f3a9dc83ecd1a92377fb97f1339b4b3009807"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Una vanga si ferma su strato duro sotto un campo arido.",
+          "sha256": "e4746325c8f0771d26af52f4dcb00a9889d9848efb2d4ee942fedbdff2fd1dce"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Caliche carbonatico cementato è possibile e può fermare radici o drenaggio.",
+          "sha256": "bc19b5b1233a2f78164f62c190ca5041e109e6303d98855e4f836a105900c39d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Compattazione, gesso cementato o altri orizzonti possono esser duri.",
+          "sha256": "b9ffa9d7838b0d5727b4ffb75be6ed82f4c5430063e90bef211f8b29964016cc"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Esamina profilo e composizione prima di chiamarlo caliche o romperlo.",
+          "sha256": "ad24a365b0700cd4b1f607c7d384198573529a003bc7f7c05e6472331ac4fb9a"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Registra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche.",
+          "sha256": "4b35321b2fac2b761a74dd016ee1ecc0f27aca2b3d4118cd5e33268a7d0b9e11"
+        }
+      ],
+      "scientificMeaning": "Che cosa prova uno strato duro?\n\nUna vanga si ferma su strato duro sotto un campo arido.\n\nCaliche carbonatico cementato è possibile e può fermare radici o drenaggio.\n\nCompattazione, gesso cementato o altri orizzonti possono esser duri.\n\nEsamina profilo e composizione prima di chiamarlo caliche o romperlo.\n\nRegistra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche.",
+      "displayText": "Che cosa prova uno strato duro?\n\nUna vanga si ferma su strato duro sotto un campo arido.\n\nCaliche carbonatico cementato è possibile e può fermare radici o drenaggio.\n\nCompattazione, gesso cementato o altri orizzonti possono esser duri.\n\nEsamina profilo e composizione prima di chiamarlo caliche o romperlo.\n\nRegistra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche.",
+      "captionText": "Che cosa prova uno strato duro?\n\nUna vanga si ferma su strato duro sotto un campo arido.\n\nCaliche carbonatico cementato è possibile e può fermare radici o drenaggio.\n\nCompattazione, gesso cementato o altri orizzonti possono esser duri.\n\nEsamina profilo e composizione prima di chiamarlo caliche o romperlo.\n\nRegistra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche.",
+      "spokenText": "Che cosa prova uno strato duro?\n\nUna vanga si ferma su strato duro sotto un campo arido.\n\nCaliche carbonatico cementato è possibile e può fermare radici o drenaggio.\n\nCompattazione, gesso cementato o altri orizzonti possono esser duri.\n\nEsamina profilo e composizione prima di chiamarlo caliche o romperlo.\n\nRegistra l’ostacolo e verifica l’origine; la resistenza da sola non prova caliche.",
+      "spokenTextSHA256": "b4efe7babe93c965f6609b51d715f349bdbe36d5810c6a7d962cfcc937e66793",
+      "spokenTextSha256": "b4efe7babe93c965f6609b51d715f349bdbe36d5810c6a7d962cfcc937e66793",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "295d3ca581e982505645c2c66493b344106b59e01c2b91b16c5f5bd2fa693a7b",
+      "requestFingerprintSha256": "295d3ca581e982505645c2c66493b344106b59e01c2b91b16c5f5bd2fa693a7b",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "27a6c9d67e860dc2c1e21d7fc8505a7d7fa28bb5cfef67c88dff0410b8499718"
+    },
+    {
+      "id": "S3-08-de-E01-r1",
+      "unitId": "S3-08-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f0f9bfdc55c4ed6fb506e718805a1713d437f6c59e5d130aa95b336ff8702caa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Strandsand-Vergleich vorsichtig nutzen",
+          "sha256": "6eaa6c41b674da7028de371eac513c93d6465ac7c0e4febf4324ea80e690b0f3"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Jemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“",
+          "sha256": "280aa558093ad642c181814c8dceedc4bfe65eff75b8f447b401396b3383feea"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Das Bild eröffnet nur die Frage nach Wasser und Nährstoffen.",
+          "sha256": "16ea701b589421894c320767d9c6a2459752a019489c18307ca69f3238b12c04"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Aridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.",
+          "sha256": "9278c0013bc915fac74d47043ed11bf9658420751e0a259ca06a1a9b5d81d977"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Textur, organische Substanz und Salze am Ort messen.",
+          "sha256": "b81e31dea460b695eda48de007bceb98d02eee7653ad0887a3607686aa876cf0"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Pauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen.",
+          "sha256": "9821db1c18c54d55a151765a2c0359529e1bc1a36dfda737b72bf372a87a7fe3"
+        }
+      ],
+      "scientificMeaning": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen.",
+      "displayText": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen.",
+      "captionText": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen.",
+      "spokenText": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter einem Prozent Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, organische Substanz und E Ce untersuchen.",
+      "spokenTextSHA256": "e375db1f9004f9340ad240f030b0fa790fb80883cd1567aa73637258c0620b3c",
+      "spokenTextSha256": "e375db1f9004f9340ad240f030b0fa790fb80883cd1567aa73637258c0620b3c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen.",
+          "spoken": "Strandsand-Vergleich vorsichtig nutzen\n\nJemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter einem Prozent Humus und salzig.“\n\nDas Bild eröffnet nur die Frage nach Wasser und Nährstoffen.\n\nAridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.\n\nTextur, organische Substanz und Salze am Ort messen.\n\nPauschalbehauptung verwerfen; Profil, Textur, organische Substanz und E Ce untersuchen.",
+          "occurrences": 1,
+          "purpose": "Expand Arabic conjunct-acronym and German grammatical numeral; exact scientific meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4d1f98c6bef01c01cc7dc632c9a4549f508a40ca5cd8d821667a55581b19e94c",
+      "requestFingerprintSha256": "4d1f98c6bef01c01cc7dc632c9a4549f508a40ca5cd8d821667a55581b19e94c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1659c4c9bb5d8866bfdcfdbc3f7c99cd01dfd68e304688b14b8c4ab504f16bc7"
+    },
+    {
+      "id": "S3-08-de-E02-r1",
+      "unitId": "S3-08-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f0f9bfdc55c4ed6fb506e718805a1713d437f6c59e5d130aa95b336ff8702caa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Den Testparzellenbericht lesen",
+          "sha256": "ec987ea46ad09f41ba897e434c5e73998680f5e7f0df37c04be7e76f716163c9"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Die 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.",
+          "sha256": "15140057185d709d1ff0fc876999417acb4149dd7a3b2cae215b49ed61a55097"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Fläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.",
+          "sha256": "276594b89244f0a3253db5d7ecb7be54028a6e6557ec32597c16a978e892cfa2"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Boden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.",
+          "sha256": "48fe58186086705fe39dd94668ba9847b7bbb8bd7622ddf31903aaa9780edfb1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Nur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich.",
+          "sha256": "facee715345c92a152eef92773272ce85a6288e0cd0a3694f94498fa73e07b6b"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Salzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten.",
+          "sha256": "b870dd79f6a8658e7db08caaaaebce4824e53b14141a43b87b9e2914816a75bd"
+        }
+      ],
+      "scientificMeaning": "Den Testparzellenbericht lesen\n\nDie 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.\n\nBoden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.\n\nNur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten.",
+      "displayText": "Den Testparzellenbericht lesen\n\nDie 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.\n\nBoden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.\n\nNur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten.",
+      "captionText": "Den Testparzellenbericht lesen\n\nDie 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.\n\nBoden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.\n\nNur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten.",
+      "spokenText": "Den Testparzellenbericht lesen\n\nDie zehn Meter mal zehn Meter große sandig-lehmige Fläche meldet organische Substanz null Komma acht Prozent, E Ce drei Komma fünf Dezisiemens pro Meter und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche einhundert Quadratmeter; organische Substanz null Komma acht Prozent ist standortspezifisch gemessen.\n\nBoden-E Ce-Aufbereitung, Tiefe, Datum sowie Brunnen-E Ce We und Ionen erfragen.\n\nNur nach Nachweis E Ce E bei fünfundzwanzig Grad Celsius ist die E Ce E-Auslegung von zwei bis vier Dezisiemens pro Meter nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen, Einheiten ohne Methodenerfindung erhalten.",
+      "spokenTextSHA256": "eec1db4564a5afa9a71a439681d3fe096de1de2781a0ca33a5a18a06436b8f56",
+      "spokenTextSha256": "eec1db4564a5afa9a71a439681d3fe096de1de2781a0ca33a5a18a06436b8f56",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Den Testparzellenbericht lesen\n\nDie 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.\n\nBoden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.\n\nNur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten.",
+          "spoken": "Den Testparzellenbericht lesen\n\nDie zehn Meter mal zehn Meter große sandig-lehmige Fläche meldet organische Substanz null Komma acht Prozent, E Ce drei Komma fünf Dezisiemens pro Meter und „leicht salziges“ Brunnenwasser ohne Methodenangaben.\n\nFläche einhundert Quadratmeter; organische Substanz null Komma acht Prozent ist standortspezifisch gemessen.\n\nBoden-E Ce-Aufbereitung, Tiefe, Datum sowie Brunnen-E Ce We und Ionen erfragen.\n\nNur nach Nachweis E Ce E bei fünfundzwanzig Grad Celsius ist die E Ce E-Auslegung von zwei bis vier Dezisiemens pro Meter nutzbar; Kulturen reagieren unterschiedlich.\n\nSalzklasse und Kulturwahl vorläufig lassen; alle Zahlen, Einheiten ohne Methodenerfindung erhalten.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "925f3924ea56912fcbebc70c5238f8cab889c5751d656628456054b3d9413009",
+      "requestFingerprintSha256": "925f3924ea56912fcbebc70c5238f8cab889c5751d656628456054b3d9413009",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1659c4c9bb5d8866bfdcfdbc3f7c99cd01dfd68e304688b14b8c4ab504f16bc7"
+    },
+    {
+      "id": "S3-08-de-E03-r1",
+      "unitId": "S3-08-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f0f9bfdc55c4ed6fb506e718805a1713d437f6c59e5d130aa95b336ff8702caa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Wasser da, aber schwer nutzbar",
+          "sha256": "795d75cda2b3bcab882d123662c4ec4483bd693b026fea874f2823f8c9d8f145"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Eine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.",
+          "sha256": "1734384b0bd8e287e00e1a1b2ec091b6f8e2bfafc7bcffacd18135d0629cb8ce"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Echte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.",
+          "sha256": "53ebabcd4983f5a9d3ecdb9ba83a19d1799308654cdadd572f1cd5fa687dcd66"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Ionenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.",
+          "sha256": "720767bb3d0e9bf7f35c7523e8017665f3dbb28d9c520737ad0ff3bb0ca9be14"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Bewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.",
+          "sha256": "e04edc2c239317e31cff15e032b0c131a80a8e3f654b0b58cfea4a9f9aa77b68"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Osmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+          "sha256": "913c8637548aa35a6bbf53aa78f488d509e0c88ac318b55c579491e3e57edd1b"
+        }
+      ],
+      "scientificMeaning": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+      "displayText": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+      "captionText": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+      "spokenText": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Natrium, Kalzium, Ka-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+      "spokenTextSHA256": "b330f890385c00d8d981de73a5e508002a044cf451f4f3ba7d48ce6efd016548",
+      "spokenTextSha256": "b330f890385c00d8d981de73a5e508002a044cf451f4f3ba7d48ce6efd016548",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+          "spoken": "Wasser da, aber schwer nutzbar\n\nEine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.\n\nEchte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.\n\nIonenmuster für Natrium, Kalzium, Ka-Ungleichgewicht oder Chloridschaden getrennt prüfen.\n\nBewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden.\n\nOsmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c9065c701dd38653c2c7c3dee048b6a920a948f95cf13b7ec2f530f73ca978c3",
+      "requestFingerprintSha256": "c9065c701dd38653c2c7c3dee048b6a920a948f95cf13b7ec2f530f73ca978c3",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1659c4c9bb5d8866bfdcfdbc3f7c99cd01dfd68e304688b14b8c4ab504f16bc7"
+    },
+    {
+      "id": "S3-08-de-E04-r1",
+      "unitId": "S3-08-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "f0f9bfdc55c4ed6fb506e718805a1713d437f6c59e5d130aa95b336ff8702caa",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Was beweist eine harte Schicht?",
+          "sha256": "599b6dc3c8e44628b5aa0178fa0a400d7d3d951fbfc04c33c01e121d95377207"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Ein Spaten stößt unter einer Trockenfläche auf eine harte Schicht.",
+          "sha256": "0b9d5434346f4ca80212ce131d1ba93bfa4b5e8e957c3459ba1796912d12f4bb"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Karbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.",
+          "sha256": "aece34acb832ac8034d8c644014301819e5b081f336833df0cf23d50002b331b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Verdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.",
+          "sha256": "d3eb46da47526bc1083dcaa4682cb44a59d50b374ce6430451c86b20f5f230da"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Profil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.",
+          "sha256": "94c2782d6e84bdcbf417d72b7281a5f67b93729ccf083932903a2cb7b5516eba"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Hindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+          "sha256": "8e89b9ab32f41559774abac5bbd418ab97fe1456a5295452c9b9919461fb410a"
+        }
+      ],
+      "scientificMeaning": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+      "displayText": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+      "captionText": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+      "spokenText": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln, Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+      "spokenTextSHA256": "757f164cd3c89d7f37dde3ad11d05e4951760f72fd74d1e9b59b694bcc82353e",
+      "spokenTextSha256": "757f164cd3c89d7f37dde3ad11d05e4951760f72fd74d1e9b59b694bcc82353e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+          "spoken": "Was beweist eine harte Schicht?\n\nEin Spaten stößt unter einer Trockenfläche auf eine harte Schicht.\n\nKarbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln, Wasser hemmen.\n\nVerdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.\n\nProfil und Zusammensetzung vor Benennung oder Aufbrechen prüfen.\n\nHindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d2ccdf8889213ca3aa97b6e31f6029ae73ab0e5e0563a8f9303bd93d8c37da47",
+      "requestFingerprintSha256": "d2ccdf8889213ca3aa97b6e31f6029ae73ab0e5e0563a8f9303bd93d8c37da47",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "1659c4c9bb5d8866bfdcfdbc3f7c99cd01dfd68e304688b14b8c4ab504f16bc7"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-08-ar-EG-E01-r1",
+      "S3-08-ar-EG-E02-r1",
+      "S3-08-ar-EG-E03-r1",
+      "S3-08-ar-EG-E04-r1"
+    ],
+    "en": [
+      "S3-08-en-E01-r1",
+      "S3-08-en-E02-r1",
+      "S3-08-en-E03-r1",
+      "S3-08-en-E04-r1"
+    ],
+    "it": [
+      "S3-08-it-E01-r1",
+      "S3-08-it-E02-r1",
+      "S3-08-it-E03-r1",
+      "S3-08-it-E04-r1"
+    ],
+    "de": [
+      "S3-08-de-E01-r1",
+      "S3-08-de-E02-r1",
+      "S3-08-de-E03-r1",
+      "S3-08-de-E04-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\four-gated-specific-contexts-job-r1\\request.json",
+      "sha256": "1ec1a2b642f7da26cdc1f19f8a421e631a66bfe6fa31274b3f91e6451a09460b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-ar-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "22eba5bfcc27354feccf3a14381e30f9e36b5af235e67f054904b1e614155fe1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-de-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "dfb0ec4d6581b6aee483b24bcf5d3c1b8a2eafd59c75b2f4aca7bb40b676f53f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-en-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "5d08fa0c2a4bc7f978d596d28690c54abe781b8a799193d7037cf37c9cf208a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "fa082acaf0c62a0d1bfaced90ecc9f7bf224695aa85de4f9f78e66c6d5aae7df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-contexts-job-r1\\request.json",
+      "sha256": "8fee27313f56166be85406712cb5f3f8bd0f8af932fa0b49fa01d78263646613"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reflection-one-diagnostic-job-r1\\request.json",
+      "sha256": "112fea12625d7cb8860ff26dd95eb10e7970377b54e77428a03af149d9f7dcf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-contexts-job-r1\\request.json",
+      "sha256": "cc2d355f6aebc3cdd2ac3bab5e71b0e62334dd97625277a9e4153330974dd9b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-ar-context-job-r1\\request.json",
+      "sha256": "d6fd96d2342648eccb9a76aac12a5e593ccc25c5527f7cfffcc438dbba15d48b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-postjoin-job-r1\\request.json",
+      "sha256": "0ae7226d8b703ecb1a2b7de618b6d52fe66deb04280d8678e8d61e7f425872d7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-contexts-job-r1\\request.json",
+      "sha256": "8e7e78448beecda2f965e283e969bf84aaf366f2f5ed0dafa3c0a28aa1c5b84b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-instructions-contexts-job-r1\\request.json",
+      "sha256": "9de32bb4adcc94c2444d085c77536de5ad2465575c9d04ea6e99c76c133ad47e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-contexts-job-r1\\request.json",
+      "sha256": "8380bc486c82d5dce36abf38b843e4f12e9685993ebc3fe870b6487162fd38f4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-contexts-job-r1\\request.json",
+      "sha256": "294b6d11649f9ee70fe85f46594ea731864b9b123bbea5bc7dd440e1a3e7c4e5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-contexts-job-r1\\request.json",
+      "sha256": "39e78078d90bae538aa2ce0b7511cd7d95e41e5eb9dbf61f2355109469b12aa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-three-contexts-job-r1\\request.json",
+      "sha256": "67963c6f1a40cf1f72eda92b41a4f074b8f042931a1907c250e508805b8a43fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-contexts-job-r1\\request.json",
+      "sha256": "9aa1001d869de9301651a99c17508d48b5f426cea037c9e11e8ee3982690b7e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-contexts-job-r1\\request.json",
+      "sha256": "0e97ef1b41ad29ede682579877129b0a0cfe827ccf6251f892696617d750aabb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-contexts-job-r1\\request.json",
+      "sha256": "4302b73bf016ca5c0501f2dca7b48349caca21104d84a4b7034b78691ec79a0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-contexts-job-r1\\request.json",
+      "sha256": "630811ba7211c67509e0572f12f15c69a6d877c927feba5e5bd26955d4ba23f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-contexts-job-r1\\request.json",
+      "sha256": "f88e2baa755d7f401abe870372186f8fc980feb0c90283ed8f3becef13776b51"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-contexts-job-r1\\request.json",
+      "sha256": "5954ddf1b8d00a149bfdbd09470722dd54f888616a7b80506ef75033e38d6a46"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-contexts-job-r1\\request.json",
+      "sha256": "4a72173ec8287047fc82cf8f584847dc1ebdbec599c24717f9e14c4f1f88c24c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-contexts-job-r1\\request.json",
+      "sha256": "64af7c01e314d7ae64fb42022f5d3de97d59c5a78d054a56f5b6edaa553ca3eb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-s112-three-contexts-job-r1\\request.json",
+      "sha256": "18b02f90596ab9c0a3467b7601c770d0a4eb74a16f9562698831ee73c84ae467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-seven-contexts-job-r1\\request.json",
+      "sha256": "9dca7602219c8f853d2b339eaead7935ea8c0a872d2ec87767d0a9a8e0f0ee5b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-contexts-job-r1\\request.json",
+      "sha256": "1e483434237a5e0c428ddfc1d0ad00a853a70993ec714a81ec9b7683944f8ab0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-contexts-job-r1\\request.json",
+      "sha256": "385921ed2672538709257410529db2b626f2b069e7f94df34d283247ce099da2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-contexts-job-r1\\request.json",
+      "sha256": "99bb8e54504b4ec1672e2a2e1d5304b791e0cc34fb86ab8b9f88a91f000e0c10"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-contexts-job-r1\\request.json",
+      "sha256": "61bd39a3446e984a2590c1dc80d563706fad85e5b0a7131d3615b7c67c7aaab2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-contexts-job-r1\\request.json",
+      "sha256": "767975b7203171328fec05fa74c3c583661b3a0ffbfbbf9ff3886c5d467a35de"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-contexts-job-r1\\request.json",
+      "sha256": "48d195b4796b3a4a0162c2ee33d938678759a2f272350ad64f289ec1cdc8c483"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-de-title-tail-context-job-r1\\request.json",
+      "sha256": "f11ad362175bb4160b9590b0f8450f94ab84d789ee4da4e5f59de0a55f44314f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-contexts-job-r1\\request.json",
+      "sha256": "7c61e066f892b52d5495fffb10b7db3aed3fc4577d614f578241fc9c15f5d43d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-contexts-job-r1\\request.json",
+      "sha256": "7a0db5cf35cf2ea934eee18025ad091d40d689b052d59e1b6b11f746b00df467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-contexts-job-r1\\request.json",
+      "sha256": "7d5e74a2ea8784bf9e4d464819e0ed8a2526f6bf67d0375f6ef8b2bc49957098"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-contexts-job-r1\\request.json",
+      "sha256": "0aa5a4c66a83d868667bb17eab0b7f235f282a2aaefe3974a10cf0006ae0ca05"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-contexts-job-r1\\request.json",
+      "sha256": "f55c6a6a7c5e9b907a6e212b7c2dac7dfbdf2723b672a735fe45897a7caaef50"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-teaching-contexts-job-r1\\request.json",
+      "sha256": "06e359bc01b9a5b28071c950cb91ec940fec05ccf8ef37f954d587fd94cfc588"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-method-tail-contexts-job-r1\\request.json",
+      "sha256": "31e59fe07d616bc1c8288f3ef35463d95a0e9e6db38791b5ab0f942a7625dd17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-contexts-job-r1\\request.json",
+      "sha256": "6b8ad21629a39bd6a1c3913c50db7b485bc5038a5ef5c3706204bde183e8f5fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-de-r02-numeric-context-job-r1\\request.json",
+      "sha256": "b09f3ed92e321eae4598e604a25f2517c2fc7c98c3c14cf45b603018344fe8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-three-remaining-contexts-job-r1\\request.json",
+      "sha256": "2a00206582d9c6b7dc3dab4e6a46ca3ecd61fc4a14090d7454c9b4d28fd5bcb2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-two-reading-contexts-job-r1\\request.json",
+      "sha256": "e1ceee9ff39011e87c993c70cec2a0c21ba58eb9b2923c2751a82e616d1c0054"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-five-reading-contexts-job-r1\\request.json",
+      "sha256": "5cc14e79b161c3e8796cba60ebf3c6a738051a3dc55061aab13b65eb4a0be86f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-two-teaching-contexts-job-r1\\request.json",
+      "sha256": "eaab5b52d22a131747239ef64a9b5a749138e7fada7291baa7282c2127536a41"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-whole-job-r1\\request.json",
+      "sha256": "7e798d2d949b039f9aa422bf8d2da3d0940b98c9924e70b4d5adddd2608505ff"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-four-reading-contexts-job-r1\\request.json",
+      "sha256": "8103e4614bb684a8ccbbe7ea274101884c410b3b6ec7823d6e8e6152177abed2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-four-teaching-contexts-job-r1\\request.json",
+      "sha256": "bdeceafaea8a8253cf26bef1c4d0f6081c12fa7ea28bec1a78ea32f6e49791b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-six-lab-contexts-job-r1\\request.json",
+      "sha256": "11797df5b04cf5db1e17f84fd6c1c4fa5e93bcedfc7fc069621a45555b982412"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-three-final-checks-job-r1\\request.json",
+      "sha256": "9779de80a0b46986afe217ebc449506dd3cc671bc09638c4e57606d90b9bd4b7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r2\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r3\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "a6f9bba236cdd1797fb64537c82d77d8fd61fcd5d34e390560ba58713b9fbf29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-s215-two-specific-reviews-job-r1\\request.json",
+      "sha256": "56cffa0893b7963dd886bf2d6644adf577c902a28bee90928b60d8b8378b1dc2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-ar-foundation-context-job-r1\\request.json",
+      "sha256": "b1920b5338fcbf765890bce1f7da0a3da2d6416e5fd8e31869af81b9cc0470ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-two-guided-contexts-job-r1\\request.json",
+      "sha256": "74395d31ce1a0f6308f96a375e4300cd3d01efae1df138b5272dca9d063aec59"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-ar-final-word-context-job-r1\\request.json",
+      "sha256": "8e8b8d6554d9a3b357b3c2c38a50677da8991f8f79807b90d3d1c976f925f3ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-gated-job-r1\\request.json",
+      "sha256": "9116f963721c807bcb22b086ceb9629fdc1f28cf15b9ba4f00359304c234904f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-gated-job-r1\\request.json",
+      "sha256": "c82e9b6ddea157c21a010e37be0ab2d6a2933e80ecd83354263f8b7968812045"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-gated-job-r1\\request.json",
+      "sha256": "c9d616b9dae9d7c01cecc1b48e652b3f2d5683059b9779c7f413921661a7ae65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-fifteen-contexts-job-r1\\request.json",
+      "sha256": "259696dc2de52d4d629e667f47c0d2247836b24807d4c24df99e00d677008de8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-reading-job-r1\\request.json",
+      "sha256": "b3063d5cf960b6dac5aae290314893823f11f0ed57ca34bdbada7de39275a649"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\two-whole-candidate-reviews-job-r1\\request.json",
+      "sha256": "4d39adaa7f9184c2f18dd9aa945447056d51bef65185e1088f273f99a1cfa13a"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-08",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "f0f9bfdc55c4ed6fb506e718805a1713d437f6c59e5d130aa95b336ff8702caa",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "desert-analogy",
+      "title": "Strandsand-Vergleich vorsichtig nutzen",
+      "situation": "Jemand sagt: „Jeder Wüstenboden ist heiß, reiner Sand, unter 1 % Humus und salzig.“",
+      "reasoning": [
+        "Das Bild eröffnet nur die Frage nach Wasser und Nährstoffen.",
+        "Aridisol-Klassifikation verlangt Feuchteregime und Profil; kalte Aridisole gibt es.",
+        "Textur, organische Substanz und Salze am Ort messen."
+      ],
+      "takeaway": "Pauschalbehauptung verwerfen; Profil, Textur, OM und EC untersuchen."
+    },
+    {
+      "id": "plot-report",
+      "title": "Den Testparzellenbericht lesen",
+      "situation": "Die 10 m × 10 m große sandig-lehmige Fläche meldet OM 0,8 %, EC 3,5 dS/m und „leicht salziges“ Brunnenwasser ohne Methodenangaben.",
+      "reasoning": [
+        "Fläche 100 m²; OM 0,8 % ist standortspezifisch gemessen.",
+        "Boden-EC-Aufbereitung, Tiefe/Datum sowie Brunnen-ECw und Ionen erfragen.",
+        "Nur nach Nachweis ECe bei 25 °C ist die ECe-Auslegung von 2–4 dS/m nutzbar; Kulturen reagieren unterschiedlich."
+      ],
+      "takeaway": "Salzklasse und Kulturwahl vorläufig lassen; alle Zahlen/Einheiten ohne Methodenerfindung erhalten."
+    },
+    {
+      "id": "wet-but-stressed",
+      "title": "Wasser da, aber schwer nutzbar",
+      "situation": "Eine Wurzelraumprobe ist feucht, die Kultur leidet, und ein zuverlässiger Test zeigt erhöhte Salze.",
+      "reasoning": [
+        "Echte Trockenheit weniger wahrscheinlich, falls Wasser verfügbar ist; osmotischer Salzstress bleibt möglich.",
+        "Ionenmuster für Na/Ca/K-Ungleichgewicht oder Chloridschaden getrennt prüfen.",
+        "Bewässerungswasser und Abfluss analysieren, bevor mehr Wasser oder Auswaschung empfohlen werden."
+      ],
+      "takeaway": "Osmotische Aufnahmeschwierigkeit von leerem Speicher und direkter Ionentoxizität trennen."
+    },
+    {
+      "id": "hard-layer",
+      "title": "Was beweist eine harte Schicht?",
+      "situation": "Ein Spaten stößt unter einer Trockenfläche auf eine harte Schicht.",
+      "reasoning": [
+        "Karbonatverfestigter Kaliche ist eine Möglichkeit und kann Wurzeln/Wasser hemmen.",
+        "Verdichtung, gipszementierte oder andere Horizonte können ebenso hart sein.",
+        "Profil und Zusammensetzung vor Benennung oder Aufbrechen prüfen."
+      ],
+      "takeaway": "Hindernis dokumentieren und Herkunft prüfen; Widerstand allein beweist Kaliche nicht."
+    }
+  ]
+}

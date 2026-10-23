@@ -1,0 +1,336 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-08-en.json",
+    "sha256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+    "bytes": 32411
+  },
+  "units": [
+    {
+      "id": "S3-08-en-E01-r1",
+      "unitId": "S3-08-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Use the beach-sand analogy carefully",
+          "sha256": "eefa5f6d3fae4c32200f107a03d781fbab5accabe41cafa71282777e3a44adac"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'",
+          "sha256": "210cadea10f1a4af456ea734c3758dd5abf303be645ea67a7b68f452202e51e4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The analogy only starts a question about water and nutrient retention.",
+          "sha256": "347458b93280d84693636c5b323b4a3e513381593cb02533e506068675b56374"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Aridisol classification depends on moisture regime and profile features; cold Aridisols exist.",
+          "sha256": "9cbad5b6edffc3ada649b043c36e65a224fd263f5e0ae856162d2002a049e4a4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Texture, organic matter and salts must be measured for the site.",
+          "sha256": "dfc742604b6d260d0819f64c37c3dc73b55a8a044f15f626d99e04758ea85f00"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Reject the universal claim; propose a texture/profile/OM/EC investigation.",
+          "sha256": "90b030a0a87df305e2b91ac05b7dcc76124143bd8b13a8db0a283d39d422e27c"
+        }
+      ],
+      "scientificMeaning": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "displayText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "captionText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+      "spokenText": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under one percent organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture, profile, organic matter, E C investigation.",
+      "spokenTextSHA256": "d9cb3e353ee3a411a4f0bb878b080252174755c4afdc8d671e727d2e054cb7ec",
+      "spokenTextSha256": "d9cb3e353ee3a411a4f0bb878b080252174755c4afdc8d671e727d2e054cb7ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under 1% organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture/profile/OM/EC investigation.",
+          "spoken": "Use the beach-sand analogy carefully\n\nA student says: 'All desert soils are hot, pure sand, contain under one percent organic matter and are salty.'\n\nThe analogy only starts a question about water and nutrient retention.\n\nAridisol classification depends on moisture regime and profile features; cold Aridisols exist.\n\nTexture, organic matter and salts must be measured for the site.\n\nReject the universal claim; propose a texture, profile, organic matter, E C investigation.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6f475a4bf2e7f6495f585c5dbe1e01837614d0bb1aaf6ec9c5e6815a1d5ea29a",
+      "requestFingerprintSha256": "6f475a4bf2e7f6495f585c5dbe1e01837614d0bb1aaf6ec9c5e6815a1d5ea29a",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-08-en-E02-r1",
+      "unitId": "S3-08-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Read the pilot-plot report",
+          "sha256": "9f8747814b7b86854035d9967c12aa77d584a6558e449aaeeeefeccf2bf5caf6"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.",
+          "sha256": "14b744c949c5827089bbeda7d2944a954c6cf0d1438b7b324b3873e5fe33f14f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "The area is 100 m²; 0.8% OM is a measured site value.",
+          "sha256": "46f30048c21973a1c527aeca7ebe92381f01251ac87a167376e41b046df0e15e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Request soil EC preparation, sampling depth/date and the borewell ECw plus ions.",
+          "sha256": "0e13ad791370fc741a2b58ac8f494bd072e94b720932a3c31faed65ef911ddd5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Only if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.",
+          "sha256": "8a0c014db444921dab989bc11956f7f9fb9fea262c8a6ba635a553917b3cc663"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Mark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "sha256": "a8997e291fc2e5112e8e8760815e10a2e9447ed80789822ca4ecc42816d8e138"
+        }
+      ],
+      "scientificMeaning": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "displayText": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "captionText": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "spokenText": "Read the pilot-plot report\n\nThe ten metres multiplied by ten metres sandy-loam plot reports organic matter zero point eight percent, E C three point five decisiemens per metre and 'slightly saline' borewell water with no methods attached.\n\nThe area is one hundred square metres; zero point eight percent organic matter is a measured site value.\n\nRequest soil E C preparation, sampling depth, date and the borewell E C w plus ions.\n\nOnly if the soil value is verified as E C e at twenty-five degrees Celsius can an E C e-specific two to four decisiemens per metre interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+      "spokenTextSHA256": "9c3d3da66015ab1435d9a13e72500d70a0bab0e872acc65ab931ee70224583f6",
+      "spokenTextSha256": "9c3d3da66015ab1435d9a13e72500d70a0bab0e872acc65ab931ee70224583f6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Read the pilot-plot report\n\nThe 10 m × 10 m sandy-loam plot reports organic matter 0.8%, EC 3.5 dS/m and 'slightly saline' borewell water with no methods attached.\n\nThe area is 100 m²; 0.8% OM is a measured site value.\n\nRequest soil EC preparation, sampling depth/date and the borewell ECw plus ions.\n\nOnly if the soil value is verified as ECe at 25°C can an ECe-specific 2–4 dS/m interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "spoken": "Read the pilot-plot report\n\nThe ten metres multiplied by ten metres sandy-loam plot reports organic matter zero point eight percent, E C three point five decisiemens per metre and 'slightly saline' borewell water with no methods attached.\n\nThe area is one hundred square metres; zero point eight percent organic matter is a measured site value.\n\nRequest soil E C preparation, sampling depth, date and the borewell E C w plus ions.\n\nOnly if the soil value is verified as E C e at twenty-five degrees Celsius can an E C e-specific two to four decisiemens per metre interpretation be used; crop sensitivity still varies.\n\nMark salinity class and crop choice provisional; preserve all numbers and units without guessing the method.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fe6c551d3a8c54a8f1b0a4103c5d1db5dc2d75815c89922d315104c6ce27aa27",
+      "requestFingerprintSha256": "fe6c551d3a8c54a8f1b0a4103c5d1db5dc2d75815c89922d315104c6ce27aa27",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-08-en-E03-r1",
+      "unitId": "S3-08-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Water can be present but difficult to use",
+          "sha256": "2d901333fd63f58a8d96a91f712b55d242b613fb3e02807f5e1949ad05cbdc7f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.",
+          "sha256": "5b0f9a1732bcfc049ce4ebd0265937ab852a9ec9d0075fc1442e87177c2e1d5f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Physical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.",
+          "sha256": "1bd035732d09c0e2c6b111491a8c81ce6893c14f3718aab401ce8647e6d630f9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Check the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.",
+          "sha256": "2c96d0ddbe1a89801d2fdefaaae854dea34e215f7a0dfd837c2e34b8ac7c473e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Analyse irrigation water and drainage before adding more water or attempting leaching.",
+          "sha256": "fd0e6bd10776f8d059bddc58c246226ce67b5b86bbb11f900682fe0840834cf8"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Distinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "sha256": "92553e53007f76801faa657d8c51a024a93a17b79f702ae2636c9c9e661cca64"
+        }
+      ],
+      "scientificMeaning": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "displayText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "captionText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "spokenText": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible sodium, calcium, K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+      "spokenTextSHA256": "2220dc9253ccfdc1f10851bc90226692c7968c9c0c3faf227e5a635cde0bb589",
+      "spokenTextSha256": "2220dc9253ccfdc1f10851bc90226692c7968c9c0c3faf227e5a635cde0bb589",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible Na/Ca/K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "spoken": "Water can be present but difficult to use\n\nA root-zone sample is moist, yet a crop looks stressed and a reliable soil test confirms elevated salts.\n\nPhysical drought is less likely if water is truly available, but salt-induced osmotic stress remains plausible.\n\nCheck the specific ion pattern for possible sodium, calcium, K imbalance or chloride injury separately.\n\nAnalyse irrigation water and drainage before adding more water or attempting leaching.\n\nDistinguish osmotic uptake difficulty from an empty reservoir and from direct ion toxicity.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3e2afd65adc0ed84baf7a3b775984baa2610477d06d74f5b5476d6a608a09b98",
+      "requestFingerprintSha256": "3e2afd65adc0ed84baf7a3b775984baa2610477d06d74f5b5476d6a608a09b98",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-08-en-E04-r1",
+      "unitId": "S3-08-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "What does a hard layer prove?",
+          "sha256": "b68f5e68e6a369897c12c7f7b1422543fe1fe315754008588166f60ed1cce418"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A spade stops at a hard layer below a dryland plot.",
+          "sha256": "a9e634a679017923d5ad02c2b61f0eda17a847ccc076d7e46dad4a79db9e3e9d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.",
+          "sha256": "a0642ad48b7ca130f753bba040053e045b3f358aa84d8cc9ec55a57bfd449c8d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Compaction, gypsum-cemented or other horizons may also be hard.",
+          "sha256": "178f206ffc8320ce903d7defe42a6991f11911324d48fba6a2612f24ae83e465"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Examine profile and composition before naming or breaking the layer.",
+          "sha256": "7e8f3d13faa4ca5fa65600a482a24364cffe1bc65b4ddb58975bdbc4ebe8b5ce"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Record the obstruction and test its origin; do not label it caliche from resistance alone.",
+          "sha256": "ec36a15c3cc2155b80922dfd2e65b4d3425e698f023d27d98f71dc943f7c246c"
+        }
+      ],
+      "scientificMeaning": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "displayText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "captionText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "spokenText": "What does a hard layer prove?\n\nA spade stops at a hard layer below a dryland plot.\n\nA carbonate-cemented caliche layer is one possible cause and can impede roots or drainage.\n\nCompaction, gypsum-cemented or other horizons may also be hard.\n\nExamine profile and composition before naming or breaking the layer.\n\nRecord the obstruction and test its origin; do not label it caliche from resistance alone.",
+      "spokenTextSHA256": "8e07342f91d1b47a792a1be12a50a32f71d07d0d8b1b19b19957344e356339d6",
+      "spokenTextSha256": "8e07342f91d1b47a792a1be12a50a32f71d07d0d8b1b19b19957344e356339d6",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2155e73a4ae4856ff40aefdfff4e0e4d05b1fe3a6e4aa04967810487b349c085",
+      "requestFingerprintSha256": "2155e73a4ae4856ff40aefdfff4e0e4d05b1fe3a6e4aa04967810487b349c085",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

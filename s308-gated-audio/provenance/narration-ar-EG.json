@@ -1,0 +1,343 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-08-ar-EG.json",
+    "sha256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+    "bytes": 43942
+  },
+  "units": [
+    {
+      "id": "S3-08-ar-EG-E01-r1",
+      "unitId": "S3-08-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "استخدم مثال رمل الشاطئ بحذر",
+          "sha256": "affdaf0d4992ba626e376c92e3190521d4d549418abee19ab8e839435e9ae697"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "طالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».",
+          "sha256": "089f9fd6af470cb333b317219b3f732b79978e31235938153efe782a09a65c59"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "المثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.",
+          "sha256": "7848b0685116efe2dfc44fa5030c088d8b92cb04c32cf08e5fa7eefb7dc7a9c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "رتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.",
+          "sha256": "b16f9636f5d5f79af584febb3557912dc00fdd4575bae60ba3a741bd72e24de9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "القوام والمادة العضوية والأملاح لازم تتقاس في الموقع.",
+          "sha256": "2d09dd23249de3d8e0636ffeb509dc21e0e08db3a733bcc804302d75dd57ec69"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "ارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+          "sha256": "ef90d901f3968dd7d7c6e76a44c34c6ff1c8ad7c4ab35fb8c195a55007ac63da"
+        }
+      ],
+      "scientificMeaning": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "displayText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "captionText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+      "spokenText": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من واحد في المية ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة أريديسولز تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع والمادة العضوية وإي سي.",
+      "spokenTextSHA256": "7f7550d2ef63ee28bf17b9adb9c9bd311706db90b9a600d1367d4707db1b354a",
+      "spokenTextSha256": "7f7550d2ef63ee28bf17b9adb9c9bd311706db90b9a600d1367d4707db1b354a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من ١٪ ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة Aridisol تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع وOM وEC.",
+          "spoken": "استخدم مثال رمل الشاطئ بحذر\n\nطالب يقول: «كل أرض صحراوية حارة ورمل خالص ومادتها العضوية أقل من واحد في المية ومالحة».\n\nالمثال يفتح سؤال الاحتفاظ بالماء والعناصر فقط.\n\nرتبة أريديسولز تتحدد بنظام الرطوبة وقطاع التربة؛ وفيه أنواع باردة.\n\nالقوام والمادة العضوية والأملاح لازم تتقاس في الموقع.\n\nارفض التعميم واقترح فحص القوام والقطاع والمادة العضوية وإي سي.",
+          "occurrences": 1,
+          "purpose": "Expand Arabic conjunct-acronym and German grammatical numeral; exact scientific meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4b950032fe4abf059c949978902e39b1e8017e735c71327b46a8ffe3659105d6",
+      "requestFingerprintSha256": "4b950032fe4abf059c949978902e39b1e8017e735c71327b46a8ffe3659105d6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "desert-analogy",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-08-ar-EG-E02-r1",
+      "unitId": "S3-08-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "اقرأ تقرير قطعة التجربة",
+          "sha256": "2944e82b8e87d7f17c236f60b3cf34a9513b7a939632f403b98accb1cb714635"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "قطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.",
+          "sha256": "cf1cf3903bd41bb2775d894d7bd1928a44e958a6230700be131f4cca574c5359"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "المساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.",
+          "sha256": "5025274f06ed1b027799c0e092db6c164db9111067bd4deb0cfe63ed63d83e9a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.",
+          "sha256": "866e954e8f6ed1706f167377c4dfd20132a8d8e2754f48f3b2e1e268257cdf65"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "لو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.",
+          "sha256": "0d45cc8924556713b59f850333b3d711792f02e362171ae7fe1c00f83a852d0e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "خلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "sha256": "d6e575ff20a532189bdec47a2a13b36509e4ef5d5d9d62b6b87af2f7b8fa443a"
+        }
+      ],
+      "scientificMeaning": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "displayText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "captionText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "spokenText": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي عشرة متر مضروب في عشرة متر، المادة العضوية صفر فاصلة تمانية في المية وإي سي‏ تلاتة فاصلة خمسة ديسي سيمنز لكل متر وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة مية متر مربع؛ صفر فاصلة تمانية في المية قيمة موقع مقاسة.\n\nاطلب طريقة إي سي للتربة وعمق، تاريخ العينة وإي سي دبليو للبئر والأيونات.\n\nلو ثبت فقط أنه إي سي إي عند خمسة وعشرين درجة مئوية ينفع تفسير جدول اتنين إلى أربعة ديسي سيمنز لكل متر الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+      "spokenTextSHA256": "5af80c6b2f1619518f08cfedf7596052ca7d9d47d816c3023e7b7677e485e298",
+      "spokenTextSha256": "5af80c6b2f1619518f08cfedf7596052ca7d9d47d816c3023e7b7677e485e298",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي ١٠ م × ١٠ م، المادة العضوية ٠٫٨٪ وEC‏ ٣٫٥ dS/m وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة ١٠٠ م²؛ ٠٫٨٪ قيمة موقع مقاسة.\n\nاطلب طريقة EC للتربة وعمق/تاريخ العينة وECw للبئر والأيونات.\n\nلو ثبت فقط أنه ECe عند ٢٥°م ينفع تفسير جدول ٢–٤ dS/m الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "spoken": "اقرأ تقرير قطعة التجربة\n\nقطعة لوم رملي عشرة متر مضروب في عشرة متر، المادة العضوية صفر فاصلة تمانية في المية وإي سي‏ تلاتة فاصلة خمسة ديسي سيمنز لكل متر وماء بئر «قليل الملوحة» من غير ذكر طرق القياس.\n\nالمساحة مية متر مربع؛ صفر فاصلة تمانية في المية قيمة موقع مقاسة.\n\nاطلب طريقة إي سي للتربة وعمق، تاريخ العينة وإي سي دبليو للبئر والأيونات.\n\nلو ثبت فقط أنه إي سي إي عند خمسة وعشرين درجة مئوية ينفع تفسير جدول اتنين إلى أربعة ديسي سيمنز لكل متر الخاص به؛ حساسية المحصول تظل مختلفة.\n\nخلي تصنيف الملوحة واختيار المحصول مؤقتين؛ احفظ كل رقم ووحدة من غير تخمين الطريقة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b114ca2a6eeff42aae9f6b47795632dc788a54c1ed42918323c2c6bf4c3b9867",
+      "requestFingerprintSha256": "b114ca2a6eeff42aae9f6b47795632dc788a54c1ed42918323c2c6bf4c3b9867",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "plot-report",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-08-ar-EG-E03-r1",
+      "unitId": "S3-08-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "الماء موجود لكن صعب الامتصاص",
+          "sha256": "90d68940e0eebf3de1cacf58c8b6890e5f6b63a4800b4d8b04182b729dbe4458"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "عينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.",
+          "sha256": "171531fcd4fa8ad0a6ec55d53825c564d78c230dab0a80ce3fc2b12bf03544ee"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "الجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.",
+          "sha256": "c8b2e829a9e168b1a137e2e2504f7a2ebc555b2eb904413fab4ddeda4aa6610c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "افحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.",
+          "sha256": "1d01215a823269636f5853cccf88032e4eaccf55ec33216792ac81a73194c5d4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "حلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.",
+          "sha256": "d4522c10fc7ab5a0552e40799a927f3071e57eaf2f7ec1ca0fc1a17a6dd875a0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "فرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "sha256": "4769b6d23b528d49ad399547f2474d4513c5af217c4d6c0cae7a59865d737c23"
+        }
+      ],
+      "scientificMeaning": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "displayText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "captionText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "spokenText": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمال لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض الصوديوم، الكالسيوم، البوتاسيوم أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+      "spokenTextSHA256": "53a504b74ff91062f15bbc6edb07905012b95d12c81e8a77013389e26064a9cb",
+      "spokenTextSha256": "53a504b74ff91062f15bbc6edb07905012b95d12c81e8a77013389e26064a9cb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمالًا لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض Na/Ca/K أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "spoken": "الماء موجود لكن صعب الامتصاص\n\nعينة تربة من منطقة الجذور رطبة، لكن المحصول باين عليه إجهاد وتحليل تربة موثوق بيأكد زيادة الأملاح.\n\nالجفاف الفعلي أقل احتمال لو الماء متاح فعلًا، لكن الإجهاد الأسموزي من الأملاح ممكن.\n\nافحص نمط الأيونات لاحتمال تعارض الصوديوم، الكالسيوم، البوتاسيوم أو سمّية الكلوريد كل على حدة.\n\nحلل ماء الري والصرف قبل زيادة الماء أو محاولة الغسيل.\n\nفرّق بين صعوبة الامتصاص الأسموزية وخزان ماء فارغ وبين سمية أيون مباشرة.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "afba4dc8dabeb6cf4fcb58280612001852415f1f0199011c94b2684bff147702",
+      "requestFingerprintSha256": "afba4dc8dabeb6cf4fcb58280612001852415f1f0199011c94b2684bff147702",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wet-but-stressed",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-08-ar-EG-E04-r1",
+      "unitId": "S3-08-ar-EG-E04-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1d5a01f72bc03d827550fa82b7b3bf2825f63080727f34cea2b92f04680810be",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "إيه اللي تثبته طبقة صلبة؟",
+          "sha256": "6d7244703e140501603e1abca5533d3f1cbfaa114c021df960dbfd3d3c83501e"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "الكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.",
+          "sha256": "0c1cb39a11d401e5925733afd589912f646523bf188fe2c89742f91db7cd618b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "طبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.",
+          "sha256": "2eb586c678331f39d4d8b2c8ebb03556772705dbc02cfb5cc31eb300215ba896"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "الدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.",
+          "sha256": "3a3c214585b881d1735addbc8ca5841f1a2865f2d80df1e529b622a96a0065cf"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "افحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.",
+          "sha256": "b6c9d6ad8a2f45ffeeff9ae5fe6d281c8dac68c6ebb79bc4cec13a5f66972795"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "سجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "sha256": "0422e635a8c8c1a970dbdeb58a1b54727c3c93c9fab5fcd713b962a1a9867abf"
+        }
+      ],
+      "scientificMeaning": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "displayText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "captionText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "spokenText": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وممكن تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق تانية ممكن تكون صلبة برضه.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+      "spokenTextSHA256": "dc84058b69dbab60092d7ba49b48edb36ee7c0556989ed296de9630cb1c642f0",
+      "spokenTextSha256": "dc84058b69dbab60092d7ba49b48edb36ee7c0556989ed296de9630cb1c642f0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وقد تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق أخرى قد تكون صلبة أيضًا.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "spoken": "إيه اللي تثبته طبقة صلبة؟\n\nالكوريك يقف عند طبقة صلبة أسفل قطعة أرض جافة.\n\nطبقة كربونات متماسكة كاليشي أحد الاحتمالات وممكن تعوق الجذور أو الصرف.\n\nالدمك أو التماسك بالجبس أو آفاق تانية ممكن تكون صلبة برضه.\n\nافحص القطاع والتركيب قبل ما تسمي الطبقة أو تكسرها.\n\nسجّل العائق وافحص أصله؛ المقاومة وحدها ما تثبتش إنه كاليشي.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "458c9384c6e42ecf6903bfe4565b9b95b105db934230cbb95f2b123cf2c227fe",
+      "requestFingerprintSha256": "458c9384c6e42ecf6903bfe4565b9b95b105db934230cbb95f2b123cf2c227fe",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "hard-layer",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}
