@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "scope": "S202_DE_R04_ONE_EXPLICIT_ADDITIONAL_ATTEMPT_AFTER_HTTP503",
+  "stepId": "S2-02",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s202-de-r04-explicit-attempt2-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_DE_FULL_SOURCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-02-de-R04-explicit-attempt2-r1",
+      "unitId": "S2-02-de-R04-explicit-attempt2-r1",
+      "locale": "de",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "74bf0d4fe3c9392044b7218b74383045ae9221cf16094f729087549cb4ff58f0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Wenn Wurzeln und Wurzelhaare wachsen, berühren sie neue Bodenflächen und Wasserfilme, aus denen Nährstoffe geliefert werden können. Das ist Wurzelinterzeption. Der Vergleich mit einem Gang zum Kühlschrank beschreibt die bewegte Wurzel, bedeutet aber nicht, dass sie Bodenpartikel frisst. Nährstoffionen müssen an der Oberfläche verfügbar werden und auf geeignete Weise in die Wurzel gelangen.",
+          "sha256": "f9cf172339c4f119e934cad622696cc4802b3b65a68b07c7e95042866645b1fd"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Ein gesundes, ausgedehntes Wurzelsystem erkundet mehr Boden. Verdichtung, Wurzelschaden oder Sauerstoffmangel können das einschränken. Interzeption ist einer der drei Wege und leistet bei vielen Elementen meist einen kleineren unmittelbaren Beitrag als Massenfluss oder Diffusion; ihre Bedeutung variiert nach Element und Standort.",
+          "sha256": "1065673fe8f31902abf8355ecefda761164f6c5fd4df8175b37e142da6896ff6"
+        }
+      ],
+      "scientificMeaning": "Wenn Wurzeln und Wurzelhaare wachsen, berühren sie neue Bodenflächen und Wasserfilme, aus denen Nährstoffe geliefert werden können. Das ist Wurzelinterzeption. Der Vergleich mit einem Gang zum Kühlschrank beschreibt die bewegte Wurzel, bedeutet aber nicht, dass sie Bodenpartikel frisst. Nährstoffionen müssen an der Oberfläche verfügbar werden und auf geeignete Weise in die Wurzel gelangen.\n\nEin gesundes, ausgedehntes Wurzelsystem erkundet mehr Boden. Verdichtung, Wurzelschaden oder Sauerstoffmangel können das einschränken. Interzeption ist einer der drei Wege und leistet bei vielen Elementen meist einen kleineren unmittelbaren Beitrag als Massenfluss oder Diffusion; ihre Bedeutung variiert nach Element und Standort.",
+      "displayText": "Wenn Wurzeln und Wurzelhaare wachsen, berühren sie neue Bodenflächen und Wasserfilme, aus denen Nährstoffe geliefert werden können. Das ist Wurzelinterzeption. Der Vergleich mit einem Gang zum Kühlschrank beschreibt die bewegte Wurzel, bedeutet aber nicht, dass sie Bodenpartikel frisst. Nährstoffionen müssen an der Oberfläche verfügbar werden und auf geeignete Weise in die Wurzel gelangen.\n\nEin gesundes, ausgedehntes Wurzelsystem erkundet mehr Boden. Verdichtung, Wurzelschaden oder Sauerstoffmangel können das einschränken. Interzeption ist einer der drei Wege und leistet bei vielen Elementen meist einen kleineren unmittelbaren Beitrag als Massenfluss oder Diffusion; ihre Bedeutung variiert nach Element und Standort.",
+      "captionText": "Wenn Wurzeln und Wurzelhaare wachsen, berühren sie neue Bodenflächen und Wasserfilme, aus denen Nährstoffe geliefert werden können. Das ist Wurzelinterzeption. Der Vergleich mit einem Gang zum Kühlschrank beschreibt die bewegte Wurzel, bedeutet aber nicht, dass sie Bodenpartikel frisst. Nährstoffionen müssen an der Oberfläche verfügbar werden und auf geeignete Weise in die Wurzel gelangen.\n\nEin gesundes, ausgedehntes Wurzelsystem erkundet mehr Boden. Verdichtung, Wurzelschaden oder Sauerstoffmangel können das einschränken. Interzeption ist einer der drei Wege und leistet bei vielen Elementen meist einen kleineren unmittelbaren Beitrag als Massenfluss oder Diffusion; ihre Bedeutung variiert nach Element und Standort.",
+      "spokenText": "Wenn Wurzeln und Wurzelhaare wachsen, berühren sie neue Bodenflächen und Wasserfilme, aus denen Nährstoffe geliefert werden können. Das ist Wurzelinterzeption. Der Vergleich mit einem Gang zum Kühlschrank beschreibt die bewegte Wurzel, bedeutet aber nicht, dass sie Bodenpartikel frisst. Nährstoffionen müssen an der Oberfläche verfügbar werden und auf geeignete Weise in die Wurzel gelangen.\n\nEin gesundes, ausgedehntes Wurzelsystem erkundet mehr Boden. Verdichtung, Wurzelschaden oder Sauerstoffmangel können das einschränken. Interzeption ist einer der drei Wege und leistet bei vielen Elementen meist einen kleineren unmittelbaren Beitrag als Massenfluss oder Diffusion; ihre Bedeutung variiert nach Element und Standort.",
+      "spokenTextSHA256": "3b860480cd9bd8f0974a9a435e93162f69530b6bfe9eb1db1463a677a715790a",
+      "spokenTextSha256": "3b860480cd9bd8f0974a9a435e93162f69530b6bfe9eb1db1463a677a715790a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "291cc6b632a322a046665cff0f09049d6d7e599f0977d325ed6a02d73b21cc1e",
+      "requestFingerprintSha256": "291cc6b632a322a046665cff0f09049d6d7e599f0977d325ed6a02d73b21cc1e",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "9363bfe3b082bf8bafaff7a5fc736df16b1360f5fb383bff44bc1cf1c4efffea",
+      "canonicalSourceUnitId": "S2-02-de-R04-r1",
+      "explicitAdditionalAttemptAfterConfirmedHTTP503": true,
+      "priorChargedFingerprintCalls": 1,
+      "cumulativeFingerprintTTSCeiling": 2
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-02-de-R04-explicit-attempt2-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
