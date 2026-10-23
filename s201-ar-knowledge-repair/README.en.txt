@@ -1,0 +1,1 @@
+One root-approved 23-word ar-EG complete source-equivalent sentence for S2-01-ar-EG-knowledge-completion-r1; same original Charon/current model/delivery,1TTS1blind1ASR2GET0retry. Exact source/display and all outside original PCM preserved; quiet-cut/source/prefix/suffix evidence in pinned proposal. No automatic join/postjoin; root selects actual candidate.
