@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "S214_DE_FIRST_R2",
+  "stepId": "S2-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s214-de-first-r2-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-14-de-supplied-results-online-evidence-repair-r2",
+      "unitId": "S2-14-de-supplied-results-online-evidence-repair-r2",
+      "locale": "de",
+      "semanticGroup": "s214-de-first-r2-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reportPractice/ui/facilitation",
+          "text": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+          "sha256": "b0c1793ff12559b9f006208fdebd5cae3ed575732ee1f56dbd7bf5d4dac67cd5"
+        }
+      ],
+      "scientificMeaning": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "displayText": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "captionText": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+      "spokenText": "Die Fachkraft stellt die Ergebnisse für organische Substanz, Phosphor und Kalium nach den physikalischen Messungen bereit. Ein Klick im Onlinekurs ist kein Nachweis für diese Ausgabe.",
+      "spokenTextSHA256": "abbec64812748926e344813fe1d2073b75588404b4ee988cbead45b45dfbacfe",
+      "spokenTextSha256": "abbec64812748926e344813fe1d2073b75588404b4ee988cbead45b45dfbacfe",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+          "spoken": "Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht.",
+          "spoken": "Die Fachkraft stellt die Ergebnisse für organische Substanz, Phosphor und Kalium nach den physikalischen Messungen bereit. Ein Klick im Onlinekurs ist kein Nachweis für diese Ausgabe.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "0ba711dc331b5e6be9ab76012d0cbc0a00cbc8a4e3f973cad8b4f6bfaa3f2128",
+      "requestFingerprintSha256": "0ba711dc331b5e6be9ab76012d0cbc0a00cbc8a4e3f973cad8b4f6bfaa3f2128",
+      "sourcePlanSha256": "ec24e7ca39fcf4f603a9a2b222e6665286a2d5f51ff579fa1da1fbb9963f4a79",
+      "exactSentenceBefore": "Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reportPractice/ui/facilitation",
+        "original": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+        "effective": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reportPractice/ui/facilitation",
+            "text": "Aktivplan: 95 Minuten = 5 + 35 + 10 + 45. Feld 3: 40 Minuten plus 5 Austausch, darin vorgeschlagene aktive Stufen 20 + 20. Trocknen, vollständiges Absetzen und Labor brauchen zusätzliche Zeit. Die Fachkraft gibt OM/P/K nach den physikalischen Messungen aus; ein Online-Klick bestätigt das nicht. Einzelbeobachtungen und Unterschriften getrennt. Für die Gruppenarbeit bereitet die Fachkraft je Gruppe einen Gerätesatz und eine gekennzeichnete, bereits getrocknete und gesiebte Probe vor, soweit die tatsächliche Ausstattung und das freigegebene sichere Verfahren dies erlauben. Leere Berichtsvorlagen werden vorbereitet; das OM/P/K-Datenblatt bleibt bis zur vorgesehenen Ausgabe getrennt. Zur Unterstützung werden die passenden Zeilen der Interpretationstabelle hervorgehoben, ohne unklassifizierte Intervalle auszufüllen oder einen niedrigen Gehalt an organischer Substanz vorauszusetzen.",
+            "sha256": "b0c1793ff12559b9f006208fdebd5cae3ed575732ee1f56dbd7bf5d4dac67cd5"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-de-facilitation-first-clarification-root-r2.json",
+        "rootSelectedAuthoritySHA256": "ab38be592d9c2d6325e6a4d67722ab0a2476ee27ddc77d71f12c3d4a60c00a7b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-14-de-supplied-results-online-evidence-repair-r2"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
