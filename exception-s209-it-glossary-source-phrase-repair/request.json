@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXCEPTION_S209_IT_GLOSSARY_SOURCE_PHRASE_REPAIR",
+  "stepId": "S2-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-exception-s209-it-glossary-source-phrase-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-09-it-glossary-source-phrase-repair-r1",
+      "unitId": "S2-09-it-glossary-source-phrase-repair-r1",
+      "locale": "it",
+      "semanticGroup": "exception-s209-it-glossary-source-phrase-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ed00629b058aa13208eba6e8de45ae0b6e70e8cce966e9a9edb2029dae8f5c6d",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+          "sha256": "e11a66432b807799c6d5aa8c4beced2df20d7ba34d933d1559e3c7677197153d"
+        }
+      ],
+      "scientificMeaning": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+      "displayText": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+      "captionText": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+      "spokenText": "Verifica se sono milligrammi per chilogrammo di suolo, milligrammi per litro di soluzione o un’altra base dichiarata.",
+      "spokenTextSHA256": "dbec9db4336fbfd196eb7c3f9d1e2016374bc8b438ffc83ee7c65e2e22ba6ba9",
+      "spokenTextSha256": "dbec9db4336fbfd196eb7c3f9d1e2016374bc8b438ffc83ee7c65e2e22ba6ba9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+          "spoken": "chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+          "spoken": "Verifica se sono milligrammi per chilogrammo di suolo, milligrammi per litro di soluzione o un’altra base dichiarata.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "b1bf17335646517d36b3a5245a0ec5580116b7cc8dc124ccc48b8d54fb8bad5e",
+      "requestFingerprintSha256": "b1bf17335646517d36b3a5245a0ec5580116b7cc8dc124ccc48b8d54fb8bad5e",
+      "sourcePlanSha256": "286a7aac86885e8fe94c6fa87af79ef0507c4e9961257330c7a7d7997fd56bc2",
+      "exactSentenceBefore": "chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/glossary/3/1",
+        "original": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+        "effective": "Parti per milione sulla base di massa o volume del rapporto; chiedi se è mg/kg suolo, mg/L soluzione o altra base dichiarata.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-09-it-glossary-source-phrase-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
