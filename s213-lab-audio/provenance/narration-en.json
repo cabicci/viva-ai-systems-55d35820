@@ -1,0 +1,437 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-en.json",
+    "sha256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+    "bytes": 40361
+  },
+  "units": [
+    {
+      "id": "S2-13-en-schematic-structure-guidance-r1",
+      "unitId": "S2-13-en-schematic-structure-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "schematic-structure-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/modelHelp",
+          "text": "Illustrative particles, pores and paths are enlarged and schematic. A/B/C are supplied models, not your samples. No rate, water volume, CEC or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.",
+          "sha256": "95d7a134e38c5e8a1bf20fc0e9a982f264e63688786b71289970d0be0532145d"
+        },
+        {
+          "pointer": "/managementPractice/ui/compacted",
+          "text": "Compare a compacted structure",
+          "sha256": "d3561b21324b586c31ce208de502f28d79b90939cfdb44acad0d07dd3e13ba89"
+        },
+        {
+          "pointer": "/managementPractice/ui/structure/0",
+          "text": "Illustrated open structure",
+          "sha256": "5d7f65814f7d1e652512d50ac263b7e86f00e7a296efba6e213985d1fdb40feb"
+        },
+        {
+          "pointer": "/managementPractice/ui/structure/1",
+          "text": "Illustrated compacted structure",
+          "sha256": "985646a3e52715f6e1269045995a4dd8edf98794528d6a1ca94298c46edc0217"
+        }
+      ],
+      "scientificMeaning": "Illustrative particles, pores and paths are enlarged and schematic. A/B/C are supplied models, not your samples. No rate, water volume, CEC or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+      "displayText": "Illustrative particles, pores and paths are enlarged and schematic. A/B/C are supplied models, not your samples. No rate, water volume, CEC or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+      "captionText": "Illustrative particles, pores and paths are enlarged and schematic. A/B/C are supplied models, not your samples. No rate, water volume, CEC or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+      "spokenText": "Illustrative particles, pores and paths are enlarged and schematic. A, B, and C are supplied models, not your samples. No rate, water volume, C E C or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+      "spokenTextSHA256": "926ab6da4f04a4365d13e594c3e7e93f51e6e137025006856c2a5dbbc4b1d4a6",
+      "spokenTextSha256": "926ab6da4f04a4365d13e594c3e7e93f51e6e137025006856c2a5dbbc4b1d4a6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Illustrative particles, pores and paths are enlarged and schematic. A/B/C are supplied models, not your samples. No rate, water volume, CEC or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+          "spoken": "Illustrative particles, pores and paths are enlarged and schematic. A, B, and C are supplied models, not your samples. No rate, water volume, C E C or field outcome is simulated. Changing the illustrated structure leaves the three mineral percentages unchanged.\n\nCompare a compacted structure\n\nIllustrated open structure\n\nIllustrated compacted structure",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3dc857a43b076d21ca3391c5e353d73ab987e9e3b88907172de35b288e654683",
+      "requestFingerprintSha256": "3dc857a43b076d21ca3391c5e353d73ab987e9e3b88907172de35b288e654683",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-source-attempt-guidance-r1",
+      "unitId": "S2-13-en-source-attempt-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "source-attempt-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/sourceAttempt",
+          "text": "For each supplied A/B/C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.",
+          "sha256": "37bfd071e97851c4c8a8ba9ec22cf31aacd9bc196a64e3f0feab13a91aee1f20"
+        },
+        {
+          "pointer": "/managementPractice/ui/sourceNeed",
+          "text": "Enter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.",
+          "sha256": "faa10f628cd9a84e558eb5facf7e23dbe14d2724a5b5aad5545a0bec28f06588"
+        },
+        {
+          "pointer": "/managementPractice/ui/reasonBoundary",
+          "text": "Comparison after an attempt is not semantic grading or observed skill approval.",
+          "sha256": "07c97ccf5192ff9b58a46d0d92b607ec41f1d1c996b5eaa3bd356b4210841f33"
+        }
+      ],
+      "scientificMeaning": "For each supplied A/B/C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+      "displayText": "For each supplied A/B/C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+      "captionText": "For each supplied A/B/C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+      "spokenText": "For each supplied A, B, and C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+      "spokenTextSHA256": "529a1c093181530254de961e34389c4cf4b1f43d901bc229295195d214a1e3eb",
+      "spokenTextSha256": "529a1c093181530254de961e34389c4cf4b1f43d901bc229295195d214a1e3eb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For each supplied A/B/C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+          "spoken": "For each supplied A, B, and C profile, write a provisional class and your own interpretation with a reason and an outstanding site check. Then compare the complete model. Any attempt qualifies, including an incorrect answer; these fields do not grade meaning or certify practical skill.\n\nEnter a provisional class and your own reasoning for all three profiles first. Use the supplied inputs; do not invent observations.\n\nComparison after an attempt is not semantic grading or observed skill approval.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0c560fb3ae123add043a58d4d12f9dfd74ae94860eed00ac87820cddde140e31",
+      "requestFingerprintSha256": "0c560fb3ae123add043a58d4d12f9dfd74ae94860eed00ac87820cddde140e31",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-diagnosis-guidance-r1",
+      "unitId": "S2-13-en-diagnosis-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "diagnosis-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/diagnosisHelp",
+          "text": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching/drainage plan; the screen does not approve a field treatment.",
+          "sha256": "f69b625a08e204f2cd1f23f1571b9d6b32705e6436bc655edf80a8d735d04966"
+        },
+        {
+          "pointer": "/managementPractice/ui/diagnosisBad",
+          "text": "A clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.",
+          "sha256": "f3212faaa310e34e10a161113faa30acae5c7b062f5c4fa34669fa16823b826d"
+        },
+        {
+          "pointer": "/managementPractice/ui/diagnosisGood",
+          "text": "Decision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+          "sha256": "6180156a0255ff511c3ba068ae9e520fad2bd024a4baf833182e2b0cf8089c2c"
+        }
+      ],
+      "scientificMeaning": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching/drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+      "displayText": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching/drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+      "captionText": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching/drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+      "spokenText": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching and drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+      "spokenTextSHA256": "cedb134a432c22699a1f2d66c063d9ca67a7e42b30aceec49d823c34c76b61fe",
+      "spokenTextSha256": "cedb134a432c22699a1f2d66c063d9ca67a7e42b30aceec49d823c34c76b61fe",
+      "spokenAdaptationChanges": [
+        {
+          "written": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching/drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+          "spoken": "This is a supplied decision exercise. Reclamation with gypsum requires diagnosed sodicity and a feasible expert-reviewed leaching and drainage plan; the screen does not approve a field treatment.\n\nA clay label is not a sodicity diagnosis. Confirmed sodicity also needs feasible removal of displaced sodium; otherwise complete the evidence or drainage plan first.\n\nDecision fits the supplied evidence. Actual treatment still requires verified site data, material and expert instructions.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7cb32119374313f896d8219a2247d4742c571310e261a188415fda313c1b095a",
+      "requestFingerprintSha256": "7cb32119374313f896d8219a2247d4742c571310e261a188415fda313c1b095a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-knowledge-completion-r1",
+      "unitId": "S2-13-en-knowledge-completion-r1",
+      "locale": "en",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/passChecks/0/evidence",
+          "text": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.",
+          "sha256": "b7598762d512b7651332bb17d978faad79eca522d06493529453930cf4c4de5d"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/0/decision",
+          "text": "Pass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.",
+          "sha256": "646a23b60c374dce08a45ba7218d8b628a06e9156f1d0297e762386334ca0bbc"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/1/evidence",
+          "text": "Keeps the supplied A/B/C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, pH, salinity and crop needs before recommendation.",
+          "sha256": "832991a9d86a60a79dc054e6114bf9cf2c63905a1722ea934e3e0780a0e47a74"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/1/decision",
+          "text": "Pass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.",
+          "sha256": "3bc46c56d8708b84842e24817896265b8d5bf3d76c86ec81ba21db5b0c50bb1d"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/2/evidence",
+          "text": "Gives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage/leaching plan.",
+          "sha256": "47866f48e11a2d63db11c98b26d3b422447b47bcd6312380831740d587a01d96"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/2/decision",
+          "text": "Pass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand/silt/clay ratio.",
+          "sha256": "967c01eff49162b56ad2d6ad510ca15c6618747d65d7d54121edab1f6155628b"
+        }
+      ],
+      "scientificMeaning": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A/B/C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, pH, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage/leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand/silt/clay ratio.",
+      "displayText": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A/B/C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, pH, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage/leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand/silt/clay ratio.",
+      "captionText": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A/B/C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, pH, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage/leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand/silt/clay ratio.",
+      "spokenText": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A, B, and C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, P H, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage and leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand, silt, clay ratio.",
+      "spokenTextSHA256": "34dba971e2a864e2d8a5e71b5edfaa641aa49840fe577bf99dba19c42d70cfad",
+      "spokenTextSha256": "34dba971e2a864e2d8a5e71b5edfaa641aa49840fe577bf99dba19c42d70cfad",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A/B/C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, pH, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage/leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand/silt/clay ratio.",
+          "spoken": "Names all five source comparison dimensions and explains four requested sandy-versus-clay properties using particle size, pore arrangement, charge and the role of structure; distinguishes water held from water available to roots.\n\nPass only when the comparison and reasons are consistent; a texture-only absolute claim needs targeted review and retry.\n\nKeeps the supplied A, B, and C model separate from personal jar data; for each profile gives a provisional class, a plausible challenge and a conditional crop or management choice, identifying drainage, climate, P H, salinity and crop needs before recommendation.\n\nPass when the numerical model, reasoning and stated conditions agree; an unsupported crop prescription or invented measurement does not pass.\n\nGives two reasoned clay-field challenges and one nutrient- or water-holding advantage; states that organic matter may improve structure after assessing material and site, while gypsum requires sodicity diagnosis and a feasible drainage and leaching plan.\n\nPass when the proposed action follows a diagnosis and the learner does not equate amendment with a changed sand, silt, clay ratio.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bcb8f97838f17d05f38fddd68f5ed26b25a0f74d36bf70d9acab87929e8d9295",
+      "requestFingerprintSha256": "bcb8f97838f17d05f38fddd68f5ed26b25a0f74d36bf70d9acab87929e8d9295",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-record-guidance-r1",
+      "unitId": "S2-13-en-record-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/recordHelp",
+          "text": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.",
+          "sha256": "31bada2130527b443014e5836fc068f1108a37e70f3111d8c16b29698795998e"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/0",
+          "text": "Own sample ID and underlying measurement record",
+          "sha256": "dd116b2c760db9c3209ace6f1888aec25862d17485d97f7bf453d6a5fdab5992"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/1",
+          "text": "Actual sand/silt/clay percentages and method limits",
+          "sha256": "4871fd7a6b86691961904aa77f292cb0ace25222891574c7545a54673c24fcf8"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/2",
+          "text": "Provisional class and triangle reference",
+          "sha256": "01a9de5d58746c6a6b657ea352e7be5667fa1eebdcdcea1cc3d73a20ead40990"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/3",
+          "text": "Expected challenge, reason and confirming field observation",
+          "sha256": "2e84161e847400d1f67fdc04e58a2e38f8484141f59d086ca72be1ec0848f3c5"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/4",
+          "text": "Conditional option and remaining crop/site checks",
+          "sha256": "0239d4e7e38f791cce1389c878966c4bb432c33d80df885b4647fca96102f03d"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/5",
+          "text": "Uncertainty or missing evidence",
+          "sha256": "6b4640a8292d0bb4ee325356762d9029f04eb15ff7a35543c29e602914618680"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/6",
+          "text": "Trainer discussion or feedback (blank until observed)",
+          "sha256": "30ba40ffb57246c5028acb487ea380a0dfa8f96fa62fed12c01ef3fa9e7fc7e2"
+        },
+        {
+          "pointer": "/managementPractice/ui/saved",
+          "text": "Draft saved locally; no field decision or practical approval created.",
+          "sha256": "6dabd9c534c120ce14d7126be5552e96a9f970033cd9e13c8e92bbeb96dbe207"
+        },
+        {
+          "pointer": "/managementPractice/ui/notReady",
+          "text": "Complete the identified practice rows first. Do not invent an observation to unlock an example.",
+          "sha256": "cd9d0faa1ff0bc60c246a170617dd8f4176c3734ae9c599c9f4ccb3a3a11bda1"
+        },
+        {
+          "pointer": "/managementPractice/ui/knowledgeOnly",
+          "text": "Reasoning rehearsal; no new physical pass",
+          "sha256": "02fea482f9ff4e0d470130d50cdc0c3300e5354ad3788eed14e7d308b7d5802c"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Texture interpretation worksheet",
+          "sha256": "0b7dd3b9a01cdb11c64e321cd81dd6a2f71882e4c3c63b2a333ee55273569f9b"
+        }
+      ],
+      "scientificMeaning": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand/silt/clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop/site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+      "displayText": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand/silt/clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop/site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+      "captionText": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand/silt/clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop/site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+      "spokenText": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand, silt, clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop and site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+      "spokenTextSHA256": "285662845e06a986477f564bbf1fcde460d36fe67dce11865f7857699a5a52a0",
+      "spokenTextSha256": "285662845e06a986477f564bbf1fcde460d36fe67dce11865f7857699a5a52a0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand/silt/clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop/site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+          "spoken": "Use existing measured records only. Unknown data remain blank with an explanation. Saving notes does not verify measurements, free-text reasoning, chronology or a practical pass.\n\nOwn sample ID and underlying measurement record\n\nActual sand, silt, clay percentages and method limits\n\nProvisional class and triangle reference\n\nExpected challenge, reason and confirming field observation\n\nConditional option and remaining crop and site checks\n\nUncertainty or missing evidence\n\nTrainer discussion or feedback (blank until observed)\n\nDraft saved locally; no field decision or practical approval created.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nReasoning rehearsal; no new physical pass\n\nTexture interpretation worksheet",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9e83f8cf3932aff25baae75a0f63ac2b844c5c78b9b5ef117f324f6d6d34e187",
+      "requestFingerprintSha256": "9e83f8cf3932aff25baae75a0f63ac2b844c5c78b9b5ef117f324f6d6d34e187",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-extension-and-facilitation-r1",
+      "unitId": "S2-13-en-extension-and-facilitation-r1",
+      "locale": "en",
+      "semanticGroup": "extension-and-facilitation",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/extension",
+          "text": "Optional CEC or plant-available-water inquiry",
+          "sha256": "2a16d5f4e88bf1b07e2de0c791e51f8f6d440e6bf65133a22c305b63a91609ac"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/0",
+          "text": "Source title, publisher, URL and date",
+          "sha256": "8063b448f733f439dcc4225166a9759d3d548fce428f3cc1fefc354937c35685"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/1",
+          "text": "Quantity: CEC or plant-available water",
+          "sha256": "f0d6b22f8d24ac3cfc7bedf304d3f50cfb4cff07fb1bed54b06013183aa83e83"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/2",
+          "text": "Published value/range, or leave blank if unavailable",
+          "sha256": "585a43159b7419e738e7a73f290754fbe29d1968b573bf22b71a9b0191aec620"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/3",
+          "text": "Units and measurement/calculation method",
+          "sha256": "209ff457bcaf059c510c1d02f6a7c763a0308f8a983effa7b095698d0f32bf4e"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/4",
+          "text": "Texture, mineralogy, horizon, depth and region/context",
+          "sha256": "77ffb37fd3bdbd29ffc396e5226f882789e4febecb2a6b26214f26b0907f672b"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/5",
+          "text": "Why this is not a measured result for your field",
+          "sha256": "fcc7d4f450592858f1f07f6dcb7ba2ebf75ff029009ce2c5e62c72cf727c35a2"
+        },
+        {
+          "pointer": "/managementPractice/ui/facilitation",
+          "text": "Discuss in groups of 3–4 while keeping each learner’s answer separate. The combined activity offers a 5-minute setup, 15–20-minute preparation, 10-minute measurement, 10-minute interpretation and 10-minute share-out outline; a separate summary lists 35 minutes work plus 10 discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation/share-out and previously recorded jars. Prepared tables support practice only.",
+          "sha256": "b4dc1a1f5205651dac84d3e5dd87bcf265201e90264429cd9bc0dac59c46988d"
+        }
+      ],
+      "scientificMeaning": "Optional CEC or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: CEC or plant-available water\n\nPublished value/range, or leave blank if unavailable\n\nUnits and measurement/calculation method\n\nTexture, mineralogy, horizon, depth and region/context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of 3–4 while keeping each learner’s answer separate. The combined activity offers a 5-minute setup, 15–20-minute preparation, 10-minute measurement, 10-minute interpretation and 10-minute share-out outline; a separate summary lists 35 minutes work plus 10 discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation/share-out and previously recorded jars. Prepared tables support practice only.",
+      "displayText": "Optional CEC or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: CEC or plant-available water\n\nPublished value/range, or leave blank if unavailable\n\nUnits and measurement/calculation method\n\nTexture, mineralogy, horizon, depth and region/context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of 3–4 while keeping each learner’s answer separate. The combined activity offers a 5-minute setup, 15–20-minute preparation, 10-minute measurement, 10-minute interpretation and 10-minute share-out outline; a separate summary lists 35 minutes work plus 10 discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation/share-out and previously recorded jars. Prepared tables support practice only.",
+      "captionText": "Optional CEC or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: CEC or plant-available water\n\nPublished value/range, or leave blank if unavailable\n\nUnits and measurement/calculation method\n\nTexture, mineralogy, horizon, depth and region/context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of 3–4 while keeping each learner’s answer separate. The combined activity offers a 5-minute setup, 15–20-minute preparation, 10-minute measurement, 10-minute interpretation and 10-minute share-out outline; a separate summary lists 35 minutes work plus 10 discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation/share-out and previously recorded jars. Prepared tables support practice only.",
+      "spokenText": "Optional C E C or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: C E C or plant-available water\n\nPublished value or range, or leave blank if unavailable\n\nUnits and measurement or calculation method\n\nTexture, mineralogy, horizon, depth and region, context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of three to four while keeping each learner’s answer separate. The combined activity offers a five-minute setup, fifteen to twenty-minute preparation, ten-minute measurement, ten-minute interpretation and ten-minute share-out outline; a separate summary lists thirty-five minutes work plus ten discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation, share-out and previously recorded jars. Prepared tables support practice only.",
+      "spokenTextSHA256": "9b20437693c88a9b438c32691fca19b69c8315f3d66b7f8f3d522b6da1f7d751",
+      "spokenTextSha256": "9b20437693c88a9b438c32691fca19b69c8315f3d66b7f8f3d522b6da1f7d751",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Optional CEC or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: CEC or plant-available water\n\nPublished value/range, or leave blank if unavailable\n\nUnits and measurement/calculation method\n\nTexture, mineralogy, horizon, depth and region/context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of 3–4 while keeping each learner’s answer separate. The combined activity offers a 5-minute setup, 15–20-minute preparation, 10-minute measurement, 10-minute interpretation and 10-minute share-out outline; a separate summary lists 35 minutes work plus 10 discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation/share-out and previously recorded jars. Prepared tables support practice only.",
+          "spoken": "Optional C E C or plant-available-water inquiry\n\nSource title, publisher, URL and date\n\nQuantity: C E C or plant-available water\n\nPublished value or range, or leave blank if unavailable\n\nUnits and measurement or calculation method\n\nTexture, mineralogy, horizon, depth and region, context\n\nWhy this is not a measured result for your field\n\nDiscuss in groups of three to four while keeping each learner’s answer separate. The combined activity offers a five-minute setup, fifteen to twenty-minute preparation, ten-minute measurement, ten-minute interpretation and ten-minute share-out outline; a separate summary lists thirty-five minutes work plus ten discussion. These are alternative teaching outlines, not a settling timetable. This step uses the interpretation, share-out and previously recorded jars. Prepared tables support practice only.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1be582dd7012f0e6e017563e813dbfb437e1f07e23afdaf9c94d8e0ecb19a63a",
+      "requestFingerprintSha256": "1be582dd7012f0e6e017563e813dbfb437e1f07e23afdaf9c94d8e0ecb19a63a",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

@@ -1,0 +1,437 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-it.json",
+    "sha256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+    "bytes": 41167
+  },
+  "units": [
+    {
+      "id": "S2-13-it-schematic-structure-guidance-r1",
+      "unitId": "S2-13-it-schematic-structure-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "schematic-structure-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/modelHelp",
+          "text": "Particelle, pori e percorsi sono schematici e ingranditi. A/B/C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, CEC o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.",
+          "sha256": "20f659e0900c2eac56123914b6392ad78be1fd12a5bed7555b3a4332220594d1"
+        },
+        {
+          "pointer": "/managementPractice/ui/compacted",
+          "text": "Confronta una struttura compattata",
+          "sha256": "bd2dcfb05cf73d9fab5035d613c222367523db79752325fa8e0d2f2020117489"
+        },
+        {
+          "pointer": "/managementPractice/ui/structure/0",
+          "text": "Struttura aperta illustrata",
+          "sha256": "29d2994c1e6b21574a16da742051dba21f2272b41399ca900fb00d61134f6f5f"
+        },
+        {
+          "pointer": "/managementPractice/ui/structure/1",
+          "text": "Struttura compattata illustrata",
+          "sha256": "9b04087f6315a91b238aeef6161afc7055ce2b8995b8ef272335e20d2ee17369"
+        }
+      ],
+      "scientificMeaning": "Particelle, pori e percorsi sono schematici e ingranditi. A/B/C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, CEC o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+      "displayText": "Particelle, pori e percorsi sono schematici e ingranditi. A/B/C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, CEC o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+      "captionText": "Particelle, pori e percorsi sono schematici e ingranditi. A/B/C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, CEC o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+      "spokenText": "Particelle, pori e percorsi sono schematici e ingranditi. A, B e C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, ci e ci o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+      "spokenTextSHA256": "e1be42dfd73c8deaf5b86ae4445af17be8ffe7a36ec187120369ffb5a6d0ad7c",
+      "spokenTextSha256": "e1be42dfd73c8deaf5b86ae4445af17be8ffe7a36ec187120369ffb5a6d0ad7c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Particelle, pori e percorsi sono schematici e ingranditi. A/B/C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, CEC o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+          "spoken": "Particelle, pori e percorsi sono schematici e ingranditi. A, B e C sono modelli, non i tuoi campioni. Non si simulano velocità, volumi, ci e ci o esiti del campo. Cambiare la struttura illustrata non cambia le tre percentuali minerali.\n\nConfronta una struttura compattata\n\nStruttura aperta illustrata\n\nStruttura compattata illustrata",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "73a6d511ce7d510c4c967a7fcb41841e6e20f4f1f06a1f0a0d9f1c288717efdc",
+      "requestFingerprintSha256": "73a6d511ce7d510c4c967a7fcb41841e6e20f4f1f06a1f0a0d9f1c288717efdc",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-source-attempt-guidance-r1",
+      "unitId": "S2-13-it-source-attempt-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "source-attempt-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/sourceAttempt",
+          "text": "Per ciascun profilo A/B/C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.",
+          "sha256": "a863ce4bc5de37ec28b3d7e456d6680deb389f599a36a140a6bf02ade4e3c077"
+        },
+        {
+          "pointer": "/managementPractice/ui/sourceNeed",
+          "text": "Scrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.",
+          "sha256": "0dcd085e1f2e99d08e9c0d5c102e7c57c8797f5871613d32b87015015b071c71"
+        },
+        {
+          "pointer": "/managementPractice/ui/reasonBoundary",
+          "text": "Confronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+          "sha256": "95ba6f6f477410d883b2c71372f9187c59d0b011535779ffe09dc99f93b290e6"
+        }
+      ],
+      "scientificMeaning": "Per ciascun profilo A/B/C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+      "displayText": "Per ciascun profilo A/B/C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+      "captionText": "Per ciascun profilo A/B/C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+      "spokenText": "Per ciascun profilo A, B e C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+      "spokenTextSHA256": "ca8b86853fbe7e3f739056a32a544ce153bb13f403646ab8e753299da46ad9c4",
+      "spokenTextSha256": "ca8b86853fbe7e3f739056a32a544ce153bb13f403646ab8e753299da46ad9c4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per ciascun profilo A/B/C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+          "spoken": "Per ciascun profilo A, B e C scrivi classe provvisoria, interpretazione motivata e una verifica del sito ancora necessaria. Poi confronta il modello completo. Vale qualsiasi tentativo, anche errato; i campi non valutano il significato né certificano abilità pratiche.\n\nScrivi una classe provvisoria e il tuo ragionamento per tutti e tre i profili. Usa i dati forniti; non inventare osservazioni.\n\nConfronto dopo il tentativo: non valutazione semantica o certificazione pratica.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c032ec375e89f1de52da86fe21b3d6f07e68530a2194efb974485d4fc84d9a7f",
+      "requestFingerprintSha256": "c032ec375e89f1de52da86fe21b3d6f07e68530a2194efb974485d4fc84d9a7f",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-diagnosis-guidance-r1",
+      "unitId": "S2-13-it-diagnosis-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "diagnosis-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/diagnosisHelp",
+          "text": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione/drenaggio verificato da esperti; nessuna approvazione di trattamento.",
+          "sha256": "28e1ef28c92470192c7b6ce66cf2b6aa380fce7ad112e3101d32d91b04742577"
+        },
+        {
+          "pointer": "/managementPractice/ui/diagnosisBad",
+          "text": "Argilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.",
+          "sha256": "77a868eae1ea73156a1890e727b2fc837dd899153ebaa1c8e5b9f57691ee01c8"
+        },
+        {
+          "pointer": "/managementPractice/ui/diagnosisGood",
+          "text": "Decisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+          "sha256": "df8796a32e4df89716a11af3c313b846f2ffda68ba56c31ea3e3c0d80a29cb78"
+        }
+      ],
+      "scientificMeaning": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione/drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+      "displayText": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione/drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+      "captionText": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione/drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+      "spokenText": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione e drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+      "spokenTextSHA256": "8a112206776ab91f9b120d3592304511dee64e29dc4f1b77e0218fb4d6e7c676",
+      "spokenTextSha256": "8a112206776ab91f9b120d3592304511dee64e29dc4f1b77e0218fb4d6e7c676",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione/drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+          "spoken": "Esercizio con prove fornite. La bonifica con gesso richiede sodicità diagnosticata e un piano fattibile di lisciviazione e drenaggio verificato da esperti; nessuna approvazione di trattamento.\n\nArgilla non diagnostica sodicità. Anche la sodicità confermata richiede rimozione del sodio sostituito; completa prove o drenaggio prima.\n\nDecisione coerente con le prove fornite; interventi reali richiedono dati verificati e istruzioni esperte.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3b81d8ae2c9c60315e6281b2ae91aac5dac4687c25d4462b89e051884735068e",
+      "requestFingerprintSha256": "3b81d8ae2c9c60315e6281b2ae91aac5dac4687c25d4462b89e051884735068e",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-knowledge-completion-r1",
+      "unitId": "S2-13-it-knowledge-completion-r1",
+      "locale": "it",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/passChecks/0/evidence",
+          "text": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.",
+          "sha256": "7e859720c4b6677bf58499d927f6437d011248fddb2ecf307177586c3eaad96e"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/0/decision",
+          "text": "Supera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.",
+          "sha256": "b4feff9090600b512a315fba2f641089f75c323f4eabf9a0a5ccc1c57f9364d7"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/1/evidence",
+          "text": "Tiene distinti i modelli forniti A/B/C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pH, salinità e requisiti della coltura.",
+          "sha256": "ad8af5676efbe90e0bb15ae7865b1793437ef43a77a0bb80f0f8aa206a2920c7"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/1/decision",
+          "text": "Supera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.",
+          "sha256": "9870caaab8c87e835327442561eef788bc726134763a7d1ce531a5c8cea5a3ef"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/2/evidence",
+          "text": "Fornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.",
+          "sha256": "2e8eaeee4084494abb5137bfd87c2569979e6794856f2c9fd08fd05b51fdf393"
+        },
+        {
+          "pointer": "/managementPractice/passChecks/2/decision",
+          "text": "Supera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+          "sha256": "e75dde0dca5fb7ee205363ab99a08fd38f7ff777b7cfb34d5439c24308c7b0cc"
+        }
+      ],
+      "scientificMeaning": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A/B/C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pH, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+      "displayText": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A/B/C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pH, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+      "captionText": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A/B/C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pH, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+      "spokenText": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A, B e C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pi acca, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+      "spokenTextSHA256": "d20b17d804d75d1d8a5fe04f252ac0e33c99beef3d45df1cf1026131b8643973",
+      "spokenTextSha256": "d20b17d804d75d1d8a5fe04f252ac0e33c99beef3d45df1cf1026131b8643973",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A/B/C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pH, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+          "spoken": "Lo studente nomina tutte e cinque le dimensioni della tabella originale e spiega almeno quattro proprietà richieste nel confronto sabbia-argilla tramite dimensione, pori, carica e struttura, distinguendo l'acqua trattenuta da quella disponibile alle radici.\n\nSupera soltanto con confronto e motivazioni coerenti; una conclusione assoluta dalla sola tessitura richiede ripasso mirato e nuovo tentativo.\n\nTiene distinti i modelli forniti A, B e C dai propri dati; per ciascuno propone classe provvisoria, difficoltà plausibile e coltura o gestione condizionata a drenaggio, clima, pi acca, salinità e requisiti della coltura.\n\nSupera se numeri, motivazioni e condizioni concordano; una prescrizione colturale senza fondamento o una misura inventata non supera.\n\nFornisce due difficoltà motivate di un campo argilloso e un vantaggio di ritenzione di acqua o cationi; indica che materia organica idonea può migliorare la struttura dopo valutazione e che il gesso richiede diagnosi di sodicità e un piano fattibile di drenaggio e lisciviazione.\n\nSupera se la scelta segue la diagnosi e non attribuisce all'ammendante un cambiamento delle proporzioni di sabbia, limo e argilla.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "09d45365ecb2629b4ad323e90f47bb5f76df0325e92eb345e2a7e47e0967d665",
+      "requestFingerprintSha256": "09d45365ecb2629b4ad323e90f47bb5f76df0325e92eb345e2a7e47e0967d665",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-record-guidance-r1",
+      "unitId": "S2-13-it-record-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/recordHelp",
+          "text": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.",
+          "sha256": "954ece1e1e6aaba356fad149bd2f4de04e05ab874d02365608f12e3804c868d9"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/0",
+          "text": "ID proprio campione e registro di misura",
+          "sha256": "4bc51c4d9852b7bbf164732f44e40d834f225da1b92138c6ee384c2a276d6b99"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/1",
+          "text": "Percentuali reali sabbia/limo/argilla e limiti del metodo",
+          "sha256": "7d6feed70502c626e5d3009ccf05abd3977289896b31000a73d7f0eb89630417"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/2",
+          "text": "Classe provvisoria e riferimento del triangolo",
+          "sha256": "74bac80ebc1c3db5d15fd79cc67c77c842675147d8dfdcb6260b66f6713836ec"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/3",
+          "text": "Problema atteso, motivo e osservazione di conferma",
+          "sha256": "596cf1c4ea3f01834b29af2a6a6f2694aa06d50d36f7ddf17a98eaad6fbc7295"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/4",
+          "text": "Opzione condizionata e verifiche di coltura/sito mancanti",
+          "sha256": "b10d12c50f4a4c0b5a1778570150f379f9b080162282db4ac6ea2a6608c17401"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/5",
+          "text": "Incertezza o prova mancante",
+          "sha256": "f742826a6f5d9bad28654a327977f1200cad60de35667142aff1749704f45983"
+        },
+        {
+          "pointer": "/managementPractice/ui/fields/6",
+          "text": "Discussione/riscontro del formatore (vuoto fino a osservazione)",
+          "sha256": "9c7b91c89a7b4093920a3dfc4d31fcce926bfd49f5656c3b5f60a427ad3f5a1a"
+        },
+        {
+          "pointer": "/managementPractice/ui/saved",
+          "text": "Bozza locale salvata; nessuna decisione reale o approvazione pratica.",
+          "sha256": "3a5129fafc1b73afaf0ec567145d93ad142efe562209d2096b19ea58e2afe2fe"
+        },
+        {
+          "pointer": "/managementPractice/ui/notReady",
+          "text": "Completa prima le righe identificate. Non inventare osservazioni per aprire un esempio.",
+          "sha256": "963b14a22ff5237e284576bea7ea701eda759676870f1de94bc38a8c41cf6ea9"
+        },
+        {
+          "pointer": "/managementPractice/ui/knowledgeOnly",
+          "text": "Esercizio di ragionamento; nessuna nuova prova fisica",
+          "sha256": "7e0fd09fdc5eb4a02694d56ff96e71f2bf6109e4c476c7dc9a0e2212e3e0475f"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda di interpretazione della tessitura",
+          "sha256": "ac1bae0ef52e82880d10465e08dfa6ebacde6c3fa52cd8645498368c4f76eba1"
+        }
+      ],
+      "scientificMeaning": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia/limo/argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura/sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione/riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+      "displayText": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia/limo/argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura/sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione/riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+      "captionText": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia/limo/argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura/sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione/riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+      "spokenText": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia, limo, argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura e sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione, riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+      "spokenTextSHA256": "5fdcc1aa92868736975ee438bcb61621de1f4b4f85dfa9f0065a0665c45f2a3c",
+      "spokenTextSha256": "5fdcc1aa92868736975ee438bcb61621de1f4b4f85dfa9f0065a0665c45f2a3c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia/limo/argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura/sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione/riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+          "spoken": "Usa registri misurati esistenti. Dati ignoti vuoti con spiegazione. Salvare note non verifica misure, significato, cronologia o abilità pratiche.\n\nID proprio campione e registro di misura\n\nPercentuali reali sabbia, limo, argilla e limiti del metodo\n\nClasse provvisoria e riferimento del triangolo\n\nProblema atteso, motivo e osservazione di conferma\n\nOpzione condizionata e verifiche di coltura e sito mancanti\n\nIncertezza o prova mancante\n\nDiscussione, riscontro del formatore (vuoto fino a osservazione)\n\nBozza locale salvata; nessuna decisione reale o approvazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nEsercizio di ragionamento; nessuna nuova prova fisica\n\nScheda di interpretazione della tessitura",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d8145be3e6dcbe0f823c72955bca65a069a0f44f77b94ac6f4018b49a7d239db",
+      "requestFingerprintSha256": "d8145be3e6dcbe0f823c72955bca65a069a0f44f77b94ac6f4018b49a7d239db",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-extension-and-facilitation-r1",
+      "unitId": "S2-13-it-extension-and-facilitation-r1",
+      "locale": "it",
+      "semanticGroup": "extension-and-facilitation",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/managementPractice/ui/extension",
+          "text": "Ricerca facoltativa su CEC o acqua disponibile",
+          "sha256": "6545b64ebde12ffde3405b48afecbc9f4a6e50e75b7eb7a70b00e0b3bce5b979"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/0",
+          "text": "Titolo fonte, editore, URL e data",
+          "sha256": "ec321209a9459062b3beb2bd37020e054b6d34b96bf578f20a4b46b6dccf00bf"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/1",
+          "text": "Quantità: CEC o acqua disponibile",
+          "sha256": "0ae7d91baf6582242eccb1d33197cc02c9a0054cfa596a9bef9adf58ff39ac92"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/2",
+          "text": "Valore/intervallo pubblicato, vuoto se ignoto",
+          "sha256": "285ebd4ce9604f14d372ce4a40605a4988ab8dcd09189381f988284d5312c0d6"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/3",
+          "text": "Unità e metodo di misura/calcolo",
+          "sha256": "70a5e1033e279ce509f06cd2782f0747f5daeef103558077fcd6dbc32ad30966"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/4",
+          "text": "Tessitura, minerali, orizzonte, profondità e contesto",
+          "sha256": "4f159e23b9e408dab9e639dfbee681ae337b1e5eb6a38a6cb7d4d5b5965bb94f"
+        },
+        {
+          "pointer": "/managementPractice/ui/extensionFields/5",
+          "text": "Perché non è un risultato misurato del tuo campo",
+          "sha256": "6868d0809bc1b0a3a1a91b5fbbbdb4aba2933a6de838d71458a6fcbdcb8761d2"
+        },
+        {
+          "pointer": "/managementPractice/ui/facilitation",
+          "text": "Gruppi di 3–4, risposte individuali. L’attività integrata propone 5 minuti iniziali, 15–20 preparazione, 10 misurazione, 10 interpretazione e 10 condivisione; un riepilogo alternativo indica 35 lavoro più 10 discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+          "sha256": "af4a0f1678123e079efa094b85bceb9bebf22dc8b2b85f0045b5056b5a761772"
+        }
+      ],
+      "scientificMeaning": "Ricerca facoltativa su CEC o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: CEC o acqua disponibile\n\nValore/intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura/calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi di 3–4, risposte individuali. L’attività integrata propone 5 minuti iniziali, 15–20 preparazione, 10 misurazione, 10 interpretazione e 10 condivisione; un riepilogo alternativo indica 35 lavoro più 10 discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+      "displayText": "Ricerca facoltativa su CEC o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: CEC o acqua disponibile\n\nValore/intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura/calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi di 3–4, risposte individuali. L’attività integrata propone 5 minuti iniziali, 15–20 preparazione, 10 misurazione, 10 interpretazione e 10 condivisione; un riepilogo alternativo indica 35 lavoro più 10 discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+      "captionText": "Ricerca facoltativa su CEC o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: CEC o acqua disponibile\n\nValore/intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura/calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi di 3–4, risposte individuali. L’attività integrata propone 5 minuti iniziali, 15–20 preparazione, 10 misurazione, 10 interpretazione e 10 condivisione; un riepilogo alternativo indica 35 lavoro più 10 discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+      "spokenText": "Ricerca facoltativa su ci e ci o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: ci e ci o acqua disponibile\n\nValore o intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura o calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi da tre a quattro persone, risposte individuali. L’attività integrata propone cinque minuti iniziali, da quindici a venti minuti di preparazione, dieci minuti di misurazione, dieci minuti di interpretazione e dieci minuti di condivisione; un riepilogo alternativo indica trentacinque minuti di lavoro più dieci di discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+      "spokenTextSHA256": "ce72a862651be5498f93c03e777ac03d2d65f6a457235892fd534a8303c4e033",
+      "spokenTextSha256": "ce72a862651be5498f93c03e777ac03d2d65f6a457235892fd534a8303c4e033",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ricerca facoltativa su CEC o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: CEC o acqua disponibile\n\nValore/intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura/calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi di 3–4, risposte individuali. L’attività integrata propone 5 minuti iniziali, 15–20 preparazione, 10 misurazione, 10 interpretazione e 10 condivisione; un riepilogo alternativo indica 35 lavoro più 10 discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+          "spoken": "Ricerca facoltativa su ci e ci o acqua disponibile\n\nTitolo fonte, editore, URL e data\n\nQuantità: ci e ci o acqua disponibile\n\nValore o intervallo pubblicato, vuoto se ignoto\n\nUnità e metodo di misura o calcolo\n\nTessitura, minerali, orizzonte, profondità e contesto\n\nPerché non è un risultato misurato del tuo campo\n\nGruppi da tre a quattro persone, risposte individuali. L’attività integrata propone cinque minuti iniziali, da quindici a venti minuti di preparazione, dieci minuti di misurazione, dieci minuti di interpretazione e dieci minuti di condivisione; un riepilogo alternativo indica trentacinque minuti di lavoro più dieci di discussione. Sono piani didattici alternativi, non tempi di sedimentazione. Qui si interpretano e discutono registri precedenti; tabelle pronte solo per esercizio.",
+          "occurrences": 1,
+          "purpose": "Full source CEC/PH/units/ranges expanded, slash enum expressedas and/or accordingto exactsource context; natural Egyptian/foreign grammar. Allscience/sourceconditions/ownmeasurementlimits preserved, canonical/displayimmutable; no fullABCkey/gatedworkedanswers in ordinaryqueue."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c3b760879562b0046d7a295c26f74139d4be27913d483deef71d4aa50339dcb0",
+      "requestFingerprintSha256": "c3b760879562b0046d7a295c26f74139d4be27913d483deef71d4aa50339dcb0",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
