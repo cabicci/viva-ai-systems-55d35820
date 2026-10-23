@@ -1,0 +1,73 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-en.json",
+    "sha256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "bytes": 49429
+  },
+  "units": [
+    {
+      "id": "S2-15-en-R04-source-table-repair-r1",
+      "unitId": "S2-15-en-R04-source-table-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair13-s215-en-r04-source-table-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+          "sha256": "44e35b4c2fd427aaaa4ae657daea7b1025eed32da47aae35ef7569280b7f9695"
+        }
+      ],
+      "scientificMeaning": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+      "displayText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+      "captionText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+      "spokenText": "The teaching table in the source lists a pH of five point two, organic matter of two point one percent, low nitrogen, phosphorus at twenty-five parts per million, and potassium at one hundred eighty parts per million.",
+      "spokenTextSHA256": "7c08a09151a3297233199236394e071d7b72422f28780b53fb6b6b4b4819aae5",
+      "spokenTextSha256": "7c08a09151a3297233199236394e071d7b72422f28780b53fb6b6b4b4819aae5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+          "spoken": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm.",
+          "spoken": "The teaching table in the source lists a pH of five point two, organic matter of two point one percent, low nitrogen, phosphorus at twenty-five parts per million, and potassium at one hundred eighty parts per million.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "06a7fd61907d9b233fb2ad6106192c2fe4153d6b5d9429eced2e4686487399a5",
+      "requestFingerprintSha256": "06a7fd61907d9b233fb2ad6106192c2fe4153d6b5d9429eced2e4686487399a5",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
