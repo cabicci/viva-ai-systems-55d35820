@@ -1,0 +1,74 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-de.json",
+    "sha256": "5e40bc349429659306f32a9503322b477c0f904494c1fa88d5aa041f57d32ae3",
+    "bytes": 25765
+  },
+  "units": [
+    {
+      "id": "S2-04-de-effective-model-title-repair-r1",
+      "unitId": "S2-04-de-effective-model-title-repair-r1",
+      "locale": "de",
+      "semanticGroup": "runtime-s204-de-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5e40bc349429659306f32a9503322b477c0f904494c1fa88d5aa041f57d32ae3",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/ui/modelTitle",
+          "text": "pH-Skala ·3D-Lernmodell",
+          "sha256": "7fbbf6803ca94368e39018597ea840ea949bf6fed54c45decc5bd14ac3e6f619"
+        }
+      ],
+      "scientificMeaning": "pH-Skala ·3D-Lernmodell",
+      "displayText": "pH-Skala ·3D-Lernmodell",
+      "captionText": "pH-Skala ·3D-Lernmodell",
+      "spokenText": "P H-Skala · interaktives Lehrschema",
+      "spokenTextSHA256": "790ae983920b3e5e2b8e018ee9a002a4dd794fa4cb8eb790b131a76ff7843944",
+      "spokenTextSha256": "790ae983920b3e5e2b8e018ee9a002a4dd794fa4cb8eb790b131a76ff7843944",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH-Skala ·3D-Lernmodell",
+          "spoken": "pH-Skala ·3D-Lernmodell",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "pH-Skala ·3D-Lernmodell",
+          "spoken": "P H-Skala · interaktives Lehrschema",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "e0f83b91b4d7556081c472596fe9a5d254a9498e193e175bbcb8b65196d725f7",
+      "requestFingerprintSha256": "e0f83b91b4d7556081c472596fe9a5d254a9498e193e175bbcb8b65196d725f7",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "pH-Skala ·3D-Lernmodell",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/phPractice/ui/modelTitle",
+        "original": "pH-Skala ·3D-Lernmodell",
+        "effective": "pH-Skala · interaktives Lehrschema",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "scope": "RUNTIME_S204_DE_EFFECTIVE_MODEL_TITLE_REPAIR",
+  "stepId": "S2-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-runtime-s204-de-effective-model-title-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-04-de-effective-model-title-repair-r1",
+      "unitId": "S2-04-de-effective-model-title-repair-r1",
+      "locale": "de",
+      "semanticGroup": "runtime-s204-de-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5e40bc349429659306f32a9503322b477c0f904494c1fa88d5aa041f57d32ae3",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/ui/modelTitle",
+          "text": "pH-Skala ·3D-Lernmodell",
+          "sha256": "7fbbf6803ca94368e39018597ea840ea949bf6fed54c45decc5bd14ac3e6f619"
+        }
+      ],
+      "scientificMeaning": "pH-Skala ·3D-Lernmodell",
+      "displayText": "pH-Skala ·3D-Lernmodell",
+      "captionText": "pH-Skala ·3D-Lernmodell",
+      "spokenText": "P H-Skala · interaktives Lehrschema",
+      "spokenTextSHA256": "790ae983920b3e5e2b8e018ee9a002a4dd794fa4cb8eb790b131a76ff7843944",
+      "spokenTextSha256": "790ae983920b3e5e2b8e018ee9a002a4dd794fa4cb8eb790b131a76ff7843944",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH-Skala ·3D-Lernmodell",
+          "spoken": "pH-Skala ·3D-Lernmodell",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "pH-Skala ·3D-Lernmodell",
+          "spoken": "P H-Skala · interaktives Lehrschema",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "e0f83b91b4d7556081c472596fe9a5d254a9498e193e175bbcb8b65196d725f7",
+      "requestFingerprintSha256": "e0f83b91b4d7556081c472596fe9a5d254a9498e193e175bbcb8b65196d725f7",
+      "sourcePlanSha256": "347dc55769321d27c5e6f01952a34b3dd27fd126342a0d62c0de45876831edd9",
+      "exactSentenceBefore": "pH-Skala ·3D-Lernmodell",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/phPractice/ui/modelTitle",
+        "original": "pH-Skala ·3D-Lernmodell",
+        "effective": "pH-Skala · interaktives Lehrschema",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-04-de-effective-model-title-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
