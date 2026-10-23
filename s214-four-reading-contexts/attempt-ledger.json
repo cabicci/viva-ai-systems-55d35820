@@ -1,0 +1,56 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C04": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 4,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "separateExplicitReservation": {
+    "authoritySHA256": "2e5cb79b1719eba5237f3fabe48069af1f8d68fbdc30081b0219f072137d0c3d",
+    "reservationSHA256": "6f386d1dbf4f9ecbfe4f80c7cb61eb79ed9a0d62feb7d36e00e58ab3bc983b9b",
+    "maximumBlindPOSTs": 4,
+    "original96PoolUnchanged": true,
+    "unknownOutcomeCharged": true
+  }
+}
