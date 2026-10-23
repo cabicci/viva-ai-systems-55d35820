@@ -1,0 +1,72 @@
+name: Reviewed Soil originals upload batch01 only
+'on':
+  push:
+    branches: ['work/soil-bunny-upload-batch01-20261023-r1']
+    paths: ['upload-only/queue.json']
+permissions:
+  contents: write
+concurrency:
+  group: soil-reviewed-bunny-upload-batch01
+  cancel-in-progress: false
+jobs:
+  upload:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: {"include":[{"id":"v01-37f4c7e45a87","manifestSHA":"362d92973eeb1869ad32c849a84d4fe34f010455933256fa9b7cd9e5032b3809"},{"id":"v02-09643f56a82b","manifestSHA":"1e59f7c9a1dc527c315cc5cc029b202723c42f9eb5854cd06d282dde68f1cd16"},{"id":"v03-7dfa0b99bf99","manifestSHA":"04bef70e4df79c25e1532025c8cb412b188e74257e16f346dcf963e507e69356"},{"id":"v04-0235632b417b","manifestSHA":"d3b006bfda55a365c26458af307da03487133165666de98490a4c4ef1230e345"},{"id":"v05-28ed49a89172","manifestSHA":"cf14e8773779e2351d2cb89c9365451ac146abdbc969bd56816186ae65ca8a78"},{"id":"v06-5eac5155e1c6","manifestSHA":"feba507ccffa88a38b78ebda3a576f8513939da109c8a823272cb4981d60fe08"},{"id":"v07-9f1dc07cbc8e","manifestSHA":"e3076afdf4dfd2c2cc6a7a8a41b18096134337113a557dbda93a133a77d43b95"},{"id":"v08-166464d33dc7","manifestSHA":"a92ab2047a2ea22ec885d2a30c7562d6d38376ef1b702dd8a4b74c86c855ee5f"},{"id":"v09-2569a55e64e4","manifestSHA":"9151136819823edba7cacf7be62e97b6c21187f8353b0307b13ff0f1f4b9b37b"},{"id":"v10-6a321553fd0a","manifestSHA":"29048821c43ada17bcc4213cab6aeffaff1ac4ed0a1f1dbfbbbdc7a33fed9cd3"},{"id":"v11-5ab25eb5220c","manifestSHA":"858a7956b7511c2b576fc3349f9b58eee6840585ca8f92a4b40c8cbdd9662b07"},{"id":"v12-53c7f1dc1eab","manifestSHA":"abd741ee8bf4564bfeba59d4bcf5365cec74792fed60a2f86521073e085abcf4"}]}
+    defaults:
+      run:
+        working-directory: upload-only/${{ matrix.id }}
+    env:
+      MANIFEST_SHA: ${{ matrix.manifestSHA }}
+      WORKER_SHA: eb75d5da9bd2e24c4be966f51dfb16f7f26b0a194ecf523bc0d7747b50b56f64
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify exact bounded source and transfer original bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp ../worker.py worker.py
+          echo "$WORKER_SHA  worker.py" | sha256sum --check --strict
+          echo "$MANIFEST_SHA  manifest.json" | sha256sum --check --strict
+          python3 worker.py validate
+          python3 worker.py prepare
+      - name: One source-identity GUID create
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py create
+      - name: Preserve created GUID before upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: created-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: One unchanged original MP4 upload
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py upload
+      - name: One immediate readiness observation, encoding does not occupy upload lane
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py readiness
+      - name: Preserve per-identity upload outcome
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: outcome-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
