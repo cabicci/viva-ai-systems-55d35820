@@ -1,0 +1,1 @@
+Three explicitly root-authorized changed-prompt audio reviews. Exact previous PCM/model/API; required object schema enforced locally. No expected transcript/words, no TTS/ASR/GET/retry, no automatic follow-up. Earlier invalid outputs remain charged and preserved.
