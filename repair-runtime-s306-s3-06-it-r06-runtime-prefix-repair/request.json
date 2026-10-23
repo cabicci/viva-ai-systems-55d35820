@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_RUNTIME_S306_S3_06_IT_R06_RUNTIME_PREFIX_REPAIR",
+  "stepId": "S3-06",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-06-it-R06-runtime-prefix-repair-r1",
+      "unitId": "S3-06-it-R06-runtime-prefix-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo. L’attività online prepara la spiegazione; solo l’osservazione individuale dell’istruttore certifica prelievo e montaggio.",
+          "sha256": "2a3fc37737b099a6a710c4c498caa8b302a22b5c496f078cafccf39ea326b14e"
+        }
+      ],
+      "scientificMeaning": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo. L’attività online prepara la spiegazione; solo l’osservazione individuale dell’istruttore certifica prelievo e montaggio.",
+      "displayText": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo. L’attività online prepara la spiegazione; solo l’osservazione individuale dell’istruttore certifica prelievo e montaggio.",
+      "captionText": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo. L’attività online prepara la spiegazione; solo l’osservazione individuale dell’istruttore certifica prelievo e montaggio.",
+      "spokenText": "Un esercizio interattivo aiuta a collocare i componenti e a provare le decisioni. Trascinare le schede e scegliere le azioni nell’esercizio sono comandi didattici, non percentuali misurate di umidità in campo.",
+      "spokenTextSHA256": "2b1000184adffd74058deeab1961cc095a6ac0907339c54e5827f1c0496aa5ee",
+      "spokenTextSha256": "2b1000184adffd74058deeab1961cc095a6ac0907339c54e5827f1c0496aa5ee",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo. L’attività online prepara la spiegazione; solo l’osservazione individuale dell’istruttore certifica prelievo e montaggio.",
+          "spoken": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo.",
+          "spoken": "Un esercizio interattivo aiuta a collocare i componenti e a provare le decisioni. Trascinare le schede e scegliere le azioni nell’esercizio sono comandi didattici, non percentuali misurate di umidità in campo.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "e8c716076df45174cbbbb4c75c6a38b01ecddcc4ddc960e5964948504bbf980e",
+      "requestFingerprintSha256": "e8c716076df45174cbbbb4c75c6a38b01ecddcc4ddc960e5964948504bbf980e",
+      "sourcePlanSha256": "5734764fbed7d63f4e51bff5227ced9abf7a2007b608bf9e776b96773e7c6f63",
+      "exactSentenceBefore": "Un esercizio 3D aiuta a collocare i componenti e a provare le decisioni. Indicatore visivo di prontezza e clic per aggiungere acqua nella simulazione sono comandi didattici, non percentuali misurate di umidità in campo.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_RUNTIME_TRUTHFUL_TWO_SENTENCE_PREFIX",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s306-four-prefix-root-dispatch-authority-r1.json",
+        "authoritySHA256": "00dd85ee00cca730782d2d62a4964672e3eeaac4c5f9bfda23fcc0ff1a0be25f"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-06-it-R06-runtime-prefix-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
