@@ -1,0 +1,56 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 2,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationID": "s206-reading-contexts",
+    "reservationSHA256": "c82b15c01a8c11e562f4f739a6d1cef0a1f83ecf9687fe79394a83fcfefe57b1",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 75,
+    "globalConservativelyReservedOrConsumed": 80,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S2-06-ar-EG-R06-r1",
+        "wavSHA256": "7454ebe06ed55e6824c1512a2c5f4369109ed186b7c520569dfadb1c8e0139a7",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S2-06-it-R05-r1",
+        "wavSHA256": "b7776e81c1f5d99e9c945d93990ddbee99568c2349db6a31bbdcd72112c03ff0",
+        "firstSample": 576000,
+        "endSampleExclusive": 720000,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}
