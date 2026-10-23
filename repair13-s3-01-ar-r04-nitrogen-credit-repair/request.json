@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR13_S3_01_AR_R04_NITROGEN_CREDIT_REPAIR",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair13-s3-01-ar-r04-nitrogen-credit-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-ar-EG-R04-nitrogen-credit-repair-r1",
+      "unitId": "S3-01-ar-EG-R04-nitrogen-credit-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair13-s3-01-ar-r04-nitrogen-credit-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b56b67d6083cc4a08e3998cedcee34804f15f6f9f8179db7fcba39144f1c5328",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "مع بكتيريا ريزوبيوم مناسبة وظروف مواتية، عقد جذور بعض البقوليات تقدر تثبت نيتروجين من الجو يستفيد منه النبات. الكمية اللي اتثبتت واتحصدت أو فضلت في الجذور والبقايا واللي يقدر المحصول التالي يستفيد منه بتختلف. البقوليات ما تضمنش تعويض السماد كله أو إيداع نيتروجين صافي في كل حقل. افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+          "sha256": "180a701d0c3cd2691653f5e09c89fc23f4bcbd62f1552c4f220b37cd77283926"
+        }
+      ],
+      "scientificMeaning": "مع بكتيريا ريزوبيوم مناسبة وظروف مواتية، عقد جذور بعض البقوليات تقدر تثبت نيتروجين من الجو يستفيد منه النبات. الكمية اللي اتثبتت واتحصدت أو فضلت في الجذور والبقايا واللي يقدر المحصول التالي يستفيد منه بتختلف. البقوليات ما تضمنش تعويض السماد كله أو إيداع نيتروجين صافي في كل حقل. افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+      "displayText": "مع بكتيريا ريزوبيوم مناسبة وظروف مواتية، عقد جذور بعض البقوليات تقدر تثبت نيتروجين من الجو يستفيد منه النبات. الكمية اللي اتثبتت واتحصدت أو فضلت في الجذور والبقايا واللي يقدر المحصول التالي يستفيد منه بتختلف. البقوليات ما تضمنش تعويض السماد كله أو إيداع نيتروجين صافي في كل حقل. افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+      "captionText": "مع بكتيريا ريزوبيوم مناسبة وظروف مواتية، عقد جذور بعض البقوليات تقدر تثبت نيتروجين من الجو يستفيد منه النبات. الكمية اللي اتثبتت واتحصدت أو فضلت في الجذور والبقايا واللي يقدر المحصول التالي يستفيد منه بتختلف. البقوليات ما تضمنش تعويض السماد كله أو إيداع نيتروجين صافي في كل حقل. افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+      "spokenText": "افحص العُقَد، وحالة الحقل، وخطة الزراعة، قبل ما تحسب أي رصيد للنيتروجين.",
+      "spokenTextSHA256": "69ac5a01c3b70874285b29877611d7963ac0ca57cfd816ce739d916eae448d3d",
+      "spokenTextSha256": "69ac5a01c3b70874285b29877611d7963ac0ca57cfd816ce739d916eae448d3d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "مع بكتيريا ريزوبيوم مناسبة وظروف مواتية، عقد جذور بعض البقوليات تقدر تثبت نيتروجين من الجو يستفيد منه النبات. الكمية اللي اتثبتت واتحصدت أو فضلت في الجذور والبقايا واللي يقدر المحصول التالي يستفيد منه بتختلف. البقوليات ما تضمنش تعويض السماد كله أو إيداع نيتروجين صافي في كل حقل. افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+          "spoken": "افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+          "spoken": "افحص العُقَد، وحالة الحقل، وخطة الزراعة، قبل ما تحسب أي رصيد للنيتروجين.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "140a9a3fb4b615a7afbf80e48f3d33675bd52bdd5eba6b1143ad249f56ec169f",
+      "requestFingerprintSha256": "140a9a3fb4b615a7afbf80e48f3d33675bd52bdd5eba6b1143ad249f56ec169f",
+      "sourcePlanSha256": "73c2842bfe072a33d27cefd7a934c5459a46ba0b3fe7f300915b92221c4e26e4",
+      "exactSentenceBefore": "افحص العقد وحالة الحقل وخطة الزراعة قبل حساب أي رصيد نيتروجين.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-s301-thirteen-subpassage-root-authority-r1.json",
+        "authoritySHA256": "996d94a9f2a6e3f09f8f53e76c05726aec70e8010fcda54844a6313ef7ef0e20",
+        "metadataGETAuthoritySHA256": "301586a922ebb2bb8b319fa25ca5f09c7a1ec995062d6e46a86cedce7206e759"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-01-ar-EG-R04-nitrogen-credit-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
