@@ -1,0 +1,368 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-en.json",
+    "sha256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "bytes": 49429
+  },
+  "units": [
+    {
+      "id": "S2-15-en-R01-r1",
+      "unitId": "S2-15-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.",
+          "sha256": "b04cab10ce07b78129b3a395e0d56d0596ce41db0bd3c9ac76b6658c4f4b4a64"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "This is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+          "sha256": "f993b55d58ff1ca3579f9c06633e7517c2face03bf8c158b5face10d299ce06b"
+        }
+      ],
+      "scientificMeaning": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "displayText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "captionText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "spokenText": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a sixty-minute active lesson: five minutes introduction and outcomes, ten minutes concept review, then thirty-five minutes group writing and ten minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods, observations and propose basic actions. A one to five confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+      "spokenTextSHA256": "fbc504fa1abbb97523c2c7c7307339a66ced57db9cc6048db939fe32fc0c0b2a",
+      "spokenTextSha256": "fbc504fa1abbb97523c2c7c7307339a66ced57db9cc6048db939fe32fc0c0b2a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a 60-minute active lesson: 5 minutes introduction and outcomes, 10 minutes concept review, then 35 minutes group writing and 10 minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods/observations and propose basic actions. A 1–5 confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+          "spoken": "A farmer brings a soil sample because the corn is growing poorly; a page of unexplained numbers will not answer the management question. The technician's job is to translate findings, methods and uncertainty into plain language and a sensible next step. Recall when confusing instructions last made a task harder; compare a jargon-heavy page with a clear page using headings, a table and prioritized actions.\n\nThis is a sixty-minute active lesson: five minutes introduction and outcomes, ten minutes concept review, then thirty-five minutes group writing and ten minutes discussion. The five aims are to explain report structure, translate data, organize findings, document methods, observations and propose basic actions. A one to five confidence rating against each aim helps plan revision; actual report evidence determines achievement.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d23062bad9f6236b4526beb3a39e602af3163599e2ad44aa955742e282c703a7",
+      "requestFingerprintSha256": "d23062bad9f6236b4526beb3a39e602af3163599e2ad44aa955742e282c703a7",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R02-r1",
+      "unitId": "S2-15-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.",
+          "sha256": "43af7016dd53cc23679c717ebd6033c92fa789bca84f2cdc35f3077f4d938c7d"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "The house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+          "sha256": "d7e80f6de2289cbcc588dfcca8edf45840078b213990ac272b829e02d497db5f"
+        }
+      ],
+      "scientificMeaning": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "displayText": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "captionText": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "spokenText": "one. Title and client information: client, field, sample, date and preparer. two. Introduction, objective: why the test was requested and the crop or decision. three. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. four. Results: a table of measurements, units, source and suitable reference. five. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+      "spokenTextSHA256": "2f1f6a55d2f4a77e0bfced991eb66c5a33156a7ec4848f482500fe3b288793f9",
+      "spokenTextSha256": "2f1f6a55d2f4a77e0bfced991eb66c5a33156a7ec4848f482500fe3b288793f9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "1. Title and client information: client, field, sample, date and preparer. 2. Introduction/objective: why the test was requested and the crop or decision. 3. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. 4. Results: a table of measurements, units, source and suitable reference. 5. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+          "spoken": "one. Title and client information: client, field, sample, date and preparer. two. Introduction, objective: why the test was requested and the crop or decision. three. Methods and observations: sampling and analytical methods actually used, plus what was seen in the field. four. Results: a table of measurements, units, source and suitable reference. five. Interpretation and recommendations: what each result means, priority, conditions and follow-up. The fifth section explains the numbers; it is not a raw data duplicate.\n\nThe house analogy can cue the sequence: address, plan, tools, built frame, then how to use it. A source extension asks for a 'fifth' long-term-health section even though five core sections already exist; add long-term management as an optional extra or subsection, never replace one of the five. Define compacted, deficient and tillage in short learner-friendly sentences in every locale.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4c238984a8c40eeff7413efa162143c63079bf2661318803844b74b8df1600c7",
+      "requestFingerprintSha256": "4c238984a8c40eeff7413efa162143c63079bf2661318803844b74b8df1600c7",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R03-r1",
+      "unitId": "S2-15-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.",
+          "sha256": "0948913d92dc93dbd13a7e2b0abfd9798b13eb0f02d0d7fb2ce5d4b63bebe3e8"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "Organic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+          "sha256": "0b00a930502c7a3d1b262363ff9eb871176eb8c69c037f15464ab8f8a9d49357"
+        }
+      ],
+      "scientificMeaning": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "displayText": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "captionText": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "spokenText": "Instead of a string of chemical jargon, say: 'The measured P H is five point zero, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as ten to the power of minus five moles per litre for P H five point zero; that is a simplified concentration example, not an exact P H definition. P H is formally based on hydrogen-ion activity. Around seven is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. C E C describes soil capacity to retain exchangeable positive ions, including K, calcium and magnesium, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains organic matter to a new gardener and the other explains N P K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+      "spokenTextSHA256": "0643eb23a250bb03783a46782600ac15df582d28a16321cfc7bd3ae6060aaee7",
+      "spokenTextSha256": "0643eb23a250bb03783a46782600ac15df582d28a16321cfc7bd3ae6060aaee7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Instead of a string of chemical jargon, say: 'The measured pH is 5.0, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as 10^-5 mol/L for pH 5.0; that is a simplified concentration example, not an exact pH definition. pH is formally based on hydrogen-ion activity. Around 7 is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. CEC describes soil capacity to retain exchangeable positive ions, including K, Ca and Mg, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains OM to a new gardener and the other explains N-P-K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+          "spoken": "Instead of a string of chemical jargon, say: 'The measured P H is five point zero, an acidic result. We need the crop target and a lime-requirement test before choosing a treatment or rate.' The classroom comparison writes hydrogen-ion concentration as ten to the power of minus five moles per litre for P H five point zero; that is a simplified concentration example, not an exact P H definition. P H is formally based on hydrogen-ion activity. Around seven is neutral, lower is acidic and higher alkaline, while suitable ranges depend on crop and method. For farmer language: N supports vegetative growth; P supports root and reproductive processes; K supports many plant functions. Low K can be one possible contributor to weak stems or crop vulnerability, but symptoms alone do not prove a single cause.\n\nOrganic matter contributes to soil structure, water and nutrient cycling; its percentage and amendment quality need context, so 'more is always better' is false. C E C describes soil capacity to retain exchangeable positive ions, including K, calcium and magnesium, and depends on clay minerals and organic matter; it is not a measure of every nutrient or nitrate. In a two-minute pair exercise, one learner explains organic matter to a new gardener and the other explains N P K, then they exchange and refine the explanations. Use leaves, roots and the whole plant as discussion cues, without treating N, P or K as the sole cause of a crop symptom.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d163e0d78f2a5604259a31c04c7b0dc6a4599ad5bae53c56665c3e00b6348d1c",
+      "requestFingerprintSha256": "d163e0d78f2a5604259a31c04c7b0dc6a4599ad5bae53c56665c3e00b6348d1c",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R04-r1",
+      "unitId": "S2-15-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.",
+          "sha256": "44e35b4c2fd427aaaa4ae657daea7b1025eed32da47aae35ef7569280b7f9695"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Use a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+          "sha256": "2f4fb03c1c646fa969c31d789e86a1d6166115066cb0f5e94c7846dbfd61f376"
+        }
+      ],
+      "scientificMeaning": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "displayText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "captionText": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "spokenText": "The source's teaching table reads P H five point two, organic matter two point one percent, N Low, P twenty-five parts per million and K one hundred eighty parts per million. It prints illustrative bands P H six point zero to seven point zero, organic matter three point zero to five point zero percent, N Optimum, P thirty to fifty parts per million and K one hundred fifty to two hundred fifty parts per million, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source, method, applicable reference and status, with 'unresolved' when support is missing. Units such as milligrams per litre, micrograms per litre and milligrams per kilogram do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, organic matter, N, P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+      "spokenTextSHA256": "1d9f95d18eb3b1213a8adf2c977249656a07244cd0bb5ab689120cf124e8837c",
+      "spokenTextSha256": "1d9f95d18eb3b1213a8adf2c977249656a07244cd0bb5ab689120cf124e8837c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The source's teaching table reads pH 5.2, OM 2.1%, N Low, P 25 ppm and K 180 ppm. It prints illustrative bands pH 6.0–7.0, OM 3.0–5.0%, N Optimum, P 30–50 ppm and K 150–250 ppm, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source/method, applicable reference and status, with 'unresolved' when support is missing. Units such as mg/L, µg/L and mg/kg do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, OM, N/P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+          "spoken": "The source's teaching table reads P H five point two, organic matter two point one percent, N Low, P twenty-five parts per million and K one hundred eighty parts per million. It prints illustrative bands P H six point zero to seven point zero, organic matter three point zero to five point zero percent, N Optimum, P thirty to fifty parts per million and K one hundred fifty to two hundred fifty parts per million, and labels the entries. Preserve those values as a supplied model, but the bands differ from the other teaching table and have no lab method. A real result row needs parameter, result, unit, source, method, applicable reference and status, with 'unresolved' when support is missing. Units such as milligrams per litre, micrograms per litre and milligrams per kilogram do not identify the measured substance on their own; do not report unidentified rows as soil nutrient results.\n\nUse a short prioritized bullet list beginning with a clear action verb. The model orders acidity, organic matter, N, P and K monitoring; this is not a universal sequence. Confirm crop target and lime requirement, calibrated nutrient needs and credits, amendment analysis, drainage and compaction before saying 'apply' a specific product or rate. Monitor K only if its reference justifies that status. Explain why the first action is first for this case.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4da2dc305937499502bdf1e2afbd9f169496536bb3e4181a18ed2d9a8ce817cd",
+      "requestFingerprintSha256": "4da2dc305937499502bdf1e2afbd9f169496536bb3e4181a18ed2d9a8ce817cd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R05-r1",
+      "unitId": "S2-15-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.",
+          "sha256": "5f6f075a570e5acaae38fb171a11b3abd13d193b9ebb99d3fa3978459db51f36"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Record soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+          "sha256": "055ed76dc665dc97fc7057dd76b91d6b8329533fb535430adfc512d35d6d0281"
+        }
+      ],
+      "scientificMeaning": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "displayText": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "captionText": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "spokenText": "The teaching method example takes ten cores from the top fifteen centimetres in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace placeholder Lab Name or placeholder Test Kit Name only with a verified actual service, device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+      "spokenTextSHA256": "2fd5faa9b48c6514c594aa716add97a75317f1f1afc816bd4890f30bbe7e1ea9",
+      "spokenTextSha256": "2fd5faa9b48c6514c594aa716add97a75317f1f1afc816bd4890f30bbe7e1ea9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The teaching method example takes 10 cores from the top 15 cm in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace [Lab Name] or [Test Kit Name] only with a verified actual service/device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+          "spoken": "The teaching method example takes ten cores from the top fifteen centimetres in a zigzag route and combines them in a clean bucket. It is a specific classroom scenario; a report of real work must state the actual sampling pattern, depth, number, date and field identity. Replace placeholder Lab Name or placeholder Test Kit Name only with a verified actual service, device and method, or mark it missing. A placeholder is not evidence of laboratory testing.\n\nRecord soil appearance, feel, moisture, standing water, crop condition and relevant weeds as observations. Yellow leaves can raise a nitrogen question but do not confirm N deficiency: nutrient status, disease, root damage and waterlogging require checking. Slow drainage can restrict roots or nutrient uptake, but the cause must be investigated. Put observation, possible interpretation and proposed test in separate report cells so a farmer can see the uncertainty.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "2195637180018a4c9f9b53e7edb73f60920c7062c9c4f3d82a7db7ffe0262688",
+      "requestFingerprintSha256": "2195637180018a4c9f9b53e7edb73f60920c7062c9c4f3d82a7db7ffe0262688",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R06-r1",
+      "unitId": "S2-15-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.",
+          "sha256": "0cc5d4255df07e4bdbc75ec4c3c879d95f6457b32ac622f5e1dfa72e9c771f1a"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "In groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+          "sha256": "827a8cb765133a3b2952ad39914e8430c43263b1064e2d88e538a5c96cb52ff2"
+        }
+      ],
+      "scientificMeaning": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "displayText": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "captionText": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+      "spokenText": "Farmer Jones's West Field is a supplied tomato case: P H five point five; organic matter one point five percent; N Low; P fifteen parts per million; K two hundred parts per million; visible compaction and slow drainage after rain. The source model gives tomato bands P H six point zero to six point eight, organic matter greater than three percent, N 'Optimal', P greater than fifty parts per million and K one hundred seventy-five to two hundred fifty parts per million. These are provided classroom target labels, not independently validated local lab ranges. In particular, P greater than fifty parts per million conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is five minutes, writing thirty-five and discussion ten with fifteen- and five-minute warnings during work. Address acidity, N, P questions and compaction, drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage, subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop, rotation section is an optional extension, not proof the learner built the table independently.",
+      "spokenTextSHA256": "548a68d17e2a581530a499dc370920c88a80cafdefe262183bd2582c37950177",
+      "spokenTextSha256": "548a68d17e2a581530a499dc370920c88a80cafdefe262183bd2582c37950177",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Farmer Jones's West Field is a supplied tomato case: pH 5.5; OM 1.5%; N Low; P 15 ppm; K 200 ppm; visible compaction and slow drainage after rain. The source model gives tomato bands pH 6.0–6.8, OM >3%, N 'Optimal', P >50 ppm and K 175–250 ppm. These are provided classroom target labels, not independently validated local lab ranges. In particular, P >50 ppm conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is 5 minutes, writing 35 and discussion 10 with 15- and 5-minute warnings during work. Address acidity, N/P questions and compaction/drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage/subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop/rotation section is an optional extension, not proof the learner built the table independently.",
+          "spoken": "Farmer Jones's West Field is a supplied tomato case: P H five point five; organic matter one point five percent; N Low; P fifteen parts per million; K two hundred parts per million; visible compaction and slow drainage after rain. The source model gives tomato bands P H six point zero to six point eight, organic matter greater than three percent, N 'Optimal', P greater than fifty parts per million and K one hundred seventy-five to two hundred fifty parts per million. These are provided classroom target labels, not independently validated local lab ranges. In particular, P greater than fifty parts per million conflicts with another source table and its extraction method is missing. The date, exact lab, test method, sampling details and measured compaction layer are not supplied; do not invent them.\n\nIn groups of three or four, make all five report sections, a farmer-readable table and prioritized bullets; trainer setup is five minutes, writing thirty-five and discussion ten with fifteen- and five-minute warnings during work. Address acidity, N, P questions and compaction, drainage, but seek a lab-calibrated tomato plan before nutrient or lime rates. Do not automatically select a balanced fertilizer when K may already be adequate. Check where a restrictive layer lies and whether drainage has an outlet before deep tillage, subsoiling; avoid tillage in unsuitable wet conditions. Ask one group for its priority and another for its compaction reasoning; compare with the model after attempts, accepting supported alternatives. Sentence starters or a pre-filled table can support practice, while a long-term cover-crop, rotation section is an optional extension, not proof the learner built the table independently.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ef5f6604296cf597604f2e047ac8cda42bf517434ddf1892ee832bb48965602",
+      "requestFingerprintSha256": "1ef5f6604296cf597604f2e047ac8cda42bf517434ddf1892ee832bb48965602",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-R07-r1",
+      "unitId": "S2-15-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.",
+          "sha256": "43817992879c43f0634fd778e88a68e832410a04248814a795f0b05f9f5aca5d"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "After revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+          "sha256": "c49282a243fc96904889d877e4c5b05f425724d142a901e76e0fb50035c1f459"
+        }
+      ],
+      "scientificMeaning": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "displayText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "captionText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "spokenText": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low, optimum, high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the one to five self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+      "spokenTextSHA256": "2cfc7c21024e2b19641862e246adf025045ab369b2001509831403a152e74acc",
+      "spokenTextSha256": "2cfc7c21024e2b19641862e246adf025045ab369b2001509831403a152e74acc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low/optimum/high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the 1–5 self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+          "spoken": "Read a partner's report as if you were the farmer. Can you identify your field, sample and crop? Are dates, methods, units and the source of each value visible? Does a claimed low, optimum, high class cite an applicable lab reference? Does each suggested action follow the findings, name its uncertainty and avoid an invented rate? Mark one gap, show a corrected sentence or cell, and ask the writer to revise.\n\nAfter revising, use the one to five self-rating to choose a skill to practise next. Your confidence is useful feedback, not a pass result; the report and the trainer's separate product evaluation are the evidence.",
+          "occurrences": 1,
+          "purpose": "Complete source numeral/decimal/range/comparison/nutrient acronym/grade/placeholder expansions plus natural spoken grammar; retain all limits/units/examples/reasoning and unchanged displayed source."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3ca4c196ebda12cf774a49676c1c87542eb032137cf0137966396c066fe871a1",
+      "requestFingerprintSha256": "3ca4c196ebda12cf774a49676c1c87542eb032137cf0137966396c066fe871a1",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
