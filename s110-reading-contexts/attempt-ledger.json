@@ -1,0 +1,236 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C03": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C04": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C05": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C06": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C07": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C08": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C09": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C10": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C11": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C12": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 12,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0,
+  "globalBudgetReservation": {
+    "reservationID": "s110-readings",
+    "authoritySHA256": "b483de031f4cf92208856a748db0e17f9ff43c7b9601bc21c428ae1fd9a93259",
+    "reservationSHA256": "85a378e66357ee6777a46861dc82b24b9dc5eef7475e0c92599bc5977306bbf2",
+    "globalMaximum": 96,
+    "globalConfirmedConsumedAtSnapshot": 0,
+    "globalConservativelyReservedOrConsumed": 19,
+    "unknownOutcomesRemainCharged": true,
+    "perClipSlots": [
+      {
+        "id": "C01",
+        "sourceUnitId": "S1-10-ar-EG-R02-r1",
+        "wavSHA256": "7ab065ef6658dad1b1269e0328dd1eee6ad9cbcd8023e8fe5ab075fdcd1b2ecd",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C02",
+        "sourceUnitId": "S1-10-ar-EG-R02-r1",
+        "wavSHA256": "7ab065ef6658dad1b1269e0328dd1eee6ad9cbcd8023e8fe5ab075fdcd1b2ecd",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C03",
+        "sourceUnitId": "S1-10-ar-EG-R06-r1",
+        "wavSHA256": "4ca11a0287b3e97903b25007d81ae36554d1e4b461b0bb2f23b75c9aa89589b7",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C04",
+        "sourceUnitId": "S1-10-en-R04-r1",
+        "wavSHA256": "25fea25f8216b9ed5ec887e138d06b9f394e45241b8d9d6ebfe7a7af6cc55383",
+        "firstSample": 864000,
+        "endSampleExclusive": 1008000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C05",
+        "sourceUnitId": "S1-10-it-R02-r1",
+        "wavSHA256": "f5ed53e6e57cf5c4e494bb1d12645e05ffc2075a8a36188e500c087a765f4e0d",
+        "firstSample": 2068800,
+        "endSampleExclusive": 2212800,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C06",
+        "sourceUnitId": "S1-10-it-R03-r1",
+        "wavSHA256": "b0d8f17e5619d04d8d89a2f90b51993c6eec0fc7915c2931ed457b0db6512d69",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C07",
+        "sourceUnitId": "S1-10-it-R03-r1",
+        "wavSHA256": "b0d8f17e5619d04d8d89a2f90b51993c6eec0fc7915c2931ed457b0db6512d69",
+        "firstSample": 2082240,
+        "endSampleExclusive": 2226240,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C08",
+        "sourceUnitId": "S1-10-it-R05-r1",
+        "wavSHA256": "3658d4d3644a7389f6a3ce7699f026ff42237da0083a6c9e1d160d852a7489b0",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C09",
+        "sourceUnitId": "S1-10-de-R02-r1",
+        "wavSHA256": "9a83eb6fdbea7ec95a54646e93af3bd931bacd664169065c2b352ef03128b635",
+        "firstSample": 2057280,
+        "endSampleExclusive": 2201280,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C10",
+        "sourceUnitId": "S1-10-de-R03-r1",
+        "wavSHA256": "82cb8f4cb4a3ef1f76626dcbf24a7fa243bda8b3527d2b5f7ba157c1db86e607",
+        "firstSample": 1368000,
+        "endSampleExclusive": 1512000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C11",
+        "sourceUnitId": "S1-10-de-R04-r1",
+        "wavSHA256": "27c2bb449b6750166778c4a9eaddfda0e81a38f61d0ffd04e2c37f1117aa6632",
+        "firstSample": 648000,
+        "endSampleExclusive": 792000,
+        "maximumPOST": 1
+      },
+      {
+        "id": "C12",
+        "sourceUnitId": "S1-10-de-R04-r1",
+        "wavSHA256": "27c2bb449b6750166778c4a9eaddfda0e81a38f61d0ffd04e2c37f1117aa6632",
+        "firstSample": 2047680,
+        "endSampleExclusive": 2191680,
+        "maximumPOST": 1
+      }
+    ]
+  }
+}
