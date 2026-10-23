@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S311_NEUN_S3_11_DE_R07_NEUN_REPAIR",
+  "stepId": "S3-11",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s311-neun-s3-11-de-r07-neun-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-11-de-R07-neun-repair-r1",
+      "unitId": "S3-11-de-R07-neun-repair-r1",
+      "locale": "de",
+      "semanticGroup": "repair-s311-neun-s3-11-de-r07-neun-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "Die ursprüngliche Materialliste nennt zusätzlich Laubhumus neben Kompost und abgelagertem Mist. Qualität, Nährstoff- und Salzanalysen sowie Zweck sind wichtig; die Materialien sind keine automatisch austauschbaren Dünger. Der50:50-Vorschlag nennt keine Masse- oder Volumenbasis. Keine davon darf unterstellt oder als freigegebene Vorgabe für den realen Standort verwendet werden.",
+          "sha256": "e5d3d1704eda2a98f88910196b8c8a0ca7cec001a90dc7aeeee3f455fa55b6a2"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/3",
+          "text": "Mit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+          "sha256": "cc67fe8d5b477f28056e016dda224a3fbb2f73200d6d57f3ef7e39d813b77abc"
+        }
+      ],
+      "scientificMeaning": "Die ursprüngliche Materialliste nennt zusätzlich Laubhumus neben Kompost und abgelagertem Mist. Qualität, Nährstoff- und Salzanalysen sowie Zweck sind wichtig; die Materialien sind keine automatisch austauschbaren Dünger. Der50:50-Vorschlag nennt keine Masse- oder Volumenbasis. Keine davon darf unterstellt oder als freigegebene Vorgabe für den realen Standort verwendet werden.\n\nMit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+      "displayText": "Die ursprüngliche Materialliste nennt zusätzlich Laubhumus neben Kompost und abgelagertem Mist. Qualität, Nährstoff- und Salzanalysen sowie Zweck sind wichtig; die Materialien sind keine automatisch austauschbaren Dünger. Der50:50-Vorschlag nennt keine Masse- oder Volumenbasis. Keine davon darf unterstellt oder als freigegebene Vorgabe für den realen Standort verwendet werden.\n\nMit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+      "captionText": "Die ursprüngliche Materialliste nennt zusätzlich Laubhumus neben Kompost und abgelagertem Mist. Qualität, Nährstoff- und Salzanalysen sowie Zweck sind wichtig; die Materialien sind keine automatisch austauschbaren Dünger. Der50:50-Vorschlag nennt keine Masse- oder Volumenbasis. Keine davon darf unterstellt oder als freigegebene Vorgabe für den realen Standort verwendet werden.\n\nMit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+      "spokenText": "Fünfzehn Minuten sind für die Planung von insgesamt neun Kulturen vorgesehen.",
+      "spokenTextSHA256": "434a0fcefa00baf74ac70be75e75bbec4ca431b9d1a17abd76d00428af7cf80a",
+      "spokenTextSha256": "434a0fcefa00baf74ac70be75e75bbec4ca431b9d1a17abd76d00428af7cf80a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die ursprüngliche Materialliste nennt zusätzlich Laubhumus neben Kompost und abgelagertem Mist. Qualität, Nährstoff- und Salzanalysen sowie Zweck sind wichtig; die Materialien sind keine automatisch austauschbaren Dünger. Der50:50-Vorschlag nennt keine Masse- oder Volumenbasis. Keine davon darf unterstellt oder als freigegebene Vorgabe für den realen Standort verwendet werden.\n\nMit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+          "spoken": "fünfzehn Minuten neun Kulturen planen",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "fünfzehn Minuten neun Kulturen planen",
+          "spoken": "Fünfzehn Minuten sind für die Planung von insgesamt neun Kulturen vorgesehen.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "01968fb45e0f7866b4ec75a7679cd7e1d0d732a86bb62cee4a31d9df34fad2ad",
+      "requestFingerprintSha256": "01968fb45e0f7866b4ec75a7679cd7e1d0d732a86bb62cee4a31d9df34fad2ad",
+      "sourcePlanSha256": "a4d208ec528daa68b7688750e69946d570746edb0ebc78981755ef699c4f2746",
+      "exactSentenceBefore": "fünfzehn Minuten neun Kulturen planen",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/4/paragraphs/3",
+        "sourceText": "Mit dem Workshop S3-10 verknüpfen: 5 Minuten echte Proben beobachten, 15 Minuten neun Kulturen planen, 15 Minuten zwei Wege für den Kunden und 10 Minuten Erklärung im Austausch; die moderierende Person kann die 45 Minuten flexibel verteilen. Die getrennte Abschlussfrage zum Sandboden mit einer Kultur und einer Maßnahme beibehalten. Dies sind geplante Aktivitäten, kein Nachweis ihrer Durchführung. Glossar und Satzanfänge nutzen: Zuerst prüfen…; Eine Bewirtschaftungsoption ist… wenn…; Eine alternative Kultur ist… weil… . Eine Partnerperson kann die Wahl hinterfragen; halte deine individuelle Begründung fest und akzeptiere andere gut begründete Antworten.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-11-de-R07-neun-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
