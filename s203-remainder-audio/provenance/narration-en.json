@@ -1,0 +1,742 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-03-en.json",
+    "sha256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+    "bytes": 25406
+  },
+  "units": [
+    {
+      "id": "S2-03-en-opening-r1",
+      "unitId": "S2-03-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A lower maize leaf turns yellow. Where is the yellowing: along its centre, along its edges, or between its veins? Describe what you actually see before deciding what may have caused it. A photograph is a clue, not a fertilizer instruction.",
+          "sha256": "b0b957868f55434457887bc7268002d3a8adf80dcb0a7e450f7a62a15376a533"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Match nine N, P and K name, function and symptom cards with reasons; distinguish maize N midrib V-yellowing, K margin yellowing and older-leaf Mg interveinal striping.",
+          "sha256": "02585a09bfec14dd3ba7230fba6806559bd48cf342590c8692005a075c675721"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "At each station, record the crop, plant part, position and age of affected leaves and the visible pattern before a qualified hypothesis; state a plausible alternative cause.",
+          "sha256": "b7851385f2e84ccbfac04fb6049660b159181966ed9094305d97401c8ab91fca"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Choose field observations and a suitable soil or crop-stage-specific tissue test to check a hypothesis, without calculating or prescribing fertilizer from a picture.",
+          "sha256": "5db795aa10a78bf7ae2cfdcb9ec36a89dc46ffa86d00c93f5a7e92a704681a73"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "A lower maize leaf turns yellow. Where is the yellowing: along its centre, along its edges, or between its veins? Describe what you actually see before deciding what may have caused it. A photograph is a clue, not a fertilizer instruction.\n\nMatch nine N, P and K name, function and symptom cards with reasons; distinguish maize N midrib V-yellowing, K margin yellowing and older-leaf Mg interveinal striping.\n\nAt each station, record the crop, plant part, position and age of affected leaves and the visible pattern before a qualified hypothesis; state a plausible alternative cause.\n\nChoose field observations and a suitable soil or crop-stage-specific tissue test to check a hypothesis, without calculating or prescribing fertilizer from a picture.",
+      "displayText": "A lower maize leaf turns yellow. Where is the yellowing: along its centre, along its edges, or between its veins? Describe what you actually see before deciding what may have caused it. A photograph is a clue, not a fertilizer instruction.\n\nMatch nine N, P and K name, function and symptom cards with reasons; distinguish maize N midrib V-yellowing, K margin yellowing and older-leaf Mg interveinal striping.\n\nAt each station, record the crop, plant part, position and age of affected leaves and the visible pattern before a qualified hypothesis; state a plausible alternative cause.\n\nChoose field observations and a suitable soil or crop-stage-specific tissue test to check a hypothesis, without calculating or prescribing fertilizer from a picture.",
+      "captionText": "A lower maize leaf turns yellow. Where is the yellowing: along its centre, along its edges, or between its veins? Describe what you actually see before deciding what may have caused it. A photograph is a clue, not a fertilizer instruction.\n\nMatch nine N, P and K name, function and symptom cards with reasons; distinguish maize N midrib V-yellowing, K margin yellowing and older-leaf Mg interveinal striping.\n\nAt each station, record the crop, plant part, position and age of affected leaves and the visible pattern before a qualified hypothesis; state a plausible alternative cause.\n\nChoose field observations and a suitable soil or crop-stage-specific tissue test to check a hypothesis, without calculating or prescribing fertilizer from a picture.",
+      "spokenText": "A lower maize leaf turns yellow. Where is the yellowing: along its centre, along its edges, or between its veins? Describe what you actually see before deciding what may have caused it. A photograph is a clue, not a fertilizer instruction.\n\nMatch nine N, P and K name, function and symptom cards with reasons; distinguish maize N midrib V-yellowing, K margin yellowing and older-leaf Mg interveinal striping.\n\nAt each station, record the crop, plant part, position and age of affected leaves and the visible pattern before a qualified hypothesis; state a plausible alternative cause.\n\nChoose field observations and a suitable soil or crop-stage-specific tissue test to check a hypothesis, without calculating or prescribing fertilizer from a picture.",
+      "spokenTextSHA256": "e629b13e868616374f6cd46bf8c166bf4a8e1ea89a54ddbc42ff599e955e095d",
+      "spokenTextSha256": "e629b13e868616374f6cd46bf8c166bf4a8e1ea89a54ddbc42ff599e955e095d",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4e0d6174a864bff42c3f6c5aa5bc34de91c275b697e4ff93c64db90d7673a9fd",
+      "requestFingerprintSha256": "4e0d6174a864bff42c3f6c5aa5bc34de91c275b697e4ff93c64db90d7673a9fd",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-E01-r1",
+      "unitId": "S2-03-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A lower maize leaf has yellow outer edges but a greener centre. A second lower leaf has a yellow V along the central vein.",
+          "sha256": "34d2d1feafc9c53a26b80a43d28d4932151195e2d39f07683e7eeeec6540067a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Describe the visible route and leaf age for each before choosing a label.",
+          "sha256": "40a7b64d78d0d9a1eb5302962a77b7179a958e8cc447ee8e6429f521ee43ffb6"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "K is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.",
+          "sha256": "b21d4501a862d3a4c7b7d9510b8a723741bd70181ebe62dd6ee59fcb3442bf09"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Check whether the patterns recur across the field, inspect roots and water conditions, then use appropriate tests before management.",
+          "sha256": "42e138e983e03338ca6339f468b19d5068294c17db1302f7fd824909dabb6d42"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "The location of yellowing is evidence; neither photograph is a complete diagnosis.",
+          "sha256": "18eb58e4464ce7fd1a291b21e6498bab420413065245d7b9b4dd43a928f185f9"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "A lower maize leaf has yellow outer edges but a greener centre. A second lower leaf has a yellow V along the central vein.\n\nDescribe the visible route and leaf age for each before choosing a label.\n\nK is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.\n\nCheck whether the patterns recur across the field, inspect roots and water conditions, then use appropriate tests before management.\n\nThe location of yellowing is evidence; neither photograph is a complete diagnosis.",
+      "displayText": "A lower maize leaf has yellow outer edges but a greener centre. A second lower leaf has a yellow V along the central vein.\n\nDescribe the visible route and leaf age for each before choosing a label.\n\nK is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.\n\nCheck whether the patterns recur across the field, inspect roots and water conditions, then use appropriate tests before management.\n\nThe location of yellowing is evidence; neither photograph is a complete diagnosis.",
+      "captionText": "A lower maize leaf has yellow outer edges but a greener centre. A second lower leaf has a yellow V along the central vein.\n\nDescribe the visible route and leaf age for each before choosing a label.\n\nK is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.\n\nCheck whether the patterns recur across the field, inspect roots and water conditions, then use appropriate tests before management.\n\nThe location of yellowing is evidence; neither photograph is a complete diagnosis.",
+      "spokenText": "A lower maize leaf has yellow outer edges but a greener centre. A second lower leaf has a yellow V along the central vein.\n\nDescribe the visible route and leaf age for each before choosing a label.\n\nK is the stronger hypothesis for the first leaf; N for the second. The shared older-leaf position alone cannot distinguish them.\n\nCheck whether the patterns recur across the field, inspect roots and water conditions, then use appropriate tests before management.\n\nThe location of yellowing is evidence; neither photograph is a complete diagnosis.",
+      "spokenTextSHA256": "764c53b737f3e59fdd443b10a5daf0a2e0e8dd4cc86bbd039d3cad2d820ca407",
+      "spokenTextSha256": "764c53b737f3e59fdd443b10a5daf0a2e0e8dd4cc86bbd039d3cad2d820ca407",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e69531ab10818fe72c0da308377e4886c26110cc80b4aca21584894ef6712ad6",
+      "requestFingerprintSha256": "e69531ab10818fe72c0da308377e4886c26110cc80b4aca21584894ef6712ad6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-E02-r1",
+      "unitId": "S2-03-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Young maize is small and purplish after a cold, wet week; soil P status is not yet known.",
+          "sha256": "b955f36954b1cd2ad9dee49eba86ff9777dd082075458a3d20c3b49a1e216551"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "P shortage is plausible from the colour and growth pattern, but not established.",
+          "sha256": "f282c943b0b9e79dd6f9d810279a130642da48434c7eae2d093a65974b1a1b51"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Cold, wet soil and reduced root activity can limit P uptake even when soil P is sufficient.",
+          "sha256": "45745a3b2ef0d8d0eb58c0407ad340bae33921d919206425816067c44694ec36"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Inspect root condition and weather; interpret soil P and, if useful, appropriately sampled tissue results before deciding on treatment.",
+          "sha256": "bdddfd6a392cf03abcd871893853920dcd7fbc9ccbaa7dbb4bc4925a47f55cb0"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "A visually plausible nutrient label must survive alternative explanations.",
+          "sha256": "02148b47fa6a46a1dff333859aad7571301f6d3482de9c1be9884373cd70e277"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Young maize is small and purplish after a cold, wet week; soil P status is not yet known.\n\nP shortage is plausible from the colour and growth pattern, but not established.\n\nCold, wet soil and reduced root activity can limit P uptake even when soil P is sufficient.\n\nInspect root condition and weather; interpret soil P and, if useful, appropriately sampled tissue results before deciding on treatment.\n\nA visually plausible nutrient label must survive alternative explanations.",
+      "displayText": "Young maize is small and purplish after a cold, wet week; soil P status is not yet known.\n\nP shortage is plausible from the colour and growth pattern, but not established.\n\nCold, wet soil and reduced root activity can limit P uptake even when soil P is sufficient.\n\nInspect root condition and weather; interpret soil P and, if useful, appropriately sampled tissue results before deciding on treatment.\n\nA visually plausible nutrient label must survive alternative explanations.",
+      "captionText": "Young maize is small and purplish after a cold, wet week; soil P status is not yet known.\n\nP shortage is plausible from the colour and growth pattern, but not established.\n\nCold, wet soil and reduced root activity can limit P uptake even when soil P is sufficient.\n\nInspect root condition and weather; interpret soil P and, if useful, appropriately sampled tissue results before deciding on treatment.\n\nA visually plausible nutrient label must survive alternative explanations.",
+      "spokenText": "Young maize is small and purplish after a cold, wet week; soil P status is not yet known.\n\nP shortage is plausible from the colour and growth pattern, but not established.\n\nCold, wet soil and reduced root activity can limit P uptake even when soil P is sufficient.\n\nInspect root condition and weather; interpret soil P and, if useful, appropriately sampled tissue results before deciding on treatment.\n\nA visually plausible nutrient label must survive alternative explanations.",
+      "spokenTextSHA256": "79c2d2856f4540c11fa1aaf4d242784002136b7e6f08bb1e5acc2e7318774211",
+      "spokenTextSha256": "79c2d2856f4540c11fa1aaf4d242784002136b7e6f08bb1e5acc2e7318774211",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f66a40995fb57b978747f4b92722ce72ac63d82efce75288bba24fbb9d1a6743",
+      "requestFingerprintSha256": "f66a40995fb57b978747f4b92722ce72ac63d82efce75288bba24fbb9d1a6743",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-guided-practice-r1",
+      "unitId": "S2-03-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Build three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.",
+          "sha256": "68af3345598ae2f68f93fb92659e51dbcdef3d21b081f471b6e8506c1b96ab36"
+        },
+        {
+          "pointer": "/symptomPractice/cardSort/groupSize",
+          "text": "2–3; each learner submits an individual match and reason",
+          "sha256": "7f75a1477044122b5b318b0c05bfcab3bef3b865bffd35272b99272db61f9af0"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "These are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+          "sha256": "59cdc3c6a69c2cee01bc86cc08b93d9cc4e34c677c1032aaa42bbf1430dae7ab"
+        }
+      ],
+      "sourceNumericBindings": [
+        {
+          "pointer": "/symptomPractice/cardSort/durationMinutes",
+          "jsonType": "integer",
+          "value": 10,
+          "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+          "canonicalJSONSHA256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        }
+      ],
+      "scientificMeaning": "Build three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\n2–3; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "displayText": "Build three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\n2–3; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "captionText": "Build three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\n2–3; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "spokenText": "The card sort takes ten minutes.\n\nBuild three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\nGroups of two to three; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "spokenTextSHA256": "d82ec88950b1f881b36974cbf4e5010656ec02d2b05a3f8f882f16750d0acc4f",
+      "spokenTextSha256": "d82ec88950b1f881b36974cbf4e5010656ec02d2b05a3f8f882f16750d0acc4f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Build three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\n2–3; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+          "spoken": "The card sort takes ten minutes.\n\nBuild three name–function–symptom triples. Explain each match and one reason colour alone could mislead. Category colours may help sorting but must not encode the correct triple.\n\n2–3; each learner submits an individual match and reason\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+          "occurrences": 1,
+          "purpose": "Faithful contextual narration of separately bound native integer duration values; no fake text source binding or source/schema edit"
+        },
+        {
+          "written": "2–3; each learner",
+          "spoken": "Groups of two to three; each learner",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1efa1c16a61cf045ce85d03b741e609910e9ca8df0ee03cc09e6245877e0d9be",
+      "requestFingerprintSha256": "1efa1c16a61cf045ce85d03b741e609910e9ca8df0ee03cc09e6245877e0d9be",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-reflection-r1",
+      "unitId": "S2-03-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Can I separate what I see from a possible cause and a check that could disprove it?",
+          "sha256": "f81cf5afce7c2e803d85bd56b4198e63d9cae16495357f5997f4cfba95fd20b0"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "These are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+          "sha256": "59cdc3c6a69c2cee01bc86cc08b93d9cc4e34c677c1032aaa42bbf1430dae7ab"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Can I separate what I see from a possible cause and a check that could disprove it?\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "displayText": "Can I separate what I see from a possible cause and a check that could disprove it?\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "captionText": "Can I separate what I see from a possible cause and a check that could disprove it?\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "spokenText": "Can I separate what I see from a possible cause and a check that could disprove it?\n\nThese are provisional interpretations of teaching images. Written reasons and corroborating evidence require review; no field diagnosis or fertilizer rate is certified.",
+      "spokenTextSHA256": "2bde64a14459dd570f05cc62879efde64f84138a7ce7d0354c3c3b50b1811812",
+      "spokenTextSha256": "2bde64a14459dd570f05cc62879efde64f84138a7ce7d0354c3c3b50b1811812",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "765da2a1efffc74a7e5a3dab359d68904b7cc21232e247b3300172a5d15c50f4",
+      "requestFingerprintSha256": "765da2a1efffc74a7e5a3dab359d68904b7cc21232e247b3300172a5d15c50f4",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-comparison-r1",
+      "unitId": "S2-03-en-comparison-r1",
+      "locale": "en",
+      "semanticGroup": "comparison",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/comparisonLabel",
+          "text": "Evidence-based nutrient symptom interpretation",
+          "sha256": "521cab0523b0286e5488d42b9001bf27b4c9f626a27363636ebcdaf4603d96ff"
+        },
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Possible shortage",
+          "sha256": "379b77c8adf6657f70f8a04bbcea278c1a58956e6d28ecba31a010ce51680cd7"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "First useful location clue",
+          "sha256": "9209a473d7f95f6b5fe2718e641964f93307b40b5d5e739eaf5be2368d069470"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Typical visual clue in maize",
+          "sha256": "bbd46cee351e1b5356d6f9130929ea0a06b3a2897287128e930e0150140b89d0"
+        },
+        {
+          "pointer": "/comparison/columns/3",
+          "text": "Why still uncertain",
+          "sha256": "be7aeb71318afd84bdc38f76d1e5341553be870d69c914d52c38a6ada0055714"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "N",
+          "sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Older, lower leaf",
+          "sha256": "4002f47ebc9900d0de268242f2cae4b2e6ba0f16c578741590cfa92dfb292968"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "Yellow V from tip along midrib; plant may be pale or stunted",
+          "sha256": "f7c481046c76148aa8d1253a8cfc030d40ab763de2954e3feccb27a46a4efe19"
+        },
+        {
+          "pointer": "/comparison/rows/0/3",
+          "text": "Paleness and poor growth have other causes",
+          "sha256": "6820ac36b2e0e2f5b6e089b0efff885846ee4007c8e88f9d204150ca07f9c26b"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "P",
+          "sha256": "5c62e091b8c0565f1bafad0dad5934276143ae2ccef7a5381e8ada5b1a8d26d2"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Often young plants; lower leaves may purple",
+          "sha256": "0bc488c53d66bbd3cede6bc4657dcbdacfa2c08b04948b4a44222822fb296d1e"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Stunted, dark green or purple tint",
+          "sha256": "4246796cc4b7186f4f159caa98b734c9f7a056a298b0d34269b154e6332f9aab"
+        },
+        {
+          "pointer": "/comparison/rows/1/3",
+          "text": "Cold/wet soil or root problems can restrict uptake",
+          "sha256": "932b34fdc85b8fbf1075f100c71f4eb13a28e94e5dd83231c228280cbb02cbf5"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "K",
+          "sha256": "86be9a55762d316a3026c2836d044f5fc76e34da10e1b45feee5f18be7edb177"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Older, lower leaf",
+          "sha256": "4002f47ebc9900d0de268242f2cae4b2e6ba0f16c578741590cfa92dfb292968"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Tip to outer margins yellow; middle greener",
+          "sha256": "a412a2854e6d3fa1c830c856ff9332148c06486e0bfc4c5bf58919477b087a62"
+        },
+        {
+          "pointer": "/comparison/rows/2/3",
+          "text": "Other stress can also scorch edges",
+          "sha256": "c2268cd54c6a5191a97a806bc441b56f0c50d6362479d26660363484fe5ad3b4"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Mg (extension)",
+          "sha256": "f0a8ab8ea76f36babd3bf33a28ec9a105b11e777842ff9ac3bfeae1a7b769c78"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Older, lower leaf",
+          "sha256": "4002f47ebc9900d0de268242f2cae4b2e6ba0f16c578741590cfa92dfb292968"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Interveinal lengthwise yellow bands, veins green",
+          "sha256": "62507acb455e87bb6a97bff1e11efd1f321ea3741ecb6622bce69d1be5b209b6"
+        },
+        {
+          "pointer": "/comparison/rows/3/3",
+          "text": "Other injuries or nutrient problems can resemble it",
+          "sha256": "5863f49e019ab5d97b705768e88953de20328da982f00a627f187c39602ea532"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Evidence-based nutrient symptom interpretation\n\nPossible shortage\n\nFirst useful location clue\n\nTypical visual clue in maize\n\nWhy still uncertain\n\nN\n\nOlder, lower leaf\n\nYellow V from tip along midrib; plant may be pale or stunted\n\nPaleness and poor growth have other causes\n\nP\n\nOften young plants; lower leaves may purple\n\nStunted, dark green or purple tint\n\nCold/wet soil or root problems can restrict uptake\n\nK\n\nOlder, lower leaf\n\nTip to outer margins yellow; middle greener\n\nOther stress can also scorch edges\n\nMg (extension)\n\nOlder, lower leaf\n\nInterveinal lengthwise yellow bands, veins green\n\nOther injuries or nutrient problems can resemble it",
+      "displayText": "Evidence-based nutrient symptom interpretation\n\nPossible shortage\n\nFirst useful location clue\n\nTypical visual clue in maize\n\nWhy still uncertain\n\nN\n\nOlder, lower leaf\n\nYellow V from tip along midrib; plant may be pale or stunted\n\nPaleness and poor growth have other causes\n\nP\n\nOften young plants; lower leaves may purple\n\nStunted, dark green or purple tint\n\nCold/wet soil or root problems can restrict uptake\n\nK\n\nOlder, lower leaf\n\nTip to outer margins yellow; middle greener\n\nOther stress can also scorch edges\n\nMg (extension)\n\nOlder, lower leaf\n\nInterveinal lengthwise yellow bands, veins green\n\nOther injuries or nutrient problems can resemble it",
+      "captionText": "Evidence-based nutrient symptom interpretation\n\nPossible shortage\n\nFirst useful location clue\n\nTypical visual clue in maize\n\nWhy still uncertain\n\nN\n\nOlder, lower leaf\n\nYellow V from tip along midrib; plant may be pale or stunted\n\nPaleness and poor growth have other causes\n\nP\n\nOften young plants; lower leaves may purple\n\nStunted, dark green or purple tint\n\nCold/wet soil or root problems can restrict uptake\n\nK\n\nOlder, lower leaf\n\nTip to outer margins yellow; middle greener\n\nOther stress can also scorch edges\n\nMg (extension)\n\nOlder, lower leaf\n\nInterveinal lengthwise yellow bands, veins green\n\nOther injuries or nutrient problems can resemble it",
+      "spokenText": "Evidence-based nutrient symptom interpretation\n\nPossible shortage\n\nFirst useful location clue\n\nTypical visual clue in maize\n\nWhy still uncertain\n\nN\n\nOlder, lower leaf\n\nYellow V from tip along midrib; plant may be pale or stunted\n\nPaleness and poor growth have other causes\n\nP\n\nOften young plants; lower leaves may purple\n\nStunted, dark green or purple tint\n\nCold/wet soil or root problems can restrict uptake\n\nK\n\nOlder, lower leaf\n\nTip to outer margins yellow; middle greener\n\nOther stress can also scorch edges\n\nMg (extension)\n\nOlder, lower leaf\n\nInterveinal lengthwise yellow bands, veins green\n\nOther injuries or nutrient problems can resemble it",
+      "spokenTextSHA256": "051c9ea61b4f519627b0b0e68bffa7943f177f9b227812923077ec3926493d63",
+      "spokenTextSha256": "051c9ea61b4f519627b0b0e68bffa7943f177f9b227812923077ec3926493d63",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1bc274ddda31a4d5166cb3350d958bbcb864d1035c2f3d46257b364626017075",
+      "requestFingerprintSha256": "1bc274ddda31a4d5166cb3350d958bbcb864d1035c2f3d46257b364626017075",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-glossary-r1",
+      "unitId": "S2-03-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "chlorosis",
+          "sha256": "0a7491d03e8794850b2f8242cc4d86e29b3967b00a88162bb7c8176f77b9cc98"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Loss of normal green colour, often visible as yellowing.",
+          "sha256": "ebb2b3ebe597fee620a61d2262faa5f38883ad0078ec53725357edd69b0e6f7a"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "deficiency",
+          "sha256": "db5d7a5252dd6e796da85646fcbc22e72dce683ea73bb0dd64249c1c47ab44c6"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "An inadequate nutrient supply or use relative to plant needs; a symptom alone does not prove it.",
+          "sha256": "d03494f32697f5998e68f92166558cf9a2798b5b6d6c23d9feca7a999fec4386"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "leaf margin",
+          "sha256": "b6fceeac0fc248ca7ddeacd06e6de0e25aae1a4d6dede43fac02eb09483c59a6"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "The outer edge of a leaf.",
+          "sha256": "53ee39b6e3b8d255b50cad1703526c735b939687b68c709812d65fb39a73b789"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "midrib",
+          "sha256": "04477c86647497ffe21465ea9376b5544a07c3bf2d709ebfae2d9976b2d9af83"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "The main central vein of a leaf.",
+          "sha256": "6da0e1cf7af31a36073847baddc4b5706fadefc2e04d76f971aa7f2d22974de4"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "stunted",
+          "sha256": "b50de490b66a48aa174353705870a59deb5dbf302757c7152e335b479c4d6f2c"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Growing smaller or more slowly than expected for that crop and stage.",
+          "sha256": "820042872ef09473b4120d136d21318457d837f29578ca78a96dea436a6f1d7e"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "interveinal chlorosis",
+          "sha256": "b4c0bdf2a9e33d853fa1e76eb2331f1ea7cb11c33960112c583b3ce8d11029bf"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Yellowing between veins while the veins stay greener.",
+          "sha256": "d8f95cd935234c0752f691d87b39d366e12cdc57dd42653eaaaf8a6d8a5b874b"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "internal remobilization",
+          "sha256": "096e352a7f6b142883cc45544989f6ef3e98a5f1dac9cc33e36cd7972c671381"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Redistribution of a nutrient from older tissues toward newer tissues after uptake.",
+          "sha256": "050eac933fc6c68525f910e4d7a8e626c94caadb26c4422c42940e2701469dd6"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "chlorosis\n\nLoss of normal green colour, often visible as yellowing.\n\ndeficiency\n\nAn inadequate nutrient supply or use relative to plant needs; a symptom alone does not prove it.\n\nleaf margin\n\nThe outer edge of a leaf.\n\nmidrib\n\nThe main central vein of a leaf.\n\nstunted\n\nGrowing smaller or more slowly than expected for that crop and stage.\n\ninterveinal chlorosis\n\nYellowing between veins while the veins stay greener.\n\ninternal remobilization\n\nRedistribution of a nutrient from older tissues toward newer tissues after uptake.",
+      "displayText": "chlorosis\n\nLoss of normal green colour, often visible as yellowing.\n\ndeficiency\n\nAn inadequate nutrient supply or use relative to plant needs; a symptom alone does not prove it.\n\nleaf margin\n\nThe outer edge of a leaf.\n\nmidrib\n\nThe main central vein of a leaf.\n\nstunted\n\nGrowing smaller or more slowly than expected for that crop and stage.\n\ninterveinal chlorosis\n\nYellowing between veins while the veins stay greener.\n\ninternal remobilization\n\nRedistribution of a nutrient from older tissues toward newer tissues after uptake.",
+      "captionText": "chlorosis\n\nLoss of normal green colour, often visible as yellowing.\n\ndeficiency\n\nAn inadequate nutrient supply or use relative to plant needs; a symptom alone does not prove it.\n\nleaf margin\n\nThe outer edge of a leaf.\n\nmidrib\n\nThe main central vein of a leaf.\n\nstunted\n\nGrowing smaller or more slowly than expected for that crop and stage.\n\ninterveinal chlorosis\n\nYellowing between veins while the veins stay greener.\n\ninternal remobilization\n\nRedistribution of a nutrient from older tissues toward newer tissues after uptake.",
+      "spokenText": "chlorosis\n\nLoss of normal green colour, often visible as yellowing.\n\ndeficiency\n\nAn inadequate nutrient supply or use relative to plant needs; a symptom alone does not prove it.\n\nleaf margin\n\nThe outer edge of a leaf.\n\nmidrib\n\nThe main central vein of a leaf.\n\nstunted\n\nGrowing smaller or more slowly than expected for that crop and stage.\n\ninterveinal chlorosis\n\nYellowing between veins while the veins stay greener.\n\ninternal remobilization\n\nRedistribution of a nutrient from older tissues toward newer tissues after uptake.",
+      "spokenTextSHA256": "2df3a244dd45fa7c52b50b764b66bbf8e27b625f031c3be934a084210fe7391c",
+      "spokenTextSha256": "2df3a244dd45fa7c52b50b764b66bbf8e27b625f031c3be934a084210fe7391c",
+      "spokenAdaptationChanges": [],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "13da3dbccd1cfbfca53db121aa070d7166db8bb1053675b85eb5031f62a79fe6",
+      "requestFingerprintSha256": "13da3dbccd1cfbfca53db121aa070d7166db8bb1053675b85eb5031f62a79fe6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-station-workflow-r1",
+      "unitId": "S2-03-en-station-workflow-r1",
+      "locale": "en",
+      "semanticGroup": "station-workflow",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/symptomPractice/stations/count",
+          "text": "3–5 verified crop- and symptom-matched visuals; at least N, P and K",
+          "sha256": "972f4f49326341c99c89ae4d93703d6a7374bf047f02340a91b81928996e9e07"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/0",
+          "text": "station number",
+          "sha256": "4f0327e0e400e33ba747571eb316ecb58d173813126af52c5f9b7d5a69580dba"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/1",
+          "text": "crop and growth stage",
+          "sha256": "15694d15a02247cfdaf812685038fecf25b75a1fbd7233d79e3631cbf5c34be0"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/2",
+          "text": "direct observation",
+          "sha256": "5613d62bbd15e76e99d473200e20bed6211106573b064d661a3fc699ddf1635f"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/3",
+          "text": "affected position and leaf age",
+          "sha256": "4198158c2fd474eb921b38288e772adb1a8ee5e52b292dbe4b5ee449e997cc7e"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/4",
+          "text": "likely nutrient hypothesis",
+          "sha256": "d9d17ff50534be53d817792ea12403e0cc3f8669bc124d99cf551af9f4cbdece"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/5",
+          "text": "reasoning and alternative",
+          "sha256": "51ebb8f948253a281c1a2ce2a5b811871f4ff9207e1a60dae3aa861011bebea7"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/6",
+          "text": "field or laboratory check",
+          "sha256": "aec80d83a1e95d952d6ffcbd95b5f57deca5dd060c06192955a3c5807b6d832c"
+        },
+        {
+          "pointer": "/symptomPractice/stations/instruction",
+          "text": "Rotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.",
+          "sha256": "08defc4d79b5eb985799c85a9437876f2ea4204000776e423c1b22587ab47f5a"
+        },
+        {
+          "pointer": "/symptomPractice/debrief/instruction",
+          "text": "Compare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.",
+          "sha256": "04933d3e7bfe69cbfcc561018941fffebc36d41d92fa50ca711685466260d200"
+        },
+        {
+          "pointer": "/symptomPractice/exitTicket",
+          "text": "Older lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?",
+          "sha256": "5bac5a7556f223791f005f8360c145a8cda30143042f9962b73224522fc2299c"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Symptom observation and card worksheet",
+          "sha256": "3bf0114c2828b369654ef6a3a68c17b0c8eb02be05acfa9683669f5684976f3b"
+        }
+      ],
+      "sourceNumericBindings": [
+        {
+          "pointer": "/symptomPractice/stations/durationMinutes",
+          "jsonType": "integer",
+          "value": 25,
+          "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+          "canonicalJSONSHA256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569"
+        },
+        {
+          "pointer": "/symptomPractice/debrief/durationMinutes",
+          "jsonType": "integer",
+          "value": 10,
+          "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+          "canonicalJSONSHA256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        }
+      ],
+      "scientificMeaning": "3–5 verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+      "displayText": "3–5 verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+      "captionText": "3–5 verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+      "spokenText": "The stations take twenty-five minutes, followed by ten minutes for the debrief.\n\nThree to five verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+      "spokenTextSHA256": "653a9e2fed6384802627579f50a71a1697a581104f204300c849dcdce6831a7d",
+      "spokenTextSha256": "653a9e2fed6384802627579f50a71a1697a581104f204300c849dcdce6831a7d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3–5 verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+          "spoken": "The stations take twenty-five minutes, followed by ten minutes for the debrief.\n\n3–5 verified crop- and symptom-matched visuals; at least N, P and K\n\nstation number\n\ncrop and growth stage\n\ndirect observation\n\naffected position and leaf age\n\nlikely nutrient hypothesis\n\nreasoning and alternative\n\nfield or laboratory check\n\nRotate through each available station. Record observations before the hypothesis. Do not reveal an answer key during the first attempt.\n\nCompare group explanations with each image, discuss alternative causes and check the patterns. Then answer the exit ticket independently without notes.\n\nOlder lower maize leaves have yellow outer margins while the centre stays greener. What is the strongest provisional hypothesis, why are older leaves affected, and what would you check next?\n\nSymptom observation and card worksheet",
+          "occurrences": 1,
+          "purpose": "Faithful contextual narration of separately bound native integer duration values; no fake text source binding or source/schema edit"
+        },
+        {
+          "written": "3–5 verified",
+          "spoken": "Three to five verified",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b46273d2d3114f9d1e653b1400952ca94d259e6092eab95bf56e3cd33ecfb941",
+      "requestFingerprintSha256": "b46273d2d3114f9d1e653b1400952ca94d259e6092eab95bf56e3cd33ecfb941",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-03-en-knowledge-completion-r1",
+      "unitId": "S2-03-en-knowledge-completion-r1",
+      "locale": "en",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b01b366afb95177a18fd675395445e3b31be55d269ef2940cae91224754d7a53",
+      "sourceBindings": [
+        {
+          "pointer": "/symptomPractice/passChecks/0/evidence",
+          "text": "Individually groups all nine cards into three justified N/P/K sets and identifies the N centre-V, K outer-margin yellowing and P young-maize purpling patterns on the checked station images. Magnesium interveinal striping is optional enrichment, not an additional core pass requirement.",
+          "sha256": "3a32c20c2b136ef4b0f827ada5160554fa14d44033898e58efbd6061d7babd7e"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/0/decision",
+          "text": "Pass only with all three justified card matches and pattern distinctions correct. A wrong function or symptom receives targeted feedback and an open retry.",
+          "sha256": "f4f984c5b85bf7ff675a0ab7fe089d8e1d00a2c0b066d6d51e30fdb9cc3fbfd4"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/1/evidence",
+          "text": "For at least one N, one P and one K image, separates direct observation from a likely explanation, records whether affected leaves are older or newer, and offers a plausible non-nutrient or uptake-related alternative.",
+          "sha256": "c32032d90aa99631ec45203622cbcc695e9b663a203fae8241259bc19bac042e"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/1/decision",
+          "text": "Pass when all three records use the visible evidence and at least one alternative is reasoned; colour alone or an unqualified diagnosis does not pass.",
+          "sha256": "eb5a08e7cf2558c6c6afe631ac1c6f1076e1f4c06ad4e8692d883288da20d9d2"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/2/evidence",
+          "text": "For the cool-soil purple maize case and an edge-yellowing case, explains which field context to check and when soil and/or suitably sampled tissue analysis could help confirm nutrient status.",
+          "sha256": "97a34829316e3b33531b3a6ac69c095dcddb39b0168e511df57b16a275341f18"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/2/decision",
+          "text": "Pass when the learner states the limits of visual diagnosis and does not prescribe a fertilizer or rate from an image; otherwise review and retry.",
+          "sha256": "fe55172abab3be2ec5d7a17a2c92796100fdfa4f7a1668b3db7e08cd1fa1e1d5"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Individually groups all nine cards into three justified N/P/K sets and identifies the N centre-V, K outer-margin yellowing and P young-maize purpling patterns on the checked station images. Magnesium interveinal striping is optional enrichment, not an additional core pass requirement.\n\nPass only with all three justified card matches and pattern distinctions correct. A wrong function or symptom receives targeted feedback and an open retry.\n\nFor at least one N, one P and one K image, separates direct observation from a likely explanation, records whether affected leaves are older or newer, and offers a plausible non-nutrient or uptake-related alternative.\n\nPass when all three records use the visible evidence and at least one alternative is reasoned; colour alone or an unqualified diagnosis does not pass.\n\nFor the cool-soil purple maize case and an edge-yellowing case, explains which field context to check and when soil and/or suitably sampled tissue analysis could help confirm nutrient status.\n\nPass when the learner states the limits of visual diagnosis and does not prescribe a fertilizer or rate from an image; otherwise review and retry.",
+      "displayText": "Individually groups all nine cards into three justified N/P/K sets and identifies the N centre-V, K outer-margin yellowing and P young-maize purpling patterns on the checked station images. Magnesium interveinal striping is optional enrichment, not an additional core pass requirement.\n\nPass only with all three justified card matches and pattern distinctions correct. A wrong function or symptom receives targeted feedback and an open retry.\n\nFor at least one N, one P and one K image, separates direct observation from a likely explanation, records whether affected leaves are older or newer, and offers a plausible non-nutrient or uptake-related alternative.\n\nPass when all three records use the visible evidence and at least one alternative is reasoned; colour alone or an unqualified diagnosis does not pass.\n\nFor the cool-soil purple maize case and an edge-yellowing case, explains which field context to check and when soil and/or suitably sampled tissue analysis could help confirm nutrient status.\n\nPass when the learner states the limits of visual diagnosis and does not prescribe a fertilizer or rate from an image; otherwise review and retry.",
+      "captionText": "Individually groups all nine cards into three justified N/P/K sets and identifies the N centre-V, K outer-margin yellowing and P young-maize purpling patterns on the checked station images. Magnesium interveinal striping is optional enrichment, not an additional core pass requirement.\n\nPass only with all three justified card matches and pattern distinctions correct. A wrong function or symptom receives targeted feedback and an open retry.\n\nFor at least one N, one P and one K image, separates direct observation from a likely explanation, records whether affected leaves are older or newer, and offers a plausible non-nutrient or uptake-related alternative.\n\nPass when all three records use the visible evidence and at least one alternative is reasoned; colour alone or an unqualified diagnosis does not pass.\n\nFor the cool-soil purple maize case and an edge-yellowing case, explains which field context to check and when soil and/or suitably sampled tissue analysis could help confirm nutrient status.\n\nPass when the learner states the limits of visual diagnosis and does not prescribe a fertilizer or rate from an image; otherwise review and retry.",
+      "spokenText": "Individually groups all nine cards into three justified N, P and K sets and identifies the N centre-V, K outer-margin yellowing and P young-maize purpling patterns on the checked station images. Magnesium interveinal striping is optional enrichment, not an additional core pass requirement.\n\nPass only with all three justified card matches and pattern distinctions correct. A wrong function or symptom receives targeted feedback and an open retry.\n\nFor at least one N, one P and one K image, separates direct observation from a likely explanation, records whether affected leaves are older or newer, and offers a plausible non-nutrient or uptake-related alternative.\n\nPass when all three records use the visible evidence and at least one alternative is reasoned; colour alone or an unqualified diagnosis does not pass.\n\nFor the cool-soil purple maize case and an edge-yellowing case, explains which field context to check and when soil and/or suitably sampled tissue analysis could help confirm nutrient status.\n\nPass when the learner states the limits of visual diagnosis and does not prescribe a fertilizer or rate from an image; otherwise review and retry.",
+      "spokenTextSHA256": "687a20814e6460a186cac90a5a249413bfed537da726579f9da71827c59bfbd5",
+      "spokenTextSha256": "687a20814e6460a186cac90a5a249413bfed537da726579f9da71827c59bfbd5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "N/P/K",
+          "spoken": "N, P and K",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aae46de03134265cf38232c0cb1de071f7dc55009a9c67d3607bffde0804dfd7",
+      "requestFingerprintSha256": "aae46de03134265cf38232c0cb1de071f7dc55009a9c67d3607bffde0804dfd7",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

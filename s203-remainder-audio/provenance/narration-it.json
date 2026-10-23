@@ -1,0 +1,742 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-03-it.json",
+    "sha256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+    "bytes": 26412
+  },
+  "units": [
+    {
+      "id": "S2-03-it-opening-r1",
+      "unitId": "S2-03-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Una foglia di mais è gialla: il giallo segue la nervatura centrale o i bordi? È una foglia vecchia o nuova? Prima registra quello che vedi, poi formula un'ipotesi provvisoria e cerca di verificarla.",
+          "sha256": "49d54cc4f88a62143dbd1ee14efe4ebf9ac9bf6a6112e1fe5f328de07dd94e31"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Abbinare con motivazione le nove carte di nomi, funzioni e segni di N, P e K; distinguere nel mais la V gialla centrale indicativa di N, il margine giallo indicativo di K e le striature internervali delle foglie vecchie indicative di Mg.",
+          "sha256": "1dc21b3149a327e10c8aef360755fa87e32ab802fc5be73d4ddd6b6ac7e8bf50"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "In ciascuna stazione annotare coltura, parte interessata, posizione, età della foglia e segno visibile prima dell'ipotesi, indicando una causa alternativa plausibile.",
+          "sha256": "25a59f39cbaf66365d22299bde0aec49fa52eec6c6f9d0f06e168d37dcf04158"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Scegliere osservazioni di campo e un'analisi del suolo o dei tessuti adatta a coltura e fase per verificare l'ipotesi, senza prescrivere concime da una fotografia.",
+          "sha256": "51d215241596a35c4814555b2c7cec5b30a9224b30191db7fcd8a0c4b2ad0605"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Una foglia di mais è gialla: il giallo segue la nervatura centrale o i bordi? È una foglia vecchia o nuova? Prima registra quello che vedi, poi formula un'ipotesi provvisoria e cerca di verificarla.\n\nAbbinare con motivazione le nove carte di nomi, funzioni e segni di N, P e K; distinguere nel mais la V gialla centrale indicativa di N, il margine giallo indicativo di K e le striature internervali delle foglie vecchie indicative di Mg.\n\nIn ciascuna stazione annotare coltura, parte interessata, posizione, età della foglia e segno visibile prima dell'ipotesi, indicando una causa alternativa plausibile.\n\nScegliere osservazioni di campo e un'analisi del suolo o dei tessuti adatta a coltura e fase per verificare l'ipotesi, senza prescrivere concime da una fotografia.",
+      "displayText": "Una foglia di mais è gialla: il giallo segue la nervatura centrale o i bordi? È una foglia vecchia o nuova? Prima registra quello che vedi, poi formula un'ipotesi provvisoria e cerca di verificarla.\n\nAbbinare con motivazione le nove carte di nomi, funzioni e segni di N, P e K; distinguere nel mais la V gialla centrale indicativa di N, il margine giallo indicativo di K e le striature internervali delle foglie vecchie indicative di Mg.\n\nIn ciascuna stazione annotare coltura, parte interessata, posizione, età della foglia e segno visibile prima dell'ipotesi, indicando una causa alternativa plausibile.\n\nScegliere osservazioni di campo e un'analisi del suolo o dei tessuti adatta a coltura e fase per verificare l'ipotesi, senza prescrivere concime da una fotografia.",
+      "captionText": "Una foglia di mais è gialla: il giallo segue la nervatura centrale o i bordi? È una foglia vecchia o nuova? Prima registra quello che vedi, poi formula un'ipotesi provvisoria e cerca di verificarla.\n\nAbbinare con motivazione le nove carte di nomi, funzioni e segni di N, P e K; distinguere nel mais la V gialla centrale indicativa di N, il margine giallo indicativo di K e le striature internervali delle foglie vecchie indicative di Mg.\n\nIn ciascuna stazione annotare coltura, parte interessata, posizione, età della foglia e segno visibile prima dell'ipotesi, indicando una causa alternativa plausibile.\n\nScegliere osservazioni di campo e un'analisi del suolo o dei tessuti adatta a coltura e fase per verificare l'ipotesi, senza prescrivere concime da una fotografia.",
+      "spokenText": "Una foglia di mais è gialla: il giallo segue la nervatura centrale o i bordi? È una foglia vecchia o nuova? Prima registra quello che vedi, poi formula un'ipotesi provvisoria e cerca di verificarla.\n\nAbbinare con motivazione le nove carte di nomi, funzioni e segni di N, P e K; distinguere nel mais la V gialla centrale indicativa di N, il margine giallo indicativo di K e le striature internervali delle foglie vecchie indicative di Mg.\n\nIn ciascuna stazione annotare coltura, parte interessata, posizione, età della foglia e segno visibile prima dell'ipotesi, indicando una causa alternativa plausibile.\n\nScegliere osservazioni di campo e un'analisi del suolo o dei tessuti adatta a coltura e fase per verificare l'ipotesi, senza prescrivere concime da una fotografia.",
+      "spokenTextSHA256": "249c3282c427efe07e6b76f2b0028fa8fe520e2adfc8362de917dbca89937693",
+      "spokenTextSha256": "249c3282c427efe07e6b76f2b0028fa8fe520e2adfc8362de917dbca89937693",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "389f79f93c24893216d2383c0932b563beceb1373e054a973cadfddf72eb02f5",
+      "requestFingerprintSha256": "389f79f93c24893216d2383c0932b563beceb1373e054a973cadfddf72eb02f5",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-E01-r1",
+      "unitId": "S2-03-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una foglia inferiore di mais ha margini esterni gialli ma il centro più verde. Un'altra foglia inferiore ha una V gialla lungo la nervatura centrale.",
+          "sha256": "3640f24546d448914b6d44ee2388065cf4860b2bb87b74c3004b6e6c8b24aa67"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Descrivi percorso del giallo ed età di ciascuna foglia prima di nominare un elemento.",
+          "sha256": "8abfbb4dc0001e808afbd098144b23a347df9bc05478f93f2e935ebca0c8f90e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "K è l'ipotesi più forte per la prima, N per la seconda. La sola posizione su foglie vecchie non le distingue.",
+          "sha256": "dddb8e5cdbd7f1c63a4e0cbcab78618ad770c3e7349f1f1b52769366053da2ee"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Controlla ripetizione nel campo, radici e acqua, poi fai verifiche adatte prima di intervenire.",
+          "sha256": "9f7767c0999a31de37d0fe9027271130eebd187972ad7fd963aae525ec33c655"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "La posizione del giallo è una prova utile; nessuna foto da sola è diagnosi completa.",
+          "sha256": "a4c5c8ac19f6ae8a7bc25889c81b161618d0ad336a56d5beb00771c9a45a3638"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Una foglia inferiore di mais ha margini esterni gialli ma il centro più verde. Un'altra foglia inferiore ha una V gialla lungo la nervatura centrale.\n\nDescrivi percorso del giallo ed età di ciascuna foglia prima di nominare un elemento.\n\nK è l'ipotesi più forte per la prima, N per la seconda. La sola posizione su foglie vecchie non le distingue.\n\nControlla ripetizione nel campo, radici e acqua, poi fai verifiche adatte prima di intervenire.\n\nLa posizione del giallo è una prova utile; nessuna foto da sola è diagnosi completa.",
+      "displayText": "Una foglia inferiore di mais ha margini esterni gialli ma il centro più verde. Un'altra foglia inferiore ha una V gialla lungo la nervatura centrale.\n\nDescrivi percorso del giallo ed età di ciascuna foglia prima di nominare un elemento.\n\nK è l'ipotesi più forte per la prima, N per la seconda. La sola posizione su foglie vecchie non le distingue.\n\nControlla ripetizione nel campo, radici e acqua, poi fai verifiche adatte prima di intervenire.\n\nLa posizione del giallo è una prova utile; nessuna foto da sola è diagnosi completa.",
+      "captionText": "Una foglia inferiore di mais ha margini esterni gialli ma il centro più verde. Un'altra foglia inferiore ha una V gialla lungo la nervatura centrale.\n\nDescrivi percorso del giallo ed età di ciascuna foglia prima di nominare un elemento.\n\nK è l'ipotesi più forte per la prima, N per la seconda. La sola posizione su foglie vecchie non le distingue.\n\nControlla ripetizione nel campo, radici e acqua, poi fai verifiche adatte prima di intervenire.\n\nLa posizione del giallo è una prova utile; nessuna foto da sola è diagnosi completa.",
+      "spokenText": "Una foglia inferiore di mais ha margini esterni gialli ma il centro più verde. Un'altra foglia inferiore ha una V gialla lungo la nervatura centrale.\n\nDescrivi percorso del giallo ed età di ciascuna foglia prima di nominare un elemento.\n\nK è l'ipotesi più forte per la prima, N per la seconda. La sola posizione su foglie vecchie non le distingue.\n\nControlla ripetizione nel campo, radici e acqua, poi fai verifiche adatte prima di intervenire.\n\nLa posizione del giallo è una prova utile; nessuna foto da sola è diagnosi completa.",
+      "spokenTextSHA256": "66f21f290f58b92d5948c9070f8849cc4e507f9581764b00eac8db24e7fc3fb1",
+      "spokenTextSha256": "66f21f290f58b92d5948c9070f8849cc4e507f9581764b00eac8db24e7fc3fb1",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a5854450eb783637dd2025b766e831e273b75fb2e1c2959c7344b0039d3f7335",
+      "requestFingerprintSha256": "a5854450eb783637dd2025b766e831e273b75fb2e1c2959c7344b0039d3f7335",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-E02-r1",
+      "unitId": "S2-03-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il mais giovane è piccolo e violaceo dopo una settimana fredda e bagnata; il livello di P del suolo è ignoto.",
+          "sha256": "030129100eda87a16771cea952e4930b49724a9cb3853dda41c46bd3c03dfe1a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Una limitazione di P è plausibile per colore e crescita, ma non dimostrata.",
+          "sha256": "a3dc52b30318bb8e6a0c2251ab50a00a41a42e1ab5ce2a21aa788ea69082877b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Freddo, terreno bagnato e ridotta attività radicale possono limitare l'assorbimento anche se il P del suolo è sufficiente.",
+          "sha256": "340d2d508d54aee7a33ee598d8301d9869373ec8a5b151627e6cd4589ab197dd"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Controlla radici e meteo, poi interpreta P del suolo e, se utile, tessuto campionato correttamente prima di decidere.",
+          "sha256": "e4f327b90ce702f4190bb805b7c17ff9b93c0e2b500fa934522b10ecea9f9d63"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Una buona ipotesi visiva va confrontata con spiegazioni alternative.",
+          "sha256": "0c3c89083fa30ce2c56b7ec5cbeaacbfb0585c929ef44a540dbca5c1c52e4326"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Il mais giovane è piccolo e violaceo dopo una settimana fredda e bagnata; il livello di P del suolo è ignoto.\n\nUna limitazione di P è plausibile per colore e crescita, ma non dimostrata.\n\nFreddo, terreno bagnato e ridotta attività radicale possono limitare l'assorbimento anche se il P del suolo è sufficiente.\n\nControlla radici e meteo, poi interpreta P del suolo e, se utile, tessuto campionato correttamente prima di decidere.\n\nUna buona ipotesi visiva va confrontata con spiegazioni alternative.",
+      "displayText": "Il mais giovane è piccolo e violaceo dopo una settimana fredda e bagnata; il livello di P del suolo è ignoto.\n\nUna limitazione di P è plausibile per colore e crescita, ma non dimostrata.\n\nFreddo, terreno bagnato e ridotta attività radicale possono limitare l'assorbimento anche se il P del suolo è sufficiente.\n\nControlla radici e meteo, poi interpreta P del suolo e, se utile, tessuto campionato correttamente prima di decidere.\n\nUna buona ipotesi visiva va confrontata con spiegazioni alternative.",
+      "captionText": "Il mais giovane è piccolo e violaceo dopo una settimana fredda e bagnata; il livello di P del suolo è ignoto.\n\nUna limitazione di P è plausibile per colore e crescita, ma non dimostrata.\n\nFreddo, terreno bagnato e ridotta attività radicale possono limitare l'assorbimento anche se il P del suolo è sufficiente.\n\nControlla radici e meteo, poi interpreta P del suolo e, se utile, tessuto campionato correttamente prima di decidere.\n\nUna buona ipotesi visiva va confrontata con spiegazioni alternative.",
+      "spokenText": "Il mais giovane è piccolo e violaceo dopo una settimana fredda e bagnata; il livello di P del suolo è ignoto.\n\nUna limitazione di P è plausibile per colore e crescita, ma non dimostrata.\n\nFreddo, terreno bagnato e ridotta attività radicale possono limitare l'assorbimento anche se il P del suolo è sufficiente.\n\nControlla radici e meteo, poi interpreta P del suolo e, se utile, tessuto campionato correttamente prima di decidere.\n\nUna buona ipotesi visiva va confrontata con spiegazioni alternative.",
+      "spokenTextSHA256": "ba755c1a79953fd33307d6553abd3977d3ba4a8d0a53c7fa2bc5b07d53fdaf7a",
+      "spokenTextSha256": "ba755c1a79953fd33307d6553abd3977d3ba4a8d0a53c7fa2bc5b07d53fdaf7a",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8e5c05e064362dadcb70face635e350567f7124545e17b010fa82454f2826191",
+      "requestFingerprintSha256": "8e5c05e064362dadcb70face635e350567f7124545e17b010fa82454f2826191",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-guided-practice-r1",
+      "unitId": "S2-03-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Forma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.",
+          "sha256": "4f10bf586f8b3e72541ae06531b03f183ad82be0c7d986b15778fc9764bdf7b8"
+        },
+        {
+          "pointer": "/symptomPractice/cardSort/groupSize",
+          "text": "2–3 per discutere; ogni studente consegna abbinamenti e motivi personali",
+          "sha256": "cf0348811dc4dd1491cdbcf97f1d2a592a2de449cb4e3b373ae44a62f144f8d1"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Interpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+          "sha256": "88e72650234aa4b5c9b1a46529397056933fe66d8d587570d219834a181828e3"
+        }
+      ],
+      "sourceNumericBindings": [
+        {
+          "pointer": "/symptomPractice/cardSort/durationMinutes",
+          "jsonType": "integer",
+          "value": 10,
+          "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+          "canonicalJSONSHA256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        }
+      ],
+      "scientificMeaning": "Forma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\n2–3 per discutere; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "displayText": "Forma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\n2–3 per discutere; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "captionText": "Forma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\n2–3 per discutere; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "spokenText": "L’ordinamento delle carte dura dieci minuti.\n\nForma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\nDiscutete in gruppi di due o tre; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "spokenTextSHA256": "83d6f346c73ecb98a0d5ffe77bde1f484d12592061c46496a33254e306c82ae8",
+      "spokenTextSha256": "83d6f346c73ecb98a0d5ffe77bde1f484d12592061c46496a33254e306c82ae8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Forma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\n2–3 per discutere; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+          "spoken": "L’ordinamento delle carte dura dieci minuti.\n\nForma tre terne nome–funzione–segno, spiega ogni scelta e perché il solo colore può trarre in inganno. I colori delle categorie possono aiutare a ordinare ma non devono rivelare le terne corrette.\n\n2–3 per discutere; ogni studente consegna abbinamenti e motivi personali\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+          "occurrences": 1,
+          "purpose": "Faithful contextual narration of separately bound native integer duration values; no fake text source binding or source/schema edit"
+        },
+        {
+          "written": "2–3 per discutere",
+          "spoken": "Discutete in gruppi di due o tre",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0e8042b987400496dcd02d7a8c2c15ebdb29985c2ae848de7b0307f0b7b78720",
+      "requestFingerprintSha256": "0e8042b987400496dcd02d7a8c2c15ebdb29985c2ae848de7b0307f0b7b78720",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-reflection-r1",
+      "unitId": "S2-03-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "So separare ciò che vedo da una causa possibile e da una verifica che potrebbe smentirla?",
+          "sha256": "d624aa9f95b1f24e6b00e73198899ad8e5809b61cc114ab5870de550284e07a0"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Interpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+          "sha256": "88e72650234aa4b5c9b1a46529397056933fe66d8d587570d219834a181828e3"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "So separare ciò che vedo da una causa possibile e da una verifica che potrebbe smentirla?\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "displayText": "So separare ciò che vedo da una causa possibile e da una verifica che potrebbe smentirla?\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "captionText": "So separare ciò che vedo da una causa possibile e da una verifica che potrebbe smentirla?\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "spokenText": "So separare ciò che vedo da una causa possibile e da una verifica che potrebbe smentirla?\n\nInterpretazioni provvisorie di immagini didattiche. Motivazioni e riscontri richiedono revisione; nessuna diagnosi in campo o dose di concime certificata.",
+      "spokenTextSHA256": "66706bab90938db2aa068475de2944dd783ff289d520db98675c4631266ce4e0",
+      "spokenTextSha256": "66706bab90938db2aa068475de2944dd783ff289d520db98675c4631266ce4e0",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "477beb9417c251b96e5e3b11f016df2f0224413acdf551b6baa811ba801c52b2",
+      "requestFingerprintSha256": "477beb9417c251b96e5e3b11f016df2f0224413acdf551b6baa811ba801c52b2",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-comparison-r1",
+      "unitId": "S2-03-it-comparison-r1",
+      "locale": "it",
+      "semanticGroup": "comparison",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/comparisonLabel",
+          "text": "Leggere i segni nutritivi senza saltare alla diagnosi",
+          "sha256": "c98e4d2d55f030f1c40debccff9ca780d69c27baa8abf15369fe88745dc70dd4"
+        },
+        {
+          "pointer": "/comparison/columns/0",
+          "text": "Possibile carenza",
+          "sha256": "747a7527840c4c5ed47823f82fa24819fd6d8fee89291c43b40290c9c2e85475"
+        },
+        {
+          "pointer": "/comparison/columns/1",
+          "text": "Primo indizio di posizione",
+          "sha256": "78db774101ac2a3301336e8e031e3942e11034199b923fe63ac09cefc08dc9cd"
+        },
+        {
+          "pointer": "/comparison/columns/2",
+          "text": "Segno visivo nel mais",
+          "sha256": "06e9743f746d5ab095a26cf724f897af783e4290ab08a34679cf5a3f21437991"
+        },
+        {
+          "pointer": "/comparison/columns/3",
+          "text": "Perché resta incerto",
+          "sha256": "8b5e0cf0cd23587ec7a0169040fcb4127d6078d790e05e268a568def950e5612"
+        },
+        {
+          "pointer": "/comparison/rows/0/0",
+          "text": "N",
+          "sha256": "8ce86a6ae65d3692e7305e2c58ac62eebd97d3d943e093f577da25c36988246b"
+        },
+        {
+          "pointer": "/comparison/rows/0/1",
+          "text": "Foglia vecchia e bassa",
+          "sha256": "978dcae09233d166374314d2f1b398d48831bb8440e4e037117cf39d958911be"
+        },
+        {
+          "pointer": "/comparison/rows/0/2",
+          "text": "V gialla dalla punta lungo la nervatura centrale; pianta pallida o stentata",
+          "sha256": "20dfffb267c14fa8ff4b2a8e0ddfd06fa8a164d29ad159c549073e22e306c1f9"
+        },
+        {
+          "pointer": "/comparison/rows/0/3",
+          "text": "Pallore e crescita scarsa hanno altre cause",
+          "sha256": "692f7aacdee0189579796c819ba3ae5b3c58dc3b55f415a8aeb042eeca96e000"
+        },
+        {
+          "pointer": "/comparison/rows/1/0",
+          "text": "P",
+          "sha256": "5c62e091b8c0565f1bafad0dad5934276143ae2ccef7a5381e8ada5b1a8d26d2"
+        },
+        {
+          "pointer": "/comparison/rows/1/1",
+          "text": "Spesso pianta giovane; foglie basse talvolta viola",
+          "sha256": "2560c18db7e8a527acc3b051c229ab43b5c3a57336bf63edb88f9177761c634f"
+        },
+        {
+          "pointer": "/comparison/rows/1/2",
+          "text": "Crescita stentata, verde scuro o tinta viola",
+          "sha256": "f782ee029ff5949ef4d46eb6a68e3a4eb717362adec1eeb4730843a65fb85534"
+        },
+        {
+          "pointer": "/comparison/rows/1/3",
+          "text": "Freddo, eccesso d'acqua o problemi radicali limitano l'assorbimento",
+          "sha256": "790c122fed206501de04b4b82f887b73392cdad4886dfc9be5783c31d69e0f6c"
+        },
+        {
+          "pointer": "/comparison/rows/2/0",
+          "text": "K",
+          "sha256": "86be9a55762d316a3026c2836d044f5fc76e34da10e1b45feee5f18be7edb177"
+        },
+        {
+          "pointer": "/comparison/rows/2/1",
+          "text": "Foglia vecchia e bassa",
+          "sha256": "978dcae09233d166374314d2f1b398d48831bb8440e4e037117cf39d958911be"
+        },
+        {
+          "pointer": "/comparison/rows/2/2",
+          "text": "Giallo dalla punta ai margini esterni; centro più verde",
+          "sha256": "6fdd032b1fac9d31a75d9c724cf00ef641a6697078c6a99b5162f1cc310f6176"
+        },
+        {
+          "pointer": "/comparison/rows/2/3",
+          "text": "Altri stress possono bruciare i bordi",
+          "sha256": "86e555bf8bb6dc3e96cf343739bd7f04b815e538d58f71f421f383dd99982323"
+        },
+        {
+          "pointer": "/comparison/rows/3/0",
+          "text": "Mg (approfondimento)",
+          "sha256": "15ce49a8befdd0cc10365cec34a63bf427d6ea81dab8837d4696db18a797ff91"
+        },
+        {
+          "pointer": "/comparison/rows/3/1",
+          "text": "Foglia vecchia e bassa",
+          "sha256": "978dcae09233d166374314d2f1b398d48831bb8440e4e037117cf39d958911be"
+        },
+        {
+          "pointer": "/comparison/rows/3/2",
+          "text": "Bande gialle longitudinali fra nervature rimaste verdi",
+          "sha256": "5e6f921836e3b4bcafa2390e8f73757614322d3b4303e5dc5dffd5f94cbde288"
+        },
+        {
+          "pointer": "/comparison/rows/3/3",
+          "text": "Lesioni o altri problemi nutritivi possono somigliarvi",
+          "sha256": "d2dd7dc47868f5203109e539e988683bfcdded5a8928e5c50bac584bc6a51728"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Leggere i segni nutritivi senza saltare alla diagnosi\n\nPossibile carenza\n\nPrimo indizio di posizione\n\nSegno visivo nel mais\n\nPerché resta incerto\n\nN\n\nFoglia vecchia e bassa\n\nV gialla dalla punta lungo la nervatura centrale; pianta pallida o stentata\n\nPallore e crescita scarsa hanno altre cause\n\nP\n\nSpesso pianta giovane; foglie basse talvolta viola\n\nCrescita stentata, verde scuro o tinta viola\n\nFreddo, eccesso d'acqua o problemi radicali limitano l'assorbimento\n\nK\n\nFoglia vecchia e bassa\n\nGiallo dalla punta ai margini esterni; centro più verde\n\nAltri stress possono bruciare i bordi\n\nMg (approfondimento)\n\nFoglia vecchia e bassa\n\nBande gialle longitudinali fra nervature rimaste verdi\n\nLesioni o altri problemi nutritivi possono somigliarvi",
+      "displayText": "Leggere i segni nutritivi senza saltare alla diagnosi\n\nPossibile carenza\n\nPrimo indizio di posizione\n\nSegno visivo nel mais\n\nPerché resta incerto\n\nN\n\nFoglia vecchia e bassa\n\nV gialla dalla punta lungo la nervatura centrale; pianta pallida o stentata\n\nPallore e crescita scarsa hanno altre cause\n\nP\n\nSpesso pianta giovane; foglie basse talvolta viola\n\nCrescita stentata, verde scuro o tinta viola\n\nFreddo, eccesso d'acqua o problemi radicali limitano l'assorbimento\n\nK\n\nFoglia vecchia e bassa\n\nGiallo dalla punta ai margini esterni; centro più verde\n\nAltri stress possono bruciare i bordi\n\nMg (approfondimento)\n\nFoglia vecchia e bassa\n\nBande gialle longitudinali fra nervature rimaste verdi\n\nLesioni o altri problemi nutritivi possono somigliarvi",
+      "captionText": "Leggere i segni nutritivi senza saltare alla diagnosi\n\nPossibile carenza\n\nPrimo indizio di posizione\n\nSegno visivo nel mais\n\nPerché resta incerto\n\nN\n\nFoglia vecchia e bassa\n\nV gialla dalla punta lungo la nervatura centrale; pianta pallida o stentata\n\nPallore e crescita scarsa hanno altre cause\n\nP\n\nSpesso pianta giovane; foglie basse talvolta viola\n\nCrescita stentata, verde scuro o tinta viola\n\nFreddo, eccesso d'acqua o problemi radicali limitano l'assorbimento\n\nK\n\nFoglia vecchia e bassa\n\nGiallo dalla punta ai margini esterni; centro più verde\n\nAltri stress possono bruciare i bordi\n\nMg (approfondimento)\n\nFoglia vecchia e bassa\n\nBande gialle longitudinali fra nervature rimaste verdi\n\nLesioni o altri problemi nutritivi possono somigliarvi",
+      "spokenText": "Leggere i segni nutritivi senza saltare alla diagnosi\n\nPossibile carenza\n\nPrimo indizio di posizione\n\nSegno visivo nel mais\n\nPerché resta incerto\n\nN\n\nFoglia vecchia e bassa\n\nV gialla dalla punta lungo la nervatura centrale; pianta pallida o stentata\n\nPallore e crescita scarsa hanno altre cause\n\nP\n\nSpesso pianta giovane; foglie basse talvolta viola\n\nCrescita stentata, verde scuro o tinta viola\n\nFreddo, eccesso d'acqua o problemi radicali limitano l'assorbimento\n\nK\n\nFoglia vecchia e bassa\n\nGiallo dalla punta ai margini esterni; centro più verde\n\nAltri stress possono bruciare i bordi\n\nMg (approfondimento)\n\nFoglia vecchia e bassa\n\nBande gialle longitudinali fra nervature rimaste verdi\n\nLesioni o altri problemi nutritivi possono somigliarvi",
+      "spokenTextSHA256": "0276db47b3aaea856c583f881c8e22fcc8f4e3c928769b57e81007e14d8c6f17",
+      "spokenTextSha256": "0276db47b3aaea856c583f881c8e22fcc8f4e3c928769b57e81007e14d8c6f17",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "959dcccf5172c1ef9ccafc16d8c27a4504f46216f050b9493bf33589f8d036a2",
+      "requestFingerprintSha256": "959dcccf5172c1ef9ccafc16d8c27a4504f46216f050b9493bf33589f8d036a2",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-glossary-r1",
+      "unitId": "S2-03-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "clorosi",
+          "sha256": "4ec11a4cb907d506bfd3126ae87d4eeb8889ff9a7dfea306d1879c9fc9e78e6f"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Perdita del verde normale, spesso visibile come ingiallimento.",
+          "sha256": "f8c1986dce1a1504c5417c2b9d071d75c3a909f3f6ebce92a7e8161246269f94"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "carenza",
+          "sha256": "c90552449cdf0bf4e8c990a6c9f010fe20202dafe36ad718360d615ed850142c"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Fornitura o utilizzazione del nutriente inferiore al bisogno della pianta; il sintomo da solo non dimostra la causa.",
+          "sha256": "dc2dedf3136202045f363bfdc12ed869a8af3e194d6a361c499541300fbb356a"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "margine fogliare",
+          "sha256": "e120ff49390f65ad68e46c3ad86b7d375f91c6de1aa8c73a49fbd8fa593214ea"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Bordo esterno della foglia.",
+          "sha256": "3a3d15adeafa410432f297e76447be9597f510c4e2e7ba68926cb5d2fb49a46d"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "nervatura centrale",
+          "sha256": "ee7d987fb8e310eba9d8c5c7971ee52d6e6e553f168252c1f1d43332f7f4d3de"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Nervatura principale al centro della foglia.",
+          "sha256": "1207d92b7263220fd9f7bb6222822aff1e146809c5b8e7a4a773b884256f55cb"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "crescita stentata",
+          "sha256": "6a4559abdf34186249baa74790628bb8b8e9a9bcfc90ce438d4361934dfa416d"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Crescita più piccola o lenta del previsto per coltura e fase.",
+          "sha256": "89a0689cbbcdcf0ce769220f1218bb04cb32a07c8543daee8c11767c7fcab5ab"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "clorosi internervale",
+          "sha256": "72f44b638fa5bbb8afe14c1bcc83b013ebd685be70cb9285b786aeab65df1952"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Giallo fra le nervature, che restano relativamente verdi.",
+          "sha256": "f8f31af8bece61d45a7785c080e3d619a9ed4c6dec8abdc81e726eba2bb493f4"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "rimobilizzazione interna",
+          "sha256": "f293a0c30487ea779cbf0b35eb97c570989f2a885236550f1bb898c9008237dd"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Redistribuzione di un nutriente dai tessuti vecchi a quelli nuovi dopo l'assorbimento.",
+          "sha256": "b53856c0a6d48c77aa989de093b164c74cd6989d7390a0636cd3cac7b7bb6224"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "clorosi\n\nPerdita del verde normale, spesso visibile come ingiallimento.\n\ncarenza\n\nFornitura o utilizzazione del nutriente inferiore al bisogno della pianta; il sintomo da solo non dimostra la causa.\n\nmargine fogliare\n\nBordo esterno della foglia.\n\nnervatura centrale\n\nNervatura principale al centro della foglia.\n\ncrescita stentata\n\nCrescita più piccola o lenta del previsto per coltura e fase.\n\nclorosi internervale\n\nGiallo fra le nervature, che restano relativamente verdi.\n\nrimobilizzazione interna\n\nRedistribuzione di un nutriente dai tessuti vecchi a quelli nuovi dopo l'assorbimento.",
+      "displayText": "clorosi\n\nPerdita del verde normale, spesso visibile come ingiallimento.\n\ncarenza\n\nFornitura o utilizzazione del nutriente inferiore al bisogno della pianta; il sintomo da solo non dimostra la causa.\n\nmargine fogliare\n\nBordo esterno della foglia.\n\nnervatura centrale\n\nNervatura principale al centro della foglia.\n\ncrescita stentata\n\nCrescita più piccola o lenta del previsto per coltura e fase.\n\nclorosi internervale\n\nGiallo fra le nervature, che restano relativamente verdi.\n\nrimobilizzazione interna\n\nRedistribuzione di un nutriente dai tessuti vecchi a quelli nuovi dopo l'assorbimento.",
+      "captionText": "clorosi\n\nPerdita del verde normale, spesso visibile come ingiallimento.\n\ncarenza\n\nFornitura o utilizzazione del nutriente inferiore al bisogno della pianta; il sintomo da solo non dimostra la causa.\n\nmargine fogliare\n\nBordo esterno della foglia.\n\nnervatura centrale\n\nNervatura principale al centro della foglia.\n\ncrescita stentata\n\nCrescita più piccola o lenta del previsto per coltura e fase.\n\nclorosi internervale\n\nGiallo fra le nervature, che restano relativamente verdi.\n\nrimobilizzazione interna\n\nRedistribuzione di un nutriente dai tessuti vecchi a quelli nuovi dopo l'assorbimento.",
+      "spokenText": "clorosi\n\nPerdita del verde normale, spesso visibile come ingiallimento.\n\ncarenza\n\nFornitura o utilizzazione del nutriente inferiore al bisogno della pianta; il sintomo da solo non dimostra la causa.\n\nmargine fogliare\n\nBordo esterno della foglia.\n\nnervatura centrale\n\nNervatura principale al centro della foglia.\n\ncrescita stentata\n\nCrescita più piccola o lenta del previsto per coltura e fase.\n\nclorosi internervale\n\nGiallo fra le nervature, che restano relativamente verdi.\n\nrimobilizzazione interna\n\nRedistribuzione di un nutriente dai tessuti vecchi a quelli nuovi dopo l'assorbimento.",
+      "spokenTextSHA256": "cb57e99b4917e439913ff3e8d1ad30b7b9302757c6f1478f15e4b26295eb326e",
+      "spokenTextSha256": "cb57e99b4917e439913ff3e8d1ad30b7b9302757c6f1478f15e4b26295eb326e",
+      "spokenAdaptationChanges": [],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "98e1d364da6e1d7129674c0fd0d8faf2e87970ed9c41be0bd749db182eabd988",
+      "requestFingerprintSha256": "98e1d364da6e1d7129674c0fd0d8faf2e87970ed9c41be0bd749db182eabd988",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-station-workflow-r1",
+      "unitId": "S2-03-it-station-workflow-r1",
+      "locale": "it",
+      "semanticGroup": "station-workflow",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/symptomPractice/stations/count",
+          "text": "3–5 immagini verificate per coltura e segno; almeno N, P e K",
+          "sha256": "90ed45c36e156bcb9fc7c9d698c708bf6818f49f126f9882f29aa51942c852f2"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/0",
+          "text": "numero della stazione",
+          "sha256": "58cdbf384c9176f7c394c5861a920f2e3aad63184c2c2bb58879df2bf52efab4"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/1",
+          "text": "coltura e fase",
+          "sha256": "58460882b027d563d62fa7ddb2e395b71c8d480a41cbe706286995690c2d233f"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/2",
+          "text": "osservazione diretta",
+          "sha256": "83ad783f50f784bc6b81eaff1ccef95ed64dc80e40addee22629b36a6c3fc83b"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/3",
+          "text": "posizione e età della foglia",
+          "sha256": "b21550701286fe2526b797e48e94e6c655d7c0f115700ad3cfaca6e381b44ade"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/4",
+          "text": "ipotesi nutritiva probabile",
+          "sha256": "22610b0fa9e737d6466e3390d83ce9a58ee53fbff60e1686d9d0885d4357cc7e"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/5",
+          "text": "motivo e alternativa",
+          "sha256": "3b37c67e95afc99c01409c07eb6320422b1bf5b4eaa15689c969fab8dc7cc548"
+        },
+        {
+          "pointer": "/symptomPractice/stations/fields/6",
+          "text": "verifica in campo o in laboratorio",
+          "sha256": "862d986f194b21b32dabdfe1038eb91257c6c4e7b8a7a66fdf67645f060aa5a3"
+        },
+        {
+          "pointer": "/symptomPractice/stations/instruction",
+          "text": "Passa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.",
+          "sha256": "8616d105a8c5eaae7c34952db8c847b255fe7ec2570565e9416ca3e163d5be7c"
+        },
+        {
+          "pointer": "/symptomPractice/debrief/instruction",
+          "text": "Confronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.",
+          "sha256": "1b63d2922ff6683262bb66431f74d5af0cee2f459ef7d1148c45029f752f8d42"
+        },
+        {
+          "pointer": "/symptomPractice/exitTicket",
+          "text": "Le vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?",
+          "sha256": "9ad65e7757e3e63ce2609708deb471a601002c377c5639f08281af5143a342da"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda osservazioni e carte",
+          "sha256": "7583de43950d19db0ef12080aac1b59f69e76b7076fd10f5ca0923faafbd091e"
+        }
+      ],
+      "sourceNumericBindings": [
+        {
+          "pointer": "/symptomPractice/stations/durationMinutes",
+          "jsonType": "integer",
+          "value": 25,
+          "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+          "canonicalJSONSHA256": "b7a56873cd771f2c446d369b649430b65a756ba278ff97ec81bb6f55b2e73569"
+        },
+        {
+          "pointer": "/symptomPractice/debrief/durationMinutes",
+          "jsonType": "integer",
+          "value": 10,
+          "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+          "canonicalJSONSHA256": "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+        }
+      ],
+      "scientificMeaning": "3–5 immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+      "displayText": "3–5 immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+      "captionText": "3–5 immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+      "spokenText": "Le stazioni durano venticinque minuti, seguite da dieci minuti di discussione finale.\n\nDa tre a cinque immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+      "spokenTextSHA256": "7b4f2c725a290cbc96587db30cc54d99b8af8078301f807177e2a5594358cd35",
+      "spokenTextSha256": "7b4f2c725a290cbc96587db30cc54d99b8af8078301f807177e2a5594358cd35",
+      "spokenAdaptationChanges": [
+        {
+          "written": "3–5 immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+          "spoken": "Le stazioni durano venticinque minuti, seguite da dieci minuti di discussione finale.\n\n3–5 immagini verificate per coltura e segno; almeno N, P e K\n\nnumero della stazione\n\ncoltura e fase\n\nosservazione diretta\n\nposizione e età della foglia\n\nipotesi nutritiva probabile\n\nmotivo e alternativa\n\nverifica in campo o in laboratorio\n\nPassa per tutte le stazioni disponibili. Registra prima ciò che osservi e solo dopo l'ipotesi. Non mostrare la soluzione al primo tentativo.\n\nConfronta le spiegazioni con ogni immagine, discuti le alternative e chiarisci i disegni. Poi rispondi individualmente alla domanda finale senza appunti.\n\nLe vecchie foglie basse del mais hanno margini gialli e centro più verde. Qual è l’ipotesi provvisoria più forte, perché riguarda le foglie vecchie e cosa verificheresti dopo?\n\nScheda osservazioni e carte",
+          "occurrences": 1,
+          "purpose": "Faithful contextual narration of separately bound native integer duration values; no fake text source binding or source/schema edit"
+        },
+        {
+          "written": "3–5 immagini",
+          "spoken": "Da tre a cinque immagini",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "77a0bc246f197e5deaae95a945002a9838605635928a580ef497289af8cf74a5",
+      "requestFingerprintSha256": "77a0bc246f197e5deaae95a945002a9838605635928a580ef497289af8cf74a5",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-03-it-knowledge-completion-r1",
+      "unitId": "S2-03-it-knowledge-completion-r1",
+      "locale": "it",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4c7150822d2f8e79fa652e38e2dcfac06c787a44c6000870294c6b134cfcd94a",
+      "sourceBindings": [
+        {
+          "pointer": "/symptomPractice/passChecks/0/evidence",
+          "text": "Ogni studente costruisce e motiva tre gruppi N/P/K con tutte le nove carte e distingue sulle immagini verificate delle stazioni la V centrale per N, l’ingiallimento dei margini per K e la colorazione violacea del mais giovane per P. Le striature internervali associate a una possibile carenza di magnesio sono un approfondimento facoltativo, non un requisito aggiuntivo per superare la prova di base.",
+          "sha256": "9412d0d0a11bc9b207f33f83fdcf4b3f7801f505722030a0fb054c02c8724532"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/0/decision",
+          "text": "Superato solo con tutti e tre gli abbinamenti giustificati e i disegni fogliari corretti; per ogni errore riscontro specifico e nuovo tentativo libero.",
+          "sha256": "f4627984fc86ad1602ae81241aa8bda1d66e128c0cd8b3022616b2894946b304"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/1/evidence",
+          "text": "Per almeno un'immagine di N, una di P e una di K distingue osservazione diretta da spiegazione probabile, indica foglie vecchie o nuove e propone una causa alternativa non nutritiva o legata all'assorbimento.",
+          "sha256": "ad71f7821810d73f05ad895f3a10debc829550ae95ef78ee8db8465cd72d5961"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/1/decision",
+          "text": "Superato se tutti e tre i registri si fondano su prove visibili e un'alternativa è motivata; solo colore o diagnosi certa non bastano.",
+          "sha256": "7d420c7fa82284692786a84e6b8b20403fae19d62c9af4f191c4ce6f7a535746"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/2/evidence",
+          "text": "Per il mais violaceo dopo il freddo e un caso di margini gialli spiega quali condizioni controllare e quando possono servire analisi del terreno o di tessuto campionato correttamente.",
+          "sha256": "fd8a76d473285d48cd91f3fe94858609394ec016258b2372f39ceb57eb75167d"
+        },
+        {
+          "pointer": "/symptomPractice/passChecks/2/decision",
+          "text": "Superato se riconosce i limiti della diagnosi visiva e non ricava fertilizzante o dose dall'immagine; altrimenti ripasso e nuovo tentativo.",
+          "sha256": "e5651e1872e267bd9ab7f2c2ce52e942ba5fbbb250d16a29dffe90ab6dce4d67"
+        }
+      ],
+      "sourceNumericBindings": [],
+      "scientificMeaning": "Ogni studente costruisce e motiva tre gruppi N/P/K con tutte le nove carte e distingue sulle immagini verificate delle stazioni la V centrale per N, l’ingiallimento dei margini per K e la colorazione violacea del mais giovane per P. Le striature internervali associate a una possibile carenza di magnesio sono un approfondimento facoltativo, non un requisito aggiuntivo per superare la prova di base.\n\nSuperato solo con tutti e tre gli abbinamenti giustificati e i disegni fogliari corretti; per ogni errore riscontro specifico e nuovo tentativo libero.\n\nPer almeno un'immagine di N, una di P e una di K distingue osservazione diretta da spiegazione probabile, indica foglie vecchie o nuove e propone una causa alternativa non nutritiva o legata all'assorbimento.\n\nSuperato se tutti e tre i registri si fondano su prove visibili e un'alternativa è motivata; solo colore o diagnosi certa non bastano.\n\nPer il mais violaceo dopo il freddo e un caso di margini gialli spiega quali condizioni controllare e quando possono servire analisi del terreno o di tessuto campionato correttamente.\n\nSuperato se riconosce i limiti della diagnosi visiva e non ricava fertilizzante o dose dall'immagine; altrimenti ripasso e nuovo tentativo.",
+      "displayText": "Ogni studente costruisce e motiva tre gruppi N/P/K con tutte le nove carte e distingue sulle immagini verificate delle stazioni la V centrale per N, l’ingiallimento dei margini per K e la colorazione violacea del mais giovane per P. Le striature internervali associate a una possibile carenza di magnesio sono un approfondimento facoltativo, non un requisito aggiuntivo per superare la prova di base.\n\nSuperato solo con tutti e tre gli abbinamenti giustificati e i disegni fogliari corretti; per ogni errore riscontro specifico e nuovo tentativo libero.\n\nPer almeno un'immagine di N, una di P e una di K distingue osservazione diretta da spiegazione probabile, indica foglie vecchie o nuove e propone una causa alternativa non nutritiva o legata all'assorbimento.\n\nSuperato se tutti e tre i registri si fondano su prove visibili e un'alternativa è motivata; solo colore o diagnosi certa non bastano.\n\nPer il mais violaceo dopo il freddo e un caso di margini gialli spiega quali condizioni controllare e quando possono servire analisi del terreno o di tessuto campionato correttamente.\n\nSuperato se riconosce i limiti della diagnosi visiva e non ricava fertilizzante o dose dall'immagine; altrimenti ripasso e nuovo tentativo.",
+      "captionText": "Ogni studente costruisce e motiva tre gruppi N/P/K con tutte le nove carte e distingue sulle immagini verificate delle stazioni la V centrale per N, l’ingiallimento dei margini per K e la colorazione violacea del mais giovane per P. Le striature internervali associate a una possibile carenza di magnesio sono un approfondimento facoltativo, non un requisito aggiuntivo per superare la prova di base.\n\nSuperato solo con tutti e tre gli abbinamenti giustificati e i disegni fogliari corretti; per ogni errore riscontro specifico e nuovo tentativo libero.\n\nPer almeno un'immagine di N, una di P e una di K distingue osservazione diretta da spiegazione probabile, indica foglie vecchie o nuove e propone una causa alternativa non nutritiva o legata all'assorbimento.\n\nSuperato se tutti e tre i registri si fondano su prove visibili e un'alternativa è motivata; solo colore o diagnosi certa non bastano.\n\nPer il mais violaceo dopo il freddo e un caso di margini gialli spiega quali condizioni controllare e quando possono servire analisi del terreno o di tessuto campionato correttamente.\n\nSuperato se riconosce i limiti della diagnosi visiva e non ricava fertilizzante o dose dall'immagine; altrimenti ripasso e nuovo tentativo.",
+      "spokenText": "Ogni studente costruisce e motiva tre gruppi N, P e K con tutte le nove carte e distingue sulle immagini verificate delle stazioni la V centrale per N, l’ingiallimento dei margini per K e la colorazione violacea del mais giovane per P. Le striature internervali associate a una possibile carenza di magnesio sono un approfondimento facoltativo, non un requisito aggiuntivo per superare la prova di base.\n\nSuperato solo con tutti e tre gli abbinamenti giustificati e i disegni fogliari corretti; per ogni errore riscontro specifico e nuovo tentativo libero.\n\nPer almeno un'immagine di N, una di P e una di K distingue osservazione diretta da spiegazione probabile, indica foglie vecchie o nuove e propone una causa alternativa non nutritiva o legata all'assorbimento.\n\nSuperato se tutti e tre i registri si fondano su prove visibili e un'alternativa è motivata; solo colore o diagnosi certa non bastano.\n\nPer il mais violaceo dopo il freddo e un caso di margini gialli spiega quali condizioni controllare e quando possono servire analisi del terreno o di tessuto campionato correttamente.\n\nSuperato se riconosce i limiti della diagnosi visiva e non ricava fertilizzante o dose dall'immagine; altrimenti ripasso e nuovo tentativo.",
+      "spokenTextSHA256": "bcdc5129b619dee196eb57c2546c43a28229ef90c4762123e5e6b9b5d09b198e",
+      "spokenTextSha256": "bcdc5129b619dee196eb57c2546c43a28229ef90c4762123e5e6b9b5d09b198e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "N/P/K",
+          "spoken": "N, P e K",
+          "occurrences": 1,
+          "purpose": "Faithful natural spoken grouping/range/notation or Egyptian grammar; source/display/numeric values unchanged"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9f0c09af3cdc42dcd6734d003025aac3443dedc6146c82e8ead67b31bdef7d78",
+      "requestFingerprintSha256": "9f0c09af3cdc42dcd6734d003025aac3443dedc6146c82e8ead67b31bdef7d78",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
