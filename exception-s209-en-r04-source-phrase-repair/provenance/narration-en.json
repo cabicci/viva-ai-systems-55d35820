@@ -1,0 +1,75 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-09-en.json",
+    "sha256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+    "bytes": 31046
+  },
+  "units": [
+    {
+      "id": "S2-09-en-R04-source-phrase-repair-r1",
+      "unitId": "S2-09-en-R04-source-phrase-repair-r1",
+      "locale": "en",
+      "semanticGroup": "exception-s209-en-r04-source-phrase-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "sha256": "c0f59cccdb23ed42d3b12f1423718ca9be809dd5a402e3b7e04dffe7f43b40e0"
+        }
+      ],
+      "scientificMeaning": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "displayText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "captionText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "spokenText": "Keep these results separate. Any conversion requires the laboratory's reporting basis and calculation.",
+      "spokenTextSHA256": "b3915c30c6c50533d7bff9059b99a4ed51e1db49ea432f44345e2957cb68c1c1",
+      "spokenTextSha256": "b3915c30c6c50533d7bff9059b99a4ed51e1db49ea432f44345e2957cb68c1c1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "spoken": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "spoken": "Keep these results separate. Any conversion requires the laboratory's reporting basis and calculation.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "65b883fcaa745bf11790520640ab4dc37181fdce6da8af243e1decd78a505050",
+      "requestFingerprintSha256": "65b883fcaa745bf11790520640ab4dc37181fdce6da8af243e1decd78a505050",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/3/paragraphs/0",
+        "original": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+        "effective": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}

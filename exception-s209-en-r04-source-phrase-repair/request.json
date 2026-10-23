@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXCEPTION_S209_EN_R04_SOURCE_PHRASE_REPAIR",
+  "stepId": "S2-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-exception-s209-en-r04-source-phrase-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-09-en-R04-source-phrase-repair-r1",
+      "unitId": "S2-09-en-R04-source-phrase-repair-r1",
+      "locale": "en",
+      "semanticGroup": "exception-s209-en-r04-source-phrase-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0d5c7e312b33cdaa54d383402060deb94b08b49c9777992de2e9c72f40077968",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "sha256": "c0f59cccdb23ed42d3b12f1423718ca9be809dd5a402e3b7e04dffe7f43b40e0"
+        }
+      ],
+      "scientificMeaning": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "displayText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "captionText": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "spokenText": "Keep these results separate. Any conversion requires the laboratory's reporting basis and calculation.",
+      "spokenTextSHA256": "b3915c30c6c50533d7bff9059b99a4ed51e1db49ea432f44345e2957cb68c1c1",
+      "spokenTextSha256": "b3915c30c6c50533d7bff9059b99a4ed51e1db49ea432f44345e2957cb68c1c1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "spoken": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+          "spoken": "Keep these results separate. Any conversion requires the laboratory's reporting basis and calculation.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "65b883fcaa745bf11790520640ab4dc37181fdce6da8af243e1decd78a505050",
+      "requestFingerprintSha256": "65b883fcaa745bf11790520640ab4dc37181fdce6da8af243e1decd78a505050",
+      "sourcePlanSha256": "3004dcd995ccbd5a78b1cfb7b43dc8844b236e9540d62fe9a16093751b523683",
+      "exactSentenceBefore": "Do not convert one into the other without the laboratory's reporting basis and calculation.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/3/paragraphs/0",
+        "original": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+        "effective": "A report may state a nutrient in parts per million (ppm), or provide a Low, Medium/Optimum or High class. Ppm means one part in a million parts on the stated mass or volume basis. For a mass-of-soil result, 1 ppm can be expressed as 1 mg/kg; a solution result might be mg/L. Do not convert one into the other without the laboratory's reporting basis and calculation.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\nine-exception-root-dispositions-r1.json",
+        "rootSelectedAuthoritySHA256": "d85cce2934876bd09ddf25195b931592fe6ec371d2c5c3bc164cc848cd9c2b1b"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S2-09-en-R04-source-phrase-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
