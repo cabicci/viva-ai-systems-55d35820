@@ -1,0 +1,1 @@
+ONE exact root-authorized complete S214 German source-equivalent extraction glossary definition: Boden-P notpH expanded Phosphor/Prüfwert. Same originalCharon/model/delivery,1TTS1blind1ASR2metadataGET0retry0postjoin. All other glossaryentries and exactoutsidePCM preserved, current source/display immutable. No contextpoolincrease/rootactualcandidate selectionrequired.

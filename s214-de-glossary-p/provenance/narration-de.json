@@ -1,0 +1,82 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-14-de.json",
+    "sha256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+    "bytes": 39414
+  },
+  "units": [
+    {
+      "id": "S2-14-de-extraction-phosphorus-glossary-repair-r1",
+      "unitId": "S2-14-de-extraction-phosphorus-glossary-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s214-de-glossary-p-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "sha256": "353c546a3fa045c039fb036a5e68bee3b3dbd9802c0007ad5f2951afa6e0aa42"
+        }
+      ],
+      "scientificMeaning": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "displayText": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "captionText": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "spokenText": "Ein Laborverfahren bestimmt einen Prüfwert, zum Beispiel für Phosphor im Boden. Die Interpretation des Ergebnisses hängt von diesem Verfahren ab.",
+      "spokenTextSHA256": "cd2151884a424f31d0681ea563fceb02adbce010efe8eb38f0303fed3c2a386e",
+      "spokenTextSha256": "cd2151884a424f31d0681ea563fceb02adbce010efe8eb38f0303fed3c2a386e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "spoken": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "spoken": "Ein Laborverfahren bestimmt einen Prüfwert, zum Beispiel für Phosphor im Boden. Die Interpretation des Ergebnisses hängt von diesem Verfahren ab.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "3f57a9c212cdc83e9a5305d0fa6de60cc5e109d90de98e4656606924cb2b30a9",
+      "requestFingerprintSha256": "3f57a9c212cdc83e9a5305d0fa6de60cc5e109d90de98e4656606924cb2b30a9",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/glossary/3/1",
+        "original": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+        "effective": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/glossary/3/1",
+            "text": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+            "sha256": "353c546a3fa045c039fb036a5e68bee3b3dbd9802c0007ad5f2951afa6e0aa42"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-de-glossary-phosphorus-root-repair-r1.json",
+        "rootSelectedAuthoritySHA256": "b122ca588869bc423a6d3f78d5cb0438f3e49d003dae2bb009fb8687a91942db"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}

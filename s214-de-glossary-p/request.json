@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "S214_DE_GLOSSARY_P",
+  "stepId": "S2-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s214-de-glossary-p-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-14-de-extraction-phosphorus-glossary-repair-r1",
+      "unitId": "S2-14-de-extraction-phosphorus-glossary-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s214-de-glossary-p-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "sha256": "353c546a3fa045c039fb036a5e68bee3b3dbd9802c0007ad5f2951afa6e0aa42"
+        }
+      ],
+      "scientificMeaning": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "displayText": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "captionText": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "spokenText": "Ein Laborverfahren bestimmt einen Prüfwert, zum Beispiel für Phosphor im Boden. Die Interpretation des Ergebnisses hängt von diesem Verfahren ab.",
+      "spokenTextSHA256": "cd2151884a424f31d0681ea563fceb02adbce010efe8eb38f0303fed3c2a386e",
+      "spokenTextSha256": "cd2151884a424f31d0681ea563fceb02adbce010efe8eb38f0303fed3c2a386e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "spoken": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+          "spoken": "Ein Laborverfahren bestimmt einen Prüfwert, zum Beispiel für Phosphor im Boden. Die Interpretation des Ergebnisses hängt von diesem Verfahren ab.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "3f57a9c212cdc83e9a5305d0fa6de60cc5e109d90de98e4656606924cb2b30a9",
+      "requestFingerprintSha256": "3f57a9c212cdc83e9a5305d0fa6de60cc5e109d90de98e4656606924cb2b30a9",
+      "sourcePlanSha256": "fdaff5803c005e9f2fdbe523241a08534092cbb133f6c2dc802c4b6041b8dcbd",
+      "exactSentenceBefore": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/glossary/3/1",
+        "original": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+        "effective": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/glossary/3/1",
+            "text": "Laborverfahren zur Messung eines Index wie Boden-P; die Interpretation des Ergebnisses hängt davon ab.",
+            "sha256": "353c546a3fa045c039fb036a5e68bee3b3dbd9802c0007ad5f2951afa6e0aa42"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-de-glossary-phosphorus-root-repair-r1.json",
+        "rootSelectedAuthoritySHA256": "b122ca588869bc423a6d3f78d5cb0438f3e49d003dae2bb009fb8687a91942db"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-14-de-extraction-phosphorus-glossary-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
