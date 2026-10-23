@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "scope": "S206_IT_E02_SPECIMEN_REPAIR",
+  "stepId": "S2-06",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s206-it-e02-specimen-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-06-it-E02-specimen-paragraph-repair-r1",
+      "unitId": "S2-06-it-E02-specimen-paragraph-repair-r1",
+      "locale": "it",
+      "semanticGroup": "s206-it-e02-specimen-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a2c8bafdf95c74bc00acb3c757baeff442bc1293f530f4e821a34a4f35357494",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/situation",
+          "text": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+          "sha256": "92755cc9f31225680b5f4d9148628b5f96cf2ded42173a97d3704116b67ae88c"
+        }
+      ],
+      "scientificMeaning": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+      "displayText": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+      "captionText": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+      "spokenText": "La chiave della fonte indica un pH vicino a cinque virgola cinque per il campione A. Ma il campione A preparato in classe dà il colore più vicino a pH sei.",
+      "spokenTextSHA256": "e2c0aa1a61b13b638147f1d0bfc6e12eeee429ff1f6c57f7e37c2f96f24b3fc8",
+      "spokenTextSha256": "e2c0aa1a61b13b638147f1d0bfc6e12eeee429ff1f6c57f7e37c2f96f24b3fc8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+          "spoken": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+          "spoken": "La chiave della fonte indica un pH vicino a cinque virgola cinque per il campione A. Ma il campione A preparato in classe dà il colore più vicino a pH sei.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPECIMEN_IDENTITY_SPOKEN_PARAGRAPH_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "19861f7733c598095553fdde54135bcf7840823b8a498aad0c48ac2956b90f3f",
+      "requestFingerprintSha256": "19861f7733c598095553fdde54135bcf7840823b8a498aad0c48ac2956b90f3f",
+      "sourcePlanSha256": "5d5d2bcc7fed45247666c44821e3b626e6d1fc6b81d308dd67aad74dd39d9436",
+      "exactSentenceBefore": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/examples/1/situation",
+        "original": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+        "effective": "La chiave della fonte attende A vicino a 5.5, ma A preparato in classe dà il colore più vicino a pH 6.",
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s206-it-specimen-a-spoken-repair-decision-r1.json",
+        "rootSelectedAuthoritySHA256": "9a442cb116ca095a0e219b8ad097f719a8634762c47922d8576e24d809174eb7"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-06-it-E02-specimen-paragraph-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
