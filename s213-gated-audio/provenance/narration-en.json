@@ -1,0 +1,248 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-en.json",
+    "sha256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+    "bytes": 40361
+  },
+  "units": [
+    {
+      "id": "S2-13-en-E01-r1",
+      "unitId": "S2-13-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Model A: 65/25/10 sandy loam",
+          "sha256": "491e9fb369a262e8bd2c1d0bd9ac9d76c23a2e1b4d3de6f5d98796b86d22bb14"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.",
+          "sha256": "e99c8a196929b2f563ffa484b1a2e97df8b5b4bdd25e9e5848b914b37fcafd8c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The three figures sum to 100 mm; the corresponding percentages are 65/25/10.",
+          "sha256": "65d77b2ccb27b21ea3d77427bace0de552bd44d68dd8393e413508e171a3a2e1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Under comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.",
+          "sha256": "6e86478b649a80a39e5aac45e4795c7c3e26fb91e9e9f821218da7b1a0a5412f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Carrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.",
+          "sha256": "ee2a881aac9edd320ce531d4b6bbe6fb186caa02b2809844f6fc8c2763aa7339"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Match the management question to actual conditions.",
+          "sha256": "4284b89677879c35bd35ee991d699b0b3d426a5456a17ab9b6a5d080b31881f2"
+        }
+      ],
+      "scientificMeaning": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "displayText": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "captionText": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "spokenText": "Model A: sixty-five, twenty-five, ten sandy loam\n\nA supplied example with a total height of one hundred millimetres has sixty-five millimetres sand, twenty-five millimetres silt and ten millimetres clay.\n\nThe three figures sum to one hundred millimetres; the corresponding percentages are sixty-five, twenty-five, ten.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "spokenTextSHA256": "fa6ed3a7fc32103678d9afa127e2a853356b099b4ee2699befcb5825d1ce7ebf",
+      "spokenTextSha256": "fa6ed3a7fc32103678d9afa127e2a853356b099b4ee2699befcb5825d1ce7ebf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+          "spoken": "Model A: sixty-five, twenty-five, ten sandy loam\n\nA supplied example with a total height of one hundred millimetres has sixty-five millimetres sand, twenty-five millimetres silt and ten millimetres clay.\n\nThe three figures sum to one hundred millimetres; the corresponding percentages are sixty-five, twenty-five, ten.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5e25f59803ad4b930287fd3dca771b09b2db135512d60cff751e24b1a00ac0d2",
+      "requestFingerprintSha256": "5e25f59803ad4b930287fd3dca771b09b2db135512d60cff751e24b1a00ac0d2",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-E02-r1",
+      "unitId": "S2-13-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Model B: 40/40/20 loam",
+          "sha256": "362c4d6e692b77c47ef9225dfd505484351a7efef225ebf1472ed6e66cc6ecbb"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.",
+          "sha256": "6896d3354b4d2bd425213f6d483e8da0c950b889cfcf3828ae93d7adee95c8d1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "The point lies in loam on the labelled triangle.",
+          "sha256": "d8b9558ee0f783d91dfbd4772cb8b0c57b7ddbe8273e883c47fecf4d653cdadf"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "A good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.",
+          "sha256": "a8feed1dcb73a0b836386cef08e20c865f371e4082a5551b953b1da0c346637c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Maize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.",
+          "sha256": "6368276130be39022230a18caa47056cfc9f230f434ec1f5a491bad9f398c87a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Loam is a favourable clue, not a guarantee.",
+          "sha256": "203abbc1048052582f664b5ad436e09c58d4fad65a1cf4dd3e29e39c28debfc7"
+        }
+      ],
+      "scientificMeaning": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "displayText": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "captionText": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "spokenText": "Model B: forty, forty, twenty loam\n\nA supplied example with a total height of one hundred millimetres has forty millimetres sand, forty millimetres silt and twenty millimetres clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "spokenTextSHA256": "6a0c0498077072090584f3b9e1869c80f14d535134ac0710a27b8016501ad583",
+      "spokenTextSha256": "6a0c0498077072090584f3b9e1869c80f14d535134ac0710a27b8016501ad583",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+          "spoken": "Model B: forty, forty, twenty loam\n\nA supplied example with a total height of one hundred millimetres has forty millimetres sand, forty millimetres silt and twenty millimetres clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9be4b5f56b64b6c32c7d1d070fcbfc007ad50dbc1df3aa9eb136911665c9d86f",
+      "requestFingerprintSha256": "9be4b5f56b64b6c32c7d1d070fcbfc007ad50dbc1df3aa9eb136911665c9d86f",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-13-en-E03-r1",
+      "unitId": "S2-13-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Model C: 15/30/55 clay",
+          "sha256": "5703ada10dbe41176e620a87e79e2415f355f9ed8bb26812091732d31d3c4729"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.",
+          "sha256": "c2b77ba1e44bcec95fd7b5e4baf2aec203de081c7c9fdfac2f8ec12098a7bdea"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The point lies in the clay class.",
+          "sha256": "fecfb0bb44db7ae133b4c897fef4c53fcfbb61c82c722c053115fafa990644ee"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Wet workability and poor aeration are possible challenges; cation retention is one possible advantage.",
+          "sha256": "003d58a7c91ad0ea3d09c9a1ed83f1efafa808643094f2daf57cad5dbcb0160a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Inspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.",
+          "sha256": "b065062bf4f6b8d78fca083d6342131b2c342f77b4647609b0c77360ba66e15a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A texture class starts a diagnosis; it does not finish one.",
+          "sha256": "6d6b2619340ac28e36b06c34f4016426c5423b21ba5394a036f003c48f121d3e"
+        }
+      ],
+      "scientificMeaning": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "displayText": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "captionText": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "spokenText": "Model C: fifteen, thirty, fifty-five clay\n\nA supplied example with a total height of one hundred millimetres has fifteen millimetres sand, thirty millimetres silt and fifty-five millimetres clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "spokenTextSHA256": "3e9b8ec6baa44966aaef8cb47e2b368a459b4d344a21d3ccd87e6b65eab388c2",
+      "spokenTextSha256": "3e9b8ec6baa44966aaef8cb47e2b368a459b4d344a21d3ccd87e6b65eab388c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+          "spoken": "Model C: fifteen, thirty, fifty-five clay\n\nA supplied example with a total height of one hundred millimetres has fifteen millimetres sand, thirty millimetres silt and fifty-five millimetres clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f0742618210ea03d4b04f0afb69030bca7d2b33187ccc79f55a35bdfaa40fe91",
+      "requestFingerprintSha256": "f0742618210ea03d4b04f0afb69030bca7d2b33187ccc79f55a35bdfaa40fe91",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

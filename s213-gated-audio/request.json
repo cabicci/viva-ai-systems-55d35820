@@ -1,0 +1,1454 @@
+{
+  "schemaVersion": 1,
+  "scope": "S213_GATED_12_FULL_CURRENT_SEDIMENTATION_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S2-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s213-gated-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 12,
+  "maximumBlindAudioReviewCalls": 12,
+  "maximumASRInvocations": 12,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_NINE_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-13-ar-EG-E01-r1",
+      "unitId": "S2-13-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "المثال A: ‏65/25/10 لومي رملي",
+          "sha256": "13cf4fcea5ad94aea3bba835454142427c79029cd1323661c85a5a4f615e5e31"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "مثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.",
+          "sha256": "ba6598fe81bbd8ca6089ca3b0008aeabd9a4426b8340f2dabc2913f2544280ff"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.",
+          "sha256": "5a2abfef41ccfe64305d9b17d430010d2f5e3dffee625cc048f986ed53b970bc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "لو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.",
+          "sha256": "486ddc8feea60bb9c6c496d66c57c0708223834774915e157ec5dea985835b88"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "الجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.",
+          "sha256": "263bb5c1ad0b1be18f89c301bab3409baa2439677ad0057c0a5e64bfc39e656d"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "اربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "sha256": "f01e7211b77d7714a0b125ae0eea2037d4c034e8aee9b73345e223278610fd07"
+        }
+      ],
+      "scientificMeaning": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "displayText": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "captionText": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "spokenText": "المثال إيه: ‏خمسة وستين, خمسة وعشرين, عشرة لومي رملي\n\nمثال معطى ارتفاعه الكلي مية ملليمتر: ‏خمسة وستين ملليمتر رمل وخمسة وعشرين ملليمتر سلت وعشرة ملليمتر طين.\n\nالأرقام التلاتة مجموعها مية ملليمتر؛ فنسب البرطمان خمسة وستين, خمسة وعشرين, عشرة.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "spokenTextSHA256": "e10062162b56e927bd3d0798ca67fe99a8011f4f972830a1e10beebe0509dc59",
+      "spokenTextSha256": "e10062162b56e927bd3d0798ca67fe99a8011f4f972830a1e10beebe0509dc59",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "spoken": "المثال إيه: ‏خمسة وستين, خمسة وعشرين, عشرة لومي رملي\n\nمثال معطى ارتفاعه الكلي مية ملليمتر: ‏خمسة وستين ملليمتر رمل وخمسة وعشرين ملليمتر سلت وعشرة ملليمتر طين.\n\nالأرقام التلاتة مجموعها مية ملليمتر؛ فنسب البرطمان خمسة وستين, خمسة وعشرين, عشرة.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c82764d25b1a21b21522dced246277a29555cda5bc8ff8deb871e3dafd59f1dd",
+      "requestFingerprintSha256": "c82764d25b1a21b21522dced246277a29555cda5bc8ff8deb871e3dafd59f1dd",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8eb1e3fdecb301c3e88b0a72b66ae5127005c90665ca1630de1d97eac8894cb3"
+    },
+    {
+      "id": "S2-13-ar-EG-E02-r1",
+      "unitId": "S2-13-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "المثال B: ‏40/40/20 لومي",
+          "sha256": "a25fa25aefc777bb84efd9ea9db0cbd0da1900c1dd8aec5eb3fb39b67b8ade00"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.",
+          "sha256": "2b942986c23146108619ba89d7bf9c361b9eb468acd0263ecc5cd8530fc0ff4b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "النقطة تقع في فئة اللومية على المثلث بعلاماته.",
+          "sha256": "8761d6427e01d539df8f78e73c47ebffdaf03e7d821872dea558fca41d4c74f9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "البناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.",
+          "sha256": "0aed733ab0841f019537f29939c9d296e9a224dbaa3334f432de46e09bcd7c07"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "الذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.",
+          "sha256": "86eaa1926c25285f7a4fa6b5917daa63b90aba41f4e17b2d37ea979df2846e20"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "اللومية مؤشر مساعد، مش ضمان.",
+          "sha256": "4f1e4a9aedd5fec899e2279205204b486df690e32d706ebff34849b20f7b0063"
+        }
+      ],
+      "scientificMeaning": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "displayText": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "captionText": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "spokenText": "المثال بي: ‏أربعين, أربعين, عشرين لومي\n\nمثال معطى ارتفاعه مية ملليمتر فيه أربعين ملليمتر رمل وأربعين ملليمتر سلت وعشرين ملليمتر طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازن مفيد بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "spokenTextSHA256": "59907cd4b30fb671e2bc4ef0213f8bd6403805f2fdbb723b9daaba95e197ae48",
+      "spokenTextSha256": "59907cd4b30fb671e2bc4ef0213f8bd6403805f2fdbb723b9daaba95e197ae48",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+          "spoken": "المثال بي: ‏أربعين, أربعين, عشرين لومي\n\nمثال معطى ارتفاعه مية ملليمتر فيه أربعين ملليمتر رمل وأربعين ملليمتر سلت وعشرين ملليمتر طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازن مفيد بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ef21dc8cad40ab02dfdffcba22b685429115011fa8da4f770ee239da6381e50b",
+      "requestFingerprintSha256": "ef21dc8cad40ab02dfdffcba22b685429115011fa8da4f770ee239da6381e50b",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8eb1e3fdecb301c3e88b0a72b66ae5127005c90665ca1630de1d97eac8894cb3"
+    },
+    {
+      "id": "S2-13-ar-EG-E03-r1",
+      "unitId": "S2-13-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "المثال C: ‏15/30/55 طيني",
+          "sha256": "91afdaed1efa733a2e10bf926ab0a1858f5a47241c30bc7995d962f629c744be"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "مثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.",
+          "sha256": "6321d7da3c55090116a68607a724b9df12e8dabaee689cda7523586b90665972"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "النقطة تقع في فئة الطين.",
+          "sha256": "e3bc21cfc6b1d165306c234ae294c98cc9275ab7110b612dd3ce5ad48eb2342c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "صعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.",
+          "sha256": "5c1755216bd733839daf07f0345268882cd0e74f40faea4165a60a48efdd2faf"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "افحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.",
+          "sha256": "715c9a5a829e39599fa9f3db35a99f86e5560eb05f98189009a432106f93f62e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "اسم القوام يبدأ التشخيص، مش ينهيه.",
+          "sha256": "acbfcbc2a195da4d52d9b9e570f4b2d5a16c2ba6244b533804e2b419580ee9b1"
+        }
+      ],
+      "scientificMeaning": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "displayText": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "captionText": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "spokenText": "المثال سي: ‏خمستاشر, تلاتين, خمسة وخمسين طيني\n\nمثال معطى ارتفاعه مية ملليمتر فيه خمستاشر ملليمتر رمل وتلاتين ملليمتر سلت وخمسة وخمسين ملليمتر طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "spokenTextSHA256": "c34503d9a8ecfccf896d4dcd22a3eee57ed590f6cf5986fd8ab8b905018f673f",
+      "spokenTextSha256": "c34503d9a8ecfccf896d4dcd22a3eee57ed590f6cf5986fd8ab8b905018f673f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+          "spoken": "المثال سي: ‏خمستاشر, تلاتين, خمسة وخمسين طيني\n\nمثال معطى ارتفاعه مية ملليمتر فيه خمستاشر ملليمتر رمل وتلاتين ملليمتر سلت وخمسة وخمسين ملليمتر طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b5164f726fe71302262d2898902687d1a14305700922a53a5595c7d7def762c3",
+      "requestFingerprintSha256": "b5164f726fe71302262d2898902687d1a14305700922a53a5595c7d7def762c3",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "8eb1e3fdecb301c3e88b0a72b66ae5127005c90665ca1630de1d97eac8894cb3"
+    },
+    {
+      "id": "S2-13-en-E01-r1",
+      "unitId": "S2-13-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Model A: 65/25/10 sandy loam",
+          "sha256": "491e9fb369a262e8bd2c1d0bd9ac9d76c23a2e1b4d3de6f5d98796b86d22bb14"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.",
+          "sha256": "e99c8a196929b2f563ffa484b1a2e97df8b5b4bdd25e9e5848b914b37fcafd8c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The three figures sum to 100 mm; the corresponding percentages are 65/25/10.",
+          "sha256": "65d77b2ccb27b21ea3d77427bace0de552bd44d68dd8393e413508e171a3a2e1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Under comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.",
+          "sha256": "6e86478b649a80a39e5aac45e4795c7c3e26fb91e9e9f821218da7b1a0a5412f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Carrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.",
+          "sha256": "ee2a881aac9edd320ce531d4b6bbe6fb186caa02b2809844f6fc8c2763aa7339"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Match the management question to actual conditions.",
+          "sha256": "4284b89677879c35bd35ee991d699b0b3d426a5456a17ab9b6a5d080b31881f2"
+        }
+      ],
+      "scientificMeaning": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "displayText": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "captionText": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "spokenText": "Model A: sixty-five, twenty-five, ten sandy loam\n\nA supplied example with a total height of one hundred millimetres has sixty-five millimetres sand, twenty-five millimetres silt and ten millimetres clay.\n\nThe three figures sum to one hundred millimetres; the corresponding percentages are sixty-five, twenty-five, ten.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+      "spokenTextSHA256": "fa6ed3a7fc32103678d9afa127e2a853356b099b4ee2699befcb5825d1ce7ebf",
+      "spokenTextSha256": "fa6ed3a7fc32103678d9afa127e2a853356b099b4ee2699befcb5825d1ce7ebf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model A: 65/25/10 sandy loam\n\nA supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.\n\nThe three figures sum to 100 mm; the corresponding percentages are 65/25/10.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+          "spoken": "Model A: sixty-five, twenty-five, ten sandy loam\n\nA supplied example with a total height of one hundred millimetres has sixty-five millimetres sand, twenty-five millimetres silt and ten millimetres clay.\n\nThe three figures sum to one hundred millimetres; the corresponding percentages are sixty-five, twenty-five, ten.\n\nUnder comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.\n\nCarrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements.\n\nMatch the management question to actual conditions.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5e25f59803ad4b930287fd3dca771b09b2db135512d60cff751e24b1a00ac0d2",
+      "requestFingerprintSha256": "5e25f59803ad4b930287fd3dca771b09b2db135512d60cff751e24b1a00ac0d2",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "d359dd603fdaaacff11fb98a1ac16ba564feb7f34fdfc704b2dfb97182fbe45c"
+    },
+    {
+      "id": "S2-13-en-E02-r1",
+      "unitId": "S2-13-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Model B: 40/40/20 loam",
+          "sha256": "362c4d6e692b77c47ef9225dfd505484351a7efef225ebf1472ed6e66cc6ecbb"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.",
+          "sha256": "6896d3354b4d2bd425213f6d483e8da0c950b889cfcf3828ae93d7adee95c8d1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "The point lies in loam on the labelled triangle.",
+          "sha256": "d8b9558ee0f783d91dfbd4772cb8b0c57b7ddbe8273e883c47fecf4d653cdadf"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "A good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.",
+          "sha256": "a8feed1dcb73a0b836386cef08e20c865f371e4082a5551b953b1da0c346637c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Maize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.",
+          "sha256": "6368276130be39022230a18caa47056cfc9f230f434ec1f5a491bad9f398c87a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Loam is a favourable clue, not a guarantee.",
+          "sha256": "203abbc1048052582f664b5ad436e09c58d4fad65a1cf4dd3e29e39c28debfc7"
+        }
+      ],
+      "scientificMeaning": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "displayText": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "captionText": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "spokenText": "Model B: forty, forty, twenty loam\n\nA supplied example with a total height of one hundred millimetres has forty millimetres sand, forty millimetres silt and twenty millimetres clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+      "spokenTextSHA256": "6a0c0498077072090584f3b9e1869c80f14d535134ac0710a27b8016501ad583",
+      "spokenTextSha256": "6a0c0498077072090584f3b9e1869c80f14d535134ac0710a27b8016501ad583",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model B: 40/40/20 loam\n\nA supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+          "spoken": "Model B: forty, forty, twenty loam\n\nA supplied example with a total height of one hundred millimetres has forty millimetres sand, forty millimetres silt and twenty millimetres clay.\n\nThe point lies in loam on the labelled triangle.\n\nA good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.\n\nMaize, wheat and many vegetables are examples to consider only after crop and site requirements are checked.\n\nLoam is a favourable clue, not a guarantee.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9be4b5f56b64b6c32c7d1d070fcbfc007ad50dbc1df3aa9eb136911665c9d86f",
+      "requestFingerprintSha256": "9be4b5f56b64b6c32c7d1d070fcbfc007ad50dbc1df3aa9eb136911665c9d86f",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "d359dd603fdaaacff11fb98a1ac16ba564feb7f34fdfc704b2dfb97182fbe45c"
+    },
+    {
+      "id": "S2-13-en-E03-r1",
+      "unitId": "S2-13-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Model C: 15/30/55 clay",
+          "sha256": "5703ada10dbe41176e620a87e79e2415f355f9ed8bb26812091732d31d3c4729"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.",
+          "sha256": "c2b77ba1e44bcec95fd7b5e4baf2aec203de081c7c9fdfac2f8ec12098a7bdea"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The point lies in the clay class.",
+          "sha256": "fecfb0bb44db7ae133b4c897fef4c53fcfbb61c82c722c053115fafa990644ee"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Wet workability and poor aeration are possible challenges; cation retention is one possible advantage.",
+          "sha256": "003d58a7c91ad0ea3d09c9a1ed83f1efafa808643094f2daf57cad5dbcb0160a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Inspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.",
+          "sha256": "b065062bf4f6b8d78fca083d6342131b2c342f77b4647609b0c77360ba66e15a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A texture class starts a diagnosis; it does not finish one.",
+          "sha256": "6d6b2619340ac28e36b06c34f4016426c5423b21ba5394a036f003c48f121d3e"
+        }
+      ],
+      "scientificMeaning": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "displayText": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "captionText": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "spokenText": "Model C: fifteen, thirty, fifty-five clay\n\nA supplied example with a total height of one hundred millimetres has fifteen millimetres sand, thirty millimetres silt and fifty-five millimetres clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+      "spokenTextSHA256": "3e9b8ec6baa44966aaef8cb47e2b368a459b4d344a21d3ccd87e6b65eab388c2",
+      "spokenTextSha256": "3e9b8ec6baa44966aaef8cb47e2b368a459b4d344a21d3ccd87e6b65eab388c2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Model C: 15/30/55 clay\n\nA supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+          "spoken": "Model C: fifteen, thirty, fifty-five clay\n\nA supplied example with a total height of one hundred millimetres has fifteen millimetres sand, thirty millimetres silt and fifty-five millimetres clay.\n\nThe point lies in the clay class.\n\nWet workability and poor aeration are possible challenges; cation retention is one possible advantage.\n\nInspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met.\n\nA texture class starts a diagnosis; it does not finish one.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f0742618210ea03d4b04f0afb69030bca7d2b33187ccc79f55a35bdfaa40fe91",
+      "requestFingerprintSha256": "f0742618210ea03d4b04f0afb69030bca7d2b33187ccc79f55a35bdfaa40fe91",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "d359dd603fdaaacff11fb98a1ac16ba564feb7f34fdfc704b2dfb97182fbe45c"
+    },
+    {
+      "id": "S2-13-it-E01-r1",
+      "unitId": "S2-13-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Modello A: 65/25/10 franco sabbioso",
+          "sha256": "126c87f214df8a5ea44ee91d5fc4ce7f2f8ae28b24a0219fca9d23231617bd20"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Un esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.",
+          "sha256": "b60b934012c597603b6a48620c53e244e0566be82c05dbdbb2299da9a9550928"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "I tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.",
+          "sha256": "b91e8c213b1330326a8cb3642ff8d5cc0929398587cd9ff8f22a59904fbf080f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Con struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.",
+          "sha256": "6659b8eda345ce960e26c6ba1c7621e7a191fa59471b4261c0f479f2b0edbf0b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Carote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.",
+          "sha256": "44290fee7e048c949cd9a9425ef97182f281bce79c9519b42eff0fd5bd68b2ae"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Collega la scelta di gestione alle condizioni effettive.",
+          "sha256": "9e7ba14a0495fab719b3777dc488f89d120e27f2024d367a7a3425eec4290736"
+        }
+      ],
+      "scientificMeaning": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "displayText": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "captionText": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "spokenText": "Modello A: sessantacinque, venticinque, dieci franco sabbioso\n\nUn esempio fornito da cento millimetri contiene sessantacinque millimetri sabbia, venticinque millimetri limo e dieci millimetri argilla.\n\nI tre valori totalizzano cento millimetri; le corrispondenti percentuali sono sessantacinque, venticinque, dieci.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "spokenTextSHA256": "36c678a8e69318f67db0d1d6a8340428501dfbb153678b9be4e049929c2db9e0",
+      "spokenTextSha256": "36c678a8e69318f67db0d1d6a8340428501dfbb153678b9be4e049929c2db9e0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+          "spoken": "Modello A: sessantacinque, venticinque, dieci franco sabbioso\n\nUn esempio fornito da cento millimetri contiene sessantacinque millimetri sabbia, venticinque millimetri limo e dieci millimetri argilla.\n\nI tre valori totalizzano cento millimetri; le corrispondenti percentuali sono sessantacinque, venticinque, dieci.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b6664f7bafa55170e8efa11d4b32c083ff2ded4e9796decce2731214fa522c24",
+      "requestFingerprintSha256": "b6664f7bafa55170e8efa11d4b32c083ff2ded4e9796decce2731214fa522c24",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "8c109f8f02751ee05c7f675caed57c8e6df13ec7ecd45f53ffb9d07db1857fbf"
+    },
+    {
+      "id": "S2-13-it-E02-r1",
+      "unitId": "S2-13-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modello B: 40/40/20 franco",
+          "sha256": "5b378563b5656d7201addf06a7dc2e0315537d0e9574240bac7172126d130b89"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.",
+          "sha256": "770d90122211988bdc03f834d41865ad7f88b9ce9c4883e500c8aa01769fb06b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Il punto cade nel franco sul triangolo etichettato.",
+          "sha256": "82db6b74b56bb1a951e95fc72096a5c09cdf50d8778005ed618426998b658419"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Una buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.",
+          "sha256": "b08809a781a2a19c246b3b2851d3dc7165d40c005dc773b8aeb7ec2c381e88cb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Mais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.",
+          "sha256": "1b5a91a48fd915eb9bb456617cb616e65b8e8be9307abc71b90969e58e417655"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Franco è un indizio favorevole, non una garanzia.",
+          "sha256": "3df205dde57da8ccf8943e0b31e0839719de8abd73aa8312bc495e1f6c3a69cf"
+        }
+      ],
+      "scientificMeaning": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "displayText": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "captionText": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "spokenText": "Modello B: quaranta, quaranta, venti franco\n\nUn esempio fornito da cento millimetri contiene quaranta millimetri sabbia, quaranta millimetri limo e venti millimetri argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "spokenTextSHA256": "98e78373ea989b13f626f774ad8e6bcedc9ff21fd569592688fca4de3ef1a1bf",
+      "spokenTextSha256": "98e78373ea989b13f626f774ad8e6bcedc9ff21fd569592688fca4de3ef1a1bf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+          "spoken": "Modello B: quaranta, quaranta, venti franco\n\nUn esempio fornito da cento millimetri contiene quaranta millimetri sabbia, quaranta millimetri limo e venti millimetri argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b0679217917f9ef737f05fb7ea858e36420f4b1349848ea598c47f4d03c502e",
+      "requestFingerprintSha256": "6b0679217917f9ef737f05fb7ea858e36420f4b1349848ea598c47f4d03c502e",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "8c109f8f02751ee05c7f675caed57c8e6df13ec7ecd45f53ffb9d07db1857fbf"
+    },
+    {
+      "id": "S2-13-it-E03-r1",
+      "unitId": "S2-13-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Modello C: 15/30/55 argilloso",
+          "sha256": "00093b9817dbd79f6c5d37abc609a2777b947fa284bb996872870e36daf90a56"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.",
+          "sha256": "5a642d6c8e517aa16bc1302040e6e09e21f52a794f00f3844777b273680a1bca"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Il punto rientra nella classe argillosa.",
+          "sha256": "d00326589fbc958f2a6de2f867de6e932def8bc1fb46d46dfb1352350d1b040e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Lavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.",
+          "sha256": "117e9c94a952b99e6b2679ce97bacb8e3f0ec558c56e1c947f0807b94cc7d8ef"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Controlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.",
+          "sha256": "061e56050f3d0dbf7b57e26a77e398b62f0ff969d7f5da72108ca51c91e3bc44"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Una classe tessiturale avvia la diagnosi, non la conclude.",
+          "sha256": "d7e112ea1f165049739858f1835f8b46b2d2a7c8567a7a6a5b1f306578fdec34"
+        }
+      ],
+      "scientificMeaning": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "displayText": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "captionText": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "spokenText": "Modello C: quindici, trenta, cinquantacinque argilloso\n\nUn esempio fornito da cento millimetri contiene quindici millimetri sabbia, trenta millimetri limo e cinquantacinque millimetri argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "spokenTextSHA256": "1ef36b3bee473c743985263db566e353276a1e4f206427dc7bedc779b9e4c1db",
+      "spokenTextSha256": "1ef36b3bee473c743985263db566e353276a1e4f206427dc7bedc779b9e4c1db",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+          "spoken": "Modello C: quindici, trenta, cinquantacinque argilloso\n\nUn esempio fornito da cento millimetri contiene quindici millimetri sabbia, trenta millimetri limo e cinquantacinque millimetri argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "90f39c0e12e67c55d9f18b1a960d9e797e8bbd7e8d6f74ab0d2162c74b69a6ab",
+      "requestFingerprintSha256": "90f39c0e12e67c55d9f18b1a960d9e797e8bbd7e8d6f74ab0d2162c74b69a6ab",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "8c109f8f02751ee05c7f675caed57c8e6df13ec7ecd45f53ffb9d07db1857fbf"
+    },
+    {
+      "id": "S2-13-de-E01-r1",
+      "unitId": "S2-13-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Modell A: 65/25/10 sandiger Lehm",
+          "sha256": "6dacbb00c34967f584c9f5341a96a4641ef953f5ab8e497a1860f75da72edff1"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.",
+          "sha256": "5655d1ee6d290f7e5b7dfe7a3f113b87da6711b86af5167df746016529988396"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.",
+          "sha256": "94d3d7e48d2c0f5a8d3a0649d170735cc2668f22e8993193501646938bcaa6bd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Bei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.",
+          "sha256": "7a48d8a15a97a72b7a6c13607d0518c7f29069749cf30c3b6f3a523d186a25ba"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Karotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.",
+          "sha256": "1d4ab0f8e202f49a6fa271d15af1f02b500f8ca35f194f0c75ea6896bf0d5696"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Die Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "sha256": "815cf3d9b5d26726a8876e90992db0aa7db12b45eb58cd4e83d4f43ab3de5c4b"
+        }
+      ],
+      "scientificMeaning": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "displayText": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "captionText": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "spokenText": "Modell A: fünfundsechzig, fünfundzwanzig, zehn sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfundsechzig Millimeter Sand, fünfundzwanzig Millimeter Schluff und zehn Millimeter Ton.\n\nZusammen ergeben die Schichten einhundert Millimeter; ihre Anteile betragen fünfundsechzig, fünfundzwanzig, zehn Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "spokenTextSHA256": "f7bf9e71527111b6753f54879e0f7241dd4c0a68161278d9c0efdb10251a3c7c",
+      "spokenTextSha256": "f7bf9e71527111b6753f54879e0f7241dd4c0a68161278d9c0efdb10251a3c7c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "spoken": "Modell A: fünfundsechzig, fünfundzwanzig, zehn sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfundsechzig Millimeter Sand, fünfundzwanzig Millimeter Schluff und zehn Millimeter Ton.\n\nZusammen ergeben die Schichten einhundert Millimeter; ihre Anteile betragen fünfundsechzig, fünfundzwanzig, zehn Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "59e14229e6f5a1f5450a4db2c1cadf8722d7ec2c0bb0810cf2ac48720d6f92b2",
+      "requestFingerprintSha256": "59e14229e6f5a1f5450a4db2c1cadf8722d7ec2c0bb0810cf2ac48720d6f92b2",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "b36c443955f9265844992571c6882edfa107ab9fa021e0f9e8ab731fe66df6ec"
+    },
+    {
+      "id": "S2-13-de-E02-r1",
+      "unitId": "S2-13-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modell B: 40/40/20 Lehm",
+          "sha256": "31a34455e74e5c2a2fc8236617becb3d17c3735a8d6dcdc980f49c0ebf77a7da"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.",
+          "sha256": "769311ea10427bd2e72eecc4a95e1c77fc09a9762fdba3035a96a92774bff6b9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Der Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.",
+          "sha256": "119c3c60974e4938c5be396ce8fb3a54cf253c01efeb67addc1bbd74419eb1cc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Bei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.",
+          "sha256": "ec8b59693a96069ebe3cb566001c96b2278c5d8554e62e9fbe09ea1a0bda25db"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Mais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.",
+          "sha256": "0413a5ef1ee9b6bbfc2cd7ca2486f2dfa02dbb32fccf2aea02e6be0d9e750869"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Lehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "sha256": "bfc0a72724e152a67d6716646d13e96f5ef85eff3dc1c783bd0e1f95cfbb5ab6"
+        }
+      ],
+      "scientificMeaning": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "displayText": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "captionText": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "spokenText": "Modell B: vierzig, vierzig, zwanzig Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält vierzig Millimeter Sand, vierzig Millimeter Schluff und zwanzig Millimeter Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "spokenTextSHA256": "734ab00f83ccc2116b6f80fa9d7ceb81032d3a75719ab1687daaec7312395191",
+      "spokenTextSha256": "734ab00f83ccc2116b6f80fa9d7ceb81032d3a75719ab1687daaec7312395191",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "spoken": "Modell B: vierzig, vierzig, zwanzig Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält vierzig Millimeter Sand, vierzig Millimeter Schluff und zwanzig Millimeter Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "29359f0aa8a44c0b8256e7172107a11f469f369a826f1d4aa9a54b1fbd6ebf99",
+      "requestFingerprintSha256": "29359f0aa8a44c0b8256e7172107a11f469f369a826f1d4aa9a54b1fbd6ebf99",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "b36c443955f9265844992571c6882edfa107ab9fa021e0f9e8ab731fe66df6ec"
+    },
+    {
+      "id": "S2-13-de-E03-r1",
+      "unitId": "S2-13-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Modell C: 15/30/55 Ton",
+          "sha256": "e28a2ba0c37f4c35aacf0b997d425270ef1e17e2072cf47f9677c1f38d27151d"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.",
+          "sha256": "bc8cd5acfff7e6bcbf0ed5fb88864ec530767c746298bbf6afecf434ef41a188"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Der Punkt liegt in der Texturklasse Ton.",
+          "sha256": "38864545cfac4a7386960e1c330d2798d441fc328a40c2162a8117e56d1649ed"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Schwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.",
+          "sha256": "828b5c0c025fed4604d1aa406703c1f35b0f191a97eda481e2503c5946ed8f5c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Prüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.",
+          "sha256": "89ba178e53381020c7537ea7f9b51d2e0f46461575385519c598d3e3a90cfcf0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Die Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "sha256": "68df29915e083860c00529a3fdb5b45c7f423fd02eaf8554846c3e100fb88df6"
+        }
+      ],
+      "scientificMeaning": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "displayText": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "captionText": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "spokenText": "Modell C: fünfzehn, dreißig, fünfundfünfzig Ton\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfzehn Millimeter Sand, dreißig Millimeter Schluff und fünfundfünfzig Millimeter Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "spokenTextSHA256": "31bb04fae199743a1bca7747425f81357376923e3bdac2c3643f40da6bfb8e64",
+      "spokenTextSha256": "31bb04fae199743a1bca7747425f81357376923e3bdac2c3643f40da6bfb8e64",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "spoken": "Modell C: fünfzehn, dreißig, fünfundfünfzig Ton\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfzehn Millimeter Sand, dreißig Millimeter Schluff und fünfundfünfzig Millimeter Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5fef07183964303e1cfb2b5e503fbc3089831bdb071dc08ed74e860c40e10c26",
+      "requestFingerprintSha256": "5fef07183964303e1cfb2b5e503fbc3089831bdb071dc08ed74e860c40e10c26",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "b36c443955f9265844992571c6882edfa107ab9fa021e0f9e8ab731fe66df6ec"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 3,
+    "blind": 3,
+    "asr": 3,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-13-ar-EG-E01-r1",
+      "S2-13-ar-EG-E02-r1",
+      "S2-13-ar-EG-E03-r1"
+    ],
+    "en": [
+      "S2-13-en-E01-r1",
+      "S2-13-en-E02-r1",
+      "S2-13-en-E03-r1"
+    ],
+    "it": [
+      "S2-13-it-E01-r1",
+      "S2-13-it-E02-r1",
+      "S2-13-it-E03-r1"
+    ],
+    "de": [
+      "S2-13-de-E01-r1",
+      "S2-13-de-E02-r1",
+      "S2-13-de-E03-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}

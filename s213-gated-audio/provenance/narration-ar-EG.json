@@ -1,0 +1,248 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-ar-EG.json",
+    "sha256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+    "bytes": 52413
+  },
+  "units": [
+    {
+      "id": "S2-13-ar-EG-E01-r1",
+      "unitId": "S2-13-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "المثال A: ‏65/25/10 لومي رملي",
+          "sha256": "13cf4fcea5ad94aea3bba835454142427c79029cd1323661c85a5a4f615e5e31"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "مثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.",
+          "sha256": "ba6598fe81bbd8ca6089ca3b0008aeabd9a4426b8340f2dabc2913f2544280ff"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.",
+          "sha256": "5a2abfef41ccfe64305d9b17d430010d2f5e3dffee625cc048f986ed53b970bc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "لو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.",
+          "sha256": "486ddc8feea60bb9c6c496d66c57c0708223834774915e157ec5dea985835b88"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "الجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.",
+          "sha256": "263bb5c1ad0b1be18f89c301bab3409baa2439677ad0057c0a5e64bfc39e656d"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "اربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "sha256": "f01e7211b77d7714a0b125ae0eea2037d4c034e8aee9b73345e223278610fd07"
+        }
+      ],
+      "scientificMeaning": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "displayText": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "captionText": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "spokenText": "المثال إيه: ‏خمسة وستين, خمسة وعشرين, عشرة لومي رملي\n\nمثال معطى ارتفاعه الكلي مية ملليمتر: ‏خمسة وستين ملليمتر رمل وخمسة وعشرين ملليمتر سلت وعشرة ملليمتر طين.\n\nالأرقام التلاتة مجموعها مية ملليمتر؛ فنسب البرطمان خمسة وستين, خمسة وعشرين, عشرة.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+      "spokenTextSHA256": "e10062162b56e927bd3d0798ca67fe99a8011f4f972830a1e10beebe0509dc59",
+      "spokenTextSha256": "e10062162b56e927bd3d0798ca67fe99a8011f4f972830a1e10beebe0509dc59",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال A: ‏65/25/10 لومي رملي\n\nمثال معطى ارتفاعه الكلي 100 mm: ‏65 mm رمل و25 mm سلت و10 mm طين.\n\nالأرقام التلاتة مجموعها 100 mm؛ فنسب البرطمان 65/25/10.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "spoken": "المثال إيه: ‏خمسة وستين, خمسة وعشرين, عشرة لومي رملي\n\nمثال معطى ارتفاعه الكلي مية ملليمتر: ‏خمسة وستين ملليمتر رمل وخمسة وعشرين ملليمتر سلت وعشرة ملليمتر طين.\n\nالأرقام التلاتة مجموعها مية ملليمتر؛ فنسب البرطمان خمسة وستين, خمسة وعشرين, عشرة.\n\nلو البناء والجو متشابهين، الصرف الأسرع وغسل العناصر احتمالين معقولين.\n\nالجزر والبطاطس وإكليل الجبل أمثلة نفحصها، مش قائمة زراعة تلقائية؛ تحقق من توفر الميه وباقي شروط الموقع.\n\nاربط سؤال الإدارة بظروف الحقل الحقيقية.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c82764d25b1a21b21522dced246277a29555cda5bc8ff8deb871e3dafd59f1dd",
+      "requestFingerprintSha256": "c82764d25b1a21b21522dced246277a29555cda5bc8ff8deb871e3dafd59f1dd",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S2-13-ar-EG-E02-r1",
+      "unitId": "S2-13-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "المثال B: ‏40/40/20 لومي",
+          "sha256": "a25fa25aefc777bb84efd9ea9db0cbd0da1900c1dd8aec5eb3fb39b67b8ade00"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.",
+          "sha256": "2b942986c23146108619ba89d7bf9c361b9eb468acd0263ecc5cd8530fc0ff4b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "النقطة تقع في فئة اللومية على المثلث بعلاماته.",
+          "sha256": "8761d6427e01d539df8f78e73c47ebffdaf03e7d821872dea558fca41d4c74f9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "البناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.",
+          "sha256": "0aed733ab0841f019537f29939c9d296e9a224dbaa3334f432de46e09bcd7c07"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "الذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.",
+          "sha256": "86eaa1926c25285f7a4fa6b5917daa63b90aba41f4e17b2d37ea979df2846e20"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "اللومية مؤشر مساعد، مش ضمان.",
+          "sha256": "4f1e4a9aedd5fec899e2279205204b486df690e32d706ebff34849b20f7b0063"
+        }
+      ],
+      "scientificMeaning": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "displayText": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "captionText": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "spokenText": "المثال بي: ‏أربعين, أربعين, عشرين لومي\n\nمثال معطى ارتفاعه مية ملليمتر فيه أربعين ملليمتر رمل وأربعين ملليمتر سلت وعشرين ملليمتر طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازن مفيد بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+      "spokenTextSHA256": "59907cd4b30fb671e2bc4ef0213f8bd6403805f2fdbb723b9daaba95e197ae48",
+      "spokenTextSha256": "59907cd4b30fb671e2bc4ef0213f8bd6403805f2fdbb723b9daaba95e197ae48",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال B: ‏40/40/20 لومي\n\nمثال معطى ارتفاعه 100 mm فيه 40 mm رمل و40 mm سلت و20 mm طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازنًا مفيدًا بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+          "spoken": "المثال بي: ‏أربعين, أربعين, عشرين لومي\n\nمثال معطى ارتفاعه مية ملليمتر فيه أربعين ملليمتر رمل وأربعين ملليمتر سلت وعشرين ملليمتر طين.\n\nالنقطة تقع في فئة اللومية على المثلث بعلاماته.\n\nالبناء الجيد ممكن يسهل الخدمة ويوفر توازن مفيد بين الصرف والاحتفاظ بالميه والتهوية.\n\nالذرة والقمح وخضراوات كثيرة أمثلة للنظر فيها بعد فحص احتياجات المحصول والموقع.\n\nاللومية مؤشر مساعد، مش ضمان.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ef21dc8cad40ab02dfdffcba22b685429115011fa8da4f770ee239da6381e50b",
+      "requestFingerprintSha256": "ef21dc8cad40ab02dfdffcba22b685429115011fa8da4f770ee239da6381e50b",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S2-13-ar-EG-E03-r1",
+      "unitId": "S2-13-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "de65f14d2e9c1f661e2328a33ef618045dfb5cdd0b765c2cb5c4b3759c7cfbbc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "المثال C: ‏15/30/55 طيني",
+          "sha256": "91afdaed1efa733a2e10bf926ab0a1858f5a47241c30bc7995d962f629c744be"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "مثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.",
+          "sha256": "6321d7da3c55090116a68607a724b9df12e8dabaee689cda7523586b90665972"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "النقطة تقع في فئة الطين.",
+          "sha256": "e3bc21cfc6b1d165306c234ae294c98cc9275ab7110b612dd3ce5ad48eb2342c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "صعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.",
+          "sha256": "5c1755216bd733839daf07f0345268882cd0e74f40faea4165a60a48efdd2faf"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "افحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.",
+          "sha256": "715c9a5a829e39599fa9f3db35a99f86e5560eb05f98189009a432106f93f62e"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "اسم القوام يبدأ التشخيص، مش ينهيه.",
+          "sha256": "acbfcbc2a195da4d52d9b9e570f4b2d5a16c2ba6244b533804e2b419580ee9b1"
+        }
+      ],
+      "scientificMeaning": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "displayText": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "captionText": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "spokenText": "المثال سي: ‏خمستاشر, تلاتين, خمسة وخمسين طيني\n\nمثال معطى ارتفاعه مية ملليمتر فيه خمستاشر ملليمتر رمل وتلاتين ملليمتر سلت وخمسة وخمسين ملليمتر طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+      "spokenTextSHA256": "c34503d9a8ecfccf896d4dcd22a3eee57ed590f6cf5986fd8ab8b905018f673f",
+      "spokenTextSha256": "c34503d9a8ecfccf896d4dcd22a3eee57ed590f6cf5986fd8ab8b905018f673f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المثال C: ‏15/30/55 طيني\n\nمثال معطى ارتفاعه 100 mm فيه 15 mm رمل و30 mm سلت و55 mm طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+          "spoken": "المثال سي: ‏خمستاشر, تلاتين, خمسة وخمسين طيني\n\nمثال معطى ارتفاعه مية ملليمتر فيه خمستاشر ملليمتر رمل وتلاتين ملليمتر سلت وخمسة وخمسين ملليمتر طين.\n\nالنقطة تقع في فئة الطين.\n\nصعوبة خدمة الأرض المبلولة والتهوية الضعيفة تحديين محتملين؛ حفظ الكاتيونات ميزة محتملة.\n\nافحص بناء الحقل وصرفه. اختَر مادة عضوية مناسبة بعد تقييمها والموقع؛ ولا تستخدم الجبس إلا لو ثبتت الصودية وتوافرت شروط الاستصلاح.\n\nاسم القوام يبدأ التشخيص، مش ينهيه.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b5164f726fe71302262d2898902687d1a14305700922a53a5595c7d7def762c3",
+      "requestFingerprintSha256": "b5164f726fe71302262d2898902687d1a14305700922a53a5595c7d7def762c3",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

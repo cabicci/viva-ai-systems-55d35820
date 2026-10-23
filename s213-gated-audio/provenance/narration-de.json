@@ -1,0 +1,248 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-de.json",
+    "sha256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+    "bytes": 43315
+  },
+  "units": [
+    {
+      "id": "S2-13-de-E01-r1",
+      "unitId": "S2-13-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Modell A: 65/25/10 sandiger Lehm",
+          "sha256": "6dacbb00c34967f584c9f5341a96a4641ef953f5ab8e497a1860f75da72edff1"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.",
+          "sha256": "5655d1ee6d290f7e5b7dfe7a3f113b87da6711b86af5167df746016529988396"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.",
+          "sha256": "94d3d7e48d2c0f5a8d3a0649d170735cc2668f22e8993193501646938bcaa6bd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Bei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.",
+          "sha256": "7a48d8a15a97a72b7a6c13607d0518c7f29069749cf30c3b6f3a523d186a25ba"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Karotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.",
+          "sha256": "1d4ab0f8e202f49a6fa271d15af1f02b500f8ca35f194f0c75ea6896bf0d5696"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Die Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "sha256": "815cf3d9b5d26726a8876e90992db0aa7db12b45eb58cd4e83d4f43ab3de5c4b"
+        }
+      ],
+      "scientificMeaning": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "displayText": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "captionText": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "spokenText": "Modell A: fünfundsechzig, fünfundzwanzig, zehn sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfundsechzig Millimeter Sand, fünfundzwanzig Millimeter Schluff und zehn Millimeter Ton.\n\nZusammen ergeben die Schichten einhundert Millimeter; ihre Anteile betragen fünfundsechzig, fünfundzwanzig, zehn Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+      "spokenTextSHA256": "f7bf9e71527111b6753f54879e0f7241dd4c0a68161278d9c0efdb10251a3c7c",
+      "spokenTextSha256": "f7bf9e71527111b6753f54879e0f7241dd4c0a68161278d9c0efdb10251a3c7c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell A: 65/25/10 sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.\n\nZusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "spoken": "Modell A: fünfundsechzig, fünfundzwanzig, zehn sandiger Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfundsechzig Millimeter Sand, fünfundzwanzig Millimeter Schluff und zehn Millimeter Ton.\n\nZusammen ergeben die Schichten einhundert Millimeter; ihre Anteile betragen fünfundsechzig, fünfundzwanzig, zehn Prozent.\n\nBei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.\n\nKarotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen.\n\nDie Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "59e14229e6f5a1f5450a4db2c1cadf8722d7ec2c0bb0810cf2ac48720d6f92b2",
+      "requestFingerprintSha256": "59e14229e6f5a1f5450a4db2c1cadf8722d7ec2c0bb0810cf2ac48720d6f92b2",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-13-de-E02-r1",
+      "unitId": "S2-13-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modell B: 40/40/20 Lehm",
+          "sha256": "31a34455e74e5c2a2fc8236617becb3d17c3735a8d6dcdc980f49c0ebf77a7da"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.",
+          "sha256": "769311ea10427bd2e72eecc4a95e1c77fc09a9762fdba3035a96a92774bff6b9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Der Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.",
+          "sha256": "119c3c60974e4938c5be396ce8fb3a54cf253c01efeb67addc1bbd74419eb1cc"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Bei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.",
+          "sha256": "ec8b59693a96069ebe3cb566001c96b2278c5d8554e62e9fbe09ea1a0bda25db"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Mais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.",
+          "sha256": "0413a5ef1ee9b6bbfc2cd7ca2486f2dfa02dbb32fccf2aea02e6be0d9e750869"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Lehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "sha256": "bfc0a72724e152a67d6716646d13e96f5ef85eff3dc1c783bd0e1f95cfbb5ab6"
+        }
+      ],
+      "scientificMeaning": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "displayText": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "captionText": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "spokenText": "Modell B: vierzig, vierzig, zwanzig Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält vierzig Millimeter Sand, vierzig Millimeter Schluff und zwanzig Millimeter Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+      "spokenTextSHA256": "734ab00f83ccc2116b6f80fa9d7ceb81032d3a75719ab1687daaec7312395191",
+      "spokenTextSha256": "734ab00f83ccc2116b6f80fa9d7ceb81032d3a75719ab1687daaec7312395191",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell B: 40/40/20 Lehm\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "spoken": "Modell B: vierzig, vierzig, zwanzig Lehm\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält vierzig Millimeter Sand, vierzig Millimeter Schluff und zwanzig Millimeter Ton.\n\nDer Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.\n\nBei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.\n\nMais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele.\n\nLehm ist ein nützlicher Hinweis, keine Erfolgsgarantie.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "29359f0aa8a44c0b8256e7172107a11f469f369a826f1d4aa9a54b1fbd6ebf99",
+      "requestFingerprintSha256": "29359f0aa8a44c0b8256e7172107a11f469f369a826f1d4aa9a54b1fbd6ebf99",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-13-de-E03-r1",
+      "unitId": "S2-13-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Modell C: 15/30/55 Ton",
+          "sha256": "e28a2ba0c37f4c35aacf0b997d425270ef1e17e2072cf47f9677c1f38d27151d"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.",
+          "sha256": "bc8cd5acfff7e6bcbf0ed5fb88864ec530767c746298bbf6afecf434ef41a188"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Der Punkt liegt in der Texturklasse Ton.",
+          "sha256": "38864545cfac4a7386960e1c330d2798d441fc328a40c2162a8117e56d1649ed"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Schwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.",
+          "sha256": "828b5c0c025fed4604d1aa406703c1f35b0f191a97eda481e2503c5946ed8f5c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Prüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.",
+          "sha256": "89ba178e53381020c7537ea7f9b51d2e0f46461575385519c598d3e3a90cfcf0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Die Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "sha256": "68df29915e083860c00529a3fdb5b45c7f423fd02eaf8554846c3e100fb88df6"
+        }
+      ],
+      "scientificMeaning": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "displayText": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "captionText": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "spokenText": "Modell C: fünfzehn, dreißig, fünfundfünfzig Ton\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfzehn Millimeter Sand, dreißig Millimeter Schluff und fünfundfünfzig Millimeter Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+      "spokenTextSHA256": "31bb04fae199743a1bca7747425f81357376923e3bdac2c3643f40da6bfb8e64",
+      "spokenTextSha256": "31bb04fae199743a1bca7747425f81357376923e3bdac2c3643f40da6bfb8e64",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modell C: 15/30/55 Ton\n\nEin vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "spoken": "Modell C: fünfzehn, dreißig, fünfundfünfzig Ton\n\nEin vorgegebenes Beispiel mit insgesamt einhundert Millimetern enthält fünfzehn Millimeter Sand, dreißig Millimeter Schluff und fünfundfünfzig Millimeter Ton.\n\nDer Punkt liegt in der Texturklasse Ton.\n\nSchwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.\n\nPrüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus.\n\nDie Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5fef07183964303e1cfb2b5e503fbc3089831bdb071dc08ed74e860c40e10c26",
+      "requestFingerprintSha256": "5fef07183964303e1cfb2b5e503fbc3089831bdb071dc08ed74e860c40e10c26",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

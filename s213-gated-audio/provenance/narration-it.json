@@ -1,0 +1,248 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-13-it.json",
+    "sha256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+    "bytes": 41167
+  },
+  "units": [
+    {
+      "id": "S2-13-it-E01-r1",
+      "unitId": "S2-13-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Modello A: 65/25/10 franco sabbioso",
+          "sha256": "126c87f214df8a5ea44ee91d5fc4ce7f2f8ae28b24a0219fca9d23231617bd20"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Un esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.",
+          "sha256": "b60b934012c597603b6a48620c53e244e0566be82c05dbdbb2299da9a9550928"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "I tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.",
+          "sha256": "b91e8c213b1330326a8cb3642ff8d5cc0929398587cd9ff8f22a59904fbf080f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Con struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.",
+          "sha256": "6659b8eda345ce960e26c6ba1c7621e7a191fa59471b4261c0f479f2b0edbf0b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Carote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.",
+          "sha256": "44290fee7e048c949cd9a9425ef97182f281bce79c9519b42eff0fd5bd68b2ae"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Collega la scelta di gestione alle condizioni effettive.",
+          "sha256": "9e7ba14a0495fab719b3777dc488f89d120e27f2024d367a7a3425eec4290736"
+        }
+      ],
+      "scientificMeaning": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "displayText": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "captionText": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "spokenText": "Modello A: sessantacinque, venticinque, dieci franco sabbioso\n\nUn esempio fornito da cento millimetri contiene sessantacinque millimetri sabbia, venticinque millimetri limo e dieci millimetri argilla.\n\nI tre valori totalizzano cento millimetri; le corrispondenti percentuali sono sessantacinque, venticinque, dieci.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+      "spokenTextSHA256": "36c678a8e69318f67db0d1d6a8340428501dfbb153678b9be4e049929c2db9e0",
+      "spokenTextSha256": "36c678a8e69318f67db0d1d6a8340428501dfbb153678b9be4e049929c2db9e0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello A: 65/25/10 franco sabbioso\n\nUn esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.\n\nI tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+          "spoken": "Modello A: sessantacinque, venticinque, dieci franco sabbioso\n\nUn esempio fornito da cento millimetri contiene sessantacinque millimetri sabbia, venticinque millimetri limo e dieci millimetri argilla.\n\nI tre valori totalizzano cento millimetri; le corrispondenti percentuali sono sessantacinque, venticinque, dieci.\n\nCon struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.\n\nCarote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito.\n\nCollega la scelta di gestione alle condizioni effettive.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b6664f7bafa55170e8efa11d4b32c083ff2ded4e9796decce2731214fa522c24",
+      "requestFingerprintSha256": "b6664f7bafa55170e8efa11d4b32c083ff2ded4e9796decce2731214fa522c24",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-E02-r1",
+      "unitId": "S2-13-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Modello B: 40/40/20 franco",
+          "sha256": "5b378563b5656d7201addf06a7dc2e0315537d0e9574240bac7172126d130b89"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.",
+          "sha256": "770d90122211988bdc03f834d41865ad7f88b9ce9c4883e500c8aa01769fb06b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Il punto cade nel franco sul triangolo etichettato.",
+          "sha256": "82db6b74b56bb1a951e95fc72096a5c09cdf50d8778005ed618426998b658419"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Una buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.",
+          "sha256": "b08809a781a2a19c246b3b2851d3dc7165d40c005dc773b8aeb7ec2c381e88cb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Mais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.",
+          "sha256": "1b5a91a48fd915eb9bb456617cb616e65b8e8be9307abc71b90969e58e417655"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Franco è un indizio favorevole, non una garanzia.",
+          "sha256": "3df205dde57da8ccf8943e0b31e0839719de8abd73aa8312bc495e1f6c3a69cf"
+        }
+      ],
+      "scientificMeaning": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "displayText": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "captionText": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "spokenText": "Modello B: quaranta, quaranta, venti franco\n\nUn esempio fornito da cento millimetri contiene quaranta millimetri sabbia, quaranta millimetri limo e venti millimetri argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+      "spokenTextSHA256": "98e78373ea989b13f626f774ad8e6bcedc9ff21fd569592688fca4de3ef1a1bf",
+      "spokenTextSha256": "98e78373ea989b13f626f774ad8e6bcedc9ff21fd569592688fca4de3ef1a1bf",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello B: 40/40/20 franco\n\nUn esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+          "spoken": "Modello B: quaranta, quaranta, venti franco\n\nUn esempio fornito da cento millimetri contiene quaranta millimetri sabbia, quaranta millimetri limo e venti millimetri argilla.\n\nIl punto cade nel franco sul triangolo etichettato.\n\nUna buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.\n\nMais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito.\n\nFranco è un indizio favorevole, non una garanzia.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b0679217917f9ef737f05fb7ea858e36420f4b1349848ea598c47f4d03c502e",
+      "requestFingerprintSha256": "6b0679217917f9ef737f05fb7ea858e36420f4b1349848ea598c47f4d03c502e",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-13-it-E03-r1",
+      "unitId": "S2-13-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Modello C: 15/30/55 argilloso",
+          "sha256": "00093b9817dbd79f6c5d37abc609a2777b947fa284bb996872870e36daf90a56"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Un esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.",
+          "sha256": "5a642d6c8e517aa16bc1302040e6e09e21f52a794f00f3844777b273680a1bca"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Il punto rientra nella classe argillosa.",
+          "sha256": "d00326589fbc958f2a6de2f867de6e932def8bc1fb46d46dfb1352350d1b040e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Lavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.",
+          "sha256": "117e9c94a952b99e6b2679ce97bacb8e3f0ec558c56e1c947f0807b94cc7d8ef"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Controlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.",
+          "sha256": "061e56050f3d0dbf7b57e26a77e398b62f0ff969d7f5da72108ca51c91e3bc44"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Una classe tessiturale avvia la diagnosi, non la conclude.",
+          "sha256": "d7e112ea1f165049739858f1835f8b46b2d2a7c8567a7a6a5b1f306578fdec34"
+        }
+      ],
+      "scientificMeaning": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "displayText": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "captionText": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "spokenText": "Modello C: quindici, trenta, cinquantacinque argilloso\n\nUn esempio fornito da cento millimetri contiene quindici millimetri sabbia, trenta millimetri limo e cinquantacinque millimetri argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+      "spokenTextSHA256": "1ef36b3bee473c743985263db566e353276a1e4f206427dc7bedc779b9e4c1db",
+      "spokenTextSha256": "1ef36b3bee473c743985263db566e353276a1e4f206427dc7bedc779b9e4c1db",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello C: 15/30/55 argilloso\n\nUn esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+          "spoken": "Modello C: quindici, trenta, cinquantacinque argilloso\n\nUn esempio fornito da cento millimetri contiene quindici millimetri sabbia, trenta millimetri limo e cinquantacinque millimetri argilla.\n\nIl punto rientra nella classe argillosa.\n\nLavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.\n\nControlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate.\n\nUna classe tessiturale avvia la diagnosi, non la conclude.",
+          "occurrences": 1,
+          "purpose": "Only exactsource numeral/orderedtuple/unit/acronym expansions and natural grammar. Fulltitle/class/reasoning/takeaway retains sourcegate. TruthfulsolutionflagTRUE, never ordinaryvideo."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "PREPARED_NOT_QUEUED_REQUIRES_TRUTHFUL_GATED_ENGINE_REVIEW",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "90f39c0e12e67c55d9f18b1a960d9e797e8bbd7e8d6f74ab0d2162c74b69a6ab",
+      "requestFingerprintSha256": "90f39c0e12e67c55d9f18b1a960d9e797e8bbd7e8d6f74ab0d2162c74b69a6ab",
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_ALL_THREE_PROVISIONAL_CLASS_AND_OWN_REASON_ATTEMPTS",
+        "allThreeProfilesRequired": true,
+        "incorrectThoughtfulAttemptsUnlock": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

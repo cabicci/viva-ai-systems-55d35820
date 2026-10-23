@@ -1,0 +1,41 @@
+{
+  "stepId": "S2-13",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "142829b3a6f5680d3e15bfa51474c5cbf7473f51c151c74b8a3fc051a5ded6f8",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "model-a",
+      "title": "Modell A: 65/25/10 sandiger Lehm",
+      "situation": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 65 mm Sand, 25 mm Schluff und 10 mm Ton.",
+      "reasoning": [
+        "Zusammen ergeben die Schichten 100 mm; ihre Anteile betragen 65/25/10 Prozent.",
+        "Bei vergleichbarem Gefüge und Wetter sind rasche Entwässerung und Nährstoffauswaschung mögliche Probleme.",
+        "Karotten, Kartoffeln und Rosmarin sind bedingt zu prüfende Beispiele, keine automatische Pflanzempfehlung. Wasserversorgung und weitere Standortansprüche müssen passen."
+      ],
+      "takeaway": "Die Bewirtschaftungsfrage richtet sich nach den tatsächlichen Bedingungen."
+    },
+    {
+      "id": "model-b",
+      "title": "Modell B: 40/40/20 Lehm",
+      "situation": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 40 mm Sand, 40 mm Schluff und 20 mm Ton.",
+      "reasoning": [
+        "Der Punkt liegt im beschrifteten Texturdreieck im Bereich Lehm.",
+        "Bei gutem Gefüge können Bearbeitbarkeit, Entwässerung, Wasserspeicherung und Durchlüftung günstig zusammenspielen.",
+        "Mais, Weizen und viele Gemüsearten sind nur nach Prüfung ihrer Kultur- und Standortansprüche mögliche Beispiele."
+      ],
+      "takeaway": "Lehm ist ein nützlicher Hinweis, keine Erfolgsgarantie."
+    },
+    {
+      "id": "model-c",
+      "title": "Modell C: 15/30/55 Ton",
+      "situation": "Ein vorgegebenes Beispiel mit insgesamt 100 mm enthält 15 mm Sand, 30 mm Schluff und 55 mm Ton.",
+      "reasoning": [
+        "Der Punkt liegt in der Texturklasse Ton.",
+        "Schwierige Bearbeitbarkeit bei Nässe und unzureichende Belüftung können Probleme sein; die Speicherung austauschbarer Kationen kann ein Vorteil sein.",
+        "Prüfe das Gefüge und die Entwässerung vor Ort. Geeignetes organisches Material kommt nur nach Prüfung seiner Qualität und des Standorts infrage. Gips setzt eine nachgewiesene Sodizität und geeignete Bedingungen zur Auswaschung voraus."
+      ],
+      "takeaway": "Die Texturklasse beginnt eine Diagnose, schließt sie aber nicht ab."
+    }
+  ]
+}

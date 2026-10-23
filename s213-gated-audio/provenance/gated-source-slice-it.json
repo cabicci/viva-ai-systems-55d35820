@@ -1,0 +1,41 @@
+{
+  "stepId": "S2-13",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "287c9a041dcf250fdb12f43544a1d74fbc2d26fe1d3656ff1b99a589c9e82f23",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "model-a",
+      "title": "Modello A: 65/25/10 franco sabbioso",
+      "situation": "Un esempio fornito da 100 mm contiene 65 mm sabbia, 25 mm limo e 10 mm argilla.",
+      "reasoning": [
+        "I tre valori totalizzano 100 mm; le corrispondenti percentuali sono 65/25/10.",
+        "Con struttura e clima comparabili sono plausibili drenaggio rapido e lisciviazione dei nutrienti.",
+        "Carote, patate e rosmarino sono esempi da valutare, non una lista automatica di semina; controlla l'apporto d'acqua e gli altri requisiti del sito."
+      ],
+      "takeaway": "Collega la scelta di gestione alle condizioni effettive."
+    },
+    {
+      "id": "model-b",
+      "title": "Modello B: 40/40/20 franco",
+      "situation": "Un esempio fornito da 100 mm contiene 40 mm sabbia, 40 mm limo e 20 mm argilla.",
+      "reasoning": [
+        "Il punto cade nel franco sul triangolo etichettato.",
+        "Una buona struttura può dare lavorabilità e un equilibrio utile di drenaggio, umidità e aerazione.",
+        "Mais, frumento e molti ortaggi restano esempi da valutare solo dopo i requisiti colturali e del sito."
+      ],
+      "takeaway": "Franco è un indizio favorevole, non una garanzia."
+    },
+    {
+      "id": "model-c",
+      "title": "Modello C: 15/30/55 argilloso",
+      "situation": "Un esempio fornito da 100 mm contiene 15 mm sabbia, 30 mm limo e 55 mm argilla.",
+      "reasoning": [
+        "Il punto rientra nella classe argillosa.",
+        "Lavorabilità da bagnato e scarsa aerazione sono possibili problemi; la ritenzione di cationi è un possibile vantaggio.",
+        "Controlla struttura e drenaggio del campo. Valuta materiale organico idoneo solo dopo esame del sito e della sua qualità; gesso soltanto con diagnosi di sodicità e condizioni di recupero adeguate."
+      ],
+      "takeaway": "Una classe tessiturale avvia la diagnosi, non la conclude."
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "stepId": "S2-13",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "3cb5262a81aeca5045288efe0d3e9b9d92093eac445bff862d8e765b16102523",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "model-a",
+      "title": "Model A: 65/25/10 sandy loam",
+      "situation": "A supplied 100 mm example has 65 mm sand, 25 mm silt and 10 mm clay.",
+      "reasoning": [
+        "The three figures sum to 100 mm; the corresponding percentages are 65/25/10.",
+        "Under comparable structure and weather, faster drainage and nutrient leaching are plausible concerns.",
+        "Carrots, potatoes and rosemary are examples to assess, not an automatic planting list; check moisture supply and the other site requirements."
+      ],
+      "takeaway": "Match the management question to actual conditions."
+    },
+    {
+      "id": "model-b",
+      "title": "Model B: 40/40/20 loam",
+      "situation": "A supplied 100 mm example has 40 mm sand, 40 mm silt and 20 mm clay.",
+      "reasoning": [
+        "The point lies in loam on the labelled triangle.",
+        "A good structure can provide workable soil with a useful balance of drainage, moisture retention and aeration.",
+        "Maize, wheat and many vegetables are examples to consider only after crop and site requirements are checked."
+      ],
+      "takeaway": "Loam is a favourable clue, not a guarantee."
+    },
+    {
+      "id": "model-c",
+      "title": "Model C: 15/30/55 clay",
+      "situation": "A supplied 100 mm example has 15 mm sand, 30 mm silt and 55 mm clay.",
+      "reasoning": [
+        "The point lies in the clay class.",
+        "Wet workability and poor aeration are possible challenges; cation retention is one possible advantage.",
+        "Inspect the actual field's structure and drainage. Choose suitable organic material only after assessing it and the site; use gypsum only if sodicity is diagnosed and reclamation conditions are met."
+      ],
+      "takeaway": "A texture class starts a diagnosis; it does not finish one."
+    }
+  ]
+}
