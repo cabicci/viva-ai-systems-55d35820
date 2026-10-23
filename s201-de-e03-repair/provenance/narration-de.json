@@ -1,0 +1,67 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-01-de.json",
+    "sha256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+    "bytes": 24233
+  },
+  "scope": "One approved13word source-equivalent cooler-proof/no-freezing sentence; exact originalprefix/suffix remain, measuredquietcuts37.49–45.25, no automaticjoin.",
+  "units": [
+    {
+      "id": "S2-01-de-E03-sentence-repair-r1",
+      "unitId": "S2-01-de-E03-sentence-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s201-de-e03-repair-sentence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bac795e48660ff83f8a13d3284072148f2f43d6b882bdc1f261efb3164105fc5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+          "sha256": "9272b2bb8d675ded4cbd968323c4c18f064dae820c1fe4dfa3986a6bac266183"
+        }
+      ],
+      "scientificMeaning": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+      "displayText": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+      "captionText": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+      "spokenText": "Die Reihenfolge lautet: N, dann P zwei O fünf, dann K zwei O.",
+      "spokenTextSHA256": "76b2063027ea81c2dd0a141c50fc05ce3b4beaf2b6e7958a1b1e08a495ff9836",
+      "spokenTextSha256": "76b2063027ea81c2dd0a141c50fc05ce3b4beaf2b6e7958a1b1e08a495ff9836",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+          "spoken": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+          "occurrences": 1,
+          "purpose": "EXACT_COMPLETE_SOURCE_SENTENCE_EXTRACTION_REMAINDER_RETAINED_ORIGINAL_PCM"
+        },
+        {
+          "written": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+          "spoken": "Die Reihenfolge lautet: N, dann P zwei O fünf, dann K zwei O.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_COOLER_CANNOT_PROVE_FOUR_C_AND_NO_FREEZING"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "402fa7ba8c195020d7033d35a2634b8700972db637f7a212ea85b0364781f075",
+      "requestFingerprintSha256": "402fa7ba8c195020d7033d35a2634b8700972db637f7a212ea85b0364781f075",
+      "sourcePlanSha256": "cd1bccd373a99fabf5e611e929b163320ed21bffda07c6b768fddb296b95cb9c",
+      "exactSentenceBefore": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ]
+}

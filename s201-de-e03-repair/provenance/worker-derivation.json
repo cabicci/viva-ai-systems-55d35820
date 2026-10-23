@@ -1,0 +1,18 @@
+{
+  "sourceWorkerSHA256": "859180e850cff736e5e12fe6d3515607c796a3b79ee7b5fdb494450ba63e5826",
+  "unchangedOperationalMethod": "Reviewed one-sentence engine:1TTS1blind1ASR2GET0retry, immutableaudio and thin diagnostic binding.",
+  "changedSourceBinding": {
+    "unitId": "S2-01-de-E03-sentence-repair-r1",
+    "locale": "de",
+    "voice": "Charon",
+    "sourceBindings": [
+      {
+        "pointer": "/examples/2/reasoning/0",
+        "text": "Behalte die Reihenfolge N–P₂O₅–K₂O bei.",
+        "sha256": "9272b2bb8d675ded4cbd968323c4c18f064dae820c1fe4dfa3986a6bac266183"
+      }
+    ],
+    "approvedSpokenText": "Die Reihenfolge lautet: N, dann P zwei O fünf, dann K zwei O."
+  },
+  "noAutomaticAssembly": true
+}
