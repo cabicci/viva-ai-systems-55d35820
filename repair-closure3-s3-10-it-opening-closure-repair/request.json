@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_CLOSURE3_S3_10_IT_OPENING_CLOSURE_REPAIR",
+  "stepId": "S3-10",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-closure3-s3-10-it-opening-closure-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-10-it-opening-closure-repair-r1",
+      "unitId": "S3-10-it-opening-closure-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-closure3-s3-10-it-opening-closure-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Un elenco di colture è solo un’ipotesi iniziale. Esamina i tre campioni reali e annota ciò che osservi; verifica poi drenaggio, fertilità, pH, acqua e clima prima di consigliare una coltura o promettere un vantaggio economico.",
+          "sha256": "0da5425b6abd862de5f2e21d57b37e8c7343d3da7252883fa548573c65a53632"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.",
+          "sha256": "ee5257d243cc4807c94975ee8d66ce60f83fb5cd8ebba015f1643c3a81a186e8"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Motivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+          "sha256": "0751f24e0facd2f447d12a1c51d93f46270e3e643c3501628c78a2bae5b3c63f"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Spiegare come un miglior abbinamento possa aiutare radici, acqua e nutrienti e ridurre alcuni costi o rischi, proponendo un’alternativa motivata senza garantire resa, profitto o immunità dalle malattie.",
+          "sha256": "fe0d7340df5f6b744ab28c124120f3105122df620afde94e61e867494a1b70ed"
+        }
+      ],
+      "scientificMeaning": "Un elenco di colture è solo un’ipotesi iniziale. Esamina i tre campioni reali e annota ciò che osservi; verifica poi drenaggio, fertilità, pH, acqua e clima prima di consigliare una coltura o promettere un vantaggio economico.\n\nEsaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.\n\nSpiegare come un miglior abbinamento possa aiutare radici, acqua e nutrienti e ridurre alcuni costi o rischi, proponendo un’alternativa motivata senza garantire resa, profitto o immunità dalle malattie.",
+      "displayText": "Un elenco di colture è solo un’ipotesi iniziale. Esamina i tre campioni reali e annota ciò che osservi; verifica poi drenaggio, fertilità, pH, acqua e clima prima di consigliare una coltura o promettere un vantaggio economico.\n\nEsaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.\n\nSpiegare come un miglior abbinamento possa aiutare radici, acqua e nutrienti e ridurre alcuni costi o rischi, proponendo un’alternativa motivata senza garantire resa, profitto o immunità dalle malattie.",
+      "captionText": "Un elenco di colture è solo un’ipotesi iniziale. Esamina i tre campioni reali e annota ciò che osservi; verifica poi drenaggio, fertilità, pH, acqua e clima prima di consigliare una coltura o promettere un vantaggio economico.\n\nEsaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.\n\nSpiegare come un miglior abbinamento possa aiutare radici, acqua e nutrienti e ridurre alcuni costi o rischi, proponendo un’alternativa motivata senza garantire resa, profitto o immunità dalle malattie.",
+      "spokenText": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+      "spokenTextSHA256": "4e3f0d2266dc4903c2b5a9b01ef384c35e55b5c38c2c4dc5283d523019109f21",
+      "spokenTextSha256": "4e3f0d2266dc4903c2b5a9b01ef384c35e55b5c38c2c4dc5283d523019109f21",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un elenco di colture è solo un’ipotesi iniziale. Esamina i tre campioni reali e annota ciò che osservi; verifica poi drenaggio, fertilità, pH, acqua e clima prima di consigliare una coltura o promettere un vantaggio economico.\n\nEsaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.\n\nSpiegare come un miglior abbinamento possa aiutare radici, acqua e nutrienti e ridurre alcuni costi o rischi, proponendo un’alternativa motivata senza garantire resa, profitto o immunità dalle malattie.",
+          "spoken": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+          "spoken": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "c3c38331c9782b5a7adfe047b3add4deec91ae6cc91061e637db98e51668ca17",
+      "requestFingerprintSha256": "c3c38331c9782b5a7adfe047b3add4deec91ae6cc91061e637db98e51668ca17",
+      "sourcePlanSha256": "57ed174d6c4c6be4d55c4e9d8f68e056799345d1d2a077f1ff962bb2f1146974",
+      "exactSentenceBefore": "Esaminare tre campioni di suolo reali, non etichettati e opportunamente umidi; annotare granulosità, adesività, liscezza, forma e nastro prima di una classificazione provvisoria e separare la tessitura dal drenaggio e dalla fertilità misurati.\n\nMotivare tre colture candidate per ciascuno dei gruppi sabbioso, argilloso e franco; creare poi una tabella separata per tre rapporti, con due colture condizionatamente adatte e una a rischio per ciascuno e con le verifiche locali mancanti.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointers": [
+          "/intro",
+          "/goals/0",
+          "/goals/1",
+          "/goals/2"
+        ],
+        "spokenOnly": true,
+        "sourceTextUnchanged": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-10-it-opening-closure-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
