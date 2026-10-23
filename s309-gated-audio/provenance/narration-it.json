@@ -1,0 +1,348 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-09-it.json",
+    "sha256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+    "bytes": 39992
+  },
+  "units": [
+    {
+      "id": "S3-09-it-E01-r1",
+      "unitId": "S3-09-it-E01-r1",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Uno schema difendibile di una pagina",
+          "sha256": "beedb7a768a5f82462e6ea2bed9b6538f1ab7aa7f8a571e4d1d1fdcf34c215e3"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Appezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.",
+          "sha256": "e1ce6d17d0cbf475f9c86ef7641f540d83bc4f7db3d8e68f88bc082fbe3eb2c0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Problema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.",
+          "sha256": "482bfddebc735006a23e66add4e6915318211c660c02651f97c96a9c92655c57"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Problema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.",
+          "sha256": "c74de1b4a2c048c107b4bf07db376bac991e04cd29d3eae0129c45d99697ccc0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Problema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.",
+          "sha256": "9aed406a6e36d8060ac9acd4abb9ad391c0408a1162607da178e1e20f1d2ace7"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Disponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.",
+          "sha256": "33e960975cbea0055fd7acb2c5531fc472f9322f28f401f55ae8b58f5ca340ff"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Non stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto.",
+          "sha256": "d43648ceed2fe981c737a33883a0860f0551dd6e4f70e03875e492f4e6df2bf6"
+        }
+      ],
+      "scientificMeaning": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.\n\nProblema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.\n\nProblema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto.",
+      "displayText": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.\n\nProblema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.\n\nProblema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto.",
+      "captionText": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.\n\nProblema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.\n\nProblema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto.",
+      "spokenText": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di cento metri quadrati: sostanza organica zero virgola otto per cento, e ci tre virgola cinque decisiemens per metro senza metodo e pozzo descritto come leggermente salino.\n\nProblema uno: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema due: possibile stress salino da valutare con e ci e coerente, profondità e drenaggio.\n\nProblema tre: il pozzo richiede e ci doppia vu e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost, lisciviazione dal referto incompleto.",
+      "spokenTextSHA256": "85eed6a3439fc269a2e3f0beebd2167e033e35f334802ff1babb8db190e06e98",
+      "spokenTextSha256": "85eed6a3439fc269a2e3f0beebd2167e033e35f334802ff1babb8db190e06e98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.\n\nProblema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.\n\nProblema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto.",
+          "spoken": "Uno schema difendibile di una pagina\n\nAppezzamento franco-sabbioso di cento metri quadrati: sostanza organica zero virgola otto per cento, e ci tre virgola cinque decisiemens per metro senza metodo e pozzo descritto come leggermente salino.\n\nProblema uno: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.\n\nProblema due: possibile stress salino da valutare con e ci e coerente, profondità e drenaggio.\n\nProblema tre: il pozzo richiede e ci doppia vu e analisi ionica prima del piano irriguo o di lavaggio.\n\nDisponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio.\n\nNon stabilire una coltura o una dose definitiva di compost, lisciviazione dal referto incompleto.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8b5ad393aec749f9474c352e83db39b3651a54ccc6e6ab9ccd8c09d33283254c",
+      "requestFingerprintSha256": "8b5ad393aec749f9474c352e83db39b3651a54ccc6e6ab9ccd8c09d33283254c",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "one-page-plot",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-09-it-E02-r1",
+      "unitId": "S3-09-it-E02-r1",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Conserva le quantità senza applicarle alla cieca",
+          "sha256": "0878c854d8f532aec633e67e0fa1fe42efabea9ce1123ee703ede54e679a9bea"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Modello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.",
+          "sha256": "dd47edfe2cb795cfe9f56d20d7a7663e54b7f0b49ad3803fb6c44ea42b3afd3b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Sono esempi diversi, non una prescrizione verificata per il terreno pilota.",
+          "sha256": "300fcbc71492cc56bed3dcb8df259c3844fe512a4cd2be322c6c5372d5da072c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Su 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.",
+          "sha256": "9559cc7d6d59a2a49af40f6e89a5cfd6f35084dfa64108ab0b6da8e5fe464de2"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Chiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.",
+          "sha256": "8d4d7e298fdac572a9bd18619aff83ec0f6b782446dacd8f7841e91b6ce0dd39"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Mantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+          "sha256": "7b1958ad42d6e6f340769c792040aef737737b7bb160a0b38100f69af0a5e881"
+        }
+      ],
+      "scientificMeaning": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+      "displayText": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+      "captionText": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+      "spokenText": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: cinque a dieci centimetri di compost, letame miscelati nei primi quindici centimetri e, dopo la semina, sette a dieci centimetri di paglia, cippato. Modello diverso della banca: primi quindici a venti centimetri e pacciamatura cinque a dieci centimetri per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu cento metri quadrati lo strato di cinque centimetri occupa cinque metri cubi e quello di dieci centimetri dieci metri cubi, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi e ci del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+      "spokenTextSHA256": "cda2c125431f618443124e5b8be9fa7ef45bb4cb554dbf6cc92308a0b93b651a",
+      "spokenTextSha256": "cda2c125431f618443124e5b8be9fa7ef45bb4cb554dbf6cc92308a0b93b651a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+          "spoken": "Conserva le quantità senza applicarle alla cieca\n\nModello del docente: cinque a dieci centimetri di compost, letame miscelati nei primi quindici centimetri e, dopo la semina, sette a dieci centimetri di paglia, cippato. Modello diverso della banca: primi quindici a venti centimetri e pacciamatura cinque a dieci centimetri per un altro suolo sabbioso e alcalino.\n\nSono esempi diversi, non una prescrizione verificata per il terreno pilota.\n\nSu cento metri quadrati lo strato di cinque centimetri occupa cinque metri cubi e quello di dieci centimetri dieci metri cubi, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.\n\nChiedi e ci del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura.\n\nMantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fd3128c838dee3d6a4aea2271b7c5f537fcb545b7a04030591d9091b9dd7da11",
+      "requestFingerprintSha256": "fd3128c838dee3d6a4aea2271b7c5f537fcb545b7a04030591d9091b9dd7da11",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "source-numbers",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-09-it-E03-r1",
+      "unitId": "S3-09-it-E03-r1",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Orzo e sorgo come candidate condizionate",
+          "sha256": "1def2c5f92a3e588454bea1dc067885336750b5d7b5b16c93532cda8aa4e7cd2"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Uno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.",
+          "sha256": "b4008a099ec45333832f4b0a13b6d6be37c02c57a7ec6f0e28ab59bc380953e4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "In una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.",
+          "sha256": "e61910d6064ff40309b799bc9fb6052fe3c9a44e7c499013df8e2ebb0c62a764"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Il sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.",
+          "sha256": "92d975ef51179ac201c3264555fc99906931600d572b95ee23a1cef0bb0e06c6"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Prima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.",
+          "sha256": "6bbbfb25ef8eb79e073055e1964472c2c79e3ea1dd3e85b430bf4d1cd3c9f63b"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Coppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+          "sha256": "29591ae1ea43d41c62f594f1915257c72f667f761888d2643527118bac49032b"
+        }
+      ],
+      "scientificMeaning": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+      "displayText": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+      "captionText": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+      "spokenText": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica e ci e, e ci doppia vu, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+      "spokenTextSHA256": "b3d2a999b03a3ae8fcd935eefd45d65ecec0a5641f3a8e48264aa64f7e5cf5d8",
+      "spokenTextSha256": "b3d2a999b03a3ae8fcd935eefd45d65ecec0a5641f3a8e48264aa64f7e5cf5d8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+          "spoken": "Orzo e sorgo come candidate condizionate\n\nUno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.\n\nIn una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.\n\nIl sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.\n\nPrima della scelta verifica e ci e, e ci doppia vu, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto.\n\nCoppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a7b6ed498928c1c40719f606e06706980fad36d00bb95cd528ea6c30f5f76b2f",
+      "requestFingerprintSha256": "a7b6ed498928c1c40719f606e06706980fad36d00bb95cd528ea6c30f5f76b2f",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choose-two",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-09-it-E04-r1",
+      "unitId": "S3-09-it-E04-r1",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "La terza tecnica dipende dal luogo",
+          "sha256": "d4bded8e4023a16f9d58f7c4887c554d3ec90e135214fb9341b99b5e226f3f46"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Per un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.",
+          "sha256": "ff528cd7a021df0579056c9deb45d66639ca4dbe75203d03dd185c2e13bb797b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Verifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.",
+          "sha256": "0857b142fc4aee0838ffc4286c4aaba59b4d2e354e7e89b14afb21d5a07da1d8"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "La copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.",
+          "sha256": "b46b49c9939b8902391e291af8f6576458c3abab3fe851c7581dc1598de8a79b"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Veccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori.",
+          "sha256": "f01b827b9aeae904956f79b43a9bde79601cad1572416a25c3dbdb4cb51a8430"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Descrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+          "sha256": "05c04ff00647d28b9165a14e2f4a3941d51b443fcb4d8071eeabc110cc49dd40"
+        }
+      ],
+      "scientificMeaning": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+      "displayText": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+      "captionText": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+      "spokenText": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pi acca o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di cento metri quadrati molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+      "spokenTextSHA256": "fe627cd4996352897f87c1026932d7e70bdcd2e34c7e49092d7ca2ce41fb0a7a",
+      "spokenTextSha256": "fe627cd4996352897f87c1026932d7e70bdcd2e34c7e49092d7ca2ce41fb0a7a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+          "spoken": "La terza tecnica dipende dal luogo\n\nPer un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.\n\nVerifica qualità e salinità del compost prima della dose: non presumere correzione di pi acca o sali.\n\nLa copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.\n\nVeccia e frangivento richiedono acqua e spazio; in un pilota di cento metri quadrati molto arido potrebbero esserci alternative migliori.\n\nDescrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "cf48046dd9623abacc41de08fd7e13f1726c3e29aed6f47715e098d98202ed70",
+      "requestFingerprintSha256": "cf48046dd9623abacc41de08fd7e13f1726c3e29aed6f47715e098d98202ed70",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wind-cover",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

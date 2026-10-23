@@ -1,0 +1,53 @@
+{
+  "stepId": "S3-09",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "one-page-plot",
+      "title": "A defensible one-page outline",
+      "situation": "A 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.",
+      "reasoning": [
+        "Concern 1: low measured OM may limit storage; test soil and amendment quality before a rate.",
+        "Concern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.",
+        "Concern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.",
+        "Put tests, conditional interventions, crop candidates and monitoring on one page."
+      ],
+      "takeaway": "Do not declare a final crop or compost/leaching dose from the incomplete report."
+    },
+    {
+      "id": "source-numbers",
+      "title": "Preserve the model's quantities without adopting them blindly",
+      "situation": "The teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.",
+      "reasoning": [
+        "These are different source examples, not a validated prescription for the pilot plot.",
+        "At 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.",
+        "Ask for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth."
+      ],
+      "takeaway": "Retain both original example ranges in the learning record; obtain a documented site specification before field application."
+    },
+    {
+      "id": "choose-two",
+      "title": "Barley plus sorghum as conditional candidates",
+      "situation": "A student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.",
+      "reasoning": [
+        "Barley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.",
+        "Sorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.",
+        "Before a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use."
+      ],
+      "takeaway": "A justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks."
+    },
+    {
+      "id": "wind-cover",
+      "title": "A third technique depends on the site",
+      "situation": "For a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.",
+      "reasoning": [
+        "Compost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.",
+        "Mulch may reduce evaporation, but the material and depth depend on crop and irrigation.",
+        "Vetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives."
+      ],
+      "takeaway": "Give three distinct techniques with conditional reasons and explain why one option may be deferred."
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-09-en.json",
+    "sha256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+    "bytes": 36984
+  },
+  "units": [
+    {
+      "id": "S3-09-en-E01-r1",
+      "unitId": "S3-09-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "A defensible one-page outline",
+          "sha256": "f7985193bb2395dfd0e37a8e8a4d77148cf77e870fdd9a454888563f31672cfd"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.",
+          "sha256": "5c977936495cee02ed7640bc20a56f781536df0c6882ac22a192bf9f6604a743"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Concern 1: low measured OM may limit storage; test soil and amendment quality before a rate.",
+          "sha256": "21180ca9c4f01884b29d5de27acfd4166e0cec7a1519e75c8d49a67432c12403"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Concern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.",
+          "sha256": "6cb5ea41ae220ba0c465f7aa8ce2ee053ba0394874cc8a291bec2a0b48ccca2c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Concern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.",
+          "sha256": "c44681fb46b0dc7a0624579860060ba3d2e17cb42a1d9628510f1d1e8204b117"
+        },
+        {
+          "pointer": "/examples/0/reasoning/3",
+          "text": "Put tests, conditional interventions, crop candidates and monitoring on one page.",
+          "sha256": "816cd20b01e01f50861d2600c84e8b5ef21278a12cc1ee8cf5edf4a8751ea636"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Do not declare a final crop or compost/leaching dose from the incomplete report.",
+          "sha256": "154850e5c63dcb306d4cac2df8d247648cfbd63e9716ba464e9899ec326006b3"
+        }
+      ],
+      "scientificMeaning": "A defensible one-page outline\n\nA 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.\n\nConcern 1: low measured OM may limit storage; test soil and amendment quality before a rate.\n\nConcern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.\n\nConcern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost/leaching dose from the incomplete report.",
+      "displayText": "A defensible one-page outline\n\nA 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.\n\nConcern 1: low measured OM may limit storage; test soil and amendment quality before a rate.\n\nConcern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.\n\nConcern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost/leaching dose from the incomplete report.",
+      "captionText": "A defensible one-page outline\n\nA 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.\n\nConcern 1: low measured OM may limit storage; test soil and amendment quality before a rate.\n\nConcern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.\n\nConcern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost/leaching dose from the incomplete report.",
+      "spokenText": "A defensible one-page outline\n\nA one hundred square metres sandy-loam plot has organic matter zero point eight percent, E C three point five decisiemens per metre without an extraction method and slightly saline borewell water.\n\nConcern one: low measured organic matter may limit storage; test soil and amendment quality before a rate.\n\nConcern two: possible salt stress needs method-matched E C e, depth and drainage evidence.\n\nConcern three: borewell water needs E C w and ion analysis before an irrigation, leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost, leaching dose from the incomplete report.",
+      "spokenTextSHA256": "4ecc02561078cb70d34bea4df0ae67df642b74cdec23e4ee161b5fcc2f09ae10",
+      "spokenTextSha256": "4ecc02561078cb70d34bea4df0ae67df642b74cdec23e4ee161b5fcc2f09ae10",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A defensible one-page outline\n\nA 100 m² sandy-loam plot has OM 0.8%, EC 3.5 dS/m without an extraction method and slightly saline borewell water.\n\nConcern 1: low measured OM may limit storage; test soil and amendment quality before a rate.\n\nConcern 2: possible salt stress needs method-matched ECe, depth and drainage evidence.\n\nConcern 3: borewell water needs ECw and ion analysis before an irrigation/leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost/leaching dose from the incomplete report.",
+          "spoken": "A defensible one-page outline\n\nA one hundred square metres sandy-loam plot has organic matter zero point eight percent, E C three point five decisiemens per metre without an extraction method and slightly saline borewell water.\n\nConcern one: low measured organic matter may limit storage; test soil and amendment quality before a rate.\n\nConcern two: possible salt stress needs method-matched E C e, depth and drainage evidence.\n\nConcern three: borewell water needs E C w and ion analysis before an irrigation, leaching plan.\n\nPut tests, conditional interventions, crop candidates and monitoring on one page.\n\nDo not declare a final crop or compost, leaching dose from the incomplete report.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7b1eff782c76f485af81cdcae8ff94838e38e9edf8c8ccc7f8aec21e7d52f5f6",
+      "requestFingerprintSha256": "7b1eff782c76f485af81cdcae8ff94838e38e9edf8c8ccc7f8aec21e7d52f5f6",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "one-page-plot",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-09-en-E02-r1",
+      "unitId": "S3-09-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Preserve the model's quantities without adopting them blindly",
+          "sha256": "bdfcca69824325a8e577dc0165eb67cbf2d776d5fa4895031da3a8670e2fe081"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.",
+          "sha256": "65e7a0d9e2cca6e5f3e6b461ba5c415cdbe8f0df68af4610d278ae5ff1f99f5e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "These are different source examples, not a validated prescription for the pilot plot.",
+          "sha256": "2265e09eb308f7ef9c9bffbb20bb701c0bbb44a0b43934ebea88a830bd2b32c6"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "At 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.",
+          "sha256": "1ac1c7ed158674e5a477070bca1cdfa98cf536ad5c6fffcea81dbaf862ddb26f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Ask for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.",
+          "sha256": "656ab26fc9397ee396a3f86b59ce00096e47ab6ae858c2c9233484843a7a9e73"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Retain both original example ranges in the learning record; obtain a documented site specification before field application.",
+          "sha256": "88b47e5592a6d8a06e988f8bab02a70e354f19d7ef171b0bfebadd2d4aace6d2"
+        }
+      ],
+      "scientificMeaning": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+      "displayText": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+      "captionText": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+      "spokenText": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says five to ten centimetres compost, manure, mixed through fifteen centimetres of soil, and seven to ten centimetres straw, wood-chip mulch. The bank model says fifteen to twenty centimetres incorporation and five to ten centimetres mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt one hundred square metres, a surface layer five centimetres thick alone occupies five cubic metres; a layer ten centimetres thick occupies ten cubic metres before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product E C, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+      "spokenTextSHA256": "ae07e558c993d88fc07c7590553f5a9621421a06082f780b3a29969980cdbca9",
+      "spokenTextSha256": "ae07e558c993d88fc07c7590553f5a9621421a06082f780b3a29969980cdbca9",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says 5–10 cm compost/manure, mixed through 15 cm of soil, and 7–10 cm straw/wood-chip mulch. The bank model says 15–20 cm incorporation and 5–10 cm mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt 100 m², a 5 cm surface layer alone occupies 5 m³; a 10 cm layer occupies 10 m³ before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product EC, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+          "spoken": "Preserve the model's quantities without adopting them blindly\n\nThe teacher model says five to ten centimetres compost, manure, mixed through fifteen centimetres of soil, and seven to ten centimetres straw, wood-chip mulch. The bank model says fifteen to twenty centimetres incorporation and five to ten centimetres mulch for a different sandy, alkaline scenario.\n\nThese are different source examples, not a validated prescription for the pilot plot.\n\nAt one hundred square metres, a surface layer five centimetres thick alone occupies five cubic metres; a layer ten centimetres thick occupies ten cubic metres before shrinkage, density and mixing, demonstrating why material supply and analysis matter.\n\nAsk for product E C, nutrients, maturity, target crop, soil results, budget and safe incorporation depth.\n\nRetain both original example ranges in the learning record; obtain a documented site specification before field application.",
+          "occurrences": 1,
+          "purpose": "Expand Arabic conjunct-acronym and German grammatical numeral; exact scientific meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a0f36044d441dc2cb76cd18969ea3015fbe3ace99b1670fd0781b8598cf1880d",
+      "requestFingerprintSha256": "a0f36044d441dc2cb76cd18969ea3015fbe3ace99b1670fd0781b8598cf1880d",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "source-numbers",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-09-en-E03-r1",
+      "unitId": "S3-09-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Barley plus sorghum as conditional candidates",
+          "sha256": "891db8196d70aa3a0f3c99b57c9a7dc494a5af44ea18505eb3d426cecc6dab14"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.",
+          "sha256": "1f5d96fe95bdeccc984a958f0aa96daa0535fa2b28deee255ad28a126dd51124"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Barley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.",
+          "sha256": "38369f70cd97f7e720d5817a21f8d52f1428633a21736b4aaf5f59072444b50a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Sorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.",
+          "sha256": "d843e4d29807e7e98c6be681b02cc01350df83c73c4edbbc4f86b0e354800f1c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Before a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use.",
+          "sha256": "ecdf8ab44def7ddd7722dbec7989f641a9135c46ec7f9db708eb83f061d73877"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+          "sha256": "4dd96746d671a9b8741295fd53c3ec33e601938503d7e5717f826e837a6ecbc7"
+        }
+      ],
+      "scientificMeaning": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+      "displayText": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+      "captionText": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+      "spokenText": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm E C e, E C w, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+      "spokenTextSHA256": "e988e21e8da65c44ce6b17cbb7be1ec32acff68cbf9dac47c0ccca651f68f8cb",
+      "spokenTextSha256": "e988e21e8da65c44ce6b17cbb7be1ec32acff68cbf9dac47c0ccca651f68f8cb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm ECe/ECw, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+          "spoken": "Barley plus sorghum as conditional candidates\n\nA student proposes barley for possible salinity tolerance and sorghum for drought adaptation on the small plot.\n\nBarley has a relatively high salt-tolerance rating for grain in an FAO reference, but seedling establishment can be less tolerant.\n\nSorghum can be drought adapted and is only moderately salt tolerant in the same comparison; these are different reasons, not interchangeable ratings.\n\nBefore a decision, confirm E C e, E C w, cultivar, season, seed supply, establishment water and expected use.\n\nA justified preliminary pair, not a promise of successful yield; cowpea, quinoa, sugar beet and other source candidates need their own checks.",
+          "occurrences": 1,
+          "purpose": "Full source orderedtuples, arithmeticoperators/subtractions, decimals/mm/percent/acronyms expanded accurately; tuplevalues not division, same scientific qualifications and all source facts retained. Canonical/display read-only."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "189d6b22fdb47caf878549787cf0d4bae74241dceb7b23c418ec140450de0dec",
+      "requestFingerprintSha256": "189d6b22fdb47caf878549787cf0d4bae74241dceb7b23c418ec140450de0dec",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "choose-two",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-09-en-E04-r1",
+      "unitId": "S3-09-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4674af02374886cff345ed2c0d99ef8fc1112dd776cbc56636798e5e07eb3f1c",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "A third technique depends on the site",
+          "sha256": "a5a0885ce3c43673641882f4ef87c6126ff06c7f7a42e23c5dccd4320fc26e6b"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "For a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.",
+          "sha256": "368259a752c76557e09bfe6bc35cb0186f1b5099894f4d3e04592cb63fd629be"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Compost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.",
+          "sha256": "63446af7d9d3d91f710eeac6968ccc0072dfb7ef15c7c5b61221b573559d59c1"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Mulch may reduce evaporation, but the material and depth depend on crop and irrigation.",
+          "sha256": "3a6a125ba13504b96b0fd92de506da8e3d2c754153616c04f4c35cbecb53f95f"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Vetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives.",
+          "sha256": "68faa502e7612dc810d529ae80632a277e83f4b24f8f84a9385c1cbdc4509ef1"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Give three distinct techniques with conditional reasons and explain why one option may be deferred.",
+          "sha256": "9d1f5762e3933d7ecff38c402a985ed89b9eef1b85c8e92252a5c58be7f64372"
+        }
+      ],
+      "scientificMeaning": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+      "displayText": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+      "captionText": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+      "spokenText": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct p H or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry pilot covering one hundred square metres may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+      "spokenTextSHA256": "1bfc74e51256beaf0043818d1e79a7aba5c51c04de85d650fd39848b97bb625e",
+      "spokenTextSha256": "1bfc74e51256beaf0043818d1e79a7aba5c51c04de85d650fd39848b97bb625e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct pH or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry 100 m² pilot may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+          "spoken": "A third technique depends on the site\n\nFor a sandy, alkaline case, a student proposes compost, straw mulch and a vetch cover crop plus a tree windbreak.\n\nCompost quality and salinity must be checked before a rate; it cannot be assumed to correct p H or salt.\n\nMulch may reduce evaporation, but the material and depth depend on crop and irrigation.\n\nVetch and windbreaks need water and space; a very dry pilot covering one hundred square metres may have better alternatives.\n\nGive three distinct techniques with conditional reasons and explain why one option may be deferred.",
+          "occurrences": 1,
+          "purpose": "Expand Arabic conjunct-acronym and German grammatical numeral; exact scientific meaning unchanged before any provider call."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b8da2d784580daf0543780effdfbd22423c6803e9086e6ba06ff5e659429f92e",
+      "requestFingerprintSha256": "b8da2d784580daf0543780effdfbd22423c6803e9086e6ba06ff5e659429f92e",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourceCaseId": "wind-cover",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

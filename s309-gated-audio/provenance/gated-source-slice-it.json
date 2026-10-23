@@ -1,0 +1,53 @@
+{
+  "stepId": "S3-09",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "one-page-plot",
+      "title": "Uno schema difendibile di una pagina",
+      "situation": "Appezzamento franco-sabbioso di 100 m²: sostanza organica 0,8%, EC 3,5 dS/m senza metodo e pozzo descritto come leggermente salino.",
+      "reasoning": [
+        "Problema 1: la bassa sostanza organica misurata può limitare la riserva; analizza suolo e prodotto prima della dose.",
+        "Problema 2: possibile stress salino da valutare con ECe coerente, profondità e drenaggio.",
+        "Problema 3: il pozzo richiede ECw e analisi ionica prima del piano irriguo o di lavaggio.",
+        "Disponi in una pagina analisi, azioni condizionate, colture candidate e monitoraggio."
+      ],
+      "takeaway": "Non stabilire una coltura o una dose definitiva di compost/lisciviazione dal referto incompleto."
+    },
+    {
+      "id": "source-numbers",
+      "title": "Conserva le quantità senza applicarle alla cieca",
+      "situation": "Modello del docente: 5–10 cm di compost/letame miscelati nei primi 15 cm e, dopo la semina, 7–10 cm di paglia/cippato. Modello diverso della banca: primi 15–20 cm e pacciamatura 5–10 cm per un altro suolo sabbioso e alcalino.",
+      "reasoning": [
+        "Sono esempi diversi, non una prescrizione verificata per il terreno pilota.",
+        "Su 100 m² lo strato di 5 cm occupa 5 m³ e quello di 10 cm 10 m³, prima di densità, assestamento e miscelazione: servono dati su prodotto e disponibilità.",
+        "Chiedi EC del prodotto, nutrienti, maturità, coltura, analisi del suolo, budget e profondità sicura."
+      ],
+      "takeaway": "Mantieni entrambi gli intervalli negli esempi e ottieni una specifica locale documentata prima dell’applicazione."
+    },
+    {
+      "id": "choose-two",
+      "title": "Orzo e sorgo come candidate condizionate",
+      "situation": "Uno studente propone orzo per relativa tolleranza salina e sorgo per adattamento alla siccità nel piccolo appezzamento.",
+      "reasoning": [
+        "In una fonte FAO l’orzo ha tolleranza relativamente alta come cereale, ma le piantine possono essere meno tolleranti.",
+        "Il sorgo può adattarsi alla siccità ed è solo moderatamente tollerante al sale nella stessa comparazione: sono motivazioni differenti.",
+        "Prima della scelta verifica ECe, ECw, cultivar, stagione, sementi, acqua iniziale e destinazione del raccolto."
+      ],
+      "takeaway": "Coppia preliminare motivata, non promessa di resa; fagiolo dall’occhio, quinoa, barbabietola e altre candidate richiedono verifiche proprie."
+    },
+    {
+      "id": "wind-cover",
+      "title": "La terza tecnica dipende dal luogo",
+      "situation": "Per un caso sabbioso e alcalino uno studente propone compost, paglia, una copertura di veccia e alberi frangivento.",
+      "reasoning": [
+        "Verifica qualità e salinità del compost prima della dose: non presumere correzione di pH o sali.",
+        "La copertura può ridurre evaporazione, ma materiale e spessore dipendono da coltura e irrigazione.",
+        "Veccia e frangivento richiedono acqua e spazio; in un pilota di 100 m² molto arido potrebbero esserci alternative migliori."
+      ],
+      "takeaway": "Descrivi tre tecniche diverse con ragioni condizionate e spiega perché una potrebbe essere rinviata."
+    }
+  ]
+}

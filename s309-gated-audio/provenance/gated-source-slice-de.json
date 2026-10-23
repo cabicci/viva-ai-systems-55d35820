@@ -1,0 +1,53 @@
+{
+  "stepId": "S3-09",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "d8dd7537f6d60c49b7ad81028d9a0f5dff03a7f2141ac73c12a335720b31b3b8",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "one-page-plot",
+      "title": "Ein vertretbarer Einseiter",
+      "situation": "100 m² sandiger Lehm mit 0,8 % organischer Substanz, EC 3,5 dS/m ohne Methode und als leicht salzhaltig beschriebenem Brunnenwasser.",
+      "reasoning": [
+        "Problem 1: Gemessen geringer Humus kann die Speicherung begrenzen; Boden und Material vor der Menge prüfen.",
+        "Problem 2: Möglicher Salzstress braucht methodisch passendes ECe, Probentiefe und Entwässerungsbefund.",
+        "Problem 3: Brunnenwasser braucht ECw und Ionenanalyse vor Bewässerung oder Auswaschung.",
+        "Prüfungen, bedingte Maßnahmen, Kulturkandidaten und Kontrolle auf einer Seite anordnen."
+      ],
+      "takeaway": "Aus dem lückenhaften Bericht weder Kultur noch Kompost- oder Auswaschungsmenge endgültig festlegen."
+    },
+    {
+      "id": "source-numbers",
+      "title": "Originalzahlen behalten, nicht blind anwenden",
+      "situation": "Lehrermodell: 5–10 cm Kompost/Mist in den oberen 15 cm, nach Pflanzung 7–10 cm Stroh/Holzmulch. Anderes Modell: Einarbeitung in obere 15–20 cm und 5–10 cm Mulch für einen anderen sandig-alkalischen Fall.",
+      "reasoning": [
+        "Verschiedene Quellenbeispiele, keine validierte Verordnung für die Parzelle.",
+        "Auf 100 m² belegen 5 cm bereits 5 m³ und 10 cm 10 m³, vor Dichte, Setzung und Mischung; deshalb Produktanalyse und Lieferbarkeit prüfen.",
+        "Produkt-EC, Nährstoffe, Reife, Kultur, Bodenbefund, Kosten und sichere Einarbeitungstiefe erfragen."
+      ],
+      "takeaway": "Beide Originalbereiche als Lernbeispiele behalten; vor Feldanwendung eine dokumentierte lokale Vorgabe einholen."
+    },
+    {
+      "id": "choose-two",
+      "title": "Gerste und Sorghum nur bedingt",
+      "situation": "Ein Lernender schlägt Gerste wegen relativer Salzverträglichkeit und Sorghum wegen Trockenheitsanpassung auf der kleinen Fläche vor.",
+      "reasoning": [
+        "Gerste ist in einer FAO-Quelle als Getreide relativ salztolerant; Keimlinge können empfindlicher sein.",
+        "Sorghum kann trockenheitsangepasst sein, ist im selben Vergleich aber nur mäßig salztolerant; das sind unterschiedliche Gründe.",
+        "Vor der Entscheidung ECe/ECw, Sorte, Saison, Saatgut, Etablierungswasser und Nutzung prüfen."
+      ],
+      "takeaway": "Begründetes vorläufiges Paar, keine Ertragsgarantie; Augenbohne, Quinoa, Zuckerrübe und andere Kandidaten brauchen eigene Prüfungen."
+    },
+    {
+      "id": "wind-cover",
+      "title": "Dritte Technik nach Standort wählen",
+      "situation": "Für einen sandig-alkalischen Fall werden Kompost, Stroh, Wicken-Zwischenfrucht und Baum-Windschutz vorgeschlagen.",
+      "reasoning": [
+        "Kompostqualität und Salz vor der Menge prüfen; keine automatische pH- oder Salzkorrektur annehmen.",
+        "Mulch kann Verdunstung senken, doch Material und Stärke hängen von Kultur und Bewässerung ab.",
+        "Wicke und Bäume brauchen Wasser und Raum; auf sehr trockenen 100 m² können andere Optionen besser sein."
+      ],
+      "takeaway": "Drei verschiedene Techniken bedingt begründen und erklären, warum eine verschoben werden kann."
+    }
+  ]
+}
