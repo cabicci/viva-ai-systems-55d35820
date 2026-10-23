@@ -1,0 +1,74 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-04-en.json",
+    "sha256": "b8aebe067b81353d2f6b057b9cddc6b59145887deac559df898ed7f5d7f9f43c",
+    "bytes": 25359
+  },
+  "units": [
+    {
+      "id": "S2-04-en-effective-model-title-repair-r1",
+      "unitId": "S2-04-en-effective-model-title-repair-r1",
+      "locale": "en",
+      "semanticGroup": "runtime-s204-en-effective-model-title-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8aebe067b81353d2f6b057b9cddc6b59145887deac559df898ed7f5d7f9f43c",
+      "sourceBindings": [
+        {
+          "pointer": "/phPractice/ui/modelTitle",
+          "text": "pH scale ·3D teaching model",
+          "sha256": "65a639dd721b8ce6ed90a8c96f8f61e5ce462f04826d80194749deb7bd007272"
+        }
+      ],
+      "scientificMeaning": "pH scale ·3D teaching model",
+      "displayText": "pH scale ·3D teaching model",
+      "captionText": "pH scale ·3D teaching model",
+      "spokenText": "P H scale · interactive teaching schematic",
+      "spokenTextSHA256": "db469e6465eab4a39a3435d0d8c5a7a75817cc5a4ac3ac75b8bd38890f5cf086",
+      "spokenTextSha256": "db469e6465eab4a39a3435d0d8c5a7a75817cc5a4ac3ac75b8bd38890f5cf086",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH scale ·3D teaching model",
+          "spoken": "pH scale ·3D teaching model",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "pH scale ·3D teaching model",
+          "spoken": "P H scale · interactive teaching schematic",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_EFFECTIVE_IMPLEMENTATION_LABEL_OR_ARABIC_OBSERVATION_PRIORITY_CORRECTION"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "8134bc742f034e5bca1e8fd9c8b00cfc0dee88d63ebc4f4e3a57bfcb040762cb",
+      "requestFingerprintSha256": "8134bc742f034e5bca1e8fd9c8b00cfc0dee88d63ebc4f4e3a57bfcb040762cb",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "pH scale ·3D teaching model",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/phPractice/ui/modelTitle",
+        "original": "pH scale ·3D teaching model",
+        "effective": "pH scale · interactive teaching schematic",
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\runtime-applicability-and-s206-direction-decisions-r1.json",
+        "rootSelectedAuthoritySHA256": "834e635f21fba9bfba3644fd2c156d09c7ea52ab0e5e251c7abdde649f834934"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": true
+    }
+  ]
+}
