@@ -1,0 +1,75 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-08-en.json",
+    "sha256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+    "bytes": 22777
+  },
+  "scope": "One root-approved route sentence only; all other original PCM retained.",
+  "units": [
+    {
+      "id": "S1-08-en-R05-sentence-repair-r1",
+      "unitId": "S1-08-en-R05-sentence-repair-r1",
+      "locale": "en",
+      "semanticGroup": "R05-procedure-sentence-repair",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "The trainer continues: 'Now I try the ball. If it holds, I press an even ribbon and let it break by itself. I record its length, then check the feel of a small wetter pinch. I follow both branches before writing a class. If it will not make a ball after conditioning, that is the result I record.' The demonstration must include a valid non-ribbon outcome as well as a ribbon-forming example.",
+          "sha256": "f07edbaa768d39026bb5b3bd9457693574ab400ef3472eff59175f6a46dc1cb3"
+        }
+      ],
+      "scientificMeaning": "The trainer continues: 'Now I try the ball. If it holds, I press an even ribbon and let it break by itself. I record its length, then check the feel of a small wetter pinch. I follow both branches before writing a class. If it will not make a ball after conditioning, that is the result I record.' The demonstration must include a valid non-ribbon outcome as well as a ribbon-forming example.",
+      "displayText": "The trainer continues: 'Now I try the ball. If it holds, I press an even ribbon and let it break by itself. I record its length, then check the feel of a small wetter pinch. I follow both branches before writing a class. If it will not make a ball after conditioning, that is the result I record.' The demonstration must include a valid non-ribbon outcome as well as a ribbon-forming example.",
+      "captionText": "The trainer continues: 'Now I try the ball. If it holds, I press an even ribbon and let it break by itself. I record its length, then check the feel of a small wetter pinch. I follow both branches before writing a class. If it will not make a ball after conditioning, that is the result I record.' The demonstration must include a valid non-ribbon outcome as well as a ribbon-forming example.",
+      "spokenText": "If the ball holds together, I press an even ribbon and let it snap under its own weight.",
+      "spokenTextSHA256": "4173c0d88266736dee1249cb795ae047b7f43a8c46aa35d6dfac13870ade9d42",
+      "spokenTextSha256": "4173c0d88266736dee1249cb795ae047b7f43a8c46aa35d6dfac13870ade9d42",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The trainer continues: 'Now I try the ball. If it holds, I press an even ribbon and let it break by itself. I record its length, then check the feel of a small wetter pinch. I follow both branches before writing a class. If it will not make a ball after conditioning, that is the result I record.' The demonstration must include a valid non-ribbon outcome as well as a ribbon-forming example.",
+          "spoken": "If it holds, I press an even ribbon and let it break by itself.",
+          "occurrences": 1,
+          "purpose": "EXACT_INDEPENDENT_CLAUSE_EXTRACTION_ALL_OTHER_SOURCE_SENTENCES_RETAINED_FROM_ORIGINAL_PCM"
+        },
+        {
+          "written": "If it holds, I press an even ribbon and let it break by itself.",
+          "spoken": "If the ball holds together, I press an even ribbon and let it snap under its own weight.",
+          "occurrences": 1,
+          "purpose": "ROOT_APPROVED_SOURCE_EQUIVALENT_ROUTE_DESCRIPTION_FOR_CORROBORATED_W_ARTICULATION_FAULT"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "f9ad23e6d6b1721f0d313a156eef07233bf420064f8b417b4c7be7d16c770ea0",
+      "requestFingerprintSha256": "f9ad23e6d6b1721f0d313a156eef07233bf420064f8b417b4c7be7d16c770ea0",
+      "sourcePlanSha256": "ee0ed6e6e3cb36c37a5b517f01355f655b0872924aed1a94dc9e24ff4c8e1d68",
+      "exactSentenceBefore": "If it holds, I press an even ribbon and let it break by itself.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true
+    }
+  ],
+  "supportingCurrentSourceBinding": {
+    "sourcePath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S1-08-en.json",
+    "sourceWholeFileSHA256": "ec4200dc068cc29487a0ac5bd4479b4f58f3bfdc5cc1d0add643307b59139f6c",
+    "pointer": "/reading/2/paragraphs/0",
+    "text": "If a ball forms, place it between thumb and forefinger. Gently press with the thumb and push soil upward into a strip of reasonably even width and thickness. Let the strip extend over the forefinger until it breaks under its own weight. Do not stretch it like dough or support a long strip with the other hand and call that its unsupported length.",
+    "sha256": "317d76f0f8db394bcffd3e625edf5ff1fcf6cccac4df2eea30b7d492bad8a8b3",
+    "scope": "Existing current-source own-weight method supports the source-equivalent snap-under-its-own-weight spoken wording; no manual pulling and no new scientific instruction."
+  }
+}
