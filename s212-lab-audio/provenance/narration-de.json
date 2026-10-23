@@ -1,0 +1,557 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-12-de.json",
+    "sha256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+    "bytes": 31286
+  },
+  "units": [
+    {
+      "id": "S2-12-de-jar-math-guidance-r1",
+      "unitId": "S2-12-de-jar-math-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "jar-math-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/jarModel",
+          "text": "Veränderbares Lehrglas ·3D",
+          "sha256": "c0b0098a7c2f23a793abe9b15b4c335574415a2d925d2597c57053e948c90486"
+        },
+        {
+          "pointer": "/texturePractice/ui/jarHelp",
+          "text": "Synthetische Markenübung am vorgegebenen 80 mm-Beispiel, keine Schülermessung. Summenmarken auf 44,68,80 mm stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.",
+          "sha256": "dab189c1bce6abe32a208c84cc49a90257bf89a07b097d81a10b9b0aac664758"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMarkers",
+          "text": "Vorgegebene 44/68/80 mm-Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.",
+          "sha256": "f255b5d2c45ef2d59a75010e61d209de6c61f578c3f4ac706527ee54ee5052a7"
+        },
+        {
+          "pointer": "/texturePractice/ui/badDenominator",
+          "text": "Jede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.",
+          "sha256": "ebbaa13555911eedd56bdca3d2614fc280fe0e6ed41dee6a2dcf0ce307a63d5c"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMath",
+          "text": "Benachbarte Marken subtrahieren, durch 80 mm teilen und mit 100 multiplizieren. Übungsgenauigkeit 0.1 mm und 0.1 Prozentpunkt, keine Labortoleranz.",
+          "sha256": "194c60dc23aec178b875cdd0ab05b32d6234dadab625aadb7c056021f7ee3833"
+        },
+        {
+          "pointer": "/texturePractice/ui/goodMath",
+          "text": "Beispiel ergibt 44/24/12 mm und 55/30/15%. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+          "sha256": "d9b3605454d5cfea74d99510ac2d705345a9781fd926d975d8c69db57b02fbfa"
+        }
+      ],
+      "scientificMeaning": "Veränderbares Lehrglas ·3D\n\nSynthetische Markenübung am vorgegebenen 80 mm-Beispiel, keine Schülermessung. Summenmarken auf 44,68,80 mm stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene 44/68/80 mm-Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch 80 mm teilen und mit 100 multiplizieren. Übungsgenauigkeit 0.1 mm und 0.1 Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt 44/24/12 mm und 55/30/15%. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+      "displayText": "Veränderbares Lehrglas ·3D\n\nSynthetische Markenübung am vorgegebenen 80 mm-Beispiel, keine Schülermessung. Summenmarken auf 44,68,80 mm stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene 44/68/80 mm-Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch 80 mm teilen und mit 100 multiplizieren. Übungsgenauigkeit 0.1 mm und 0.1 Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt 44/24/12 mm und 55/30/15%. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+      "captionText": "Veränderbares Lehrglas ·3D\n\nSynthetische Markenübung am vorgegebenen 80 mm-Beispiel, keine Schülermessung. Summenmarken auf 44,68,80 mm stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene 44/68/80 mm-Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch 80 mm teilen und mit 100 multiplizieren. Übungsgenauigkeit 0.1 mm und 0.1 Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt 44/24/12 mm und 55/30/15%. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+      "spokenText": "Veränderbares Lehrglas ; dreidimensional\n\nSynthetische Markenübung am vorgegebenen achtzig Millimeter -Beispiel, keine Schülermessung. Summenmarken auf vierundvierzig, achtundsechzig, achtzig Millimeter stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene vierundvierzig, achtundsechzig, achtzig Millimeter -Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch achtzig Millimeter teilen und mit einhundert multiplizieren. Übungsgenauigkeit null Komma eins Millimeter und null Komma eins Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt vierundvierzig, vierundzwanzig, zwölf Millimeter und fünfundfünfzig, dreißig, fünfzehn Prozent. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+      "spokenTextSHA256": "6005c9ab45aad9cfd020921717394ed388533f322451421980f890bdb7693ecb",
+      "spokenTextSha256": "6005c9ab45aad9cfd020921717394ed388533f322451421980f890bdb7693ecb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Veränderbares Lehrglas ·3D\n\nSynthetische Markenübung am vorgegebenen 80 mm-Beispiel, keine Schülermessung. Summenmarken auf 44,68,80 mm stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene 44/68/80 mm-Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch 80 mm teilen und mit 100 multiplizieren. Übungsgenauigkeit 0.1 mm und 0.1 Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt 44/24/12 mm und 55/30/15%. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+          "spoken": "Veränderbares Lehrglas ; dreidimensional\n\nSynthetische Markenübung am vorgegebenen achtzig Millimeter -Beispiel, keine Schülermessung. Summenmarken auf vierundvierzig, achtundsechzig, achtzig Millimeter stellen; Schichtdicken ergeben sich aus benachbarten Marken. Schwimmendes ausschließen.\n\nVorgegebene vierundvierzig, achtundsechzig, achtzig Millimeter -Marken aufsteigend nutzen. Nullsumme, negative oder vertauschte Marken sind ungültig.\n\nJede Dicke durch gesamte Mineralhöhe teilen, nicht durch Zwischenmarke oder eigene Dicke.\n\nBenachbarte Marken subtrahieren, durch achtzig Millimeter teilen und mit einhundert multiplizieren. Übungsgenauigkeit null Komma eins Millimeter und null Komma eins Prozentpunkt, keine Labortoleranz.\n\nBeispiel ergibt vierundvierzig, vierundzwanzig, zwölf Millimeter und fünfundfünfzig, dreißig, fünfzehn Prozent. Nur vorgegebene Rechnung geprüft; individuelle Messung bleibt unbeobachtet.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "26aec03b2c860b2fc9e8867970fe5b91fe7e6c33f0fa9517d7b7d4804063d51b",
+      "requestFingerprintSha256": "26aec03b2c860b2fc9e8867970fe5b91fe7e6c33f0fa9517d7b7d4804063d51b",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-12-de-triangle-guidance-r1",
+      "unitId": "S2-12-de-triangle-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "triangle-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/triangleHelp",
+          "text": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen USDA-Datei 2024. Zahlen verweisen auf die übersetzte USDA-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.",
+          "sha256": "783432a4574590311d907e14276f6644200d5e9dbac5d1c26e48dffd87dff21a"
+        },
+        {
+          "pointer": "/texturePractice/ui/badPercent",
+          "text": "Drei endliche Prozentwerte von 0 bis 100 mit Summe 100 eingeben. Gerundete 99/101 brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.",
+          "sha256": "2af76c9f0dcaae6705311bc56cc93cd4efbfba14aa4f0487442bde72c6c9d10f"
+        },
+        {
+          "pointer": "/texturePractice/ui/classGood",
+          "text": "Klasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.",
+          "sha256": "ae0fb8bb6546ab1cb286e901b7a16eba9e4202a60540fd377982e7aebb37c03b"
+        },
+        {
+          "pointer": "/texturePractice/ui/classBad",
+          "text": "Sanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.",
+          "sha256": "bcc9fa92236f2ca50310e673fd0c020bc6f18a20aa2769a702d5026468b5c3bc"
+        },
+        {
+          "pointer": "/texturePractice/ui/thresholdNote",
+          "text": "30/30/40 liegt auf der 40%-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.",
+          "sha256": "70afe8ee195d5c2b148a3821b725dc02193c296fc94272573c01af32d6b04bf7"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/0",
+          "text": "Sand",
+          "sha256": "82855c11ae69b0652a292b72967a82d5f4973b88d76c6c793276ef8c5942a803"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/1",
+          "text": "Lehmiger Sand",
+          "sha256": "17f8808c4759b16e0d995e5be3d56340db96ce93cff2af06775e49645a881d96"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/2",
+          "text": "Sandiger Lehm",
+          "sha256": "21b5839bea67c108cd38366b252679d157fc597273b0da65569c2ccddb31a64c"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/3",
+          "text": "Sandig-toniger Lehm",
+          "sha256": "93ae2877acc3b2de4daea64debb9fba89ae2416c717b49641a24871919cc4987"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/4",
+          "text": "Lehm",
+          "sha256": "83f8ee17e455ebf0eee96ca731430e8aaab187a4c964399988f899464296a4ea"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/5",
+          "text": "Sandiger Ton",
+          "sha256": "dc0b82b8a7543a83d7d0ad7d12ff51b7901625f92dd4ec025296a54cd9c06b0a"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/6",
+          "text": "Toniger Lehm",
+          "sha256": "23bf6caed58d768d86540fb632d2b726a9b03450d61a94ec97b5f44a174513f0"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/7",
+          "text": "Schluffiger Ton",
+          "sha256": "b26870194da677e71d1800ad2675c11cb792ed7bc1d1a24193c507554ce737ce"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/8",
+          "text": "Schluffig-toniger Lehm",
+          "sha256": "7dd36ef67f7c0a459ba6f57e97f8ef78708b44b06b165a73a0ce99a898d15a94"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/9",
+          "text": "Schluffiger Lehm",
+          "sha256": "d74a3f2ab8fce76005311bcfc129c0d6127a191d0ddb63921e2de50c6aa60c27"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/10",
+          "text": "Schluff",
+          "sha256": "aa9bfebc4a989d9b59cb273495479e5ada6a28ab5580882b1a3e4ff37be60565"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/11",
+          "text": "Ton",
+          "sha256": "d7bb53dca2ae574b558d274024a2093f7868bd29a7c2a02ea7c2748582aa5b22"
+        }
+      ],
+      "scientificMeaning": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen USDA-Datei 2024. Zahlen verweisen auf die übersetzte USDA-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von 0 bis 100 mit Summe 100 eingeben. Gerundete 99/101 brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\n30/30/40 liegt auf der 40%-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+      "displayText": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen USDA-Datei 2024. Zahlen verweisen auf die übersetzte USDA-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von 0 bis 100 mit Summe 100 eingeben. Gerundete 99/101 brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\n30/30/40 liegt auf der 40%-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+      "captionText": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen USDA-Datei 2024. Zahlen verweisen auf die übersetzte USDA-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von 0 bis 100 mit Summe 100 eingeben. Gerundete 99/101 brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\n30/30/40 liegt auf der 40%-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+      "spokenText": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen U Es De A-Datei zweitausendvierundzwanzig. Zahlen verweisen auf die übersetzte U Es De A-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von null bis einhundert mit Summe einhundert eingeben. Gerundete neunundneunzig oder einhunderteins brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\ndreißig, dreißig, vierzig liegt auf der vierzig Prozent-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+      "spokenTextSHA256": "a23386569f578f6ccb631e5ebc2af9c5d0b1af229a50d0d91fe5ddb9293c3777",
+      "spokenTextSha256": "a23386569f578f6ccb631e5ebc2af9c5d0b1af229a50d0d91fe5ddb9293c3777",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen USDA-Datei 2024. Zahlen verweisen auf die übersetzte USDA-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von 0 bis 100 mit Summe 100 eingeben. Gerundete 99/101 brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\n30/30/40 liegt auf der 40%-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+          "spoken": "Grenzen und Klassifikationsvergleiche stammen aus der offiziellen U Es De A-Datei zweitausendvierundzwanzig. Zahlen verweisen auf die übersetzte U Es De A-Legende, nicht ein deutsches Klassifikationssystem. Sand nimmt nach links zu, Ton nach oben, Schluff rechts nach unten. Linien treffen sich bei ausgeglichenen Anteilen; Glashöhenanteile bleiben Näherungen.\n\nDrei endliche Prozentwerte von null bis einhundert mit Summe einhundert eingeben. Gerundete neunundneunzig oder einhunderteins brauchen Prüfung der Rohhöhen; keine stillschweigende Normalisierung.\n\nKlasse stimmt mit offizieller Grundkonvention. Drei Linien erklären; Rechnung erzeugt keine Probenmessung.\n\nSanddiagonale, waagerechte Tonlinie und Schluffdiagonale verfolgen; Schnittpunkt mit nummeriertem Bereich und Legende vergleichen.\n\ndreißig, dreißig, vierzig liegt auf der vierzig Prozent-Tongrenze; offizielle Datei zählt den Punkt zu Ton. Explizite Grenzregel statt Farbraten.\n\nSand\n\nLehmiger Sand\n\nSandiger Lehm\n\nSandig-toniger Lehm\n\nLehm\n\nSandiger Ton\n\nToniger Lehm\n\nSchluffiger Ton\n\nSchluffig-toniger Lehm\n\nSchluffiger Lehm\n\nSchluff\n\nTon",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "42d9874d9b23d05e2e02ed32a745b99a857991410fc7f36867020a1eb47125f1",
+      "requestFingerprintSha256": "42d9874d9b23d05e2e02ed32a745b99a857991410fc7f36867020a1eb47125f1",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-12-de-source-card-guidance-r1",
+      "unitId": "S2-12-de-source-card-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "source-card-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/card/scenario",
+          "text": "Ein gesondertes, über 48 Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte 1–6; Punkte 7–12 hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.",
+          "sha256": "563129658314b5d1622dee71f1e157a169a459b609f7044a85833161587aca6d"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/0/criterion",
+          "text": "Gesamte Mineralschichthöhe in mm messen",
+          "sha256": "4119564dd015042fc0b0c97f7daff117b6581034b59f89123f8ab4c0eb6c64c8"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/1/criterion",
+          "text": "Separate Sandhöhe in mm messen",
+          "sha256": "54acd0ae0e3ba439811964d9718a66ae05589fa53ba2bf12b209d2b3215ed319"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/2/criterion",
+          "text": "Separate Schluffhöhe in mm messen",
+          "sha256": "3230246d4c935df4d18b088ac287c92c65071d4befeee94af8ab619a3f69b532"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/3/criterion",
+          "text": "Separate Tonhöhe in mm messen",
+          "sha256": "4c70877fba4cc864541545ef1e0de0e859d37f28964e5b69baef35a66417690b"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/4/criterion",
+          "text": "Sand-, Schluff- und Tonanteile berechnen",
+          "sha256": "7af06df081783a8958aebe9fd0a670e89bc2a7805c69c02e4c88489545b30536"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/5/criterion",
+          "text": "Alle Prozentwerte eindeutig notieren",
+          "sha256": "fadfe98cba16d0d318709b3d3239eaa4e803460d1fca159268d8b30f6d88a7de"
+        },
+        {
+          "pointer": "/texturePractice/card/bridgeToPreviousStep",
+          "text": "Die zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+          "sha256": "4ffab8e8440dd0d118b9dd1187d67d91cee294d76b5df33c58b5e870bc7a2d22"
+        }
+      ],
+      "scientificMeaning": "Ein gesondertes, über 48 Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte 1–6; Punkte 7–12 hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in mm messen\n\nSeparate Sandhöhe in mm messen\n\nSeparate Schluffhöhe in mm messen\n\nSeparate Tonhöhe in mm messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+      "displayText": "Ein gesondertes, über 48 Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte 1–6; Punkte 7–12 hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in mm messen\n\nSeparate Sandhöhe in mm messen\n\nSeparate Schluffhöhe in mm messen\n\nSeparate Tonhöhe in mm messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+      "captionText": "Ein gesondertes, über 48 Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte 1–6; Punkte 7–12 hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in mm messen\n\nSeparate Sandhöhe in mm messen\n\nSeparate Schluffhöhe in mm messen\n\nSeparate Tonhöhe in mm messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+      "spokenText": "Ein gesondertes, über achtundvierzig Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte eins bis sechs; Punkte sieben bis zwölf hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in Millimeter messen\n\nSeparate Sandhöhe in Millimeter messen\n\nSeparate Schluffhöhe in Millimeter messen\n\nSeparate Tonhöhe in Millimeter messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+      "spokenTextSHA256": "c4b6149d3e73011efeee638b13958f77fc6952b602a7f68abe6b8e0743e5ca92",
+      "spokenTextSha256": "c4b6149d3e73011efeee638b13958f77fc6952b602a7f68abe6b8e0743e5ca92",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ein gesondertes, über 48 Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte 1–6; Punkte 7–12 hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in mm messen\n\nSeparate Sandhöhe in mm messen\n\nSeparate Schluffhöhe in mm messen\n\nSeparate Tonhöhe in mm messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+          "spoken": "Ein gesondertes, über achtundvierzig Stunden vorbereitetes Lehrglas dient nur zur Messübung. Die vorige Lernstufe behandelt Vorbereitungspunkte eins bis sechs; Punkte sieben bis zwölf hier betreffen Gesamt- und einzelne Sand-, Schluff- und Tonhöhen, alle drei Anteile und klare Aufzeichnung. Deine eigenen Gläser benötigen echte spätere Beobachtungen und Prüfung durch die Lehrkraft.\n\nGesamte Mineralschichthöhe in Millimeter messen\n\nSeparate Sandhöhe in Millimeter messen\n\nSeparate Schluffhöhe in Millimeter messen\n\nSeparate Tonhöhe in Millimeter messen\n\nSand-, Schluff- und Tonanteile berechnen\n\nAlle Prozentwerte eindeutig notieren\n\nDie zwölfteilige Tätigkeit wird fortgesetzt: Vorbereitung in der vorigen Lernstufe, danach Messen und Aufzeichnen hier. Ein vorbereitetes Lehrglas ersetzt nicht deine individuell beobachteten Gläser.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e1ea15c7194c0af2e03a14bf45a87abf9a9dc7b9bd62314932a83ef0dd985338",
+      "requestFingerprintSha256": "e1ea15c7194c0af2e03a14bf45a87abf9a9dc7b9bd62314932a83ef0dd985338",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-12-de-practical-measurement-r1",
+      "unitId": "S2-12-de-practical-measurement-r1",
+      "locale": "de",
+      "semanticGroup": "practical-measurement",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/practical/0/title",
+          "text": "Drei echte Gläser messen",
+          "sha256": "103dc2c5b30310137080c62fff957dfb0e7df08899608041a5d07e0edba31bce"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/conditions",
+          "text": "Drei individuell bezeichnete Gläser aus S2-11 haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.",
+          "sha256": "e17409a84e25612113a6f7dfc1f872c4a52fd9fd851b516bf140114c34a6859c"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/0",
+          "text": "Jedes Glas der früheren eigenen Kennung und Zeitliste zuordnen",
+          "sha256": "0cda74b8ff5c60124ea55b28ecc8495da1195ca8dde74b334fc7a0409571e1b9"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/1",
+          "text": "Tatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren",
+          "sha256": "937d8069133d342311e350f3eb2ae313b6624cf184fdf1faf26e9e3fca6826ca"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/2",
+          "text": "Lineal unten ansetzen und jede kumulative Marke in mm lesen",
+          "sha256": "f35d563687df7655a568b48b48985247fc18c192c4a97f7ac517bca215ad1821"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/3",
+          "text": "Aufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren",
+          "sha256": "fe2b6a066c380f162d2223b725b940faa53d69e51ce7602e7395ef5da5d1a05e"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/4",
+          "text": "Letzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen",
+          "sha256": "d002c90ded3108d8455388554795dac65e8b3b44e0dfb35f937572d50b8dcf21"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/5",
+          "text": "Drei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+          "sha256": "765dee5a3a36e43582df92eca183caa4a59ba0932b69ed8986fca726bb3e680c"
+        }
+      ],
+      "scientificMeaning": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus S2-11 haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in mm lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+      "displayText": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus S2-11 haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in mm lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+      "captionText": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus S2-11 haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in mm lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+      "spokenText": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus Schritt elf der Station zwei haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in Millimeter lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+      "spokenTextSHA256": "e1a2f7ead1a942eb2d51449c9a0c908a6b401912b3346109e89e516fde83f5ae",
+      "spokenTextSha256": "e1a2f7ead1a942eb2d51449c9a0c908a6b401912b3346109e89e516fde83f5ae",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus S2-11 haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in mm lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+          "spoken": "Drei echte Gläser messen\n\nDrei individuell bezeichnete Gläser aus Schritt elf der Station zwei haben echte frühe, spätere und letzte Beobachtungen nach dem festgelegten sicheren Verfahren. Ein getrenntes vorbereitetes Glas dient nur zum Üben.\n\nJedes Glas der früheren eigenen Kennung und Zeitliste zuordnen\n\nTatsächliche letzte Grenze prüfen und Störungen oder Unsicherheit notieren\n\nLineal unten ansetzen und jede kumulative Marke in Millimeter lesen\n\nAufeinanderfolgende Marken zu Sand-, Schluff- und Tondicken subtrahieren\n\nLetzte gesamte Mineralhöhe messen und die Summe der drei Dicken abgleichen\n\nDrei getrennte Reihen A, B und C notieren und vorgegebene Beispielwerte abgrenzen",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d9bcc48fe8c43757c31d681a3f92688b404b89c11b12c0d88106076ac402518f",
+      "requestFingerprintSha256": "d9bcc48fe8c43757c31d681a3f92688b404b89c11b12c0d88106076ac402518f",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-12-de-knowledge-completion-r1",
+      "unitId": "S2-12-de-knowledge-completion-r1",
+      "locale": "de",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/passChecks/0/evidence",
+          "text": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in mm, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.",
+          "sha256": "c771965c4abfd1b917a4e8008ff3b6a029be5c4523d1ac9a5760c4136f1c38b5"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/0/decision",
+          "text": "Bestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.",
+          "sha256": "a8ab21cceba39ac760726c1184deafba86034a6450c1f3c6f46235bad74e1cbc"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/evidence",
+          "text": "Schichtdicke / gesamte Mineralschichthöhe ×100 wird für drei Fraktionen benutzt, Nenner und Kürzung der mm gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe 100% von Mess- oder Rechenfehlern unterschieden.",
+          "sha256": "ced2ed4f7cf675a0910bbeab8caae04bcbaa8aa8066dffc7f76cb58bfe83b91f"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/decision",
+          "text": "Bestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.",
+          "sha256": "61a477270897ef5a7490281124887b995e74b1c891b91f383335f7716a327fac"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/evidence",
+          "text": "Die gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für 55/30/15, Lehm für 40/40/20 und Ton für 15/30/55. Die Glas-Höhenschätzung wird als vorläufig erklärt.",
+          "sha256": "030c8bfec1125be5cac2a7381fc8e9260f0eb8c0fb73df5276ca268d3c2c5c6f"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/decision",
+          "text": "Bestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+          "sha256": "e83b22c70c287986bfda2372000ce4a734228b3b5d5064a71ca7accfed384fbd"
+        }
+      ],
+      "scientificMeaning": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in mm, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke / gesamte Mineralschichthöhe ×100 wird für drei Fraktionen benutzt, Nenner und Kürzung der mm gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe 100% von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für 55/30/15, Lehm für 40/40/20 und Ton für 15/30/55. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+      "displayText": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in mm, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke / gesamte Mineralschichthöhe ×100 wird für drei Fraktionen benutzt, Nenner und Kürzung der mm gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe 100% von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für 55/30/15, Lehm für 40/40/20 und Ton für 15/30/55. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+      "captionText": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in mm, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke / gesamte Mineralschichthöhe ×100 wird für drei Fraktionen benutzt, Nenner und Kürzung der mm gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe 100% von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für 55/30/15, Lehm für 40/40/20 und Ton für 15/30/55. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+      "spokenText": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in Millimeter, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke geteilt durch gesamte Mineralschichthöhe mal einhundert wird für drei Fraktionen benutzt, Nenner und Kürzung der Millimeter gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe einhundert Prozent von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für fünfundfünfzig, dreißig, fünfzehn, Lehm für vierzig, vierzig, zwanzig und Ton für fünfzehn, dreißig, fünfundfünfzig. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+      "spokenTextSHA256": "8ad72030647e7d3c740e248a5031041e454845d13530d47e4a9b7b52b24007fc",
+      "spokenTextSha256": "8ad72030647e7d3c740e248a5031041e454845d13530d47e4a9b7b52b24007fc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in mm, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke / gesamte Mineralschichthöhe ×100 wird für drei Fraktionen benutzt, Nenner und Kürzung der mm gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe 100% von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für 55/30/15, Lehm für 40/40/20 und Ton für 15/30/55. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+          "spoken": "Für jedes der drei eigenen gekennzeichneten Gläser zeigt die lernende Person nach der vorgesehenen Absetzzeit Boden, Sand-, Schluff- und letzte Mineralgrenze; sie misst Höhen in Millimeter, berechnet Schichtdicken aus aufeinanderfolgenden Marken und benennt unklare Übergänge.\n\nBestanden, wenn die Lehrkraft Messungen an allen drei eigenen Gläsern beobachtet hat und Kennung sowie Rechnung nachvollziehbar sind. Ein Demonstrationsglas oder vorgegebene Wertetabelle genügt nicht.\n\nSchichtdicke geteilt durch gesamte Mineralschichthöhe mal einhundert wird für drei Fraktionen benutzt, Nenner und Kürzung der Millimeter gezeigt, eine fehlende Fraktion durch Subtraktion ermittelt und eine rundungsbedingte Summe nahe einhundert Prozent von Mess- oder Rechenfehlern unterschieden.\n\nBestanden bei richtigem Nenner, nachvollziehbaren Rechnungen und begründeter Summenprüfung; eine starre Fragenzahl oder unerklärte Rechnerantwort genügt nicht.\n\nDie gedruckten Sand-, Ton- und Schluffachsen werden in der richtigen Richtung bis zur Schnittstelle verfolgt; die Klassen sind sandiger Lehm für fünfundfünfzig, dreißig, fünfzehn, Lehm für vierzig, vierzig, zwanzig und Ton für fünfzehn, dreißig, fünfundfünfzig. Die Glas-Höhenschätzung wird als vorläufig erklärt.\n\nBestanden, wenn Klassenname und Linienweg auf der angegebenen Grafik übereinstimmen. Der Rechner kann ein Beispiel prüfen, aber keine eigenen Glasdaten erzeugen.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c7c0bd43cd537890551a3685794c15ccb93a506ef49d5a2beb3890a716bae0c3",
+      "requestFingerprintSha256": "c7c0bd43cd537890551a3685794c15ccb93a506ef49d5a2beb3890a716bae0c3",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S2-12-de-record-guidance-r1",
+      "unitId": "S2-12-de-record-guidance-r1",
+      "locale": "de",
+      "semanticGroup": "record-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8c9366d834cf4e0fe9b505e15b3f761090f547379c8b02f5d37d570f11edef5b",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/recordHelp",
+          "text": "Unbekannte Marken/Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.",
+          "sha256": "80253f3d887be6a7b1b054edd89689d9e8376cfa316492f1cdb5826d5654fb00"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/0",
+          "text": "Probenkennung und eigenes Glas/Übungsbeispiel",
+          "sha256": "b4dd47d561d42f7475303a372db31f761c3eadd2bc2a17f78ff2b9974ba13d12"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/1",
+          "text": "Verfahren, echte Absetzgeschichte und Beobachtungszeit",
+          "sha256": "e846f5749e525ebbfd9776a3c4b5a4aff4ab2e99ff4d9351fba6b6d34064b206"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/2",
+          "text": "Bodenbezug und Sand-/Schluff-/Endsummenmarken, mm",
+          "sha256": "f2d9043f487b6eda60d522530673bf3bc63a9ce7a00f4e049b6ca13fb725c6a5"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/3",
+          "text": "Einzelne Sand-/Schluff-/Tondicken und Gesamthöhe, mm",
+          "sha256": "436665583ed3d4100a90afc054cae55c1a495febcad7c16ed9f1afbb0215b227"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/4",
+          "text": "Ungerundete Sand-/Schluff-/Tonanteile",
+          "sha256": "97dfcb5b5e4d1152832c0ebcd276c900b0487d16bcd5fb9669bda288857d96e0"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/5",
+          "text": "Gerundete Anteile und Summenprüfung",
+          "sha256": "4f09c1ec4fc0ef01968a58f62cb2f37e31a268f208b3e69dc2aca31c6ec6067c"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/6",
+          "text": "Dreiecksreferenz, Schnittpunkt und vorläufige Klasse",
+          "sha256": "dcf67b2ee41af9d1df0826cfd8d56c703bc7aa7e016a1ef95cf148e1a55713c0"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/7",
+          "text": "Unklare Grenze, fehlende Angaben und nächster Schritt",
+          "sha256": "4ce8e336a73db8d0fe1c8f1901567aab52807d224000a2fcd00068bb46205bf8"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/8",
+          "text": "Individuelle Rückmeldung der Lehrkraft und Datum (leer)",
+          "sha256": "474fbf269292a6b9fe2db84aff201a670a9a69450ac8c49b0ce15781c36ca612"
+        },
+        {
+          "pointer": "/texturePractice/ui/saved",
+          "text": "Entwurf lokal gespeichert; Messkriterium unbeobachtet.",
+          "sha256": "464150bcedd77937ec22cd055d3a1c395a1d840297d984edec7063cb258292da"
+        },
+        {
+          "pointer": "/texturePractice/ui/reasonBoundary",
+          "text": "Modell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.",
+          "sha256": "6d5fe5cd60f6160fab5c2fdec20803131e9ef1121b6ebcb225eea817f9ede64b"
+        },
+        {
+          "pointer": "/texturePractice/ui/notReady",
+          "text": "Zuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.",
+          "sha256": "7d677ed7ff869e4bc00d0e6edd87cf7a654ea1d9d87a2671ddb42b56b4f73c42"
+        },
+        {
+          "pointer": "/texturePractice/ui/knowledgeOnly",
+          "text": "Rechnen und Verfolgen; echte Messung unbeobachtet",
+          "sha256": "b16441922ba289724897090bf47b9f002ea67d6de24c334534ef215bfc7cde5c"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Arbeitsblatt Schichtmessung und Textur",
+          "sha256": "1e5e8f95f63dba3b18931945ceba2dd83aa27a9124a37a7ea49eb0e3383870d1"
+        }
+      ],
+      "scientificMeaning": "Unbekannte Marken/Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und eigenes Glas/Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-/Schluff-/Endsummenmarken, mm\n\nEinzelne Sand-/Schluff-/Tondicken und Gesamthöhe, mm\n\nUngerundete Sand-/Schluff-/Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+      "displayText": "Unbekannte Marken/Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und eigenes Glas/Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-/Schluff-/Endsummenmarken, mm\n\nEinzelne Sand-/Schluff-/Tondicken und Gesamthöhe, mm\n\nUngerundete Sand-/Schluff-/Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+      "captionText": "Unbekannte Marken/Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und eigenes Glas/Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-/Schluff-/Endsummenmarken, mm\n\nEinzelne Sand-/Schluff-/Tondicken und Gesamthöhe, mm\n\nUngerundete Sand-/Schluff-/Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+      "spokenText": "Unbekannte Marken, Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und Angabe, ob eigenes Glas oder Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-, Schluff-, Endsummenmarken, Millimeter \n\nEinzelne Sand-, Schluff-, Tondicken und Gesamthöhe, Millimeter \n\nUngerundete Sand-, Schluff-, Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+      "spokenTextSHA256": "9b3bb9634170618c049a73fb79c5c601f31af1337cf2b4381c98e4ffcec6345a",
+      "spokenTextSha256": "9b3bb9634170618c049a73fb79c5c601f31af1337cf2b4381c98e4ffcec6345a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Unbekannte Marken/Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und eigenes Glas/Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-/Schluff-/Endsummenmarken, mm\n\nEinzelne Sand-/Schluff-/Tondicken und Gesamthöhe, mm\n\nUngerundete Sand-/Schluff-/Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+          "spoken": "Unbekannte Marken, Zeiten mit Erklärung leer lassen. Entwurfsnotizen bestätigen weder Messung noch Chronologie, Freigabe oder Laborbefund.\n\nProbenkennung und Angabe, ob eigenes Glas oder Übungsbeispiel\n\nVerfahren, echte Absetzgeschichte und Beobachtungszeit\n\nBodenbezug und Sand-, Schluff-, Endsummenmarken, Millimeter \n\nEinzelne Sand-, Schluff-, Tondicken und Gesamthöhe, Millimeter \n\nUngerundete Sand-, Schluff-, Tonanteile\n\nGerundete Anteile und Summenprüfung\n\nDreiecksreferenz, Schnittpunkt und vorläufige Klasse\n\nUnklare Grenze, fehlende Angaben und nächster Schritt\n\nIndividuelle Rückmeldung der Lehrkraft und Datum (leer)\n\nEntwurf lokal gespeichert; Messkriterium unbeobachtet.\n\nModell nach dem Versuch ist weder semantische Freigabe noch beobachtete Praxis.\n\nZuerst gekennzeichnete Übungszeilen vervollständigen. Keine Beobachtungen zum Freischalten erfinden.\n\nRechnen und Verfolgen; echte Messung unbeobachtet\n\nArbeitsblatt Schichtmessung und Textur",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a6045eb3ac71f9b763ed05996cd462073787272b6776d4e79d4a6db3a4dd0b4c",
+      "requestFingerprintSha256": "a6045eb3ac71f9b763ed05996cd462073787272b6776d4e79d4a6db3a4dd0b4c",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-12-it.json",
+    "sha256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+    "bytes": 31237
+  },
+  "units": [
+    {
+      "id": "S2-12-it-jar-math-guidance-r1",
+      "unitId": "S2-12-it-jar-math-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "jar-math-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/jarModel",
+          "text": "Barattolo didattico modificabile ·3D",
+          "sha256": "4e2b74444b0b015a54253983048f0a81bfeef729735e0a5d64ad8b16af3522fb"
+        },
+        {
+          "pointer": "/texturePractice/ui/jarHelp",
+          "text": "Esercizio sintetico sull’esempio fornito di 80 mm, non una misura dello studente. Porta le quote cumulative a 44,68,80 mm; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.",
+          "sha256": "da5be30e5c46090005682f4a5b5f23a42b5924084ee5770148dc6d2aa0d2b585"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMarkers",
+          "text": "Usa le quote assegnate 44,68,80 mm in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.",
+          "sha256": "51bec4134dd39892cc81fe07deec6042d859aebc6264097928363cba4b5f2bbf"
+        },
+        {
+          "pointer": "/texturePractice/ui/badDenominator",
+          "text": "Dividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.",
+          "sha256": "a85d2a6d8826412f350c34c6e405e1e082f082c90b6608c747c8a6a43dddd057"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMath",
+          "text": "Sottrai quote consecutive, dividi per 80 mm e moltiplica per 100. Precisione didattica 0.1 mm e 0.1 punto percentuale; non tolleranza di laboratorio.",
+          "sha256": "6eb2f3600e3e91bb1e0b39d7a65f4f876cbd556ac21ee448e35e63e85d06773c"
+        },
+        {
+          "pointer": "/texturePractice/ui/goodMath",
+          "text": "L’esempio dà44/24/12 mm e 55/30/15%. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+          "sha256": "d088f9c83f7e87f1695fe340b382e2dc91d3f9fb5ea88a8b21a572d7ebdc3988"
+        }
+      ],
+      "scientificMeaning": "Barattolo didattico modificabile ·3D\n\nEsercizio sintetico sull’esempio fornito di 80 mm, non una misura dello studente. Porta le quote cumulative a 44,68,80 mm; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate 44,68,80 mm in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per 80 mm e moltiplica per 100. Precisione didattica 0.1 mm e 0.1 punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà44/24/12 mm e 55/30/15%. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+      "displayText": "Barattolo didattico modificabile ·3D\n\nEsercizio sintetico sull’esempio fornito di 80 mm, non una misura dello studente. Porta le quote cumulative a 44,68,80 mm; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate 44,68,80 mm in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per 80 mm e moltiplica per 100. Precisione didattica 0.1 mm e 0.1 punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà44/24/12 mm e 55/30/15%. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+      "captionText": "Barattolo didattico modificabile ·3D\n\nEsercizio sintetico sull’esempio fornito di 80 mm, non una misura dello studente. Porta le quote cumulative a 44,68,80 mm; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate 44,68,80 mm in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per 80 mm e moltiplica per 100. Precisione didattica 0.1 mm e 0.1 punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà44/24/12 mm e 55/30/15%. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+      "spokenText": "Barattolo didattico modificabile ; tridimensionale\n\nEsercizio sintetico sull’esempio fornito di ottanta millimetri, non una misura dello studente. Porta le quote cumulative a quarantaquattro, sessantotto, ottanta millimetri; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate quarantaquattro, sessantotto, ottanta millimetri in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per ottanta millimetri e moltiplica per cento. Precisione didattica zero virgola un millimetro e zero virgola uno punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà quarantaquattro, ventiquattro, dodici millimetri e cinquantacinque, trenta, quindici per cento. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+      "spokenTextSHA256": "ea55cc3548f99fc77d97601a99e65edec2fd03fdd0c03700a5467003dde546ec",
+      "spokenTextSha256": "ea55cc3548f99fc77d97601a99e65edec2fd03fdd0c03700a5467003dde546ec",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Barattolo didattico modificabile ·3D\n\nEsercizio sintetico sull’esempio fornito di 80 mm, non una misura dello studente. Porta le quote cumulative a 44,68,80 mm; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate 44,68,80 mm in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per 80 mm e moltiplica per 100. Precisione didattica 0.1 mm e 0.1 punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà44/24/12 mm e 55/30/15%. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+          "spoken": "Barattolo didattico modificabile ; tridimensionale\n\nEsercizio sintetico sull’esempio fornito di ottanta millimetri, non una misura dello studente. Porta le quote cumulative a quarantaquattro, sessantotto, ottanta millimetri; ogni spessore è la differenza tra quote consecutive. Escludi residui galleggianti.\n\nUsa le quote assegnate quarantaquattro, sessantotto, ottanta millimetri in ordine crescente. Totale nullo, quote negative o invertite non sostengono il calcolo.\n\nDividi ogni spessore per l’altezza minerale totale, non per una quota intermedia o per se stesso.\n\nSottrai quote consecutive, dividi per ottanta millimetri e moltiplica per cento. Precisione didattica zero virgola un millimetro e zero virgola uno punto percentuale; non tolleranza di laboratorio.\n\nL’esempio dà quarantaquattro, ventiquattro, dodici millimetri e cinquantacinque, trenta, quindici per cento. Solo calcolo fornito verificato; misurazione individuale ancora non osservata.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c2c2f7349b22d2cbba3566605c2fe5112bd45faa520774a0294fc8f0dffbd6e1",
+      "requestFingerprintSha256": "c2c2f7349b22d2cbba3566605c2fe5112bd45faa520774a0294fc8f0dffbd6e1",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-12-it-triangle-guidance-r1",
+      "unitId": "S2-12-it-triangle-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "triangle-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/triangleHelp",
+          "text": "Confini e disuguaglianze provengono dal file ufficiale USDA 2024. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.",
+          "sha256": "c5867d9e5a5493f0e273e5ae98d82c595b1e8321cedf4e33394170b4403961c2"
+        },
+        {
+          "pointer": "/texturePractice/ui/badPercent",
+          "text": "Inserisci tre percentuali finite da 0 a 100 con somma 100. Un totale arrotondato 99/101 richiede le altezze originali; nessuna normalizzazione silenziosa.",
+          "sha256": "8369df42e761ce39d6a3f47aa86aee43b4c41e675298c7b8c1b2197c8fcf3791"
+        },
+        {
+          "pointer": "/texturePractice/ui/classGood",
+          "text": "Classe coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.",
+          "sha256": "6b6ac3461d1ac4551ff13a5ce528a082a5e3d016131d6426d77cc5e74c0988f8"
+        },
+        {
+          "pointer": "/texturePractice/ui/classBad",
+          "text": "Traccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.",
+          "sha256": "5d87da5be653d4c4815e7712551276d48c1d990c5073af70a105bb54ffdc1d74"
+        },
+        {
+          "pointer": "/texturePractice/ui/thresholdNote",
+          "text": "30/30/40 è sulla soglia 40% argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.",
+          "sha256": "1147a11d35dd2e656054c09fc6af3714bc1249eaf04421b9715e3ec00b19dc90"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/0",
+          "text": "Sabbia",
+          "sha256": "b2711be3086ccaa9a49a97ab49db3ec76e60e9bec0e5e945b25ade0b820f9e15"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/1",
+          "text": "Sabbia franca",
+          "sha256": "f1abdeae1c4879f391144fba921d9be2e0f89ed2fd05350fae691c3dc62c4878"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/2",
+          "text": "Franco sabbioso",
+          "sha256": "8197cc7ed55bf31accba829f4a6b7a960973f9031039df178e2d9ede172f831e"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/3",
+          "text": "Franco sabbioso argilloso",
+          "sha256": "61ed958b1c4e113df8e321d718a8e6524eef2fac21d40d379161af26eee2b1bb"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/4",
+          "text": "Franco",
+          "sha256": "adc4d83d58802ca312d1585f24d8efc7fb1a993376fb6307a06cda6832df1eec"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/5",
+          "text": "Argilla sabbiosa",
+          "sha256": "6aaaa317e47a1288eee61155074b33afc49f907ab2308d04f5ae2ba4a868e876"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/6",
+          "text": "Franco argilloso",
+          "sha256": "dad2ab1c2595ac0e4740ff412610462d4e4ef5efff183c1d00fc1fc8f66af30e"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/7",
+          "text": "Argilla limosa",
+          "sha256": "4a9586a7af08c7e1f874a369f27040b004ea23185cedeb65115568784cac4317"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/8",
+          "text": "Franco limoso argilloso",
+          "sha256": "bd0d33b2aefc8b784a25d561ba3bc15af9485e769462c7fa3fcc6feebb48cb19"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/9",
+          "text": "Franco limoso",
+          "sha256": "7bf4e61f08bfa77c4ed31abbdf6de051f6721a90f56ac2f998c0108c741476b5"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/10",
+          "text": "Limo",
+          "sha256": "0ca12b563e600ad18fd028fab5d75fe491d9ac02385f178db883607813dbbd4f"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/11",
+          "text": "Argilla",
+          "sha256": "1370962ccdba290a4a40e9031fc8cb9c9efe8b458912d3c40d9b177c1ac54550"
+        }
+      ],
+      "scientificMeaning": "Confini e disuguaglianze provengono dal file ufficiale USDA 2024. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da 0 a 100 con somma 100. Un totale arrotondato 99/101 richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\n30/30/40 è sulla soglia 40% argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+      "displayText": "Confini e disuguaglianze provengono dal file ufficiale USDA 2024. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da 0 a 100 con somma 100. Un totale arrotondato 99/101 richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\n30/30/40 è sulla soglia 40% argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+      "captionText": "Confini e disuguaglianze provengono dal file ufficiale USDA 2024. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da 0 a 100 con somma 100. Un totale arrotondato 99/101 richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\n30/30/40 è sulla soglia 40% argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+      "spokenText": "Confini e disuguaglianze provengono dal file ufficiale u esse di a duemilaventiquattro. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da zero a cento con somma cento. Un totale arrotondato novantanove o centouno richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\ntrenta, trenta, quaranta è sulla soglia quaranta per cento argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+      "spokenTextSHA256": "3bc4615602993536847ac2eeed25f4881390b80c3f807af2106618cd5ac80656",
+      "spokenTextSha256": "3bc4615602993536847ac2eeed25f4881390b80c3f807af2106618cd5ac80656",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Confini e disuguaglianze provengono dal file ufficiale USDA 2024. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da 0 a 100 con somma 100. Un totale arrotondato 99/101 richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\n30/30/40 è sulla soglia 40% argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+          "spoken": "Confini e disuguaglianze provengono dal file ufficiale u esse di a duemilaventiquattro. I numeri rinviano alla legenda tradotta. Sabbia cresce verso sinistra, argilla verso l’alto e limo lungo il lato destro verso il basso. Le guide si incontrano nei valori bilanciati; le percentuali del barattolo restano stime.\n\nInserisci tre percentuali finite da zero a cento con somma cento. Un totale arrotondato novantanove o centouno richiede le altezze originali; nessuna normalizzazione silenziosa.\n\nClasse coerente con la convenzione ufficiale di base. Spiega le tre linee: il calcolo non crea misure del campione.\n\nTraccia diagonale sabbia, orizzontale argilla e diagonale limo; confronta l’intersezione con regione numerata e legenda.\n\ntrenta, trenta, quaranta è sulla soglia quaranta per cento argilla; il file ufficiale lo include in argilla. Convenzione esplicita, non supposizione dal colore.\n\nSabbia\n\nSabbia franca\n\nFranco sabbioso\n\nFranco sabbioso argilloso\n\nFranco\n\nArgilla sabbiosa\n\nFranco argilloso\n\nArgilla limosa\n\nFranco limoso argilloso\n\nFranco limoso\n\nLimo\n\nArgilla",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "852cf289a527f31051374a5b768dda6c33ad1a1d8d912d417480af9846512040",
+      "requestFingerprintSha256": "852cf289a527f31051374a5b768dda6c33ad1a1d8d912d417480af9846512040",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-12-it-source-card-guidance-r1",
+      "unitId": "S2-12-it-source-card-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "source-card-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/card/scenario",
+          "text": "Un barattolo didattico separato preparato per 48 ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci 1–6; qui le voci 7–12 riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.",
+          "sha256": "4693621473f35db725d5d86708ce3e34c3e8e43d50d3f3bd37ae36995236bcb9"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/0/criterion",
+          "text": "Misurare l'altezza minerale totale in mm",
+          "sha256": "bcb82e07c2e6451d52d84eb8a30d79e4475646a9fed3992ec386f5495c47e577"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/1/criterion",
+          "text": "Misurare lo spessore distinto della sabbia in mm",
+          "sha256": "9ec3c61da03a55fd948fbe5a67835c40d8e8a9c0b3b076de8b364fb1c0b229b0"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/2/criterion",
+          "text": "Misurare lo spessore distinto del limo in mm",
+          "sha256": "8d4ee84a59308122c2a59f5a97fb06fbe5cfb5e8d1763e3a8299afbac5c90636"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/3/criterion",
+          "text": "Misurare lo spessore distinto dell'argilla in mm",
+          "sha256": "ace86c93810ae6120f7b497fede2f026b3549af717b7d4bcf42e5a2daa7faa64"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/4/criterion",
+          "text": "Calcolare le percentuali di sabbia, limo e argilla",
+          "sha256": "514de1f32fdec1e552b5b32c581c2b395d2a49a338e0a8d24fb075a1751e8c55"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/5/criterion",
+          "text": "Registrare chiaramente tutte le percentuali",
+          "sha256": "60dc92294d5beb348d6aedf1963608f5cab7dbff08da18e9782872c357b8cd53"
+        },
+        {
+          "pointer": "/texturePractice/card/bridgeToPreviousStep",
+          "text": "L’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+          "sha256": "ebb51c992eb594042046415251a41d76f5368fc63cd2ce9e0804d8a17827b1fa"
+        }
+      ],
+      "scientificMeaning": "Un barattolo didattico separato preparato per 48 ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci 1–6; qui le voci 7–12 riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in mm\n\nMisurare lo spessore distinto della sabbia in mm\n\nMisurare lo spessore distinto del limo in mm\n\nMisurare lo spessore distinto dell'argilla in mm\n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+      "displayText": "Un barattolo didattico separato preparato per 48 ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci 1–6; qui le voci 7–12 riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in mm\n\nMisurare lo spessore distinto della sabbia in mm\n\nMisurare lo spessore distinto del limo in mm\n\nMisurare lo spessore distinto dell'argilla in mm\n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+      "captionText": "Un barattolo didattico separato preparato per 48 ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci 1–6; qui le voci 7–12 riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in mm\n\nMisurare lo spessore distinto della sabbia in mm\n\nMisurare lo spessore distinto del limo in mm\n\nMisurare lo spessore distinto dell'argilla in mm\n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+      "spokenText": "Un barattolo didattico separato preparato per quarantotto ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci uno a sei; qui le voci sette a dodici riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in millimetri \n\nMisurare lo spessore distinto della sabbia in millimetri \n\nMisurare lo spessore distinto del limo in millimetri \n\nMisurare lo spessore distinto dell'argilla in millimetri \n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+      "spokenTextSHA256": "12197103b763c8caa8ed396ed4dd61b57bf54204c716ab7a3a69bfbb8256e381",
+      "spokenTextSha256": "12197103b763c8caa8ed396ed4dd61b57bf54204c716ab7a3a69bfbb8256e381",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un barattolo didattico separato preparato per 48 ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci 1–6; qui le voci 7–12 riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in mm\n\nMisurare lo spessore distinto della sabbia in mm\n\nMisurare lo spessore distinto del limo in mm\n\nMisurare lo spessore distinto dell'argilla in mm\n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+          "spoken": "Un barattolo didattico separato preparato per quarantotto ore serve solo a esercitare la misura. La tappa precedente copre la preparazione, voci uno a sei; qui le voci sette a dodici riguardano altezza totale, spessori distinti di sabbia, limo e argilla, tre percentuali e registrazione chiara. I tuoi barattoli richiedono osservazioni successive reali e verifica del formatore.\n\nMisurare l'altezza minerale totale in millimetri \n\nMisurare lo spessore distinto della sabbia in millimetri \n\nMisurare lo spessore distinto del limo in millimetri \n\nMisurare lo spessore distinto dell'argilla in millimetri \n\nCalcolare le percentuali di sabbia, limo e argilla\n\nRegistrare chiaramente tutte le percentuali\n\nL’attività di dodici voci prosegue: preparazione nella tappa precedente, misura e registrazione qui. Un barattolo dimostrativo preparato non sostituisce i tuoi barattoli osservati individualmente.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "eb42eab2bf80f788f2c134c15c7196405981b1c23eb43766668ffeb7a76e8d6b",
+      "requestFingerprintSha256": "eb42eab2bf80f788f2c134c15c7196405981b1c23eb43766668ffeb7a76e8d6b",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-12-it-practical-measurement-r1",
+      "unitId": "S2-12-it-practical-measurement-r1",
+      "locale": "it",
+      "semanticGroup": "practical-measurement",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/practical/0/title",
+          "text": "Misurare tre barattoli reali",
+          "sha256": "d2131a49a3b34b6060101f8b388e6fdc18aa1a24774e7494798e8fe4640ef4bc"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/conditions",
+          "text": "I tre barattoli personali identificati in S2-11 hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.",
+          "sha256": "756747af94e80014d8937fb0e785b4681d90b613192925526fdec2fe30245b1a"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/0",
+          "text": "Abbina ogni barattolo all'identificativo e al registro orario precedente",
+          "sha256": "2795de90a184717e8caa95cb7a05ae2649de04190500fd49546fa5ad7d97c58a"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/1",
+          "text": "Controlla il limite finale reale e annota disturbi o incertezze",
+          "sha256": "f45e77baf4d482b1b6765b2eff4958fa25e4f35ceca712df25605a8a275dea69"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/2",
+          "text": "Pone il righello dal fondo e legge ogni segno cumulativo in mm",
+          "sha256": "560c9eba7b6972e8a28e7476b23f4d5d8e2b3bd25abab8d48158da99688b789c"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/3",
+          "text": "Sottrae segni consecutivi per gli spessori di sabbia, limo e argilla",
+          "sha256": "5ebd71d71beb13147d67a43885b9aa1f7ed3b4b3fa9c3f97598f63748438e186"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/4",
+          "text": "Misura l'altezza minerale totale e verifica che gli spessori la sommino",
+          "sha256": "1496b8d95a7d5f4bf04adbc953b8273586c85ac7f3dcd00697faf3455f4b01bd"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/5",
+          "text": "Registra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+          "sha256": "aa0a815b8f1ed33eccd0a96b42a8c0aa05ce0a64e2edbc0c1c6b4d2b37b68040"
+        }
+      ],
+      "scientificMeaning": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in S2-11 hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in mm\n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+      "displayText": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in S2-11 hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in mm\n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+      "captionText": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in S2-11 hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in mm\n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+      "spokenText": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in fase undici della stazione due hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in millimetri \n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+      "spokenTextSHA256": "db9c2cd5ce1f519263dfe5eff5f44c1671ca7889fd8e269fcf3c64a010e78347",
+      "spokenTextSha256": "db9c2cd5ce1f519263dfe5eff5f44c1671ca7889fd8e269fcf3c64a010e78347",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in S2-11 hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in mm\n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+          "spoken": "Misurare tre barattoli reali\n\nI tre barattoli personali identificati in fase undici della stazione due hanno vere osservazioni iniziali, successive e finali secondo il procedimento sicuro dichiarato dal formatore. Un barattolo preparato separato serve solo a esercitarsi.\n\nAbbina ogni barattolo all'identificativo e al registro orario precedente\n\nControlla il limite finale reale e annota disturbi o incertezze\n\nPone il righello dal fondo e legge ogni segno cumulativo in millimetri \n\nSottrae segni consecutivi per gli spessori di sabbia, limo e argilla\n\nMisura l'altezza minerale totale e verifica che gli spessori la sommino\n\nRegistra tre righe distinte A, B e C distinguendo eventuali esempi forniti",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f404933ec40e31429e1543c7cf5ce3356b592dcce763ef7f742a7597c800fce3",
+      "requestFingerprintSha256": "f404933ec40e31429e1543c7cf5ce3356b592dcce763ef7f742a7597c800fce3",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-12-it-knowledge-completion-r1",
+      "unitId": "S2-12-it-knowledge-completion-r1",
+      "locale": "it",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/passChecks/0/evidence",
+          "text": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in mm, sottrae segni successivi per ogni strato e annota confini incerti.",
+          "sha256": "2cd50db8ee83b52ad1ec1bb322d5b858b0e39da2cd888b17dbd1618bc4becb88"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/0/decision",
+          "text": "Supera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.",
+          "sha256": "229ccaf9d44f461d4800849cd7d496c329c12812f70573945e9322feeac863f7"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/evidence",
+          "text": "Usa spessore dello strato / spessore minerale totale ×100 per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei mm, ricava una frazione mancante per sottrazione e distingue un totale vicino a 100% per arrotondamento da un errore di misura o calcolo.",
+          "sha256": "21ae37a73ab068f6ea93529467ee498fbd0852c9992530f5007befe60c3e3f61"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/decision",
+          "text": "Supera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.",
+          "sha256": "eaa33159bd593ab41cb385d5c7836d92db3e28a057fc7f90ddc06c75c10aee0e"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/evidence",
+          "text": "Segue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per 55/30/15, franco per 40/40/20 e argilloso per 15/30/55, spiegando che una stima per altezza nel barattolo resta provvisoria.",
+          "sha256": "6225b4c543d75fee87476b48bd9c2b6c86c9e61634d531dc2b65cebc0d897079"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/decision",
+          "text": "Supera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+          "sha256": "9c44768574c3b810e2ebfef4a661f371028d52b52848bd1d3df33048a2b1e061"
+        }
+      ],
+      "scientificMeaning": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in mm, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato / spessore minerale totale ×100 per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei mm, ricava una frazione mancante per sottrazione e distingue un totale vicino a 100% per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per 55/30/15, franco per 40/40/20 e argilloso per 15/30/55, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+      "displayText": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in mm, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato / spessore minerale totale ×100 per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei mm, ricava una frazione mancante per sottrazione e distingue un totale vicino a 100% per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per 55/30/15, franco per 40/40/20 e argilloso per 15/30/55, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+      "captionText": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in mm, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato / spessore minerale totale ×100 per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei mm, ricava una frazione mancante per sottrazione e distingue un totale vicino a 100% per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per 55/30/15, franco per 40/40/20 e argilloso per 15/30/55, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+      "spokenText": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in millimetri, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato diviso per spessore minerale totale moltiplicato per cento per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei millimetri, ricava una frazione mancante per sottrazione e distingue un totale vicino a cento per cento per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per cinquantacinque, trenta, quindici, franco per quaranta, quaranta, venti e argilloso per quindici, trenta, cinquantacinque, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+      "spokenTextSHA256": "fa637a2e109c2026fe2fc734d572b29d22cb09257cc0badd80f74b40b300a659",
+      "spokenTextSha256": "fa637a2e109c2026fe2fc734d572b29d22cb09257cc0badd80f74b40b300a659",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in mm, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato / spessore minerale totale ×100 per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei mm, ricava una frazione mancante per sottrazione e distingue un totale vicino a 100% per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per 55/30/15, franco per 40/40/20 e argilloso per 15/30/55, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+          "spoken": "Per ciascuno dei tre propri barattoli identificati, lo studente indica fondo, limiti di sabbia e limo e limite minerale finale dopo il tempo dichiarato; registra quote in millimetri, sottrae segni successivi per ogni strato e annota confini incerti.\n\nSupera se il formatore osserva misure rintracciabili e aritmeticamente coerenti di tutti e tre i barattoli. Il barattolo dimostrativo già pronto o una tabella con numeri forniti non sostituiscono la prova.\n\nUsa spessore dello strato diviso per spessore minerale totale moltiplicato per cento per tutte e tre le frazioni, mostra il denominatore e la cancellazione dei millimetri, ricava una frazione mancante per sottrazione e distingue un totale vicino a cento per cento per arrotondamento da un errore di misura o calcolo.\n\nSupera con denominatore, calcoli e controllo del totale motivati; un numero fisso di domande o un risultato inspiegato della calcolatrice non basta.\n\nSegue le scale stampate di sabbia, argilla e limo nella direzione corretta e la loro intersezione; dà franco sabbioso per cinquantacinque, trenta, quindici, franco per quaranta, quaranta, venti e argilloso per quindici, trenta, cinquantacinque, spiegando che una stima per altezza nel barattolo resta provvisoria.\n\nSupera quando classe e ragionamento sulle linee coincidono sul grafico scelto. La calcolatrice può confermare l'esempio, ma non produrre le misure personali.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b5badc662bd827c6f4ba156e9d3e22b35a45f48357bdea020131b67fee978204",
+      "requestFingerprintSha256": "b5badc662bd827c6f4ba156e9d3e22b35a45f48357bdea020131b67fee978204",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S2-12-it-record-guidance-r1",
+      "unitId": "S2-12-it-record-guidance-r1",
+      "locale": "it",
+      "semanticGroup": "record-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "81e8b9dee29baf56e8f30828effc97c735e7a4de03b98ac9425901c645423af4",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/recordHelp",
+          "text": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.",
+          "sha256": "558a321134ac82afd7f823b1b0cd2a3e42948f620e59f9de95ab4264b2ac1410"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/0",
+          "text": "ID campione e proprio barattolo/esempio",
+          "sha256": "d9aa30dfdc23919951b392792224b01087af9fa3c9a0522a3e8fdaef5d93ee51"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/1",
+          "text": "Metodo, storia reale di sedimentazione e ora osservata",
+          "sha256": "ceee5f0ca0995fac4fa789b34ef9cbb0763f7a4cd3125bb802ad0895cba3eead"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/2",
+          "text": "Riferimento fondo e quote cumulative sabbia/limo/finale, mm",
+          "sha256": "46cc005f300d934bc5430ef740ffbbb9c7a451b68fdc0ffd63c03bb9e74fc2a8"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/3",
+          "text": "Spessori distinti sabbia/limo/argilla e totale, mm",
+          "sha256": "a79c5e132932e7babc1ef2ef5f2ac3c759975162b6306a0af978de8aa58a19ba"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/4",
+          "text": "Percentuali sabbia/limo/argilla non arrotondate",
+          "sha256": "bf983f085ba5a117e73989388923002cb439a01aecedeb326635246fe2a2dcb4"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/5",
+          "text": "Percentuali arrotondate e controllo somma",
+          "sha256": "41a99b0afeaf6c9e887d96852608e61a4e1b51809e263c7158adbfaa29cbdd9f"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/6",
+          "text": "Riferimento triangolo, intersezione e classe provvisoria",
+          "sha256": "fa55bddae84be247d589f239e75faaa22116ccb708f77f9e804b21098ab12fbe"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/7",
+          "text": "Interfaccia incerta, dati mancanti e prossima azione",
+          "sha256": "cd596c97047f25c06f43236bef225094e6c05afc96ed365a67bf493d25fedc7b"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/8",
+          "text": "Commento individuale del formatore e data (vuoto)",
+          "sha256": "612e34be3258756cafadc814f195d32e09666514f7493720f274d7f4ccef5be3"
+        },
+        {
+          "pointer": "/texturePractice/ui/saved",
+          "text": "Bozza locale salvata; criterio di misurazione non osservato.",
+          "sha256": "bd49ed55ea04401931dbc53f26d904f36c6de162ea4ddac0e5bca42d40b53502"
+        },
+        {
+          "pointer": "/texturePractice/ui/reasonBoundary",
+          "text": "Il modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.",
+          "sha256": "9f8f13db528a2cb1950c18cbd4db82b2c8150e0cbece891a1fc261ea3a0d86be"
+        },
+        {
+          "pointer": "/texturePractice/ui/notReady",
+          "text": "Completa prima le righe identificate. Non inventare osservazioni per aprire un esempio.",
+          "sha256": "963b14a22ff5237e284576bea7ea701eda759676870f1de94bc38a8c41cf6ea9"
+        },
+        {
+          "pointer": "/texturePractice/ui/knowledgeOnly",
+          "text": "Calcolo e tracciamento; misura reale non osservata",
+          "sha256": "4d512aca207b56f392854636f2be765f72d208e91c9daf91d9799147587b5381"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Scheda di misura degli strati e tessitura",
+          "sha256": "b89a37f190b7e32c12f240e365d6bdf22c852f8b4f5cac802450c39209ee4cd6"
+        }
+      ],
+      "scientificMeaning": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e proprio barattolo/esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia/limo/finale, mm\n\nSpessori distinti sabbia/limo/argilla e totale, mm\n\nPercentuali sabbia/limo/argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+      "displayText": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e proprio barattolo/esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia/limo/finale, mm\n\nSpessori distinti sabbia/limo/argilla e totale, mm\n\nPercentuali sabbia/limo/argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+      "captionText": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e proprio barattolo/esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia/limo/finale, mm\n\nSpessori distinti sabbia/limo/argilla e totale, mm\n\nPercentuali sabbia/limo/argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+      "spokenText": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e indicazione se si tratta del proprio barattolo o di un esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia, limo, finale, millimetri \n\nSpessori distinti sabbia, limo, argilla e totale, millimetri \n\nPercentuali sabbia, limo, argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+      "spokenTextSHA256": "c9112d947dd449af0db40e0de13cd00ecee2f399aa6606b7da750627a84040cb",
+      "spokenTextSha256": "c9112d947dd449af0db40e0de13cd00ecee2f399aa6606b7da750627a84040cb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e proprio barattolo/esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia/limo/finale, mm\n\nSpessori distinti sabbia/limo/argilla e totale, mm\n\nPercentuali sabbia/limo/argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+          "spoken": "Quote e tempi ignoti restano vuoti con spiegazione. Note provvisorie non provano misure, cronologia, approvazione o risultati di laboratorio.\n\nID campione e indicazione se si tratta del proprio barattolo o di un esempio\n\nMetodo, storia reale di sedimentazione e ora osservata\n\nRiferimento fondo e quote cumulative sabbia, limo, finale, millimetri \n\nSpessori distinti sabbia, limo, argilla e totale, millimetri \n\nPercentuali sabbia, limo, argilla non arrotondate\n\nPercentuali arrotondate e controllo somma\n\nRiferimento triangolo, intersezione e classe provvisoria\n\nInterfaccia incerta, dati mancanti e prossima azione\n\nCommento individuale del formatore e data (vuoto)\n\nBozza locale salvata; criterio di misurazione non osservato.\n\nIl modello dopo il tentativo non approva semanticamente né certifica una prestazione pratica.\n\nCompleta prima le righe identificate. Non inventare osservazioni per aprire un esempio.\n\nCalcolo e tracciamento; misura reale non osservata\n\nScheda di misura degli strati e tessitura",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3d80d75df03ddfc06084231b7a69d70eaf60f4285a62b8b2fa63c8a070ee12a6",
+      "requestFingerprintSha256": "3d80d75df03ddfc06084231b7a69d70eaf60f4285a62b8b2fa63c8a070ee12a6",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

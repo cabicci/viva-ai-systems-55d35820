@@ -1,0 +1,557 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-12-en.json",
+    "sha256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+    "bytes": 30490
+  },
+  "units": [
+    {
+      "id": "S2-12-en-jar-math-guidance-r1",
+      "unitId": "S2-12-en-jar-math-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "jar-math-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/jarModel",
+          "text": "Editable teaching jar ·3D",
+          "sha256": "eb95875883fa0cad92e1283dbbf50201f0c446f2047870f91e751b9fd9d3144d"
+        },
+        {
+          "pointer": "/texturePractice/ui/jarHelp",
+          "text": "Synthetic marker exercise based on the supplied 80 mm example, not a measured student jar. Move the cumulative marks to 44,68,80 mm; the layer thickness is the difference between successive marks. Floating material is excluded.",
+          "sha256": "4be4afa54d0945ae9bc2fd466207a8548a3956037c124c358b565cc201912e1d"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMarkers",
+          "text": "Use the assigned 44,68,80 mm cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.",
+          "sha256": "c93ec1d02bc42c987be54a5a7c2155cfd82e8b92ab40e8ada54dabcce3ba3116"
+        },
+        {
+          "pointer": "/texturePractice/ui/badDenominator",
+          "text": "Divide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.",
+          "sha256": "6cb73b0b02fd72c5ec9b85880505a0acec6e9794cc5f57e50ebb28f386cc2e64"
+        },
+        {
+          "pointer": "/texturePractice/ui/badMath",
+          "text": "Subtract consecutive marks, then divide each thickness by 80 mm and multiply by 100. Use 0.1 mm and 0.1 percentage-point precision for this exercise, not as a laboratory tolerance.",
+          "sha256": "6bac7318ccdf158f466f9694c616b45784578ad06dcadba12e6e58bea7cb3a17"
+        },
+        {
+          "pointer": "/texturePractice/ui/goodMath",
+          "text": "The example gives 44/24/12 mm and 55/30/15%. This checks the supplied calculation only; individual measurement remains unobserved.",
+          "sha256": "d2764e59092654f1401c4f128677d894744d3163db5470d9ca5c91614e71ce41"
+        }
+      ],
+      "scientificMeaning": "Editable teaching jar ·3D\n\nSynthetic marker exercise based on the supplied 80 mm example, not a measured student jar. Move the cumulative marks to 44,68,80 mm; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned 44,68,80 mm cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by 80 mm and multiply by 100. Use 0.1 mm and 0.1 percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives 44/24/12 mm and 55/30/15%. This checks the supplied calculation only; individual measurement remains unobserved.",
+      "displayText": "Editable teaching jar ·3D\n\nSynthetic marker exercise based on the supplied 80 mm example, not a measured student jar. Move the cumulative marks to 44,68,80 mm; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned 44,68,80 mm cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by 80 mm and multiply by 100. Use 0.1 mm and 0.1 percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives 44/24/12 mm and 55/30/15%. This checks the supplied calculation only; individual measurement remains unobserved.",
+      "captionText": "Editable teaching jar ·3D\n\nSynthetic marker exercise based on the supplied 80 mm example, not a measured student jar. Move the cumulative marks to 44,68,80 mm; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned 44,68,80 mm cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by 80 mm and multiply by 100. Use 0.1 mm and 0.1 percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives 44/24/12 mm and 55/30/15%. This checks the supplied calculation only; individual measurement remains unobserved.",
+      "spokenText": "Editable teaching jar ; three dimensional\n\nSynthetic marker exercise based on the supplied example with a total height of eighty millimetres, not a measured student jar. Move the cumulative marks to forty-four, sixty-eight, eighty millimetres; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned forty-four, sixty-eight, eighty millimetres cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by eighty millimetres and multiply by one hundred. Use zero point one millimetre and zero point one percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives forty-four, twenty-four, twelve millimetres and fifty-five, thirty, fifteen percent. This checks the supplied calculation only; individual measurement remains unobserved.",
+      "spokenTextSHA256": "e5553aaadfb37847654981bcaa89160a5c8a234076e20db2f29c6fab464ffb2d",
+      "spokenTextSha256": "e5553aaadfb37847654981bcaa89160a5c8a234076e20db2f29c6fab464ffb2d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Editable teaching jar ·3D\n\nSynthetic marker exercise based on the supplied 80 mm example, not a measured student jar. Move the cumulative marks to 44,68,80 mm; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned 44,68,80 mm cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by 80 mm and multiply by 100. Use 0.1 mm and 0.1 percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives 44/24/12 mm and 55/30/15%. This checks the supplied calculation only; individual measurement remains unobserved.",
+          "spoken": "Editable teaching jar ; three dimensional\n\nSynthetic marker exercise based on the supplied example with a total height of eighty millimetres, not a measured student jar. Move the cumulative marks to forty-four, sixty-eight, eighty millimetres; the layer thickness is the difference between successive marks. Floating material is excluded.\n\nUse the assigned forty-four, sixty-eight, eighty millimetres cumulative marks in increasing order. Zero total, negative or reversed marks cannot support this example.\n\nDivide every separate layer by the total mineral-layer height, not a cumulative intermediate mark or its own thickness.\n\nSubtract consecutive marks, then divide each thickness by eighty millimetres and multiply by one hundred. Use zero point one millimetre and zero point one percentage-point precision for this exercise, not as a laboratory tolerance.\n\nThe example gives forty-four, twenty-four, twelve millimetres and fifty-five, thirty, fifteen percent. This checks the supplied calculation only; individual measurement remains unobserved.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "959518eea09618b33461d5776920d91f660e25f4e9b25674d35e0c6089e67315",
+      "requestFingerprintSha256": "959518eea09618b33461d5776920d91f660e25f4e9b25674d35e0c6089e67315",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-12-en-triangle-guidance-r1",
+      "unitId": "S2-12-en-triangle-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "triangle-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/triangleHelp",
+          "text": "Region boundaries and classification inequalities come from the official 2024 USDA workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.",
+          "sha256": "b64d31b9a0399e702e01dd83168c2aef6b14f63ca4b2d2115fb5d7140337924c"
+        },
+        {
+          "pointer": "/texturePractice/ui/badPercent",
+          "text": "Enter three finite percentages from 0 to 100 that total 100 before plotting. A rounded 99/101 total must be checked against raw heights; it is not silently normalized.",
+          "sha256": "197da679e0d9ca8886f52c3b3bf225e9e55af6f71082e64256924fe399f23628"
+        },
+        {
+          "pointer": "/texturePractice/ui/classGood",
+          "text": "Class matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.",
+          "sha256": "9dfe547b5dca853fb9b2838af92510178b5858d1a570516dd78b461f94e4b2be"
+        },
+        {
+          "pointer": "/texturePractice/ui/classBad",
+          "text": "Trace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.",
+          "sha256": "84816f54b1380bac764615d183f5f19272fc2bbfd80b884a629be92ed3ac7388"
+        },
+        {
+          "pointer": "/texturePractice/ui/thresholdNote",
+          "text": "30/30/40 sits on the 40% clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.",
+          "sha256": "1a41bd22286ba804053ce489bf57069cf045eb444433d33df7dc648f4bc3d46c"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/0",
+          "text": "Sand",
+          "sha256": "82855c11ae69b0652a292b72967a82d5f4973b88d76c6c793276ef8c5942a803"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/1",
+          "text": "Loamy sand",
+          "sha256": "05b49931910c41408e8e88e2aabe8a8a8604149c80f11e6827756bfac0110479"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/2",
+          "text": "Sandy loam",
+          "sha256": "966debaa75144e8b1d8a57287234ff3348e5488cc859ed666e7a117c5d2d9643"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/3",
+          "text": "Sandy clay loam",
+          "sha256": "330f1670591e8b83e8c6d47c5bf3292afcfc2c2bf7b1e8f9f6c0821404e26072"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/4",
+          "text": "Loam",
+          "sha256": "08f4d336fa5bcd07c7577912d8a4f4398c01fbfe8df5b9b8a14a78b3ff4f12b5"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/5",
+          "text": "Sandy clay",
+          "sha256": "fa9490513f5fa196e92d383034e88a012e329574faba447d5d36b88e1e50fa88"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/6",
+          "text": "Clay loam",
+          "sha256": "fb9556553652c7f989b3fe03c32aa99a6aea6ba94e4f0ab293fda13a29015277"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/7",
+          "text": "Silty clay",
+          "sha256": "fff3649c9b16b7346493cfcf9aefec07a99838f692038a7b6d60aa0c7882fc2e"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/8",
+          "text": "Silty clay loam",
+          "sha256": "6b97120a83bf9d5e0a21795cc2d48551f1aeccf32a9e43d4d4334ee76baac1ff"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/9",
+          "text": "Silt loam",
+          "sha256": "665ec9876a429c0624e0f8bdae32f83a0cfe6198a9cd0aa48f5857211986b423"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/10",
+          "text": "Silt",
+          "sha256": "277b9e1c6b7981d1ba0cbba6a1445604c35bfbe052a753ea8b54c5f2da720743"
+        },
+        {
+          "pointer": "/texturePractice/ui/classNames/11",
+          "text": "Clay",
+          "sha256": "05947b7bdbad0f301c8086a325985c41961fa6c762799f8659f64740683736de"
+        }
+      ],
+      "scientificMeaning": "Region boundaries and classification inequalities come from the official 2024 USDA workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from 0 to 100 that total 100 before plotting. A rounded 99/101 total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\n30/30/40 sits on the 40% clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+      "displayText": "Region boundaries and classification inequalities come from the official 2024 USDA workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from 0 to 100 that total 100 before plotting. A rounded 99/101 total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\n30/30/40 sits on the 40% clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+      "captionText": "Region boundaries and classification inequalities come from the official 2024 USDA workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from 0 to 100 that total 100 before plotting. A rounded 99/101 total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\n30/30/40 sits on the 40% clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+      "spokenText": "Region boundaries and classification inequalities come from the official twenty twenty-four U S D A workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from zero to one hundred that total one hundred before plotting. A rounded ninety-nine or one hundred and one total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\nthirty, thirty, forty sits on the forty percent clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+      "spokenTextSHA256": "d071cd41eab860196fbcc87d7898af7e365a2d8f3f64f6c888e49992db06575a",
+      "spokenTextSha256": "d071cd41eab860196fbcc87d7898af7e365a2d8f3f64f6c888e49992db06575a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Region boundaries and classification inequalities come from the official 2024 USDA workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from 0 to 100 that total 100 before plotting. A rounded 99/101 total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\n30/30/40 sits on the 40% clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+          "spoken": "Region boundaries and classification inequalities come from the official twenty twenty-four U S D A workbook. Region numbers identify the translated legend. Sand increases right-to-left, clay upward, silt down the right edge. Guidelines meet at the selected balanced percentages; jar-height percentages remain an approximation.\n\nEnter three finite percentages from zero to one hundred that total one hundred before plotting. A rounded ninety-nine or one hundred and one total must be checked against raw heights; it is not silently normalized.\n\nClass matches the official basic-class convention. Explain the three traced lines; this calculation does not create your sample measurements.\n\nTrace the sand diagonal, horizontal clay line and silt diagonal, then compare the intersection with the numbered region and legend.\n\nthirty, thirty, forty sits on the forty percent clay threshold; the official workbook includes it in clay. Boundary convention is explicit, not guessed from a colour.\n\nSand\n\nLoamy sand\n\nSandy loam\n\nSandy clay loam\n\nLoam\n\nSandy clay\n\nClay loam\n\nSilty clay\n\nSilty clay loam\n\nSilt loam\n\nSilt\n\nClay",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8d117978755cececa329414801609e5d513102eecd88e58c010699425c73b1dc",
+      "requestFingerprintSha256": "8d117978755cececa329414801609e5d513102eecd88e58c010699425c73b1dc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-12-en-source-card-guidance-r1",
+      "unitId": "S2-12-en-source-card-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "source-card-guidance",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/card/scenario",
+          "text": "A separate teaching jar prepared for 48 hours supports measurement rehearsal only. The previous step covers setup items 1–6; items 7–12 here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.",
+          "sha256": "c7e9aafd998c5ba22c29db6a79e965f46e6c55e39adc40ecf20e651059c0b2df"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/0/criterion",
+          "text": "Measure total mineral-layer height in mm",
+          "sha256": "a641c583f9a4de5b2cc97a613dd3c46794bd6b8cea28971f2126ec28884d0d76"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/1/criterion",
+          "text": "Measure separate sand height in mm",
+          "sha256": "37a747039aeeca00d724ef7840406ea0b3831cb73bf5dcd9238c397f0393b85b"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/2/criterion",
+          "text": "Measure separate silt height in mm",
+          "sha256": "b626bbb955f3482da47f0edbfd372feb1a7dc5a0f30923af437ae2ebdae69a68"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/3/criterion",
+          "text": "Measure separate clay height in mm",
+          "sha256": "06538019bf6f04db15befd76d7498505770cef3916fe771798786f30b89db925"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/4/criterion",
+          "text": "Calculate sand, silt and clay percentages",
+          "sha256": "da7a6c5f204aecc04bd4425046b06c11114227c804e2e38078e146873ff55475"
+        },
+        {
+          "pointer": "/texturePractice/card/observedRowsForThisStep/5/criterion",
+          "text": "Record all percentages clearly",
+          "sha256": "756352c85fbaf1d29b2ad99280d5f020070066d850d5ab01c9c1b01c007c9dc0"
+        },
+        {
+          "pointer": "/texturePractice/card/bridgeToPreviousStep",
+          "text": "The twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+          "sha256": "736a86457473567c6d3de3af3739d3fad486d8193ca5128208c55d03079e7747"
+        }
+      ],
+      "scientificMeaning": "A separate teaching jar prepared for 48 hours supports measurement rehearsal only. The previous step covers setup items 1–6; items 7–12 here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in mm\n\nMeasure separate sand height in mm\n\nMeasure separate silt height in mm\n\nMeasure separate clay height in mm\n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+      "displayText": "A separate teaching jar prepared for 48 hours supports measurement rehearsal only. The previous step covers setup items 1–6; items 7–12 here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in mm\n\nMeasure separate sand height in mm\n\nMeasure separate silt height in mm\n\nMeasure separate clay height in mm\n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+      "captionText": "A separate teaching jar prepared for 48 hours supports measurement rehearsal only. The previous step covers setup items 1–6; items 7–12 here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in mm\n\nMeasure separate sand height in mm\n\nMeasure separate silt height in mm\n\nMeasure separate clay height in mm\n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+      "spokenText": "A separate teaching jar prepared for forty-eight hours supports measurement rehearsal only. The previous step covers setup items one to six; items seven to twelve here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in millimetres \n\nMeasure separate sand height in millimetres \n\nMeasure separate silt height in millimetres \n\nMeasure separate clay height in millimetres \n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+      "spokenTextSHA256": "4d27bdf26b328cc98f08b4b938d29486ebb3be618e0979f2c230a8c1e141fca1",
+      "spokenTextSha256": "4d27bdf26b328cc98f08b4b938d29486ebb3be618e0979f2c230a8c1e141fca1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A separate teaching jar prepared for 48 hours supports measurement rehearsal only. The previous step covers setup items 1–6; items 7–12 here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in mm\n\nMeasure separate sand height in mm\n\nMeasure separate silt height in mm\n\nMeasure separate clay height in mm\n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+          "spoken": "A separate teaching jar prepared for forty-eight hours supports measurement rehearsal only. The previous step covers setup items one to six; items seven to twelve here cover total and separate sand, silt and clay heights, all three percentages and clear recording. Your own jars require real later observations and trainer verification.\n\nMeasure total mineral-layer height in millimetres \n\nMeasure separate sand height in millimetres \n\nMeasure separate silt height in millimetres \n\nMeasure separate clay height in millimetres \n\nCalculate sand, silt and clay percentages\n\nRecord all percentages clearly\n\nThe twelve-item activity continues: preparation in the previous step, then measurement and recording here. A prepared demonstration jar cannot replace your individually observed jars.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a32c388222f46312057f43f88d2b20176cd5ae61128ed0f6b5819845516edea8",
+      "requestFingerprintSha256": "a32c388222f46312057f43f88d2b20176cd5ae61128ed0f6b5819845516edea8",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-12-en-practical-measurement-r1",
+      "unitId": "S2-12-en-practical-measurement-r1",
+      "locale": "en",
+      "semanticGroup": "practical-measurement",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/practical/0/title",
+          "text": "Measure three real jars",
+          "sha256": "7ce72ce6ec519f94d2d82c583350707c0f7e3e6f07267360e8ae617864067753"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/conditions",
+          "text": "Three individually identified jars from S2-11 have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.",
+          "sha256": "f0f4405de4e9db195dcc1d529b2996a6f7d131619a5c13a8b613e1b02b70552f"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/0",
+          "text": "Matches every jar to the student's earlier ID and timed record",
+          "sha256": "b548f2ba9a4bc8a340b9e448c78b07b8d7b23678c8f2b33f6887c29fdeb809cc"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/1",
+          "text": "Checks the actual final boundary and notes disturbance or uncertainty",
+          "sha256": "169995e6094215bc8696d64741794f40f2e7df1be9eb360b77c2f39671cfd9de"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/2",
+          "text": "Places the ruler at the bottom and reads each cumulative mark in mm",
+          "sha256": "3aceee3accdd840671a2d47e9de56ad7c9bc1cd574161604143bb7102ab889d0"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/3",
+          "text": "Subtracts successive marks for sand, silt and clay thicknesses",
+          "sha256": "8117a405b1d608b3310a3fc4233274856c3240c4aa85d9ebdf864c93ccfb41e8"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/4",
+          "text": "Measures the final total mineral height and verifies the three thicknesses sum to it",
+          "sha256": "64cf7b6cd08a10afc427eb8a946a0aaf36169544556b5e988a94e2619aa1f4bb"
+        },
+        {
+          "pointer": "/texturePractice/practical/0/observationRows/5",
+          "text": "Records three separate rows A, B and C and distinguishes any supplied example values",
+          "sha256": "1a1f64af7a2d6510230d873770667848b58f6724d992725b2459ea1d1b0d80d0"
+        }
+      ],
+      "scientificMeaning": "Measure three real jars\n\nThree individually identified jars from S2-11 have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in mm\n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+      "displayText": "Measure three real jars\n\nThree individually identified jars from S2-11 have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in mm\n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+      "captionText": "Measure three real jars\n\nThree individually identified jars from S2-11 have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in mm\n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+      "spokenText": "Measure three real jars\n\nThree individually identified jars from station two step eleven have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in millimetres \n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+      "spokenTextSHA256": "0f61fc4be9e3406737566f50d0553e54728d9db258622a07b6f4480a05a2028d",
+      "spokenTextSha256": "0f61fc4be9e3406737566f50d0553e54728d9db258622a07b6f4480a05a2028d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Measure three real jars\n\nThree individually identified jars from S2-11 have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in mm\n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+          "spoken": "Measure three real jars\n\nThree individually identified jars from station two step eleven have real early, later and final observations under the trainer's declared safe procedure. A separate pre-settled jar may be used only for rehearsal.\n\nMatches every jar to the student's earlier ID and timed record\n\nChecks the actual final boundary and notes disturbance or uncertainty\n\nPlaces the ruler at the bottom and reads each cumulative mark in millimetres \n\nSubtracts successive marks for sand, silt and clay thicknesses\n\nMeasures the final total mineral height and verifies the three thicknesses sum to it\n\nRecords three separate rows A, B and C and distinguishes any supplied example values",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "209b4140c0a56338648a80d15958cf39b119ae023f4b99582f268a85e1b43a2e",
+      "requestFingerprintSha256": "209b4140c0a56338648a80d15958cf39b119ae023f4b99582f268a85e1b43a2e",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-12-en-knowledge-completion-r1",
+      "unitId": "S2-12-en-knowledge-completion-r1",
+      "locale": "en",
+      "semanticGroup": "knowledge-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/passChecks/0/evidence",
+          "text": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in mm and obtains each layer by subtracting successive marks, noting any unclear boundary.",
+          "sha256": "609a2d64f48a01509ed63f68d5d2d309a04c7c1a1094da854701955f333ba622"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/0/decision",
+          "text": "Pass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.",
+          "sha256": "91893c534fe13d7b2d08575586541bc49ba5c784a7059a946a7043125216f0ad"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/evidence",
+          "text": "Uses layer thickness / total mineral-layer thickness × 100 for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-100% rounding total versus a real measurement or arithmetic error.",
+          "sha256": "7a16665838109068d264894aec2f95397ee5a40cb11e22c4700fe47a150ec5b5"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/1/decision",
+          "text": "Pass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.",
+          "sha256": "dbbd757032bbd2beb71d2e0c8c77f2873cdafe34ba8d20d464e31d4c7887cc66"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/evidence",
+          "text": "Traces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for 55/30/15, loam for 40/40/20 and clay for 15/30/55, and explains the provisional nature of a jar-height estimate.",
+          "sha256": "a9e42686dbd0c0fe7800a9bfe23b1e31717dc491f43770598afce124a6a38740"
+        },
+        {
+          "pointer": "/texturePractice/passChecks/2/decision",
+          "text": "Pass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+          "sha256": "8d87798d015cc9989344116f0772134828ee48bdd6d466718cdf796ca6976663"
+        }
+      ],
+      "scientificMeaning": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in mm and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness / total mineral-layer thickness × 100 for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-100% rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for 55/30/15, loam for 40/40/20 and clay for 15/30/55, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+      "displayText": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in mm and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness / total mineral-layer thickness × 100 for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-100% rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for 55/30/15, loam for 40/40/20 and clay for 15/30/55, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+      "captionText": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in mm and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness / total mineral-layer thickness × 100 for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-100% rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for 55/30/15, loam for 40/40/20 and clay for 15/30/55, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+      "spokenText": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in millimetres and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness divided by total mineral-layer thickness multiplied by one hundred for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-one hundred percent rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for fifty-five, thirty, fifteen, loam for forty, forty, twenty and clay for fifteen, thirty, fifty-five, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+      "spokenTextSHA256": "38fc7a8ff73a1da198594913ef77150fb9c53b20a060d374649d94a7b747feb1",
+      "spokenTextSha256": "38fc7a8ff73a1da198594913ef77150fb9c53b20a060d374649d94a7b747feb1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in mm and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness / total mineral-layer thickness × 100 for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-100% rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for 55/30/15, loam for 40/40/20 and clay for 15/30/55, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+          "spoken": "For each of three identified jars, the learner points to the actual basal, sand, silt and final mineral marks after the declared observation period; records heights in millimetres and obtains each layer by subtracting successive marks, noting any unclear boundary.\n\nPass when all three jars have traceable, arithmetically consistent layer and total measurements observed by the trainer. Do not pass from the trainer's pre-settled demonstration jar or a table of supplied values.\n\nUses layer thickness divided by total mineral-layer thickness multiplied by one hundred for all three fractions, shows the denominator and units cancelling, identifies a missing fraction by subtraction, and explains a near-one hundred percent rounding total versus a real measurement or arithmetic error.\n\nPass with the right denominator, calculations and a justified total check; a fixed question count or an unexplained calculator answer is insufficient.\n\nTraces the printed chart's labelled sand, clay and silt axes with the correct direction and intersection; gives sandy loam for fifty-five, thirty, fifteen, loam for forty, forty, twenty and clay for fifteen, thirty, fifty-five, and explains the provisional nature of a jar-height estimate.\n\nPass when the class and line-tracing reasoning agree on the specified chart. A calculator may confirm the worked point; it cannot create a student's measurements.",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "82bc37e95411824db71ffc363e106379b6147a3531d77d84b88a1dd2c3f8110f",
+      "requestFingerprintSha256": "82bc37e95411824db71ffc363e106379b6147a3531d77d84b88a1dd2c3f8110f",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-12-en-record-guidance-r1",
+      "unitId": "S2-12-en-record-guidance-r1",
+      "locale": "en",
+      "semanticGroup": "record-guidance",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e7f0888fbd27d6ac5e0317b3fccd7011472fa76b1f6093bc42c5602d91a4fe9",
+      "sourceBindings": [
+        {
+          "pointer": "/texturePractice/ui/recordHelp",
+          "text": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.",
+          "sha256": "b24c72b81d7495a3cf6e5e589f11b6e2e62b0303b9557e374e36a80abea3c6b0"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/0",
+          "text": "Sample ID and own/practice identity",
+          "sha256": "d85f0cbfcab0afd7824dc1a89d85ae4835e884c29396d4a60cccaf16a4bf6410"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/1",
+          "text": "Selected method, real settling history and observation time",
+          "sha256": "998f5c91cbd1ef301312a32181a4f0a1ff49a0a5aa98b2d81af83725b96b5fc1"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/2",
+          "text": "Bottom reference and cumulative sand/silt/final marks, mm",
+          "sha256": "20b4950003f326ab80e53bcf521088a97aee82be2252109272ee43e6fbdee8b0"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/3",
+          "text": "Separate sand/silt/clay thicknesses and total, mm",
+          "sha256": "d54a89310c7147a4e35b68df2bd7b9576604250acda6906e24594a4aab50df65"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/4",
+          "text": "Unrounded sand/silt/clay percentages",
+          "sha256": "27483e4a805c14f60742a67ab1a12e82486abdf35b2b103a80e8f4ea98480980"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/5",
+          "text": "Rounded percentages and total check",
+          "sha256": "d78676aca934083585481b202391e826d2ab621b5e3273ca404475c69e27a624"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/6",
+          "text": "Triangle reference, traced intersection and provisional class",
+          "sha256": "991195e8459c69b4dfbe6a217fd39eecb24281576c80938ee56fdf9bbe583b60"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/7",
+          "text": "Unclear boundary, missing data and next action",
+          "sha256": "cf1f3aca1698ce997c54765b9df03524d6a015d9d7c082f61718e75653a2e2fd"
+        },
+        {
+          "pointer": "/texturePractice/ui/fields/8",
+          "text": "Individual trainer feedback and date (blank)",
+          "sha256": "acc69a05951d4fb8103056a58d60575de7d90c2bff3a0a528a2a1ae87060f8e4"
+        },
+        {
+          "pointer": "/texturePractice/ui/saved",
+          "text": "Draft saved locally; measurement criterion remains unobserved.",
+          "sha256": "80ba19576f426aecb7bca37b6142ea1dbcfbdd035c5b84ef376b3d083798b8b6"
+        },
+        {
+          "pointer": "/texturePractice/ui/reasonBoundary",
+          "text": "A model after your attempt is not semantic approval or an observed practical pass.",
+          "sha256": "37c635d813ec97f9f497e3eb15669c9309bdebb486cd676b2fe988f39b5232d0"
+        },
+        {
+          "pointer": "/texturePractice/ui/notReady",
+          "text": "Complete the identified practice rows first. Do not invent an observation to unlock an example.",
+          "sha256": "cd9d0faa1ff0bc60c246a170617dd8f4176c3734ae9c599c9f4ccb3a3a11bda1"
+        },
+        {
+          "pointer": "/texturePractice/ui/knowledgeOnly",
+          "text": "Calculation and tracing rehearsal; real measurement unobserved",
+          "sha256": "fca47229b46785603d4b92d1340765f6e3a0ce2800909b5f3ba8f21a3a484637"
+        },
+        {
+          "pointer": "/studentDownloads/0/title",
+          "text": "Layer measurement and texture worksheet",
+          "sha256": "f0710315dcdf5f6a4eead019374833d956ab9f11525e524a6f09ba82a2ac8541"
+        }
+      ],
+      "scientificMeaning": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and own/practice identity\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand/silt/final marks, mm\n\nSeparate sand/silt/clay thicknesses and total, mm\n\nUnrounded sand/silt/clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+      "displayText": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and own/practice identity\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand/silt/final marks, mm\n\nSeparate sand/silt/clay thicknesses and total, mm\n\nUnrounded sand/silt/clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+      "captionText": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and own/practice identity\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand/silt/final marks, mm\n\nSeparate sand/silt/clay thicknesses and total, mm\n\nUnrounded sand/silt/clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+      "spokenText": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and whether it is your own jar or a practice example\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand, silt, final marks, millimetres \n\nSeparate sand, silt, clay thicknesses and total, millimetres \n\nUnrounded sand, silt, clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+      "spokenTextSHA256": "105f4d3ff760c3b584ae9b3936a9116d0ee2395fa679a711b6915b597dd72c42",
+      "spokenTextSha256": "105f4d3ff760c3b584ae9b3936a9116d0ee2395fa679a711b6915b597dd72c42",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and own/practice identity\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand/silt/final marks, mm\n\nSeparate sand/silt/clay thicknesses and total, mm\n\nUnrounded sand/silt/clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+          "spoken": "Unknown marks or times stay blank with an explanation. Draft notes are not measured evidence, verified chronology, trainer approval or a laboratory result.\n\nSample ID and whether it is your own jar or a practice example\n\nSelected method, real settling history and observation time\n\nBottom reference and cumulative sand, silt, final marks, millimetres \n\nSeparate sand, silt, clay thicknesses and total, millimetres \n\nUnrounded sand, silt, clay percentages\n\nRounded percentages and total check\n\nTriangle reference, traced intersection and provisional class\n\nUnclear boundary, missing data and next action\n\nIndividual trainer feedback and date (blank)\n\nDraft saved locally; measurement criterion remains unobserved.\n\nA model after your attempt is not semantic approval or an observed practical pass.\n\nComplete the identified practice rows first. Do not invent an observation to unlock an example.\n\nCalculation and tracing rehearsal; real measurement unobserved\n\nLayer measurement and texture worksheet",
+          "occurrences": 1,
+          "purpose": "Full source mathoperator role preserved: slash meaning division spoken divided-by, ordered tuples remain orderedvalues, own/practice slash means alternative,99/101 means rounded alternatives. Exactwhole-source quantities/qualifiers retained; natural grammar/units/spacing only, canonical/display immutable."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e430871cafe08e2f67f80c0d31bd03b0defa51e5a7bbca0b2db92816e33abdbd",
+      "requestFingerprintSha256": "e430871cafe08e2f67f80c0d31bd03b0defa51e5a7bbca0b2db92816e33abdbd",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
