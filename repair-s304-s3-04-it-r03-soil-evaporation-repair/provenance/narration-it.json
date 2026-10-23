@@ -1,0 +1,73 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-04-it.json",
+    "sha256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+    "bytes": 24790
+  },
+  "units": [
+    {
+      "id": "S3-04-it-R03-soil-evaporation-repair-r1",
+      "unitId": "S3-04-it-R03-soil-evaporation-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s304-s3-04-it-r03-soil-evaporation-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6ca449dfb4caa96c9441105191ac21b0e4aa85df07de219659b13a4e948d474a",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+          "sha256": "2b61f5d0bb3754d5b1c2a18c0a7e69edb5061530af6864cae6485099c31e8834"
+        }
+      ],
+      "scientificMeaning": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "displayText": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "captionText": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+      "spokenText": "L’evaporazione dal terreno nudo è diversa dalla traspirazione.",
+      "spokenTextSHA256": "5092caa234a90b60c78686bf92a1cd7fbb26f71ae0b8c18f709b422bd6e05890",
+      "spokenTextSha256": "5092caa234a90b60c78686bf92a1cd7fbb26f71ae0b8c18f709b422bd6e05890",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L’acqua sale dalle radici alle foglie e può uscire come vapore dagli stomi: è la traspirazione, che può raffreddare la pianta. L’evaporazione dal terreno nudo è distinta. Entrambe contribuiscono alle perdite del campo, ma il colore che sale nel picciolo del sedano mostra una via di trasporto, non evaporazione del suolo né una misura esatta dei nutrienti.",
+          "spoken": "L’evaporazione dal terreno nudo è distinta.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "L’evaporazione dal terreno nudo è distinta.",
+          "spoken": "L’evaporazione dal terreno nudo è diversa dalla traspirazione.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "5c25144f64c8be5c518f710987e651f9026f6743b506ce3fa579b2c8de2f5bf0",
+      "requestFingerprintSha256": "5c25144f64c8be5c518f710987e651f9026f6743b506ce3fa579b2c8de2f5bf0",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "L’evaporazione dal terreno nudo è distinta.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SPOKEN_ONLY_SOURCE_EQUIVALENT_SUBPASSAGE_CANONICAL_DISPLAY_READONLY",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s304-three-repairs-one-context-root-authority-r1.json",
+        "authoritySHA256": "703cc846f723c5a145f38558960e2fec8e0fc9f069c76ec9ec4dab2b35a41f26",
+        "metadataGETAuthoritySHA256": "21d7a238bc1be716c7acbee8f9c12c96f9dad5accc0383b5e6fcba505cb5c1c5"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
