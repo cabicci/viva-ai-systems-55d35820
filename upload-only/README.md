@@ -1,0 +1,1 @@
+Upload original reviewed Soil S2-02 Egyptian Arabic MP4 to Bunny Stream library670679. No generation, mapping, merge or publication. Exact per-GUID receipts. A failed/uncertain create/PUT is never retried automatically. Source WebVTT transferred but caption addition remains separate.
