@@ -1,0 +1,74 @@
+{
+  "stepId": "S2-15",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "teaching-table",
+      "title": "Lehrtabelle, kein Laborzertifikat",
+      "situation": "Vorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.",
+      "reasoning": [
+        "Zeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.",
+        "Vermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.",
+        "Frage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz."
+      ],
+      "takeaway": "Eine übersichtliche Tabelle braucht verlässliche Spalten."
+    },
+    {
+      "id": "west-field-model",
+      "title": "Farmer Jones: West-Field-Tomaten",
+      "situation": "pH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.",
+      "reasoning": [
+        "Fünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.",
+        "Säure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.",
+        "Sperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen."
+      ],
+      "takeaway": "Der Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis."
+    },
+    {
+      "id": "corn-case",
+      "title": "Getrennter Schreibfall: Mais",
+      "situation": "pH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.",
+      "reasoning": [
+        "Die angegebenen Kategorien in einfacher Sprache erläutern.",
+        "Liste bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.",
+        "Frühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden."
+      ],
+      "takeaway": "Der Maisfall ist nicht der Tomatenbericht."
+    },
+    {
+      "id": "field-b",
+      "title": "Field B: fünf pH-Werte",
+      "situation": "Einzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.",
+      "reasoning": [
+        "Alle fünf Werte in einer Tabelle mit Feldkennung darstellen.",
+        "Summe 31.2 und arithmetisches Mittel 31.2/5 = 6.24.",
+        "„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke."
+      ],
+      "takeaway": "Ein Mittelwert schafft keine neue physische Messung."
+    },
+    {
+      "id": "paddock-3",
+      "title": "Einseitiges Produkt Paddock 3",
+      "situation": "pH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.",
+      "reasoning": [
+        "Paddock-3-Kennung und alle fünf Werte verständlich aufführen.",
+        "P/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.",
+        "Lehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur."
+      ],
+      "takeaway": "Ein ordentliches Produkt benötigt reale fachliche Bewertung."
+    },
+    {
+      "id": "other-final-cases",
+      "title": "Spätere schriftliche Fälle bleiben getrennt",
+      "situation": "Fall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.",
+      "reasoning": [
+        "Jede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.",
+        "Bei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.",
+        "Bei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis."
+      ],
+      "takeaway": "Gefragte Kulturbeispiele bleiben standortabhängig."
+    }
+  ]
+}

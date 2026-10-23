@@ -1,0 +1,563 @@
+{
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-ar-EG.json",
+    "sha256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+    "bytes": 61316
+  },
+  "units": [
+    {
+      "id": "S2-15-ar-EG-E01-r1",
+      "unitId": "S2-15-ar-EG-E01-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "جدول توضيحي، مش شهادة معمل",
+          "sha256": "7e15254b21c1a3c58ef858f455de9794315e0bd6d309f551f536d52894509c27"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "مثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.",
+          "sha256": "7aa73a73cab81f9e3a0345f85cf048598540fc88c8d5509b8f6511dde3a6c932"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "اعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.",
+          "sha256": "2987b7becc62903e65db4e64e86f4b13e38ce57a7a0b891d7c784e924e7ab57c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "ما تدمجش الأرقام بعينة West Field ولا تعتبر النطاقات قاعدة عامة للطماطم.",
+          "sha256": "1ccfd4db56d73d5eea966ed380e16332fb783dc23e8624a6d0e36c48f212a2cd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "اطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.",
+          "sha256": "c4fe293c2c69556ddb094ad4527642faa26f655268e1399c23ac89bd244a2065"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "جدول مرتب من غير أعمدة موثوقة مش كفاية.",
+          "sha256": "f00b768300a1e6cff4c149edd351f8c707da46ce0c6e5bd851a6c5bcf98b8bdd"
+        }
+      ],
+      "scientificMeaning": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة West Field ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+      "displayText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة West Field ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+      "captionText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة West Field ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+      "spokenText": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: بي إتش خمسة فاصلة اتنين؛ المادة العضوية اتنين فاصلة واحد في المية؛ النيتروجين منخفض؛ الفوسفور خمسة وعشرين جزء في المليون؛ البوتاسيوم مية وتمانين جزء في المليون، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة حقل ويست فيلد ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+      "spokenTextSHA256": "9c63ecac4c780bb80f76c744125cf042a7020b56627288aa34f7e148970790e7",
+      "spokenTextSha256": "9c63ecac4c780bb80f76c744125cf042a7020b56627288aa34f7e148970790e7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: pH 5.2؛ المادة العضوية 2.1%؛ N منخفض؛ P 25 ppm؛ K 180 ppm، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة West Field ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+          "spoken": "جدول توضيحي، مش شهادة معمل\n\nمثال المصدر: بي إتش خمسة فاصلة اتنين؛ المادة العضوية اتنين فاصلة واحد في المية؛ النيتروجين منخفض؛ الفوسفور خمسة وعشرين جزء في المليون؛ البوتاسيوم مية وتمانين جزء في المليون، مع نطاقات مثال خاصة به.\n\nاعرض الصفوف الخمسة والوحدات والنطاقات المطبوعة على أنها مثال.\n\nما تدمجش الأرقام بعينة حقل ويست فيلد ولا تعتبر النطاقات قاعدة عامة للطماطم.\n\nاطلب طريقة التحليل ومرجع المعمل الملائم للمحصول قبل وصف الحالة أو الجرعة.\n\nجدول مرتب من غير أعمدة موثوقة مش كفاية.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fef24116231d3579abc4414bb68ea9b5bcc659f382eb2ad68ae30ce2a3b52d5c",
+      "requestFingerprintSha256": "fef24116231d3579abc4414bb68ea9b5bcc659f382eb2ad68ae30ce2a3b52d5c",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "teaching-table",
+        "casePointer": "/portfolio/cases/0",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-ar-EG-E02-r1",
+      "unitId": "S2-15-ar-EG-E02-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Farmer Jones: طماطم West Field",
+          "sha256": "4a676e8bfbb07ad8a580fd7a72bfce20657c46053c6194b586bc507b5a2de947"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "المعطى pH 5.5، مادة عضوية 1.5%، N منخفض، P 15 ppm، K 200 ppm، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.",
+          "sha256": "1cb8a9e63ae6927c5bedf3c5f09d3b68c4ae41694b59b372fe1b23167485a3d7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "اكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.",
+          "sha256": "f7e371595b2513c35dd10334f019bc49122cc0220b5c57c2c47239cc32e26f7f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اربط الحموضة وN/P بخطة حسب المحصول والمعمل، وسجّل K من غير تسميد متوازن تلقائي.",
+          "sha256": "4506056b627428467494d18e4e8d17ec219c4de2695402ee2d6b32bbaac929a2"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "افحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.",
+          "sha256": "68bd9697eccf3d514ae5276c1955acb0d3865f2980a22c5b6c1f80d994be9f63"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "القيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+          "sha256": "062b6372d6da65d87c3e4345e6de80e7e6375cb4cbb7286f1eb031f45bac3144"
+        }
+      ],
+      "scientificMeaning": "Farmer Jones: طماطم West Field\n\nالمعطى pH 5.5، مادة عضوية 1.5%، N منخفض، P 15 ppm، K 200 ppm، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة وN/P بخطة حسب المحصول والمعمل، وسجّل K من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+      "displayText": "Farmer Jones: طماطم West Field\n\nالمعطى pH 5.5، مادة عضوية 1.5%، N منخفض، P 15 ppm، K 200 ppm، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة وN/P بخطة حسب المحصول والمعمل، وسجّل K من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+      "captionText": "Farmer Jones: طماطم West Field\n\nالمعطى pH 5.5، مادة عضوية 1.5%، N منخفض، P 15 ppm، K 200 ppm، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة وN/P بخطة حسب المحصول والمعمل، وسجّل K من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+      "spokenText": "المزارع جونز: طماطم حقل ويست فيلد\n\nالمعطى بي إتش خمسة فاصلة خمسة، مادة عضوية واحد فاصلة خمسة في المية، النيتروجين منخفض، الفوسفور خمستاشر جزء في المليون، البوتاسيوم ميتين جزء في المليون، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة والنيتروجين والفوسفور بخطة حسب المحصول والمعمل، وسجّل البوتاسيوم من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+      "spokenTextSHA256": "1753345fc19310f3f190e34a93e59a9ed9c21458dd15ed954267b4cc7c18d6a7",
+      "spokenTextSha256": "1753345fc19310f3f190e34a93e59a9ed9c21458dd15ed954267b4cc7c18d6a7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Farmer Jones: طماطم West Field\n\nالمعطى pH 5.5، مادة عضوية 1.5%، N منخفض، P 15 ppm، K 200 ppm، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة وN/P بخطة حسب المحصول والمعمل، وسجّل K من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+          "spoken": "المزارع جونز: طماطم حقل ويست فيلد\n\nالمعطى بي إتش خمسة فاصلة خمسة، مادة عضوية واحد فاصلة خمسة في المية، النيتروجين منخفض، الفوسفور خمستاشر جزء في المليون، البوتاسيوم ميتين جزء في المليون، مع انضغاط وصرف بطيء؛ النطاقات تعليمية وغير معايرة معمليًا.\n\nاكتب الأقسام الخمسة وبيّن غياب التاريخ والمعمل والطريقة.\n\nاربط الحموضة والنيتروجين والفوسفور بخطة حسب المحصول والمعمل، وسجّل البوتاسيوم من غير تسميد متوازن تلقائي.\n\nافحص موضع الانضغاط والرطوبة ومخرج الصرف قبل تدخل ميكانيكي، وفسّر أولوية البداية.\n\nالقيمة في طريقة التقرير والاستدلال، مش جرعة أو حرث آلي.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "19308baa381c0fe2a02394b7ae34f3038b15e112f5dd36d2e6561b123cd93f41",
+      "requestFingerprintSha256": "19308baa381c0fe2a02394b7ae34f3038b15e112f5dd36d2e6561b123cd93f41",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "west-field-model",
+        "casePointer": "/portfolio/cases/1",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-ar-EG-E03-r1",
+      "unitId": "S2-15-ar-EG-E03-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "مسألة منفصلة: الذرة",
+          "sha256": "7196b59a5a080413a9fd0f7be1b0e53920e963662165e9d8bf95d381728bb2d9"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "pH 5.4 والهدف المعطى 6.0–7.0؛ المادة العضوية 2.0% والهدف >3%؛ N وP منخفضين، K ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.",
+          "sha256": "86f2dbcf07be1fcba3b2217957a0c53c9c875514af23482f45f5556b6cbf5acd"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "اشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.",
+          "sha256": "e55b63c97d12399ed4deae12da5b644dc3f1cd761d3aa8a220592d4da844ed67"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "رتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.",
+          "sha256": "b04b58cffeb9c511c62af3cf679e7d4632dd6b475fbd0fb6b5627c7e257ba430"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "الاصفرار القديم مش تشخيص مستقل لنقص N؛ لا تخترع طريقة أو جرعة أو تاريخًا.",
+          "sha256": "461ad3f933a9e6fe4b7bbc7db7f57d476ad7c10956223d00f9c373f2647044af"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "مسألة الذرة مختلفة عن تقرير طماطم West Field.",
+          "sha256": "c811bc02362d0ffb644705e86158982a36169d04b1bdd82ecf2c0adf2b60158d"
+        }
+      ],
+      "scientificMeaning": "مسألة منفصلة: الذرة\n\npH 5.4 والهدف المعطى 6.0–7.0؛ المادة العضوية 2.0% والهدف >3%؛ N وP منخفضين، K ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص N؛ لا تخترع طريقة أو جرعة أو تاريخًا.\n\nمسألة الذرة مختلفة عن تقرير طماطم West Field.",
+      "displayText": "مسألة منفصلة: الذرة\n\npH 5.4 والهدف المعطى 6.0–7.0؛ المادة العضوية 2.0% والهدف >3%؛ N وP منخفضين، K ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص N؛ لا تخترع طريقة أو جرعة أو تاريخًا.\n\nمسألة الذرة مختلفة عن تقرير طماطم West Field.",
+      "captionText": "مسألة منفصلة: الذرة\n\npH 5.4 والهدف المعطى 6.0–7.0؛ المادة العضوية 2.0% والهدف >3%؛ N وP منخفضين، K ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص N؛ لا تخترع طريقة أو جرعة أو تاريخًا.\n\nمسألة الذرة مختلفة عن تقرير طماطم West Field.",
+      "spokenText": "مسألة منفصلة: الذرة\n\nبي إتش خمسة فاصلة أربعة والهدف المعطى ستة فاصلة صفر إلى سبعة فاصلة صفر؛ المادة العضوية اتنين فاصلة صفر في المية والهدف أكبر من تلاتة في المية؛ النيتروجين والفوسفور منخفضين، البوتاسيوم ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص النيتروجين؛ لا تخترع طريقة أو جرعة أو تاريخ.\n\nمسألة الذرة مختلفة عن تقرير طماطم حقل ويست فيلد.",
+      "spokenTextSHA256": "c632594e8955b18de3c93948f503b6c3eef08d9d7597727f473ab3c68c7a1cf1",
+      "spokenTextSha256": "c632594e8955b18de3c93948f503b6c3eef08d9d7597727f473ab3c68c7a1cf1",
+      "spokenAdaptationChanges": [
+        {
+          "written": "مسألة منفصلة: الذرة\n\npH 5.4 والهدف المعطى 6.0–7.0؛ المادة العضوية 2.0% والهدف >3%؛ N وP منخفضين، K ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص N؛ لا تخترع طريقة أو جرعة أو تاريخًا.\n\nمسألة الذرة مختلفة عن تقرير طماطم West Field.",
+          "spoken": "مسألة منفصلة: الذرة\n\nبي إتش خمسة فاصلة أربعة والهدف المعطى ستة فاصلة صفر إلى سبعة فاصلة صفر؛ المادة العضوية اتنين فاصلة صفر في المية والهدف أكبر من تلاتة في المية؛ النيتروجين والفوسفور منخفضين، البوتاسيوم ملائم، والأرض منضغطة وظهرت أوراق صفراء سابقًا.\n\nاشرح تصنيفات المثال بلغة بسيطة وبيّن أنها معطاة.\n\nرتّب فحص احتياج الجير وتفسير المغذيات والانضغاط والصرف والمحصول بشروط واضحة.\n\nالاصفرار القديم مش تشخيص مستقل لنقص النيتروجين؛ لا تخترع طريقة أو جرعة أو تاريخ.\n\nمسألة الذرة مختلفة عن تقرير طماطم حقل ويست فيلد.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "649d67f92cd1e78f6574924bd30d803599e76ab1e5156448004722e2e79a0818",
+      "requestFingerprintSha256": "649d67f92cd1e78f6574924bd30d803599e76ab1e5156448004722e2e79a0818",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "corn-case",
+        "casePointer": "/portfolio/cases/2",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-ar-EG-E04-r1",
+      "unitId": "S2-15-ar-EG-E04-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Field B: خمس قراءات pH",
+          "sha256": "a02fb3a2ce14114660a02b5cbc18771755994cf4fc8f397b1bd1a2f5fa39f55e"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "القراءات الخمس 6.2 و6.4 و6.1 و6.3 و6.2؛ السؤال يطلب التاريخ لكنه غير معطى.",
+          "sha256": "3034a3a9342e703f13a56e2f96d4337ae11948f4dcbd0a5691f5d2e608511c44"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "اعرض كل قراءة في جدول مع هوية الحقل.",
+          "sha256": "69acb7b1c8cbede12666e7e90bab58393eb2385e311017a39d8d313fdd28826d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "المجموع 31.2 والمتوسط الحسابي 31.2÷5 = 6.24.",
+          "sha256": "962a885315ea29577cf47d517b5e3cf408b82f6dae15902f0d3c09ee2cea2d4d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "اكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ لا تضع تاريخًا غير معروف.",
+          "sha256": "0945f460cc688a3b65fca79a5ba24555b3e52215a60823809224615b7f03cee0"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "المتوسط يلخص قراءات، مش قياسًا جديدًا على مادة ممزوجة.",
+          "sha256": "e094953673cb601d2f3fb8844edaec938bc7ed55bd6fb944c1167973c47a6ded"
+        }
+      ],
+      "scientificMeaning": "Field B: خمس قراءات pH\n\nالقراءات الخمس 6.2 و6.4 و6.1 و6.3 و6.2؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع 31.2 والمتوسط الحسابي 31.2÷5 = 6.24.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ لا تضع تاريخًا غير معروف.\n\nالمتوسط يلخص قراءات، مش قياسًا جديدًا على مادة ممزوجة.",
+      "displayText": "Field B: خمس قراءات pH\n\nالقراءات الخمس 6.2 و6.4 و6.1 و6.3 و6.2؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع 31.2 والمتوسط الحسابي 31.2÷5 = 6.24.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ لا تضع تاريخًا غير معروف.\n\nالمتوسط يلخص قراءات، مش قياسًا جديدًا على مادة ممزوجة.",
+      "captionText": "Field B: خمس قراءات pH\n\nالقراءات الخمس 6.2 و6.4 و6.1 و6.3 و6.2؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع 31.2 والمتوسط الحسابي 31.2÷5 = 6.24.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ لا تضع تاريخًا غير معروف.\n\nالمتوسط يلخص قراءات، مش قياسًا جديدًا على مادة ممزوجة.",
+      "spokenText": "الحقل بي: خمس قراءات بي إتش\n\nالقراءات الخمس ستة فاصلة اتنين وستة فاصلة أربعة وستة فاصلة واحد وستة فاصلة تلاتة وستة فاصلة اتنين؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع واحد وتلاتين فاصلة اتنين والمتوسط الحسابي واحد وتلاتين فاصلة اتنين مقسوم على خمسة بتساوي ستة فاصلة اتنين أربعة.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ ما تحطش تاريخ مش معروف.\n\nالمتوسط يلخص قراءات، مش قياس جديد على مادة ممزوجة.",
+      "spokenTextSHA256": "5db2ab841186f81af8def9ddd75f2ca0270a60e53bf8ebe1b78ad52383776f68",
+      "spokenTextSha256": "5db2ab841186f81af8def9ddd75f2ca0270a60e53bf8ebe1b78ad52383776f68",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Field B: خمس قراءات pH\n\nالقراءات الخمس 6.2 و6.4 و6.1 و6.3 و6.2؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع 31.2 والمتوسط الحسابي 31.2÷5 = 6.24.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ لا تضع تاريخًا غير معروف.\n\nالمتوسط يلخص قراءات، مش قياسًا جديدًا على مادة ممزوجة.",
+          "spoken": "الحقل بي: خمس قراءات بي إتش\n\nالقراءات الخمس ستة فاصلة اتنين وستة فاصلة أربعة وستة فاصلة واحد وستة فاصلة تلاتة وستة فاصلة اتنين؛ السؤال يطلب التاريخ لكنه غير معطى.\n\nاعرض كل قراءة في جدول مع هوية الحقل.\n\nالمجموع واحد وتلاتين فاصلة اتنين والمتوسط الحسابي واحد وتلاتين فاصلة اتنين مقسوم على خمسة بتساوي ستة فاصلة اتنين أربعة.\n\nاكتب «متوسط خمس قراءات» لا «قياس عينة مخلوطة»؛ ما تحطش تاريخ مش معروف.\n\nالمتوسط يلخص قراءات، مش قياس جديد على مادة ممزوجة.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "096e5639ca15dcd8674caaf08522f57b481e55b9a70f7fa526507e5b0ede1218",
+      "requestFingerprintSha256": "096e5639ca15dcd8674caaf08522f57b481e55b9a70f7fa526507e5b0ede1218",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "field-b",
+        "casePointer": "/portfolio/cases/3",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-ar-EG-E05-r1",
+      "unitId": "S2-15-ar-EG-E05-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/title",
+          "text": "منتج Paddock 3 في صفحة",
+          "sha256": "9129130041ccadc51f8b33d0a71055d27e856d7eb6968b90d0b88c2f77886039"
+        },
+        {
+          "pointer": "/examples/4/situation",
+          "text": "pH 7.8 قلوي، مادة عضوية 1.5% منخفضة، N مرتفع، P منخفض جدًا، K منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بـP/K.",
+          "sha256": "82f4f9c697e332b47dacd1c2e71e0e1df7817e688fd9920f2d796a5f67c023ee"
+        },
+        {
+          "pointer": "/examples/4/reasoning/0",
+          "text": "اكتب هوية Paddock 3 وكل النتائج الخمس بلغة المزارع.",
+          "sha256": "a9a3aa0cc79df47d3bb0be105cdce1145a7bd2abe89c6a36082817596a17f64e"
+        },
+        {
+          "pointer": "/examples/4/reasoning/1",
+          "text": "اقترح خطة P/K مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.",
+          "sha256": "f7db545b8b172ea0600025622b1531b0f06394e61462dfb86138d505f4efbe78"
+        },
+        {
+          "pointer": "/examples/4/reasoning/2",
+          "text": "المدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم/لا والدليل والإجراء التصحيحي.",
+          "sha256": "ba2e46a5083b2f5ce95c6f541e24c4e85fc61152e6be1fca33a65a6bc0886c74"
+        },
+        {
+          "pointer": "/examples/4/takeaway",
+          "text": "المنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+          "sha256": "e7cc9cde6c4d65df3692270174c6e121f2f74504d3efeafd462f500c7f545d82"
+        }
+      ],
+      "scientificMeaning": "منتج Paddock 3 في صفحة\n\npH 7.8 قلوي، مادة عضوية 1.5% منخفضة، N مرتفع، P منخفض جدًا، K منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بـP/K.\n\nاكتب هوية Paddock 3 وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة P/K مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم/لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+      "displayText": "منتج Paddock 3 في صفحة\n\npH 7.8 قلوي، مادة عضوية 1.5% منخفضة، N مرتفع، P منخفض جدًا، K منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بـP/K.\n\nاكتب هوية Paddock 3 وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة P/K مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم/لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+      "captionText": "منتج Paddock 3 في صفحة\n\npH 7.8 قلوي، مادة عضوية 1.5% منخفضة، N مرتفع، P منخفض جدًا، K منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بـP/K.\n\nاكتب هوية Paddock 3 وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة P/K مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم/لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+      "spokenText": "منتج بادوك تلاتة في صفحة\n\nبي إتش سبعة فاصلة تمانية قلوي، مادة عضوية واحد فاصلة خمسة في المية منخفضة، النيتروجين مرتفع، الفوسفور منخفض جدًا، البوتاسيوم منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بالفوسفور والبوتاسيوم.\n\nاكتب هوية بادوك تلاتة وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة الفوسفور والبوتاسيوم مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم، لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+      "spokenTextSHA256": "99716008335b406ef3a64c2974828f38b8d4633b2db3d57653d83cb8860e7ee8",
+      "spokenTextSha256": "99716008335b406ef3a64c2974828f38b8d4633b2db3d57653d83cb8860e7ee8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "منتج Paddock 3 في صفحة\n\npH 7.8 قلوي، مادة عضوية 1.5% منخفضة، N مرتفع، P منخفض جدًا، K منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بـP/K.\n\nاكتب هوية Paddock 3 وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة P/K مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم/لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+          "spoken": "منتج بادوك تلاتة في صفحة\n\nبي إتش سبعة فاصلة تمانية قلوي، مادة عضوية واحد فاصلة خمسة في المية منخفضة، النيتروجين مرتفع، الفوسفور منخفض جدًا، البوتاسيوم منخفض؛ مطلوب إجراء عملي واحد على الأقل متعلق بالفوسفور والبوتاسيوم.\n\nاكتب هوية بادوك تلاتة وكل النتائج الخمس بلغة المزارع.\n\nاقترح خطة الفوسفور والبوتاسيوم مشروطة بطريقة المعمل والمحصول؛ ذكر مسحوق العظم في قائمة المصدر مش وصفة أو جرعة إلزامية.\n\nالمدرّب يفحص خمس خانات: الهوية، النتائج، الوضوح، توصية نقص، وترتيب الصفحة؛ يسجل نعم، لا والدليل والإجراء التصحيحي.\n\nالمنتج الأنيق يحتاج مراجعة حقيقية من المدرّب وتوصية سليمة.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d53a4c8162c31a461abbf4859fe24d6682fb9ee3a66ad1640837857654cbdafb",
+      "requestFingerprintSha256": "d53a4c8162c31a461abbf4859fe24d6682fb9ee3a66ad1640837857654cbdafb",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "paddock-3",
+        "casePointer": "/portfolio/cases/4",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-ar-EG-E06-r1",
+      "unitId": "S2-15-ar-EG-E06-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "E06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/5/title",
+          "text": "ما تخلطش مسائل التقييم اللاحقة",
+          "sha256": "7731be76f870a006aa2102dbfd4180d7a3fc7d2c3c334be9fc1855f28c60a83b"
+        },
+        {
+          "pointer": "/examples/5/situation",
+          "text": "حالة أ: pH 5.2 وN منخفض وP منخفض وK متوسط ومادة عضوية 1%، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: pH 6.8 وN متوسط وP مرتفع وK منخفض، وتطلب خطة تسميد ومحصولين.",
+          "sha256": "ddb445dcdbb97a9cc375db1e93d5f6eaf6a5d4e56809285fb42213e19517144d"
+        },
+        {
+          "pointer": "/examples/5/reasoning/0",
+          "text": "احتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.",
+          "sha256": "937944cdc4754d8a5aa034bb6f550bb6cd831e1a08cf79d7d4779d59ae7d62ba"
+        },
+        {
+          "pointer": "/examples/5/reasoning/1",
+          "text": "في الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة N/P والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند pH 5.2، لأن إرشادات زراعتها بتفضّل تقريبًا pH 6–7؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.",
+          "sha256": "c93918804eaf05cf24a19535545e5453b0b4dd8864a41c577e7e4eaca4a92e57"
+        },
+        {
+          "pointer": "/examples/5/reasoning/2",
+          "text": "في ب، لا تضف P من غير حاجة؛ تحقق من نقص K المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن N من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند pH 6.8، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.",
+          "sha256": "a1bbb8c5b087fbd96bf49e95d06799ee0717203f91454cb4b8db8a5e1b4a3f06"
+        },
+        {
+          "pointer": "/examples/5/takeaway",
+          "text": "نحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+          "sha256": "3e0edc8bff781cfc644d2ce95b4118bfcb3776972dce9c1b0bd98d401d887435"
+        }
+      ],
+      "scientificMeaning": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: pH 5.2 وN منخفض وP منخفض وK متوسط ومادة عضوية 1%، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: pH 6.8 وN متوسط وP مرتفع وK منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة N/P والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند pH 5.2، لأن إرشادات زراعتها بتفضّل تقريبًا pH 6–7؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف P من غير حاجة؛ تحقق من نقص K المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن N من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند pH 6.8، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+      "displayText": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: pH 5.2 وN منخفض وP منخفض وK متوسط ومادة عضوية 1%، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: pH 6.8 وN متوسط وP مرتفع وK منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة N/P والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند pH 5.2، لأن إرشادات زراعتها بتفضّل تقريبًا pH 6–7؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف P من غير حاجة؛ تحقق من نقص K المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن N من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند pH 6.8، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+      "captionText": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: pH 5.2 وN منخفض وP منخفض وK متوسط ومادة عضوية 1%، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: pH 6.8 وN متوسط وP مرتفع وK منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة N/P والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند pH 5.2، لأن إرشادات زراعتها بتفضّل تقريبًا pH 6–7؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف P من غير حاجة؛ تحقق من نقص K المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن N من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند pH 6.8، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+      "spokenText": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: بي إتش خمسة فاصلة اتنين والنيتروجين منخفض والفوسفور منخفض والبوتاسيوم متوسط ومادة عضوية واحد في المية، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: بي إتش ستة فاصلة تمانية والنيتروجين متوسط والفوسفور مرتفع والبوتاسيوم منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة النيتروجين والفوسفور والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند بي إتش خمسة فاصلة اتنين، لأن إرشادات زراعتها بتفضّل تقريبًا بي إتش ستة إلى سبعة؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف الفوسفور من غير حاجة؛ تحقق من نقص البوتاسيوم المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن النيتروجين من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند بي إتش ستة فاصلة تمانية، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+      "spokenTextSHA256": "19af432c497a54b132574e0e41b3968f277be210308a2c5e55eba9e704886c31",
+      "spokenTextSha256": "19af432c497a54b132574e0e41b3968f277be210308a2c5e55eba9e704886c31",
+      "spokenAdaptationChanges": [
+        {
+          "written": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: pH 5.2 وN منخفض وP منخفض وK متوسط ومادة عضوية 1%، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: pH 6.8 وN متوسط وP مرتفع وK منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة N/P والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند pH 5.2، لأن إرشادات زراعتها بتفضّل تقريبًا pH 6–7؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف P من غير حاجة؛ تحقق من نقص K المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن N من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند pH 6.8، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+          "spoken": "ما تخلطش مسائل التقييم اللاحقة\n\nحالة أ: بي إتش خمسة فاصلة اتنين والنيتروجين منخفض والفوسفور منخفض والبوتاسيوم متوسط ومادة عضوية واحد في المية، وتطلب أسلوبين تحسين وأمثلة محاصيل. حالة ب: بي إتش ستة فاصلة تمانية والنيتروجين متوسط والفوسفور مرتفع والبوتاسيوم منخفض، وتطلب خطة تسميد ومحصولين.\n\nاحتفظ بكل مجموعة أرقام والعدد المطلوب من الطرق والمحاصيل.\n\nفي الحالة أ، افحص احتياج الجير الخاص بالمحصول وخطة النيتروجين والفوسفور والمادة العضوية المعايرة لطريقة التحليل كمسارين منفصلين. البروكلي والفاصوليا أمثلة ممكن تواجه خطر عند بي إتش خمسة فاصلة اتنين، لأن إرشادات زراعتها بتفضّل تقريبًا بي إتش ستة إلى سبعة؛ ده احتمال خطر، مش ضمان للفشل. بعد تحسين متحقق منه، ممكن نفحص ملاءمة الطماطم والذرة الحلوة لو المناخ والصرف والملوحة وتوازن المغذيات واحتياجات الصنف المحلي مناسبين.\n\nفي ب، لا تضف الفوسفور من غير حاجة؛ تحقق من نقص البوتاسيوم المبلّغ عنه حسب الطريقة واحتياج المحصول، ووازن النيتروجين من كل المصادر. الطماطم والذرة الحلوة مرشحان للفحص عند بي إتش ستة فاصلة تمانية، لكن البيانات الناقصة لا تضمن نجاحهما ولا تحدد جرعة.\n\nنحافظ على سؤال المحاصيل مع ربط النجاح الفعلي بدليل الموقع.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": true,
+      "requestFingerprintSHA256": "c8fce1e2be1a937f16f653b66d7704bfc5e35a10d027f1647388584eb2ed7bb2",
+      "requestFingerprintSha256": "c8fce1e2be1a937f16f653b66d7704bfc5e35a10d027f1647388584eb2ed7bb2",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "other-final-cases",
+        "casePointer": "/portfolio/cases/5",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceWrittenCaseModelAnswerIncluded": true,
+      "liveQuizAnswerKeyIncluded": false
+    }
+  ]
+}

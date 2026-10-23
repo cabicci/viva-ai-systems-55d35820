@@ -1,0 +1,1 @@
+OFFLINE ONLY:24 S215 E01toE06 fullworkedmodel narrations,6perlocale, after corresponding ownreport/critique attempt. Source facts/qualifiers retained, no ordinaryfrontload. Proposed24TTS24blind24ASR8metadataGET0retry. Providerfunctions unchanged. Owner explicit gatedpipeline approval required before any publication.

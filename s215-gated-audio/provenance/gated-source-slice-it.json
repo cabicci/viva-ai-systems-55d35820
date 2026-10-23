@@ -1,0 +1,74 @@
+{
+  "stepId": "S2-15",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "teaching-table",
+      "title": "Tabella illustrativa, non certificato di laboratorio",
+      "situation": "Modello: pH 5.2; sostanza organica 2.1%; N Basso; P 25 ppm; K 180 ppm, con intervalli illustrativi propri.",
+      "reasoning": [
+        "Mostra cinque righe, unità e intervalli stampati come esempio.",
+        "Non unirli a West Field né usare gli intervalli come regola universale per il pomodoro.",
+        "Richiedi metodo e riferimento di laboratorio calibrato per la coltura prima di classe o dose."
+      ],
+      "takeaway": "Una tabella elegante richiede colonne attendibili."
+    },
+    {
+      "id": "west-field-model",
+      "title": "Farmer Jones: pomodori di West Field",
+      "situation": "pH 5.5, sostanza organica 1.5%, N Basso, P 15 ppm, K 200 ppm, compattazione e drenaggio lento; obiettivi del modello non calibrati in laboratorio.",
+      "reasoning": [
+        "Includi cinque sezioni e segnala data, laboratorio e metodo mancanti.",
+        "Acidità e N/P richiedono piano colturale/laboratorio; registra K senza fertilizzazione bilanciata automatica.",
+        "Indaga strato, umidità e sbocco prima di intervento meccanico e motiva la priorità."
+      ],
+      "takeaway": "Conta la logica del rapporto, non una dose o lavorazione automatica."
+    },
+    {
+      "id": "corn-case",
+      "title": "Caso scritto distinto: mais",
+      "situation": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+      "reasoning": [
+        "Spiega le categorie fornite con parole semplici.",
+        "Elenca controlli condizionati di calce, nutrienti, compattazione, drenaggio e coltura.",
+        "Il giallo non prova carenza di N; non inventare metodo, dose o data."
+      ],
+      "takeaway": "Questo mais non è il rapporto pomodoro di West Field."
+    },
+    {
+      "id": "field-b",
+      "title": "Field B: cinque letture pH",
+      "situation": "Letture 6.2, 6.4, 6.1, 6.3, 6.2; la data è richiesta ma non fornita.",
+      "reasoning": [
+        "Mostra tutte e cinque le letture in una tabella identificata.",
+        "Somma 31.2 e media 31.2/5 = 6.24.",
+        "Scrivi “media di cinque letture”, non misura di un campione misto; data reale o mancante."
+      ],
+      "takeaway": "Una media non crea una nuova misura fisica."
+    },
+    {
+      "id": "paddock-3",
+      "title": "Prodotto Paddock 3 in una pagina",
+      "situation": "pH 7.8 alcalino, sostanza organica 1.5% bassa, N Alto, P Molto basso, K Basso; almeno un’azione condizionata per P/K.",
+      "reasoning": [
+        "Includi identità Paddock 3 e cinque risultati in lingua comune.",
+        "Proponi un piano nutritivo condizionato per P e K, calibrato dal laboratorio per la coltura; la farina d'ossa citata nella lista di controllo è un esempio, non un prodotto obbligatorio né una dose prescritta.",
+        "Il formatore verifica cinque righe: ID, risultati, chiarezza, azione per carenza e impaginazione, registrando sì/no e prova/correzione."
+      ],
+      "takeaway": "Un prodotto ordinato richiede comunque revisione reale."
+    },
+    {
+      "id": "other-final-cases",
+      "title": "Tieni distinti i casi scritti finali",
+      "situation": "Caso A: pH 5.2, N Basso, P Basso, K Medio, sostanza organica 1%; due interventi e esempi di colture. Caso B: pH 6.8, N Medio, P Alto, K Basso; strategia e due colture.",
+      "reasoning": [
+        "Conserva esattamente dati e numero di tecniche/colture richieste.",
+        "Per A valuta calce e piano N/P/sostanza organica. Broccoli e fagioli comuni sono a rischio a pH 5.2 secondo guide che preferiscono circa 6–7, non destinati certamente a fallire; dopo miglioramento verificato, pomodoro e mais dolce sono candidati se clima, drenaggio, salinità e varietà lo consentono.",
+        "Per B evita P superfluo, verifica K e bilancia N. Pomodoro e mais dolce sono candidati da esaminare a pH 6.8, non promesse né base per una dose."
+      ],
+      "takeaway": "Le colture richieste rimangono esempi condizionati dal sito."
+    }
+  ]
+}

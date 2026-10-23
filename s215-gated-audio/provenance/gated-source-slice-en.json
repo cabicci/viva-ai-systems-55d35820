@@ -1,0 +1,74 @@
+{
+  "stepId": "S2-15",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "teaching-table",
+      "title": "Illustrative table, not a laboratory certificate",
+      "situation": "Supplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+      "reasoning": [
+        "Show all five rows, reported units and printed bands as source examples.",
+        "Do not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.",
+        "Ask for the actual analytical method and crop-calibrated lab reference before a final class or input rate."
+      ],
+      "takeaway": "A clean table needs trustworthy columns, not just attractive formatting."
+    },
+    {
+      "id": "west-field-model",
+      "title": "Farmer Jones: West Field tomatoes",
+      "situation": "Provided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+      "reasoning": [
+        "Include all five sections and mark missing date, lab and test methods.",
+        "Treat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.",
+        "Inspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives."
+      ],
+      "takeaway": "A model's value is its report structure and reasoning, not an automatic dose or tillage instruction."
+    },
+    {
+      "id": "corn-case",
+      "title": "Separate written case: corn",
+      "situation": "Corn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+      "reasoning": [
+        "Explain the supplied categories simply and clearly identify them as provided.",
+        "List conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.",
+        "Prior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented."
+      ],
+      "takeaway": "This corn exercise is separate from the West Field tomato report."
+    },
+    {
+      "id": "field-b",
+      "title": "Field B: five pH readings",
+      "situation": "Field B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.",
+      "reasoning": [
+        "Show all five readings in an identified table.",
+        "The sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.",
+        "Say 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing."
+      ],
+      "takeaway": "An average summarizes separate measurements; it does not manufacture a new physical measurement."
+    },
+    {
+      "id": "paddock-3",
+      "title": "Paddock 3 one-page product",
+      "situation": "Supplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+      "reasoning": [
+        "One page includes Paddock 3 field ID and all five original results in plain language.",
+        "Offer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.",
+        "The trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each."
+      ],
+      "takeaway": "A polished product still needs a verified trainer review and sound recommendation."
+    },
+    {
+      "id": "other-final-cases",
+      "title": "Keep later written cases distinct",
+      "situation": "Case A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+      "reasoning": [
+        "Retain each exact dataset and requested number of techniques or crops.",
+        "For case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.",
+        "For case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate."
+      ],
+      "takeaway": "Question prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence."
+    }
+  ]
+}

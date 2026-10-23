@@ -1,0 +1,563 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-de.json",
+    "sha256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+    "bytes": 46487
+  },
+  "units": [
+    {
+      "id": "S2-15-de-E01-r1",
+      "unitId": "S2-15-de-E01-r1",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Lehrtabelle, kein Laborzertifikat",
+          "sha256": "fedb0af7ac9fe04ba5204a449bca2474c32a5d25196dcff7e3462db0f1f837f4"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Vorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.",
+          "sha256": "7443cbd617b0b9f3c005448a069babbb531b8582284f8e7de24407ab848ac677"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.",
+          "sha256": "e232ffd3dd760bd6bbd323e3b2cbe057053a67c26484b3ff5e66c799e6e132f5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Vermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.",
+          "sha256": "3f1c5c046a00ed6a3267f56b71516341b0a490e0d13667a4f386558d0bff7d18"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Frage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.",
+          "sha256": "724fc6b56f205ca799a6c92a54fc5883685d7c46296b9409d9a8d8dec0f79a4e"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Eine übersichtliche Tabelle braucht verlässliche Spalten.",
+          "sha256": "ac64f15997319541ffe154faf89d8dc3217f6243c0f9e5875d4f98cc96453af5"
+        }
+      ],
+      "scientificMeaning": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+      "displayText": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+      "captionText": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+      "spokenText": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: Pe Ha fünf Komma zwei, organische Substanz zwei Komma eins Prozent, Stickstoff Niedrig, Phosphor fünfundzwanzig Teile pro Million, Kalium einhundertachtzig Teile pro Million samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+      "spokenTextSHA256": "c734b701a350f429b1d975e2f0ac1e184d13803a547f51d9fd96062ae9a92f98",
+      "spokenTextSha256": "c734b701a350f429b1d975e2f0ac1e184d13803a547f51d9fd96062ae9a92f98",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: pH 5.2, organische Substanz 2.1%, N Niedrig, P 25 ppm, K 180 ppm samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+          "spoken": "Lehrtabelle, kein Laborzertifikat\n\nVorgabe: Pe Ha fünf Komma zwei, organische Substanz zwei Komma eins Prozent, Stickstoff Niedrig, Phosphor fünfundzwanzig Teile pro Million, Kalium einhundertachtzig Teile pro Million samt Beispielbereichen.\n\nZeige fünf Zeilen, Einheiten und gedruckte Bereiche ausdrücklich als Beispiel.\n\nVermische die Werte nicht mit West Field und erkläre Bereiche nicht zu allgemeinen Tomatenwerten.\n\nFrage vor Einstufung oder Dosis nach Methode und kulturkalibrierter Laborreferenz.\n\nEine übersichtliche Tabelle braucht verlässliche Spalten.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "257c8f15275d84bbf9593f2ecb1e75bce29c2a18e2831c753b8a5c533c38a5b7",
+      "requestFingerprintSha256": "257c8f15275d84bbf9593f2ecb1e75bce29c2a18e2831c753b8a5c533c38a5b7",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "teaching-table",
+        "casePointer": "/portfolio/cases/0",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-de-E02-r1",
+      "unitId": "S2-15-de-E02-r1",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Farmer Jones: West-Field-Tomaten",
+          "sha256": "a9d9d1de1d6b8b746431eea76881fcbe3df74b8294feb7c073db3b1b016b9f11"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "pH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.",
+          "sha256": "86e808c1c927ffb5d74d06189d13954b92d83a775e898a44f45eebce6d415af0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Fünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.",
+          "sha256": "47f27f476a969627f51d5b8b597ae99511400d3d71f5524046cb560863d4a6c2"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Säure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.",
+          "sha256": "6c9a35869dea600598ab006dc360a73ae58548a9e2c644313597bd18b7bb5a2d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Sperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.",
+          "sha256": "b5da6c60273eafe6028c2d245be3b7cde052483afde64e1b12b44e0749de9f5a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Der Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+          "sha256": "c13802b76ae34e5f28ba85f3e5fe0be9cc77d6daa7ec52bbe5487c527eb87372"
+        }
+      ],
+      "scientificMeaning": "Farmer Jones: West-Field-Tomaten\n\npH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+      "displayText": "Farmer Jones: West-Field-Tomaten\n\npH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+      "captionText": "Farmer Jones: West-Field-Tomaten\n\npH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+      "spokenText": "Farmer Jones: West-Field-Tomaten\n\nPe Ha fünf Komma fünf, organische Substanz eins Komma fünf Prozent, Stickstoff Niedrig, Phosphor fünfzehn Teile pro Million, Kalium zweihundert Teile pro Million, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und Stickstoff, Phosphor verlangen Kultur-, Laborplan; Kalium nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+      "spokenTextSHA256": "436841d04124c3690cc1ea1005f1e46829ce21840ee987d03758297459b0eea7",
+      "spokenTextSha256": "436841d04124c3690cc1ea1005f1e46829ce21840ee987d03758297459b0eea7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Farmer Jones: West-Field-Tomaten\n\npH 5.5, organische Substanz 1.5%, N Niedrig, P 15 ppm, K 200 ppm, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und N/P verlangen Kultur-/Laborplan; K nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+          "spoken": "Farmer Jones: West-Field-Tomaten\n\nPe Ha fünf Komma fünf, organische Substanz eins Komma fünf Prozent, Stickstoff Niedrig, Phosphor fünfzehn Teile pro Million, Kalium zweihundert Teile pro Million, Verdichtung und langsamer Abfluss; Modellbereiche ohne lokale Laborkalibrierung.\n\nFünf Abschnitte mit ausdrücklich fehlendem Datum, Labor und Verfahren.\n\nSäure und Stickstoff, Phosphor verlangen Kultur-, Laborplan; Kalium nicht mit automatischem Volldünger behandeln.\n\nSperrschicht, Feuchte und Abfluss vor mechanischer Maßnahme prüfen; Priorität begründen.\n\nDer Nutzen liegt im Aufbau und Denken, nicht in einer automatischen Dosis.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a0db704cb1ce7b0f29a0b481e785c74b0cc119c4ea405bea7624a9baaa0aca5f",
+      "requestFingerprintSha256": "a0db704cb1ce7b0f29a0b481e785c74b0cc119c4ea405bea7624a9baaa0aca5f",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "west-field-model",
+        "casePointer": "/portfolio/cases/1",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-de-E03-r1",
+      "unitId": "S2-15-de-E03-r1",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Getrennter Schreibfall: Mais",
+          "sha256": "dbd55a9ee87af8eab416f8b34ca48bafc69a783653c47407e729a1db9956374f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "pH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.",
+          "sha256": "f4a70b9c4cd71c5eca315f9a738f7e1c8f9d59cddab26a5725dec456d55e6d3d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Die angegebenen Kategorien in einfacher Sprache erläutern.",
+          "sha256": "4df5eb55b74e8b568a2886d6d68a04a56a1e15ee8e7b66d40e796791a083ed54"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Liste bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.",
+          "sha256": "461ffa984b3ff96a25c0b4234612f83e5647ccc62d8331b3d76eb0b456449146"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Frühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden.",
+          "sha256": "ab1b9dbb8241b2d0213a189cfcd1f63f6701dff2b6b8a407c30d89eb3ac0405a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Der Maisfall ist nicht der Tomatenbericht.",
+          "sha256": "80c92266f6dbdafcff834f4f0b6a0b3cb2cee225964e75b7b0c2cc4556ecad33"
+        }
+      ],
+      "scientificMeaning": "Getrennter Schreibfall: Mais\n\npH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+      "displayText": "Getrennter Schreibfall: Mais\n\npH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+      "captionText": "Getrennter Schreibfall: Mais\n\npH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+      "spokenText": "Getrennter Schreibfall: Mais\n\nPe Ha fünf Komma vier (angegebenes Ziel sechs Komma null bis sieben Komma null), organische Substanz zwei Komma null Prozent (Ziel größer als drei Prozent ), Stickstoff, Phosphor Niedrig, Kalium Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen Stickstoff-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+      "spokenTextSHA256": "0ac972cef6f6fe68b08006a0683434cec611e36a8257e3c0614bc6255a3ae628",
+      "spokenTextSha256": "0ac972cef6f6fe68b08006a0683434cec611e36a8257e3c0614bc6255a3ae628",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Getrennter Schreibfall: Mais\n\npH 5.4 (angegebenes Ziel 6.0–7.0), organische Substanz 2.0% (Ziel >3%), N/P Niedrig, K Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen N-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+          "spoken": "Getrennter Schreibfall: Mais\n\nPe Ha fünf Komma vier (angegebenes Ziel sechs Komma null bis sieben Komma null), organische Substanz zwei Komma null Prozent (Ziel größer als drei Prozent ), Stickstoff, Phosphor Niedrig, Kalium Optimal, Verdichtung und früheres Vergilben.\n\nDie angegebenen Kategorien in einfacher Sprache erläutern.\n\nListe bedingte nächste Schritte zur Kalkbedarfsprüfung, Nährstoffdeutung, Verdichtungs- und Entwässerungsprüfung sowie Kulturprüfung in einer begründeten Reihenfolge auf.\n\nFrühere gelbe Blätter beweisen keinen Stickstoff-Mangel; keine Methode, Dosis oder Datum erfinden.\n\nDer Maisfall ist nicht der Tomatenbericht.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5e0f38d62b9803aab2bd6439dd10d6526750a3346542163297140069fdfe9b4b",
+      "requestFingerprintSha256": "5e0f38d62b9803aab2bd6439dd10d6526750a3346542163297140069fdfe9b4b",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "corn-case",
+        "casePointer": "/portfolio/cases/2",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-de-E04-r1",
+      "unitId": "S2-15-de-E04-r1",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Field B: fünf pH-Werte",
+          "sha256": "4bef06eb8813498f457a70925107ae772a97f7495b7a8cfce4b6a43eec3a4f3c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Einzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.",
+          "sha256": "76347337f40304bb5ffed8eb0a412cbbc1e8766d6f12483ea56420881cbcf1ec"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Alle fünf Werte in einer Tabelle mit Feldkennung darstellen.",
+          "sha256": "523bf085f426e9d04b969c7fc133408c2ae0b72c61a49909a9e2c11b38cde17c"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Summe 31.2 und arithmetisches Mittel 31.2/5 = 6.24.",
+          "sha256": "cc5627f99064bfd51548dfacd7a1709357d7b40aec7f2f125dafbe306729ab70"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke.",
+          "sha256": "12f0885714098c0649fea695755a9c83c79894ca20c042bad0ce14fb711ca370"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Ein Mittelwert schafft keine neue physische Messung.",
+          "sha256": "6965a675b7df45850d562a2b8e8d83ec39be9fd73fe269a0908ae84dc595c579"
+        }
+      ],
+      "scientificMeaning": "Field B: fünf pH-Werte\n\nEinzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme 31.2 und arithmetisches Mittel 31.2/5 = 6.24.\n\n„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+      "displayText": "Field B: fünf pH-Werte\n\nEinzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme 31.2 und arithmetisches Mittel 31.2/5 = 6.24.\n\n„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+      "captionText": "Field B: fünf pH-Werte\n\nEinzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme 31.2 und arithmetisches Mittel 31.2/5 = 6.24.\n\n„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+      "spokenText": "Field B: fünf Pe Ha-Werte\n\nEinzelwerte sechs Komma zwei, sechs Komma vier, sechs Komma eins, sechs Komma drei, sechs Komma zwei; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme einunddreißig Komma zwei und arithmetisches Mittel einunddreißig Komma zwei geteilt durch fünf gleich sechs Komma zwei vier.\n\n„Mittel aus fünf Werten“, nicht Pe Ha einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+      "spokenTextSHA256": "9cec2db0d94c1d0df226b76864bf73e89835b906f5e00615bbcceb6ade0adc0a",
+      "spokenTextSha256": "9cec2db0d94c1d0df226b76864bf73e89835b906f5e00615bbcceb6ade0adc0a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Field B: fünf pH-Werte\n\nEinzelwerte 6.2, 6.4, 6.1, 6.3, 6.2; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme 31.2 und arithmetisches Mittel 31.2/5 = 6.24.\n\n„Mittel aus fünf Werten“, nicht pH einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+          "spoken": "Field B: fünf Pe Ha-Werte\n\nEinzelwerte sechs Komma zwei, sechs Komma vier, sechs Komma eins, sechs Komma drei, sechs Komma zwei; das gefragte Datum wird nicht genannt.\n\nAlle fünf Werte in einer Tabelle mit Feldkennung darstellen.\n\nSumme einunddreißig Komma zwei und arithmetisches Mittel einunddreißig Komma zwei geteilt durch fünf gleich sechs Komma zwei vier.\n\n„Mittel aus fünf Werten“, nicht Pe Ha einer Mischprobe; echtes Datum oder Lücke.\n\nEin Mittelwert schafft keine neue physische Messung.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0c32c1e895c3fe08ea468af3bcb0fc299a8991512176e2e30308914479049b59",
+      "requestFingerprintSha256": "0c32c1e895c3fe08ea468af3bcb0fc299a8991512176e2e30308914479049b59",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "field-b",
+        "casePointer": "/portfolio/cases/3",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-de-E05-r1",
+      "unitId": "S2-15-de-E05-r1",
+      "locale": "de",
+      "semanticGroup": "E05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/title",
+          "text": "Einseitiges Produkt Paddock 3",
+          "sha256": "f50923cadfca5d0018d7bb42e0e434fc64e8e123dd06a6a6d1033f026b1458b3"
+        },
+        {
+          "pointer": "/examples/4/situation",
+          "text": "pH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.",
+          "sha256": "d6cd0bed83f70f8dada61497783c65dd7bb29fed3f0bbd6025d8fe5b6c55226b"
+        },
+        {
+          "pointer": "/examples/4/reasoning/0",
+          "text": "Paddock-3-Kennung und alle fünf Werte verständlich aufführen.",
+          "sha256": "913aee1a5077842f24820ecfe4ad1211b4cf29b590ceab793f97de616fb41bd1"
+        },
+        {
+          "pointer": "/examples/4/reasoning/1",
+          "text": "P/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.",
+          "sha256": "54460ff7356d17ee4374f0d312bb32155b566587160c3b7278926a6a222ef3cf"
+        },
+        {
+          "pointer": "/examples/4/reasoning/2",
+          "text": "Lehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur.",
+          "sha256": "7b080d012947160ce50cf05d5dfa5969cdfadf755626173684a8a4609407cf2a"
+        },
+        {
+          "pointer": "/examples/4/takeaway",
+          "text": "Ein ordentliches Produkt benötigt reale fachliche Bewertung.",
+          "sha256": "29838c7eddeaf10645db98dc40abba0deb8a175fdbb66919a61e6e3df97d12de"
+        }
+      ],
+      "scientificMeaning": "Einseitiges Produkt Paddock 3\n\npH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.\n\nPaddock-3-Kennung und alle fünf Werte verständlich aufführen.\n\nP/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+      "displayText": "Einseitiges Produkt Paddock 3\n\npH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.\n\nPaddock-3-Kennung und alle fünf Werte verständlich aufführen.\n\nP/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+      "captionText": "Einseitiges Produkt Paddock 3\n\npH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.\n\nPaddock-3-Kennung und alle fünf Werte verständlich aufführen.\n\nP/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+      "spokenText": "Einseitiges Produkt Paddock drei\n\nPe Ha sieben Komma acht alkalisch, organische Substanz eins Komma fünf Prozent niedrig, Stickstoff Hoch, Phosphor Sehr niedrig, Kalium Niedrig; mindestens eine bedingte Phosphor, Kalium-Maßnahme.\n\nPaddock-drei-Kennung und alle fünf Werte verständlich aufführen.\n\nPhosphor, Kalium-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja, Nein mit Beleg, Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+      "spokenTextSHA256": "95d6920a451eabbb40e1432ba0884ac80e3781c01626962dddd8d0969d69df47",
+      "spokenTextSha256": "95d6920a451eabbb40e1432ba0884ac80e3781c01626962dddd8d0969d69df47",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Einseitiges Produkt Paddock 3\n\npH 7.8 alkalisch, organische Substanz 1.5% niedrig, N Hoch, P Sehr niedrig, K Niedrig; mindestens eine bedingte P/K-Maßnahme.\n\nPaddock-3-Kennung und alle fünf Werte verständlich aufführen.\n\nP/K-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja/Nein mit Beleg/Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+          "spoken": "Einseitiges Produkt Paddock drei\n\nPe Ha sieben Komma acht alkalisch, organische Substanz eins Komma fünf Prozent niedrig, Stickstoff Hoch, Phosphor Sehr niedrig, Kalium Niedrig; mindestens eine bedingte Phosphor, Kalium-Maßnahme.\n\nPaddock-drei-Kennung und alle fünf Werte verständlich aufführen.\n\nPhosphor, Kalium-Plan kultur- und methodenbezogen; Knochenmehl aus dem Beispiel ist keine Pflichtgabe oder Dosierung.\n\nLehrkraft prüft fünf Zeilen: Kennung, Werte, verständliche Erklärung, Maßnahme gegen Mangel und Lesbarkeit; Ja, Nein mit Beleg, Korrektur.\n\nEin ordentliches Produkt benötigt reale fachliche Bewertung.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b32cdaa74b1e6e6f4d3c1b5eee80b937bc1846f3d4d17f78bfc5953be521620e",
+      "requestFingerprintSha256": "b32cdaa74b1e6e6f4d3c1b5eee80b937bc1846f3d4d17f78bfc5953be521620e",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "paddock-3",
+        "casePointer": "/portfolio/cases/4",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-de-E06-r1",
+      "unitId": "S2-15-de-E06-r1",
+      "locale": "de",
+      "semanticGroup": "E06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/5/title",
+          "text": "Spätere schriftliche Fälle bleiben getrennt",
+          "sha256": "041cd027b22da1337d5a6e4efc183bfe53c2cf0013affef6ecbb84fac3d7806b"
+        },
+        {
+          "pointer": "/examples/5/situation",
+          "text": "Fall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.",
+          "sha256": "84a0e78f5432b6465f7b9e57285ac12069026da99c37b352c5221a0a9bc78e55"
+        },
+        {
+          "pointer": "/examples/5/reasoning/0",
+          "text": "Jede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.",
+          "sha256": "da412359108837a6c42c45d7e07f673b08396dc0b4e5d7a467b5401749a97a2e"
+        },
+        {
+          "pointer": "/examples/5/reasoning/1",
+          "text": "Bei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.",
+          "sha256": "8e3966f6ca6746295ad535991ecdb57468a5edd55bb694797c22512f617a52e5"
+        },
+        {
+          "pointer": "/examples/5/reasoning/2",
+          "text": "Bei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis.",
+          "sha256": "c2c6fac3db4bc0bef943dd857815e9bd996873c1af88c06c01683484efd02b19"
+        },
+        {
+          "pointer": "/examples/5/takeaway",
+          "text": "Gefragte Kulturbeispiele bleiben standortabhängig.",
+          "sha256": "c9ff148a39bcb075376d2704f79552835104d9385aad098dd104608944dd9fa3"
+        }
+      ],
+      "scientificMeaning": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.\n\nBei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+      "displayText": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.\n\nBei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+      "captionText": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.\n\nBei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+      "spokenText": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: Pe Ha fünf Komma zwei, Stickstoff Niedrig, Phosphor Niedrig, Kalium Mittel, organische Substanz eins Prozent; zwei Verbesserungen und Kulturbeispiele. Fall B: Pe Ha sechs Komma acht, Stickstoff Mittel, Phosphor Hoch, Kalium Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen, Kulturen erhalten.\n\nBei A Kalkbedarf sowie Stickstoff, Phosphor-, Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei Pe Ha fünf Komma zwei gemäß Anbauhinweisen mit etwa Pe Ha sechs bis sieben möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige Phosphor-Gabe vermeiden, Kalium prüfen und Stickstoff bilanzieren. Tomate und Zuckermais bei Pe Ha sechs Komma acht nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch Kalium-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+      "spokenTextSHA256": "9ee0616dcef568e6790199f3e5885569026d6c722d3bab7f63db647a7c16fb28",
+      "spokenTextSha256": "9ee0616dcef568e6790199f3e5885569026d6c722d3bab7f63db647a7c16fb28",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: pH 5.2, N Niedrig, P Niedrig, K Mittel, organische Substanz 1%; zwei Verbesserungen und Kulturbeispiele. Fall B: pH 6.8, N Mittel, P Hoch, K Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen/Kulturen erhalten.\n\nBei A Kalkbedarf sowie N/P-/Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei pH 5.2 gemäß Anbauhinweisen mit etwa pH 6–7 möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige P-Gabe vermeiden, K prüfen und N bilanzieren. Tomate und Zuckermais bei pH 6.8 nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch K-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+          "spoken": "Spätere schriftliche Fälle bleiben getrennt\n\nFall A: Pe Ha fünf Komma zwei, Stickstoff Niedrig, Phosphor Niedrig, Kalium Mittel, organische Substanz eins Prozent; zwei Verbesserungen und Kulturbeispiele. Fall B: Pe Ha sechs Komma acht, Stickstoff Mittel, Phosphor Hoch, Kalium Niedrig; Strategie und zwei Kulturen.\n\nJede Datengruppe und geforderte Zahl von Maßnahmen, Kulturen erhalten.\n\nBei A Kalkbedarf sowie Stickstoff, Phosphor-, Humusplanung prüfen. Brokkoli und Gartenbohnen sind bei Pe Ha fünf Komma zwei gemäß Anbauhinweisen mit etwa Pe Ha sechs bis sieben möglicherweise gefährdet, nicht sicher erfolglos. Nach belegter Verbesserung können Tomate und Zuckermais bei passendem Klima, Abfluss, Salzgehalt und Sorte geprüft werden.\n\nBei B unnötige Phosphor-Gabe vermeiden, Kalium prüfen und Stickstoff bilanzieren. Tomate und Zuckermais bei Pe Ha sechs Komma acht nur als Kandidaten nennen; der knappe Fall belegt weder Eignung noch Kalium-Dosis.\n\nGefragte Kulturbeispiele bleiben standortabhängig.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": true,
+      "requestFingerprintSHA256": "61cbfb19e4d8fb0c585fa6350c78e30e7e642f6268ec2e4e916f02cea18edb29",
+      "requestFingerprintSha256": "61cbfb19e4d8fb0c585fa6350c78e30e7e642f6268ec2e4e916f02cea18edb29",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "other-final-cases",
+        "casePointer": "/portfolio/cases/5",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-de.json",
+      "sourceWrittenCaseModelAnswerIncluded": true,
+      "liveQuizAnswerKeyIncluded": false
+    }
+  ]
+}

@@ -1,0 +1,563 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-en.json",
+    "sha256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "bytes": 49429
+  },
+  "units": [
+    {
+      "id": "S2-15-en-E01-r1",
+      "unitId": "S2-15-en-E01-r1",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Illustrative table, not a laboratory certificate",
+          "sha256": "b30a771997c702f20541eff00887e00760f7eaa3759406ffbc7faa8d7026ef70"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Supplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.",
+          "sha256": "3f8482e391911abe96e635165b2ac27bfc5007ae108b22216da5265b4634f1e5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Show all five rows, reported units and printed bands as source examples.",
+          "sha256": "7994f3e276c2edb1a9b066e32e830ef0b51b660459f1fca747d1ae6ab75a81e5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Do not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.",
+          "sha256": "d432968ab895cade9ff913ec773d73d241d047134a4464742a889b8df8e8e6ef"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Ask for the actual analytical method and crop-calibrated lab reference before a final class or input rate.",
+          "sha256": "528deafcd035b0d8d9d4a0743d8c75aae484da496f4026e3e437e5fcfbf1fa78"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A clean table needs trustworthy columns, not just attractive formatting.",
+          "sha256": "2c7abfeb45c356e73243093a83eb14b4740cda868c4f49ef1bd1f46eff73b31d"
+        }
+      ],
+      "scientificMeaning": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+      "displayText": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+      "captionText": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+      "spokenText": "Illustrative table, not a laboratory certificate\n\nSupplied model: P H five point two; organic matter two point one percent; nitrogen Low; phosphorus twenty-five parts per million; potassium one hundred eighty parts per million, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+      "spokenTextSHA256": "bde169fc952b32f37fe698ddec038de0eda9e13e06c51e5d6bd95c96a34698a5",
+      "spokenTextSha256": "bde169fc952b32f37fe698ddec038de0eda9e13e06c51e5d6bd95c96a34698a5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Illustrative table, not a laboratory certificate\n\nSupplied model: pH 5.2; OM 2.1%; N Low; P 25 ppm; K 180 ppm, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+          "spoken": "Illustrative table, not a laboratory certificate\n\nSupplied model: P H five point two; organic matter two point one percent; nitrogen Low; phosphorus twenty-five parts per million; potassium one hundred eighty parts per million, with its own example reference bands.\n\nShow all five rows, reported units and printed bands as source examples.\n\nDo not merge these numbers with the West Field sample or use the bands as a universal tomato guideline.\n\nAsk for the actual analytical method and crop-calibrated lab reference before a final class or input rate.\n\nA clean table needs trustworthy columns, not just attractive formatting.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ea73936b7dd6f44fd96475ca58e8a7ce57def3a281dd043ee9477ad863d52886",
+      "requestFingerprintSha256": "ea73936b7dd6f44fd96475ca58e8a7ce57def3a281dd043ee9477ad863d52886",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "teaching-table",
+        "casePointer": "/portfolio/cases/0",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-en-E02-r1",
+      "unitId": "S2-15-en-E02-r1",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Farmer Jones: West Field tomatoes",
+          "sha256": "f331733664f13a5f895e44973ed75b490d5a0bde7754a94d41f6a775f46bc7c2"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Provided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.",
+          "sha256": "06c46c97dc8a83b4adbd40b399620a7a6d4fefb2f414156660ec80b20505b037"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Include all five sections and mark missing date, lab and test methods.",
+          "sha256": "a794287d30c2b0cd39e33cf3681ee17b5a672bf646f4e5145a5704c60be25737"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Treat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.",
+          "sha256": "f54d3c2e7a02dba732b6eb2923bca38162ba49f3b5978d12d62ac7fdb1d13d28"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Inspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.",
+          "sha256": "6c0af747812ee41660c4ede4822826f40d69545c8caa4b7677c17eaa537dc309"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "A model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+          "sha256": "3b16e478f74bcc9a0cbe13828096a5e96f844ce1f71362fc1659b417077579e2"
+        }
+      ],
+      "scientificMeaning": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+      "displayText": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+      "captionText": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+      "spokenText": "Farmer Jones: West Field tomatoes\n\nProvided P H five point five, organic matter one point five percent, nitrogen Low, phosphorus fifteen parts per million, potassium two hundred parts per million, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat P H and nitrogen, phosphorus as questions for a crop, site, lab plan; record the supplied potassium value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+      "spokenTextSHA256": "5bef0a6f09582993e75a3c980dbcdb1fd08f7a5f351c6dc9a9b6a09cec499fee",
+      "spokenTextSha256": "5bef0a6f09582993e75a3c980dbcdb1fd08f7a5f351c6dc9a9b6a09cec499fee",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Farmer Jones: West Field tomatoes\n\nProvided pH 5.5, OM 1.5%, N Low, P 15 ppm, K 200 ppm, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat pH and N/P as questions for a crop/site/lab plan; record the supplied K value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+          "spoken": "Farmer Jones: West Field tomatoes\n\nProvided P H five point five, organic matter one point five percent, nitrogen Low, phosphorus fifteen parts per million, potassium two hundred parts per million, compaction and slow drainage; classroom target bands are supplied but not laboratory-calibrated.\n\nInclude all five sections and mark missing date, lab and test methods.\n\nTreat P H and nitrogen, phosphorus as questions for a crop, site, lab plan; record the supplied potassium value without automatic balanced fertilization.\n\nInspect the restrictive layer, moisture and outlet before mechanical intervention, and state a reasoned first priority with alternatives.\n\nA model's value is its report structure and reasoning, not an automatic dose or tillage instruction.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6961755c85d8fab1fd2cd2cf64ee68cb0aec6753d6317aab9fdececd7946d4c0",
+      "requestFingerprintSha256": "6961755c85d8fab1fd2cd2cf64ee68cb0aec6753d6317aab9fdececd7946d4c0",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "west-field-model",
+        "casePointer": "/portfolio/cases/1",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-en-E03-r1",
+      "unitId": "S2-15-en-E03-r1",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Separate written case: corn",
+          "sha256": "5c74506ea17cdb26aa288eea6c9b2cb194a176eb430404cd9be439bc9a08410f"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Corn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.",
+          "sha256": "e382f1eb62ac01f37078593e9b03917f33f3ceb0ec36265a7a664106beecc1d2"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Explain the supplied categories simply and clearly identify them as provided.",
+          "sha256": "fa3b8de59f6b7e54744a584dddb46a2923db110059c50df23d96c06b3307f592"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "List conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.",
+          "sha256": "863490e2da3cda845a601effba0f7c8acd20533aeec51c551f140ac34ed05dba"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Prior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented.",
+          "sha256": "5a35bcf3ec9d1c34cef46eb0759f70290bc2ea99d49627fcc3c0e15fbad44b51"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "This corn exercise is separate from the West Field tomato report.",
+          "sha256": "eacb3405e19affd9e915d293e21108997e474a04a66260e03883f1d1bd838898"
+        }
+      ],
+      "scientificMeaning": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+      "displayText": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+      "captionText": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+      "spokenText": "Separate written case: corn\n\nCorn case: P H five point four (stated target six point zero to seven point zero), organic matter two point zero percent (stated target greater than three percent ), nitrogen Low, phosphorus Low, potassium Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction, drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove nitrogen deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+      "spokenTextSHA256": "066a2b57abcf89c2ade17ab09a5c0ff52232c13e6bbf975ae4659963e05e357a",
+      "spokenTextSha256": "066a2b57abcf89c2ade17ab09a5c0ff52232c13e6bbf975ae4659963e05e357a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Separate written case: corn\n\nCorn case: pH 5.4 (stated target 6.0–7.0), OM 2.0% (stated target >3%), N Low, P Low, K Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction/drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove N deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+          "spoken": "Separate written case: corn\n\nCorn case: P H five point four (stated target six point zero to seven point zero), organic matter two point zero percent (stated target greater than three percent ), nitrogen Low, phosphorus Low, potassium Optimum; compacted soil and prior yellow leaves.\n\nExplain the supplied categories simply and clearly identify them as provided.\n\nList conditional next actions for lime requirement, nutrient interpretation, compaction, drainage and crop check in defensible order.\n\nPrior yellow leaves do not independently prove nitrogen deficiency; no method, rate or date may be invented.\n\nThis corn exercise is separate from the West Field tomato report.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c0c993358ec92b4ea07c6f70da794a7054636ac357c8d276dc0193faaa41fc11",
+      "requestFingerprintSha256": "c0c993358ec92b4ea07c6f70da794a7054636ac357c8d276dc0193faaa41fc11",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "corn-case",
+        "casePointer": "/portfolio/cases/2",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-en-E04-r1",
+      "unitId": "S2-15-en-E04-r1",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Field B: five pH readings",
+          "sha256": "e94f71a0d2085f1bf352d3ae6952ef9a8c055332ec0abb2d260580bd3522b065"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Field B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.",
+          "sha256": "63088ec2d0e1558837f68babb7bd3fed225789a382766565847d229a7abb7294"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Show all five readings in an identified table.",
+          "sha256": "b36eda059a98c8f71915d82b069660efff435f9dddd99dee8f30559e1666ed18"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "The sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.",
+          "sha256": "618b02b655097ce4580d7d3ce551cb8e7b596c3a1455b7505014cfd398edafdd"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Say 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.",
+          "sha256": "e32cf54687ccaed46714792a7e6d0c1d86118bdf80128c6938ef330b37c3af4c"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "An average summarizes separate measurements; it does not manufacture a new physical measurement.",
+          "sha256": "4ce87b23bd7da2efcb9b9d9338ae7d9a8b03af421bb3a491fe8dc08543905b09"
+        }
+      ],
+      "scientificMeaning": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "displayText": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "captionText": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "spokenText": "Field B: five P H readings\n\nField B's five reported P H readings are six point two, six point four, six point one, six point three and six point two; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is thirty-one point two and the arithmetic mean is thirty-one point two divided by five equals six point two four.\n\nSay 'mean of five readings', not 'P H of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+      "spokenTextSHA256": "d0c6d3efabe7183bfcba549b7dbc86749c9fdc0bdf4b93307c3b5fb8409504a0",
+      "spokenTextSha256": "d0c6d3efabe7183bfcba549b7dbc86749c9fdc0bdf4b93307c3b5fb8409504a0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Field B: five pH readings\n\nField B's five reported pH readings are 6.2, 6.4, 6.1, 6.3 and 6.2; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is 31.2 and the arithmetic mean is 31.2/5 = 6.24.\n\nSay 'mean of five readings', not 'pH of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+          "spoken": "Field B: five P H readings\n\nField B's five reported P H readings are six point two, six point four, six point one, six point three and six point two; the date is requested but not supplied.\n\nShow all five readings in an identified table.\n\nThe sum is thirty-one point two and the arithmetic mean is thirty-one point two divided by five equals six point two four.\n\nSay 'mean of five readings', not 'P H of a mixed sample'. Insert the actual test date only when known; otherwise mark it missing.\n\nAn average summarizes separate measurements; it does not manufacture a new physical measurement.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ca7c962ee43c04aa5af5485aae6681381de7604a15020f45e72350465e38b898",
+      "requestFingerprintSha256": "ca7c962ee43c04aa5af5485aae6681381de7604a15020f45e72350465e38b898",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "field-b",
+        "casePointer": "/portfolio/cases/3",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-en-E05-r1",
+      "unitId": "S2-15-en-E05-r1",
+      "locale": "en",
+      "semanticGroup": "E05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/4/title",
+          "text": "Paddock 3 one-page product",
+          "sha256": "f02b94f72cf10aeaa0bd62b94b1ac79d72a4552c77a8b660ca5d8812632ca1a4"
+        },
+        {
+          "pointer": "/examples/4/situation",
+          "text": "Supplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.",
+          "sha256": "29fe72441c723350bb2accda72131f3b54c86f22e95d947de6b1d835e9dce9b9"
+        },
+        {
+          "pointer": "/examples/4/reasoning/0",
+          "text": "One page includes Paddock 3 field ID and all five original results in plain language.",
+          "sha256": "2af310f57d447e13ff119d7870faeab20a943d1f9acd7ecd86f0a60d2b4104eb"
+        },
+        {
+          "pointer": "/examples/4/reasoning/1",
+          "text": "Offer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.",
+          "sha256": "90eeb504af02cb28c8578e3d49aaeb2cc975dbd06adf22360f034872c386241a"
+        },
+        {
+          "pointer": "/examples/4/reasoning/2",
+          "text": "The trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each.",
+          "sha256": "b579bd76d2e2a172ac8143eed614e5025972a3b9ee44e63347645a93382a3208"
+        },
+        {
+          "pointer": "/examples/4/takeaway",
+          "text": "A polished product still needs a verified trainer review and sound recommendation.",
+          "sha256": "04e90347dbb35e963accef8478f18a36136ae743997b3f419c22e45edeaad92e"
+        }
+      ],
+      "scientificMeaning": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.\n\nOne page includes Paddock 3 field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+      "displayText": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.\n\nOne page includes Paddock 3 field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+      "captionText": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.\n\nOne page includes Paddock 3 field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+      "spokenText": "Paddock three one-page product\n\nSupplied P H seven point eight alkaline, organic matter one point five percent low, nitrogen High, phosphorus Very Low and potassium Low; the task asks for at least one practical phosphorus, potassium-related action.\n\nOne page includes Paddock three field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated phosphorus, potassium nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes, no and evidence, corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+      "spokenTextSHA256": "cc821390c0be20d8dd00343394c72b3ce627dac16e2c3fa9f8099e0c793eb465",
+      "spokenTextSha256": "cc821390c0be20d8dd00343394c72b3ce627dac16e2c3fa9f8099e0c793eb465",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Paddock 3 one-page product\n\nSupplied pH 7.8 alkaline, OM 1.5% low, N High, P Very Low and K Low; the task asks for at least one practical P/K-related action.\n\nOne page includes Paddock 3 field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated P/K nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes/no and evidence/corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+          "spoken": "Paddock three one-page product\n\nSupplied P H seven point eight alkaline, organic matter one point five percent low, nitrogen High, phosphorus Very Low and potassium Low; the task asks for at least one practical phosphorus, potassium-related action.\n\nOne page includes Paddock three field ID and all five original results in plain language.\n\nOffer a conditional lab- and crop-calibrated phosphorus, potassium nutrient plan; a named bone-meal example in the checklist is not a required product or dose.\n\nThe trainer checks five rows: field ID, all results, simple explanation, a deficiency-related recommendation and clear legible organization, recording yes, no and evidence, corrective action for each.\n\nA polished product still needs a verified trainer review and sound recommendation.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7fe5ed19ac033a87e0d8b10d3e34353fbe221048b8c37e4a1fc05a0209e84b19",
+      "requestFingerprintSha256": "7fe5ed19ac033a87e0d8b10d3e34353fbe221048b8c37e4a1fc05a0209e84b19",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "paddock-3",
+        "casePointer": "/portfolio/cases/4",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false
+    },
+    {
+      "id": "S2-15-en-E06-r1",
+      "unitId": "S2-15-en-E06-r1",
+      "locale": "en",
+      "semanticGroup": "E06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/5/title",
+          "text": "Keep later written cases distinct",
+          "sha256": "3c8aea0985363566958132f553f9687a295249865328cbe313e067434a1a5b0e"
+        },
+        {
+          "pointer": "/examples/5/situation",
+          "text": "Case A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.",
+          "sha256": "ba67ff68413aea786c767a94a184e373b271649a96e4c4fc82e3769de5a1bd38"
+        },
+        {
+          "pointer": "/examples/5/reasoning/0",
+          "text": "Retain each exact dataset and requested number of techniques or crops.",
+          "sha256": "e4a7060ae300279801948e4b2dd57841ad2d49a538687af2e807c13b50de82c4"
+        },
+        {
+          "pointer": "/examples/5/reasoning/1",
+          "text": "For case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.",
+          "sha256": "1d7b45d2562485bcdac539a115c491900da1da2acb31f05a44919bffb926fdd5"
+        },
+        {
+          "pointer": "/examples/5/reasoning/2",
+          "text": "For case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate.",
+          "sha256": "fa84e97dfe9be12a2926f7554efc646464e45b00af9bf97c0a85e885abdf8588"
+        },
+        {
+          "pointer": "/examples/5/takeaway",
+          "text": "Question prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+          "sha256": "662dd8753cdc012e57259751de53b6e9a5728fee1e8cef4803227f1670455162"
+        }
+      ],
+      "scientificMeaning": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+      "displayText": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+      "captionText": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+      "spokenText": "Keep later written cases distinct\n\nCase A: P H five point two, nitrogen Low, phosphorus Low, potassium Medium, organic matter one percent, with two soil techniques and crop examples requested. Case B: P H six point eight, nitrogen Medium, phosphorus High, potassium Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated nitrogen, phosphorus, organic matter plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting P H five point two because extension growing guidance prefers about P H six to seven; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary phosphorus input, investigate the reported potassium shortage by method and crop need, and balance nitrogen from all sources. Tomatoes and sweet corn could be investigated as candidates at P H six point eight, but the incomplete case does not prove their suitability or set a potassium rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+      "spokenTextSHA256": "7c4981150c9e4012eaecb1adcbcc25175e8a22beabd24f0377c38c0840cd1f8a",
+      "spokenTextSha256": "7c4981150c9e4012eaecb1adcbcc25175e8a22beabd24f0377c38c0840cd1f8a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Keep later written cases distinct\n\nCase A: pH 5.2, N Low, P Low, K Medium, OM 1%, with two soil techniques and crop examples requested. Case B: pH 6.8, N Medium, P High, K Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated N/P/OM plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting pH 5.2 because extension growing guidance prefers about pH 6–7; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary P input, investigate the reported K shortage by method and crop need, and balance N from all sources. Tomatoes and sweet corn could be investigated as candidates at pH 6.8, but the incomplete case does not prove their suitability or set a K rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+          "spoken": "Keep later written cases distinct\n\nCase A: P H five point two, nitrogen Low, phosphorus Low, potassium Medium, organic matter one percent, with two soil techniques and crop examples requested. Case B: P H six point eight, nitrogen Medium, phosphorus High, potassium Low, requesting a seasonal fertilizer strategy and two suitable crops.\n\nRetain each exact dataset and requested number of techniques or crops.\n\nFor case A, assess a crop-specific lime requirement and a method-calibrated nitrogen, phosphorus, organic matter plan as two distinct pathways. Broccoli and common beans are examples at risk under the starting P H five point two because extension growing guidance prefers about P H six to seven; this is a risk hypothesis, not a guaranteed failure. After verified improvement, tomatoes and sweet corn are two candidate crops if climate, drainage, salinity, nutrient balance and local variety requirements also fit.\n\nFor case B, avoid an unnecessary phosphorus input, investigate the reported potassium shortage by method and crop need, and balance nitrogen from all sources. Tomatoes and sweet corn could be investigated as candidates at P H six point eight, but the incomplete case does not prove their suitability or set a potassium rate.\n\nQuestion prompts and requested crop examples are preserved while crop success remains conditional on actual site evidence.",
+          "occurrences": 1,
+          "purpose": "Complete source preserved; explicit decimal arithmetic, units, elemental names and Egyptian spoken inflections. No source mutation."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "OFFLINE_PENDING_OWNER_GATED_PIPELINE_PERMISSION",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": true,
+      "requestFingerprintSHA256": "2872d1fd88f2ea725a5a3fd509b276229ea385cbaf8234dc8e0ac35eb2c54765",
+      "requestFingerprintSha256": "2872d1fd88f2ea725a5a3fd509b276229ea385cbaf8234dc8e0ac35eb2c54765",
+      "disclosure": {
+        "mode": "AFTER_OWN_CASE_ATTEMPT_ONLY",
+        "sourceId": "other-final-cases",
+        "casePointer": "/portfolio/cases/5",
+        "gate": "Corresponding nonblank report/critique attempt; text-presence only, not semantic pass. Edit/reload/reset closes. No ordinary linear frontload.",
+        "sourceDisclosureEvidence": {
+          "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s215-integration-r1\\future-media-disclosure.json",
+          "sha256": "668f3140bb280aad9edf8613c9e7e5815afdea8b94e24420ea22d5d056274cc8"
+        }
+      },
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceWrittenCaseModelAnswerIncluded": true,
+      "liveQuizAnswerKeyIncluded": false
+    }
+  ]
+}
