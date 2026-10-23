@@ -1,0 +1,295 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-15-en.json",
+    "sha256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+    "bytes": 49429
+  },
+  "units": [
+    {
+      "id": "S2-15-en-opening-r1",
+      "unitId": "S2-15-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.",
+          "sha256": "fbd4eb5c69b3c4e35a7d375493574e6c918d61d6626997f5b1c2ac00abbfab9a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Write all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.",
+          "sha256": "d9511ac7f2bc679ae35d027ecc4aeac71bab2ca904fa32fa60d07636c3e697d3"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "sha256": "b8ce75e444708af2e35b5ba52187d50f2233c39767bec5c559c5cce3a0f40f34"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Prioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.",
+          "sha256": "6f55cbb91749d7152231a996637c0962c281240bd2b414a54b38f0b28607f694"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Review another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "sha256": "c8ebf7c028d78ef93237d68ce203461fc1ad90eb4b9db16f046c384f38fcab57"
+        }
+      ],
+      "scientificMeaning": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "displayText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "captionText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain P H, N, P, K, organic matter and C E C accurately in language a farmer understands.\n\nPreserve Field B's five individual P H readings and report their arithmetic mean six point two four with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenTextSHA256": "04c27ab4299bb02ec7c030b4768ac8ef39c7e7c1af737771077ba50bedc726da",
+      "spokenTextSha256": "04c27ab4299bb02ec7c030b4768ac8ef39c7e7c1af737771077ba50bedc726da",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "spoken": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain P H, N, P, K, organic matter and C E C accurately in language a farmer understands.\n\nPreserve Field B's five individual P H readings and report their arithmetic mean six point two four with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4d54a1b13d3fc7a5cbd463046acd56f49b298809df8b8713ea18ca629914feb4",
+      "requestFingerprintSha256": "4d54a1b13d3fc7a5cbd463046acd56f49b298809df8b8713ea18ca629914feb4",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-guided-practice-r1",
+      "unitId": "S2-15-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.",
+          "sha256": "ffe3db08bc0dda5cbee4285df7fe924592db6ecef6a643d985ed5b0a971a0a2f"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "sha256": "78c3dc15d28afa519d9e47c85afac1c0dc3c93dea2900b974bd5ba1ab1a8c848"
+        }
+      ],
+      "scientificMeaning": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "displayText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "captionText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenTextSHA256": "9434da730c5723d9f5e1db6ad4afdc50dddf8ef77d2c8340aa014f22e075fad4",
+      "spokenTextSha256": "9434da730c5723d9f5e1db6ad4afdc50dddf8ef77d2c8340aa014f22e075fad4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "spoken": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7e868068731672e61e9eef5daf250d0e0cf8a343205ab57b6ea4848a5ec1f217",
+      "requestFingerprintSha256": "7e868068731672e61e9eef5daf250d0e0cf8a343205ab57b6ea4848a5ec1f217",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-reflection-r1",
+      "unitId": "S2-15-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Write soil test results in clear, simple language.",
+          "sha256": "8bb640c6ae32c5a2f1d0b8ac3a2d9e20b804419bc9b1466cf45094daecff3d0f"
+        },
+        {
+          "pointer": "/reflectionItems/1/prompt",
+          "text": "Use tables and bullet points to organize results and include recommendations.",
+          "sha256": "453a6ae7ec6517af63a54bf1b495ec53ed6f7c45ea4898a5df88970d11f4813b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment prompts; plan practice, not certify competence.",
+          "sha256": "c5124074c298bd1064d1d8fbdde3b96475e11a5a82c7e1e2b06457d0a812a55f"
+        }
+      ],
+      "scientificMeaning": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "displayText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "captionText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "spokenText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "spokenTextSHA256": "509004d5870599b388fec539053c7c3fb7d23aa864538341e2383325c3c0d623",
+      "spokenTextSha256": "509004d5870599b388fec539053c7c3fb7d23aa864538341e2383325c3c0d623",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+          "spoken": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "05277aa366f899504f4019b7e6c01085cc0c81e43e37489c97e5c1252be8dd07",
+      "requestFingerprintSha256": "05277aa366f899504f4019b7e6c01085cc0c81e43e37489c97e5c1252be8dd07",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-15-en-glossary-r1",
+      "unitId": "S2-15-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.",
+          "sha256": "a0fc2d5bb537d4283a8dedf0cc8d149b34361e56796a6a7625e2f04901010007"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Nitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.",
+          "sha256": "86e8b58e1ffa42d48ad32bfbd4394c6ccb1fe2a65769655d5582b25e387bdcb8"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "organic matter (OM)",
+          "sha256": "38f381ae61e57074d22eea1be965745fcd6bd599c7643f294d2ffaef65855f6e"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Organic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.",
+          "sha256": "86b5e41e28460b526e7f265167d24c1d3c80b0631e885484ef2e5aeaf31b3c06"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "cation exchange capacity (CEC)",
+          "sha256": "f978d7ec7835341b637121c6a8276a36eb61a1c0b1ac4180e10401e93d7e7762"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Capacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.",
+          "sha256": "45d9523386cba862428a47e4a6f361afb053b30856391093405cc8f2645cc09e"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "compaction",
+          "sha256": "96847128a59a0bfa3bf9526873a325465149ff3e11f00a19d102643e6c37af47"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.",
+          "sha256": "0d224ba23ab2467e21bf9d92c0a3271b394bc828b2ade486988bcfefe037323a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "tillage",
+          "sha256": "081bcdf2867e779813c21c123af147fc1de5bbfade2405dfffa990fae99b5469"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Mechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.",
+          "sha256": "2129cac07f6c59e9cc83918057edd876e5f6d4f3685ebd3b1f453c12f86edab0"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "deficient",
+          "sha256": "6f5657b70de5c769863ed44d21859dc7dafbc890b7397c9baf53c462c3159074"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Below a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "sha256": "dc1e8cea641f6efe16c557304c991e486b35942f01ef75fc67d789638e5b40b5"
+        }
+      ],
+      "scientificMeaning": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "displayText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "captionText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenText": "P H\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN P K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter, abbreviated O M\n\nOrganic material in soil relevant to structure and nutrient, water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (C E C)\n\nCapacity to hold exchangeable positively charged ions such as K, calcium and magnesium, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenTextSHA256": "51714c24472947d7a014a8f5374d72012fd1f83cfaa08959daca4dfdcba2318d",
+      "spokenTextSha256": "51714c24472947d7a014a8f5374d72012fd1f83cfaa08959daca4dfdcba2318d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "spoken": "P H\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN P K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter, abbreviated O M\n\nOrganic material in soil relevant to structure and nutrient, water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (C E C)\n\nCapacity to hold exchangeable positively charged ions such as K, calcium and magnesium, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "184ff06fa74ed564032f5f000ad9cfcd3b092304fcf1248692ff0984949b24c7",
+      "requestFingerprintSha256": "184ff06fa74ed564032f5f000ad9cfcd3b092304fcf1248692ff0984949b24c7",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

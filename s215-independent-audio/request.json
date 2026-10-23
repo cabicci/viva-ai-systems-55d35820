@@ -1,0 +1,1722 @@
+{
+  "schemaVersion": 1,
+  "scope": "S215_SIXTEEN_INDEPENDENT_CURRENT_SOURCE_FOUR_FIXED_LOCALE_LANES_THIN_DIAGNOSTICS",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s215-independent-audio-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 16,
+  "maximumBlindAudioReviewCalls": 16,
+  "maximumASRInvocations": 16,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_FOUR_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-15-ar-EG-opening-r1",
+      "unitId": "S2-15-ar-EG-opening-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.",
+          "sha256": "fc059833e064f2c704b97c23ddc031d760fd11173b6fe46971246d92e6e57338"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "تكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح pH وN وP وK والمادة العضوية وCEC بلغة يفهمها المزارع.",
+          "sha256": "8f1155fbf83cac2cd5e175899c2a5c0a4adbae2a1282892405ed938b59065fdf"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "تحافظ على قراءات pH الخمس في Field B وتحسب متوسطها 6.24، وتكتب تاريخًا حقيقيًا أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.",
+          "sha256": "0fbe148cdc3ac9530757d9a2dc31a727eda44c049a43119156e3746147ec925d"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "ترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.",
+          "sha256": "cbf3317d57dbff6446b1a6d0c4a60032bebc6ced2b784de7bb7539a79aea1ced"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "تراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+          "sha256": "e926ddbd6bb9aece7d65d39e9fa81e0f899b7242ab3f9839e366eb12ef93a5e6"
+        }
+      ],
+      "scientificMeaning": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح pH وN وP وK والمادة العضوية وCEC بلغة يفهمها المزارع.\n\nتحافظ على قراءات pH الخمس في Field B وتحسب متوسطها 6.24، وتكتب تاريخًا حقيقيًا أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "displayText": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح pH وN وP وK والمادة العضوية وCEC بلغة يفهمها المزارع.\n\nتحافظ على قراءات pH الخمس في Field B وتحسب متوسطها 6.24، وتكتب تاريخًا حقيقيًا أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "captionText": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح pH وN وP وK والمادة العضوية وCEC بلغة يفهمها المزارع.\n\nتحافظ على قراءات pH الخمس في Field B وتحسب متوسطها 6.24، وتكتب تاريخًا حقيقيًا أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "spokenText": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح بي إتش والنيتروجين والفوسفور والبوتاسيوم والمادة العضوية وسي إي سي بلغة يفهمها المزارع.\n\nتحافظ على قراءات بي إتش الخمس في الحقل بي وتحسب متوسطها ستة فاصلة اتنين أربعة، وتكتب تاريخ حقيقي أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+      "spokenTextSHA256": "9797bf09cdb855efbc2392281835b9967b1cfc2a3bf1130458f80dbdd8320057",
+      "spokenTextSha256": "9797bf09cdb855efbc2392281835b9967b1cfc2a3bf1130458f80dbdd8320057",
+      "spokenAdaptationChanges": [
+        {
+          "written": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح pH وN وP وK والمادة العضوية وCEC بلغة يفهمها المزارع.\n\nتحافظ على قراءات pH الخمس في Field B وتحسب متوسطها 6.24، وتكتب تاريخًا حقيقيًا أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+          "spoken": "المزارع محتاج تقرير يفهمه ويقدر يتصرف على أساسه. اكتب هوية العينة، واعرض النتائج بوحداتها وطريقتها، واشرح اللي معروف واللي لسه محتاج تحقق، ورتّب الخطوات الجاية بدليل. شكل الصفحة الحلو ما يصلحش تشخيص من غير سند.\n\nتكتب أقسام التقرير الخمسة وجدول نتائج معروف المصدر والطريقة والوحدة والمرجع، وتشرح بي إتش والنيتروجين والفوسفور والبوتاسيوم والمادة العضوية وسي إي سي بلغة يفهمها المزارع.\n\nتحافظ على قراءات بي إتش الخمس في الحقل بي وتحسب متوسطها ستة فاصلة اتنين أربعة، وتكتب تاريخ حقيقي أو توضّح إنه غير معروف؛ المتوسط مش قياس لعينة مجمّعة.\n\nترتّب إجراءات مشروطة بربط نتائج المعمل بالملاحظة الميدانية للصرف والانضغاط والنبات، وتحدد اللازم التحقق منه قبل تشخيص أو جرعة أو منتج.\n\nتراجع تقرير تاني وتدور على بيانات ناقصة، أو مصدر بيانات منسوب غلط، أو مرجع من غير سند، أو تناقضات ومشاكل في الوضوح، وبعدها تصحّحه. تقييم ثقتك بنفسك للتخطيط للتدريب بس.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6e0dc13ae822a807ef9e83dbcbb7b698d17c2f9fd77414d2377b264c471eb304",
+      "requestFingerprintSha256": "6e0dc13ae822a807ef9e83dbcbb7b698d17c2f9fd77414d2377b264c471eb304",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "96d33b240b4fc438b33a9ae51d1553b56eda74163bfda4965ffd741db2f95035"
+    },
+    {
+      "id": "S2-15-ar-EG-guided-practice-r1",
+      "unitId": "S2-15-ar-EG-guided-practice-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "رتّب الأقسام الخمسة وحوّل رقمًا مبهمًا إلى صف واضح فيه الوحدة والمصدر.",
+          "sha256": "4b344306a6efe9cd594aae3fb612b776771cb4925fd38499b0bae92abccc1254"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "الخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+          "sha256": "5cf5ecbe15190877777992cd16eeb61682403599bcec3a6cad36c0f323b09cb7"
+        }
+      ],
+      "scientificMeaning": "رتّب الأقسام الخمسة وحوّل رقمًا مبهمًا إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "displayText": "رتّب الأقسام الخمسة وحوّل رقمًا مبهمًا إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "captionText": "رتّب الأقسام الخمسة وحوّل رقمًا مبهمًا إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "spokenText": "رتّب الأقسام الخمسة وحوّل رقم مش واضح إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج بادوك تلاتة تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+      "spokenTextSHA256": "2de4c1c7c69cb19935eef17a8a034310f1050367e8e36287fbae0d3109a7baa8",
+      "spokenTextSha256": "2de4c1c7c69cb19935eef17a8a034310f1050367e8e36287fbae0d3109a7baa8",
+      "spokenAdaptationChanges": [
+        {
+          "written": "رتّب الأقسام الخمسة وحوّل رقمًا مبهمًا إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج Paddock 3 تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+          "spoken": "رتّب الأقسام الخمسة وحوّل رقم مش واضح إلى صف واضح فيه الوحدة والمصدر.\n\nالخطوة دي بتقيّم التقرير ومراجعة الزميل، وما بتمنحش مهارة ميدانية جديدة. بطاقة منتج بادوك تلاتة تحتفظ بخانات المدرّب الأصلية الخمس، ولازم مراجع فعلي يسجل الدليل والتصحيح.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4924e6aa6a6c3a0e056d2037ceaa520f5e717617fd55d36a123d4ffef00df876",
+      "requestFingerprintSha256": "4924e6aa6a6c3a0e056d2037ceaa520f5e717617fd55d36a123d4ffef00df876",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "96d33b240b4fc438b33a9ae51d1553b56eda74163bfda4965ffd741db2f95035"
+    },
+    {
+      "id": "S2-15-ar-EG-reflection-r1",
+      "unitId": "S2-15-ar-EG-reflection-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.",
+          "sha256": "2b17c664f31e63eed9f79270937715862c7d24dc8fc051f1f13662494944ed4f"
+        },
+        {
+          "pointer": "/reflectionItems/1/prompt",
+          "text": "استخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.",
+          "sha256": "8ee1ac09e4cdc8112ff42264ad2509e371ce091d9478f70ccd30dc6f448aeded"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "أسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+          "sha256": "bcc45f92b3065d44c413601d48f6b651fcd0878d90ce46ec127b62da887ada4e"
+        }
+      ],
+      "scientificMeaning": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+      "displayText": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+      "captionText": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+      "spokenText": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+      "spokenTextSHA256": "352de5698ddbd7419b6fa200ad7ecc6404fe25f7c1fdcbc055c149263a5afe9a",
+      "spokenTextSha256": "352de5698ddbd7419b6fa200ad7ecc6404fe25f7c1fdcbc055c149263a5afe9a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+          "spoken": "اكتب نتايج تحليل التربة بلغة واضحة وبسيطة.\n\nاستخدم جداول ونقاط عشان ترتّب النتايج وتضيف التوصيات.\n\nأسئلة التقييم الذاتي الأصلية للتخطيط للتدريب، مش لإثبات الإتقان.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "da828546847448f354834670d8838df16a9658a172f8accd78c47deb10a0a533",
+      "requestFingerprintSha256": "da828546847448f354834670d8838df16a9658a172f8accd78c47deb10a0a533",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "96d33b240b4fc438b33a9ae51d1553b56eda74163bfda4965ffd741db2f95035"
+    },
+    {
+      "id": "S2-15-ar-EG-glossary-r1",
+      "unitId": "S2-15-ar-EG-glossary-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "d5e931ce8536c8db3330956f054c1d62ff81902df266be2b856b2d6bc2a54b33",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "مقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.",
+          "sha256": "5cfef9d98e9231c19ef5cf24a3d2590921ea37b2acdeb4a71a3a48877c4ab17b"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "نيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.",
+          "sha256": "291f43fa3a4937ce2382826be274a659328c8ab3530d01b64ee5ec8511f9d087"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "المادة العضوية (OM)",
+          "sha256": "036d5257f4d475ac45ddb2fb2befdfd1a9483e1f5cb337ff87a6a22392e0921e"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "مواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها الإداري يعتمد على الطريقة والموقع.",
+          "sha256": "3eb8bf9e840c2ed3c730bc2edb593f1925d141ce0cc0553df2df0460834c1f1c"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "السعة التبادلية الكاتيونية (CEC)",
+          "sha256": "d69132c1bdb0914a9c3963fd73f9b195cebbec698e38d726803ae2066ac8731b"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "قدرة التربة على حفظ كاتيونات متبادلة زي K وCa وMg وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.",
+          "sha256": "b0150be87233ae59c6ff4a1b4b5472a7f36bf4640a9d72047a323f04296a16f7"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "انضغاط التربة",
+          "sha256": "4393e90c1290335e41f124e2a63eb01ce72b04b4e32c7e1de5b81fa6ce623111"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "كثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.",
+          "sha256": "e4d012fb0fa8b7168b72a530c05281676d26b03547d406930ed279a6e2e904da"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "الحرث",
+          "sha256": "7b7f114a51db09ac9fc15218b28f223dabdf57495bbb90450dc8945b43c57da8"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "تحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسببًا.",
+          "sha256": "47af4915f90982a21b29ee134f80ab61402c05a78726a0a5755e527c56f8956b"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "نقص",
+          "sha256": "d98306f3ed1214471bb0618334dbd421ee3bc66e7b30b7305f6ae76a40911ede"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "مستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+          "sha256": "782f858beb97691d8f1f99df7a55c78dcfe24bd97e2a5b34df71cc12d5cc5da5"
+        }
+      ],
+      "scientificMeaning": "pH\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nN-P-K\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية (OM)\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها الإداري يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (CEC)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي K وCa وMg وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسببًا.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+      "displayText": "pH\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nN-P-K\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية (OM)\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها الإداري يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (CEC)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي K وCa وMg وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسببًا.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+      "captionText": "pH\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nN-P-K\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية (OM)\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها الإداري يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (CEC)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي K وCa وMg وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسببًا.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+      "spokenText": "بي إتش\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nالنيتروجين والفوسفور والبوتاسيوم\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية، واختصارها أو إم\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها في إدارة التربة يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (سي إي سي)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي البوتاسيوم والكالسيوم والماغنيسيوم وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسبب.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+      "spokenTextSHA256": "2891ff6da5f66b4dc22a4c0e5ce50d377150ca3c5300c132cea077234f4003cb",
+      "spokenTextSha256": "2891ff6da5f66b4dc22a4c0e5ce50d377150ca3c5300c132cea077234f4003cb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nN-P-K\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية (OM)\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها الإداري يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (CEC)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي K وCa وMg وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسببًا.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+          "spoken": "بي إتش\n\nمقياس مرتبط بنشاط أيون الهيدروجين؛ الأقل أكثر حموضة، والتفسير حسب المحصول وطريقة الاختبار.\n\nالنيتروجين والفوسفور والبوتاسيوم\n\nنيتروجين وفوسفور وبوتاسيوم؛ عناصر كبرى لها وظائف متعددة، وعرض واحد ما يثبتش نقص عنصر بعينه.\n\nالمادة العضوية، واختصارها أو إم\n\nمواد عضوية في التربة تؤثر في البنية ودورة الماء والمغذيات؛ معناها في إدارة التربة يعتمد على الطريقة والموقع.\n\nالسعة التبادلية الكاتيونية (سي إي سي)\n\nقدرة التربة على حفظ كاتيونات متبادلة زي البوتاسيوم والكالسيوم والماغنيسيوم وتتأثر بالطين والمادة العضوية؛ مش قياس مباشر للنترات.\n\nانضغاط التربة\n\nكثافة ومقاومة ممكن تقلل المسام ونمو الجذور؛ العمق والسبب محتاجين فحص.\n\nالحرث\n\nتحريك ميكانيكي للتربة؛ الحرث العميق يحتاج طبقة معيقة مشخصة وظروف آمنة وسبب.\n\nنقص\n\nمستوى دون نطاق تفسير ملائم للمحصول وطريقة الفحص، مش مجرد رقم يبدو صغيرًا.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b89335a7cae5a38de0a3b923f2c696f925cec8f4ff63a9fe50898ed6c9f0aef1",
+      "requestFingerprintSha256": "b89335a7cae5a38de0a3b923f2c696f925cec8f4ff63a9fe50898ed6c9f0aef1",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "96d33b240b4fc438b33a9ae51d1553b56eda74163bfda4965ffd741db2f95035"
+    },
+    {
+      "id": "S2-15-en-opening-r1",
+      "unitId": "S2-15-en-opening-r1",
+      "locale": "en",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.",
+          "sha256": "fbd4eb5c69b3c4e35a7d375493574e6c918d61d6626997f5b1c2ac00abbfab9a"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Write all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.",
+          "sha256": "d9511ac7f2bc679ae35d027ecc4aeac71bab2ca904fa32fa60d07636c3e697d3"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Preserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.",
+          "sha256": "b8ce75e444708af2e35b5ba52187d50f2233c39767bec5c559c5cce3a0f40f34"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Prioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.",
+          "sha256": "6f55cbb91749d7152231a996637c0962c281240bd2b414a54b38f0b28607f694"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Review another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "sha256": "c8ebf7c028d78ef93237d68ce203461fc1ad90eb4b9db16f046c384f38fcab57"
+        }
+      ],
+      "scientificMeaning": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "displayText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "captionText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenText": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain P H, N, P, K, organic matter and C E C accurately in language a farmer understands.\n\nPreserve Field B's five individual P H readings and report their arithmetic mean six point two four with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+      "spokenTextSHA256": "04c27ab4299bb02ec7c030b4768ac8ef39c7e7c1af737771077ba50bedc726da",
+      "spokenTextSha256": "04c27ab4299bb02ec7c030b4768ac8ef39c7e7c1af737771077ba50bedc726da",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain pH, N, P, K, OM and CEC accurately in language a farmer understands.\n\nPreserve Field B's five individual pH readings and report their arithmetic mean 6.24 with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "spoken": "A farmer needs a report they can understand and act on. Name the sample, show the measured or supplied results with units and methods, explain what is known and uncertain, and prioritize the next evidence-based actions. A readable page does not excuse an unsupported diagnosis.\n\nWrite all five report sections and an identified results table with methods, units and reference; explain P H, N, P, K, organic matter and C E C accurately in language a farmer understands.\n\nPreserve Field B's five individual P H readings and report their arithmetic mean six point two four with a real or explicitly unknown date, without pretending it is a pooled sample measurement.\n\nPrioritize conditional actions by linking laboratory data with observations of drainage, compaction and crop condition, naming what must be checked before a product, dose or cause is asserted.\n\nReview another report for missing fields, false provenance, unsupported reference, contradictions and clarity, then correct it; use confidence self-rating only to plan practice.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4d54a1b13d3fc7a5cbd463046acd56f49b298809df8b8713ea18ca629914feb4",
+      "requestFingerprintSha256": "4d54a1b13d3fc7a5cbd463046acd56f49b298809df8b8713ea18ca629914feb4",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "531c66483d21d8b6bc8d00341abf05974813c0e8b18ea4735dce4740e9321557"
+    },
+    {
+      "id": "S2-15-en-guided-practice-r1",
+      "unitId": "S2-15-en-guided-practice-r1",
+      "locale": "en",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.",
+          "sha256": "ffe3db08bc0dda5cbee4285df7fe924592db6ecef6a643d985ed5b0a971a0a2f"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "This step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "sha256": "78c3dc15d28afa519d9e47c85afac1c0dc3c93dea2900b974bd5ba1ab1a8c848"
+        }
+      ],
+      "scientificMeaning": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "displayText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "captionText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenText": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+      "spokenTextSHA256": "9434da730c5723d9f5e1db6ad4afdc50dddf8ef77d2c8340aa014f22e075fad4",
+      "spokenTextSha256": "9434da730c5723d9f5e1db6ad4afdc50dddf8ef77d2c8340aa014f22e075fad4",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock 3 product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "spoken": "Order the five report sections and turn an unexplained result into a farmer-readable table row with source and units.\n\nThis step assesses a report and peer review; no new field skill is certified. The Paddock three product card retains its five original trainer checklist rows and requires an actual reviewer to mark evidence and any corrective action.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "7e868068731672e61e9eef5daf250d0e0cf8a343205ab57b6ea4848a5ec1f217",
+      "requestFingerprintSha256": "7e868068731672e61e9eef5daf250d0e0cf8a343205ab57b6ea4848a5ec1f217",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "531c66483d21d8b6bc8d00341abf05974813c0e8b18ea4735dce4740e9321557"
+    },
+    {
+      "id": "S2-15-en-reflection-r1",
+      "unitId": "S2-15-en-reflection-r1",
+      "locale": "en",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Write soil test results in clear, simple language.",
+          "sha256": "8bb640c6ae32c5a2f1d0b8ac3a2d9e20b804419bc9b1466cf45094daecff3d0f"
+        },
+        {
+          "pointer": "/reflectionItems/1/prompt",
+          "text": "Use tables and bullet points to organize results and include recommendations.",
+          "sha256": "453a6ae7ec6517af63a54bf1b495ec53ed6f7c45ea4898a5df88970d11f4813b"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Original self-assessment prompts; plan practice, not certify competence.",
+          "sha256": "c5124074c298bd1064d1d8fbdde3b96475e11a5a82c7e1e2b06457d0a812a55f"
+        }
+      ],
+      "scientificMeaning": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "displayText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "captionText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "spokenText": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+      "spokenTextSHA256": "509004d5870599b388fec539053c7c3fb7d23aa864538341e2383325c3c0d623",
+      "spokenTextSha256": "509004d5870599b388fec539053c7c3fb7d23aa864538341e2383325c3c0d623",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+          "spoken": "Write soil test results in clear, simple language.\n\nUse tables and bullet points to organize results and include recommendations.\n\nOriginal self-assessment prompts; plan practice, not certify competence.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "05277aa366f899504f4019b7e6c01085cc0c81e43e37489c97e5c1252be8dd07",
+      "requestFingerprintSha256": "05277aa366f899504f4019b7e6c01085cc0c81e43e37489c97e5c1252be8dd07",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "531c66483d21d8b6bc8d00341abf05974813c0e8b18ea4735dce4740e9321557"
+    },
+    {
+      "id": "S2-15-en-glossary-r1",
+      "unitId": "S2-15-en-glossary-r1",
+      "locale": "en",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cbf54096e6eb933cfbe610441d3ff208143f70d94532ab745d9486c97d57f086",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "A measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.",
+          "sha256": "a0fc2d5bb537d4283a8dedf0cc8d149b34361e56796a6a7625e2f04901010007"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Nitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.",
+          "sha256": "86e8b58e1ffa42d48ad32bfbd4394c6ccb1fe2a65769655d5582b25e387bdcb8"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "organic matter (OM)",
+          "sha256": "38f381ae61e57074d22eea1be965745fcd6bd599c7643f294d2ffaef65855f6e"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Organic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.",
+          "sha256": "86b5e41e28460b526e7f265167d24c1d3c80b0631e885484ef2e5aeaf31b3c06"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "cation exchange capacity (CEC)",
+          "sha256": "f978d7ec7835341b637121c6a8276a36eb61a1c0b1ac4180e10401e93d7e7762"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Capacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.",
+          "sha256": "45d9523386cba862428a47e4a6f361afb053b30856391093405cc8f2645cc09e"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "compaction",
+          "sha256": "96847128a59a0bfa3bf9526873a325465149ff3e11f00a19d102643e6c37af47"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "A condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.",
+          "sha256": "0d224ba23ab2467e21bf9d92c0a3271b394bc828b2ade486988bcfefe037323a"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "tillage",
+          "sha256": "081bcdf2867e779813c21c123af147fc1de5bbfade2405dfffa990fae99b5469"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Mechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.",
+          "sha256": "2129cac07f6c59e9cc83918057edd876e5f6d4f3685ebd3b1f453c12f86edab0"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "deficient",
+          "sha256": "6f5657b70de5c769863ed44d21859dc7dafbc890b7397c9baf53c462c3159074"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Below a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "sha256": "dc1e8cea641f6efe16c557304c991e486b35942f01ef75fc67d789638e5b40b5"
+        }
+      ],
+      "scientificMeaning": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "displayText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "captionText": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenText": "P H\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN P K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter, abbreviated O M\n\nOrganic material in soil relevant to structure and nutrient, water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (C E C)\n\nCapacity to hold exchangeable positively charged ions such as K, calcium and magnesium, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+      "spokenTextSHA256": "51714c24472947d7a014a8f5374d72012fd1f83cfaa08959daca4dfdcba2318d",
+      "spokenTextSha256": "51714c24472947d7a014a8f5374d72012fd1f83cfaa08959daca4dfdcba2318d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN-P-K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter (OM)\n\nOrganic material in soil relevant to structure and nutrient/water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (CEC)\n\nCapacity to hold exchangeable positively charged ions such as K, Ca and Mg, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "spoken": "P H\n\nA measure related to hydrogen-ion activity; lower values are more acidic, and interpretation depends on crop and test method.\n\nN P K\n\nNitrogen, phosphorus and potassium—major crop nutrients with multiple functions; one symptom does not prove a single deficiency.\n\norganic matter, abbreviated O M\n\nOrganic material in soil relevant to structure and nutrient, water cycling; its reported percentage and management meaning need method and site context.\n\ncation exchange capacity (C E C)\n\nCapacity to hold exchangeable positively charged ions such as K, calcium and magnesium, influenced by clay mineralogy and organic matter; not a direct nitrate measure.\n\ncompaction\n\nA condition where soil density and resistance can restrict pores and root growth; the layer and cause need field investigation.\n\ntillage\n\nMechanical disturbance of soil; any deep operation needs a diagnosed layer, safe conditions and a reason.\n\ndeficient\n\nBelow a suitable crop- and method-specific interpretation range, rather than simply a small-looking number.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "184ff06fa74ed564032f5f000ad9cfcd3b092304fcf1248692ff0984949b24c7",
+      "requestFingerprintSha256": "184ff06fa74ed564032f5f000ad9cfcd3b092304fcf1248692ff0984949b24c7",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "531c66483d21d8b6bc8d00341abf05974813c0e8b18ea4735dce4740e9321557"
+    },
+    {
+      "id": "S2-15-it-opening-r1",
+      "unitId": "S2-15-it-opening-r1",
+      "locale": "it",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.",
+          "sha256": "c67b2266af4a257bf7fb137182fc664715a29a5442b5a2de99567021d6f10981"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Redigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pH, N, P, K, sostanza organica e CEC con parole accessibili.",
+          "sha256": "ef252d8efa210b32056b5c2b8736b77c4d52e93666e26ee3267c5af9baf7399d"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Conservare le cinque letture di pH di Field B e la loro media aritmetica 6.24, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.",
+          "sha256": "f9101ddd395fa8eb2aa4489c3921d3e595484895a49ca2462e00e76127630c15"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Dare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.",
+          "sha256": "409bb49beead763d80ea4c35ee2e13c38a92c65be53082a7b6f6e813956f9cd6"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Rivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+          "sha256": "b567defb2eb320851491b66208dd4a16ceb9b40ff362de8b01a287abf2ca4db8"
+        }
+      ],
+      "scientificMeaning": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pH, N, P, K, sostanza organica e CEC con parole accessibili.\n\nConservare le cinque letture di pH di Field B e la loro media aritmetica 6.24, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+      "displayText": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pH, N, P, K, sostanza organica e CEC con parole accessibili.\n\nConservare le cinque letture di pH di Field B e la loro media aritmetica 6.24, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+      "captionText": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pH, N, P, K, sostanza organica e CEC con parole accessibili.\n\nConservare le cinque letture di pH di Field B e la loro media aritmetica 6.24, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+      "spokenText": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pi acca, enne, pi, cappa, sostanza organica e ci e ci con parole accessibili.\n\nConservare le cinque letture di pi acca di Field B e la loro media aritmetica sei virgola due quattro, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+      "spokenTextSHA256": "b0fbf250a704233a2000af66ec84256fa953e82e8afd3beb569b91a1fa242964",
+      "spokenTextSha256": "b0fbf250a704233a2000af66ec84256fa953e82e8afd3beb569b91a1fa242964",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pH, N, P, K, sostanza organica e CEC con parole accessibili.\n\nConservare le cinque letture di pH di Field B e la loro media aritmetica 6.24, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+          "spoken": "L’agricoltore ha bisogno di un rapporto comprensibile e utilizzabile. Identifica il campione, mostra risultati, unità e metodi, distingui ciò che sappiamo da ciò che richiede verifica e ordina i prossimi passi secondo le prove. Una bella impaginazione non giustifica una diagnosi infondata.\n\nRedigere le cinque sezioni e una tabella di risultati identificati con metodo, unità e riferimento; spiegare pi acca, enne, pi, cappa, sostanza organica e ci e ci con parole accessibili.\n\nConservare le cinque letture di pi acca di Field B e la loro media aritmetica sei virgola due quattro, con data reale o esplicitamente sconosciuta; la media non è una misura del campione composito.\n\nDare priorità ad azioni condizionate collegando laboratorio, drenaggio, compattazione e coltura; dire cosa verificare prima di affermare causa, prodotto o dose.\n\nRivedere un altro rapporto per individuare campi mancanti, falsa provenienza dei dati, riferimenti non supportati, contraddizioni e problemi di chiarezza; correggerlo e usare l'autovalutazione della fiducia solo per pianificare l'esercitazione.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6a5876f2475434ff87409d94d4c07ea67f937da8b2175d6d4e5a120f4964c098",
+      "requestFingerprintSha256": "6a5876f2475434ff87409d94d4c07ea67f937da8b2175d6d4e5a120f4964c098",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c3e5dbbef5f62b5ee7313285e3aa4958546121464e30cbdc730e7351f6a2e782"
+    },
+    {
+      "id": "S2-15-it-guided-practice-r1",
+      "unitId": "S2-15-it-guided-practice-r1",
+      "locale": "it",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.",
+          "sha256": "9b066fbfefe91476b86104c2e3119fcc7773d30e6b1a073dc050315f36605691"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Questo passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+          "sha256": "119c52555377fffdebed847f7d68021590162c67934b6ac11adfb0c7e741290a"
+        }
+      ],
+      "scientificMeaning": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+      "displayText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+      "captionText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+      "spokenText": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock tre mantiene le cinque righe originali e richiede un valutatore reale.",
+      "spokenTextSHA256": "b603c584fe0855a8206cc434b9ba794091ccb9cae9995a018b1f3fde1d3129ba",
+      "spokenTextSha256": "b603c584fe0855a8206cc434b9ba794091ccb9cae9995a018b1f3fde1d3129ba",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock 3 mantiene le cinque righe originali e richiede un valutatore reale.",
+          "spoken": "Ordina cinque sezioni e trasforma un numero opaco in riga con unità e fonte.\n\nQuesto passo valuta rapporto e revisione tra pari; non certifica una nuova abilità di campo. La scheda Paddock tre mantiene le cinque righe originali e richiede un valutatore reale.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "658bc7c796b64040d3bba5bf654ce67a603888fe216e114f5dd542633c23df3d",
+      "requestFingerprintSha256": "658bc7c796b64040d3bba5bf654ce67a603888fe216e114f5dd542633c23df3d",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c3e5dbbef5f62b5ee7313285e3aa4958546121464e30cbdc730e7351f6a2e782"
+    },
+    {
+      "id": "S2-15-it-reflection-r1",
+      "unitId": "S2-15-it-reflection-r1",
+      "locale": "it",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.",
+          "sha256": "5a611e786b01664b3302b3cc27226336b1b777a28f028c25e85536dd1a1e25cf"
+        },
+        {
+          "pointer": "/reflectionItems/1/prompt",
+          "text": "Usare tabelle ed elenchi per organizzare risultati e raccomandazioni.",
+          "sha256": "559134760ff6f0869d212939cb0ff6c81793535a63b750b3cba1469749c6a588"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Autovalutazioni originali per pianificare, non certificare.",
+          "sha256": "033b61e80cb089071a172d4f42ab3ce5b431f44d30fccd6bbb40a66707f8bb4d"
+        }
+      ],
+      "scientificMeaning": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+      "displayText": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+      "captionText": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+      "spokenText": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+      "spokenTextSHA256": "9facf5fae577a6217447bed932e72242f0df15c9f003726b5991fb68b2f34e88",
+      "spokenTextSha256": "9facf5fae577a6217447bed932e72242f0df15c9f003726b5991fb68b2f34e88",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+          "spoken": "Scrivere risultati delle analisi in linguaggio chiaro e semplice.\n\nUsare tabelle ed elenchi per organizzare risultati e raccomandazioni.\n\nAutovalutazioni originali per pianificare, non certificare.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6010a6f7a54e16eb8ac1c8018a4da8a59bbac0cc4076ee4b845c067199535750",
+      "requestFingerprintSha256": "6010a6f7a54e16eb8ac1c8018a4da8a59bbac0cc4076ee4b845c067199535750",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c3e5dbbef5f62b5ee7313285e3aa4958546121464e30cbdc730e7351f6a2e782"
+    },
+    {
+      "id": "S2-15-it-glossary-r1",
+      "unitId": "S2-15-it-glossary-r1",
+      "locale": "it",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Misura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.",
+          "sha256": "ec9a1f6b06845263ca99b22d930d7a5a81fd128dc578f60eafbd94e6591b1eb7"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Azoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.",
+          "sha256": "760c23ace00c913a539361415a156f0686a867616a0ad624eaced35bf8a5af8c"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "sostanza organica (OM)",
+          "sha256": "07fabca258c9d6eee89298ad4b7ead386c7c168859ed8884eae4b41289b3dc9a"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Materiale organico del suolo legato a struttura e cicli di acqua/nutrienti; percentuale da interpretare nel sito.",
+          "sha256": "bd93392a96426f8ebcfa500b1f87eb9793dfd6b87355bd64ba55e4e41d723373"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "capacità di scambio cationico (CEC)",
+          "sha256": "102484bce3281b5a36e7a80fefcc5524a04378371e99b339246138cb100c65af"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Capacità di trattenere cationi scambiabili come K, Ca e Mg, influenzata da argille e sostanza organica; non misura direttamente nitrato.",
+          "sha256": "f52845eca03d2a5fe43d75b3ffef536b9c9c6dcc643718c8865ce5b3e3b139ec"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "compattazione",
+          "sha256": "2312be1d82be15096ad2b1dbb2b9cea9b6c6a7dc0df15839eb2887dbd02db93c"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Densità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.",
+          "sha256": "72bce18dab412799cf326e5a1054860cb25e505357e74c3c409eb3146caea3d4"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "lavorazione del terreno",
+          "sha256": "d42f12cec0334bdb1a816f4d9526182ca7da2b4b4f1e6646dca227d6f56e976b"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Disturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.",
+          "sha256": "efdacbeb9e80134d128986c4f4affc939b2301f01703019b178e236b617169aa"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "carente",
+          "sha256": "c70c2e302ebfa2b3ebac64ccde934c35a5f4eeebe68d538ceb4908d8da0633e7"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Sotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+          "sha256": "db23ca1e40dc41b40313b89f2523aedcc291a91059f93482cd4e3b79900161e0"
+        }
+      ],
+      "scientificMeaning": "pH\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nN-P-K\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica (OM)\n\nMateriale organico del suolo legato a struttura e cicli di acqua/nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (CEC)\n\nCapacità di trattenere cationi scambiabili come K, Ca e Mg, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+      "displayText": "pH\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nN-P-K\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica (OM)\n\nMateriale organico del suolo legato a struttura e cicli di acqua/nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (CEC)\n\nCapacità di trattenere cationi scambiabili come K, Ca e Mg, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+      "captionText": "pH\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nN-P-K\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica (OM)\n\nMateriale organico del suolo legato a struttura e cicli di acqua/nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (CEC)\n\nCapacità di trattenere cationi scambiabili come K, Ca e Mg, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+      "spokenText": "pi acca\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nenne pi cappa\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica, abbreviata o emme\n\nMateriale organico del suolo legato a struttura e cicli di acqua, nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (ci e ci)\n\nCapacità di trattenere cationi scambiabili come cappa, calcio e magnesio, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+      "spokenTextSHA256": "7138ddbfe25a973386e9677e0b41fec9736055c6a6fd8995812c3125b8d1efdc",
+      "spokenTextSha256": "7138ddbfe25a973386e9677e0b41fec9736055c6a6fd8995812c3125b8d1efdc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nN-P-K\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica (OM)\n\nMateriale organico del suolo legato a struttura e cicli di acqua/nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (CEC)\n\nCapacità di trattenere cationi scambiabili come K, Ca e Mg, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+          "spoken": "pi acca\n\nMisura relativa all’attività degli ioni idrogeno; valori più bassi sono più acidi, interpretazione per coltura e metodo.\n\nenne pi cappa\n\nAzoto, fosforo e potassio, macronutrienti dalle molte funzioni; un sintomo non prova una sola carenza.\n\nsostanza organica, abbreviata o emme\n\nMateriale organico del suolo legato a struttura e cicli di acqua, nutrienti; percentuale da interpretare nel sito.\n\ncapacità di scambio cationico (ci e ci)\n\nCapacità di trattenere cationi scambiabili come cappa, calcio e magnesio, influenzata da argille e sostanza organica; non misura direttamente nitrato.\n\ncompattazione\n\nDensità e resistenza che possono limitare pori e radici; profondità e causa vanno indagate.\n\nlavorazione del terreno\n\nDisturbo meccanico; un intervento profondo richiede strato diagnosticato, condizioni sicure e motivazione.\n\ncarente\n\nSotto un intervallo interpretativo idoneo per coltura e metodo, non solo un numero apparentemente piccolo.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "58bd77b4f9128070fd69570fa31f26e1103753164f3f93a8c3c67c7c3875dd0b",
+      "requestFingerprintSha256": "58bd77b4f9128070fd69570fa31f26e1103753164f3f93a8c3c67c7c3875dd0b",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "c3e5dbbef5f62b5ee7313285e3aa4958546121464e30cbdc730e7351f6a2e782"
+    },
+    {
+      "id": "S2-15-de-opening-r1",
+      "unitId": "S2-15-de-opening-r1",
+      "locale": "de",
+      "semanticGroup": "opening",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.",
+          "sha256": "cce2c44e18cf4588b2da4c69763545babeb99c38aa4dbf1471f489568c54eab0"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Alle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; pH, N, P, K, organische Substanz und KAK verständlich und korrekt erklären.",
+          "sha256": "3e0da995a102ce9dfcec7d8d9d4dd35b4f2aa251154ebbd297ab6fc2c2ddb61a"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Alle fünf pH-Messwerte von Field B erhalten und das arithmetische Mittel 6.24 mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.",
+          "sha256": "942b61630a3a3968add7bc0e14d9d8f463d2889d0ec0006debfd199a6fd3e51b"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Bedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.",
+          "sha256": "3fab21b3d7a8ad2bb6d58e772cc53615c7ac1fc4fcd08dd2ca51f1ef73cac8c9"
+        },
+        {
+          "pointer": "/goals/3",
+          "text": "Einen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+          "sha256": "104766ab589a223b18292fe2077953531ff0e88ce5d22f260a451eebe12c2556"
+        }
+      ],
+      "scientificMeaning": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; pH, N, P, K, organische Substanz und KAK verständlich und korrekt erklären.\n\nAlle fünf pH-Messwerte von Field B erhalten und das arithmetische Mittel 6.24 mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+      "displayText": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; pH, N, P, K, organische Substanz und KAK verständlich und korrekt erklären.\n\nAlle fünf pH-Messwerte von Field B erhalten und das arithmetische Mittel 6.24 mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+      "captionText": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; pH, N, P, K, organische Substanz und KAK verständlich und korrekt erklären.\n\nAlle fünf pH-Messwerte von Field B erhalten und das arithmetische Mittel 6.24 mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+      "spokenText": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; Pe Ha, En, Pe, Ka, organische Substanz und Ka A Ka verständlich und korrekt erklären.\n\nAlle fünf Pe Ha-Messwerte von Field B erhalten und das arithmetische Mittel sechs Komma zwei vier mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+      "spokenTextSHA256": "c0b60efa00602f9e8e4aef845cbc588ec41a0490a2663635d44266554ca43515",
+      "spokenTextSha256": "c0b60efa00602f9e8e4aef845cbc588ec41a0490a2663635d44266554ca43515",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; pH, N, P, K, organische Substanz und KAK verständlich und korrekt erklären.\n\nAlle fünf pH-Messwerte von Field B erhalten und das arithmetische Mittel 6.24 mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+          "spoken": "Ein Betrieb braucht einen Bericht, den er versteht und nutzen kann. Benenne die Probe, zeige Werte mit Einheit und Methode, trenne gesicherte Aussagen von offenen Fragen und ordne die nächsten Schritte nach Belegen. Ein ansprechendes Layout ersetzt keine begründete Diagnose.\n\nAlle fünf Berichtsteile und eine zugeordnete Ergebnistabelle mit Methode, Einheit und Referenz erstellen; Pe Ha, En, Pe, Ka, organische Substanz und Ka A Ka verständlich und korrekt erklären.\n\nAlle fünf Pe Ha-Messwerte von Field B erhalten und das arithmetische Mittel sechs Komma zwei vier mit echtem oder ausdrücklich unbekanntem Datum angeben; das Mittel ist keine Messung einer Mischprobe.\n\nBedingte Maßnahmen anhand von Laborwerten, Entwässerung, Verdichtung und Pflanzenzustand priorisieren und nötige Prüfungen vor Ursache, Produkt oder Dosierung nennen.\n\nEinen fremden Bericht auf fehlende Angaben, falsche Herkunft, unbelegte Referenzen, Widersprüche und Verständlichkeit prüfen und berichtigen; Selbsteinschätzung dient nur der Übungsplanung.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1698514161fd427a77325c1024cae827a21ace001442ff07c9226f6fdcdb244b",
+      "requestFingerprintSha256": "1698514161fd427a77325c1024cae827a21ace001442ff07c9226f6fdcdb244b",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "f9888cc22f63cf36adb9488729f39c08c2401cff2c5ee707086a7a7cd6ed5d23"
+    },
+    {
+      "id": "S2-15-de-guided-practice-r1",
+      "unitId": "S2-15-de-guided-practice-r1",
+      "locale": "de",
+      "semanticGroup": "guided-practice",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.",
+          "sha256": "4ddb81ff62e1a33f9be7ea45fc091556d746b09ddf46154e2edc6c457a265eee"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Dieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+          "sha256": "74d8c3cf9a455e063b5e574700f447a6db06b51cab18df85c523e9fe3c6229d2"
+        }
+      ],
+      "scientificMeaning": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+      "displayText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+      "captionText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+      "spokenText": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-drei-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+      "spokenTextSHA256": "49951f4652402c5b3df700797e4a1fbea11ea455567ff8fed9395df01b02cecd",
+      "spokenTextSha256": "49951f4652402c5b3df700797e4a1fbea11ea455567ff8fed9395df01b02cecd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-3-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+          "spoken": "Fünf Berichtsteile ordnen und einen unklaren Wert zur Zeile mit Einheit und Quelle machen.\n\nDieser Schritt prüft Bericht und Partnerkritik, bescheinigt keine neue Feldfertigkeit. Die Paddock-drei-Karte behält die fünf ursprünglichen Prüfpunkte; ein echter Bewerter dokumentiert Belege und Korrekturen.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4cd41d1a781838672671ac4016ec05767ec3363a5e762e72bb22c83595b12f0f",
+      "requestFingerprintSha256": "4cd41d1a781838672671ac4016ec05767ec3363a5e762e72bb22c83595b12f0f",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "f9888cc22f63cf36adb9488729f39c08c2401cff2c5ee707086a7a7cd6ed5d23"
+    },
+    {
+      "id": "S2-15-de-reflection-r1",
+      "unitId": "S2-15-de-reflection-r1",
+      "locale": "de",
+      "semanticGroup": "reflection",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/selfReflection/question",
+          "text": "Bodentestergebnisse klar und einfach aufschreiben.",
+          "sha256": "41b7e32fee029726ee993b51b5b6dff41c003575554757e72c0e14ed6d259c28"
+        },
+        {
+          "pointer": "/reflectionItems/1/prompt",
+          "text": "Tabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.",
+          "sha256": "682d9dbf792b065b389ff385fe9ed352d8342aafbabcae94a0a3a8751192f7c9"
+        },
+        {
+          "pointer": "/selfReflection/note",
+          "text": "Ursprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+          "sha256": "aaa8d620c0441d6404260c391fdb7134e43a686cec01a031ab6c75804be461ad"
+        }
+      ],
+      "scientificMeaning": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+      "displayText": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+      "captionText": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+      "spokenText": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+      "spokenTextSHA256": "4c0f7cb81ab97bf1de768e31ab391ae61b08607e9cb1e1fddcaef55d14f2d361",
+      "spokenTextSha256": "4c0f7cb81ab97bf1de768e31ab391ae61b08607e9cb1e1fddcaef55d14f2d361",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+          "spoken": "Bodentestergebnisse klar und einfach aufschreiben.\n\nTabellen und Aufzählungen zum Ordnen von Ergebnissen und Empfehlungen verwenden.\n\nUrsprüngliche Selbsteinschätzung für Übungsplanung, kein Kompetenznachweis.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "335fbd17470d17464cd14ca3cfc4bd377fa4e9c765864b718f0fc61380066a7a",
+      "requestFingerprintSha256": "335fbd17470d17464cd14ca3cfc4bd377fa4e9c765864b718f0fc61380066a7a",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "f9888cc22f63cf36adb9488729f39c08c2401cff2c5ee707086a7a7cd6ed5d23"
+    },
+    {
+      "id": "S2-15-de-glossary-r1",
+      "unitId": "S2-15-de-glossary-r1",
+      "locale": "de",
+      "semanticGroup": "glossary",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "82d7cfbe2eaf0c14be15320ccb05b68e8acd29f5595b67949f7c0f285ec11df7",
+      "sourceBindings": [
+        {
+          "pointer": "/glossary/0/0",
+          "text": "pH",
+          "sha256": "d18eae6d1eef0c9714e30a31d881151fbf211908219a0e5261dc5232d8a88985"
+        },
+        {
+          "pointer": "/glossary/0/1",
+          "text": "Größe in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.",
+          "sha256": "6886ad737abf9e7bed27dde371729764741bc5cee889d3111aee7822bda20310"
+        },
+        {
+          "pointer": "/glossary/1/0",
+          "text": "N-P-K",
+          "sha256": "29a724abcf992944a4a3ae95706c06ef005d9bb4b5416c4719ee6b7ec56dfbdb"
+        },
+        {
+          "pointer": "/glossary/1/1",
+          "text": "Stickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.",
+          "sha256": "6de7533edfeca36d8dafb07fef0142972030caa63d317e925c84d8d153d1ee8e"
+        },
+        {
+          "pointer": "/glossary/2/0",
+          "text": "organische Substanz (OM)",
+          "sha256": "dd49e61a958abd11ec77e1c0356024276dc36b4ee2af7a761c0fe1bc8780664a"
+        },
+        {
+          "pointer": "/glossary/2/1",
+          "text": "Organisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.",
+          "sha256": "41341cf4c036b3eefa850eec6a08ddb4baf6b1ff7775e02422d3369bafd8c4aa"
+        },
+        {
+          "pointer": "/glossary/3/0",
+          "text": "Kationenaustauschkapazität (KAK/CEC)",
+          "sha256": "cffe0c2f5a220bedb384eb778fe79d2c2405ff2b8eb8440aa03133de46e8f69d"
+        },
+        {
+          "pointer": "/glossary/3/1",
+          "text": "Fähigkeit, austauschbare positive Ionen wie K, Ca und Mg zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.",
+          "sha256": "cc625c8f52ae8483ba228b0375bb8a9257f49a336da28db9d9ee6c1089c2db64"
+        },
+        {
+          "pointer": "/glossary/4/0",
+          "text": "Verdichtung",
+          "sha256": "a0b7f294bad81e4f0e66c51694b6669c12ad3db3c8209662cc68d1e27a8a7dc3"
+        },
+        {
+          "pointer": "/glossary/4/1",
+          "text": "Bodendichte/-widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.",
+          "sha256": "caa4901a84e9fafda07cd16df7e74bc89ea859b0dc10cc31323caadbd8b1eb0d"
+        },
+        {
+          "pointer": "/glossary/5/0",
+          "text": "Bodenbearbeitung",
+          "sha256": "6fc26dee09e93f6ec93e17ade8ff56b0cf7c13e32c1ec90d3af0129011db10d1"
+        },
+        {
+          "pointer": "/glossary/5/1",
+          "text": "Mechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.",
+          "sha256": "eb88fc3c6b1382ebe58fcf39274bb9c986ff33f159b2324afeec4b3b51b354c3"
+        },
+        {
+          "pointer": "/glossary/6/0",
+          "text": "Mangel",
+          "sha256": "3d0fba61bae45e6e7f5618c28e920e6695d73bd9584ccfc6839db26808f51f2a"
+        },
+        {
+          "pointer": "/glossary/6/1",
+          "text": "Unterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+          "sha256": "74f7b5c59d668f0ecc7e47a596c0834604ca0be22c381d2842e3d270c4543ce3"
+        }
+      ],
+      "scientificMeaning": "pH\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nN-P-K\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz (OM)\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (KAK/CEC)\n\nFähigkeit, austauschbare positive Ionen wie K, Ca und Mg zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte/-widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+      "displayText": "pH\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nN-P-K\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz (OM)\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (KAK/CEC)\n\nFähigkeit, austauschbare positive Ionen wie K, Ca und Mg zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte/-widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+      "captionText": "pH\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nN-P-K\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz (OM)\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (KAK/CEC)\n\nFähigkeit, austauschbare positive Ionen wie K, Ca und Mg zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte/-widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+      "spokenText": "Pe Ha\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nEn Pe Ka\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz, abgekürzt Oh Em\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (Ka A Ka, Ce E Ce)\n\nFähigkeit, austauschbare positive Ionen wie Ka, Kalzium und Magnesium zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte, -widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+      "spokenTextSHA256": "afd2b6e3845ea5af3bc879dd0f448bd83b9667725d88cd5482a34ab56eeaa73e",
+      "spokenTextSha256": "afd2b6e3845ea5af3bc879dd0f448bd83b9667725d88cd5482a34ab56eeaa73e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nN-P-K\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz (OM)\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (KAK/CEC)\n\nFähigkeit, austauschbare positive Ionen wie K, Ca und Mg zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte/-widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+          "spoken": "Pe Ha\n\nGröße in Beziehung zur Wasserstoffionenaktivität; kleinere Werte saurer, Einordnung je nach Kultur und Verfahren.\n\nEn Pe Ka\n\nStickstoff, Phosphor und Kalium mit mehreren Pflanzenfunktionen; ein Symptom beweist keinen einzelnen Mangel.\n\norganische Substanz, abgekürzt Oh Em\n\nOrganisches Bodenmaterial mit Bedeutung für Struktur sowie Wasser- und Nährstoffkreisläufe; der gemeldete Prozentwert und seine Bedeutung für die Bewirtschaftung brauchen Verfahrens- und Standortkontext.\n\nKationenaustauschkapazität (Ka A Ka, Ce E Ce)\n\nFähigkeit, austauschbare positive Ionen wie Ka, Kalzium und Magnesium zu halten; durch Ton und organische Substanz beeinflusst, kein direktes Nitratmaß.\n\nVerdichtung\n\nBodendichte, -widerstand können Poren und Wurzeln beschränken; Lage und Ursache untersuchen.\n\nBodenbearbeitung\n\nMechanischer Eingriff; tiefe Lockerung braucht nachgewiesene Sperrschicht, sichere Bedingungen und Zweck.\n\nMangel\n\nUnterhalb eines zur Kultur und Methode passenden Beurteilungsbereichs, nicht nur eine klein wirkende Zahl.",
+          "occurrences": 1,
+          "purpose": "Full source decimal/unit/chemical acronym expansions and natural Egyptian speech; glossary OM label identified by its abbreviation rather than duplicated full term. All source qualifications unchanged."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "c3803cec0c9c0420d5e3e63372ecf5f6fcbfecaa86a92f2221667b8d28b6c0bc",
+      "requestFingerprintSha256": "c3803cec0c9c0420d5e3e63372ecf5f6fcbfecaa86a92f2221667b8d28b6c0bc",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "f9888cc22f63cf36adb9488729f39c08c2401cff2c5ee707086a7a7cd6ed5d23"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 4,
+    "blind": 4,
+    "asr": 4,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S2-15-ar-EG-opening-r1",
+      "S2-15-ar-EG-guided-practice-r1",
+      "S2-15-ar-EG-reflection-r1",
+      "S2-15-ar-EG-glossary-r1"
+    ],
+    "en": [
+      "S2-15-en-opening-r1",
+      "S2-15-en-guided-practice-r1",
+      "S2-15-en-reflection-r1",
+      "S2-15-en-glossary-r1"
+    ],
+    "it": [
+      "S2-15-it-opening-r1",
+      "S2-15-it-guided-practice-r1",
+      "S2-15-it-reflection-r1",
+      "S2-15-it-glossary-r1"
+    ],
+    "de": [
+      "S2-15-de-opening-r1",
+      "S2-15-de-guided-practice-r1",
+      "S2-15-de-reflection-r1",
+      "S2-15-de-glossary-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "replacementOfZeroJobWorkflowValidationFailure": {
+    "runId": 39872760402,
+    "commit": "5dcdf084b2d34cbd51286c5661212b962457b141",
+    "failureEvidenceSHA256": "8dce453d2c9d9bff5caa633c1be7960b7290307c8a592c847816126e1d0d6385",
+    "jobs": 0,
+    "artifacts": 0,
+    "providerCallsExecutableByFailedRun": 0,
+    "notProviderRetry": true
+  }
+}
