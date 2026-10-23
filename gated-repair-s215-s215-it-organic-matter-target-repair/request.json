@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "scope": "GATED_REPAIR_S215_S215_IT_ORGANIC_MATTER_TARGET_REPAIR",
+  "stepId": "S2-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-gated-repair-s215-s215-it-organic-matter-target-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_GATED_SUBPASSAGE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-15-it-organic-matter-target-repair-r1",
+      "unitId": "S2-15-it-organic-matter-target-repair-r1",
+      "locale": "it",
+      "semanticGroup": "gated-repair-s215-s215-it-organic-matter-target-repair-phrase",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "adc9b2ffd0645884f69651432954d689b7b7b401b8623bf9c3ff59a182ec9311",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/situation",
+          "text": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+          "sha256": "d40769fb438b6d0964dc1e46db357706393c073de97898f79d110d1d1ed99958"
+        }
+      ],
+      "scientificMeaning": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+      "displayText": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+      "captionText": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+      "spokenText": "La sostanza organica misurata è del due per cento; l’obiettivo dichiarato è superiore al tre per cento.",
+      "spokenTextSHA256": "abad023be49f5144a998335b67400058086ec766d1e9a492105f1acd90ce5494",
+      "spokenTextSha256": "abad023be49f5144a998335b67400058086ec766d1e9a492105f1acd90ce5494",
+      "spokenAdaptationChanges": [
+        {
+          "written": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+          "spoken": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+          "spoken": "La sostanza organica misurata è del due per cento; l’obiettivo dichiarato è superiore al tre per cento.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "f158009efb94cca47b75887a1ef48324b230a082588fac7723e7c0c4c907158c",
+      "requestFingerprintSha256": "f158009efb94cca47b75887a1ef48324b230a082588fac7723e7c0c4c907158c",
+      "sourcePlanSha256": "a3bf26b3f7f97a1682e66d0a0b95496997dd1aa8078b9c4c1e613d8210ada1d8",
+      "exactSentenceBefore": "pH 5.4 (obiettivo dichiarato 6.0–7.0), sostanza organica 2.0% (>3%), N/P Bassi, K Ottimale, suolo compattato e foglie gialle precedenti.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_GATED_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s215-italian-five-subpassage-authority-r1.json",
+        "authoritySHA256": "1fc99605bdbd2cd05a3d6998cd938bc58174ff1ad5ea577f13cdaa55efe9546a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_REPORT_AND_CRITIQUE_ATTEMPT",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S2-15-it-E03-r1",
+      "sourceCaseIndex": 2,
+      "sourceCaseId": "corn-case",
+      "answerSubpassageOnly": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S2-15-it-organic-matter-target-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "duplicateExclusionProof": "EXACT_FINGERPRINT_PRIVATE_PREPUBLICATION_AUDIT_NO_REUSABLE_MATCH"
+}
