@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_S309CLOSURE2_S3_09_IT_R06_SEMANTIC_REPAIR",
+  "stepId": "S3-09",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-s309closure2-s3-09-it-r06-semantic-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-09-it-R06-semantic-repair-r1",
+      "unitId": "S3-09-it-R06-semantic-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s309closure2-s3-09-it-r06-semantic-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4690fa4ad677b330b0a7c7802d138c28430fef282b667ec0f4aa5600c43bb5b5",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.",
+          "sha256": "c03a0b2659815561ea161c8ccff180537edacc41057d4d10d717905587e7105c"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Una coltura convenzionale tollerante al sale non è automaticamente una vera alofita. La quinoa varia secondo genotipo e fase; la palma da datteri può tollerare relativamente il sale, ma richiede tempi e investimenti lunghi; l’asparago è perenne. Il pistacchio non è una prescrizione per «salinità moderata»: portinnesto, marza, età, ioni specifici, clima invernale ed economia del frutteto contano. Scegli due *candidate* con motivazioni separate per poca acqua e sale, e indica quale prova potrebbe cambiare la scelta.",
+          "sha256": "b19e59873c37314f5657be28b0889a34aea079c9186da3d04bf5590195c19aa7"
+        }
+      ],
+      "scientificMeaning": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.\n\nUna coltura convenzionale tollerante al sale non è automaticamente una vera alofita. La quinoa varia secondo genotipo e fase; la palma da datteri può tollerare relativamente il sale, ma richiede tempi e investimenti lunghi; l’asparago è perenne. Il pistacchio non è una prescrizione per «salinità moderata»: portinnesto, marza, età, ioni specifici, clima invernale ed economia del frutteto contano. Scegli due *candidate* con motivazioni separate per poca acqua e sale, e indica quale prova potrebbe cambiare la scelta.",
+      "displayText": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.\n\nUna coltura convenzionale tollerante al sale non è automaticamente una vera alofita. La quinoa varia secondo genotipo e fase; la palma da datteri può tollerare relativamente il sale, ma richiede tempi e investimenti lunghi; l’asparago è perenne. Il pistacchio non è una prescrizione per «salinità moderata»: portinnesto, marza, età, ioni specifici, clima invernale ed economia del frutteto contano. Scegli due *candidate* con motivazioni separate per poca acqua e sale, e indica quale prova potrebbe cambiare la scelta.",
+      "captionText": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.\n\nUna coltura convenzionale tollerante al sale non è automaticamente una vera alofita. La quinoa varia secondo genotipo e fase; la palma da datteri può tollerare relativamente il sale, ma richiede tempi e investimenti lunghi; l’asparago è perenne. Il pistacchio non è una prescrizione per «salinità moderata»: portinnesto, marza, età, ioni specifici, clima invernale ed economia del frutteto contano. Scegli due *candidate* con motivazioni separate per poca acqua e sale, e indica quale prova potrebbe cambiare la scelta.",
+      "spokenText": "Conserva tutti i nomi, ma le classi generiche alta e moderata non bastano per scegliere una coltura quando manca il metodo di misura della conducibilità elettrica.",
+      "spokenTextSHA256": "563476026ebaf71cf7b70c224f6856d9d0456228ab654fd0abe2655bf6df6764",
+      "spokenTextSha256": "563476026ebaf71cf7b70c224f6856d9d0456228ab654fd0abe2655bf6df6764",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.\n\nUna coltura convenzionale tollerante al sale non è automaticamente una vera alofita. La quinoa varia secondo genotipo e fase; la palma da datteri può tollerare relativamente il sale, ma richiede tempi e investimenti lunghi; l’asparago è perenne. Il pistacchio non è una prescrizione per «salinità moderata»: portinnesto, marza, età, ioni specifici, clima invernale ed economia del frutteto contano. Scegli due *candidate* con motivazioni separate per poca acqua e sale, e indica quale prova potrebbe cambiare la scelta.",
+          "spoken": "Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca.",
+          "spoken": "Conserva tutti i nomi, ma le classi generiche alta e moderata non bastano per scegliere una coltura quando manca il metodo di misura della conducibilità elettrica.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "75696dfccde1e61e287ad935cb6054e17b945fce07edc5209528abc34b57624c",
+      "requestFingerprintSha256": "75696dfccde1e61e287ad935cb6054e17b945fce07edc5209528abc34b57624c",
+      "sourcePlanSha256": "94c9de67c11b71d767960d1704ff9ecfb49292a1ef56b12a597f13446a2dd287",
+      "exactSentenceBefore": "Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca.",
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "repairOnlyNotWholeUnitNarration": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/reading/5/paragraphs/0",
+        "sourceText": "L’originale cita orzo, quinoa, barbabietola da zucchero, palma da datteri, asparago e pistacchio come candidate relativamente tolleranti al sale e propone orzo con sorgo o fagiolo dall’occhio come coppia modello. Conserva tutti i nomi, ma le classi generiche «alta» e «moderata» non scelgono una coltura se il metodo EC manca. Confronta una fonte attendibile con ECe del suolo e ECw del pozzo misurate con metodi appropriati, ioni rilevanti, fase della piantina, cultivar, resa attesa e clima locale. Orzo e barbabietola da zucchero risultano relativamente tolleranti nelle tabelle FAO, mentre sorgo e fagiolo dall’occhio rientrano in altri intervalli di tolleranza; nessuna specie è immune al sale. Nell’Allegato 1 della FAO, tabella A1.1, l’asparago è classificato T (tollerante), anziché «moderato» come nella tabella originale. È una classificazione relativa alle condizioni di salinità del suolo e di fase di crescita dichiarate nella tabella, non una garanzia per qualsiasi campo.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-09-it-R06-semantic-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
