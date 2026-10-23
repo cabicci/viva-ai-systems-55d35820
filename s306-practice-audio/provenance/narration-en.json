@@ -1,0 +1,530 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-en.json",
+    "sha256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+    "bytes": 25136
+  },
+  "units": [
+    {
+      "id": "S3-06-en-components-and-sequence-r1",
+      "unitId": "S3-06-en-components-and-sequence-r1",
+      "locale": "en",
+      "semanticGroup": "components-and-sequence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/modelHelp",
+          "text": "One-metre / three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.",
+          "sha256": "f87141b0231ce1a1b491425cc61d606022fde3525a03fc77fa7b88e3f1136001"
+        },
+        {
+          "pointer": "/dripPractice/ui/partTitle",
+          "text": "Match each component to its function",
+          "sha256": "93e70ce846ee565f1ba6e4fb1d2ad29e690e6f28462e64b4aacfc7e321e5db32"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/0",
+          "text": "Tube",
+          "sha256": "557ed347f13cdeb376f0d3e940a316aaeeae96b0065d9511eef443ea99df3665"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/0",
+          "text": "Carries water along the line",
+          "sha256": "1d667d1f192cd7e2ec81bb510cfd5093a19b9915e094fa56f77ad746a4356343"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/1",
+          "text": "Three emitters",
+          "sha256": "015cec53ddbed4ca69b5139dd00970a99eb2c79e2eff2668586ae1e841d11ae8"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/1",
+          "text": "Release water near the three intended plants",
+          "sha256": "2dced9bf7ad29030dba5341b9e301a838823ffd14ab9cf184aff85100e177b8d"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/2",
+          "text": "Matching punch",
+          "sha256": "dd2f3e9e81365d1334ab3b612aedb3508a95776b306b595c8f148cc6949435e8"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/2",
+          "text": "Makes product-matched holes with the safe kit tool",
+          "sha256": "931a52fd1060bfb0df41707b915a1a4d404a622e54f27bc955a5b29dd04bb649"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/3",
+          "text": "End cap",
+          "sha256": "dbba5e53ce90085810789427e8114e9c7c68c7539d302d5ff60b785a8c926865"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/3",
+          "text": "Closes the downstream end",
+          "sha256": "e5ea8e6a9a887c11380ced27e90fde5c249d98d0adb1b2c123400b5399c5ab86"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/4",
+          "text": "Supply connector",
+          "sha256": "31114d4fa64289edffc036df167ce7e97af195bacb21022e001a6e3cb4564661"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/4",
+          "text": "Joins the isolated line to its compatible supply",
+          "sha256": "c0d15f42c79b3bd9bd3a109416e32dca63845b9ad419fcfbe4ad30ccd7b5642e"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/5",
+          "text": "Upstream filter",
+          "sha256": "a46d8d9d8e98600b79855a0b238d6055030af6e2c41ed138f2c375566e6af026"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/5",
+          "text": "Reduces particles that could block emitters",
+          "sha256": "956b9d4f7069452e7788a14652bf4fbfab56ff3fa5c231f07a408ba3fab9a6d2"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/6",
+          "text": "Kit-required pressure controls",
+          "sha256": "388736f69858f3d2e93bbe706dead591a592f8c3955f2a50c5633859b68df9c2"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/6",
+          "text": "Maintain/check the selected kit’s operating limits",
+          "sha256": "c3183bd1e32aa66b9ea43622ba3ea465249c248432424ab6015bff0dd974c197"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderTitle",
+          "text": "Arrange a safe conceptual workflow",
+          "sha256": "614c9d08dfc26090805c336d847d6ebfff970217c4e9a119f46f3588a96e2b41"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderHelp",
+          "text": "Each card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.",
+          "sha256": "896d89e1e4b8c8bbabbf323d642dc9ffc4148d79b8eae9eb09b8ae94919fcb5e"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/0",
+          "text": "Lay out and name the disconnected components",
+          "sha256": "b2772c0d4e342f3d616e3bc10f6ca4188253c22db2a6b8f2a3b76d66120bef2c"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/1",
+          "text": "Check PPE, tool compatibility and actual kit/manual limits",
+          "sha256": "d518a2fb7ce1db582d68556624cd2a8a84552a1989059a220f07c9791608f2ea"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/2",
+          "text": "Measure one metre, mark three plant positions and use the kit-matched punch",
+          "sha256": "370c841de0e88479ae1d68ccef8130185e6c15b0a80762df8f85342fd4cff0c8"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/3",
+          "text": "Seat the three compatible emitters",
+          "sha256": "d2a2a19efd66883d75c03012a3a3a5f8df5ad1203a0fe0781b3f74b076af5e68"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/4",
+          "text": "Fit the downstream end cap",
+          "sha256": "1927055686ec31032e6d83e4118c0ad78f174d39a29e10b9181d42c02b4dfc37"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/5",
+          "text": "Fit the connector to the isolated, inactive line",
+          "sha256": "9b59c1f1d83bc37a7b50f29d8ad44507a6a3820078f0950ab65916c7be1789b4"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/6",
+          "text": "Trainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+          "sha256": "0f0a146b229006ea5be1c189d1856e608a3b5de49e3dcad651f90e76f42188f8"
+        }
+      ],
+      "scientificMeaning": "One-metre / three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain/check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck PPE, tool compatibility and actual kit/manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+      "displayText": "One-metre / three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain/check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck PPE, tool compatibility and actual kit/manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+      "captionText": "One-metre / three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain/check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck PPE, tool compatibility and actual kit/manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+      "spokenText": "One-metre, three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain or check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck personal protective equipment, tool compatibility and actual kit and manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+      "spokenTextSHA256": "ddf34818adeee94ac0105766cce3971d9163e12a164e0133f5aee69c6bc89c2a",
+      "spokenTextSha256": "ddf34818adeee94ac0105766cce3971d9163e12a164e0133f5aee69c6bc89c2a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "One-metre / three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain/check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck PPE, tool compatibility and actual kit/manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+          "spoken": "One-metre, three-emitter teaching brief. Positions and component shapes are schematic, not actual kit dimensions, hole sizes or a product demonstration. Select a component to inspect its role. An assembled picture is not a water test.\n\nMatch each component to its function\n\nTube\n\nCarries water along the line\n\nThree emitters\n\nRelease water near the three intended plants\n\nMatching punch\n\nMakes product-matched holes with the safe kit tool\n\nEnd cap\n\nCloses the downstream end\n\nSupply connector\n\nJoins the isolated line to its compatible supply\n\nUpstream filter\n\nReduces particles that could block emitters\n\nKit-required pressure controls\n\nMaintain or check the selected kit’s operating limits\n\nArrange a safe conceptual workflow\n\nEach card must appear once. Layout and kit verification precede punching; punching precedes emitter seating; emitters, end closure and connector precede a test. Independent closures may change order where the real manual allows. This is reasoning practice, not permission to operate.\n\nLay out and name the disconnected components\n\nCheck personal protective equipment, tool compatibility and actual kit and manual limits\n\nMeasure one metre, mark three plant positions and use the kit-matched punch\n\nSeat the three compatible emitters\n\nFit the downstream end cap\n\nFit the connector to the isolated, inactive line\n\nTrainer-controlled test of all three outlets and joints; isolate before fault correction, retest and tidy",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d845169784f2ae19a9e0d8151c52bf70ff5d9c3b08ddfef5f01995bf43c65119",
+      "requestFingerprintSha256": "d845169784f2ae19a9e0d8151c52bf70ff5d9c3b08ddfef5f01995bf43c65119",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-records-r1",
+      "unitId": "S3-06-en-records-r1",
+      "locale": "en",
+      "semanticGroup": "records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/sampleNotes",
+          "text": "Actual sample observations: before and after",
+          "sha256": "fc8d808d92edbe4c87c13aeebde1d779ca472ab30b4e6ab42f50b89c7d3e5a85"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/0",
+          "text": "Sand",
+          "sha256": "82855c11ae69b0652a292b72967a82d5f4973b88d76c6c793276ef8c5942a803"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/1",
+          "text": "Loam",
+          "sha256": "08f4d336fa5bcd07c7577912d8a4f4398c01fbfe8df5b9b8a14a78b3ff4f12b5"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/2",
+          "text": "Clay",
+          "sha256": "05947b7bdbad0f301c8086a325985c41961fa6c762799f8659f64740683736de"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/0",
+          "text": "Place, depth, date and sample identity",
+          "sha256": "cd839c08664f5dfb2508561c0776cb246f6cb010bca1289f28342fe93a99338e"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/1",
+          "text": "Before addition: actual grains/ball/ribbon/stain observations",
+          "sha256": "a0c0af5cc1bcf344cf6c13a7b8a8b9e55a71843cd69917174f0f0c5c541758d5"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/2",
+          "text": "Actual water added and after-observations, or not performed",
+          "sha256": "5c905df3316dcc16084e1a3ae52cebd89bdd5a3064bca7c14acc1d062c3097c2"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/3",
+          "text": "Texture-specific interpretation, guide and uncertainties",
+          "sha256": "1a61144938e4a2c3c932fe9805df48a90b3b0fb8332771b4962c03b73cc0430b"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitNotes",
+          "text": "Actual kit and supply record",
+          "sha256": "3dfbb6b3a3065af1e57db838a40f5e6662b2ee23fc2ec4f322e3779191be5359"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/0",
+          "text": "Manufacturer and model",
+          "sha256": "0222fb2d055525ad2fa3543e3635a329ae40455aa52d5dfb49cadea447f031eb"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/1",
+          "text": "Tube and emitter compatibility",
+          "sha256": "ffbb824efaf5e958a6432120e307035736481feaaa3d9d34e598f2c5a6ddea58"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/2",
+          "text": "Punch/tool identity and hole specification from the manual",
+          "sha256": "ee4282aba6d9d3238cacf983334fe1fdf5202ab0368bd04fa26b4a12c639652a"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/3",
+          "text": "Manual title/version and relevant page",
+          "sha256": "fa75fe412bf47b2f1a1e76f0b410b84d5705c235921fbd5b93a04ceab6a49306"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/4",
+          "text": "Filter and actual water quality",
+          "sha256": "d33219d959b296959818e1e4c54087dcb7cc1383dc10ddeab0c5c1b7924e6603"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/5",
+          "text": "Pressure control/gauge and product limits from the manual",
+          "sha256": "a023d62eb15cc707cc5f1983ec90cd6a7c8cf2ddd08e85baa252b6274a9ffe8e"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/6",
+          "text": "Safe supply, isolation and trainer verification",
+          "sha256": "cd7e998e8da139c0ce9bf0684ac776447ef97396ed4d283058b7c4fb68529d0e"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/7",
+          "text": "Missing equipment or information; no value inferred",
+          "sha256": "a639e65bc373c7f4cf743d059657a5a7c643aa892f4f6e1fa378e37a5d0041db"
+        },
+        {
+          "pointer": "/dripPractice/ui/testNotes",
+          "text": "Actual individual output and follow-up record",
+          "sha256": "d0b45d8ec9458dbb99e390043affdda08cacea999c1ca22270e9a9c3e3300d23"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/0",
+          "text": "Outlet 1: observation, method and units if measured",
+          "sha256": "69e958a474c16b4b1192ee31179f4aca9f7a38db0b27c8c15e626e3542ca6219"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/1",
+          "text": "Outlet 2: observation, method and units if measured",
+          "sha256": "3ff35510433f3fca7723843ee2e823017ce29dcfabab16fd330e5415775ae3a2"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/2",
+          "text": "Outlet 3: observation, method and units if measured",
+          "sha256": "4233802ecf717b88fbed3215d7fd6c3fe7a986550c4c2f4a452ce3a69053f229"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/3",
+          "text": "Joints, leaks and safe corrective action",
+          "sha256": "6e19cb49f066f5db2df620fdd20b3d78ee5b19dd29f73f87bf9b3336619c1762"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/4",
+          "text": "Retest evidence and remaining defects",
+          "sha256": "e3284313f51a91924d2470b54f321202079d9e5a87902b495ab91c2f3600ec1a"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/5",
+          "text": "Student, trainer, date/site and clean-up evidence",
+          "sha256": "066f02fd1317f72585f2091ea1e669614276648d7b3ec3a3e6992f0ed4cb53e7"
+        },
+        {
+          "pointer": "/dripPractice/ui/notes",
+          "text": "No observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "sha256": "6ca8a96fc44a59a84fac7df98b039d7c665c93aa7313a210a71b71160e3a4704"
+        },
+        {
+          "pointer": "/dripPractice/ui/noKit",
+          "text": "Actual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+          "sha256": "1b53c698fc0af0ac8dcd7ca5e4dd05478a72349ee6059aba5050a4dc5684b3e9"
+        }
+      ],
+      "scientificMeaning": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains/ball/ribbon/stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch/tool identity and hole specification from the manual\n\nManual title/version and relevant page\n\nFilter and actual water quality\n\nPressure control/gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet 1: observation, method and units if measured\n\nOutlet 2: observation, method and units if measured\n\nOutlet 3: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date/site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+      "displayText": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains/ball/ribbon/stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch/tool identity and hole specification from the manual\n\nManual title/version and relevant page\n\nFilter and actual water quality\n\nPressure control/gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet 1: observation, method and units if measured\n\nOutlet 2: observation, method and units if measured\n\nOutlet 3: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date/site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+      "captionText": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains/ball/ribbon/stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch/tool identity and hole specification from the manual\n\nManual title/version and relevant page\n\nFilter and actual water quality\n\nPressure control/gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet 1: observation, method and units if measured\n\nOutlet 2: observation, method and units if measured\n\nOutlet 3: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date/site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+      "spokenText": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains, ball, ribbon, stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch, tool identity and hole specification from the manual\n\nManual title, version and relevant page\n\nFilter and actual water quality\n\nPressure control, gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet one: observation, method and units if measured\n\nOutlet two: observation, method and units if measured\n\nOutlet three: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date, site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+      "spokenTextSHA256": "824d4b622ce44ffc7d6fecc8cf9635b5f5657e6e2f1c5a081e6fb90f95fd148b",
+      "spokenTextSha256": "824d4b622ce44ffc7d6fecc8cf9635b5f5657e6e2f1c5a081e6fb90f95fd148b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains/ball/ribbon/stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch/tool identity and hole specification from the manual\n\nManual title/version and relevant page\n\nFilter and actual water quality\n\nPressure control/gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet 1: observation, method and units if measured\n\nOutlet 2: observation, method and units if measured\n\nOutlet 3: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date/site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+          "spoken": "Actual sample observations: before and after\n\nSand\n\nLoam\n\nClay\n\nPlace, depth, date and sample identity\n\nBefore addition: actual grains, ball, ribbon, stain observations\n\nActual water added and after-observations, or not performed\n\nTexture-specific interpretation, guide and uncertainties\n\nActual kit and supply record\n\nManufacturer and model\n\nTube and emitter compatibility\n\nPunch, tool identity and hole specification from the manual\n\nManual title, version and relevant page\n\nFilter and actual water quality\n\nPressure control, gauge and product limits from the manual\n\nSafe supply, isolation and trainer verification\n\nMissing equipment or information; no value inferred\n\nActual individual output and follow-up record\n\nOutlet one: observation, method and units if measured\n\nOutlet two: observation, method and units if measured\n\nOutlet three: observation, method and units if measured\n\nJoints, leaks and safe corrective action\n\nRetest evidence and remaining defects\n\nStudent, trainer, date, site and clean-up evidence\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.\n\nActual compatible kit not recorded. No product pressure, flow, hole-size or numerical emitter spacing is supplied.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b1d527a8a2ce14c7463e8500d5a07e3a5c864f01576993b4809a3381a087cad6",
+      "requestFingerprintSha256": "b1d527a8a2ce14c7463e8500d5a07e3a5c864f01576993b4809a3381a087cad6",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-practical-checklist-r1",
+      "unitId": "S3-06-en-practical-checklist-r1",
+      "locale": "en",
+      "semanticGroup": "practical-checklist",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/studentTask",
+          "text": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.",
+          "sha256": "e607308fdabfbb769ac1b1478e46bc49ac88a8ab72b9246c017956a6247a0b24"
+        },
+        {
+          "pointer": "/dripPractice/equipmentGate",
+          "text": "A compatible kit and its manufacturer instructions, including punch/emitter size and operating pressure/flow, must be recorded before detailed demonstration or actual water test.",
+          "sha256": "574978ba1b50bba92233080f8c2e6da8c775e944b5917c6cbb1e341ff1116864"
+        },
+        {
+          "pointer": "/dripPractice/ui/trainerTitle",
+          "text": "Trainer observation: ten original checklist items",
+          "sha256": "7b809f2bc34fa6c636d8bd54726de834d671801c9317f73b6162d3de4dac2e0e"
+        },
+        {
+          "pointer": "/dripPractice/checklist/0/evidence",
+          "text": "Suitable PPE used (for example, gloves appropriate to the task) and workspace made safe",
+          "sha256": "8d7ed0c44336b64a05d2f46d9c8a2c08e70199b0c076ba0511248c93bf9d4cef"
+        },
+        {
+          "pointer": "/dripPractice/checklist/1/evidence",
+          "text": "Uses a trowel to take a sample from the active root zone; approximately 10–15 cm applies only to this planter-box exercise",
+          "sha256": "030c54044cee610a2e0294784a6c3cacd02c58fd6079d23e38f0dc64ffae343d"
+        },
+        {
+          "pointer": "/dripPractice/checklist/2/evidence",
+          "text": "Feel and appearance test personally performed and observations recorded",
+          "sha256": "dae84131e1cbcd72525a20ce8f3ed6bffd1ac48f32201bb983a4e542479edae8"
+        },
+        {
+          "pointer": "/dripPractice/checklist/3/evidence",
+          "text": "Moisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer",
+          "sha256": "e90ba06ba472915aacb0534e8f8bbaf4c3c0d7321181eadeefa0275ad8f1f0ac"
+        },
+        {
+          "pointer": "/dripPractice/checklist/4/evidence",
+          "text": "Tubing, three emitters, punch, cap, connector and required filter/control components identified",
+          "sha256": "da5635996593c5f2adcea006d10ff31c0178f3b11862c7af8b7f6c0144ead948"
+        },
+        {
+          "pointer": "/dripPractice/checklist/5/evidence",
+          "text": "One-metre compatible tube measured and three plant-aligned holes punched safely",
+          "sha256": "aef141d70f1d5476c7b39bf352c418a7783663c437f3162dab9c5de5d57580ab"
+        },
+        {
+          "pointer": "/dripPractice/checklist/6/evidence",
+          "text": "Three compatible emitters firmly seated",
+          "sha256": "0b1696c07f4dc5e0c056e1740bc93bf52db433f55e26df7ec923b5287aef2e98"
+        },
+        {
+          "pointer": "/dripPractice/checklist/7/evidence",
+          "text": "End cap fitted securely",
+          "sha256": "4898161d658f0ab624dbf4e3b1e51a5d0b578deb8b488e8478b0820bccf9970c"
+        },
+        {
+          "pointer": "/dripPractice/checklist/8/evidence",
+          "text": "Source connector fitted per actual kit instructions",
+          "sha256": "475a9c0cf0cd00b7c827cc67a0597d19cd1d2f05e849e0cdfad46b45c268d713"
+        },
+        {
+          "pointer": "/dripPractice/checklist/9/evidence",
+          "text": "Trainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+          "sha256": "e219662490fed099b53ac0e7ed12abe8038565393b0f302d945a0eb723b45c2d"
+        }
+      ],
+      "scientificMeaning": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch/emitter size and operating pressure/flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable PPE used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately 10–15 cm applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter/control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+      "displayText": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch/emitter size and operating pressure/flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable PPE used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately 10–15 cm applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter/control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+      "captionText": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch/emitter size and operating pressure/flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable PPE used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately 10–15 cm applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter/control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+      "spokenText": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch, emitter size and operating pressure, flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable personal protective equipment used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately ten to fifteen centimetres applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter, control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+      "spokenTextSHA256": "004305526ce2902d9dc271639323fcd476955e9667fd870d9477c636778d8399",
+      "spokenTextSha256": "004305526ce2902d9dc271639323fcd476955e9667fd870d9477c636778d8399",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch/emitter size and operating pressure/flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable PPE used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately 10–15 cm applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter/control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+          "spoken": "For this supervised process-card exercise, use a trowel to take your own sample from the trainer-designated root zone of the provided planter box containing young plants in sandy loam. Record and interpret the actual moisture observations, then personally assemble and test a one-metre line with three emitters under trainer observation, using the verified compatible kit and its manual.\n\nA compatible kit and its manufacturer instructions, including punch, emitter size and operating pressure, flow, must be recorded before detailed demonstration or actual water test.\n\nTrainer observation: ten original checklist items\n\nSuitable personal protective equipment used (for example, gloves appropriate to the task) and workspace made safe\n\nUses a trowel to take a sample from the active root zone; approximately ten to fifteen centimetres applies only to this planter-box exercise\n\nFeel and appearance test personally performed and observations recorded\n\nMoisture interpreted from actual evidence and texture, not a prescribed 'too dry' answer\n\nTubing, three emitters, punch, cap, connector and required filter, control components identified\n\nOne-metre compatible tube measured and three plant-aligned holes punched safely\n\nThree compatible emitters firmly seated\n\nEnd cap fitted securely\n\nSource connector fitted per actual kit instructions\n\nTrainer-controlled test confirms all three outputs and leak-free joints; student corrects faults safely and cleans up",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "dc5cfbb8951ccbefe610bcb98b8fb18e67946727c04a378e2c6a15134f50cd9a",
+      "requestFingerprintSha256": "dc5cfbb8951ccbefe610bcb98b8fb18e67946727c04a378e2c6a15134f50cd9a",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-06-en-criteria-r1",
+      "unitId": "S3-06-en-criteria-r1",
+      "locale": "en",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/passChecks/0/evidence",
+          "text": "Trainer records student ID, actual sampling position/depth (source card offers approximately 10–15 cm for its planter box), texture, squeeze/ribbon/color/water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.",
+          "sha256": "334e7b1e2ba8770ce329e38b5322251a74b5bd2e3895488624495bce3dc14d1e"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/0/decision",
+          "text": "Pass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.",
+          "sha256": "36b080ecabd1a288413b0231b6bce712b94cf71b99d166cfef24e0c42359905c"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/evidence",
+          "text": "Matches each listed component to its function and orders layout, kit-guided marking/punching, emitter seating, end closure, source connector, filtration/pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.",
+          "sha256": "9c61edabbb0db2cc551576370d67c32bc83e76359dad079ad6a520d243e29afe"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/decision",
+          "text": "Pass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.",
+          "sha256": "a14b3f98239ed8e6955677a2a2f58688fbdd2b8b0f636963cbaa74b7592883d7"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/evidence",
+          "text": "Trainer witnesses the same student use the suitable PPE/tool, position three holes for three plants along a measured 1 m compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.",
+          "sha256": "f1675997f7517f01234b33e8dc7a13b53ee8698c4eb135dc64ec17b4d5b84c9c"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/decision",
+          "text": "Pass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.",
+          "sha256": "5e3d5a9b40795d1dab44aee6de6f1e46799f2a121431c68a618b06aa280d825b"
+        },
+        {
+          "pointer": "/dripPractice/practicalDecision",
+          "text": "C01 and C03 pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C02 is assessed separately online.",
+          "sha256": "412626417036dfdc540e2351925199fe50efa14c7cd6e640548e4a163e49e056"
+        }
+      ],
+      "scientificMeaning": "Trainer records student ID, actual sampling position/depth (source card offers approximately 10–15 cm for its planter box), texture, squeeze/ribbon/color/water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking/punching, emitter seating, end closure, source connector, filtration/pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable PPE/tool, position three holes for three plants along a measured 1 m compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC01 and C03 pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C02 is assessed separately online.",
+      "displayText": "Trainer records student ID, actual sampling position/depth (source card offers approximately 10–15 cm for its planter box), texture, squeeze/ribbon/color/water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking/punching, emitter seating, end closure, source connector, filtration/pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable PPE/tool, position three holes for three plants along a measured 1 m compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC01 and C03 pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C02 is assessed separately online.",
+      "captionText": "Trainer records student ID, actual sampling position/depth (source card offers approximately 10–15 cm for its planter box), texture, squeeze/ribbon/color/water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking/punching, emitter seating, end closure, source connector, filtration/pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable PPE/tool, position three holes for three plants along a measured 1 m compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC01 and C03 pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C02 is assessed separately online.",
+      "spokenText": "Trainer records student ID, actual sampling position, depth (source card offers approximately ten to fifteen centimetres for its planter box), texture, squeeze, ribbon, color, water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking, punching, emitter seating, end closure, source connector, filtration, pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable personal protective equipment and tool, position three holes for three plants along a measured one-metre compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC zero one and C zero three pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C zero two is assessed separately online.",
+      "spokenTextSHA256": "7f8c7f4a211642b9a4a27444650fb46fbe261f3b2144660f6ccfdb7fd6a969bd",
+      "spokenTextSha256": "7f8c7f4a211642b9a4a27444650fb46fbe261f3b2144660f6ccfdb7fd6a969bd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Trainer records student ID, actual sampling position/depth (source card offers approximately 10–15 cm for its planter box), texture, squeeze/ribbon/color/water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking/punching, emitter seating, end closure, source connector, filtration/pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable PPE/tool, position three holes for three plants along a measured 1 m compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC01 and C03 pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C02 is assessed separately online.",
+          "spoken": "Trainer records student ID, actual sampling position, depth (source card offers approximately ten to fifteen centimetres for its planter box), texture, squeeze, ribbon, color, water-stain observations, moisture judgment and a texture-specific reason. The student reports the observed state, even if it is not dry.\n\nPass only on individual observed sampling and supported interpretation; a simulator click, group answer or scripted 'too dry' label does not pass.\n\nMatches each listed component to its function and orders layout, kit-guided marking, punching, emitter seating, end closure, source connector, filtration, pressure verification, controlled water test and clean-up. No invented pressure, flow or hole-spacing numbers.\n\nPass when functions, sequence, kit compatibility and test boundary are correct; missing safety or kit verification triggers targeted retry.\n\nTrainer witnesses the same student use the suitable personal protective equipment and tool, position three holes for three plants along a measured one-metre compatible tube, fit three emitters, cap and connect, then test under kit-specified operating conditions for secure joints, leaks and all three outputs, correct defects and tidy the site.\n\nPass only after all individual safety and functional checks are observed and signed. Any untested or leaking line remains unpassed until safely corrected and retested.\n\nC zero one and C zero three pass only with trainer-recorded individual evidence for all applicable safety and functional checks; no fixed score substitution. Correct and retest any failure. C zero two is assessed separately online.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a56c2e4d43ddfd7185b029c4e214584f414ae1ab5142e4642bc89308bc0ed387",
+      "requestFingerprintSha256": "a56c2e4d43ddfd7185b029c4e214584f414ae1ab5142e4642bc89308bc0ed387",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

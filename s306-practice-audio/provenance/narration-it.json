@@ -1,0 +1,530 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-it.json",
+    "sha256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+    "bytes": 25974
+  },
+  "units": [
+    {
+      "id": "S3-06-it-components-and-sequence-r1",
+      "unitId": "S3-06-it-components-and-sequence-r1",
+      "locale": "it",
+      "semanticGroup": "components-and-sequence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/modelHelp",
+          "text": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.",
+          "sha256": "6b5b7230356f010858d5deb051d48a95a683159073ed4d77b619b0bb886131a3"
+        },
+        {
+          "pointer": "/dripPractice/ui/partTitle",
+          "text": "Associa parte e funzione",
+          "sha256": "4611f90529663e086e0e0820892ad79a6996a7c21625df1ac80b97766b5c7533"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/0",
+          "text": "Tubo",
+          "sha256": "0382fe9faf5f722ae26d6cfdcba56ed7987c298ddc4f8da7e725582fb0e8906c"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/0",
+          "text": "Trasporta acqua lungo la linea",
+          "sha256": "a3b3e2e847a0f347fccc07dcd9b4f3bc095ffba548deaf34acad37c952f086ad"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/1",
+          "text": "Tre gocciolatori",
+          "sha256": "366951d4e215f72a114748374045686ba1d3ad7225c24b3862230e8153705cf8"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/1",
+          "text": "Erogano vicino alle tre piante previste",
+          "sha256": "631ecfbe7bc2c0b29b3874d33c2f6d6374d2aaf7d1d0626b1275c82864c5d437"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/2",
+          "text": "Punzone compatibile",
+          "sha256": "ea13421ae208c64e3cd14ee80e9dcec8b3793db2f7f639f4cbd8548453eea3f4"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/2",
+          "text": "Crea fori compatibili con l’attrezzo sicuro",
+          "sha256": "c9540f996cfca22926bfc953e9236b5232bf106f8cb547e6fd42cd35d05aa059"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/3",
+          "text": "Tappo terminale",
+          "sha256": "31143bfe2b8878c501bf6ee3a6f21332a9c79c665f084240e1f0f5995aaeb9e8"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/3",
+          "text": "Chiude l’estremità a valle",
+          "sha256": "5595231a1d201539d3373f1bd2284ed7550e8625b96746c6aa3d8b40ce71dbe3"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/4",
+          "text": "Raccordo",
+          "sha256": "cb7121aced7c1459b82abf55cfca584d425a40c2184a926642ac7dfae5479fd3"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/4",
+          "text": "Collega la linea isolata alla fonte compatibile",
+          "sha256": "bff189d5904f7d827034ae0a58f6cc5d6dcbca9a9c13688f054742d42030f854"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/5",
+          "text": "Filtro a monte",
+          "sha256": "91c288e4a1bb3fb3c231b96ab466d86ecfe3e4749ba3473a9bb6347d009b4f0d"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/5",
+          "text": "Riduce particelle che ostruiscono i gocciolatori",
+          "sha256": "630a2f120a9a3c5ad16d2f3aba14f1790ea732bd90699d98489a9c4b9fab41dd"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/6",
+          "text": "Controlli di pressione del kit",
+          "sha256": "b3f248d8ab0d7c10ec172e19e2ac4af3a4ad5aac6f4b032842adad2f2eae62d7"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/6",
+          "text": "Mantengono o verificano i limiti del kit scelto",
+          "sha256": "b1985a4b57411de83a42fe2c7355a68c1beb9d2b1bd78a500a7d81fb1f8f3221"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderTitle",
+          "text": "Ordina la logica di preparazione sicura",
+          "sha256": "6ccdfc9a74f782dac4db684e46388cafc177dacccd8deb71a909b4f5a6a7389c"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderHelp",
+          "text": "Ogni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.",
+          "sha256": "c694d6eb628e2c3a4864ad34aa036eccece39108c2314892cd6260908290899a"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/0",
+          "text": "Disporre e nominare i pezzi scollegati",
+          "sha256": "3d6f9322e445c47c0a7ff0683d939105359256a548544f1ecf3c197d2d6cd402"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/1",
+          "text": "Verificare protezioni, attrezzi e limiti del manuale reale",
+          "sha256": "81b1c1abe280bd515f2d3c52c31db3efd612a9b04f010cc67b01759e8994c51a"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/2",
+          "text": "Misurare un metro, segnare tre piante e usare il punzone compatibile",
+          "sha256": "dc65fcc66a53e0dfb6771391b882fca7e7a2f72e67fefde24bd5df81ec0e5942"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/3",
+          "text": "Inserire i tre gocciolatori compatibili",
+          "sha256": "aa0f5d1d2461ea128680410f79969631c6c747507220429019c6d8554afb7039"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/4",
+          "text": "Montare il tappo a valle",
+          "sha256": "5ba12ef6666dd1c101e0deaca61cf1df20fcf632c1324fbe5f1f2e1cb3de0fda"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/5",
+          "text": "Montare raccordo sulla linea isolata e inattiva",
+          "sha256": "5af6c8d1879fc6301fa7efdd59966e2d91091f9b1142523d112404ba7a7d3a96"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/6",
+          "text": "Prova controllata dal formatore di sbocchi/giunti; isolare prima di correggere, riprovare e riordinare",
+          "sha256": "02e009e61e28f95fc8d5da04a27462dc5352162cfd1d45b7ee54338b724394f4"
+        }
+      ],
+      "scientificMeaning": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi/giunti; isolare prima di correggere, riprovare e riordinare",
+      "displayText": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi/giunti; isolare prima di correggere, riprovare e riordinare",
+      "captionText": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi/giunti; isolare prima di correggere, riprovare e riordinare",
+      "spokenText": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi, giunti; isolare prima di correggere, riprovare e riordinare",
+      "spokenTextSHA256": "edbc18fa16e538fd931c69b8fa1b33231c09cc0abd5ade2115335c92fa0b2e30",
+      "spokenTextSha256": "edbc18fa16e538fd931c69b8fa1b33231c09cc0abd5ade2115335c92fa0b2e30",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi/giunti; isolare prima di correggere, riprovare e riordinare",
+          "spoken": "Compito didattico: un metro e tre gocciolatori. Posizioni e forme sono schematiche, non misure del kit, fori o dimostrazione operativa. Selezionare un componente per la funzione. Immagine montata non significa prova idrica.\n\nAssocia parte e funzione\n\nTubo\n\nTrasporta acqua lungo la linea\n\nTre gocciolatori\n\nErogano vicino alle tre piante previste\n\nPunzone compatibile\n\nCrea fori compatibili con l’attrezzo sicuro\n\nTappo terminale\n\nChiude l’estremità a valle\n\nRaccordo\n\nCollega la linea isolata alla fonte compatibile\n\nFiltro a monte\n\nRiduce particelle che ostruiscono i gocciolatori\n\nControlli di pressione del kit\n\nMantengono o verificano i limiti del kit scelto\n\nOrdina la logica di preparazione sicura\n\nOgni scheda una volta. Disposizione e verifica del kit precedono i fori, i fori precedono i gocciolatori; gocciolatori, tappo e raccordo precedono la prova. Chiusure indipendenti possono cambiare ordine se consentito dal manuale. È ragionamento, non permesso operativo.\n\nDisporre e nominare i pezzi scollegati\n\nVerificare protezioni, attrezzi e limiti del manuale reale\n\nMisurare un metro, segnare tre piante e usare il punzone compatibile\n\nInserire i tre gocciolatori compatibili\n\nMontare il tappo a valle\n\nMontare raccordo sulla linea isolata e inattiva\n\nProva controllata dal formatore di sbocchi, giunti; isolare prima di correggere, riprovare e riordinare",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "15407cf07b4aedce07c496c9f3473a2c3c7f41721ef7377606147b7b32f65048",
+      "requestFingerprintSha256": "15407cf07b4aedce07c496c9f3473a2c3c7f41721ef7377606147b7b32f65048",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-06-it-records-r1",
+      "unitId": "S3-06-it-records-r1",
+      "locale": "it",
+      "semanticGroup": "records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/sampleNotes",
+          "text": "Osservazioni reali prima e dopo l’acqua",
+          "sha256": "7ea4693f640b270ecdd74a9dac74729bfdfd5cde6a5fc7e667c1cabb5d699609"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/0",
+          "text": "Sabbia",
+          "sha256": "b2711be3086ccaa9a49a97ab49db3ec76e60e9bec0e5e945b25ade0b820f9e15"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/1",
+          "text": "Franco",
+          "sha256": "adc4d83d58802ca312d1585f24d8efc7fb1a993376fb6307a06cda6832df1eec"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/2",
+          "text": "Argilla",
+          "sha256": "1370962ccdba290a4a40e9031fc8cb9c9efe8b458912d3c40d9b177c1ac54550"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/0",
+          "text": "Punto, profondità, data e identità",
+          "sha256": "e720f6b8395807091cb567fdd8cf08cae72706fdc4897918b0fbb8780fcbdc9e"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/1",
+          "text": "Granuli, palla, nastro e macchie prima",
+          "sha256": "1e30ce7e9d6017d7a4cd1f5d2180f36b0c11826dbd321975b71c1c43a24c951b"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/2",
+          "text": "Acqua realmente aggiunta e osservazione successiva, oppure non eseguito",
+          "sha256": "35d1026f11224cfa632008213a0867c7dd7654f4919b4446694ff0154f3802d5"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/3",
+          "text": "Interpretazione per tessitura, guida e incertezze",
+          "sha256": "504a56a12a7e347930e91a5d74dfe35ec97716e357f99feb8eeca14c06216c30"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitNotes",
+          "text": "Registro del kit e alimentazione reali",
+          "sha256": "e38477e4b30f4797590b03662cd22de127cf8e015065b740651875ff4e2b5d06"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/0",
+          "text": "Marca e modello",
+          "sha256": "0afde0eabb9e7fc1a99d05a225417b0f9ddc47b173e273551c6c5e9967a3c41f"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/1",
+          "text": "Compatibilità tubo/gocciolatore",
+          "sha256": "10e00c974b40d82adea91e5363853e33b11497b3ef0367df777eccef391d354c"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/2",
+          "text": "Attrezzo e foro prescritti dal manuale",
+          "sha256": "224210a53408ed4f05b1ebf3633ed2c79af1304cb6ec8a8283632f7e184d22cf"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/3",
+          "text": "Titolo/versione/pagina del manuale",
+          "sha256": "40cf218ff7a77c2cc71275914632f057c24b7e12874ba4bb74a5d2b080c8b9c4"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/4",
+          "text": "Filtro e qualità reale dell’acqua",
+          "sha256": "55b44b5c608aaab87c42f538237179b92948cc690696328768bdde064054e881"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/5",
+          "text": "Regolazione/manometro e limiti del prodotto",
+          "sha256": "9ea82eb09bdc9b056539b1c89e6f023abb6a5e333784b239f4dfad953bead955"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/6",
+          "text": "Fonte, isolamento e verifica del formatore",
+          "sha256": "c6ff54bb5c4b75364ddcd2181e6c397f5e645daf7a972d01cb738fad34f86b39"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/7",
+          "text": "Attrezzi o dati mancanti; nessuna cifra dedotta",
+          "sha256": "57a9f4605e1b2fd49cbdaebba255ff2f886eb806ed55c11b7921df795f71fc14"
+        },
+        {
+          "pointer": "/dripPractice/ui/testNotes",
+          "text": "Osservazioni individuali degli sbocchi",
+          "sha256": "4903408f9cec37f1f077afb9608b92e55fcf60771e32748caed56f9e549e4713"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/0",
+          "text": "Sbocco1: osservazione, metodo e unità se misurati",
+          "sha256": "bd922ba786423a10a8f6dd64ed4175f32b2a0ef14049e37f19963cd9fe296723"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/1",
+          "text": "Sbocco2: osservazione, metodo e unità se misurati",
+          "sha256": "d3aff7601f517d07aa4cac4f02309b92117b36a047d5db523bf65cd801c90bd8"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/2",
+          "text": "Sbocco3: osservazione, metodo e unità se misurati",
+          "sha256": "acb9790988869e7b84074cd5175c82d7ee48e69064730810ec126c4cf559d057"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/3",
+          "text": "Giunti, perdite e correzione sicura",
+          "sha256": "52826522379d466f99e7c0efd973a07e2df9856161da99192c5b3ab2e8f82fb2"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/4",
+          "text": "Prove di ripetizione e difetti residui",
+          "sha256": "5bd0473a446ccbfc3e3b9bce75fd3ebb0bb58f1ac12e0682fc5d768ffe824c25"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/5",
+          "text": "Studente, formatore, data/sito e pulizia",
+          "sha256": "4f2b47e1e6cbb2de38509ce47cc588f36eb625448992a38209da9d7900b46c91"
+        },
+        {
+          "pointer": "/dripPractice/ui/notes",
+          "text": "Nessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "sha256": "4a522e832c103528797170b4d5108df44a57cdd46a152441df263dae68dd409c"
+        },
+        {
+          "pointer": "/dripPractice/ui/noKit",
+          "text": "Kit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+          "sha256": "127920cc90b050998e11ffce97ddbb148e3c57d5438f237b6f10ac2df79ec7bc"
+        }
+      ],
+      "scientificMeaning": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo/gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo/versione/pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione/manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco1: osservazione, metodo e unità se misurati\n\nSbocco2: osservazione, metodo e unità se misurati\n\nSbocco3: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data/sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+      "displayText": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo/gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo/versione/pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione/manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco1: osservazione, metodo e unità se misurati\n\nSbocco2: osservazione, metodo e unità se misurati\n\nSbocco3: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data/sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+      "captionText": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo/gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo/versione/pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione/manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco1: osservazione, metodo e unità se misurati\n\nSbocco2: osservazione, metodo e unità se misurati\n\nSbocco3: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data/sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+      "spokenText": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo, gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo, versione, pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione, manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco uno: osservazione, metodo e unità se misurati\n\nSbocco due: osservazione, metodo e unità se misurati\n\nSbocco tre: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data, sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+      "spokenTextSHA256": "c26c4d763e2b6fb5e31272347c57bddd8b5e06fa3e8541d4ba87f13435b3c0e6",
+      "spokenTextSha256": "c26c4d763e2b6fb5e31272347c57bddd8b5e06fa3e8541d4ba87f13435b3c0e6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo/gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo/versione/pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione/manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco1: osservazione, metodo e unità se misurati\n\nSbocco2: osservazione, metodo e unità se misurati\n\nSbocco3: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data/sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+          "spoken": "Osservazioni reali prima e dopo l’acqua\n\nSabbia\n\nFranco\n\nArgilla\n\nPunto, profondità, data e identità\n\nGranuli, palla, nastro e macchie prima\n\nAcqua realmente aggiunta e osservazione successiva, oppure non eseguito\n\nInterpretazione per tessitura, guida e incertezze\n\nRegistro del kit e alimentazione reali\n\nMarca e modello\n\nCompatibilità tubo, gocciolatore\n\nAttrezzo e foro prescritti dal manuale\n\nTitolo, versione, pagina del manuale\n\nFiltro e qualità reale dell’acqua\n\nRegolazione, manometro e limiti del prodotto\n\nFonte, isolamento e verifica del formatore\n\nAttrezzi o dati mancanti; nessuna cifra dedotta\n\nOsservazioni individuali degli sbocchi\n\nSbocco uno: osservazione, metodo e unità se misurati\n\nSbocco due: osservazione, metodo e unità se misurati\n\nSbocco tre: osservazione, metodo e unità se misurati\n\nGiunti, perdite e correzione sicura\n\nProve di ripetizione e difetti residui\n\nStudente, formatore, data, sito e pulizia\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.\n\nKit reale compatibile non registrato. Nessuna pressione, portata, misura foro o distanza numerica dedotta.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "4f10ef41d0745a204431c4dc8e563a47852107e7e70c564738eccd5e5b42becf",
+      "requestFingerprintSha256": "4f10ef41d0745a204431c4dc8e563a47852107e7e70c564738eccd5e5b42becf",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-06-it-practical-checklist-r1",
+      "unitId": "S3-06-it-practical-checklist-r1",
+      "locale": "it",
+      "semanticGroup": "practical-checklist",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/studentTask",
+          "text": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.",
+          "sha256": "0c5e2a0d3fea10ff1fdbc5c2cd7e7a39e9fe93b5872567f9a6bc4d8da9369b70"
+        },
+        {
+          "pointer": "/dripPractice/equipmentGate",
+          "text": "Prima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone/gocciolatore e limiti di pressione/portata.",
+          "sha256": "2389a51cb529e1c7c0b4b244ff3575eb429316996635b79987d782c56cee415c"
+        },
+        {
+          "pointer": "/dripPractice/ui/trainerTitle",
+          "text": "Osservazione del formatore: dieci voci",
+          "sha256": "8570e9faf1ec1ecc9f7b6c70517870910071c81a708c8460efddad290f8eb539"
+        },
+        {
+          "pointer": "/dripPractice/checklist/0/evidence",
+          "text": "Dispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura",
+          "sha256": "8b0de8b2238b755d0ad0485ea50dab3b24954935e2b07aec7d1910fb9ac1a405"
+        },
+        {
+          "pointer": "/dripPractice/checklist/1/evidence",
+          "text": "Usa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; circa 10–15 cm vale soltanto per questo esercizio con la fioriera",
+          "sha256": "39c93e1cfdea41ad831dbde1dd431c1e2f3eb40a6f53f96791056ec4c2d0c24d"
+        },
+        {
+          "pointer": "/dripPractice/checklist/2/evidence",
+          "text": "Prova tattile e visiva eseguita personalmente e annotata",
+          "sha256": "e4a272db689adf7650671dcfe481255e1d54f56b06a9dcae02ffadd84c0d642a"
+        },
+        {
+          "pointer": "/dripPractice/checklist/3/evidence",
+          "text": "Umidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito",
+          "sha256": "861d956e4afd781812dfbfe1dd3bb6a195e6863e7764cadda740189c60fed0c6"
+        },
+        {
+          "pointer": "/dripPractice/checklist/4/evidence",
+          "text": "Riconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro/controlli richiesti",
+          "sha256": "13973a3c10311f9ff4901fc6fd2acfe77dfbd32d2ab72de9b9070387327fa26c"
+        },
+        {
+          "pointer": "/dripPractice/checklist/5/evidence",
+          "text": "Tubo compatibile da un metro misurato e tre fori sicuri allineati alle piante",
+          "sha256": "07b8902283615f1ea46c124f5ddb1580e3c7bcb84a9c1243b36a7c291b5c3105"
+        },
+        {
+          "pointer": "/dripPractice/checklist/6/evidence",
+          "text": "Tre gocciolatori compatibili inseriti saldamente",
+          "sha256": "1049b79e1e82bb769891e1c1c6d1f06b83595b53240c1fa5d70dc4620c15c80c"
+        },
+        {
+          "pointer": "/dripPractice/checklist/7/evidence",
+          "text": "Tappo terminale fissato",
+          "sha256": "16b36248bf662c13580367574fd5ed530bfedf9cf425e4d03f370513eac6f7d1"
+        },
+        {
+          "pointer": "/dripPractice/checklist/8/evidence",
+          "text": "Raccordo montato secondo il kit reale",
+          "sha256": "c2d6c53565a85b8a8a8fc3dac348ce8f6ab447d28d459cb0d4413f88d6f672ef"
+        },
+        {
+          "pointer": "/dripPractice/checklist/9/evidence",
+          "text": "Prova controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+          "sha256": "3cd65ca5b71011b6828eb0eeb0605c86819cde2d9070a2fcf35b6f87dbeb3153"
+        }
+      ],
+      "scientificMeaning": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone/gocciolatore e limiti di pressione/portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; circa 10–15 cm vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro/controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+      "displayText": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone/gocciolatore e limiti di pressione/portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; circa 10–15 cm vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro/controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+      "captionText": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone/gocciolatore e limiti di pressione/portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; circa 10–15 cm vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro/controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+      "spokenText": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone, gocciolatore e limiti di pressione, portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; da dieci a quindici centimetri circa vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro, controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+      "spokenTextSHA256": "bdd6b64cc01541c9c582e4d81d1249e6c29d6ecffa077a7093f632b0363a9cc2",
+      "spokenTextSha256": "bdd6b64cc01541c9c582e4d81d1249e6c29d6ecffa077a7093f632b0363a9cc2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone/gocciolatore e limiti di pressione/portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; circa 10–15 cm vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro/controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+          "spoken": "Per questo esercizio supervisionato della scheda pratica, usa una paletta da giardinaggio per prelevare personalmente un campione dalla zona radicale indicata dall’istruttore nella fioriera fornita, con giovani piante in terreno franco sabbioso. Registra e interpreta le osservazioni reali sull’umidità, poi monta e prova personalmente una linea di un metro con tre gocciolatori sotto osservazione dell’istruttore, con il kit compatibile verificato e il relativo manuale.\n\nPrima di dimostrazione operativa dettagliata o prova con acqua occorrono kit compatibile e manuale del produttore, con misura di punzone, gocciolatore e limiti di pressione, portata.\n\nOsservazione del formatore: dieci voci\n\nDispositivi di protezione adatti usati, per esempio guanti appropriati al compito, e area resa sicura\n\nUsa una paletta da giardinaggio per prelevare un campione dalla zona radicale attiva; da dieci a quindici centimetri circa vale soltanto per questo esercizio con la fioriera\n\nProva tattile e visiva eseguita personalmente e annotata\n\nUmidità interpretata da osservazioni e tessitura effettive, non da «troppo secco» predefinito\n\nRiconosciuti tubo, tre gocciolatori, punzone, tappo, raccordo e filtro, controlli richiesti\n\nTubo compatibile da un metro misurato e tre fori sicuri allineati alle piante\n\nTre gocciolatori compatibili inseriti saldamente\n\nTappo terminale fissato\n\nRaccordo montato secondo il kit reale\n\nProva controllata dall’istruttore conferma tre sbocchi e giunti senza perdite; correzione sicura e pulizia",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "b40968e7d1c2a23278d1bae87192fed8a75d056913450e98910ef5a8a2116af3",
+      "requestFingerprintSha256": "b40968e7d1c2a23278d1bae87192fed8a75d056913450e98910ef5a8a2116af3",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-06-it-criteria-r1",
+      "unitId": "S3-06-it-criteria-r1",
+      "locale": "it",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b8870e51a8193b5ce021c2eca35cbe61c0b653a33563b5a5f86e893e99beabf7",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/passChecks/0/evidence",
+          "text": "L’istruttore registra studente, punto e profondità reali di prelievo (circa 10–15 cm solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.",
+          "sha256": "3f776edb0a2a297724a4b5d8b6dd441e9f715ec722837bd6ff8931d2f2485ed3"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/0/decision",
+          "text": "Superamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.",
+          "sha256": "599014f67aa81104907529a8d19466d85c0d64c974da36f00393e01a909999f3"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/evidence",
+          "text": "Associa i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.",
+          "sha256": "2de2d1ad030f61ad9496905f03b2efe1a2093287abd4afa9cfc456467630415c"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/decision",
+          "text": "Superamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.",
+          "sha256": "ca55b06e513962309d4215286010c624374ec84fd88232a721deddc210647873"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/evidence",
+          "text": "L’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.",
+          "sha256": "30ad971a8cb18f7a9864f07a180f0d2bbf1aa529fcb6b04ca93a4d550b03cc8c"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/decision",
+          "text": "Superamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.",
+          "sha256": "863370e54b6fa9688f23cdc8decdac45749b3eb65d31dd66cda482e4ab47f7c7"
+        },
+        {
+          "pointer": "/dripPractice/practicalDecision",
+          "text": "C01 e C03 si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C02 è valutato separatamente online.",
+          "sha256": "cf147435020ec16768fa131c9bf8398b53eaa872bef6c2d938ae0682088c2799"
+        }
+      ],
+      "scientificMeaning": "L’istruttore registra studente, punto e profondità reali di prelievo (circa 10–15 cm solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC01 e C03 si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C02 è valutato separatamente online.",
+      "displayText": "L’istruttore registra studente, punto e profondità reali di prelievo (circa 10–15 cm solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC01 e C03 si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C02 è valutato separatamente online.",
+      "captionText": "L’istruttore registra studente, punto e profondità reali di prelievo (circa 10–15 cm solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC01 e C03 si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C02 è valutato separatamente online.",
+      "spokenText": "L’istruttore registra studente, punto e profondità reali di prelievo (da dieci a quindici centimetri circa solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC zero uno e C zero tre si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C zero due è valutato separatamente online.",
+      "spokenTextSHA256": "4467d887f08454cc2ec995e9bf9f2404c18bfff3701e86803c1cb961a96db5a6",
+      "spokenTextSha256": "4467d887f08454cc2ec995e9bf9f2404c18bfff3701e86803c1cb961a96db5a6",
+      "spokenAdaptationChanges": [
+        {
+          "written": "L’istruttore registra studente, punto e profondità reali di prelievo (circa 10–15 cm solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC01 e C03 si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C02 è valutato separatamente online.",
+          "spoken": "L’istruttore registra studente, punto e profondità reali di prelievo (da dieci a quindici centimetri circa solo per la fioriera della scheda originale), tessitura, forma, nastro, colore e tracce d’acqua, giudizio e motivazione. Si riferisce la condizione osservata anche se non è secca.\n\nSuperamento solo con prelievo individuale osservato e interpretazione giustificata; un clic simulato, una risposta collettiva o «troppo secco» recitato non bastano.\n\nAssocia i componenti alla funzione e ordina disposizione, marcatura e foratura secondo il manuale, inserimento, chiusura, raccordo, verifica di filtro e pressione, prova controllata e pulizia. Nessun numero inventato per pressione, portata o distanza.\n\nSuperamento se funzioni, sequenza, compatibilità e confini della prova sono corretti; errori di sicurezza o mancata verifica del kit richiedono ripasso mirato.\n\nL’istruttore osserva lo stesso studente usare protezioni e attrezzi adatti, segnare tre fori secondo tre piante su tubo compatibile da un metro, inserire gocciolatori, tappo e raccordo, poi provare nelle condizioni previste dal kit tutti e tre gli sbocchi e i giunti, correggere i difetti e riordinare.\n\nSuperamento soltanto dopo registrazione e firma di tutte le verifiche individuali di sicurezza e funzionalità. Una linea non provata o con perdite resta non superata finché non viene corretta e riprovata in sicurezza.\n\nC zero uno e C zero tre si superano soltanto con prove individuali registrate e firmate dall’istruttore per tutti i controlli pertinenti. Nessuna soglia numerica sostitutiva. Correggere e riprovare ogni errore. C zero due è valutato separatamente online.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "782766702944cd4f313b47a44fc159844efeebc68d1f99f641cbcbeee2d81779",
+      "requestFingerprintSha256": "782766702944cd4f313b47a44fc159844efeebc68d1f99f641cbcbeee2d81779",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

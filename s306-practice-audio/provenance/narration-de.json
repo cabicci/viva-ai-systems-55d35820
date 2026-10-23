@@ -1,0 +1,523 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-de.json",
+    "sha256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+    "bytes": 26095
+  },
+  "units": [
+    {
+      "id": "S3-06-de-components-and-sequence-r1",
+      "unitId": "S3-06-de-components-and-sequence-r1",
+      "locale": "de",
+      "semanticGroup": "components-and-sequence",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/modelHelp",
+          "text": "Lehrauftrag: ein Meter und drei Tropfer. Positionen und Formen sind schematisch, keine Kitmaße, Lochgrößen oder Produktvorführung. Bauteil für Funktion wählen. Montiertes Bild ist kein Wassertest.",
+          "sha256": "da2af96e56533c9d420ea385a7bbe0262d990bfe1554cb3bb23e5b08e72ea2f7"
+        },
+        {
+          "pointer": "/dripPractice/ui/partTitle",
+          "text": "Bauteil und Funktion zuordnen",
+          "sha256": "86d79981fe3ca41c76adc584f0ebe4fb33022b967423fc5ce4b3e2498a08128b"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/0",
+          "text": "Schlauch",
+          "sha256": "1e5e3cd5249be5cfe6b5568e602013da692abe82e8609feeeb547d0c97064c7d"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/0",
+          "text": "Leitet Wasser entlang der Leitung",
+          "sha256": "09c008b25f366af483b9cb6c79e979fee4f95b813c689c5ece0d9ee7a1fd29d7"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/1",
+          "text": "Drei Tropfer",
+          "sha256": "9c2c969b0eeb1d1933d61d2581dc8355f1cc3b7700be409f4873156e3e27d957"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/1",
+          "text": "Geben Wasser nahe den drei Pflanzen ab",
+          "sha256": "056bbb01465cc2daaac899b3ffb1aaaf72e3a125b63e5667ace505ad52d40bd3"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/2",
+          "text": "Passendes Lochwerkzeug",
+          "sha256": "08a94f50558cf36787f626933e4ef174bd95d7e33ced90e209b1ac343922f893"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/2",
+          "text": "Erzeugt passende Löcher mit sicherem Werkzeug",
+          "sha256": "3ade0efc60a64e514ea12c89d24950bbe0613f2449d2232da6fe462e9af9141a"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/3",
+          "text": "Endverschluss",
+          "sha256": "5e9e674e99c3a5caa6adb5d3e445860b67a258d79d946d998c1b8e6121c07bae"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/3",
+          "text": "Verschließt das Ende",
+          "sha256": "f51edd748b74dabe20c5396bc67f9a697903fcea762b34c1642a5d714eff9610"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/4",
+          "text": "Anschlussstück",
+          "sha256": "674eaeb75c9de4ad46e15380f343c96ac551bec93efd4551ca3dac2a7ca08b30"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/4",
+          "text": "Verbindet abgesperrte Leitung mit passender Quelle",
+          "sha256": "0399ba32aa0448a5cb1e382709762924404b8adfc02f40bcfca9560c26491c79"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/5",
+          "text": "Vorgeschalteter Filter",
+          "sha256": "c75d6a7a1ba2de91a64f2300e94c7c60970fa7f8113532e75c056bd1f33c3295"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/5",
+          "text": "Verringert verstopfende Partikel",
+          "sha256": "c3430f3b5905fd3c4dc12afd3aa9afb73b6e05306fdaa887328b29a0dcb69032"
+        },
+        {
+          "pointer": "/dripPractice/ui/parts/6",
+          "text": "Vom Kit geforderte Druckregelung",
+          "sha256": "d914eecd10eb12d30f35befb003b7aeac86bab51835bd05f1b2a7b942be4460c"
+        },
+        {
+          "pointer": "/dripPractice/ui/functions/6",
+          "text": "Halten oder prüfen die Grenzen des gewählten Kits",
+          "sha256": "eb0f92eb367a7bcedb7d93954c18d9f683ff143071c40bd7b51267b14d85b995"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderTitle",
+          "text": "Sichere Vorbereitungslogik ordnen",
+          "sha256": "814a33b95d789cf5314d3774554e818e483acead26ffa84f1241cae06b88c56e"
+        },
+        {
+          "pointer": "/dripPractice/ui/orderHelp",
+          "text": "Jede Karte einmal. Auslegen und Kitprüfung vor Lochen, Lochen vor Tropfereinsetzen; Tropfer, Verschluss und Anschluss vor Test. Unabhängige Verschlüsse dürfen bei erlaubender Anleitung anders folgen. Denkübung, keine Betriebserlaubnis.",
+          "sha256": "e4a23e6755d15926b8bee2b9ebbfdcfe4a2182ef331604366d4549734a3bc200"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/0",
+          "text": "Getrennte Teile auslegen und benennen",
+          "sha256": "00fde4d85f20ef637edd08c36fe7b777a1fba0eb22a669f4c462549477640092"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/1",
+          "text": "Schutz, Werkzeug und Grenzen der echten Anleitung prüfen",
+          "sha256": "79f2e0c2d9fdabbe4c2bf61339e526f5dbd2e82961ff75e6816a014052b239d8"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/2",
+          "text": "Einen Meter messen, drei Pflanzen markieren und passendes Werkzeug nutzen",
+          "sha256": "3384c5b9493c62293cdd8d93b3217e3926f5c3529dcae600c97862cbfe619dba"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/3",
+          "text": "Drei passende Tropfer einsetzen",
+          "sha256": "30cacc002260e11e083a22e6ecf728d306fd74256f432498f5ec695ba2fa8309"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/4",
+          "text": "Endverschluss montieren",
+          "sha256": "4884a43f8b49584e44fda01e9a380a6b1ff380f0f41047b45f115c0728e447e2"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/5",
+          "text": "Anschluss an abgesperrter inaktiver Leitung montieren",
+          "sha256": "beccbd9798269d75e4a52d0f5432e6bc96ed9b14d68c149ef6c8f51f27c23cc1"
+        },
+        {
+          "pointer": "/dripPractice/ui/steps/6",
+          "text": "Unter Kontrolle der Lehrkraft alle drei Auslässe und Verbindungen testen; vor Fehlerbehebung absperren, erneut testen und aufräumen",
+          "sha256": "bc2c7b8da7000ae9977cec9fc692608ba89f70ce74328cec3e525b227434bb8f"
+        }
+      ],
+      "scientificMeaning": "Lehrauftrag: ein Meter und drei Tropfer. Positionen und Formen sind schematisch, keine Kitmaße, Lochgrößen oder Produktvorführung. Bauteil für Funktion wählen. Montiertes Bild ist kein Wassertest.\n\nBauteil und Funktion zuordnen\n\nSchlauch\n\nLeitet Wasser entlang der Leitung\n\nDrei Tropfer\n\nGeben Wasser nahe den drei Pflanzen ab\n\nPassendes Lochwerkzeug\n\nErzeugt passende Löcher mit sicherem Werkzeug\n\nEndverschluss\n\nVerschließt das Ende\n\nAnschlussstück\n\nVerbindet abgesperrte Leitung mit passender Quelle\n\nVorgeschalteter Filter\n\nVerringert verstopfende Partikel\n\nVom Kit geforderte Druckregelung\n\nHalten oder prüfen die Grenzen des gewählten Kits\n\nSichere Vorbereitungslogik ordnen\n\nJede Karte einmal. Auslegen und Kitprüfung vor Lochen, Lochen vor Tropfereinsetzen; Tropfer, Verschluss und Anschluss vor Test. Unabhängige Verschlüsse dürfen bei erlaubender Anleitung anders folgen. Denkübung, keine Betriebserlaubnis.\n\nGetrennte Teile auslegen und benennen\n\nSchutz, Werkzeug und Grenzen der echten Anleitung prüfen\n\nEinen Meter messen, drei Pflanzen markieren und passendes Werkzeug nutzen\n\nDrei passende Tropfer einsetzen\n\nEndverschluss montieren\n\nAnschluss an abgesperrter inaktiver Leitung montieren\n\nUnter Kontrolle der Lehrkraft alle drei Auslässe und Verbindungen testen; vor Fehlerbehebung absperren, erneut testen und aufräumen",
+      "displayText": "Lehrauftrag: ein Meter und drei Tropfer. Positionen und Formen sind schematisch, keine Kitmaße, Lochgrößen oder Produktvorführung. Bauteil für Funktion wählen. Montiertes Bild ist kein Wassertest.\n\nBauteil und Funktion zuordnen\n\nSchlauch\n\nLeitet Wasser entlang der Leitung\n\nDrei Tropfer\n\nGeben Wasser nahe den drei Pflanzen ab\n\nPassendes Lochwerkzeug\n\nErzeugt passende Löcher mit sicherem Werkzeug\n\nEndverschluss\n\nVerschließt das Ende\n\nAnschlussstück\n\nVerbindet abgesperrte Leitung mit passender Quelle\n\nVorgeschalteter Filter\n\nVerringert verstopfende Partikel\n\nVom Kit geforderte Druckregelung\n\nHalten oder prüfen die Grenzen des gewählten Kits\n\nSichere Vorbereitungslogik ordnen\n\nJede Karte einmal. Auslegen und Kitprüfung vor Lochen, Lochen vor Tropfereinsetzen; Tropfer, Verschluss und Anschluss vor Test. Unabhängige Verschlüsse dürfen bei erlaubender Anleitung anders folgen. Denkübung, keine Betriebserlaubnis.\n\nGetrennte Teile auslegen und benennen\n\nSchutz, Werkzeug und Grenzen der echten Anleitung prüfen\n\nEinen Meter messen, drei Pflanzen markieren und passendes Werkzeug nutzen\n\nDrei passende Tropfer einsetzen\n\nEndverschluss montieren\n\nAnschluss an abgesperrter inaktiver Leitung montieren\n\nUnter Kontrolle der Lehrkraft alle drei Auslässe und Verbindungen testen; vor Fehlerbehebung absperren, erneut testen und aufräumen",
+      "captionText": "Lehrauftrag: ein Meter und drei Tropfer. Positionen und Formen sind schematisch, keine Kitmaße, Lochgrößen oder Produktvorführung. Bauteil für Funktion wählen. Montiertes Bild ist kein Wassertest.\n\nBauteil und Funktion zuordnen\n\nSchlauch\n\nLeitet Wasser entlang der Leitung\n\nDrei Tropfer\n\nGeben Wasser nahe den drei Pflanzen ab\n\nPassendes Lochwerkzeug\n\nErzeugt passende Löcher mit sicherem Werkzeug\n\nEndverschluss\n\nVerschließt das Ende\n\nAnschlussstück\n\nVerbindet abgesperrte Leitung mit passender Quelle\n\nVorgeschalteter Filter\n\nVerringert verstopfende Partikel\n\nVom Kit geforderte Druckregelung\n\nHalten oder prüfen die Grenzen des gewählten Kits\n\nSichere Vorbereitungslogik ordnen\n\nJede Karte einmal. Auslegen und Kitprüfung vor Lochen, Lochen vor Tropfereinsetzen; Tropfer, Verschluss und Anschluss vor Test. Unabhängige Verschlüsse dürfen bei erlaubender Anleitung anders folgen. Denkübung, keine Betriebserlaubnis.\n\nGetrennte Teile auslegen und benennen\n\nSchutz, Werkzeug und Grenzen der echten Anleitung prüfen\n\nEinen Meter messen, drei Pflanzen markieren und passendes Werkzeug nutzen\n\nDrei passende Tropfer einsetzen\n\nEndverschluss montieren\n\nAnschluss an abgesperrter inaktiver Leitung montieren\n\nUnter Kontrolle der Lehrkraft alle drei Auslässe und Verbindungen testen; vor Fehlerbehebung absperren, erneut testen und aufräumen",
+      "spokenText": "Lehrauftrag: ein Meter und drei Tropfer. Positionen und Formen sind schematisch, keine Kitmaße, Lochgrößen oder Produktvorführung. Bauteil für Funktion wählen. Montiertes Bild ist kein Wassertest.\n\nBauteil und Funktion zuordnen\n\nSchlauch\n\nLeitet Wasser entlang der Leitung\n\nDrei Tropfer\n\nGeben Wasser nahe den drei Pflanzen ab\n\nPassendes Lochwerkzeug\n\nErzeugt passende Löcher mit sicherem Werkzeug\n\nEndverschluss\n\nVerschließt das Ende\n\nAnschlussstück\n\nVerbindet abgesperrte Leitung mit passender Quelle\n\nVorgeschalteter Filter\n\nVerringert verstopfende Partikel\n\nVom Kit geforderte Druckregelung\n\nHalten oder prüfen die Grenzen des gewählten Kits\n\nSichere Vorbereitungslogik ordnen\n\nJede Karte einmal. Auslegen und Kitprüfung vor Lochen, Lochen vor Tropfereinsetzen; Tropfer, Verschluss und Anschluss vor Test. Unabhängige Verschlüsse dürfen bei erlaubender Anleitung anders folgen. Denkübung, keine Betriebserlaubnis.\n\nGetrennte Teile auslegen und benennen\n\nSchutz, Werkzeug und Grenzen der echten Anleitung prüfen\n\nEinen Meter messen, drei Pflanzen markieren und passendes Werkzeug nutzen\n\nDrei passende Tropfer einsetzen\n\nEndverschluss montieren\n\nAnschluss an abgesperrter inaktiver Leitung montieren\n\nUnter Kontrolle der Lehrkraft alle drei Auslässe und Verbindungen testen; vor Fehlerbehebung absperren, erneut testen und aufräumen",
+      "spokenTextSHA256": "6d97fa0d7f332c2d6b1ed58071905413e53e5a4586428d42efc4bf23631de380",
+      "spokenTextSha256": "6d97fa0d7f332c2d6b1ed58071905413e53e5a4586428d42efc4bf23631de380",
+      "spokenAdaptationChanges": [],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ed3b2bf53021d053c3a7512e89a0e4ea643f20481330da32b2e883ec852c317e",
+      "requestFingerprintSha256": "ed3b2bf53021d053c3a7512e89a0e4ea643f20481330da32b2e883ec852c317e",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-06-de-records-r1",
+      "unitId": "S3-06-de-records-r1",
+      "locale": "de",
+      "semanticGroup": "records",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/ui/sampleNotes",
+          "text": "Echte Probenbeobachtung vor und nach Wasser",
+          "sha256": "6e192ab813c7f221221157b2184ecadca4351a61f52e3f3eb3094fcfab7008cb"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/0",
+          "text": "Sand",
+          "sha256": "82855c11ae69b0652a292b72967a82d5f4973b88d76c6c793276ef8c5942a803"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/1",
+          "text": "Lehm",
+          "sha256": "83f8ee17e455ebf0eee96ca731430e8aaab187a4c964399988f899464296a4ea"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleNames/2",
+          "text": "Ton",
+          "sha256": "d7bb53dca2ae574b558d274024a2093f7868bd29a7c2a02ea7c2748582aa5b22"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/0",
+          "text": "Stelle, Tiefe, Datum und Probenkennung",
+          "sha256": "f7cf8e7c52e8fb075887aee1cee2a7241c778be7f6978d0895b5f8c36cbfe68e"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/1",
+          "text": "Körner, Kugel, Band und Flecken vorher",
+          "sha256": "b859b286fc05c4be52e88b9cd7b9ea925fd06625c211d24295193688afd40b35"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/2",
+          "text": "Wirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt",
+          "sha256": "5a618c1763e8959c1f61bb6addab5a8825aff8c9e1289c18743c23fae33305fa"
+        },
+        {
+          "pointer": "/dripPractice/ui/sampleFields/3",
+          "text": "Texturbezogene Deutung, Anleitung und Unsicherheit",
+          "sha256": "e5a9a3a9dbeb5dfe47ca0a276bb509a923ea952cf73a691fd5d1403e34130a2b"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitNotes",
+          "text": "Echtes Kit und Versorgung protokollieren",
+          "sha256": "722e23c09013b9b71d0e049615555d05a0915fd55b816504f446731ae59481a7"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/0",
+          "text": "Hersteller und Modell",
+          "sha256": "56337aa5f4b37f50c687eb98dbe99e921b9086173bb3b3bdd102ef95baabc3f9"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/1",
+          "text": "Schlauch-/Tropferkompatibilität",
+          "sha256": "6af317836ac4d8adb27f483121f4b51495a1e784a71d368715cff46c7393a9d0"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/2",
+          "text": "Werkzeug und Lochvorgabe der Anleitung",
+          "sha256": "a2f15976a132f9e1cdf1878de25bc19f8ac4647f8e23e00435430f38f2d5dae9"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/3",
+          "text": "Titel/Version/Seite der Anleitung",
+          "sha256": "178660509366d24752d706c356b9bd5747559bde766bd56cb6171f862a095084"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/4",
+          "text": "Filter und tatsächliche Wasserqualität",
+          "sha256": "1af294670af7cdec13012d5ba30783172cf1eda2b88b145bb9a6b7258816cbb5"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/5",
+          "text": "Druckregelung/Messung und Produktgrenzen",
+          "sha256": "91cde0ebe91d57d5e6c45440b5b95bb9e16cab934946e1bdc61fb73e55e55819"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/6",
+          "text": "Quelle, Absperrung und Lehrkraftprüfung",
+          "sha256": "dcff6e3af79d6eaf5ab49d4680e1d59289e278469173571fa302036ead7258e6"
+        },
+        {
+          "pointer": "/dripPractice/ui/kitFields/7",
+          "text": "Fehlende Ausrüstung/Daten; keine Zahl ableiten",
+          "sha256": "dda3876fcbde2d4ad2c6326a27b4309dc86dfd383eef273c3a67006b796ddcdc"
+        },
+        {
+          "pointer": "/dripPractice/ui/testNotes",
+          "text": "Individuelles Auslass- und Folgeprotokoll",
+          "sha256": "7b302c76f6c325b8b14fbc3da2542338d76fef4e3297c1c5ffbc9c2feb09d9a3"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/0",
+          "text": "Auslass1: Beobachtung, Methode und Einheit falls gemessen",
+          "sha256": "1c3e62dcd68c5bad35b49c9b419ab40db155b633ef1f58dc811760b74be54c14"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/1",
+          "text": "Auslass2: Beobachtung, Methode und Einheit falls gemessen",
+          "sha256": "1108672c2b3beead94ed6671e0930c6c5531c7bc7c2cbb161689552eadc55dc7"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/2",
+          "text": "Auslass3: Beobachtung, Methode und Einheit falls gemessen",
+          "sha256": "2b23453fa3b5f98a1a73c0d2569c65bfba35d85d1113e55460a0160d13aa83e2"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/3",
+          "text": "Verbindungen, Lecks und sichere Korrektur",
+          "sha256": "7285df2dbe0ceb29128ff33b5fdef63670b0463c8cb27344a9affed3283b6770"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/4",
+          "text": "Nachprüfbelege und Restfehler",
+          "sha256": "e8995c61759c0cf610a906b6eef6b0e4662589a0226844e04d875775e02f847d"
+        },
+        {
+          "pointer": "/dripPractice/ui/testFields/5",
+          "text": "Person, Lehrkraft, Datum/Ort und Aufräumbeleg",
+          "sha256": "49d0627ae8ba1cf6b3d0a63174b0e395a5d586b98cd3fba3553058b668f8f673"
+        },
+        {
+          "pointer": "/dripPractice/ui/notes",
+          "text": "Noch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "sha256": "b52420721e5c599400f3d45039fb8ca6d281c87de1f99529fe04972a8cf9366a"
+        },
+        {
+          "pointer": "/dripPractice/ui/noKit",
+          "text": "Tatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+          "sha256": "796215f41fdcc539214e8da852abb8cc3c5215cc3baf319ca2cf26ed686b3f36"
+        }
+      ],
+      "scientificMeaning": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-/Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel/Version/Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung/Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung/Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass1: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass2: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass3: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum/Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+      "displayText": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-/Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel/Version/Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung/Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung/Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass1: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass2: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass3: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum/Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+      "captionText": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-/Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel/Version/Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung/Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung/Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass1: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass2: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass3: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum/Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+      "spokenText": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-, Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel, Version, Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung, Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung, Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass eins: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass zwei: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass drei: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum, Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+      "spokenTextSHA256": "8bddcc72478cd2536f60e9601028a7de752b20de98942d82e249f33ccc44214e",
+      "spokenTextSha256": "8bddcc72478cd2536f60e9601028a7de752b20de98942d82e249f33ccc44214e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-/Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel/Version/Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung/Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung/Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass1: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass2: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass3: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum/Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+          "spoken": "Echte Probenbeobachtung vor und nach Wasser\n\nSand\n\nLehm\n\nTon\n\nStelle, Tiefe, Datum und Probenkennung\n\nKörner, Kugel, Band und Flecken vorher\n\nWirkliche Zugabe und Nachbeobachtung oder nicht durchgeführt\n\nTexturbezogene Deutung, Anleitung und Unsicherheit\n\nEchtes Kit und Versorgung protokollieren\n\nHersteller und Modell\n\nSchlauch-, Tropferkompatibilität\n\nWerkzeug und Lochvorgabe der Anleitung\n\nTitel, Version, Seite der Anleitung\n\nFilter und tatsächliche Wasserqualität\n\nDruckregelung, Messung und Produktgrenzen\n\nQuelle, Absperrung und Lehrkraftprüfung\n\nFehlende Ausrüstung, Daten; keine Zahl ableiten\n\nIndividuelles Auslass- und Folgeprotokoll\n\nAuslass eins: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass zwei: Beobachtung, Methode und Einheit falls gemessen\n\nAuslass drei: Beobachtung, Methode und Einheit falls gemessen\n\nVerbindungen, Lecks und sichere Korrektur\n\nNachprüfbelege und Restfehler\n\nPerson, Lehrkraft, Datum, Ort und Aufräumbeleg\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.\n\nTatsächlich kompatibles Kit nicht dokumentiert. Keine Druck-, Durchfluss-, Loch- oder Zahlenabstände erfunden.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "d064b05807584da6355c4a2e06b46d2bc576bba4ccf28f71c680989c2078d21b",
+      "requestFingerprintSha256": "d064b05807584da6355c4a2e06b46d2bc576bba4ccf28f71c680989c2078d21b",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-06-de-practical-checklist-r1",
+      "unitId": "S3-06-de-practical-checklist-r1",
+      "locale": "de",
+      "semanticGroup": "practical-checklist",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/studentTask",
+          "text": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.",
+          "sha256": "d2bd56eda4fc2164d44da2a7f3b4857d82170586c08943a90d7d76d19427ce8b"
+        },
+        {
+          "pointer": "/dripPractice/equipmentGate",
+          "text": "Vor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-/Tropfergrößen und Druck-/Durchflussgrenzen dokumentiert sein.",
+          "sha256": "c7dc750dfc1f5b54773e78af2a6d3d9adf0d27ae3166efdc43f2226729d7882b"
+        },
+        {
+          "pointer": "/dripPractice/ui/trainerTitle",
+          "text": "Lehrkraftbeobachtung: zehn Originalpunkte",
+          "sha256": "8a984a48afa3e223db0298a7cb3d3155e914d4ab12563500958473c3be3c4f68"
+        },
+        {
+          "pointer": "/dripPractice/checklist/0/evidence",
+          "text": "Geeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert",
+          "sha256": "98450d85e8738dbc20503d20249aaa8beb54821eb50b9105e1bf189f358945c3"
+        },
+        {
+          "pointer": "/dripPractice/checklist/1/evidence",
+          "text": "Entnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa 10–15 cm gilt nur für diese Pflanzkastenübung",
+          "sha256": "9fde4f5322ec54b346a8c53a9921b1064f04b4a61514b2adca716049049eefa6"
+        },
+        {
+          "pointer": "/dripPractice/checklist/2/evidence",
+          "text": "Tast- und Sichtprüfung eigenhändig durchgeführt und erfasst",
+          "sha256": "eadd515f2dc65a96a02837c50f3ca5a7291a91cfad6cc925c7fc034f41fb0af2"
+        },
+        {
+          "pointer": "/dripPractice/checklist/3/evidence",
+          "text": "Feuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“",
+          "sha256": "c0994c5f40bc4b4bb387d4b7d20f8958399a48b8bf0c685d86aa863d60fc46e3"
+        },
+        {
+          "pointer": "/dripPractice/checklist/4/evidence",
+          "text": "Schlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-/Regelteile benannt",
+          "sha256": "d78174c8de464454a635b543970363a49c23f6c5fff65b23a9cd8026f2295498"
+        },
+        {
+          "pointer": "/dripPractice/checklist/5/evidence",
+          "text": "Passenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt",
+          "sha256": "6f712796bb0afe5ec674ba5ea5c5d1f99eb59bac7f60d941dfb3798cc2e99599"
+        },
+        {
+          "pointer": "/dripPractice/checklist/6/evidence",
+          "text": "Drei kompatible Tropfer fest eingesetzt",
+          "sha256": "e3438779531c7ac34437ee8ecf20b31a4ee9eb9b193fce8c2a93676578799e17"
+        },
+        {
+          "pointer": "/dripPractice/checklist/7/evidence",
+          "text": "Endverschluss sicher angebracht",
+          "sha256": "ac55433cc492e00b3683730623e21ced8047146bdfd6ade516e639908dcdce2c"
+        },
+        {
+          "pointer": "/dripPractice/checklist/8/evidence",
+          "text": "Quellenanschluss nach wirklicher Kit-Anleitung angebracht",
+          "sha256": "f5bfd31552f763dfbd8c21ed4306e2df0533f99542752627c1bf5591580fba65"
+        },
+        {
+          "pointer": "/dripPractice/checklist/9/evidence",
+          "text": "Von Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+          "sha256": "e40603a9fbfa7e2c5bd6d5df7c250e12da8789b969e019bc6b0bec531d71240d"
+        }
+      ],
+      "scientificMeaning": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-/Tropfergrößen und Druck-/Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa 10–15 cm gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-/Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+      "displayText": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-/Tropfergrößen und Druck-/Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa 10–15 cm gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-/Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+      "captionText": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-/Tropfergrößen und Druck-/Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa 10–15 cm gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-/Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+      "spokenText": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-, Tropfergrößen und Druck-, Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa zehn bis fünfzehn Zentimeter gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-, Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+      "spokenTextSHA256": "6e0fd9eec9170c5b10f72a91b016cd48069f74f8d1b7140c2f6ee41d9ebb77eb",
+      "spokenTextSha256": "6e0fd9eec9170c5b10f72a91b016cd48069f74f8d1b7140c2f6ee41d9ebb77eb",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-/Tropfergrößen und Druck-/Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa 10–15 cm gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-/Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+          "spoken": "Verwende bei dieser betreuten Übung der Arbeitskarte eine Pflanzkelle, um selbst eine Probe aus dem von der Lehrkraft bestimmten Wurzelraum des bereitgestellten Pflanzkastens mit jungen Pflanzen in sandigem Lehm zu entnehmen. Dokumentiere und deute die tatsächlichen Feuchtebeobachtungen; montiere und prüfe danach selbst eine einen Meter lange Leitung mit drei Tropfern unter Beobachtung der Lehrkraft, mit dem geprüften kompatiblen Kit und seiner Anleitung.\n\nVor genauer Vorführung oder echtem Wassertest müssen ein kompatibles Kit und dessen Herstelleranleitung samt passenden Loch-, Tropfergrößen und Druck-, Durchflussgrenzen dokumentiert sein.\n\nLehrkraftbeobachtung: zehn Originalpunkte\n\nGeeignete Schutzausrüstung verwendet, zum Beispiel für die Aufgabe passende Handschuhe, und Arbeitsplatz gesichert\n\nEntnimmt mit einer Pflanzkelle eine Probe aus dem aktiven Wurzelraum; etwa zehn bis fünfzehn Zentimeter gilt nur für diese Pflanzkastenübung\n\nTast- und Sichtprüfung eigenhändig durchgeführt und erfasst\n\nFeuchte nach wirklichem Befund und Textur gedeutet, nicht nach vorgegebenem „zu trocken“\n\nSchlauch, drei Tropfer, Werkzeug, Verschluss, Anschluss und nötige Filter-, Regelteile benannt\n\nPassenden Ein-Meter-Schlauch gemessen und drei pflanzenbezogene Löcher sicher gesetzt\n\nDrei kompatible Tropfer fest eingesetzt\n\nEndverschluss sicher angebracht\n\nQuellenanschluss nach wirklicher Kit-Anleitung angebracht\n\nVon Lehrkraft kontrollierter Test bestätigt drei Ausläufe und dichte Verbindungen; Fehler sicher korrigiert und aufgeräumt",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ac885166474b4e0456769a1ac3f04b7e96a0bd42a720ffc35f2c69eb4208eeb8",
+      "requestFingerprintSha256": "ac885166474b4e0456769a1ac3f04b7e96a0bd42a720ffc35f2c69eb4208eeb8",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-06-de-criteria-r1",
+      "unitId": "S3-06-de-criteria-r1",
+      "locale": "de",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/passChecks/0/evidence",
+          "text": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.",
+          "sha256": "f0233671b4a646e3f3f29605eebb0b613fed00aae9c3d89b845afbaa652fd0ec"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/0/decision",
+          "text": "Bestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.",
+          "sha256": "82ece9543c81fc5b6037f2058c76a3e5ad606a5478eddbfd941539cd3a71f715"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/evidence",
+          "text": "Ordnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.",
+          "sha256": "b665f68b573c1f944a0f0a56a38d8d1cae53d5d36e9f27d3506ff8197196b775"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/decision",
+          "text": "Bestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.",
+          "sha256": "179b489c172911b711952a3568a1ec7d69980153dbf143b7886ba2ce80e64646"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/evidence",
+          "text": "Die Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.",
+          "sha256": "d5140c16f15dbc8596ffdffda0009203869f29ec08697821f9ce61138908360b"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/decision",
+          "text": "Bestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.",
+          "sha256": "0be93ae628a18b3aa60cfaa5ce27727011b0aa19031ce2d9ab9d2cc44b6ba899"
+        },
+        {
+          "pointer": "/dripPractice/practicalDecision",
+          "text": "C01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+          "sha256": "3812519170a5ee22c11051f6166e94e6f643fc8c9e7b8787d8d06a2fb175eb67"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "displayText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "captionText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "spokenText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa zehn bis fünfzehn Zentimeter nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen Ein-Meter-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC null eins und C null drei bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C null zwei wird getrennt online bewertet.",
+      "spokenTextSHA256": "20eebaa514453311faf08c3252cba27d894d97f239b9f06459b41900eaddb55d",
+      "spokenTextSha256": "20eebaa514453311faf08c3252cba27d894d97f239b9f06459b41900eaddb55d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+          "spoken": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa zehn bis fünfzehn Zentimeter nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen Ein-Meter-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC null eins und C null drei bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C null zwei wird getrennt online bewertet.",
+          "occurrences": 1,
+          "purpose": "Fullsource-equivalent component-function/safesequence/recordfields/tenchecklist/threecriteria; 10–15cmplanterboxonly;1m3emitters;actualmanual/PPE/isolation/retest/signatureboundary. NoUI3Dlabel norworkedEanswer voiced. C01–03 codes expanded, no fake observation or pass."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "bded8f29bf8d385fe092886a90a94e1842c0d5ca72df75f1edc54b56509198dc",
+      "requestFingerprintSha256": "bded8f29bf8d385fe092886a90a94e1842c0d5ca72df75f1edc54b56509198dc",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
