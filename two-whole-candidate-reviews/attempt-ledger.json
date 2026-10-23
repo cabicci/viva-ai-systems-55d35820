@@ -1,0 +1,29 @@
+{
+  "clips": {
+    "C01": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    },
+    "C02": {
+      "priorWholeRecording": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1
+      },
+      "priorIdenticalContextCalls": 0,
+      "newCallsStarted": 0,
+      "maximumAdditionalReview": 1
+    }
+  },
+  "maximumReviewCalls": 2,
+  "TTS": 0,
+  "ASR": 0,
+  "GET": 0,
+  "retry": 0
+}

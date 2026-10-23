@@ -1,0 +1,1 @@
+2fixed bounded exactPCM contextdiagnostics. Aggregate2blindPOST/0TTS/ASR/GET/retry. Generic unhintedprompt/factualexcerptboundaries, no sourcewords/allegations supplied. Sourcekind:WHOLE_ASSEMBLED_CANDIDATE_PCM_NO_NEW_AUDIO. Original files unchanged. Noautomaticrepair, extra audio gaps, assembly or adoption by this diagnostic.
