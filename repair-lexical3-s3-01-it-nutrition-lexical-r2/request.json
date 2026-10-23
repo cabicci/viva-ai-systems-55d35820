@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_LEXICAL3_S3_01_IT_NUTRITION_LEXICAL_R2",
+  "stepId": "S3-01",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-lexical3-s3-01-it-nutrition-lexical-r2-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-01-it-nutrition-lexical-r2",
+      "unitId": "S3-01-it-nutrition-lexical-r2",
+      "locale": "it",
+      "semanticGroup": "repair-lexical3-s3-01-it-nutrition-lexical-r2-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "4e8ac8544f97341e77464b18eac000a31027880abda3f77416bfc7fef6b4c166",
+      "sourceBindings": [
+        {
+          "pointer": "/cropGroups/ui/nutrition/0",
+          "text": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.",
+          "sha256": "d478abf6d31db0c85aaae7fbb5aec52bd7f9a16f893073b5b25fbc9132af95ba"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/1",
+          "text": "Le verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.",
+          "sha256": "c14dd93c2e86a69ae69ef93cbf184000ef6a68c4c04a1e1c7dacf742d73b90a5"
+        },
+        {
+          "pointer": "/cropGroups/ui/nutrition/2",
+          "text": "Molte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.",
+          "sha256": "f72056167ee1a20e8216b9618d4acc57db93ed08e3c0c06e831b5cf528309060"
+        },
+        {
+          "pointer": "/cropGroups/ui/other",
+          "text": "Un’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "sha256": "745710deab5b38019382fc6aff79978a4fae7fa9e5940f19b58edc1cc7c6024a"
+        }
+      ],
+      "scientificMeaning": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "displayText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "captionText": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "spokenText": "Questa è una prospettiva diversa; non è un elenco normativo dell’Egitto.",
+      "spokenTextSHA256": "917c9b770455c0699a69b5c63cdd1700ed64b5764ae23afa6fbb50e0fb058c3e",
+      "spokenTextSha256": "917c9b770455c0699a69b5c63cdd1700ed64b5764ae23afa6fbb50e0fb058c3e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Le leguminose sono apprezzate come alimenti ricchi di proteine; l’uso distingue legumi secchi, oleaginose e foraggere.\n\nLe verdure apportano vitamine, minerali e fibre; cicli e fabbisogni variano molto.\n\nMolte colture da frutta sono apprezzate per dolcezza, vitamine e antiossidanti; caratteristiche e gestione variano.\n\nUn’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "spoken": "Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+          "spoken": "Questa è una prospettiva diversa; non è un elenco normativo dell’Egitto.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "a86d17dca39d32e02dad76d23949af7bd85421603cf2f0303cd6c600de81fb86",
+      "requestFingerprintSha256": "a86d17dca39d32e02dad76d23949af7bd85421603cf2f0303cd6c600de81fb86",
+      "sourcePlanSha256": "c3c27526458c3781384e41efa74d6496814d13507ad9da66906311046338225e",
+      "exactSentenceBefore": "Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "sourcePointer": "/cropGroups/ui/other",
+        "sourceText": "Un’altra classificazione può riunire carote, patate e barbabietole fra ortaggi da radice e tubero. Raggruppa parti raccolte e usi, senza dichiarare tutte e tre radici botaniche. Illustra una prospettiva diversa, non un elenco normativo egiziano.",
+        "canonicalUnchanged": true,
+        "spokenOnlyRootAuthorized": true
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-01-it-nutrition-lexical-r2"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
