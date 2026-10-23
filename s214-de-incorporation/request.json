@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "scope": "S214_DE_INCORPORATION",
+  "stepId": "S2-14",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s214-de-incorporation-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S2-14-de-incorporation-subpassage-repair-r1",
+      "unitId": "S2-14-de-incorporation-subpassage-repair-r1",
+      "locale": "de",
+      "semanticGroup": "s214-de-incorporation-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "25990c71315eebe10e6b84a7ef8514bd5bc2218be308f287a10f67208a20be7c",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+          "sha256": "3a12a6aaccfeb691a0f643aa95f54e942f50e6bc77a788da9eede89538db9094"
+        }
+      ],
+      "scientificMeaning": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+      "displayText": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+      "captionText": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+      "spokenText": "Für Ziel und Material, die Art des Einarbeitens sowie die Zugabe oder das Zurückhalten von Kalium sind ein echter, methodenkalibrierter Bericht, eine Nährstoffbilanz und Standortbelege erforderlich.",
+      "spokenTextSHA256": "2e31645e0e4c3cfa8fe5d093d248cb3d120eb3d9ff9e20e5dc4126e9fa34a931",
+      "spokenTextSha256": "2e31645e0e4c3cfa8fe5d093d248cb3d120eb3d9ff9e20e5dc4126e9fa34a931",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+          "spoken": "Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege.",
+          "spoken": "Für Ziel und Material, die Art des Einarbeitens sowie die Zugabe oder das Zurückhalten von Kalium sind ein echter, methodenkalibrierter Bericht, eine Nährstoffbilanz und Standortbelege erforderlich.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_S213_FINITE_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-de.json",
+      "requestFingerprintSHA256": "5d3f46402aa5170992af5fae2e1e40b5010cb533d89b35940e8de38e43c03c12",
+      "requestFingerprintSha256": "5d3f46402aa5170992af5fae2e1e40b5010cb533d89b35940e8de38e43c03c12",
+      "sourcePlanSha256": "4586e98a18515b404bf006d7abb20bff7564e2fd304e8fa63cbd16599d571821",
+      "exactSentenceBefore": "Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "pointer": "/reading/5/paragraphs/2",
+        "original": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+        "effective": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+        "allExactSourceBindings": [
+          {
+            "pointer": "/reading/5/paragraphs/2",
+            "text": "Die getrennte Tomaten-Musterantwort schlägt außerdem pH mindestens 6.2, 2–3 Zoll Kompost oder gut verrotteten Mist sowie Knochenmehl, 10-20-10 oder Tripelsuperphosphat vor und nennt keinen zusätzlichen Kaliumbedarf. Das sind zu prüfende Lehrvorschläge, keine bestätigten Verordnungen. Ziel, Material, Einarbeitung und die Zugabe oder das Zurückhalten von K brauchen einen echten methodenkalibrierten Bericht, Nährstoffbilanz und Standortbelege. Das Muster nennt MAP vor der Pflanzung; die Tomatenantwort arbeitet auch das vorgeschlagene Phosphorprodukt vor der Pflanzung ein. Dieser Beispielzeitpunkt gilt nur, wenn ein fachlich geprüfter örtlicher Plan Material und Platzierung bestätigt.",
+            "sha256": "3a12a6aaccfeb691a0f643aa95f54e942f50e6bc77a788da9eede89538db9094"
+          }
+        ],
+        "spokenOnly": true,
+        "rootSelectedAuthorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s214-four-postcontext-root-repairs-r1.json",
+        "rootSelectedAuthoritySHA256": "510932912c883cc82ecb189a03c81c3438082ccdad50a2ff3c304de3a3b53b20"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S2-14-de-incorporation-subpassage-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
