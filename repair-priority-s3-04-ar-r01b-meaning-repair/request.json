@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "scope": "REPAIR_PRIORITY_S3_04_AR_R01B_MEANING_REPAIR",
+  "stepId": "S3-04",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-repair-priority-s3-04-ar-r01b-meaning-repair-20261023-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-04-ar-EG-R01b-meaning-repair-r1",
+      "unitId": "S3-04-ar-EG-R01b-meaning-repair-r1",
+      "locale": "ar-EG",
+      "semanticGroup": "repair-priority-s3-04-ar-r01b-meaning-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "eae2008f908aef1e6d1730d08ccce8fcefb684940fc0a0bd1ea19c0ba0d4abb7",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "الموضوع الأصلي ٩٠ دقيقة: ٤٥ للشرح والنقاش و٤٥ لورشة تشخيص الحقل. الخطوات اللي بعد كده تشرح احتياجات المحاصيل للمياه وطرق الري وعلامات الإجهاد والعناصر والتوصيات بالدليل. الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة. المدرّب ممكن يستخدم برطمانات تربة وجزرة وكرفس في مياه ملوّنة كوسائل اختيارية.",
+          "sha256": "8406462f5df00d95c6957a9755ae3401cfae68620b29fb4d0c4bdb0237996563"
+        }
+      ],
+      "scientificMeaning": "الموضوع الأصلي ٩٠ دقيقة: ٤٥ للشرح والنقاش و٤٥ لورشة تشخيص الحقل. الخطوات اللي بعد كده تشرح احتياجات المحاصيل للمياه وطرق الري وعلامات الإجهاد والعناصر والتوصيات بالدليل. الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة. المدرّب ممكن يستخدم برطمانات تربة وجزرة وكرفس في مياه ملوّنة كوسائل اختيارية.",
+      "displayText": "الموضوع الأصلي ٩٠ دقيقة: ٤٥ للشرح والنقاش و٤٥ لورشة تشخيص الحقل. الخطوات اللي بعد كده تشرح احتياجات المحاصيل للمياه وطرق الري وعلامات الإجهاد والعناصر والتوصيات بالدليل. الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة. المدرّب ممكن يستخدم برطمانات تربة وجزرة وكرفس في مياه ملوّنة كوسائل اختيارية.",
+      "captionText": "الموضوع الأصلي ٩٠ دقيقة: ٤٥ للشرح والنقاش و٤٥ لورشة تشخيص الحقل. الخطوات اللي بعد كده تشرح احتياجات المحاصيل للمياه وطرق الري وعلامات الإجهاد والعناصر والتوصيات بالدليل. الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة. المدرّب ممكن يستخدم برطمانات تربة وجزرة وكرفس في مياه ملوّنة كوسائل اختيارية.",
+      "spokenText": "الخطوة دي بتشرح أساسيات الميه في النبات والتربة. ده شرح للمفاهيم، مش اجتياز لأي مهارة من المهارات اللي هتيجي بعد كده.",
+      "spokenTextSHA256": "2c5e4f1a8a84e8b61a00f7dba7d686db4af18416c8693fb463a62ade07d1a7fc",
+      "spokenTextSha256": "2c5e4f1a8a84e8b61a00f7dba7d686db4af18416c8693fb463a62ade07d1a7fc",
+      "spokenAdaptationChanges": [
+        {
+          "written": "الموضوع الأصلي ٩٠ دقيقة: ٤٥ للشرح والنقاش و٤٥ لورشة تشخيص الحقل. الخطوات اللي بعد كده تشرح احتياجات المحاصيل للمياه وطرق الري وعلامات الإجهاد والعناصر والتوصيات بالدليل. الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة. المدرّب ممكن يستخدم برطمانات تربة وجزرة وكرفس في مياه ملوّنة كوسائل اختيارية.",
+          "spoken": "الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة.",
+          "spoken": "الخطوة دي بتشرح أساسيات الميه في النبات والتربة. ده شرح للمفاهيم، مش اجتياز لأي مهارة من المهارات اللي هتيجي بعد كده.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "deliverySHA256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "requestFingerprintSHA256": "bc8498c30febff21e613160e5f5c749a8d217e1f7b363993ec12d36bce6c8754",
+      "requestFingerprintSha256": "bc8498c30febff21e613160e5f5c749a8d217e1f7b363993ec12d36bce6c8754",
+      "sourcePlanSha256": "8ac24c252e67bbe384141af1ad01e296a991df461a2fa786af9c06d8271bbcaa",
+      "exactSentenceBefore": "الخطوة دي بتأسس مفاهيم المياه في النبات والتربة، وما تمنحش اجتياز المهارات اللاحقة.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\five-meaning-priority-repairs-root-authority-r1.json",
+        "authoritySHA256": "f720d03b66fba9da2c37a833d87476dd4c4084ba6228817e29e60d09e798ea91"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 1,
+    "blind": 1,
+    "asr": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-04-ar-EG-R01b-meaning-repair-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
