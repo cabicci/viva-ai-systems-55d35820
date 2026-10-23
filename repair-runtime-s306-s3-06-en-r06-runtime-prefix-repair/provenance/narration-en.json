@@ -1,0 +1,72 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-06-en.json",
+    "sha256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+    "bytes": 25136
+  },
+  "units": [
+    {
+      "id": "S3-06-en-R06-runtime-prefix-repair-r1",
+      "unitId": "S3-06-en-R06-runtime-prefix-repair-r1",
+      "locale": "en",
+      "semanticGroup": "repair-runtime-s306-s3-06-en-r06-runtime-prefix-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "65e0a1660b9e3f3a072b783c604bff404218b26145b0a3f57a9c10ebf20dddd0",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+          "sha256": "610fbf3cb67df1d1403d9789c8b7de4ccf238f0fe0b396cfc52409bb56e876d6"
+        }
+      ],
+      "scientificMeaning": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "displayText": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "captionText": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+      "spokenText": "An interactive rehearsal can help you place components and practise decisions. Dragging cards and choosing actions in this rehearsal are training controls, not a measured field-moisture percentage.",
+      "spokenTextSHA256": "36697973bd369b365f3c078a1f376164fcd7c0f24dbbba9131b28cc11cf799dd",
+      "spokenTextSha256": "36697973bd369b365f3c078a1f376164fcd7c0f24dbbba9131b28cc11cf799dd",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage. The online activity can prepare you to explain the process; only the trainer's individual observation can certify sampling and assembly skills.",
+          "spoken": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage.",
+          "spoken": "An interactive rehearsal can help you place components and practise decisions. Dragging cards and choosing actions in this rehearsal are training controls, not a measured field-moisture percentage.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-en.json",
+      "requestFingerprintSHA256": "dd266872ffbfb9550b5da46abdafcb0a953d298b1cb7dc8d86986c3115843140",
+      "requestFingerprintSha256": "dd266872ffbfb9550b5da46abdafcb0a953d298b1cb7dc8d86986c3115843140",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "A 3D rehearsal can help you place components and practise decisions. A visual readiness meter or clicks to add water in that rehearsal are simulation controls, not a measured field-moisture percentage.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_RUNTIME_TRUTHFUL_TWO_SENTENCE_PREFIX",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s306-four-prefix-root-dispatch-authority-r1.json",
+        "authoritySHA256": "00dd85ee00cca730782d2d62a4964672e3eeaac4c5f9bfda23fcc0ff1a0be25f"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
