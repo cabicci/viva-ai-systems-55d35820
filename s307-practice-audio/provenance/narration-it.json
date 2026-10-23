@@ -1,0 +1,223 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-it.json",
+    "sha256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+    "bytes": 38890
+  },
+  "units": [
+    {
+      "id": "S3-07-it-case-records-r1",
+      "unitId": "S3-07-it-case-records-r1",
+      "locale": "it",
+      "semanticGroup": "case-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/ui/caseSheets",
+          "text": "Prepara due schede di casi diversi",
+          "sha256": "704e90fa368e801a39ca965a46620e4974ca8809dad628197ab63f700277fcd5"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/0",
+          "text": "Osservazione, età e posizione fogliare",
+          "sha256": "1bb842c51afbcf7ade8e1545613ce13ab234ec1e887cb6f110b2fd4f2174d9b1"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/1",
+          "text": "Almeno due spiegazioni concorrenti",
+          "sha256": "9dd2d7479c14ae28b6a30245798d5cfac4b390f0b9f4ae3e23a3d5892b3e803e"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/2",
+          "text": "Prove suolo/radici/clima e incertezze",
+          "sha256": "4336990be7ee53b7601828283aa285c2baab1b55d30bff22f55f582aa921b077"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/3",
+          "text": "Test che potrebbe cambiare l’ipotesi",
+          "sha256": "d8b307c2b87053a86271c980412de3235cf6cab592e750d7d245bc547a0044c1"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/4",
+          "text": "Priorità idrica, metodo e prove per calendario",
+          "sha256": "caf259b32a4fb806841203463f47f4febf880856495d088350a2f1f3bc242698"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/5",
+          "text": "Fonte e motivazione",
+          "sha256": "7cecdc2ef20cdce39c7679a8649c8804f187d9597eafe79c115ef6216f5a4859"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/6",
+          "text": "Dose: prove o dati mancanti, nessun numero inventato",
+          "sha256": "05e74e2770dd27be5a3b9780ece7a0fcec3e6f77dee16cc5d75d81aa554221b3"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/7",
+          "text": "Tempo e rischio di perdita",
+          "sha256": "ad2659b5a68a7430bb6b746f42a3dc24a1e780b193b2aa54bb99be153a54f59d"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/8",
+          "text": "Posizione, sicurezza seme/prodotto e fattibilità",
+          "sha256": "5c0401c71a8f5ff8f4685b208b8f5e540693b65490006afd42ca4b4c057b1b7a"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/9",
+          "text": "Via di perdita, costi e alternativa",
+          "sha256": "a7fe99af8cd59997f62448309a9601793b7e622288f1aeebe3cf8d0e8c7ee402"
+        },
+        {
+          "pointer": "/stressPractice/ui/defence",
+          "text": "Difesa individuale e uscita",
+          "sha256": "f5c32f6527f1d3067604f7cbd09f6f85b31a187e4635bdc578d36bc9bf93beac"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/0",
+          "text": "Quale caso difendi e perché?",
+          "sha256": "1cc0d09c04b1e3cb92653d140052f7c8cb852005ef69a6ea47dd96e28a9d452b"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/1",
+          "text": "Quale critica o nuova prova cambierebbe la scelta?",
+          "sha256": "1e76b0cd3e49e3b9f4f1fdf7f04a9f75787ed3242df6dd8ac709ee20bf0ee055"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/2",
+          "text": "Uscita: indizio K ai margini e metodo motivato per sabbia",
+          "sha256": "147426349db469f3f9e86724998691117aa9cbadf1af4d2d04070beca87c50c5"
+        },
+        {
+          "pointer": "/stressPractice/ui/reasonBoundary",
+          "text": "Il testo apre soltanto il confronto; non convalida la causalità.",
+          "sha256": "e4ba79b2eb7c457ed7a76333b8d68300462af7aec0c429b7423363649c83d852"
+        },
+        {
+          "pointer": "/stressPractice/ui/boundary",
+          "text": "Le attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "sha256": "b29de053cf2b52240dc03f29f853fbdc27a4901129640c64de203c434a566f7f"
+        }
+      ],
+      "scientificMeaning": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo/radici/clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme/prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio K ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "displayText": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo/radici/clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme/prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio K ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "captionText": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo/radici/clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme/prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio K ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "spokenText": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo, radici, clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme, prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio cappa ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+      "spokenTextSHA256": "87d11a47c294879a5eb1929a3231a4b507f58b233182d8c7579d9a80c4a2563f",
+      "spokenTextSha256": "87d11a47c294879a5eb1929a3231a4b507f58b233182d8c7579d9a80c4a2563f",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo/radici/clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme/prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio K ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "spoken": "Prepara due schede di casi diversi\n\nOsservazione, età e posizione fogliare\n\nAlmeno due spiegazioni concorrenti\n\nProve suolo, radici, clima e incertezze\n\nTest che potrebbe cambiare l’ipotesi\n\nPriorità idrica, metodo e prove per calendario\n\nFonte e motivazione\n\nDose: prove o dati mancanti, nessun numero inventato\n\nTempo e rischio di perdita\n\nPosizione, sicurezza seme, prodotto e fattibilità\n\nVia di perdita, costi e alternativa\n\nDifesa individuale e uscita\n\nQuale caso difendi e perché?\n\nQuale critica o nuova prova cambierebbe la scelta?\n\nUscita: indizio cappa ai margini e metodo motivato per sabbia\n\nIl testo apre soltanto il confronto; non convalida la causalità.\n\nLe attività online preparano il ragionamento. Completezza del testo e scelte corrette non dimostrano diagnosi, intervento reale o padronanza dei criteri: le spiegazioni richiedono revisione del formatore.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "87aa4180a27b3241523ec3f860738548f29548c05beec58999aa6f3843587425",
+      "requestFingerprintSha256": "87aa4180a27b3241523ec3f860738548f29548c05beec58999aa6f3843587425",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-07-it-criteria-r1",
+      "unitId": "S3-07-it-criteria-r1",
+      "locale": "it",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/passChecks/0/evidence",
+          "text": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno/stress radicale effettivo al concime.",
+          "sha256": "e805bd8b15ecb98578bf3c182b0e3cb32c659ece9b3bc9c5d39f6bd83330c110"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/0/decision",
+          "text": "Si supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.",
+          "sha256": "8fa4d78c03da28cc8822a611e7f4a42377e667e8cc1f0b8271ff6d7b825d0186"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/evidence",
+          "text": "Per ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.",
+          "sha256": "866ea61d5cbdb28c5b781d1750876a9b2835d4fbf21c45532926da833b777ff6"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/decision",
+          "text": "Si supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.",
+          "sha256": "e99b6b0b1cbe1cbe66fab10b5339c40cc384c89e98980c87da7b3bdb513cd572"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/evidence",
+          "text": "Consegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di 45 minuti si registra il contributo individuale anche durante il gruppo.",
+          "sha256": "ecc58d71a832ab12b50e0bc509e0370ebe0281c1fc2d0a4f32636db8020e693a"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/decision",
+          "text": "Due casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.",
+          "sha256": "575d605dde9c349a4e56c1d928d1a8fe296f3516bf5ff98b08ebc0b69da756fa"
+        },
+        {
+          "pointer": "/stressPractice/practicalInstruction",
+          "text": "L’istruttore può guidare 45 minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.",
+          "sha256": "e73a3283cfe97fae67459509c9e422fddbbda62eaa7ec3751027f115159e55e9"
+        },
+        {
+          "pointer": "/stressPractice/addedReflection",
+          "text": "Quale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?",
+          "sha256": "a1eeafbf2e9526cea626d9e488e6d21fdad7046ed0c18b55e1c71c84c8c76c7b"
+        },
+        {
+          "pointer": "/stressPractice/ui/notes",
+          "text": "Nessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "sha256": "4a522e832c103528797170b4d5108df44a57cdd46a152441df263dae68dd409c"
+        }
+      ],
+      "scientificMeaning": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno/stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di 45 minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare 45 minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+      "displayText": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno/stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di 45 minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare 45 minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+      "captionText": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno/stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di 45 minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare 45 minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+      "spokenText": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno o lo stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo, coltura e guida locale adeguata. Il nitrato di calcio è enne più ci a, non enne pi cappa; niente urea, di a pi o cappa fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di quarantacinque minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare quarantacinque minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+      "spokenTextSHA256": "35a8cd2b634ad755fa2fdbe1b5c9be5c23b443eb602a4985e933c1310161e431",
+      "spokenTextSha256": "35a8cd2b634ad755fa2fdbe1b5c9be5c23b443eb602a4985e933c1310161e431",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno/stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo/coltura e guida locale adeguata. Il nitrato di calcio è N+Ca, non NPK; niente urea, DAP o K fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di 45 minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare 45 minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "spoken": "Per pomodoro, frumento, pianificazione delle verdure a foglia e mais freddo distingue fatti e ipotesi, indica alternative e una verifica successiva, e antepone il ristagno o lo stress radicale effettivo al concime.\n\nSi supera con prove e spiegazioni concorrenti; una carenza dedotta da una sola foglia o dall’appassimento pomeridiano richiede ripasso mirato.\n\nPer ogni azione proposta specifica fonte, prove per la dose, momento e posizione; la dose esige dati su suolo, coltura e guida locale adeguata. Il nitrato di calcio è enne più ci a, non enne pi cappa; niente urea, di a pi o cappa fogliare automatici.\n\nSi supera quando le quattro R e la priorità idrica sono adeguate, senza dose o calendario ingiustificati.\n\nConsegna due schede complete su casi distinti, difende uno oralmente o per iscritto in forma accessibile e valuta alternative negli altri. Nel laboratorio di quarantacinque minuti si registra il contributo individuale anche durante il gruppo.\n\nDue casi completi fondati su prove più una difesa ragionata; presenza o risposta collettiva non dimostra il ragionamento individuale.\n\nL’istruttore può guidare quarantacinque minuti di discussione su schede e osservare il ragionamento. Non è certificazione di diagnosi sul campo o applicazione di concime. Consigli reali richiedono analisi locali e supervisione qualificata.\n\nQuale sintomo hai interpretato troppo presto? Quale test ti farebbe cambiare idea? Per quale delle quattro R mancano ancora prove?\n\nNessuna osservazione, decisione del formatore o firma registrata. Compilare solo dopo lavoro reale supervisionato.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9aac67df4d814008718db62065da44ad42d4b5d33f549236cd49d9d7a12a07ca",
+      "requestFingerprintSha256": "9aac67df4d814008718db62065da44ad42d4b5d33f549236cd49d9d7a12a07ca",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

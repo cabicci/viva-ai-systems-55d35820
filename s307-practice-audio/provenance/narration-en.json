@@ -1,0 +1,223 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-en.json",
+    "sha256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+    "bytes": 40383
+  },
+  "units": [
+    {
+      "id": "S3-07-en-case-records-r1",
+      "unitId": "S3-07-en-case-records-r1",
+      "locale": "en",
+      "semanticGroup": "case-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/ui/caseSheets",
+          "text": "Prepare two different case records",
+          "sha256": "f95e8ab1ac06276142ca0a148f8837328fe05877aff4af46e6447370217caf4b"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/0",
+          "text": "Observation and affected leaf age/location",
+          "sha256": "4ecc84c541f9e4f1484dce754baf284aad3aef64ac11e3427deda890248b3a30"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/1",
+          "text": "At least two competing explanations",
+          "sha256": "b6e27c174ea58f22a474fe2a6144652c08924c34e14ff64439b5963913379df0"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/2",
+          "text": "Soil/root/weather evidence and uncertainty",
+          "sha256": "4645dd4ca7c6e7bdf26c4db3324379aa9fd1eb4c0428d7ac026600232cc30da4"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/3",
+          "text": "Test or observation that could change the hypothesis",
+          "sha256": "b7adad64eb0c191c70c29a3adb3ef5ff5a05080836106336e1b2f934656fd1d8"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/4",
+          "text": "Water priority, conditional method and scheduling evidence",
+          "sha256": "fb1aee64451fddc11b3e1ce08b89034c5178b583d7002c1c95b053959bb073b2"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/5",
+          "text": "Right source and why it is appropriate",
+          "sha256": "0fba3a23016943058ba80d6a787c9ea1296e329cb0a7b2ef4d35498c7c3fa298"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/6",
+          "text": "Right rate: evidence or missing data, not a made-up number",
+          "sha256": "d414bd6dfee3e672aaa94760362ad4193dbd25063cce14fad635f1bcb3c4bd27"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/7",
+          "text": "Right time and loss-risk condition",
+          "sha256": "49e65d730fbd0f91046c1a1f81929af898795460111d3035baf94bab93ff019d"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/8",
+          "text": "Right place, product/seed safety and feasibility",
+          "sha256": "abe4443abdc01bdd1f3dbaa2dcce68e81b3aa163e3db54868528b667d934919f"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/9",
+          "text": "Potential loss pathway, costs and alternative",
+          "sha256": "d90ebc1e76c548e327514943b9bd1b13d1d66549b5683b0d8b3941ace410dda3"
+        },
+        {
+          "pointer": "/stressPractice/ui/defence",
+          "text": "Individual explanation and exit record",
+          "sha256": "a3e2fbb9cb90debd6ce2391117e6542305f6dd67c6241592ff50d886b800902c"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/0",
+          "text": "Which one case will you defend and why?",
+          "sha256": "3dccf3bed32a72047b8c5f46d7969ae2025fb5b908b8194f0964e78e0bf0ae1f"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/1",
+          "text": "What criticism or new evidence would change your recommendation?",
+          "sha256": "12fc3cb04904bb7f99c1cf28fcfea13db8a15ee14670a1d56347bdc2639f777d"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/2",
+          "text": "Exit: K leaf-margin clue and a reasoned method for very sandy soil",
+          "sha256": "6789a1e76ac4ca06aed58f276495b4976c2fe8605cfa30c43ee7f97dde01e65a"
+        },
+        {
+          "pointer": "/stressPractice/ui/reasonBoundary",
+          "text": "Text presence opens comparison only; it does not validate causal reasoning.",
+          "sha256": "8132cb52121b1079ffc458d3441e883e487440a5e459bb370b665cdb7f459fad"
+        },
+        {
+          "pointer": "/stressPractice/ui/boundary",
+          "text": "These online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "sha256": "59053f6d794ac59361b17e23cb742baa801e4ac98ab05c18d15523480f126b94"
+        }
+      ],
+      "scientificMeaning": "Prepare two different case records\n\nObservation and affected leaf age/location\n\nAt least two competing explanations\n\nSoil/root/weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product/seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "displayText": "Prepare two different case records\n\nObservation and affected leaf age/location\n\nAt least two competing explanations\n\nSoil/root/weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product/seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "captionText": "Prepare two different case records\n\nObservation and affected leaf age/location\n\nAt least two competing explanations\n\nSoil/root/weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product/seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenText": "Prepare two different case records\n\nObservation and affected leaf age, location\n\nAt least two competing explanations\n\nSoil, root, weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product, seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+      "spokenTextSHA256": "b9489cf1fb280534d49c474c671747e5ef407890be878ed728ddcdedb63d5c2d",
+      "spokenTextSha256": "b9489cf1fb280534d49c474c671747e5ef407890be878ed728ddcdedb63d5c2d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Prepare two different case records\n\nObservation and affected leaf age/location\n\nAt least two competing explanations\n\nSoil/root/weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product/seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "spoken": "Prepare two different case records\n\nObservation and affected leaf age, location\n\nAt least two competing explanations\n\nSoil, root, weather evidence and uncertainty\n\nTest or observation that could change the hypothesis\n\nWater priority, conditional method and scheduling evidence\n\nRight source and why it is appropriate\n\nRight rate: evidence or missing data, not a made-up number\n\nRight time and loss-risk condition\n\nRight place, product, seed safety and feasibility\n\nPotential loss pathway, costs and alternative\n\nIndividual explanation and exit record\n\nWhich one case will you defend and why?\n\nWhat criticism or new evidence would change your recommendation?\n\nExit: K leaf-margin clue and a reasoned method for very sandy soil\n\nText presence opens comparison only; it does not validate causal reasoning.\n\nThese online tasks rehearse reasoning only. Typed completeness and correct choices do not establish a diagnosis, a real field treatment or criterion mastery; the case explanations need trainer review.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "94f4e116dd0d6cd340d7f2424789831e437c74b01eb629c93277d7a5dbf7b827",
+      "requestFingerprintSha256": "94f4e116dd0d6cd340d7f2424789831e437c74b01eb629c93277d7a5dbf7b827",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-07-en-criteria-r1",
+      "unitId": "S3-07-en-criteria-r1",
+      "locale": "en",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "ee46efcb849a028cd387f0c659eb5f814cc2505cbd5caff71b0a0829147609a3",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/passChecks/0/evidence",
+          "text": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation/test, and places correction of actual standing-water/root stress before fertilizer advice.",
+          "sha256": "d425dacffdaa1eb0f116e511abed974ffbd415073e7bcc84a12f1c06c2558717"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/0/decision",
+          "text": "Pass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.",
+          "sha256": "fd4ceb8914923c30b0fec562c1c8cd5d259507a6fa3b2546b22c519ab3d1a804"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/evidence",
+          "text": "For each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil/crop data and suitable local guidance. Describes calcium nitrate as N plus Ca, not NPK; avoids automatic urea, DAP or foliar K from symptoms.",
+          "sha256": "bb0ca4acff29e10dc35c9d59d8a2b772250ccf6aaa7ee7a0ccfd6a36ed3713db"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/decision",
+          "text": "Pass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.",
+          "sha256": "f62bf75c15edeaa85da2d58165b313b5be12a8270a7480e46fe67c1db665f52d"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/evidence",
+          "text": "Submits two complete case sheets, gives one defended presentation or equivalent oral/written explanation and critiques alternatives for the remaining cases. For the 45-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.",
+          "sha256": "653aa088ae15ec8289bc550c74bc98f43284bef471f984d3d11dc2733d279d7a"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/decision",
+          "text": "Pass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.",
+          "sha256": "7fa7c7f7d6eccac41e383e7c083bed7332a8e4ad26ea6f4d70e9515cadc589ad"
+        },
+        {
+          "pointer": "/stressPractice/practicalInstruction",
+          "text": "The trainer may facilitate a 45-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.",
+          "sha256": "1db7483eb363246855a450b2dc9d2e91147d1b8b96cc8e8a5205184e6bff001d"
+        },
+        {
+          "pointer": "/stressPractice/addedReflection",
+          "text": "Which symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?",
+          "sha256": "fe322444adfa91d8ecc23a361d3251baeb0dd94e55f75d625d52b1558e957b0b"
+        },
+        {
+          "pointer": "/stressPractice/ui/notes",
+          "text": "No observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "sha256": "6ca8a96fc44a59a84fac7df98b039d7c665c93aa7313a210a71b71160e3a4704"
+        }
+      ],
+      "scientificMeaning": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation/test, and places correction of actual standing-water/root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil/crop data and suitable local guidance. Describes calcium nitrate as N plus Ca, not NPK; avoids automatic urea, DAP or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral/written explanation and critiques alternatives for the remaining cases. For the 45-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a 45-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+      "displayText": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation/test, and places correction of actual standing-water/root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil/crop data and suitable local guidance. Describes calcium nitrate as N plus Ca, not NPK; avoids automatic urea, DAP or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral/written explanation and critiques alternatives for the remaining cases. For the 45-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a 45-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+      "captionText": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation/test, and places correction of actual standing-water/root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil/crop data and suitable local guidance. Describes calcium nitrate as N plus Ca, not NPK; avoids automatic urea, DAP or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral/written explanation and critiques alternatives for the remaining cases. For the 45-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a 45-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+      "spokenText": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation or test, and places correction of actual standing water or root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil, crop data and suitable local guidance. Describes calcium nitrate as N plus C A, not N P K; avoids automatic urea, D A P or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral or written explanation and critiques alternatives for the remaining cases. For the forty-five-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a forty-five-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+      "spokenTextSHA256": "3f44a732cc37d0d6d0cfc12249b65f3f151b0b1c145e14dcf43f60a99cd20fb2",
+      "spokenTextSha256": "3f44a732cc37d0d6d0cfc12249b65f3f151b0b1c145e14dcf43f60a99cd20fb2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation/test, and places correction of actual standing-water/root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil/crop data and suitable local guidance. Describes calcium nitrate as N plus Ca, not NPK; avoids automatic urea, DAP or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral/written explanation and critiques alternatives for the remaining cases. For the 45-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a 45-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "spoken": "For tomato, wheat, leafy planning and cold maize, labels facts separately from hypotheses, gives plausible alternatives, identifies a next observation or test, and places correction of actual standing water or root stress before fertilizer advice.\n\nPass only with evidence and competing explanations; naming a deficiency from one leaf image or afternoon wilt alone needs guided retry.\n\nFor each proposed nutrient action identifies source, rate evidence, timing and placement; rate requires soil, crop data and suitable local guidance. Describes calcium nitrate as N plus C A, not N P K; avoids automatic urea, D A P or foliar K from symptoms.\n\nPass when all four R's and water priority fit the scenario and do not include an unsupported dose or calendar.\n\nSubmits two complete case sheets, gives one defended presentation or equivalent oral or written explanation and critiques alternatives for the remaining cases. For the forty-five-minute trainer workshop, contribution and reasoning are captured individually even if groups discuss together.\n\nPass on two complete, evidence-based cases plus one defended explanation; participation or a group answer alone does not establish the individual's reasoning.\n\nThe trainer may facilitate a forty-five-minute case discussion using prepared cards and observe reasoning. This is not a signed field-diagnosis or fertilizer-application skill. Any real field advice requires local testing and qualified supervision.\n\nWhich symptom did you initially overinterpret, what test would change your mind, and which of the four R decisions still lacks evidence?\n\nNo observation, trainer decision or signature has been recorded. Complete them only after actual supervised work.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a4b37b0cf8403b87a833ba4fe7ac5190f1e1b2a7783e5a879537d6c215068655",
+      "requestFingerprintSha256": "a4b37b0cf8403b87a833ba4fe7ac5190f1e1b2a7783e5a879537d6c215068655",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

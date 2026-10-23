@@ -1,0 +1,223 @@
+{
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-07-de.json",
+    "sha256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+    "bytes": 38885
+  },
+  "units": [
+    {
+      "id": "S3-07-de-case-records-r1",
+      "unitId": "S3-07-de-case-records-r1",
+      "locale": "de",
+      "semanticGroup": "case-records",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/ui/caseSheets",
+          "text": "Zwei unterschiedliche Fallbögen erstellen",
+          "sha256": "b8e43514a569443f22ca394f3ec597036f9025079c4f8debcd78f74d6542b4f8"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/0",
+          "text": "Beobachtung, Blattalter und Lage",
+          "sha256": "19d587b720ab7ba13d6346c63e4fe1cc6e09462d6db75a1a03cc917a9cc75c34"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/1",
+          "text": "Mindestens zwei konkurrierende Erklärungen",
+          "sha256": "ccd75c571fc664f57fa8a0209a7f2e6b501fe342e0ddf7753bd8f5862e6a327a"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/2",
+          "text": "Boden/Wurzel/Wetterbelege und Unsicherheit",
+          "sha256": "6b349863e8dfe7d0f8f89b5db827bcaf49b1cc1d9c2345ae5342db7d075b856a"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/3",
+          "text": "Test, der die Hypothese ändern könnte",
+          "sha256": "8f16dc9bb3625481aca689b4f29af11cd7f81bb714485743e06e9aa755999f59"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/4",
+          "text": "Wasserpriorität, Methode und Terminbelege",
+          "sha256": "491d5c54ce4a383a91e101870a7ac4a97daf5ae9f44977feaad10ebda361efd1"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/5",
+          "text": "Quelle und Begründung",
+          "sha256": "25514ff5149df16128aaa508a6d601a76ae382d10f4d8005e79cbe37806f5075"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/6",
+          "text": "Menge: Beleg oder fehlende Daten, keine erfundene Zahl",
+          "sha256": "910ff57946f2245ea65457a924cb20a42e241ecf8187571bc4613976c0e11d4f"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/7",
+          "text": "Zeit und Verlustrisiko",
+          "sha256": "5d20010ae5fa3ef561a917bca81cbfa3dc24c8ffc1e8ab4cd52224b47e3374a2"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/8",
+          "text": "Ort, Saat/Produktsicherheit und Machbarkeit",
+          "sha256": "4580363db4c3b5ed8d4f3d9d85b101a398d2eac743410bcfafab695e2db0ad34"
+        },
+        {
+          "pointer": "/stressPractice/ui/caseFields/9",
+          "text": "Verlustweg, Kosten und Alternative",
+          "sha256": "2e2a3acb83b38990a8fecbe233e12595c0b8656d234b304a39c60f1b05cfc352"
+        },
+        {
+          "pointer": "/stressPractice/ui/defence",
+          "text": "Individuelle Verteidigung und Ausgangskarte",
+          "sha256": "f97711eb32dc246ef2d3af7aa2067639ee5a6d7c24c9ae3b4ba721ca8fc61f5f"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/0",
+          "text": "Welchen Fall verteidigst du und warum?",
+          "sha256": "37ad99808209768a88b08ea21ca252946d39d4f417eda28db26160c87bded00c"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/1",
+          "text": "Welche Kritik oder neue Evidenz ändert die Empfehlung?",
+          "sha256": "45e389eb85e0b75cc72fbef329ec99bedcb627107b046bccaca73b9ce73967ba"
+        },
+        {
+          "pointer": "/stressPractice/ui/defenceFields/2",
+          "text": "Ausgang: K-Randhinweis und begründete Methode für Sand",
+          "sha256": "1e95c72b19c5433a510a2dfba28a09a131b08c1934f9669fc74221b3fe2a3d07"
+        },
+        {
+          "pointer": "/stressPractice/ui/reasonBoundary",
+          "text": "Vorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.",
+          "sha256": "370e6ce106ef64c4bfbb9a12c986d4d1339512c74b7665aaf436b18ca18b542e"
+        },
+        {
+          "pointer": "/stressPractice/ui/boundary",
+          "text": "Onlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "sha256": "04ce401540d66f529221e71d096c3c8a1f13bee978634ac550426c9f9b084239"
+        }
+      ],
+      "scientificMeaning": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden/Wurzel/Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat/Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: K-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "displayText": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden/Wurzel/Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat/Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: K-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "captionText": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden/Wurzel/Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat/Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: K-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "spokenText": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden, Wurzel, Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat, Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: Ka-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+      "spokenTextSHA256": "87222e7c5ef0d3d001931b46482a48486b100643b71f5aa111ef39367e9398e5",
+      "spokenTextSha256": "87222e7c5ef0d3d001931b46482a48486b100643b71f5aa111ef39367e9398e5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden/Wurzel/Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat/Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: K-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "spoken": "Zwei unterschiedliche Fallbögen erstellen\n\nBeobachtung, Blattalter und Lage\n\nMindestens zwei konkurrierende Erklärungen\n\nBoden, Wurzel, Wetterbelege und Unsicherheit\n\nTest, der die Hypothese ändern könnte\n\nWasserpriorität, Methode und Terminbelege\n\nQuelle und Begründung\n\nMenge: Beleg oder fehlende Daten, keine erfundene Zahl\n\nZeit und Verlustrisiko\n\nOrt, Saat, Produktsicherheit und Machbarkeit\n\nVerlustweg, Kosten und Alternative\n\nIndividuelle Verteidigung und Ausgangskarte\n\nWelchen Fall verteidigst du und warum?\n\nWelche Kritik oder neue Evidenz ändert die Empfehlung?\n\nAusgang: Ka-Randhinweis und begründete Methode für Sand\n\nVorhandener Text öffnet nur den Vergleich, keine Bestätigung der Ursache.\n\nOnlineaufgaben üben Begründungen. Vollständiger Text und richtige Auswahl belegen keine Diagnose, reale Behandlung oder Kriterienbeherrschung. Die Lehrkraft muss die Fallbegründungen prüfen.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "f45c9bd34edb44ab46826558a75c8de7fb435aae814b8340f5425dc4e8abf0ec",
+      "requestFingerprintSha256": "f45c9bd34edb44ab46826558a75c8de7fb435aae814b8340f5425dc4e8abf0ec",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-07-de-criteria-r1",
+      "unitId": "S3-07-de-criteria-r1",
+      "locale": "de",
+      "semanticGroup": "criteria",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/stressPractice/passChecks/0/evidence",
+          "text": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe/Wurzelstress vor Düngerfragen.",
+          "sha256": "0e99a1789d247611130d2b8e6c4d87024c31fe84e2943ac0b871355795ce0b12"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/0/decision",
+          "text": "Bestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.",
+          "sha256": "cb51e00f9e5ebc5af6f2fdf7838b93130688debb23ce04a1030084678ac14e78"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/evidence",
+          "text": "Für jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-/Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist N+Ca, kein NPK. Keine automatische Harnstoff-, DAP- oder Blatt-K-Gabe.",
+          "sha256": "df21f1c6db82bb766827fcd3c372b5a0154a160cdf9d761a4c0ef8f656c3e7ac"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/1/decision",
+          "text": "Bestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.",
+          "sha256": "bfe6d01a03a5f719bc361e1e492458a4e790ff7c98a0102938f47f7ca5bf00ab"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/evidence",
+          "text": "Zwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der 45-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.",
+          "sha256": "56b8a70ec9c15c7e5f7771d3713498fa0e0edbe6bb99588a9a96e802150079a4"
+        },
+        {
+          "pointer": "/stressPractice/passChecks/2/decision",
+          "text": "Zwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.",
+          "sha256": "d53edc290064cc0e204fc41a76bd4637b5ac84375c27f9baa6e7d2b96b42150a"
+        },
+        {
+          "pointer": "/stressPractice/practicalInstruction",
+          "text": "Die Lehrkraft kann eine 45-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.",
+          "sha256": "34aee90eadaba935947ea60db9a85f290e0ce352981f649486031b5d882e47d2"
+        },
+        {
+          "pointer": "/stressPractice/addedReflection",
+          "text": "Welches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?",
+          "sha256": "4e27f8fcda732b69edf4b91edf7ee2d1c99ba43caa66abddf269c91c2d497605"
+        },
+        {
+          "pointer": "/stressPractice/ui/notes",
+          "text": "Noch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "sha256": "b52420721e5c599400f3d45039fb8ca6d281c87de1f99529fe04972a8cf9366a"
+        }
+      ],
+      "scientificMeaning": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe/Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-/Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist N+Ca, kein NPK. Keine automatische Harnstoff-, DAP- oder Blatt-K-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der 45-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine 45-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+      "displayText": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe/Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-/Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist N+Ca, kein NPK. Keine automatische Harnstoff-, DAP- oder Blatt-K-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der 45-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine 45-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+      "captionText": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe/Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-/Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist N+Ca, kein NPK. Keine automatische Harnstoff-, DAP- oder Blatt-K-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der 45-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine 45-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+      "spokenText": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe oder Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-, Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist En plus Ce A, kein En Pe Ka. Keine automatische Harnstoff-, De A Pe- oder Blatt-Ka-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der fünfundvierzig-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine fünfundvierzig-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+      "spokenTextSHA256": "2c6b2badb1b27ccbb19e6dc20a602fcad419273f61ab9714ab8fc893376f4d6b",
+      "spokenTextSha256": "2c6b2badb1b27ccbb19e6dc20a602fcad419273f61ab9714ab8fc893376f4d6b",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe/Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-/Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist N+Ca, kein NPK. Keine automatische Harnstoff-, DAP- oder Blatt-K-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der 45-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine 45-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "spoken": "Bei Tomate, Weizen, Blattgemüse-Planung und kaltem Mais trennt die Person Fakten und Vermutungen, nennt Alternativen und passende Prüfungen und behandelt tatsächliche Staunässe oder Wurzelstress vor Düngerfragen.\n\nBestanden nur mit Belegen und konkurrierenden Erklärungen; Mangel aus einem Blattbild oder Nachmittagswelke allein verlangt gezielte Wiederholung.\n\nFür jeden Nährstoffvorschlag nennt sie Quelle, Belege für die Menge, Zeitpunkt und Platzierung; Menge braucht Boden-, Pflanzendaten und geeignete lokale Empfehlungen. Calciumnitrat ist En plus Ce A, kein En Pe Ka. Keine automatische Harnstoff-, De A Pe- oder Blatt-Ka-Gabe.\n\nBestanden, wenn alle vier R und die Wasserpriorität passen, ohne unbelegte Menge oder Kalender.\n\nZwei vollständige Fallbögen für verschiedene Fälle, eine verteidigte mündliche oder zugängliche schriftliche Erklärung und Kritik der übrigen Alternativen. In der fünfundvierzig-minütigen Werkstatt wird trotz Gruppengespräch individuelles Denken dokumentiert.\n\nZwei belegte Fälle plus eine verteidigte Erklärung; Anwesenheit oder Gruppenlösung allein beweist keine individuelle Leistung.\n\nDie Lehrkraft kann eine fünfundvierzig-minütige Fallbesprechung moderieren und Begründungen beobachten. Das ist kein unterschriebener Nachweis für Felddiagnose oder Düngerausbringung. Echter Feldrat braucht lokale Tests und qualifizierte Aufsicht.\n\nWelches Symptom hast du zuerst überdeutet? Welche Prüfung würde deine Meinung ändern? Für welche der vier R fehlen noch Belege?\n\nNoch keine Beobachtung, Lehrkraftentscheidung oder Unterschrift dokumentiert. Erst nach echter betreuter Arbeit ausfüllen.",
+          "occurrences": 1,
+          "purpose": "SourceboundcaseRecord10fields/3defencequestions/3criterion requirements/45mintrainerdiscussionNOTfieldcertification/actualunsignednotespreserved. Natural slashsymbol expansions only; no fullcasekey."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "deliverySHA256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "116cde07e41a802d096a3a8cbaf35e0ffc7da98c725ef746cc87df73a1427280",
+      "requestFingerprintSha256": "116cde07e41a802d096a3a8cbaf35e0ffc7da98c725ef746cc87df73a1427280",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}
