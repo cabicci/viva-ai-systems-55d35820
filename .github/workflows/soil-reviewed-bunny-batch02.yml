@@ -1,0 +1,72 @@
+name: Reviewed Soil originals upload batch02 only
+'on':
+  push:
+    branches: ['work/soil-bunny-upload-batch02-20261023-r1']
+    paths: ['upload-only/queue.json']
+permissions:
+  contents: write
+concurrency:
+  group: soil-reviewed-bunny-upload-batch02
+  cancel-in-progress: false
+jobs:
+  upload:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: {"include":[{"id":"v01-0df45d18e458","manifestSHA":"44dd5546e92be07ba775290741176f5c72743e91cb2de751c5e04ebf64f73c93"},{"id":"v02-412647171f9a","manifestSHA":"1a7ed3afb3633baded22c0ef90f615c08fb7324de798bc544ed73ffc136d7911"},{"id":"v03-004bc7f90c1c","manifestSHA":"ef13e0c112bd3392d0ca0faf4c3cd53e7de90fd2f76b83c60e7b6ba2a92a9ea4"},{"id":"v04-2b6f7352c60a","manifestSHA":"957ce8287bf8b89e57df10ccf6fd9f86121b4b2e370b0bc6da6bf2aef654f244"}]}
+    defaults:
+      run:
+        working-directory: upload-only/${{ matrix.id }}
+    env:
+      MANIFEST_SHA: ${{ matrix.manifestSHA }}
+      WORKER_SHA: eb75d5da9bd2e24c4be966f51dfb16f7f26b0a194ecf523bc0d7747b50b56f64
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify exact bounded source and transfer original bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp ../worker.py worker.py
+          echo "$WORKER_SHA  worker.py" | sha256sum --check --strict
+          echo "$MANIFEST_SHA  manifest.json" | sha256sum --check --strict
+          python3 worker.py validate
+          python3 worker.py prepare
+      - name: One source-identity GUID create
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py create
+      - name: Preserve created GUID before upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: created-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: One unchanged original MP4 upload
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py upload
+      - name: One immediate readiness observation, encoding does not occupy upload lane
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py readiness
+      - name: Preserve per-identity upload outcome
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: outcome-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
