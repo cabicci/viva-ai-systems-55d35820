@@ -1,0 +1,433 @@
+{
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S2-07-en.json",
+    "sha256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+    "bytes": 31319
+  },
+  "units": [
+    {
+      "id": "S2-07-en-R01-r1",
+      "unitId": "S2-07-en-R01-r1",
+      "locale": "en",
+      "semanticGroup": "R01",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "A digital pH meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.",
+          "sha256": "c0b3b75997ff4682319b7c3672fea32abe26d59e47f5d24d6d802a0eda03c0c2"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "A professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures pH; nutrient interpretation and amendment rates need further soil and crop evidence.",
+          "sha256": "ff6c2ceaae8b0a829673a0401e70efd639bba8d171b87973106c0a96a26354de"
+        }
+      ],
+      "scientificMeaning": "A digital pH meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures pH; nutrient interpretation and amendment rates need further soil and crop evidence.",
+      "displayText": "A digital pH meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures pH; nutrient interpretation and amendment rates need further soil and crop evidence.",
+      "captionText": "A digital pH meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures pH; nutrient interpretation and amendment rates need further soil and crop evidence.",
+      "spokenText": "A digital P H meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures P H; nutrient interpretation and amendment rates need further soil and crop evidence.",
+      "spokenTextSHA256": "db972b459d5eb386f503ed9c413cc68661c95f99a541a03ae5bf4f2814d7575a",
+      "spokenTextSha256": "db972b459d5eb386f503ed9c413cc68661c95f99a541a03ae5bf4f2814d7575a",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A digital pH meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures pH; nutrient interpretation and amendment rates need further soil and crop evidence.",
+          "spoken": "A digital P H meter estimates acidity in the medium touching its electrode. A display with two decimal places does not prove that sampling, calibration or preparation was accurate. Label the representative sample first and decide whether the approved meter is intended for direct soil contact or a suspension; an ordinary glass electrode must not be pushed into soil merely because it shows digits.\n\nA professional laboratory may provide controlled methods, quality checks and additional nutrient or organic-matter results, but accuracy is not guaranteed by the word 'laboratory' alone. Record the actual method and ask what question the result is intended to answer. This step measures P H; nutrient interpretation and amendment rates need further soil and crop evidence.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8201a1c32a67680ffd9c30e942f1a0c63b5e8d2f82a60f711e8491dd46b0f2a0",
+      "requestFingerprintSha256": "8201a1c32a67680ffd9c30e942f1a0c63b5e8d2f82a60f711e8491dd46b0f2a0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R02-r1",
+      "unitId": "S2-07-en-R02-r1",
+      "locale": "en",
+      "semanticGroup": "R02",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at 2 mm; weigh 20 g of the sieved soil and measure 20 mL of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for 15 minutes. These numbers belong together as that card's mass-to-volume preparation: 20 g soil to 20 mL water, stated as 1:1 g:mL, not 1:1 g:g or an unqualified volume ratio.",
+          "sha256": "ace759da6a9a083d6bf99a4138b7f36d6231650302d82eb3db5df8fedcf07d5b"
+        },
+        {
+          "pointer": "/reading/1/paragraphs/1",
+          "text": "Keep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions 1:1 or 1:2 and a 15-30 minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+          "sha256": "8d591d9d03dffd71067287e37f232e671f885430a433b901f0b5ecf72a1f4ff1"
+        }
+      ],
+      "scientificMeaning": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at 2 mm; weigh 20 g of the sieved soil and measure 20 mL of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for 15 minutes. These numbers belong together as that card's mass-to-volume preparation: 20 g soil to 20 mL water, stated as 1:1 g:mL, not 1:1 g:g or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions 1:1 or 1:2 and a 15-30 minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+      "displayText": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at 2 mm; weigh 20 g of the sieved soil and measure 20 mL of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for 15 minutes. These numbers belong together as that card's mass-to-volume preparation: 20 g soil to 20 mL water, stated as 1:1 g:mL, not 1:1 g:g or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions 1:1 or 1:2 and a 15-30 minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+      "captionText": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at 2 mm; weigh 20 g of the sieved soil and measure 20 mL of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for 15 minutes. These numbers belong together as that card's mass-to-volume preparation: 20 g soil to 20 mL water, stated as 1:1 g:mL, not 1:1 g:g or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions 1:1 or 1:2 and a 15-30 minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+      "spokenText": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at two millimetres; weigh twenty grams of the sieved soil and measure twenty millilitres of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for fifteen minutes. These numbers belong together as that card's mass-to-volume preparation: twenty grams soil to twenty millilitres water, stated as one to one on a gram to millilitre basis, not one to one on a gram to gram basis or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions one to one or one to two and a fifteen to thirty minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital meter procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+      "spokenTextSHA256": "7b16e74d2bda711f32e27c5768da2b82c221f2a9fbf5ff2f47b0e6f5d31192ed",
+      "spokenTextSha256": "7b16e74d2bda711f32e27c5768da2b82c221f2a9fbf5ff2f47b0e6f5d31192ed",
+      "spokenAdaptationChanges": [
+        {
+          "written": "1:1 g:mL",
+          "spoken": "one to one on a gram to millilitre basis",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "1:1 g:g",
+          "spoken": "one to one on a gram to gram basis",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "1:1",
+          "spoken": "one to one",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "1:2",
+          "spoken": "one to two",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at 2 mm; weigh 20 g of the sieved soil and measure 20 mL of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for 15 minutes. These numbers belong together as that card's mass-to-volume preparation: 20 g soil to 20 mL water, stated as one to one on a gram to millilitre basis, not one to one on a gram to gram basis or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions one to one or one to two and a 15-30 minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+          "spoken": "The source's assessed scenario starts with a raw, air-dried sample. Wear the site's specified eye, clothing and hand protection; gently break soil clods in a clean mortar without grinding stones; sieve at two millimetres; weigh twenty grams of the sieved soil and measure twenty millilitres of distilled water into a clean beaker. In that card, stir for one minute and allow the suspension to stand for fifteen minutes. These numbers belong together as that card's mass-to-volume preparation: twenty grams soil to twenty millilitres water, stated as one to one on a gram to millilitre basis, not one to one on a gram to gram basis or an unqualified volume ratio.\n\nKeep the label, balance and cylinder readings and actual elapsed times in the record. The teacher explanation also mentions one to one or one to two and a fifteen to thirty minute wait; those are alternatives, not permission to choose a ratio from one procedure and a time from another. The digital-metre procedure used for real training must be declared in full and checked against the actual device and site method before anyone touches a sample for credit.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        },
+        {
+          "written": "digital-metre procedure",
+          "spoken": "digital meter procedure",
+          "occurrences": 1,
+          "purpose": "Natural spoken grammar/sampleletter expansion or equipmentmeter wording; all quantities/conditions/source unchanged"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "e5259c6988771b330d6cd2d6e3b8a1ad08e02b07b8aaed375e270071e36b07d0",
+      "requestFingerprintSha256": "e5259c6988771b330d6cd2d6e3b8a1ad08e02b07b8aaed375e270071e36b07d0",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R03-r1",
+      "unitId": "S2-07-en-R03-r1",
+      "locale": "en",
+      "semanticGroup": "R03",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/0",
+          "text": "A documented example is the Hanna HI99121 with its dedicated soil electrode. Its manual gives a separate slurry using 10 g of dried, 2 mm-sieved soil and 25 mL of the maker's HI7051 preparation solution, mixed for 30 seconds and left for 5 minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.",
+          "sha256": "28b34799e27d162ce4f5ef0287b1dd1a681f865a92de28be87241580f12fd415"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "The physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+          "sha256": "73ef80cfdfa3bf01af8e1323df3dfbeab9741485b673922cfab411d170e24d01"
+        }
+      ],
+      "scientificMeaning": "A documented example is the Hanna HI99121 with its dedicated soil electrode. Its manual gives a separate slurry using 10 g of dried, 2 mm-sieved soil and 25 mL of the maker's HI7051 preparation solution, mixed for 30 seconds and left for 5 minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+      "displayText": "A documented example is the Hanna HI99121 with its dedicated soil electrode. Its manual gives a separate slurry using 10 g of dried, 2 mm-sieved soil and 25 mL of the maker's HI7051 preparation solution, mixed for 30 seconds and left for 5 minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+      "captionText": "A documented example is the Hanna HI99121 with its dedicated soil electrode. Its manual gives a separate slurry using 10 g of dried, 2 mm-sieved soil and 25 mL of the maker's HI7051 preparation solution, mixed for 30 seconds and left for 5 minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+      "spokenText": "A documented example is the Hanna H I nine nine one two one with its dedicated soil electrode. Its manual gives a separate slurry using ten grams of dried soil passed through a two-millimetre sieve and twenty-five millilitres of the maker's H I seven zero five one preparation solution, mixed for thirty seconds and left for five minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+      "spokenTextSHA256": "844467f39b45e3e79a51af8319866660bb5bf5a5f016b690d86a055f16b7d869",
+      "spokenTextSha256": "844467f39b45e3e79a51af8319866660bb5bf5a5f016b690d86a055f16b7d869",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI99121",
+          "spoken": "H I nine nine one two one",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "HI7051",
+          "spoken": "H I seven zero five one",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "dried, 2 mm-sieved soil",
+          "spoken": "dried soil passed through a two-millimetre sieve",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "A documented example is the Hanna H I nine nine one two one with its dedicated soil electrode. Its manual gives a separate slurry using 10 g of dried soil passed through a two-millimetre sieve and 25 mL of the maker's H I seven zero five one preparation solution, mixed for 30 seconds and left for 5 minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+          "spoken": "A documented example is the Hanna H I nine nine one two one with its dedicated soil electrode. Its manual gives a separate slurry using ten grams of dried soil passed through a two-millimetre sieve and twenty-five millilitres of the maker's H I seven zero five one preparation solution, mixed for thirty seconds and left for five minutes. It also describes a different direct-ground measurement method for that probe. These are examples of method-specific instructions, not additions to the source card. Do not combine the manufacturer's solution or timing with the card's distilled-water ratio.\n\nThe physical training site may own a different meter and probe. The trainer must identify them and choose one procedure, including the liquid, sample ratio and basis, mixing, equilibration, electrode placement and cleaning. If the manual or local quality-control rules cannot be checked, the online comparison can be learned now but the practical measurement is unassessed.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "58c9119dbd614083367175fc7adfae0ca5badaf2835965786dddc4ccce188625",
+      "requestFingerprintSha256": "58c9119dbd614083367175fc7adfae0ca5badaf2835965786dddc4ccce188625",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R04-r1",
+      "unitId": "S2-07-en-R04-r1",
+      "locale": "en",
+      "semanticGroup": "R04",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/3/paragraphs/0",
+          "text": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the HI99121 manual, the standard two-point sequence begins at pH 7.01 and then uses pH 4.01 or 10.01; its NIST set has 6.86 with 4.01 or 9.18. The original teacher example says pH 4 and 7, which illustrates the idea but does not override a meter's recognized set or screen prompts.",
+          "sha256": "d54a78001c1cb95499a57fa1c07258286c359886eccf0373b6d3295848fd4492"
+        },
+        {
+          "pointer": "/reading/3/paragraphs/1",
+          "text": "Put buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+          "sha256": "11f4ac78b62b7f7e98d57ca2e007652e1a95a94dd3dc25ed05bf308a73642703"
+        }
+      ],
+      "scientificMeaning": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the HI99121 manual, the standard two-point sequence begins at pH 7.01 and then uses pH 4.01 or 10.01; its NIST set has 6.86 with 4.01 or 9.18. The original teacher example says pH 4 and 7, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+      "displayText": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the HI99121 manual, the standard two-point sequence begins at pH 7.01 and then uses pH 4.01 or 10.01; its NIST set has 6.86 with 4.01 or 9.18. The original teacher example says pH 4 and 7, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+      "captionText": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the HI99121 manual, the standard two-point sequence begins at pH 7.01 and then uses pH 4.01 or 10.01; its NIST set has 6.86 with 4.01 or 9.18. The original teacher example says pH 4 and 7, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+      "spokenText": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the H I nine nine one two one manual, the standard two-point sequence begins at P H seven point zero one and then uses P H four point zero one or ten point zero one; its N I S T set has six point eight six with four point zero one or nine point one eight. The original teacher example says P H four and seven, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+      "spokenTextSHA256": "feafd45a9ef0d995f2e3d2d183d460201fd2c835489afacdbf88c6be6d9fc8a0",
+      "spokenTextSha256": "feafd45a9ef0d995f2e3d2d183d460201fd2c835489afacdbf88c6be6d9fc8a0",
+      "spokenAdaptationChanges": [
+        {
+          "written": "HI99121",
+          "spoken": "H I nine nine one two one",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "NIST",
+          "spoken": "N I S T",
+          "occurrences": 1,
+          "purpose": "Exact source ratio basis/product-buffer identifier or natural spoken grammar; no method mixing or scientific source change"
+        },
+        {
+          "written": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the H I nine nine one two one manual, the standard two-point sequence begins at pH 7.01 and then uses pH 4.01 or 10.01; its N I S T set has 6.86 with 4.01 or 9.18. The original teacher example says pH 4 and 7, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+          "spoken": "Calibration uses clean, in-date buffer solutions whose values span or suit the expected sample range as the actual meter instructs. In the H I nine nine one two one manual, the standard two-point sequence begins at P H seven point zero one and then uses P H four point zero one or ten point zero one; its N I S T set has six point eight six with four point zero one or nine point one eight. The original teacher example says P H four and seven, which illustrates the idea but does not override a meter's recognized set or screen prompts.\n\nPut buffer portions in separate clean vessels when required; never pour used liquid back into the original bottle. Rinse the electrode between solutions using the actual manual's care instructions, avoid wiping or scraping delicate glass, wait for the meter to accept each calibration point, and record the set and acceptance. If the display rejects a buffer, do not claim calibration succeeded; check buffer identity, condition and electrode care, then repeat only the failed calibration stage with the trainer.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9d86cdf46421e018cf4f9a232c6f4655ea9611adb223d7581f2b5535f8174f93",
+      "requestFingerprintSha256": "9d86cdf46421e018cf4f9a232c6f4655ea9611adb223d7581f2b5535f8174f93",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R05-r1",
+      "unitId": "S2-07-en-R05-r1",
+      "locale": "en",
+      "semanticGroup": "R05",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/4/paragraphs/0",
+          "text": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.",
+          "sha256": "fbe8459161e94d7f7d7da830aad79379687b8ef0928b9ad5c22e8633729c7cd9"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/1",
+          "text": "Let the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.",
+          "sha256": "12d5b6260885bf4a636a5802c0a0d2c259af90f31b58e0b4711e1a04cd60b4e1"
+        },
+        {
+          "pointer": "/reading/4/paragraphs/2",
+          "text": "The teacher also offers pH indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+          "sha256": "80c7dfcfb3b096d2f178f9f253e5b75b70b275a294967baec606cde01aaf7fe7"
+        }
+      ],
+      "scientificMeaning": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers pH indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+      "displayText": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers pH indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+      "captionText": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers pH indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+      "spokenText": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers P H indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+      "spokenTextSHA256": "8d33f56efc5e7f9029fb4f67611fbecfc5f02f4a3e4d3f5684a993efb8f1b65d",
+      "spokenTextSha256": "8d33f56efc5e7f9029fb4f67611fbecfc5f02f4a3e4d3f5684a993efb8f1b65d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers pH indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+          "spoken": "Use the actual method's specified measurement point in the prepared sample. For the source process card, place the calibrated electrode in the liquid phase of the settled slurry, with sensing tip and junction correctly immersed as the probe manual requires, without grinding the glass against settled grit or the beaker bottom. Other validated methods may call for gentle swirling or measurement in the suspension; do not silently swap their directions.\n\nLet the reading settle by the device's stability indication or the site's documented acceptance rule. Record the displayed value at its supported resolution, sample ID, preparation and liquid, calibration, time and any unusual behaviour. Rinse between samples according to the electrode manual to prevent carryover. At the end, clean and store the probe exactly as instructed; a generic order to leave every probe in distilled water would damage some electrodes.\n\nThe teacher also offers P H indicator strips as a separate method: dip only the reactive end into the appropriate clear liquid and compare with that strip maker's chart at its specified time. A strip colour cannot calibrate a digital electrode, and a meter reading cannot be inferred from a strip without its method. Keep the strip route as an alternative demonstration, not an extra reagent or calibration step inside the digital-meter process card.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "1ddc6384dcad614bb64e9c3165b003f3117483f7b953052236ebadc688dc49dc",
+      "requestFingerprintSha256": "1ddc6384dcad614bb64e9c3165b003f3117483f7b953052236ebadc688dc49dc",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R06-r1",
+      "unitId": "S2-07-en-R06-r1",
+      "locale": "en",
+      "semanticGroup": "R06",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.",
+          "sha256": "dc829857f2dd4b52a9fee375b94b8ff1096fc49221e893f4d1568ba4dabdb465"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "In the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. pH alone does not determine an amendment or dose. A 6.8 model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+          "sha256": "d45a6a4f198a4aec23fcaafaa9def7cb97cf8c02de34977421946577549f5231"
+        }
+      ],
+      "scientificMeaning": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. pH alone does not determine an amendment or dose. A 6.8 model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+      "displayText": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. pH alone does not determine an amendment or dose. A 6.8 model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+      "captionText": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. pH alone does not determine an amendment or dose. A 6.8 model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+      "spokenText": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. P H alone does not determine an amendment or dose. A six point eight model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+      "spokenTextSHA256": "98327a6dd4854afe0bfba2cc55d8b4cce6210c8108a532c604e3417ede18bc8d",
+      "spokenTextSha256": "98327a6dd4854afe0bfba2cc55d8b4cce6210c8108a532c604e3417ede18bc8d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. pH alone does not determine an amendment or dose. A 6.8 model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+          "spoken": "Use separate samples A, B and C. The trainer pretests them and keeps the actual key private. Rotate tester, recorder and analyst, but each learner must personally measure and be observed. Record the actual method and reading before comparing with qualified teaching targets.\n\nIn the source's three ten-minute content parts, learners measure, discuss possible nutrient effects and then suggest a reasoned next check or crop-specific response. P H alone does not determine an amendment or dose. A six point eight model value is slightly acidic, near neutral; if a real sample differs from its model target, record what the instrument actually measured and investigate the difference.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "862c74253d8aed9e495c9efcd0a6447dfd692f6d2d96556b59878c6d306cdf72",
+      "requestFingerprintSha256": "862c74253d8aed9e495c9efcd0a6447dfd692f6d2d96556b59878c6d306cdf72",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S2-07-en-R07-r1",
+      "unitId": "S2-07-en-R07-r1",
+      "locale": "en",
+      "semanticGroup": "R07",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "637371eb5c84e24f4f936d6cd5518ddbd787f45f7ef6640a436d80fd569f3a57",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/0",
+          "text": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred pH appears or overwrite a failed run without a note.",
+          "sha256": "6520c00fca34489435c14eb9e2bad32fe1323f72b9d49b2e9fedb3eb00872cbc"
+        },
+        {
+          "pointer": "/reading/6/paragraphs/1",
+          "text": "Compare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+          "sha256": "7ccc802d5d2c697ba5529d5b75aea96067f498bb2954b8e5df4c48130befb2b3"
+        }
+      ],
+      "scientificMeaning": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred pH appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+      "displayText": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred pH appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+      "captionText": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred pH appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+      "spokenText": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred P H appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+      "spokenTextSHA256": "db7c4737bd9aba8740bda806ba6f03af1f3fea5b887186dfa93b93a27eb676c5",
+      "spokenTextSha256": "db7c4737bd9aba8740bda806ba6f03af1f3fea5b887186dfa93b93a27eb676c5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred pH appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+          "spoken": "A rejected buffer, expired or mixed-up solution, dry/damaged electrode, unstable display, unlabeled beaker or undocumented ratio means the result cannot be trusted. Stop, protect the sample and instrument, tell the trainer, identify the affected stage, and repeat it under the same declared method. Do not keep pressing a button until a preferred P H appears or overwrite a failed run without a note.\n\nCompare a field colour kit, a calibrated meter and a laboratory by purpose, method, time, resolution and quality controls. A digital meter can be convenient and give a numerical reading; a laboratory may add controlled analysis and interpretation; neither one removes the need for a representative sample or a recorded procedure.",
+          "occurrences": 1,
+          "purpose": "Whole-token units and exact mass/volume/timing/buffer decimal spoken forms;1:1g:mL versusg:g preserved distinctly,not volume assumption"
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "ac20a59d4f86698eeb67aff3247eb0175fa3ae99e334bfbbaf5b1ff1e9f40f7d",
+      "requestFingerprintSha256": "ac20a59d4f86698eeb67aff3247eb0175fa3ae99e334bfbbaf5b1ff1e9f40f7d",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
