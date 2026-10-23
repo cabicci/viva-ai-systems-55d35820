@@ -1,0 +1,72 @@
+{
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-05-it.json",
+    "sha256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+    "bytes": 29327
+  },
+  "units": [
+    {
+      "id": "S3-05-it-guided-practice-clarity-repair-r1",
+      "unitId": "S3-05-it-guided-practice-clarity-repair-r1",
+      "locale": "it",
+      "semanticGroup": "repair-s305-s3-05-it-guided-practice-clarity-repair-phrase",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "b9552e885aeaaa1210a1af28353f08df721a3f58f49754644cd9dd37db55c456",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "sha256": "8c9a6ef7c5c360ceee662b76fafbc908384d9683e0fbbb4b3f5a76c880ceda5c"
+        }
+      ],
+      "scientificMeaning": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "displayText": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "captionText": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "spokenText": "Questo ragionamento non certifica l’uso dell’attrezzatura e non approva un vero piano irriguo.",
+      "spokenTextSHA256": "bb1822ebe21ff87215e13f4f52820ae3f7bc03fe0ed47ae610bd5889b19ebc17",
+      "spokenTextSha256": "bb1822ebe21ff87215e13f4f52820ae3f7bc03fe0ed47ae610bd5889b19ebc17",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il formatore può guidare l’ispezione di filtro e gocciolatore, irrigatore e solco o bacino, con osservazioni individuali. Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "spoken": "Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "occurrences": 1,
+          "purpose": "EXACT_PHRASE_EXTRACTION_ALL_OTHER_SOURCE_AUDIO_RETAINED"
+        },
+        {
+          "written": "Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+          "spoken": "Questo ragionamento non certifica l’uso dell’attrezzatura e non approva un vero piano irriguo.",
+          "occurrences": 1,
+          "purpose": "ROOT_SELECTED_SOURCE_EQUIVALENT_SPOKEN_SUBPASSAGE_ONLY"
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "deliverySHA256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "actualAudio": null,
+      "timings": null,
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "sourcePlan": "provenance/narration-it.json",
+      "requestFingerprintSHA256": "bdcce02df2700c0a1e91fbf17afc0d92f5329ad98363f66d5d19f8fee30fa273",
+      "requestFingerprintSha256": "bdcce02df2700c0a1e91fbf17afc0d92f5329ad98363f66d5d19f8fee30fa273",
+      "sourcePlanSha256": "5cd33ffafae9754cca9ed4a1cdbc4dbf096942f32ca56f6f96972b4a226dc9f2",
+      "exactSentenceBefore": "Questo ragionamento non certifica uso dell’attrezzatura né un piano irriguo reale.",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "effectiveSourceCorrection": {
+        "kind": "ROOT_SELECTED_SOURCE_EQUIVALENT_SUBPASSAGE",
+        "authorityPath": "Private\\soil-rebuild-20261014\\new-method-root-qa-20261023\\s305-seven-repairs-root-authority-r1.json",
+        "authoritySHA256": "b04a2d2bfcea4de1e33a405324845a4ca77456c56f26c9fdaacf7f772a6e296a"
+      },
+      "effectiveDisplayPatchRequiredBeforeIntegration": false
+    }
+  ]
+}
