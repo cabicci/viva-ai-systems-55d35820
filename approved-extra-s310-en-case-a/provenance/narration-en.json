@@ -1,0 +1,153 @@
+{
+  "schemaVersion": 1,
+  "stepId": "S3-10",
+  "locale": "en",
+  "units": [
+    {
+      "id": "S3-10-en-E04-duplicate-subpassage-extra1",
+      "unitId": "S3-10-en-E04-duplicate-subpassage-extra1",
+      "stepId": "S3-10",
+      "locale": "en",
+      "semanticGroup": "approved-extra-s310-en-case-a-subpassage",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Treat three reports as three cases",
+          "sha256": "5e06778eebfddb2e1402da6471d0b6781f226021a5571bdc64217829fd67ae03"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.",
+          "sha256": "a6b6d868e7dbdc087acbbfd51a33c653d82f7560a319b7f07c8e392ec27e82c9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.",
+          "sha256": "6612087aaaa15051255c61dd350e5c3efb219cbc77056eb83267c5d296dd3a87"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.",
+          "sha256": "1b1cb47b05591b2eb7f47853f0ea5a7cb665172767e2791ad73c1da2cd09d207"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.",
+          "sha256": "f430d8a54f1a9834c81e9c636dbcf29185b5337f9ad00be2e9ee2aa064282903"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Report values stay separate from physical sample identities; every row needs reasons and a missing test.",
+          "sha256": "db978587fad2134184c8f089a0de437b743b21f8d4334ab02ca1540e7354bfc7"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "Treat three reports as three cases",
+        "situation": "A is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.",
+        "reasoning": [
+          "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.",
+          "B: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.",
+          "C: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison."
+        ],
+        "takeaway": "Report values stay separate from physical sample identities; every row needs reasons and a missing test."
+      },
+      "scientificMeaning": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "displayText": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "captionText": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "spokenText": "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low nitrogen stays uncorrected, not inherently impossible.",
+      "spokenTextSHA256": "2870e0e477c22e89df9e8fb1e3524e8a7b2c96d6701bcb7dd56f554ed9aaea3b",
+      "spokenTextSha256": "2870e0e477c22e89df9e8fb1e3524e8a7b2c96d6701bcb7dd56f554ed9aaea3b",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Read this complete A-report paragraph once, without repeating the final negated qualification. Preserve moisture, nutrients and low-nitrogen condition; do not read these directions aloud.",
+      "requestFingerprintSHA256": "3195c73994aa49b0dedec295f265acbdafab71becfb833f369e4945dba5ef326",
+      "requestFingerprintSha256": "3195c73994aa49b0dedec295f265acbdafab71becfb833f369e4945dba5ef326",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+          "spoken": "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low nitrogen stays uncorrected, not inherently impossible.",
+          "occurrences": 1,
+          "purpose": "Exact approved coherent parent subpassage only; not full-case or whole-reading narration. All outside original PCM must be preserved; source bindings describe parent context."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "872b546c9c64055dbcad42bc6207c8ba343bbd0a89b4e32bde0ca977c5ce5551",
+      "sourcePlan": "provenance/narration-en.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "answerSubpassageOnly": true,
+      "sourceBoundaryAndJoinCutFrames": "PENDING_ACTUAL_GENERATED_AUDIO_AND_SEMANTIC_ACCEPTANCE; no cuts invented now",
+      "exactParentSpokenCharacterSlice": {
+        "first": 235,
+        "endExclusive": 414,
+        "sha256": "2870e0e477c22e89df9e8fb1e3524e8a7b2c96d6701bcb7dd56f554ed9aaea3b",
+        "UTF8HashNotByteOffsets": true
+      },
+      "parentOriginalRequest": {
+        "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-gated-job-20261024-r2\\request.json",
+        "sha256": "682b7165064c89ade097321f7e734ceed00761531193930b2cd9feea190ccf20"
+      },
+      "parentOriginalUnitId": "S3-10-en-E04-r1",
+      "originalSpokenWholeSHA256": "c772b13a4375d49588f14a6eaf599fc620e7c29a2260b54f11a3fbfdd8fcee3b",
+      "deliverySHA256": "872b546c9c64055dbcad42bc6207c8ba343bbd0a89b4e32bde0ca977c5ce5551",
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-10-en-E04-r1",
+      "sourceCaseIndex": 3
+    }
+  ],
+  "repairOnlyNotFullParentNarration": true
+}
