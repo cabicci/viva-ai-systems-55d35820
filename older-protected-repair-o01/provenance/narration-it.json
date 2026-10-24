@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "stepId": "S3-11",
+  "units": [
+    {
+      "id": "S3-11-it-E03-terreno-onepass-r1",
+      "unitId": "S3-11-it-E03-terreno-onepass-r1",
+      "stepId": "S3-11",
+      "locale": "it",
+      "semanticGroup": "O01-bounded-source-completion",
+      "sourceCaseId": "rocky-slope",
+      "sourceWholeFileSHA256": "05b37520b7de0fd21f31bc997532a7332fee9f619b8e6c2046fb81f8e77a066e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Scegli un uso che trattiene il suolo",
+          "sha256": "8da235163a4916ab1cb881c6061811c88a8cb69e926ef04dd0b7fc6def23c42a"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Il banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.",
+          "sha256": "89784415605d9b222983aa2379cc1a14e5c8dd0703dcda95f3d3e23c2f1ad610"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Confronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.",
+          "sha256": "662501a2a3bbb3c3b600ba73e178e81bcea56975db9d58938e6fe3eb73443d31"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Una copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.",
+          "sha256": "fba5cc87ecd0a0a4072f762c33a935edfa3fb46f12d506238cfaac88d0c847b8"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Conserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico.",
+          "sha256": "74631fcbfe4ce2da54ce0e6ee64471aacc2df13280b55fab66c35d615e3c7e98"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Una copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto.",
+          "sha256": "94022b0eb88a5a142d1b81d289a9fd24b27ef4bde3f95fafaf349d35890ce1fc"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "rocky-slope",
+        "title": "Scegli un uso che trattiene il suolo",
+        "situation": "Il banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.",
+        "reasoning": [
+          "Confronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.",
+          "Una copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.",
+          "Conserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico."
+        ],
+        "takeaway": "Una copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto."
+      },
+      "scientificMeaning": "Scegli un uso che trattiene il suolo\n\nIl banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.\n\nConfronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.\n\nUna copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.\n\nConserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico.\n\nUna copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto.",
+      "displayText": "Scegli un uso che trattiene il suolo\n\nIl banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.\n\nConfronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.\n\nUna copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.\n\nConserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico.\n\nUna copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto.",
+      "captionText": "Scegli un uso che trattiene il suolo\n\nIl banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.\n\nConfronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.\n\nUna copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.\n\nConserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico.\n\nUna copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto.",
+      "spokenText": "Il banco descrive un pendio roccioso con terreno molto sottile e senza strato profondo dimostrato.",
+      "spokenTextSHA256": "3bd98a31e31177a15c360eacdcf6067d7ba2e1ec75ef63be351bf482accf2537",
+      "spokenTextSha256": "3bd98a31e31177a15c360eacdcf6067d7ba2e1ec75ef63be351bf482accf2537",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.\nPronuncia terreno molto sottile in modo naturale e chiaro. Conserva senza strato profondo dimostrato; non leggere queste istruzioni.",
+      "requestFingerprintSHA256": "7fe34687815eca4dc79f5c2f9d2198620c291fc9133edf0cddd14d0df4979d79",
+      "requestFingerprintSha256": "7fe34687815eca4dc79f5c2f9d2198620c291fc9133edf0cddd14d0df4979d79",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Scegli un uso che trattiene il suolo\n\nIl banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato.\n\nConfronta carote o patate, mais, risaia e pascolo/erbe per radici e disturbo del suolo.\n\nUna copertura vegetale stabilita e locale è la scelta iniziale meno erosiva; controlla specie, acqua e pascolamento.\n\nConserva i residui e riduci il disturbo se opportuno, con piano per deflusso e attecchimento; la non lavorazione da sola non è progetto idraulico.\n\nUna copertura condizionata è più difendibile di annuali a radice profonda o allagati sul pendio descritto.",
+          "spoken": "Il banco descrive un pendio roccioso con terreno molto sottile e senza strato profondo dimostrato.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "1b5a992df1e34d5cb05e8a3e405182eacf93407b5c7294c454993212cc7985f4",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-11-it.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-11-it-E03-r1",
+      "originalSpokenWholeSHA256": "51f22b371c13d670ae7853c0a1f3589f8be85afdda7b646774f82fcfdca0f696",
+      "exactParentSpokenCharacterSlice": {
+        "first": 38,
+        "endExclusive": 134,
+        "text": "Il banco descrive un pendio roccioso con suolo molto sottile e senza strato profondo dimostrato."
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-11-it-E03-r1",
+      "sourceCaseIndex": 2,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "1b5a992df1e34d5cb05e8a3e405182eacf93407b5c7294c454993212cc7985f4"
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
