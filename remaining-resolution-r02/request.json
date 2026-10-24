@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_BROAD_PERMISSION_R02_COHERENT_RESOLUTION_ROOT_EXACT_REVIEW_REQUIRED",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-remaining-resolution-r02-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-de-R03-r1-coherent-resolution-extra1",
+      "unitId": "S3-13-de-R03-r1-coherent-resolution-extra1",
+      "locale": "de",
+      "semanticGroup": "R02-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/2",
+          "text": "Versuche zuerst, die Funktion ohne Bauteilkarte zu benennen, und erkläre sie dann einer Partnerperson. Vergleiche drei Vorteile und die Entscheidung für einen Acre. Das ursprüngliche Thema umfasst 90 Minuten: 45 Minuten Theorie und 45 Minuten Praxis; dies sind Themenzeiten, keine eigenen Zeitvorgaben für jeden der drei Schritte. Tatsächliche Bedienung und Wartung bleiben ihren betreuten Schritten vorbehalten.",
+          "sha256": "5de75dbc973a01c6e665606c4bd381cd4e6926a3ca948d329164c0b0978009fe"
+        }
+      ],
+      "scientificMeaning": "Versuche zuerst, die Funktion ohne Bauteilkarte zu benennen, und erkläre sie dann einer Partnerperson. Vergleiche drei Vorteile und die Entscheidung für einen Acre. Das ursprüngliche Thema umfasst 90 Minuten: 45 Minuten Theorie und 45 Minuten Praxis; dies sind Themenzeiten, keine eigenen Zeitvorgaben für jeden der drei Schritte. Tatsächliche Bedienung und Wartung bleiben ihren betreuten Schritten vorbehalten.",
+      "displayText": "Versuche zuerst, die Funktion ohne Bauteilkarte zu benennen, und erkläre sie dann einer Partnerperson. Vergleiche drei Vorteile und die Entscheidung für einen Acre. Das ursprüngliche Thema umfasst 90 Minuten: 45 Minuten Theorie und 45 Minuten Praxis; dies sind Themenzeiten, keine eigenen Zeitvorgaben für jeden der drei Schritte. Tatsächliche Bedienung und Wartung bleiben ihren betreuten Schritten vorbehalten.",
+      "captionText": "Versuche zuerst, die Funktion ohne Bauteilkarte zu benennen, und erkläre sie dann einer Partnerperson. Vergleiche drei Vorteile und die Entscheidung für einen Acre. Das ursprüngliche Thema umfasst 90 Minuten: 45 Minuten Theorie und 45 Minuten Praxis; dies sind Themenzeiten, keine eigenen Zeitvorgaben für jeden der drei Schritte. Tatsächliche Bedienung und Wartung bleiben ihren betreuten Schritten vorbehalten.",
+      "spokenText": "Vergleiche drei Vorteile und die Entscheidung für einen Acre.",
+      "spokenTextSHA256": "8dc35810405542d80f7a95e31df441ba8e2225d3c5e656b3a799dd52f59c739c",
+      "spokenTextSha256": "8dc35810405542d80f7a95e31df441ba8e2225d3c5e656b3a799dd52f59c739c",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Versuche zuerst, die Funktion ohne Bauteilkarte zu benennen, und erkläre sie dann einer Partnerperson. Vergleiche drei Vorteile und die Entscheidung für einen Acre. Das ursprüngliche Thema umfasst 90 Minuten: 45 Minuten Theorie und 45 Minuten Praxis; dies sind Themenzeiten, keine eigenen Zeitvorgaben für jeden der drei Schritte. Tatsächliche Bedienung und Wartung bleiben ihren betreuten Schritten vorbehalten.",
+          "spoken": "Vergleiche drei Vorteile und die Entscheidung für einen Acre.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.\nAcre is the English area unit: pronounce AY-ker, not the German noun Acker. Keep the unit and the three advantages; do not speak this direction.",
+      "deliverySHA256": "872644bd87c5b91c82324a36d223d23a62b30658dbbdc10b7cd4639b2c9116f7",
+      "deliverySha256": "872644bd87c5b91c82324a36d223d23a62b30658dbbdc10b7cd4639b2c9116f7",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "aae5fe49a27043b80f2b66116626e5e62f296e1126f947156ccb2b4746057436",
+      "requestFingerprintSha256": "aae5fe49a27043b80f2b66116626e5e62f296e1126f947156ccb2b4746057436",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "df108474a555156533c9c48ab7c00362ff134065b5ca5d596e4d3904b8b2f156",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-13-de.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-13-de-R03-r1",
+      "originalSpokenWholeSHA256": "59f78c9f50281d0fb77e27567e0aad94181f7534d98042f91664de01547dfca1",
+      "exactParentSpokenCharacterSlice": {
+        "first": 103,
+        "endExclusive": 164,
+        "text": "Vergleiche drei Vorteile und die Entscheidung für einen Acre.",
+        "notPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-13-de-R03-r1-coherent-resolution-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
