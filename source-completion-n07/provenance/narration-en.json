@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "stepId": "S3-16",
+  "units": [
+    {
+      "id": "S3-16-en-R01-stepdup-subpassage-extra1",
+      "unitId": "S3-16-en-R01-stepdup-subpassage-extra1",
+      "locale": "en",
+      "semanticGroup": "N07-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "In this scenario, a junior agronomy technician advises a farmer about Plot C by collecting a composite sample and measuring pH and texture. Treat these as three observed skill chains, not as a quick page-completion exercise. pH and texture inform a preliminary recommendation, but cannot establish the whole soil health or guarantee a successful season. The crop/report reasoning continues in the separate S3-17 step.",
+          "sha256": "11b071eb2001da46c8c0445060a9e885a93d98ae4a22a3d5eafd3be2474ffb4c"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "The task allocates 25 minutes for practical and 20 minutes for a report, yet its pH method requires air-dried preparation and a 30–60-minute slurry wait. Use documented Stage A collection/label; Stage B own sample preparation and drying; Stage C calibrated pH; Stage D ribbon/feel; Stage E report. Record each stage's start/finish, actual active minutes and waiting separately. A jar or slurry prepared early for teaching may show a waiting effect but never stands in for the student's own sample. The trainer identifies the real pH meter, buffers, sampling purpose, field and laboratory method before practice.",
+          "sha256": "15a747f7b034b03f00041544006b67f3b4876adf62ddf15de639ddd9276b6390"
+        }
+      ],
+      "scientificMeaning": "In this scenario, a junior agronomy technician advises a farmer about Plot C by collecting a composite sample and measuring pH and texture. Treat these as three observed skill chains, not as a quick page-completion exercise. pH and texture inform a preliminary recommendation, but cannot establish the whole soil health or guarantee a successful season. The crop/report reasoning continues in the separate S3-17 step.\n\nThe task allocates 25 minutes for practical and 20 minutes for a report, yet its pH method requires air-dried preparation and a 30–60-minute slurry wait. Use documented Stage A collection/label; Stage B own sample preparation and drying; Stage C calibrated pH; Stage D ribbon/feel; Stage E report. Record each stage's start/finish, actual active minutes and waiting separately. A jar or slurry prepared early for teaching may show a waiting effect but never stands in for the student's own sample. The trainer identifies the real pH meter, buffers, sampling purpose, field and laboratory method before practice.",
+      "displayText": "In this scenario, a junior agronomy technician advises a farmer about Plot C by collecting a composite sample and measuring pH and texture. Treat these as three observed skill chains, not as a quick page-completion exercise. pH and texture inform a preliminary recommendation, but cannot establish the whole soil health or guarantee a successful season. The crop/report reasoning continues in the separate S3-17 step.\n\nThe task allocates 25 minutes for practical and 20 minutes for a report, yet its pH method requires air-dried preparation and a 30–60-minute slurry wait. Use documented Stage A collection/label; Stage B own sample preparation and drying; Stage C calibrated pH; Stage D ribbon/feel; Stage E report. Record each stage's start/finish, actual active minutes and waiting separately. A jar or slurry prepared early for teaching may show a waiting effect but never stands in for the student's own sample. The trainer identifies the real pH meter, buffers, sampling purpose, field and laboratory method before practice.",
+      "captionText": "In this scenario, a junior agronomy technician advises a farmer about Plot C by collecting a composite sample and measuring pH and texture. Treat these as three observed skill chains, not as a quick page-completion exercise. pH and texture inform a preliminary recommendation, but cannot establish the whole soil health or guarantee a successful season. The crop/report reasoning continues in the separate S3-17 step.\n\nThe task allocates 25 minutes for practical and 20 minutes for a report, yet its pH method requires air-dried preparation and a 30–60-minute slurry wait. Use documented Stage A collection/label; Stage B own sample preparation and drying; Stage C calibrated pH; Stage D ribbon/feel; Stage E report. Record each stage's start/finish, actual active minutes and waiting separately. A jar or slurry prepared early for teaching may show a waiting effect but never stands in for the student's own sample. The trainer identifies the real pH meter, buffers, sampling purpose, field and laboratory method before practice.",
+      "spokenText": "The crop and report reasoning continues in the separate step S three seventeen.",
+      "spokenTextSHA256": "8bda59f20ed52a0c8533f95d0d09724f95a1593d9be1e577336dbf5e784b8e8e",
+      "spokenTextSha256": "8bda59f20ed52a0c8533f95d0d09724f95a1593d9be1e577336dbf5e784b8e8e",
+      "spokenAdaptationChanges": [
+        {
+          "written": "In this scenario, a junior agronomy technician advises a farmer about Plot C by collecting a composite sample and measuring pH and texture. Treat these as three observed skill chains, not as a quick page-completion exercise. pH and texture inform a preliminary recommendation, but cannot establish the whole soil health or guarantee a successful season. The crop/report reasoning continues in the separate S3-17 step.\n\nThe task allocates 25 minutes for practical and 20 minutes for a report, yet its pH method requires air-dried preparation and a 30–60-minute slurry wait. Use documented Stage A collection/label; Stage B own sample preparation and drying; Stage C calibrated pH; Stage D ribbon/feel; Stage E report. Record each stage's start/finish, actual active minutes and waiting separately. A jar or slurry prepared early for teaching may show a waiting effect but never stands in for the student's own sample. The trainer identifies the real pH meter, buffers, sampling purpose, field and laboratory method before practice.",
+          "spoken": "The crop and report reasoning continues in the separate step S three seventeen.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Say step only once before the identifier; read S three seventeen clearly. Do not read this direction.",
+      "deliverySHA256": "22322f4a283081220dd80ddc73bd8d06222a65557fea78c43c6740ff08fd9bad",
+      "deliverySha256": "22322f4a283081220dd80ddc73bd8d06222a65557fea78c43c6740ff08fd9bad",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5ea4abd7198f399afa8a3575e3dd9c7e7a1f5ca79d64e89d220a4e84dcd98317",
+      "requestFingerprintSha256": "5ea4abd7198f399afa8a3575e3dd9c7e7a1f5ca79d64e89d220a4e84dcd98317",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-16-en.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-16-en-R01-r1",
+      "originalSpokenWholeSHA256": "dda267a1ee64c8fda3c91d7a0dde843a86f10165e08b6ec039c57b256c40522c",
+      "exactParentSpokenCharacterSlice": {
+        "first": 356,
+        "endExclusive": 437,
+        "originalText": "The crop, report reasoning continues in the separate step S three seventeen step.",
+        "notActualPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
