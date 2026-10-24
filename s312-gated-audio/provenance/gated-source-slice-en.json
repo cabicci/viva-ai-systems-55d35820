@@ -1,0 +1,30 @@
+{
+  "stepId": "S3-12",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "symbolic-mass",
+      "title": "Calculate without inventing the recipe",
+      "situation": "A trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.",
+      "reasoning": [
+        "First check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.",
+        "Then calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.",
+        "If the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions."
+      ],
+      "takeaway": "Actual numeric ingredient masses remain pending the documented trainer card."
+    },
+    {
+      "id": "two-ratios",
+      "title": "Do not transfer the clay example",
+      "situation": "A teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.",
+      "reasoning": [
+        "Three different purposes, with potentially different mass/volume bases, site material and water behaviour.",
+        "Retain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.",
+        "Ask the trainer for the approved specification and tests for each real task."
+      ],
+      "takeaway": "No universal proportion follows from the three cards."
+    }
+  ]
+}

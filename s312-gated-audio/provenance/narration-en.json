@@ -1,0 +1,268 @@
+{
+  "stepId": "S3-12",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-12-en.json",
+    "sha256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+    "bytes": 29846
+  },
+  "units": [
+    {
+      "id": "S3-12-en-E01-r1",
+      "unitId": "S3-12-en-E01-r1",
+      "stepId": "S3-12",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Calculate without inventing the recipe",
+          "sha256": "22fb5d4fabb394b5d92c91bf5c4ad90a90136a1135895346609f90cbd8b6a44e"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.",
+          "sha256": "85fe7402bcba4736b710bd7b45a5df307a6e210a0da936c288e0f48abc1db076"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "First check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.",
+          "sha256": "7c0af65656d0786ed719e1e9b759b4dce8b46083a8be384f72665f69191bbac8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Then calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.",
+          "sha256": "d4f9cc7693072d13dc2a1fabcabe8c7523abe22f13c054e8267a0212447c030f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "If the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.",
+          "sha256": "29d1ef5e5d724fceab6e165f14b981960c65781f735896b0f2a077f3884e36ab"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Actual numeric ingredient masses remain pending the documented trainer card.",
+          "sha256": "94d674a44e38b0fa70236b79790e3125a08e300d19951ba326a3e101ac5d85b1"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Calculate without inventing the recipe",
+        "situation": "A trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.",
+        "reasoning": [
+          "First check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.",
+          "Then calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.",
+          "If the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions."
+        ],
+        "takeaway": "Actual numeric ingredient masses remain pending the documented trainer card."
+      },
+      "scientificMeaning": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "displayText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "captionText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "spokenText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a five kilogram tomato product.\n\nFirst check c plus p plus b equals one and confirm that all three materials are authorized and the phosphorus need is evidenced.\n\nThen calculate masses as five times c, five times p and five times b kilograms; add them to verify five kilograms before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "spokenTextSHA256": "b0b84af917120150d69e3dc0453e714d4fee232ef451d6a23041866d5684029f",
+      "spokenTextSha256": "b0b84af917120150d69e3dc0453e714d4fee232ef451d6a23041866d5684029f",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "84188cffc50089e3a322eb8de903605b63739cbdc76d2d2c60ad8ab17a3ca20e",
+      "requestFingerprintSha256": "84188cffc50089e3a322eb8de903605b63739cbdc76d2d2c60ad8ab17a3ca20e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+          "spoken": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a five kilogram tomato product.\n\nFirst check c plus p plus b equals one and confirm that all three materials are authorized and the phosphorus need is evidenced.\n\nThen calculate masses as five times c, five times p and five times b kilograms; add them to verify five kilograms before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-12-en-E02-r1",
+      "unitId": "S3-12-en-E02-r1",
+      "stepId": "S3-12",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Do not transfer the clay example",
+          "sha256": "8585ac0613c0cdf797678b704941d82db50eb9eef4726299e073fbc93e80e155"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.",
+          "sha256": "e1baa5a5b5cda5338bfccceb4cd4f4b865ea0fe233e70f6b3d993d3b74183810"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Three different purposes, with potentially different mass/volume bases, site material and water behaviour.",
+          "sha256": "35f9e36350140f318e424e8e1cdeb3d56d7ba5c4216bd72ea0e0f8ddf29f86a8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Retain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.",
+          "sha256": "eaa81d6ca33c26a3a0fb4c85e743584ea8a090acd5f3b02d28b8a5d1fbc1b061"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Ask the trainer for the approved specification and tests for each real task.",
+          "sha256": "a05d79fb135ab7a3637621002ee35e3e92f9e49f42483bbf94403a12db6e55f6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "No universal proportion follows from the three cards.",
+          "sha256": "e19292eb8f531e4769ff8558cfe031d25dd96e86891bf4f496f4b927429decbc"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Do not transfer the clay example",
+        "situation": "A teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.",
+        "reasoning": [
+          "Three different purposes, with potentially different mass/volume bases, site material and water behaviour.",
+          "Retain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.",
+          "Ask the trainer for the approved specification and tests for each real task."
+        ],
+        "takeaway": "No universal proportion follows from the three cards."
+      },
+      "scientificMeaning": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "displayText": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "captionText": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "spokenText": "Do not transfer the clay example\n\nA teacher model shows an outdoor fifty to fifty raised bed, while a bank process card says roughly one part compost to two parts clay in a container and another card asks for a five kilogram tomato blend.\n\nThree different purposes, with potentially different mass or volume bases, site material and water behaviour.\n\nRetain fifty to fifty as the outdoor source example and approximately one to two as the separate process-card example, but do not apply either as the five kilogram tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "spokenTextSHA256": "342f15f57eb5db783d6fa4a86009730a533785b46b38734d8cc607f2a5ed117d",
+      "spokenTextSha256": "342f15f57eb5db783d6fa4a86009730a533785b46b38734d8cc607f2a5ed117d",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "cf16c4718c02381ad9f0a746bf9e929b186cec7da03251f45a0a3894de356257",
+      "requestFingerprintSha256": "cf16c4718c02381ad9f0a746bf9e929b186cec7da03251f45a0a3894de356257",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+          "spoken": "Do not transfer the clay example\n\nA teacher model shows an outdoor fifty to fifty raised bed, while a bank process card says roughly one part compost to two parts clay in a container and another card asks for a five kilogram tomato blend.\n\nThree different purposes, with potentially different mass or volume bases, site material and water behaviour.\n\nRetain fifty to fifty as the outdoor source example and approximately one to two as the separate process-card example, but do not apply either as the five kilogram tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

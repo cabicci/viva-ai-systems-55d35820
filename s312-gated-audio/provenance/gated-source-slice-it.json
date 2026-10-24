@@ -1,0 +1,30 @@
+{
+  "stepId": "S3-12",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "symbolic-mass",
+      "title": "Calcola senza inventare la ricetta",
+      "situation": "Una futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.",
+      "reasoning": [
+        "Controlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.",
+        "Calcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.",
+        "Con quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità."
+      ],
+      "takeaway": "Masse numeriche effettive sospese fino alla scheda documentata."
+    },
+    {
+      "id": "two-ratios",
+      "title": "Non trasferire la proporzione dell’argilla",
+      "situation": "Il modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.",
+      "reasoning": [
+        "Tre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.",
+        "Conserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.",
+        "Chiedi specifica approvata e analisi per ciascun lavoro reale."
+      ],
+      "takeaway": "Non deriva una proporzione universale dalle tre schede."
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "stepId": "S3-12",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "symbolic-mass",
+      "title": "Rechnen ohne Rezept zu erfinden",
+      "situation": "Eine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.",
+      "reasoning": [
+        "Zuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.",
+        "Dann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.",
+        "Bei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen."
+      ],
+      "takeaway": "Tatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen."
+    },
+    {
+      "id": "two-ratios",
+      "title": "Tonverhältnis nicht auf das Produkt übertragen",
+      "situation": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+      "reasoning": [
+        "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+        "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+        "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen."
+      ],
+      "takeaway": "Aus den drei Karten folgt kein allgemeines Mischverhältnis."
+    }
+  ]
+}

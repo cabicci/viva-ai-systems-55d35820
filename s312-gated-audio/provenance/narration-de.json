@@ -1,0 +1,268 @@
+{
+  "stepId": "S3-12",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-12-de.json",
+    "sha256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+    "bytes": 29809
+  },
+  "units": [
+    {
+      "id": "S3-12-de-E01-r1",
+      "unitId": "S3-12-de-E01-r1",
+      "stepId": "S3-12",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Rechnen ohne Rezept zu erfinden",
+          "sha256": "849b5d72fee7880e951eddce0aa81a7a574a08ab1a5119022649ebb094f69230"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Eine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.",
+          "sha256": "8ddf82c9634f56fa42cdee9fb0f6c9e6eca264e576d3f39296655a3342dc6319"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.",
+          "sha256": "40bfeb1541c402e2c9569c9b55a3db72d59a36102d52edbdb113e7472ae7328e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Dann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.",
+          "sha256": "3e80de85a472d07d1d01bc3028379c6d70398cff4f22d69b15cfd435243f08d4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Bei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.",
+          "sha256": "137d06342ac20a779ce52e3f4915745fbdf92838dc0244de643d84703df29dd0"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "sha256": "b83ff2fb5aa3a0c30124f5ab2b7d3041a51de339480828c67c0399008f7e3d2b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Rechnen ohne Rezept zu erfinden",
+        "situation": "Eine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.",
+        "reasoning": [
+          "Zuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.",
+          "Dann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.",
+          "Bei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen."
+        ],
+        "takeaway": "Tatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen."
+      },
+      "scientificMeaning": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "displayText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "captionText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "spokenText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile Ce, Pe und Be für fünf Kilogramm Tomatenprodukt vor.\n\nZuerst Ce plus Pe plus Be gleich eins, die Zulassung aller drei Zutaten und den Phosphor-Bedarfsbeleg prüfen.\n\nDann fünf mal Ce, fünf mal Pe und fünf mal Be Kilogramm berechnen und vor dem Wiegen die Summe fünf Kilogramm prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "spokenTextSHA256": "7b0935b02b17923cbb53c16c3f18a3d5e45bfda9dd3ec543b1e1f83173cc81be",
+      "spokenTextSha256": "7b0935b02b17923cbb53c16c3f18a3d5e45bfda9dd3ec543b1e1f83173cc81be",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "7b2b5b9ba7e41c362f7f6eb042c4b621d5caabb223f493bd4d0cfdaafdba1593",
+      "requestFingerprintSha256": "7b2b5b9ba7e41c362f7f6eb042c4b621d5caabb223f493bd4d0cfdaafdba1593",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "spoken": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile Ce, Pe und Be für fünf Kilogramm Tomatenprodukt vor.\n\nZuerst Ce plus Pe plus Be gleich eins, die Zulassung aller drei Zutaten und den Phosphor-Bedarfsbeleg prüfen.\n\nDann fünf mal Ce, fünf mal Pe und fünf mal Be Kilogramm berechnen und vor dem Wiegen die Summe fünf Kilogramm prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-12-de-E02-r1",
+      "unitId": "S3-12-de-E02-r1",
+      "stepId": "S3-12",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Tonverhältnis nicht auf das Produkt übertragen",
+          "sha256": "5c33448a243b38128e149164aa42d1c2348583fcd75069bfa47a50505b1e0af8"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+          "sha256": "4fa6f7a68cd540e96128ca67f8adef3425834a2bc06e866843608020ae081260"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "sha256": "517ebf226eef9b9e046ffca210966cff97028bd3f476e54bf3f59fe0da3e771d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "sha256": "02fab73ef8f1c49e817c27fa1343614664fa1846e974bc509592478364feb315"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.",
+          "sha256": "b64385bda1ecd815083d501dab34f4c7dcc00ae99ee921ab6ca73eb3276eeea8"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Aus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "sha256": "f8953d7a34a7f3e8b60a8efbde10d7e27f6eb5423cffae961c8f76a889ab38a6"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Tonverhältnis nicht auf das Produkt übertragen",
+        "situation": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+        "reasoning": [
+          "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen."
+        ],
+        "takeaway": "Aus den drei Karten folgt kein allgemeines Mischverhältnis."
+      },
+      "scientificMeaning": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "displayText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "captionText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "spokenText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt fünfzig zu fünfzig, eine Prozesskarte ungefähr ein Teil Kompost zu zwei Teilen Tonboden im Gefäß und die Produktkarte fünf Kilogramm Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen- oder Volumenbasen, Materialien und Wasserverhalten.\n\nfünfzig zu fünfzig als Freilandbeispiel der Quelle und ungefähr eins zu zwei als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die fünf-Kilogramm-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "spokenTextSHA256": "288e81ef0d3cc2d0530abef9ac6bc4ad85b7f23f1e5ef83cd7d87d7515c7266f",
+      "spokenTextSha256": "288e81ef0d3cc2d0530abef9ac6bc4ad85b7f23f1e5ef83cd7d87d7515c7266f",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "f955d95f99d20ffe5b3599b2efb85a115699858b9f1786d3aef6f2fee2a8fb07",
+      "requestFingerprintSha256": "f955d95f99d20ffe5b3599b2efb85a115699858b9f1786d3aef6f2fee2a8fb07",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "spoken": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt fünfzig zu fünfzig, eine Prozesskarte ungefähr ein Teil Kompost zu zwei Teilen Tonboden im Gefäß und die Produktkarte fünf Kilogramm Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen- oder Volumenbasen, Materialien und Wasserverhalten.\n\nfünfzig zu fünfzig als Freilandbeispiel der Quelle und ungefähr eins zu zwei als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die fünf-Kilogramm-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Initial 8 source-gated S3-12 complete authored worked-case answers, 2 per fixed locale lane. Exact frozen source/model/voice/spoken bindings. No retries, assembly or automatic adoption. Root final review and dispatch follow-up required.

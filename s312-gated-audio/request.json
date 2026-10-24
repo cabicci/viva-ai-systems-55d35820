@@ -1,0 +1,2623 @@
+{
+  "schemaVersion": 1,
+  "scope": "S312_8_SOURCE_GATED_COMPLETE_WORKED_CASES_FOUR_FIXED_LOCALE_LANES",
+  "stepId": "S3-12",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-s312-gated-audio-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 8,
+  "maximumBlindAudioReviewCalls": 8,
+  "maximumASRInvocations": 8,
+  "maximumMetadataGETCalls": 8,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "FOUR_FIXED_INDEPENDENT_LOCALE_LANES_2_TTS_IMMEDIATE_UPLOADS_THEN_THIN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-12-ar-EG-E01-r1",
+      "unitId": "S3-12-ar-EG-E01-r1",
+      "stepId": "S3-12",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "53f106be1806e3cee4722cc3add2c3510383b7874f69890dc73d18d449393eb4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "احسب من غير اختراع وصفة",
+          "sha256": "cedf8a36216e63269c34dd0ce6fe43a47fd4ae7ccaa3d8ad56f33b10a26d9fae"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "بطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.",
+          "sha256": "209b70fb540b6116599d60c61003c0db2f7f9970a29aae22dcacb98db3af3c65"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.",
+          "sha256": "9144d51f720270ce4df118a5b70bc1f4222df2090a01a878dbc034df5ae489e9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "احسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.",
+          "sha256": "cd49e0bb16b2295072efcba9a33cef0209dbd92389031b402649e070d2f0f1d2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "لو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.",
+          "sha256": "74168f7059b6e198394b240eb741058dbfdbd535983c80fe8e361e28010096ae"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "الأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+          "sha256": "1fa7aa6a9a2634b479348fcd4fe599ca31cf8bc9696043c8db1c316f17f2f3b4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "احسب من غير اختراع وصفة",
+        "situation": "بطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.",
+        "reasoning": [
+          "الأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.",
+          "احسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.",
+          "لو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة."
+        ],
+        "takeaway": "الأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة."
+      },
+      "scientificMeaning": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "displayText": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "captionText": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "spokenText": "احسب من غير ما تخترع وصفة\n\nبطاقة لسه المدرّب هيعتمدها بعد كده، بتحدد تلات نسب بالكتلة: الأولى رمزها c، والتانية رمزها p، والتالتة رمزها b. النسب دي لمنتج طماطم نهائي وزنه خمسة كيلوجرام.\n\nالأول اتأكد إن مجموع النسبة الأولى والتانية والتالتة بيساوي واحد. واتأكد إن المكونات التلاتة مسموحة، وإن فيه دليل على الاحتياج للفوسفور.\n\nاحسب وزن المكوّن الأول: خمسة مضروبة في النسبة الأولى. ووزن المكوّن التاني: خمسة مضروبة في النسبة التانية. ووزن المكوّن التالت: خمسة مضروبة في النسبة التالتة. الأوزان بالكيلوجرام. اجمعهم واتأكد إن المجموع خمسة كيلوجرام قبل ما توزن.\n\nلو البطاقة فيها أجزاء بالحجم، ما تحطهاش زي ما هي على الميزان. لازم كثافة حجمية وتعليمات للرطوبة.\n\nالأوزان الفعلية بالأرقام لسه معلّقة لحد ما يبقى فيه مواصفة مكتوبة من المدرّب.",
+      "spokenTextSHA256": "1a7d858b601639ecf70f7a106f714914c468201cbc89e75fd1c9feb906e993b5",
+      "spokenTextSha256": "1a7d858b601639ecf70f7a106f714914c468201cbc89e75fd1c9feb906e993b5",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "14c8e0a846339267a823a0c7e3aee09401ce2bf13a1414548bbf18d4232a6a3e",
+      "requestFingerprintSha256": "14c8e0a846339267a823a0c7e3aee09401ce2bf13a1414548bbf18d4232a6a3e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+          "spoken": "احسب من غير ما تخترع وصفة\n\nبطاقة لسه المدرّب هيعتمدها بعد كده، بتحدد تلات نسب بالكتلة: الأولى رمزها c، والتانية رمزها p، والتالتة رمزها b. النسب دي لمنتج طماطم نهائي وزنه خمسة كيلوجرام.\n\nالأول اتأكد إن مجموع النسبة الأولى والتانية والتالتة بيساوي واحد. واتأكد إن المكونات التلاتة مسموحة، وإن فيه دليل على الاحتياج للفوسفور.\n\nاحسب وزن المكوّن الأول: خمسة مضروبة في النسبة الأولى. ووزن المكوّن التاني: خمسة مضروبة في النسبة التانية. ووزن المكوّن التالت: خمسة مضروبة في النسبة التالتة. الأوزان بالكيلوجرام. اجمعهم واتأكد إن المجموع خمسة كيلوجرام قبل ما توزن.\n\nلو البطاقة فيها أجزاء بالحجم، ما تحطهاش زي ما هي على الميزان. لازم كثافة حجمية وتعليمات للرطوبة.\n\nالأوزان الفعلية بالأرقام لسه معلّقة لحد ما يبقى فيه مواصفة مكتوبة من المدرّب.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "f491f43ee38594035be754fc9449e7f2417f9fc961bfc52f94218dec5facacab"
+    },
+    {
+      "id": "S3-12-ar-EG-E02-r1",
+      "unitId": "S3-12-ar-EG-E02-r1",
+      "stepId": "S3-12",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "53f106be1806e3cee4722cc3add2c3510383b7874f69890dc73d18d449393eb4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "ما تنقلش نسبة الطين إلى المنتج",
+          "sha256": "2ae084479b74228a6192043a21dd64a0a0ff64d27a36695edbe610e0a2a0de54"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "نموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.",
+          "sha256": "d3998eb9a3fabf7cf26a78e64a62bb3c47a3cb0723acbda9602126306aefb928"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "ثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.",
+          "sha256": "9f0b3481c6ecddd8d34f0175d29d0d79b3b140618b8a9e7c92fddf15c4bc55a3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "احتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.",
+          "sha256": "b161fcdb059ce38442d61448097c9b5c11ddeb43a67c75ca726f00e526102c0b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "اطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.",
+          "sha256": "7b4536945d7d27933539e14963938fd01f1e870fb3c1800074f682b6309fca41"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "ما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+          "sha256": "34bb0c7325f900aed11b46e9aa87ae1c21afb88b41162a8db396a918f88fc5be"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "ما تنقلش نسبة الطين إلى المنتج",
+        "situation": "نموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.",
+        "reasoning": [
+          "ثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.",
+          "احتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.",
+          "اطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي."
+        ],
+        "takeaway": "ما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث."
+      },
+      "scientificMeaning": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "displayText": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "captionText": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "spokenText": "ما تنقلش نسبة الطين للمنتج\n\nنموذج المدرّس فيه حوض خارجي بنسبة خمسين لخمسين. وبطاقة العملية فيها تقريبًا جزء كمبوست لجزئين طين في وعاء. وفيه بطاقة تالتة طالبة خلطة طماطم وزنها خمسة كيلوجرام.\n\nدول تلات أغراض مختلفين. وأساس الوزن والحجم والمواد وسلوك المَيّه ممكن يختلف بينهم.\n\nخلي نسب خمسين لخمسين وواحد لاتنين زي ما وردوا في المثالين، لكن ما تستخدمش أي واحدة فيهم كوصفة للطماطم وزنها خمسة كيلوجرام.\n\nاطلب المواصفة والفحوص المعتمدة لكل شغل حقيقي.\n\nما فيش نسبة عامة تقدر تنقلها بين البطاقات التلاتة.",
+      "spokenTextSHA256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+      "spokenTextSha256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "dc0b6befa0145142815eb5b07f1b8f6bdbb591af024e706e8ab65890bbae3f3f",
+      "requestFingerprintSha256": "dc0b6befa0145142815eb5b07f1b8f6bdbb591af024e706e8ab65890bbae3f3f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+          "spoken": "ما تنقلش نسبة الطين للمنتج\n\nنموذج المدرّس فيه حوض خارجي بنسبة خمسين لخمسين. وبطاقة العملية فيها تقريبًا جزء كمبوست لجزئين طين في وعاء. وفيه بطاقة تالتة طالبة خلطة طماطم وزنها خمسة كيلوجرام.\n\nدول تلات أغراض مختلفين. وأساس الوزن والحجم والمواد وسلوك المَيّه ممكن يختلف بينهم.\n\nخلي نسب خمسين لخمسين وواحد لاتنين زي ما وردوا في المثالين، لكن ما تستخدمش أي واحدة فيهم كوصفة للطماطم وزنها خمسة كيلوجرام.\n\nاطلب المواصفة والفحوص المعتمدة لكل شغل حقيقي.\n\nما فيش نسبة عامة تقدر تنقلها بين البطاقات التلاتة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "١",
+            "٢",
+            "٥",
+            "٥٠"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "102523cb66354194b1c7a430bbb3591eccf3e2a6a242a3f2c153a9fb118de4ef",
+              "revisedSpokenSHA256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "f491f43ee38594035be754fc9449e7f2417f9fc961bfc52f94218dec5facacab"
+    },
+    {
+      "id": "S3-12-en-E01-r1",
+      "unitId": "S3-12-en-E01-r1",
+      "stepId": "S3-12",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Calculate without inventing the recipe",
+          "sha256": "22fb5d4fabb394b5d92c91bf5c4ad90a90136a1135895346609f90cbd8b6a44e"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.",
+          "sha256": "85fe7402bcba4736b710bd7b45a5df307a6e210a0da936c288e0f48abc1db076"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "First check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.",
+          "sha256": "7c0af65656d0786ed719e1e9b759b4dce8b46083a8be384f72665f69191bbac8"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Then calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.",
+          "sha256": "d4f9cc7693072d13dc2a1fabcabe8c7523abe22f13c054e8267a0212447c030f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "If the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.",
+          "sha256": "29d1ef5e5d724fceab6e165f14b981960c65781f735896b0f2a077f3884e36ab"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Actual numeric ingredient masses remain pending the documented trainer card.",
+          "sha256": "94d674a44e38b0fa70236b79790e3125a08e300d19951ba326a3e101ac5d85b1"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Calculate without inventing the recipe",
+        "situation": "A trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.",
+        "reasoning": [
+          "First check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.",
+          "Then calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.",
+          "If the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions."
+        ],
+        "takeaway": "Actual numeric ingredient masses remain pending the documented trainer card."
+      },
+      "scientificMeaning": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "displayText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "captionText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "spokenText": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a five kilogram tomato product.\n\nFirst check c plus p plus b equals one and confirm that all three materials are authorized and the phosphorus need is evidenced.\n\nThen calculate masses as five times c, five times p and five times b kilograms; add them to verify five kilograms before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+      "spokenTextSHA256": "b0b84af917120150d69e3dc0453e714d4fee232ef451d6a23041866d5684029f",
+      "spokenTextSha256": "b0b84af917120150d69e3dc0453e714d4fee232ef451d6a23041866d5684029f",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "84188cffc50089e3a322eb8de903605b63739cbdc76d2d2c60ad8ab17a3ca20e",
+      "requestFingerprintSha256": "84188cffc50089e3a322eb8de903605b63739cbdc76d2d2c60ad8ab17a3ca20e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a 5 kg tomato product.\n\nFirst check c+p+b=1 and confirm that all three materials are authorized and the P need is evidenced.\n\nThen calculate masses as 5c, 5p and 5b kg; add them to verify 5 kg before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+          "spoken": "Calculate without inventing the recipe\n\nA trainer-approved card eventually supplies three mass fractions c, p and b for a five kilogram tomato product.\n\nFirst check c plus p plus b equals one and confirm that all three materials are authorized and the phosphorus need is evidenced.\n\nThen calculate masses as five times c, five times p and five times b kilograms; add them to verify five kilograms before weighing.\n\nIf the card gives volume parts instead, do not put those fractions straight onto a scale; obtain bulk-density and moisture instructions.\n\nActual numeric ingredient masses remain pending the documented trainer card.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "e4c2fa8753633fa687a933bf3195e6f5957723c254cc922bbd8c521db53ff646"
+    },
+    {
+      "id": "S3-12-en-E02-r1",
+      "unitId": "S3-12-en-E02-r1",
+      "stepId": "S3-12",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Do not transfer the clay example",
+          "sha256": "8585ac0613c0cdf797678b704941d82db50eb9eef4726299e073fbc93e80e155"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.",
+          "sha256": "e1baa5a5b5cda5338bfccceb4cd4f4b865ea0fe233e70f6b3d993d3b74183810"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Three different purposes, with potentially different mass/volume bases, site material and water behaviour.",
+          "sha256": "35f9e36350140f318e424e8e1cdeb3d56d7ba5c4216bd72ea0e0f8ddf29f86a8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Retain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.",
+          "sha256": "eaa81d6ca33c26a3a0fb4c85e743584ea8a090acd5f3b02d28b8a5d1fbc1b061"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Ask the trainer for the approved specification and tests for each real task.",
+          "sha256": "a05d79fb135ab7a3637621002ee35e3e92f9e49f42483bbf94403a12db6e55f6"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "No universal proportion follows from the three cards.",
+          "sha256": "e19292eb8f531e4769ff8558cfe031d25dd96e86891bf4f496f4b927429decbc"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Do not transfer the clay example",
+        "situation": "A teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.",
+        "reasoning": [
+          "Three different purposes, with potentially different mass/volume bases, site material and water behaviour.",
+          "Retain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.",
+          "Ask the trainer for the approved specification and tests for each real task."
+        ],
+        "takeaway": "No universal proportion follows from the three cards."
+      },
+      "scientificMeaning": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "displayText": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "captionText": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "spokenText": "Do not transfer the clay example\n\nA teacher model shows an outdoor fifty to fifty raised bed, while a bank process card says roughly one part compost to two parts clay in a container and another card asks for a five kilogram tomato blend.\n\nThree different purposes, with potentially different mass or volume bases, site material and water behaviour.\n\nRetain fifty to fifty as the outdoor source example and approximately one to two as the separate process-card example, but do not apply either as the five kilogram tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+      "spokenTextSHA256": "342f15f57eb5db783d6fa4a86009730a533785b46b38734d8cc607f2a5ed117d",
+      "spokenTextSha256": "342f15f57eb5db783d6fa4a86009730a533785b46b38734d8cc607f2a5ed117d",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "cf16c4718c02381ad9f0a746bf9e929b186cec7da03251f45a0a3894de356257",
+      "requestFingerprintSha256": "cf16c4718c02381ad9f0a746bf9e929b186cec7da03251f45a0a3894de356257",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Do not transfer the clay example\n\nA teacher model shows an outdoor 50:50 raised bed, while a bank process card says roughly 1 part compost to 2 parts clay in a container and another card asks for a 5 kg tomato blend.\n\nThree different purposes, with potentially different mass/volume bases, site material and water behaviour.\n\nRetain 50:50 as the outdoor source example and approximately 1:2 as the separate process-card example, but do not apply either as the 5 kg tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+          "spoken": "Do not transfer the clay example\n\nA teacher model shows an outdoor fifty to fifty raised bed, while a bank process card says roughly one part compost to two parts clay in a container and another card asks for a five kilogram tomato blend.\n\nThree different purposes, with potentially different mass or volume bases, site material and water behaviour.\n\nRetain fifty to fifty as the outdoor source example and approximately one to two as the separate process-card example, but do not apply either as the five kilogram tomato recipe.\n\nAsk the trainer for the approved specification and tests for each real task.\n\nNo universal proportion follows from the three cards.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "e4c2fa8753633fa687a933bf3195e6f5957723c254cc922bbd8c521db53ff646"
+    },
+    {
+      "id": "S3-12-it-E01-r1",
+      "unitId": "S3-12-it-E01-r1",
+      "stepId": "S3-12",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Calcola senza inventare la ricetta",
+          "sha256": "779d0a28baf19d44eadc870a63f05868e0451ccfcb95b254cc3629014f15cf3a"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.",
+          "sha256": "a917a367d1ef8a3b56132319162b8ec8b9159112db36101e98a64557152b8c52"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Controlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.",
+          "sha256": "b85999097f93e78ca2cae254b1c2eba22c35f5cc75b13cfc49a022d675c921c9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Calcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.",
+          "sha256": "7510e04fe9873aeb04f6420889c3e86650d17952eb6da82f023a47448ac31338"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Con quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.",
+          "sha256": "31bc9a53580a86034cb6752d75142304a7908cdfed1a3728c39c61814bd97529"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Masse numeriche effettive sospese fino alla scheda documentata.",
+          "sha256": "94cf9ddecc1de392ce81a6258162992d22b591d5c86079cdaa421d8eaecb9972"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Calcola senza inventare la ricetta",
+        "situation": "Una futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.",
+        "reasoning": [
+          "Controlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.",
+          "Calcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.",
+          "Con quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità."
+        ],
+        "takeaway": "Masse numeriche effettive sospese fino alla scheda documentata."
+      },
+      "scientificMeaning": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "displayText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "captionText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "spokenText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche ci, pi e bi per cinque chilogrammi di prodotto per pomodori.\n\nControlla ci più pi più bi uguale a uno, autorizzazione di tutti e tre i materiali e prova del bisogno di fosforo.\n\nCalcola cinque per ci, cinque per pi e cinque per bi chilogrammi e verifica il totale di cinque chilogrammi prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "spokenTextSHA256": "39d52480e1f50ac36f1bae0e073ffb720b2b0547e193c9826a9885956d6eba53",
+      "spokenTextSha256": "39d52480e1f50ac36f1bae0e073ffb720b2b0547e193c9826a9885956d6eba53",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "0fc897e6648072bbcc63ef486c70b4bbe6a1420e7f6b0d56455d7bc326f09c96",
+      "requestFingerprintSha256": "0fc897e6648072bbcc63ef486c70b4bbe6a1420e7f6b0d56455d7bc326f09c96",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+          "spoken": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche ci, pi e bi per cinque chilogrammi di prodotto per pomodori.\n\nControlla ci più pi più bi uguale a uno, autorizzazione di tutti e tre i materiali e prova del bisogno di fosforo.\n\nCalcola cinque per ci, cinque per pi e cinque per bi chilogrammi e verifica il totale di cinque chilogrammi prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "7b9255c308c81f163badbc010a1d66e38e0bf5873a3e717d2f0de365c062b5a2"
+    },
+    {
+      "id": "S3-12-it-E02-r1",
+      "unitId": "S3-12-it-E02-r1",
+      "stepId": "S3-12",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Non trasferire la proporzione dell’argilla",
+          "sha256": "f9781d24127eae7c185c71637812bebe439cf00a0d0726d3ecfd42a2dddaccb3"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.",
+          "sha256": "6f1b25e24e38eaeea7e1798cd828e74572d87437d20e7e24b0722a9bceb49de9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Tre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.",
+          "sha256": "c88addaefd5579ac2e2290025c56ea1545ab1c48bc4e4b19a17d8a5c1515514c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Conserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.",
+          "sha256": "d512c2dd271316ff009ec594a60d746aab25afb4280f130748843b686a4ae5c4"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Chiedi specifica approvata e analisi per ciascun lavoro reale.",
+          "sha256": "15b5b3bd5addaefc57f0392d66c6d7293a55986f42c49924c11a30df1d850701"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Non deriva una proporzione universale dalle tre schede.",
+          "sha256": "0bb3cdf0466b924d3dcbcab21f90a8e8ac4e91bfab8d9435bb826a3821e1c5b3"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Non trasferire la proporzione dell’argilla",
+        "situation": "Il modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.",
+        "reasoning": [
+          "Tre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.",
+          "Conserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.",
+          "Chiedi specifica approvata e analisi per ciascun lavoro reale."
+        ],
+        "takeaway": "Non deriva una proporzione universale dalle tre schede."
+      },
+      "scientificMeaning": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "displayText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "captionText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "spokenText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna cinquanta a cinquanta; la scheda di processo indica circa una parte di compost per due parti di suolo argilloso in un contenitore; un’altra richiede cinque chilogrammi di miscela per pomodori.\n\nTre scopi, basi massa o volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva cinquanta a cinquanta e uno a due come esempi fedeli, ma non applicarli al prodotto da cinque chilogrammi.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "spokenTextSHA256": "cf6d88a15f55cc1e34b19d258853093abfe7772061aacec2d052927a43bb40e7",
+      "spokenTextSha256": "cf6d88a15f55cc1e34b19d258853093abfe7772061aacec2d052927a43bb40e7",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "ae5b3563cd679634008d0da31c54f02aed1d5df6586aa6513d12c5ecc8c6a138",
+      "requestFingerprintSha256": "ae5b3563cd679634008d0da31c54f02aed1d5df6586aa6513d12c5ecc8c6a138",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+          "spoken": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna cinquanta a cinquanta; la scheda di processo indica circa una parte di compost per due parti di suolo argilloso in un contenitore; un’altra richiede cinque chilogrammi di miscela per pomodori.\n\nTre scopi, basi massa o volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva cinquanta a cinquanta e uno a due come esempi fedeli, ma non applicarli al prodotto da cinque chilogrammi.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "7b9255c308c81f163badbc010a1d66e38e0bf5873a3e717d2f0de365c062b5a2"
+    },
+    {
+      "id": "S3-12-de-E01-r1",
+      "unitId": "S3-12-de-E01-r1",
+      "stepId": "S3-12",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Rechnen ohne Rezept zu erfinden",
+          "sha256": "849b5d72fee7880e951eddce0aa81a7a574a08ab1a5119022649ebb094f69230"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Eine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.",
+          "sha256": "8ddf82c9634f56fa42cdee9fb0f6c9e6eca264e576d3f39296655a3342dc6319"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Zuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.",
+          "sha256": "40bfeb1541c402e2c9569c9b55a3db72d59a36102d52edbdb113e7472ae7328e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Dann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.",
+          "sha256": "3e80de85a472d07d1d01bc3028379c6d70398cff4f22d69b15cfd435243f08d4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Bei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.",
+          "sha256": "137d06342ac20a779ce52e3f4915745fbdf92838dc0244de643d84703df29dd0"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "sha256": "b83ff2fb5aa3a0c30124f5ab2b7d3041a51de339480828c67c0399008f7e3d2b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Rechnen ohne Rezept zu erfinden",
+        "situation": "Eine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.",
+        "reasoning": [
+          "Zuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.",
+          "Dann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.",
+          "Bei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen."
+        ],
+        "takeaway": "Tatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen."
+      },
+      "scientificMeaning": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "displayText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "captionText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "spokenText": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile Ce, Pe und Be für fünf Kilogramm Tomatenprodukt vor.\n\nZuerst Ce plus Pe plus Be gleich eins, die Zulassung aller drei Zutaten und den Phosphor-Bedarfsbeleg prüfen.\n\nDann fünf mal Ce, fünf mal Pe und fünf mal Be Kilogramm berechnen und vor dem Wiegen die Summe fünf Kilogramm prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+      "spokenTextSHA256": "7b0935b02b17923cbb53c16c3f18a3d5e45bfda9dd3ec543b1e1f83173cc81be",
+      "spokenTextSha256": "7b0935b02b17923cbb53c16c3f18a3d5e45bfda9dd3ec543b1e1f83173cc81be",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "7b2b5b9ba7e41c362f7f6eb042c4b621d5caabb223f493bd4d0cfdaafdba1593",
+      "requestFingerprintSha256": "7b2b5b9ba7e41c362f7f6eb042c4b621d5caabb223f493bd4d0cfdaafdba1593",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile c, p und b für 5 kg Tomatenprodukt vor.\n\nZuerst c+p+b=1, die Zulassung aller drei Zutaten und den P-Bedarfsbeleg prüfen.\n\nDann 5c, 5p und 5b kg berechnen und vor dem Wiegen die Summe 5 kg prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "spoken": "Rechnen ohne Rezept zu erfinden\n\nEine künftig bestätigte Karte gibt Massenanteile Ce, Pe und Be für fünf Kilogramm Tomatenprodukt vor.\n\nZuerst Ce plus Pe plus Be gleich eins, die Zulassung aller drei Zutaten und den Phosphor-Bedarfsbeleg prüfen.\n\nDann fünf mal Ce, fünf mal Pe und fünf mal Be Kilogramm berechnen und vor dem Wiegen die Summe fünf Kilogramm prüfen.\n\nBei Volumenteilen diese nicht unmittelbar abwiegen; Schüttdichte und Feuchteanweisung verlangen.\n\nTatsächliche Zahlenmassen bleiben bis zur Lehrkraftkarte offen.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "b8c6d55a4c90c9303e4a6af42674d7a62701678314817658a148b402faaca390"
+    },
+    {
+      "id": "S3-12-de-E02-r1",
+      "unitId": "S3-12-de-E02-r1",
+      "stepId": "S3-12",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Tonverhältnis nicht auf das Produkt übertragen",
+          "sha256": "5c33448a243b38128e149164aa42d1c2348583fcd75069bfa47a50505b1e0af8"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+          "sha256": "4fa6f7a68cd540e96128ca67f8adef3425834a2bc06e866843608020ae081260"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "sha256": "517ebf226eef9b9e046ffca210966cff97028bd3f476e54bf3f59fe0da3e771d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "sha256": "02fab73ef8f1c49e817c27fa1343614664fa1846e974bc509592478364feb315"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.",
+          "sha256": "b64385bda1ecd815083d501dab34f4c7dcc00ae99ee921ab6ca73eb3276eeea8"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Aus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "sha256": "f8953d7a34a7f3e8b60a8efbde10d7e27f6eb5423cffae961c8f76a889ab38a6"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Tonverhältnis nicht auf das Produkt übertragen",
+        "situation": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+        "reasoning": [
+          "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen."
+        ],
+        "takeaway": "Aus den drei Karten folgt kein allgemeines Mischverhältnis."
+      },
+      "scientificMeaning": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "displayText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "captionText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "spokenText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt fünfzig zu fünfzig, eine Prozesskarte ungefähr ein Teil Kompost zu zwei Teilen Tonboden im Gefäß und die Produktkarte fünf Kilogramm Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen- oder Volumenbasen, Materialien und Wasserverhalten.\n\nfünfzig zu fünfzig als Freilandbeispiel der Quelle und ungefähr eins zu zwei als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die fünf-Kilogramm-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "spokenTextSHA256": "288e81ef0d3cc2d0530abef9ac6bc4ad85b7f23f1e5ef83cd7d87d7515c7266f",
+      "spokenTextSha256": "288e81ef0d3cc2d0530abef9ac6bc4ad85b7f23f1e5ef83cd7d87d7515c7266f",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "f955d95f99d20ffe5b3599b2efb85a115699858b9f1786d3aef6f2fee2a8fb07",
+      "requestFingerprintSha256": "f955d95f99d20ffe5b3599b2efb85a115699858b9f1786d3aef6f2fee2a8fb07",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "spoken": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt fünfzig zu fünfzig, eine Prozesskarte ungefähr ein Teil Kompost zu zwei Teilen Tonboden im Gefäß und die Produktkarte fünf Kilogramm Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen- oder Volumenbasen, Materialien und Wasserverhalten.\n\nfünfzig zu fünfzig als Freilandbeispiel der Quelle und ungefähr eins zu zwei als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die fünf-Kilogramm-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "b8c6d55a4c90c9303e4a6af42674d7a62701678314817658a148b402faaca390"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "tts": 2,
+    "blind": 2,
+    "asr": 2,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-12-ar-EG-E01-r1",
+      "S3-12-ar-EG-E02-r1"
+    ],
+    "en": [
+      "S3-12-en-E01-r1",
+      "S3-12-en-E02-r1"
+    ],
+    "it": [
+      "S3-12-it-E01-r1",
+      "S3-12-it-E02-r1"
+    ],
+    "de": [
+      "S3-12-de-E01-r1",
+      "S3-12-de-E02-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\closure29-uncalled9-contexts-job-r1\\request.json",
+      "sha256": "85a573a400fb2d85a169b9f581ce5fe35313d358f49014c1eb291ce840d4c162"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s207-ar-r01-source-phrase-repair-job-r1\\request.json",
+      "sha256": "532846a8d87a60abba32d1e406f1eae9e65b23f4c2da6e27511f8fcbb3943863"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-de-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "03c73f2a5be384d95686d796ae1cb73b7dbc139d2f7eadf3d3fd841623b69a26"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s208-it-r03-source-phrase-repair-job-r1\\request.json",
+      "sha256": "16650f206a4a8c0281031c571775b0adc0d56314c69b859856448d6eb4511149"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-ar-r05-source-phrase-repair-job-r1\\request.json",
+      "sha256": "0cce8df053ace676c2251aff9bbb33929c71b346e01741fa753f4b038181162d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-guided-practice-source-phrase-repair-job-r1\\request.json",
+      "sha256": "d0b8c4f60b96355d2c7e040dfeb7b32cc5a8aee1456d18ac3edfa2822aabcc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-en-r04-source-phrase-repair-job-r1\\request.json",
+      "sha256": "11a55c7184991e62eda7f014e333306cb64eb3c89cb9e7793492548ffff6c316"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\exception-s209-it-glossary-source-phrase-repair-job-r1\\request.json",
+      "sha256": "eaf81892b973b4084d56929a534d855278459938f347bee20092ed52b3acd2d0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\four-gated-specific-contexts-job-r1\\request.json",
+      "sha256": "1ec1a2b642f7da26cdc1f19f8a421e631a66bfe6fa31274b3f91e6451a09460b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-conditional-compaction-repair-job-r1\\request.json",
+      "sha256": "1d06c64b1bf47f2c8cdc11302930bef5fcf609e8ca5677d2919b7b3ec609ed4e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-missing-conditional-and-b-repair-job-r1\\request.json",
+      "sha256": "c8663409b0993c914c37531837deab44aca7aa69a9909e741e64e0bab557874a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-nutrient-model-repair-job-r1\\request.json",
+      "sha256": "450d79d33cb5eba0eccd705a0a909e0380f69c867ab89e114100c8fa5242ed0a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-organic-matter-target-repair-job-r1\\request.json",
+      "sha256": "5c34cdb9b35c5e1fe683403661c2126ad518bbd654cc37923b5da6354b1ab58d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\gated-repair-s215-s215-it-tomato-no-universal-rule-repair-job-r1\\request.json",
+      "sha256": "c01d87052f4190b2241eff3e9b9b3d87e22f1752260e07e3ca7afa0debafa74f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-closure29-uncalled9-contexts-fixture-r1\\request.json",
+      "sha256": "85a573a400fb2d85a169b9f581ce5fe35313d358f49014c1eb291ce840d4c162"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-examples-contexts-fixture-r1\\request.json",
+      "sha256": "8e7e78448beecda2f965e283e969bf84aaf366f2f5ed0dafa3c0a28aa1c5b84b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-four-gated-specific-contexts-fixture-r1\\request.json",
+      "sha256": "1ec1a2b642f7da26cdc1f19f8a421e631a66bfe6fa31274b3f91e6451a09460b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-instructions-contexts-fixture-r1\\request.json",
+      "sha256": "9de32bb4adcc94c2444d085c77536de5ad2465575c9d04ea6e99c76c133ad47e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-instructions-contexts-fixture-r2\\request.json",
+      "sha256": "9de32bb4adcc94c2444d085c77536de5ad2465575c9d04ea6e99c76c133ad47e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-instructions-contexts-fixture-r3\\request.json",
+      "sha256": "9de32bb4adcc94c2444d085c77536de5ad2465575c9d04ea6e99c76c133ad47e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-ordinary-closure29-contexts-fixture-r1\\request.json",
+      "sha256": "2b584949395812f304f4effecf29c2a546da26497498ee7cf5e70405963662ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-ordinary23-contexts-fixture-r1\\request.json",
+      "sha256": "cfa95722300d14236bda442116cf479d2a75d30ffe567d8d6eb5c17a733e6fe4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-reading-contexts-fixture-r1\\request.json",
+      "sha256": "8380bc486c82d5dce36abf38b843e4f12e9685993ebc3fe870b6487162fd38f4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s102-reading-contexts-fixture-r1\\request.json",
+      "sha256": "8fee27313f56166be85406712cb5f3f8bd0f8af932fa0b49fa01d78263646613"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s102-reflection-one-diagnostic-fixture-r1\\request.json",
+      "sha256": "112fea12625d7cb8860ff26dd95eb10e7970377b54e77428a03af149d9f7dcf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s102-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "cc2d355f6aebc3cdd2ac3bab5e71b0e62334dd97625277a9e4153330974dd9b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s103-de-p03-postjoin-fixture-r1\\request.json",
+      "sha256": "0ae7226d8b703ecb1a2b7de618b6d52fe66deb04280d8678e8d61e7f425872d7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s104-reading-contexts-fixture-r1\\request.json",
+      "sha256": "294b6d11649f9ee70fe85f46594ea731864b9b123bbea5bc7dd440e1a3e7c4e5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s104-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "39e78078d90bae538aa2ce0b7511cd7d95e41e5eb9dbf61f2355109469b12aa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s105-three-contexts-fixture-r1\\request.json",
+      "sha256": "67963c6f1a40cf1f72eda92b41a4f074b8f042931a1907c250e508805b8a43fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s106-reading-contexts-fixture-r1\\request.json",
+      "sha256": "9aa1001d869de9301651a99c17508d48b5f426cea037c9e11e8ee3982690b7e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s107-reading-contexts-fixture-r1\\request.json",
+      "sha256": "0e97ef1b41ad29ede682579877129b0a0cfe827ccf6251f892696617d750aabb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s107-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "4302b73bf016ca5c0501f2dca7b48349caca21104d84a4b7034b78691ec79a0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s108-reading-contexts-fixture-r1\\request.json",
+      "sha256": "630811ba7211c67509e0572f12f15c69a6d877c927feba5e5bd26955d4ba23f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s108-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "f88e2baa755d7f401abe870372186f8fc980feb0c90283ed8f3becef13776b51"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s109-reading-contexts-fixture-r1\\request.json",
+      "sha256": "5954ddf1b8d00a149bfdbd09470722dd54f888616a7b80506ef75033e38d6a46"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s109-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "4a72173ec8287047fc82cf8f584847dc1ebdbec599c24717f9e14c4f1f88c24c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s110-reading-contexts-fixture-r1\\request.json",
+      "sha256": "64af7c01e314d7ae64fb42022f5d3de97d59c5a78d054a56f5b6edaa553ca3eb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s110-s112-three-contexts-fixture-r1\\request.json",
+      "sha256": "18b02f90596ab9c0a3467b7601c770d0a4eb74a16f9562698831ee73c84ae467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s111-seven-contexts-fixture-r1\\request.json",
+      "sha256": "9dca7602219c8f853d2b339eaead7935ea8c0a872d2ec87767d0a9a8e0f0ee5b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s112-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "1e483434237a5e0c428ddfc1d0ad00a853a70993ec714a81ec9b7683944f8ab0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s201-reading-contexts-fixture-r1\\request.json",
+      "sha256": "385921ed2672538709257410529db2b626f2b069e7f94df34d283247ce099da2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s201-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "99bb8e54504b4ec1672e2a2e1d5304b791e0cc34fb86ab8b9f88a91f000e0c10"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s202-reading-contexts-fixture-r1\\request.json",
+      "sha256": "61bd39a3446e984a2590c1dc80d563706fad85e5b0a7131d3615b7c67c7aaab2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s203-reading-contexts-fixture-r1\\request.json",
+      "sha256": "767975b7203171328fec05fa74c3c583661b3a0ffbfbbf9ff3886c5d467a35de"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s203-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "48d195b4796b3a4a0162c2ee33d938678759a2f272350ad64f289ec1cdc8c483"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s204-de-title-tail-context-fixture-r1\\request.json",
+      "sha256": "f11ad362175bb4160b9590b0f8450f94ab84d789ee4da4e5f59de0a55f44314f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s204-reading-contexts-fixture-r1\\request.json",
+      "sha256": "7c61e066f892b52d5495fffb10b7db3aed3fc4577d614f578241fc9c15f5d43d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s204-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "7a0db5cf35cf2ea934eee18025ad091d40d689b052d59e1b6b11f746b00df467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s205-reading-contexts-fixture-r1\\request.json",
+      "sha256": "7d5e74a2ea8784bf9e4d464819e0ed8a2526f6bf67d0375f6ef8b2bc49957098"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s205-remainder-contexts-fixture-r1\\request.json",
+      "sha256": "0aa5a4c66a83d868667bb17eab0b7f235f282a2aaefe3974a10cf0006ae0ca05"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s206-reading-contexts-fixture-r1\\request.json",
+      "sha256": "f55c6a6a7c5e9b907a6e212b7c2dac7dfbdf2723b672a735fe45897a7caaef50"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s206-teaching-contexts-fixture-r1\\request.json",
+      "sha256": "06e359bc01b9a5b28071c950cb91ec940fec05ccf8ef37f954d587fd94cfc588"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s207-method-tail-contexts-fixture-r1\\request.json",
+      "sha256": "31e59fe07d616bc1c8288f3ef35463d95a0e9e6db38791b5ab0f942a7625dd17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s207-reading-contexts-fixture-r1\\request.json",
+      "sha256": "6b8ad21629a39bd6a1c3913c50db7b485bc5038a5ef5c3706204bde183e8f5fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s211-de-r02-numeric-context-fixture-r1\\request.json",
+      "sha256": "b09f3ed92e321eae4598e604a25f2517c2fc7c98c3c14cf45b603018344fe8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s212-three-remaining-contexts-fixture-r1\\request.json",
+      "sha256": "2a00206582d9c6b7dc3dab4e6a46ca3ecd61fc4a14090d7454c9b4d28fd5bcb2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s212-two-reading-contexts-fixture-r1\\request.json",
+      "sha256": "e1ceee9ff39011e87c993c70cec2a0c21ba58eb9b2923c2751a82e616d1c0054"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s213-five-reading-contexts-fixture-r1\\request.json",
+      "sha256": "5cc14e79b161c3e8796cba60ebf3c6a738051a3dc55061aab13b65eb4a0be86f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s213-two-teaching-contexts-fixture-r1\\request.json",
+      "sha256": "eaab5b52d22a131747239ef64a9b5a749138e7fada7291baa7282c2127536a41"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s214-de-glossary-whole-fixture-r1\\request.json",
+      "sha256": "7e798d2d949b039f9aa422bf8d2da3d0940b98c9924e70b4d5adddd2608505ff"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s214-four-reading-contexts-fixture-r1\\request.json",
+      "sha256": "8103e4614bb684a8ccbbe7ea274101884c410b3b6ec7823d6e8e6152177abed2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s214-four-teaching-contexts-fixture-r1\\request.json",
+      "sha256": "bdeceafaea8a8253cf26bef1c4d0f6081c12fa7ea28bec1a78ea32f6e49791b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s214-six-lab-contexts-fixture-r1\\request.json",
+      "sha256": "11797df5b04cf5db1e17f84fd6c1c4fa5e93bcedfc7fc069621a45555b982412"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s215-three-final-checks-fixture-r1\\request.json",
+      "sha256": "9779de80a0b46986afe217ebc449506dd3cc671bc09638c4e57606d90b9bd4b7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s302-fifteen-contexts-fixture-r1\\request.json",
+      "sha256": "5c5c8653a2548ecfc29743b7217f45e9a3148cf1205cc37c04efe4e6713a665a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s302-s215-two-specific-reviews-fixture-r1\\request.json",
+      "sha256": "56cffa0893b7963dd886bf2d6644adf577c902a28bee90928b60d8b8378b1dc2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s304-ar-foundation-context-fixture-r1\\request.json",
+      "sha256": "b1920b5338fcbf765890bce1f7da0a3da2d6416e5fd8e31869af81b9cc0470ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s304-two-guided-contexts-fixture-r1\\request.json",
+      "sha256": "74395d31ce1a0f6308f96a375e4300cd3d01efae1df138b5272dca9d063aec59"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s305-ar-final-word-context-fixture-r1\\request.json",
+      "sha256": "8e8b8d6554d9a3b357b3c2c38a50677da8991f8f79807b90d3d1c976f925f3ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s308-fifteen-contexts-fixture-r1\\request.json",
+      "sha256": "259696dc2de52d4d629e667f47c0d2247836b24807d4c24df99e00d677008de8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s310-ar-opening-tail-context-fixture-r1\\request.json",
+      "sha256": "3cf8b7c7fc3e4764713bc56fae041fe26cb2112f28115b5f51abd558f4f9fd9b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-s311-eleven-original-contexts-fixture-r1\\request.json",
+      "sha256": "bdeac7711c617065ce8301c298538c4d0f9725b7807fe5635682b9b25438dbdb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\offline-two-whole-candidate-reviews-fixture-r1\\request.json",
+      "sha256": "4d39adaa7f9184c2f18dd9aa945447056d51bef65185e1088f273f99a1cfa13a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\ordinary-closure29-contexts-job-r1\\request.json",
+      "sha256": "2b584949395812f304f4effecf29c2a546da26497498ee7cf5e70405963662ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\ordinary23-contexts-job-r1\\request.json",
+      "sha256": "cfa95722300d14236bda442116cf479d2a75d30ffe567d8d6eb5c17a733e6fe4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-arclosure2-s3-11-ar-r06-ar-clause-repair-job-r1\\request.json",
+      "sha256": "648fb70af2821d5847cdf30480eb0d8d617564dae29fa5dff5a3df26073feb49"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-arclosure2-s3-13-ar-r02-ar-clause-repair-job-r1\\request.json",
+      "sha256": "853d941671f56dfb315f84f8a963aa28e72dc56d0239869b35dcbf87c3c1815a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-candidate-record-closure-repair-job-r1\\request.json",
+      "sha256": "a3e56e37875bfed27648c2280d0e24aa04059334fd21859f729b6a8692ad5e68"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-02-en-r06-closure-repair-job-r1\\request.json",
+      "sha256": "f605213d21621e400e1088aed2df7386a53e0ba0b1766814f3cddb8494c5d23f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-closure3-s3-10-it-opening-closure-repair-job-r1\\request.json",
+      "sha256": "0f8ab7afd344a648fce030a9a01a86b5599dc1119c0b36650c94ff5e38782e8d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-guidance-s215-ar-report-boundary-repair-job-r1\\request.json",
+      "sha256": "af24f2e4b0c08c477f10134997aae28b71b1658f23e644fdf9d31542a6609f13"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-01-it-nutrition-lexical-r2-job-r1\\request.json",
+      "sha256": "a45eb036d48398878a4b8f0d5260ac8b4b1a16bcb4540265c7d1a47cd0a6bc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-de-r04-lexical-r2-job-r1\\request.json",
+      "sha256": "f79bc519052ad3fc2d097f1f94e04ca1ee796d49a27b2017416c5c0442f322e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical3-s3-10-en-r03-lexical-r2-job-r1\\request.json",
+      "sha256": "5f98929250f32aad0cc26febaeeff77a9cc66a503474201b9f470fdb11459cca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-lexical4-s3-10-it-r07-expanded-repair-job-r1\\request.json",
+      "sha256": "de3b48c1d82482893cee3438a119ebb4788767fdf07cc4c68d6145e3d3c41e54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-ar-conditional-support-meaning-repair-job-r1\\request.json",
+      "sha256": "d9e0e72a2b007c29292c4b1dc3cb212655fe72bf3962c19591988e7a9aad8da4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-02-de-r01-meaning-repair-job-r1\\request.json",
+      "sha256": "b6fb1e8e8932b7a7d3d04a9cee94f2be7f73b32e50caf68b77c03b569fc743e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-03-ar-r02b-meaning-repair-job-r1\\request.json",
+      "sha256": "2157544cfa403d0c6d72d1683e84362e29d7cddd81ce47863fbae68f70f6bc6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-04-ar-r01b-meaning-repair-job-r1\\request.json",
+      "sha256": "636736c691e42159c34e8434b647cae6cc2e9e8767b9577ae330560e52e8e1bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-priority-s3-07-it-criteria-meaning-repair-job-r1\\request.json",
+      "sha256": "943ff1507803e651129cb348f78d92fb9d4ba3717bd51492beec69adb67e2597"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-de-second-sentence-job-r1\\request.json",
+      "sha256": "fe6d8c4bbe8b993e037b774eeabc767e3d5b641dc1a9c653283dd134c1651c15"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-ar-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "22eba5bfcc27354feccf3a14381e30f9e36b5af235e67f054904b1e614155fe1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-de-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "dfb0ec4d6581b6aee483b24bcf5d3c1b8a2eafd59c75b2f4aca7bb40b676f53f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-en-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "5d08fa0c2a4bc7f978d596d28690c54abe781b8a799193d7037cf37c9cf208a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-runtime-s306-s3-06-it-r06-runtime-prefix-repair-job-r1\\request.json",
+      "sha256": "fa082acaf0c62a0d1bfaced90ecc9f7bf224695aa85de4f9f78e66c6d5aae7df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-ar-knowledge-completion-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "f4a213c299333c2b0d52d4caf8bd703750c6d2eb93ffd5a73b2d88dc55127b53"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s210-en-r05-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "d5d322d550418bdbc27ec4bec828a53dd81fb8df558a3b5e8eedbef1f13e8ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-residues-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "b458e8742a8522c4bb13dac93148c6c8edec4d6804ffd7fe93b838599a17771e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s211-ar-setup-vessel-source-subpassage-repair-job-r1\\request.json",
+      "sha256": "45e9df0afb6599a0d1160ee53f95f9ec6cc8ca08c45eec1403ece51df9de08ab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-ar-fine-particles-subpassage-repair-job-r1\\request.json",
+      "sha256": "8d8def1f667fabacad88bba1b28bdeb7b2a740ba9f52198471481a382774cfa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-comparison-wet-compacted-subpassage-repair-job-r1\\request.json",
+      "sha256": "f9a7ed2461ec0aef76a6800ec649c9b5b5efe629526e10f3c4a098176484490e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-de-knowledge-source-clarification-subpassage-repair-job-r1\\request.json",
+      "sha256": "0ad0edb6c0d435c8f81fe965a6cc1319782122ecec20180b0db921d4beb69ced"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-cec-expansion-subpassage-repair-job-r1\\request.json",
+      "sha256": "5af1cc7af69a57b57fb56885ef79c3db273daefd2bdcd2bbd1848ff7ed7e47b3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s213-it-opening-texture-subpassage-repair-job-r1\\request.json",
+      "sha256": "d516c9e69449da15c4ce285ccffd29199b496287db05e2b16ad452848529e849"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-ar-r01c-soil-jars-repair-job-r1\\request.json",
+      "sha256": "bd6f7989293645ea6dffe0235f27fa0a4c4331537d251e06edbbe5c6c7a64ee9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-en-r04-dye-marker-repair-job-r1\\request.json",
+      "sha256": "643f81e08ef47c08581b00b1f457755f9965a43ccd80b929a46cfc0ce18c9290"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s304-s3-04-it-r03-soil-evaporation-repair-job-r1\\request.json",
+      "sha256": "3ccf2a4858a1411dba73918eb8f159b861a221aa438ebb3cd534eb7f07baa9cd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "a70c5ca3257ce5375072ed62f14830d072252b2d4df4fef7bcb42cf92c51df43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-clarity-repair-job-r1\\request.json",
+      "sha256": "bb5f7960856020deb0b7e6246142cb18ee0fcb67636c15565a8e5da154ed86a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-ar-r06-ending-repair-job-r1\\request.json",
+      "sha256": "d1d03694472fa70793691058586f997ff2b5302509b4b59e0941afbe1a1e2760"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-glossary-clarity-repair-job-r1\\request.json",
+      "sha256": "aa1fd3590d9be7ae258ff1456091b2dace017852ef6a3cd5d9e2b210058b8103"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-en-r05-clarity-repair-job-r1\\request.json",
+      "sha256": "19881f521779b68f385e3a3859d6ed0a0eed6c713b1a6ac65e5bc340bb3f077b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-guided-practice-clarity-repair-job-r1\\request.json",
+      "sha256": "2e30741107277fe7134048ceeac0b62f72a935d96fc4f3634b9fcdfc1d66ff70"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r01a-clarity-repair-job-r1\\request.json",
+      "sha256": "08c5e14e0b5b1b4d5128fc1fc1b7a4290651e5acc81817c5e932f633b9218c7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s305-s3-05-it-r07-clarity-repair-job-r1\\request.json",
+      "sha256": "d7d8411a33c204f0c90f7382a6eddf0c36a7e65b30cf43a2e6eefbb8241c9da0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s309botanical-s3-09-ar-r04-botanical-r2-job-r1\\request.json",
+      "sha256": "30276373818c77950b2c556789b6a793204c8d6ea42eaa8b1cb67b9c3fd5e17b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s309closure2-s3-09-ar-r04-semantic-repair-job-r1\\request.json",
+      "sha256": "73383409c80cad3ae31f1025c36fd12c930badbfabef04a3e03ce610091587e0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s309closure2-s3-09-it-r06-semantic-repair-job-r1\\request.json",
+      "sha256": "5083e0aae3471e8bc645b6a4c2692dd33c9d89441caaa8553a9037bcf2a7392a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-s311-neun-s3-11-de-r07-neun-repair-job-r1\\request.json",
+      "sha256": "114901f6509835e9a1698fbc2c5bd7d468e57d085bf94ebd4b71290074f8f5c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-11-it-r06-source-repair-job-r1\\request.json",
+      "sha256": "917c257d285d1a7e021df7bbcd5120f0f17ec1c17e8c2b2a65958d3b9f269af7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-12-de-r06-source-repair-job-r1\\request.json",
+      "sha256": "094827d9ffbf46fe78d3ec157861c8943600f4d5a30be73a1eff7c97ef85286c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r02-source-repair-job-r1\\request.json",
+      "sha256": "ff77099939f9aeb4e1a5a99670296c51917b56d2d71e2d824097f7d7e61daf7a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r04-source-repair-job-r1\\request.json",
+      "sha256": "ab3102d19bb361f8bd29eb3767f7077118fd7e4137be66e00af90253ed93ec11"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair-source5-s3-13-it-r07-source-repair-job-r1\\request.json",
+      "sha256": "74610a88dbda63921c30a34b032121d3a9314a1ba22828404e9c101a4682bcd5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-group-table-repair-job-r1\\request.json",
+      "sha256": "43bcc295c1fe4c7d1e686f3d19c00d97171c60483b4fe564d26884656df86014"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-model-p-repair-job-r1\\request.json",
+      "sha256": "749ec2f9039360940871c8e533eb2c299c2a1003ac8de0043cbb6f5cceabc801"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-ar-r06-priorities-repair-job-r1\\request.json",
+      "sha256": "c64927befad27715ae13f73dd7c9392e48c62e83c9803462c4ae1e0ef70739a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "7931023b96750080f0eb096b4d865be0942ddf1d0de4c59afd6d3837b1fa9893"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-de-r05-observation-list-repair-job-r1\\request.json",
+      "sha256": "6fc4d7b04a616b01b35d0c5f92b4441b76fe8635529861fbabfd714b41bce10e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-en-r04-source-table-repair-job-r1\\request.json",
+      "sha256": "862b5e77aac76f418f72bbf516ab5c30369ccea3728d0f0dd7197c837568004c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-identified-analytes-repair-job-r1\\request.json",
+      "sha256": "e5a2319e413089dd049d2cb84078ab30b5ee5250e83ad3002d99638fe8e106e3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s215-it-r04-illustrative-bands-repair-job-r1\\request.json",
+      "sha256": "0810bffd353811f18fd6dbbe2defa98c326a011c4fc0364648526e2ac15d6a43"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-nitrogen-credit-repair-job-r1\\request.json",
+      "sha256": "c316feb16580d51345b7495bca029a38e46880d939ec12e49aaea3d52cbce80c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-ar-r04-rhizobia-conditions-repair-job-r1\\request.json",
+      "sha256": "c971000ff5c751bfd538f3d2d510d2281216670b7a7232a50a1d0b3c5e86f689"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-fruit-group-repair-job-r1\\request.json",
+      "sha256": "4992fb1b4e320c2f5810b848e04a8d2988a3e548c920649714a9ab486645f558"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-en-r06-management-repair-job-r1\\request.json",
+      "sha256": "3976ce52a3055e8dc9163da76acb1528ef78a4b9f6f264acda18e862894a0c9e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\repair13-s3-01-it-r06-sustained-care-repair-job-r1\\request.json",
+      "sha256": "df9165cc69aee8a73769783e95c7e971eb48edb9b394f7c7ad943abdb0328d7e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "43b9c96683dd0b7d53128ef0f20e220d3383c0d94d562637884d44586190b986"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "2623b56ff472bf01a5a5a01cf2669a112d38f404cca6bee83658260cadc556be"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "21da84f67e28068f82c079b53706013d441f7bb95b2190be95cec128dc1ad1b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "09fd907e1982e53661ae2de4596cfc9d6ccb8ea4f299bf60d5c4ed940f336bb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "8f624a39deb9a0c141bdc0beaaf377cd06f5cc5572a3aa9f2a614d20f56821a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "c3a489b7d14f7ec0b846f806424045e55588af692b87809d1f0b9dc2c66602ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-fallback-repair-job-r1\\request.json",
+      "sha256": "02d70a6218509d26c78a54005c32bf927689f3bda9c7dfba6e886e3eb8cbb231"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s201-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b8b1abb840672d163f46be8ee8a55de765baf424c26a85c2855bbd796edd97a4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0558b02615033c1df0751a7253192a794df69b1015b1749f557851a98481cafb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fbc5921e8e2316767f17128849673bf432360ee4c5ef791f23d9d65c0aef61ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "6a8edc66ac7414f3be2eb8e15bf461ca6770a0ef4a86b2bd6dcbb815865b14f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s202-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "b9981f00c694815b91a6e93036a0b8e469b6be577c34558c46391b47b60866d4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-ar-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "355b4dd933c3fc37dd138dd17938026d46fee02679a884d3d000046bc29c41bb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-de-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "5a713447ce6a953e9e19b284ed9be42d75334570c38fa4c86f1419944aa20c58"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-en-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "fe09884488c7e1092e07ec39c5f818da0da99851ee379d5f0ea856e64281f854"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s204-it-effective-model-title-repair-job-r1\\request.json",
+      "sha256": "0f30c4a079d06a892758c40215c8f5add4aa50e26e6d922ed0c35b56c1c52087"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\runtime-s206-ar-effective-record-direction-repair-job-r1\\request.json",
+      "sha256": "c3ab728ca3339160713a92957394a873c0933b6c108349a696a6190cf8ce8c98"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-ar-reflection-repair-job-r1\\request.json",
+      "sha256": "819293eef240f314f8a7546342007456e3ed6bc30682a972bb0b9ea83835eb80"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-carriers-job-r1\\request.json",
+      "sha256": "588949d57895347769e6f1ec925a6b916332c1ca356c6b6711c3593272a9fd5e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-contexts-job-r1\\request.json",
+      "sha256": "8fee27313f56166be85406712cb5f3f8bd0f8af932fa0b49fa01d78263646613"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reading-job-r1\\request.json",
+      "sha256": "53a1d6b453846a94e4b361aea9ec3d4fa9f017c1ca6d5f4a2ababc2f2fe222dd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-reflection-one-diagnostic-job-r1\\request.json",
+      "sha256": "112fea12625d7cb8860ff26dd95eb10e7970377b54e77428a03af149d9f7dcf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-contexts-job-r1\\request.json",
+      "sha256": "cc2d355f6aebc3cdd2ac3bab5e71b0e62334dd97625277a9e4153330974dd9b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s102-remainder-job-r1\\request.json",
+      "sha256": "f547e8f862c0d4924207a8bc9731015cf4c053e1af4fd812175c927daad4f049"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-ar-context-job-r1\\request.json",
+      "sha256": "d6fd96d2342648eccb9a76aac12a5e593ccc25c5527f7cfffcc438dbba15d48b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-postjoin-job-r1\\request.json",
+      "sha256": "0ae7226d8b703ecb1a2b7de618b6d52fe66deb04280d8678e8d61e7f425872d7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-de-p03-repair-job-r1\\request.json",
+      "sha256": "5ddd4d480688a9e7b8355448279a7c7432f2bc00b95ec2470aad544a55f345b6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-contexts-job-r1\\request.json",
+      "sha256": "8e7e78448beecda2f965e283e969bf84aaf366f2f5ed0dafa3c0a28aa1c5b84b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-examples-job-r1\\request.json",
+      "sha256": "b1b4d7f7ecaa4ea1b5a22c945eeb1688023c8af23119f9812250ff564b751f36"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-instructions-contexts-job-r1\\request.json",
+      "sha256": "9de32bb4adcc94c2444d085c77536de5ad2465575c9d04ea6e99c76c133ad47e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-r01-job-r1\\request.json",
+      "sha256": "1f0c4cb037f5585e17ba13a22e2699d0deadfd01a630c9758866c1566599dcc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-contexts-job-r1\\request.json",
+      "sha256": "8380bc486c82d5dce36abf38b843e4f12e9685993ebc3fe870b6487162fd38f4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-reading-remainder-job-r1\\request.json",
+      "sha256": "472b389ace33857b01f61623efc732ff58e44a5201ef17b13c19e306b89fc761"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-contexts-job-r1\\request.json",
+      "sha256": "294b6d11649f9ee70fe85f46594ea731864b9b123bbea5bc7dd440e1a3e7c4e5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-reading-job-r1\\request.json",
+      "sha256": "1feb43b90e1b8cc5d8ddd6299993e3548a3f59edb8c8d59c7f494fbf12a879ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-contexts-job-r1\\request.json",
+      "sha256": "39e78078d90bae538aa2ce0b7511cd7d95e41e5eb9dbf61f2355109469b12aa0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-de-route-repair-job-r1\\request.json",
+      "sha256": "4bc3c17a268c4a4c18cb8ede6dd880fc51e59d8c49e92e3b5b368ee75eec8897"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s105-three-contexts-job-r1\\request.json",
+      "sha256": "67963c6f1a40cf1f72eda92b41a4f074b8f042931a1907c250e508805b8a43fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r1\\request.json",
+      "sha256": "895d4a6613317913f600d9409faa67295db7d38a56d4acf64e574ae2c28ec68b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-ar-two-repair-job-r2\\request.json",
+      "sha256": "3c2882155cd4d878eaf16f9ec6361810a5f9a911e47319779e23f80d495dab54"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-en-two-repair-job-r1\\request.json",
+      "sha256": "aedffa4f5086e9564c2d99627b54fe3e99c018e47d81cb036d90e4d3b862ae82"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-contexts-job-r1\\request.json",
+      "sha256": "9aa1001d869de9301651a99c17508d48b5f426cea037c9e11e8ee3982690b7e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r1\\request.json",
+      "sha256": "3c017cb3cd5e47bbbce954ca67da38f1713288e29ab268835ea44ee89a3ce13f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-remainder-job-r2\\request.json",
+      "sha256": "a261e1edc196f2191cdad53743497faa120bf07f265d0c4dc87aa354815dfaf6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-contexts-job-r1\\request.json",
+      "sha256": "0e97ef1b41ad29ede682579877129b0a0cfe827ccf6251f892696617d750aabb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-reading-job-r1\\request.json",
+      "sha256": "3df41e406d2ee91966f4aea603fb07dbe6b775d6f9677880173fbaf768c21cbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-contexts-job-r1\\request.json",
+      "sha256": "4302b73bf016ca5c0501f2dca7b48349caca21104d84a4b7034b78691ec79a0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s107-remainder-job-r1\\request.json",
+      "sha256": "58045da17efd2d4a9f361638deedd297d173d40cd3854d743b1a7d4e42091163"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-ar-p01-repair-job-r1\\request.json",
+      "sha256": "ec3bb93e697a8a87d1aca87315140607c1a13f100073c0ca325ef689c4ceb9bf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-en-r05-repair-job-r1\\request.json",
+      "sha256": "0e1b907a785f821c12a9cced7b83b01e5b74b5e2d636f0103901a64d835363a6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-contexts-job-r1\\request.json",
+      "sha256": "630811ba7211c67509e0572f12f15c69a6d877c927feba5e5bd26955d4ba23f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-reading-job-r1\\request.json",
+      "sha256": "508f66cbfe12ba5d6f155ed48622579577d0e82f0f5ca5ba5f0c2af2b6066f37"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-contexts-job-r1\\request.json",
+      "sha256": "f88e2baa755d7f401abe870372186f8fc980feb0c90283ed8f3becef13776b51"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s108-remainder-job-r1\\request.json",
+      "sha256": "27b4f10212a0eb4df43ea7997eb0bf8c11c65eccaf3a09fb0c42a6721738dca5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-it-opening-repair-job-r1\\request.json",
+      "sha256": "ccc6ee9bc647f163081a6da29dabb4d38676a89b00dcc6a2f2b1255bf850f9e6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-contexts-job-r1\\request.json",
+      "sha256": "5954ddf1b8d00a149bfdbd09470722dd54f888616a7b80506ef75033e38d6a46"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-reading-job-r1\\request.json",
+      "sha256": "9a54ed52f7d15e1ed78a5f9482c47fab13a3e485fbff0e0ccc578676ad197c2c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-contexts-job-r1\\request.json",
+      "sha256": "4a72173ec8287047fc82cf8f584847dc1ebdbec599c24717f9e14c4f1f88c24c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s109-remainder-job-r1\\request.json",
+      "sha256": "15d74acdfdc65c406da3404aee23f1a4a5f3932ecb16abda46456f9e534cef81"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-en-r04-repair-job-r1\\request.json",
+      "sha256": "085f97f5eacbd3fe607186d34254ac11a3eb6a7a9cdd4aceea2ec389891b99ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-contexts-job-r1\\request.json",
+      "sha256": "64af7c01e314d7ae64fb42022f5d3de97d59c5a78d054a56f5b6edaa553ca3eb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-reading-job-r1\\request.json",
+      "sha256": "63b307462203772f2d666cc5fe2607cef47c2f59ac279304c1edc4eec10c1858"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-remainder-job-r1\\request.json",
+      "sha256": "328512c68519746e2615617144eff7eee2cc8be865d485abc341f90f5e81e1c9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s110-s112-three-contexts-job-r1\\request.json",
+      "sha256": "18b02f90596ab9c0a3467b7601c770d0a4eb74a16f9562698831ee73c84ae467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-carriers-job-r1\\request.json",
+      "sha256": "15bbfdc03325cfea860249e90cc45c592b5fa0e777dcc8339861ffcf88d4cc27"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s111-seven-contexts-job-r1\\request.json",
+      "sha256": "9dca7602219c8f853d2b339eaead7935ea8c0a872d2ec87767d0a9a8e0f0ee5b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-de-reflection-repair-job-r1\\request.json",
+      "sha256": "8ce0dcb27d1c364a81381686c6c4d3f8c9c44ea29a42a0f598cbf2e31eed80d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-reading-job-r1\\request.json",
+      "sha256": "b492c7da93caef15f1d4441f020bd1f1d00461c89ac900b004351f6cc7ffe57e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-contexts-job-r1\\request.json",
+      "sha256": "1e483434237a5e0c428ddfc1d0ad00a853a70993ec714a81ec9b7683944f8ab0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s112-remainder-job-r1\\request.json",
+      "sha256": "243f64f2cdc0c704f601034ebb357a267edb2dbb4d237f118d343370156a0df3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-ar-knowledge-repair-job-r1\\request.json",
+      "sha256": "440ce98645e4d4f45bf2d4be97d4d99c1f57ccde8e6bc31b83f5a9bb32db0ae7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-de-e03-repair-job-r1\\request.json",
+      "sha256": "90b404d62c463e09f99bc369565c6bd60cbad2fe082c3767523d1f4573b0f27b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-en-r01-repair-job-r1\\request.json",
+      "sha256": "e04edb9df8556d99f105b8486f59db5c992c7acb125360ceffedd67481d5684e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-contexts-job-r1\\request.json",
+      "sha256": "385921ed2672538709257410529db2b626f2b069e7f94df34d283247ce099da2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-reading-job-r1\\request.json",
+      "sha256": "54d661c82dbdff2a99b1cfe05130c53c9ccbadfe75cdaf1d08ae154a875ebd6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-contexts-job-r1\\request.json",
+      "sha256": "99bb8e54504b4ec1672e2a2e1d5304b791e0cc34fb86ab8b9f88a91f000e0c10"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s201-remainder-job-r1\\request.json",
+      "sha256": "5ff426db854518a721dfa3a5f32c3e35fef4329a3be6cc94dfa056aac28403fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-r04-explicit-attempt2-job-r1\\request.json",
+      "sha256": "61f6f3122ac3030968d197c507ef3e887d7ba560d6dd4fcb35bd2d032a28b177"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-extension-prototype-r5\\request.json",
+      "sha256": "bf41ce942ce91a41fbd51af601699ae5d13243c3c471c086118001f43a466e97"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-de-recovery-job-r1\\request.json",
+      "sha256": "feac7320091e419e82abd3b303574e5672a4eeef37bf76ebd116b476f78f7e67"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-contexts-job-r1\\request.json",
+      "sha256": "61bd39a3446e984a2590c1dc80d563706fad85e5b0a7131d3615b7c67c7aaab2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-reading-job-r1\\request.json",
+      "sha256": "62702a33718a205eb4cc6efa272b2d6750706f135f6f73a4160b089cdd358c5a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s202-remainder-job-r1\\request.json",
+      "sha256": "899aba2bdb5e067b03a07a26569b52ab3d7f4487579b094338e870565cd85e60"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-e01-repair-job-r1\\request.json",
+      "sha256": "915cf049d8b877e0afc4561c48f4271f72a10cf40c5335addb23902bf08e057f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-en-r01-repair-job-r1\\request.json",
+      "sha256": "966d10d707edbda8733533f9173406d145a178ba6f4bc4336b38dd69e7b71f6b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-contexts-job-r1\\request.json",
+      "sha256": "767975b7203171328fec05fa74c3c583661b3a0ffbfbbf9ff3886c5d467a35de"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-reading-job-r1\\request.json",
+      "sha256": "86b2cfd86f0d62fd35a0b4e06bab4020a3b74d1cded745dc9456483a2a968d31"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-contexts-job-r1\\request.json",
+      "sha256": "48d195b4796b3a4a0162c2ee33d938678759a2f272350ad64f289ec1cdc8c483"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s203-remainder-job-r1\\request.json",
+      "sha256": "d3df8347f48e0263418be68778ab989f10ecb001af74e91cf658a5d6b1c8bbf7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-ar-guided-repair-job-r1\\request.json",
+      "sha256": "6355cf1c7d11852dd3801ff1149b699b050e2a155c40e847ed45d3be762ac464"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-de-title-tail-context-job-r1\\request.json",
+      "sha256": "f11ad362175bb4160b9590b0f8450f94ab84d789ee4da4e5f59de0a55f44314f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-completion-repair-job-r1\\request.json",
+      "sha256": "854b63ee56a906c28ba0adfc822c508644f4aab7d9ccca3bc40e64a6d28243b1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-repair-job-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-it-opening-unstarted-branch-preflight-backup-r1\\request.json",
+      "sha256": "2f62ae374acbe50f03dbbf3b5a1b392bc8343fcd19ea8bfe8268ddd77467abc6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-contexts-job-r1\\request.json",
+      "sha256": "7c61e066f892b52d5495fffb10b7db3aed3fc4577d614f578241fc9c15f5d43d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-reading-job-r1\\request.json",
+      "sha256": "b55c29323139713e478c5ac705d71c2b01668f353e225c429821ea9f36025f93"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-contexts-job-r1\\request.json",
+      "sha256": "7a0db5cf35cf2ea934eee18025ad091d40d689b052d59e1b6b11f746b00df467"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s204-remainder-job-r1\\request.json",
+      "sha256": "0ad7d37ce80431f470196b0725b2b25ba9c6a939e1cf65dfdcb9597204659322"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-lab-job-r1\\request.json",
+      "sha256": "168dd7662f64495c38e9105d0f87d5b1d624fafc52d8b407cc3ae2db40fcadb1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-contexts-job-r1\\request.json",
+      "sha256": "7d5e74a2ea8784bf9e4d464819e0ed8a2526f6bf67d0375f6ef8b2bc49957098"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-reading-job-r1\\request.json",
+      "sha256": "99b9581231c784daa9a80a5c46dbd413cbbfdd26bf7d62680337fbaef560dec0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-contexts-job-r1\\request.json",
+      "sha256": "0aa5a4c66a83d868667bb17eab0b7f235f282a2aaefe3974a10cf0006ae0ca05"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-job-r1\\request.json",
+      "sha256": "85be9ed333a93f0041bd434c71efd8a950d028df330bffea99dee0558cd794ef"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s205-remainder-unstarted-before-boundary-fix-r1\\request.json",
+      "sha256": "92a04fb4133c07a9175c6471f093e4c4bbe1810d253ae15f060038ca856e4ab8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-it-e02-specimen-repair-job-r1\\request.json",
+      "sha256": "95a6db3b0cbd029d333aecbc9eac092b8d5435eb1f766ccec7bb5b841df99765"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-lab-job-r1\\request.json",
+      "sha256": "f73a1ba011330267b80d0f144fd5c6a9dc5257c7d22220603da8a61ea7079dbf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-contexts-job-r1\\request.json",
+      "sha256": "f55c6a6a7c5e9b907a6e212b7c2dac7dfbdf2723b672a735fe45897a7caaef50"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-reading-job-r1\\request.json",
+      "sha256": "9e806db155e4e67c6134d004b0502b9d633857a83abdda53c5aef17782dea8f5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-remainder-job-r1\\request.json",
+      "sha256": "ff2729dec285a3049c76bb747b89eefd32b8d6bd5cf5717d2dffbd3162514350"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s206-teaching-contexts-job-r1\\request.json",
+      "sha256": "06e359bc01b9a5b28071c950cb91ec940fec05ccf8ef37f954d587fd94cfc588"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-lab-job-r1\\request.json",
+      "sha256": "165df3c6e82c204af4f983f39af7fab5e2e666a1f7f2fd99b14b20c19e6ac9e9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-method-tail-contexts-job-r1\\request.json",
+      "sha256": "31e59fe07d616bc1c8288f3ef35463d95a0e9e6db38791b5ab0f942a7625dd17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-contexts-job-r1\\request.json",
+      "sha256": "6b8ad21629a39bd6a1c3913c50db7b485bc5038a5ef5c3706204bde183e8f5fa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-reading-job-r1\\request.json",
+      "sha256": "f06687b4104b6e17207a30c0ac0f7b520ef4581a212edbe6b1e49f2cec4bd20f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s207-remainder-job-r1\\request.json",
+      "sha256": "1d6391b3b279640ec3b626e9f6a837dd320d8e81b30988a332f1d80f2e6c6fa3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-lab-job-r1\\request.json",
+      "sha256": "f89c028fb37d6f79445f1acd18981d83d40517498b96d0ed70ea980e90915514"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-reading-job-r1\\request.json",
+      "sha256": "0c22234ac65c52f53b92b4e22f0f20fdd48950cbb18fc8b33db1813b7ec4a2d6"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s208-remainder-job-r1\\request.json",
+      "sha256": "7671e945aee4b277fbac57e57681c20de902387159e9d02d3925212283975798"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-lab-job-r1\\request.json",
+      "sha256": "c4f5d5f3c5a2ae82e23a3a059e447bf73e4316fab7c9e541656cec0802d0b45f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-reading-job-r1\\request.json",
+      "sha256": "a5b3246784ef2992b857369391a8097b6fc0ecbf9823cd16d4442a9b5e650c9f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s209-remainder-job-r1\\request.json",
+      "sha256": "ea88eeec97d1273ef3feeba972c1ecc611e6bfb22a996cc38b372a1c7e51d72d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-lab-job-r1\\request.json",
+      "sha256": "fe0309ecc17ef516b69af34f67d156f14acd132cbc4e9ab40547f8f809994b65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-reading-job-r1\\request.json",
+      "sha256": "0f03ca1410ea58b7770616d4673bc12243356433af9f57761b221b2d6f39b65d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s210-remainder-job-r1\\request.json",
+      "sha256": "bca37cd1abd0acdd01974b9a55d419c9de72f4dba1e26b697795c6351c71fe7f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-de-r02-numeric-context-job-r1\\request.json",
+      "sha256": "b09f3ed92e321eae4598e604a25f2517c2fc7c98c3c14cf45b603018344fe8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-lab-job-r1\\request.json",
+      "sha256": "c4e9cc9bd8f550a84b1f3f51989fbad401e4fff6d4d0911df2d11e1dac79bc94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-reading-job-r1\\request.json",
+      "sha256": "48bec75f1625b8eebcd6f1ba26fab8f9761478a8b9fc954e29ea4f062a01b871"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s211-remainder-job-r1\\request.json",
+      "sha256": "f91f9b07dfed2c8e8ecc0cdb3536dfca7d3c26930cee87f45e142badbf01d92f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-lab-job-r1\\request.json",
+      "sha256": "3715109e90343b3e67a0fa6026877538bfe0e1c395d33fc46f8f6dddeb577fe8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-reading-job-r1\\request.json",
+      "sha256": "7d666eefe1586cb144d548332b2488b8f02e0a79a0a07f2d468a5d1f2891e2ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-remainder-job-r1\\request.json",
+      "sha256": "9917491cda3960b12e8636568274449fb8b9479f17cb69fcb22571a3d8f700e1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-three-remaining-contexts-job-r1\\request.json",
+      "sha256": "2a00206582d9c6b7dc3dab4e6a46ca3ecd61fc4a14090d7454c9b4d28fd5bcb2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s212-two-reading-contexts-job-r1\\request.json",
+      "sha256": "e1ceee9ff39011e87c993c70cec2a0c21ba58eb9b2923c2751a82e616d1c0054"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-ar-fine-charge-r2-job-r1\\request.json",
+      "sha256": "4b45583a9aeceaf86120a1c5780bbb7b3179689e7caafa9cd37d1c3aa2bf6e0f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-de-knowledge-phrase-job-r1\\request.json",
+      "sha256": "a46606602f7d55194f8c1348af06b06c5fa8093a3d6355a0879ab508bd14af2a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-five-reading-contexts-job-r1\\request.json",
+      "sha256": "5cc14e79b161c3e8796cba60ebf3c6a738051a3dc55061aab13b65eb4a0be86f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-before-owner-approval-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-gated-job-r1\\request.json",
+      "sha256": "4c9326d0bd6ccc73bdfc632b9caa05eab205c2a9f47081b566b433dda59da8a3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-lab-job-r1\\request.json",
+      "sha256": "019eddc57382446f45b688e3469c8027b5de714274b83a3ecfb646724835614c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-reading-job-r1\\request.json",
+      "sha256": "b071db65d7b767a0fd5778f53f2c8bc17f7a4f1c8e44033f75c8e206fe20a3ed"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-remainder-job-r1\\request.json",
+      "sha256": "dab803f4bf5d23d1ef4e7ef197e8e2fe45b5ca900fe2c7e0b2f2979d84f4d074"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s213-two-teaching-contexts-job-r1\\request.json",
+      "sha256": "eaab5b52d22a131747239ef64a9b5a749138e7fada7291baa7282c2127536a41"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-first-r2-job-r1\\request.json",
+      "sha256": "6865cfbe0b3afb1dfe723f4d92d7779f4daba5a4cb3875a8ac02ec857f921e8f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-p-job-r1\\request.json",
+      "sha256": "110a9214aa28e37c82fb26b95090e0981fe7a013502bfd86c81eeac2e847a46e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-glossary-whole-job-r1\\request.json",
+      "sha256": "7e798d2d949b039f9aa422bf8d2da3d0940b98c9924e70b4d5adddd2608505ff"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-incorporation-job-r1\\request.json",
+      "sha256": "3cfb516f013abbb39f535b784345f26ac977ffe3731f0ecd2692f535083b076f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-p-test-job-r1\\request.json",
+      "sha256": "8a4af3fa95a8b7879f2618e4a7f9e097b2e49b845a956ca39140c4a306669dcd"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-sheet-p-job-r1\\request.json",
+      "sha256": "91fe01589239629b3c59ed28d0ab6b49873204ca485facb4e23ca01ae019a8e8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-de-supplied-p-job-r1\\request.json",
+      "sha256": "fe740ba8417b7a1492960a7e670b474d4418c7ac14460e399fb843652be60aab"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-condition-item-job-r1\\request.json",
+      "sha256": "d149ae19a4f355cbccce6b9743d9af132a4686bcd2422a38cc345877afdb4eb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-missing-tail-job-r1\\request.json",
+      "sha256": "fb3ee308008e91270bc82c1cfec1e5727dda52215f0183f51902b28b4dbd1674"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-p-method-job-r1\\request.json",
+      "sha256": "d5fd8d6e798cc1e0cc85be2748c8223641328208f8be63b4436c548fc2e2bf17"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-en-settling-job-r1\\request.json",
+      "sha256": "9162c6cf02272aec88f5a84cf88b16800b48ffc4c562dba36d16ac7d07be7034"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-four-reading-contexts-job-r1\\request.json",
+      "sha256": "8103e4614bb684a8ccbbe7ea274101884c410b3b6ec7823d6e8e6152177abed2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-four-teaching-contexts-job-r1\\request.json",
+      "sha256": "bdeceafaea8a8253cf26bef1c4d0f6081c12fa7ea28bec1a78ea32f6e49791b2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-it-map-job-r1\\request.json",
+      "sha256": "b5ec09783900e490181cc0a86cac59e0b5e8653d581e18d87ca8b2e7f1110239"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-lab-job-r1\\request.json",
+      "sha256": "7df76545da6ace1599e32bedcc3298924cc9642601fbabd76ff64bd61c43a92d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-reading-job-r1\\request.json",
+      "sha256": "3262ee26745f96f139e3e1ff9f0a7b80d75adee64b11f917aa6d262ff2cf0b4c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-remainder-job-r1\\request.json",
+      "sha256": "5d7741d4ca80ed20b1231d37a4397fa0cbd68155d19fbc0105dd328208fcdc47"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s214-six-lab-contexts-job-r1\\request.json",
+      "sha256": "11797df5b04cf5db1e17f84fd6c1c4fa5e93bcedfc7fc069621a45555b982412"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-before-owner-approval-r1\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r1\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r2\\request.json",
+      "sha256": "de60f65dd24f27ef40fb5f62734afed1e295bb844833f4dc7385211704a44b7c"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-gated-job-r3\\request.json",
+      "sha256": "28d436644d5e0845f4fdcd935f9da7f983b693f32cbd200996b02324f43d5321"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-guidance-job-r1\\request.json",
+      "sha256": "3305b34a7a68743775a3386de84e54d8683227fdb16c9a2e21b653bcb183a699"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-independent-job-r1\\request.json",
+      "sha256": "a2e12c2b7b039cb66de58509e058fe8af195928984318550f6a59647903d1cb7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-reading-job-r1\\request.json",
+      "sha256": "4c1ae8dbb6043af4b3a1b1dd3d7845e04edb38292ebcb534a1fa6785559b5d4f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s215-three-final-checks-job-r1\\request.json",
+      "sha256": "9779de80a0b46986afe217ebc449506dd3cc671bc09638c4e57606d90b9bd4b7"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r2\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-gated-job-r3\\request.json",
+      "sha256": "5f653f254786174c3083f5c8ee599ed1896d32b2186390cb674f7725a0c00ece"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-guidance-job-r1\\request.json",
+      "sha256": "3ec7d993b80abad1ea3b0748363f9db90ed970c0412f0e37f83b67373cfc83c1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-job-r1\\request.json",
+      "sha256": "a871c5ed4da3d5be592cd1eab5e900511cd648100914c2696e5eadd6ff12d18f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-independent-offline-failed-preflight-r1\\request.json",
+      "sha256": "8184c81cb9371876d1e23da7ac1d4e29804e15059de9791eff19151d20649312"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s301-reading-job-r1\\request.json",
+      "sha256": "393daf609e4c6a8e67d194d1537de5e087de9145f587d8c283ab542de64568ae"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-fifteen-contexts-job-r1\\request.json",
+      "sha256": "5c5c8653a2548ecfc29743b7217f45e9a3148cf1205cc37c04efe4e6713a665a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-gated-job-r2\\request.json",
+      "sha256": "a6f9bba236cdd1797fb64537c82d77d8fd61fcd5d34e390560ba58713b9fbf29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-guidance-job-r1\\request.json",
+      "sha256": "52b4ce764c4ceb54e02dd964090915dcb87b5ac532b2d15d795b98985bca040f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-independent-job-r1\\request.json",
+      "sha256": "520d49f9cb0836d9c6884b5b8343418c3f9aabcdafe0cf0434681c83531eb595"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-reading-job-r1\\request.json",
+      "sha256": "13465159943ec381f7256907b0079c93cbc77023712cdfe547a80c981e54aaa9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-s215-two-specific-reviews-job-r1\\request.json",
+      "sha256": "56cffa0893b7963dd886bf2d6644adf577c902a28bee90928b60d8b8378b1dc2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-strict-three-contexts-job-r1\\request.json",
+      "sha256": "8a4ac17554c46a921a948874eefc977d8ccafbe3979e91532ab239f4c10c6ec5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s302-strict3-mock-fixture-r1\\request.json",
+      "sha256": "8a4ac17554c46a921a948874eefc977d8ccafbe3979e91532ab239f4c10c6ec5"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-gated-job-r2\\request.json",
+      "sha256": "15023b675eab700531de4a7d8e461d037f74b36499c36a40c4864bbe1b41a244"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-independent-job-r1\\request.json",
+      "sha256": "1b066c40ee95edb530d574ad710e165d91d7f400979ffe7cee0c992e381b0739"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s303-reading-job-r1\\request.json",
+      "sha256": "ec047a9408fde5ce6e5bdb2659cf5e13257c54544034931fdefcc58e5eef6680"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-ar-foundation-context-job-r1\\request.json",
+      "sha256": "b1920b5338fcbf765890bce1f7da0a3da2d6416e5fd8e31869af81b9cc0470ec"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r1\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-gated-job-r2\\request.json",
+      "sha256": "2fb863cc70ee779743025ae69ce698078893bad647e32a648be9aff1f93d28a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-independent-job-r1\\request.json",
+      "sha256": "997e9b48734c40369f215eddaf59a007f27dbb6f5c1b774e927984a92bfcb6ad"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-reading-job-r1\\request.json",
+      "sha256": "0cfddb82bbe93497ff476b3c15d409447f2cd222f7ef7181c99ecd06f0f69682"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s304-two-guided-contexts-job-r1\\request.json",
+      "sha256": "74395d31ce1a0f6308f96a375e4300cd3d01efae1df138b5272dca9d063aec59"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-ar-final-word-context-job-r1\\request.json",
+      "sha256": "8e8b8d6554d9a3b357b3c2c38a50677da8991f8f79807b90d3d1c976f925f3ca"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-carriers-job-r1\\request.json",
+      "sha256": "4d44c5256e8e706d446fc2ce302ed03700288155f1006e950e42655521fc00a8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-gated-job-r1\\request.json",
+      "sha256": "9116f963721c807bcb22b086ceb9629fdc1f28cf15b9ba4f00359304c234904f"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-independent-job-r1\\request.json",
+      "sha256": "bdc60f5847b7d9f7a1ace4aa2c5962546dc99215251c6bb0444feeee489766fe"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s305-reading-job-r1\\request.json",
+      "sha256": "5646f05e50e4756d8bcb9b9c191894c6562aa08c7a88276b3996cb75b9c9e2ea"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-gated-job-r1\\request.json",
+      "sha256": "c82e9b6ddea157c21a010e37be0ab2d6a2933e80ecd83354263f8b7968812045"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-independent-job-r1\\request.json",
+      "sha256": "d8ef9283fc00f9850aaf774a121586ed3ce8634bc982909d4e11f6731ce5dadf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-practice-job-r1\\request.json",
+      "sha256": "970cd8188192d2fa55b4319beeffb55ab35e3615ab1e6585f5b3d97736a81c4a"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s306-reading-job-r1\\request.json",
+      "sha256": "d0444ed784c30321e63931acdf920f0c0331990203974a49847f1c6445fb9e29"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-gated-job-r1\\request.json",
+      "sha256": "c9d616b9dae9d7c01cecc1b48e652b3f2d5683059b9779c7f413921661a7ae65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-independent-job-r1\\request.json",
+      "sha256": "2a47ad7690792a676bd92b2f765d376a9413ff077d0e75cbd2c95a89fdad46aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-practice-job-r1\\request.json",
+      "sha256": "9f68b159155ec8cea87bb7f4f1f7863dd6869e269526a41f73fa226292f33012"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-prefinal-count-r1\\request.json",
+      "sha256": "c9d616b9dae9d7c01cecc1b48e652b3f2d5683059b9779c7f413921661a7ae65"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+      "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-fifteen-contexts-job-r1\\request.json",
+      "sha256": "259696dc2de52d4d629e667f47c0d2247836b24807d4c24df99e00d677008de8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-gated-job-r1\\request.json",
+      "sha256": "95255e891d93bdea54e9416e41e9f0d4f9f014f66768fd704b249e573b68fcf9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-gated-prefinal-localization-r1\\request.json",
+      "sha256": "518503b606fb3c4262a3f4afaff09911db98544d3aaeacf8c947cf6071bc4b6e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-independent-job-r1\\request.json",
+      "sha256": "b7905e8ac105e1960a17e756df2a9a0de8171896a6c62ccd80b9281dd1c2eadc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r1\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s308-reading-job-r2\\request.json",
+      "sha256": "4aa47579fb76e27e3637f0fd2a45c83624ed7a68c2fc5af516c2d62ef5192ddf"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-gated-job-r1\\request.json",
+      "sha256": "b0458c83904316f55b941698f8e89dccc538ff0a3e9d938d620ad137773342aa"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-gated-prefinal-localization-r1\\request.json",
+      "sha256": "19ad0c3c3f4f0f55f068b87d6ed39f13a2838ce1ae6f35353e236cec72310260"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-independent-job-r1\\request.json",
+      "sha256": "c4d8e7ccfe02d7ef06ce53dbb597035860c503482c048ef899ded1f515e759c8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s309-reading-job-r1\\request.json",
+      "sha256": "f724944a85d4fbb071b6f7787792bb6a62c0c0bc407950e3e98dd9f91fa6874d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-ar-opening-tail-context-job-r1\\request.json",
+      "sha256": "3cf8b7c7fc3e4764713bc56fae041fe26cb2112f28115b5f51abd558f4f9fd9b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-gated-job-20261024-r1\\request.json",
+      "sha256": "682b7165064c89ade097321f7e734ceed00761531193930b2cd9feea190ccf20"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-gated-job-20261024-r2\\request.json",
+      "sha256": "682b7165064c89ade097321f7e734ceed00761531193930b2cd9feea190ccf20"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-independent-job-r1\\request.json",
+      "sha256": "a443eee33191f213b2c0404155c4f54b5d4387d62cebe93fbefde784e59cc0a9"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s310-reading-job-r1\\request.json",
+      "sha256": "b3063d5cf960b6dac5aae290314893823f11f0ed57ca34bdbada7de39275a649"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-eleven-original-contexts-job-r1\\request.json",
+      "sha256": "bdeac7711c617065ce8301c298538c4d0f9725b7807fe5635682b9b25438dbdb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-independent-job-r1\\request.json",
+      "sha256": "a8e8f1ecb06992e78730c174fcbd53cd4af1111d98d09c0e0945e7594ce30675"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-reading-job-r1\\request.json",
+      "sha256": "c7b05806b2dff56c529949e8d1d663b587f3a0d68297f9836774624a610163d8"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-readings-prefinal-localization-r1\\request.json",
+      "sha256": "c7373b8aab30ef51b287bf35070a9302ad0e6292e7575783d0ad02915d55427d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-strict2-mock-fixture-r1\\request.json",
+      "sha256": "97af1504928269b2506c5e615f3e301e610391aff1a0efcd786c184438990640"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s311-two-strict-recoveries-job-r1\\request.json",
+      "sha256": "97af1504928269b2506c5e615f3e301e610391aff1a0efcd786c184438990640"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-de-recovery-job-r1\\request.json",
+      "sha256": "8a33c9d71852d036ba8671480867c96ecde2f6669e549c110b2fa15b344d99fc"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-independent-job-r1\\request.json",
+      "sha256": "843cb802e7a64c1e9a7903d94d655844a22197449ddc0a2d4fd61fd35c393dc1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-reading-job-r1\\request.json",
+      "sha256": "8f17ceb195b70f4a30799d371bd212d534401532d5c6791d68467522542391a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s312-readings-prefinal-localization-r1\\request.json",
+      "sha256": "4e281fd13123819aad28f15e178fb1c49b0ba15206a363605c6dcd419bbfa5a0"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s313-independent-job-r1\\request.json",
+      "sha256": "6cf282c35d309ef83b5c53c0fb01ef223615fa9c5a379ef487c8e077d7336825"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s313-reading-job-r1\\request.json",
+      "sha256": "bff5d424a4502b7996495794c7e500b8bef418bbc83b547d8a598dd1d5c1d4a2"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s313-readings-prefinal-localization-r1\\request.json",
+      "sha256": "0daf00d7e05c405243ad0895d7405471a0b37dbe7aa74d8d4255f34ae79caa3d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-independent-job-r1\\request.json",
+      "sha256": "efeb7e9b0c099d57504c8a729df550f91a03453af92e6d1a2a9a72594a5c9f55"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r1\\request.json",
+      "sha256": "cc5821b84eaa06884426033ff2698130523d5a1ad4282ddf6f18338c707444df"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s314-reading-job-r2\\request.json",
+      "sha256": "9544949e628fe4b1d0ba188e14761e98e3114447d4a32f9ede67a8a9b386dbba"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-independent-job-r1\\request.json",
+      "sha256": "305a15cad78d6a0ae97671a2b0f7dc7c7e1e575211f245c834572362f7834b1b"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r1\\request.json",
+      "sha256": "949c35e95ec0f57eaf57366f24a528ea9d1558182f682f5aa8112d541e919f94"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s315-reading-job-r2\\request.json",
+      "sha256": "7f4c8d2be10dd5e3f7b8b85797d448e4a4731c7eab089b1bb30e4ff912af2e8e"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s316-independent-job-r1\\request.json",
+      "sha256": "98d0d9df928762ba25ec4a3f86a84e9598d28ae809cb68ae42749fa91bb4422d"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s316-reading-job-r1\\request.json",
+      "sha256": "bd21152d411fab7d837fe8be80a8b6b6199fd07be84ba750237ced4b704efdfb"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s317-independent-job-r1\\request.json",
+      "sha256": "a1622b161ddf3088ca74b181d5fb7d7037f68bc98c9e1ec42391a39029eca3d1"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s317-reading-job-r1\\request.json",
+      "sha256": "10ba76dbb5ab98e02403aaa2b9fde51a1a399ce513aaa3496eca4fcb31052023"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\two-whole-candidate-reviews-job-r1\\request.json",
+      "sha256": "4d39adaa7f9184c2f18dd9aa945447056d51bef65185e1088f273f99a1cfa13a"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}

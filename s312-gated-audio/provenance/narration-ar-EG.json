@@ -1,0 +1,270 @@
+{
+  "stepId": "S3-12",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-12-ar-EG.json",
+    "sha256": "53f106be1806e3cee4722cc3add2c3510383b7874f69890dc73d18d449393eb4",
+    "bytes": 38726
+  },
+  "units": [
+    {
+      "id": "S3-12-ar-EG-E01-r1",
+      "unitId": "S3-12-ar-EG-E01-r1",
+      "stepId": "S3-12",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "53f106be1806e3cee4722cc3add2c3510383b7874f69890dc73d18d449393eb4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "احسب من غير اختراع وصفة",
+          "sha256": "cedf8a36216e63269c34dd0ce6fe43a47fd4ae7ccaa3d8ad56f33b10a26d9fae"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "بطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.",
+          "sha256": "209b70fb540b6116599d60c61003c0db2f7f9970a29aae22dcacb98db3af3c65"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.",
+          "sha256": "9144d51f720270ce4df118a5b70bc1f4222df2090a01a878dbc034df5ae489e9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "احسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.",
+          "sha256": "cd49e0bb16b2295072efcba9a33cef0209dbd92389031b402649e070d2f0f1d2"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "لو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.",
+          "sha256": "74168f7059b6e198394b240eb741058dbfdbd535983c80fe8e361e28010096ae"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "الأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+          "sha256": "1fa7aa6a9a2634b479348fcd4fe599ca31cf8bc9696043c8db1c316f17f2f3b4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "احسب من غير اختراع وصفة",
+        "situation": "بطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.",
+        "reasoning": [
+          "الأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.",
+          "احسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.",
+          "لو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة."
+        ],
+        "takeaway": "الأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة."
+      },
+      "scientificMeaning": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "displayText": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "captionText": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+      "spokenText": "احسب من غير ما تخترع وصفة\n\nبطاقة لسه المدرّب هيعتمدها بعد كده، بتحدد تلات نسب بالكتلة: الأولى رمزها c، والتانية رمزها p، والتالتة رمزها b. النسب دي لمنتج طماطم نهائي وزنه خمسة كيلوجرام.\n\nالأول اتأكد إن مجموع النسبة الأولى والتانية والتالتة بيساوي واحد. واتأكد إن المكونات التلاتة مسموحة، وإن فيه دليل على الاحتياج للفوسفور.\n\nاحسب وزن المكوّن الأول: خمسة مضروبة في النسبة الأولى. ووزن المكوّن التاني: خمسة مضروبة في النسبة التانية. ووزن المكوّن التالت: خمسة مضروبة في النسبة التالتة. الأوزان بالكيلوجرام. اجمعهم واتأكد إن المجموع خمسة كيلوجرام قبل ما توزن.\n\nلو البطاقة فيها أجزاء بالحجم، ما تحطهاش زي ما هي على الميزان. لازم كثافة حجمية وتعليمات للرطوبة.\n\nالأوزان الفعلية بالأرقام لسه معلّقة لحد ما يبقى فيه مواصفة مكتوبة من المدرّب.",
+      "spokenTextSHA256": "1a7d858b601639ecf70f7a106f714914c468201cbc89e75fd1c9feb906e993b5",
+      "spokenTextSha256": "1a7d858b601639ecf70f7a106f714914c468201cbc89e75fd1c9feb906e993b5",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "14c8e0a846339267a823a0c7e3aee09401ce2bf13a1414548bbf18d4232a6a3e",
+      "requestFingerprintSha256": "14c8e0a846339267a823a0c7e3aee09401ce2bf13a1414548bbf18d4232a6a3e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "احسب من غير اختراع وصفة\n\nبطاقة يعتمدها المدرّب لاحقًا بتحدد نسبًا كتلية c وp وb لمنتج طماطم نهائي وزنه ٥ كجم.\n\nالأول تأكد إن c+p+b=1 وإن المكونات الثلاثة مسموحة ودليل الفوسفور موجود.\n\nاحسب الأوزان 5c و5p و5b كجم؛ مجموعهم ٥ كجم قبل الميزان.\n\nلو البطاقة أعطت أجزاء بالحجم، ما تحطهاش كما هي على الميزان؛ لازم كثافة حجمية وتعليمات رطوبة.\n\nالأوزان الرقمية الفعلية معلّقة لحد مواصفة المدرّب المكتوبة.",
+          "spoken": "احسب من غير ما تخترع وصفة\n\nبطاقة لسه المدرّب هيعتمدها بعد كده، بتحدد تلات نسب بالكتلة: الأولى رمزها c، والتانية رمزها p، والتالتة رمزها b. النسب دي لمنتج طماطم نهائي وزنه خمسة كيلوجرام.\n\nالأول اتأكد إن مجموع النسبة الأولى والتانية والتالتة بيساوي واحد. واتأكد إن المكونات التلاتة مسموحة، وإن فيه دليل على الاحتياج للفوسفور.\n\nاحسب وزن المكوّن الأول: خمسة مضروبة في النسبة الأولى. ووزن المكوّن التاني: خمسة مضروبة في النسبة التانية. ووزن المكوّن التالت: خمسة مضروبة في النسبة التالتة. الأوزان بالكيلوجرام. اجمعهم واتأكد إن المجموع خمسة كيلوجرام قبل ما توزن.\n\nلو البطاقة فيها أجزاء بالحجم، ما تحطهاش زي ما هي على الميزان. لازم كثافة حجمية وتعليمات للرطوبة.\n\nالأوزان الفعلية بالأرقام لسه معلّقة لحد ما يبقى فيه مواصفة مكتوبة من المدرّب.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-12-ar-EG-E02-r1",
+      "unitId": "S3-12-ar-EG-E02-r1",
+      "stepId": "S3-12",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "53f106be1806e3cee4722cc3add2c3510383b7874f69890dc73d18d449393eb4",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "ما تنقلش نسبة الطين إلى المنتج",
+          "sha256": "2ae084479b74228a6192043a21dd64a0a0ff64d27a36695edbe610e0a2a0de54"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "نموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.",
+          "sha256": "d3998eb9a3fabf7cf26a78e64a62bb3c47a3cb0723acbda9602126306aefb928"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "ثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.",
+          "sha256": "9f0b3481c6ecddd8d34f0175d29d0d79b3b140618b8a9e7c92fddf15c4bc55a3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "احتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.",
+          "sha256": "b161fcdb059ce38442d61448097c9b5c11ddeb43a67c75ca726f00e526102c0b"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "اطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.",
+          "sha256": "7b4536945d7d27933539e14963938fd01f1e870fb3c1800074f682b6309fca41"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "ما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+          "sha256": "34bb0c7325f900aed11b46e9aa87ae1c21afb88b41162a8db396a918f88fc5be"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "ما تنقلش نسبة الطين إلى المنتج",
+        "situation": "نموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.",
+        "reasoning": [
+          "ثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.",
+          "احتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.",
+          "اطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي."
+        ],
+        "takeaway": "ما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث."
+      },
+      "scientificMeaning": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "displayText": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "captionText": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+      "spokenText": "ما تنقلش نسبة الطين للمنتج\n\nنموذج المدرّس فيه حوض خارجي بنسبة خمسين لخمسين. وبطاقة العملية فيها تقريبًا جزء كمبوست لجزئين طين في وعاء. وفيه بطاقة تالتة طالبة خلطة طماطم وزنها خمسة كيلوجرام.\n\nدول تلات أغراض مختلفين. وأساس الوزن والحجم والمواد وسلوك المَيّه ممكن يختلف بينهم.\n\nخلي نسب خمسين لخمسين وواحد لاتنين زي ما وردوا في المثالين، لكن ما تستخدمش أي واحدة فيهم كوصفة للطماطم وزنها خمسة كيلوجرام.\n\nاطلب المواصفة والفحوص المعتمدة لكل شغل حقيقي.\n\nما فيش نسبة عامة تقدر تنقلها بين البطاقات التلاتة.",
+      "spokenTextSHA256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+      "spokenTextSha256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "dc0b6befa0145142815eb5b07f1b8f6bdbb591af024e706e8ab65890bbae3f3f",
+      "requestFingerprintSha256": "dc0b6befa0145142815eb5b07f1b8f6bdbb591af024e706e8ab65890bbae3f3f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "ما تنقلش نسبة الطين إلى المنتج\n\nنموذج المدرّس فيه حوض خارجي ٥٠:٥٠، وبطاقة العملية فيها تقريبًا جزء كمبوست إلى جزأين طين في وعاء، وبطاقة ثالثة تطلب خلطة طماطم ٥ كجم.\n\nثلاثة أغراض مختلفة، وممكن أساس الوزن والحجم والمواد وسلوك الماء يختلف.\n\nاحتفظ بـ٥٠:٥٠ و١:٢ كما وردا في المثالين، لكن لا تستخدم أيًا منهما لوصفة الطماطم ٥ كجم.\n\nاطلب المواصفة والفحوص المعتمدة لكل عمل حقيقي.\n\nما فيش نسبة عامة تنفع تنتقل بين البطاقات الثلاث.",
+          "spoken": "ما تنقلش نسبة الطين للمنتج\n\nنموذج المدرّس فيه حوض خارجي بنسبة خمسين لخمسين. وبطاقة العملية فيها تقريبًا جزء كمبوست لجزئين طين في وعاء. وفيه بطاقة تالتة طالبة خلطة طماطم وزنها خمسة كيلوجرام.\n\nدول تلات أغراض مختلفين. وأساس الوزن والحجم والمواد وسلوك المَيّه ممكن يختلف بينهم.\n\nخلي نسب خمسين لخمسين وواحد لاتنين زي ما وردوا في المثالين، لكن ما تستخدمش أي واحدة فيهم كوصفة للطماطم وزنها خمسة كيلوجرام.\n\nاطلب المواصفة والفحوص المعتمدة لكل شغل حقيقي.\n\nما فيش نسبة عامة تقدر تنقلها بين البطاقات التلاتة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "١",
+            "٢",
+            "٥",
+            "٥٠"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "102523cb66354194b1c7a430bbb3591eccf3e2a6a242a3f2c153a9fb118de4ef",
+              "revisedSpokenSHA256": "3dd48977b83aa1ac933362ef499dcfe4a4c10b0f81fe04a96db4dc329892b05a",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "stepId": "S3-12",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-12-it.json",
+    "sha256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+    "bytes": 29460
+  },
+  "units": [
+    {
+      "id": "S3-12-it-E01-r1",
+      "unitId": "S3-12-it-E01-r1",
+      "stepId": "S3-12",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "symbolic-mass",
+      "sourceWholeFileSHA256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Calcola senza inventare la ricetta",
+          "sha256": "779d0a28baf19d44eadc870a63f05868e0451ccfcb95b254cc3629014f15cf3a"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Una futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.",
+          "sha256": "a917a367d1ef8a3b56132319162b8ec8b9159112db36101e98a64557152b8c52"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Controlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.",
+          "sha256": "b85999097f93e78ca2cae254b1c2eba22c35f5cc75b13cfc49a022d675c921c9"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Calcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.",
+          "sha256": "7510e04fe9873aeb04f6420889c3e86650d17952eb6da82f023a47448ac31338"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Con quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.",
+          "sha256": "31bc9a53580a86034cb6752d75142304a7908cdfed1a3728c39c61814bd97529"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Masse numeriche effettive sospese fino alla scheda documentata.",
+          "sha256": "94cf9ddecc1de392ce81a6258162992d22b591d5c86079cdaa421d8eaecb9972"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "symbolic-mass",
+        "title": "Calcola senza inventare la ricetta",
+        "situation": "Una futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.",
+        "reasoning": [
+          "Controlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.",
+          "Calcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.",
+          "Con quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità."
+        ],
+        "takeaway": "Masse numeriche effettive sospese fino alla scheda documentata."
+      },
+      "scientificMeaning": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "displayText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "captionText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "spokenText": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche ci, pi e bi per cinque chilogrammi di prodotto per pomodori.\n\nControlla ci più pi più bi uguale a uno, autorizzazione di tutti e tre i materiali e prova del bisogno di fosforo.\n\nCalcola cinque per ci, cinque per pi e cinque per bi chilogrammi e verifica il totale di cinque chilogrammi prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+      "spokenTextSHA256": "39d52480e1f50ac36f1bae0e073ffb720b2b0547e193c9826a9885956d6eba53",
+      "spokenTextSha256": "39d52480e1f50ac36f1bae0e073ffb720b2b0547e193c9826a9885956d6eba53",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "0fc897e6648072bbcc63ef486c70b4bbe6a1420e7f6b0d56455d7bc326f09c96",
+      "requestFingerprintSha256": "0fc897e6648072bbcc63ef486c70b4bbe6a1420e7f6b0d56455d7bc326f09c96",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche c, p e b per 5 kg di prodotto per pomodori.\n\nControlla c+p+b=1, autorizzazione di tutti e tre i materiali e prova del bisogno di P.\n\nCalcola 5c, 5p e 5b kg e verifica il totale di 5 kg prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+          "spoken": "Calcola senza inventare la ricetta\n\nUna futura scheda firmata indica frazioni massiche ci, pi e bi per cinque chilogrammi di prodotto per pomodori.\n\nControlla ci più pi più bi uguale a uno, autorizzazione di tutti e tre i materiali e prova del bisogno di fosforo.\n\nCalcola cinque per ci, cinque per pi e cinque per bi chilogrammi e verifica il totale di cinque chilogrammi prima della bilancia.\n\nCon quote volumetriche non trasferirle direttamente in pesi; chiedi densità apparente e umidità.\n\nMasse numeriche effettive sospese fino alla scheda documentata.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "5"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-12-it-E02-r1",
+      "unitId": "S3-12-it-E02-r1",
+      "stepId": "S3-12",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "3a89791bb1fc96f35e971491cfc76d012048d6c3e0df96d6e3514acaa2c54ae6",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Non trasferire la proporzione dell’argilla",
+          "sha256": "f9781d24127eae7c185c71637812bebe439cf00a0d0726d3ecfd42a2dddaccb3"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Il modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.",
+          "sha256": "6f1b25e24e38eaeea7e1798cd828e74572d87437d20e7e24b0722a9bceb49de9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Tre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.",
+          "sha256": "c88addaefd5579ac2e2290025c56ea1545ab1c48bc4e4b19a17d8a5c1515514c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Conserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.",
+          "sha256": "d512c2dd271316ff009ec594a60d746aab25afb4280f130748843b686a4ae5c4"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Chiedi specifica approvata e analisi per ciascun lavoro reale.",
+          "sha256": "15b5b3bd5addaefc57f0392d66c6d7293a55986f42c49924c11a30df1d850701"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Non deriva una proporzione universale dalle tre schede.",
+          "sha256": "0bb3cdf0466b924d3dcbcab21f90a8e8ac4e91bfab8d9435bb826a3821e1c5b3"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Non trasferire la proporzione dell’argilla",
+        "situation": "Il modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.",
+        "reasoning": [
+          "Tre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.",
+          "Conserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.",
+          "Chiedi specifica approvata e analisi per ciascun lavoro reale."
+        ],
+        "takeaway": "Non deriva una proporzione universale dalle tre schede."
+      },
+      "scientificMeaning": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "displayText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "captionText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "spokenText": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna cinquanta a cinquanta; la scheda di processo indica circa una parte di compost per due parti di suolo argilloso in un contenitore; un’altra richiede cinque chilogrammi di miscela per pomodori.\n\nTre scopi, basi massa o volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva cinquanta a cinquanta e uno a due come esempi fedeli, ma non applicarli al prodotto da cinque chilogrammi.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+      "spokenTextSHA256": "cf6d88a15f55cc1e34b19d258853093abfe7772061aacec2d052927a43bb40e7",
+      "spokenTextSha256": "cf6d88a15f55cc1e34b19d258853093abfe7772061aacec2d052927a43bb40e7",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "ae5b3563cd679634008d0da31c54f02aed1d5df6586aa6513d12c5ecc8c6a138",
+      "requestFingerprintSha256": "ae5b3563cd679634008d0da31c54f02aed1d5df6586aa6513d12c5ecc8c6a138",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna 50:50; la scheda di processo indica circa 1 parte di compost per 2 parti di suolo argilloso in un contenitore; un’altra richiede 5 kg di miscela per pomodori.\n\nTre scopi, basi massa/volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva 50:50 e 1:2 come esempi fedeli, ma non applicarli al prodotto da 5 kg.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+          "spoken": "Non trasferire la proporzione dell’argilla\n\nIl modello del docente presenta un’aiuola esterna cinquanta a cinquanta; la scheda di processo indica circa una parte di compost per due parti di suolo argilloso in un contenitore; un’altra richiede cinque chilogrammi di miscela per pomodori.\n\nTre scopi, basi massa o volume, materiali e comportamenti idrici potenzialmente distinti.\n\nConserva cinquanta a cinquanta e uno a due come esempi fedeli, ma non applicarli al prodotto da cinque chilogrammi.\n\nChiedi specifica approvata e analisi per ciascun lavoro reale.\n\nNon deriva una proporzione universale dalle tre schede.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "5",
+            "50"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}
