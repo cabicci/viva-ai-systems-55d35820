@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "stepId": "S3-12",
+  "units": [
+    {
+      "id": "S3-12-en-opening-lexical-meaning-subpassage-extra1",
+      "unitId": "S3-12-en-opening-lexical-meaning-subpassage-extra1",
+      "locale": "en",
+      "semanticGroup": "corroborated-C021-coherent-subpassage-repair",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "8952bc9fcace335915af40ca232b85a6d55f22dd750c1439e1ffbb72527d5d6f",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "A mineral soil texture class, a clay-amended teaching container and a tomato potting blend are different things. Read the trainer's material specification and its mass or volume basis before calculating or mixing.",
+          "sha256": "1204d98710e2b2dd7e919768e7cdfbd88b2ffcdf46e18fc680967b76fd62f0ef"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "Explain the distinct functions and limits of clay mineral soil, compost, perlite and a phosphorus source; identify whether a recipe is by mass or volume and calculate amounts only from a supplied documented specification.",
+          "sha256": "7c1450c117ac45a96b02d8bc084f81797570f25d673fd6f5cd6d92306b799de9"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "Under a trainer, identify three real soil samples by feel, select the confirmed clay sample, then measure, mix and assess its separate teaching-container amendment to an announced specification; treat the source's approximate 1 part compost to 2 parts soil as an unverified example, not a general recipe.",
+          "sha256": "1834421e08a94648952ddfc56cf24c96423f0024aff49ba8d26d1d6facb1b23c"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "Individually calculate and make a 5 kg tomato potting product to the trainer's documented ingredient, proportion, moisture/weight-tolerance and quality specification; check uniformity, final mass, packaging, label and the agronomic reason for each authorized component.",
+          "sha256": "8aee11cdd17fea18d8b9db58912d479f82fba9000e4bc6c215c89d804b87d560"
+        }
+      ],
+      "scientificMeaning": "A mineral soil texture class, a clay-amended teaching container and a tomato potting blend are different things. Read the trainer's material specification and its mass or volume basis before calculating or mixing.\n\nExplain the distinct functions and limits of clay mineral soil, compost, perlite and a phosphorus source; identify whether a recipe is by mass or volume and calculate amounts only from a supplied documented specification.\n\nUnder a trainer, identify three real soil samples by feel, select the confirmed clay sample, then measure, mix and assess its separate teaching-container amendment to an announced specification; treat the source's approximate 1 part compost to 2 parts soil as an unverified example, not a general recipe.\n\nIndividually calculate and make a 5 kg tomato potting product to the trainer's documented ingredient, proportion, moisture/weight-tolerance and quality specification; check uniformity, final mass, packaging, label and the agronomic reason for each authorized component.",
+      "displayText": "A mineral soil texture class, a clay-amended teaching container and a tomato potting blend are different things. Read the trainer's material specification and its mass or volume basis before calculating or mixing.\n\nExplain the distinct functions and limits of clay mineral soil, compost, perlite and a phosphorus source; identify whether a recipe is by mass or volume and calculate amounts only from a supplied documented specification.\n\nUnder a trainer, identify three real soil samples by feel, select the confirmed clay sample, then measure, mix and assess its separate teaching-container amendment to an announced specification; treat the source's approximate 1 part compost to 2 parts soil as an unverified example, not a general recipe.\n\nIndividually calculate and make a 5 kg tomato potting product to the trainer's documented ingredient, proportion, moisture/weight-tolerance and quality specification; check uniformity, final mass, packaging, label and the agronomic reason for each authorized component.",
+      "captionText": "A mineral soil texture class, a clay-amended teaching container and a tomato potting blend are different things. Read the trainer's material specification and its mass or volume basis before calculating or mixing.\n\nExplain the distinct functions and limits of clay mineral soil, compost, perlite and a phosphorus source; identify whether a recipe is by mass or volume and calculate amounts only from a supplied documented specification.\n\nUnder a trainer, identify three real soil samples by feel, select the confirmed clay sample, then measure, mix and assess its separate teaching-container amendment to an announced specification; treat the source's approximate 1 part compost to 2 parts soil as an unverified example, not a general recipe.\n\nIndividually calculate and make a 5 kg tomato potting product to the trainer's documented ingredient, proportion, moisture/weight-tolerance and quality specification; check uniformity, final mass, packaging, label and the agronomic reason for each authorized component.",
+      "spokenText": "Read the trainer's material specification and its mass or volume basis before calculating or mixing.",
+      "spokenTextSHA256": "d0a50855b439355252db220324f43fe7e7d92affb42ff1e462a5a09c0f4815c7",
+      "spokenTextSha256": "d0a50855b439355252db220324f43fe7e7d92affb42ff1e462a5a09c0f4815c7",
+      "spokenAdaptationChanges": [
+        {
+          "written": "A mineral soil texture class, a clay-amended teaching container and a tomato potting blend are different things. Read the trainer's material specification and its mass or volume basis before calculating or mixing.\n\nExplain the distinct functions and limits of clay mineral soil, compost, perlite and a phosphorus source; identify whether a recipe is by mass or volume and calculate amounts only from a supplied documented specification.\n\nUnder a trainer, identify three real soil samples by feel, select the confirmed clay sample, then measure, mix and assess its separate teaching-container amendment to an announced specification; treat the source's approximate 1 part compost to 2 parts soil as an unverified example, not a general recipe.\n\nIndividually calculate and make a 5 kg tomato potting product to the trainer's documented ingredient, proportion, moisture/weight-tolerance and quality specification; check uniformity, final mass, packaging, label and the agronomic reason for each authorized component.",
+          "spoken": "Read the trainer's material specification and its mass or volume basis before calculating or mixing.",
+          "occurrences": 1,
+          "purpose": "Exact root-read coherent repair subpassage, with identifier clarifying Bindestrich only in C008. Source bindings retain parent context, not claim that snippet narrates every parent leaf. Preserve all outside original PCM."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Keep basis clearly as BAY-sis with the s sounds intact, not basious or bashis. Preserve the mass OR volume distinction. Do not read this direction aloud.",
+      "deliverySHA256": "d9afcac00d949d47e0b0fc5cecee3bd8f4b5eace7dbe34e8cf87c7d5b90b2725",
+      "deliverySha256": "d9afcac00d949d47e0b0fc5cecee3bd8f4b5eace7dbe34e8cf87c7d5b90b2725",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "0a3b05af5edfdcb59e1187130e4a780d07dba6a1a909e6ebdd3b0e16e35fada0",
+      "requestFingerprintSha256": "0a3b05af5edfdcb59e1187130e4a780d07dba6a1a909e6ebdd3b0e16e35fada0",
+      "sourcePlan": "provenance/narration-en.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-12-en-opening-r1",
+      "originalSpokenWholeSHA256": "f27ff5818dac36cda2417d8b6ff74d23c66f8bae105cbdedc4a16d521e36e150",
+      "exactParentSpokenCharacterSlice": {
+        "first": 113,
+        "endExclusive": 213,
+        "text": "Read the trainer's material specification and its mass or volume basis before calculating or mixing.",
+        "notPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_SOURCE_PHRASE_BOUNDARIES",
+      "separateFromEarlierFiveTTSAnd119AndR10": true
+    }
+  ],
+  "repairOnlyNotFullParentNarration": true
+}
