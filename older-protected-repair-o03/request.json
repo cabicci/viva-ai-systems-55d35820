@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_ROOT_TEXT_APPROVED_OLDER_PROTECTED_O03_ONE_COHERENT_REPAIR",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-older-protected-repair-o03-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_GATED_SUBPASSAGE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-ar-EG-E02-site-title-onepass-r1",
+      "unitId": "S3-13-ar-EG-E02-site-title-onepass-r1",
+      "stepId": "S3-13",
+      "locale": "ar-EG",
+      "semanticGroup": "O03-bounded-source-completion",
+      "sourceCaseId": "one-acre",
+      "sourceWholeFileSHA256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "الأكر سؤال موقع، مش فدان",
+          "sha256": "f8d0f508ba83b3698b3dcbbec763878033e8729b58338e6409b421cf08ea240c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.",
+          "sha256": "de246ef46519c30e685e06669b415ddab0c86f33ac437e5ea546428b9b92bc8a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "حوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.",
+          "sha256": "0d4fdae25d00a3655aaccfe97eb282f4180c899b18b0334219184a8549279d67"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "قس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.",
+          "sha256": "d086f611b58aa6cdd254c96e384c18068ea73c4488352908f926f9cc8269b28a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "لو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.",
+          "sha256": "8b0071383d9456b244c5e86f2a49ea87f3dd3a933a93bbe28b1a2a182d2f8568"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "قرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+          "sha256": "044bb6562fb2006ff5fa15606169016209a579a8492b5c599f6cf85201d580e9"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "one-acre",
+        "title": "الأكر سؤال موقع، مش فدان",
+        "situation": "مزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.",
+        "reasoning": [
+          "حوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.",
+          "قس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.",
+          "لو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس."
+        ],
+        "takeaway": "قرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة."
+      },
+      "scientificMeaning": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "displayText": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "captionText": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "spokenText": "الأكر مش فدان. واختيار طريقة الشغل بيعتمد على الموقع.",
+      "spokenTextSHA256": "5adacbb9d425757ae55f9f99d01c0939828697f210c04ac0e62f05d506469cb1",
+      "spokenTextSha256": "5adacbb9d425757ae55f9f99d01c0939828697f210c04ac0e62f05d506469cb1",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.\nخلّي كلمة الموقع واضحة في سياق اختيار طريقة الشغل، وقول الأكر مش فدان من غير تغيير المعنى. ما تقراش التعليمات.",
+      "requestFingerprintSHA256": "90f2fc9d301ff55e9b67df4cad865ee4ebe6fc0843d634fe697b123055b1ce5c",
+      "requestFingerprintSha256": "90f2fc9d301ff55e9b67df4cad865ee4ebe6fc0843d634fe697b123055b1ce5c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+          "spoken": "الأكر مش فدان. واختيار طريقة الشغل بيعتمد على الموقع.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "3a62888ffbc5082aa295567d2aad8052531deade6b6c4f3bddc86c75c3237682",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "1b18316895480abf109fca3d240d41abeb385a8d79f87b01b5925fb5af7af1fa",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-13-ar-EG.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-13-ar-EG-E02-r1",
+      "originalSpokenWholeSHA256": "ffdfbe92cc0fd0adb5691a3d13223eda28ac0b14e73de254a1dcd67c1cc6c8e6",
+      "exactParentSpokenCharacterSlice": {
+        "first": 0,
+        "endExclusive": 24,
+        "text": "الأكر سؤال موقع، مش فدان"
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-13-ar-EG-E02-r1",
+      "sourceCaseIndex": 1,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "3a62888ffbc5082aa295567d2aad8052531deade6b6c4f3bddc86c75c3237682"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-13-ar-EG-E02-site-title-onepass-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "duplicateExclusionProof": "EXACT_FINGERPRINT_PRIVATE_PREPUBLICATION_AUDIT_NO_REUSABLE_MATCH"
+}
