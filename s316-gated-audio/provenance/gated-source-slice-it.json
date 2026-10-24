@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-16",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "clock",
+      "title": "25 minuti non includono l’attesa",
+      "situation": "Studente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.",
+      "reasoning": [
+        "I 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.",
+        "Un ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.",
+        "Lo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare."
+      ],
+      "takeaway": "Lavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio."
+    },
+    {
+      "id": "cups",
+      "title": "Due tazze non sono una pesata",
+      "situation": "L’esempio richiede «circa due tazze o 500 grammi» del composito.",
+      "reasoning": [
+        "Chiedere unità e quantità al laboratorio ricevente.",
+        "Se 500 g, pesare; se due tazze, misurare il volume e dichiararlo.",
+        "Registrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume."
+      ],
+      "takeaway": "Quantità univoca misurata e identità integra."
+    },
+    {
+      "id": "ph-method",
+      "title": "Un rapporto deve dire quale grandezza",
+      "situation": "L'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.",
+      "reasoning": [
+        "Primo esempio massa:volume, secondo volume:volume.",
+        "Scegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.",
+        "La misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro."
+      ],
+      "takeaway": "Misura riproducibile con metodo dichiarato."
+    },
+    {
+      "id": "feel",
+      "title": "Nastri corti, classi differenti",
+      "situation": "Due campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.",
+      "reasoning": [
+        "Prima confermare umidità, sfera e nastro.",
+        "Seguire ramo USDA del nastro debole e distinguere granuloso/liscio.",
+        "Se il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni."
+      ],
+      "takeaway": "Usare lunghezza e sensazione, annotando l’incertezza della stima sul campo."
+    }
+  ]
+}

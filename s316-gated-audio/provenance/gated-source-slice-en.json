@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-16",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "clock",
+      "title": "25 practical minutes do not contain the wait",
+      "situation": "A student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.",
+      "reasoning": [
+        "The planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.",
+        "Record one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.",
+        "The student carries out each task; a trainer's earlier example tube is demonstration only."
+      ],
+      "takeaway": "Staged observed work with active and waiting times logged separately; no shortcut pass."
+    },
+    {
+      "id": "cups",
+      "title": "Two cups are not a mass reading",
+      "situation": "The example says submit 'about 2 cups or 500 grams' of the composite.",
+      "reasoning": [
+        "Ask what amount and unit the receiving lab actually requests.",
+        "If it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.",
+        "Record the sample ID and required sampling depth/count rather than equating volume with mass."
+      ],
+      "takeaway": "One unambiguous measured submission amount and an intact identity chain."
+    },
+    {
+      "id": "ph-method",
+      "title": "A ratio must name its basis",
+      "situation": "The teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.",
+      "reasoning": [
+        "The worked example is mass:volume; the lab example is volume:volume.",
+        "Choose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.",
+        "A digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other."
+      ],
+      "takeaway": "A reproducible, device-matched measurement rather than a mixed-method number."
+    },
+    {
+      "id": "feel",
+      "title": "The same short ribbon may mean different classes",
+      "situation": "Two samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.",
+      "reasoning": [
+        "Confirm proper moisture and ball/ribbon conditions first.",
+        "Follow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.",
+        "If the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates."
+      ],
+      "takeaway": "Classify with both ribbon length and feel; note field-estimate uncertainty."
+    }
+  ]
+}

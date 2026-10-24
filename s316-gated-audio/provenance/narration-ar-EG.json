@@ -1,0 +1,552 @@
+{
+  "stepId": "S3-16",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-16-ar-EG.json",
+    "sha256": "d5bebdb052bb79ccf542f654c672364f91f5485f94ff0ab61122a48a5b597a82",
+    "bytes": 51137
+  },
+  "units": [
+    {
+      "id": "S3-16-ar-EG-E01-r1",
+      "unitId": "S3-16-ar-EG-E01-r1",
+      "stepId": "S3-16",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "clock",
+      "sourceWholeFileSHA256": "d5bebdb052bb79ccf542f654c672364f91f5485f94ff0ab61122a48a5b597a82",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "٢٥ دقيقة ما تشملش الانتظار",
+          "sha256": "8262023297778af998a1eabbfcfe6a10ff99ebcc76ca16f4243e854d9affd75d"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "الطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.",
+          "sha256": "0080d1f315288cbad89736995a0c8b4087735e8548969df0e3cc7d0eca281f06"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "الـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.",
+          "sha256": "e7293be1a126d1d573dde9f3bc0472588d6a47ee234c767a3161c61b01044794"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "سجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.",
+          "sha256": "d1af31a72157e7404f5e8ccb123f7931b46ff6d60a8b5763d12d45269ed41e9e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "الطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط.",
+          "sha256": "cac14a41e25e6c3292f73ee1109c94999a8e9049b1855c1b5bcd0dd3949b8dd8"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "شغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر.",
+          "sha256": "ff8e57830bac7e575fd4a8ffd1f02d4081e4cc9eb0b243c55e681da34af2985a"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "clock",
+        "title": "٢٥ دقيقة ما تشملش الانتظار",
+        "situation": "الطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.",
+        "reasoning": [
+          "الـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.",
+          "سجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.",
+          "الطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط."
+        ],
+        "takeaway": "شغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر."
+      },
+      "scientificMeaning": "٢٥ دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.\n\nالـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.\n\nسجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط.\n\nشغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر.",
+      "displayText": "٢٥ دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.\n\nالـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.\n\nسجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط.\n\nشغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر.",
+      "captionText": "٢٥ دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.\n\nالـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.\n\nسجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط.\n\nشغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر.",
+      "spokenText": "خمسة وعشرين دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة سي الساعة عشرة بالظبط، وبدأ يجففها بالهوا. وبعد كده بدأ انتظار اتزان معلّق بي إتش، ومدته في المثال التعليمي من تلاتين لستين دقيقة.\n\nالخمسة وعشرين دقيقة المخططة، تقدير للشغل النشط، مش إجمالي التجفيف والانتظار.\n\nسجّل هوية عينة واحدة تربط الجمع والتجفيف وبي إتش والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفّذ كل مرحلة بنفسه. أنبوبة المدرّب الجاهزة للعرض بس.\n\nشغل على مراحل، وملاحظة للأداء، ووقت شغل ووقت انتظار كل واحد لوحده. من غير اختصار يدي اجتياز.",
+      "spokenTextSHA256": "d413e8a7e10bf0a277cd974ab566cf15a397583641b949a6ed1d217a1344c224",
+      "spokenTextSha256": "d413e8a7e10bf0a277cd974ab566cf15a397583641b949a6ed1d217a1344c224",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "24a1c350531063884a4a01f9bdc333b9763edd7d374b6f247f390d5aab3509f4",
+      "requestFingerprintSha256": "24a1c350531063884a4a01f9bdc333b9763edd7d374b6f247f390d5aab3509f4",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "٢٥ دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة C الساعة ١٠:٠٠، وبدأ يجففها بالهوا، وبعدها بدأ انتظار اتزان معلّق pH اللي مدته في المثال التعليمي ٣٠–٦٠ دقيقة.\n\nالـ٢٥ دقيقة المخططة تقدير عمل نشط، مش إجمالي التجفيف والانتظار.\n\nسجل هوية عينة واحدة عبر الجمع والتجفيف وpH والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفذ كل مرحلة؛ أنبوبة المدرّب الجاهزة للعرض فقط.\n\nشغل على مراحل وملاحظة ووقت عمل وانتظار منفصل، بلا اجتياز مختصر.",
+          "spoken": "خمسة وعشرين دقيقة ما تشملش الانتظار\n\nالطالب جمع تربة القطعة سي الساعة عشرة بالظبط، وبدأ يجففها بالهوا. وبعد كده بدأ انتظار اتزان معلّق بي إتش، ومدته في المثال التعليمي من تلاتين لستين دقيقة.\n\nالخمسة وعشرين دقيقة المخططة، تقدير للشغل النشط، مش إجمالي التجفيف والانتظار.\n\nسجّل هوية عينة واحدة تربط الجمع والتجفيف وبي إتش والملمس والتقرير، مع وقت كل فعل.\n\nالطالب ينفّذ كل مرحلة بنفسه. أنبوبة المدرّب الجاهزة للعرض بس.\n\nشغل على مراحل، وملاحظة للأداء، ووقت شغل ووقت انتظار كل واحد لوحده. من غير اختصار يدي اجتياز.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٠٠",
+            "١٠",
+            "٢٥",
+            "٣٠",
+            "٦٠"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "130979438fc304dea238021c1f654eb93d7d79dd33809940cecc26f1bc62a704",
+              "revisedSpokenSHA256": "d413e8a7e10bf0a277cd974ab566cf15a397583641b949a6ed1d217a1344c224",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-16-ar-EG-E02-r1",
+      "unitId": "S3-16-ar-EG-E02-r1",
+      "stepId": "S3-16",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "cups",
+      "sourceWholeFileSHA256": "d5bebdb052bb79ccf542f654c672364f91f5485f94ff0ab61122a48a5b597a82",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "كوبان مش قراءة ميزان",
+          "sha256": "d90f468b93d0818494a06b2d0cf84f8642a714e65a488c5fb0cb1484776c6a06"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "المثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.",
+          "sha256": "6aa4d09b303642b88d6e207f69c6ead9c8d7d2d65aeeb08bb078aade90f75f6c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "اسأل المعمل المستلم مطلوب أي كمية وأي وحدة.",
+          "sha256": "18c155f9cd1f3c389de243bb92ba43bd270bce0050c8bfeb87f50e3025299a9e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "لو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.",
+          "sha256": "5835e990783261efb656ff15ed470c900f5f45e418b0f127dc2bbdf2b0147067"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "اربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة.",
+          "sha256": "04e49945d0b94395f03a648ebe46c277e61b30a7608c5c911dbdb5ffeebfdb67"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "مقدار واضح مقاس وهوية عينة سليمة.",
+          "sha256": "2f27e9f27f9415ec47da87e23eb86a393e0fe1a2728c78159da7c1739b99125b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "cups",
+        "title": "كوبان مش قراءة ميزان",
+        "situation": "المثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.",
+        "reasoning": [
+          "اسأل المعمل المستلم مطلوب أي كمية وأي وحدة.",
+          "لو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.",
+          "اربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة."
+        ],
+        "takeaway": "مقدار واضح مقاس وهوية عينة سليمة."
+      },
+      "scientificMeaning": "كوبان مش قراءة ميزان\n\nالمثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.\n\nاسأل المعمل المستلم مطلوب أي كمية وأي وحدة.\n\nلو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة.\n\nمقدار واضح مقاس وهوية عينة سليمة.",
+      "displayText": "كوبان مش قراءة ميزان\n\nالمثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.\n\nاسأل المعمل المستلم مطلوب أي كمية وأي وحدة.\n\nلو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة.\n\nمقدار واضح مقاس وهوية عينة سليمة.",
+      "captionText": "كوبان مش قراءة ميزان\n\nالمثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.\n\nاسأل المعمل المستلم مطلوب أي كمية وأي وحدة.\n\nلو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة.\n\nمقدار واضح مقاس وهوية عينة سليمة.",
+      "spokenText": "كوبين مش قراءة ميزان\n\nالمثال بيقول حوالي كوبين أو خمسمية جرام من العينة المركّبة.\n\nاسأل المعمل المستلم عن الكمية والوحدة المطلوبين فعلًا.\n\nلو المطلوب خمسمية جرام، اوزن المقدار ده. ولو المطلوب كوبين، قيس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد، بدل ما تساوي بين الحجم والكتلة.\n\nمقدار واضح ومقاس، وهوية عينة سليمة.",
+      "spokenTextSHA256": "bc2d284457b2a03db38c4d1cec3365b25bdf1ba47c5cd280d54f6815decbc49d",
+      "spokenTextSha256": "bc2d284457b2a03db38c4d1cec3365b25bdf1ba47c5cd280d54f6815decbc49d",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "6aecee21d22c8dcc6e877e0f3c906f59c43eaed193a75e65828b5adaca74dbd0",
+      "requestFingerprintSha256": "6aecee21d22c8dcc6e877e0f3c906f59c43eaed193a75e65828b5adaca74dbd0",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "كوبان مش قراءة ميزان\n\nالمثال بيقول «حوالي كوبين أو ٥٠٠ جرام» من العينة المركّبة.\n\nاسأل المعمل المستلم مطلوب أي كمية وأي وحدة.\n\nلو ٥٠٠ جرام زِن؛ لو كوبين قِس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد بدل تحويل الحجم لكتلة.\n\nمقدار واضح مقاس وهوية عينة سليمة.",
+          "spoken": "كوبين مش قراءة ميزان\n\nالمثال بيقول حوالي كوبين أو خمسمية جرام من العينة المركّبة.\n\nاسأل المعمل المستلم عن الكمية والوحدة المطلوبين فعلًا.\n\nلو المطلوب خمسمية جرام، اوزن المقدار ده. ولو المطلوب كوبين، قيس الحجم واكتب الوحدة.\n\nاربط المقدار برقم العينة والعمق والعدد، بدل ما تساوي بين الحجم والكتلة.\n\nمقدار واضح ومقاس، وهوية عينة سليمة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٥٠٠"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "19a0cb30d47718d29b9cac4cc6c6093c120946b440533d93809cc904512693c6",
+              "revisedSpokenSHA256": "bc2d284457b2a03db38c4d1cec3365b25bdf1ba47c5cd280d54f6815decbc49d",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-16-ar-EG-E03-r1",
+      "unitId": "S3-16-ar-EG-E03-r1",
+      "stepId": "S3-16",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "ph-method",
+      "sourceWholeFileSHA256": "d5bebdb052bb79ccf542f654c672364f91f5485f94ff0ab61122a48a5b597a82",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "النسبة لازم تقول أساسها",
+          "sha256": "05b823ef9469cdb732bde0a65bc2a22ab2e8d5a640c8a556d03dfd48702073e8"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "مثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.",
+          "sha256": "c316ba5748c6a3e3741a790174c459e818251ba7ed7ea0dd23a9f27608ffd979"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "المثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.",
+          "sha256": "17dd82e3435defe1f578fa6651aa2c6f18e5f9a2acd8e69a7ba309157f773789"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "اختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.",
+          "sha256": "867166dab76858b471044463a281af769a8820b47906c52271b095379709cfc9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "القياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية.",
+          "sha256": "627252842fe4c9459af1aac8897714e4e5cbc7866a8677def0af8ea07919f8e8"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "قياس قابل للتكرار بجهاز وطريقة مطابقين.",
+          "sha256": "c23b92c6debf09b1bc7cef272d957e1c09cf76e04fdca95635e11388b0624a7a"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "ph-method",
+        "title": "النسبة لازم تقول أساسها",
+        "situation": "مثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.",
+        "reasoning": [
+          "المثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.",
+          "اختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.",
+          "القياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية."
+        ],
+        "takeaway": "قياس قابل للتكرار بجهاز وطريقة مطابقين."
+      },
+      "scientificMeaning": "النسبة لازم تقول أساسها\n\nمثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.\n\nالمثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.\n\nاختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية.\n\nقياس قابل للتكرار بجهاز وطريقة مطابقين.",
+      "displayText": "النسبة لازم تقول أساسها\n\nمثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.\n\nالمثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.\n\nاختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية.\n\nقياس قابل للتكرار بجهاز وطريقة مطابقين.",
+      "captionText": "النسبة لازم تقول أساسها\n\nمثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.\n\nالمثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.\n\nاختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية.\n\nقياس قابل للتكرار بجهاز وطريقة مطابقين.",
+      "spokenText": "النسبة لازم توضّح أساسها\n\nمثال الشرح بيستخدم عشرين جرام تربة جافة وعشرين ملليلتر مَيّه مقطّرة. ده أساس كتلة لحجم. فيه طريقة معملية تانية منفصلة، أساسها واحد لواحد، حجم لحجم. التربة فيها بتتاخد بمكيال اسمه «عشرة جرام إن سي آر تلتاشر فوليومتريك سكوب»، ومعاه عشرة ملليلتر مَيّه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن بالظبط عشرة جرام من التربة دي.\n\nالمثال التعليمي كتلة لحجم، والطريقة المعملية التانية حجم لحجم.\n\nاختار الإجراء الحقيقي للجهاز والمعمل، وسجّل الكمية والانتظار والمعايرة. ما تاخدش رقم من طريقة تانية.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان، لكل واحدة فيهم أدوات وإجراءات مختلفة. لو عملت واحدة، ده ما يثبتش إنك عملت التانية.\n\nالمطلوب قياس تقدر تكرره، بجهاز وطريقة مطابقين.",
+      "spokenTextSHA256": "c51067387f4daa69ebc9b8c07e9532e15a8065d5c222ec9d54a16b5e24649636",
+      "spokenTextSha256": "c51067387f4daa69ebc9b8c07e9532e15a8065d5c222ec9d54a16b5e24649636",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "972fe7c740d3137310e67dfd847700d5d7d4e3fdd290fbac66be09a290c0d624",
+      "requestFingerprintSha256": "972fe7c740d3137310e67dfd847700d5d7d4e3fdd290fbac66be09a290c0d624",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "النسبة لازم تقول أساسها\n\nمثال الشرح بيستخدم ٢٠ جم تربة جافة و٢٠ مل مياه مقطرة: كتلة:حجم. طريقة معملية منفصلة بتستخدم ١:١ حجم:حجم، بمكيال تربة اسمه «10 gram NCR-13 volumetric scoop» ومعاه ١٠ مل مياه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن ١٠ جم بالضبط من التربة دي.\n\nالمثال التعليمي كتلة:حجم، والمعمل الآخر حجم:حجم.\n\nاختر إجراء الجهاز والمعمل الحقيقي وسجل الكمية والانتظار والمعايرة؛ ما تستعيرش رقمًا من طريقة مختلفة.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان ليهم أدوات وإجراءات مختلفة؛ تنفيذ واحدة ما يثبتش إنك نفذت التانية.\n\nقياس قابل للتكرار بجهاز وطريقة مطابقين.",
+          "spoken": "النسبة لازم توضّح أساسها\n\nمثال الشرح بيستخدم عشرين جرام تربة جافة وعشرين ملليلتر مَيّه مقطّرة. ده أساس كتلة لحجم. فيه طريقة معملية تانية منفصلة، أساسها واحد لواحد، حجم لحجم. التربة فيها بتتاخد بمكيال اسمه «عشرة جرام إن سي آر تلتاشر فوليومتريك سكوب»، ومعاه عشرة ملليلتر مَيّه منزوعة الأيونات. ده اسم مكيال حجمي، مش تعليمات إنك توزن بالظبط عشرة جرام من التربة دي.\n\nالمثال التعليمي كتلة لحجم، والطريقة المعملية التانية حجم لحجم.\n\nاختار الإجراء الحقيقي للجهاز والمعمل، وسجّل الكمية والانتظار والمعايرة. ما تاخدش رقم من طريقة تانية.\n\nالقياس بالقطب الرقمي والمقارنة بكاشف ألوان، لكل واحدة فيهم أدوات وإجراءات مختلفة. لو عملت واحدة، ده ما يثبتش إنك عملت التانية.\n\nالمطلوب قياس تقدر تكرره، بجهاز وطريقة مطابقين.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "10",
+            "13",
+            "١",
+            "١٠",
+            "٢٠"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "af53276cb385881471437e78cbb52457c4fd4ab36b85a94abae7e61a50c39fa2",
+              "revisedSpokenSHA256": "c51067387f4daa69ebc9b8c07e9532e15a8065d5c222ec9d54a16b5e24649636",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-16-ar-EG-E04-r1",
+      "unitId": "S3-16-ar-EG-E04-r1",
+      "stepId": "S3-16",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "sourceCaseId": "feel",
+      "sourceWholeFileSHA256": "d5bebdb052bb79ccf542f654c672364f91f5485f94ff0ab61122a48a5b597a82",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "شريطان قصيران وممكن فئتين",
+          "sha256": "4929adee5ad8ac564705729dfb604bcc45cc566c980494ddf3573810cfae5160"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "عينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.",
+          "sha256": "dbba296e144afc4293cbb011b5283d6cf8aade111d23185a01fb7b6231673625"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "اضبط الرطوبة ونتيجة الكرة والشريط الأول.",
+          "sha256": "616829258570f8b4b65be94542dd6bf9a8a5c7649675c2271a9b67ccb9505abf"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "اتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.",
+          "sha256": "ea724862c1310775143a418c1a2cd203262e2bcc0843e3306f4fbd22c544a7fd"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "لو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة.",
+          "sha256": "dfb0cffa36a37805141948cdf1deeb811ce4ece5d8579d0433375518d85ac797"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "صنّف بالطول والإحساس مع بيان حدود التقدير الحقلي.",
+          "sha256": "77e07949efbc681106c869e65c7604bb7523fccb5dce82e9e67ec46717a46faf"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "feel",
+        "title": "شريطان قصيران وممكن فئتين",
+        "situation": "عينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.",
+        "reasoning": [
+          "اضبط الرطوبة ونتيجة الكرة والشريط الأول.",
+          "اتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.",
+          "لو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة."
+        ],
+        "takeaway": "صنّف بالطول والإحساس مع بيان حدود التقدير الحقلي."
+      },
+      "scientificMeaning": "شريطان قصيران وممكن فئتين\n\nعينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.\n\nاضبط الرطوبة ونتيجة الكرة والشريط الأول.\n\nاتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.\n\nلو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة.\n\nصنّف بالطول والإحساس مع بيان حدود التقدير الحقلي.",
+      "displayText": "شريطان قصيران وممكن فئتين\n\nعينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.\n\nاضبط الرطوبة ونتيجة الكرة والشريط الأول.\n\nاتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.\n\nلو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة.\n\nصنّف بالطول والإحساس مع بيان حدود التقدير الحقلي.",
+      "captionText": "شريطان قصيران وممكن فئتين\n\nعينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.\n\nاضبط الرطوبة ونتيجة الكرة والشريط الأول.\n\nاتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.\n\nلو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة.\n\nصنّف بالطول والإحساس مع بيان حدود التقدير الحقلي.",
+      "spokenText": "شريطين قصيرين، وممكن فئتين مختلفتين\n\nعينتين، كل واحدة عملت شريط طوله اتنين سنتيمتر. واحدة ملمسها خشن عند الفرك المبلول، والتانية ناعمة جدًا.\n\nاتأكد الأول من الرطوبة ونتيجة الكورة والشريط.\n\nامشِ على فرع الشريط الضعيف في دليل يو إس دي إيه، وبعدين فرّق بين الإحساس الخشن والناعم.\n\nلو العينة اللي شريطها ضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي. ولو ناعمة جدًا، بيدعم لوم سلتي. ولو ولا إحساس فيهم هو الغالب، امشِ على فرع اللوم. دي تقديرات حقلية بشروطها.\n\nصنّف بالطول والإحساس مع بعض، ووضّح حدود التقدير الحقلي.",
+      "spokenTextSHA256": "f5f9cefecc275503cac1f011ce33dfbd61dc084bf7812f1e5887c93ffcb8b720",
+      "spokenTextSha256": "f5f9cefecc275503cac1f011ce33dfbd61dc084bf7812f1e5887c93ffcb8b720",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "ba9705eed5efea42db9c99d58d89492fce657de26f80f771fe214ba73a44d25b",
+      "requestFingerprintSha256": "ba9705eed5efea42db9c99d58d89492fce657de26f80f771fe214ba73a44d25b",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "شريطان قصيران وممكن فئتين\n\nعينتان كل واحدة عملت شريطًا ٢ سم؛ واحدة خشنة عند الفرك والأخرى ناعمة جدًا.\n\nاضبط الرطوبة ونتيجة الكرة والشريط الأول.\n\nاتبع فرع الشريط الضعيف في دليل USDA ثم فرق ملمس الخشن والناعم.\n\nلو العينة ذات الشريط الضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي؛ ولو ناعمة جدًا، بيدعم لوم سلتي. ولو مفيش إحساس منهم غالب، اتبع فرع اللوم. دي تفضل تقديرات حقلية مشروطة.\n\nصنّف بالطول والإحساس مع بيان حدود التقدير الحقلي.",
+          "spoken": "شريطين قصيرين، وممكن فئتين مختلفتين\n\nعينتين، كل واحدة عملت شريط طوله اتنين سنتيمتر. واحدة ملمسها خشن عند الفرك المبلول، والتانية ناعمة جدًا.\n\nاتأكد الأول من الرطوبة ونتيجة الكورة والشريط.\n\nامشِ على فرع الشريط الضعيف في دليل يو إس دي إيه، وبعدين فرّق بين الإحساس الخشن والناعم.\n\nلو العينة اللي شريطها ضعيف ملمسها خشن جدًا، الدليل بيدعم لوم رملي. ولو ناعمة جدًا، بيدعم لوم سلتي. ولو ولا إحساس فيهم هو الغالب، امشِ على فرع اللوم. دي تقديرات حقلية بشروطها.\n\nصنّف بالطول والإحساس مع بعض، ووضّح حدود التقدير الحقلي.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٢"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "f8f9d5f55ebaa1506ffe2f3c1cca2e660f4634806ddffe38d1d1c7657815eb3e",
+              "revisedSpokenSHA256": "f5f9cefecc275503cac1f011ce33dfbd61dc084bf7812f1e5887c93ffcb8b720",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

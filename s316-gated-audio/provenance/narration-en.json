@@ -1,0 +1,514 @@
+{
+  "stepId": "S3-16",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-16-en.json",
+    "sha256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+    "bytes": 39425
+  },
+  "units": [
+    {
+      "id": "S3-16-en-E01-r1",
+      "unitId": "S3-16-en-E01-r1",
+      "stepId": "S3-16",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "clock",
+      "sourceWholeFileSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "25 practical minutes do not contain the wait",
+          "sha256": "9a55a6e9e79ca27dbf7948d9b92328cf2ab64bce4c98c056dca751124545b25c"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.",
+          "sha256": "0f1a405e8a667829c8c12c795bee3cd8bc79def5cbc61d9d336132e1b99405d1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "The planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.",
+          "sha256": "d15c45af1e2ef800f3119137af0bcf2ad74932b41bf18e8640445bea3a9460a1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Record one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.",
+          "sha256": "05fee6a0e1ef72137321ac074d27e946b05a60cd6b81408d3f6820cda54e3869"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "The student carries out each task; a trainer's earlier example tube is demonstration only.",
+          "sha256": "6085034502abf4a8627fbe0a7fe68079defed154d79f59a811d0d5b30eeb5948"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Staged observed work with active and waiting times logged separately; no shortcut pass.",
+          "sha256": "cf94d734fcd5d72139f65d12f2c71fb2ca71d23c179825e02a2661afb56219a2"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "clock",
+        "title": "25 practical minutes do not contain the wait",
+        "situation": "A student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.",
+        "reasoning": [
+          "The planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.",
+          "Record one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.",
+          "The student carries out each task; a trainer's earlier example tube is demonstration only."
+        ],
+        "takeaway": "Staged observed work with active and waiting times logged separately; no shortcut pass."
+      },
+      "scientificMeaning": "25 practical minutes do not contain the wait\n\nA student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.\n\nThe planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.\n\nRecord one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+      "displayText": "25 practical minutes do not contain the wait\n\nA student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.\n\nThe planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.\n\nRecord one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+      "captionText": "25 practical minutes do not contain the wait\n\nA student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.\n\nThe planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.\n\nRecord one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+      "spokenText": "twenty-five practical minutes do not contain the wait\n\nA student collects Plot C soil at ten o'clock, starts air drying, and later begins the example’s thirty to sixty-minute P H equilibration.\n\nThe planned twenty-five-minute practical block is an active-work planning figure; it cannot include every necessary drying or equilibration interval.\n\nRecord one sample ID across collection, drying, P H, feel and later reporting, with actual date and time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+      "spokenTextSHA256": "5b6f8400f328259d9ab79c7fef1c35c6da6889dc907b3a86fea0c74dc4804903",
+      "spokenTextSha256": "5b6f8400f328259d9ab79c7fef1c35c6da6889dc907b3a86fea0c74dc4804903",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "47c062cf467acfd13ee6ae1313863d52d3178c617296e489e5a9516b029a4cee",
+      "requestFingerprintSha256": "47c062cf467acfd13ee6ae1313863d52d3178c617296e489e5a9516b029a4cee",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "25 practical minutes do not contain the wait\n\nA student collects Plot C soil at 10:00, starts air drying, and later begins the example’s 30–60-minute pH equilibration.\n\nThe planned 25-minute practical block is an active-work planning figure; it cannot include every necessary dry/equilibrate interval.\n\nRecord one sample ID across collection, drying, pH, feel and later reporting, with actual date/time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+          "spoken": "twenty-five practical minutes do not contain the wait\n\nA student collects Plot C soil at ten o'clock, starts air drying, and later begins the example’s thirty to sixty-minute P H equilibration.\n\nThe planned twenty-five-minute practical block is an active-work planning figure; it cannot include every necessary drying or equilibration interval.\n\nRecord one sample ID across collection, drying, P H, feel and later reporting, with actual date and time for each action.\n\nThe student carries out each task; a trainer's earlier example tube is demonstration only.\n\nStaged observed work with active and waiting times logged separately; no shortcut pass.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "00",
+            "10",
+            "25",
+            "30",
+            "60"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "priorSpokenSHA256": "ae5c34bdb81520f34b8927b4f499a2b87ee20ac5bd482a72101507cde96c6055",
+              "revisedSpokenSHA256": "5b6f8400f328259d9ab79c7fef1c35c6da6889dc907b3a86fea0c74dc4804903",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-16-en-E02-r1",
+      "unitId": "S3-16-en-E02-r1",
+      "stepId": "S3-16",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "cups",
+      "sourceWholeFileSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Two cups are not a mass reading",
+          "sha256": "45d45cc5ae21321283a2e26a9c66013fe788f3bb40228a01f437e8d0a6e8da54"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The example says submit 'about 2 cups or 500 grams' of the composite.",
+          "sha256": "971696f2a89269387f2de794985bd90124c6f6f6ea5e3457e4f338698bcb3ec7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Ask what amount and unit the receiving lab actually requests.",
+          "sha256": "813de85a221e7e891997f7b2235a9eae1ba1bebeda80017c639387e950e68b6e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "If it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.",
+          "sha256": "c1e8e9dd3b0ff6c0460ea18a3f628e2418551b8cbc164473b6b6f9fd09680157"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Record the sample ID and required sampling depth/count rather than equating volume with mass.",
+          "sha256": "952ac9e467264725685ae09e6e6fd5999cfc13e3bf45c605c48846f9e78fd195"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "One unambiguous measured submission amount and an intact identity chain.",
+          "sha256": "f71198d1fb57f61d716f46984701aea43ec71e20628832c049bf7d556b21b042"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "cups",
+        "title": "Two cups are not a mass reading",
+        "situation": "The example says submit 'about 2 cups or 500 grams' of the composite.",
+        "reasoning": [
+          "Ask what amount and unit the receiving lab actually requests.",
+          "If it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.",
+          "Record the sample ID and required sampling depth/count rather than equating volume with mass."
+        ],
+        "takeaway": "One unambiguous measured submission amount and an intact identity chain."
+      },
+      "scientificMeaning": "Two cups are not a mass reading\n\nThe example says submit 'about 2 cups or 500 grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth/count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+      "displayText": "Two cups are not a mass reading\n\nThe example says submit 'about 2 cups or 500 grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth/count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+      "captionText": "Two cups are not a mass reading\n\nThe example says submit 'about 2 cups or 500 grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth/count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+      "spokenText": "Two cups are not a mass reading\n\nThe example says submit 'about two cups or five hundred grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires five hundred grams, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth and count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+      "spokenTextSHA256": "a5d6ec46b03231c67ef4650970efeecba66dd8348138b6991edaf94f4bcf2690",
+      "spokenTextSha256": "a5d6ec46b03231c67ef4650970efeecba66dd8348138b6991edaf94f4bcf2690",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "a2ea0b2c910501d1124e5cc018a859b9c7f72b9fde8f7516e16e24eaec3d0659",
+      "requestFingerprintSha256": "a2ea0b2c910501d1124e5cc018a859b9c7f72b9fde8f7516e16e24eaec3d0659",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Two cups are not a mass reading\n\nThe example says submit 'about 2 cups or 500 grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires 500 g, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth/count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+          "spoken": "Two cups are not a mass reading\n\nThe example says submit 'about two cups or five hundred grams' of the composite.\n\nAsk what amount and unit the receiving lab actually requests.\n\nIf it requires five hundred grams, weigh that amount; if it requests two cups, measure volume and label it as such.\n\nRecord the sample ID and required sampling depth and count rather than equating volume with mass.\n\nOne unambiguous measured submission amount and an intact identity chain.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-16-en-E03-r1",
+      "unitId": "S3-16-en-E03-r1",
+      "stepId": "S3-16",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "ph-method",
+      "sourceWholeFileSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A ratio must name its basis",
+          "sha256": "30eb605d8b01d1b0fd9d28112094f6798e7c4d1fc359f6513ed18d4c04e78afe"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.",
+          "sha256": "1e8962d13f64b56cb3e94846eec31629d03a6041af94277ccea7164bb1100976"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The worked example is mass:volume; the lab example is volume:volume.",
+          "sha256": "b91de5f10b21f5f11c4fbb712f5263ff58633934e6de2d3f3a55c63d6b40af2b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Choose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.",
+          "sha256": "1344ecbdc161aca0c61a92c955c22b91b6f29def919ef800f0cc7b98a361944c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "A digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.",
+          "sha256": "9fed276a83f1e827277c4352fa3e3b161fd9365f11acc614c347b572053819d0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A reproducible, device-matched measurement rather than a mixed-method number.",
+          "sha256": "d75b677d115253d2a6a539310347a11dad1e5e99aaba99bdb405f72b3a718862"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "ph-method",
+        "title": "A ratio must name its basis",
+        "situation": "The teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.",
+        "reasoning": [
+          "The worked example is mass:volume; the lab example is volume:volume.",
+          "Choose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.",
+          "A digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other."
+        ],
+        "takeaway": "A reproducible, device-matched measurement rather than a mixed-method number."
+      },
+      "scientificMeaning": "A ratio must name its basis\n\nThe teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.\n\nThe worked example is mass:volume; the lab example is volume:volume.\n\nChoose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+      "displayText": "A ratio must name its basis\n\nThe teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.\n\nThe worked example is mass:volume; the lab example is volume:volume.\n\nChoose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+      "captionText": "A ratio must name its basis\n\nThe teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.\n\nThe worked example is mass:volume; the lab example is volume:volume.\n\nChoose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+      "spokenText": "A ratio must name its basis\n\nThe teaching example uses twenty grams dry soil plus twenty millilitres distilled water: mass to volume. A separate laboratory method uses one to one volume to volume, taking soil with the scoop named ‘ten gram N C R thirteen volumetric scoop’ and adding ten millilitres deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly ten grams of this soil.\n\nThe worked example is mass to volume; the lab example is volume to volume.\n\nChoose the actual training S O P and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+      "spokenTextSHA256": "d87a3a741408afa95c2f2220090e73c3221a1e46a43d1c701441679eeb29d1ca",
+      "spokenTextSha256": "d87a3a741408afa95c2f2220090e73c3221a1e46a43d1c701441679eeb29d1ca",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "4d840bced071e37fc13513dc76d4925b969516d208d288c9d66ff1b5a3aaaf2e",
+      "requestFingerprintSha256": "4d840bced071e37fc13513dc76d4925b969516d208d288c9d66ff1b5a3aaaf2e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "A ratio must name its basis\n\nThe teaching example uses 20 g dry soil plus 20 mL distilled water: mass:volume. A separate laboratory method uses 1:1 volume:volume, taking soil with the scoop named ‘10 gram NCR-13 volumetric scoop’ and adding 10 mL deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly 10 g of this soil.\n\nThe worked example is mass:volume; the lab example is volume:volume.\n\nChoose the actual training SOP and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+          "spoken": "A ratio must name its basis\n\nThe teaching example uses twenty grams dry soil plus twenty millilitres distilled water: mass to volume. A separate laboratory method uses one to one volume to volume, taking soil with the scoop named ‘ten gram N C R thirteen volumetric scoop’ and adding ten millilitres deionized water. That is a volumetric scoop's name, not an instruction to weigh exactly ten grams of this soil.\n\nThe worked example is mass to volume; the lab example is volume to volume.\n\nChoose the actual training S O P and meter, then log its aliquot, wait and calibration; do not borrow an attractive number from the other procedure.\n\nA digital-electrode measurement and a colour-reagent comparison use different equipment and procedures; one does not demonstrate the other.\n\nA reproducible, device-matched measurement rather than a mixed-method number.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-16-en-E04-r1",
+      "unitId": "S3-16-en-E04-r1",
+      "stepId": "S3-16",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "sourceCaseId": "feel",
+      "sourceWholeFileSHA256": "a36f1ce356d23e32bf54d9dff65c2003ced1cfe5c2e91536c64df344823ec78b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "The same short ribbon may mean different classes",
+          "sha256": "4738c52df0321c7944deb4ada66f58a55681db9511e80085623b236815b3573c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Two samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.",
+          "sha256": "036fb6656ea7a0a7f89c47fd8b13b7a49d1a32458e7c868744df5c6ac86ca8d9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Confirm proper moisture and ball/ribbon conditions first.",
+          "sha256": "0c73c0e26ccfa63c668f3aea226a4924561505c9c6e0bb0141890e8898acb700"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Follow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.",
+          "sha256": "8e277868be9786fe1a4a3cd33638f56f228197addfc31a58915dc5fafe844a73"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "If the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.",
+          "sha256": "4cbb0efb51fcf89f8dfb825938171e81cf467eedd81e0a00b90b5df5958be0ca"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Classify with both ribbon length and feel; note field-estimate uncertainty.",
+          "sha256": "dcd59081e503e373f4dfcb4354d13769f543f3b119d6264f18364ad69f79edce"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "feel",
+        "title": "The same short ribbon may mean different classes",
+        "situation": "Two samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.",
+        "reasoning": [
+          "Confirm proper moisture and ball/ribbon conditions first.",
+          "Follow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.",
+          "If the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates."
+        ],
+        "takeaway": "Classify with both ribbon length and feel; note field-estimate uncertainty."
+      },
+      "scientificMeaning": "The same short ribbon may mean different classes\n\nTwo samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball/ribbon conditions first.\n\nFollow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+      "displayText": "The same short ribbon may mean different classes\n\nTwo samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball/ribbon conditions first.\n\nFollow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+      "captionText": "The same short ribbon may mean different classes\n\nTwo samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball/ribbon conditions first.\n\nFollow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+      "spokenText": "The same short ribbon may mean different classes\n\nTwo samples both produce a two-centimetre ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball and ribbon conditions first.\n\nFollow the U S D A weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+      "spokenTextSHA256": "5732be88200aad244eaf93e9268949f096709fa1c58baccca9ffda30087e4ecb",
+      "spokenTextSha256": "5732be88200aad244eaf93e9268949f096709fa1c58baccca9ffda30087e4ecb",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "c8070d1d762e27b30b0cded48b2ca5033cb99f349fd61c0d886effdffd9c797b",
+      "requestFingerprintSha256": "c8070d1d762e27b30b0cded48b2ca5033cb99f349fd61c0d886effdffd9c797b",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "The same short ribbon may mean different classes\n\nTwo samples both produce a 2 cm ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball/ribbon conditions first.\n\nFollow the USDA weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+          "spoken": "The same short ribbon may mean different classes\n\nTwo samples both produce a two-centimetre ribbon, but one feels gritty and the other feels very smooth when wet rubbed.\n\nConfirm proper moisture and ball and ribbon conditions first.\n\nFollow the U S D A weak-ribbon branch, then distinguish gritty from smooth wet-rub feel.\n\nIf the weak-ribbon sample feels very gritty, the guide supports sandy loam; if it feels very smooth, it supports silt loam. If neither feel predominates, use the loam branch. These remain conditional field estimates.\n\nClassify with both ribbon length and feel; note field-estimate uncertainty.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

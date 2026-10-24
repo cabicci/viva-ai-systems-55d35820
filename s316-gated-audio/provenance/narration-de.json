@@ -1,0 +1,524 @@
+{
+  "stepId": "S3-16",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-16-de.json",
+    "sha256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+    "bytes": 39466
+  },
+  "units": [
+    {
+      "id": "S3-16-de-E01-r1",
+      "unitId": "S3-16-de-E01-r1",
+      "stepId": "S3-16",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "clock",
+      "sourceWholeFileSHA256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "25 Minuten enthalten keine Wartezeit",
+          "sha256": "e236c61c270a7e6001f97f5c1a03d583d4aa2a4430600d11ffdd6e70bf886f66"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Person entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.",
+          "sha256": "24058ff0d7b09bbce34a7602497deac74c3bb75db2521f56125d0ad7792dd147"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Die geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.",
+          "sha256": "954b8bb4d8a7728af5ee69ff508056269e3a3a524f2098ba487a5556682cd39e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Eine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.",
+          "sha256": "2dd6e50d4b69fd0c87e570c4c0e7e656ee249121459d7917d99b71270765c31e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Jede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.",
+          "sha256": "e25d4a3448b2f4e2072c05c00d4347a8b6bbf03723886544d2df6640ec8d7a05"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Gestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+          "sha256": "c008fba7f6ccbdf8e94614e64e10c0b7b0ede01ef2cd0ec1867cce22c2c83711"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "clock",
+        "title": "25 Minuten enthalten keine Wartezeit",
+        "situation": "Person entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.",
+        "reasoning": [
+          "Die geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.",
+          "Eine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.",
+          "Jede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration."
+        ],
+        "takeaway": "Gestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass."
+      },
+      "scientificMeaning": "25 Minuten enthalten keine Wartezeit\n\nPerson entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.\n\nDie geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+      "displayText": "25 Minuten enthalten keine Wartezeit\n\nPerson entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.\n\nDie geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+      "captionText": "25 Minuten enthalten keine Wartezeit\n\nPerson entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.\n\nDie geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+      "spokenText": "fünfundzwanzig Minuten enthalten keine Wartezeit\n\nPerson entnimmt um zehn Uhr Boden von C, beginnt Lufttrocknung und wartet später dreißig bis sechzig Minuten auf Pe Ha-Ausgleich.\n\nDie geplanten fünfundzwanzig Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, Pe Ha, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+      "spokenTextSHA256": "db8940d4d3735f3e284c9a5a3b3266d5e8a7b0ed9ca8a86e9087b79388b5d167",
+      "spokenTextSha256": "db8940d4d3735f3e284c9a5a3b3266d5e8a7b0ed9ca8a86e9087b79388b5d167",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "a9050183adb509770d17cd9773067a11cb426f91f943efd54133abad7be754ce",
+      "requestFingerprintSha256": "a9050183adb509770d17cd9773067a11cb426f91f943efd54133abad7be754ce",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "25 Minuten enthalten keine Wartezeit\n\nPerson entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.\n\nDie geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+          "spoken": "fünfundzwanzig Minuten enthalten keine Wartezeit\n\nPerson entnimmt um zehn Uhr Boden von C, beginnt Lufttrocknung und wartet später dreißig bis sechzig Minuten auf Pe Ha-Ausgleich.\n\nDie geplanten fünfundzwanzig Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.\n\nEine ID verbindet Entnahme, Trocknung, Pe Ha, Fühlen und Bericht mit realen Zeiten.\n\nJede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration.\n\nGestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "00",
+            "10",
+            "25",
+            "30",
+            "60"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-16-de-E02-r1",
+      "unitId": "S3-16-de-E02-r1",
+      "stepId": "S3-16",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "cups",
+      "sourceWholeFileSHA256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Zwei Tassen sind keine Waagenanzeige",
+          "sha256": "001403df3f2ce2fc1d6ae10671ece475fdbfd73b21f4923c81d469e784ca7b2a"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Das Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.",
+          "sha256": "7113d352a031e373dd835eb4612cac9e1a431e6105b14c128416e876555c0f8c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Empfangslabor nach Menge und Einheit fragen.",
+          "sha256": "3292951724015f44329904c672caa3276e86a17e353a55cbf5f9df926410ba93"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Bei 500 g wiegen, bei Tassen Volumen messen und so benennen.",
+          "sha256": "67a7f379d0fbb4d92f640006e3c01ddfbe40d47ebb7d8ef43924e572e5f31ace"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Proben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.",
+          "sha256": "e1bab83370a5fd7da18d0ae6aa6f6b89d6d96dbbc36bc2fe33841e545a7b75f4"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Eine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+          "sha256": "6a7a1a44b6f9794ce79b3acdf0af95fdaa53800c11986beac58391e72eefe137"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "cups",
+        "title": "Zwei Tassen sind keine Waagenanzeige",
+        "situation": "Das Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.",
+        "reasoning": [
+          "Empfangslabor nach Menge und Einheit fragen.",
+          "Bei 500 g wiegen, bei Tassen Volumen messen und so benennen.",
+          "Proben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen."
+        ],
+        "takeaway": "Eine eindeutige gemessene Abgabemenge und intakte Identitätskette."
+      },
+      "scientificMeaning": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei 500 g wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+      "displayText": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei 500 g wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+      "captionText": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei 500 g wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+      "spokenText": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa zwei Tassen oder fünfhundert Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei fünfhundert Gramm wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+      "spokenTextSHA256": "005a7871e11d7ad80bece7b8d9aa01dc19ce49d936ff6aea28160c91de08e91f",
+      "spokenTextSha256": "005a7871e11d7ad80bece7b8d9aa01dc19ce49d936ff6aea28160c91de08e91f",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "63cdb0b3defe33552f06bd5d00a56deb28a513c8a832b21647fee11e7d424790",
+      "requestFingerprintSha256": "63cdb0b3defe33552f06bd5d00a56deb28a513c8a832b21647fee11e7d424790",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei 500 g wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+          "spoken": "Zwei Tassen sind keine Waagenanzeige\n\nDas Beispiel bietet „etwa zwei Tassen oder fünfhundert Gramm“ Mischprobe.\n\nEmpfangslabor nach Menge und Einheit fragen.\n\nBei fünfhundert Gramm wiegen, bei Tassen Volumen messen und so benennen.\n\nProben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen.\n\nEine eindeutige gemessene Abgabemenge und intakte Identitätskette.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2",
+            "500"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-16-de-E03-r1",
+      "unitId": "S3-16-de-E03-r1",
+      "stepId": "S3-16",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "sourceCaseId": "ph-method",
+      "sourceWholeFileSHA256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Verhältnis braucht seine Bezugsgrößen",
+          "sha256": "c35abd3af5ca5480c11a0be445b8707819d19cebb472d120e5404bed0a0419a1"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Das Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.",
+          "sha256": "f94dfb90a6e21629fab423757d2980f03c33b169668b3c06d5ceb25855563195"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Lehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.",
+          "sha256": "27f4922273ae959f314a4ef908410349951e88ee3ce8ff105e33a2ec0cc9b4a3"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Reales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.",
+          "sha256": "52efb15409001058414bb4b2e14aa249ffd7d7ca5aa4c4e30317b0f77159769a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Eine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.",
+          "sha256": "70477c059467b4f6af6ce9f293ef2d5f2610e87d04f0b025ab5d66b0cfbcaa19"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Wiederholbare gerätegebundene Messung.",
+          "sha256": "ed7deaac5d31e8a55618f5efca15673bdf64544a2ad53469095d8e4267537d6e"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "ph-method",
+        "title": "Verhältnis braucht seine Bezugsgrößen",
+        "situation": "Das Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.",
+        "reasoning": [
+          "Lehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.",
+          "Reales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.",
+          "Eine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen."
+        ],
+        "takeaway": "Wiederholbare gerätegebundene Messung."
+      },
+      "scientificMeaning": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.\n\nReales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+      "displayText": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.\n\nReales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+      "captionText": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.\n\nReales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+      "spokenText": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt zwanzig Gramm trockenen Boden plus zwanzig Milliliter destilliertes Wasser: Masse zu Volumen. Ein anderes Laborverfahren nutzt eins zu eins Volumen zu Volumen, entnimmt Boden mit dem als «zehn gram En Ce Er dreizehn volumetric scoop» bezeichneten Messlöffel und ergänzt zehn Milliliter deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau zehn Gramm dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse zu Volumen, Laborbeispiel Volumen zu Volumen.\n\nReales Es O Pe und Gerät auswählen und Portion, Warten und Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+      "spokenTextSHA256": "45fb05f011078e2a47d725ccf2baa182f0b408ed932c9894d7ec4d9d5feaa7a2",
+      "spokenTextSha256": "45fb05f011078e2a47d725ccf2baa182f0b408ed932c9894d7ec4d9d5feaa7a2",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "b774e10a698a583adc5e4e6ef31f1efdb2a9c51abfa472047551280d104b6371",
+      "requestFingerprintSha256": "b774e10a698a583adc5e4e6ef31f1efdb2a9c51abfa472047551280d104b6371",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.\n\nReales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+          "spoken": "Verhältnis braucht seine Bezugsgrößen\n\nDas Lehrbeispiel nutzt zwanzig Gramm trockenen Boden plus zwanzig Milliliter destilliertes Wasser: Masse zu Volumen. Ein anderes Laborverfahren nutzt eins zu eins Volumen zu Volumen, entnimmt Boden mit dem als «zehn gram En Ce Er dreizehn volumetric scoop» bezeichneten Messlöffel und ergänzt zehn Milliliter deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau zehn Gramm dieses Bodens abzuwiegen.\n\nLehrbeispiel Masse zu Volumen, Laborbeispiel Volumen zu Volumen.\n\nReales Es O Pe und Gerät auswählen und Portion, Warten und Kalibrierung dokumentieren; Zahlen nicht mischen.\n\nEine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen.\n\nWiederholbare gerätegebundene Messung.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "10",
+            "13",
+            "20"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-16-de-E04-r1",
+      "unitId": "S3-16-de-E04-r1",
+      "stepId": "S3-16",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "sourceCaseId": "feel",
+      "sourceWholeFileSHA256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Gleich kurzes Band, verschiedene Klassen",
+          "sha256": "531be74da51ad3c7a1fa4a9febc6e62ebbd5ee8fb58b7a9ca65198b9451a696a"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Zwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.",
+          "sha256": "919477d45612ee3ef402ca9a60d303249cca097b4df02190214f521df3c524cf"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Zuerst Feuchte, Kugel und Band prüfen.",
+          "sha256": "55f049ad1e5b975f38d526efe2feec4b2395777ac998658b08d7dbdd4f06722d"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "USDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.",
+          "sha256": "7d03f2ef903e2b71f3be2952f5c241ed9244824d0d6393b9c755fabfd7113a4e"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Fühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.",
+          "sha256": "80bd4f266154f40e507acdaaefbfafdd5c9ea5aaab1f4a025ca6ea6358af6669"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Länge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+          "sha256": "ec82e4a06b34076cca0a2d7e11627b70ed39d40a6809ace942e42ab052655263"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "feel",
+        "title": "Gleich kurzes Band, verschiedene Klassen",
+        "situation": "Zwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.",
+        "reasoning": [
+          "Zuerst Feuchte, Kugel und Band prüfen.",
+          "USDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.",
+          "Fühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen."
+        ],
+        "takeaway": "Länge und Gefühl zusammen verwenden, Feldunsicherheit nennen."
+      },
+      "scientificMeaning": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nUSDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+      "displayText": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nUSDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+      "captionText": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nUSDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+      "spokenText": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden zwei-Zentimeter-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nU Es De A-Schwachbandzweig nutzen, dann Körnigkeit und Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+      "spokenTextSHA256": "3a5d4141d6014a76d66d93a57c34c083fca166748bde63973aef73835c6a0bc5",
+      "spokenTextSha256": "3a5d4141d6014a76d66d93a57c34c083fca166748bde63973aef73835c6a0bc5",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "bb0c16140bac9cc15bdd062b785b6f171b51554f9d466941a680623db6a9d7f8",
+      "requestFingerprintSha256": "bb0c16140bac9cc15bdd062b785b6f171b51554f9d466941a680623db6a9d7f8",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nUSDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+          "spoken": "Gleich kurzes Band, verschiedene Klassen\n\nZwei Proben bilden zwei-Zentimeter-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.\n\nZuerst Feuchte, Kugel und Band prüfen.\n\nU Es De A-Schwachbandzweig nutzen, dann Körnigkeit und Glätte unterscheiden.\n\nFühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen.\n\nLänge und Gefühl zusammen verwenden, Feldunsicherheit nennen.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

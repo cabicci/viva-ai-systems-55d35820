@@ -1,0 +1,523 @@
+{
+  "stepId": "S3-16",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-16-it.json",
+    "sha256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+    "bytes": 39449
+  },
+  "units": [
+    {
+      "id": "S3-16-it-E01-r1",
+      "unitId": "S3-16-it-E01-r1",
+      "stepId": "S3-16",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "clock",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "25 minuti non includono l’attesa",
+          "sha256": "3b5c44f7e6c13d612a8c0d62b34337d4c7bd9dd25aca7caff22eb4b38edbe0d2"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Studente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.",
+          "sha256": "378bbe7fb8c926bbdd1f727b82bd5bb8dd791410182ca5bb58b37a5befb55986"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "I 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.",
+          "sha256": "b45e94309124205b405eda98c90a0a33e99237eeeeb0ca46106fc0d4bedd37d5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Un ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.",
+          "sha256": "ac4679a807755618e47483c5e989b4f53b15d5e61cacf0e6a50aa4e4d717ecf1"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Lo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.",
+          "sha256": "ab4730dd680b842ed2e41ddad6deb6155acd64da3a1cda9fba204a839f501634"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Lavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+          "sha256": "45794fc7a261753446a5cfccb208b1fca1e5e46d51a2f4989dec1c3b9def8208"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "clock",
+        "title": "25 minuti non includono l’attesa",
+        "situation": "Studente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.",
+        "reasoning": [
+          "I 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.",
+          "Un ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.",
+          "Lo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare."
+        ],
+        "takeaway": "Lavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio."
+      },
+      "scientificMeaning": "25 minuti non includono l’attesa\n\nStudente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.\n\nI 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+      "displayText": "25 minuti non includono l’attesa\n\nStudente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.\n\nI 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+      "captionText": "25 minuti non includono l’attesa\n\nStudente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.\n\nI 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+      "spokenText": "venticinque minuti non includono l’attesa\n\nStudente preleva C alle dieci in punto, inizia essiccazione, poi l’equilibrio pi acca richiede trenta a sessanta minuti.\n\nI venticinque minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pi acca, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+      "spokenTextSHA256": "7ac705a84770afbe2de6cbc05d7b18fd2fd365f0e6663f6828523852c5064eab",
+      "spokenTextSha256": "7ac705a84770afbe2de6cbc05d7b18fd2fd365f0e6663f6828523852c5064eab",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "704ff50c224b928cfce5e4a2b03e38272fb4ecffe47b7b7beee5674fe1e827fd",
+      "requestFingerprintSha256": "704ff50c224b928cfce5e4a2b03e38272fb4ecffe47b7b7beee5674fe1e827fd",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "25 minuti non includono l’attesa\n\nStudente preleva C alle 10:00, inizia essiccazione, poi l’equilibrio pH richiede 30–60 minuti.\n\nI 25 minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pH, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+          "spoken": "venticinque minuti non includono l’attesa\n\nStudente preleva C alle dieci in punto, inizia essiccazione, poi l’equilibrio pi acca richiede trenta a sessanta minuti.\n\nI venticinque minuti pianificati stimano lavoro attivo, non tutti i tempi necessari.\n\nUn ID collega raccolta, essiccazione, pi acca, tatto e relazione con tempo di ciascuno.\n\nLo studente esegue ogni fase; provetta preparata dal formatore serve solo a mostrare.\n\nLavoro per fasi osservate, tempi attivi e d’attesa distinti, nessun passaggio fittizio.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "00",
+            "10",
+            "25",
+            "30",
+            "60"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-16-it-E02-r1",
+      "unitId": "S3-16-it-E02-r1",
+      "stepId": "S3-16",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "cups",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Due tazze non sono una pesata",
+          "sha256": "2f95d9793dd0d7051ec6bdad2940b7da0d1456ad122e42b07aff22369ab97b7d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "L’esempio richiede «circa due tazze o 500 grammi» del composito.",
+          "sha256": "671cbedd8f2ac9d6ad1f046377ceac901777432b2661c33f75b0c4cf01adf916"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Chiedere unità e quantità al laboratorio ricevente.",
+          "sha256": "b63dda8f54ebd5f6ac92f3df69fb9fcc348434988ad0dca73847fef57ac5c7fa"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Se 500 g, pesare; se due tazze, misurare il volume e dichiararlo.",
+          "sha256": "0bb6a18db01ed0b0fc214f798e678c21e444deed3f56b613276b9afbd9b4db88"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Registrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.",
+          "sha256": "1fd02cf6b5b7af8f6a98fb1c32dab876805c11100d9a0d9bddaf265696e252ba"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Quantità univoca misurata e identità integra.",
+          "sha256": "e07f22e3f35ae79da06c154777746d09f955a4ce6af9a109d5af20e1326be680"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "cups",
+        "title": "Due tazze non sono una pesata",
+        "situation": "L’esempio richiede «circa due tazze o 500 grammi» del composito.",
+        "reasoning": [
+          "Chiedere unità e quantità al laboratorio ricevente.",
+          "Se 500 g, pesare; se due tazze, misurare il volume e dichiararlo.",
+          "Registrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume."
+        ],
+        "takeaway": "Quantità univoca misurata e identità integra."
+      },
+      "scientificMeaning": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o 500 grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe 500 g, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+      "displayText": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o 500 grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe 500 g, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+      "captionText": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o 500 grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe 500 g, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+      "spokenText": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o cinquecento grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe cinquecento grammi, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+      "spokenTextSHA256": "07bb82443c7afaa802d0ced02b4b926b0f6891c5cb63d8fb4b9b3dad030f2c72",
+      "spokenTextSha256": "07bb82443c7afaa802d0ced02b4b926b0f6891c5cb63d8fb4b9b3dad030f2c72",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "fbabea00cd8c5438d14880db8eb3993e7e2d0be3324d068af4844f08a6f82ed8",
+      "requestFingerprintSha256": "fbabea00cd8c5438d14880db8eb3993e7e2d0be3324d068af4844f08a6f82ed8",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o 500 grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe 500 g, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+          "spoken": "Due tazze non sono una pesata\n\nL’esempio richiede «circa due tazze o cinquecento grammi» del composito.\n\nChiedere unità e quantità al laboratorio ricevente.\n\nSe cinquecento grammi, pesare; se due tazze, misurare il volume e dichiararlo.\n\nRegistrare l’ID del campione, la profondità e il numero di prelievi richiesti, senza equiparare massa e volume.\n\nQuantità univoca misurata e identità integra.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "500"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-16-it-E03-r1",
+      "unitId": "S3-16-it-E03-r1",
+      "stepId": "S3-16",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "ph-method",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Un rapporto deve dire quale grandezza",
+          "sha256": "2335724f6ab098b397ee4f3bb8153cde1eb93cfd8dd2857de9f95b6f81d81e18"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "L'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.",
+          "sha256": "dfd7dd2c0cba09a8ca8a62519fee28783cfa0d755a1c2469dce5ef4eb4f03296"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Primo esempio massa:volume, secondo volume:volume.",
+          "sha256": "c19661ae2bec70c2aa2f7ae95c4c9cf0323c5be65c38be0f5f403be4df1a1170"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Scegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.",
+          "sha256": "039a4422a6ed3b45475e578c23325eb59cf3c22b98717f0430fc752799819f3f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "La misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.",
+          "sha256": "5f6889dd3b550759495fb1eed176484c946ab940e0e4917dc8e26ddd8f16e972"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Misura riproducibile con metodo dichiarato.",
+          "sha256": "f9e3af60389af720013b619a737aa0e3daac9559984b2d4bc604664466f8a089"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "ph-method",
+        "title": "Un rapporto deve dire quale grandezza",
+        "situation": "L'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.",
+        "reasoning": [
+          "Primo esempio massa:volume, secondo volume:volume.",
+          "Scegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.",
+          "La misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro."
+        ],
+        "takeaway": "Misura riproducibile con metodo dichiarato."
+      },
+      "scientificMeaning": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.\n\nPrimo esempio massa:volume, secondo volume:volume.\n\nScegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+      "displayText": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.\n\nPrimo esempio massa:volume, secondo volume:volume.\n\nScegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+      "captionText": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.\n\nPrimo esempio massa:volume, secondo volume:volume.\n\nScegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+      "spokenText": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa venti grammi di suolo secco e venti millilitri di acqua distillata: rapporto fra massa e volume. Un metodo di laboratorio separato usa uno a uno rapporto fra due volumi, prelevando il suolo con il misurino denominato «dieci gram enne ci erre tredici volumetric scoop» e aggiungendo dieci millilitri di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente dieci grammi di questo terreno.\n\nPrimo esempio rapporto fra massa e volume, secondo rapporto fra due volumi.\n\nScegliere esse o pi e pi accametro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+      "spokenTextSHA256": "fd84307a35c779cb4f4501d6cab28004230737752f4e4aff3b3423d1ae3fb7c6",
+      "spokenTextSha256": "fd84307a35c779cb4f4501d6cab28004230737752f4e4aff3b3423d1ae3fb7c6",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "6c3bb64ef833479738f0176cbe973e773dd1822a0d48b1c0ace87da6d439df3e",
+      "requestFingerprintSha256": "6c3bb64ef833479738f0176cbe973e773dd1822a0d48b1c0ace87da6d439df3e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa 20 g di suolo secco e 20 mL di acqua distillata: massa:volume. Un metodo di laboratorio separato usa 1:1 volume:volume, prelevando il suolo con il misurino denominato «10 gram NCR-13 volumetric scoop» e aggiungendo 10 mL di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente 10 g di questo terreno.\n\nPrimo esempio massa:volume, secondo volume:volume.\n\nScegliere SOP e pHmetro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+          "spoken": "Un rapporto deve dire quale grandezza\n\nL'esempio didattico usa venti grammi di suolo secco e venti millilitri di acqua distillata: rapporto fra massa e volume. Un metodo di laboratorio separato usa uno a uno rapporto fra due volumi, prelevando il suolo con il misurino denominato «dieci gram enne ci erre tredici volumetric scoop» e aggiungendo dieci millilitri di acqua deionizzata. È il nome di un misurino volumetrico, non un'istruzione a pesare esattamente dieci grammi di questo terreno.\n\nPrimo esempio rapporto fra massa e volume, secondo rapporto fra due volumi.\n\nScegliere esse o pi e pi accametro veri e registrare aliquota, attesa e calibrazione; non mescolare cifre delle due procedure.\n\nLa misura con elettrodo digitale e il confronto con reagente colorimetrico usano strumenti e procedure diversi; eseguire l'uno non dimostra di aver eseguito l'altro.\n\nMisura riproducibile con metodo dichiarato.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "10",
+            "13",
+            "20"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-16-it-E04-r1",
+      "unitId": "S3-16-it-E04-r1",
+      "stepId": "S3-16",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "sourceCaseId": "feel",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Nastri corti, classi differenti",
+          "sha256": "4c164f61f2629debdc4d6a55dbdfdc27a22db7fc28844b2b204339a82659963c"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Due campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.",
+          "sha256": "c6d82c8c6e2ba80535befe0ab0cdf39a6bb7c35d32245b901b7dd6bc6d985ec2"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Prima confermare umidità, sfera e nastro.",
+          "sha256": "999ecb99055f13595bedc245cb6d0afef558e12a27b8d97f8c110e5e3350fe17"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Seguire ramo USDA del nastro debole e distinguere granuloso/liscio.",
+          "sha256": "a70233e149ff43b4f57c31b946412ba5d9ed3da7f794d95765479cb46505ee8e"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Se il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.",
+          "sha256": "8741d3e6e23a6c2cf4bb3d0f990780481f56895a22d1c9bb3d1bee52657e627b"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Usare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+          "sha256": "d9548952bb765ad66dabccba15d6c661d2b7243e958d7fda708f4b4668a0d1be"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "feel",
+        "title": "Nastri corti, classi differenti",
+        "situation": "Due campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.",
+        "reasoning": [
+          "Prima confermare umidità, sfera e nastro.",
+          "Seguire ramo USDA del nastro debole e distinguere granuloso/liscio.",
+          "Se il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni."
+        ],
+        "takeaway": "Usare lunghezza e sensazione, annotando l’incertezza della stima sul campo."
+      },
+      "scientificMeaning": "Nastri corti, classi differenti\n\nDue campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo USDA del nastro debole e distinguere granuloso/liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+      "displayText": "Nastri corti, classi differenti\n\nDue campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo USDA del nastro debole e distinguere granuloso/liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+      "captionText": "Nastri corti, classi differenti\n\nDue campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo USDA del nastro debole e distinguere granuloso/liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+      "spokenText": "Nastri corti, classi differenti\n\nDue campioni fanno nastro due centimetri; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo u esse di a del nastro debole e distinguere granuloso da liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+      "spokenTextSHA256": "53936ae28929c10a82cb6d199fdfbe2ce304c13434ab4dc7d1df1ab9ee1115ec",
+      "spokenTextSha256": "53936ae28929c10a82cb6d199fdfbe2ce304c13434ab4dc7d1df1ab9ee1115ec",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "f1c84a18e1dcf8348760d3d3cf79564a9c085b531c9989caa8fcc4d7fa2a8606",
+      "requestFingerprintSha256": "f1c84a18e1dcf8348760d3d3cf79564a9c085b531c9989caa8fcc4d7fa2a8606",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nastri corti, classi differenti\n\nDue campioni fanno nastro 2 cm; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo USDA del nastro debole e distinguere granuloso/liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+          "spoken": "Nastri corti, classi differenti\n\nDue campioni fanno nastro due centimetri; uno è granuloso, altro molto liscio allo sfregamento umido.\n\nPrima confermare umidità, sfera e nastro.\n\nSeguire ramo u esse di a del nastro debole e distinguere granuloso da liscio.\n\nSe il campione con nastro debole è molto granuloso, la guida sostiene franco sabbioso; se è molto liscio, franco limoso. Se nessuna sensazione predomina, seguire il ramo franco. Sono stime sul campo condizionate alle osservazioni.\n\nUsare lunghezza e sensazione, annotando l’incertezza della stima sul campo.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

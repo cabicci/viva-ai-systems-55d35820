@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-16",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "fb4dcda932b50a8f799d6d89ffc5c77ccb17c7a4c47638802f4f6d068cc987b3",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "clock",
+      "title": "25 Minuten enthalten keine Wartezeit",
+      "situation": "Person entnimmt um 10:00 Boden von C, beginnt Lufttrocknung und wartet später 30–60 Minuten auf pH-Ausgleich.",
+      "reasoning": [
+        "Die geplanten 25 Minuten gelten für aktive Arbeit, nicht alle Trocknungs- und Warteabschnitte.",
+        "Eine ID verbindet Entnahme, Trocknung, pH, Fühlen und Bericht mit realen Zeiten.",
+        "Jede Aufgabe führt die lernende Person selbst aus; das früher vorbereitete Lehrgefäß der Lehrkraft dient nur der Demonstration."
+      ],
+      "takeaway": "Gestufte Beobachtung mit getrennten aktiven und Wartezeiten, kein Abkürzungspass."
+    },
+    {
+      "id": "cups",
+      "title": "Zwei Tassen sind keine Waagenanzeige",
+      "situation": "Das Beispiel bietet „etwa 2 Tassen oder 500 Gramm“ Mischprobe.",
+      "reasoning": [
+        "Empfangslabor nach Menge und Einheit fragen.",
+        "Bei 500 g wiegen, bei Tassen Volumen messen und so benennen.",
+        "Proben-ID, erforderliche Tiefe und Zahl der Teilproben notieren, statt Volumen mit Masse gleichzusetzen."
+      ],
+      "takeaway": "Eine eindeutige gemessene Abgabemenge und intakte Identitätskette."
+    },
+    {
+      "id": "ph-method",
+      "title": "Verhältnis braucht seine Bezugsgrößen",
+      "situation": "Das Lehrbeispiel nutzt 20 g trockenen Boden plus 20 mL destilliertes Wasser: Masse:Volumen. Ein anderes Laborverfahren nutzt 1:1 Volumen:Volumen, entnimmt Boden mit dem als «10 gram NCR-13 volumetric scoop» bezeichneten Messlöffel und ergänzt 10 mL deionisiertes Wasser. Dies ist der Name eines Volumenmesslöffels, keine Anweisung, genau 10 g dieses Bodens abzuwiegen.",
+      "reasoning": [
+        "Lehrbeispiel Masse:Volumen, Laborbeispiel Volumen:Volumen.",
+        "Reales SOP/Gerät auswählen und Portion, Warten/Kalibrierung dokumentieren; Zahlen nicht mischen.",
+        "Eine Messung mit digitaler Elektrode und ein Farbreagenzvergleich nutzen unterschiedliche Geräte und Verfahren. Das eine belegt nicht die Durchführung des anderen."
+      ],
+      "takeaway": "Wiederholbare gerätegebundene Messung."
+    },
+    {
+      "id": "feel",
+      "title": "Gleich kurzes Band, verschiedene Klassen",
+      "situation": "Zwei Proben bilden 2-cm-Band, eine fühlt körnig, die andere sehr glatt beim Nassreiben.",
+      "reasoning": [
+        "Zuerst Feuchte, Kugel und Band prüfen.",
+        "USDA-Schwachbandzweig nutzen, dann Körnigkeit/Glätte unterscheiden.",
+        "Fühlt sich die Probe mit schwachem Band sehr körnig an, stützt die Anleitung sandigen Lehm; bei sehr glattem Gefühl Schlufflehm. Überwiegt keine Empfindung, den Lehmzweig verwenden. Es bleiben bedingte Feldschätzungen."
+      ],
+      "takeaway": "Länge und Gefühl zusammen verwenden, Feldunsicherheit nennen."
+    }
+  ]
+}
