@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 1,
+  "locale": "ar-EG",
+  "stepId": "S3-10",
+  "units": [
+    {
+      "id": "S3-10-ar-EG-E04-takeaway-subpassage-extra1",
+      "unitId": "S3-10-ar-EG-E04-takeaway-subpassage-extra1",
+      "stepId": "S3-10",
+      "locale": "ar-EG",
+      "semanticGroup": "N09-bounded-source-completion",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "التقارير A وB وC ثلاث حالات مختلفة",
+          "sha256": "08e2d19f509e7aa968a5df61484392592189158e0bab315f39ad1aa4fc360b76"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.",
+          "sha256": "32ec0f2773a4986bc91e935a1e4780ec9e60110ef3fa41531397907298753a63"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.",
+          "sha256": "3a2bf27315c6ed6da1beec96deb30dd0ce33851e36660df427bc8f6aac4cf4f5"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.",
+          "sha256": "4c7fe11b94c8788de0d3ee05616d13ae6f2139739d04740c1fc677867d00c788"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.",
+          "sha256": "fdd5ea8ff7af3dc331b59250db3f643c74ccc074653679168f7caf0277e660e7"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "قيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+          "sha256": "36ad5489641a303fa9ca005ad9593580ee50c1757edc8849d56f79b420118218"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "التقارير A وB وC ثلاث حالات مختلفة",
+        "situation": "A لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.",
+        "reasoning": [
+          "A: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.",
+          "B: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.",
+          "C: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها."
+        ],
+        "takeaway": "قيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا."
+      },
+      "scientificMeaning": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "displayText": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "captionText": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "spokenText": "قيم التقارير دي منفصلة عن هوية العينات الحقيقية. كل صف محتاج سبب وفحص لسه ناقص.",
+      "spokenTextSHA256": "4518d75c9df3e3302d131898997c3338d500b95908fd69cc0d5438ad46cdfbb8",
+      "spokenTextSha256": "4518d75c9df3e3302d131898997c3338d500b95908fd69cc0d5438ad46cdfbb8",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. حافظ على نفس نبرة وسرعة الجزء المقبول قبل الخاتمة، من غير خفض مفاجئ للصوت أو تطويل آخر جملة. قول النص بس، مش التعليمات.",
+      "requestFingerprintSHA256": "155608f3dca04ac5d78a3d3d0200e802f4e53d75c87fa4d28ad047019beef9aa",
+      "requestFingerprintSha256": "155608f3dca04ac5d78a3d3d0200e802f4e53d75c87fa4d28ad047019beef9aa",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+          "spoken": "قيم التقارير دي منفصلة عن هوية العينات الحقيقية. كل صف محتاج سبب وفحص لسه ناقص.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "c51f9a329617572a7a1fd85c854cca4a82ff1c5c287841a25334e5f772e76c35",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-10-ar-EG.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-10-ar-EG-E04-r1",
+      "originalSpokenWholeSHA256": "2625222032f8211c5c057a5754751c454e94a053248c131c894d960074df4530",
+      "exactParentSpokenCharacterSlice": {
+        "first": 1051,
+        "endExclusive": 1130,
+        "originalText": "قيم التقارير دي منفصلة عن هوية العينات الحقيقية. كل صف محتاج سبب وفحص لسه ناقص.",
+        "notActualPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-10-ar-EG-E04-r1",
+      "sourceCaseIndex": 3,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "c51f9a329617572a7a1fd85c854cca4a82ff1c5c287841a25334e5f772e76c35"
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
