@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_AUTHORIZED_CORROBORATED_C008_ONE_COHERENT_SUBPASSAGE",
+  "stepId": "S3-11",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-approved-corroborated-c008-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-11-de-guided-practice-coherent-reviewed-repair-extra1",
+      "unitId": "S3-11-de-guided-practice-coherent-reviewed-repair-extra1",
+      "locale": "de",
+      "semanticGroup": "corroborated-C008-coherent-subpassage-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cebd013ea0dd206976f5accee75267e5f7d5864f9ae6c17f394602e7afd99864",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.",
+          "sha256": "50cfaa5feb1066b8af67e451bbc8127fcbc23568d03f8837d561f8677d6e7529"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Für die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.",
+          "sha256": "4d58c95e888c2db60c4f0fe8268cd30b9fcf6b861319a3fce710a12676785574"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Ordne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.",
+          "sha256": "54220b59973abb7ae66ce4d15502a933c85ec9a8386f05092f8df62d228fde61"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Bewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.",
+          "sha256": "cf028e46391ecce4a0c2304c7d2e9d9450fc13f1b392fc56a443aa5c50112478"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Dieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+          "sha256": "7d80a84ee8f54f82fa04040c22a476ada4be156c98cc22e10e1c62dd7925ae84"
+        }
+      ],
+      "scientificMeaning": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "displayText": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "captionText": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+      "spokenText": "Nutze den ursprünglichen Ablauf fünf, fünfzehn, fünfzehn, zehn Minuten zusammen mit Schritt Es drei Bindestrich zehn für Proben und Kulturen.",
+      "spokenTextSHA256": "beba3e2e8629ca14a775534d922139dd71d778abb6d74a0357fff9d17eaab7e5",
+      "spokenTextSha256": "beba3e2e8629ca14a775534d922139dd71d778abb6d74a0357fff9d17eaab7e5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nutze den ursprünglichen Ablauf 5/15/15/10 Minuten zusammen mit S3-10 für Proben und Kulturen. Für Möhren formuliere bedingte Bodenbewirtschaftung und eine wirklich andere Kultur und erkläre einen Weg einem Partner. Sand-Abschlussticket mit einer Kultur und einer Maßnahme getrennt bearbeiten. Optional: Lernbudget für ein Beet 10 × 10 Fuß mit offengelegten Preisen und Annahmen.\n\nFür die humusarme Fahrspur Diagnose, bedingte Maßnahme und Nachprüfung in 3–6 Monaten planen; Kompost und Mineraldünger bei schneller Nährstoffwirkung und langfristigem Bodenzustand vergleichen.\n\nOrdne die vier Nutzungen der Aufgabe für einen flachgründigen steinigen Hang, begründe die erosionsärmere und erkläre, was Erntereste und Direktsaat leisten und nicht leisten.\n\nBewerte Gründe und Diagnose, nicht Übereinstimmung mit einem Modellpflanzennamen oder willkürlicher Kompostmenge.\n\nDieser Schritt bewertet Wissen und Begründungen. Ein gespeicherter Plan oder ein Bildschirmmodell belegt keine Wiederherstellung im Feld, ersetzt keine Unterschrift der Lehrkraft, garantiert keinen Kulturerfolg und bestätigt keine praktische Fähigkeit.",
+          "spoken": "Nutze den ursprünglichen Ablauf fünf, fünfzehn, fünfzehn, zehn Minuten zusammen mit Schritt Es drei Bindestrich zehn für Proben und Kulturen.",
+          "occurrences": 1,
+          "purpose": "Exact root-read coherent repair subpassage, with identifier clarifying Bindestrich only in C008. Source bindings retain parent context, not claim that snippet narrates every parent leaf. Preserve all outside original PCM."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung. Keep the course identifier explicitly separated as Es drei Bindestrich zehn, so it cannot sound like the numeral dreizehn. Do not speak this instruction.",
+      "deliverySHA256": "e6616052b47c1f92360c65958b86cc158db170fbbd27794f06f51cfbd90b1706",
+      "deliverySha256": "e6616052b47c1f92360c65958b86cc158db170fbbd27794f06f51cfbd90b1706",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "8d291a6c0ff1ce6db425a5e56f91e8bb2b3d55cf2ab52647441bf046adb85a30",
+      "requestFingerprintSha256": "8d291a6c0ff1ce6db425a5e56f91e8bb2b3d55cf2ab52647441bf046adb85a30",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "836e8cc9b28986bd076a6ba26f98a4cd13deab99e00ba9d39ee42bfb5c09b865",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-11-de-guided-practice-r1",
+      "originalSpokenWholeSHA256": "9980a044351fba09be51e160f763202421605a852dab103a11141ac75d977af4",
+      "exactParentSpokenCharacterSlice": {
+        "first": 0,
+        "endExclusive": 129,
+        "originalSpokenSlice": "Nutze den ursprünglichen Ablauf fünf, fünfzehn, fünfzehn, zehn Minuten zusammen mit Schritt Es drei zehn für Proben und Kulturen.",
+        "characterOffsetsNotPCMSamples": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_SOURCE_PHRASE_BOUNDARIES",
+      "separateFromEarlierFiveTTSAnd119AndR10": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-11-de-guided-practice-coherent-reviewed-repair-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
