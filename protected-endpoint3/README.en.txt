@@ -1,0 +1,1 @@
+Finite source-free protected-context audio evidence only:0TTS3blind0ASR0GET0retry. Three distinct complete final-source contexts through actual original ends. No source transcript or allegation supplied to model. Root exact worker review before dispatch.
