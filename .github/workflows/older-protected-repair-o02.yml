@@ -1,0 +1,214 @@
+name: Exact source completion O02
+'on':
+  push:
+    branches:
+    - work/soil-older-protected-repair-o02-20261024-r1
+    paths:
+    - older-protected-repair-o02/request.json
+permissions:
+  contents: read
+concurrency:
+  group: older-protected-repair-o02-c2a69e76fa495e773f9aa36195317d8440709b4d2cde333510771544b394c764
+  cancel-in-progress: false
+env:
+  PACKAGE: older-protected-repair-o02
+  REQUEST_SHA: c2a69e76fa495e773f9aa36195317d8440709b4d2cde333510771544b394c764
+  WORKER_SHA: d810306a4214b9898c460324b559053601f5b7662dc5103769145f22f2a9bc90
+  FREEZE_SHA: 9394d9ecedadd16db010223698e9d9957aa711b4dacf30a433f36b89e447d0d9
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_ar:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820'
+      && github.ref == 'refs/heads/work/soil-older-protected-repair-o02-20261024-r1' && github.event.created == true && github.event.before
+      == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: de
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S3-12-de-E02-three-cards-onepass-r1
+      id: tts1
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome == 'success' && steps.runtime.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-12-de-E02-three-cards-onepass-r1
+
+        '
+    - name: Upload full immutable audio once S3-12-de-E02-three-cards-onepass-r1
+      id: upload1
+      if: always() && steps.tts1.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: older-protected-repair-o02-r1-S3-12-de-E02-three-cards-onepass-r1-audio
+        path: ${{ env.PACKAGE }}/output/S3-12-de-E02-three-cards-onepass-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S3-12-de-E02-three-cards-onepass-r1
+      id: receipt1
+      if: always() && steps.upload1.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload1.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload1.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-12-de-E02-three-cards-onepass-r1 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S3-12-de-E02-three-cards-onepass-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-12-de-E02-three-cards-onepass-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S3-12-de-E02-three-cards-onepass-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S3-12-de-E02-three-cards-onepass-r1
+
+        '
+    - name: compare S3-12-de-E02-three-cards-onepass-r1
+      if: always() && steps.tts1.outcome == 'success' && steps.upload1.outcome == 'success' && steps.receipt1.outcome == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S3-12-de-E02-three-cards-onepass-r1
+
+        '
+    - name: Stage thin diagnostics S3-12-de-E02-three-cards-onepass-r1
+      id: stage1
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S3-12-de-E02-three-cards-onepass-r1
+
+        '
+    - name: Preserve thin diagnostics S3-12-de-E02-three-cards-onepass-r1
+      if: always() && steps.stage1.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: older-protected-repair-o02-r1-S3-12-de-E02-three-cards-onepass-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S3-12-de-E02-three-cards-onepass-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: older-protected-repair-o02-r1-de-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/older-protected-repair-o02.yml'
+    - name: Preserve raw output receipts independently of staging
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: older-protected-repair-o02-de-raw-preserved
+        path: ${{ env.PACKAGE }}/output/
+        if-no-files-found: warn
+        retention-days: 30

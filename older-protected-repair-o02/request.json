@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_ROOT_TEXT_APPROVED_OLDER_PROTECTED_O02_ONE_COHERENT_REPAIR",
+  "stepId": "S3-12",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-older-protected-repair-o02-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_GATED_SUBPASSAGE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-12-de-E02-three-cards-onepass-r1",
+      "unitId": "S3-12-de-E02-three-cards-onepass-r1",
+      "stepId": "S3-12",
+      "locale": "de",
+      "semanticGroup": "O02-bounded-source-completion",
+      "sourceCaseId": "two-ratios",
+      "sourceWholeFileSHA256": "4bee0f47b77d839b779fa408625fd6347d6f37a07a9e3c5090079728b52ec188",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Tonverhältnis nicht auf das Produkt übertragen",
+          "sha256": "5c33448a243b38128e149164aa42d1c2348583fcd75069bfa47a50505b1e0af8"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+          "sha256": "4fa6f7a68cd540e96128ca67f8adef3425834a2bc06e866843608020ae081260"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "sha256": "517ebf226eef9b9e046ffca210966cff97028bd3f476e54bf3f59fe0da3e771d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "sha256": "02fab73ef8f1c49e817c27fa1343614664fa1846e974bc509592478364feb315"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.",
+          "sha256": "b64385bda1ecd815083d501dab34f4c7dcc00ae99ee921ab6ca73eb3276eeea8"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Aus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "sha256": "f8953d7a34a7f3e8b60a8efbde10d7e27f6eb5423cffae961c8f76a889ab38a6"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "two-ratios",
+        "title": "Tonverhältnis nicht auf das Produkt übertragen",
+        "situation": "Das Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.",
+        "reasoning": [
+          "Drei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.",
+          "50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.",
+          "Für jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen."
+        ],
+        "takeaway": "Aus den drei Karten folgt kein allgemeines Mischverhältnis."
+      },
+      "scientificMeaning": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "displayText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "captionText": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+      "spokenText": "Das Freilandmodell nennt ein Verhältnis von fünfzig zu fünfzig. Die Prozesskarte nennt ungefähr einen Teil Kompost zu zwei Teilen Tonboden im Gefäß. Die Produktkarte nennt eine Tomatenmischung von fünf Kilogramm.",
+      "spokenTextSHA256": "0e427c65f92fc7004eaa485542cc0c9d9fc92a681b4e114a2bc6e8daf85bcd27",
+      "spokenTextSha256": "0e427c65f92fc7004eaa485542cc0c9d9fc92a681b4e114a2bc6e8daf85bcd27",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.\nDrei Karten als getrennte Angaben erklären, nicht als Anweisung zum Mischen. Nach fünf Kilogramm endet der dritte Satz. Keine zusätzlichen Wörter einfügen.",
+      "requestFingerprintSHA256": "caa9424a67032abc00b46653508a6fa74e50b8756f93947f62c9bf30033a1dd3",
+      "requestFingerprintSha256": "caa9424a67032abc00b46653508a6fa74e50b8756f93947f62c9bf30033a1dd3",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tonverhältnis nicht auf das Produkt übertragen\n\nDas Freilandmodell nennt 50:50, eine Prozesskarte ungefähr 1 Teil Kompost zu 2 Teilen Tonboden im Gefäß und die Produktkarte 5 kg Tomatenmischung.\n\nDrei Zwecke, möglicherweise unterschiedliche Massen-/Volumenbasen, Materialien und Wasserverhalten.\n\n50:50 als Freilandbeispiel der Quelle und ungefähr 1:2 als getrenntes Beispiel der Prozesskarte beibehalten; keines davon als Rezept für die 5-kg-Tomatenmischung verwenden.\n\nFür jede echte Arbeit bestätigte Vorgabe und Analysen der Lehrkraft verlangen.\n\nAus den drei Karten folgt kein allgemeines Mischverhältnis.",
+          "spoken": "Das Freilandmodell nennt ein Verhältnis von fünfzig zu fünfzig. Die Prozesskarte nennt ungefähr einen Teil Kompost zu zwei Teilen Tonboden im Gefäß. Die Produktkarte nennt eine Tomatenmischung von fünf Kilogramm.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "2e06e71e7382f03a905f00c4d60b629a71999b2d46438bf2d4a360bc74272091",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "812d301051d4ede8376d388d4bf8442b7ac45d2e8e0172b596ed7b9b00eba6a4",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-12-de.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-12-de-E02-r1",
+      "originalSpokenWholeSHA256": "288e81ef0d3cc2d0530abef9ac6bc4ad85b7f23f1e5ef83cd7d87d7515c7266f",
+      "exactParentSpokenCharacterSlice": {
+        "first": 48,
+        "endExclusive": 222,
+        "text": "Das Freilandmodell nennt fünfzig zu fünfzig, eine Prozesskarte ungefähr ein Teil Kompost zu zwei Teilen Tonboden im Gefäß und die Produktkarte fünf Kilogramm Tomatenmischung."
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-12-de-E02-r1",
+      "sourceCaseIndex": 1,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "2e06e71e7382f03a905f00c4d60b629a71999b2d46438bf2d4a360bc74272091"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-12-de-E02-three-cards-onepass-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "duplicateExclusionProof": "EXACT_FINGERPRINT_PRIVATE_PREPUBLICATION_AUDIT_NO_REUSABLE_MATCH"
+}
