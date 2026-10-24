@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_APPROVED_EXACT_EXTRA_S307_IT_SPECIE",
+  "stepId": "S3-07",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-approved-extra-s307-it-specie-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-07-it-R03b-lexical-subpassage-extra1",
+      "unitId": "S3-07-it-R03b-lexical-subpassage-extra1",
+      "locale": "it",
+      "semanticGroup": "approved-extra-s307-it-specie-subpassage",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "1c676c4cc720d689106fa159ab68b2c8413f4384e0ddb741928b5a6746250027",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/2/paragraphs/1",
+          "text": "La carenza di azoto mobile può iniziare con ingiallimento generale delle foglie vecchie inferiori. Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento. La carenza di K può ingiallire o bruciare margini vecchi. La mobilità interna di N, P e K rende l’età fogliare un indizio, ma sintomi e cause variano. Promemoria: «N: il vecchio perde verde; P: può apparire viola; K: margini vecchi»; sono inviti a verificare, non diagnosi cromatiche. Nel tipico indizio di K sui margini del mais, il centro della foglia può restare verde; anche questo contrasto è un indizio, non una diagnosi.",
+          "sha256": "1993249bc60eb8449107f60f6d8c3fcffcaf206232b1eaf0c603338f8d609b13"
+        },
+        {
+          "pointer": "/reading/2/paragraphs/2",
+          "text": "P partecipa a trasferimento energetico e sviluppo radicale; K regola acqua e funzioni vegetali. L’età di una foglia di mais è un indizio da integrare con schema, radici e condizioni.",
+          "sha256": "71e7cd6bf1b1d286757c1550d5b886a02f2af52160f37ab553add12402911e45"
+        }
+      ],
+      "scientificMeaning": "La carenza di azoto mobile può iniziare con ingiallimento generale delle foglie vecchie inferiori. Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento. La carenza di K può ingiallire o bruciare margini vecchi. La mobilità interna di N, P e K rende l’età fogliare un indizio, ma sintomi e cause variano. Promemoria: «N: il vecchio perde verde; P: può apparire viola; K: margini vecchi»; sono inviti a verificare, non diagnosi cromatiche. Nel tipico indizio di K sui margini del mais, il centro della foglia può restare verde; anche questo contrasto è un indizio, non una diagnosi.\n\nP partecipa a trasferimento energetico e sviluppo radicale; K regola acqua e funzioni vegetali. L’età di una foglia di mais è un indizio da integrare con schema, radici e condizioni.",
+      "displayText": "La carenza di azoto mobile può iniziare con ingiallimento generale delle foglie vecchie inferiori. Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento. La carenza di K può ingiallire o bruciare margini vecchi. La mobilità interna di N, P e K rende l’età fogliare un indizio, ma sintomi e cause variano. Promemoria: «N: il vecchio perde verde; P: può apparire viola; K: margini vecchi»; sono inviti a verificare, non diagnosi cromatiche. Nel tipico indizio di K sui margini del mais, il centro della foglia può restare verde; anche questo contrasto è un indizio, non una diagnosi.\n\nP partecipa a trasferimento energetico e sviluppo radicale; K regola acqua e funzioni vegetali. L’età di una foglia di mais è un indizio da integrare con schema, radici e condizioni.",
+      "captionText": "La carenza di azoto mobile può iniziare con ingiallimento generale delle foglie vecchie inferiori. Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento. La carenza di K può ingiallire o bruciare margini vecchi. La mobilità interna di N, P e K rende l’età fogliare un indizio, ma sintomi e cause variano. Promemoria: «N: il vecchio perde verde; P: può apparire viola; K: margini vecchi»; sono inviti a verificare, non diagnosi cromatiche. Nel tipico indizio di K sui margini del mais, il centro della foglia può restare verde; anche questo contrasto è un indizio, non una diagnosi.\n\nP partecipa a trasferimento energetico e sviluppo radicale; K regola acqua e funzioni vegetali. L’età di una foglia di mais è un indizio da integrare con schema, radici e condizioni.",
+      "spokenText": "Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento.",
+      "spokenTextSHA256": "447d56dd9da46f83944ef95bb21462666315f9013c06bffabe9326c236c32d92",
+      "spokenTextSha256": "447d56dd9da46f83944ef95bb21462666315f9013c06bffabe9326c236c32d92",
+      "spokenAdaptationChanges": [
+        {
+          "written": "La carenza di azoto mobile può iniziare con ingiallimento generale delle foglie vecchie inferiori. Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento. La carenza di K può ingiallire o bruciare margini vecchi. La mobilità interna di N, P e K rende l’età fogliare un indizio, ma sintomi e cause variano. Promemoria: «N: il vecchio perde verde; P: può apparire viola; K: margini vecchi»; sono inviti a verificare, non diagnosi cromatiche. Nel tipico indizio di K sui margini del mais, il centro della foglia può restare verde; anche questo contrasto è un indizio, non una diagnosi.\n\nP partecipa a trasferimento energetico e sviluppo radicale; K regola acqua e funzioni vegetali. L’età di una foglia di mais è un indizio da integrare con schema, radici e condizioni.",
+          "spoken": "Lo stress da fosforo può causare crescita lenta e viola nel mais giovane, spesso in tessuti più vecchi, specie se il suolo freddo ne limita l’assorbimento.",
+          "occurrences": 1,
+          "purpose": "Exact approved coherent parent subpassage only; not full-case or whole-reading narration. All outside original PCM must be preserved; source bindings describe parent context."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Use natural Italian pronunciation of the adverb specie, /ˈspɛtʃe/, keeping its first vowel e; do not alter the scientific clause or read this direction aloud.",
+      "deliverySHA256": "3d78bfa3869405b9416e28b80da5609a7ceeb1a9197443d0f4a8ca2e71953a23",
+      "deliverySha256": "3d78bfa3869405b9416e28b80da5609a7ceeb1a9197443d0f4a8ca2e71953a23",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "9dd0ea29fec3b15e75f292d20d10898c419e0f3b872d39e522e22f65b83c6409",
+      "requestFingerprintSha256": "9dd0ea29fec3b15e75f292d20d10898c419e0f3b872d39e522e22f65b83c6409",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "5bceb4c6d1854755a8cee50e7c1729da472c8203b3ec8aa8f869156466bf7126",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "answerSubpassageOnly": false,
+      "sourceBoundaryAndJoinCutFrames": "PENDING_ACTUAL_GENERATED_AUDIO_AND_SEMANTIC_ACCEPTANCE; no cuts invented now",
+      "exactParentSpokenCharacterSlice": {
+        "first": 99,
+        "endExclusive": 254,
+        "sha256": "447d56dd9da46f83944ef95bb21462666315f9013c06bffabe9326c236c32d92",
+        "UTF8HashNotByteOffsets": true
+      },
+      "parentOriginalRequest": {
+        "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s307-reading-job-r1\\request.json",
+        "sha256": "e327d03d958d2b7018ba9a2f6395eab4aaf8e5671939da083780583c1221caa4"
+      },
+      "parentOriginalUnitId": "S3-07-it-R03b-r1",
+      "originalSpokenWholeSHA256": "64d801e68548226810377c83c05a8e962c9d367608647ec6acbb58591d1a8550"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-07-it-R03b-lexical-subpassage-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
