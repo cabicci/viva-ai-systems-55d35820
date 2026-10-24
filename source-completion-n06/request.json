@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_ROOT_TEXT_APPROVED_N06_FINITE_SOURCE_COMPLETION",
+  "stepId": "S3-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-source-completion-n06-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-15-ar-EG-opening-inspection-subpassage-extra1",
+      "unitId": "S3-15-ar-EG-opening-inspection-subpassage-extra1",
+      "locale": "ar-EG",
+      "semanticGroup": "N06-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+      "sourceBindings": [
+        {
+          "pointer": "/intro",
+          "text": "العناية بالآلة بتبدأ بإيقافها وعزلها، مش بلمس جزء بيلف. دليل Honda FJ500-SER مثال موثّق؛ وقبل التطبيق المدرّب لازم يطابق الجهاز الفعلي ودليله، ويتحقق من أهلية المشغّل والموقع، ويحدد الفحوص المسموحة للطالب واللي محتاج فني مختص. أي عرض عطل سبب للتوقف والفحص الآمن، مش إذن لتجربة عطل والآلة شغالة.",
+          "sha256": "77fc4f6d756a64d5f257fb3fc3439ba2731bd25aa81827f88dc9cf420f4997c0"
+        },
+        {
+          "pointer": "/goals/0",
+          "text": "لو الطالب مؤهل ومتدرّب، ينفّذ بنفسه التنظيف والفحص المسموحين بعد الاستخدام، على جهاز مطابق متوقف ومعزول وبارد وتحت إشراف المدرّب، ويحدد أعمال الفلتر والزيت والأسنان والتخزين اللي دليل الجهاز بيخصصها لفني مؤهل.",
+          "sha256": "386e4c7d1703a7dceedae5e363165138e1208153ec8758f48dae0f2db6d2a46b"
+        },
+        {
+          "pointer": "/goals/1",
+          "text": "اشرح سببين محتملين على الأقل والقرار الآمن التالي لكل مشكلة من عدم بدء التشغيل والعزيق غير الفعّال؛ وأوقف وبلّغ عن الاهتزاز الخطر أو صعوبة التحكم، بدل ما تشخّص بلمس أجزاء متحركة.",
+          "sha256": "63e8660d58f3bd735432a50910a964b56466eb687e2cc3f8cdbdaac8ec88f120"
+        },
+        {
+          "pointer": "/goals/2",
+          "text": "جهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+          "sha256": "617cb357544af900df88c2350cd8ab68bc288d8d23e36a6af5c06a84aa000ae3"
+        }
+      ],
+      "scientificMeaning": "العناية بالآلة بتبدأ بإيقافها وعزلها، مش بلمس جزء بيلف. دليل Honda FJ500-SER مثال موثّق؛ وقبل التطبيق المدرّب لازم يطابق الجهاز الفعلي ودليله، ويتحقق من أهلية المشغّل والموقع، ويحدد الفحوص المسموحة للطالب واللي محتاج فني مختص. أي عرض عطل سبب للتوقف والفحص الآمن، مش إذن لتجربة عطل والآلة شغالة.\n\nلو الطالب مؤهل ومتدرّب، ينفّذ بنفسه التنظيف والفحص المسموحين بعد الاستخدام، على جهاز مطابق متوقف ومعزول وبارد وتحت إشراف المدرّب، ويحدد أعمال الفلتر والزيت والأسنان والتخزين اللي دليل الجهاز بيخصصها لفني مؤهل.\n\nاشرح سببين محتملين على الأقل والقرار الآمن التالي لكل مشكلة من عدم بدء التشغيل والعزيق غير الفعّال؛ وأوقف وبلّغ عن الاهتزاز الخطر أو صعوبة التحكم، بدل ما تشخّص بلمس أجزاء متحركة.\n\nجهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+      "displayText": "العناية بالآلة بتبدأ بإيقافها وعزلها، مش بلمس جزء بيلف. دليل Honda FJ500-SER مثال موثّق؛ وقبل التطبيق المدرّب لازم يطابق الجهاز الفعلي ودليله، ويتحقق من أهلية المشغّل والموقع، ويحدد الفحوص المسموحة للطالب واللي محتاج فني مختص. أي عرض عطل سبب للتوقف والفحص الآمن، مش إذن لتجربة عطل والآلة شغالة.\n\nلو الطالب مؤهل ومتدرّب، ينفّذ بنفسه التنظيف والفحص المسموحين بعد الاستخدام، على جهاز مطابق متوقف ومعزول وبارد وتحت إشراف المدرّب، ويحدد أعمال الفلتر والزيت والأسنان والتخزين اللي دليل الجهاز بيخصصها لفني مؤهل.\n\nاشرح سببين محتملين على الأقل والقرار الآمن التالي لكل مشكلة من عدم بدء التشغيل والعزيق غير الفعّال؛ وأوقف وبلّغ عن الاهتزاز الخطر أو صعوبة التحكم، بدل ما تشخّص بلمس أجزاء متحركة.\n\nجهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+      "captionText": "العناية بالآلة بتبدأ بإيقافها وعزلها، مش بلمس جزء بيلف. دليل Honda FJ500-SER مثال موثّق؛ وقبل التطبيق المدرّب لازم يطابق الجهاز الفعلي ودليله، ويتحقق من أهلية المشغّل والموقع، ويحدد الفحوص المسموحة للطالب واللي محتاج فني مختص. أي عرض عطل سبب للتوقف والفحص الآمن، مش إذن لتجربة عطل والآلة شغالة.\n\nلو الطالب مؤهل ومتدرّب، ينفّذ بنفسه التنظيف والفحص المسموحين بعد الاستخدام، على جهاز مطابق متوقف ومعزول وبارد وتحت إشراف المدرّب، ويحدد أعمال الفلتر والزيت والأسنان والتخزين اللي دليل الجهاز بيخصصها لفني مؤهل.\n\nاشرح سببين محتملين على الأقل والقرار الآمن التالي لكل مشكلة من عدم بدء التشغيل والعزيق غير الفعّال؛ وأوقف وبلّغ عن الاهتزاز الخطر أو صعوبة التحكم، بدل ما تشخّص بلمس أجزاء متحركة.\n\nجهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+      "spokenText": "جهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+      "spokenTextSHA256": "617cb357544af900df88c2350cd8ab68bc288d8d23e36a6af5c06a84aa000ae3",
+      "spokenTextSha256": "617cb357544af900df88c2350cd8ab68bc288d8d23e36a6af5c06a84aa000ae3",
+      "spokenAdaptationChanges": [
+        {
+          "written": "العناية بالآلة بتبدأ بإيقافها وعزلها، مش بلمس جزء بيلف. دليل Honda FJ500-SER مثال موثّق؛ وقبل التطبيق المدرّب لازم يطابق الجهاز الفعلي ودليله، ويتحقق من أهلية المشغّل والموقع، ويحدد الفحوص المسموحة للطالب واللي محتاج فني مختص. أي عرض عطل سبب للتوقف والفحص الآمن، مش إذن لتجربة عطل والآلة شغالة.\n\nلو الطالب مؤهل ومتدرّب، ينفّذ بنفسه التنظيف والفحص المسموحين بعد الاستخدام، على جهاز مطابق متوقف ومعزول وبارد وتحت إشراف المدرّب، ويحدد أعمال الفلتر والزيت والأسنان والتخزين اللي دليل الجهاز بيخصصها لفني مؤهل.\n\nاشرح سببين محتملين على الأقل والقرار الآمن التالي لكل مشكلة من عدم بدء التشغيل والعزيق غير الفعّال؛ وأوقف وبلّغ عن الاهتزاز الخطر أو صعوبة التحكم، بدل ما تشخّص بلمس أجزاء متحركة.\n\nجهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+          "spoken": "جهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية. قول فحص بترتيب الحروف فاء ثم حاء ثم صاد، مش فصح. قول الجملة كلها طبيعي من غير ما تقرا التعليمات.",
+      "deliverySHA256": "06fb9e5bfce38869bde57df51e7087ee067dc649584a9695a374ccd48891feb3",
+      "deliverySha256": "06fb9e5bfce38869bde57df51e7087ee067dc649584a9695a374ccd48891feb3",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "053268db2f2830e99b662f64be36c87fd7047fd9134c9c6c8943e26a9d7c973b",
+      "requestFingerprintSha256": "053268db2f2830e99b662f64be36c87fd7047fd9134c9c6c8943e26a9d7c973b",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "66472c26f8c0b693d9560fe68d2f899f2db856bc88a40d45322d23f456906baa",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-15-ar-EG.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-15-ar-EG-opening-r1",
+      "originalSpokenWholeSHA256": "3260e965622d7bea81fff20edddd1688a4f41ece3865ee683a232df3b69e1a44",
+      "exactParentSpokenCharacterSlice": {
+        "first": 700,
+        "endExclusive": 896,
+        "originalText": "جهّز سجل استخدام وفحص وبلاغ عطل صادق خاص بالموديل، فيه مواعيد الصيانة اللي محددها المصنع، وهل أداء كل فرد اتلاحظ فعلًا، والإحالة للمختص والمتابعة؛ واستخدم التقييم الذاتي من غير ادعاء اجتياز مهارة.",
+        "notActualPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-15-ar-EG-opening-inspection-subpassage-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
