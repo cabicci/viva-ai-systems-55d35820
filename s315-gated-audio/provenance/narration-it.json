@@ -1,0 +1,508 @@
+{
+  "stepId": "S3-15",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-15-it.json",
+    "sha256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+    "bytes": 44178
+  },
+  "units": [
+    {
+      "id": "S3-15-it-E01-r1",
+      "unitId": "S3-15-it-E01-r1",
+      "stepId": "S3-15",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "stall",
+      "sourceWholeFileSHA256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Serbatoio pieno, poi si ferma",
+          "sha256": "0b1bbfeed09c5f03e91538dd2092c212fe17c35af4b47308962c5e7a1b05674e"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Il motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».",
+          "sha256": "48c9ff37d0c6a6d4dccde35eaa00043f3f55181a91095d5b38596fe3367c20dc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Arrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.",
+          "sha256": "0ba9e43fb6b99bd376537e8480a00afbd62d47e40835e9331765d26ed8e42779"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Filtro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.",
+          "sha256": "f1c02e773e244b4df5e0e0a305839efebd60bdc303dd12d7c44e7b8cfdb5c954"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Usare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico.",
+          "sha256": "c1379754ada5e9ddb7bd7edc56760b5e0982b32a9e371c7f27cb8b69f0c77cef"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Diagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+          "sha256": "a0e4a6c9e765320cfa5dbe7aeabf3d9f48570d9ccb52fe1ebe5fc60479683d13"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "stall",
+        "title": "Serbatoio pieno, poi si ferma",
+        "situation": "Il motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».",
+        "reasoning": [
+          "Arrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.",
+          "Filtro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.",
+          "Usare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico."
+        ],
+        "takeaway": "Diagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi."
+      },
+      "scientificMeaning": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+      "displayText": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+      "captionText": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+      "spokenText": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi o irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+      "spokenTextSHA256": "0d67e487e9354668f9c9f4736d691fd4cb66e03bc9360db4815cda5f797033cd",
+      "spokenTextSha256": "0d67e487e9354668f9c9f4736d691fd4cb66e03bc9360db4815cda5f797033cd",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "1a39578e2d622672e4d1dd4b71c1d08941963448d720a0f916697fa4945d3fa4",
+      "requestFingerprintSha256": "1a39578e2d622672e4d1dd4b71c1d08941963448d720a0f916697fa4945d3fa4",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+          "spoken": "Serbatoio pieno, poi si ferma\n\nIl motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».\n\nArrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.\n\nFiltro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.\n\nUsare lo schema del dispositivo reale, registrare e affidare lavori pericolosi o irrisolti al tecnico.\n\nDiagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-15-it-E02-r1",
+      "unitId": "S3-15-it-E02-r1",
+      "stepId": "S3-15",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "quality",
+      "sourceWholeFileSHA256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Restano erbe ma motore normale",
+          "sha256": "50863cf50ea1cf7de4c42ed23fe97b8b0864d83f87e845afbceba96b81a28594"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Dopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.",
+          "sha256": "dd9b61e30ccec01a5d83780930915d64195182b6e094466110ad16217205f625"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Risultato scarso non dimostra guasto del motore.",
+          "sha256": "a09748606cff74a321cdb697974181161e322e20712aae7c1b3ce07fe5659e76"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Fermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.",
+          "sha256": "a08d8e1e680294f19c2b4b38afd5c6af1375e195f98c4b0deff87bed53b2ce7d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Documentare coltura e decisione del formatore prima di ripetere.",
+          "sha256": "6103d7c13bbb66feee30bf8d6ba6980a42351a84a8ea56656db8c3632eaa9fab"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Più cause possibili; adattare con formatore/manuale e inviare zappe danneggiate.",
+          "sha256": "842a6268a3011500d58c20d4a3088307f6801319fe66a8b65d427ee6af6cd57f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "quality",
+        "title": "Restano erbe ma motore normale",
+        "situation": "Dopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.",
+        "reasoning": [
+          "Risultato scarso non dimostra guasto del motore.",
+          "Fermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.",
+          "Documentare coltura e decisione del formatore prima di ripetere."
+        ],
+        "takeaway": "Più cause possibili; adattare con formatore/manuale e inviare zappe danneggiate."
+      },
+      "scientificMeaning": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore/manuale e inviare zappe danneggiate.",
+      "displayText": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore/manuale e inviare zappe danneggiate.",
+      "captionText": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore/manuale e inviare zappe danneggiate.",
+      "spokenText": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità e regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore e manuale e inviare zappe danneggiate.",
+      "spokenTextSHA256": "2eecb1931d2606f473e9a10d8491761258f3c9f6a25c7d03c2cb03aa221d7ac8",
+      "spokenTextSha256": "2eecb1931d2606f473e9a10d8491761258f3c9f6a25c7d03c2cb03aa221d7ac8",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "746a7c08d29cb9cd448421a55755109ee8f598b02037c122390c830758b1e7b0",
+      "requestFingerprintSha256": "746a7c08d29cb9cd448421a55755109ee8f598b02037c122390c830758b1e7b0",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore/manuale e inviare zappe danneggiate.",
+          "spoken": "Restano erbe ma motore normale\n\nDopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.\n\nRisultato scarso non dimostra guasto del motore.\n\nFermare, valutare umidità, velocità e regolazione e zappe visibili senza toccare parti in moto.\n\nDocumentare coltura e decisione del formatore prima di ripetere.\n\nPiù cause possibili; adattare con formatore e manuale e inviare zappe danneggiate.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-15-it-E03-r1",
+      "unitId": "S3-15-it-E03-r1",
+      "stepId": "S3-15",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "vibration",
+      "sourceWholeFileSHA256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Vibrazioni improvvise",
+          "sha256": "b4e745ec1895d3a6809e1668a8825cc4b3fefa4a33c478c227f1d4a40302b299"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Durante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.",
+          "sha256": "c35e263ccea4cb2c3f8b7ade670a61d82b7072d56126bb03ed80f088e116f916"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Fermare subito e tenere lontani; non toccare rotore attivo né proseguire.",
+          "sha256": "fbfd7b5eaf5107ca7e78275209431633fd16667e28b5471bbff17afcb155c1cc"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Isolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.",
+          "sha256": "f65d13e8965c6ae9f21277881359ce0b3a6889aea05ef27af9d351540ef29a1e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Non creare un bullone allentato su macchina per rendere realistico il caso.",
+          "sha256": "1eda06aa48a472844140b6c31258ae33f8c3b4dc7f5825d04b8db7b593c2912a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Segnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+          "sha256": "6c2fe4b8fb1ed04c5b96e0230d6fd67a69e987bf49298735967008e7e7d8ef17"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "vibration",
+        "title": "Vibrazioni improvvise",
+        "situation": "Durante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.",
+        "reasoning": [
+          "Fermare subito e tenere lontani; non toccare rotore attivo né proseguire.",
+          "Isolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.",
+          "Non creare un bullone allentato su macchina per rendere realistico il caso."
+        ],
+        "takeaway": "Segnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate."
+      },
+      "scientificMeaning": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+      "displayText": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+      "captionText": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+      "spokenText": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore e trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+      "spokenTextSHA256": "28099e8607c9bb8c93bb65a77e3f08e04f015382643bf85ff41f21674e0795d4",
+      "spokenTextSha256": "28099e8607c9bb8c93bb65a77e3f08e04f015382643bf85ff41f21674e0795d4",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "74428b3a1d825f0a50de6c431c5e0ae5a9375dc4a7d59a0bceea109596d04fb4",
+      "requestFingerprintSha256": "74428b3a1d825f0a50de6c431c5e0ae5a9375dc4a7d59a0bceea109596d04fb4",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+          "spoken": "Vibrazioni improvvise\n\nDurante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.\n\nFermare subito e tenere lontani; non toccare rotore attivo né proseguire.\n\nIsolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore e trasmissione a tecnico.\n\nNon creare un bullone allentato su macchina per rendere realistico il caso.\n\nSegnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-15-it-E04-r1",
+      "unitId": "S3-15-it-E04-r1",
+      "stepId": "S3-15",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "sourceCaseId": "log",
+      "sourceWholeFileSHA256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Registro invece di memoria",
+          "sha256": "4f27577b2ffa89b9792f416a58cd3e2b1bd3909d4d1875bdbed35c2c41907f8b"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Una nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.",
+          "sha256": "9855b5431cb705a2c5b8bbd742ae8d17fbd4fd6c55d5891351ac10bf78eec271"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Identificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.",
+          "sha256": "e7bce81774132cf6a54c3818991ad60399ba13396ad7712542639eff0dbc0779"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Non attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.",
+          "sha256": "4eb6de78fffb6fa36566ae49dfc4d5df7b9f666846e6330239bcf4599f31a166"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Registrare difetti e se attività pratica fu davvero osservata.",
+          "sha256": "7056246d3667a5d0f69221fd74a8e4f9c328cf4a115835b012b611e786154fbf"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Registro verificabile con scadenze e stato onesto, non giudizio vago.",
+          "sha256": "2469ae0fbe619d2aae996c534c375be604c67b8c686e109264aedd06c2bf53f1"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "log",
+        "title": "Registro invece di memoria",
+        "situation": "Una nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.",
+        "reasoning": [
+          "Identificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.",
+          "Non attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.",
+          "Registrare difetti e se attività pratica fu davvero osservata."
+        ],
+        "takeaway": "Registro verificabile con scadenze e stato onesto, non giudizio vago."
+      },
+      "scientificMeaning": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+      "displayText": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+      "captionText": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+      "spokenText": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello e manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a esse e erre né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+      "spokenTextSHA256": "4884d593ba879323862651bc849b05b47e41a8aee57595f3db814f0195b10658",
+      "spokenTextSha256": "4884d593ba879323862651bc849b05b47e41a8aee57595f3db814f0195b10658",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "eddddb43644e0f37ff94ec818583a8321bffafbba077074f4eb32c307da2664c",
+      "requestFingerprintSha256": "eddddb43644e0f37ff94ec818583a8321bffafbba077074f4eb32c307da2664c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+          "spoken": "Registro invece di memoria\n\nUna nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.\n\nIdentificare modello e manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.\n\nNon attribuire grasso settimanale a esse e erre né lavare carta; assegnare servizio previsto dal costruttore.\n\nRegistrare difetti e se attività pratica fu davvero osservata.\n\nRegistro verificabile con scadenze e stato onesto, non giudizio vago.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

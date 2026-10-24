@@ -1,0 +1,508 @@
+{
+  "stepId": "S3-15",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-15-de.json",
+    "sha256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+    "bytes": 45380
+  },
+  "units": [
+    {
+      "id": "S3-15-de-E01-r1",
+      "unitId": "S3-15-de-E01-r1",
+      "stepId": "S3-15",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "stall",
+      "sourceWholeFileSHA256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Tank voll, Motor geht aus",
+          "sha256": "b17d79c173d4dbe168c899cffa353b1baa282ebbc1aaf573cf2cf3458d34618b"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Der Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.",
+          "sha256": "b9ef26530e7cb2cc89f46359eb3b1014739a0b8cae6cbfac2a7866fe1a8400dd"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Stoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.",
+          "sha256": "63df4f75d12c31de630908dffebe95e8e4b880b91056545d3ddcadd613fb2647"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Verschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.",
+          "sha256": "de410c13aa64b2a8d62a85556076f808690e410d5bb16aa7f94e384dc9c39435"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Handbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben.",
+          "sha256": "b9a39d51cd7a7de2a73d0b4058388038c5c6695811ea31f8eab376c631db7003"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Bedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+          "sha256": "5e4aaacdb8d90fd67410bec0f2ebf1d7846083c5525169542425316149a4e96c"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "stall",
+        "title": "Tank voll, Motor geht aus",
+        "situation": "Der Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.",
+        "reasoning": [
+          "Stoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.",
+          "Verschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.",
+          "Handbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben."
+        ],
+        "takeaway": "Bedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf."
+      },
+      "scientificMeaning": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+      "displayText": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+      "captionText": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+      "spokenText": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter oder falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche oder offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+      "spokenTextSHA256": "b8bfcab529d3680f183c14882a1f3290081a9f65d495196007c17427d2884587",
+      "spokenTextSha256": "b8bfcab529d3680f183c14882a1f3290081a9f65d495196007c17427d2884587",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "91120b99c217ed672dc55aba83f48c9bdf941496cb746d4abcdcb90191a9597f",
+      "requestFingerprintSha256": "91120b99c217ed672dc55aba83f48c9bdf941496cb746d4abcdcb90191a9597f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+          "spoken": "Tank voll, Motor geht aus\n\nDer Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.\n\nStoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.\n\nVerschmutzter oder falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.\n\nHandbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche oder offene Aufgaben zur Fachkraft geben.\n\nBedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-15-de-E02-r1",
+      "unitId": "S3-15-de-E02-r1",
+      "stepId": "S3-15",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "quality",
+      "sourceWholeFileSHA256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Unkraut bleibt, Motor läuft normal",
+          "sha256": "0f3b536555a7e46648b8e780ef39e1ff20a8d589e129b68bdbd7e0b010875a41"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Nach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.",
+          "sha256": "c922d380787970c5510b021f77fa9507fa757129bfd1cfe891456350ab1ccd9a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Schwaches Ergebnis beweist keinen Motorfehler.",
+          "sha256": "f8f9cf9c0cc5a7794b4ca3e6be3424bed7d6789cd50f9f9a4b6929d5c0a3b8b0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Stoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.",
+          "sha256": "95e8e8daf8d4b77e6796677549b63840c7da430b1551e7990ed5c505e8ff1406"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Kulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.",
+          "sha256": "59550b690a232bf74684719d2f7832d3e375b79dded588a9295159b600d5d31a"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Mehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+          "sha256": "fd57c8a1a684bcb601cdbe9887dc44ce9f7b471c111ca8c83f2b56813c7381d2"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "quality",
+        "title": "Unkraut bleibt, Motor läuft normal",
+        "situation": "Nach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.",
+        "reasoning": [
+          "Schwaches Ergebnis beweist keinen Motorfehler.",
+          "Stoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.",
+          "Kulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren."
+        ],
+        "takeaway": "Mehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft."
+      },
+      "scientificMeaning": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+      "displayText": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+      "captionText": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+      "spokenText": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo und Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+      "spokenTextSHA256": "caf37882adb42a25aae2a32a511344a9a93998e5e1e631b29a49071e4c40a798",
+      "spokenTextSha256": "caf37882adb42a25aae2a32a511344a9a93998e5e1e631b29a49071e4c40a798",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "ffdd4ca03cc2fde32815dec358d272802f5a39d83e8b6c1fa5c7453d046be608",
+      "requestFingerprintSha256": "ffdd4ca03cc2fde32815dec358d272802f5a39d83e8b6c1fa5c7453d046be608",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+          "spoken": "Unkraut bleibt, Motor läuft normal\n\nNach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.\n\nSchwaches Ergebnis beweist keinen Motorfehler.\n\nStoppen, Feuchte, Tempo und Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.\n\nKulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren.\n\nMehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-15-de-E03-r1",
+      "unitId": "S3-15-de-E03-r1",
+      "stepId": "S3-15",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "sourceCaseId": "vibration",
+      "sourceWholeFileSHA256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Vibration steigt plötzlich",
+          "sha256": "71beea9e9752e591872b76412a45799d51febb8577e179c8842507feeb58fede"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Bei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.",
+          "sha256": "f00a94613bfd9de2a33b63aa35d85bd91e80950532d9f128c07474671ed45d87"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Sofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.",
+          "sha256": "da59c6e925a8f2fabf6cc07a28ccbc7b35a4eecd77b3fa1ac0d34e0e4a6390c9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Gesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.",
+          "sha256": "b9a8addcdfcf34d23d01018ec728795f25b377e913bc92df3ae5c7b4f6b011ac"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Keine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.",
+          "sha256": "16ba390042aa8d98bb85ec5d792115ca00429631c72a41f00397bbebefb032de"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Gefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+          "sha256": "df3b4dd77ce698ba9d9ce195ee26c88728a2238c8871db6aba8780c5eb58fef4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "vibration",
+        "title": "Vibration steigt plötzlich",
+        "situation": "Bei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.",
+        "reasoning": [
+          "Sofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.",
+          "Gesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.",
+          "Keine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen."
+        ],
+        "takeaway": "Gefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben."
+      },
+      "scientificMeaning": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+      "displayText": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+      "captionText": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+      "spokenText": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert und abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor und Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+      "spokenTextSHA256": "e2b89b61425743dadb608b82530d569180f6732cef6d5e807c58e0ffa1d25ee9",
+      "spokenTextSha256": "e2b89b61425743dadb608b82530d569180f6732cef6d5e807c58e0ffa1d25ee9",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "b35e1d5145d7754cb45368f64a5a2c77343c60f634ddb6f626b1e990c2d7cc5c",
+      "requestFingerprintSha256": "b35e1d5145d7754cb45368f64a5a2c77343c60f634ddb6f626b1e990c2d7cc5c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+          "spoken": "Vibration steigt plötzlich\n\nBei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.\n\nSofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.\n\nGesichert und abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor und Antrieb zur Fachkraft.\n\nKeine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen.\n\nGefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-15-de-E04-r1",
+      "unitId": "S3-15-de-E04-r1",
+      "stepId": "S3-15",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "sourceCaseId": "log",
+      "sourceWholeFileSHA256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Serviceprotokoll statt Erinnerung",
+          "sha256": "fa39b224b5dcdcf5d6781acb4748184f5407ed2a96e1f4e41a8ff00e0eb7177a"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "Ein Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.",
+          "sha256": "b258429964c9ad70af5cf806bf2cd7dbf381f5b47bd6322001ba458966d0a66c"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Tatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.",
+          "sha256": "393c7aea944ee7f2259ff9846cf1838f18bc7930875fe6a0f6d7cc61bb0301a1"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Kein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.",
+          "sha256": "64145b99787a50f8e3a4dc365e3514a7b9a8eb9c52f7edbabc32b634c86a0921"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Mängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.",
+          "sha256": "ec3bac9899c81c04953347651e75efc9f5ad92c33b572a7ba4dca1bcfa4d918d"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Prüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+          "sha256": "8d16f07650b5e40a58b8412a5894ea675731ed21d62cc8eb628c06aac39763b9"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "log",
+        "title": "Serviceprotokoll statt Erinnerung",
+        "situation": "Ein Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.",
+        "reasoning": [
+          "Tatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.",
+          "Kein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.",
+          "Mängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten."
+        ],
+        "takeaway": "Prüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“."
+      },
+      "scientificMeaning": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+      "displayText": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+      "captionText": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+      "spokenText": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell und Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für Es E Er behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+      "spokenTextSHA256": "04a88929d958da79617242502d0ec4e5c6277879943e577cc7cc450ac9b5d44f",
+      "spokenTextSha256": "04a88929d958da79617242502d0ec4e5c6277879943e577cc7cc450ac9b5d44f",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "dcb9de7aca40f3d497c2c7da202480c6a0a5125d9c8df91e4cf12fa79e9f8b06",
+      "requestFingerprintSha256": "dcb9de7aca40f3d497c2c7da202480c6a0a5125d9c8df91e4cf12fa79e9f8b06",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+          "spoken": "Serviceprotokoll statt Erinnerung\n\nEin Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.\n\nTatsächliches Modell und Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.\n\nKein Wochenfett für Es E Er behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.\n\nMängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten.\n\nPrüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

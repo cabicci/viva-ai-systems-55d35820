@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-15",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "1c6c5f2038f9e8e7bad2ef65e1d368fee766f63d5a2d8a4043e7e9db930a3861",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "stall",
+      "title": "Serbatoio pieno, poi si ferma",
+      "situation": "Il motore tossisce e si spegne benché il serbatoio sia pieno; la fonte dice di controllare «subito il filtro».",
+      "reasoning": [
+        "Arrestare e mettere in sicurezza: pieno non verifica rubinetto, interruttore, flusso o accensione.",
+        "Filtro sporco o mal montato è possibile e verificabile secondo manuale, ma non sempre prima di tutto.",
+        "Usare lo schema del dispositivo reale, registrare e affidare lavori pericolosi/irrisolti al tecnico."
+      ],
+      "takeaway": "Diagnosi condizionale con filtro incluso; non sostituire la candela o far girare per tentativi."
+    },
+    {
+      "id": "quality",
+      "title": "Restano erbe ma motore normale",
+      "situation": "Dopo passaggio consentito, erbe radicate restano, suolo è bagnato e usura zappe ignota.",
+      "reasoning": [
+        "Risultato scarso non dimostra guasto del motore.",
+        "Fermare, valutare umidità, velocità/regolazione e zappe visibili senza toccare parti in moto.",
+        "Documentare coltura e decisione del formatore prima di ripetere."
+      ],
+      "takeaway": "Più cause possibili; adattare con formatore/manuale e inviare zappe danneggiate."
+    },
+    {
+      "id": "vibration",
+      "title": "Vibrazioni improvvise",
+      "situation": "Durante passaggio la vibrazione cresce; fonte suggerisce viti allentate o zappe danneggiate.",
+      "reasoning": [
+        "Fermare subito e tenere lontani; non toccare rotore attivo né proseguire.",
+        "Isolato e freddo, persona qualificata verifica solo parti esterne ammesse; motore/trasmissione a tecnico.",
+        "Non creare un bullone allentato su macchina per rendere realistico il caso."
+      ],
+      "takeaway": "Segnalare stop pericoloso e rinviare riavvio finché causa e riparazione non siano verificate."
+    },
+    {
+      "id": "log",
+      "title": "Registro invece di memoria",
+      "situation": "Una nota dice «ingrassata questa settimana, filtro lavato, tutto bene», senza modello, ore o tipo di elemento.",
+      "reasoning": [
+        "Identificare modello/manuale, registro delle ore e metodo di rilevazione, data, osservatore e tipo di elemento. Usare una lettura del contaore soltanto se la macchina effettiva ne dispone.",
+        "Non attribuire grasso settimanale a SER né lavare carta; assegnare servizio previsto dal costruttore.",
+        "Registrare difetti e se attività pratica fu davvero osservata."
+      ],
+      "takeaway": "Registro verificabile con scadenze e stato onesto, non giudizio vago."
+    }
+  ]
+}

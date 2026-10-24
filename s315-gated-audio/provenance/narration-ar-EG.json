@@ -1,0 +1,542 @@
+{
+  "stepId": "S3-15",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-15-ar-EG.json",
+    "sha256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+    "bytes": 56733
+  },
+  "units": [
+    {
+      "id": "S3-15-ar-EG-E01-r1",
+      "unitId": "S3-15-ar-EG-E01-r1",
+      "stepId": "S3-15",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "stall",
+      "sourceWholeFileSHA256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "خزان مليان ومحرك بيقطع",
+          "sha256": "990eb4eff193f86f08d54837ad8679022c4580b9866349ce510b563fafeb8412"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "المحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».",
+          "sha256": "5250095e35bb621a4b8108a3916026e1221fbfd3f08edbbc3a9f8e3985701281"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "أوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.",
+          "sha256": "1f2c305b84661a7761c3a47182ee99c5c06d435ab5ac8a9b58b0c258ff7de80a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "الفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.",
+          "sha256": "42b63428a351c92c2c4a4d54b676302492d05082b74cfdacbd39ecc24274ed2f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "امشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص.",
+          "sha256": "3a714192af53d24f5edafc7949dc38bc1675889c75abc0dae3d8b99627e89052"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "تشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين.",
+          "sha256": "956937aa1709583d32629e991e4638afca163d7a4acb471b26602d7c05f5c592"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "stall",
+        "title": "خزان مليان ومحرك بيقطع",
+        "situation": "المحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».",
+        "reasoning": [
+          "أوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.",
+          "الفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.",
+          "امشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص."
+        ],
+        "takeaway": "تشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين."
+      },
+      "scientificMeaning": "خزان مليان ومحرك بيقطع\n\nالمحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».\n\nأوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.\n\nالفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.\n\nامشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص.\n\nتشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين.",
+      "displayText": "خزان مليان ومحرك بيقطع\n\nالمحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».\n\nأوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.\n\nالفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.\n\nامشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص.\n\nتشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين.",
+      "captionText": "خزان مليان ومحرك بيقطع\n\nالمحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».\n\nأوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.\n\nالفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.\n\nامشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص.\n\nتشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين.",
+      "spokenText": "خزان مليان ومحرك بيقطع\n\nالمحرك بيقطّع وبعدين بيقف، والخزان مليان؛ إجابة الأصل بتقول «افحص فلتر الهوا بعد كده».\n\nأوقف الآلة. الخزان المليان ما يثبتش وضع الصمام والمفتاح أو وصول الوقود أو عمل الإشعال.\n\nالفلتر المتسخ أو راكب غلط احتمال، ويتفحص بأمان حسب الدليل؛ مش خطوة أولى ثابتة.\n\nامشِ على جدول الجهاز الحقيقي وسجّل النتيجة وحوّل الشغل الخطر أو غير المحلول للمختص.\n\nتشخيص مشروط فيه فحص الفلتر كاحتمال؛ ما تغيرش الشمعة أو تشغّل الجهاز بالتخمين.",
+      "spokenTextSHA256": "f7607d0460820595357d3a73be28a8a83699888d6d941dbedbee67f05bd9bc94",
+      "spokenTextSha256": "f7607d0460820595357d3a73be28a8a83699888d6d941dbedbee67f05bd9bc94",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "c6abe57cafab33bcee8103d192dc492a77b2f3e347924067dd6791c0eab1aa85",
+      "requestFingerprintSha256": "c6abe57cafab33bcee8103d192dc492a77b2f3e347924067dd6791c0eab1aa85",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-15-ar-EG-E02-r1",
+      "unitId": "S3-15-ar-EG-E02-r1",
+      "stepId": "S3-15",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "quality",
+      "sourceWholeFileSHA256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "الحشائش باقية والمحرك سليم",
+          "sha256": "b888bd57967d12c40060de663d969d863f276b532375bfe12dd6dfbdd0418a41"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "بعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.",
+          "sha256": "c4775a6677d7cdc0fd20241f2ef4622451440ed44758336244f31907da6ac87e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "ضعف النتيجة مش دليل عطل محرك.",
+          "sha256": "03ba53c6a4e282ee470f4d82919c4dd9908971172a95453f3dc696ad78eb5637"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "أوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.",
+          "sha256": "29ed8bd9d15900d8ca9679541e7fbbdcf9853d6a569132969643acf48aa8b908"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "وثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.",
+          "sha256": "e4c2e0eda90853e5ab82272f6e686f63adbb15f5c97d076f5cdd75ff6263ff8c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "فيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+          "sha256": "7e737bdc7e133bd1af95375e89ed6bae4a70542c49e98f0ca4621c622b5c056f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "quality",
+        "title": "الحشائش باقية والمحرك سليم",
+        "situation": "بعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.",
+        "reasoning": [
+          "ضعف النتيجة مش دليل عطل محرك.",
+          "أوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.",
+          "وثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد."
+        ],
+        "takeaway": "فيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص."
+      },
+      "scientificMeaning": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+      "displayText": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+      "captionText": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+      "spokenText": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+      "spokenTextSHA256": "c4654d5ba5b24f1de52a463773881405ded5e294882ff9ca6d5076922fe78a6a",
+      "spokenTextSha256": "c4654d5ba5b24f1de52a463773881405ded5e294882ff9ca6d5076922fe78a6a",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "e7dacc1f691fce952dec0ebe18f65db756dc0764e8ebc695138c8ca0b6caa016",
+      "requestFingerprintSha256": "e7dacc1f691fce952dec0ebe18f65db756dc0764e8ebc695138c8ca0b6caa016",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح به الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+          "spoken": "الحشائش باقية والمحرك سليم\n\nبعد مرور مسموح الحشائش لسه بجذورها والتربة مبلولة، وحالة الأسنان مجهولة.\n\nضعف النتيجة مش دليل عطل محرك.\n\nأوقف وراجع توقيت رطوبة التربة والسرعة والضبط وحالة الأسنان الظاهرة من غير لمس متحرك.\n\nوثّق حالة النبات والنتيجة وقرار المدرّب قبل أي مرور جديد.\n\nفيه أسباب محتملة متعددة؛ التعديل حسب المدرّب والدليل، والأسنان التالفة للمختص.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "بعد مرور مسموح به",
+              "spokenPhrase": "بعد مرور مسموح",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "26ce7e069b491865c4eacccec6d492ed1590704eb63c11c86f62b95a901a7106",
+              "revisedSpokenSHA256": "c4654d5ba5b24f1de52a463773881405ded5e294882ff9ca6d5076922fe78a6a",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-15-ar-EG-E03-r1",
+      "unitId": "S3-15-ar-EG-E03-r1",
+      "stepId": "S3-15",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "vibration",
+      "sourceWholeFileSHA256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "الاهتزاز زاد فجأة",
+          "sha256": "405a13173c6df93e30ae4ac237d39fe0986f4f19e4a5a34005e5ce890730cefa"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "أثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.",
+          "sha256": "454ec9885fc80207249fbac587cd1ea04882856f3a13c3ed921924fe7ac7e0e9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "أوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.",
+          "sha256": "6028519dbc0d991739ad7ccf0b497236628cdfe32daaece89961b7e109a94e95"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "بعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.",
+          "sha256": "c6059a99a8ccd5428f9646f5ac09445016db69f116cdc54cfb4ee24fc1b494c9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "ما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل.",
+          "sha256": "bde606d7a1bdf5f954ec1c74cbe7fe6cf8ae8005986038649907c0a9eae3661f"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "بلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+          "sha256": "4dfca200abfad70f595aaf4b6834aff2d021e7b3d84ffdc2d08b1afc9691482f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "vibration",
+        "title": "الاهتزاز زاد فجأة",
+        "situation": "أثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.",
+        "reasoning": [
+          "أوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.",
+          "بعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.",
+          "ما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل."
+        ],
+        "takeaway": "بلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا."
+      },
+      "scientificMeaning": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.\n\nما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+      "displayText": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.\n\nما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+      "captionText": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.\n\nما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+      "spokenText": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص بس اللي مسموح له يفحصه. مشاكل المحرك ونقل الحركة لفنّي.\n\nما تعملش عطل بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+      "spokenTextSHA256": "92f37c6292e90795ab5f597f75f2a7ad6ddef0b0c2e316a3e2a2e7c2d5f0fea3",
+      "spokenTextSha256": "92f37c6292e90795ab5f597f75f2a7ad6ddef0b0c2e316a3e2a2e7c2d5f0fea3",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "adb9f6280cdd5f7b41d1e34fb092e2aeecd289f21bb3b9fcfcea4941e18fed85",
+      "requestFingerprintSha256": "adb9f6280cdd5f7b41d1e34fb092e2aeecd289f21bb3b9fcfcea4941e18fed85",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.\n\nما تصنعش عطلًا بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+          "spoken": "الاهتزاز زاد فجأة\n\nأثناء المرور الاهتزاز أعلى من المعتاد؛ الأصل يذكر مسامير مفكوكة أو أسنان تالفة.\n\nأوقف فورًا وخلي الناس بعيدة؛ ما تلمسش الجزء الدوار ولا تكمل.\n\nبعد العزل والتبريد، الشخص المؤهل يفحص بس اللي مسموح له يفحصه. مشاكل المحرك ونقل الحركة لفنّي.\n\nما تعملش عطل بمسمار مفكوك في آلة هتشتغل.\n\nبلّغ عن توقف بسبب خطر، وأجّل إعادة التشغيل لحد ما سبب العطل وإصلاحه يتأكدوا.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "ما تصنعش عطلًا بمسمار مفكوك",
+              "spokenPhrase": "ما تعملش عطل بمسمار مفكوك",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "بعد العزل والتبريد، الشخص المؤهل يفحص فقط ما يُسمح به؛ مشاكل المحرك ونقل الحركة لفنّي.",
+              "spokenPhrase": "بعد العزل والتبريد، الشخص المؤهل يفحص بس اللي مسموح له يفحصه. مشاكل المحرك ونقل الحركة لفنّي.",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "30346013abee19a4c979e679ebbf7aa263421e8e8e0f8b49e9d55b781ce752d7",
+              "revisedSpokenSHA256": "92f37c6292e90795ab5f597f75f2a7ad6ddef0b0c2e316a3e2a2e7c2d5f0fea3",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-15-ar-EG-E04-r1",
+      "unitId": "S3-15-ar-EG-E04-r1",
+      "stepId": "S3-15",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "sourceCaseId": "log",
+      "sourceWholeFileSHA256": "244cba99181717fc444b7596a1dc4c6a956dc48996c21af8bd3b698ad7378f38",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "سجل الخدمة مش كلام من الذاكرة",
+          "sha256": "bb8c5642ed50afc4ed0c4efe3ff5a25c2c36f99de3152cfc837e94a5d634f418"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "السجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.",
+          "sha256": "f0dfcbee1ed722a545409a36f33abfa23770e97d52257b1c0cafee745ee7c225"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "حدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.",
+          "sha256": "90a62ab13c35f9688367828a0f6ff8509d0b41afd709cf4597df2973a7634f22"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "ما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.",
+          "sha256": "b18ccfcfa837d4b996375a791cb7adc005fb2e2af63ef581bdff4f16f3fe540a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "سجّل العيوب وهل الأداء العملي اتشاف فعلاً.",
+          "sha256": "afbcde7d57056ae8c20acb46cd271c5ad8baac4e0d1a67944d1a9e00eecfcf42"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "سجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة.",
+          "sha256": "c34365d5cf69aca23be8f040962c2d5c0f875cd53ec4e5347abf0f8264828f66"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "log",
+        "title": "سجل الخدمة مش كلام من الذاكرة",
+        "situation": "السجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.",
+        "reasoning": [
+          "حدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.",
+          "ما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.",
+          "سجّل العيوب وهل الأداء العملي اتشاف فعلاً."
+        ],
+        "takeaway": "سجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة."
+      },
+      "scientificMeaning": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة.",
+      "displayText": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة.",
+      "captionText": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة.",
+      "spokenText": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـإس إي آر ولا تغسل ورق الفلتر؛ حوّل خدمة المصنع اللي ليها مواعيد محددة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل تقدر تراجعه، فيه شغل مؤجل وحالة صادقة، مش كلمة «كويس» عامة.",
+      "spokenTextSHA256": "af50042354b9777c6fb00c8ca859516f37c4861f00c0a30b32c0d5c7b1ae7456",
+      "spokenTextSha256": "af50042354b9777c6fb00c8ca859516f37c4861f00c0a30b32c0d5c7b1ae7456",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "f5d613f6f8573f87a94b126901c22f03408dfe3db0f46f04e80ee5242c8146a8",
+      "requestFingerprintSha256": "f5d613f6f8573f87a94b126901c22f03408dfe3db0f46f04e80ee5242c8146a8",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـSER ولا تغسل ورق الفلتر؛ أحِل خدمة المصنع المجدولة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة، مش كلمة «كويس» عامة.",
+          "spoken": "سجل الخدمة مش كلام من الذاكرة\n\nالسجل كاتب «شحّمت الأسبوع ده، غسلت الفلتر، الجهاز كويس» بلا موديل أو ساعات أو نوع العنصر.\n\nحدّد الموديل والدليل وسجل ساعات التشغيل وطريقة حسابه والتاريخ ومين شاف الفحص ونوع العنصر. قراءة عداد الساعات بس لو الجهاز الفعلي فيه عداد.\n\nما تنسبش موعد تشحيم أسبوعي لـإس إي آر ولا تغسل ورق الفلتر؛ حوّل خدمة المصنع اللي ليها مواعيد محددة للمختص.\n\nسجّل العيوب وهل الأداء العملي اتشاف فعلاً.\n\nسجل تقدر تراجعه، فيه شغل مؤجل وحالة صادقة، مش كلمة «كويس» عامة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "أحِل خدمة المصنع المجدولة للمختص.",
+              "spokenPhrase": "حوّل خدمة المصنع اللي ليها مواعيد محددة للمختص.",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "سجل قابل للمراجعة فيه أعمال مؤجلة وحالة صادقة",
+              "spokenPhrase": "سجل تقدر تراجعه، فيه شغل مؤجل وحالة صادقة",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "c7060e622bc884451a55ead2760f8d9c3b778d4c5c4b740b688fcf33fdbd0587",
+              "revisedSpokenSHA256": "af50042354b9777c6fb00c8ca859516f37c4861f00c0a30b32c0d5c7b1ae7456",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

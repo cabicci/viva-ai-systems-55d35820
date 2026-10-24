@@ -1,0 +1,34 @@
+{
+  "sourceWorkerSHA256": "45e73a4f01b9df53baf4dd5c13bd6067b4cb1bf5dcd1993d928da74822ff0e0b",
+  "sourceGateSHA256": "8ac622a5c817a14328f22fb2c74eb0093fcad974bf91b872834026af7e1a8b92",
+  "exactFrozenDataRebindings": [
+    "Unit IDs",
+    "step/scope/branch",
+    "case groups/canonical case IDs",
+    "source-pointer maps",
+    "reviewed full-spoken allowlists",
+    "batch count and per-lane count literals",
+    "matching execution-order and cache-field label"
+  ],
+  "batchCount": 16,
+  "perLaneCount": 4,
+  "perPartBudgetsUnchanged": [
+    1,
+    1,
+    1,
+    0
+  ],
+  "metadataGETAggregateUnchanged": 8,
+  "normalizedASTEquivalentBeyondExactFrozenData": true,
+  "providerCodeAndSecurityGateBehaviorUnchanged": true,
+  "operationalDisclosureGate": {
+    "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+    "ownCaseOnly": true,
+    "requiresNonblankReportAttempt": true,
+    "textPresenceIsNotSemanticGrading": true,
+    "editReloadResetRehide": true,
+    "mayNotEnterOrdinaryLinearVideo": true
+  },
+  "priorPackageReadOnly": true,
+  "newProviderCalls": 0
+}

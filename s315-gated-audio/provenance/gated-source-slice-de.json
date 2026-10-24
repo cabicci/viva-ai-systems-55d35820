@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-15",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "8e719063a038ec717c2a7dbeda3d7476ec407b03e794e029b13e60158c9f5bd3",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "stall",
+      "title": "Tank voll, Motor geht aus",
+      "situation": "Der Motor stottert und stirbt trotz vollem Tank; die Quellantwort lautet „als Nächstes Luftfilter“.",
+      "reasoning": [
+        "Stoppen und sichern: voller Tank bestätigt Ventil, Schalter, Durchfluss oder Zündung nicht.",
+        "Verschmutzter/falsch sitzender Filter ist möglich und nach Handbuch sicher prüfbar, aber nicht immer der erste Schritt.",
+        "Handbuchdiagramm des wirklichen Geräts nutzen, Ergebnisse notieren und gefährliche/offene Aufgaben zur Fachkraft geben."
+      ],
+      "takeaway": "Bedingte Diagnose mit Luftfilter als Möglichkeit; keine Kerze auf Verdacht tauschen oder Probelauf."
+    },
+    {
+      "id": "quality",
+      "title": "Unkraut bleibt, Motor läuft normal",
+      "situation": "Nach einer erlaubten Fahrt bleibt das Unkraut verwurzelt stehen; der Boden ist nass und der Verschleiß der Hackmesser unbekannt.",
+      "reasoning": [
+        "Schwaches Ergebnis beweist keinen Motorfehler.",
+        "Stoppen, Feuchte, Tempo/Einstellung und sichtbare Messer prüfen ohne bewegte Teile anzufassen.",
+        "Kulturzustand, Foto oder Beobachtung und Entscheidung der Lehrkraft vor jeder erneuten Fahrt dokumentieren."
+      ],
+      "takeaway": "Mehrere Ursachen möglich; Anpassung nur mit Lehrkraft und Handbuch, beschädigte Messer zur Fachkraft."
+    },
+    {
+      "id": "vibration",
+      "title": "Vibration steigt plötzlich",
+      "situation": "Bei Fahrt wird die Vibration viel stärker; die Vorlage nennt lockere Schrauben oder beschädigte Messer.",
+      "reasoning": [
+        "Sofort stoppen und andere fernhalten; weder den laufenden Rotor berühren noch weiterfahren.",
+        "Gesichert/abgekühlt prüft geeignete Person nur erlaubte äußere Teile; Motor/Antrieb zur Fachkraft.",
+        "Keine lockere Schraube an betriebsfähiger Maschine als Demo erzeugen."
+      ],
+      "takeaway": "Gefährlichen Stopp melden und Neustart bis bestätigter Behebung verschieben."
+    },
+    {
+      "id": "log",
+      "title": "Serviceprotokoll statt Erinnerung",
+      "situation": "Ein Zettel sagt „diese Woche gefettet, Filter gewaschen, alles gut“, aber ohne Modell, Stunden oder Elementtyp.",
+      "reasoning": [
+        "Tatsächliches Modell/Anleitung, Betriebsstundenprotokoll und Erfassungsmethode, Datum, beobachtende Person und Elementtyp nennen. Einen Zählerstand nur angeben, wenn das tatsächliche Gerät einen Zähler besitzt.",
+        "Kein Wochenfett für SER behaupten oder Papierelement waschen; planmäßige Händlerarbeit übergeben.",
+        "Mängel und tatsächlich beobachtete praktische Arbeit getrennt festhalten."
+      ],
+      "takeaway": "Prüfbares Protokoll mit fälligen Aufgaben und ehrlichem Status statt pauschalem „gut“."
+    }
+  ]
+}

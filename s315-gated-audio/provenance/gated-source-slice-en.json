@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-15",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "stall",
+      "title": "A full tank, then a stall",
+      "situation": "A cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'",
+      "reasoning": [
+        "Stop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.",
+        "A dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.",
+        "Use the actual manual's chart, record findings and refer unsafe or unresolved work."
+      ],
+      "takeaway": "Investigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess."
+    },
+    {
+      "id": "quality",
+      "title": "Weeds remain but the engine is normal",
+      "situation": "After a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.",
+      "reasoning": [
+        "Do not treat a poor result as proof of an engine fault.",
+        "Stop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.",
+        "Document crop condition, photo/observation and trainer decision before repeating any pass."
+      ],
+      "takeaway": "Several causes remain possible; adjust only under the trainer and manual, and refer damaged tines."
+    },
+    {
+      "id": "vibration",
+      "title": "Vibration rises suddenly",
+      "situation": "During a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.",
+      "reasoning": [
+        "Stop immediately and keep people clear; do not feel the machine's live rotary or keep driving.",
+        "Once isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.",
+        "Never create a loose-bolt fault on a machine to make this exercise realistic."
+      ],
+      "takeaway": "Report a hazardous stop and defer restart until the cause and repair are verified."
+    },
+    {
+      "id": "log",
+      "title": "Service log versus memory",
+      "situation": "A record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.",
+      "reasoning": [
+        "Identify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.",
+        "Do not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.",
+        "Record abnormal findings and whether practical actions were actually observed."
+      ],
+      "takeaway": "An auditable log with due work and honest status, not a blanket 'good' rating."
+    }
+  ]
+}

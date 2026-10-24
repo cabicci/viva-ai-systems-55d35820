@@ -1,0 +1,504 @@
+{
+  "stepId": "S3-15",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-15-en.json",
+    "sha256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+    "bytes": 42351
+  },
+  "units": [
+    {
+      "id": "S3-15-en-E01-r1",
+      "unitId": "S3-15-en-E01-r1",
+      "stepId": "S3-15",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "stall",
+      "sourceWholeFileSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "A full tank, then a stall",
+          "sha256": "a75c453e47e894aedf5ad33920c827e65bdf6eac98897e1d732e87da2b168db4"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'",
+          "sha256": "8263782934635789979d1eee2fb51a32b475ee8b41bb2ece37f3d9a56e273a59"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Stop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.",
+          "sha256": "835bde34ba20cae16cae116d8e006c7a33f80e25ef87085c5aca28801fa9921c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "A dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.",
+          "sha256": "784d958539dce7c4fd4e3cd00b3864425130d9594c9d5cb98d0ebdbc35a2ab73"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Use the actual manual's chart, record findings and refer unsafe or unresolved work.",
+          "sha256": "6f1c5ff8e679e681adf0954738a0788d251d22a88c21d3328c43b3ea6ce7d120"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Investigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+          "sha256": "50e295aeed9dc8d9d49c0334856713ad02c0b13b7c5de39e64dc02b0bb1de51b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "stall",
+        "title": "A full tank, then a stall",
+        "situation": "A cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'",
+        "reasoning": [
+          "Stop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.",
+          "A dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.",
+          "Use the actual manual's chart, record findings and refer unsafe or unresolved work."
+        ],
+        "takeaway": "Investigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess."
+      },
+      "scientificMeaning": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+      "displayText": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+      "captionText": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+      "spokenText": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty or poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+      "spokenTextSHA256": "3a5e813eba10f50583c64ad3fcff27c53713de674e4dffa7aa25686988aa413d",
+      "spokenTextSha256": "3a5e813eba10f50583c64ad3fcff27c53713de674e4dffa7aa25686988aa413d",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "e33908d58afb7222cd60b1d5b81d10d7ae2c8f2b7b100d52089e5363b4e7b60c",
+      "requestFingerprintSha256": "e33908d58afb7222cd60b1d5b81d10d7ae2c8f2b7b100d52089e5363b4e7b60c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty/poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+          "spoken": "A full tank, then a stall\n\nA cultivator sputters and dies; its fuel tank is full. The source answer says 'check air filter next.'\n\nStop and make the machine safe. A full tank does not verify the fuel valve, switch, fuel feed or ignition.\n\nA dirty or poorly seated air cleaner is one plausible cause and may be checked safely under the matched procedure; it is not an invariant first action.\n\nUse the actual manual's chart, record findings and refer unsafe or unresolved work.\n\nInvestigate conditionally, with air-cleaner condition included; do not replace the plug or run the machine as a guess.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-15-en-E02-r1",
+      "unitId": "S3-15-en-E02-r1",
+      "stepId": "S3-15",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "quality",
+      "sourceWholeFileSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Weeds remain but the engine is normal",
+          "sha256": "c12986a5d4fb61a38671400eb3168c36eaa7e20a01d324e6f89bf2ed7f41594d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "After a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.",
+          "sha256": "fdd54350729d6cd398b0003e76e73d7a788c3f54fc1faa4fff592b0cf18ca85f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Do not treat a poor result as proof of an engine fault.",
+          "sha256": "bca9f7ca882db9de2af6fb52a3c448480a8405f3e9b5a9dc24320a7fb5d9a4fb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Stop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.",
+          "sha256": "56b6bcb593bf1579858606a7c43f037eadf5ffbe7267034bfeb267c385f6dde6"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Document crop condition, photo/observation and trainer decision before repeating any pass.",
+          "sha256": "c09ed2ebbf6eb4573095c6cf53e4fa48678da7d905d2920f13fc312f8ca5deec"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Several causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+          "sha256": "bdce958fa977493ff043270c45be1b5bc57e91514bd0d6b47f0bf426bc550a5e"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "quality",
+        "title": "Weeds remain but the engine is normal",
+        "situation": "After a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.",
+        "reasoning": [
+          "Do not treat a poor result as proof of an engine fault.",
+          "Stop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.",
+          "Document crop condition, photo/observation and trainer decision before repeating any pass."
+        ],
+        "takeaway": "Several causes remain possible; adjust only under the trainer and manual, and refer damaged tines."
+      },
+      "scientificMeaning": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo/observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+      "displayText": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo/observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+      "captionText": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo/observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+      "spokenText": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace and setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo or observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+      "spokenTextSHA256": "e1f04df3990a50757d59f592cf89e066fe4c16b3fb2052ed71d8ff298f4abc26",
+      "spokenTextSha256": "e1f04df3990a50757d59f592cf89e066fe4c16b3fb2052ed71d8ff298f4abc26",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "776ab9f909928270d37c9ecd9937bd42ea6fed63c3e6b892529ab01cf670893d",
+      "requestFingerprintSha256": "776ab9f909928270d37c9ecd9937bd42ea6fed63c3e6b892529ab01cf670893d",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace/setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo/observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+          "spoken": "Weeds remain but the engine is normal\n\nAfter a permitted pass, weeds remain rooted and soil is wet; tine wear is unknown.\n\nDo not treat a poor result as proof of an engine fault.\n\nStop and assess soil timing, pass pace and setting and visible tine condition without touching moving parts.\n\nDocument crop condition, photo or observation and trainer decision before repeating any pass.\n\nSeveral causes remain possible; adjust only under the trainer and manual, and refer damaged tines.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-15-en-E03-r1",
+      "unitId": "S3-15-en-E03-r1",
+      "stepId": "S3-15",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "vibration",
+      "sourceWholeFileSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Vibration rises suddenly",
+          "sha256": "d6435b4f9d3303f814a34eeba9a72592a8b0ae5a82faadaac0dde9eab4c9e7f5"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "During a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.",
+          "sha256": "590b7a91a20e122f02a65ab0a3d551a89d943fa5abd9ef5bdc3b80fd2ee80e57"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Stop immediately and keep people clear; do not feel the machine's live rotary or keep driving.",
+          "sha256": "0b48ba2c30c3ee89a737fb7022c33399297a41b75c241db7123c58af3372e80c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Once isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.",
+          "sha256": "cf6520024334002f6522b993f57e8bfee653b98267341007422d538ed76699ae"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Never create a loose-bolt fault on a machine to make this exercise realistic.",
+          "sha256": "49e618775d5e8f9ade24d9970a7336e964e2f9ba0064b2b007496b3c381fc1fa"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Report a hazardous stop and defer restart until the cause and repair are verified.",
+          "sha256": "d84b844017dd409b0181359794abd2454afea746859151ce772df5699531def4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "vibration",
+        "title": "Vibration rises suddenly",
+        "situation": "During a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.",
+        "reasoning": [
+          "Stop immediately and keep people clear; do not feel the machine's live rotary or keep driving.",
+          "Once isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.",
+          "Never create a loose-bolt fault on a machine to make this exercise realistic."
+        ],
+        "takeaway": "Report a hazardous stop and defer restart until the cause and repair are verified."
+      },
+      "scientificMeaning": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+      "displayText": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+      "captionText": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+      "spokenText": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated and cooled, a qualified person checks permissible external fasteners and tines; engine and drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+      "spokenTextSHA256": "de684bd87c74abfe52cab3d4d1688df169fbabde24f71acb5ae2a900d9692523",
+      "spokenTextSha256": "de684bd87c74abfe52cab3d4d1688df169fbabde24f71acb5ae2a900d9692523",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "1a535318a17498b8196b9fafa97f0471330e7533f6a266e6394bb746444ad2c5",
+      "requestFingerprintSha256": "1a535318a17498b8196b9fafa97f0471330e7533f6a266e6394bb746444ad2c5",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated/cooled, a qualified person checks permissible external fasteners and tines; engine/drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+          "spoken": "Vibration rises suddenly\n\nDuring a pass, vibration is much stronger than normal. The source offers loose bolts or damaged blades as possibilities.\n\nStop immediately and keep people clear; do not feel the machine's live rotary or keep driving.\n\nOnce isolated and cooled, a qualified person checks permissible external fasteners and tines; engine and drive issues go to the technician.\n\nNever create a loose-bolt fault on a machine to make this exercise realistic.\n\nReport a hazardous stop and defer restart until the cause and repair are verified.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-15-en-E04-r1",
+      "unitId": "S3-15-en-E04-r1",
+      "stepId": "S3-15",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "sourceCaseId": "log",
+      "sourceWholeFileSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Service log versus memory",
+          "sha256": "3013e5151f3fea4ed4fa4466632bc5bf203f721f7112dc78b7a478d064b33280"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.",
+          "sha256": "18fdbe1d23d5678f272c690f588086162a740d98efed9bb9d0bfedc0a59ade9a"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "Identify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.",
+          "sha256": "58a09e9f975c4e8751531f365320acb24d388ada070776c0dce141895a08feaf"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "Do not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.",
+          "sha256": "e573f88378da1485e5110607bc8647ca1910e473d69555d9a209f4e28f952d43"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "Record abnormal findings and whether practical actions were actually observed.",
+          "sha256": "7e475e08d89a646c9e3c3e6ade74f21cb9581a99af1883589766454c683001d8"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "An auditable log with due work and honest status, not a blanket 'good' rating.",
+          "sha256": "581047b41a258d22ad63c1f167ac432e4ec007c34b339a672d468b27d098e87f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "log",
+        "title": "Service log versus memory",
+        "situation": "A record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.",
+        "reasoning": [
+          "Identify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.",
+          "Do not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.",
+          "Record abnormal findings and whether practical actions were actually observed."
+        ],
+        "takeaway": "An auditable log with due work and honest status, not a blanket 'good' rating."
+      },
+      "scientificMeaning": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+      "displayText": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+      "captionText": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+      "spokenText": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model and manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the S E R or wash its paper element; assign the maker's scheduled or dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+      "spokenTextSHA256": "77693da400d3f70e16eadc68dd612e1bc9e4118422a67122bb3a4e094839c982",
+      "spokenTextSha256": "77693da400d3f70e16eadc68dd612e1bc9e4118422a67122bb3a4e094839c982",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "f7eaabcb76d04ecb6a1b0421e89dbfb2f2fa62112574f95725a82bc27063e9b3",
+      "requestFingerprintSha256": "f7eaabcb76d04ecb6a1b0421e89dbfb2f2fa62112574f95725a82bc27063e9b3",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model/manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the SER or wash its paper element; assign the maker's scheduled/dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+          "spoken": "Service log versus memory\n\nA record says 'greased this week, filter washed, machine good' but gives no model, hour reading or element type.\n\nIdentify actual model and manual, operating-hours record and its method, task date, observer and element type. Use a meter reading only if the actual machine has a meter.\n\nDo not claim weekly grease for the S E R or wash its paper element; assign the maker's scheduled or dealer work.\n\nRecord abnormal findings and whether practical actions were actually observed.\n\nAn auditable log with due work and honest status, not a blanket 'good' rating.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
