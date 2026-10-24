@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "locale": "en",
+  "stepId": "S3-08",
+  "units": [
+    {
+      "id": "S3-08-en-source-ab-comparison-supplement-r1",
+      "unitId": "S3-08-en-source-ab-comparison-supplement-r1",
+      "locale": "en",
+      "semanticGroup": "N11-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "6650e2a93c606252ebb0efcdabd679a439529b4f4530c71d14b102eee71f086b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/6/paragraphs/2",
+          "sha256": "520d68290cae76db47427f3de66866051a688ff19b4501c9094c85918035028d",
+          "text": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores."
+        },
+        {
+          "pointer": "/drylandPractice/ui/ab",
+          "sha256": "520d68290cae76db47427f3de66866051a688ff19b4501c9094c85918035028d",
+          "text": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores."
+        }
+      ],
+      "scientificMeaning": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.\n\nSource A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+      "displayText": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.\n\nSource A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+      "captionText": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.\n\nSource A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+      "spokenText": "Source A and B questions: which column resembles the unamended low-organic-matter case, why, and what amendment might support aggregation? A illustrates the low-organic-matter concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+      "spokenTextSHA256": "c074cc7aed71eb9cf7be8694e7b1b10d6ab19478e41e7e0a9cf2e6b0da31e7d2",
+      "spokenTextSha256": "c074cc7aed71eb9cf7be8694e7b1b10d6ab19478e41e7e0a9cf2e6b0da31e7d2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Source A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.\n\nSource A/B questions: which column resembles the unamended low-OM case, why, and what amendment might support aggregation? A illustrates the low-OM concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+          "spoken": "Source A and B questions: which column resembles the unamended low-organic-matter case, why, and what amendment might support aggregation? A illustrates the low-organic-matter concern, but a pure-sand drawing does not measure the stated sandy loam. B is an organic-amended concept, not guaranteed complete retention or blocked pores.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "deliverySHA256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a96e6ed86a3ea452541c812cc9126e75b33da9142eafd873d73d3fd54e355cce",
+      "requestFingerprintSha256": "a96e6ed86a3ea452541c812cc9126e75b33da9142eafd873d73d3fd54e355cce",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourceCanonicalPath": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\motion-new-training-r1\\s308-integration-r1\\en.json",
+      "repairOnlyNotFullParagraphNarration": false,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-08-en-R07-r1",
+      "originalSpokenWholeSHA256": "1b3f7215769e538c1e4594e912aded2801a147fda6709ddf2ff3958a7941a487",
+      "exactParentSpokenCharacterSlice": null,
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": true
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
