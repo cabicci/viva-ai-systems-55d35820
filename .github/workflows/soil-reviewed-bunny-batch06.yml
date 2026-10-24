@@ -1,0 +1,72 @@
+name: Reviewed Soil originals upload batch06 only
+'on':
+  push:
+    branches: ['work/soil-bunny-upload-batch06-20261024-r1']
+    paths: ['upload-only/queue.json']
+permissions:
+  contents: write
+concurrency:
+  group: soil-reviewed-bunny-upload-batch04
+  cancel-in-progress: false
+jobs:
+  upload:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix: {"include":[{"id":"v001-d812285aacf1","manifestSHA":"563bcb0ba3579ff098037c6ccddbd34e1841b52a5f0dbe0d9f4805d27b28467e"},{"id":"v002-58ea08d95d71","manifestSHA":"505eee18e8b724b9fb5cb21189e436bfbf3910e635f349944a764b1c3621fe28"},{"id":"v003-dfe2e5cef84d","manifestSHA":"d90fb75541f881f0660ed2ef254d6596b6c257896ab74ba5495efbc59f18a913"},{"id":"v004-8841ac5445a5","manifestSHA":"91b98da842051583d94a0d93ca4928be17636f305175cf056c1f6d35063d711e"},{"id":"v005-028273c8711e","manifestSHA":"71c4f62409deab56338707676f0ac07563138dd7273fcbab596b6ac4650ef655"},{"id":"v006-e38887d9b55b","manifestSHA":"e912698bffb71ada42e81cf78432701a7af3e91ad5fd729aebc6d9f3c7d2a299"},{"id":"v007-39c48fd0fafe","manifestSHA":"67eb3a1ab47e49f649d16e030f74db12e8f4de6b7beb2a00dca7b9be92aa1edf"},{"id":"v008-f002f5ba4ead","manifestSHA":"b94e2f31a985b4cfd3cc514178c90c9d96d62f9118827816689c648bc32a9213"},{"id":"v009-3ca8e1e3604f","manifestSHA":"2beba1ffc0750ff2647e3ba76085c67b40b6d1db78c9900c7d3f990af6df8e30"},{"id":"v010-f53470cd24fd","manifestSHA":"4567880174115145496c282c1eb3a47999c719817cb49fafb8f9f49f56bf8a5a"},{"id":"v011-86ac731c10ee","manifestSHA":"136ab7dfbebefb063a28a5e98062534540b2f061b222db87413cf1900e3832d7"},{"id":"v012-e710ee4f4cd8","manifestSHA":"160f9320e274e33d9d4d204418a5c9cb0071256385e45b6d6803ab710316366e"},{"id":"v013-1f572b44de3a","manifestSHA":"c1ff8e759068dcaa6ed4126a0ac5476aa00fabedd39725e575c2818ec2398f80"},{"id":"v014-ebd10912774d","manifestSHA":"2140cca25cee10970504b0f7b52d730658884f555a961df1295eb70f362c8c3f"},{"id":"v015-5c3040d7e143","manifestSHA":"0134ae95e208400a253c4afcef2495aaecd20de35ff7db5f740314d32e0ce6e5"},{"id":"v016-dd6b90e5610a","manifestSHA":"57d912facc40ef67fa7c1658edf8f50f00c7343051a392c17b35a7721db5eff4"},{"id":"v017-2eace415f76f","manifestSHA":"467dde2f52739282742cce956e6530b570dd810c97256a7bfc47116753a18264"},{"id":"v018-5d8be278c403","manifestSHA":"26a2dd96dff93a755ac5436aac1b628c8ab3229a90003cb325e49f32e40823a0"},{"id":"v019-103a1fa4ce5a","manifestSHA":"d2dbc8c13760f722751fab9a6407d5a6b76f46d0d2ed4ff80644c3ceefff1359"},{"id":"v020-9d891aaa5071","manifestSHA":"79b51b0052d2286f614c31d9417e93447332d94007ef2cb949f34c90ba00f456"},{"id":"v021-302b9c9bba6c","manifestSHA":"d332c19b63a2439961a6b71400877261d486fc99f05bfe4bcfd4cf1df7b6ba6e"},{"id":"v022-b1a9e6a49414","manifestSHA":"3b805db96bce634fd195e223feabf84a9e729f0234346c5230882cde8606edab"}]}
+    defaults:
+      run:
+        working-directory: upload-only/${{ matrix.id }}
+    env:
+      MANIFEST_SHA: ${{ matrix.manifestSHA }}
+      WORKER_SHA: eb75d5da9bd2e24c4be966f51dfb16f7f26b0a194ecf523bc0d7747b50b56f64
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Verify exact bounded source and transfer original bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp ../worker.py worker.py
+          echo "$WORKER_SHA  worker.py" | sha256sum --check --strict
+          echo "$MANIFEST_SHA  manifest.json" | sha256sum --check --strict
+          python3 worker.py validate
+          python3 worker.py prepare
+      - name: One source-identity GUID create
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py create
+      - name: Preserve created GUID before upload
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: created-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
+      - name: One unchanged original MP4 upload
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py upload
+      - name: One immediate readiness observation, encoding does not occupy upload lane
+        if: success()
+        env:
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 worker.py readiness
+      - name: Preserve per-identity upload outcome
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: outcome-${{ matrix.id }}
+          path: upload-only/${{ matrix.id }}/output/*.json
+          if-no-files-found: error
+          retention-days: 30
