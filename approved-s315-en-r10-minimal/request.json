@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_AUTHORIZED_SEPARATE_S315_EN_R10_ONE_COHERENT_SENTENCE_REPAIR",
+  "stepId": "S3-15",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-approved-s315-en-r10-minimal-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-15-en-R10-pictorial-coherent-extra1",
+      "unitId": "S3-15-en-R10-pictorial-coherent-extra1",
+      "locale": "en",
+      "semanticGroup": "s315-en-r10-one-coherent-sentence-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "3e19ffbbc70e0ea0221e5ab5c5856d0a713fdf2d7d69ecb63b3029323872f058",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "The original workshop labels its phases: safety/identification 5 minutes, pre-use/start 10, a 30 m pass/evaluation 15 and stop/clean/report 10. Those labels total 40 minutes, and the 15-minute field phase already includes discussion. The table separately lists 35 minutes work plus 10 discussion; their overlap is not explained. If the ten discussion minutes are additional, the phase plan would be 50 minutes before extra individual turns, but this is not a proven source minimum. Plan enough time for every output and each learner's safe observed turn; never compress isolation or care to fit the table. Record actual machine, operator, date and operating-hour record, checks, abnormal findings, corrective action/referral and trainer observation/signature. Naming three pre-checks on the source exit ticket checks recall, not observed post-use care.",
+          "sha256": "bc100c02d6b9b93d06d723db1c03e40628f544fb233bb0c24b4cabae0da97b97"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "The final teacher self-assessment table on physical p. 217 lists other soil/crop outcomes but omits this cultivator task. Add a learner reflection on safe shutdown, permitted cleaning, fault reporting and what still needs practice. Mark 'can / partly / cannot' honestly. Self-rating helps plan learning; it never awards an observed practical pass. If no eligible machine/learner/site is available, keep practical C01 unattempted and use case analysis for C02/C03 only.",
+          "sha256": "b4c1c0784fb896a6e20a793895e69283b307ea9283305498eb71d7f5eccdf8e3"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Continue the shared workshop’s preparation and rotating roles from S3-14 with clear commands, pictorial checklists and safe inert demonstrations. Keep one instructed eligible operator and each learner’s own evidence. Afterward discuss a key takeaway and three pre-checks actually performed, without inventing experience. Corrosion prevention and extended storage use an approved compatible method and qualified manual procedure.",
+          "sha256": "5a7298b7dd1a4a4d5744981faa5282df8786c83a750095df681f8b5539c650f6"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/3",
+          "text": "Use this self-reflection to identify what you can do and what needs more practice. It does not record a practical result or replace the trainer’s observation.",
+          "sha256": "d41184faabef06018f7a2cc355e2d2ca0f2fc860bacdbc9aa64dcab8aeeb761f"
+        }
+      ],
+      "scientificMeaning": "The original workshop labels its phases: safety/identification 5 minutes, pre-use/start 10, a 30 m pass/evaluation 15 and stop/clean/report 10. Those labels total 40 minutes, and the 15-minute field phase already includes discussion. The table separately lists 35 minutes work plus 10 discussion; their overlap is not explained. If the ten discussion minutes are additional, the phase plan would be 50 minutes before extra individual turns, but this is not a proven source minimum. Plan enough time for every output and each learner's safe observed turn; never compress isolation or care to fit the table. Record actual machine, operator, date and operating-hour record, checks, abnormal findings, corrective action/referral and trainer observation/signature. Naming three pre-checks on the source exit ticket checks recall, not observed post-use care.\n\nThe final teacher self-assessment table on physical p. 217 lists other soil/crop outcomes but omits this cultivator task. Add a learner reflection on safe shutdown, permitted cleaning, fault reporting and what still needs practice. Mark 'can / partly / cannot' honestly. Self-rating helps plan learning; it never awards an observed practical pass. If no eligible machine/learner/site is available, keep practical C01 unattempted and use case analysis for C02/C03 only.\n\nContinue the shared workshop’s preparation and rotating roles from S3-14 with clear commands, pictorial checklists and safe inert demonstrations. Keep one instructed eligible operator and each learner’s own evidence. Afterward discuss a key takeaway and three pre-checks actually performed, without inventing experience. Corrosion prevention and extended storage use an approved compatible method and qualified manual procedure.\n\nUse this self-reflection to identify what you can do and what needs more practice. It does not record a practical result or replace the trainer’s observation.",
+      "displayText": "The original workshop labels its phases: safety/identification 5 minutes, pre-use/start 10, a 30 m pass/evaluation 15 and stop/clean/report 10. Those labels total 40 minutes, and the 15-minute field phase already includes discussion. The table separately lists 35 minutes work plus 10 discussion; their overlap is not explained. If the ten discussion minutes are additional, the phase plan would be 50 minutes before extra individual turns, but this is not a proven source minimum. Plan enough time for every output and each learner's safe observed turn; never compress isolation or care to fit the table. Record actual machine, operator, date and operating-hour record, checks, abnormal findings, corrective action/referral and trainer observation/signature. Naming three pre-checks on the source exit ticket checks recall, not observed post-use care.\n\nThe final teacher self-assessment table on physical p. 217 lists other soil/crop outcomes but omits this cultivator task. Add a learner reflection on safe shutdown, permitted cleaning, fault reporting and what still needs practice. Mark 'can / partly / cannot' honestly. Self-rating helps plan learning; it never awards an observed practical pass. If no eligible machine/learner/site is available, keep practical C01 unattempted and use case analysis for C02/C03 only.\n\nContinue the shared workshop’s preparation and rotating roles from S3-14 with clear commands, pictorial checklists and safe inert demonstrations. Keep one instructed eligible operator and each learner’s own evidence. Afterward discuss a key takeaway and three pre-checks actually performed, without inventing experience. Corrosion prevention and extended storage use an approved compatible method and qualified manual procedure.\n\nUse this self-reflection to identify what you can do and what needs more practice. It does not record a practical result or replace the trainer’s observation.",
+      "captionText": "The original workshop labels its phases: safety/identification 5 minutes, pre-use/start 10, a 30 m pass/evaluation 15 and stop/clean/report 10. Those labels total 40 minutes, and the 15-minute field phase already includes discussion. The table separately lists 35 minutes work plus 10 discussion; their overlap is not explained. If the ten discussion minutes are additional, the phase plan would be 50 minutes before extra individual turns, but this is not a proven source minimum. Plan enough time for every output and each learner's safe observed turn; never compress isolation or care to fit the table. Record actual machine, operator, date and operating-hour record, checks, abnormal findings, corrective action/referral and trainer observation/signature. Naming three pre-checks on the source exit ticket checks recall, not observed post-use care.\n\nThe final teacher self-assessment table on physical p. 217 lists other soil/crop outcomes but omits this cultivator task. Add a learner reflection on safe shutdown, permitted cleaning, fault reporting and what still needs practice. Mark 'can / partly / cannot' honestly. Self-rating helps plan learning; it never awards an observed practical pass. If no eligible machine/learner/site is available, keep practical C01 unattempted and use case analysis for C02/C03 only.\n\nContinue the shared workshop’s preparation and rotating roles from S3-14 with clear commands, pictorial checklists and safe inert demonstrations. Keep one instructed eligible operator and each learner’s own evidence. Afterward discuss a key takeaway and three pre-checks actually performed, without inventing experience. Corrosion prevention and extended storage use an approved compatible method and qualified manual procedure.\n\nUse this self-reflection to identify what you can do and what needs more practice. It does not record a practical result or replace the trainer’s observation.",
+      "spokenText": "Continue the shared workshop’s preparation and rotating roles from step S three fourteen with clear commands, pictorial checklists and safe inert demonstrations.",
+      "spokenTextSHA256": "09337c45f1078ce08a53a930af538b9eadab56f324595c70e962ec7d37c20390",
+      "spokenTextSha256": "09337c45f1078ce08a53a930af538b9eadab56f324595c70e962ec7d37c20390",
+      "spokenAdaptationChanges": [
+        {
+          "written": "The original workshop labels its phases: safety/identification 5 minutes, pre-use/start 10, a 30 m pass/evaluation 15 and stop/clean/report 10. Those labels total 40 minutes, and the 15-minute field phase already includes discussion. The table separately lists 35 minutes work plus 10 discussion; their overlap is not explained. If the ten discussion minutes are additional, the phase plan would be 50 minutes before extra individual turns, but this is not a proven source minimum. Plan enough time for every output and each learner's safe observed turn; never compress isolation or care to fit the table. Record actual machine, operator, date and operating-hour record, checks, abnormal findings, corrective action/referral and trainer observation/signature. Naming three pre-checks on the source exit ticket checks recall, not observed post-use care.\n\nThe final teacher self-assessment table on physical p. 217 lists other soil/crop outcomes but omits this cultivator task. Add a learner reflection on safe shutdown, permitted cleaning, fault reporting and what still needs practice. Mark 'can / partly / cannot' honestly. Self-rating helps plan learning; it never awards an observed practical pass. If no eligible machine/learner/site is available, keep practical C01 unattempted and use case analysis for C02/C03 only.\n\nContinue the shared workshop’s preparation and rotating roles from S3-14 with clear commands, pictorial checklists and safe inert demonstrations. Keep one instructed eligible operator and each learner’s own evidence. Afterward discuss a key takeaway and three pre-checks actually performed, without inventing experience. Corrosion prevention and extended storage use an approved compatible method and qualified manual procedure.\n\nUse this self-reflection to identify what you can do and what needs more practice. It does not record a practical result or replace the trainer’s observation.",
+          "spoken": "Continue the shared workshop’s preparation and rotating roles from step S three fourteen with clear commands, pictorial checklists and safe inert demonstrations.",
+          "occurrences": 1,
+          "purpose": "Exact coherent parent sentence only, not full139second recording. Parent-context source bindings retained; preserve every outside PCM sample until approved actual splice."
+        }
+      ],
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary. Pronounce pictorial as PIK-TOR-ee-ul, retaining the medial vowel, and inert as in-ERT with stress on the second syllable. Preserve step S three fourteen and every procedural qualification; do not read these directions aloud.",
+      "deliverySHA256": "ef2bb0aa791704d6faf475adb241d9887be0e7a299ba81a48b8de9ec47735bb6",
+      "deliverySha256": "ef2bb0aa791704d6faf475adb241d9887be0e7a299ba81a48b8de9ec47735bb6",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "fc284562f6b72d1e964298f974a829649103932daf0da39705f8d59fc7bd8f8c",
+      "requestFingerprintSha256": "fc284562f6b72d1e964298f974a829649103932daf0da39705f8d59fc7bd8f8c",
+      "sourcePlan": "provenance/narration-en.json",
+      "sourcePlanSha256": "50559ebd49a7344036376f47ab6ce4610f39ad3b6bd21bcf4f928331a17583f7",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-15-en-R10-r1",
+      "originalSpokenWholeSHA256": "c0e32845cacceac5357d066df22492f2c1b0f7a125f29feaf0ec01311411cbfe",
+      "exactParentSpokenCharacterSlice": {
+        "first": 1414,
+        "endExclusive": 1575,
+        "offsetsAreCharactersNotPCMFrames": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "PENDING_ACTUAL_NEW_AUDIO_AND_VERIFIED_WORD_BOUNDARIES; no original syllable cut or invented timing.",
+      "separateFromEarlierFiveTTSBudget": true
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "en": [
+      "S3-15-en-R10-pictorial-coherent-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
