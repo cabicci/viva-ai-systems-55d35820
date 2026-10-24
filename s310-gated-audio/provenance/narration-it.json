@@ -1,0 +1,508 @@
+{
+  "stepId": "S3-10",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-it.json",
+    "sha256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+    "bytes": 49979
+  },
+  "units": [
+    {
+      "id": "S3-10-it-E01-r1",
+      "unitId": "S3-10-it-E01-r1",
+      "stepId": "S3-10",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "sample-not-answer",
+      "sourceWholeFileSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Tre campioni senza etichette",
+          "sha256": "e490eeeba6f48e8be3192817d976e166d841483863b2f42c4648a8d964cede92"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Un vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.",
+          "sha256": "d9b9be1c8f8260166f530c596a5b5e6da67ee0200e9e1e8a3ae54166b6c62e8f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Registra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.",
+          "sha256": "c945cd6a61aa56264824c0cd3c0162e6db729a6db76a5927c9f47ddbccc455fc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Formula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.",
+          "sha256": "aca7fe3e94057148d30d4f3894866a3bc40d43e53d7c1854f2af91cb2e908732"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Se serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.",
+          "sha256": "2a4c65d7099bd8d789ad02bc30d3f183b73c69f4f0130cc8c15899f32cf3a791"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Nessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+          "sha256": "fb276eff32a88f85b980a5a878f1b6cde749a8cc8f1a5e6a518c00b489a87f97"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sample-not-answer",
+        "title": "Tre campioni senza etichette",
+        "situation": "Un vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.",
+        "reasoning": [
+          "Registra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.",
+          "Formula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.",
+          "Se serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate."
+        ],
+        "takeaway": "Nessuna identità reale è precompilata: il formatore verifica le osservazioni."
+      },
+      "scientificMeaning": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+      "displayText": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+      "captionText": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+      "spokenText": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso, argilloso o franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+      "spokenTextSHA256": "2639d124b5e6686e791bdcad92c16399a3cae802eb93bd47812d5acd80d9613d",
+      "spokenTextSha256": "2639d124b5e6686e791bdcad92c16399a3cae802eb93bd47812d5acd80d9613d",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "90004216a25467a84ebcea4bb1a710dd31ba3152b6859308c2b76bec5c0f974e",
+      "requestFingerprintSha256": "90004216a25467a84ebcea4bb1a710dd31ba3152b6859308c2b76bec5c0f974e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+          "spoken": "Tre campioni senza etichette\n\nUn vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.\n\nRegistra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.\n\nFormula ipotesi provvisorie sabbioso, argilloso o franco e dichiara incertezza.\n\nSe serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate.\n\nNessuna identità reale è precompilata: il formatore verifica le osservazioni.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-10-it-E02-r1",
+      "unitId": "S3-10-it-E02-r1",
+      "stepId": "S3-10",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "three-per-texture",
+      "sourceWholeFileSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Nove candidate condizionate",
+          "sha256": "fbcd4acdd156a6a546f6524b4732c97a18d019d51c3c4d3118de56e40683ac13"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "L’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.",
+          "sha256": "cff25fd990c2b125ad264af96500bcdd913e9dcc996d7298a2e4ff5f9a46a410"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Per sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.",
+          "sha256": "a05376f21ec4ece5ac0683fea80853d5f25c3ee736b365d54d4700db2e1ea273"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Per argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.",
+          "sha256": "6d8f85e1b7b61692f83814f662115cb1ab06acdedad609d7f9cf1e1d2a912733"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Per franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio.",
+          "sha256": "f98a4be36f24fe936c976072be3efbf6dbff5245b41af4668eb846d3ebc3b4e4"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "I nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+          "sha256": "238f812eccd29aa771578d5e872045961d6ef2037c3f7ba401a2ebb97b7fb91d"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "three-per-texture",
+        "title": "Nove candidate condizionate",
+        "situation": "L’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.",
+        "reasoning": [
+          "Per sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.",
+          "Per argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.",
+          "Per franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio."
+        ],
+        "takeaway": "I nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate."
+      },
+      "scientificMeaning": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+      "displayText": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+      "captionText": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+      "spokenText": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pi acca e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+      "spokenTextSHA256": "6287b232c2647cbbf615c82ed13ea44f42dfa3f9be6d735083d69e21c6c45ced",
+      "spokenTextSha256": "6287b232c2647cbbf615c82ed13ea44f42dfa3f9be6d735083d69e21c6c45ced",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "68b2606a5c8f35d0bae8e341769cebfb1a78c3afa727433307cc95d8aec30a8e",
+      "requestFingerprintSha256": "68b2606a5c8f35d0bae8e341769cebfb1a78c3afa727433307cc95d8aec30a8e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+          "spoken": "Nove candidate condizionate\n\nL’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.\n\nPer sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.\n\nPer argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.\n\nPer franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pi acca e drenaggio.\n\nI nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-10-it-E03-r1",
+      "unitId": "S3-10-it-E03-r1",
+      "stepId": "S3-10",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "compacted-carrots",
+      "sourceWholeFileSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Il cliente vuole carote in argilla compattata",
+          "sha256": "0087b576846c9bb9581f2a0988e83ee6df757bc8a0ce790254b34cfe390cf596"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Una verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.",
+          "sha256": "5c2d824e46a5e27a121ecfd1a8249fa6e2f66012aa262df5fc1172521678581d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Via gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.",
+          "sha256": "3bff63e853fa1e98a6c870de8cc6a9152e5e37f005445bd08cae510b704051c5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Via alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.",
+          "sha256": "13300931c4bd2bae905d1b68d1be3ca52f9ce6f54285d67c08c8d7f87ea85eca"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Spiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.",
+          "sha256": "ff6e32d0e380cbbd662202bff53b63e3e209314d69debfe09d47bb1bc88ba4b2"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Due vie distinte e difendibili, con prove e spiegazione personale.",
+          "sha256": "66a47202c6b1555b5333951fae84232b7c8220c63a651ecf43bd1907a70d84ca"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "compacted-carrots",
+        "title": "Il cliente vuole carote in argilla compattata",
+        "situation": "Una verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.",
+        "reasoning": [
+          "Via gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.",
+          "Via alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.",
+          "Spiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla."
+        ],
+        "takeaway": "Due vie distinte e difendibili, con prove e spiegazione personale."
+      },
+      "scientificMeaning": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+      "displayText": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+      "captionText": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+      "spokenText": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pi acca, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+      "spokenTextSHA256": "d604f6398c6b4e704fd49532d01d51ab9e343af6734f9a699075ae6f903f5553",
+      "spokenTextSha256": "d604f6398c6b4e704fd49532d01d51ab9e343af6734f9a699075ae6f903f5553",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "46fbfdde948a66b5db24f31520864c13e6b7309df3d10f1bb00e57ae9ea14b96",
+      "requestFingerprintSha256": "46fbfdde948a66b5db24f31520864c13e6b7309df3d10f1bb00e57ae9ea14b96",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+          "spoken": "Il cliente vuole carote in argilla compattata\n\nUna verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.\n\nVia gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.\n\nVia alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pi acca, nutrienti, ristagno e clima.\n\nSpiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla.\n\nDue vie distinte e difendibili, con prove e spiegazione personale.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-10-it-E04-r1",
+      "unitId": "S3-10-it-E04-r1",
+      "stepId": "S3-10",
+      "locale": "it",
+      "semanticGroup": "E04",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Tre rapporti, tre casi",
+          "sha256": "6bd3d53734812380e3e8e937bf7d987e2ba896a5bac96ee877e2a834486fee66"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.",
+          "sha256": "e47deb1fe7f142b2bc82fd4643339648144000654a9fae668cc8d9dd2a501cfb"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.",
+          "sha256": "d07130541db38ab2e2455dddeb787e7379398415518877bfdab23e91bf4dbe23"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.",
+          "sha256": "39000a9f65c0997a1f76b68bb4b9c48269170eeb101b709c880daaa733ffe014"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.",
+          "sha256": "dd0241216ce05f4d3d011605d22a9e63287f247351ae87bc980194f29489947f"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "I valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+          "sha256": "f6ff9634bb550ab5b48da9616dc3a183b463ae69a94311088aa3a931798e2477"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "Tre rapporti, tre casi",
+        "situation": "A franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.",
+        "reasoning": [
+          "A: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.",
+          "B: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.",
+          "C: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto."
+        ],
+        "takeaway": "I valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante."
+      },
+      "scientificMeaning": "Tre rapporti, tre casi\n\nA franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+      "displayText": "Tre rapporti, tre casi\n\nA franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+      "captionText": "Tre rapporti, tre casi\n\nA franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+      "spokenText": "Tre rapporti, tre casi\n\nA franco-sabbioso. pi acca cinque virgola otto. azoto e sostanza organica bassi; B franco-argilloso. pi acca sette virgola due. azoto e sostanza organica alti; C limoso. pi acca sei virgola cinque. soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se azoto resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura e drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+      "spokenTextSHA256": "1dbf31161ff91cb906b630a7c07a79e3c51de857446e284aa7ca59ce3bfa3501",
+      "spokenTextSha256": "1dbf31161ff91cb906b630a7c07a79e3c51de857446e284aa7ca59ce3bfa3501",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "2f5271fe18dbe97d3e9eaab0c45d285ddbfe340ad7868556ff57764d9ee251c7",
+      "requestFingerprintSha256": "2f5271fe18dbe97d3e9eaab0c45d285ddbfe340ad7868556ff57764d9ee251c7",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tre rapporti, tre casi\n\nA franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+          "spoken": "Tre rapporti, tre casi\n\nA franco-sabbioso. pi acca cinque virgola otto. azoto e sostanza organica bassi; B franco-argilloso. pi acca sette virgola due. azoto e sostanza organica alti; C limoso. pi acca sei virgola cinque. soggetto a ristagno.\n\nA: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se azoto resta basso, non impossibile in assoluto.\n\nB: broccoli e mais possibili se struttura e drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.\n\nC: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto.\n\nI valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory [\"5,8\", \"6,5\", \"7,2\"]. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": [
+            "5,8",
+            "6,5",
+            "7,2"
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

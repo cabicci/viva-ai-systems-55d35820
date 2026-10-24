@@ -1,0 +1,500 @@
+{
+  "stepId": "S3-10",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-de.json",
+    "sha256": "ab1adbb8ee3c4c57dd59945ab32bda78a953bc25693a03266bed9e7a5b512d40",
+    "bytes": 51065
+  },
+  "units": [
+    {
+      "id": "S3-10-de-E01-r1",
+      "unitId": "S3-10-de-E01-r1",
+      "stepId": "S3-10",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "sample-not-answer",
+      "sourceWholeFileSHA256": "ab1adbb8ee3c4c57dd59945ab32bda78a953bc25693a03266bed9e7a5b512d40",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Drei unbeschriftete Proben",
+          "sha256": "1ffa18d39aeddf7d06344e0c570a28a604a964368205f1180b02ad429ff002bf"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "In einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.",
+          "sha256": "0150c7d5be9c12430632a66cd270d4332c116f737159e11cf05df32283b711c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Notiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.",
+          "sha256": "30e16755b97312f4da2e848d4ba054b759efc0b6380fba8c1954037a0381f8a3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Leite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.",
+          "sha256": "f6c9b3266535359d2010ebf6393c9627fb43919bb6e65f6f286191fc1094d02a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Für Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten.",
+          "sha256": "1c43f3465c842b41056d9a914d4f4f2439186052680b85e04a09beb7b704bb96"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Keine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen.",
+          "sha256": "11f802303c35929a12d0874f48de3aea9062e4fa6e25bb5c2add90ab95d54a07"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sample-not-answer",
+        "title": "Drei unbeschriftete Proben",
+        "situation": "In einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.",
+        "reasoning": [
+          "Notiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.",
+          "Leite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.",
+          "Für Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten."
+        ],
+        "takeaway": "Keine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen."
+      },
+      "scientificMeaning": "Drei unbeschriftete Proben\n\nIn einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.\n\nNotiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.\n\nLeite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.\n\nFür Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten.\n\nKeine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen.",
+      "displayText": "Drei unbeschriftete Proben\n\nIn einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.\n\nNotiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.\n\nLeite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.\n\nFür Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten.\n\nKeine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen.",
+      "captionText": "Drei unbeschriftete Proben\n\nIn einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.\n\nNotiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.\n\nLeite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.\n\nFür Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten.\n\nKeine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen.",
+      "spokenText": "Drei unbeschriftete Proben\n\nIn einer Schale liegen A, B und C; die Lehrkraft hat ihre Identitäten nicht verraten.\n\nNotiere nach vergleichbarem Anfeuchten Körnigkeit, Glätte, Klebrigkeit, Ball und Bändchen für jede Probe.\n\nLeite nur vorläufig sandige, tonreiche oder lehmige Gruppen ab und benenne Unsicherheit.\n\nFür Unterklassen validiertes Verfahren nutzen; Entwässerung und Fruchtbarkeit getrennt beobachten.\n\nKeine echten Identitäten vorab eingetragen; die Lehrkraft prüft die Beobachtungen.",
+      "spokenTextSHA256": "b3f8308cdb0730c1b75e94f2527986e3fe60eb75e45eb1454f3f48fc5f03eb8f",
+      "spokenTextSha256": "b3f8308cdb0730c1b75e94f2527986e3fe60eb75e45eb1454f3f48fc5f03eb8f",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "8c5d0840cf135cd8edc975c7b9da9bf9e4ad1523819d3d6d12b28b0d4bdf67ad",
+      "requestFingerprintSha256": "8c5d0840cf135cd8edc975c7b9da9bf9e4ad1523819d3d6d12b28b0d4bdf67ad",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-10-de-E02-r1",
+      "unitId": "S3-10-de-E02-r1",
+      "stepId": "S3-10",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "three-per-texture",
+      "sourceWholeFileSHA256": "ab1adbb8ee3c4c57dd59945ab32bda78a953bc25693a03266bed9e7a5b512d40",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Neun bedingte Kandidaten",
+          "sha256": "c29a2396cca1d993e02b5af87516cb11ba798c8be072fb5480824e8c96e9a486"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Die Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.",
+          "sha256": "6cbb50e0a06cf956181eece18e56e65868fb65fe4e895fff27f3f817979a4557"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Für entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.",
+          "sha256": "f1101a5d66543ce9ea1993a9e927882426881e868f585bbdcefcb682cdb0dec3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Für strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.",
+          "sha256": "e338ce0ecf40deca444f26b4b01ff95a4dec6e68c070ae73a188c80e993cf0ce"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Für geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung.",
+          "sha256": "4ee892dee2c8b678651102c2f2a99b6acb92c9c4e4334c42bdc04708572edeaa"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Die neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+          "sha256": "f8d13d15012586e3cc114b61013bce5089b7173df60108cf111ba61d12e4494e"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "three-per-texture",
+        "title": "Neun bedingte Kandidaten",
+        "situation": "Die Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.",
+        "reasoning": [
+          "Für entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.",
+          "Für strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.",
+          "Für geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung."
+        ],
+        "takeaway": "Die neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten."
+      },
+      "scientificMeaning": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+      "displayText": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+      "captionText": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+      "spokenText": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, Pe Ha- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+      "spokenTextSHA256": "e34e4e84fc37226065b64d6fa418d93434041bebf05c6f6bd81e0850cd86eeea",
+      "spokenTextSha256": "e34e4e84fc37226065b64d6fa418d93434041bebf05c6f6bd81e0850cd86eeea",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "e43e799403eaa34c7ce8efa9962c3bfd0cce0f034334f6813360482579925d6b",
+      "requestFingerprintSha256": "e43e799403eaa34c7ce8efa9962c3bfd0cce0f034334f6813360482579925d6b",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, pH- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+          "spoken": "Neun bedingte Kandidaten\n\nDie Übung fordert mindestens drei Kulturen für jede sandige, tonreiche und lehmige Gruppe.\n\nFür entwässerten, ausreichend bewässerten Sand: Karotten, Radieschen und Kartoffeln aus dem Modell, jeweils mit Tiefen-, Wasser- und Nährstoffprüfung.\n\nFür strukturierten, entwässerten Ton: Brokkoli, Kopfkohl und Grünkohl, jeweils mit Staunässe- und Nährstoffprüfung.\n\nFür geeigneten Lehm: Tomaten, Paprika und Gurken, jeweils mit Klima-, Pe Ha- und Entwässerungsprüfung.\n\nDie neun Namen zeigen Begründungen, keine Anbauanweisung; gut begründete Alternativen gelten.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-10-de-E03-r1",
+      "unitId": "S3-10-de-E03-r1",
+      "stepId": "S3-10",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "sourceCaseId": "compacted-carrots",
+      "sourceWholeFileSHA256": "ab1adbb8ee3c4c57dd59945ab32bda78a953bc25693a03266bed9e7a5b512d40",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Karottenwunsch auf verdichtetem Ton",
+          "sha256": "86f898caad19a9e8c05b2a6236fd8713575bb70d75fa1da8e30bcad95bb6efc5"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Wurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.",
+          "sha256": "7cd9660b22f030f3d9a947a0a79db8c1037558705ee84190a348d1c34d97202a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Verbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.",
+          "sha256": "f4a44e05747d45ef3f7bb0077df7abc34f96f36db1a5d7adabc82bbdda2fe7eb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Alternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.",
+          "sha256": "f8a4a44abe625045ddb466d56cba422cdf0e9e32b64b40c1ca4208c971683905"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Kosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.",
+          "sha256": "ed18ce03b14bc887255a3307a434e3e7ab3dff277ceec07bcc3ab5b77be1194d"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Zwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+          "sha256": "8b19325b6e3d2ba23da74d126913b2e4eaf0940f1e0d95c7fd8593d301678430"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "compacted-carrots",
+        "title": "Karottenwunsch auf verdichtetem Ton",
+        "situation": "Wurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.",
+        "reasoning": [
+          "Verbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.",
+          "Alternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.",
+          "Kosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären."
+        ],
+        "takeaway": "Zwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung."
+      },
+      "scientificMeaning": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+      "displayText": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+      "captionText": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+      "spokenText": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach Pe Ha-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+      "spokenTextSHA256": "943304327bae220624d333bb45594220a071959b57466fa68410bc9584b9b9b3",
+      "spokenTextSha256": "943304327bae220624d333bb45594220a071959b57466fa68410bc9584b9b9b3",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "cd6ddf9e6388cce34e94881d2c898b85e12650804679cadc0e146a45ef7d7241",
+      "requestFingerprintSha256": "cd6ddf9e6388cce34e94881d2c898b85e12650804679cadc0e146a45ef7d7241",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach pH-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+          "spoken": "Karottenwunsch auf verdichtetem Ton\n\nWurzelprüfung und Feldbeobachtung bestätigen Verdichtung und schlechten Wasserabzug.\n\nVerbesserungsweg: Verdichtung und Wasserweg angehen, geeignetes organisches Material prüfen und ein fachlich geplantes Hochbeet erwägen, falls begründet; keine Maße oder Mischungsverhältnisse erfinden.\n\nAlternativweg: örtlich geeignete Kultur wie Blattgemüse auf entwässertem Beet oder Bohnen erst nach Pe Ha-, Nährstoff-, Staunässe- und Klimaprüfung testen.\n\nKosten, Wasser und Wurzelentwicklung vergleichen, statt Karotten auf jedem Ton für unmöglich zu erklären.\n\nZwei verschiedene vertretbare Wege mit Belegen und individueller Erklärung.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-10-de-E04-r1",
+      "unitId": "S3-10-de-E04-r1",
+      "stepId": "S3-10",
+      "locale": "de",
+      "semanticGroup": "E04",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "ab1adbb8ee3c4c57dd59945ab32bda78a953bc25693a03266bed9e7a5b512d40",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "A, B und C als drei Berichte",
+          "sha256": "b727b276092844a41cacc04ef8b42237f8ecc7067518a20ea11f971cc8d98f0b"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.",
+          "sha256": "440893ad9addc9965dd5bec65483a958d17d4322ae5e3b9de5a46a9df45d0134"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.",
+          "sha256": "10b0e16c6093e235bbc930035b3c693f847b93d03ad40b0fd91e9ded28aea0f5"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.",
+          "sha256": "696c8d12b03e9534f2c96d1f1a78dbd32eea8526d4eacf8a94da446b0c2ef236"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.",
+          "sha256": "0fb3046028ccb09f7f425584b921f8e07298fcd714578479ce768fbbceb93e81"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Berichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+          "sha256": "95ab0d4f064ed305f698ac7bd163b84d6271c87e820f016f7a910a2a6fc95344"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "A, B und C als drei Berichte",
+        "situation": "A sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.",
+        "reasoning": [
+          "A: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.",
+          "B: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.",
+          "C: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst."
+        ],
+        "takeaway": "Berichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung."
+      },
+      "scientificMeaning": "A, B und C als drei Berichte\n\nA sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+      "displayText": "A, B und C als drei Berichte\n\nA sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+      "captionText": "A, B und C als drei Berichte\n\nA sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+      "spokenText": "A, B und C als drei Berichte\n\nA sandiger Lehm. Pe Ha fünf Komma acht. Stickstoff und Humus niedrig; B toniger Lehm. Pe Ha sieben Komma zwei. Stickstoff und Humus hoch; C schluffig. Pe Ha sechs Komma fünf. staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig Stickstoff schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+      "spokenTextSHA256": "8e65c18fb6e65f81293d7f6272d688be5e54a80536e2ec5a9544b16ec9ea5372",
+      "spokenTextSha256": "8e65c18fb6e65f81293d7f6272d688be5e54a80536e2ec5a9544b16ec9ea5372",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "5ab1afc304cf52b23136878fa9f3cde879c46b3a21a17e602c3a6cbbdb1aa9c2",
+      "requestFingerprintSha256": "5ab1afc304cf52b23136878fa9f3cde879c46b3a21a17e602c3a6cbbdb1aa9c2",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "A, B und C als drei Berichte\n\nA sandiger Lehm/pH 5,8/N und Humus niedrig; B toniger Lehm/pH 7,2/N und Humus hoch; C schluffig/pH 6,5/staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig N schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+          "spoken": "A, B und C als drei Berichte\n\nA sandiger Lehm. Pe Ha fünf Komma acht. Stickstoff und Humus niedrig; B toniger Lehm. Pe Ha sieben Komma zwei. Stickstoff und Humus hoch; C schluffig. Pe Ha sechs Komma fünf. staunässegefährdet.\n\nA: Karotten und Kartoffeln möglich mit Feuchte- und Nährstoffmanagement; Mais bei dauerhaft wenig Stickstoff schwächer, nicht grundsätzlich unmöglich.\n\nB: Brokkoli und Mais möglich, wenn Struktur, Entwässerung und andere Nährstoffe passen; gerade tiefgehende Wurzeln bei bestätigter Verdichtung schwächer.\n\nC: Reis und Weide sind die beiden Quellenbeispiele; beide setzen passende örtliche Art oder Sorte, Klima und Wassersystem voraus. Weide ist ein nicht als Nahrungspflanze verwendeter Baum, keine zweite geprüfte Nahrungskultur. Beschränkt sich die Aufgabe auf Nahrungskulturen, bleibt dieses Modell unvollständig, bis ein zweiter örtlich begründeter Kandidat vorliegt; keinen erfinden. Eine staunässeempfindliche Kultur kann mit Begründung weniger geeignet sein. Möhren wären bei anhaltender Staunässe im Wurzelraum weniger geeignet; prüfe Entwässerung, Wurzelbedingungen und örtliche Saison, bevor du diesen Vergleich annimmst oder änderst.\n\nBerichtswerte sind nicht die Identitäten der echten Proben; jede Zeile braucht Gründe und eine offene Prüfung.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory [\"5,8\", \"6,5\", \"7,2\"]. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": [
+            "5,8",
+            "6,5",
+            "7,2"
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

@@ -1,0 +1,508 @@
+{
+  "stepId": "S3-10",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-ar-EG.json",
+    "sha256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+    "bytes": 65650
+  },
+  "units": [
+    {
+      "id": "S3-10-ar-EG-E01-r1",
+      "unitId": "S3-10-ar-EG-E01-r1",
+      "stepId": "S3-10",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "sample-not-answer",
+      "sourceWholeFileSHA256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "ثلاث عينات من غير أسماء",
+          "sha256": "9800f9aaec97ab9abda0b28b3ee8b5875e67fe58f692635484a98c2f6d857c8c"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "فيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.",
+          "sha256": "c6eea68c632a35430e4959bf83014c3c14eeff5631ae78ac5641c57b242c5e2c"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "بعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.",
+          "sha256": "86b7a31a75a5ae132531b8c8a99bf7520a4ce862eb5fda5f09dd8863da9bf2b3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "رشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.",
+          "sha256": "bc35d55799a6cf10e1e527d1fe481217d40015b9cb0bfa33ce49caff6bd780fb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "لو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة.",
+          "sha256": "3a4e4292865412378d40aedf985291d0a486c9e8f8cf90b73293a4abd35be7df"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "مافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب.",
+          "sha256": "3214ad72c9aea2bb9c581d9149383f0c7b36dd552aaaf52ae66ee6750b0c51c5"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sample-not-answer",
+        "title": "ثلاث عينات من غير أسماء",
+        "situation": "فيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.",
+        "reasoning": [
+          "بعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.",
+          "رشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.",
+          "لو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة."
+        ],
+        "takeaway": "مافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب."
+      },
+      "scientificMeaning": "ثلاث عينات من غير أسماء\n\nفيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.\n\nبعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.\n\nرشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.\n\nلو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة.\n\nمافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب.",
+      "displayText": "ثلاث عينات من غير أسماء\n\nفيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.\n\nبعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.\n\nرشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.\n\nلو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة.\n\nمافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب.",
+      "captionText": "ثلاث عينات من غير أسماء\n\nفيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.\n\nبعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.\n\nرشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.\n\nلو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة.\n\nمافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب.",
+      "spokenText": "تلات عينات من غير أسماء\n\nفيه صينية فيها عينات إيه وبي وسي، والمدرّب لسه ما كشفش هويتهم.\n\nبعد ما تظبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة، والكورة والشريط لكل عينة.\n\nرشّح بشكل مؤقت إذا كانت مجموعة رملية أو طينية أو لومية، ووضّح حدود ثقتك في الترشيح ده.\n\nلو محتاج فئة أدق، استخدم طريقة معتمدة. الصرف والخصوبة محتاجين ملاحظات مختلفة.\n\nما فيش هوية فعلية مكتوبة من قبل. المدرّب هو اللي يتحقق من ملاحظات الطالب.",
+      "spokenTextSHA256": "c41082070fb9e0293d20fe688922fee37226cd798681e20b95c8c862d15e1c9a",
+      "spokenTextSha256": "c41082070fb9e0293d20fe688922fee37226cd798681e20b95c8c862d15e1c9a",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "a8808711cb3b88bb561815f386190f1f28594e738f178837e428ce19ddc5146e",
+      "requestFingerprintSha256": "a8808711cb3b88bb561815f386190f1f28594e738f178837e428ce19ddc5146e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "ثلاث عينات من غير أسماء\n\nفيه صينية عينات A وB وC والمدرّب ما كشفش هويتهم.\n\nبعد ضبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة والكرة والشريط لكل واحدة.\n\nرشّح مجموعة رملية أو طينية أو لومية مؤقتًا واذكر حدود الثقة.\n\nلو محتاج فئة أدق استخدم طريقة معتمدة؛ الصرف والخصوبة يحتاجوا ملاحظات مختلفة.\n\nمافيش هوية فعلية متكتبة مسبقًا؛ المدرّب يتحقق من ملاحظات الطالب.",
+          "spoken": "تلات عينات من غير أسماء\n\nفيه صينية فيها عينات إيه وبي وسي، والمدرّب لسه ما كشفش هويتهم.\n\nبعد ما تظبط البلل بالتدريج، سجّل الخشونة والنعومة واللزوجة، والكورة والشريط لكل عينة.\n\nرشّح بشكل مؤقت إذا كانت مجموعة رملية أو طينية أو لومية، ووضّح حدود ثقتك في الترشيح ده.\n\nلو محتاج فئة أدق، استخدم طريقة معتمدة. الصرف والخصوبة محتاجين ملاحظات مختلفة.\n\nما فيش هوية فعلية مكتوبة من قبل. المدرّب هو اللي يتحقق من ملاحظات الطالب.",
+          "occurrences": 1,
+          "purpose": "NaturalEgyptian tلات/كورة/محتاجين, sameunnamedA/B/C, stagedmoistureobservations, tentativegroupsanduncertainty, validatedsubclassmethod, separatedrainage/fertilityobservations; NOpretendedsampleidentities. No numericpHvaluesinthisunit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-10-ar-EG-E02-r1",
+      "unitId": "S3-10-ar-EG-E02-r1",
+      "stepId": "S3-10",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "three-per-texture",
+      "sourceWholeFileSHA256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "تسعة مرشحين بشروط",
+          "sha256": "9600865ded7c644dee7f0cd361e36da8a73e4d895dc50ad238288027be1a017d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "النشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.",
+          "sha256": "1ebceae244980c4bb69615637aa12f95441afb988f5b93b643ee0a61e142071a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "لرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.",
+          "sha256": "5b015668206bef0ff52dfd0ead3e2697429bff4979e87dc1813aa1b8384af2ae"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "لطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.",
+          "sha256": "3d2e044a5dc660c4a85e31ad4a74b1ebe158d9a549e33dbbd68a8ddfd2ee2d45"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "للوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف.",
+          "sha256": "aad3b175addb190712415c969adcd4dceb23148c3180157669fbd1af80ade6a0"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "التسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة.",
+          "sha256": "d8662c3439d5f904976e58f368b8613087806326e23a7bdcb0fa11d81fd1d85d"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "three-per-texture",
+        "title": "تسعة مرشحين بشروط",
+        "situation": "النشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.",
+        "reasoning": [
+          "لرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.",
+          "لطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.",
+          "للوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف."
+        ],
+        "takeaway": "التسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة."
+      },
+      "scientificMeaning": "تسعة مرشحين بشروط\n\nالنشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.\n\nلرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.\n\nلطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.\n\nللوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف.\n\nالتسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة.",
+      "displayText": "تسعة مرشحين بشروط\n\nالنشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.\n\nلرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.\n\nلطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.\n\nللوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف.\n\nالتسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة.",
+      "captionText": "تسعة مرشحين بشروط\n\nالنشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.\n\nلرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.\n\nلطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.\n\nللوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف.\n\nالتسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة.",
+      "spokenText": "تسع ترشيحات بشروط\n\nالنشاط طالب تلات محاصيل على الأقل لكل مجموعة: الرملية، والطينية، واللومية.\n\nللتربة الرملية اللي صرفها كويس ومعاها ري وتغذية كفاية: الجزر والفجل والبطاطس، زي نموذج الأصل. بس لكل واحد لازم تفحص العمق والمَيّه والعناصر.\n\nللطين اللي بناؤه وصرفه كويسين: البروكلي والكرنب والكيل، مع فحص الغمر والعناصر لكل واحد.\n\nوللتربة اللومية المناسبة: الطماطم والفلفل والخيار، مع فحص الجو وبي إتش والصرف.\n\nالتسع أسماء دول نموذج يوضّح التعليل، مش أمر بالزراعة. والبدائل اللي عليها تبرير مقبولة.",
+      "spokenTextSHA256": "3f806b582983ccec7d7339f144c425c877171760b6c48c6de6b4c46553ed4fd3",
+      "spokenTextSha256": "3f806b582983ccec7d7339f144c425c877171760b6c48c6de6b4c46553ed4fd3",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "d73225ce63458836179496c907e89f09e46a7ae1898199758a14eaf4ef3f2bc2",
+      "requestFingerprintSha256": "d73225ce63458836179496c907e89f09e46a7ae1898199758a14eaf4ef3f2bc2",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "تسعة مرشحين بشروط\n\nالنشاط يطلب ثلاثة محاصيل على الأقل لكل مجموعة رملية وطينية ولومية.\n\nلرمل جيد الصرف ومعاه ري وتغذية كافيين: جزر وفجل وبطاطس من نموذج الأصل، مع فحص العمق والماء والعناصر.\n\nلطين جيد البناء والصرف: بروكلي وكرنب وكيل مع فحص الغمر والعناصر لكل واحد.\n\nللوم مناسب: طماطم وفلفل وخيار مع فحص الجو وpH والصرف.\n\nالتسعة أسماء نموذج تعليل، مش أمر زراعة؛ اقبل بدائل مبررة.",
+          "spoken": "تسع ترشيحات بشروط\n\nالنشاط طالب تلات محاصيل على الأقل لكل مجموعة: الرملية، والطينية، واللومية.\n\nللتربة الرملية اللي صرفها كويس ومعاها ري وتغذية كفاية: الجزر والفجل والبطاطس، زي نموذج الأصل. بس لكل واحد لازم تفحص العمق والمَيّه والعناصر.\n\nللطين اللي بناؤه وصرفه كويسين: البروكلي والكرنب والكيل، مع فحص الغمر والعناصر لكل واحد.\n\nوللتربة اللومية المناسبة: الطماطم والفلفل والخيار، مع فحص الجو وبي إتش والصرف.\n\nالتسع أسماء دول نموذج يوضّح التعليل، مش أمر بالزراعة. والبدائل اللي عليها تبرير مقبولة.",
+          "occurrences": 1,
+          "purpose": "NaturalEgyptian تلات/كويس/المَيّه/التسع, sameatleast3cropsineachgroup/nineconditionalnames, sandycarrot/radish/potato,claybroccoli/cabbage/kale,loamtomato/pepper/cucumber plusallspecificdepth/water/nutrient/climate/pH/drainagechecks. No specificnumericpHvalueinthisunit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-10-ar-EG-E03-r1",
+      "unitId": "S3-10-ar-EG-E03-r1",
+      "stepId": "S3-10",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "compacted-carrots",
+      "sourceWholeFileSHA256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "عميل عايز جزر في طين مدكوك",
+          "sha256": "86d5cd06db5ba29731ad8cbfbd4010747e3131777cfe4ac08bb7bd175283b5ae"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "ملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.",
+          "sha256": "e70d5b56b98469cb9ae338169219570978e4030da6a0152dc37442189d3192d7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "مسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.",
+          "sha256": "fecd581b4cf2d7a2be58d383d75b5b9547d38f702dc7ddc50075a3dabb8afdee"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "مسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.",
+          "sha256": "c7b3b2c7899895d5b279bd12ce6ec0383c11f30864706a7d48038ecf6c023726"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "اشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.",
+          "sha256": "9b7b944db361423c58af3c66009f5565deabc31ef851a5bb88ca8678907a60e0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "مساران مختلفان ومبرران، مع دليل وشرح فردي.",
+          "sha256": "5b16834472c4d084a4af3ae7c7a4225a49a0a25fd3839ca1129aff592b8c2ea6"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "compacted-carrots",
+        "title": "عميل عايز جزر في طين مدكوك",
+        "situation": "ملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.",
+        "reasoning": [
+          "مسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.",
+          "مسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.",
+          "اشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية."
+        ],
+        "takeaway": "مساران مختلفان ومبرران، مع دليل وشرح فردي."
+      },
+      "scientificMeaning": "عميل عايز جزر في طين مدكوك\n\nملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.\n\nمسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.\n\nمسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nمساران مختلفان ومبرران، مع دليل وشرح فردي.",
+      "displayText": "عميل عايز جزر في طين مدكوك\n\nملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.\n\nمسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.\n\nمسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nمساران مختلفان ومبرران، مع دليل وشرح فردي.",
+      "captionText": "عميل عايز جزر في طين مدكوك\n\nملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.\n\nمسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.\n\nمسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nمساران مختلفان ومبرران، مع دليل وشرح فردي.",
+      "spokenText": "عميل عايز يزرع جزر في طين مدكوك\n\nملاحظة في الحقل وفحص للجذور أكدوا وجود دمك وضعف في الصرف.\n\nطريق التحسين: اتعامل مع الدمك وحركة المَيّه، وافحص محسّن مناسب. وفكّر في حوض مرتفع بتصميم موثّق لو ينفع. ما تخترعش أبعاد أو نسب خلط.\n\nوطريق البديل: جرّب محصول محلي مناسب، زي ورقيات في حوض صرفه كويس أو فاصوليا. بس ده بعد فحوص بي إتش والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمَيّه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nدول طريقين مختلفين، وكل واحد ليه تبرير، ومعاهم دليل وشرح فردي.",
+      "spokenTextSHA256": "5e34bc562b58043377b77c786860803fd1119eedff34a519c2b5ba41a049a526",
+      "spokenTextSha256": "5e34bc562b58043377b77c786860803fd1119eedff34a519c2b5ba41a049a526",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "ce443da0fb2f53ddb11593b77ab0404b7cf0a56f4aacd6612d54733eeedab7f4",
+      "requestFingerprintSha256": "ce443da0fb2f53ddb11593b77ab0404b7cf0a56f4aacd6612d54733eeedab7f4",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "عميل عايز جزر في طين مدكوك\n\nملاحظة حقل وفحص جذور أكدوا الدمك وضعف الصرف.\n\nمسار التحسين: تعامل مع الدمك وحركة الماء، وافحص محسنًا مناسبًا، وفكر في حوض مرتفع بتصميم موثق لو ينفع؛ ما تخترعش أبعادًا أو نسب خلط.\n\nمسار البديل: جرّب محصولًا محليًا مناسبًا، زي ورقيات في حوض مصروف أو فاصوليا، فقط بعد فحوص pH والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمياه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nمساران مختلفان ومبرران، مع دليل وشرح فردي.",
+          "spoken": "عميل عايز يزرع جزر في طين مدكوك\n\nملاحظة في الحقل وفحص للجذور أكدوا وجود دمك وضعف في الصرف.\n\nطريق التحسين: اتعامل مع الدمك وحركة المَيّه، وافحص محسّن مناسب. وفكّر في حوض مرتفع بتصميم موثّق لو ينفع. ما تخترعش أبعاد أو نسب خلط.\n\nوطريق البديل: جرّب محصول محلي مناسب، زي ورقيات في حوض صرفه كويس أو فاصوليا. بس ده بعد فحوص بي إتش والعناصر والتغدق والمناخ.\n\nاشرح المفاضلة بين التكلفة والمَيّه ونمو الجذور، بدل ما تقول إن الجزر مستحيل ينمو في أي تربة طينية.\n\nدول طريقين مختلفين، وكل واحد ليه تبرير، ومعاهم دليل وشرح فردي.",
+          "occurrences": 1,
+          "purpose": "NaturalEgyptian محسّن مناسب/طريقين مختلفين وكلواحدليهربرير, sameconfirmedcompaction/drainage, improvementversusalternativepaths, noinventeddimensions/mixratios, locallysuitableleafyorbeanonlyaftertests, noabsoluteclaycarrotban. No numericquantitiesinthisunit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-10-ar-EG-E04-r1",
+      "unitId": "S3-10-ar-EG-E04-r1",
+      "stepId": "S3-10",
+      "locale": "ar-EG",
+      "semanticGroup": "E04",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "2e3fb2822566f4937cda6d78391b427258eca3f56dbd1f97e821954eae211f0e",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "التقارير A وB وC ثلاث حالات مختلفة",
+          "sha256": "08e2d19f509e7aa968a5df61484392592189158e0bab315f39ad1aa4fc360b76"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.",
+          "sha256": "32ec0f2773a4986bc91e935a1e4780ec9e60110ef3fa41531397907298753a63"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.",
+          "sha256": "3a2bf27315c6ed6da1beec96deb30dd0ce33851e36660df427bc8f6aac4cf4f5"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.",
+          "sha256": "4c7fe11b94c8788de0d3ee05616d13ae6f2139739d04740c1fc677867d00c788"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.",
+          "sha256": "fdd5ea8ff7af3dc331b59250db3f643c74ccc074653679168f7caf0277e660e7"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "قيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+          "sha256": "36ad5489641a303fa9ca005ad9593580ee50c1757edc8849d56f79b420118218"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "التقارير A وB وC ثلاث حالات مختلفة",
+        "situation": "A لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.",
+        "reasoning": [
+          "A: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.",
+          "B: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.",
+          "C: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها."
+        ],
+        "takeaway": "قيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا."
+      },
+      "scientificMeaning": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "displayText": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "captionText": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+      "spokenText": "التقارير إيه وبي وسي تلات حالات مختلفة\n\nالتقرير إيه: لوم رملي، بي إتش خمسة فاصلة تمانية، والنيتروجين والمادة العضوية قليلين. التقرير بي: لوم طيني، بي إتش سبعة فاصلة اتنين، والنيتروجين والمادة العضوية عاليين. والتقرير سي: تربة سلتية، بي إتش ستة فاصلة خمسة، ومعرّضة للتغدق.\n\nفي إيه، الجزر والبطاطس ترشيحين محتملين مع إدارة الرطوبة والعناصر. الذرة ممكن تكون أقل ملاءمة لو النيتروجين فضل ناقص، لكنها مش مستحيلة نهائيًا.\n\nفي بي، البروكلي والذرة ممكن يناسبوا لو البناء والصرف وباقي العناصر مناسبين. ومحصول جذره عميق ومستقيم ممكن يبقى أقل ملاءمة لو فيه دمك مثبت.\n\nوفي سي، الأرز والصفصاف هما المثالين اللي في الأصل. وكل واحد محتاج نوع أو صنف محلي مناسب، وجو ونظام مَيّه مناسبين. الصفصاف شجرة مش غذائية، ومش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يبقى فيه ترشيح غذائي تاني عليه دليل محلي. ما نخترعش اسم. المحصول اللي بيتأثر بالمَيّه الراكدة ممكن يكون أقل ملاءمة، مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر. افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير دي منفصلة عن هوية العينات الحقيقية. كل صف محتاج سبب وفحص لسه ناقص.",
+      "spokenTextSHA256": "2625222032f8211c5c057a5754751c454e94a053248c131c894d960074df4530",
+      "spokenTextSha256": "2625222032f8211c5c057a5754751c454e94a053248c131c894d960074df4530",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "79554d1ac5635944969c8bf3fbf802b0bcd0ade2c01abcf055c35cbf3f3d447f",
+      "requestFingerprintSha256": "79554d1ac5635944969c8bf3fbf802b0bcd0ade2c01abcf055c35cbf3f3d447f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "التقارير A وB وC ثلاث حالات مختلفة\n\nA لوم رملي/pH‏ ٥٫٨/N وOM قليلان؛ B لوم طيني/pH‏ ٧٫٢/N وOM عاليان؛ C سلتية/pH‏ ٦٫٥ ومعرضة للتغدق.\n\nA: الجزر والبطاطس محتملان مع إدارة رطوبة وعناصر؛ الذرة قد تكون أقل ملاءمة إذا ظل N ناقصًا، مش مستحيلة نهائيًا.\n\nB: البروكلي والذرة ممكنان لو البناء والصرف وباقي العناصر مناسبة؛ محصول جذره عميق مستقيم ممكن يكون أقل ملاءمة مع دمك مثبت.\n\nC: الأرز والصفصاف هما المثالين في الأصل، وكل واحد محتاج نوع أو صنف محلي وجو ونظام ميه مناسبين. الصفصاف شجرة غير غذائية، مش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يتوفر مرشح غذائي تاني بدليل محلي؛ ما نخترعش اسم. المحصول الحساس للميه الراكدة ممكن يكون أقل ملاءمة مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر؛ افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير منفصلة عن هوية العينات الفعلية؛ كل صف يحتاج سببًا وفحصًا ناقصًا.",
+          "spoken": "التقارير إيه وبي وسي تلات حالات مختلفة\n\nالتقرير إيه: لوم رملي، بي إتش خمسة فاصلة تمانية، والنيتروجين والمادة العضوية قليلين. التقرير بي: لوم طيني، بي إتش سبعة فاصلة اتنين، والنيتروجين والمادة العضوية عاليين. والتقرير سي: تربة سلتية، بي إتش ستة فاصلة خمسة، ومعرّضة للتغدق.\n\nفي إيه، الجزر والبطاطس ترشيحين محتملين مع إدارة الرطوبة والعناصر. الذرة ممكن تكون أقل ملاءمة لو النيتروجين فضل ناقص، لكنها مش مستحيلة نهائيًا.\n\nفي بي، البروكلي والذرة ممكن يناسبوا لو البناء والصرف وباقي العناصر مناسبين. ومحصول جذره عميق ومستقيم ممكن يبقى أقل ملاءمة لو فيه دمك مثبت.\n\nوفي سي، الأرز والصفصاف هما المثالين اللي في الأصل. وكل واحد محتاج نوع أو صنف محلي مناسب، وجو ونظام مَيّه مناسبين. الصفصاف شجرة مش غذائية، ومش محصول غذائي تاني اتأكدنا منه. لو النشاط مقتصر على محاصيل غذائية، النموذج ده لسه ناقص لحد ما يبقى فيه ترشيح غذائي تاني عليه دليل محلي. ما نخترعش اسم. المحصول اللي بيتأثر بالمَيّه الراكدة ممكن يكون أقل ملاءمة، مع توضيح السبب. الجزر يبقى أقل ملاءمة لو التغدق في منطقة الجذور مستمر. افحص الصرف وظروف الجذور والموسم المحلي قبل ما تقبل المقارنة أو تغيّرها.\n\nقيم التقارير دي منفصلة عن هوية العينات الحقيقية. كل صف محتاج سبب وفحص لسه ناقص.",
+          "occurrences": 1,
+          "purpose": "NaturalEgyptian قليلين/عاليين/ترشيحين/ممكنين, exactA5.8lowN/OM,B7.2highN/OM,C6.5siltywaterlogging;allconditionalcropfits,Nlowdoesnotcategoricallyexclude maize,confirmedcompaction,willownonfoodnotverifiedsecondfoodcrop,foodonlytaskremainsincompletependinglocallyevidencedcandidate;nofabricatedcrop. Reportidentitiesseparatefromphysicalsamples.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٥٫٨",
+            "٦٫٥",
+            "٧٫٢"
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

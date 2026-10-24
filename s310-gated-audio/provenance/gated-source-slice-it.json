@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-10",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "5b1437cb689f4e384cc08f4e5930b26d400e9769b8cefef0e2e3722b125671f2",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "sample-not-answer",
+      "title": "Tre campioni senza etichette",
+      "situation": "Un vassoio contiene campioni A, B e C, ma il formatore non ha svelato le identità.",
+      "reasoning": [
+        "Registra granulosità, liscezza, adesività, pallina e nastro di ciascuno a umidità comparabile.",
+        "Formula ipotesi provvisorie sabbioso/argilloso/franco e dichiara incertezza.",
+        "Se serve una sottoclasse, verifica con metodo validato; drenaggio e fertilità richiedono osservazioni separate."
+      ],
+      "takeaway": "Nessuna identità reale è precompilata: il formatore verifica le osservazioni."
+    },
+    {
+      "id": "three-per-texture",
+      "title": "Nove candidate condizionate",
+      "situation": "L’esercizio richiede almeno tre colture per ognuno dei gruppi sabbioso, argilloso e franco.",
+      "reasoning": [
+        "Per sabbia drenata e adeguatamente irrigata: carote, ravanelli, patate dal modello, con controlli su profondità, acqua e nutrienti.",
+        "Per argilla strutturata e drenata: broccoli, cavolo e cavolo riccio, con controlli su ristagno e nutrienti.",
+        "Per franco adatto: pomodori, peperoni, cetrioli, con controlli su clima, pH e drenaggio."
+      ],
+      "takeaway": "I nove nomi sono modelli di ragionamento, non un ordine di semina; accetta alternative motivate."
+    },
+    {
+      "id": "compacted-carrots",
+      "title": "Il cliente vuole carote in argilla compattata",
+      "situation": "Una verifica delle radici e un’osservazione sul campo confermano compattazione e drenaggio scarso.",
+      "reasoning": [
+        "Via gestionale: affronta compattazione e movimento dell’acqua, analizza un materiale organico e considera un’aiuola rialzata progettata se giustificata; non inventare dimensioni o proporzioni.",
+        "Via alternativa: prova una coltura locale, per esempio un’ortiva a foglia in letto drenato o fagioli, solo dopo analisi di pH, nutrienti, ristagno e clima.",
+        "Spiega costi, acqua e radici senza dichiarare che le carote non possano crescere in nessuna argilla."
+      ],
+      "takeaway": "Due vie distinte e difendibili, con prove e spiegazione personale."
+    },
+    {
+      "id": "reports-abc",
+      "title": "Tre rapporti, tre casi",
+      "situation": "A franco-sabbioso/pH 5,8/N e sostanza organica bassi; B franco-argilloso/pH 7,2/N e sostanza organica alti; C limoso/pH 6,5/soggetto a ristagno.",
+      "reasoning": [
+        "A: carote e patate plausibili se gestiti acqua e nutrienti; mais meno adatto se N resta basso, non impossibile in assoluto.",
+        "B: broccoli e mais possibili se struttura/drenaggio e altri nutrienti sono adeguati; radice lunga e diritta meno adatta con compattazione confermata.",
+        "C: riso e salice sono i due esempi della fonte, entrambi condizionati a specie o cultivar, clima e sistema idrico locali adatti. Il salice è un albero non alimentare, non una seconda coltura alimentare verificata. Se la consegna ammette solo alimenti, questo modello resta incompleto finché non viene proposta una seconda candidata alimentare giustificata localmente: non inventarla. Una coltura sensibile al ristagno può risultare meno adatta, con motivazione. Le carote sarebbero meno adatte se il ristagno nella zona radicale persistesse; verifica drenaggio, condizioni radicali e stagione locale prima di accettare o modificare il confronto."
+      ],
+      "takeaway": "I valori dei rapporti non sono identità dei campioni fisici; ogni riga richiede motivazione e prova mancante."
+    }
+  ]
+}

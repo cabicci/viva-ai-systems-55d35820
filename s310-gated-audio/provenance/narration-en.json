@@ -1,0 +1,508 @@
+{
+  "stepId": "S3-10",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-10-en.json",
+    "sha256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+    "bytes": 47884
+  },
+  "units": [
+    {
+      "id": "S3-10-en-E01-r1",
+      "unitId": "S3-10-en-E01-r1",
+      "stepId": "S3-10",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "sample-not-answer",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Three unlabelled samples",
+          "sha256": "e22c5fa790025449e27f6a4ca96b2ab67ecad588ff764b180ed6a2def11f2003"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A tray holds samples A, B and C, but the trainer has not disclosed identities.",
+          "sha256": "9a4e2e1891eadca9e0c21c372353102f4ccc8cd710c40b0ffeca104f0f5cfb3f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Record grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.",
+          "sha256": "eac4412f747421597fed581ee7ff6396e346fd0575bbf4d80583ff84022c419e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Make tentative sandy/clay/loamy group identifications and state uncertainty.",
+          "sha256": "d3f4c89a1bf8ba7c520d9be6740a6cc4485f370378646ec8c79091d567427f2b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Check precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.",
+          "sha256": "add3a918779a7244a13f58a561dcfca03e5a13a65717d1e723bd24134a633b98"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "No actual identities are pre-filled; the trainer verifies the learner's observations.",
+          "sha256": "5c8e9f1bd8cb3c9c5a935ea09130ee4e1a8a45efc4aa2059368d1670f9eca9f3"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sample-not-answer",
+        "title": "Three unlabelled samples",
+        "situation": "A tray holds samples A, B and C, but the trainer has not disclosed identities.",
+        "reasoning": [
+          "Record grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.",
+          "Make tentative sandy/clay/loamy group identifications and state uncertainty.",
+          "Check precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations."
+        ],
+        "takeaway": "No actual identities are pre-filled; the trainer verifies the learner's observations."
+      },
+      "scientificMeaning": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy/clay/loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+      "displayText": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy/clay/loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+      "captionText": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy/clay/loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+      "spokenText": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy, clay or loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+      "spokenTextSHA256": "51c450cfd02b2e1af0ccbf7da38d3bb02b217567dec900c1f727d1cad2f5f102",
+      "spokenTextSha256": "51c450cfd02b2e1af0ccbf7da38d3bb02b217567dec900c1f727d1cad2f5f102",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "ed22fa82dc0dcf4f471a61a8ae258395d9d172d2b9c84bd3c615e5f3068a82db",
+      "requestFingerprintSha256": "ed22fa82dc0dcf4f471a61a8ae258395d9d172d2b9c84bd3c615e5f3068a82db",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy/clay/loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+          "spoken": "Three unlabelled samples\n\nA tray holds samples A, B and C, but the trainer has not disclosed identities.\n\nRecord grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.\n\nMake tentative sandy, clay or loamy group identifications and state uncertainty.\n\nCheck precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations.\n\nNo actual identities are pre-filled; the trainer verifies the learner's observations.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-E02-r1",
+      "unitId": "S3-10-en-E02-r1",
+      "stepId": "S3-10",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "three-per-texture",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Nine conditional candidates",
+          "sha256": "7c9d5081b8c5b4023ac2b05ca87d2ae1b66a3a97d095c52b783ddf301928cd53"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "The workshop asks for at least three crops per sandy, clay and loamy group.",
+          "sha256": "14171a91b90bcb429fed952d762b766b2c7dd862869b9493a61b4bef5834d8cb"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "For well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.",
+          "sha256": "7601895e7fa0ecfd8843315d21fd66da42ba330f2a4a360ce661c67f79d59a2e"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "For structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.",
+          "sha256": "48fa0b3728ce7a95d3e4a2ce120dcabafc4ada62f019fb8e198f9746f358bba9"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "For suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage.",
+          "sha256": "f35e1736a7d1f90c00482ebfbed642cdc528b7bf0d35c21d9823fedb03252897"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "These nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+          "sha256": "b284c844a5790eecd3ae605166df6dae2cf4a8ef9e278c1c1428148e2c79317b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "three-per-texture",
+        "title": "Nine conditional candidates",
+        "situation": "The workshop asks for at least three crops per sandy, clay and loamy group.",
+        "reasoning": [
+          "For well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.",
+          "For structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.",
+          "For suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage."
+        ],
+        "takeaway": "These nine names model reasoning, not a site planting order; alternative defended matches are accepted."
+      },
+      "scientificMeaning": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+      "displayText": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+      "captionText": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+      "spokenText": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth, water and nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, P H and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+      "spokenTextSHA256": "67611585363db7127316e86548e97299169f5ee6c4d90674b8a8c8fe174640de",
+      "spokenTextSha256": "67611585363db7127316e86548e97299169f5ee6c4d90674b8a8c8fe174640de",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "c76d0732f1b8b15318185e16018a2dbfce5ed8a51e4cbe77198045fe69e1b314",
+      "requestFingerprintSha256": "c76d0732f1b8b15318185e16018a2dbfce5ed8a51e4cbe77198045fe69e1b314",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+          "spoken": "Nine conditional candidates\n\nThe workshop asks for at least three crops per sandy, clay and loamy group.\n\nFor well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth, water and nutrients.\n\nFor structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.\n\nFor suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, P H and drainage.\n\nThese nine names model reasoning, not a site planting order; alternative defended matches are accepted.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-E03-r1",
+      "unitId": "S3-10-en-E03-r1",
+      "stepId": "S3-10",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "compacted-carrots",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A client wants carrots in compacted clay",
+          "sha256": "b4e97571a4cf089ed9acc43b00cbe1d4bacf32af33e46bb88f74f25a7b5fbe16"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A root check and field observation confirm compaction and poor drainage.",
+          "sha256": "795f14df7e20c67dff76d6a40615cf6b38f4fd17d194a4addd542dfe21913635"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Management path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.",
+          "sha256": "ccbeeac88837f29596e81d6fa0eecc2806dcc80434e3287fc28997ad5616311c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Alternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.",
+          "sha256": "e947f5a5bcff5ac2f50ac595d26eb9033e57c558edfd23ed8289107ad537d98a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Explain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.",
+          "sha256": "07deec1bf8dcd8f14e825901fa80bae5b5999b303f6d8207a123a78f8d9f4182"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Two distinct defensible paths, with evidence and an individual explanation.",
+          "sha256": "451f6a6a90bffe634ce0dd3ad7c3504c87d542d3a66d629970959fb3ecfa58d2"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "compacted-carrots",
+        "title": "A client wants carrots in compacted clay",
+        "situation": "A root check and field observation confirm compaction and poor drainage.",
+        "reasoning": [
+          "Management path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.",
+          "Alternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.",
+          "Explain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay."
+        ],
+        "takeaway": "Two distinct defensible paths, with evidence and an individual explanation."
+      },
+      "scientificMeaning": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+      "displayText": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+      "captionText": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+      "spokenText": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after P H, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+      "spokenTextSHA256": "afab933bd896bd0e3d341ce0afcb70122e17d6bbfce5b95a09a117774d06bb30",
+      "spokenTextSha256": "afab933bd896bd0e3d341ce0afcb70122e17d6bbfce5b95a09a117774d06bb30",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "de93477b77b6f3c7437969da3aeaf2c8d421583969c4aa6c84992f908a0d1c25",
+      "requestFingerprintSha256": "de93477b77b6f3c7437969da3aeaf2c8d421583969c4aa6c84992f908a0d1c25",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+          "spoken": "A client wants carrots in compacted clay\n\nA root check and field observation confirm compaction and poor drainage.\n\nManagement path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.\n\nAlternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after P H, fertility, waterlogging and climate checks.\n\nExplain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay.\n\nTwo distinct defensible paths, with evidence and an individual explanation.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory []. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-10-en-E04-r1",
+      "unitId": "S3-10-en-E04-r1",
+      "stepId": "S3-10",
+      "locale": "en",
+      "semanticGroup": "E04",
+      "sourceCaseId": "reports-abc",
+      "sourceWholeFileSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/3/title",
+          "text": "Treat three reports as three cases",
+          "sha256": "5e06778eebfddb2e1402da6471d0b6781f226021a5571bdc64217829fd67ae03"
+        },
+        {
+          "pointer": "/examples/3/situation",
+          "text": "A is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.",
+          "sha256": "a6b6d868e7dbdc087acbbfd51a33c653d82f7560a319b7f07c8e392ec27e82c9"
+        },
+        {
+          "pointer": "/examples/3/reasoning/0",
+          "text": "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.",
+          "sha256": "6612087aaaa15051255c61dd350e5c3efb219cbc77056eb83267c5d296dd3a87"
+        },
+        {
+          "pointer": "/examples/3/reasoning/1",
+          "text": "B: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.",
+          "sha256": "1b1cb47b05591b2eb7f47853f0ea5a7cb665172767e2791ad73c1da2cd09d207"
+        },
+        {
+          "pointer": "/examples/3/reasoning/2",
+          "text": "C: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.",
+          "sha256": "f430d8a54f1a9834c81e9c636dbcf29185b5337f9ad00be2e9ee2aa064282903"
+        },
+        {
+          "pointer": "/examples/3/takeaway",
+          "text": "Report values stay separate from physical sample identities; every row needs reasons and a missing test.",
+          "sha256": "db978587fad2134184c8f089a0de437b743b21f8d4334ab02ca1540e7354bfc7"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "reports-abc",
+        "title": "Treat three reports as three cases",
+        "situation": "A is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.",
+        "reasoning": [
+          "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.",
+          "B: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.",
+          "C: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison."
+        ],
+        "takeaway": "Report values stay separate from physical sample identities; every row needs reasons and a missing test."
+      },
+      "scientificMeaning": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "displayText": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "captionText": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "spokenText": "Treat three reports as three cases\n\nA is sandy loam. P H five point eight. low nitrogen. low organic matter; B is clay loam. P H seven point two. high nitrogen. high organic matter; C is silty. P H six point five. waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low nitrogen stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure and drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species or cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+      "spokenTextSHA256": "c772b13a4375d49588f14a6eaf599fc620e7c29a2260b54f11a3fbfdd8fcee3b",
+      "spokenTextSha256": "c772b13a4375d49588f14a6eaf599fc620e7c29a2260b54f11a3fbfdd8fcee3b",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "11eb81d5c5c440f3c66a8f5e76a090908b701408d5b761f83ac715d91b961005",
+      "requestFingerprintSha256": "11eb81d5c5c440f3c66a8f5e76a090908b701408d5b761f83ac715d91b961005",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Treat three reports as three cases\n\nA is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+          "spoken": "Treat three reports as three cases\n\nA is sandy loam. P H five point eight. low nitrogen. low organic matter; B is clay loam. P H seven point two. high nitrogen. high organic matter; C is silty. P H six point five. waterlogging-prone.\n\nA: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low nitrogen stays uncorrected, not inherently impossible.\n\nB: broccoli and corn are possible if structure and drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.\n\nC: rice and willow are the two source examples, each only conditional on a suitable local species or cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison.\n\nReport values stay separate from physical sample identities; every row needs reasons and a missing test.",
+          "occurrences": 1,
+          "purpose": "Exactcase-specificlocalizedsourcewith pronunciationexpansiononly; source numeric literal inventory [\"5.8\", \"6.5\", \"7.2\"]. pH acronym and letters pronouncedforlocale wherepresent; wordboundariespreserve nativewords; slashconjunctions/alternativesexplicit. No claimofpHnumberinunitwithoutit.",
+          "sourceNumericLiteralsInThisUnit": [
+            "5.8",
+            "6.5",
+            "7.2"
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "sourceWrittenCaseModelAnswerIncluded is legacy shorthand ONLY for originalbank/written-testmodelkeys; it does NOT refer to thisauthoredlessonworkedcaseanswer. ThefullauthoredlessoncaseanswerISincludedandowncasegated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

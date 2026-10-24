@@ -1,0 +1,52 @@
+{
+  "stepId": "S3-10",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "ef4ba0291a43d7eca634814fabdc10252d9f71f9a61ca3a3b0d59ed0d91aa2d8",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "sample-not-answer",
+      "title": "Three unlabelled samples",
+      "situation": "A tray holds samples A, B and C, but the trainer has not disclosed identities.",
+      "reasoning": [
+        "Record grit, smoothness, stickiness, ball and ribbon for each after consistent moistening.",
+        "Make tentative sandy/clay/loamy group identifications and state uncertainty.",
+        "Check precise texture by a validated method if a subgroup matters; drainage and fertility need separate observations."
+      ],
+      "takeaway": "No actual identities are pre-filled; the trainer verifies the learner's observations."
+    },
+    {
+      "id": "three-per-texture",
+      "title": "Nine conditional candidates",
+      "situation": "The workshop asks for at least three crops per sandy, clay and loamy group.",
+      "reasoning": [
+        "For well-drained, adequately irrigated sandy soil: carrots, radishes and potatoes from the source model, each checked for depth/water/nutrients.",
+        "For structured, drained clay-rich soil: broccoli, cabbage and kale from the model, each checked for waterlogging and nutrient supply.",
+        "For suitable loam: tomatoes, peppers and cucumbers from the source, each checked for climate, pH and drainage."
+      ],
+      "takeaway": "These nine names model reasoning, not a site planting order; alternative defended matches are accepted."
+    },
+    {
+      "id": "compacted-carrots",
+      "title": "A client wants carrots in compacted clay",
+      "situation": "A root check and field observation confirm compaction and poor drainage.",
+      "reasoning": [
+        "Management path: address compaction and water movement, test a suitable organic input and consider a properly designed raised growing area if justified; do not invent dimensions or mix ratios.",
+        "Alternative path: trial a locally suitable crop such as a drained-bed leafy crop or bean only after pH, fertility, waterlogging and climate checks.",
+        "Explain cost, water and root-development tradeoffs instead of promising carrots cannot grow in any clay."
+      ],
+      "takeaway": "Two distinct defensible paths, with evidence and an individual explanation."
+    },
+    {
+      "id": "reports-abc",
+      "title": "Treat three reports as three cases",
+      "situation": "A is sandy loam/pH 5.8/low N/low OM; B is clay loam/pH 7.2/high N/high OM; C is silty/pH 6.5/waterlogging-prone.",
+      "reasoning": [
+        "A: carrots and potatoes are plausible with moisture and nutrient management; a high-demand corn crop may be lower fit if low N stays uncorrected, not inherently impossible.",
+        "B: broccoli and corn are possible if structure/drainage and other nutrients suit; a deep straight-rooted crop may be lower fit under confirmed compaction.",
+        "C: rice and willow are the two source examples, each only conditional on a suitable local species/cultivar, climate and water system. Willow is a non-food tree, not a second verified food crop. If the task is restricted to food crops, this model is incomplete until a second locally justified food candidate is supplied; do not invent one. A waterlogging-sensitive candidate can be lower fit with reasons. Carrots would be lower fit if root-zone waterlogging persists; verify drainage, rooting conditions and the local season before accepting or changing that comparison."
+      ],
+      "takeaway": "Report values stay separate from physical sample identities; every row needs reasons and a missing test."
+    }
+  ]
+}
