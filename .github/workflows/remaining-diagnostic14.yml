@@ -1,0 +1,374 @@
+name: Fourteen distinct saved-PCM source-free diagnostics
+'on':
+  push:
+    branches:
+    - work/soil-remaining-diagnostic14-20261024-r1
+    paths:
+    - remaining-diagnostic14/request.json
+permissions:
+  contents: read
+concurrency:
+  group: remaining-diagnostic14-c62a3c5eab37605dd642c829995f5be2e5c390cc03fcc7844c15a55b9a9e084c
+  cancel-in-progress: false
+env:
+  PACKAGE: remaining-diagnostic14
+  REQUEST_SHA: c62a3c5eab37605dd642c829995f5be2e5c390cc03fcc7844c15a55b9a9e084c
+  WORKER_SHA: 549d02111d5c90e5bf6b3a61da878e505f69ab982d7cf4426c1009c712f29d94
+  FREEZE_SHA: 4bde62917d3f4902be86f4fc29796e956e5c5c60e6d75e34e4f8a4b923113474
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820'
+      && github.ref == 'refs/heads/work/soil-remaining-diagnostic14-20261024-r1' && github.event.created == true && github.event.before
+      == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify fourteen exact original PCM contexts and finite fourteen-review budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Preserve exact context before onlyreview
+      id: audio
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-r1-inputs
+        path: ${{ env.PACKAGE }}/inputs/
+        if-no-files-found: error
+        retention-days: 30
+    - name: Record immutable context upload
+      id: receipt
+      env:
+        AID: ${{ steps.audio.outputs.artifact-id }}
+        DIGEST: ${{ steps.audio.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One distinct source-free context M001
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M001
+
+        '
+    - name: Preserve exact diagnostic M001
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M001-evidence
+        path: ${{ env.PACKAGE }}/output/M001/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M002
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M002
+
+        '
+    - name: Preserve exact diagnostic M002
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M002-evidence
+        path: ${{ env.PACKAGE }}/output/M002/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M003
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M003
+
+        '
+    - name: Preserve exact diagnostic M003
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M003-evidence
+        path: ${{ env.PACKAGE }}/output/M003/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M004
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M004
+
+        '
+    - name: Preserve exact diagnostic M004
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M004-evidence
+        path: ${{ env.PACKAGE }}/output/M004/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M005
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M005
+
+        '
+    - name: Preserve exact diagnostic M005
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M005-evidence
+        path: ${{ env.PACKAGE }}/output/M005/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M006
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M006
+
+        '
+    - name: Preserve exact diagnostic M006
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M006-evidence
+        path: ${{ env.PACKAGE }}/output/M006/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M007
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M007
+
+        '
+    - name: Preserve exact diagnostic M007
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M007-evidence
+        path: ${{ env.PACKAGE }}/output/M007/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M008
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M008
+
+        '
+    - name: Preserve exact diagnostic M008
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M008-evidence
+        path: ${{ env.PACKAGE }}/output/M008/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M009
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M009
+
+        '
+    - name: Preserve exact diagnostic M009
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M009-evidence
+        path: ${{ env.PACKAGE }}/output/M009/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M010
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M010
+
+        '
+    - name: Preserve exact diagnostic M010
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M010-evidence
+        path: ${{ env.PACKAGE }}/output/M010/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M011
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M011
+
+        '
+    - name: Preserve exact diagnostic M011
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M011-evidence
+        path: ${{ env.PACKAGE }}/output/M011/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M012
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M012
+
+        '
+    - name: Preserve exact diagnostic M012
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M012-evidence
+        path: ${{ env.PACKAGE }}/output/M012/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M013
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M013
+
+        '
+    - name: Preserve exact diagnostic M013
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M013-evidence
+        path: ${{ env.PACKAGE }}/output/M013/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One distinct source-free context M014
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip M014
+
+        '
+    - name: Preserve exact diagnostic M014
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-M014-evidence
+        path: ${{ env.PACKAGE }}/output/M014/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: Preserve all exact payload and partial outcomes
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: remaining-diagnostic14-r2-evidence
+        retention-days: 30
+        include-hidden-files: true
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/attempt-ledger.json
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/prompts/blind.txt
+
+          ${{ env.PACKAGE }}/provenance/model-availability.json
+
+          ${{ env.PACKAGE }}/provenance/context-proof.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/inputs/M001.wav
+
+          ${{ env.PACKAGE }}/inputs/M002.wav
+
+          ${{ env.PACKAGE }}/inputs/M003.wav
+
+          ${{ env.PACKAGE }}/inputs/M004.wav
+
+          ${{ env.PACKAGE }}/inputs/M005.wav
+
+          ${{ env.PACKAGE }}/inputs/M006.wav
+
+          ${{ env.PACKAGE }}/inputs/M007.wav
+
+          ${{ env.PACKAGE }}/inputs/M008.wav
+
+          ${{ env.PACKAGE }}/inputs/M009.wav
+
+          ${{ env.PACKAGE }}/inputs/M010.wav
+
+          ${{ env.PACKAGE }}/inputs/M011.wav
+
+          ${{ env.PACKAGE }}/inputs/M012.wav
+
+          ${{ env.PACKAGE }}/inputs/M013.wav
+
+          ${{ env.PACKAGE }}/inputs/M014.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/remaining-diagnostic14.yml'

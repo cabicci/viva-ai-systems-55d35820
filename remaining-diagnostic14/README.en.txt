@@ -1,0 +1,1 @@
+Fourteen distinct source-free original-PCM contexts. Finite0TTS14blind0ASR0GET0retry. Original recordings are unchanged; protected source fragments remain separate from ordinary teaching playback. Exact root review before dispatch.
