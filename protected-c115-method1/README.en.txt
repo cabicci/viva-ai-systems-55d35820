@@ -1,0 +1,1 @@
+Finite source-free protected-context audio evidence only:0TTS1blind0ASR0GET0retry. Same M006 PCM under separately authorized simplified method; previous charged result remains spent. No source transcript or allegation supplied to model. Root exact worker review before dispatch.
