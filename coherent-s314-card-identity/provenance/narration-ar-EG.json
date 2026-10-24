@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "locale": "ar-EG",
+  "stepId": "S3-14",
+  "units": [
+    {
+      "id": "S3-14-ar-EG-E01-card-identity-onepass-r1",
+      "unitId": "S3-14-ar-EG-E01-card-identity-onepass-r1",
+      "stepId": "S3-14",
+      "locale": "ar-EG",
+      "semanticGroup": "S314-card-identity-bounded-source-completion",
+      "sourceCaseId": "no-go",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "متبدأش لمجرد علامة صح",
+          "sha256": "3151eb6a54c6cbd453ab103e21bfbefdc999ac87f87cb276d1a7e819ef1cb824"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "أول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.",
+          "sha256": "235e09513da9805b22e257f8cb517fd015d4cddab94c16ce38f3506884ca03cf"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "أوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.",
+          "sha256": "17a7bbddc964be6f037b09c10ab2f2fc7b65208e6a74d074e20d05e2308b4d6e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "ما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.",
+          "sha256": "63279217869415150f9691e96616311e4f4396ca53733e01b2df35983eccf6c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "أعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.",
+          "sha256": "f4910e93f9134463354e174ea63f12b8ed300aeeec76de90ca1038d0809988f5"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "مفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+          "sha256": "5540bc79435f9c88b3f28baf55451423772260adbd34f53486fa62e4ae429037"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "no-go",
+        "title": "متبدأش لمجرد علامة صح",
+        "situation": "أول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.",
+        "reasoning": [
+          "أوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.",
+          "ما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.",
+          "أعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول."
+        ],
+        "takeaway": "مفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق."
+      },
+      "scientificMeaning": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "displayText": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "captionText": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "spokenText": "أول خمس خانات من بطاقة بنك الأسئلة عليها علامة صح، لكن زيت المحرك ما اتفحصش، وجهاز التدريب مختلف عن المثال.",
+      "spokenTextSHA256": "b58f27b30d46f9f8fb15b2364c7624b998f0b99e73567fe00269ab39bdeaa2d0",
+      "spokenTextSha256": "b58f27b30d46f9f8fb15b2364c7624b998f0b99e73567fe00269ab39bdeaa2d0",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.\nانطق عبارة «بطاقة بنك الأسئلة» بوضوح طبيعي، مع الاحتفاظ بأول خمس خانات وعلامة الصح ونفي فحص الزيت واختلاف جهاز التدريب. حافظ على الترابط، وما تقراش تعليمات الأداء دي.",
+      "requestFingerprintSHA256": "54c5e06e27ce5eb73c31ed963b17ff1dc45a240a528ef479a9700f94d4b12a38",
+      "requestFingerprintSha256": "54c5e06e27ce5eb73c31ed963b17ff1dc45a240a528ef479a9700f94d4b12a38",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+          "spoken": "أول خمس خانات من بطاقة بنك الأسئلة عليها علامة صح، لكن زيت المحرك ما اتفحصش، وجهاز التدريب مختلف عن المثال.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "a3c511d3ed12d0d5a2e213290b26961ecc26aa0b2002b0b95745465ba65af859",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-14-ar-EG.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-14-ar-EG-E01-r1",
+      "originalSpokenWholeSHA256": "58aa035d88956c31420b474362ca323ad0aab8cbac566e136e54891f8c699483",
+      "exactParentSpokenCharacterSlice": {
+        "first": 23,
+        "endExclusive": 112,
+        "text": "أول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال."
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-14-ar-EG-E01-r1",
+      "sourceCaseIndex": 0,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "a3c511d3ed12d0d5a2e213290b26961ecc26aa0b2002b0b95745465ba65af859"
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
