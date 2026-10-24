@@ -1,0 +1,118 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_BROAD_PERMISSION_R03_COHERENT_RESOLUTION_ROOT_EXACT_REVIEW_REQUIRED",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-remaining-resolution-r03-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-de-R07-r1-coherent-resolution-extra1",
+      "unitId": "S3-13-de-R07-r1-coherent-resolution-extra1",
+      "locale": "de",
+      "semanticGroup": "R03-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Vor einer SER-Empfehlung echten Reihenabstand und Wurzelzone mit Fräseinheit und Sicherheitsabstand vergleichen; Steine, Draht, Hang, Nässe, Sicht, Menschen, Schutz, Ausbildung, geeigneten Betriebsort im Freien und Kohlenmonoxidrisiko prüfen. Eine breite Fräse kann für dicht bepflanzte Reihen ungeeignet sein, selbst wenn die Quelle „Schmalreihengerät“ sagt. Handjäten, kleineres passendes Werkzeug oder Aufschub wählen, wenn Gefahr oder Pflanzenschaden den Nutzen übersteigen.",
+          "sha256": "e3a5dbc958d598bf1db0c2c451a7cdf1c0a2eb37df56f1dd981c8fe92e7ce582"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Bedienende müssen das Handbuch lesen und beachten. Vor Zinkenkontrolle stoppen und unbeabsichtigtes Starten verhindern, Personen fernhalten und den Benzinmotor niemals in einem geschlossenen Gewächshaus oder anderen geschlossenen Raum betreiben, wie es das Handbuch untersagt. Diese Lektion bescheinigt keine Bedienung. S3-14 behandelt angeleitete Vorprüfung und Betrieb, S3-15 Wartung und Fehlersuche.",
+          "sha256": "ed6ace17c53fb89131876bec865410570c5c8f5161eb8565a6030561ca54ae4d"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/2",
+          "text": "Der Hersteller warnt vor Abgasansammlung in geschlossenen und sogar teilweise umschlossenen Bereichen. Die Benzinfräse nicht in einem geschlossenen Raum betreiben, in dem sich Kohlenmonoxid ansammeln kann. Ein Gewächshausbeispiel ist keine Erlaubnis für Innenbetrieb; ein vorgeschlagener Ventilator oder eine Abgaslösung belegt keine Sicherheit.",
+          "sha256": "e48deba425094437302effa988f33d4a4d88395e7dec418c9c512beb3b708abd"
+        }
+      ],
+      "scientificMeaning": "Vor einer SER-Empfehlung echten Reihenabstand und Wurzelzone mit Fräseinheit und Sicherheitsabstand vergleichen; Steine, Draht, Hang, Nässe, Sicht, Menschen, Schutz, Ausbildung, geeigneten Betriebsort im Freien und Kohlenmonoxidrisiko prüfen. Eine breite Fräse kann für dicht bepflanzte Reihen ungeeignet sein, selbst wenn die Quelle „Schmalreihengerät“ sagt. Handjäten, kleineres passendes Werkzeug oder Aufschub wählen, wenn Gefahr oder Pflanzenschaden den Nutzen übersteigen.\n\nBedienende müssen das Handbuch lesen und beachten. Vor Zinkenkontrolle stoppen und unbeabsichtigtes Starten verhindern, Personen fernhalten und den Benzinmotor niemals in einem geschlossenen Gewächshaus oder anderen geschlossenen Raum betreiben, wie es das Handbuch untersagt. Diese Lektion bescheinigt keine Bedienung. S3-14 behandelt angeleitete Vorprüfung und Betrieb, S3-15 Wartung und Fehlersuche.\n\nDer Hersteller warnt vor Abgasansammlung in geschlossenen und sogar teilweise umschlossenen Bereichen. Die Benzinfräse nicht in einem geschlossenen Raum betreiben, in dem sich Kohlenmonoxid ansammeln kann. Ein Gewächshausbeispiel ist keine Erlaubnis für Innenbetrieb; ein vorgeschlagener Ventilator oder eine Abgaslösung belegt keine Sicherheit.",
+      "displayText": "Vor einer SER-Empfehlung echten Reihenabstand und Wurzelzone mit Fräseinheit und Sicherheitsabstand vergleichen; Steine, Draht, Hang, Nässe, Sicht, Menschen, Schutz, Ausbildung, geeigneten Betriebsort im Freien und Kohlenmonoxidrisiko prüfen. Eine breite Fräse kann für dicht bepflanzte Reihen ungeeignet sein, selbst wenn die Quelle „Schmalreihengerät“ sagt. Handjäten, kleineres passendes Werkzeug oder Aufschub wählen, wenn Gefahr oder Pflanzenschaden den Nutzen übersteigen.\n\nBedienende müssen das Handbuch lesen und beachten. Vor Zinkenkontrolle stoppen und unbeabsichtigtes Starten verhindern, Personen fernhalten und den Benzinmotor niemals in einem geschlossenen Gewächshaus oder anderen geschlossenen Raum betreiben, wie es das Handbuch untersagt. Diese Lektion bescheinigt keine Bedienung. S3-14 behandelt angeleitete Vorprüfung und Betrieb, S3-15 Wartung und Fehlersuche.\n\nDer Hersteller warnt vor Abgasansammlung in geschlossenen und sogar teilweise umschlossenen Bereichen. Die Benzinfräse nicht in einem geschlossenen Raum betreiben, in dem sich Kohlenmonoxid ansammeln kann. Ein Gewächshausbeispiel ist keine Erlaubnis für Innenbetrieb; ein vorgeschlagener Ventilator oder eine Abgaslösung belegt keine Sicherheit.",
+      "captionText": "Vor einer SER-Empfehlung echten Reihenabstand und Wurzelzone mit Fräseinheit und Sicherheitsabstand vergleichen; Steine, Draht, Hang, Nässe, Sicht, Menschen, Schutz, Ausbildung, geeigneten Betriebsort im Freien und Kohlenmonoxidrisiko prüfen. Eine breite Fräse kann für dicht bepflanzte Reihen ungeeignet sein, selbst wenn die Quelle „Schmalreihengerät“ sagt. Handjäten, kleineres passendes Werkzeug oder Aufschub wählen, wenn Gefahr oder Pflanzenschaden den Nutzen übersteigen.\n\nBedienende müssen das Handbuch lesen und beachten. Vor Zinkenkontrolle stoppen und unbeabsichtigtes Starten verhindern, Personen fernhalten und den Benzinmotor niemals in einem geschlossenen Gewächshaus oder anderen geschlossenen Raum betreiben, wie es das Handbuch untersagt. Diese Lektion bescheinigt keine Bedienung. S3-14 behandelt angeleitete Vorprüfung und Betrieb, S3-15 Wartung und Fehlersuche.\n\nDer Hersteller warnt vor Abgasansammlung in geschlossenen und sogar teilweise umschlossenen Bereichen. Die Benzinfräse nicht in einem geschlossenen Raum betreiben, in dem sich Kohlenmonoxid ansammeln kann. Ein Gewächshausbeispiel ist keine Erlaubnis für Innenbetrieb; ein vorgeschlagener Ventilator oder eine Abgaslösung belegt keine Sicherheit.",
+      "spokenText": "Schritt Es drei Bindestrich vierzehn behandelt angeleitete Vorprüfung und Betrieb, Schritt Es drei Bindestrich fünfzehn Wartung und Fehlersuche.",
+      "spokenTextSHA256": "ce7ea21b03302a83b3e2ab57c9881b7e8bdc1ca7d8dd8cdee232390ddd9eb1d5",
+      "spokenTextSha256": "ce7ea21b03302a83b3e2ab57c9881b7e8bdc1ca7d8dd8cdee232390ddd9eb1d5",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vor einer SER-Empfehlung echten Reihenabstand und Wurzelzone mit Fräseinheit und Sicherheitsabstand vergleichen; Steine, Draht, Hang, Nässe, Sicht, Menschen, Schutz, Ausbildung, geeigneten Betriebsort im Freien und Kohlenmonoxidrisiko prüfen. Eine breite Fräse kann für dicht bepflanzte Reihen ungeeignet sein, selbst wenn die Quelle „Schmalreihengerät“ sagt. Handjäten, kleineres passendes Werkzeug oder Aufschub wählen, wenn Gefahr oder Pflanzenschaden den Nutzen übersteigen.\n\nBedienende müssen das Handbuch lesen und beachten. Vor Zinkenkontrolle stoppen und unbeabsichtigtes Starten verhindern, Personen fernhalten und den Benzinmotor niemals in einem geschlossenen Gewächshaus oder anderen geschlossenen Raum betreiben, wie es das Handbuch untersagt. Diese Lektion bescheinigt keine Bedienung. S3-14 behandelt angeleitete Vorprüfung und Betrieb, S3-15 Wartung und Fehlersuche.\n\nDer Hersteller warnt vor Abgasansammlung in geschlossenen und sogar teilweise umschlossenen Bereichen. Die Benzinfräse nicht in einem geschlossenen Raum betreiben, in dem sich Kohlenmonoxid ansammeln kann. Ein Gewächshausbeispiel ist keine Erlaubnis für Innenbetrieb; ein vorgeschlagener Ventilator oder eine Abgaslösung belegt keine Sicherheit.",
+          "spoken": "Schritt Es drei Bindestrich vierzehn behandelt angeleitete Vorprüfung und Betrieb, Schritt Es drei Bindestrich fünfzehn Wartung und Fehlersuche.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.\nRead each identifier as Es drei Bindestrich vierzehn or Es drei Bindestrich fünfzehn, never four point one/five. These are S3-14 and S3-15. Do not speak the instruction.",
+      "deliverySHA256": "d12af21dd05d091c923393c0ba23eead9c15b092cb39e4ac88c20f01fce36874",
+      "deliverySha256": "d12af21dd05d091c923393c0ba23eead9c15b092cb39e4ac88c20f01fce36874",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "6b8cddadd5d863d02e2c7b059abef58c3b8b9840ce1866300c741ec709267591",
+      "requestFingerprintSha256": "6b8cddadd5d863d02e2c7b059abef58c3b8b9840ce1866300c741ec709267591",
+      "sourcePlan": "provenance/narration-de.json",
+      "sourcePlanSha256": "f7cccf974269ada91f0e117b2db87187efef2280bf4c5b2ec065310ef690fcee",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-13-de.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-13-de-R07-r1",
+      "originalSpokenWholeSHA256": "8edeb45ba9d171d6f223db2ef6d9aedf02345526f541f6b354c1b7a79dab2b42",
+      "exactParentSpokenCharacterSlice": {
+        "first": 804,
+        "endExclusive": 924,
+        "text": "Schritt Es drei vierzehn behandelt angeleitete Vorprüfung und Betrieb, Schritt Es drei fünfzehn Wartung und Fehlersuche.",
+        "notPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "de": [
+      "S3-13-de-R07-r1-coherent-resolution-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
