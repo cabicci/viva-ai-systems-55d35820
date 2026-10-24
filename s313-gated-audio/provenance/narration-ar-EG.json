@@ -1,0 +1,440 @@
+{
+  "stepId": "S3-13",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-13-ar-EG.json",
+    "sha256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+    "bytes": 41593
+  },
+  "units": [
+    {
+      "id": "S3-13-ar-EG-E01-r1",
+      "unitId": "S3-13-ar-EG-E01-r1",
+      "stepId": "S3-13",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "part-cards",
+      "sourceWholeFileSHA256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "اعمل بطاقات أجزاء SER فقط",
+          "sha256": "cb4c9b43374cd07d03b28aef130f8c9aa8328758fee92cfe4ac33f36e0571d6c"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "رسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.",
+          "sha256": "1e12dbaecee4b8a1440669f316c0be4430ce986da218dbeb22f03b47ebd88311"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "اختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.",
+          "sha256": "c40254def73a5fc25e21faf4643000419055d817fe3e41e678f116481aafb768"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "اشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.",
+          "sha256": "cfd55c0bb99d0b22968a066cd1ab69c0255645a00d92be78b7ac9bb0aa2540c4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "ارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.",
+          "sha256": "1c0326fdb1f313ab8efa7bac720dea50fbd68381043362329e1da2e5cb857f0d"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "لوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+          "sha256": "959a4acbd00b831519678cadc65dad669c164098dac89a51d617a7b74bb008a4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "part-cards",
+        "title": "اعمل بطاقات أجزاء SER فقط",
+        "situation": "رسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.",
+        "reasoning": [
+          "اختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.",
+          "اشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.",
+          "ارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة."
+        ],
+        "takeaway": "لوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع."
+      },
+      "scientificMeaning": "اعمل بطاقات أجزاء SER فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.\n\nاشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+      "displayText": "اعمل بطاقات أجزاء SER فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.\n\nاشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+      "captionText": "اعمل بطاقات أجزاء SER فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.\n\nاشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+      "spokenText": "اعمل بطاقات أجزاء إس إي آر فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـدي إي ودي إي آر فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على إس إي آر.\n\nاشرح وظيفة الأجزاء وإن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة دي إي ودي إي آر والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+      "spokenTextSHA256": "115d3ab7ebd03953138736da08d2372867b89abb53e53fde578447678c0e2ebf",
+      "spokenTextSha256": "115d3ab7ebd03953138736da08d2372867b89abb53e53fde578447678c0e2ebf",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "9034d572e931646957f209d76d8910b9137a0d6922cb60f3ae860998aaae209c",
+      "requestFingerprintSha256": "9034d572e931646957f209d76d8910b9137a0d6922cb60f3ae860998aaae209c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "اعمل بطاقات أجزاء SER فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـDE/DER فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على SER.\n\nاشرح وظيفيًا إن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة DE/DER والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+          "spoken": "اعمل بطاقات أجزاء إس إي آر فقط\n\nرسم عام حاطط عجلة بين الناقل والأسنان؛ رسم المصنع حاطط العجلة الأمامية لـدي إي ودي إي آر فقط.\n\nاختار من الدليل ضبط المقبض والمحرك والتحكم وغطاء السير والقابض والناقل والجزء الدوّار وقضبان السحب ومنقّي الهوا اللي تنطبق على إس إي آر.\n\nاشرح وظيفة الأجزاء وإن القدرة بتنتقل من المحرك للقابض اللي بيشد السير، ومنه لناقل الحركة والجزء الدوّار. ده مسار تعليمي، مش رسم تفصيلي مكشوف للتروس.\n\nارفض عجلة دي إي ودي إي آر والقابض الطردي العام وتسميات خامة أو قدرة مش مثبتة.\n\nلوحة أجزاء محددة الموديل وقابلة للتحقق، من غير جزء مخترع.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "اشرح وظيفيًا إن",
+              "spokenPhrase": "اشرح وظيفة الأجزاء وإن",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "8b933bbbdbad00f4625281fc9daa522da71a2d98f31eb74d3ad68f673feb10fd",
+              "revisedSpokenSHA256": "115d3ab7ebd03953138736da08d2372867b89abb53e53fde578447678c0e2ebf",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-13-ar-EG-E02-r1",
+      "unitId": "S3-13-ar-EG-E02-r1",
+      "stepId": "S3-13",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "one-acre",
+      "sourceWholeFileSHA256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "الأكر سؤال موقع، مش فدان",
+          "sha256": "f8d0f508ba83b3698b3dcbbec763878033e8729b58338e6409b421cf08ea240c"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "مزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.",
+          "sha256": "de246ef46519c30e685e06669b415ddab0c86f33ac437e5ea546428b9b92bc8a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "حوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.",
+          "sha256": "0d4fdae25d00a3655aaccfe97eb282f4180c899b18b0334219184a8549279d67"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "قس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.",
+          "sha256": "d086f611b58aa6cdd254c96e384c18068ea73c4488352908f926f9cc8269b28a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "لو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.",
+          "sha256": "8b0071383d9456b244c5e86f2a49ea87f3dd3a933a93bbe28b1a2a182d2f8568"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "قرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+          "sha256": "044bb6562fb2006ff5fa15606169016209a579a8492b5c599f6cf85201d580e9"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "one-acre",
+        "title": "الأكر سؤال موقع، مش فدان",
+        "situation": "مزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.",
+        "reasoning": [
+          "حوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.",
+          "قس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.",
+          "لو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس."
+        ],
+        "takeaway": "قرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة."
+      },
+      "scientificMeaning": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "displayText": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "captionText": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "spokenText": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل بإيده ولا بعزّاقة.\n\nحوّل الأكر لحوالي أربعة آلاف وسبعة وأربعين متر مربع أو صفر فاصلة تسعة ستة أربعة فدان مصري؛ ما تستخدمش مدة من أربع لست ساعات كوحدة تحويل.\n\nقيس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+      "spokenTextSHA256": "ffdfbe92cc0fd0adb5691a3d13223eda28ac0b14e73de254a1dcd67c1cc6c8e6",
+      "spokenTextSha256": "ffdfbe92cc0fd0adb5691a3d13223eda28ac0b14e73de254a1dcd67c1cc6c8e6",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "859282079b61447264bd5200a3461eea3184a7beb7a9a78e6926a48e2cb28ad0",
+      "requestFingerprintSha256": "859282079b61447264bd5200a3461eea3184a7beb7a9a78e6926a48e2cb28ad0",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل يدويًا ولا بعزّاقة.\n\nحوّل الأكر لحوالي ٤٠٤٧ م² أو ٠٫٩٦٤ فدان مصري؛ ما تستخدمش ٤–٦ ساعات كوحدة تحويل.\n\nقس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+          "spoken": "الأكر سؤال موقع، مش فدان\n\nمزارع عنده أكر واحد وصفوف متقاربة وبيسأل يشتغل بإيده ولا بعزّاقة.\n\nحوّل الأكر لحوالي أربعة آلاف وسبعة وأربعين متر مربع أو صفر فاصلة تسعة ستة أربعة فدان مصري؛ ما تستخدمش مدة من أربع لست ساعات كوحدة تحويل.\n\nقيس خلوص الصف وخطر الحجارة وقارن العمالة والزمن والملاءمة والسلامة الفعلية.\n\nلو الاستهلاك الحقيقي وزمن العمل ناقصين، سيب تكلفة التشغيل فارغة لحد القياس.\n\nقرار مشروط بالأبعاد والبيانات الناقصة، مش ترشيح تلقائي للآلة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٠٫٩٦٤",
+            "٤",
+            "٤٠٤٧",
+            "٦"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "تلقائي للآلة",
+              "spokenPhrase": "تلقائي للآلة",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "يدويًا",
+              "spokenPhrase": "بإيده",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "1befee6d4e737cb29defb281e55d5c39e6dfa253a7496915327293795045eba8",
+              "revisedSpokenSHA256": "ffdfbe92cc0fd0adb5691a3d13223eda28ac0b14e73de254a1dcd67c1cc6c8e6",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-13-ar-EG-E03-r1",
+      "unitId": "S3-13-ar-EG-E03-r1",
+      "stepId": "S3-13",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "service",
+      "sourceWholeFileSHA256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "سعّر الخدمة من مدخلات حقيقية فقط",
+          "sha256": "f707337671a9d6ed734dbdca791347e6f670ef928918a490aacd0d5e5f1f46e1"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "طالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.",
+          "sha256": "ee41836223d450a38db8521797fd5718cf78c824ac0bb8058c4d9f978e3acaac"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "سجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.",
+          "sha256": "7945f2e48417cb5bc325e06389b46f52a6c8ac84cdd5b97f9a0d6ab62f28ea12"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "فرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.",
+          "sha256": "710ce9267da2a9e0988bf96d677df9566d5f75292c4f85e1a8941b2b6340d12c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "اطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.",
+          "sha256": "00722134579843babbb41a66525fb690450507093ad7b3cf13662e9940203337"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "قالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+          "sha256": "c6507e4298533deaeed938fc6217972e13439f2a06ed0dee5a81fddfe1af1b72"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "service",
+        "title": "سعّر الخدمة من مدخلات حقيقية فقط",
+        "situation": "طالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.",
+        "reasoning": [
+          "سجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.",
+          "فرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.",
+          "اطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح."
+        ],
+        "takeaway": "قالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون."
+      },
+      "scientificMeaning": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "displayText": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "captionText": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "spokenText": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرّق بين سعة خزان المصنع اتنين فاصلة أربعة لتر وبين استهلاك لتر في الساعة مقاس، وبين اتنين فاصلة تلاتة لتر في الساعة غير مثبتة لـإس إي آر في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطي للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب واضح، من غير تكلفة مخترعة أو ربح مضمون.",
+      "spokenTextSHA256": "18a6d9710374cd83c07e3d07afd43ae72ca5d88dc256ca3eaa16f18e91f61b49",
+      "spokenTextSha256": "18a6d9710374cd83c07e3d07afd43ae72ca5d88dc256ca3eaa16f18e91f61b49",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "738bee27e3a0293422c5de853c7b3d0bdf2d63178d7366f238b9b7ef591bad58",
+      "requestFingerprintSha256": "738bee27e3a0293422c5de853c7b3d0bdf2d63178d7366f238b9b7ef591bad58",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+          "spoken": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرّق بين سعة خزان المصنع اتنين فاصلة أربعة لتر وبين استهلاك لتر في الساعة مقاس، وبين اتنين فاصلة تلاتة لتر في الساعة غير مثبتة لـإس إي آر في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطي للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب واضح، من غير تكلفة مخترعة أو ربح مضمون.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٢٫٣",
+            "٢٫٤"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "احتياطًا للأعطال",
+              "spokenPhrase": "احتياطي للأعطال",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "فرق بين سعة",
+              "spokenPhrase": "فرّق بين سعة",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "قالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+              "spokenPhrase": "قالب حساب واضح، من غير تكلفة مخترعة أو ربح مضمون.",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "c0322b08914bce4a0853d328dd0b83763b1e74fd166fd11d2f871be56c406162",
+              "revisedSpokenSHA256": "18a6d9710374cd83c07e3d07afd43ae72ca5d88dc256ca3eaa16f18e91f61b49",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

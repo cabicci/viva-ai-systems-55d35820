@@ -1,0 +1,392 @@
+{
+  "stepId": "S3-13",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-13-en.json",
+    "sha256": "ef45850b8686accdb188e95c2c42c467165c91b67c3ab8d31aaf91fcb5d21580",
+    "bytes": 31620
+  },
+  "units": [
+    {
+      "id": "S3-13-en-E01-r1",
+      "unitId": "S3-13-en-E01-r1",
+      "stepId": "S3-13",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "part-cards",
+      "sourceWholeFileSHA256": "ef45850b8686accdb188e95c2c42c467165c91b67c3ab8d31aaf91fcb5d21580",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Build only SER part cards",
+          "sha256": "e6eb84f6123673296a913c60d192800fb1509a1cad255b58eeb6d26140b0e187"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "A generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.",
+          "sha256": "a19fb8756e3aa6bfa1e21075e1a251fcb9855b47c53b3152c29347c7cbfe741f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Select SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.",
+          "sha256": "9740abbf2bab224a47127d5ef7a93a2105c4b48f3e4c4c5eb89deb8c3c1ef532"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Use a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.",
+          "sha256": "90897d21350a30fcb72f57c74c637af0fcebccf0ee055c70ec7cfd81b88dffcb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Reject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels.",
+          "sha256": "f40f7fb510c84f76b828da97ea1c11d271944786203be444a7dee548167686a9"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A model-labelled, checkable part board; no invented part.",
+          "sha256": "45cc04804158f35cd694930cf8b5e9bc1665a4b855677935011c3ee10a3e505f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "part-cards",
+        "title": "Build only SER part cards",
+        "situation": "A generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.",
+        "reasoning": [
+          "Select SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.",
+          "Use a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.",
+          "Reject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels."
+        ],
+        "takeaway": "A model-labelled, checkable part board; no invented part."
+      },
+      "scientificMeaning": "Build only SER part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.\n\nSelect SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels.\n\nA model-labelled, checkable part board; no invented part.",
+      "displayText": "Build only SER part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.\n\nSelect SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels.\n\nA model-labelled, checkable part board; no invented part.",
+      "captionText": "Build only SER part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.\n\nSelect SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels.\n\nA model-labelled, checkable part board; no invented part.",
+      "spokenText": "Build only S E R part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for D E and D E R only.\n\nSelect S E R-applicable handlebar-height adjuster, engine and controls, belt cover and clutch, transmission and shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine  to  belt-tension clutch  to  transmission and rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the D E and D E R-only front wheel, generic centrifugal cylinders and unsupported material or power labels.\n\nA model-labelled, checkable part board; no invented part.",
+      "spokenTextSHA256": "099e09c5c7abac7e301386c794e243fe4de972c700163b262dee6b654941d67c",
+      "spokenTextSha256": "099e09c5c7abac7e301386c794e243fe4de972c700163b262dee6b654941d67c",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "c7f7689f481e9ea90fff7fa74dc35ccee90b87c2ced0456be9ff8b88e0ec5738",
+      "requestFingerprintSha256": "c7f7689f481e9ea90fff7fa74dc35ccee90b87c2ced0456be9ff8b88e0ec5738",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Build only SER part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.\n\nSelect SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels.\n\nA model-labelled, checkable part board; no invented part.",
+          "spoken": "Build only S E R part cards\n\nA generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for D E and D E R only.\n\nSelect S E R-applicable handlebar-height adjuster, engine and controls, belt cover and clutch, transmission and shift, rotary, drag bars and air cleaner from the manual.\n\nUse a simple engine  to  belt-tension clutch  to  transmission and rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.\n\nReject the D E and D E R-only front wheel, generic centrifugal cylinders and unsupported material or power labels.\n\nA model-labelled, checkable part board; no invented part.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-13-en-E02-r1",
+      "unitId": "S3-13-en-E02-r1",
+      "stepId": "S3-13",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "one-acre",
+      "sourceWholeFileSHA256": "ef45850b8686accdb188e95c2c42c467165c91b67c3ab8d31aaf91fcb5d21580",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "One acre is a site question, not a feddan",
+          "sha256": "2caeb6ac33dd29878ca8968d5f93203d5a64bb1a5c33831a28b79df73e16d747"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A farmer has one acre with tight rows and asks for hand or machine weeding.",
+          "sha256": "0884ff39130008e2eecf7e7e720d60d7d6e12b651d55d8fc2dd9d42fa6b7b33f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Convert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.",
+          "sha256": "7b989cb6ea85fdb89f2a103d73bd3e449dd02014ad506fcec8c225bf46672b1f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Measure row clearance/stone risk and compare actual labour, time, machine fit and safety.",
+          "sha256": "c0fe95c17dcc251103489b182646fca6d83f9ad50115e729878899269e17cea5"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "If actual fuel use and job-time data are missing, leave operating cost blank pending measurement.",
+          "sha256": "68761a8abbe9e1391e75f0f6270cf699b9175f8d85abfe0849a9aa9d7f6e7b5e"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Conditional choice with dimensions and missing data, not an automatic machine recommendation.",
+          "sha256": "b93a84c61c8055b198b71b3bd758b8115e5249b4d266f0c34ab78b9f2e87d2b9"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "one-acre",
+        "title": "One acre is a site question, not a feddan",
+        "situation": "A farmer has one acre with tight rows and asks for hand or machine weeding.",
+        "reasoning": [
+          "Convert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.",
+          "Measure row clearance/stone risk and compare actual labour, time, machine fit and safety.",
+          "If actual fuel use and job-time data are missing, leave operating cost blank pending measurement."
+        ],
+        "takeaway": "Conditional choice with dimensions and missing data, not an automatic machine recommendation."
+      },
+      "scientificMeaning": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.\n\nMeasure row clearance/stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+      "displayText": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.\n\nMeasure row clearance/stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+      "captionText": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.\n\nMeasure row clearance/stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+      "spokenText": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about four thousand forty-seven square metres or zero point nine six four Egyptian feddan; do not use four to six hours as a conversion.\n\nMeasure row clearance and stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+      "spokenTextSHA256": "01bf5c2ecfef4cca4202fe8752ca08c5acd3c174fdbd907410d25cec4448bb4a",
+      "spokenTextSha256": "01bf5c2ecfef4cca4202fe8752ca08c5acd3c174fdbd907410d25cec4448bb4a",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "e448c72faa1b262dd568c5222b0f9bf74c2ae19231dcab18bb5cbffeaf08d848",
+      "requestFingerprintSha256": "e448c72faa1b262dd568c5222b0f9bf74c2ae19231dcab18bb5cbffeaf08d848",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.\n\nMeasure row clearance/stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+          "spoken": "One acre is a site question, not a feddan\n\nA farmer has one acre with tight rows and asks for hand or machine weeding.\n\nConvert one acre to about four thousand forty-seven square metres or zero point nine six four Egyptian feddan; do not use four to six hours as a conversion.\n\nMeasure row clearance and stone risk and compare actual labour, time, machine fit and safety.\n\nIf actual fuel use and job-time data are missing, leave operating cost blank pending measurement.\n\nConditional choice with dimensions and missing data, not an automatic machine recommendation.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "0.964",
+            "4",
+            "4,047",
+            "6"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-13-en-E03-r1",
+      "unitId": "S3-13-en-E03-r1",
+      "stepId": "S3-13",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "service",
+      "sourceWholeFileSHA256": "ef45850b8686accdb188e95c2c42c467165c91b67c3ab8d31aaf91fcb5d21580",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Quote a service only from valid inputs",
+          "sha256": "33fd4c1486ec248bf968d0693fa11fb9dfb8e04c05f30a5210c8701368036e19"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "A learner proposes a weeding service for neighbouring small plots.",
+          "sha256": "f624bab0e04580e4e98c00db5c4723126703bd6bdb04321aed2c91be72bfe2b5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "List actual total working area and suitable rows, setup/travel time, labour and maintenance.",
+          "sha256": "0bff3a08e692802e9569e448821d00b8a8e84c962b00fdf645f96d4c239ab475"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Distinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.",
+          "sha256": "fec23300f18024ede2e2bb3100869314fa7188149b503f378c0c505dad9d9e45"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Request local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.",
+          "sha256": "a5c26d4424e6567497b79ade47d9be9f4dadce1f22a8f3645deab420ebac7064"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A transparent calculation template; no invented cost or guaranteed profit.",
+          "sha256": "e371a10b063602cf46015cbf9de138a8e7d88779be811d222488496a00c7009c"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "service",
+        "title": "Quote a service only from valid inputs",
+        "situation": "A learner proposes a weeding service for neighbouring small plots.",
+        "reasoning": [
+          "List actual total working area and suitable rows, setup/travel time, labour and maintenance.",
+          "Distinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.",
+          "Request local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin."
+        ],
+        "takeaway": "A transparent calculation template; no invented cost or guaranteed profit."
+      },
+      "scientificMeaning": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup/travel time, labour and maintenance.\n\nDistinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+      "displayText": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup/travel time, labour and maintenance.\n\nDistinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+      "captionText": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup/travel time, labour and maintenance.\n\nDistinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+      "spokenText": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup and travel time, labour and maintenance.\n\nDistinguish manufacturer two point four litres capacity from measured litres per hour and source two point three litres per hour not verified for S E R.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+      "spokenTextSHA256": "08da66daf8b1931e22e29c0246f20b175e5fdbc908422e9310883e4575400505",
+      "spokenTextSha256": "08da66daf8b1931e22e29c0246f20b175e5fdbc908422e9310883e4575400505",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "21242f317406f66ab5355fc4145d8541e2f12c1bea2cbe38b2a266e4ca73c07f",
+      "requestFingerprintSha256": "21242f317406f66ab5355fc4145d8541e2f12c1bea2cbe38b2a266e4ca73c07f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup/travel time, labour and maintenance.\n\nDistinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+          "spoken": "Quote a service only from valid inputs\n\nA learner proposes a weeding service for neighbouring small plots.\n\nList actual total working area and suitable rows, setup and travel time, labour and maintenance.\n\nDistinguish manufacturer two point four litres capacity from measured litres per hour and source two point three litres per hour not verified for S E R.\n\nRequest local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin.\n\nA transparent calculation template; no invented cost or guaranteed profit.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2.3",
+            "2.4"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

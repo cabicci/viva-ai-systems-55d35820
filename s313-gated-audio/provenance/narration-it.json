@@ -1,0 +1,393 @@
+{
+  "stepId": "S3-13",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-13-it.json",
+    "sha256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+    "bytes": 31774
+  },
+  "units": [
+    {
+      "id": "S3-13-it-E01-r1",
+      "unitId": "S3-13-it-E01-r1",
+      "stepId": "S3-13",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "part-cards",
+      "sourceWholeFileSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Solo schede di parti SER",
+          "sha256": "b1cebf26ca2197b56a7d88055c7c78f2d26eeb1aec75919aa5660fc53625c4e6"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Un disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.",
+          "sha256": "bc8b5fcbec2e6b693d1a39503f7fe9fd59f91a6e6814f46ea8a3df7e782a0f5a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Dal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.",
+          "sha256": "9e69dac1017dca435d1aafc84127957cb9230c1b5c66d4b3b77ff33f72abd7ee"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Spiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.",
+          "sha256": "a9a0b2f91803541a4ec132fda864aab96dd8eec8b51e399d28898179323b5bcb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Escludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati.",
+          "sha256": "98cf9755ef2fe58bf835d8bca6097ae2319241a19e506614afe7e9ba71f66233"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Tavola verificabile per il modello, senza parte inventata.",
+          "sha256": "51bb051787364a1e4cd38764557cf78a3b187fca4a1da854ed7189a2bb5cd97f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "part-cards",
+        "title": "Solo schede di parti SER",
+        "situation": "Un disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.",
+        "reasoning": [
+          "Dal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.",
+          "Spiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.",
+          "Escludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati."
+        ],
+        "takeaway": "Tavola verificabile per il modello, senza parte inventata."
+      },
+      "scientificMeaning": "Solo schede di parti SER\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.\n\nDal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.\n\nSpiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+      "displayText": "Solo schede di parti SER\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.\n\nDal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.\n\nSpiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+      "captionText": "Solo schede di parti SER\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.\n\nDal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.\n\nSpiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+      "spokenText": "Solo schede di parti esse e erre\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per di e e di e erre.\n\nDal manuale scegli regolatore manubrio, motore e comandi, copertura cinghia e frizione, cambio, rotore, barre e filtro aria applicabili a esse e erre.\n\nSpiega motore  a  frizione a tensione di cinghia  a  cambio e rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota di e e di e erre, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+      "spokenTextSHA256": "393f2a8883c59dd47b9efadc16376caa40f329c3cdc000238c1283687a4a07b2",
+      "spokenTextSha256": "393f2a8883c59dd47b9efadc16376caa40f329c3cdc000238c1283687a4a07b2",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "08bed1b658a4ed29dd738df1f5e48902cb75797f3c11f7304584a4089eaad78c",
+      "requestFingerprintSha256": "08bed1b658a4ed29dd738df1f5e48902cb75797f3c11f7304584a4089eaad78c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Solo schede di parti SER\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.\n\nDal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.\n\nSpiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+          "spoken": "Solo schede di parti esse e erre\n\nUn disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per di e e di e erre.\n\nDal manuale scegli regolatore manubrio, motore e comandi, copertura cinghia e frizione, cambio, rotore, barre e filtro aria applicabili a esse e erre.\n\nSpiega motore  a  frizione a tensione di cinghia  a  cambio e rotore come percorso funzionale, non disegno interno degli ingranaggi.\n\nEscludi ruota di e e di e erre, cilindri centrifughi generici e materiale o potenza non documentati.\n\nTavola verificabile per il modello, senza parte inventata.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-13-it-E02-r1",
+      "unitId": "S3-13-it-E02-r1",
+      "stepId": "S3-13",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "one-acre",
+      "sourceWholeFileSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Un acre è un caso, non un feddan",
+          "sha256": "78ecd63dfd49d3eb930d9b100ebf5fca60fb9ff35c7a0c671b43653027e75387"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.",
+          "sha256": "f27287388bcfbe4c7bc615da069ea4b1d423aa64e3de1000b5a43d2648c41438"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Converti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.",
+          "sha256": "ee24dd01c08d11f688ce574e234cd25d1135d1c97d08d498ee4008f1f27e9924"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Misura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.",
+          "sha256": "5d18297a686f8b3393906a6857d4a8dedad22a3d6ed6a39925f9725244185600"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Se consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.",
+          "sha256": "8a8dc7bc20052d16fb4e1222a72590ffc0584a0fdfd9b6ecf10fd922337fcf39"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Scelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+          "sha256": "4031d949a25551fea51cc9f0b856f321c7aef30e68d96c88f0ea761d0a9fe307"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "one-acre",
+        "title": "Un acre è un caso, non un feddan",
+        "situation": "Un agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.",
+        "reasoning": [
+          "Converti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.",
+          "Misura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.",
+          "Se consumo e tempo veri mancano, lascia il costo vuoto fino alle misure."
+        ],
+        "takeaway": "Scelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica."
+      },
+      "scientificMeaning": "Un acre è un caso, non un feddan\n\nUn agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.\n\nConverti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+      "displayText": "Un acre è un caso, non un feddan\n\nUn agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.\n\nConverti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+      "captionText": "Un acre è un caso, non un feddan\n\nUn agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.\n\nConverti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+      "spokenText": "Un acre è un caso, non un feddan\n\nUn agricoltore ha un acre con file ravvicinate e chiede mano o macchina.\n\nConverti un acre in circa quattromila quarantasette metri quadrati o zero virgola nove sei quattro feddan; da quattro a sei ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+      "spokenTextSHA256": "7c8361ac50b38dbd20965560d7419668b45b055245dfd22041aea28a55418ce2",
+      "spokenTextSha256": "7c8361ac50b38dbd20965560d7419668b45b055245dfd22041aea28a55418ce2",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "2b43762773978a5ac10e3c0d27858aa96d2d342f1865726e0e3332d2ff0d5a84",
+      "requestFingerprintSha256": "2b43762773978a5ac10e3c0d27858aa96d2d342f1865726e0e3332d2ff0d5a84",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un acre è un caso, non un feddan\n\nUn agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.\n\nConverti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+          "spoken": "Un acre è un caso, non un feddan\n\nUn agricoltore ha un acre con file ravvicinate e chiede mano o macchina.\n\nConverti un acre in circa quattromila quarantasette metri quadrati o zero virgola nove sei quattro feddan; da quattro a sei ore non sono conversione.\n\nMisura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.\n\nSe consumo e tempo veri mancano, lascia il costo vuoto fino alle misure.\n\nScelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "0,964",
+            "1",
+            "4",
+            "4.047",
+            "6"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-13-it-E03-r1",
+      "unitId": "S3-13-it-E03-r1",
+      "stepId": "S3-13",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "service",
+      "sourceWholeFileSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Quota un servizio solo con dati validi",
+          "sha256": "d1446cb76bf4dff49c250fb2470e5673fd6efab2c4cd83de6f0a461943972f96"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Uno studente propone servizio di diserbo in piccoli appezzamenti vicini.",
+          "sha256": "1765a247c6be5ae27fc9272855437257593eed1ddd8da9a62a0817d215b01d31"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Elenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.",
+          "sha256": "eef2c695a729b3d9a2e1a91b3adc4c888faab02699b7009003a8cc3af84f50dd"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Separa serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.",
+          "sha256": "540f5ebacb9e7dc41d9430700cca6ab8c5186b5d6a85001ed1ac0a1f084ebc6b"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Richiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.",
+          "sha256": "0a6714ccb771f03a6b332faa7f31cb53630d1f5187cacb56f63578ef060fa2be"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Schema trasparente, senza costo inventato o profitto garantito.",
+          "sha256": "5fa6484f50308ba6b9bfd68346628f5d7b67d808e516be1919d84b657c488e74"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "service",
+        "title": "Quota un servizio solo con dati validi",
+        "situation": "Uno studente propone servizio di diserbo in piccoli appezzamenti vicini.",
+        "reasoning": [
+          "Elenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.",
+          "Separa serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.",
+          "Richiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo."
+        ],
+        "takeaway": "Schema trasparente, senza costo inventato o profitto garantito."
+      },
+      "scientificMeaning": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.\n\nSepara serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+      "displayText": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.\n\nSepara serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+      "captionText": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.\n\nSepara serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+      "spokenText": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione e trasporto, lavoro e manutenzione.\n\nSepara serbatoio due virgola quattro litri da consumo in litri per ora misurato e dalla cifra due virgola tre litri per ora non verificata per esse e erre.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+      "spokenTextSHA256": "addd5df4ad237574f3ac536a7bb059a364f5b87bd2614c709bdfbcee74e4dc0f",
+      "spokenTextSha256": "addd5df4ad237574f3ac536a7bb059a364f5b87bd2614c709bdfbcee74e4dc0f",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "f647d54e8822525a2644116e9b95d7f56b8746da7fc2bbf937cedc1ec21e8aa0",
+      "requestFingerprintSha256": "f647d54e8822525a2644116e9b95d7f56b8746da7fc2bbf937cedc1ec21e8aa0",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.\n\nSepara serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+          "spoken": "Quota un servizio solo con dati validi\n\nUno studente propone servizio di diserbo in piccoli appezzamenti vicini.\n\nElenca area e file lavorabili, tempi di preparazione e trasporto, lavoro e manutenzione.\n\nSepara serbatoio due virgola quattro litri da consumo in litri per ora misurato e dalla cifra due virgola tre litri per ora non verificata per esse e erre.\n\nRichiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo.\n\nSchema trasparente, senza costo inventato o profitto garantito.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2,3",
+            "2,4"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

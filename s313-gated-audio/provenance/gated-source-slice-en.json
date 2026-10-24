@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-13",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "ef45850b8686accdb188e95c2c42c467165c91b67c3ab8d31aaf91fcb5d21580",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "part-cards",
+      "title": "Build only SER part cards",
+      "situation": "A generic drawing has a wheel between transmission and blades; a manufacturer sheet marks a front wheel for DE/DER only.",
+      "reasoning": [
+        "Select SER-applicable handlebar-height adjuster, engine/controls, belt cover/clutch, transmission/shift, rotary, drag bars and air cleaner from the manual.",
+        "Use a simple engine → belt-tension clutch → transmission/rotary explanation, marking it a functional teaching path rather than an exposed diagram of a gearbox.",
+        "Reject the DE/DER-only front wheel, generic centrifugal cylinders and unsupported material/power labels."
+      ],
+      "takeaway": "A model-labelled, checkable part board; no invented part."
+    },
+    {
+      "id": "one-acre",
+      "title": "One acre is a site question, not a feddan",
+      "situation": "A farmer has one acre with tight rows and asks for hand or machine weeding.",
+      "reasoning": [
+        "Convert one acre to about 4,047 m² or 0.964 Egyptian feddan; do not use 4–6 hours as a conversion.",
+        "Measure row clearance/stone risk and compare actual labour, time, machine fit and safety.",
+        "If actual fuel use and job-time data are missing, leave operating cost blank pending measurement."
+      ],
+      "takeaway": "Conditional choice with dimensions and missing data, not an automatic machine recommendation."
+    },
+    {
+      "id": "service",
+      "title": "Quote a service only from valid inputs",
+      "situation": "A learner proposes a weeding service for neighbouring small plots.",
+      "reasoning": [
+        "List actual total working area and suitable rows, setup/travel time, labour and maintenance.",
+        "Distinguish manufacturer 2.4 L capacity from measured L/hour and source 2.3 L/hour not verified for SER.",
+        "Request local fuel and labour prices and reserve for breakdown, safety and transport before a price or margin."
+      ],
+      "takeaway": "A transparent calculation template; no invented cost or guaranteed profit."
+    }
+  ]
+}

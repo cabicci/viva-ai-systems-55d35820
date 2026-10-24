@@ -1,0 +1,385 @@
+{
+  "stepId": "S3-13",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-13-de.json",
+    "sha256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+    "bytes": 32225
+  },
+  "units": [
+    {
+      "id": "S3-13-de-E01-r1",
+      "unitId": "S3-13-de-E01-r1",
+      "stepId": "S3-13",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "part-cards",
+      "sourceWholeFileSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Nur SER-Teilekarten bauen",
+          "sha256": "6d55e102f6991fb5dcb9ba9aa9cc559b784a2f9350255bde97f3cda1bde81c23"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Allgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.",
+          "sha256": "c12795df149f63bd03204cf9e4a14c28b706ac0cf6e3098689a316d6bda64b1f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Nur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.",
+          "sha256": "7d823cdbe5a819cb64c9c4406682dc2b90584fc4844e9befa861024f11f79394"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Motor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.",
+          "sha256": "143d38f02208de796d824484319129bc641118754010bb9d990bb2cb8b4988fb"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "DE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen.",
+          "sha256": "4b2a93ebbea794cab522264e220b4bc453cc503d6e291ac73054cd316b074030"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Prüfbare modellspezifische Karte ohne erfundenes Teil.",
+          "sha256": "d94d0359a93405b74add50739fcc88690460b066ced5e6704f18fd1090ae5a34"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "part-cards",
+        "title": "Nur SER-Teilekarten bauen",
+        "situation": "Allgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.",
+        "reasoning": [
+          "Nur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.",
+          "Motor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.",
+          "DE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen."
+        ],
+        "takeaway": "Prüfbare modellspezifische Karte ohne erfundenes Teil."
+      },
+      "scientificMeaning": "Nur SER-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.\n\nNur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+      "displayText": "Nur SER-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.\n\nNur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+      "captionText": "Nur SER-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.\n\nNur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+      "spokenText": "Nur Es E Er-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur De E und De E Er.\n\nNur für Es E Er geltende Griffverstellung, Motor und Steuerung, Riemenschutz und Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor  zu  Riemenspannkupplung  zu  Getriebe und Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDe E und De E Er-Rad, generische Fliehkraftzylinder und unbelegte Material- oder Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+      "spokenTextSHA256": "866162167c3d6ec26f8605e974da07e40760ca0e28f1699353c1c18a0158f078",
+      "spokenTextSha256": "866162167c3d6ec26f8605e974da07e40760ca0e28f1699353c1c18a0158f078",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "d6d303bee42d1629159dc2ac488d3f887036a38717c69bee0b35964ae43834d7",
+      "requestFingerprintSha256": "d6d303bee42d1629159dc2ac488d3f887036a38717c69bee0b35964ae43834d7",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nur SER-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.\n\nNur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+          "spoken": "Nur Es E Er-Teilekarten bauen\n\nAllgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur De E und De E Er.\n\nNur für Es E Er geltende Griffverstellung, Motor und Steuerung, Riemenschutz und Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.\n\nMotor  zu  Riemenspannkupplung  zu  Getriebe und Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.\n\nDe E und De E Er-Rad, generische Fliehkraftzylinder und unbelegte Material- oder Leistungszahlen ausschließen.\n\nPrüfbare modellspezifische Karte ohne erfundenes Teil.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-13-de-E02-r1",
+      "unitId": "S3-13-de-E02-r1",
+      "stepId": "S3-13",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "one-acre",
+      "sourceWholeFileSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Ein Acre ist eine Standortfrage, kein Feddan",
+          "sha256": "1f3d3e8839fc3d6043788d2d14363892006a848d0462c284eed5d2a6d889ef23"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.",
+          "sha256": "0a175b1208edf46081b6ae1a6c57441910a7b1222ab43f8f8e9f275e35bafc35"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.",
+          "sha256": "69492e02a8c89bad2ebba1d413d812057898c698bb1102d63bc718c89d20b5d8"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Reihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.",
+          "sha256": "dbcac5226022780646a2c35dd6e7f13044b64683917cd269803e255c050e7df7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Fehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.",
+          "sha256": "5f5f15bed0d8fc3befc3c4e8c78fba50960915dc11ff0d4333e8d60da0916b5c"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Bedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+          "sha256": "f5e66b8c1a030ba296abaf960895fec1fa3e518c5613063e11faec811121c238"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "one-acre",
+        "title": "Ein Acre ist eine Standortfrage, kein Feddan",
+        "situation": "Ein Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.",
+        "reasoning": [
+          "1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.",
+          "Reihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.",
+          "Fehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen."
+        ],
+        "takeaway": "Bedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl."
+      },
+      "scientificMeaning": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\n1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+      "displayText": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\n1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+      "captionText": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\n1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+      "spokenText": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat ein Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\nEin Acre entspricht etwa viertausendsiebenundvierzig Quadratmetern oder null Komma neun sechs vier ägyptischen Feddan; vier bis sechs Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+      "spokenTextSHA256": "5a6bd972e46c87693a541c0331576592a0a8d1839fbf2e23cad4b844aef64615",
+      "spokenTextSha256": "5a6bd972e46c87693a541c0331576592a0a8d1839fbf2e23cad4b844aef64615",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "2a6b99913773452f6499e85e0cf0630b02f082b117e1a297be6a955be723a43c",
+      "requestFingerprintSha256": "2a6b99913773452f6499e85e0cf0630b02f082b117e1a297be6a955be723a43c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\n1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+          "spoken": "Ein Acre ist eine Standortfrage, kein Feddan\n\nEin Hof hat ein Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.\n\nEin Acre entspricht etwa viertausendsiebenundvierzig Quadratmetern oder null Komma neun sechs vier ägyptischen Feddan; vier bis sechs Stunden nicht zur Umrechnung nutzen.\n\nReihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.\n\nFehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen.\n\nBedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-13-de-E03-r1",
+      "unitId": "S3-13-de-E03-r1",
+      "stepId": "S3-13",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "sourceCaseId": "service",
+      "sourceWholeFileSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Dienstleistung nur aus gültigen Daten anbieten",
+          "sha256": "73c19de13e77984d060994c2b3ff739e0eb0591c99d437f93e1b0e495473214a"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Ein Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.",
+          "sha256": "e8ebc32ac9075c6f5f1a31f2c4a2c9cf1b1e9e7e37b3b7407f7f54b01bc4acd3"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Tatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.",
+          "sha256": "bdd9898d0b1d1edc8fab425837b952edfeda5d59d82b41803208fdb88e094248"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.",
+          "sha256": "c604a1381011994540ca09537981e6f1a4d496e744110268812f698e7cead82f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Örtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen.",
+          "sha256": "3a473ad693304f9bfe12a4642a2358d201f8cac30651bf2fc91fbfc5c49be3f7"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Transparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+          "sha256": "dc430a9fcad0fc9b4e51ef4fc86d93b61c630fb8e26c8e88326139c8e89f958c"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "service",
+        "title": "Dienstleistung nur aus gültigen Daten anbieten",
+        "situation": "Ein Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.",
+        "reasoning": [
+          "Tatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.",
+          "2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.",
+          "Örtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen."
+        ],
+        "takeaway": "Transparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn."
+      },
+      "scientificMeaning": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.\n\n2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+      "displayText": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.\n\n2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+      "captionText": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.\n\n2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+      "spokenText": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche und Reihen, Rüstzeit und Fahrtzeit, Lohn und Wartung erfassen.\n\nzwei Komma vier Liter Hersteller-Tankinhalt von gemessenen Liter je Stunde und unbelegten zwei Komma drei Liter je Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff- und Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot oder Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+      "spokenTextSHA256": "8a90f41ba323f02c5da30d42e7d0271d2e5293541dcf542140959202ccb45d2f",
+      "spokenTextSha256": "8a90f41ba323f02c5da30d42e7d0271d2e5293541dcf542140959202ccb45d2f",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "5ae85ea9789d02bc080b1cebb9384f099fb2e56a4e72dacea7762710f075daca",
+      "requestFingerprintSha256": "5ae85ea9789d02bc080b1cebb9384f099fb2e56a4e72dacea7762710f075daca",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.\n\n2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+          "spoken": "Dienstleistung nur aus gültigen Daten anbieten\n\nEin Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.\n\nTatsächliche Arbeitsfläche und Reihen, Rüstzeit und Fahrtzeit, Lohn und Wartung erfassen.\n\nzwei Komma vier Liter Hersteller-Tankinhalt von gemessenen Liter je Stunde und unbelegten zwei Komma drei Liter je Stunde der Quelle trennen.\n\nÖrtliche Kraftstoff- und Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot oder Marge anfragen.\n\nTransparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "2,3",
+            "2,4"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-13",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "cd39acd307b518f997c9fe5544d699ca6ac5fb08b05b872adacb96d1d9108aa8",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "part-cards",
+      "title": "Nur SER-Teilekarten bauen",
+      "situation": "Allgemeine Zeichnung enthält ein Rad zwischen Getriebe und Messern; Honda markiert das Vorderrad nur DE/DER.",
+      "reasoning": [
+        "Nur für SER geltende Griffverstellung, Motor/Steuerung, Riemenschutz/Kupplung, Schaltung, Rotor, Schleppstangen und Luftfilter auswählen.",
+        "Motor → Riemenspannkupplung → Getriebe/Rotor als funktionalen Lehrweg erläutern, nicht als frei gelegte Getriebezeichnung.",
+        "DE/DER-Rad, generische Fliehkraftzylinder und unbelegte Material-/Leistungszahlen ausschließen."
+      ],
+      "takeaway": "Prüfbare modellspezifische Karte ohne erfundenes Teil."
+    },
+    {
+      "id": "one-acre",
+      "title": "Ein Acre ist eine Standortfrage, kein Feddan",
+      "situation": "Ein Hof hat 1 Acre mit engen Reihen und fragt nach Handarbeit oder Maschine.",
+      "reasoning": [
+        "1 Acre sind etwa 4.047 m² oder 0,964 ägyptische Feddan; 4–6 Stunden nicht zur Umrechnung nutzen.",
+        "Reihenabstand und Steingefahr messen, tatsächliche Arbeit, Zeit, Passung und Sicherheit vergleichen.",
+        "Fehlen echter Verbrauch oder Auftragszeit, Kosten bis zur Messung offen lassen."
+      ],
+      "takeaway": "Bedingte Entscheidung mit Maßen und Datenlücken statt automatischer Maschinenwahl."
+    },
+    {
+      "id": "service",
+      "title": "Dienstleistung nur aus gültigen Daten anbieten",
+      "situation": "Ein Lernender schlägt Jäten auf benachbarten kleinen Flächen vor.",
+      "reasoning": [
+        "Tatsächliche Arbeitsfläche/Reihen, Rüst-/Fahrtzeit, Lohn und Wartung erfassen.",
+        "2,4 L Hersteller-Tankinhalt von gemessenen L/Stunde und unbelegten 2,3 L/Stunde der Quelle trennen.",
+        "Örtliche Kraftstoff-/Lohnpreise und Rücklagen für Ausfall, Schutz und Transport vor Angebot/Marge anfragen."
+      ],
+      "takeaway": "Transparentes Rechenschema ohne erfundene Preise oder garantierten Gewinn."
+    }
+  ]
+}

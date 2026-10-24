@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-13",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "6dc446556f41baa0d9ce50094ba81dd8b5254f7e4d59e179f1ffe2900d31e94b",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "part-cards",
+      "title": "Solo schede di parti SER",
+      "situation": "Un disegno generico ha una ruota fra cambio e lame; Honda segna quella ruota anteriore soltanto per DE/DER.",
+      "reasoning": [
+        "Dal manuale scegli regolatore manubrio, motore/comandi, copertura cinghia/frizione, cambio, rotore, barre e filtro aria applicabili a SER.",
+        "Spiega motore → frizione a tensione di cinghia → cambio/rotore come percorso funzionale, non disegno interno degli ingranaggi.",
+        "Escludi ruota DE/DER, cilindri centrifughi generici e materiale o potenza non documentati."
+      ],
+      "takeaway": "Tavola verificabile per il modello, senza parte inventata."
+    },
+    {
+      "id": "one-acre",
+      "title": "Un acre è un caso, non un feddan",
+      "situation": "Un agricoltore ha 1 acre con file ravvicinate e chiede mano o macchina.",
+      "reasoning": [
+        "Converti 1 acre in circa 4.047 m² o 0,964 feddan; 4–6 ore non sono conversione.",
+        "Misura spazio tra file e rischio pietre, confronta lavoro, tempo, idoneità e sicurezza.",
+        "Se consumo e tempo veri mancano, lascia il costo vuoto fino alle misure."
+      ],
+      "takeaway": "Scelta condizionata con dimensioni e dati mancanti, non raccomandazione automatica."
+    },
+    {
+      "id": "service",
+      "title": "Quota un servizio solo con dati validi",
+      "situation": "Uno studente propone servizio di diserbo in piccoli appezzamenti vicini.",
+      "reasoning": [
+        "Elenca area e file lavorabili, tempi di preparazione/trasporto, lavoro e manutenzione.",
+        "Separa serbatoio 2,4 L da consumo in L/ora misurato e dalla cifra 2,3 L/ora non verificata per SER.",
+        "Richiedi prezzi locali del carburante e lavoro e margini per guasti, sicurezza e trasporto prima del prezzo."
+      ],
+      "takeaway": "Schema trasparente, senza costo inventato o profitto garantito."
+    }
+  ]
+}
