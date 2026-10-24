@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "locale": "de",
+  "stepId": "S3-07",
+  "units": [
+    {
+      "id": "S3-07-de-R06-coherent-reviewed-repair-extra1",
+      "unitId": "S3-07-de-R06-coherent-reviewed-repair-extra1",
+      "locale": "de",
+      "semanticGroup": "corroborated-C005-coherent-subpassage-repair",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "0b8a553686a2f06e76e84d5901a5ac6275bc6c3571e462257d0622ed4463b467",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/5/paragraphs/0",
+          "text": "Das Original vermutet P-Mangel und nennt Starterdünger wie Diammoniumphosphat (DAP). Purpur plus kalter schwerer Boden beweisen aber keinen zusätzlichen P-Bedarf. Kälte oder Nässe können Aufnahme trotz ausreichender Boden-P-Analyse hemmen. Prüfe Bodentemperatur, Entwässerung, Wurzeln, Phase, passenden P-Test und lokale Beratung; beobachte Besserung beim Erwärmen.",
+          "sha256": "de0ba349a1eceec1c8885a2a2de20b95ddcc15fea0713e5bd26b9b253262a309"
+        },
+        {
+          "pointer": "/reading/5/paragraphs/1",
+          "text": "Ist ein Mangel belegt, plane standortgerechte P-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln. Banddüngung muss Etikett und Abstand zum Saatgut einhalten; sofortiges DAP oder direkter Saatkontakt ist keine allgemeine Antwort.",
+          "sha256": "6f7bfb324556f225078a8386965d2c204abb15edd6160ba94004c99b1012a8bf"
+        }
+      ],
+      "scientificMeaning": "Das Original vermutet P-Mangel und nennt Starterdünger wie Diammoniumphosphat (DAP). Purpur plus kalter schwerer Boden beweisen aber keinen zusätzlichen P-Bedarf. Kälte oder Nässe können Aufnahme trotz ausreichender Boden-P-Analyse hemmen. Prüfe Bodentemperatur, Entwässerung, Wurzeln, Phase, passenden P-Test und lokale Beratung; beobachte Besserung beim Erwärmen.\n\nIst ein Mangel belegt, plane standortgerechte P-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln. Banddüngung muss Etikett und Abstand zum Saatgut einhalten; sofortiges DAP oder direkter Saatkontakt ist keine allgemeine Antwort.",
+      "displayText": "Das Original vermutet P-Mangel und nennt Starterdünger wie Diammoniumphosphat (DAP). Purpur plus kalter schwerer Boden beweisen aber keinen zusätzlichen P-Bedarf. Kälte oder Nässe können Aufnahme trotz ausreichender Boden-P-Analyse hemmen. Prüfe Bodentemperatur, Entwässerung, Wurzeln, Phase, passenden P-Test und lokale Beratung; beobachte Besserung beim Erwärmen.\n\nIst ein Mangel belegt, plane standortgerechte P-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln. Banddüngung muss Etikett und Abstand zum Saatgut einhalten; sofortiges DAP oder direkter Saatkontakt ist keine allgemeine Antwort.",
+      "captionText": "Das Original vermutet P-Mangel und nennt Starterdünger wie Diammoniumphosphat (DAP). Purpur plus kalter schwerer Boden beweisen aber keinen zusätzlichen P-Bedarf. Kälte oder Nässe können Aufnahme trotz ausreichender Boden-P-Analyse hemmen. Prüfe Bodentemperatur, Entwässerung, Wurzeln, Phase, passenden P-Test und lokale Beratung; beobachte Besserung beim Erwärmen.\n\nIst ein Mangel belegt, plane standortgerechte P-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln. Banddüngung muss Etikett und Abstand zum Saatgut einhalten; sofortiges DAP oder direkter Saatkontakt ist keine allgemeine Antwort.",
+      "spokenText": "Ist ein Mangel belegt, plane standortgerechte Pe-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln.",
+      "spokenTextSHA256": "eb97722149b2fbc0737d7a678f748c9fa0da56c9c3cb290ff2af239e01e22c91",
+      "spokenTextSha256": "eb97722149b2fbc0737d7a678f748c9fa0da56c9c3cb290ff2af239e01e22c91",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Das Original vermutet P-Mangel und nennt Starterdünger wie Diammoniumphosphat (DAP). Purpur plus kalter schwerer Boden beweisen aber keinen zusätzlichen P-Bedarf. Kälte oder Nässe können Aufnahme trotz ausreichender Boden-P-Analyse hemmen. Prüfe Bodentemperatur, Entwässerung, Wurzeln, Phase, passenden P-Test und lokale Beratung; beobachte Besserung beim Erwärmen.\n\nIst ein Mangel belegt, plane standortgerechte P-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln. Banddüngung muss Etikett und Abstand zum Saatgut einhalten; sofortiges DAP oder direkter Saatkontakt ist keine allgemeine Antwort.",
+          "spoken": "Ist ein Mangel belegt, plane standortgerechte Pe-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln.",
+          "occurrences": 1,
+          "purpose": "Exact root-read coherent repair subpassage, with identifier clarifying Bindestrich only in C008. Source bindings retain parent context, not claim that snippet narrates every parent leaf. Preserve all outside original PCM."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung. Read Platz as the singular noun Platz, with no added final e, and keep the full conditional sentence unchanged. Do not speak this direction.",
+      "deliverySHA256": "749091b48049059150f747d36079c3b9c4e5c7a66d6a3837a942d771b3800d18",
+      "deliverySha256": "749091b48049059150f747d36079c3b9c4e5c7a66d6a3837a942d771b3800d18",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "3dd4c5ab7b35097e976ec1f32138adc91b37259723273c6925624223e942bd66",
+      "requestFingerprintSha256": "3dd4c5ab7b35097e976ec1f32138adc91b37259723273c6925624223e942bd66",
+      "sourcePlan": "provenance/narration-de.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-07-de-R06-r1",
+      "originalSpokenWholeSHA256": "434c31f9a65530478a70eb1b1f7007c9e32321a60af9d135367aaefd1b25863b",
+      "exactParentSpokenCharacterSlice": {
+        "first": 375,
+        "endExclusive": 496,
+        "originalSpokenSlice": "Ist ein Mangel belegt, plane standortgerechte Pe-Quelle und Menge sowie sicheren Zeitpunkt und Platz nahe jungen Wurzeln.",
+        "characterOffsetsNotPCMSamples": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_SOURCE_PHRASE_BOUNDARIES",
+      "separateFromEarlierFiveTTSAnd119AndR10": true
+    }
+  ],
+  "repairOnlyNotFullParentNarration": true
+}
