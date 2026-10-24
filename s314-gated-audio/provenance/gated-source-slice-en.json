@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-14",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "no-go",
+      "title": "Do not start because a checklist box was ticked",
+      "situation": "The source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.",
+      "reasoning": [
+        "Stop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.",
+        "Do not trust a planted loose bolt or start with an unknown fault.",
+        "Reassess operator eligibility and site; an ineligible learner studies an inert example."
+      ],
+      "takeaway": "No start and no practical pass until the gate is satisfied."
+    },
+    {
+      "id": "row-pass",
+      "title": "One learner, one safe pass",
+      "situation": "An eligible learner has an approved cleared row, but a person enters the turning area at 20 m.",
+      "reasoning": [
+        "Disengage/stop according to the actual manual immediately and prevent tine contact.",
+        "Record the interrupted distance and reason; do not let a second person grab moving handlebars.",
+        "Resume only after the trainer restores the clear-area gate and the learner is ready."
+      ],
+      "takeaway": "Safety and crop preservation outrank finishing the 30 m distance."
+    },
+    {
+      "id": "time",
+      "title": "Timebox without removing safety",
+      "situation": "The source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.",
+      "reasoning": [
+        "Keep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.",
+        "The trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.",
+        "An unperformed phase remains pending and is recorded."
+      ],
+      "takeaway": "A flexible realistic schedule with no skipped safety-critical action."
+    }
+  ]
+}

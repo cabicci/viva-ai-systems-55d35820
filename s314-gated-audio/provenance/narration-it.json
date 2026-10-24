@@ -1,0 +1,382 @@
+{
+  "stepId": "S3-14",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-14-it.json",
+    "sha256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+    "bytes": 40608
+  },
+  "units": [
+    {
+      "id": "S3-14-it-E01-r1",
+      "unitId": "S3-14-it-E01-r1",
+      "stepId": "S3-14",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "no-go",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Non partire perché una casella è spuntata",
+          "sha256": "a8cc3b09b27871697e21903c2fd8c44ffdbfb4ec7530dab82e527c1ff4421cfc"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Le prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.",
+          "sha256": "c12434ccd5d16b62b4db464efa08b1d18cce8b13a3dcc5d812a3743a172c58c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Fermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.",
+          "sha256": "2cf3f9721d6a0050af14a0f18fc67829429d39ec9b1779992b9e47068d2c930f"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Non fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.",
+          "sha256": "485565d4545083f9cd37d145544459fbd570f2904fab8bbd14e22888ade76054"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Rivaluta operatore e sito; chi non è idoneo studia un modello inerte.",
+          "sha256": "12259f81cfdb41118591fcb79c3bf1b5222fca1a2475b4d1f20d0f08cebf7353"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Nessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste.",
+          "sha256": "5046989d2e3dd9d94128889ec4983cfadca7b192dbc5a55f5b9bbfceee693aba"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "no-go",
+        "title": "Non partire perché una casella è spuntata",
+        "situation": "Le prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.",
+        "reasoning": [
+          "Fermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.",
+          "Non fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.",
+          "Rivaluta operatore e sito; chi non è idoneo studia un modello inerte."
+        ],
+        "takeaway": "Nessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste."
+      },
+      "scientificMeaning": "Non partire perché una casella è spuntata\n\nLe prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.\n\nFermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.\n\nNon fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.\n\nRivaluta operatore e sito; chi non è idoneo studia un modello inerte.\n\nNessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste.",
+      "displayText": "Non partire perché una casella è spuntata\n\nLe prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.\n\nFermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.\n\nNon fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.\n\nRivaluta operatore e sito; chi non è idoneo studia un modello inerte.\n\nNessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste.",
+      "captionText": "Non partire perché una casella è spuntata\n\nLe prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.\n\nFermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.\n\nNon fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.\n\nRivaluta operatore e sito; chi non è idoneo studia un modello inerte.\n\nNessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste.",
+      "spokenText": "Non partire perché una casella è spuntata\n\nLe prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.\n\nFermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.\n\nNon fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.\n\nRivaluta operatore e sito; chi non è idoneo studia un modello inerte.\n\nNessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste.",
+      "spokenTextSHA256": "068c77f1a0f02a52acf179caaa2bbd6d3ada787ef2afed65ac3ba708572ed722",
+      "spokenTextSha256": "068c77f1a0f02a52acf179caaa2bbd6d3ada787ef2afed65ac3ba708572ed722",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "40cc53f21afef5b8764621e865b0191754d65a3f3bd4150ec865a24b4893da6e",
+      "requestFingerprintSha256": "40cc53f21afef5b8764621e865b0191754d65a3f3bd4150ec865a24b4893da6e",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-14-it-E02-r1",
+      "unitId": "S3-14-it-E02-r1",
+      "stepId": "S3-14",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "row-pass",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Un allievo, un passaggio sicuro",
+          "sha256": "ad93980d973643948bebc0c6a2772d338af3b3bb2582fbbfc3c88a54cc43a6b7"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.",
+          "sha256": "83ba68a60496ecdb5efe8d65ed95258036ff85c5d4dbbc8f0c9b603fd3d2081c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Disinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.",
+          "sha256": "3cf5d6d656b7d52613882b32dc67ae1f22f22aae2ae02430b98dd0d74499ac41"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Registra distanza e motivo; un secondo adulto non afferra i manubri in movimento.",
+          "sha256": "0bd4b546d03708a472fd61f45064973c7b8dfa543befac759a5312b0b3aabf5f"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Riprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.",
+          "sha256": "43e3eddbe0a0dd8d2844b6a670b566033c0cb834ee1e1735b9d9f9af8b6fd301"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "La sicurezza delle persone e delle colture precede il completamento dei 30 m.",
+          "sha256": "d3c59fae7b33828aa3ea9de84c033416dcbbe1e771bfb2bf41dfa420406c074b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "row-pass",
+        "title": "Un allievo, un passaggio sicuro",
+        "situation": "Un allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.",
+        "reasoning": [
+          "Disinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.",
+          "Registra distanza e motivo; un secondo adulto non afferra i manubri in movimento.",
+          "Riprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione."
+        ],
+        "takeaway": "La sicurezza delle persone e delle colture precede il completamento dei 30 m."
+      },
+      "scientificMeaning": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei 30 m.",
+      "displayText": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei 30 m.",
+      "captionText": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei 30 m.",
+      "spokenText": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo venti metri.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei trenta metri.",
+      "spokenTextSHA256": "771d9980a50f56b7c70cd818d12ebcaabdc4482ea0a13ad617b04a88c375609e",
+      "spokenTextSha256": "771d9980a50f56b7c70cd818d12ebcaabdc4482ea0a13ad617b04a88c375609e",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "ddd3dd982c8ef59650180fbb622c3598a33b3df9bdf106f9d90f9e4e38c2a8d9",
+      "requestFingerprintSha256": "ddd3dd982c8ef59650180fbb622c3598a33b3df9bdf106f9d90f9e4e38c2a8d9",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei 30 m.",
+          "spoken": "Un allievo, un passaggio sicuro\n\nUn allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo venti metri.\n\nDisinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.\n\nRegistra distanza e motivo; un secondo adulto non afferra i manubri in movimento.\n\nRiprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione.\n\nLa sicurezza delle persone e delle colture precede il completamento dei trenta metri.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "20",
+            "30"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-14-it-E03-r1",
+      "unitId": "S3-14-it-E03-r1",
+      "stepId": "S3-14",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "time",
+      "sourceWholeFileSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Tempi realistici senza tagliare la sicurezza",
+          "sha256": "d85823978342bfb31c15e9e4b48e992225a66fd44e51d83ce26b7b59d96fe437"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "La tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.",
+          "sha256": "0054a81c46cad1ec6da5deafff9f0f2efb6ce03ebbb4f6abf9ff5d79783e9520"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Mantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.",
+          "sha256": "2ada755e8f1c5d04fe31a11471fbb440a5049b88a5b1e0dec33ded281d22a832"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Il formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.",
+          "sha256": "3874c7ad8a6a780d507f579afade7c122a4d7d484774f8b4ee34d46c81939b7a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Una fase non svolta resta sospesa e registrata.",
+          "sha256": "60c612c38ed7b441fc27b98229146715c57cd1872f9751258cea0274ae13761a"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Calendario realistico e flessibile senza saltare un controllo critico.",
+          "sha256": "9e3b81f64acd4b980a7a6f2c705306725a2e90df725835883b6e749c3bb2f857"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "time",
+        "title": "Tempi realistici senza tagliare la sicurezza",
+        "situation": "La tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.",
+        "reasoning": [
+          "Mantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.",
+          "Il formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.",
+          "Una fase non svolta resta sospesa e registrata."
+        ],
+        "takeaway": "Calendario realistico e flessibile senza saltare un controllo critico."
+      },
+      "scientificMeaning": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.\n\nMantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+      "displayText": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.\n\nMantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+      "captionText": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.\n\nMantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+      "spokenText": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede trentacinque minuti di lavoro e dieci di discussione, ma le quattro fasi totalizzano quaranta minuti.\n\nMantieni istruzione, controllo e avvio, passaggio e valutazione e arresto e pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in trentacinque minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+      "spokenTextSHA256": "497d3bcd980a217d983897855378bbe7e95356450b96623b14320859bccfb7f8",
+      "spokenTextSha256": "497d3bcd980a217d983897855378bbe7e95356450b96623b14320859bccfb7f8",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "455b91a3936fbe8ea0b3f8f29cfc70632700cf21f1ecf5c6529871e3945d922c",
+      "requestFingerprintSha256": "455b91a3936fbe8ea0b3f8f29cfc70632700cf21f1ecf5c6529871e3945d922c",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.\n\nMantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+          "spoken": "Tempi realistici senza tagliare la sicurezza\n\nLa tabella prevede trentacinque minuti di lavoro e dieci di discussione, ma le quattro fasi totalizzano quaranta minuti.\n\nMantieni istruzione, controllo e avvio, passaggio e valutazione e arresto e pulizia come risultati separati.\n\nIl formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in trentacinque minuti.\n\nUna fase non svolta resta sospesa e registrata.\n\nCalendario realistico e flessibile senza saltare un controllo critico.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "10",
+            "35",
+            "40"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-14",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "30c80467b9af1571807868c4bf1255d42148be3bee5b711a52a1e9d7e49b3b2a",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "no-go",
+      "title": "Ein Häkchen bedeutet nicht Startfreigabe",
+      "situation": "Die ersten fünf Originalkästchen sind abgehakt, aber Motoröl wurde nicht geprüft und die wirkliche Maschine ist nicht das Beispiel.",
+      "reasoning": [
+        "Stoppen, wirkliches Gerät und Anleitung feststellen und vollständige Prüfung samt Öl, Lecks, Schutz und Steuerung durchführen.",
+        "Nicht auf absichtlich lockere Schraube vertrauen und mit unbekanntem Fehler nicht starten.",
+        "Eignung und Ort erneut prüfen; ungeeignete Person lernt am starren Modell."
+      ],
+      "takeaway": "Kein Start und kein praktisches Bestehen vor Erfüllung aller Bedingungen."
+    },
+    {
+      "id": "row-pass",
+      "title": "Eine Person, eine sichere Fahrt",
+      "situation": "Eine geeignete Person fährt in freigegebener Reihe, doch nach 20 m betritt jemand den Wendebereich.",
+      "reasoning": [
+        "Nach tatsächlicher Anleitung sofort auskuppeln/stoppen und Messerberührung verhindern.",
+        "Unterbrochene Distanz und Grund dokumentieren; keine zweite Person greift an laufende Griffe.",
+        "Erst nach Wiederherstellung des freien Bereichs und erneuter Bereitschaft fortsetzen."
+      ],
+      "takeaway": "Personen- und Pflanzenschutz sind wichtiger als die vollen 30 m."
+    },
+    {
+      "id": "time",
+      "title": "Realistische Zeiten ohne Kürzung der Sicherheit",
+      "situation": "Die Vorlage nennt 35 Minuten Arbeit und 10 Diskussion, während ihre vier Phasen 40 Minuten dauern.",
+      "reasoning": [
+        "Einweisung, Kontrolle/Start, Fahrt/Bewertung und Stopp/Reinigung als getrennte Ergebnisse erhalten.",
+        "Die Lehrkraft plant genügend individuelle Durchgänge und Diskussion, statt vorzugeben, alle Lernenden hätten in 35 Minuten bestanden.",
+        "Nicht ausgeführte Phase bleibt offen und wird dokumentiert."
+      ],
+      "takeaway": "Flexibler Zeitplan ohne Auslassen sicherheitskritischer Schritte."
+    }
+  ]
+}

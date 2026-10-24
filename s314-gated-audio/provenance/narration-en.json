@@ -1,0 +1,384 @@
+{
+  "stepId": "S3-14",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-14-en.json",
+    "sha256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+    "bytes": 37819
+  },
+  "units": [
+    {
+      "id": "S3-14-en-E01-r1",
+      "unitId": "S3-14-en-E01-r1",
+      "stepId": "S3-14",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "no-go",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Do not start because a checklist box was ticked",
+          "sha256": "eb8fce06e03161f6013af094fc310f5040bcef1cbe5515ad336dfcf1d8af321e"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.",
+          "sha256": "2204aca5da3215157eba4ccb953d4d695bcc57427c6467c7e91bb36142243aaa"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Stop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.",
+          "sha256": "9fb829a48c309187c7e4b8f7554b69591ca612d95d57d7a53358aab0b77a4d55"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Do not trust a planted loose bolt or start with an unknown fault.",
+          "sha256": "313326c671c8fa81303cb9f44c7eb34d958e8a6b457b04720fd326aa258c9b5b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Reassess operator eligibility and site; an ineligible learner studies an inert example.",
+          "sha256": "02d6d09b2ca4bc59311fe934e9044301ce7a216ec90955270238b9fb1832b960"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "No start and no practical pass until the gate is satisfied.",
+          "sha256": "a8570f9db667c2c9bb7680d58eaa1adb3e03d711cf45983dd40045521e87fd63"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "no-go",
+        "title": "Do not start because a checklist box was ticked",
+        "situation": "The source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.",
+        "reasoning": [
+          "Stop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.",
+          "Do not trust a planted loose bolt or start with an unknown fault.",
+          "Reassess operator eligibility and site; an ineligible learner studies an inert example."
+        ],
+        "takeaway": "No start and no practical pass until the gate is satisfied."
+      },
+      "scientificMeaning": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+      "displayText": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+      "captionText": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+      "spokenText": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device and manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+      "spokenTextSHA256": "bbc08ca411f00ff2837a6511947354e58ba56b20300474aa7a79b4d405b92d4e",
+      "spokenTextSha256": "bbc08ca411f00ff2837a6511947354e58ba56b20300474aa7a79b4d405b92d4e",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "8ba13a54fd67c1ac1e889cd5bcd3983c79fb37406cb7234db6e1ea85fdb78596",
+      "requestFingerprintSha256": "8ba13a54fd67c1ac1e889cd5bcd3983c79fb37406cb7234db6e1ea85fdb78596",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device/manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+          "spoken": "Do not start because a checklist box was ticked\n\nThe source's first five bank boxes are ticked, but engine oil was not checked and the training machine differs from the example.\n\nStop; identify the actual device and manual and perform its complete checks, including oil, leaks, guards and controls.\n\nDo not trust a planted loose bolt or start with an unknown fault.\n\nReassess operator eligibility and site; an ineligible learner studies an inert example.\n\nNo start and no practical pass until the gate is satisfied.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-14-en-E02-r1",
+      "unitId": "S3-14-en-E02-r1",
+      "stepId": "S3-14",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "row-pass",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "One learner, one safe pass",
+          "sha256": "fcfaaff0a1ccca01299d6f17986b9581fcdae227b5f168f88960bca01a7e05ba"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "An eligible learner has an approved cleared row, but a person enters the turning area at 20 m.",
+          "sha256": "47342ae49a2e71bb5799bad9f7c17e360393809bb1686074a21352c9b9934b28"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Disengage/stop according to the actual manual immediately and prevent tine contact.",
+          "sha256": "6122ae36aa59efb4a8ebabc7fc441b4524c3e6495a5a21b6a16ab9e0d01bdac1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Record the interrupted distance and reason; do not let a second person grab moving handlebars.",
+          "sha256": "ee80eb1e34e3c58e537db1cac1e3c88a22fcef32d05544ad032bd8beb52526c0"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Resume only after the trainer restores the clear-area gate and the learner is ready.",
+          "sha256": "95c3dc416a90e7aeac284010170cff5bee3ba31e1914a0d1b8917be83af8b339"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Safety and crop preservation outrank finishing the 30 m distance.",
+          "sha256": "09f33e2d5408556fa9d0fff39e9d09c78a3287c83d48212d5116e124c0421b5a"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "row-pass",
+        "title": "One learner, one safe pass",
+        "situation": "An eligible learner has an approved cleared row, but a person enters the turning area at 20 m.",
+        "reasoning": [
+          "Disengage/stop according to the actual manual immediately and prevent tine contact.",
+          "Record the interrupted distance and reason; do not let a second person grab moving handlebars.",
+          "Resume only after the trainer restores the clear-area gate and the learner is ready."
+        ],
+        "takeaway": "Safety and crop preservation outrank finishing the 30 m distance."
+      },
+      "scientificMeaning": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at 20 m.\n\nDisengage/stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the 30 m distance.",
+      "displayText": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at 20 m.\n\nDisengage/stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the 30 m distance.",
+      "captionText": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at 20 m.\n\nDisengage/stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the 30 m distance.",
+      "spokenText": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at twenty metres.\n\nDisengage or stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the thirty-metre distance.",
+      "spokenTextSHA256": "f82a78d52f78e42e672e06aa728bc0eac548c3d71eaf86bcaff397994140586b",
+      "spokenTextSha256": "f82a78d52f78e42e672e06aa728bc0eac548c3d71eaf86bcaff397994140586b",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "a5b3fda6b07446e8744385103b620de1ce0184f6fbc88feed812acdacf649e38",
+      "requestFingerprintSha256": "a5b3fda6b07446e8744385103b620de1ce0184f6fbc88feed812acdacf649e38",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at 20 m.\n\nDisengage/stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the 30 m distance.",
+          "spoken": "One learner, one safe pass\n\nAn eligible learner has an approved cleared row, but a person enters the turning area at twenty metres.\n\nDisengage or stop according to the actual manual immediately and prevent tine contact.\n\nRecord the interrupted distance and reason; do not let a second person grab moving handlebars.\n\nResume only after the trainer restores the clear-area gate and the learner is ready.\n\nSafety and crop preservation outrank finishing the thirty-metre distance.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-14-en-E03-r1",
+      "unitId": "S3-14-en-E03-r1",
+      "stepId": "S3-14",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "time",
+      "sourceWholeFileSHA256": "3a85a399490efd61c24a677efcc0c9f618ccd53fc0681e3f5dfe4fadc56d1c31",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Timebox without removing safety",
+          "sha256": "fd4217838319954ed8e041abb18ad36a8833eb104b77983135152d88dd66c11e"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.",
+          "sha256": "cf9d1591a93ee2f913370be4d3d2462dad982a0fd065e91cb90192bc5d8088ed"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Keep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.",
+          "sha256": "4abf8f9d708337d87b00abb5f6cc5484276f3ae6882f0fb48273688f76059484"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "The trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.",
+          "sha256": "3df9fe99872f52c71453fac2bf7c4944a3f21658ba14e001b6b9d68b73d278e9"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "An unperformed phase remains pending and is recorded.",
+          "sha256": "71e858a400f06b4ca18a779e38dc1053c9542fa5d181cada5c3f0aaa607606a0"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A flexible realistic schedule with no skipped safety-critical action.",
+          "sha256": "4f17c4ed786413e2b3fcc190542d17ea71a5b4f0c346a47fa855a6ea1c39aac4"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "time",
+        "title": "Timebox without removing safety",
+        "situation": "The source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.",
+        "reasoning": [
+          "Keep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.",
+          "The trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.",
+          "An unperformed phase remains pending and is recorded."
+        ],
+        "takeaway": "A flexible realistic schedule with no skipped safety-critical action."
+      },
+      "scientificMeaning": "Timebox without removing safety\n\nThe source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.\n\nKeep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+      "displayText": "Timebox without removing safety\n\nThe source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.\n\nKeep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+      "captionText": "Timebox without removing safety\n\nThe source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.\n\nKeep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+      "spokenText": "Timebox without removing safety\n\nThe source table says thirty-five minutes of work plus ten discussion, but four activity phases sum to forty minutes.\n\nKeep briefing, inspection and start, pass and evaluation and stop and clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in thirty-five minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+      "spokenTextSHA256": "21d5a6b059654faaea913f141f171160f103e604d7b86cb7314646ac102d00e1",
+      "spokenTextSha256": "21d5a6b059654faaea913f141f171160f103e604d7b86cb7314646ac102d00e1",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "f5ad193b0fdc31cb232361d1dfe6df758f799b6c635c35acdc28519b800abe85",
+      "requestFingerprintSha256": "f5ad193b0fdc31cb232361d1dfe6df758f799b6c635c35acdc28519b800abe85",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Timebox without removing safety\n\nThe source table says 35 minutes of work plus 10 discussion, but four activity phases sum to 40 minutes.\n\nKeep briefing, inspection/start, pass/evaluation and stop/clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in 35 minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+          "spoken": "Timebox without removing safety\n\nThe source table says thirty-five minutes of work plus ten discussion, but four activity phases sum to forty minutes.\n\nKeep briefing, inspection and start, pass and evaluation and stop and clean as distinct outputs.\n\nThe trainer schedules adequate individual turns and discussion rather than pretending all learners passed in thirty-five minutes.\n\nAn unperformed phase remains pending and is recorded.\n\nA flexible realistic schedule with no skipped safety-critical action.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "10",
+            "35",
+            "40"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

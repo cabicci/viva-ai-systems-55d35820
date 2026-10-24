@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-14",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "5a914c19c0ec403375c0505992017c796254dff0bf7eb1132a09ea7cde190351",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "no-go",
+      "title": "Non partire perché una casella è spuntata",
+      "situation": "Le prime cinque caselle della fonte sono spuntate, ma manca il controllo dell’olio motore e la macchina reale è diversa dall’esempio.",
+      "reasoning": [
+        "Fermati, identifica dispositivo e manuale effettivi, esegui tutti i controlli: olio, perdite, protezioni e comandi.",
+        "Non fidarti di un bullone allentato apposta e non avviare con un guasto ignoto.",
+        "Rivaluta operatore e sito; chi non è idoneo studia un modello inerte."
+      ],
+      "takeaway": "Nessun avvio e nessun superamento pratico finché non sono soddisfatte tutte le condizioni richieste."
+    },
+    {
+      "id": "row-pass",
+      "title": "Un allievo, un passaggio sicuro",
+      "situation": "Un allievo idoneo lavora in una fila approvata, ma una persona entra nello spazio di svolta dopo 20 m.",
+      "reasoning": [
+        "Disinnesta e arresta subito secondo il manuale reale, evitando contatto con le zappe.",
+        "Registra distanza e motivo; un secondo adulto non afferra i manubri in movimento.",
+        "Riprendi soltanto quando il formatore ripristina l’area sgombra e verifica la preparazione."
+      ],
+      "takeaway": "La sicurezza delle persone e delle colture precede il completamento dei 30 m."
+    },
+    {
+      "id": "time",
+      "title": "Tempi realistici senza tagliare la sicurezza",
+      "situation": "La tabella prevede 35 minuti di lavoro e 10 di discussione, ma le quattro fasi totalizzano 40 minuti.",
+      "reasoning": [
+        "Mantieni istruzione, controllo/avvio, passaggio/valutazione e arresto/pulizia come risultati separati.",
+        "Il formatore prevede turni e discussione adeguati, senza dichiarare che tutti hanno superato in 35 minuti.",
+        "Una fase non svolta resta sospesa e registrata."
+      ],
+      "takeaway": "Calendario realistico e flessibile senza saltare un controllo critico."
+    }
+  ]
+}

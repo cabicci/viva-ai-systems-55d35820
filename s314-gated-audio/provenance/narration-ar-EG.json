@@ -1,0 +1,429 @@
+{
+  "stepId": "S3-14",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-14-ar-EG.json",
+    "sha256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+    "bytes": 52045
+  },
+  "units": [
+    {
+      "id": "S3-14-ar-EG-E01-r1",
+      "unitId": "S3-14-ar-EG-E01-r1",
+      "stepId": "S3-14",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "no-go",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "متبدأش لمجرد علامة صح",
+          "sha256": "3151eb6a54c6cbd453ab103e21bfbefdc999ac87f87cb276d1a7e819ef1cb824"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "أول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.",
+          "sha256": "235e09513da9805b22e257f8cb517fd015d4cddab94c16ce38f3506884ca03cf"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "أوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.",
+          "sha256": "17a7bbddc964be6f037b09c10ab2f2fc7b65208e6a74d074e20d05e2308b4d6e"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "ما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.",
+          "sha256": "63279217869415150f9691e96616311e4f4396ca53733e01b2df35983eccf6c5"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "أعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.",
+          "sha256": "f4910e93f9134463354e174ea63f12b8ed300aeeec76de90ca1038d0809988f5"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "مفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+          "sha256": "5540bc79435f9c88b3f28baf55451423772260adbd34f53486fa62e4ae429037"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "no-go",
+        "title": "متبدأش لمجرد علامة صح",
+        "situation": "أول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.",
+        "reasoning": [
+          "أوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.",
+          "ما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.",
+          "أعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول."
+        ],
+        "takeaway": "مفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق."
+      },
+      "scientificMeaning": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "displayText": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "captionText": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "spokenText": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nراجع أهلية المشغّل والموقع. واللي مش مؤهل، يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+      "spokenTextSHA256": "58aa035d88956c31420b474362ca323ad0aab8cbac566e136e54891f8c699483",
+      "spokenTextSha256": "58aa035d88956c31420b474362ca323ad0aab8cbac566e136e54891f8c699483",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "a97697d81e09fd6541cff433be30cf51eb9d1312a4170bc17aa19d86693d8bce",
+      "requestFingerprintSha256": "a97697d81e09fd6541cff433be30cf51eb9d1312a4170bc17aa19d86693d8bce",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nأعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+          "spoken": "متبدأش لمجرد علامة صح\n\nأول خمس خانات من بطاقة البنك عليها صح، لكن زيت المحرك ما اتفحصش وجهاز التدريب غير المثال.\n\nأوقف وحدد الجهاز ودليله الفعلي واعمل فحوصه كاملة ومنها الزيت والتسرب والحواجز والتحكم.\n\nما تثقش في مسمار مفكوك عمدًا وما تبدأش مع عطل مجهول.\n\nراجع أهلية المشغّل والموقع. واللي مش مؤهل، يتعلم على نموذج معزول.\n\nمفيش بدء ولا نجاح عملي لحد ما بوابات السلامة تتحقق.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "أعد فحص أهلية المشغّل والموقع؛ غير المؤهل يتعلم على نموذج معزول.",
+              "spokenPhrase": "راجع أهلية المشغّل والموقع. واللي مش مؤهل، يتعلم على نموذج معزول.",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "dc214e7932d33e170a40a68f9a0725cd30ae087d386a3084c494fd8210c45d1c",
+              "revisedSpokenSHA256": "58aa035d88956c31420b474362ca323ad0aab8cbac566e136e54891f8c699483",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-14-ar-EG-E02-r1",
+      "unitId": "S3-14-ar-EG-E02-r1",
+      "stepId": "S3-14",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "row-pass",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "طالب واحد ومرور آمن واحد",
+          "sha256": "673b25fbe5801f1f82892b118e6ab8bc3bca342f8b8cf72d55c2bf1a39db7f5d"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "طالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.",
+          "sha256": "b8a5f44bdc8303ddd273cbe25c64da92c4e8a024b73751eb1bf4e5bc25256dc3"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "افصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.",
+          "sha256": "758b67e8f1039ab193d1b30eecc4cfca48bb2841ddfeb40b389db940d9c309e1"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "سجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.",
+          "sha256": "c6ddd94d4c2a61d362e8f48b8cb8669830cbac58d592e89d33f82560b4f85392"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "كمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.",
+          "sha256": "ea97b2bfb2ded0c7563adc3f282d978e90b1e89efb6f962b271d4f993541267d"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "سلامة الناس والمحصول أهم من إكمال ٣٠ متر.",
+          "sha256": "60e0275d5d52841ebb3a09610edb024441010313525867140043eaa717d06c61"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "row-pass",
+        "title": "طالب واحد ومرور آمن واحد",
+        "situation": "طالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.",
+        "reasoning": [
+          "افصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.",
+          "سجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.",
+          "كمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب."
+        ],
+        "takeaway": "سلامة الناس والمحصول أهم من إكمال ٣٠ متر."
+      },
+      "scientificMeaning": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال ٣٠ متر.",
+      "displayText": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال ٣٠ متر.",
+      "captionText": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال ٣٠ متر.",
+      "spokenText": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالي وموافق عليه، لكن شخص دخل منطقة الدوران بعد عشرين متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال تلاتين متر.",
+      "spokenTextSHA256": "d5781fa3716689e5a0e91f5d8ba7e62c40eb0917a5aa903e7c98d5a489fb1509",
+      "spokenTextSha256": "d5781fa3716689e5a0e91f5d8ba7e62c40eb0917a5aa903e7c98d5a489fb1509",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "ff320974f455631ad1a3f80f5b622a908610e66f8b3f406a9762ced194d176c5",
+      "requestFingerprintSha256": "ff320974f455631ad1a3f80f5b622a908610e66f8b3f406a9762ced194d176c5",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالٍ وموافق عليه، لكن شخص دخل منطقة الدوران بعد ٢٠ متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال ٣٠ متر.",
+          "spoken": "طالب واحد ومرور آمن واحد\n\nطالب مؤهل على صف خالي وموافق عليه، لكن شخص دخل منطقة الدوران بعد عشرين متر.\n\nافصل الحركة أو أوقف فورًا حسب دليل الجهاز الفعلي، وامنع ملامسة الأسنان للشخص.\n\nسجّل المسافة المقطوعة وسبب التوقف؛ ما تخليش حد تاني يمسك مقابض الآلة المتحركة.\n\nكمّل فقط بعد ما المدرّب يرجع شرط خلو الموقع ويتأكد من جاهزية الطالب.\n\nسلامة الناس والمحصول أهم من إكمال تلاتين متر.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٢٠",
+            "٣٠"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "طالب مؤهل على صف خالٍ وموافق عليه",
+              "spokenPhrase": "طالب مؤهل على صف خالي وموافق عليه",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "3fbbf7bc33f9d97a6d58aeb111d4e7e3eb650a0a7188947c493cd7d9dbad50c1",
+              "revisedSpokenSHA256": "d5781fa3716689e5a0e91f5d8ba7e62c40eb0917a5aa903e7c98d5a489fb1509",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-14-ar-EG-E03-r1",
+      "unitId": "S3-14-ar-EG-E03-r1",
+      "stepId": "S3-14",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "time",
+      "sourceWholeFileSHA256": "18dd67607575c5d19ace4e37a9a54f51b393d2e25382ac9b031e5c8a32484248",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "ظبط الوقت من غير اختصار السلامة",
+          "sha256": "14b3f482bfab014306b8daf5f84c9f48970082713c45d861c8cc89d555e63212"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "جدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.",
+          "sha256": "69daec61fd280ced3975ddc391aecb7164b72025adeb7b73e0dbb56658067a18"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "خلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.",
+          "sha256": "68473bfc042bafd66e5e4f43e403fadf8c6e959468376eb3c68b7fb1f671ae62"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "المدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.",
+          "sha256": "2bbebe17167c944dd34184f8bcfaf4f31835410f69fabaf710cbb34a3985d506"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "أي مرحلة ما اتعملتش تتسجل معلقة.",
+          "sha256": "c80c05c367b21bf905046665cd948480eb76c102945fe48e20ffc1b867040222"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "جدول مرن واقعي من غير حذف خطوة أمان حاسمة.",
+          "sha256": "834bdec6deddb0335dcc87f9970ed5d0db9e45c652ccccab8c0a8a2acfcf9445"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "time",
+        "title": "ظبط الوقت من غير اختصار السلامة",
+        "situation": "جدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.",
+        "reasoning": [
+          "خلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.",
+          "المدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.",
+          "أي مرحلة ما اتعملتش تتسجل معلقة."
+        ],
+        "takeaway": "جدول مرن واقعي من غير حذف خطوة أمان حاسمة."
+      },
+      "scientificMeaning": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.\n\nخلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.\n\nالمدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير حذف خطوة أمان حاسمة.",
+      "displayText": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.\n\nخلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.\n\nالمدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير حذف خطوة أمان حاسمة.",
+      "captionText": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.\n\nخلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.\n\nالمدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير حذف خطوة أمان حاسمة.",
+      "spokenText": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول خمسة وتلاتين دقيقة عمل وعشرة نقاش لكن المراحل الأربع مجموعها أربعين دقيقة.\n\nخلّي التهيئة والفحص والبدء والمرور والتقييم والإيقاف والتنظيف نواتج منفصلة.\n\nالمدرّب ينظم دور لكل واحد ووقت كفاية للنقاش بدل افتراض نجاح الكل في خمسة وتلاتين دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير ما يشيل خطوة أمان حاسمة.",
+      "spokenTextSHA256": "a73c95e60d043be9665c9d4e58bed7e4dc2665309369b50dfde14b2dfaa01d2e",
+      "spokenTextSha256": "a73c95e60d043be9665c9d4e58bed7e4dc2665309369b50dfde14b2dfaa01d2e",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "663c952f321ea6fd916851968bfac548df0ae2bd01f9fc9c9cdc4ae2d6501882",
+      "requestFingerprintSha256": "663c952f321ea6fd916851968bfac548df0ae2bd01f9fc9c9cdc4ae2d6501882",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول ٣٥ دقيقة عمل و١٠ نقاش لكن المراحل الأربع مجموعها ٤٠ دقيقة.\n\nخلّي التهيئة والفحص/البدء والمرور/التقييم والإيقاف/التنظيف نواتج منفصلة.\n\nالمدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا بدل افتراض نجاح الكل في ٣٥ دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير حذف خطوة أمان حاسمة.",
+          "spoken": "ظبط الوقت من غير اختصار السلامة\n\nجدول الأصل يقول خمسة وتلاتين دقيقة عمل وعشرة نقاش لكن المراحل الأربع مجموعها أربعين دقيقة.\n\nخلّي التهيئة والفحص والبدء والمرور والتقييم والإيقاف والتنظيف نواتج منفصلة.\n\nالمدرّب ينظم دور لكل واحد ووقت كفاية للنقاش بدل افتراض نجاح الكل في خمسة وتلاتين دقيقة.\n\nأي مرحلة ما اتعملتش تتسجل معلقة.\n\nجدول مرن واقعي من غير ما يشيل خطوة أمان حاسمة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "١٠",
+            "٣٥",
+            "٤٠"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "writtenPhrase": "المدرّب ينظم دورًا فرديًا ووقت نقاش كافيًا",
+              "spokenPhrase": "المدرّب ينظم دور لكل واحد ووقت كفاية للنقاش",
+              "occurrences": 1
+            },
+            {
+              "writtenPhrase": "من غير حذف خطوة أمان حاسمة",
+              "spokenPhrase": "من غير ما يشيل خطوة أمان حاسمة",
+              "occurrences": 1
+            },
+            {
+              "priorSpokenSHA256": "17205bcd2720c4e7771a93171ee2d5b32bb0ba85f1ade7ea369ee361b72d490c",
+              "revisedSpokenSHA256": "a73c95e60d043be9665c9d4e58bed7e4dc2665309369b50dfde14b2dfaa01d2e",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}
