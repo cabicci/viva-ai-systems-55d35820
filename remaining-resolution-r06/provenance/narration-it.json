@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "stepId": "S3-16",
+  "units": [
+    {
+      "id": "S3-16-it-guided-practice-r1-coherent-resolution-extra1",
+      "unitId": "S3-16-it-guided-practice-r1-coherent-resolution-extra1",
+      "locale": "it",
+      "semanticGroup": "R06-bounded-source-completion",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/guidedPractice/prompt",
+          "text": "Pianifica unità C, percorso, numero/profondità motivati ed etichetta. Separa lavoro attivo e attese e spiega perché 25 minuti non possono includere essiccazione e sosta pH.",
+          "sha256": "58c59e84716f432e86682e5d487657a6180776609004273d4798743b8e0957bc"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/1",
+          "text": "Sotto osservazione raccogli, etichetta e prepara il tuo campione; identificati pHmetro digitale e SOP reali, calibra e misura la tua aliquota annotando dato grezzo. Se non disponibili, lascia la fase non tentata.",
+          "sha256": "2015fe82fafbf3178e83caf91ec62478c971a18bd5fd92a7f69ff79e1d55b27b"
+        },
+        {
+          "pointer": "/guidedPractice/learnerActions/2",
+          "text": "Sul tuo campione regola umidità, sfera, nastro e sfregamento umido e classifica con USDA. Se c’è errore, conserva tentativo 1, pratica mirata e nuova osservazione con esito reale.",
+          "sha256": "240e8c91792027b39d0b87ff464a2cd9acddf49c4addc9c758d67bfca473d331"
+        },
+        {
+          "pointer": "/guidedPractice/feedback",
+          "text": "Il percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.",
+          "sha256": "a28f4e68d874e778e179e3a35622d222e2e6a8b57b057320fef4ad3d88a76609"
+        },
+        {
+          "pointer": "/guidedPractice/practicalBoundary",
+          "text": "Tutti e tre i criteri di questa fase sono abilità pratiche osservate. Risposte online, questa simulazione 3D, autovalutazione e note compilate non li attribuiscono. Mantieni sconosciuti appezzamento C effettivo, campione, dispositivo, SOP, osservazioni e firme finché non esistono evidenze autentiche.",
+          "sha256": "81d112bea245e258ef86f9093f7c374e9db420c9581320abea1aeea32cb49da0"
+        }
+      ],
+      "scientificMeaning": "Pianifica unità C, percorso, numero/profondità motivati ed etichetta. Separa lavoro attivo e attese e spiega perché 25 minuti non possono includere essiccazione e sosta pH.\n\nSotto osservazione raccogli, etichetta e prepara il tuo campione; identificati pHmetro digitale e SOP reali, calibra e misura la tua aliquota annotando dato grezzo. Se non disponibili, lascia la fase non tentata.\n\nSul tuo campione regola umidità, sfera, nastro e sfregamento umido e classifica con USDA. Se c’è errore, conserva tentativo 1, pratica mirata e nuova osservazione con esito reale.\n\nIl percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.\n\nTutti e tre i criteri di questa fase sono abilità pratiche osservate. Risposte online, questa simulazione 3D, autovalutazione e note compilate non li attribuiscono. Mantieni sconosciuti appezzamento C effettivo, campione, dispositivo, SOP, osservazioni e firme finché non esistono evidenze autentiche.",
+      "displayText": "Pianifica unità C, percorso, numero/profondità motivati ed etichetta. Separa lavoro attivo e attese e spiega perché 25 minuti non possono includere essiccazione e sosta pH.\n\nSotto osservazione raccogli, etichetta e prepara il tuo campione; identificati pHmetro digitale e SOP reali, calibra e misura la tua aliquota annotando dato grezzo. Se non disponibili, lascia la fase non tentata.\n\nSul tuo campione regola umidità, sfera, nastro e sfregamento umido e classifica con USDA. Se c’è errore, conserva tentativo 1, pratica mirata e nuova osservazione con esito reale.\n\nIl percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.\n\nTutti e tre i criteri di questa fase sono abilità pratiche osservate. Risposte online, questa simulazione 3D, autovalutazione e note compilate non li attribuiscono. Mantieni sconosciuti appezzamento C effettivo, campione, dispositivo, SOP, osservazioni e firme finché non esistono evidenze autentiche.",
+      "captionText": "Pianifica unità C, percorso, numero/profondità motivati ed etichetta. Separa lavoro attivo e attese e spiega perché 25 minuti non possono includere essiccazione e sosta pH.\n\nSotto osservazione raccogli, etichetta e prepara il tuo campione; identificati pHmetro digitale e SOP reali, calibra e misura la tua aliquota annotando dato grezzo. Se non disponibili, lascia la fase non tentata.\n\nSul tuo campione regola umidità, sfera, nastro e sfregamento umido e classifica con USDA. Se c’è errore, conserva tentativo 1, pratica mirata e nuova osservazione con esito reale.\n\nIl percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.\n\nTutti e tre i criteri di questa fase sono abilità pratiche osservate. Risposte online, questa simulazione 3D, autovalutazione e note compilate non li attribuiscono. Mantieni sconosciuti appezzamento C effettivo, campione, dispositivo, SOP, osservazioni e firme finché non esistono evidenze autentiche.",
+      "spokenText": "Il percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.",
+      "spokenTextSHA256": "a28f4e68d874e778e179e3a35622d222e2e6a8b57b057320fef4ad3d88a76609",
+      "spokenTextSha256": "a28f4e68d874e778e179e3a35622d222e2e6a8b57b057320fef4ad3d88a76609",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Pianifica unità C, percorso, numero/profondità motivati ed etichetta. Separa lavoro attivo e attese e spiega perché 25 minuti non possono includere essiccazione e sosta pH.\n\nSotto osservazione raccogli, etichetta e prepara il tuo campione; identificati pHmetro digitale e SOP reali, calibra e misura la tua aliquota annotando dato grezzo. Se non disponibili, lascia la fase non tentata.\n\nSul tuo campione regola umidità, sfera, nastro e sfregamento umido e classifica con USDA. Se c’è errore, conserva tentativo 1, pratica mirata e nuova osservazione con esito reale.\n\nIl percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.\n\nTutti e tre i criteri di questa fase sono abilità pratiche osservate. Risposte online, questa simulazione 3D, autovalutazione e note compilate non li attribuiscono. Mantieni sconosciuti appezzamento C effettivo, campione, dispositivo, SOP, osservazioni e firme finché non esistono evidenze autentiche.",
+          "spoken": "Il percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.\nKeep the final o in solo and the negation non prova; do not anticipate prova as a final p. Read prelievi once, no false start; preserve number OR depth and missing ID OR invented times. Do not speak this instruction.",
+      "deliverySHA256": "cc3b54b1698eccda2a68042b76957f8a565d1f27ab6111399b0635754c675fe3",
+      "deliverySha256": "cc3b54b1698eccda2a68042b76957f8a565d1f27ab6111399b0635754c675fe3",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "19657e67fb9a2f904fb27a16dbb87cb1cf71ff32a9f0a478270d15a39bfc786b",
+      "requestFingerprintSha256": "19657e67fb9a2f904fb27a16dbb87cb1cf71ff32a9f0a478270d15a39bfc786b",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-16-it.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-16-it-guided-practice-r1",
+      "originalSpokenWholeSHA256": "7712262405e8249b6564d58096e27566ccf546e0293ee8ee1d4f44b5125ca7ab",
+      "exactParentSpokenCharacterSlice": {
+        "first": 614,
+        "endExclusive": 763,
+        "text": "Il percorso da solo non prova la rappresentatività; numero o profondità dei prelievi o ID mancanti, oppure tempi inventati, richiedono una revisione.",
+        "notPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
