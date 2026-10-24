@@ -1,0 +1,41 @@
+name: One reviewed existing Soil caption preflight only
+'on':
+  push:
+    branches: ['work/soil-bunny-caption-preflight-20261024-r1']
+    paths: ['caption-only/queue.json']
+permissions:
+  contents: read
+concurrency:
+  group: soil-reviewed-caption-preflight-20261024-r1
+  cancel-in-progress: false
+jobs:
+  caption:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: caption-only
+    env:
+      WORKER_SHA: 44680cd7d1ab1f18e1e6f9459b7c17f6766e1c08e3cb2fe6eff3085c7bea1c56
+      RUNNER_SHA: a59899e98080befb98794e296f33a9c1ee38064cb31441a9209a3d96e9d34f21
+      MANIFEST_SHA: 1c80ad4237dcef014a5bec24ab4b0952e3c23678d85092e87d7bfd0fa3bfef7f
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: One exact existing GUID caption and no video changes
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 -B runner.py
+      - name: Preserve exact per-request intents and sanitized caption evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: caption-preflight-outcome
+          path: caption-only/output/**/*.json
+          if-no-files-found: error
+          retention-days: 30
