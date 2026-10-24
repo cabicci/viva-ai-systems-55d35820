@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_ROOT_TEXT_APPROVED_N08_FINITE_SOURCE_COMPLETION",
+  "stepId": "S3-16",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-source-completion-n08-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_EN_SENTENCE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-16-it-R01-meter-subpassage-extra1",
+      "unitId": "S3-16-it-R01-meter-subpassage-extra1",
+      "locale": "it",
+      "semanticGroup": "N08-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/0/paragraphs/0",
+          "text": "Nello scenario un giovane tecnico agrario consiglia un coltivatore dell’Appezzamento C tramite campione composito, pH e tessitura. Sono tre catene di abilità osservate, non un rapido completamento online. pH e tessitura aiutano una raccomandazione preliminare ma non determinano tutta la salute del suolo né garantiscono il raccolto. Ragionamento sulle colture e relazione sono in S3-17.",
+          "sha256": "727aff7dbc6edabe59597bdcb49dba2f478e6f90018156f3d013c5c7f199dbca"
+        },
+        {
+          "pointer": "/reading/0/paragraphs/1",
+          "text": "Il compito prevede 25 minuti per la pratica e 20 per la relazione, ma il metodo include essiccazione all’aria e 30–60 minuti di attesa della sospensione. Separare fasi documentate: A raccolta/etichetta, B preparazione/essiccazione personale, C calibrazione/pH, D nastro/tatto, E relazione. Registrare inizio/fine, minuti attivi e attese distinti. Provetta già pronta è dimostrazione, mai prova del campione dello studente. Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+          "sha256": "a609f37ff2a3d57e0f2152cb700e1a74147c5051dd54f6c2c8afe84b062b7656"
+        }
+      ],
+      "scientificMeaning": "Nello scenario un giovane tecnico agrario consiglia un coltivatore dell’Appezzamento C tramite campione composito, pH e tessitura. Sono tre catene di abilità osservate, non un rapido completamento online. pH e tessitura aiutano una raccomandazione preliminare ma non determinano tutta la salute del suolo né garantiscono il raccolto. Ragionamento sulle colture e relazione sono in S3-17.\n\nIl compito prevede 25 minuti per la pratica e 20 per la relazione, ma il metodo include essiccazione all’aria e 30–60 minuti di attesa della sospensione. Separare fasi documentate: A raccolta/etichetta, B preparazione/essiccazione personale, C calibrazione/pH, D nastro/tatto, E relazione. Registrare inizio/fine, minuti attivi e attese distinti. Provetta già pronta è dimostrazione, mai prova del campione dello studente. Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+      "displayText": "Nello scenario un giovane tecnico agrario consiglia un coltivatore dell’Appezzamento C tramite campione composito, pH e tessitura. Sono tre catene di abilità osservate, non un rapido completamento online. pH e tessitura aiutano una raccomandazione preliminare ma non determinano tutta la salute del suolo né garantiscono il raccolto. Ragionamento sulle colture e relazione sono in S3-17.\n\nIl compito prevede 25 minuti per la pratica e 20 per la relazione, ma il metodo include essiccazione all’aria e 30–60 minuti di attesa della sospensione. Separare fasi documentate: A raccolta/etichetta, B preparazione/essiccazione personale, C calibrazione/pH, D nastro/tatto, E relazione. Registrare inizio/fine, minuti attivi e attese distinti. Provetta già pronta è dimostrazione, mai prova del campione dello studente. Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+      "captionText": "Nello scenario un giovane tecnico agrario consiglia un coltivatore dell’Appezzamento C tramite campione composito, pH e tessitura. Sono tre catene di abilità osservate, non un rapido completamento online. pH e tessitura aiutano una raccomandazione preliminare ma non determinano tutta la salute del suolo né garantiscono il raccolto. Ragionamento sulle colture e relazione sono in S3-17.\n\nIl compito prevede 25 minuti per la pratica e 20 per la relazione, ma il metodo include essiccazione all’aria e 30–60 minuti di attesa della sospensione. Separare fasi documentate: A raccolta/etichetta, B preparazione/essiccazione personale, C calibrazione/pH, D nastro/tatto, E relazione. Registrare inizio/fine, minuti attivi e attese distinti. Provetta già pronta è dimostrazione, mai prova del campione dello studente. Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+      "spokenText": "Il formatore identifica il misuratore di pi acca, i tamponi, lo scopo, il campo e il metodo di laboratorio prima della pratica.",
+      "spokenTextSHA256": "39db1b5c95952748a0be6cbe06fe0291c4f9da578f69d0b680f5c61701f10514",
+      "spokenTextSha256": "39db1b5c95952748a0be6cbe06fe0291c4f9da578f69d0b680f5c61701f10514",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Nello scenario un giovane tecnico agrario consiglia un coltivatore dell’Appezzamento C tramite campione composito, pH e tessitura. Sono tre catene di abilità osservate, non un rapido completamento online. pH e tessitura aiutano una raccomandazione preliminare ma non determinano tutta la salute del suolo né garantiscono il raccolto. Ragionamento sulle colture e relazione sono in S3-17.\n\nIl compito prevede 25 minuti per la pratica e 20 per la relazione, ma il metodo include essiccazione all’aria e 30–60 minuti di attesa della sospensione. Separare fasi documentate: A raccolta/etichetta, B preparazione/essiccazione personale, C calibrazione/pH, D nastro/tatto, E relazione. Registrare inizio/fine, minuti attivi e attese distinti. Provetta già pronta è dimostrazione, mai prova del campione dello studente. Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+          "spoken": "Il formatore identifica il misuratore di pi acca, i tamponi, lo scopo, il campo e il metodo di laboratorio prima della pratica.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi. Pronuncia chiaramente misuratore di pi acca. Leggi soltanto il testo, non queste istruzioni.",
+      "deliverySHA256": "040285e5421454ebbef699098659b08799da359037917c86052b1529b8803fc6",
+      "deliverySha256": "040285e5421454ebbef699098659b08799da359037917c86052b1529b8803fc6",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "a456b7cd7e6e375f83a4b06958ab88c4b5a76135af8d94ba55dc9b1b59340740",
+      "requestFingerprintSha256": "a456b7cd7e6e375f83a4b06958ab88c4b5a76135af8d94ba55dc9b1b59340740",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourcePlanSha256": "67a6aff9eadbd9d0f61ec711dbe7ab6361a419758989cbe8ce0d9154fd4d99d5",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-16-it.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-16-it-R01-r1",
+      "originalSpokenWholeSHA256": "db7e2bf437c8d0434ecdb86f33d27285a871bb38fc25c959440cda156c063661",
+      "exactParentSpokenCharacterSlice": {
+        "first": 877,
+        "endExclusive": 973,
+        "originalText": "Formatore identifica pHmetro, tamponi, scopo, campo e metodo di laboratorio prima della pratica.",
+        "notActualPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "it": [
+      "S3-16-it-R01-meter-subpassage-extra1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "duplicateExclusions": [
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s103-final-instructions-job-r1\\request.json",
+      "sha256": "f33b6aacf7bf1b99e2ad6f82541ebbb398b1451e9b163726df0d637bd7a939f3"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s104-remainder-job-r1\\request.json",
+      "sha256": "400fff09ff2eee1717c05f7fb6779c7ad552f9bb6b1d214488a777ed8c83c928"
+    },
+    {
+      "path": "Worktrees\\actor-4be934bfb980cd4aca45\\experiments\\new-method-audio-r1\\s106-reading-job-r1\\request.json",
+      "sha256": "3032ae8a9ea3e1bccd75f42275083123d21456b396db6ebe2cdccc48d374f20f"
+    }
+  ],
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1"
+}
