@@ -1,0 +1,34 @@
+{
+  "schema": "masaarat.reviewed-bunny-caption-readiness.v1",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "draftReleaseId": 422730845,
+  "automaticMutationRetries": 0,
+  "maximumConcurrentEntries": 2,
+  "maximumCaptionPOSTs": 1,
+  "entries": [
+    {
+      "libraryId": 670679,
+      "lessonId": "SOIL-REBUILD-S1-05",
+      "locale": "ar-EG",
+      "videoGuid": "be942b2a-2ae0-40b1-886c-507be1f715f1",
+      "sourceSHA256": "fd623b12727db0fc2ca5ce7d0a96c8e663d9a8b50cc53e73dd9dbef15e279c60",
+      "identity": "SOIL-REBUILD-S1-05:ar-EG:fd623b12727db0fc2ca5ce7d0a96c8e663d9a8b50cc53e73dd9dbef15e279c60",
+      "uploadReceiptSHA256": "4088cee55b41f33abdb80c9a46f7df5dc0eeda276572bbab89e6117005eb75aa",
+      "durationSeconds": 702.6,
+      "durationToleranceSeconds": 2,
+      "maximumCaptionPOSTs": 1,
+      "approvedCDNHosts": [
+        "vz-d1bea55a-846.b-cdn.net"
+      ],
+      "captions": {
+        "assetId": 672262873,
+        "bytes": 19739,
+        "sha256": "2eb89e98462d4825e691b2a58d98d9d78fbcf07cad2f46d4e7ce9e6b3efcab70"
+      },
+      "protected": false,
+      "expectedRemoteTitle": "Masaarat Soil SOIL-REBUILD-S1-05 ar-EG fd623b12727db0fc"
+    }
+  ],
+  "scope": "ONE_EXISTING_REVIEWED_GUID_VTT_ROUTE_PREFLIGHT_NO_VIDEO_MUTATION",
+  "executionBranch": "work/soil-bunny-caption-preflight-20261024-r2"
+}
