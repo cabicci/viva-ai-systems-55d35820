@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "locale": "it",
+  "stepId": "S3-16",
+  "units": [
+    {
+      "id": "S3-16-it-R03-r1-coherent-resolution-extra1",
+      "unitId": "S3-16-it-R03-r1-coherent-resolution-extra1",
+      "locale": "it",
+      "semanticGroup": "R05-bounded-source-completion",
+      "speakerId": "A",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "551dc0321d784ca49c34e15e99c1d6946e56df053bef95c50b9ef690489b550b",
+      "sourceBindings": [
+        {
+          "pointer": "/reading/1/paragraphs/0",
+          "text": "Definire unità gestionale sufficientemente uniforme e domanda analitica. Usare sonda o vanga adatta, secchio di plastica pulito, sacchetti e pennarello. L’esempio di campionamento propone percorso W/zigzag, 10–15 prelievi e 6–8 pollici (circa 15–20 cm) per lo strato superficiale: esempi, non regole universali. Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio. Coprire l’area, evitando vecchi cancelli, recinzioni e concentrazioni di animali se non sono l’oggetto dell’indagine; annotare ogni punto e profondità.",
+          "sha256": "5406d6935bbc6a0e019d552c04d5e3652c6e0c90e708b541809f6125e6b64c8d"
+        }
+      ],
+      "scientificMeaning": "Definire unità gestionale sufficientemente uniforme e domanda analitica. Usare sonda o vanga adatta, secchio di plastica pulito, sacchetti e pennarello. L’esempio di campionamento propone percorso W/zigzag, 10–15 prelievi e 6–8 pollici (circa 15–20 cm) per lo strato superficiale: esempi, non regole universali. Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio. Coprire l’area, evitando vecchi cancelli, recinzioni e concentrazioni di animali se non sono l’oggetto dell’indagine; annotare ogni punto e profondità.",
+      "displayText": "Definire unità gestionale sufficientemente uniforme e domanda analitica. Usare sonda o vanga adatta, secchio di plastica pulito, sacchetti e pennarello. L’esempio di campionamento propone percorso W/zigzag, 10–15 prelievi e 6–8 pollici (circa 15–20 cm) per lo strato superficiale: esempi, non regole universali. Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio. Coprire l’area, evitando vecchi cancelli, recinzioni e concentrazioni di animali se non sono l’oggetto dell’indagine; annotare ogni punto e profondità.",
+      "captionText": "Definire unità gestionale sufficientemente uniforme e domanda analitica. Usare sonda o vanga adatta, secchio di plastica pulito, sacchetti e pennarello. L’esempio di campionamento propone percorso W/zigzag, 10–15 prelievi e 6–8 pollici (circa 15–20 cm) per lo strato superficiale: esempi, non regole universali. Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio. Coprire l’area, evitando vecchi cancelli, recinzioni e concentrazioni di animali se non sono l’oggetto dell’indagine; annotare ogni punto e profondità.",
+      "spokenText": "Il formatore dichiara numero, profondità e aree atipiche da escludere per ci e laboratorio.",
+      "spokenTextSHA256": "0c0e2961006540340c2d484688654cc618fc86de041f7475839c7d8c4ef1e3e2",
+      "spokenTextSha256": "0c0e2961006540340c2d484688654cc618fc86de041f7475839c7d8c4ef1e3e2",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Definire unità gestionale sufficientemente uniforme e domanda analitica. Usare sonda o vanga adatta, secchio di plastica pulito, sacchetti e pennarello. L’esempio di campionamento propone percorso W/zigzag, 10–15 prelievi e 6–8 pollici (circa 15–20 cm) per lo strato superficiale: esempi, non regole universali. Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio. Coprire l’area, evitando vecchi cancelli, recinzioni e concentrazioni di animali se non sono l’oggetto dell’indagine; annotare ogni punto e profondità.",
+          "spoken": "Il formatore dichiara numero, profondità e aree atipiche da escludere per ci e laboratorio.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.\nThe single identifier C is ci, followed by the conjunction e and laboratorio. There is no N/enne. Keep the distinction without adding an equipment identity; do not speak these directions.",
+      "deliverySHA256": "7e246d5a0d5acad5e915a3b209ee002ddadf0045075ecc9c40cc20e5ec4e19db",
+      "deliverySha256": "7e246d5a0d5acad5e915a3b209ee002ddadf0045075ecc9c40cc20e5ec4e19db",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5977357a2380b6b5ac3addd70a5920a0828e366fedbf1cc9c8c96582cc64eb23",
+      "requestFingerprintSha256": "5977357a2380b6b5ac3addd70a5920a0828e366fedbf1cc9c8c96582cc64eb23",
+      "sourcePlan": "provenance/narration-it.json",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-16-it.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-16-it-R03-r1",
+      "originalSpokenWholeSHA256": "c39d9a2a7838f427d4cd6201f032c7b19048de8f08c6af9e3adfb529e6193b43",
+      "exactParentSpokenCharacterSlice": {
+        "first": 358,
+        "endExclusive": 448,
+        "text": "Il formatore dichiara numero, profondità e aree atipiche da escludere per C e laboratorio.",
+        "notPCMCuts": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false
+    }
+  ],
+  "sourceOnlyCompletionNoCourseChange": true
+}
