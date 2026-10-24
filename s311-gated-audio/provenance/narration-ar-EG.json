@@ -1,0 +1,408 @@
+{
+  "stepId": "S3-11",
+  "locale": "ar-EG",
+  "source": {
+    "locale": "ar-EG",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-11-ar-EG.json",
+    "sha256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+    "bytes": 46899
+  },
+  "units": [
+    {
+      "id": "S3-11-ar-EG-E01-r1",
+      "unitId": "S3-11-ar-EG-E01-r1",
+      "stepId": "S3-11",
+      "locale": "ar-EG",
+      "semanticGroup": "E01",
+      "sourceCaseId": "carrot-two-paths",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "عميل واحد ومساران مختلفان",
+          "sha256": "f61ef5bf35507e54b0c03429890653e9ec326d8edb4f6c07055a0ab6a3ed017a"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "العميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.",
+          "sha256": "43ff45f40a9fc354e07bd2bcac37401933bf9f2c35668112d77a41b85d0f4684"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "قس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.",
+          "sha256": "6573bbfb21d38cb45b069c8587e011e564a9f677d9c93fbf0042988be334a7bc"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "مسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.",
+          "sha256": "3d5cae6d708a5ca9c283f0eb40dcf9145001c94951219d6bfff1d89c6c75199a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "مسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا.",
+          "sha256": "2fa39f3113e2a5dd2b9c2ba7d6b6b2a8183a80a8c5a3db05d41b985e4fda1f6a"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "لكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا.",
+          "sha256": "319d1a21d083ccb6253d4aa90601b87a0d548794729dfbdacb04d4c8f8930939"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "carrot-two-paths",
+        "title": "عميل واحد ومساران مختلفان",
+        "situation": "العميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.",
+        "reasoning": [
+          "قس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.",
+          "مسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.",
+          "مسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا."
+        ],
+        "takeaway": "لكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا."
+      },
+      "scientificMeaning": "عميل واحد ومساران مختلفان\n\nالعميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.\n\nقس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nمسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.\n\nمسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا.\n\nلكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا.",
+      "displayText": "عميل واحد ومساران مختلفان\n\nالعميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.\n\nقس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nمسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.\n\nمسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا.\n\nلكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا.",
+      "captionText": "عميل واحد ومساران مختلفان\n\nالعميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.\n\nقس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nمسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.\n\nمسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا.\n\nلكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا.",
+      "spokenText": "عميل واحد وطريقين مختلفين\n\nالعميل عايز جزر في تربة طينية تقيلة مشيت عليها آلات. الجذور متفرعة والأرض بتفضل مبلولة.\n\nقيس عمق الدمك، والبلل، والصرف، وخواص التربة الكيميائية، والموسم. ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nفي طريق التحسين: غيّر مسار المرور، وفكّر في مادة عضوية مفحوصة، وحوض نمو مرتفع له صرف وتصميم. أرقام الأصل أمثلة للدراسة بس.\n\nوفي طريق البديل: جرّب ورقيات على خطوط صرفها كويس أو فاصوليا محلية مناسبة. الأرز أو القلقاس يتجرّبوا بس لو الجو ونظام المَيّه مناسبين. ما تعتبرش إن الفاصوليا بتتحمل الغمر تلقائي.\n\nكل طريق ليه سبب وشرط توقف. والنجاح والتكلفة محتاجين تحقق حسب المكان.",
+      "spokenTextSHA256": "cfa17f83e6c3d10f937ff99980599caca671e5eb3bbdf739d88a66382c50bcc2",
+      "spokenTextSha256": "cfa17f83e6c3d10f937ff99980599caca671e5eb3bbdf739d88a66382c50bcc2",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "907e6d0dac1be3d5da25e7396ac7e1745d53d05fd8de137f2838ad0dc0afb414",
+      "requestFingerprintSha256": "907e6d0dac1be3d5da25e7396ac7e1745d53d05fd8de137f2838ad0dc0afb414",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "عميل واحد ومساران مختلفان\n\nالعميل يريد جزرًا في طين ثقيل مشى عليه آلات، والجذور متفرعة والأرض بتفضل مبلولة.\n\nقس عمق الدمك والبلل والصرف والكيمياء والموسم؛ ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nمسار التحسين: حوّل المرور وفكر في مادة عضوية مفحوصة وحوض نمو مرتفع له صرف وتصميم؛ أرقام الأصل أمثلة دراسة فقط.\n\nمسار البديل: جرّب ورقيات على خطوط مصروفة أو فاصوليا محلية مناسبة، أو أرز/قلقاس فقط لو الجو ونظام الماء مناسبين؛ الفاصوليا مش متحملة غمرًا تلقائيًا.\n\nلكل مسار سبب وشرط توقف؛ النجاح والتكلفة يحتاجوا تحققًا محليًا.",
+          "spoken": "عميل واحد وطريقين مختلفين\n\nالعميل عايز جزر في تربة طينية تقيلة مشيت عليها آلات. الجذور متفرعة والأرض بتفضل مبلولة.\n\nقيس عمق الدمك، والبلل، والصرف، وخواص التربة الكيميائية، والموسم. ما تفترضش إن كلمة طين هي السبب الوحيد.\n\nفي طريق التحسين: غيّر مسار المرور، وفكّر في مادة عضوية مفحوصة، وحوض نمو مرتفع له صرف وتصميم. أرقام الأصل أمثلة للدراسة بس.\n\nوفي طريق البديل: جرّب ورقيات على خطوط صرفها كويس أو فاصوليا محلية مناسبة. الأرز أو القلقاس يتجرّبوا بس لو الجو ونظام المَيّه مناسبين. ما تعتبرش إن الفاصوليا بتتحمل الغمر تلقائي.\n\nكل طريق ليه سبب وشرط توقف. والنجاح والتكلفة محتاجين تحقق حسب المكان.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "34ca26de67c0c5ed61e679108b50ca477e2df95faab5ce5ce08ad1fc27d6a2dc",
+              "revisedSpokenSHA256": "cfa17f83e6c3d10f937ff99980599caca671e5eb3bbdf739d88a66382c50bcc2",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-11-ar-EG-E02-r1",
+      "unitId": "S3-11-ar-EG-E02-r1",
+      "stepId": "S3-11",
+      "locale": "ar-EG",
+      "semanticGroup": "E02",
+      "sourceCaseId": "path-three-stage",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "ثلاث مراحل مش علاج سحري",
+          "sha256": "80e0b4549d15e50c485aed04f478dcb5752cf5f24f3399e545c95c6152dd97a5"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "ممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.",
+          "sha256": "a213e5146218f511e994d8f29b8f21f797b4038a702d316e7d1736266199b7af"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "خط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.",
+          "sha256": "c647e0b3d7ac3f04ec4ee90b8bf8de618af894b6395065ac5bedfef9ff03c857"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "اختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.",
+          "sha256": "84bf2575a57d2f31c7982c1f5724b85f834eabceab3e73d036e50463675d42ad"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "أعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة.",
+          "sha256": "fa315d4917a5088b236b72b38d4059e0e4ee3eef63319edacb0845728dc8eaab"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "الكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا.",
+          "sha256": "e3d13ea7ecf709d69baeef8095ce9031ff1eb355d7575f624a6848e112d3a9a2"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "path-three-stage",
+        "title": "ثلاث مراحل مش علاج سحري",
+        "situation": "ممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.",
+        "reasoning": [
+          "خط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.",
+          "اختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.",
+          "أعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة."
+        ],
+        "takeaway": "الكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا."
+      },
+      "scientificMeaning": "ثلاث مراحل مش علاج سحري\n\nممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.\n\nخط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.\n\nاختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.\n\nأعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة.\n\nالكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا.",
+      "displayText": "ثلاث مراحل مش علاج سحري\n\nممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.\n\nخط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.\n\nاختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.\n\nأعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة.\n\nالكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا.",
+      "captionText": "ثلاث مراحل مش علاج سحري\n\nممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.\n\nخط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.\n\nاختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.\n\nأعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة.\n\nالكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا.",
+      "spokenText": "تلات مراحل، مش علاج سحري\n\nفيه ممر آلات قديم، المادة العضوية فيه قليلة. بنفكر في تحويله لزراعة خضار خلال مدة من تلات لست شهور.\n\nابدأ بخط أساس للجذور والتربة. امنع المرور، وافحص الرطوبة والصرف.\n\nاختار محسّن موثّق، وغطاء أو حوض. والإجراء الميكانيكي المضبوط يكون عند الحاجة بس وفي ظروف مناسبة.\n\nاعمل الفحوص تاني، ولاحظ الجذور والمَيّه وقارن بخط الأساس. وبعدها جرّب محصول أو غيّر المدة.\n\nالكمبوست ممكن يساعد في المادة العضوية، لكن العناصر اللي فيه بتتغير. السماد المعدني المستهدف ممكن يعالج نقص عنصر، لكنه ما يعالجش فعليًا طبقة مدكوكة.",
+      "spokenTextSHA256": "41579c6518f4e3ad419a73320b9960a34ca68f2b19cf7a9c87f4f2634114bd07",
+      "spokenTextSha256": "41579c6518f4e3ad419a73320b9960a34ca68f2b19cf7a9c87f4f2634114bd07",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "6c4a6df7a81670f2d53bd4330dec4d67fb0f5af1c140bb433e4c9f124667c000",
+      "requestFingerprintSha256": "6c4a6df7a81670f2d53bd4330dec4d67fb0f5af1c140bb433e4c9f124667c000",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "ثلاث مراحل مش علاج سحري\n\nممر آلات سابق قليل OM بنفكر نحوله لخضار في ٣–٦ شهور.\n\nخط أساس للجذور والتربة، ومنع المرور، وفحص الرطوبة والصرف.\n\nاختار محسنًا موثقًا وغطاءً أو حوضًا، وإجراء ميكانيكيًا مضبوطًا فقط عند الحاجة وفي ظروف مناسبة.\n\nأعد الفحوص وشاهد الجذور والماء وقارن بخط الأساس، وبعدها جرّب محصولًا أو غيّر المدة.\n\nالكمبوست قد يساعد OM وعناصره متغيرة؛ السماد المعدني المستهدف قد يعالج نقص عنصر لكنه ما بيعالجش طبقة مدكوكة فعليًا.",
+          "spoken": "تلات مراحل، مش علاج سحري\n\nفيه ممر آلات قديم، المادة العضوية فيه قليلة. بنفكر في تحويله لزراعة خضار خلال مدة من تلات لست شهور.\n\nابدأ بخط أساس للجذور والتربة. امنع المرور، وافحص الرطوبة والصرف.\n\nاختار محسّن موثّق، وغطاء أو حوض. والإجراء الميكانيكي المضبوط يكون عند الحاجة بس وفي ظروف مناسبة.\n\nاعمل الفحوص تاني، ولاحظ الجذور والمَيّه وقارن بخط الأساس. وبعدها جرّب محصول أو غيّر المدة.\n\nالكمبوست ممكن يساعد في المادة العضوية، لكن العناصر اللي فيه بتتغير. السماد المعدني المستهدف ممكن يعالج نقص عنصر، لكنه ما يعالجش فعليًا طبقة مدكوكة.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "٣",
+            "٦"
+          ],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "652abed5e42f36a87a7779b74beb8c66ee1e4c2b2f4fc08d07a0c803551b6c81",
+              "revisedSpokenSHA256": "41579c6518f4e3ad419a73320b9960a34ca68f2b19cf7a9c87f4f2634114bd07",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    },
+    {
+      "id": "S3-11-ar-EG-E03-r1",
+      "unitId": "S3-11-ar-EG-E03-r1",
+      "stepId": "S3-11",
+      "locale": "ar-EG",
+      "semanticGroup": "E03",
+      "sourceCaseId": "rocky-slope",
+      "sourceWholeFileSHA256": "c5d87f7ca876806a6556860ec0a8fc0c2ce220ad73aabb0f41b222be3d8b4feb",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "اختار استخدامًا يحافظ على التربة",
+          "sha256": "2b05ec518053c175e5d859a56240bdd091f06b31a7ed30bc599fd9b20114d217"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "البنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.",
+          "sha256": "4ef7fcb05adc0d7e91eaf35011d4587e877aff79c85c937f7dd0d53d47aa97d7"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "قارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.",
+          "sha256": "c6d582a239fa3134e7a03a91a66648904934ad7bb622aad3b9b6d1648ae122a5"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "غطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.",
+          "sha256": "76d2b784f626eb57dbc297aadff384845251633fe7be36c46c9e46d40ecccedc"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "حافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل.",
+          "sha256": "801ca00705889c6e3ddeb33adac18adaa0c2a06b0d701662f9458e962f0263a5"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "غطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف.",
+          "sha256": "265f01a1096bf8ab0f059fa88e566b0d38bb808d14fba45d1c7c3f2e88989056"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "rocky-slope",
+        "title": "اختار استخدامًا يحافظ على التربة",
+        "situation": "البنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.",
+        "reasoning": [
+          "قارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.",
+          "غطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.",
+          "حافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل."
+        ],
+        "takeaway": "غطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف."
+      },
+      "scientificMeaning": "اختار استخدامًا يحافظ على التربة\n\nالبنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.\n\nقارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.\n\nحافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل.\n\nغطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف.",
+      "displayText": "اختار استخدامًا يحافظ على التربة\n\nالبنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.\n\nقارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.\n\nحافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل.\n\nغطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف.",
+      "captionText": "اختار استخدامًا يحافظ على التربة\n\nالبنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.\n\nقارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.\n\nحافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل.\n\nغطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف.",
+      "spokenText": "اختار استخدام يحافظ على التربة\n\nبنك الأسئلة بيوصف منحدر صخري، تربته ضحلة، ومن غير دليل على طبقة عميقة للزراعة.\n\nقارن الجزر أو البطاطس، والذرة، وحقل الأرز، ومرعى الحشائش أو الأعشاب، حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت ومناسب للمكان، ممكن يبقى نقطة بداية أقل تعرية. افحص النوع والمَيّه وتنظيم الرعي.\n\nحافظ على المخلفات وقلّل التقليب لما يكون مناسب، ومعاه خطة لجريان المَيّه وتأسيس الغطاء. الزراعة من غير حرث لوحدها مش تصميم صرف كامل.\n\nغطاء المرعى بشروطه، في المنحدر الضحل الموصوف ده، اختيار أقوى من محصول سنوي جذره عميق أو محصول مغمور.",
+      "spokenTextSHA256": "2082acd7629f766e23afe5efe310954a0be3683e6e2c3381fa1f2e0d45056f9a",
+      "spokenTextSha256": "2082acd7629f766e23afe5efe310954a0be3683e6e2c3381fa1f2e0d45056f9a",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.",
+      "requestFingerprintSHA256": "757ed6fad39ea1a8834bd9d876edf82d3d112372ff8f2a01b185232e5291526d",
+      "requestFingerprintSha256": "757ed6fad39ea1a8834bd9d876edf82d3d112372ff8f2a01b185232e5291526d",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "اختار استخدامًا يحافظ على التربة\n\nالبنك يصف منحدرًا صخريًا تربته ضحلة ولا يثبت طبقة عميقة للزراعة.\n\nقارن الجزر/البطاطس والذرة وحقل الأرز ومرعى الحشائش/الأعشاب حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت محليًا نقطة بداية أقل تعرية؛ افحص النوع والماء وتنظيم الرعي.\n\nحافظ على المخلفات وقلل التقليب حين يناسب، مع خطة لجريان الماء وتأسيس الغطاء؛ الزراعة من غير حرث وحدها مش تصميم صرف كامل.\n\nغطاء مرعى مشروط أقوى من محصول سنوي عميق الجذر أو مغمور في المنحدر الضحل الموصوف.",
+          "spoken": "اختار استخدام يحافظ على التربة\n\nبنك الأسئلة بيوصف منحدر صخري، تربته ضحلة، ومن غير دليل على طبقة عميقة للزراعة.\n\nقارن الجزر أو البطاطس، والذرة، وحقل الأرز، ومرعى الحشائش أو الأعشاب، حسب الجذور وتقليب التربة.\n\nغطاء نباتي ثابت ومناسب للمكان، ممكن يبقى نقطة بداية أقل تعرية. افحص النوع والمَيّه وتنظيم الرعي.\n\nحافظ على المخلفات وقلّل التقليب لما يكون مناسب، ومعاه خطة لجريان المَيّه وتأسيس الغطاء. الزراعة من غير حرث لوحدها مش تصميم صرف كامل.\n\nغطاء المرعى بشروطه، في المنحدر الضحل الموصوف ده، اختيار أقوى من محصول سنوي جذره عميق أو محصول مغمور.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": [
+            "ManuallyadaptedfullcoherentpassagetonaturalEgyptianwithsamefullsourcecasefacts.",
+            {
+              "priorSpokenSHA256": "a427b71b8bbb13136514f151939a0ac29ea5b80a693c199f4a48d120cc70700d",
+              "revisedSpokenSHA256": "2082acd7629f766e23afe5efe310954a0be3683e6e2c3381fa1f2e0d45056f9a",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "84d6988005da8adcef9bc6cb393e74f188efd4a0a898d7a38a6c68a737a2b786",
+      "sourcePlan": "provenance/narration-ar-EG.json"
+    }
+  ]
+}

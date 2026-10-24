@@ -1,0 +1,383 @@
+{
+  "stepId": "S3-11",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-11-en.json",
+    "sha256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+    "bytes": 34263
+  },
+  "units": [
+    {
+      "id": "S3-11-en-E01-r1",
+      "unitId": "S3-11-en-E01-r1",
+      "stepId": "S3-11",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "carrot-two-paths",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "One client, two distinct paths",
+          "sha256": "5a16fb7d2b271646cbc77973d180f72c7603de4e5d118ebc279572f135091940"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Carrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.",
+          "sha256": "6f502424cd9402a6d86fc3a56b886974232fa372c45be6f6b82b9764a80d85c0"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Measure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.",
+          "sha256": "a0afb7a7d169dd04f0eea68742c0bc728de15dd7b407f475d7bb5b5eb48123f4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Management path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.",
+          "sha256": "0ce597367617f90d06a14d4c3ee162ddaf13d53675eed0d950c58bce475dbcd4"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Alternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant.",
+          "sha256": "7761435778791fea672cc8e240482881e6a5ae5b3baffaddcbeb4cadd7f917c7"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Both paths have a reason and a stop condition; success and cost require local verification.",
+          "sha256": "b34a293b08175f300c86b5874fd3c19b2d899664c02b513715de0c1fbece7976"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "carrot-two-paths",
+        "title": "One client, two distinct paths",
+        "situation": "Carrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.",
+        "reasoning": [
+          "Measure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.",
+          "Management path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.",
+          "Alternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant."
+        ],
+        "takeaway": "Both paths have a reason and a stop condition; success and cost require local verification."
+      },
+      "scientificMeaning": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+      "displayText": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+      "captionText": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+      "spokenText": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness and drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice or taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+      "spokenTextSHA256": "2072e1a4b20f65f03355e6958d663ed44458ed73571da1ccf51c385429cbe94c",
+      "spokenTextSha256": "2072e1a4b20f65f03355e6958d663ed44458ed73571da1ccf51c385429cbe94c",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "cb0b1dbac910bf5a2ee11fd0378d2b6b43a95ca89b8ea6aef128efa419776dcd",
+      "requestFingerprintSha256": "cb0b1dbac910bf5a2ee11fd0378d2b6b43a95ca89b8ea6aef128efa419776dcd",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness/drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice/taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+          "spoken": "One client, two distinct paths\n\nCarrots are wanted in heavy clay used by machinery; roots are forked and the site stays wet.\n\nMeasure compaction depth, wetness and drainage, chemistry and growing-season constraints rather than assuming clay texture is the sole cause.\n\nManagement path: redirect traffic, consider tested organic input and a drained, designed raised growing zone; retain the source's dimensions only as provisional study examples.\n\nAlternative path: assess a locally suitable drained-row leafy crop or bean, or managed rice or taro only with a suitable climate and water system; do not call beans flood-tolerant.\n\nBoth paths have a reason and a stop condition; success and cost require local verification.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-E02-r1",
+      "unitId": "S3-11-en-E02-r1",
+      "stepId": "S3-11",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "path-three-stage",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Three stages, not a miracle cure",
+          "sha256": "e4ae2d8958d322219db3842ac38661e6072f11449652ac0ef35ad30e292902b0"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A low-OM former machinery path is to be considered for vegetables over 3–6 months.",
+          "sha256": "5987b8c94754df670beae15961b8a9ac404c25a22452e6cad0fc4c54567fb0ad"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Baseline root and soil tests, traffic stop and moisture/drainage diagnosis.",
+          "sha256": "1e024ea448b723bd2e0876d38ad8ab04420dfd6dfa93688f23b991425cf66b6a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Select and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.",
+          "sha256": "abcc4ed2ee80efa959914c2a1ea0dc0f423ca68ac00235ef5aeea2e950c2b06a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Retest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.",
+          "sha256": "2116e96cab669c5379d7cec529a120cad12b11fdb6e02dd533621ddec42a5246"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Compost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+          "sha256": "42a4b8c3ea2ce84a0310f90665f57e528004d7d9d5978c5b86e1f782a285c63f"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "path-three-stage",
+        "title": "Three stages, not a miracle cure",
+        "situation": "A low-OM former machinery path is to be considered for vegetables over 3–6 months.",
+        "reasoning": [
+          "Baseline root and soil tests, traffic stop and moisture/drainage diagnosis.",
+          "Select and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.",
+          "Retest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable."
+        ],
+        "takeaway": "Compost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer."
+      },
+      "scientificMeaning": "Three stages, not a miracle cure\n\nA low-OM former machinery path is to be considered for vegetables over 3–6 months.\n\nBaseline root and soil tests, traffic stop and moisture/drainage diagnosis.\n\nSelect and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+      "displayText": "Three stages, not a miracle cure\n\nA low-OM former machinery path is to be considered for vegetables over 3–6 months.\n\nBaseline root and soil tests, traffic stop and moisture/drainage diagnosis.\n\nSelect and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+      "captionText": "Three stages, not a miracle cure\n\nA low-OM former machinery path is to be considered for vegetables over 3–6 months.\n\nBaseline root and soil tests, traffic stop and moisture/drainage diagnosis.\n\nSelect and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+      "spokenText": "Three stages, not a miracle cure\n\nA low-organic matter former machinery path is to be considered for vegetables over three to six months.\n\nBaseline root and soil tests, traffic stop and moisture and drainage diagnosis.\n\nSelect and document amendments, cover or bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+      "spokenTextSHA256": "99cc96415d001b67b81a7a62e18c99ec4fefd0e5642420877d9a4080dab50d16",
+      "spokenTextSha256": "99cc96415d001b67b81a7a62e18c99ec4fefd0e5642420877d9a4080dab50d16",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "7719288dcf63b2b4af48bbd24bfd03b18955327be2685677cd6c4fb5fda0de9a",
+      "requestFingerprintSha256": "7719288dcf63b2b4af48bbd24bfd03b18955327be2685677cd6c4fb5fda0de9a",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Three stages, not a miracle cure\n\nA low-OM former machinery path is to be considered for vegetables over 3–6 months.\n\nBaseline root and soil tests, traffic stop and moisture/drainage diagnosis.\n\nSelect and document amendments, cover/bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+          "spoken": "Three stages, not a miracle cure\n\nA low-organic matter former machinery path is to be considered for vegetables over three to six months.\n\nBaseline root and soil tests, traffic stop and moisture and drainage diagnosis.\n\nSelect and document amendments, cover or bed and if justified a controlled physical action under suitable conditions.\n\nRetest, observe roots and water, compare with baseline and only then trial a crop or revise the timetable.\n\nCompost can aid organic matter and supply variable nutrients; targeted mineral fertilizer may address nutrient deficiency but not a compacted layer.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "3",
+            "6"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-11-en-E03-r1",
+      "unitId": "S3-11-en-E03-r1",
+      "stepId": "S3-11",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "rocky-slope",
+      "sourceWholeFileSHA256": "2d3952861a1a13e422c83fabb6ad737d184532632aebfb3c9bb78d618fb02cfc",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Choose a land use that holds soil",
+          "sha256": "546f52e8bdbf2f54e7ffd6c8b13cfa0ad88e81c05c75e90330a0eb66e0bd3bf7"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.",
+          "sha256": "dfa9a3c4ec16e5e6016de55fbeb09d49fa6295daa17775a73f25565bf51df52d"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Compare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.",
+          "sha256": "e526902611122b1faa51ef301bdb5949c95c7c1f9e6d0d316d2d4cb5e48e67d2"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Select a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.",
+          "sha256": "c0eb3d181e2e0cc93ef2fa8bb30fb11b3ffda4c169d07ab1ee7108fcb3417172"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Retain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.",
+          "sha256": "61ec8977693f5a39ed5e23bd2346236a0b61a62a77e0f2577d9c295608aed91b"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Conditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+          "sha256": "4a37ce0b87088f6647445450c4df58834b0f39fc65c63cd97b2bd42e428b96f1"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "rocky-slope",
+        "title": "Choose a land use that holds soil",
+        "situation": "The bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.",
+        "reasoning": [
+          "Compare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.",
+          "Select a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.",
+          "Retain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design."
+        ],
+        "takeaway": "Conditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope."
+      },
+      "scientificMeaning": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+      "displayText": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+      "captionText": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+      "spokenText": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots or potatoes, corn, rice paddy and pasture-grass or herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture or ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+      "spokenTextSHA256": "fcf4ac59252e993a960fc54d34aeb778c19fc81375fb2e5a2030d56abbaa6c55",
+      "spokenTextSha256": "fcf4ac59252e993a960fc54d34aeb778c19fc81375fb2e5a2030d56abbaa6c55",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "88eb466dce047ab800205ffdda8108975c18a7be0482bdc6eeed2ef5eac8948f",
+      "requestFingerprintSha256": "88eb466dce047ab800205ffdda8108975c18a7be0482bdc6eeed2ef5eac8948f",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots/potatoes, corn, rice paddy and pasture-grass/herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture/ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+          "spoken": "Choose a land use that holds soil\n\nThe bank describes a very shallow, rocky hillside with no demonstrated deep cultivation layer.\n\nCompare the bank's carrots or potatoes, corn, rice paddy and pasture-grass or herb alternatives by rooting zone and disturbance.\n\nSelect a locally adapted, established vegetative cover as the initial lower-erosion option; verify species, water and grazing management.\n\nRetain residue and minimize disturbance where feasible, but plan runoff control and establishment; no-till alone is not a complete engineering design.\n\nConditional pasture or ground cover is stronger than a deep-rooted or flooded annual crop for this described shallow slope.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}
