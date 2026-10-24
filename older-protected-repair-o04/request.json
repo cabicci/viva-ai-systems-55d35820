@@ -1,0 +1,178 @@
+{
+  "schemaVersion": 1,
+  "scope": "OWNER_ROOT_TEXT_APPROVED_OLDER_PROTECTED_O04_ONE_COHERENT_REPAIR",
+  "stepId": "S3-13",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "repositoryId": 1272666418,
+  "branch": "refs/heads/work/soil-older-protected-repair-o04-20261024-r1",
+  "model": "gemini-3.8-flash-tts",
+  "maximumTTSCalls": 1,
+  "maximumBlindAudioReviewCalls": 1,
+  "maximumASRInvocations": 1,
+  "maximumMetadataGETCalls": 2,
+  "automaticRetries": 0,
+  "automaticReruns": 0,
+  "executionOrder": "ONE_GATED_SUBPASSAGE_TTS_IMMEDIATE_IMMUTABLE_UPLOAD_THEN_DIAGNOSTICS",
+  "units": [
+    {
+      "id": "S3-13-ar-EG-E03-weed-situation-onepass-r1",
+      "unitId": "S3-13-ar-EG-E03-weed-situation-onepass-r1",
+      "stepId": "S3-13",
+      "locale": "ar-EG",
+      "semanticGroup": "O04-bounded-source-completion",
+      "sourceCaseId": "service",
+      "sourceWholeFileSHA256": "480a21338a1b7441cff6fb34e7ef9ae1cb50d25fda5a1a5f0078d65d07cb720f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "سعّر الخدمة من مدخلات حقيقية فقط",
+          "sha256": "f707337671a9d6ed734dbdca791347e6f670ef928918a490aacd0d5e5f1f46e1"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "طالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.",
+          "sha256": "ee41836223d450a38db8521797fd5718cf78c824ac0bb8058c4d9f978e3acaac"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "سجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.",
+          "sha256": "7945f2e48417cb5bc325e06389b46f52a6c8ac84cdd5b97f9a0d6ab62f28ea12"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "فرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.",
+          "sha256": "710ce9267da2a9e0988bf96d677df9566d5f75292c4f85e1a8941b2b6340d12c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "اطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.",
+          "sha256": "00722134579843babbb41a66525fb690450507093ad7b3cf13662e9940203337"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "قالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+          "sha256": "c6507e4298533deaeed938fc6217972e13439f2a06ed0dee5a81fddfe1af1b72"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "service",
+        "title": "سعّر الخدمة من مدخلات حقيقية فقط",
+        "situation": "طالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.",
+        "reasoning": [
+          "سجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.",
+          "فرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.",
+          "اطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح."
+        ],
+        "takeaway": "قالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون."
+      },
+      "scientificMeaning": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "displayText": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "captionText": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+      "spokenText": "طالب بيقترح خدمة إزالة الحشايش لقطع أرض صغيرة وقريبة.",
+      "spokenTextSHA256": "7fa7a2f4185e88fa075466a678ca193b6b468129097132eb95c371a94d7cbc62",
+      "spokenTextSha256": "7fa7a2f4185e88fa075466a678ca193b6b468129097132eb95c371a94d7cbc62",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّس بيشرح لطلبة تعليم فني زراعي بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلمات اليومية اللّي المصريين بينطقوها كده. نبرة دافية وسرعة متوسّطة ووقفات طبيعية. راعي الشدّات من غير مبالغة أو تطويل. حافظ على كلّ النفي والشروط وحدود التدريب. اقرأ نصّ الإلقاء بسّ، من غير مقدّمة أو تعليق أو قراءة التعليمات. بلاش فصحى أو لهجة خليجية أو نبرة نشرات الأخبار. اشرح النص كله كجزء واحد متصل، من غير تمثيل شخصيات أو إضافة نصايح طبية.\nانطق الحشايش بوضوح طبيعي في جملة إزالة الحشايش. حافظ على قطع أرض صغيرة وقريبة، وما تغيّرش أي أرقام أو شروط.",
+      "requestFingerprintSHA256": "c66bfdec87cdf967b174b220bcb597bb4e8f122f0800784b15b9e4bbaf30baff",
+      "requestFingerprintSha256": "c66bfdec87cdf967b174b220bcb597bb4e8f122f0800784b15b9e4bbaf30baff",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "سعّر الخدمة من مدخلات حقيقية فقط\n\nطالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة.\n\nسجّل مساحة العمل الفعلية والصفوف المناسبة وزمن التجهيز والنقل والعمالة والصيانة.\n\nفرق بين سعة خزان المصنع ٢٫٤ لتر وبين استهلاك لتر/ساعة مقاس، وبين ٢٫٣ لتر/ساعة غير مثبتة لـSER في الأصل.\n\nاطلب أسعار الوقود والعمالة المحلية واحتياطًا للأعطال والوقاية والنقل قبل السعر والربح.\n\nقالب حساب شفاف؛ لا تكلفة مخترعة ولا ربح مضمون.",
+          "spoken": "طالب بيقترح خدمة إزالة الحشايش لقطع أرض صغيرة وقريبة.",
+          "occurrences": 1,
+          "purpose": "Exact root-read spoken source completion only. Repair parent bindings describe context; all outside original PCM remains preserved. For new S308 supplement, reading and upfront UI bind the same A/B concept, narrated once without claiming a worked-case solution."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "3853acd1c79bf370e64126b55f434b2336caa988057cf6a2efeec0a68439f95f",
+      "sourcePlan": "provenance/narration-ar-EG.json",
+      "sourcePlanSha256": "278de6da381898bece692b5add3b8f64a234f0ba8eef8d732aa22f7ab7ed1d67",
+      "sourceCanonicalPath": "Worktrees\\soil-course-pipeline-20261013\\experiments\\course-pipeline\\rebuild\\pilot\\src\\draft-content\\S3-13-ar-EG.json",
+      "actualAudio": null,
+      "timings": null,
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-13-ar-EG-E03-r1",
+      "originalSpokenWholeSHA256": "18a6d9710374cd83c07e3d07afd43ae72ca5d88dc256ca3eaa16f18e91f61b49",
+      "exactParentSpokenCharacterSlice": {
+        "first": 34,
+        "endExclusive": 83,
+        "text": "طالب يقترح خدمة إزالة حشائش لقطع أرض صغيرة قريبة."
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_BOUNDARIES",
+      "ordinaryUpfrontSourceSupplement": false,
+      "gatedPlaybackOnly": true,
+      "ordinaryLinearVideoAllowed": false,
+      "gatedOriginalUnitId": "S3-13-ar-EG-E03-r1",
+      "sourceCaseIndex": 2,
+      "answerSubpassageOnly": true,
+      "deliverySHA256": "3853acd1c79bf370e64126b55f434b2336caa988057cf6a2efeec0a68439f95f"
+    }
+  ],
+  "assemblyPerformed": false,
+  "sourceAndAssessmentFilesChanged": false,
+  "automaticAdoption": false,
+  "maximumCallsPerLane": {
+    "TTS": 1,
+    "blind": 1,
+    "ASR": 1,
+    "metadataGET": 2
+  },
+  "fixedLocaleLanes": {
+    "ar-EG": [
+      "S3-13-ar-EG-E03-weed-situation-onepass-r1"
+    ]
+  },
+  "crossLaneFailureScope": "Each lane independently stops on its confirmed shared-provider failure; no cross-job shared stop state. All aggregate counts remain bounded.",
+  "artifactPackaging": "ONE_FULL_IMMUTABLE_AUDIO_PER_UNIT_THIN_DIAGNOSTIC_AND_COMPLETE_REFERENCES_V1",
+  "duplicateExclusionProof": "EXACT_FINGERPRINT_PRIVATE_PREPUBLICATION_AUDIT_NO_REUSABLE_MATCH"
+}
