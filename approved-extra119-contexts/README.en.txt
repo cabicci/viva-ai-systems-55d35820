@@ -1,0 +1,1 @@
+Exact119 owner-approved existing-PCM diagnostics, one source-free review each, zero TTS/ASR/GET/retry. Original PCM and past attempts preserved. Six protected-case excerpts never enter ordinary learner reels. Only reviewed narrow job payload; root exact review before dispatch.

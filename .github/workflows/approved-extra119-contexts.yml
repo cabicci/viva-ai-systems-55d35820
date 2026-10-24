@@ -1,0 +1,2294 @@
+name: Approved119 finite extra source-free audio checks
+'on':
+  push:
+    branches:
+    - work/soil-approved-extra119-contexts-20261024-r1
+    paths:
+    - approved-extra119-contexts/request.json
+permissions:
+  contents: read
+concurrency:
+  group: approved-extra119-contexts-e53e6d5a6980d2f9113d82f52d4bd9416d8e614b1a9361d60e57e4c662369bf9
+  cancel-in-progress: false
+env:
+  PACKAGE: approved-extra119-contexts
+  REQUEST_SHA: e53e6d5a6980d2f9113d82f52d4bd9416d8e614b1a9361d60e57e4c662369bf9
+  WORKER_SHA: 02b2edcf9173fcf3139d61636f789f6636d27255536eec77e4a331fbf90a531c
+  FREEZE_SHA: f1d39744892a7121e0ade745d5b04d5933b7e06e4d0c2aaff8060f5f8aeb4650
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820'
+      && github.ref == 'refs/heads/work/soil-approved-extra119-contexts-20261024-r1' && github.event.created == true && github.event.before
+      == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 100
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Verify exact original sixsecond PCM and finitebudget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Preserve exact context before onlyreview
+      id: audio
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-r1-inputs
+        path: ${{ env.PACKAGE }}/inputs/
+        if-no-files-found: error
+        retention-days: 30
+    - name: Record immutable context upload
+      id: receipt
+      env:
+        AID: ${{ steps.audio.outputs.artifact-id }}
+        DIGEST: ${{ steps.audio.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One source-free extra review C072
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C072
+
+        '
+    - name: Preserve exact diagnostic C072
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C072-evidence
+        path: ${{ env.PACKAGE }}/output/C072/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C001
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C001
+
+        '
+    - name: Preserve exact diagnostic C001
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C001-evidence
+        path: ${{ env.PACKAGE }}/output/C001/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C002
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C002
+
+        '
+    - name: Preserve exact diagnostic C002
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C002-evidence
+        path: ${{ env.PACKAGE }}/output/C002/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C003
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C003
+
+        '
+    - name: Preserve exact diagnostic C003
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C003-evidence
+        path: ${{ env.PACKAGE }}/output/C003/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C004
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C004
+
+        '
+    - name: Preserve exact diagnostic C004
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C004-evidence
+        path: ${{ env.PACKAGE }}/output/C004/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C005
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C005
+
+        '
+    - name: Preserve exact diagnostic C005
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C005-evidence
+        path: ${{ env.PACKAGE }}/output/C005/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C006
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C006
+
+        '
+    - name: Preserve exact diagnostic C006
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C006-evidence
+        path: ${{ env.PACKAGE }}/output/C006/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C007
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C007
+
+        '
+    - name: Preserve exact diagnostic C007
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C007-evidence
+        path: ${{ env.PACKAGE }}/output/C007/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C008
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C008
+
+        '
+    - name: Preserve exact diagnostic C008
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C008-evidence
+        path: ${{ env.PACKAGE }}/output/C008/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C009
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C009
+
+        '
+    - name: Preserve exact diagnostic C009
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C009-evidence
+        path: ${{ env.PACKAGE }}/output/C009/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C010
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C010
+
+        '
+    - name: Preserve exact diagnostic C010
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C010-evidence
+        path: ${{ env.PACKAGE }}/output/C010/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C011
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C011
+
+        '
+    - name: Preserve exact diagnostic C011
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C011-evidence
+        path: ${{ env.PACKAGE }}/output/C011/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C012
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C012
+
+        '
+    - name: Preserve exact diagnostic C012
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C012-evidence
+        path: ${{ env.PACKAGE }}/output/C012/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C013
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C013
+
+        '
+    - name: Preserve exact diagnostic C013
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C013-evidence
+        path: ${{ env.PACKAGE }}/output/C013/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C014
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C014
+
+        '
+    - name: Preserve exact diagnostic C014
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C014-evidence
+        path: ${{ env.PACKAGE }}/output/C014/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C015
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C015
+
+        '
+    - name: Preserve exact diagnostic C015
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C015-evidence
+        path: ${{ env.PACKAGE }}/output/C015/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C016
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C016
+
+        '
+    - name: Preserve exact diagnostic C016
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C016-evidence
+        path: ${{ env.PACKAGE }}/output/C016/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C017
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C017
+
+        '
+    - name: Preserve exact diagnostic C017
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C017-evidence
+        path: ${{ env.PACKAGE }}/output/C017/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C018
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C018
+
+        '
+    - name: Preserve exact diagnostic C018
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C018-evidence
+        path: ${{ env.PACKAGE }}/output/C018/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C019
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C019
+
+        '
+    - name: Preserve exact diagnostic C019
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C019-evidence
+        path: ${{ env.PACKAGE }}/output/C019/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C020
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C020
+
+        '
+    - name: Preserve exact diagnostic C020
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C020-evidence
+        path: ${{ env.PACKAGE }}/output/C020/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C021
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C021
+
+        '
+    - name: Preserve exact diagnostic C021
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C021-evidence
+        path: ${{ env.PACKAGE }}/output/C021/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C022
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C022
+
+        '
+    - name: Preserve exact diagnostic C022
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C022-evidence
+        path: ${{ env.PACKAGE }}/output/C022/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C023
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C023
+
+        '
+    - name: Preserve exact diagnostic C023
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C023-evidence
+        path: ${{ env.PACKAGE }}/output/C023/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C024
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C024
+
+        '
+    - name: Preserve exact diagnostic C024
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C024-evidence
+        path: ${{ env.PACKAGE }}/output/C024/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C025
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C025
+
+        '
+    - name: Preserve exact diagnostic C025
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C025-evidence
+        path: ${{ env.PACKAGE }}/output/C025/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C026
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C026
+
+        '
+    - name: Preserve exact diagnostic C026
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C026-evidence
+        path: ${{ env.PACKAGE }}/output/C026/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C027
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C027
+
+        '
+    - name: Preserve exact diagnostic C027
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C027-evidence
+        path: ${{ env.PACKAGE }}/output/C027/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C028
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C028
+
+        '
+    - name: Preserve exact diagnostic C028
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C028-evidence
+        path: ${{ env.PACKAGE }}/output/C028/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C029
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C029
+
+        '
+    - name: Preserve exact diagnostic C029
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C029-evidence
+        path: ${{ env.PACKAGE }}/output/C029/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C030
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C030
+
+        '
+    - name: Preserve exact diagnostic C030
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C030-evidence
+        path: ${{ env.PACKAGE }}/output/C030/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C031
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C031
+
+        '
+    - name: Preserve exact diagnostic C031
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C031-evidence
+        path: ${{ env.PACKAGE }}/output/C031/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C032
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C032
+
+        '
+    - name: Preserve exact diagnostic C032
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C032-evidence
+        path: ${{ env.PACKAGE }}/output/C032/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C033
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C033
+
+        '
+    - name: Preserve exact diagnostic C033
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C033-evidence
+        path: ${{ env.PACKAGE }}/output/C033/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C034
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C034
+
+        '
+    - name: Preserve exact diagnostic C034
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C034-evidence
+        path: ${{ env.PACKAGE }}/output/C034/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C035
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C035
+
+        '
+    - name: Preserve exact diagnostic C035
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C035-evidence
+        path: ${{ env.PACKAGE }}/output/C035/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C036
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C036
+
+        '
+    - name: Preserve exact diagnostic C036
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C036-evidence
+        path: ${{ env.PACKAGE }}/output/C036/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C037
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C037
+
+        '
+    - name: Preserve exact diagnostic C037
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C037-evidence
+        path: ${{ env.PACKAGE }}/output/C037/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C038
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C038
+
+        '
+    - name: Preserve exact diagnostic C038
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C038-evidence
+        path: ${{ env.PACKAGE }}/output/C038/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C039
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C039
+
+        '
+    - name: Preserve exact diagnostic C039
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C039-evidence
+        path: ${{ env.PACKAGE }}/output/C039/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C040
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C040
+
+        '
+    - name: Preserve exact diagnostic C040
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C040-evidence
+        path: ${{ env.PACKAGE }}/output/C040/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C041
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C041
+
+        '
+    - name: Preserve exact diagnostic C041
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C041-evidence
+        path: ${{ env.PACKAGE }}/output/C041/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C042
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C042
+
+        '
+    - name: Preserve exact diagnostic C042
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C042-evidence
+        path: ${{ env.PACKAGE }}/output/C042/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C043
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C043
+
+        '
+    - name: Preserve exact diagnostic C043
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C043-evidence
+        path: ${{ env.PACKAGE }}/output/C043/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C044
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C044
+
+        '
+    - name: Preserve exact diagnostic C044
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C044-evidence
+        path: ${{ env.PACKAGE }}/output/C044/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C045
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C045
+
+        '
+    - name: Preserve exact diagnostic C045
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C045-evidence
+        path: ${{ env.PACKAGE }}/output/C045/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C046
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C046
+
+        '
+    - name: Preserve exact diagnostic C046
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C046-evidence
+        path: ${{ env.PACKAGE }}/output/C046/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C047
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C047
+
+        '
+    - name: Preserve exact diagnostic C047
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C047-evidence
+        path: ${{ env.PACKAGE }}/output/C047/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C048
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C048
+
+        '
+    - name: Preserve exact diagnostic C048
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C048-evidence
+        path: ${{ env.PACKAGE }}/output/C048/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C049
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C049
+
+        '
+    - name: Preserve exact diagnostic C049
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C049-evidence
+        path: ${{ env.PACKAGE }}/output/C049/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C050
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C050
+
+        '
+    - name: Preserve exact diagnostic C050
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C050-evidence
+        path: ${{ env.PACKAGE }}/output/C050/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C051
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C051
+
+        '
+    - name: Preserve exact diagnostic C051
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C051-evidence
+        path: ${{ env.PACKAGE }}/output/C051/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C052
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C052
+
+        '
+    - name: Preserve exact diagnostic C052
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C052-evidence
+        path: ${{ env.PACKAGE }}/output/C052/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C053
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C053
+
+        '
+    - name: Preserve exact diagnostic C053
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C053-evidence
+        path: ${{ env.PACKAGE }}/output/C053/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C054
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C054
+
+        '
+    - name: Preserve exact diagnostic C054
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C054-evidence
+        path: ${{ env.PACKAGE }}/output/C054/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C055
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C055
+
+        '
+    - name: Preserve exact diagnostic C055
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C055-evidence
+        path: ${{ env.PACKAGE }}/output/C055/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C056
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C056
+
+        '
+    - name: Preserve exact diagnostic C056
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C056-evidence
+        path: ${{ env.PACKAGE }}/output/C056/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C057
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C057
+
+        '
+    - name: Preserve exact diagnostic C057
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C057-evidence
+        path: ${{ env.PACKAGE }}/output/C057/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C058
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C058
+
+        '
+    - name: Preserve exact diagnostic C058
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C058-evidence
+        path: ${{ env.PACKAGE }}/output/C058/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C059
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C059
+
+        '
+    - name: Preserve exact diagnostic C059
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C059-evidence
+        path: ${{ env.PACKAGE }}/output/C059/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C060
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C060
+
+        '
+    - name: Preserve exact diagnostic C060
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C060-evidence
+        path: ${{ env.PACKAGE }}/output/C060/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C061
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C061
+
+        '
+    - name: Preserve exact diagnostic C061
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C061-evidence
+        path: ${{ env.PACKAGE }}/output/C061/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C062
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C062
+
+        '
+    - name: Preserve exact diagnostic C062
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C062-evidence
+        path: ${{ env.PACKAGE }}/output/C062/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C063
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C063
+
+        '
+    - name: Preserve exact diagnostic C063
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C063-evidence
+        path: ${{ env.PACKAGE }}/output/C063/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C064
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C064
+
+        '
+    - name: Preserve exact diagnostic C064
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C064-evidence
+        path: ${{ env.PACKAGE }}/output/C064/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C065
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C065
+
+        '
+    - name: Preserve exact diagnostic C065
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C065-evidence
+        path: ${{ env.PACKAGE }}/output/C065/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C066
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C066
+
+        '
+    - name: Preserve exact diagnostic C066
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C066-evidence
+        path: ${{ env.PACKAGE }}/output/C066/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C067
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C067
+
+        '
+    - name: Preserve exact diagnostic C067
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C067-evidence
+        path: ${{ env.PACKAGE }}/output/C067/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C068
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C068
+
+        '
+    - name: Preserve exact diagnostic C068
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C068-evidence
+        path: ${{ env.PACKAGE }}/output/C068/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C069
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C069
+
+        '
+    - name: Preserve exact diagnostic C069
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C069-evidence
+        path: ${{ env.PACKAGE }}/output/C069/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C070
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C070
+
+        '
+    - name: Preserve exact diagnostic C070
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C070-evidence
+        path: ${{ env.PACKAGE }}/output/C070/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C071
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C071
+
+        '
+    - name: Preserve exact diagnostic C071
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C071-evidence
+        path: ${{ env.PACKAGE }}/output/C071/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C073
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C073
+
+        '
+    - name: Preserve exact diagnostic C073
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C073-evidence
+        path: ${{ env.PACKAGE }}/output/C073/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C074
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C074
+
+        '
+    - name: Preserve exact diagnostic C074
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C074-evidence
+        path: ${{ env.PACKAGE }}/output/C074/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C075
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C075
+
+        '
+    - name: Preserve exact diagnostic C075
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C075-evidence
+        path: ${{ env.PACKAGE }}/output/C075/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C076
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C076
+
+        '
+    - name: Preserve exact diagnostic C076
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C076-evidence
+        path: ${{ env.PACKAGE }}/output/C076/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C077
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C077
+
+        '
+    - name: Preserve exact diagnostic C077
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C077-evidence
+        path: ${{ env.PACKAGE }}/output/C077/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C078
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C078
+
+        '
+    - name: Preserve exact diagnostic C078
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C078-evidence
+        path: ${{ env.PACKAGE }}/output/C078/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C079
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C079
+
+        '
+    - name: Preserve exact diagnostic C079
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C079-evidence
+        path: ${{ env.PACKAGE }}/output/C079/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C080
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C080
+
+        '
+    - name: Preserve exact diagnostic C080
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C080-evidence
+        path: ${{ env.PACKAGE }}/output/C080/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C081
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C081
+
+        '
+    - name: Preserve exact diagnostic C081
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C081-evidence
+        path: ${{ env.PACKAGE }}/output/C081/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C082
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C082
+
+        '
+    - name: Preserve exact diagnostic C082
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C082-evidence
+        path: ${{ env.PACKAGE }}/output/C082/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C083
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C083
+
+        '
+    - name: Preserve exact diagnostic C083
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C083-evidence
+        path: ${{ env.PACKAGE }}/output/C083/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C084
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C084
+
+        '
+    - name: Preserve exact diagnostic C084
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C084-evidence
+        path: ${{ env.PACKAGE }}/output/C084/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C085
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C085
+
+        '
+    - name: Preserve exact diagnostic C085
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C085-evidence
+        path: ${{ env.PACKAGE }}/output/C085/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C086
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C086
+
+        '
+    - name: Preserve exact diagnostic C086
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C086-evidence
+        path: ${{ env.PACKAGE }}/output/C086/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C087
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C087
+
+        '
+    - name: Preserve exact diagnostic C087
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C087-evidence
+        path: ${{ env.PACKAGE }}/output/C087/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C088
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C088
+
+        '
+    - name: Preserve exact diagnostic C088
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C088-evidence
+        path: ${{ env.PACKAGE }}/output/C088/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C089
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C089
+
+        '
+    - name: Preserve exact diagnostic C089
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C089-evidence
+        path: ${{ env.PACKAGE }}/output/C089/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C090
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C090
+
+        '
+    - name: Preserve exact diagnostic C090
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C090-evidence
+        path: ${{ env.PACKAGE }}/output/C090/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C091
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C091
+
+        '
+    - name: Preserve exact diagnostic C091
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C091-evidence
+        path: ${{ env.PACKAGE }}/output/C091/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C092
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C092
+
+        '
+    - name: Preserve exact diagnostic C092
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C092-evidence
+        path: ${{ env.PACKAGE }}/output/C092/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C093
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C093
+
+        '
+    - name: Preserve exact diagnostic C093
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C093-evidence
+        path: ${{ env.PACKAGE }}/output/C093/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C094
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C094
+
+        '
+    - name: Preserve exact diagnostic C094
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C094-evidence
+        path: ${{ env.PACKAGE }}/output/C094/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C095
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C095
+
+        '
+    - name: Preserve exact diagnostic C095
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C095-evidence
+        path: ${{ env.PACKAGE }}/output/C095/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C096
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C096
+
+        '
+    - name: Preserve exact diagnostic C096
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C096-evidence
+        path: ${{ env.PACKAGE }}/output/C096/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C097
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C097
+
+        '
+    - name: Preserve exact diagnostic C097
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C097-evidence
+        path: ${{ env.PACKAGE }}/output/C097/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C098
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C098
+
+        '
+    - name: Preserve exact diagnostic C098
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C098-evidence
+        path: ${{ env.PACKAGE }}/output/C098/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C099
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C099
+
+        '
+    - name: Preserve exact diagnostic C099
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C099-evidence
+        path: ${{ env.PACKAGE }}/output/C099/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C100
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C100
+
+        '
+    - name: Preserve exact diagnostic C100
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C100-evidence
+        path: ${{ env.PACKAGE }}/output/C100/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C101
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C101
+
+        '
+    - name: Preserve exact diagnostic C101
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C101-evidence
+        path: ${{ env.PACKAGE }}/output/C101/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C102
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C102
+
+        '
+    - name: Preserve exact diagnostic C102
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C102-evidence
+        path: ${{ env.PACKAGE }}/output/C102/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C103
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C103
+
+        '
+    - name: Preserve exact diagnostic C103
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C103-evidence
+        path: ${{ env.PACKAGE }}/output/C103/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C104
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C104
+
+        '
+    - name: Preserve exact diagnostic C104
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C104-evidence
+        path: ${{ env.PACKAGE }}/output/C104/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C105
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C105
+
+        '
+    - name: Preserve exact diagnostic C105
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C105-evidence
+        path: ${{ env.PACKAGE }}/output/C105/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C106
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C106
+
+        '
+    - name: Preserve exact diagnostic C106
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C106-evidence
+        path: ${{ env.PACKAGE }}/output/C106/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C107
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C107
+
+        '
+    - name: Preserve exact diagnostic C107
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C107-evidence
+        path: ${{ env.PACKAGE }}/output/C107/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C108
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C108
+
+        '
+    - name: Preserve exact diagnostic C108
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C108-evidence
+        path: ${{ env.PACKAGE }}/output/C108/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C109
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C109
+
+        '
+    - name: Preserve exact diagnostic C109
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C109-evidence
+        path: ${{ env.PACKAGE }}/output/C109/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C110
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C110
+
+        '
+    - name: Preserve exact diagnostic C110
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C110-evidence
+        path: ${{ env.PACKAGE }}/output/C110/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C111
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C111
+
+        '
+    - name: Preserve exact diagnostic C111
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C111-evidence
+        path: ${{ env.PACKAGE }}/output/C111/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C112
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C112
+
+        '
+    - name: Preserve exact diagnostic C112
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C112-evidence
+        path: ${{ env.PACKAGE }}/output/C112/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C113
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C113
+
+        '
+    - name: Preserve exact diagnostic C113
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C113-evidence
+        path: ${{ env.PACKAGE }}/output/C113/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C114
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C114
+
+        '
+    - name: Preserve exact diagnostic C114
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C114-evidence
+        path: ${{ env.PACKAGE }}/output/C114/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C115
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C115
+
+        '
+    - name: Preserve exact diagnostic C115
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C115-evidence
+        path: ${{ env.PACKAGE }}/output/C115/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C116
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C116
+
+        '
+    - name: Preserve exact diagnostic C116
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C116-evidence
+        path: ${{ env.PACKAGE }}/output/C116/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C117
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C117
+
+        '
+    - name: Preserve exact diagnostic C117
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C117-evidence
+        path: ${{ env.PACKAGE }}/output/C117/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C118
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C118
+
+        '
+    - name: Preserve exact diagnostic C118
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C118-evidence
+        path: ${{ env.PACKAGE }}/output/C118/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: One source-free extra review C119
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py review --clip C119
+
+        '
+    - name: Preserve exact diagnostic C119
+      if: always()
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-C119-evidence
+        path: ${{ env.PACKAGE }}/output/C119/
+        if-no-files-found: warn
+        retention-days: 30
+    - name: Preserve all exact payload and partial outcomes
+      if: always()
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: approved-extra119-contexts-r1-evidence
+        retention-days: 30
+        include-hidden-files: true
+        if-no-files-found: error
+        path: '${{ env.PACKAGE }}/output/
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/attempt-ledger.json
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/prompts/blind.txt
+
+          ${{ env.PACKAGE }}/provenance/model-availability.json
+
+          ${{ env.PACKAGE }}/provenance/context-proof.json
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/inputs/C01.wav
+
+          ${{ env.PACKAGE }}/inputs/C02.wav
+
+          ${{ env.PACKAGE }}/inputs/C03.wav
+
+          ${{ env.PACKAGE }}/inputs/C04.wav
+
+          ${{ env.PACKAGE }}/inputs/C05.wav
+
+          ${{ env.PACKAGE }}/inputs/C06.wav
+
+          ${{ env.PACKAGE }}/inputs/C07.wav
+
+          ${{ env.PACKAGE }}/inputs/C08.wav
+
+          ${{ env.PACKAGE }}/inputs/C09.wav
+
+          ${{ env.PACKAGE }}/inputs/C10.wav
+
+          ${{ env.PACKAGE }}/inputs/C11.wav
+
+          ${{ env.PACKAGE }}/inputs/C12.wav
+
+          ${{ env.PACKAGE }}/inputs/C13.wav
+
+          ${{ env.PACKAGE }}/inputs/C14.wav
+
+          ${{ env.PACKAGE }}/inputs/C15.wav
+
+          ${{ env.PACKAGE }}/inputs/C16.wav
+
+          ${{ env.PACKAGE }}/inputs/C17.wav
+
+          ${{ env.PACKAGE }}/inputs/C18.wav
+
+          ${{ env.PACKAGE }}/inputs/C19.wav
+
+          ${{ env.PACKAGE }}/inputs/C20.wav
+
+          ${{ env.PACKAGE }}/inputs/C21.wav
+
+          ${{ env.PACKAGE }}/inputs/C22.wav
+
+          ${{ env.PACKAGE }}/inputs/C23.wav
+
+          ${{ env.PACKAGE }}/inputs/C24.wav
+
+          ${{ env.PACKAGE }}/inputs/C25.wav
+
+          ${{ env.PACKAGE }}/inputs/C26.wav
+
+          ${{ env.PACKAGE }}/inputs/C27.wav
+
+          ${{ env.PACKAGE }}/inputs/C28.wav
+
+          ${{ env.PACKAGE }}/inputs/C29.wav
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/approved-extra119-contexts.yml'
