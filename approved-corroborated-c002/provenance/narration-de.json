@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "locale": "de",
+  "stepId": "S3-06",
+  "units": [
+    {
+      "id": "S3-06-de-criteria-coherent-reviewed-repair-extra1",
+      "unitId": "S3-06-de-criteria-coherent-reviewed-repair-extra1",
+      "locale": "de",
+      "semanticGroup": "corroborated-C002-coherent-subpassage-repair",
+      "speakerId": "B",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "sourceWholeFileSHA256": "bd5e30b7bd4e4c3453fff2b9154dcf74dc74e0009acda0bddff5f36ae0197b3b",
+      "sourceBindings": [
+        {
+          "pointer": "/dripPractice/passChecks/0/evidence",
+          "text": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.",
+          "sha256": "f0233671b4a646e3f3f29605eebb0b613fed00aae9c3d89b845afbaa652fd0ec"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/0/decision",
+          "text": "Bestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.",
+          "sha256": "82ece9543c81fc5b6037f2058c76a3e5ad606a5478eddbfd941539cd3a71f715"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/evidence",
+          "text": "Ordnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.",
+          "sha256": "b665f68b573c1f944a0f0a56a38d8d1cae53d5d36e9f27d3506ff8197196b775"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/1/decision",
+          "text": "Bestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.",
+          "sha256": "179b489c172911b711952a3568a1ec7d69980153dbf143b7886ba2ce80e64646"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/evidence",
+          "text": "Die Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.",
+          "sha256": "d5140c16f15dbc8596ffdffda0009203869f29ec08697821f9ce61138908360b"
+        },
+        {
+          "pointer": "/dripPractice/passChecks/2/decision",
+          "text": "Bestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.",
+          "sha256": "0be93ae628a18b3aa60cfaa5ce27727011b0aa19031ce2d9ab9d2cc44b6ba899"
+        },
+        {
+          "pointer": "/dripPractice/practicalDecision",
+          "text": "C01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+          "sha256": "3812519170a5ee22c11051f6166e94e6f643fc8c9e7b8787d8d06a2fb175eb67"
+        }
+      ],
+      "scientificMeaning": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "displayText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "captionText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+      "spokenText": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa zehn bis fünfzehn Zentimeter nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil.",
+      "spokenTextSHA256": "7ca329d741a82a94e8faa0afe2013315dab91c93cb5f8014eda97c29e1cc354d",
+      "spokenTextSha256": "7ca329d741a82a94e8faa0afe2013315dab91c93cb5f8014eda97c29e1cc354d",
+      "spokenAdaptationChanges": [
+        {
+          "written": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa 10–15 cm nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil. Die beobachtete Lage gilt auch dann, wenn sie nicht trocken ist.\n\nBestanden nur bei einzeln beobachteter Entnahme und begründeter Deutung. Simulationsklick, Gruppenantwort oder auswendig gelerntes „zu trocken“ genügt nicht.\n\nOrdnet jedes Bauteil seiner Funktion zu und bringt Auslegen, Markieren und kitgerechtes Lochen, Einsetzen, Verschließen, Anschließen, Filter- und Druckprüfung, kontrollierten Test und Aufräumen in Reihenfolge. Keine erfundenen Druck-, Durchfluss- oder Abstandsangaben.\n\nBestanden bei korrekten Funktionen, Ablauf, Bauteilkompatibilität und Prüfgrenzen; Fehler bei Sicherheit oder Kitprüfung führen zu gezielter Wiederholung.\n\nDie Lehrkraft beobachtet dieselbe lernende Person beim Verwenden geeigneter Schutzausrüstung und Werkzeuge, beim Positionieren von drei Löchern für drei Pflanzen an einem gemessenen kompatiblen 1-m-Schlauch, beim Einsetzen dreier Tropfer, Verschließen und Anschließen. Die Person testet anschließend unter den vom Kit vorgegebenen Betriebsbedingungen den festen Sitz der Verbindungen, Lecks und alle drei Auslässe, behebt Mängel und räumt den Arbeitsplatz auf.\n\nBestanden erst nach Dokumentation und Unterschrift aller individuellen Sicherheits- und Funktionskontrollen. Eine ungeprüfte oder undichte Leitung bleibt bis zur sicheren Korrektur und Nachprüfung offen.\n\nC01 und C03 bestehen nur mit von der Lehrkraft dokumentierten individuellen Sicherheits- und Funktionsnachweisen für alle zutreffenden Punkte. Keine feste Ersatz-Punktzahl. Fehler korrigieren und erneut prüfen. C02 wird getrennt online bewertet.",
+          "spoken": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa zehn bis fünfzehn Zentimeter nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil.",
+          "occurrences": 1,
+          "purpose": "Exact root-read coherent repair subpassage, with identifier clarifying Bindestrich only in C008. Source bindings retain parent context, not claim that snippet narrates every parent leaf. Preserve all outside original PCM."
+        }
+      ],
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung. Articulate the initial t in Tiefe clearly inside the complete coherent sentence, without a cut, extra syllable or word repetition. Do not speak this direction.",
+      "deliverySHA256": "5d6589c391ee6f8ef0a5aaacc90e774e23890eda81c8a4cf2d9697822facfe69",
+      "deliverySha256": "5d6589c391ee6f8ef0a5aaacc90e774e23890eda81c8a4cf2d9697822facfe69",
+      "actualAudio": null,
+      "timings": null,
+      "status": "CURRENT_FULL_SOURCE_PREPARED_NOT_PRODUCED",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "assessmentSolutionsIncluded": false,
+      "quizOrWrittenKeysIncluded": false,
+      "requestFingerprintSHA256": "5b69a1052a351792fde8c574231b50cd56e73783ec01b3916cceaf56dbde9c21",
+      "requestFingerprintSha256": "5b69a1052a351792fde8c574231b50cd56e73783ec01b3916cceaf56dbde9c21",
+      "sourcePlan": "provenance/narration-de.json",
+      "repairOnlyNotFullParagraphNarration": true,
+      "otherSourceSentencesRemainExactOriginalPCM": true,
+      "parentOriginalUnitId": "S3-06-de-criteria-r1",
+      "originalSpokenWholeSHA256": "20eebaa514453311faf08c3252cba27d894d97f239b9f06459b41900eaddb55d",
+      "exactParentSpokenCharacterSlice": {
+        "first": 0,
+        "endExclusive": 223,
+        "originalSpokenSlice": "Die Lehrkraft dokumentiert Person, tatsächlichen Entnahmeort und Tiefe (etwa zehn bis fünfzehn Zentimeter nur für den Pflanzkasten der Originalkarte), Textur, Kugel-, Band-, Farb- und Feuchtespuren sowie begründetes Urteil.",
+        "characterOffsetsNotPCMSamples": true
+      },
+      "sourceBoundaryAndJoinCutFrames": "UNKNOWN_UNTIL_ACTUAL_NEW_RECORDING_AND_VERIFIED_SOURCE_PHRASE_BOUNDARIES",
+      "separateFromEarlierFiveTTSAnd119AndR10": true
+    }
+  ],
+  "repairOnlyNotFullParentNarration": true
+}
