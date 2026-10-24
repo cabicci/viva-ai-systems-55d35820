@@ -1,0 +1,1 @@
+Exactly approved finite audio job. Immutable originals, immediate upload, actual independent diagnostics, zero retry, no automatic integration. Parent repair coverage remains held until actual semantic splice QA.

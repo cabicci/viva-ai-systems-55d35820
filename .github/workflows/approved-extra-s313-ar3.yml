@@ -1,0 +1,374 @@
+name: Approved extra finite s313-ar3
+'on':
+  push:
+    branches:
+    - work/soil-approved-extra-s313-ar3-20261024-r1
+    paths:
+    - approved-extra-s313-ar3/request.json
+permissions:
+  contents: read
+concurrency:
+  group: approved-extra-s313-ar3-c863161f52b38487cb1e8b800dbfe97e03fa6ff9001f2103b09546c909797578
+  cancel-in-progress: false
+env:
+  PACKAGE: approved-extra-s313-ar3
+  REQUEST_SHA: c863161f52b38487cb1e8b800dbfe97e03fa6ff9001f2103b09546c909797578
+  WORKER_SHA: 50c00fbe94b69d10caa179803950cfae4e921dcbd0be67769435c2d00bec68a5
+  FREEZE_SHA: 6e18df036a2b240924ba9335ebd00065fe994e2d448710ceccabc0b98b633079
+  BRANCH_CREATED: ${{ github.event.created }}
+  REPOSITORY_IS_PRIVATE: ${{ github.event.repository.private }}
+  PYTHONUNBUFFERED: '1'
+  HF_HUB_DISABLE_TELEMETRY: '1'
+  OMP_NUM_THREADS: '2'
+jobs:
+  narrate_ar:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.repository == 'cabicci/viva-ai-systems-55d35820'
+      && github.ref == 'refs/heads/work/soil-approved-extra-s313-ar3-20261024-r1' && github.event.created == true && github.event.before
+      == '0000000000000000000000000000000000000000' && github.event.repository.private == false
+    runs-on: ubuntu-22.04
+    timeout-minutes: 90
+    env:
+      LOCALE_LANE: ar-EG
+    steps:
+    - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      with:
+        persist-credentials: false
+    - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+      with:
+        python-version: '3.11'
+    - name: Validate exact fourlocale sourcebindings identity cache and budget
+      id: validate
+      run: 'cd "$PACKAGE"
+
+        python worker.py validate
+
+        '
+    - name: Finite exactpreferred model availability2GET nofallback
+      id: preflight
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py preflight
+
+        '
+    - name: Install hashverified multilingualWhisper before anyTTS
+      id: runtime
+      run: 'cd "$PACKAGE"
+
+        python -m pip download --no-deps --dest wheels faster-whisper==1.2.1
+
+        python worker.py verify-wheel
+
+        python -m pip install --disable-pip-version-check --report output/pip-install-report.json wheels/faster_whisper-1.2.1-*.whl
+
+        python worker.py prepare-asr-runtime
+
+        '
+    - name: One coherent TTS S3-13-ar-EG-opening-r1
+      id: tts_01
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome == 'success' && steps.runtime.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-13-ar-EG-opening-r1
+
+        '
+    - name: Upload full immutable audio once S3-13-ar-EG-opening-r1
+      id: upload_01
+      if: always() && steps.tts_01.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-opening-r1-audio
+        path: ${{ env.PACKAGE }}/output/S3-13-ar-EG-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S3-13-ar-EG-opening-r1
+      id: receipt_01
+      if: always() && steps.upload_01.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_01.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_01.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-13-ar-EG-opening-r1 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S3-13-ar-EG-guided-practice-r1
+      id: tts_02
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome == 'success' && steps.runtime.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-13-ar-EG-guided-practice-r1
+
+        '
+    - name: Upload full immutable audio once S3-13-ar-EG-guided-practice-r1
+      id: upload_02
+      if: always() && steps.tts_02.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-guided-practice-r1-audio
+        path: ${{ env.PACKAGE }}/output/S3-13-ar-EG-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S3-13-ar-EG-guided-practice-r1
+      id: receipt_02
+      if: always() && steps.upload_02.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_02.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_02.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-13-ar-EG-guided-practice-r1 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: One coherent TTS S3-13-ar-EG-glossary-r1
+      id: tts_03
+      if: always() && steps.validate.outcome == 'success' && steps.preflight.outcome == 'success' && steps.runtime.outcome
+        == 'success'
+      continue-on-error: true
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py produce --unit S3-13-ar-EG-glossary-r1
+
+        '
+    - name: Upload full immutable audio once S3-13-ar-EG-glossary-r1
+      id: upload_03
+      if: always() && steps.tts_03.outcome == 'success'
+      continue-on-error: true
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-glossary-r1-audio
+        path: ${{ env.PACKAGE }}/output/S3-13-ar-EG-glossary-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Record immutable audio upload S3-13-ar-EG-glossary-r1
+      id: receipt_03
+      if: always() && steps.upload_03.outcome == 'success'
+      continue-on-error: true
+      env:
+        AID: ${{ steps.upload_03.outputs.artifact-id }}
+        DIGEST: ${{ steps.upload_03.outputs.artifact-digest }}
+      run: 'cd "$PACKAGE"
+
+        python worker.py uploaded --unit S3-13-ar-EG-glossary-r1 --artifact-id "$AID" --artifact-digest "$DIGEST"
+
+        '
+    - name: blind-review S3-13-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome == 'success' && steps.receipt_01.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-13-ar-EG-opening-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S3-13-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome == 'success' && steps.receipt_01.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S3-13-ar-EG-opening-r1
+
+        '
+    - name: compare S3-13-ar-EG-opening-r1
+      if: always() && steps.tts_01.outcome == 'success' && steps.upload_01.outcome == 'success' && steps.receipt_01.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S3-13-ar-EG-opening-r1
+
+        '
+    - name: Stage thin diagnostics S3-13-ar-EG-opening-r1
+      id: stage_01
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S3-13-ar-EG-opening-r1
+
+        '
+    - name: Preserve thin diagnostics S3-13-ar-EG-opening-r1
+      if: always() && steps.stage_01.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-opening-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S3-13-ar-EG-opening-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S3-13-ar-EG-guided-practice-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome == 'success' && steps.receipt_02.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-13-ar-EG-guided-practice-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S3-13-ar-EG-guided-practice-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome == 'success' && steps.receipt_02.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S3-13-ar-EG-guided-practice-r1
+
+        '
+    - name: compare S3-13-ar-EG-guided-practice-r1
+      if: always() && steps.tts_02.outcome == 'success' && steps.upload_02.outcome == 'success' && steps.receipt_02.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S3-13-ar-EG-guided-practice-r1
+
+        '
+    - name: Stage thin diagnostics S3-13-ar-EG-guided-practice-r1
+      id: stage_02
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S3-13-ar-EG-guided-practice-r1
+
+        '
+    - name: Preserve thin diagnostics S3-13-ar-EG-guided-practice-r1
+      if: always() && steps.stage_02.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-guided-practice-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S3-13-ar-EG-guided-practice-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: blind-review S3-13-ar-EG-glossary-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome == 'success' && steps.receipt_03.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py blind-review --unit S3-13-ar-EG-glossary-r1
+
+        '
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    - name: asr S3-13-ar-EG-glossary-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome == 'success' && steps.receipt_03.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py asr --unit S3-13-ar-EG-glossary-r1
+
+        '
+    - name: compare S3-13-ar-EG-glossary-r1
+      if: always() && steps.tts_03.outcome == 'success' && steps.upload_03.outcome == 'success' && steps.receipt_03.outcome
+        == 'success'
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py compare --unit S3-13-ar-EG-glossary-r1
+
+        '
+    - name: Stage thin diagnostics S3-13-ar-EG-glossary-r1
+      id: stage_03
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-diagnostics --unit S3-13-ar-EG-glossary-r1
+
+        '
+    - name: Preserve thin diagnostics S3-13-ar-EG-glossary-r1
+      if: always() && steps.stage_03.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-S3-13-ar-EG-glossary-r1-review
+        path: ${{ env.PACKAGE }}/diagnostics-output/S3-13-ar-EG-glossary-r1/
+        retention-days: 30
+        if-no-files-found: error
+    - name: Lane summary preserves partial failures
+      if: always()
+      run: 'cd "$PACKAGE"
+
+        python worker.py summarize
+
+        '
+    - name: Stage thin complete evidence
+      id: stagecomplete
+      if: always()
+      continue-on-error: true
+      run: 'cd "$PACKAGE"
+
+        python worker.py stage-complete
+
+        '
+    - name: Preserve exact lane evidence
+      if: always() && steps.stagecomplete.outcome == 'success'
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      with:
+        name: s313-independent-r1-ar-EG-complete-evidence
+        retention-days: 30
+        if-no-files-found: error
+        include-hidden-files: true
+        path: '${{ env.PACKAGE }}/complete-output/
+
+          ${{ env.PACKAGE }}/.gitignore
+
+          ${{ env.PACKAGE }}/README.en.txt
+
+          ${{ env.PACKAGE }}/freeze_package.py
+
+          ${{ env.PACKAGE }}/offline_check.py
+
+          ${{ env.PACKAGE }}/owner-authority.json
+
+          ${{ env.PACKAGE }}/cumulative-attempt-ledger.json
+
+          ${{ env.PACKAGE }}/cache-live-audit.json
+
+          ${{ env.PACKAGE }}/expected-criteria.NOT-FOR-MODEL.json
+
+          ${{ env.PACKAGE }}/provenance/worker-derivation.json
+
+          ${{ env.PACKAGE }}/request.json
+
+          ${{ env.PACKAGE }}/runtime.json
+
+          ${{ env.PACKAGE }}/vendor/course/manifest.json
+
+          ${{ env.PACKAGE }}/vendor/pipeline-engine.py
+
+          ${{ env.PACKAGE }}/worker.py
+
+          ${{ env.PACKAGE }}/provenance/narration-ar-EG.json
+
+          ${{ env.PACKAGE }}/provenance/narration-en.json
+
+          ${{ env.PACKAGE }}/provenance/narration-it.json
+
+          ${{ env.PACKAGE }}/provenance/narration-de.json
+
+          ${{ env.PACKAGE }}/thin_artifacts.py
+
+          ${{ env.PACKAGE }}/freeze.json
+
+          .github/workflows/approved-extra-s313-ar3.yml'
