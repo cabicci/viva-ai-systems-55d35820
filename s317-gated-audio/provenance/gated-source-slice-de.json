@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-17",
+  "locale": "de",
+  "canonicalWholeSourceSHA256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "plot-c-model",
+      "title": "Vorgegebenes Modell: C, pH 6.8, lehmig",
+      "situation": "Die Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.",
+      "reasoning": [
+        "Werte als vorgegebenes Modell markieren, nicht als eigene Messung.",
+        "Nahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.",
+        "Jährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht."
+      ],
+      "takeaway": "Modell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand."
+    },
+    {
+      "id": "sandy-loam-model",
+      "title": "Getrennter Fall pH 5.8/sandiger Lehm",
+      "situation": "Ein anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.",
+      "reasoning": [
+        "Quelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.",
+        "Kartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.",
+        "Die beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest."
+      ],
+      "takeaway": "Andere Beispiele und echte C-Messung gehören in getrennte Belege."
+    },
+    {
+      "id": "calibration-retry",
+      "title": "Wiederholung kann noch Übung brauchen",
+      "situation": "Probe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.",
+      "reasoning": [
+        "Trainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.",
+        "Person studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.",
+        "Trainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“."
+      ],
+      "takeaway": "Neuer Versuch schafft neuen Beleg, keinen automatischen Erfolg."
+    }
+  ]
+}

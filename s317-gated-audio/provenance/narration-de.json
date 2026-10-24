@@ -1,0 +1,392 @@
+{
+  "stepId": "S3-17",
+  "locale": "de",
+  "source": {
+    "locale": "de",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-17-de.json",
+    "sha256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+    "bytes": 34401
+  },
+  "units": [
+    {
+      "id": "S3-17-de-E01-r1",
+      "unitId": "S3-17-de-E01-r1",
+      "stepId": "S3-17",
+      "locale": "de",
+      "semanticGroup": "E01",
+      "sourceCaseId": "plot-c-model",
+      "sourceWholeFileSHA256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Vorgegebenes Modell: C, pH 6.8, lehmig",
+          "sha256": "5b768afdffff6ebe1f37b6d54d980f5b2f58d29c60ca5e517ccde03586f38e92"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "Die Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.",
+          "sha256": "83b1cee25d371533084fcb6d968726a0c8900a4390e39b8961c5777569480c58"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Werte als vorgegebenes Modell markieren, nicht als eigene Messung.",
+          "sha256": "c7f7ae74af98414f05caa70d6cc18e0a35d5a7b0497162badb5eb5b8518b4c5a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Nahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.",
+          "sha256": "fdef73476fa69757f8151247f2acf05759f913e7b57a32cf25100ec2dd3ab047"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Jährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht.",
+          "sha256": "e9109876a70b589ca2a9867b82656b2e34482855fbb834dee8c659b77c98c053"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Modell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+          "sha256": "e22d6697bf2ab9d4f0bc03afcb9b5c0f781d867fad3dbd7d2b6fe96dddbc0174"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "plot-c-model",
+        "title": "Vorgegebenes Modell: C, pH 6.8, lehmig",
+        "situation": "Die Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.",
+        "reasoning": [
+          "Werte als vorgegebenes Modell markieren, nicht als eigene Messung.",
+          "Nahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.",
+          "Jährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht."
+        ],
+        "takeaway": "Modell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand."
+      },
+      "scientificMeaning": "Vorgegebenes Modell: C, pH 6.8, lehmig\n\nDie Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.\n\nJährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+      "displayText": "Vorgegebenes Modell: C, pH 6.8, lehmig\n\nDie Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.\n\nJährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+      "captionText": "Vorgegebenes Modell: C, pH 6.8, lehmig\n\nDie Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.\n\nJährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+      "spokenText": "Vorgegebenes Modell: C, Pe Ha sechs Komma acht, lehmig\n\nDie Quelle gibt Modell Pe Ha sechs Komma acht und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen Pe Ha und Lehm und ungemessene Standort- und Kulturbedingungen erklären.\n\nJährlicher Kompost und Pe Ha alle ein bis zwei Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+      "spokenTextSHA256": "1488f49de3841916d7d0b5812660006f8c437898c5bef760f422313ef9721224",
+      "spokenTextSha256": "1488f49de3841916d7d0b5812660006f8c437898c5bef760f422313ef9721224",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "930a7fb2a3f366f7df3f8b9d183657101eb635093d5091944f9b85757ed0d11d",
+      "requestFingerprintSha256": "930a7fb2a3f366f7df3f8b9d183657101eb635093d5091944f9b85757ed0d11d",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Vorgegebenes Modell: C, pH 6.8, lehmig\n\nDie Quelle gibt Modell pH 6.8 und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen pH/Lehm und ungemessene Standort-/Kulturbedingungen erklären.\n\nJährlicher Kompost und pH alle 1–2 Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+          "spoken": "Vorgegebenes Modell: C, Pe Ha sechs Komma acht, lehmig\n\nDie Quelle gibt Modell Pe Ha sechs Komma acht und lehmigen Boden, nennt Tomaten und Mais.\n\nWerte als vorgegebenes Modell markieren, nicht als eigene Messung.\n\nNahezu neutralen Pe Ha und Lehm und ungemessene Standort- und Kulturbedingungen erklären.\n\nJährlicher Kompost und Pe Ha alle ein bis zwei Jahre sind zu prüfende Beispiele, keine Pflicht.\n\nModell hilft Bericht, bescheinigt aber keinen umfassenden Bodenzustand.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "6.8"
+          ],
+          "boundedReadbackChanges": [
+            {
+              "priorSpokenSHA256": "17be474964ffaacea2bd082509409e35a83929cd03f3b9f3e2f6f0d817315833",
+              "revisedSpokenSHA256": "1488f49de3841916d7d0b5812660006f8c437898c5bef760f422313ef9721224",
+              "reason": "Exactcase-specificnaturallanguage/grammarreadback;source/displayunchanged."
+            }
+          ]
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-17-de-E02-r1",
+      "unitId": "S3-17-de-E02-r1",
+      "stepId": "S3-17",
+      "locale": "de",
+      "semanticGroup": "E02",
+      "sourceCaseId": "sandy-loam-model",
+      "sourceWholeFileSHA256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Getrennter Fall pH 5.8/sandiger Lehm",
+          "sha256": "ed8e996978e27b3664e0cdf7b048d1fd933f5cf7d7796b0877d8e90f257019d1"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Ein anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.",
+          "sha256": "badb123428bfa4ef8b44e97663a553093cb3cfe5ce209deff16a4bf56c3f2eb7"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Quelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.",
+          "sha256": "4fac16903eab4e50bfccc0723636d4d39ef9aa5233703141702244f0cc3d894c"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Kartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.",
+          "sha256": "714b4544767b334bcded561cac792211c46000a6fd42ff4e223fa442cd2cbb7d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "Die beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest.",
+          "sha256": "7258a36b9dc4d590d5c72131aac7daafbfc68605ca71f86c7eef56ed9b02a4e0"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Andere Beispiele und echte C-Messung gehören in getrennte Belege.",
+          "sha256": "b0aec4c4123da8ddeb41e94f8cce24c3c3121be8bc4b6be96d40848ae67e7424"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sandy-loam-model",
+        "title": "Getrennter Fall pH 5.8/sandiger Lehm",
+        "situation": "Ein anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.",
+        "reasoning": [
+          "Quelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.",
+          "Kartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.",
+          "Die beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest."
+        ],
+        "takeaway": "Andere Beispiele und echte C-Messung gehören in getrennte Belege."
+      },
+      "scientificMeaning": "Getrennter Fall pH 5.8/sandiger Lehm\n\nEin anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+      "displayText": "Getrennter Fall pH 5.8/sandiger Lehm\n\nEin anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+      "captionText": "Getrennter Fall pH 5.8/sandiger Lehm\n\nEin anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+      "spokenText": "Getrennter Fall mit Pe Ha fünf Komma acht und sandigem Lehm\n\nEin anderes Beispiel hat Pe Ha fünf Komma acht, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln und Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für Pe Ha von fünf Komma acht auf sechs Komma fünf nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material- und Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; Pe Ha allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+      "spokenTextSHA256": "ca8fd1ed782c310b7994ca182aa011bbd1ee1f813bb1c321759cf77c14ee3498",
+      "spokenTextSha256": "ca8fd1ed782c310b7994ca182aa011bbd1ee1f813bb1c321759cf77c14ee3498",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "f7ef8897fd3552bc79877f8f4de63af62e22dbcf19e5515c59d022403db58077",
+      "requestFingerprintSha256": "f7ef8897fd3552bc79877f8f4de63af62e22dbcf19e5515c59d022403db58077",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Getrennter Fall pH 5.8/sandiger Lehm\n\nEin anderes Beispiel hat pH 5,8, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln/Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für pH 5,8→6,5 nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material-/Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; pH allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+          "spoken": "Getrennter Fall mit Pe Ha fünf Komma acht und sandigem Lehm\n\nEin anderes Beispiel hat Pe Ha fünf Komma acht, sandigen Lehm, körniges Gefühl und ein Band von ungefähr einem halben Zoll Länge.\n\nQuelle der Säureklassifikation nennen statt unbestimmtes Adjektiv.\n\nKartoffeln und Erdbeeren Kandidaten, Mais abhängig vom Standort.\n\nDie beispielhafte Begründung der Quelle für Pe Ha von fünf Komma acht auf sechs Komma fünf nennt Mais und Luzerne. Tatsächliches Kulturziel, geeigneten Kalkbedarfstest und Material- und Standortangaben prüfen, bevor das Beispiel, landwirtschaftlicher Kalkstein oder ein Kompostplan zur Feldempfehlung wird; Pe Ha allein legt keine Dosis fest.\n\nAndere Beispiele und echte C-Messung gehören in getrennte Belege.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    },
+    {
+      "id": "S3-17-de-E03-r1",
+      "unitId": "S3-17-de-E03-r1",
+      "stepId": "S3-17",
+      "locale": "de",
+      "semanticGroup": "E03",
+      "sourceCaseId": "calibration-retry",
+      "sourceWholeFileSHA256": "bf89184f34807bb2f348e8c3539d276ccf50f41465804d870e5467602a0bb55f",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Wiederholung kann noch Übung brauchen",
+          "sha256": "27ee2c0a6ad4480066309a8e8e4ef16cced4661ecd99fd5646528a064808ddaf"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Probe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.",
+          "sha256": "d006470a34f0ed33fae4261d4c7986c50d123301268d4674846906947ea28eab"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Trainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.",
+          "sha256": "30078d79089851d80ca1e17a4109ee91f299134e452188b565419f257e1e426c"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Person studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.",
+          "sha256": "33cd3dcdf78658ee03ef02bbc49296fbbf8c44a4532142519fd6fffbe2edcb51"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Trainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.",
+          "sha256": "f60667f99b8f2e6799dbf9137e27b79dbc5cb5be2c68961760f11ae71d1b021c"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Neuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+          "sha256": "99d0dcb93b6caeb22bd299a696eaec177aa312b7a8af633075ce01831bcfc3b6"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "calibration-retry",
+        "title": "Wiederholung kann noch Übung brauchen",
+        "situation": "Probe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.",
+        "reasoning": [
+          "Trainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.",
+          "Person studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.",
+          "Trainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“."
+        ],
+        "takeaway": "Neuer Versuch schafft neuen Beleg, keinen automatischen Erfolg."
+      },
+      "scientificMeaning": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+      "displayText": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+      "captionText": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+      "spokenText": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber Pe Ha-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung und Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+      "spokenTextSHA256": "aff08d7b2294715c45050342ca15637143c2d50efd1f5882a8727e752791a417",
+      "spokenTextSha256": "aff08d7b2294715c45050342ca15637143c2d50efd1f5882a8727e752791a417",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Erkläre ruhig und verständlich für Lernende einer landwirtschaftlichen Berufsausbildung in natürlichem Deutsch. Lies nur den vorgegebenen zusammenhängenden Abschnitt mit natürlichen Pausen. Erhalte alle Verneinungen, Bedingungen, Sicherheitsgrenzen und Ausbildungsgrenzen. Keine zusätzlichen medizinischen Ratschläge, Diagnosen, Figurenstimmen, Einleitung, Musik oder Zusammenfassung.",
+      "requestFingerprintSHA256": "5ec5f31089fdc2674a8e2ef4ec6d24732f9de9b38778047640e42a1bb936c5ed",
+      "requestFingerprintSha256": "5ec5f31089fdc2674a8e2ef4ec6d24732f9de9b38778047640e42a1bb936c5ed",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber pH-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung/Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+          "spoken": "Wiederholung kann noch Übung brauchen\n\nProbe gut vorbereitet, aber Pe Ha-Gerät falsch kalibriert, Messung unzuverlässig.\n\nTrainer würdigt Vorbereitung nur unter ihrem Kriterium und benennt fehlende Kalibrierung.\n\nPerson studiert echte Geräteanleitung und wiederholt Kalibrierung und Messung unter Beobachtung.\n\nTrainer notiert Wirkliches, auch erneut „noch nicht nachgewiesen“.\n\nNeuer Versuch schafft neuen Beleg, keinen automatischen Erfolg.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "8f93971df2a6b7df5656e8451e59a83b7e9899eb259bdf936db6a5e1aad64e34",
+      "sourcePlan": "provenance/narration-de.json"
+    }
+  ]
+}

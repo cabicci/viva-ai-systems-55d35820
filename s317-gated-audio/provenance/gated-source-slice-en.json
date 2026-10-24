@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-17",
+  "locale": "en",
+  "canonicalWholeSourceSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "plot-c-model",
+      "title": "Supplied model: Plot C pH 6.8, loam",
+      "situation": "The source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.",
+      "reasoning": [
+        "Keep pH and texture labelled supplied model rather than personal measurements.",
+        "Explain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.",
+        "Treat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions."
+      ],
+      "takeaway": "A model supports report writing; it cannot certify all soil conditions."
+    },
+    {
+      "id": "sandy-loam-model",
+      "title": "Separate pH 5.8 sandy-loam case",
+      "situation": "A different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.",
+      "reasoning": [
+        "State the acidity classification source instead of relying on a vague adjective.",
+        "Discuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.",
+        "The source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone."
+      ],
+      "takeaway": "Different source examples and the learner's real Plot C belong in separate report records."
+    },
+    {
+      "id": "calibration-retry",
+      "title": "A retry can still need more practice",
+      "situation": "The sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.",
+      "reasoning": [
+        "The trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.",
+        "The learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.",
+        "The trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails."
+      ],
+      "takeaway": "A new attempt creates new evidence, not automatic success."
+    }
+  ]
+}

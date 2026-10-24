@@ -1,0 +1,380 @@
+{
+  "stepId": "S3-17",
+  "locale": "it",
+  "source": {
+    "locale": "it",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-17-it.json",
+    "sha256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+    "bytes": 33894
+  },
+  "units": [
+    {
+      "id": "S3-17-it-E01-r1",
+      "unitId": "S3-17-it-E01-r1",
+      "stepId": "S3-17",
+      "locale": "it",
+      "semanticGroup": "E01",
+      "sourceCaseId": "plot-c-model",
+      "sourceWholeFileSHA256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Modello fornito: C, pH 6.8, franco",
+          "sha256": "523fff5a508ca5b44fd16d8727cafb223f90dc1873b70adb941dd59de5552835"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "La fonte dà un modello pH 6.8/franco e propone pomodori e mais.",
+          "sha256": "c79aa615c8a5cbbb5e3ee968999314105fe361ae77b0f70bf659f1bd8346760a"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Etichettare pH e tessitura come modello, non misure personali.",
+          "sha256": "afcd36daa8aeb2e5739b6f141a4eb104ec3117c6ea0e3ee168e5f9b4fe439c74"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Spiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.",
+          "sha256": "4367947743acf8d84c612fd2ec3a384298586edb8ce24e27d9f347ec1ce0cad3"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Compost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse.",
+          "sha256": "f7dbc24eb526b900f41e93115e5625764330c08b6207157db46c22c6462f8a76"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "Il modello aiuta la scrittura, non certifica tutte le condizioni.",
+          "sha256": "4b7a50a98261f2c1845003d4ce563bfdc3d17cb6f5b8c336622d8fd5a2fe4c0c"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "plot-c-model",
+        "title": "Modello fornito: C, pH 6.8, franco",
+        "situation": "La fonte dà un modello pH 6.8/franco e propone pomodori e mais.",
+        "reasoning": [
+          "Etichettare pH e tessitura come modello, non misure personali.",
+          "Spiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.",
+          "Compost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse."
+        ],
+        "takeaway": "Il modello aiuta la scrittura, non certifica tutte le condizioni."
+      },
+      "scientificMeaning": "Modello fornito: C, pH 6.8, franco\n\nLa fonte dà un modello pH 6.8/franco e propone pomodori e mais.\n\nEtichettare pH e tessitura come modello, non misure personali.\n\nSpiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.\n\nCompost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+      "displayText": "Modello fornito: C, pH 6.8, franco\n\nLa fonte dà un modello pH 6.8/franco e propone pomodori e mais.\n\nEtichettare pH e tessitura come modello, non misure personali.\n\nSpiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.\n\nCompost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+      "captionText": "Modello fornito: C, pH 6.8, franco\n\nLa fonte dà un modello pH 6.8/franco e propone pomodori e mais.\n\nEtichettare pH e tessitura come modello, non misure personali.\n\nSpiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.\n\nCompost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+      "spokenText": "Modello fornito: C, pi acca sei virgola otto, franco\n\nLa fonte dà un modello con pi acca sei virgola otto e tessitura franca e propone pomodori e mais.\n\nEtichettare pi acca e tessitura come modello, non misure personali.\n\nSpiegare pi acca quasi neutro e tessitura franca e condizioni sito e coltura non misurate.\n\nCompost annuale e pi acca ogni uno o due anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+      "spokenTextSHA256": "d4ca2e2a7731108c409b81c03daf39757683246c3124a7bb939d27b5d58d2a3a",
+      "spokenTextSha256": "d4ca2e2a7731108c409b81c03daf39757683246c3124a7bb939d27b5d58d2a3a",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "8f79e7508adaeed7cfe1328f3b936cf8a1ab5eaa3966c32a4ea655decabcec50",
+      "requestFingerprintSha256": "8f79e7508adaeed7cfe1328f3b936cf8a1ab5eaa3966c32a4ea655decabcec50",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Modello fornito: C, pH 6.8, franco\n\nLa fonte dà un modello pH 6.8/franco e propone pomodori e mais.\n\nEtichettare pH e tessitura come modello, non misure personali.\n\nSpiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.\n\nCompost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+          "spoken": "Modello fornito: C, pi acca sei virgola otto, franco\n\nLa fonte dà un modello con pi acca sei virgola otto e tessitura franca e propone pomodori e mais.\n\nEtichettare pi acca e tessitura come modello, non misure personali.\n\nSpiegare pi acca quasi neutro e tessitura franca e condizioni sito e coltura non misurate.\n\nCompost annuale e pi acca ogni uno o due anni sono esempi da verificare, non prescrizioni fisse.\n\nIl modello aiuta la scrittura, non certifica tutte le condizioni.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-17-it-E02-r1",
+      "unitId": "S3-17-it-E02-r1",
+      "stepId": "S3-17",
+      "locale": "it",
+      "semanticGroup": "E02",
+      "sourceCaseId": "sandy-loam-model",
+      "sourceWholeFileSHA256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Caso separato: pH 5.8/franco sabbioso",
+          "sha256": "26a98f6f791e5cfc3393aa385158b87e2e3d19df742986c6750b4f5f643e7344"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "Un caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.",
+          "sha256": "b4f3e66c6f1312e2c90675fb84775ada25f6539090e1d47facbaa8bc064ba28d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "Indicare la fonte della classificazione di acidità.",
+          "sha256": "a758d9a386eb0d2704bb3962b1a05a8b51aa52ab178b1abc7fb8bcc6c8a2e5d6"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Patate e fragole candidati; mais condizionato al sito.",
+          "sha256": "0abd8a7120203b74fed512abc24fa36786a471c7010133416faf975a8a95926d"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "La motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose.",
+          "sha256": "c5d75f034085dcbaaea812a2c7c28d5f146daff6844a20c5f711de4c55edb932"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Esempi e vera misura C appartengono a registri separati.",
+          "sha256": "29ae4cbb387645352893a683484fb50c950805eafbbca880c8cb5b93bee29e9a"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sandy-loam-model",
+        "title": "Caso separato: pH 5.8/franco sabbioso",
+        "situation": "Un caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.",
+        "reasoning": [
+          "Indicare la fonte della classificazione di acidità.",
+          "Patate e fragole candidati; mais condizionato al sito.",
+          "La motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose."
+        ],
+        "takeaway": "Esempi e vera misura C appartengono a registri separati."
+      },
+      "scientificMeaning": "Caso separato: pH 5.8/franco sabbioso\n\nUn caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+      "displayText": "Caso separato: pH 5.8/franco sabbioso\n\nUn caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+      "captionText": "Caso separato: pH 5.8/franco sabbioso\n\nUn caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+      "spokenText": "Caso separato: pi acca cinque virgola otto e tessitura franco-sabbiosa\n\nUn caso diverso riporta pi acca cinque virgola otto, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pi acca da cinque virgola otto a sei virgola cinque cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale e sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pi acca non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+      "spokenTextSHA256": "5b722f619de2308709296437ce525789c42347acd1656e2d3ab18c4443547293",
+      "spokenTextSha256": "5b722f619de2308709296437ce525789c42347acd1656e2d3ab18c4443547293",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "17a7649ddc60fd96a4f550c33560ea3a8f1bbf1095f4bf28a4a43180485c3707",
+      "requestFingerprintSha256": "17a7649ddc60fd96a4f550c33560ea3a8f1bbf1095f4bf28a4a43180485c3707",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Caso separato: pH 5.8/franco sabbioso\n\nUn caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+          "spoken": "Caso separato: pi acca cinque virgola otto e tessitura franco-sabbiosa\n\nUn caso diverso riporta pi acca cinque virgola otto, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.\n\nIndicare la fonte della classificazione di acidità.\n\nPatate e fragole candidati; mais condizionato al sito.\n\nLa motivazione esemplificativa della fonte per pi acca da cinque virgola otto a sei virgola cinque cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale e sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pi acca non stabilisce una dose.\n\nEsempi e vera misura C appartengono a registri separati.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    },
+    {
+      "id": "S3-17-it-E03-r1",
+      "unitId": "S3-17-it-E03-r1",
+      "stepId": "S3-17",
+      "locale": "it",
+      "semanticGroup": "E03",
+      "sourceCaseId": "calibration-retry",
+      "sourceWholeFileSHA256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "Anche un ritentativo può restare carente",
+          "sha256": "b45edae81b83497ce8c49fb34dd427f653f1a7d41a67e91c9b535ba7f52b0c5a"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "Campione preparato bene, ma pHmetro calibrato male e valore inaffidabile.",
+          "sha256": "add7f7edc0cd5736b8e5735b999c5e7fed6773785b11c46142be130c47c538bf"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "Formatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.",
+          "sha256": "c7acc7a9ccf0c43aae0a8d80df3a9c80a4b1ae4604fb712f75330e2422714c6f"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "Allievo studia istruzioni reali e ripete calibrazione/misura osservata.",
+          "sha256": "481fda18009530ccb47e61c6c2f02dfa34225ac0f88a9a26a65b119af560d94e"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "Il formatore registra ciò che vede, anche un altro non ancora dimostrato.",
+          "sha256": "c2cd315c6b663b547db15b16a9b2dfe3aca991736e01ad2f90744b44368dad89"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "Nuova prova non equivale a promozione automatica.",
+          "sha256": "e5cd67a03e292375c9f8b6967c6ca15764000c7c3c36d12ff4658d3c6e58b2ac"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "calibration-retry",
+        "title": "Anche un ritentativo può restare carente",
+        "situation": "Campione preparato bene, ma pHmetro calibrato male e valore inaffidabile.",
+        "reasoning": [
+          "Formatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.",
+          "Allievo studia istruzioni reali e ripete calibrazione/misura osservata.",
+          "Il formatore registra ciò che vede, anche un altro non ancora dimostrato."
+        ],
+        "takeaway": "Nuova prova non equivale a promozione automatica."
+      },
+      "scientificMeaning": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pHmetro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione/misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+      "displayText": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pHmetro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione/misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+      "captionText": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pHmetro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione/misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+      "spokenText": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pi accametro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione e misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+      "spokenTextSHA256": "7429d96ab9e0fdf1b4e405d4b698d3cc72a4604440140040eeab0406fae792e6",
+      "spokenTextSha256": "7429d96ab9e0fdf1b4e405d4b698d3cc72a4604440140040eeab0406fae792e6",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Spiega con calma e chiarezza a studenti della formazione agraria, in italiano naturale. Leggi soltanto il brano continuo fornito con pause naturali. Conserva negazioni, condizioni, sicurezza della scena e limiti della formazione. Non aggiungere consigli medici, diagnosi, personaggi, introduzioni, musica o riepiloghi.",
+      "requestFingerprintSHA256": "c5b1d01ba575108574627e4b1ddec3223871df04f95879edf5d778c7db32d517",
+      "requestFingerprintSha256": "c5b1d01ba575108574627e4b1ddec3223871df04f95879edf5d778c7db32d517",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pHmetro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione/misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+          "spoken": "Anche un ritentativo può restare carente\n\nCampione preparato bene, ma pi accametro calibrato male e valore inaffidabile.\n\nFormatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.\n\nAllievo studia istruzioni reali e ripete calibrazione e misura osservata.\n\nIl formatore registra ciò che vede, anche un altro non ancora dimostrato.\n\nNuova prova non equivale a promozione automatica.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "e14e1f7f83c5b2aef7dbb9c23fe449d3024bab8f50cdd1348335c5d36e7c7969",
+      "sourcePlan": "provenance/narration-it.json"
+    }
+  ]
+}

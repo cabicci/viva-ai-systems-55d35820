@@ -1,0 +1,386 @@
+{
+  "stepId": "S3-17",
+  "locale": "en",
+  "source": {
+    "locale": "en",
+    "path": "Worktrees/soil-course-pipeline-20261013/experiments/course-pipeline/rebuild/pilot/src/draft-content/S3-17-en.json",
+    "sha256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+    "bytes": 33355
+  },
+  "units": [
+    {
+      "id": "S3-17-en-E01-r1",
+      "unitId": "S3-17-en-E01-r1",
+      "stepId": "S3-17",
+      "locale": "en",
+      "semanticGroup": "E01",
+      "sourceCaseId": "plot-c-model",
+      "sourceWholeFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/0/title",
+          "text": "Supplied model: Plot C pH 6.8, loam",
+          "sha256": "4e39af840e92038a73f52cd2444091215eb33aced9f50e16084e30504d410a42"
+        },
+        {
+          "pointer": "/examples/0/situation",
+          "text": "The source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.",
+          "sha256": "d3931dc208c7327c3d75a067feb29f91cb9689ce10b7a49e39f032dfcec096ce"
+        },
+        {
+          "pointer": "/examples/0/reasoning/0",
+          "text": "Keep pH and texture labelled supplied model rather than personal measurements.",
+          "sha256": "d2d2452263db77653878d071926bacd936f424027b864a40e560d19c153ab719"
+        },
+        {
+          "pointer": "/examples/0/reasoning/1",
+          "text": "Explain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.",
+          "sha256": "5ec82aa421122d7ed0e1d6c0f07f831acc671dfb6ec209ff2dca0eb6a909de0b"
+        },
+        {
+          "pointer": "/examples/0/reasoning/2",
+          "text": "Treat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.",
+          "sha256": "86d591c4b78e5ca0dfa8d6a36bc2796595a13fcf6be6034364b951ae941ac64f"
+        },
+        {
+          "pointer": "/examples/0/takeaway",
+          "text": "A model supports report writing; it cannot certify all soil conditions.",
+          "sha256": "0b45997deba61a38836c5f93c701aec7b014e36c6f206029127e070a8468e82b"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "plot-c-model",
+        "title": "Supplied model: Plot C pH 6.8, loam",
+        "situation": "The source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.",
+        "reasoning": [
+          "Keep pH and texture labelled supplied model rather than personal measurements.",
+          "Explain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.",
+          "Treat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions."
+        ],
+        "takeaway": "A model supports report writing; it cannot certify all soil conditions."
+      },
+      "scientificMeaning": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "displayText": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "captionText": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "spokenText": "Supplied model: Plot C P H six point eight, loam\n\nThe source's teaching model reports P H six point eight and loam, then names tomatoes and corn.\n\nKeep P H and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral P H and loam texture tend to suggest, and list the unmeasured site and crop constraints.\n\nTreat annual compost and P H monitoring every one to two years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+      "spokenTextSHA256": "eac7b8065c8cc666040165ff6a12b0a5b608422ece232555f6419468ad4bfe12",
+      "spokenTextSha256": "eac7b8065c8cc666040165ff6a12b0a5b608422ece232555f6419468ad4bfe12",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "e44da0aefd39f4db6111798e9144ae1ede21cef8803b6a900cbe37d3b45a19dc",
+      "requestFingerprintSha256": "e44da0aefd39f4db6111798e9144ae1ede21cef8803b6a900cbe37d3b45a19dc",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Supplied model: Plot C pH 6.8, loam\n\nThe source's teaching model reports pH 6.8 and loam, then names tomatoes and corn.\n\nKeep pH and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral pH and loam texture tend to suggest, and list the unmeasured site/crop constraints.\n\nTreat annual compost and pH monitoring every 1–2 years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+          "spoken": "Supplied model: Plot C P H six point eight, loam\n\nThe source's teaching model reports P H six point eight and loam, then names tomatoes and corn.\n\nKeep P H and texture labelled supplied model rather than personal measurements.\n\nExplain what near-neutral P H and loam texture tend to suggest, and list the unmeasured site and crop constraints.\n\nTreat annual compost and P H monitoring every one to two years as examples to check, not compulsory prescriptions.\n\nA model supports report writing; it cannot certify all soil conditions.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [
+            "1",
+            "2",
+            "6.8"
+          ],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-17-en-E02-r1",
+      "unitId": "S3-17-en-E02-r1",
+      "stepId": "S3-17",
+      "locale": "en",
+      "semanticGroup": "E02",
+      "sourceCaseId": "sandy-loam-model",
+      "sourceWholeFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/1/title",
+          "text": "Separate pH 5.8 sandy-loam case",
+          "sha256": "782f9c5b2e391ba09d22c67ebc25907cd1f6c009c693547f9c97c9e4384d55a5"
+        },
+        {
+          "pointer": "/examples/1/situation",
+          "text": "A different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.",
+          "sha256": "e4488235dbaf60ec25e453714a7ef69658f3b5d2ed138bb97167d35d69900bc6"
+        },
+        {
+          "pointer": "/examples/1/reasoning/0",
+          "text": "State the acidity classification source instead of relying on a vague adjective.",
+          "sha256": "100f697c2709a5686c96181fc8b943675f1b46d49fcf672eda8cba872d3cdd67"
+        },
+        {
+          "pointer": "/examples/1/reasoning/1",
+          "text": "Discuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.",
+          "sha256": "8ee3c7831ca6b268b9c50b062cded3ab4e64babb9535d084d44a1258f6b1405a"
+        },
+        {
+          "pointer": "/examples/1/reasoning/2",
+          "text": "The source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.",
+          "sha256": "460df2e8df3649401f88fd5e9b9a64458724fb73bf1ab910785fb0029e6f5d6f"
+        },
+        {
+          "pointer": "/examples/1/takeaway",
+          "text": "Different source examples and the learner's real Plot C belong in separate report records.",
+          "sha256": "65f9e8aa41b09436a1a5c7ce53bca168386781ce4c1a16c0ea0a89f3d30c1167"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "sandy-loam-model",
+        "title": "Separate pH 5.8 sandy-loam case",
+        "situation": "A different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.",
+        "reasoning": [
+          "State the acidity classification source instead of relying on a vague adjective.",
+          "Discuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.",
+          "The source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone."
+        ],
+        "takeaway": "Different source examples and the learner's real Plot C belong in separate report records."
+      },
+      "scientificMeaning": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "displayText": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "captionText": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "spokenText": "Separate P H five point eight sandy-loam case\n\nA different case uses P H five point eight, sandy loam, gritty feel and an approximately half-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop and site requirements.\n\nThe source's illustrative P H from five point eight to six point five lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material and site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by P H alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+      "spokenTextSHA256": "0c180aab85b4984ad93fd5d1e5cf213dc900b0b51f8269efe747c3e5c54d3fde",
+      "spokenTextSha256": "0c180aab85b4984ad93fd5d1e5cf213dc900b0b51f8269efe747c3e5c54d3fde",
+      "voice": "Kore",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "f91a107acb6a32e2e6183f4490d58a3c12da8a7b327f75d91e2cdb6df74bdb53",
+      "requestFingerprintSha256": "f91a107acb6a32e2e6183f4490d58a3c12da8a7b327f75d91e2cdb6df74bdb53",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "Separate pH 5.8 sandy-loam case\n\nA different case uses pH 5.8, sandy loam, gritty feel and an approximately 0.5-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop/site requirements.\n\nThe source's illustrative pH 5.8→6.5 lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material/site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by pH alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+          "spoken": "Separate P H five point eight sandy-loam case\n\nA different case uses P H five point eight, sandy loam, gritty feel and an approximately half-inch ribbon.\n\nState the acidity classification source instead of relying on a vague adjective.\n\nDiscuss potatoes and strawberries as candidates; corn is conditional on crop and site requirements.\n\nThe source's illustrative P H from five point eight to six point five lime-target rationale names corn and alfalfa. Check the actual crop target, an appropriate lime-requirement test and material and site information before turning that example, agricultural limestone or a compost plan into a field recommendation; no dose is established by P H alone.\n\nDifferent source examples and the learner's real Plot C belong in separate report records.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged."
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "B",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    },
+    {
+      "id": "S3-17-en-E03-r1",
+      "unitId": "S3-17-en-E03-r1",
+      "stepId": "S3-17",
+      "locale": "en",
+      "semanticGroup": "E03",
+      "sourceCaseId": "calibration-retry",
+      "sourceWholeFileSHA256": "19352e6fba96270c95256fb30e20fef7ca78594a03ab0636d24434401d871e58",
+      "sourceBindings": [
+        {
+          "pointer": "/examples/2/title",
+          "text": "A retry can still need more practice",
+          "sha256": "e2f41610990c1e349de9f10d9fc2fda4d62205291f4ed9cf29ec7549b7cc41b0"
+        },
+        {
+          "pointer": "/examples/2/situation",
+          "text": "The sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.",
+          "sha256": "cd6bf8a238c247716c9203ed32ede26ea944868a2379712287bb73f4e44111d4"
+        },
+        {
+          "pointer": "/examples/2/reasoning/0",
+          "text": "The trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.",
+          "sha256": "9db8d846904ea7d833bfb8256e1c52f2f881cd863898ee233badccf6d5a7ffcb"
+        },
+        {
+          "pointer": "/examples/2/reasoning/1",
+          "text": "The learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.",
+          "sha256": "0128e28022184d042b3f6fbad59c3d64cfc358057a47b589d3ef200c368c199a"
+        },
+        {
+          "pointer": "/examples/2/reasoning/2",
+          "text": "The trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.",
+          "sha256": "0299ecc6eead66691d0cf79aa09b4a6bf819fdf17c1efce66d437d9aa133dd31"
+        },
+        {
+          "pointer": "/examples/2/takeaway",
+          "text": "A new attempt creates new evidence, not automatic success.",
+          "sha256": "5768414454f8abca05ac7665b04e5c4b831a4a1d02ed5f851854ff7bc55e10fa"
+        }
+      ],
+      "sourceExampleComplete": {
+        "id": "calibration-retry",
+        "title": "A retry can still need more practice",
+        "situation": "The sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.",
+        "reasoning": [
+          "The trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.",
+          "The learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.",
+          "The trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails."
+        ],
+        "takeaway": "A new attempt creates new evidence, not automatic success."
+      },
+      "scientificMeaning": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "displayText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "captionText": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "spokenText": "A retry can still need more practice\n\nThe sample was prepared well, but the P H meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+      "spokenTextSHA256": "cf3bea6da193e2a8c078f42779512493c2c9b7b732fe3da2a1b90f94c00541bf",
+      "spokenTextSha256": "cf3bea6da193e2a8c078f42779512493c2c9b7b732fe3da2a1b90f94c00541bf",
+      "voice": "Charon",
+      "model": "gemini-3.8-flash-tts",
+      "delivery": "Explain calmly and naturally to agricultural vocational learners in clear English. Read only the supplied connected passage with natural pauses. Preserve all negations, conditions, scene-safety restrictions and limits of training. Do not add medical advice, diagnoses, character voices, an introduction, music or an extra summary.",
+      "requestFingerprintSHA256": "3b40dbbc1316b51a623be7c593c0e3325d034e85a4af2d0b697b3d23c33aeb76",
+      "requestFingerprintSha256": "3b40dbbc1316b51a623be7c593c0e3325d034e85a4af2d0b697b3d23c33aeb76",
+      "assessmentSolutionsIncluded": true,
+      "quizOrWrittenKeysIncluded": false,
+      "sourceWrittenCaseModelAnswerIncluded": false,
+      "liveQuizAnswerKeyIncluded": false,
+      "workedExampleFullModelAnswer": true,
+      "disclosureGate": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true
+      },
+      "spokenAdaptationChanges": [
+        {
+          "written": "A retry can still need more practice\n\nThe sample was prepared well, but the pH meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+          "spoken": "A retry can still need more practice\n\nThe sample was prepared well, but the P H meter was calibrated incorrectly and its reading is unreliable.\n\nThe trainer credits observed preparation only under its own criterion and identifies calibration as the unmet one.\n\nThe learner studies the actual meter procedure and demonstrates a fresh calibration and measurement.\n\nThe trainer records what was actually seen, including another 'not yet demonstrated' if a required check still fails.\n\nA new attempt creates new evidence, not automatic success.",
+          "occurrences": 1,
+          "purpose": "Complete coherent spoken adaptation of the same complete source case, with exact locale connector, identifier and pronunciation meanings retained. Display and captions are unchanged.",
+          "sourceNumericLiteralsInThisUnit": [],
+          "boundedReadbackChanges": []
+        }
+      ],
+      "durationSeconds": null,
+      "actionTimestamps": null,
+      "synchronizationState": "PENDING_ACTUAL_APPROVED_RECORDINGS_NO_PARAGRAPH_DURATION_INFERENCE",
+      "automaticAdoption": false,
+      "sourcePCM": "NOT_YET_GENERATED",
+      "perUnitBudgetProposedNotReserved": {
+        "TTS": 1,
+        "blind": 1,
+        "ASR": 1,
+        "retry": 0
+      },
+      "existingExactCaseRequests": [],
+      "lessonWorkedExampleFullAnswerIncluded": true,
+      "originalBankWrittenAssessmentAnswerKeysIncluded": false,
+      "answerScopeClarification": {
+        "workedExampleFullModelAnswer": true,
+        "sourceWrittenCaseModelAnswerIncluded": false,
+        "legacyFlagMeaning": "Legacyflag refersto ORIGINALbank/writtentestmodelkeys only. AuthoredlessonworkedcasefullanswerISincludedandowncasegated;livequizandwrittenassessmentkeysarenotnarrated.",
+        "liveQuizAnswerKeyIncluded": false
+      },
+      "disclosurePolicyNotes": {
+        "id": "AFTER_CORRESPONDING_OWN_CASE_EXPLANATION",
+        "ownCaseOnly": true,
+        "requiresNonblankReportAttempt": true,
+        "textPresenceIsNotSemanticGrading": true,
+        "editReloadResetRehide": true,
+        "mayNotEnterOrdinaryLinearVideo": true,
+        "titlesAndSituationsMayRemainUpfront": true,
+        "fullReasoningAndTakeawayProtected": true,
+        "doesNotAwardObservedPracticalCompetence": true
+      },
+      "speakerId": "A",
+      "maximumProviderCalls": 1,
+      "maximumBlindAudioReviewCalls": 1,
+      "maximumASRInvocations": 1,
+      "automaticRetries": 0,
+      "deliverySha256": "510e50344bc31b3a9f6469bdd796759437aa1363aefa479f76a142e07d49d999",
+      "sourcePlan": "provenance/narration-en.json"
+    }
+  ]
+}

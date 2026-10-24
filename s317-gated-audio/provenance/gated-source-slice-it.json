@@ -1,0 +1,41 @@
+{
+  "stepId": "S3-17",
+  "locale": "it",
+  "canonicalWholeSourceSHA256": "ecd7bbe683866ef9b75cb778326df7a8e1f70a5ef21b3330a0f52d6566b02721",
+  "derivedSourceSliceNotWholeFile": true,
+  "examples": [
+    {
+      "id": "plot-c-model",
+      "title": "Modello fornito: C, pH 6.8, franco",
+      "situation": "La fonte dà un modello pH 6.8/franco e propone pomodori e mais.",
+      "reasoning": [
+        "Etichettare pH e tessitura come modello, non misure personali.",
+        "Spiegare pH quasi neutro/franco e condizioni sito/coltura non misurate.",
+        "Compost annuale e pH ogni 1–2 anni sono esempi da verificare, non prescrizioni fisse."
+      ],
+      "takeaway": "Il modello aiuta la scrittura, non certifica tutte le condizioni."
+    },
+    {
+      "id": "sandy-loam-model",
+      "title": "Caso separato: pH 5.8/franco sabbioso",
+      "situation": "Un caso diverso riporta pH 5,8, tessitura franco-sabbiosa, sensazione granulosa e un nastro lungo circa mezzo pollice.",
+      "reasoning": [
+        "Indicare la fonte della classificazione di acidità.",
+        "Patate e fragole candidati; mais condizionato al sito.",
+        "La motivazione esemplificativa della fonte per pH 5,8→6,5 cita mais ed erba medica. Verifica obiettivo colturale effettivo, test appropriato del fabbisogno di correzione calcarea e informazioni su materiale/sito prima di trasformare quell'esempio, il calcare agricolo o un piano di compost in una raccomandazione di campo; il solo pH non stabilisce una dose."
+      ],
+      "takeaway": "Esempi e vera misura C appartengono a registri separati."
+    },
+    {
+      "id": "calibration-retry",
+      "title": "Anche un ritentativo può restare carente",
+      "situation": "Campione preparato bene, ma pHmetro calibrato male e valore inaffidabile.",
+      "reasoning": [
+        "Formatore riconosce preparazione solo nel suo criterio e nomina la calibrazione mancante.",
+        "Allievo studia istruzioni reali e ripete calibrazione/misura osservata.",
+        "Il formatore registra ciò che vede, anche un altro non ancora dimostrato."
+      ],
+      "takeaway": "Nuova prova non equivale a promozione automatica."
+    }
+  ]
+}
