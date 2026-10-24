@@ -1,0 +1,41 @@
+name: Reviewed existing Soil caption tracks last22 only
+'on':
+  push:
+    branches: ['work/soil-bunny-captions22-20261024-r1']
+    paths: ['caption-only/queue.json']
+permissions:
+  contents: write
+concurrency:
+  group: soil-bounded-caption-api-stages
+  cancel-in-progress: false
+jobs:
+  caption:
+    if: github.run_attempt == 1 && github.repository_id == '1272666418' && github.event.created == true && github.event.before == '0000000000000000000000000000000000000000'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: caption-only
+    env:
+      WORKER_SHA: 7d7ad14c90490316c692da78c4288b0a46a858931cdcef471e048718fb69ac0d
+      RUNNER_SHA: 1467b1964212b3466323c7294cfa4a7ecaf358afa185dd0f7f2ffccfd1238e37
+      MANIFEST_SHA: 047a7159d6d3a5827f11f5e1e164d92f688dfa6e1923515b398dc237c0b0129d
+      PYTHONUNBUFFERED: '1'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Exact existing GUID caption metadata and ACK stage only
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+        run: python3 -B runner.py
+      - name: Preserve bounded intents and per-identity sanitized outcomes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: last22-caption-outcome
+          path: caption-only/output/**/*.json
+          if-no-files-found: error
+          retention-days: 30
