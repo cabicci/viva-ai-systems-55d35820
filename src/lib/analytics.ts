@@ -1,3 +1,10 @@
+import {
+  applyTikTokConsent,
+  resetTikTokForTests,
+  trackTikTokPageView,
+  trackTikTokRegistration,
+} from "@/lib/tiktok-pixel";
+
 export const GTM_CONTAINER_ID = "GTM-5BVZ85DR";
 export const GA4_MEASUREMENT_ID = "G-MDMNHQCK5G";
 export const META_PIXEL_ID = "2165346577381544";
@@ -177,6 +184,7 @@ export function applyAnalyticsConsent(consent: AnalyticsConsent): void {
   if (consent === "granted") {
     ensureGtm(win, doc);
     ensureMetaPixel(win, doc);
+    applyTikTokConsent(true);
     return;
   }
 
@@ -188,6 +196,7 @@ export function applyAnalyticsConsent(consent: AnalyticsConsent): void {
     );
   }
   win.fbq?.("consent", "revoke");
+  applyTikTokConsent(false);
   doc.getElementById(GTM_SCRIPT_ID)?.remove();
   doc.getElementById(META_SCRIPT_ID)?.remove();
 }
@@ -209,6 +218,7 @@ export function trackPageViewOnce(url: string, title = browserDocument()?.title 
     page_title: title,
   });
   win.fbq?.("track", "PageView");
+  trackTikTokPageView();
   if (absoluteUrl.pathname === "/pricing") {
     win.dataLayer.push({ event: "masaarat_view_pricing" });
   }
@@ -232,7 +242,47 @@ export function trackAcceptedContactOnce(result: { success: boolean }, key: obje
   }
 }
 
+/** Called only after a pending new account is confirmed. Never send identity fields. */
+export function trackConfirmedRegistration(): boolean {
+  if (!analyticsGranted) return false;
+  const win = browserWindow();
+  if (!win) return false;
+  try {
+    win.dataLayer = win.dataLayer ?? [];
+    win.dataLayer.push({ event: "masaarat_sign_up", method: "email" });
+  } catch {
+    return false;
+  }
+  try {
+    win.fbq?.("track", "CompleteRegistration");
+  } catch {
+    // A vendor failure cannot change authentication or replay this conversion.
+  }
+  trackTikTokRegistration();
+  return true;
+}
+
+/** Trackers must not read an authentication URL or a prefilled identity. */
+export function isSensitiveAnalyticsUrl(href: string): boolean {
+  try {
+    const url = new URL(href, "https://masaarat.ai");
+    if (["/signup", "/login", "/forgot-password", "/reset-password"].includes(url.pathname)) {
+      return true;
+    }
+    if (url.hash) return true;
+    return [...url.searchParams].some(
+      ([key, value]) =>
+        /^(email|phone|name|full_name|code|token|token_hash|access_token|refresh_token|id_token)$/i.test(
+          key,
+        ) || value.includes("@"),
+    );
+  } catch {
+    return true;
+  }
+}
+
 export function resetAnalyticsRuntimeForTests(): void {
+  resetTikTokForTests();
   analyticsGranted = false;
   consentInitialized = false;
   lastAppliedConsent = undefined;

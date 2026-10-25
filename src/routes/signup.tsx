@@ -12,6 +12,7 @@ import { useLocale } from "@/lib/locale/locale-context";
 import { kidsSignupRedirect, parseAuthIntentSearch } from "@/lib/kids/auth-intent";
 import { buildLocalizedPublicMeta } from "@/lib/locale/build-localized-public-meta";
 import { resolveRouteHeadLocale } from "@/lib/locale/resolve-route-head-locale";
+import { rememberPendingRegistration } from "@/lib/registration-analytics";
 
 export const Route = createFileRoute("/signup")({
   validateSearch: parseAuthIntentSearch,
@@ -36,7 +37,7 @@ function SignupPage() {
     e.preventDefault();
     if (fullName.trim().length < 2) return toast.error(t("auth.signup.nameRequired"));
     setLoading(true);
-    const { error } = await supabase.auth.signUp({
+    const { data, error } = await supabase.auth.signUp({
       email,
       password,
       options: {
@@ -46,6 +47,7 @@ function SignupPage() {
     });
     setLoading(false);
     if (error) return toast.error(error.message);
+    if (search.intent !== "kids") rememberPendingRegistration(data.user);
     toast.success(t("auth.signup.toast.success"));
     navigate({ to: "/login", search, replace: true });
   }

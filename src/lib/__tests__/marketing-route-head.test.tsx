@@ -24,6 +24,7 @@ vi.mock("@/lib/locale/locale-context", () => ({
   useLocale: () => ({ locale: "en", dir: "ltr", lang: "en" }),
 }));
 vi.mock("@/lib/trustedsite", () => ({ applyTrustedSiteConsent: vi.fn() }));
+vi.mock("@/lib/auth-context", () => ({ useAuth: () => ({ user: null, loading: false }) }));
 
 type PublicKind = keyof typeof PUBLIC_ROUTE_PATHS;
 const publicHead = (locale: SupportedLocale, kind: PublicKind) =>
