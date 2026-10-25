@@ -63,6 +63,7 @@ let failure;
 let cleanupError;
 let journeyPage;
 const journeyResponses = [];
+const loginResponses = [];
 const blocked = new Set();
 const redact = (value) =>
   typeof value === "string"
@@ -213,6 +214,11 @@ try {
   journeyPage = page;
   page.on("response", async (response) => {
     const url = new URL(response.url());
+    if (url.origin === localSupabase &&
+      (url.pathname === "/auth/v1/token" || url.pathname === "/rest/v1/rpc/has_role")) {
+      // Status and endpoint only: never persist credentials, response bodies or query strings.
+      loginResponses.push({ path: url.pathname, status: response.status() });
+    }
     if (url.origin === localSupabase && url.pathname.startsWith("/rest/v1/")) {
       const item = { path: url.pathname, status: response.status() };
       journeyResponses.push(item);
@@ -225,6 +231,10 @@ try {
   });
   page.setDefaultTimeout(25_000);
   await page.goto(`${base}/login?locale=en`, { waitUntil: "domcontentloaded", timeout: 30_000 });
+  // Login inputs exist in SSR HTML before their React handlers are attached.
+  // This banner is rendered only after AnalyticsConsentGate's mount effect,
+  // so its appearance proves hydration before filling controlled auth fields.
+  await page.getByRole("button", { name: "Decline", exact: true }).waitFor({ state: "visible" });
   await page.locator('input[type="email"]').fill(email);
   await page.locator('input[type="password"]').fill(password);
   const [tokenResponse, adminResponse] = await Promise.all([
@@ -310,6 +320,7 @@ const receipt = {
   fixtureDeleted: Boolean(userId) && !cleanupError,
   credentialFileRemoved: true,
   blockedExternalOrigins: [...blocked].sort(),
+  loginResponses,
   cases: gateResult?.totals?.cases ?? 0,
   error: redact(failure?.message),
   cleanupError: redact(cleanupError?.message),
