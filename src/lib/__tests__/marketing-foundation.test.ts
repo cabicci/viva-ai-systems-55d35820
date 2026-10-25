@@ -164,7 +164,7 @@ describe("consent-gated SPA page views", () => {
     applyAnalyticsConsent("granted");
     expect(trackPageViewOnce("/")).toBe(true);
     expect(trackPageViewOnce("/")).toBe(false);
-    expect(append).toHaveBeenCalledTimes(2);
+    expect(append).toHaveBeenCalledTimes(3);
     expect(dataLayerEvents("gtm.js")).toHaveLength(1);
     const queue = (window as unknown as Window & { fbq: { queue: unknown[][] } }).fbq.queue;
     expect(queue.filter((args) => args[0] === "init")).toHaveLength(1);
@@ -267,7 +267,9 @@ describe("route classification and crawler files", () => {
     expect(isDisallowed("/image-gallery/", rules)).toBe(true);
     expect(isDisallowed("/learn/builder/lesson-1", rules)).toBe(true);
     expect(isDisallowed("/technical/learn/M01-L01", rules)).toBe(true);
-    expect(ROUTE_CATALOG.find((route) => route.source === "technical.learn.$lessonId.tsx")?.visibility).toBe("private");
+    expect(
+      ROUTE_CATALOG.find((route) => route.source === "technical.learn.$lessonId.tsx")?.visibility,
+    ).toBe("private");
     expect(isDisallowed("/kids", rules)).toBe(false);
     expect(isDisallowed("/kids/", rules)).toBe(false);
     expect(isDisallowed("/kids/level-1", rules)).toBe(true);

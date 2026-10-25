@@ -3,8 +3,14 @@ import { useEffect, useState } from "react";
 import { ANALYTICS_CONSENT_COPY } from "@/lib/analytics-consent-copy";
 import { applyTrustedSiteConsent } from "@/lib/trustedsite";
 import { useLocale } from "@/lib/locale/locale-context";
+import { useAuth } from "@/lib/auth-context";
+import {
+  clearPendingRegistration,
+  completePendingRegistration,
+} from "@/lib/registration-analytics";
 import {
   applyAnalyticsConsent,
+  isSensitiveAnalyticsUrl,
   persistAnalyticsConsent,
   readAnalyticsConsent,
   trackPageViewOnce,
@@ -13,8 +19,11 @@ import {
 
 export function AnalyticsConsentGate() {
   const { locale, dir, lang } = useLocale();
+  const { user, loading: authLoading } = useAuth();
   const pathname = useRouterState({ select: (state) => state.location.pathname });
+  const locationHref = useRouterState({ select: (state) => state.location.href });
   const onKidsPage = pathname === "/kids" || pathname.startsWith("/kids/");
+  const sensitivePage = isSensitiveAnalyticsUrl(locationHref);
   const copy = ANALYTICS_CONSENT_COPY[locale];
   const pageView = useRouterState({
     select: (state) => {
@@ -47,15 +56,21 @@ export function AnalyticsConsentGate() {
 
   useEffect(() => {
     if (!hydrated) return;
-    const effectiveConsent = onKidsPage ? "denied" : consent;
+    const effectiveConsent = onKidsPage || sensitivePage ? "denied" : consent;
     applyAnalyticsConsent(effectiveConsent);
     applyTrustedSiteConsent(effectiveConsent);
-  }, [consent, hydrated, onKidsPage]);
+    if (consent !== "granted" || onKidsPage) clearPendingRegistration();
+  }, [consent, hydrated, onKidsPage, sensitivePage]);
 
   useEffect(() => {
-    if (!hydrated || consent !== "granted" || onKidsPage || !pageView) return;
+    if (!hydrated || consent !== "granted" || onKidsPage || sensitivePage || !pageView) return;
     trackPageViewOnce(pageView.href, pageView.title);
-  }, [consent, hydrated, onKidsPage, pageView]);
+  }, [consent, hydrated, onKidsPage, sensitivePage, pageView]);
+
+  useEffect(() => {
+    if (!hydrated || authLoading || onKidsPage || sensitivePage || !pageView) return;
+    completePendingRegistration(user);
+  }, [hydrated, authLoading, user, consent, onKidsPage, sensitivePage, pageView]);
 
   function choose(next: Exclude<AnalyticsConsent, null>) {
     persistAnalyticsConsent(next);
