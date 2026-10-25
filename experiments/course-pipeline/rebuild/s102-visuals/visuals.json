@@ -1,0 +1,122 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "style": "Premium coherent educational dimensional 3D cartoon diorama, anatomically and spatially credible synthetic training props, realistic fabric/metal/plastic/field material textures, soft contact shadows and readable daylight. 16:9 wide composition, room for later localized editable overlays. No rendered people, faces, hands, helpers or on-screen presenters. Clearly synthetic faceless training mannequins may appear only where requested. No writing, numerals, symbols, arrows, logos, watermarks or fake text. No actual injuries, chemicals, medications or real treatment. All labels and calls are later overlays.",
+  "assets": [
+    {
+      "id": "s102-video-assess",
+      "scenes": [
+        "s102-reading-assess"
+      ],
+      "role": "video",
+      "subject": "Camera: first-person eye-level scan at field access gate; no body visible. Scene: A camera-view safety scan pauses behind a simple barrier before a simulated field incident. Show a separate vehicle route, uneven ground and a distant blank training mannequin; no person, face, helper or character is visible. Required visible facts: safe boundary and pause; visible route and ground hazards; fictional training props."
+    },
+    {
+      "id": "s102-video-alert",
+      "scenes": [
+        "s102-reading-alert"
+      ],
+      "role": "video",
+      "subject": "Camera: first-person close view of a safe mock call area; no hands visible. Scene: A blank phone screen and blank site card lie on a clean station inside the safe zone. A clearly open access path is visible beyond a barrier; no person, character, hands or actual call is shown. Required visible facts: blank phone and card for overlays; safe access route; no actual emergency call."
+    },
+    {
+      "id": "s102-video-injury",
+      "scenes": [
+        "s102-reading-injury"
+      ],
+      "role": "video",
+      "subject": "Camera: low three-quarter view of a faceless training mannequin. Scene: A clearly synthetic mannequin rests in a safe field shelter with its ankle untouched in the found position. Clean unused gauze and gloves are nearby as teaching props. No person, helper, blood or real wound appears. Required visible facts: limb left in its found position; mannequin visibly a nonhuman prop; unused clean supplies."
+    },
+    {
+      "id": "s102-video-heat",
+      "scenes": [
+        "s102-reading-heat"
+      ],
+      "role": "video",
+      "subject": "Camera: single continuous shaded training tableau at eye level. Scene: A clearly synthetic faceless training mannequin sits under a field shade with cooling cloth and fan ready. Small moisture beads on the mannequin show that sweating can coexist with a possible severe heat-illness scenario; a blank phone prop indicates a simulated call. No person, character, medication or drink appears. Required visible facts: shade and cooling props; moisture beads without clinical certainty; blank call prop."
+    },
+    {
+      "id": "s102-video-chemical",
+      "scenes": [
+        "s102-reading-chemical"
+      ],
+      "role": "video",
+      "subject": "Camera: side tracking view of an empty training wash route. Scene: A clear route leads from an unopened neutral training bottle to a maintained full eyewash station. Use only unused props and no person, hands, real chemical discharge or eye washing. The bottle has no label or pictogram. Required visible facts: full washing facility; safe unobstructed route; simulation props only."
+    },
+    {
+      "id": "s102-video-kit",
+      "scenes": [
+        "s102-reading-kit"
+      ],
+      "role": "video",
+      "subject": "Camera: first-person eye-level kit display at a field shelter; no hands visible. Scene: An open clean training first-aid kit displays unused gauze, gloves, blanket and blank contact card; a full eyewash station is separately visible in the background. The small eye-rinse bottle is a starter prop, not the sole provision. No person or character appears. Required visible facts: distinct clean supplies; separate full eyewash provision; blank editable contact card."
+    },
+    {
+      "id": "s102-video-road-case",
+      "scenes": [
+        "s102-example-road"
+      ],
+      "role": "video",
+      "subject": "Camera: diagonal eye-level view along the vehicle route. Scene: A clearly synthetic mannequin represents a simulated fall well away from a stationary vehicle route. Barrier and open access path show the safe approach; no person, helper or character is visible, and the mannequin is not pulled upright. Required visible facts: traffic risk spatially clear; mannequin stays still; clear access route."
+    },
+    {
+      "id": "s102-video-dizzy-case",
+      "scenes": [
+        "s102-example-dizzy"
+      ],
+      "role": "video",
+      "subject": "Camera: medium close view of a remote shade-shelter training tableau. Scene: A faceless synthetic torso mannequin sits beneath shade beside a fan, damp cooling cloth and blank mock-call phone. Moisture beads indicate that sweating is possible; no visible person, helper, diagnosis label or oral drink appears. Required visible facts: moisture beads possible; supportive cooling props; blank call phone."
+    },
+    {
+      "id": "s102-video-ankle-case",
+      "scenes": [
+        "s102-example-ankle"
+      ],
+      "role": "video",
+      "subject": "Camera: side view of shallow hidden-hole training zone. Scene: A visibly synthetic full mannequin remains in its found position beside a shallow concealed-hole prop. An emergency call card and safe access route are visible but no person, character, hands, pulling or limb straightening occurs. Required visible facts: obvious simulated mannequin; no forced movement; ground hazard visible."
+    },
+    {
+      "id": "s102-video-eye-case",
+      "scenes": [
+        "s102-example-eye"
+      ],
+      "role": "video",
+      "subject": "Camera: eye-level route toward a full eyewash station. Scene: An unopened neutral training bottle on a table stands near a clear route to a full eyewash station. No chemical discharge, exposed eye, person, helper or hands appears; a blank space remains for the editable action sequence overlay. Required visible facts: full washing station; clear route; no real exposure."
+    },
+    {
+      "id": "s102-video-kit-case",
+      "scenes": [
+        "s102-example-kit-match"
+      ],
+      "role": "video",
+      "subject": "Camera: close three-quarter view of kit shelf and wash route. Scene: Clean gauze and a blank contact card are placed outside an open training kit beside a separate full eyewash station. Tweezers stay unused; no medicine, wound, person, character or hands appear. Blank surfaces remain available for editable overlays. Required visible facts: purposeful item grouping; separate full eyewash; no treatment performed."
+    },
+    {
+      "id": "s1-02-scene-safety-still",
+      "scenes": [
+        "s1-02-scene-safety-still"
+      ],
+      "role": "lesson",
+      "subject": "Camera: wide high three-quarter spatial model from above-left. Still composition: Field access junction as a compact 3D model: stationary training mannequin away from a visible traffic route, safe observation zone behind a barrier and empty upper-left margin for overlays. No person, character or eye-level rescue motion. Distinct intended view: s102-video-assess and s102-video-road-case use first-person eye-level sequential views."
+    },
+    {
+      "id": "s1-02-heat-comparison-still",
+      "scenes": [
+        "s1-02-heat-comparison-still"
+      ],
+      "role": "lesson",
+      "subject": "Camera: two separate parallel field-shelter prop vignettes seen from above. Still composition: Left: alert scenario represented by a faceless synthetic mannequin seated in shade with unused cooling props; right: severe-warning scenario represented by a separate faceless synthetic mannequin with moisture beads and a blank call phone. Both may show moisture; no person, helper, diagnosis label or oral drink. Blank divider and margins for editable localized labels. Distinct intended view: s102-video-heat and s102-video-dizzy-case use a single continuous eye-level scene."
+    },
+    {
+      "id": "s1-02-aid-kit-still",
+      "scenes": [
+        "s1-02-aid-kit-still"
+      ],
+      "role": "lesson",
+      "subject": "Camera: close tabletop three-quarter inventory layout. Still composition: Unused gauze, tape, blanket, small starter eye-rinse bottle and blank contact card on a clean table. A maintained full eyewash station sits visibly apart in the soft-focus background. No label, medicine name or injury. Distinct intended view: s102-video-kit and s102-video-kit-case show an adult actively checking the actual training kit and washing route."
+    }
+  ]
+}

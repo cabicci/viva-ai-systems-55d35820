@@ -1,0 +1,81 @@
+{
+  "attempts": [
+    {
+      "attempt": 0,
+      "status": "reviewed",
+      "generation": "generated",
+      "quality": {
+        "transcript": "لقيت شاشا، وشريطا طبيا، وزجاجة صغيرة لغسل العين، وبطانية طوارئ، وأرقام اتصال مكتوبة في حقيبة الإسعاف. للجرح العميق، اختار شاشا نظيفا للضغط المباشر. الشريط ممكن يساعد في تثبيت غيار بالطريقة المناسبة، لكن جلبه ما يأخرش الضغط أو طلب المساعدة. لرشة في العين، ابدأ الغسل المناسب واتأكد إن تجهيزات الغسل الكاملة متاحة. الزجاجة الصغيرة لوحدها ممكن تخلص بدري. استخدم الأرقام والمكان المكتوبين عشان تبلغ بدقة حتى لو متوتر. اختار البطانية فقط لما تكون حماية المصاب من البرد مناسبة. معرفتك سبب اختيار الأداة أهم من حفظ قائمة محتويات الحقيبة.",
+        "checks": [
+          {
+            "id": "complete",
+            "pass": true,
+            "reason": "All sentences and final words are audible, with no cuts or repetitions."
+          },
+          {
+            "id": "faithful",
+            "pass": true,
+            "reason": "The transcription accurately preserves all numbers, units, negations, conditions, technical terms, and emergency actions without adding external advice."
+          },
+          {
+            "id": "locale",
+            "pass": true,
+            "reason": "The speech uses natural Egyptian Arabic pronunciation and common phrasing, consistent with the requested locale."
+          },
+          {
+            "id": "intelligible",
+            "pass": true,
+            "reason": "The speech is clear, natural, and fully intelligible, with no clipping, garbling, abrupt endings, or prolonged silences."
+          },
+          {
+            "id": "no-extra",
+            "pass": true,
+            "reason": "The recording contains only the requested content, with no introduction, music, prompt responses, or commentary."
+          }
+        ],
+        "passed": true,
+        "audioSha256": "ee5d605a7c760e9bc6a25582c05ebae2738e65157b8feebc8db157eb61b3e72f",
+        "qaKey": "64bf9fe087124253614b2538342a1ec0226bd01b0645822b8bf5c473273f587f",
+        "durationSeconds": 42.21095833333333,
+        "humanListeningReviewed": false,
+        "independentNativeReview": false
+      }
+    }
+  ],
+  "accepted": {
+    "transcript": "لقيت شاشا، وشريطا طبيا، وزجاجة صغيرة لغسل العين، وبطانية طوارئ، وأرقام اتصال مكتوبة في حقيبة الإسعاف. للجرح العميق، اختار شاشا نظيفا للضغط المباشر. الشريط ممكن يساعد في تثبيت غيار بالطريقة المناسبة، لكن جلبه ما يأخرش الضغط أو طلب المساعدة. لرشة في العين، ابدأ الغسل المناسب واتأكد إن تجهيزات الغسل الكاملة متاحة. الزجاجة الصغيرة لوحدها ممكن تخلص بدري. استخدم الأرقام والمكان المكتوبين عشان تبلغ بدقة حتى لو متوتر. اختار البطانية فقط لما تكون حماية المصاب من البرد مناسبة. معرفتك سبب اختيار الأداة أهم من حفظ قائمة محتويات الحقيبة.",
+    "checks": [
+      {
+        "id": "complete",
+        "pass": true,
+        "reason": "All sentences and final words are audible, with no cuts or repetitions."
+      },
+      {
+        "id": "faithful",
+        "pass": true,
+        "reason": "The transcription accurately preserves all numbers, units, negations, conditions, technical terms, and emergency actions without adding external advice."
+      },
+      {
+        "id": "locale",
+        "pass": true,
+        "reason": "The speech uses natural Egyptian Arabic pronunciation and common phrasing, consistent with the requested locale."
+      },
+      {
+        "id": "intelligible",
+        "pass": true,
+        "reason": "The speech is clear, natural, and fully intelligible, with no clipping, garbling, abrupt endings, or prolonged silences."
+      },
+      {
+        "id": "no-extra",
+        "pass": true,
+        "reason": "The recording contains only the requested content, with no introduction, music, prompt responses, or commentary."
+      }
+    ],
+    "passed": true,
+    "audioSha256": "ee5d605a7c760e9bc6a25582c05ebae2738e65157b8feebc8db157eb61b3e72f",
+    "qaKey": "64bf9fe087124253614b2538342a1ec0226bd01b0645822b8bf5c473273f587f",
+    "durationSeconds": 42.21095833333333,
+    "humanListeningReviewed": false,
+    "independentNativeReview": false
+  }
+}

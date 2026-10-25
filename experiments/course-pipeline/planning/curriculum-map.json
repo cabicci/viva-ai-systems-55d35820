@@ -1,0 +1,2007 @@
+{
+  "version": "0.1",
+  "status": "خطة للمراجعة — ليست أمر إنتاج",
+  "date": "2026-10-13",
+  "title": "خريطة منهج التربة والمحاصيل",
+  "courseId": "SOIL",
+  "source": {
+    "file": "Fundamentals of Soil and Crops_4Printing.pdf",
+    "sha256": "d3ac9eb19a664c59f113754679fc73d3080148fc363de46651a2df9c9004bd36",
+    "physicalPages": 146,
+    "scope": "٣ وحدات، ١٤ موضوعًا تدريسيًا، وتقييم ختامي. الغلاف والفهرس والمراجع ليست دروسًا مستقلة."
+  },
+  "audience": "طلبة التعليم الفني الزراعي؛ تعلم أونلاين وتطبيق فعلي تحت إشراف مدرّب. السنة الدراسية ومستوى الدخول غير محددين.",
+  "locales": [
+    "ar-EG",
+    "en",
+    "it",
+    "de"
+  ],
+  "units": [
+    {
+      "id": "U1",
+      "title": "مهارات التربة والشغل الآمن",
+      "sourceTitle": "Practical Soil Skills",
+      "pages": [
+        3,
+        35
+      ]
+    },
+    {
+      "id": "U2",
+      "title": "نفهم التربة ونقرأ نتائجها",
+      "sourceTitle": "Soil and Crop Science Basics",
+      "pages": [
+        36,
+        86
+      ]
+    },
+    {
+      "id": "U3",
+      "title": "نختار المحصول ونطبق في الحقل",
+      "sourceTitle": "Soil and Crop Applications",
+      "pages": [
+        87,
+        146
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "id": "SOIL-U1-L01",
+      "order": 1,
+      "unit": "U1",
+      "title": "نحدد الخطر قبل ما نبدأ",
+      "en": "Field hazards and task-specific PPE",
+      "topics": [
+        "U1-T3"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يحدد أخطار موقع عمل زراعي ويختار وسيلة التحكم ومهمات الوقاية المناسبة للمهمة.",
+      "activity": "اختيار مناطق الخطر في مشهد حقل، ثم ترتيب الإجراء الوقائي.",
+      "evidence": "قائمة تجهيز موقع يراجعها المدرب؛ يبرر الطالب قرارات الوقاية ولا يبدأ مع خطر حرج غير مسيطر عليه.",
+      "prerequisites": [],
+      "risks": [
+        "R2"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          17,
+          19
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L02",
+      "order": 2,
+      "unit": "U1",
+      "title": "نتصرف إزاي وقت الطوارئ؟",
+      "en": "Emergency decisions and communication",
+      "topics": [
+        "U1-T3"
+      ],
+      "onlineMinutes": [
+        14,
+        18
+      ],
+      "supervisedMinutes": [
+        20,
+        30
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يرتب حماية النفس وطلب المساعدة والإبلاغ عن المكان والخطر، ويلتزم بحدود تدريبه.",
+      "activity": "سيناريو متفرع للإجهاد الحراري أو حادث أو تعرض كيميائي، بدون تعرض حقيقي.",
+      "evidence": "تمثيل بلاغ طوارئ وخطة إخلاء آمنة؛ ملاحظة المدرب لتسلسل القرارات.",
+      "prerequisites": [
+        "SOIL-U1-L01"
+      ],
+      "risks": [
+        "R2"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          19,
+          25
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L03",
+      "order": 3,
+      "unit": "U1",
+      "title": "ناخد عينة تمثل الأرض",
+      "en": "Representative composite soil sampling",
+      "topics": [
+        "U1-T1"
+      ],
+      "onlineMinutes": [
+        12,
+        18
+      ],
+      "supervisedMinutes": [
+        30,
+        40
+      ],
+      "videoMinutes": [
+        3,
+        3
+      ],
+      "goal": "يخطط ويجمع عينة مركبة من منطقة متجانسة ويوثقها وفق طلب المعمل.",
+      "activity": "خريطة نقاط جمع وأسئلة عن العمق والخلط وبيانات الكيس.",
+      "evidence": "عينة فعلية بملصق مطابق وسجل جمع؛ المدرب يلاحظ التوزيع والعمق والنظافة والخلط.",
+      "prerequisites": [
+        "SOIL-U1-L01",
+        "SOIL-U1-L02"
+      ],
+      "risks": [
+        "R1"
+      ],
+      "type": "lesson",
+      "notes": "إعادة استخدام الدرس التجريبي SOIL-PILOT-01. بروتوكول ١٥ عينة و٠–٢٠ سم افتراضي لهذا التدريب فقط.",
+      "status": "تجريبي منفذ — يُعاد استخدامه",
+      "reuseLessonId": "SOIL-PILOT-01",
+      "pageRanges": [
+        [
+          4,
+          9
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L04",
+      "order": 4,
+      "unit": "U1",
+      "title": "نقرأ ملمس التربة ولونها",
+      "en": "Texture by feel and cautious color interpretation",
+      "topics": [
+        "U1-T2"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        25,
+        35
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يسجل الملمس واللون ويجري اختبار الشريط ويعرض تصنيفًا مبدئيًا مع حدود دقته.",
+      "activity": "مقارنة عينات ورسوم لمس وحالات يختلف فيها اللون عن التوقع.",
+      "evidence": "ورقة ملاحظة لثلاث عينات مجهولة، مع تنفيذ اختبار الشريط أمام المدرب.",
+      "prerequisites": [
+        "SOIL-U1-L03"
+      ],
+      "risks": [
+        "R3"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          10,
+          16
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L05",
+      "order": 5,
+      "unit": "U1",
+      "title": "نحافظ على هوية العينة",
+      "en": "Sample identity, handling and field records",
+      "topics": [
+        "U1-T4"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يربط معرف العينة بالكيس وسجل الموقع والعمق والتاريخ، ويختار الحفظ حسب التحليل.",
+      "activity": "اكتشاف أخطاء في ملصقات وسجلات وتسلسل تسليم عينات.",
+      "evidence": "كيس وسجل متطابقان وخطة تسليم؛ تمييز البيانات المجهولة بدل اختراعها.",
+      "prerequisites": [
+        "SOIL-U1-L03"
+      ],
+      "risks": [
+        "R1"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          26,
+          30
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L06",
+      "order": 6,
+      "unit": "U1",
+      "title": "نكتب طريقة الشغل بوضوح",
+      "en": "Reproducible field sampling methods",
+      "topics": [
+        "U1-T4"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يكتب وصفًا مختصرًا قابلًا للتكرار لطريقة الجمع والحفظ، ويفصل المشاهدة عن الاستنتاج.",
+      "activity": "تحسين فقرة ناقصة باستخدام سجل معلوم ومراجعة زميل بمعايير واضحة.",
+      "evidence": "فقرة تتضمن الهدف والموقع والأداة والعمق والحفظ؛ كل معلومة لها أصل في السجل.",
+      "prerequisites": [
+        "SOIL-U1-L05"
+      ],
+      "risks": [
+        "R4"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          30,
+          34
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U1-L07",
+      "order": 7,
+      "unit": "U1",
+      "title": "تطبيق الوحدة: من الحقل لسجل العينة",
+      "en": "Unit 1 practical checkpoint",
+      "topics": [
+        "U1-T1",
+        "U1-T2",
+        "U1-T3",
+        "U1-T4"
+      ],
+      "onlineMinutes": [
+        12,
+        15
+      ],
+      "supervisedMinutes": [
+        35,
+        45
+      ],
+      "videoMinutes": [
+        0,
+        0
+      ],
+      "goal": "ينفذ سلسلة العمل الآمن وجمع العينة ووصفها وتوثيقها مع تفسير اختياراته.",
+      "activity": "حالة جديدة تجمع الخريطة والعينة والملصق؛ أسئلة تفسير قصيرة.",
+      "evidence": "أدلة فردية وملاحظة مدرب؛ أي إخفاق سلامة حرج يوقف التطبيق ويُعاد التدريب عليه.",
+      "prerequisites": [
+        "SOIL-U1-L04",
+        "SOIL-U1-L06"
+      ],
+      "risks": [
+        "R1",
+        "R2"
+      ],
+      "type": "checkpoint",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          4,
+          16
+        ],
+        [
+          17,
+          25
+        ],
+        [
+          26,
+          35
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L01",
+      "order": 8,
+      "unit": "U2",
+      "title": "العناصر الغذائية بتعمل إيه؟",
+      "en": "Roles of plant nutrients",
+      "topics": [
+        "U2-T1"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يربط وظائف N وP وK بأجزاء النبات، ويميز العناصر الكبرى والصغرى.",
+      "activity": "بطاقات مطابقة مع مقارنة وظائف العناصر وأمثلة نمو.",
+      "evidence": "يشرح وظيفة كل عنصر بمثال ويصحح فكرة أن NPK هي كل احتياجات النبات.",
+      "prerequisites": [
+        "SOIL-U1-L07"
+      ],
+      "risks": [
+        "R5"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          37,
+          39
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L02",
+      "order": 9,
+      "unit": "U2",
+      "title": "العنصر بيوصل للجذر إزاي؟",
+      "en": "Nutrient movement to roots",
+      "topics": [
+        "U2-T1"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يفرق بين الجريان الكتلي والانتشار واعتراض الجذر ويربطها بالماء ونشاط التربة.",
+      "activity": "تحريك الماء والجذور في نموذج سببي مبسط ومقارنة النتيجة.",
+      "evidence": "تفسير ثلاث حالات انتقال بدون اعتبار آلية واحدة مسؤولة عن كل العناصر.",
+      "prerequisites": [
+        "SOIL-U2-L01"
+      ],
+      "risks": [
+        "R5"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          39,
+          41
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L03",
+      "order": 10,
+      "unit": "U2",
+      "title": "الأعراض دليل… مش تشخيص نهائي",
+      "en": "Nutrient symptoms and differential diagnosis",
+      "topics": [
+        "U2-T1",
+        "U3-T2"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يسجل موضع وشكل العرض ويقترح أسبابًا محتملة وخطوة تحقق قبل التوصية.",
+      "activity": "محطات صور لأعراض متشابهة مع اختيار الدليل الناقص.",
+      "evidence": "سجل مشاهدة وتفسير واحتمال بديل؛ لا توصية تسميد من صورة وحدها.",
+      "prerequisites": [
+        "SOIL-U2-L01",
+        "SOIL-U2-L02"
+      ],
+      "risks": [
+        "R5"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          41,
+          44
+        ],
+        [
+          104,
+          105
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L04",
+      "order": 11,
+      "unit": "U2",
+      "title": "نفهم pH وتأثيره",
+      "en": "Soil pH and nutrient availability",
+      "topics": [
+        "U2-T2"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقرأ مقياس pH ويفسر أثر تغيره على إتاحة العناصر مع اختلاف احتياجات المحاصيل.",
+      "activity": "مقياس تفاعلي ومثال محلول لفروق الحموضة، ثم حالة تفسير.",
+      "evidence": "قراءة صحيحة للمقياس وتفسير سبب عدم كفاية إضافة السماد وحدها.",
+      "prerequisites": [
+        "SOIL-U2-L02"
+      ],
+      "risks": [
+        "R6"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          45,
+          48
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L05",
+      "order": 12,
+      "unit": "U2",
+      "title": "نقيس pH بطريقة قابلة للتكرار",
+      "en": "Measuring and recording soil pH",
+      "topics": [
+        "U2-T2",
+        "U2-T3"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        25,
+        35
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يختار الطريقة ويعاير الجهاز ويجهز المعلق ويسجل النتيجة وفق إجراء المعمل.",
+      "activity": "ترتيب خطوات واكتشاف قراءة غير موثوقة بسبب المعايرة أو التحضير.",
+      "evidence": "سجل معايرة وقياس متكرر ضمن سماحية الإجراء المعتمد؛ يلاحظ المدرب التنفيذ.",
+      "prerequisites": [
+        "SOIL-U2-L04"
+      ],
+      "risks": [
+        "R6",
+        "R7"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          48,
+          50
+        ],
+        [
+          60,
+          61
+        ],
+        [
+          140,
+          141
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L06",
+      "order": 13,
+      "unit": "U2",
+      "title": "نقرر قبل ما نعدّل التربة",
+      "en": "pH amendments and limits of recommendations",
+      "topics": [
+        "U2-T2"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقارن خيارات إدارة الحموضة والقلوية ويحدد البيانات المطلوبة قبل تحديد مادة أو جرعة.",
+      "activity": "حالة معملية بثلاث ترب؛ اختيار إجراء مبرر أو طلب معلومات إضافية.",
+      "evidence": "توصية مشروطة بالغرض والمحصول والتحليل؛ لا جرعات عامة ولا خلط بين القلوية والصودية.",
+      "prerequisites": [
+        "SOIL-U2-L04",
+        "SOIL-U2-L05"
+      ],
+      "risks": [
+        "R6"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          50,
+          55
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L07",
+      "order": 14,
+      "unit": "U2",
+      "title": "نجهز العينة والمعمل",
+      "en": "Laboratory readiness and sample preparation",
+      "topics": [
+        "U2-T3"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        25,
+        35
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يجهز محطة نظيفة ويختار أدوات الوزن والغربلة والتحضير الملائمة للاختبار.",
+      "activity": "تحديد أدوات ومحاكاة سلسلة تحضير وكشف مصادر التلوث.",
+      "evidence": "سجل معرفات وأوزان وأداة وطريقة تحضير؛ لا تجفيف تلقائي لعينة تحتاج حفظًا مختلفًا.",
+      "prerequisites": [
+        "SOIL-U1-L05",
+        "SOIL-U2-L05"
+      ],
+      "risks": [
+        "R1",
+        "R7"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          56,
+          60
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L08",
+      "order": 15,
+      "unit": "U2",
+      "title": "نقرأ اختبارات العناصر والمادة العضوية",
+      "en": "Nutrient and organic-matter tests",
+      "topics": [
+        "U2-T3"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        20,
+        30
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يجري اختبار عناصر سريعًا بإشراف وفق إجراء المعمل، ويفسر معنى NPK وOM وحدود مقارنة النتائج.",
+      "activity": "قراءة نتائج محاكاة ومشاهدة عرض مدرب لأداة اختبار معتمدة.",
+      "evidence": "ملاحظة إجراء الاختبار المسموح به وسجل نتائجه ووحداته؛ تفسير مصدر بيانات OM والحاجة لإعادة اختبار.",
+      "prerequisites": [
+        "SOIL-U2-L07",
+        "SOIL-U2-L01"
+      ],
+      "risks": [
+        "R7",
+        "R8"
+      ],
+      "type": "lesson",
+      "notes": "الأفران والكواشف الخاصة عرض مدرب مؤهل وفق SOP؛ لا وصفة تشغيل كيميائي أو حراري عامة للطالب.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          61,
+          66
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L09",
+      "order": 16,
+      "unit": "U2",
+      "title": "نشوف الترسيب ونقيس الطبقات",
+      "en": "Sedimentation as an instructional soil model",
+      "topics": [
+        "U2-T4"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        20,
+        30
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يجهز تجربة ترسيب تعليمية ويسجل الزمن والطبقات ويشرح حدود التقدير.",
+      "activity": "خط زمني للترسيب وعينات مجهزة مسبقًا للمقارنة.",
+      "evidence": "جدول قياس صور/عينات معروف زمنها؛ التمييز بين هذا التقدير والتحليل المعملي المعتمد.",
+      "prerequisites": [
+        "SOIL-U1-L04",
+        "SOIL-U2-L07"
+      ],
+      "risks": [
+        "R3"
+      ],
+      "type": "lesson",
+      "notes": "قد يمتد الانتظار ٢٤–٤٨ ساعة؛ غير داخل وقت العمل النشط، وتحدد الطريقة المعتمدة أزمنة القياس.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          67,
+          73
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L10",
+      "order": 17,
+      "unit": "U2",
+      "title": "نحسب القوام ونقرأ المثلث",
+      "en": "Texture proportions and the USDA triangle",
+      "topics": [
+        "U2-T4"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يحسب نسب المكونات ويتحقق من مجموعها ويحدد موضع العينة في مثلث القوام.",
+      "activity": "مثال محلول ثم إدخال نسب وكشف خطأ في حساب أو تسمية.",
+      "evidence": "ورقة حساب وتصنيف متحقق منه بأداة USDA؛ يذكر حدود بيانات تجربة البرطمان.",
+      "prerequisites": [
+        "SOIL-U2-L09"
+      ],
+      "risks": [
+        "R3"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          70,
+          75
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L11",
+      "order": 18,
+      "unit": "U2",
+      "title": "نحوّل النتائج لتقرير مفهوم",
+      "en": "Clear soil results and documentation",
+      "topics": [
+        "U2-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "ينظم النتائج في جدول بوحدات ومراجع تفسير ويفصلها عن الرأي والتوصية.",
+      "activity": "إصلاح تقرير كثيف أو مضلل، ثم كتابة نسخة مختصرة للقارئ.",
+      "evidence": "تقرير واضح فيه هوية وطريقة ونتائج وتفسير وبيانات ناقصة معلنة.",
+      "prerequisites": [
+        "SOIL-U1-L06",
+        "SOIL-U2-L08",
+        "SOIL-U2-L10"
+      ],
+      "risks": [
+        "R4",
+        "R8"
+      ],
+      "type": "lesson",
+      "notes": "يشمل شرح CEC ومعنى وحدات القياس والمراجع التفسيرية بلغة بسيطة، دون حسابات أو حدود غير مقدمة.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          76,
+          81
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L12",
+      "order": 19,
+      "unit": "U2",
+      "title": "نوصّي بناءً على الدليل",
+      "en": "Evidence-based preliminary recommendations",
+      "topics": [
+        "U2-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يربط التوصية بنتيجة وطريقة تحليل ومحصول ويفرق بين إجراء أولي وقرار يحتاج مختصًا.",
+      "activity": "حالة تقرير تربة مع تعارض أو معلومة ناقصة؛ ترتيب الأولويات.",
+      "evidence": "كل توصية لها دليل وحدود؛ لا اعتماد حدود ppm أو OM كقاعدة ثابتة لكل المعامل.",
+      "prerequisites": [
+        "SOIL-U2-L06",
+        "SOIL-U2-L11"
+      ],
+      "risks": [
+        "R6",
+        "R8"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          79,
+          84
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U2-L13",
+      "order": 20,
+      "unit": "U2",
+      "title": "تطبيق الوحدة: اختبار وقراءة تقرير",
+      "en": "Unit 2 laboratory and interpretation checkpoint",
+      "topics": [
+        "U2-T1",
+        "U2-T2",
+        "U2-T3",
+        "U2-T4",
+        "U2-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        40,
+        55
+      ],
+      "videoMinutes": [
+        0,
+        0
+      ],
+      "goal": "ينفذ القياسات المسموح بها ويجمع نتائج موثقة في تفسير متسق لحالة جديدة.",
+      "activity": "ملف عينة جديد ونتائج مقدمة بوضوح، مع أسئلة كشف الأخطاء.",
+      "evidence": "ملاحظة فردية للمعمل وتقرير؛ تصحيح المهارة الناقصة وإعادة تقييمها.",
+      "prerequisites": [
+        "SOIL-U2-L03",
+        "SOIL-U2-L12"
+      ],
+      "risks": [
+        "R3",
+        "R7",
+        "R8"
+      ],
+      "type": "checkpoint",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          56,
+          86
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L01",
+      "order": 21,
+      "unit": "U3",
+      "title": "نصنّف المحاصيل حسب استخدامها",
+      "en": "Practical crop groups",
+      "topics": [
+        "U3-T1"
+      ],
+      "onlineMinutes": [
+        12,
+        16
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يصنف أمثلة من الحبوب والبقول والخضر والفاكهة ويشرح اختلاف التصنيف حسب الغرض.",
+      "activity": "بطاقات محاصيل وحالات تصلح لأكثر من وصف.",
+      "evidence": "تصنيف مبرر؛ لا خلط بين المجموعات التعليمية والتصنيف النباتي أو التنظيمي.",
+      "prerequisites": [
+        "SOIL-U2-L13"
+      ],
+      "risks": [
+        "R9"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          88,
+          91
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L02",
+      "order": 22,
+      "unit": "U3",
+      "title": "المحصول المناسب للمكان",
+      "en": "Soil, climate and crop fit",
+      "topics": [
+        "U3-T1"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقارن محاصيل مرشحة باستخدام القوام وpH والمناخ والمياه وتاريخ الحقل.",
+      "activity": "مصفوفة قرار لحقل افتراضي مصري مع بدائل وأدلة ناقصة.",
+      "evidence": "اختيار مبرر وبيانات مطلوبة للتحقق؛ ملاءمة المحصول لا تُحسم بالقوام وحده.",
+      "prerequisites": [
+        "SOIL-U3-L01",
+        "SOIL-U2-L12"
+      ],
+      "risks": [
+        "R9"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          91,
+          92
+        ],
+        [
+          95,
+          97
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L03",
+      "order": 23,
+      "unit": "U3",
+      "title": "نخطط دورة زراعية لها سبب",
+      "en": "Crop rotation and its conditions",
+      "topics": [
+        "U3-T1"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يرتب دورة زراعية لثلاثة مواسم ويبرر التنوع وإدارة العناصر والآفات وفق شروط الحالة.",
+      "activity": "ترتيب مواسم ومقارنة خطتين بدل حفظ دورة واحدة.",
+      "evidence": "خطة مع تبرير لكل موسم وحدود أثر البقول وبقايا المحصول على النيتروجين.",
+      "prerequisites": [
+        "SOIL-U3-L02"
+      ],
+      "risks": [
+        "R9"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          92,
+          98
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L04",
+      "order": 24,
+      "unit": "U3",
+      "title": "نقرأ ماء التربة وإجهاد النبات",
+      "en": "Soil water and crop stress",
+      "topics": [
+        "U3-T2"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يفرق بين التشبع والسعة الحقلية والذبول، ويجمع أدلة لتفسير الإجهاد المائي.",
+      "activity": "مقارنة منحنيات/نماذج ومشاهد ذبول بأسباب مختلفة.",
+      "evidence": "سجل رطوبة وملاحظة مع تفسير مشروط؛ لا استنتاج احتياج الري من الذبول وحده.",
+      "prerequisites": [
+        "SOIL-U2-L10",
+        "SOIL-U3-L02"
+      ],
+      "risks": [
+        "R10"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          99,
+          104
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L05",
+      "order": 25,
+      "unit": "U3",
+      "title": "نربط الري والتغذية بمرحلة النمو",
+      "en": "Irrigation choices and 4R nutrient stewardship",
+      "topics": [
+        "U3-T2"
+      ],
+      "onlineMinutes": [
+        18,
+        22
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقارن وسائل الري ويقترح خطة أولية للري والتغذية مرتبطة بالمحصول والتربة والمرحلة.",
+      "activity": "حالة متفرعة تستخدم مبادئ المصدر والمعدل والتوقيت والمكان مع بيانات طقس ومياه.",
+      "evidence": "خطة مبررة وطلب البيانات الناقصة؛ لا جداول ري يومية أو جرعات ثابتة لكل الحقول.",
+      "prerequisites": [
+        "SOIL-U3-L04",
+        "SOIL-U2-L03",
+        "SOIL-U2-L12"
+      ],
+      "risks": [
+        "R8",
+        "R10"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          101,
+          110
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L06",
+      "order": 26,
+      "unit": "U3",
+      "title": "نفهم تحديات أرض صحراوية",
+      "en": "Constraints in arid soils",
+      "topics": [
+        "U3-T3"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يربط انخفاض المادة العضوية والملوحة والطبقات الصماء بالماء والجذور ويطلب قياسات مناسبة.",
+      "activity": "قراءة ملف أرض ومياه وقياسات EC افتراضية مع تحديد نوع القياس.",
+      "evidence": "خريطة أسباب وآثار؛ يميز الملوحة والصودية والقلوية بدل اعتبارها مشكلة واحدة.",
+      "prerequisites": [
+        "SOIL-U3-L04",
+        "SOIL-U2-L08"
+      ],
+      "risks": [
+        "R10",
+        "R11"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          111,
+          114
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L07",
+      "order": 27,
+      "unit": "U3",
+      "title": "نقارن حلول إدارة الأرض الصحراوية",
+      "en": "Arid-soil management options",
+      "topics": [
+        "U3-T3"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقارن التغطية العضوية ومصدات الرياح والإضافات والمحاصيل المتحملة بحسب القيود.",
+      "activity": "مقارنة بدائل تحت ميزانية ومصدر مياه محددين في سيناريو معلوم.",
+      "evidence": "خطة أولية تبين شرط الصرف وجودة المياه وحدود التحمل؛ لا معالجة ملوحة موحدة.",
+      "prerequisites": [
+        "SOIL-U3-L05",
+        "SOIL-U3-L06"
+      ],
+      "risks": [
+        "R11"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          112,
+          117
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L08",
+      "order": 28,
+      "unit": "U3",
+      "title": "نختار أو نحسّن: قرار مبني على التربة",
+      "en": "Crop alternatives and soil management",
+      "topics": [
+        "U3-T4"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقارن تحسين شروط التربة بتغيير المحصول ويبرر أثر الاختيار على الجذور والمياه.",
+      "activity": "مقارنة ترب ومحاصيل وبدائل إدارة مع بيان المقايضات.",
+      "evidence": "مصفوفة اختيار تستخدم أكثر من خاصية ولا تضمن نجاح محصول بسبب نوع تربة واحد.",
+      "prerequisites": [
+        "SOIL-U3-L02",
+        "SOIL-U3-L07"
+      ],
+      "risks": [
+        "R9",
+        "R11"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          118,
+          123
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L09",
+      "order": 29,
+      "unit": "U3",
+      "title": "حالة مزرعة: نقنع بالدليل",
+      "en": "Integrated farm recommendation case",
+      "topics": [
+        "U3-T4"
+      ],
+      "onlineMinutes": [
+        18,
+        22
+      ],
+      "supervisedMinutes": [
+        0,
+        0
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقدم بديلين عمليين لحالة حقل ويقارن متطلبات كل بديل وحدوده.",
+      "activity": "تحدي زراعة محصول في تربة غير ملائمة؛ تقرير قصير ودفاع عن القرار.",
+      "evidence": "حلّان مبرران مع بيانات وتكاليف افتراضية موسومة؛ مراجعة زميل لا تستبدل اعتماد المختص.",
+      "prerequisites": [
+        "SOIL-U3-L03",
+        "SOIL-U3-L05",
+        "SOIL-U3-L08"
+      ],
+      "risks": [
+        "R4",
+        "R9"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          123,
+          126
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L10",
+      "order": 30,
+      "unit": "U3",
+      "title": "نتعرف على العزّاقة ونقرر إمتى تناسبنا",
+      "en": "Narrow-row weeder: purpose, components and hazards",
+      "topics": [
+        "U3-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يسمي الأجزاء في الطراز المستخدم ويشرح ملاءمة العزق وحدوده ومخاطره.",
+      "activity": "رسم تفاعلي للطراز الحقيقي وحالات اختيار العزق أو تجنبه.",
+      "evidence": "تعرف فردي على أجزاء آلة متوقفة وخطة مخاطر؛ لا تعميم مواصفات ٥ حصان أو سرعة ثابتة.",
+      "prerequisites": [
+        "SOIL-U1-L01",
+        "SOIL-U3-L08"
+      ],
+      "risks": [
+        "R12"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          127,
+          130
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L11",
+      "order": 31,
+      "unit": "U3",
+      "title": "نجهز العزّاقة ونشغّلها بإشراف",
+      "en": "Supervised weeder preparation and operation",
+      "topics": [
+        "U3-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        25,
+        35
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "ينفذ فحص ما قبل التشغيل والتشغيل والإيقاف والمناورة وفق دليل الطراز وإذن المدرب.",
+      "activity": "قرار جاهزية وتسلسل إجراء مرتبط بدليل مصنّع محدد.",
+      "evidence": "ملاحظة فردية على آلة فعلية ومنطقة آمنة؛ عدم اجتياز أي بند سلامة يوقف التشغيل.",
+      "prerequisites": [
+        "SOIL-U1-L02",
+        "SOIL-U3-L10"
+      ],
+      "risks": [
+        "R12"
+      ],
+      "type": "lesson",
+      "notes": "تحديد الطراز ودليل تشغيله شرط إنتاج الشرح التنفيذي، وليس مجرد شرط مشاهدة الفيديو.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          130,
+          134
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L12",
+      "order": 32,
+      "unit": "U3",
+      "title": "نقيّم العزق ونعتني بالآلة",
+      "en": "Weeding quality, shutdown and maintenance",
+      "topics": [
+        "U3-T5"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        30,
+        45
+      ],
+      "videoMinutes": [
+        3,
+        6
+      ],
+      "goal": "يقيم جودة الشغل ويحدد إجراء إيقاف وفحص وصيانة مسموحًا أو حالة تستلزم فنيًا.",
+      "activity": "صور نتائج عزق وحالات اهتزاز أو تعطل مع اختيار الإجراء الآمن.",
+      "evidence": "سجل قبل/بعد وفحص آلة معزولة عن الطاقة؛ لا صيانة أو فك أجزاء متحركة أثناء التشغيل.",
+      "prerequisites": [
+        "SOIL-U3-L11"
+      ],
+      "risks": [
+        "R12"
+      ],
+      "type": "lesson",
+      "notes": "",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          131,
+          135
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L13",
+      "order": 33,
+      "unit": "U3",
+      "title": "المهمة الختامية: من العينة لقرار الزراعة",
+      "en": "Final individual competency project",
+      "topics": [
+        "FINAL"
+      ],
+      "onlineMinutes": [
+        15,
+        20
+      ],
+      "supervisedMinutes": [
+        75,
+        105
+      ],
+      "videoMinutes": [
+        0,
+        0
+      ],
+      "goal": "يجمع ويقيس ويوثق ويفسر حالة جديدة ويقدم قرارًا أوليًا مع مراجع وحدود.",
+      "activity": "ملف حقل وعينة وتقرير قصير ومناقشة فردية، مع بيانات قياس حقيقية مميزة عن المقدمة.",
+      "evidence": "ملف أدلة فردي: السلامة والعينة والمعايرة والقوام والتقرير والقرار. كفاية الآلة لها محطة مستقلة ولا تُفترض من التقرير.",
+      "prerequisites": [
+        "SOIL-U1-L07",
+        "SOIL-U2-L13",
+        "SOIL-U3-L09",
+        "SOIL-U3-L12"
+      ],
+      "risks": [
+        "R1",
+        "R6",
+        "R7",
+        "R8",
+        "R12"
+      ],
+      "type": "checkpoint",
+      "notes": "لا يلزم تنفيذ كل تجربة طويلة من الصفر في جلسة واحدة؛ يوزع التقييم مع الحفاظ على أدلة كل طالب.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          136,
+          144
+        ]
+      ]
+    },
+    {
+      "id": "SOIL-U3-L14",
+      "order": 34,
+      "unit": "U3",
+      "title": "نراجع الدليل ونكمل المهارة الناقصة",
+      "en": "Reflection and targeted reassessment",
+      "topics": [
+        "FINAL"
+      ],
+      "onlineMinutes": [
+        10,
+        15
+      ],
+      "supervisedMinutes": [
+        15,
+        20
+      ],
+      "videoMinutes": [
+        0,
+        0
+      ],
+      "goal": "يقارن أدلته بمعيار المهارة ويضع خطة تدريب ثم يعيد الجزء غير المتحقق.",
+      "activity": "استرجاع مؤجل وتأمل ذاتي مرتبط بملاحظات المدرب.",
+      "evidence": "إعادة ملاحظة المهارة الناقصة وتسجيل النتيجة كما حدثت؛ لا تحويل تلقائي لكل طالب إلى متقن.",
+      "prerequisites": [
+        "SOIL-U3-L13"
+      ],
+      "risks": [],
+      "type": "reflection",
+      "notes": "التقييم الذاتي لا يمنح شهادة كفاية، وزمن العلاج الإضافي يختلف بين الطلاب.",
+      "status": "مخطط — لم يبدأ إنتاجه",
+      "pageRanges": [
+        [
+          144,
+          146
+        ]
+      ]
+    }
+  ],
+  "topics": [
+    {
+      "id": "U1-T1",
+      "title": "جمع عينات التربة",
+      "pages": [
+        4,
+        9
+      ],
+      "lessons": [
+        "SOIL-U1-L03",
+        "SOIL-U1-L07"
+      ]
+    },
+    {
+      "id": "U1-T2",
+      "title": "التعرف على نوع التربة",
+      "pages": [
+        10,
+        16
+      ],
+      "lessons": [
+        "SOIL-U1-L04",
+        "SOIL-U1-L07"
+      ]
+    },
+    {
+      "id": "U1-T3",
+      "title": "السلامة والطوارئ",
+      "pages": [
+        17,
+        25
+      ],
+      "lessons": [
+        "SOIL-U1-L01",
+        "SOIL-U1-L02",
+        "SOIL-U1-L07"
+      ]
+    },
+    {
+      "id": "U1-T4",
+      "title": "تسجيل العمل الحقلي وتقريره",
+      "pages": [
+        26,
+        34
+      ],
+      "lessons": [
+        "SOIL-U1-L05",
+        "SOIL-U1-L06",
+        "SOIL-U1-L07"
+      ]
+    },
+    {
+      "id": "U2-T1",
+      "title": "دورة العناصر ووظائف NPK",
+      "pages": [
+        37,
+        44
+      ],
+      "lessons": [
+        "SOIL-U2-L01",
+        "SOIL-U2-L02",
+        "SOIL-U2-L03",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "U2-T2",
+      "title": "تأثير pH على المحاصيل",
+      "pages": [
+        45,
+        55
+      ],
+      "lessons": [
+        "SOIL-U2-L04",
+        "SOIL-U2-L05",
+        "SOIL-U2-L06",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "U2-T3",
+      "title": "تحليل التربة في المعمل",
+      "pages": [
+        56,
+        66
+      ],
+      "lessons": [
+        "SOIL-U2-L05",
+        "SOIL-U2-L07",
+        "SOIL-U2-L08",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "U2-T4",
+      "title": "التركيب الميكانيكي والقوام",
+      "pages": [
+        67,
+        75
+      ],
+      "lessons": [
+        "SOIL-U2-L09",
+        "SOIL-U2-L10",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "U2-T5",
+      "title": "تقرير النتائج والتوصيات",
+      "pages": [
+        76,
+        84
+      ],
+      "lessons": [
+        "SOIL-U2-L11",
+        "SOIL-U2-L12",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "U3-T1",
+      "title": "تصنيف المحاصيل والدورة الزراعية",
+      "pages": [
+        88,
+        98
+      ],
+      "lessons": [
+        "SOIL-U3-L01",
+        "SOIL-U3-L02",
+        "SOIL-U3-L03"
+      ]
+    },
+    {
+      "id": "U3-T2",
+      "title": "احتياجات الماء والعناصر",
+      "pages": [
+        99,
+        110
+      ],
+      "lessons": [
+        "SOIL-U2-L03",
+        "SOIL-U3-L04",
+        "SOIL-U3-L05"
+      ]
+    },
+    {
+      "id": "U3-T3",
+      "title": "التربة في البيئة الصحراوية",
+      "pages": [
+        111,
+        117
+      ],
+      "lessons": [
+        "SOIL-U3-L06",
+        "SOIL-U3-L07"
+      ]
+    },
+    {
+      "id": "U3-T4",
+      "title": "ملاءمة المحصول للتربة",
+      "pages": [
+        118,
+        126
+      ],
+      "lessons": [
+        "SOIL-U3-L08",
+        "SOIL-U3-L09"
+      ]
+    },
+    {
+      "id": "U3-T5",
+      "title": "العزّاقة ضيقة الصفوف",
+      "pages": [
+        127,
+        135
+      ],
+      "lessons": [
+        "SOIL-U3-L10",
+        "SOIL-U3-L11",
+        "SOIL-U3-L12"
+      ]
+    },
+    {
+      "id": "FINAL",
+      "title": "التقييم الختامي وإعادة التقييم",
+      "pages": [
+        136,
+        146
+      ],
+      "lessons": [
+        "SOIL-U3-L13",
+        "SOIL-U3-L14"
+      ]
+    }
+  ],
+  "risks": [
+    {
+      "id": "R1",
+      "title": "بروتوكول العينة والحفظ",
+      "pages": [
+        5,
+        9,
+        28,
+        59,
+        140
+      ],
+      "finding": "اختلاف عدد العينات والعمق والتبريد والتجفيف بين الأمثلة.",
+      "resolution": "ربط كل إجراء بغرض التحليل وتعليمات المعمل؛ بروتوكول الدرس التجريبي مثال موسوم فقط.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R2",
+      "title": "السلامة والطوارئ",
+      "pages": [
+        17,
+        25
+      ],
+      "finding": "أمثلة أرقام الطوارئ وإجراءات الإسعاف لا تُنقل كما هي إلى مصر.",
+      "resolution": "مراجعة مختص سلامة/إسعاف محلي، والتحقق من خطة الموقع وSDS. لا أدوية أو إنقاذ خارج التأهيل.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R3",
+      "title": "القوام والتصنيف",
+      "pages": [
+        11,
+        16,
+        60,
+        75
+      ],
+      "finding": "اختبار الشريط والبرطمان تقديران، ومثال 55/30/15 في ص71 له تسمية تحتاج تدقيقًا.",
+      "resolution": "التحقق من تصنيفات الأمثلة بمثلث USDA؛ فصل التقدير التعليمي عن التحليل الكمي المعتمد.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R4",
+      "title": "صدق التسجيل",
+      "pages": [
+        29,
+        34,
+        76,
+        84
+      ],
+      "finding": "تعليمات المثال تسمح باختراع بيانات ناقصة.",
+      "resolution": "في الواقع تُسجل «غير متاح» ويطلب القياس؛ في المحاكاة تُوسم القيم بأنها مقدمة أو مفترضة.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R5",
+      "title": "وظائف العناصر وتشخيص الأعراض",
+      "pages": [
+        38,
+        44,
+        104,
+        105
+      ],
+      "finding": "تعميم وظائف العناصر أو تفسير لون ورقة كدليل قاطع قد يضلل.",
+      "resolution": "التمييز بين NPK وبقية العناصر الأساسية؛ الأعراض قرائن تحتاج تحققًا وسياقًا.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R6",
+      "title": "pH والمعالجة",
+      "pages": [
+        45,
+        55,
+        60,
+        61,
+        140,
+        141
+      ],
+      "finding": "طرق القياس والمدى المناسب تختلف، وارتفاع pH لا يساوي الصودية.",
+      "resolution": "ربط الطريقة بمعمل/جهاز محدد؛ لا جرعات جير أو كبريت عامة ولا ضمان نجاح تعديل تربة جيرية.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R7",
+      "title": "إجراءات المعمل",
+      "pages": [
+        56,
+        65
+      ],
+      "finding": "التحضير والأفران والكواشف وأزمنة الانتظار تحتاج SOP موثقًا.",
+      "resolution": "تحديد المعمل والأداة والكاشف والمعايرة وضبط الجودة؛ العروض ذات الخطر ينفذها مدرب مؤهل.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R8",
+      "title": "حدود تفسير النتائج",
+      "pages": [
+        62,
+        66,
+        79,
+        84
+      ],
+      "finding": "حدود P وK وOM تختلف في أمثلة الكتاب ولا تصلح معيارًا عامًا.",
+      "resolution": "ذكر طريقة الاستخلاص والوحدات ومرجع المعمل والمحصول؛ استخدام بيانات تعليمية متسقة.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R9",
+      "title": "المحاصيل والدورة",
+      "pages": [
+        88,
+        98,
+        118,
+        126
+      ],
+      "finding": "التصنيف التعليمي لا يحسم الملاءمة، وأثر البقول أو الحرث ليس مضمونًا في كل سياق.",
+      "resolution": "حالات محلية معلومة؛ مقارنة القوام والمناخ والمياه والمرض وتاريخ الإدارة، مع شروط توصية واضحة.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R10",
+      "title": "احتياج المياه",
+      "pages": [
+        99,
+        110
+      ],
+      "finding": "ماء التربة المتاح وجدول الري لا يُستنتجان من القوام أو الذبول وحدهما.",
+      "resolution": "التمييز بين الماء الكلي والمتاح للنبات؛ ربط التخطيط بالطقس والمرحلة والجذور ونظام الري.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R11",
+      "title": "الملوحة والأرض الصحراوية",
+      "pages": [
+        111,
+        126
+      ],
+      "finding": "تصنيف EC يتوقف على طريقة القياس، والمحاصيل المتحملة ليست كلها نباتات ملحية متخصصة.",
+      "resolution": "تحديد EC التربة/المياه وطريقة القياس والصرف، والتفريق بين الملوحة والصودية والقلوية.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    },
+    {
+      "id": "R12",
+      "title": "العزّاقة ومواصفاتها",
+      "pages": [
+        127,
+        135
+      ],
+      "finding": "وصف الآلة وجدول الأعطال بهما نصوص ناقصة، وتوجد تعليمات متعارضة وتعميمات للسرعة/التبريد.",
+      "resolution": "تحديد الطراز ودليل المصنع ومراجعة فني قبل إنتاج التشغيل والصيانة؛ لا افتراض أرقام أو آلية قابض.",
+      "status": "مراجعة مستهدفة قبل إنتاج المحتوى المعني"
+    }
+  ],
+  "notes": [
+    "أوقات التعلم تقديرات أولية لكل طالب، وليست ساعات معتمدة أو مددًا مقاسة. عدد اللغات لا يضاعف وقت الطالب.",
+    "وقت الأونلاين يشمل الشرح والأنشطة والأسئلة؛ وقت المدرب يشمل التطبيق والملاحظة الفردية، ولا يُحسب مرة ثانية داخل الأونلاين.",
+    "انتظار جفاف العينة أو ترسيبها ٢٤–٤٨ ساعة منفصل عن وقت العمل النشط؛ تُستخدم عينات مجهزة مسبقًا عند الحاجة.",
+    "الحفاظ على الوحدات الأصلية مع تقديم السلامة قبل جمع العينات، وتوزيع الموضوعات الطويلة على مهارات أصغر.",
+    "الفيديو الحالي SOIL-PILOT-01 يعاد استخدامه في U1-L03؛ لا يغيَّر معرفه ولا يُعاد توليد صوته.",
+    "كل درس جديد يُنتج بالمصري والإنجليزي والإيطالي والألماني، مع توطين النص والصوت والفيديو والأنشطة والتقييم.",
+    "الإجابة الصحيحة أونلاين لا تثبت الكفاية العملية؛ سجل الملاحظة يبدأ غير مُلاحظ وتُوثَّق الأدلة الفعلية لكل طالب.",
+    "الصور كرتونية ثلاثية الأبعاد بخامات واقعية؛ ألوان المنصة، Cairo للفيديو وTajawal للواجهة، والكتابة منفصلة عن الصور.",
+    "المساعد اللايف شرط عند النشر؛ يجيب من الدرس والمنهج باللغات الأربع مع مراجع، ولا يُفعَّل في مرحلة الخريطة.",
+    "أسئلة استرجاع قصيرة أول الدروس، وعودة بعد يوم وأسبوع حيث يناسب التسلسل؛ محطات التقييم تعيد استخدام المهارات في سياقات جديدة."
+  ],
+  "batches": [
+    {
+      "id": "B1",
+      "title": "السلامة والعمل الحقلي",
+      "lessons": [
+        "SOIL-U1-L01",
+        "SOIL-U1-L02",
+        "SOIL-U1-L03",
+        "SOIL-U1-L04",
+        "SOIL-U1-L05",
+        "SOIL-U1-L06",
+        "SOIL-U1-L07"
+      ]
+    },
+    {
+      "id": "B2",
+      "title": "العناصر وpH",
+      "lessons": [
+        "SOIL-U2-L01",
+        "SOIL-U2-L02",
+        "SOIL-U2-L03",
+        "SOIL-U2-L04",
+        "SOIL-U2-L05",
+        "SOIL-U2-L06"
+      ]
+    },
+    {
+      "id": "B3",
+      "title": "المعمل والقوام والتقرير",
+      "lessons": [
+        "SOIL-U2-L07",
+        "SOIL-U2-L08",
+        "SOIL-U2-L09",
+        "SOIL-U2-L10",
+        "SOIL-U2-L11",
+        "SOIL-U2-L12",
+        "SOIL-U2-L13"
+      ]
+    },
+    {
+      "id": "B4",
+      "title": "قرارات المحصول والمياه والتربة",
+      "lessons": [
+        "SOIL-U3-L01",
+        "SOIL-U3-L02",
+        "SOIL-U3-L03",
+        "SOIL-U3-L04",
+        "SOIL-U3-L05",
+        "SOIL-U3-L06",
+        "SOIL-U3-L07",
+        "SOIL-U3-L08",
+        "SOIL-U3-L09"
+      ]
+    },
+    {
+      "id": "B5",
+      "title": "الآلة والتقييم النهائي",
+      "lessons": [
+        "SOIL-U3-L10",
+        "SOIL-U3-L11",
+        "SOIL-U3-L12",
+        "SOIL-U3-L13",
+        "SOIL-U3-L14"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "UMD-SOIL",
+      "organization": "University of Maryland Extension",
+      "title": "Soil Sampling Procedures for Nutrient Management",
+      "url": "https://extension.umd.edu/resource/soil-sampling-procedures-nutrient-management",
+      "accessed": "2026-10-13",
+      "application": "Separate meaningful management areas; distribute subsamples; use clean equipment; follow test-specific depth and sample handling."
+    },
+    {
+      "id": "ILO-CBT",
+      "organization": "International Labour Organization",
+      "title": "Competency-Based Training: An Introductory Manual for Practitioners",
+      "url": "https://www.ilo.org/publications/competency-based-training-cbt-introductory-manual-practitioners",
+      "accessed": "2026-10-13",
+      "application": "Observable sampling competence, practical evidence, feedback and reassessment, with trainer observation distinct from online completion."
+    },
+    {
+      "id": "FAO-ELEARNING",
+      "organization": "FAO",
+      "title": "E-learning methodologies and good practices",
+      "url": "https://www.fao.org/4/i2516e/i2516e.pdf",
+      "accessed": "2026-10-13",
+      "application": "Needs and learner context, objectives aligned to activities, segmented explanation, feedback and a reviewable prototype."
+    },
+    {
+      "id": "IES-PRACTICE",
+      "organization": "Institute of Education Sciences / What Works Clearinghouse",
+      "title": "Organizing Instruction and Study to Improve Student Learning",
+      "url": "https://ies.ed.gov/ncee/wwc/PracticeGuide/1",
+      "accessed": "2026-10-13",
+      "application": "A worked example before practice, explanatory questions, retrieval checks and prompts to revisit after a delay. Recommendation evidence strengths differ."
+    },
+    {
+      "id": "CAST-UDL",
+      "organization": "CAST",
+      "title": "Universal Design for Learning Guidelines 3.0",
+      "url": "https://udlguidelines.cast.org/",
+      "accessed": "2026-10-13",
+      "application": "Text, visual explanation, audio, captions, keyboard-operable practice and downloadable field record."
+    },
+    {
+      "id": "W3C-WCAG",
+      "organization": "W3C",
+      "title": "Web Content Accessibility Guidelines 2.2",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "accessed": "2026-10-13",
+      "application": "Visible focus, semantic controls, language/direction metadata, responsive layout and text alternatives; no certification claim."
+    },
+    {
+      "id": "USDA-TEXTURE",
+      "organization": "USDA NRCS",
+      "title": "Soil Texture Calculator",
+      "url": "https://www.nrcs.usda.gov/resources/education-and-teaching-materials/soil-texture-calculator",
+      "application": "مراجعة تصنيف أمثلة المثلث قبل تأليف الدروس."
+    },
+    {
+      "id": "FAO-56",
+      "organization": "FAO",
+      "title": "Crop evapotranspiration — Irrigation and drainage paper 56",
+      "url": "https://www.fao.org/4/x0490e/x0490e00.htm",
+      "application": "مرجع مفاهيم الاحتياج المائي وتأثير الطقس ومرحلة النمو؛ لا نضيف معادلات متقدمة خارج مستوى الطالب."
+    },
+    {
+      "id": "ILO-AGRI",
+      "organization": "ILO",
+      "title": "Safety and health in agriculture — Code of practice",
+      "url": "https://www.ilo.org/resource/other/safety-and-health-agriculture-code-practice",
+      "application": "تقديم إدارة المخاطر قبل العمل الحقلي ومراجعة مهام التدريب."
+    },
+    {
+      "id": "ILO-MACH",
+      "organization": "ILO",
+      "title": "Safety and health in the use of machinery",
+      "url": "https://www.ilo.org/resource/safety-and-health-use-machinery",
+      "application": "مراجعة ضوابط التدريب على الآلة وتقديم دليل المصنع على التعميمات."
+    }
+  ],
+  "summary": {
+    "learningStations": 34,
+    "teachingLessons": 30,
+    "assessmentStations": 4,
+    "onlineMinutes": [
+      486,
+      646
+    ],
+    "supervisedMinutes": [
+      505,
+      700
+    ],
+    "newExplainerVideos": 116,
+    "existingPilotVideos": 4
+  },
+  "entryCheck": {
+    "minutes": [
+      10,
+      15
+    ],
+    "includedInTotals": false,
+    "description": "تشخيص غير محسوب في الدرجة: قراءة الوحدات والنسب، خبرة العمل الحقلي، والقدرة على استخدام جهاز التعلم. يحدد دعمًا مناسبًا ولا يفترض سنة دراسية."
+  }
+}

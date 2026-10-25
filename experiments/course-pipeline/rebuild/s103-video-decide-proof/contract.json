@@ -1,0 +1,17 @@
+{
+  "reviewModel": "gemini-2.5-flash",
+  "maxRepairsPerAsset": 3,
+  "global": [
+    {"id":"pilot-cartoon","criterion":"Compact sculpted premium 3D educational cartoon miniature on warm off-white with plausible materials, low three-quarter scene, clean negative space; not photoreal, a broad landscape, overhead diagram or visible character."},
+    {"id":"no-text-identity","criterion":"No embedded words, numerals, arrows, fake text, product name, school/Spark identity, branding, logo or watermark."},
+    {"id":"no-real-hazard","criterion":"No person, hand, active chemical release, rescue, eye/skin exposure, actual treatment, neutralization or danger plume shown as safe to enter."}
+  ],
+  "assets": {
+    "s103-video-decide": [
+      {"id":"separate-decision-zones","criterion":"A harmless small sealed practice tray and a clearly separate closed unfamiliar area are physically apart; there is no transfer or approach to the unknown area."},
+      {"id":"withdrawal-corridor","criterion":"A visible open route withdraws from the observation position without passing through the unknown area or the practice tray; no arrow or person is drawn."},
+      {"id":"no-size-permission","criterion":"The small simulated practice patch does not visually authorize untrained cleanup, imply a universal safe volume or portray an unknown airborne hazard as safe to enter."},
+      {"id":"different-from-reading-still","criterion":"The image is a low close training-store diorama with bottle/tray/barrier, not the higher orthographic split-site reading map planned for this lesson."}
+    ]
+  }
+}

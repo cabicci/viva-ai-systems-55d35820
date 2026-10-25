@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "requestId": "Whole-B-natural-Cairo-proof-20261020",
+  "ownerCorrection": "Holistic B passage repair; retain exact accepted A; one TTS, one audio understanding, one ASR invocation",
+  "sourcePins": [
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/short-voice-proof-request.private.json",
+      "sha256": "6aff20882e9a1c974c25998fe898b74b40c0a598418509751d1e5e68aa2c1ae8"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/production-media.private.json",
+      "sha256": "5ddbd566d234899fcf10b6a4a11180c28abab3e540352d76c73653d49d570c1f"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/pipeline-engine.py",
+      "sha256": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/course/manifest.json",
+      "sha256": "5d508c08c091f4a78bd07c4ed5db23297f1df153b832f382d29b008aa236ca49"
+    }
+  ],
+  "sourceRequestPath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/short-voice-proof-request.private.json",
+  "enginePath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/pipeline-engine.py",
+  "mediaPath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/production-media.private.json",
+  "segments": [
+    {
+      "speakerId": "B",
+      "existingVoiceCandidate": "Kore",
+      "text": "ولما تشيل أداة حادّة، خلّي الطرف الحاد لتحت وبعيد عن الناس، وسيب مسافة حواليك. واتّبع طريقة الشيل اللي المدرّب ورّاك تعملها بالأداة دي.",
+      "sourceScene": "s101-limits",
+      "sourceMeaning": "Carry sharp edge down and away from people; maintain clearance and follow tool-specific trainer instruction."
+    }
+  ],
+  "voiceDelivery": "اتكلم بالمصري القاهري الطبيعي، كأنك مدرّب بيشرح لطلبة بهدوء ووضوح. الجيم مصرية، والقاف همزة في الكلام اليومي. اقرأ نص الإلقاء بس من غير مقدمة أو تعليق أو قراءة تعليمات. حافظ على الوقفات القصيرة الطبيعية بين أجزاء المعنى، من غير نبرة نشرات ولا فصحى ولا خليجي. انطق الجملة كاملة بسلاسة، وحافظ على التضعيف الطبيعي المسموع في خلّي واتّبع والمدرّب وورّاك، من غير تطويل الحروف أو ضغط مبالغ فيه على المقاطع. الطرف الحاد يبقى لتحت وبعيد عن الناس، واتّبع فيها تاء مشددة. دي تعليمات أداء لا تُقرأ؛ اقرأ النص فقط.",
+  "model": "gemini-2.5-flash-preview-tts",
+  "voice": "Kore",
+  "provider": "gemini",
+  "maximumProviderCalls": 1,
+  "maxAttempts": 1,
+  "transportAttempts": 1,
+  "preserve": {
+    "A_sha256": "0d8bae78d3cafbe31b5b173eddb8686b87afa7e7f7cc1f32b13705a673ed67e5",
+    "oldB_sha256": "939baa6cd376f9df76687d03476d0e57d1880953ac9a41b176bccb72ce2a2080",
+    "regenerateA": false,
+    "overwriteOldB": false,
+    "fullMovie": false
+  },
+  "asr": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "language": "ar",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "clip": "B-only"
+  },
+  "acceptance": "Candidate technical checks do not prove shadda or owner/human listening approval."
+}

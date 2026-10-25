@@ -1,0 +1,31 @@
+{
+  "provider": "gemini",
+  "apiVersion": "v1beta",
+  "model": "gemini-nano-banana-2.1",
+  "imageSize": "2K",
+  "aspectRatio": "16:9",
+  "styleReference": "course/visuals.json",
+  "assets": [
+    {
+      "id": "s1-04-tool-layout-still",
+      "role": "lesson",
+      "scenes": ["s1-04-tool-layout-still"],
+      "sourceRecordIds": ["TE-U1-T1-D034", "TE-U1-T1-D035", "TE-U1-T1-D036", "TE-U1-T1-D053"],
+      "subject": "ONE compact high three-quarter overhead SCULPTED CARTOON 3D educational diorama on warm off-white, consistent with the accepted soil-course pilot, with realistic brushed steel, wood, dry soil and clean plastic textures. This is a STILL TOOL COMPARISON layout, not an action scene. On one clean field-prep table, arrange FOUR visibly separate implements with complete shapes and margins: (1) a slender HOLLOW straight push-tube SOIL SAMPLING PROBE with a clearly open circular lower mouth and a narrow soil portion shown separately beside it, (2) a clearly different HAND AUGER with an unmistakable open helical spiral cutting head and T-handle, (3) a broad flat SPADE with one thin EVEN vertical soil slice beside it instead of a full shovel-load mound, and (4) a small hand TROWEL. A clean EMPTY plain plastic mixing bucket sits well apart from all tools. The hollow probe must not look like a solid locating rod; the auger must not look like a hollow undisturbed corer. Do not imply any tool is being used, or that a standard auger preserves natural structure. No hands, person, character, inserted underground tool, utilities, moving parts, arrows, labels, numbers, text, logos, brand shapes or pseudo-writing. Leave clear blank margins for later editable four-language labels. Keep the scientific tool geometry readable in a compact, stylized miniature rather than a photoreal product photo."
+    },
+    {
+      "id": "s1-04-representation-still",
+      "role": "lesson",
+      "scenes": ["s1-04-representation-still"],
+      "sourceRecordIds": ["TE-U1-T1-D008", "TE-U1-T1-D009", "TE-U1-T1-D010", "TE-U1-T1-D011", "TE-U1-T1-D055", "TE-U1-T1-D056"],
+      "subject": "Compact TOP-DOWN near-orthographic sculpted CARTOON 3D field-section teaching model on warm off-white, like the owner-accepted S1-01 pilot but compositionally DIFFERENT from a field-level video walk and from the existing interactive training scene. Show TWO clearly separate adjacent management/comparison zones divided by a visible plain ground boundary: one zone has a small patch of yellow stunted crop plants and the other has healthier green plants of the SAME crop type. Within EACH zone, show several small clean soil subsample plugs distributed across that zone, then one distinct EMPTY plain unlabelled mixing bowl and plain blank sample bag for that zone, spatially separate from the other zone's bowl and bag; there must be NO mixing across the boundary. At a remote field gate, show ONE isolated soil plug separated from the planned distributed plugs to illustrate why a convenient one-point grab cannot represent both areas. Keep all sample tokens physically detached teaching props with clear margins; no diagnosis of the yellowing, fertilizer action, actual sampling person or tool. Do not imply a fixed universal number of subsamples, depth or bag quantity. Realistic soil, leaf and plastic textures but clearly miniature toy-free educational cartoon sculpture, not photography. NO people, hands, characters, text, arrows, numbers, symbols, logos, pseudo-writing or baked labels; reserve clean blank margins for editable four-language overlays."
+    },
+    {
+      "id": "s1-04-contamination-still",
+      "role": "lesson",
+      "scenes": ["s1-04-contamination-still"],
+      "sourceRecordIds": ["TE-U1-T1-D038", "TE-U1-T1-D039", "TE-U1-T1-D044", "TE-U1-T1-D050", "TE-U1-T1-D051"],
+      "subject": "Compact SIDE-BY-SIDE sculpted CARTOON 3D tabletop comparison diorama on warm off-white matching the accepted S1-01 visual language, but compositionally DIFFERENT from a video that follows a sequential equipment-cleaning action. LEFT station: a plainly PLASTIC clean empty bucket beside a visibly clean sampling probe and a separate blank new sample bag. RIGHT station: a METAL GALVANIZED bucket with small physically plausible zinc-coating wear, a few OLD fertilizer granules at its rim, and a clearly different soil-smeared probe groove from a previous area. Keep the two stations separate with an open gap; nothing from the right station enters the left bag. A small third separate clean receiving spot suggests rechecking before a new area, but show NO actual cleaning chemical, rinsing, hand or person. Materials must be distinguishable by shape and texture without implying all metal sampling tools are prohibited or all plastic buckets are clean by default. Use no icons, arrows, words, numbers, labels, brands, logos, fake text or diagnosis; leave blank margins for later localized editable callouts. The wear/residue is a warning prop, not a recommended container."
+    }
+  ]
+}

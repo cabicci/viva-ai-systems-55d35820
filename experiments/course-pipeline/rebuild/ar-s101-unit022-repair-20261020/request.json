@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "requestId": "S1-01-ar-022-deliberate-repair-v1-20261020",
+  "ownerCorrection": "Root deliberate repair of diagnosed selection-verb fault; not automatic ASR loop. Exact canonical unit022 text unchanged. One repair attempt only.",
+  "sourcePins": [
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/short-voice-proof-request.private.json",
+      "sha256": "6aff20882e9a1c974c25998fe898b74b40c0a598418509751d1e5e68aa2c1ae8"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/production-media.private.json",
+      "sha256": "5ddbd566d234899fcf10b6a4a11180c28abab3e540352d76c73653d49d570c1f"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/pipeline-engine.py",
+      "sha256": "78698b25f1653c6f4fc70d54bb3f88fd3a3d716e846df41bea6548a080c7f595"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/course/manifest.json",
+      "sha256": "5d508c08c091f4a78bd07c4ed5db23297f1df153b832f382d29b008aa236ca49"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/ar-accepted-method-fullpilot-20261020/source-inventory.private.json",
+      "sha256": "4c359ea835a6e91829846261c5ac21e339c9855c1d0064b2e677eb3393732557"
+    }
+  ],
+  "sourceRequestPath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/short-voice-proof-request.private.json",
+  "enginePath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/vendor/pipeline-engine.py",
+  "mediaPath": "experiments/course-pipeline/rebuild/ar-voice-proof-20261020/production-media.private.json",
+  "segments": [
+    {
+      "speakerId": "A",
+      "existingVoiceCandidate": "Charon",
+      "text": "حسب تقييم المخاطر، ممكن تحتاج كمان بدلة أو مريلة مقاومة للمادة. ولو فيه احتمال تستنشق غبار، أو أبخرة، أو رذاذ ضار، جهاز حماية التنفس لازم يتختار حسب الملوّث والمهمة، وبالفلتر أو الخرطوشة المناسبة، ومع التدريب المطلوب. النوع اللي بيقفل بإحكام على الوش محتاج اختبار ملاءمة. صورة ماسك، أو كمامة غبار مستخدمة مع خطر مش مناسبة ليه، مش دليل إنك محمي.",
+      "sourceScene": "s101-chemical",
+      "sourceMeaning": "Respiratory protection deliberately selected for contaminant, task, filter and training; fit test and illustration limits retained."
+    }
+  ],
+  "voiceDelivery": "اتكلم بالمصري القاهري الطبيعي بصوت المدرّب الهادي والواضح، وبنفس صوت شارون المختار. اقرأ الفقرة كاملة بسلاسة ووقفات طبيعية، من غير إعراب فصيح متكلف ولا نبرة أخبار ولا مبالغة. كلمة «يتختار» معناها الجهاز يتم اختياره: انطق حروفها كاملة «يِتْخْتار»، بالتاء اللي بعد الخاء وبالراء في آخر الكلمة، بشكل طبيعي واضح، مع الحفاظ على كل كلام الفقرة وشروط الأمان. دي تعليمات نطق ما تتقراش؛ اقرأ نص الإلقاء فقط من غير مقدمة ولا تعليق.",
+  "model": "gemini-2.5-flash-preview-tts",
+  "voice": "Charon",
+  "provider": "gemini",
+  "maximumProviderCalls": 1,
+  "maxAttempts": 1,
+  "transportAttempts": 1,
+  "preserve": {
+    "A_sha256": "0d8bae78d3cafbe31b5b173eddb8686b87afa7e7f7cc1f32b13705a673ed67e5",
+    "oldB_sha256": "939baa6cd376f9df76687d03476d0e57d1880953ac9a41b176bccb72ce2a2080",
+    "regenerateA": false,
+    "overwriteOldB": false,
+    "fullMovie": false,
+    "regenerateAcceptedClipA": false,
+    "overwriteOriginalUnit022": false,
+    "canonicalInventoryUnchanged": true
+  },
+  "asr": {
+    "packageVersion": "1.2.1",
+    "wheelSha256": "79a66ad50688c0b794dd501dc340a736992a6342f7f95e5811be60b5224a26a7",
+    "modelRepo": "Systran/faster-whisper-small",
+    "modelRevision": "536b0662742c02347bc0e980a01041f333bce120",
+    "device": "cpu",
+    "computeType": "int8",
+    "language": "ar",
+    "beamSize": 5,
+    "wordTimestamps": true,
+    "vadFilter": false,
+    "conditionOnPreviousText": false,
+    "clip": "S1-01-ar-022-only"
+  },
+  "acceptance": "Candidate technical checks do not prove shadda or owner/human listening approval."
+}

@@ -1,0 +1,79 @@
+name: Soil single B Kore shadda repair
+on:
+  push:
+    branches: [work/soil-course-pipeline-20261013]
+    paths: [experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: soil-single-b-shadda-102576d8d5552d40c6059f182932ee12ab2f42a06520d27c3f31e5bb89fb3600
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020
+  REQUEST_SHA: 102576d8d5552d40c6059f182932ee12ab2f42a06520d27c3f31e5bb89fb3600
+  SCRIPT_SHA: 4286d20e85ee93e6e84598dbe1364814b19935887925e31be85304ffcdd64a1b
+  PYTHONUNBUFFERED: '1'
+jobs:
+  b-voice:
+    if: github.ref == 'refs/heads/work/soil-course-pipeline-20261013' && github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Check exact LF bytes and frozen sources, B-only
+        run: |
+          echo "$REQUEST_SHA  $PACKAGE/request.json" | sha256sum -c -
+          echo "$SCRIPT_SHA  $PACKAGE/repair.py" | sha256sum -c -
+          python "$PACKAGE/repair.py" validate
+      - name: One B Kore request only, no transport or content retries
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_API_KEY_1: ${{ secrets.GEMINI_API_KEY_1 }}
+          GEMINI_API_KEY_2: ${{ secrets.GEMINI_API_KEY_2 }}
+          GEMINI_API_KEY_3: ${{ secrets.GEMINI_API_KEY_3 }}
+        run: python "$PACKAGE/repair.py" produce
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-b-shadda-candidate
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/output/
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/offline-validation.private.json
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/failure.private.json
+  b-word-timing:
+    needs: b-voice
+    if: github.run_attempt == 1 && needs.b-voice.result == 'success'
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    env:
+      HF_HUB_DISABLE_TELEMETRY: '1'
+      OMP_NUM_THREADS: '2'
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.11'
+      - name: Download only this run's one B candidate
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --name soil-ar-b-shadda-candidate --dir "$PACKAGE/voice-input"
+      - name: Verify pinned ASR package and install
+        run: |
+          python -m pip download --no-deps --dest "$PACKAGE/wheels" faster-whisper==1.2.1
+          python "$PACKAGE/repair.py" verify-wheel
+          python -m pip install --disable-pip-version-check --report "$PACKAGE/asr-output/pip-install-report.private.json" "$PACKAGE"/wheels/faster_whisper-1.2.1-*.whl
+      - name: One B-only ASR pass, no speech generation
+        run: python "$PACKAGE/repair.py" asr
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: soil-ar-b-shadda-word-timing
+          retention-days: 30
+          path: |
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/asr-output/
+            experiments/course-pipeline/rebuild/ar-b-shadda-proof-20261020/failure.private.json

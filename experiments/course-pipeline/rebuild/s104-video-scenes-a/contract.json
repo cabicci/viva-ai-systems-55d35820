@@ -1,0 +1,25 @@
+{
+  "reviewModel":"gemini-2.5-flash",
+  "maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-cartoon","criterion":"Compact precise sculpted 3D cartoon educational miniature on warm off-white with believable textures and blank margins; not a photoreal full field scene or toy-faced character."},
+    {"id":"no-baked-text-brand","criterion":"No words, numerals, fake writing, arrows, labels, school or Spark name, brand-like marks, logos or watermarks are printed or sculpted in pixels."},
+    {"id":"no-people-treatment","criterion":"No person, hand, presenter, face or character; no applied treatment, chemical spraying, digging by a person or fertilizer prescription."}
+  ],
+  "assets":{
+    "s104-video-purpose":[
+      {"id":"distinct-question-zones","criterion":"Two clearly separate crop strips show weak yellow growth versus greener comparison without establishing a causal diagnosis or remedy; two blank unused holders remain apart."},
+      {"id":"field-video-view","criterion":"Low oblique view along the miniature crop strips, different from the accepted high overhead S1-04 representation still."}
+    ],
+    "s104-video-representation":[
+      {"id":"same-zone-layer","criterion":"Several separate plugs are visible at horizontally different places within one indicated soil layer in the SAME near zone; a contrasting far zone is separated and has no shared bowl."},
+      {"id":"unmixed-unfixed","criterion":"No transferred or mixed soil, fixed universal count or depth, nutrient remedy or gate-only sampling implication."},
+      {"id":"close-cutaway-video-view","criterion":"Close low cutaway with a foreground depth layer, not the accepted overhead two-zone static representation still."}
+    ],
+    "s104-video-tools":[
+      {"id":"tool-geometry","criterion":"Four separate stations show a genuinely hollow probe sampling mouth and narrow core, visibly spiral auger cutting head with loose crumbs, broad spade with thin slice, and small hand trowel. Neither probe nor auger is misrepresented as the other."},
+      {"id":"no-undisturbed-auger","criterion":"Ordinary auger clearly loosens soil; the image does not imply that it preserves an undisturbed core or that all tools use one motion."},
+      {"id":"close-tool-video-view","criterion":"Low close side working-end study is compositionally distinct from the accepted overhead S1-04 tool-layout reading still."}
+    ]
+  }
+}

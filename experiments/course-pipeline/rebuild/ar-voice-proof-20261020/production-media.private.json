@@ -1,0 +1,13 @@
+{
+  "provider": "gemini",
+  "model": "gemini-2.5-flash-preview-tts",
+  "voices": {
+    "A": "Charon",
+    "B": "Kore"
+  },
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "maxAttempts": 3,
+  "requestGapSeconds": 5
+}

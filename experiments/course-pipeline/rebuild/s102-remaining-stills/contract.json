@@ -1,0 +1,28 @@
+{
+  "reviewModel":"gemini-2.5-flash",
+  "maxRepairsPerAsset":3,
+  "global":[
+    {"id":"pilot-style","criterion":"Clearly compact sculpted 3D cartoon educational miniature on warm off-white with credible material textures, generous margins, no photoreal broad scene or toy-face."},
+    {"id":"no-text","criterion":"No baked words, numbers, arrows, labels, phone digits, printed card lines, brand-like shapes, logos, watermark or pseudo-writing."},
+    {"id":"no-real-care","criterion":"No real or rendered person, visible helper or hand, actual injury, chemical discharge, active eye washing or treatment. Only the heat-comparison still may include visibly synthetic faceless full training mannequins."}
+  ],
+  "assets":{
+    "s1-02-scene-safety-still":[
+      {"id":"boundary","criterion":"Empty near-side observation area is continuously divided from stationary unbadged vehicle route and a separate off-route ground hole; no tempting gap into traffic."},
+      {"id":"spatial-route","criterion":"A protected open access route is spatially clear without drawn arrows or a person walking; vehicle is on intact ground separate from hole."},
+      {"id":"different-view","criterion":"Exactly perpendicular overhead orthographic map; no visible side faces of slab, fence or vehicle; clearly distinct from lower oblique video hazard scans."},
+      {"id":"shallow-hole","criterion":"Off-route ground depression is small, shallow and partly grass-concealed, with no giant open excavation, crater, pit or cliff."}
+    ],
+    "s1-02-heat-comparison-still":[
+      {"id":"two-distinct-vignettes","criterion":"Two separate shade settings each have a clearly synthetic supported faceless full mannequin and unused cooling props, with a blank mock-call phone only in the urgent-warning vignette."},
+      {"id":"sweat-not-gate","criterion":"Both vignettes may display moisture; no visual claim that lack of sweating defines severe illness, no diagnosis from skin or pose alone."},
+      {"id":"no-unsafe-drink","criterion":"No oral drink, treatment or visible person/helper; labels remain editable and absent from generated pixels."},
+      {"id":"different-view","criterion":"Parallel overhead comparison differs in actual composition from single eye-level heat/dizzy video tableaus."}
+    ],
+    "s1-02-aid-kit-still":[
+      {"id":"unused-inventory","criterion":"Clean gauze, tape, blanket, sealed small starter rinse and truly blank card are separate unused tabletop props; no open kit or treatment action."},
+      {"id":"full-wash-provision","criterion":"A distinct complete plumbed dual-nozzle eyewash is visible in a background alcove, not merely the small bottle."},
+      {"id":"different-view","criterion":"Close near-orthographic inventory still differs from first-person open-kit video and split reasoned-choice case scene."}
+    ]
+  }
+}

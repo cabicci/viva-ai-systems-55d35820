@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "scope": "One B-only ASR setup repair; no voice/provider/video job",
+  "sourceVoiceRun": 39383512430,
+  "sourceVoiceCommit": "a29ebfec0db27087e72de688526a7f56a0406b00",
+  "artifact": "soil-ar-b-shadda-candidate",
+  "expectedWavSha256": "cc3a7db7438d83dff38f4de053e83aef73b0eda3b69fe46f519d084425e4110e",
+  "previousTimingFailure": "Nested output/ artifact path caused read failure before any model call; safe locator correction only",
+  "previousAsrCalls": 0,
+  "redoA": false,
+  "speechProviderCalls": 0,
+  "noInventedAnchors": true
+}

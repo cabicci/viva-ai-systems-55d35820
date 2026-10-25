@@ -1,0 +1,32 @@
+{
+  "atUTC": "2026-10-20T07:16:51.0198976Z",
+  "status": "TEXT_REVIEWED_AWAIT_ACTUAL_AUDIO_DIAGNOSTIC_BEFORE_BOUNDED_REPAIR",
+  "A": {
+    "text": "قبل ما تستخدم الأداة، بص على المقبض واتأكد إنه ثابت، وإن الجزء اللي هتشتغل بيه سليم ونضيف. لو لقيت عيب، بلّغ المدرّب وما تستخدمهاش.",
+    "decision": "Preserve existing accepted recording unless actual audio review identifies a material issue; optional prose polish alone is not a reason to regenerate."
+  },
+  "B": {
+    "text": "ولما تشيل أداة حادّة، خلّي الطرف الحاد لتحت وبعيد عن الناس، وسيب مسافة حواليك. واتّبع طريقة الشيل اللي المدرّب ورّاك تعملها بالأداة دي.",
+    "changes": [
+      "السن -> الطرف الحاد: explicit sharp working end, same safety meaning",
+      "ورّاهالك -> ورّاك تعملها بالأداة دي: retains physical demonstration and tool-specific instruction",
+      "Preserve owner-requested doubled ت in واتّبع",
+      "Use whole-passage natural delivery and purposeful pronunciation marks, not formal full diacritics"
+    ],
+    "meaningChecks": [
+      "sharp end points down",
+      "away from people",
+      "clearance maintained",
+      "follow trainer demonstration",
+      "appropriate for the actual tool"
+    ],
+    "independentTextReview": "text-review-agent/SHORT-SCRIPT-CONCLUSION.md plus agent full-alternative review; no claim of external native reviewer"
+  },
+  "notChanged": [
+    "scientific source",
+    "44lesson content packages",
+    "approved assets",
+    "speaker identities and TTS model"
+  ],
+  "next": "Evaluate actual full recordings and record whole-segment outcome; do not equate transcript agreement with pronunciation."
+}
