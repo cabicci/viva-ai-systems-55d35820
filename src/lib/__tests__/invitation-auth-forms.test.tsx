@@ -57,6 +57,13 @@ describe("invited recipient auth forms", () => {
         }),
       ),
     );
+    await waitFor(() =>
+      expect(mock.navigate).toHaveBeenCalledWith({
+        to: "/login",
+        search: mock.search,
+        replace: true,
+      }),
+    );
   });
   it("also prefills the existing-account login without an automatic sign-in", () => {
     const Page = LoginRoute.options.component!;

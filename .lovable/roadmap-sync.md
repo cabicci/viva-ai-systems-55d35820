@@ -18,6 +18,13 @@ summary: Updated undici to7.30.1 and Zod to4.6.6 with a transitive override in t
 
 ## Preserved prior sync entries
 
+## 2026-10-26 — Preserve signup success when measurement data is unavailable
+
+[roadmap:4bf70da4-e41e-43c1-b42b-887e3bb5d25a]
+scope: ui
+source: user
+summary: Exact-revision CI exposed an unhandled signup-test rejection from optional measurement reading absent data. Optional user access now leaves the existing success/login return intact; the invitation test explicitly verifies navigation. Nine auth/registration suites pass132 tests. Actual matching roadmap notes updated; no live signup, ad activation or payment transaction.
+
 ## 2026-10-07 — Multi-domain social sharing card
 
 [roadmap:b5525659-9af0-488c-b4ad-494e206e46be]

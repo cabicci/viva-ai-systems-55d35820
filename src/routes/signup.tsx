@@ -47,7 +47,7 @@ function SignupPage() {
     });
     setLoading(false);
     if (error) return toast.error(error.message);
-    if (search.intent !== "kids") rememberPendingRegistration(data.user);
+    if (search.intent !== "kids") rememberPendingRegistration(data?.user);
     toast.success(t("auth.signup.toast.success"));
     navigate({ to: "/login", search, replace: true });
   }
