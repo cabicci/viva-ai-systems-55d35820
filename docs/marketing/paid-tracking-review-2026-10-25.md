@@ -22,14 +22,19 @@ cannot be unloaded from memory; revocation calls their consent interfaces.
   and route-head integration. Targeted ESLint and whitespace validation pass.
 - Full TypeScript checking is blocked by existing imports of the unavailable
   `@electric-sql/pglite-pgvector` dependency in five unchanged tests.
-- The build is blocked by the mandatory roadmap guard. The roadmap logger was
-  attempted but has no Supabase service environment in this worktree. No roadmap
-  record or matching marker was fabricated, and no guard was bypassed.
+- The actual roadmap record was saved and verified through the authenticated
+  administration UI: `4bf70da4-e41e-43c1-b42b-887e3bb5d25a`, status in progress.
+  A matching marker was then written through the supported `--marker-only` path.
+- Assistant integration, roadmap guard and contextual visual verification all
+  pass (400 assets, 100 lessons, four locales). The Vite client/server production
+  build passes. Bun could not resolve the installed Vite command alias, so the
+  same Vite build was run through its installed Node entry point after those
+  mandatory checks passed. No guard was bypassed.
 
 ## Release checks still required
 
-1. Record the actual change through the approved roadmap path and run the full
-   build. Review and release this isolated change without other checkout work.
+1. Review and release this isolated change without other checkout work. The
+   build and matching actual roadmap record are now verified.
 2. Configure GA4 `sign_up` on custom event `masaarat_sign_up`, with `method`
    constant `email`, in a reviewed GTM change. Four pre-existing workspace
    additions for lead/pricing measurement are preserved and unpublished.

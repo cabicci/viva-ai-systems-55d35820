@@ -1,3 +1,16 @@
+# Roadmap sync marker
+
+[roadmap:4bf70da4-e41e-43c1-b42b-887e3bb5d25a]
+date: 2026-10-25
+scope: ui
+source: user
+summary: Prepared consent-gated existing TikTok pixel and confirmed signup measurement in isolated worktree; 54 targeted tests passed; pending full build, release and live conversion checks; no ad spend.
+
+This file is updated after the matching roadmap_items row is updated.
+The build's roadmap guard fails on ANY meaningful project change without a fresh marker.
+
+## Preserved prior sync entries
+
 ## 2026-10-07 — Multi-domain social sharing card
 
 [roadmap:b5525659-9af0-488c-b4ad-494e206e46be]
