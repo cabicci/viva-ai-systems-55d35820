@@ -1,0 +1,304 @@
+{
+  "schema": "fate-s08-scoped-actual-pixel-repair.v1",
+  "reviewer": "audio_review helper, direct view_image inspection of all20 actual encoded PNGs; independent of the original scene implementation",
+  "scope": "Precisely4 existing S08 scenes, no new speech/image/semantic calls. Caption orthography, endpoint comparison geometry and English label spacing only. Original written lesson, source spoken script, clocks and accepted recordings preserved.",
+  "contracts": [
+    {
+      "path": "lessons\\FATE2-S08\\lesson.public.json",
+      "sha256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2"
+    },
+    {
+      "path": "media-plan\\FATE2-S08\\scene-plan.en.json",
+      "sha256": "d0507d591e72fc23e60d9bca5a2b6421ce2822474ca4697a9a0a938a7f6399b7"
+    }
+  ],
+  "records": [
+    {
+      "id": "S08-01-en",
+      "status": "needs_repair",
+      "finding": "Actual English caption band in checkpoints02/03 spells the scientific group oligoketes; authored lesson and correctly visible group label use Oligochaetes. Correct only clean written captions, not spoken text or recording.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-01-en",
+        "file": "FateV2-S08-01-en.mp4",
+        "sha256": "cc640c2c388563ed1e29e2ea1077f018f07e0d453d14043c4558e525bc1e4b0b",
+        "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\FateV2-S08-01-en.mp4"
+      },
+      "timingSHA256": "63627b948bedbc1685c214bcce825f807a7085d290321503cb48385fa91ff8de",
+      "renderSHA256": "bf84f99dc9f64755768bf14173cac725af418d4e1a053cc040794a7387e563d6",
+      "actualPixelsViewed": true,
+      "viewedCheckpoints": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "549b2c0c3adabda1ea3b4fc431be5224277c37bfa1668f89b0ccef2a3a20930e",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\encoded-01.png"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "f20dbc2679f46270082f4c915c6349019d0ba283cd81a5592fcb2309f1493fde",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\encoded-02.png"
+        },
+        {
+          "frame": 287,
+          "file": "encoded-03.png",
+          "sha256": "1bc054fd5dc99949ca46848ddb155c199c470cfbeaa72ca18af77ea00dbc559c",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\encoded-03.png"
+        },
+        {
+          "frame": 585,
+          "file": "encoded-04.png",
+          "sha256": "60a151c05b932d41fe190e964d2da359ee4e81fae5a5c3059ab737d55f1152ea",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\encoded-04.png"
+        },
+        {
+          "frame": 1304,
+          "file": "encoded-05.png",
+          "sha256": "33ae1fbbc98f47b9f79c4dd1b6280c0d8f70f7efc54a8cad33d5c27afd413fc3",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-01-en\\encoded-05.png"
+        }
+      ],
+      "newAudioClaim": false,
+      "captionTextEdits": [
+        {
+          "captionIndex": 0,
+          "before": "The page 17 figure lists aquatic algae, plants, snails, bivalves, oligoketes, crustaceans, and insects.",
+          "after": "The page 17 figure lists aquatic algae, plants, snails, bivalves, oligochaetes, crustaceans, and insects."
+        },
+        {
+          "captionIndex": 1,
+          "before": "Its terrestrial group contains plants, snails, nematodes, oligoketes, mites, springtails, and insects.",
+          "after": "Its terrestrial group contains plants, snails, nematodes, oligochaetes, mites, springtails, and insects."
+        }
+      ],
+      "allCaptionTimesAndIndicesPreserved": true
+    },
+    {
+      "id": "S08-02-ar-EG",
+      "status": "needs_repair",
+      "finding": "Actual encoded checkpoints02–05 place NOEC, LOEC and LC50 on one rising line and a tested-concentrations band between LOEC and LC50. Both locale variants demonstrate the shared geometry. Narration states unlike endpoints are not made comparable by duration. Separate LC50 test card from illustrative within-context NOEC/LOEC tested-level comparison; make distinct endpoint/test/context and no common scale explicit.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-02-ar-EG",
+        "file": "FateV2-S08-02-ar-EG.mp4",
+        "sha256": "3595b87258415ad9ebaf07923e0ed240ec98085d03e9314fec78e35227ac0fe5",
+        "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\FateV2-S08-02-ar-EG.mp4"
+      },
+      "timingSHA256": "30a75da73b789ae6311e195a9655360fa4c27e3a831bf828997aad1b1634aff8",
+      "renderSHA256": "0c3db7580a53cb4d6aa227d02980744ba38bca139c364e7305537fb565395489",
+      "actualPixelsViewed": true,
+      "viewedCheckpoints": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "7c7a3bfbcd00bc0bd11b46e1cf68beb91390f92feb2575d1bae4978f96ad65d7",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\encoded-01.png"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "24a72f3d2bbb2616a42f182fbf859efe05fc4514f92b8b5535161c7b360c0284",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\encoded-02.png"
+        },
+        {
+          "frame": 722,
+          "file": "encoded-03.png",
+          "sha256": "684d8fc2708e1cb23d7cef15ff2f0f369e2e17948e33b97ed8c164200fa7a8e4",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\encoded-03.png"
+        },
+        {
+          "frame": 1247,
+          "file": "encoded-04.png",
+          "sha256": "a35b613c0fa626eed98657f023cb2ef14c4110bb2b213412827b58ff0615444a",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\encoded-04.png"
+        },
+        {
+          "frame": 1453,
+          "file": "encoded-05.png",
+          "sha256": "94a869986b2518c6c389b122c8b72ec729b7c77f8e4d6cdc56a19a83ceaa6748",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-ar-EG\\encoded-05.png"
+        }
+      ],
+      "newAudioClaim": false,
+      "captionTextEdits": [],
+      "allCaptionTimesAndIndicesPreserved": true
+    },
+    {
+      "id": "S08-02-en",
+      "status": "needs_repair",
+      "finding": "Actual encoded checkpoints02–05 place NOEC, LOEC and LC50 on one rising line and a tested-concentrations band between LOEC and LC50. Both locale variants demonstrate the shared geometry. Narration states unlike endpoints are not made comparable by duration. Separate LC50 test card from illustrative within-context NOEC/LOEC tested-level comparison; make distinct endpoint/test/context and no common scale explicit.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-02-en",
+        "file": "FateV2-S08-02-en.mp4",
+        "sha256": "b39e19970aaf59283fb98731020ed39a6b86ab9235d89c60e27dde89d2176519",
+        "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\FateV2-S08-02-en.mp4"
+      },
+      "timingSHA256": "ad42a02738a3178b9a6d77db436bcfe8d7a7a8f3ef9b281e8313cd1a24231e84",
+      "renderSHA256": "ef85b4f6dc42328606c754d8780dd81facdbb4aae5b5504aae5d59aed7104473",
+      "actualPixelsViewed": true,
+      "viewedCheckpoints": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "612b3892d886a20f8ef726a4aee40d312d2b52c06f32700223f54f2b0f901533",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\encoded-01.png"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "08b3cdc6d3c601040d4edf348123ad0fad08ea23aff4c4f58f7ec03180c8c270",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\encoded-02.png"
+        },
+        {
+          "frame": 718,
+          "file": "encoded-03.png",
+          "sha256": "07bbcb101db9f2eb5d5bd8e781d87afdf374f3f7074584d2865e1323c3aec050",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\encoded-03.png"
+        },
+        {
+          "frame": 1227,
+          "file": "encoded-04.png",
+          "sha256": "acd807bd5d3d03189d926a39c04c98d83137f488dfaca32bd1f8fd4317f0d8f7",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\encoded-04.png"
+        },
+        {
+          "frame": 1445,
+          "file": "encoded-05.png",
+          "sha256": "0bf42d7b7d3cf36dd76f2f65093fbe34025eb00ec9b724ab14c246b35af3e742",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-02-en\\encoded-05.png"
+        }
+      ],
+      "newAudioClaim": false,
+      "captionTextEdits": [],
+      "allCaptionTimesAndIndicesPreserved": true
+    },
+    {
+      "id": "S08-03-en",
+      "status": "needs_repair",
+      "finding": "Actual encoded checkpoints04/05 show the English display label No universal95%protection guarantee. Correct spacing only to No universal 95% protection guarantee.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-03-en",
+        "file": "FateV2-S08-03-en.mp4",
+        "sha256": "9c0016c0c5c97aa9c055001bc9bb514cb41429d208ac632bd3ddc5b2a72cb94a",
+        "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\FateV2-S08-03-en.mp4"
+      },
+      "timingSHA256": "a7e0370a774e1cdc9ce5375febfa5f74d7ea0f3fe46572b7db513b238a600cc7",
+      "renderSHA256": "1629397835e74a6edaedba708660363bfa6149a23359f1c5b880b47037e1beb2",
+      "actualPixelsViewed": true,
+      "viewedCheckpoints": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "eaf28bb2517cd8e2ca3a2214150f177aaeeb6b8e608d2518f8d52bf554ded8be",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\encoded-01.png"
+        },
+        {
+          "frame": 99,
+          "file": "encoded-02.png",
+          "sha256": "8ad45ea382425d8fe28dd4ee9d66aeb8740bc5a7395008f6cbe1d514930e0675",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\encoded-02.png"
+        },
+        {
+          "frame": 247,
+          "file": "encoded-03.png",
+          "sha256": "bc3e1d9e2d6af9aaf7773676e34f4d7317eb17bfb08579b7622fc90b18e65bae",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\encoded-03.png"
+        },
+        {
+          "frame": 329,
+          "file": "encoded-04.png",
+          "sha256": "8bfab03c35b113a45a548585d569f74fa1522ceabc0e246d389db8fdad822a98",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\encoded-04.png"
+        },
+        {
+          "frame": 1095,
+          "file": "encoded-05.png",
+          "sha256": "639568bfd7a05c1e16a306c9996d909fe4057c01d353ef117d0b30127b975002",
+          "localPath": "production\\rest-ready-scenes-v1\\artifacts\\fate-v2-rest-ready-video-v1-S08-03-en\\encoded-05.png"
+        }
+      ],
+      "newAudioClaim": false,
+      "captionTextEdits": [],
+      "allCaptionTimesAndIndicesPreserved": true
+    }
+  ],
+  "sourceAudioUnchanged": [
+    {
+      "id": "S08-01-en",
+      "spokenTextSHA256": "e7992dc5d401bdf1f61a6fa399448db6e82e5389b1dfbab93bc83f7326a26db2",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "sourceAudioSHA256": "450a709c4e48f8caddbc262c2303346b022b81ae79f26f6774d5285cd94c5551",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-01-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "d6e49a1b65ad21b373989e329cc2e4f61cfe370ac46774d4680927024bb8834d"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-01-en",
+        "file": "review-disposition.en.json",
+        "sha256": "8f2d0a2000c74306c47f2abac978c3cbc40f10cd360875f1f330af388ccf7267"
+      }
+    },
+    {
+      "id": "S08-02-ar-EG",
+      "spokenTextSHA256": "01cc650e5810ed8d02818cec60b86fa70125af5d5fc7615d2d9a947a89b6b216",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "sourceAudioSHA256": "c279aab16cd7d69cc25a2b478b1593aa96220b09e18edf61923187944d12e609",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "06c672a41b4bfd4c836fa1644c54f98701b1af120c9d85c8e7ba55297386cb04"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "a55c46e713df2220e1b1af00c27d174ffb291a338d9d7bdb95167dbb9647a2c3"
+      }
+    },
+    {
+      "id": "S08-02-en",
+      "spokenTextSHA256": "53c82d882bfd47e30b1bff83949838a9b33ca8d6f0dd132dbbf807935ad5bf5a",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "sourceAudioSHA256": "62f63c5104a38166b982d1d79256ea305200a82096a2d1bfab12df165ce8852c",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3e407b9c1007b572761faa9967da8684de640ff950cf2b11c9ea8247aa91d2d0"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "894b1f3b96dbbb9e24ca1db7e1f27fd7a6878a63ccffbec33298f61e98ebd7d1"
+      }
+    },
+    {
+      "id": "S08-03-en",
+      "spokenTextSHA256": "a53939a3083dc04769b10a887fb96cf08daef263838032c87c6c33c6c86ea0d7",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "sourceAudioSHA256": "fe096ceda5e35450d6b03dc6386da8bae27c4f066cc96519c146a907f3ec345a",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "4f38080bb93046bfed8d16d3ebcd26b0d911d5a1d127b369cb6a5dc6b33fbc98"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "3102049a1cbc2f2ca80b6f25ed1e20e2758d06f037c61f872cd1bf1697502772"
+      }
+    }
+  ],
+  "nativePlaybackPerformed": false,
+  "humanListeningClaimed": false
+}

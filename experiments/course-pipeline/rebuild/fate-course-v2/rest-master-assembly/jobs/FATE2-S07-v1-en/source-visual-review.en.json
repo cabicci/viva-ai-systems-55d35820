@@ -1,0 +1,822 @@
+{
+  "schema": "fate-s02-selected-encoded-visual-review.v1",
+  "schemaNote": "S02 gate fields reused with explicit current step/locale and sampled evidence scope.",
+  "reviewedAtUTC": "2026-10-26T12:38:47.266010+00:00",
+  "step": "FATE2-S07",
+  "locale": "en",
+  "status": "clear",
+  "visualDimensionReadyForAssembly": true,
+  "sourceSelectionPlan": {
+    "file": "diagnostics\\selection-refresh-candidate\\snapshots\\FATE2-S07-en-selection.candidate.en.json",
+    "sha256": "66a3a3c481f5a4e034fbd5fa124c33e9273c24ca2e883f286fa6cac26a1fd846"
+  },
+  "sourceContracts": [
+    {
+      "file": "lessons\\FATE2-S07\\lesson.public.json",
+      "sha256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f"
+    },
+    {
+      "file": "media-plan\\FATE2-S07\\scene-plan.en.json",
+      "sha256": "c1ef967ecc744235deec6dd05b904c9b6c632a46ec64e8a5aafa345c68c7945c"
+    },
+    {
+      "file": "media-plan\\FATE2-S07\\spoken-draft.en.json",
+      "sha256": "7c5e2382e6868c2c7177060f1de462da617bc3b6e2b1242e47fe23d99fc0879a"
+    }
+  ],
+  "reviewer": "audio_review helper; independent direct visual inspection of actual encoded pixel diagnostic sheets and full-resolution caption strips, separate from source production",
+  "scope": "All25 selected encoded checkpoints from all5 English scenes were viewed as actual-pixel contact sheets, with separate original-resolution caption strips. Qualification covers sampled progression, relative geometry, scientific symbols/units/qualifiers, English caption readability, and card/disclaimer/caption separation for assembly. No continuous playback or new listening claim.",
+  "nativePlaybackPerformed": false,
+  "newHumanListeningClaimed": false,
+  "allCheckpointsRead": 25,
+  "byteHashReferencesVerified": 70,
+  "sourceReviewSheetManifest": {
+    "file": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\review-sheet-manifest.en.json",
+    "sha256": "be9c5b9ac0719168526ceec961a153a97b52509c7ea07000c85ae291b1db2c2d"
+  },
+  "reviewerObservations": {
+    "file": "media-plan\\FATE2-S07\\visual-en-observations.en.json",
+    "sha256": "84d6c82734a5293ec7623873dbfed6ff78e3dd17b29b24b44bc2e053eba1397a"
+  },
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "sectionID": "ratios",
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-01-en",
+        "file": "visual.mp4",
+        "sha256": "938831e8793bb25e88b6c0da5109b174b678ff5aaf8f317bd5511f53189c43fe",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-01-en",
+        "file": "FateV2-S07-01-en.mp4",
+        "sha256": "d2f921e6e6e5a98a40e930c927b4d6e804e348d3ceadf0b946b670bd9d6b73a7",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/FateV2-S07-01-en.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-01-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ec314b3c64cd6a83277fa3db0933f95622231d5e66c13b56e48b8578f6856593",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-01-en",
+        "file": "render.en.json",
+        "sha256": "ef49f70f8126ea8f967c96fa1261610b0c9b57d6569332bd9b0e145f46a15e24",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-01-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "9455eccf398007aca784c2aed7e92dad729da8f8afdf3a7eba3df188dafd4d71",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S07-01-en/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-01-en",
+        "file": "S07-01-en.wav",
+        "sha256": "422d62f8e4e1aedeb238e920b294152fdb4e7e8d044813d23c554538cfd22d33",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S07-01-en/S07-01-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-01-en",
+        "file": "review-disposition.en.json",
+        "sha256": "4b6566dd7843938e43858fa053eb7152c05184b30cb33de6931b2595a7972540",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S07-01-en/review-disposition.en.json"
+      },
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "c49dad52cdd4bcf60140100b1e8ebb7d0daaab580c58a17e709e111cc8eccc75",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Pages 15 to 16 introduce BCF, BAF, BSAF,"
+        },
+        {
+          "frame": 259,
+          "file": "encoded-02.png",
+          "sha256": "570d29b31dc03b78e52d383c39b0baa4a6f6a614bcffa89ee34ad5d1adf29d9d",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/encoded-02.png",
+          "timeSeconds": 8.633333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Start with the numerator and denominator"
+        },
+        {
+          "frame": 948,
+          "file": "encoded-03.png",
+          "sha256": "0547e594b3db7fdc258f82a75888fa8eceb96b21bbaea98c59c128e42d8d57d6",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/encoded-03.png",
+          "timeSeconds": 31.6,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Multiple routes raise the broader BAF question."
+        },
+        {
+          "frame": 1239,
+          "file": "encoded-04.png",
+          "sha256": "f8434ffebc689172548de6f6579349ce6f0f2df1c595378a44b52afdbd25a0f5",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/encoded-04.png",
+          "timeSeconds": 41.3,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "A large concentration factor is not itself"
+        },
+        {
+          "frame": 1365,
+          "file": "encoded-05.png",
+          "sha256": "0f45920d85f83b8411318dffe32e236c42711017305f0d656edfa552d5fe3a14",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-en/encoded-05.png",
+          "timeSeconds": 45.5,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        }
+      ],
+      "diagnosticViews": {
+        "contactSheet": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-01-contact.png",
+          "sha256": "4dfac7d8ba91d7fb4f8c09a1b2e012d8ac006df1b2648913f404aef61e98b980",
+          "scale": 0.5
+        },
+        "captionStrips": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-01-caption-strips.png",
+          "sha256": "a3b591bd6582c2d271e19e226f4eea241442abb9cf4aa87c8a8fc64bd71cf071",
+          "scale": 1.0,
+          "crop": [
+            0,
+            880,
+            1920,
+            1080
+          ]
+        }
+      },
+      "finding": "Organism mg/kg is the numerator and water mg/L the denominator; L/kg results, and the visible final card explicitly distinguishes a concentration factor from mortality. Sequential cue cards preserve route-dependent interpretation rather than a universal factor.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 2,
+      "sectionID": "normalise",
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-02-en",
+        "file": "visual.mp4",
+        "sha256": "05a8ae7064cb3469628166674f8131713d3f66f2d3a90074e32aedc380286953",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-02-en",
+        "file": "FateV2-S07-02-en.mp4",
+        "sha256": "4e8969faa40a501be3d54de467d2759bedbbaa5b25451250d951fd9e03e353f9",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/FateV2-S07-02-en.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-02-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "4ab85cbe01f25ac553fb0609e1b333f4f8c2a9f38314b2eeaa63f0ffdb51a0dd",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-02-en",
+        "file": "render.en.json",
+        "sha256": "4de382bbb77d03978e154550094ec247dfbe211e1f0add65774d3f70ccc861fe",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "6307eb03c500bde285996704ce1bd3d51958cfbe14182401c576bb19791166d8",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S07-02-en/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-02-en",
+        "file": "S07-02-en.wav",
+        "sha256": "22b19efe94cf69cdc832b17b92bf5e65b966543e2f5a32044248245cab0aaa0b",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S07-02-en/S07-02-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "a3db534c8067ec14321d6ed6b69ee299376036e3b75075c32f054d719eb129ba",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S07-02-en/review-disposition.en.json"
+      },
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "5ed18f167f3f12eeea8e4727332589d47b6a5285852dae7f37bd57d25191bf21",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Tissue and sediment have different denominators."
+        },
+        {
+          "frame": 203,
+          "file": "encoded-02.png",
+          "sha256": "16173b1a293603f300044facab96f3d1bc7f6cc5831132cb90c20a18aecc04f5",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/encoded-02.png",
+          "timeSeconds": 6.766666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "normalizes a hydrophobic organic compound's tissue concentration to lipid"
+        },
+        {
+          "frame": 377,
+          "file": "encoded-03.png",
+          "sha256": "81ffa5c8bd3e02a3955fad0718cbdcd27ae4306796867c6f165f7987df7dc5ad",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/encoded-03.png",
+          "timeSeconds": 12.566666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "and its sediment concentration to organic carbon."
+        },
+        {
+          "frame": 470,
+          "file": "encoded-04.png",
+          "sha256": "92b6d394469b3c6b9bf9709a21c8bf3c2892564b2093ea79c1b4081aae03ed92",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/encoded-04.png",
+          "timeSeconds": 15.666666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Divide by a fraction, not the percentage numeral."
+        },
+        {
+          "frame": 1333,
+          "file": "encoded-05.png",
+          "sha256": "85e4105934905a345a17d98e906299794d6fb07aa225740efbba8ae97d628d4f",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-02-en/encoded-05.png",
+          "timeSeconds": 44.43333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        }
+      ],
+      "diagnosticViews": {
+        "contactSheet": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-02-contact.png",
+          "sha256": "788d9620fb59470496415abcb3cc941ec370d28b4a121b307b8dcae4fc6b255f",
+          "scale": 0.5
+        },
+        "captionStrips": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-02-caption-strips.png",
+          "sha256": "7894e862fd551d11cc615b54d118312d0fdc19308dee2a9c2bda263995b43e97",
+          "scale": 1.0,
+          "crop": [
+            0,
+            880,
+            1920,
+            1080
+          ]
+        }
+      },
+      "finding": "Normalised tissue concentration is divided by lipid fraction, sediment by organic-carbon fraction, and the two normalised terms retain their ratio positions. 5%=0.05 is displayed correctly; captions retain the hydrophobic-organic context and fraction instruction.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 3,
+      "sectionID": "kinetic",
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-03-en",
+        "file": "visual.mp4",
+        "sha256": "52ef8ef180d5c10e68e72e08c8e30902f57d7067d122014aeb7c9ca3b79fd6dc",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-03-en",
+        "file": "FateV2-S07-03-en.mp4",
+        "sha256": "2d47c12927c56b5d4b5182b850a4ff874a40eff88bf78f3543048c398fc987ac",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/FateV2-S07-03-en.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ecd39e40d1a255b8ed0d5f68a790d9d083c889ed07a7a82099e48fb8786f83b5",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-03-en",
+        "file": "render.en.json",
+        "sha256": "0ef1e19e8ba653c65b808ef3d76cf2b0bfe423ea1bafb840c1156055de6b4d7c",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "1824295bcbd03f603cb0793fa046a3686882d23e8b125d0d7029726d49b1ed3f",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S07-03-en/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-03-en",
+        "file": "S07-03-en.wav",
+        "sha256": "67251c7a857478ddee086d30055f2d56b54956584be8632f6608f5d176b5a965",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S07-03-en/S07-03-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "fa0fb03f1a020aeead79129809918d6849c0ed86c968701cf862652e6891783c",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S07-03-en/review-disposition.en.json"
+      },
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "79c3998aa1bf59e51f77a96cf565dc4610946655b422f521b164ad8b5b4fbcdf",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Kinetics is an outline heading in the source."
+        },
+        {
+          "frame": 186,
+          "file": "encoded-02.png",
+          "sha256": "ff080708845e2114b09d6c512991e35f44ab1ad71c22ce27284fa7e955b53dc6",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/encoded-02.png",
+          "timeSeconds": 6.2,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Assume one compartment, constant water concentration,"
+        },
+        {
+          "frame": 477,
+          "file": "encoded-03.png",
+          "sha256": "7f09d9a4748c0925bfbb68339a242525331dee7f5b98060ec3b6c9161711499c",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/encoded-03.png",
+          "timeSeconds": 15.9,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Net concentration change is the uptake rate minus the loss rate."
+        },
+        {
+          "frame": 1228,
+          "file": "encoded-04.png",
+          "sha256": "39ab519f301c9ec930467957f8a5d46ec79d8efa0e129eb33b6ddbadebc072fb",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/encoded-04.png",
+          "timeSeconds": 40.93333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "This kinetic steady state is neither stopped molecular movement"
+        },
+        {
+          "frame": 1865,
+          "file": "encoded-05.png",
+          "sha256": "7a280a83603689773d4d90d1b40f5a9972a00bfd90a066b21c1a180dfa56a6fb",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-03-en/encoded-05.png",
+          "timeSeconds": 62.166666666666664,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        }
+      ],
+      "diagnosticViews": {
+        "contactSheet": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-03-contact.png",
+          "sha256": "272a6faf7fab947402cf7077ff3bb7850db2a585c26767cd3121d2e62c284d55",
+          "scale": 0.5
+        },
+        "captionStrips": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-03-caption-strips.png",
+          "sha256": "6f7015bf809b9d233e8a5a3fa2a38ef72a17696513c2dcd23a6f4b9a477532e6",
+          "scale": 1.0,
+          "crop": [
+            0,
+            880,
+            1920,
+            1080
+          ]
+        }
+      },
+      "finding": "One-compartment Cw→Cf→loss diagram retains continuing arrows. Input k1 Cw and loss k2 Cf align with the derivative equation; zero net change is separately displayed with an explicit non-equilibrium qualifier.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 4,
+      "sectionID": "prediction",
+      "visual": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-04-en-terminal-r2",
+        "file": "visual.mp4",
+        "sha256": "699758e057e4e4ccb305674fcf924bb43a694a935b4adc9e2fadadad0d428ff0",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-04-en-terminal-r2",
+        "file": "FateV2-S07-04-en-terminal-r2.mp4",
+        "sha256": "e0053f5b0ef45d934ae8de7d99202745f32f508210bf4b52b749fcf1b8502f05",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/FateV2-S07-04-en-terminal-r2.mp4"
+      },
+      "timing": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-04-en-terminal-r2",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "8040b744b11c84570458c042a307aa6026b173e6e357ab7754ff026282b34223",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-04-en-terminal-r2",
+        "file": "render.en.json",
+        "sha256": "86e14bade2dea2c3d79ab9bb4f96d00a7a0fadaea0d87aefb11e59968008e7ce",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "d72615877fcd7c3e22c89c14bbd740c2b4fce73cd212e1410a85004accef21fc",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S07-04-en/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-04-en",
+        "file": "S07-04-en.wav",
+        "sha256": "b2205cad423474b22b4dd5d944c427fa94938d0f32161c7e59c0362912333a5a",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S07-04-en/S07-04-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "819295302517a760fb6f2c37e43ed1b7c400995e44da66ea0076a70b35a897e3",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S07-04-en/review-disposition.en.json"
+      },
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "763e260cdcfc7abad9716bae464d046233bd63a669ad17e37dc30ea080c2d0dc",
+          "actualPresentationTimestampSeconds": 0,
+          "accurateSeekThresholdSeconds": 0,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "The source writes,"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "cc0c328b3308d5488baf957cd252151e505359c9dc872f570f853523800cbc28",
+          "actualPresentationTimestampSeconds": 0.8,
+          "accurateSeekThresholdSeconds": 0.7833335,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/encoded-02.png",
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "The source writes,"
+        },
+        {
+          "frame": 344,
+          "file": "encoded-03.png",
+          "sha256": "b438d6dc251c382260f4b64d27cf454234b03ddfb19c037ab6116a418ba0383b",
+          "actualPresentationTimestampSeconds": 11.466667,
+          "accurateSeekThresholdSeconds": 11.45,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/encoded-03.png",
+          "timeSeconds": 11.466666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "but does not supply coefficients"
+        },
+        {
+          "frame": 797,
+          "file": "encoded-04.png",
+          "sha256": "33f550bc19eedee17f5c967b7c93bfcf51ed3b2f38f72f0344eaa9aa868c1525",
+          "actualPresentationTimestampSeconds": 26.566667,
+          "accurateSeekThresholdSeconds": 26.549999999999997,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/encoded-04.png",
+          "timeSeconds": 26.566666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Before using a prediction,"
+        },
+        {
+          "frame": 1505,
+          "file": "encoded-05.png",
+          "sha256": "4248df82f04d3652a6b7d594f6d5e84d5893c431299a1bd8ff6d479e71687dc4",
+          "actualPresentationTimestampSeconds": 50.166667,
+          "accurateSeekThresholdSeconds": 50.15,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-04-en-terminal-r2/encoded-05.png",
+          "timeSeconds": 50.166666666666664,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        }
+      ],
+      "diagnosticViews": {
+        "contactSheet": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-04-contact.png",
+          "sha256": "37bf8b5a3c035610e7a3ff9f517e1d7a868c3c1c9cb66748eb4e886b3578287f",
+          "scale": 0.5
+        },
+        "captionStrips": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-04-caption-strips.png",
+          "sha256": "2034f587427e248bc1ab0665f3b2f16d83c38ef7630fe1df39bc085b6a10c334",
+          "scale": 1.0,
+          "crop": [
+            0,
+            880,
+            1920,
+            1080
+          ]
+        }
+      },
+      "finding": "log BCF=a log Kow+b is displayed without invented coefficients; a=?, b=? and Domain? remain unknown. Final text retains validation/uncertainty and states an incomplete relation is not a numerical prediction.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "visual": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-05-en-terminal-r2",
+        "file": "visual.mp4",
+        "sha256": "ad77d98e1ea5a4fc54c3b9441f8811971e9f059204590482beb8d05c75b92f30",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-05-en-terminal-r2",
+        "file": "FateV2-S07-05-en-terminal-r2.mp4",
+        "sha256": "7cf8f4ff5bb843a846f8de6bbed03216b049c791941cd264aa9430b5d634a99a",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/FateV2-S07-05-en-terminal-r2.mp4"
+      },
+      "timing": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-05-en-terminal-r2",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "a753f963439d9b6f03e235fa37542627b22da093754e83f19f115e33d5428617",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S07-05-en-terminal-r2",
+        "file": "render.en.json",
+        "sha256": "983cd0c55e2096e4b854a2358958736720e0e1c805fdf1109297c7c9d1ea995e",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "ed0b8e378ea49bf7a3f07e72263957b1ea49b27d656722fd7ddcb0d12eba3331",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S07-05-en/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-05-en",
+        "file": "S07-05-en.wav",
+        "sha256": "6a0d37ba56496b2e6097c04b3128f8a82ecee0d4437f2d9980b134b689b57a5c",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S07-05-en/S07-05-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "610d2dde2c8b5c01065ecf52153a4108b66a50dea5eeac67165910d8007b97f5",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S07-05-en/review-disposition.en.json"
+      },
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "2702934c54bc61a753f7c6700e0fd3c50027ee5169dce39db6cadc7450937de6",
+          "actualPresentationTimestampSeconds": 0,
+          "accurateSeekThresholdSeconds": 0,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Solve an invented one-compartment aqueous model with constant coefficients,"
+        },
+        {
+          "frame": 595,
+          "file": "encoded-02.png",
+          "sha256": "dddf3204f8496d70fbd036889330c0258ddd781a4dac8ffe3ba2f29ec76f4d81",
+          "actualPresentationTimestampSeconds": 19.833333,
+          "accurateSeekThresholdSeconds": 19.8166665,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/encoded-02.png",
+          "timeSeconds": 19.833333333333332,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Dividing 20 by 0.1 gives a concentration factor of 200 liters per kilogram."
+        },
+        {
+          "frame": 780,
+          "file": "encoded-03.png",
+          "sha256": "b9fc88eaca9f3cf129e85e3ac4f68fd6002241095a511409166c8702e053113f",
+          "actualPresentationTimestampSeconds": 26,
+          "accurateSeekThresholdSeconds": 25.9833335,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/encoded-03.png",
+          "timeSeconds": 26.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": "Multiply by water concentration to obtain a steady-state body concentration"
+        },
+        {
+          "frame": 990,
+          "file": "encoded-04.png",
+          "sha256": "e2072948f892e913b4399de2c59eb4f55e3cd12c75e152d70fc0fedc7231c5a8",
+          "actualPresentationTimestampSeconds": 33,
+          "accurateSeekThresholdSeconds": 32.9833335,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/encoded-04.png",
+          "timeSeconds": 33.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        },
+        {
+          "frame": 1538,
+          "file": "encoded-05.png",
+          "sha256": "1bf03775ca4efe46d7b0637178f24a413729c36450f2bcf943e573569a5cd3d9",
+          "actualPresentationTimestampSeconds": 51.266667,
+          "accurateSeekThresholdSeconds": 51.25,
+          "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S07-05-en-terminal-r2/encoded-05.png",
+          "timeSeconds": 51.266666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "viewMethod": "Diagnostic contact sheet at0.5scale plus original-resolution caption strip; source PNG identity verified",
+          "captionAtFrame": null
+        }
+      ],
+      "diagnosticViews": {
+        "contactSheet": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-05-contact.png",
+          "sha256": "c6cfaeec14bfecb30a9f051c705810dd8e5fe1fe955e20ccf2b7d724c94c8492",
+          "scale": 0.5
+        },
+        "captionStrips": {
+          "path": "diagnostics\\encoded-review-sheets\\FATE2-S07\\en\\66a3a3c481f5\\scene-05-caption-strips.png",
+          "sha256": "f13f391aa113df62cf7270c5154a184f4d9ab32dac50b07d7c443a3d15e2af03",
+          "scale": 1.0,
+          "crop": [
+            0,
+            880,
+            1920,
+            1080
+          ]
+        }
+      },
+      "finding": "Invented training disclosure remains visible. 20/0.10=200 L/kg, 200×0.002=0.40 mg/kg and equal0.040 mg/kg/day input/loss are correct. Both arrows and coloured dots persist at the final sampled frame; no empirical measurement or thermodynamic equilibrium is implied.",
+      "defects": []
+    }
+  ],
+  "checks": {
+    "geometry": "Numerator/denominator, compartment arrows, retained unknown coefficients and ongoing fluxes match their authored meanings.",
+    "numbers": "L/kg, 5%=0.05, 200 L/kg, 0.40 mg/kg and0.040 mg/kg/day inspected in actual sampled pixels.",
+    "layout": "Sampled card stacks, equations, disclaimer and English caption band remain separated and readable.",
+    "temporalSampling": "Meaningful intermediate cue states and final results viewed against exact stored actual-recording action/caption clocks; not sample-exact forced alignment or continuous playback."
+  },
+  "resolvedDefects": [],
+  "limitations": [
+    "Sampled encoded action/intermediate/final frames only; full continuous playback, every caption interval, acoustics and future master joins are outside this evidence.",
+    "Contact-sheet views use0.5scale and may be displayed smaller; original-resolution caption strips were separately viewed. No claim of exhaustive original-pixel inspection.",
+    "Accepted audio and prior actual-audio reviews remain unchanged; no new listening, native/expert approval or full-course source-coverage certification is claimed.",
+    "Qualitative generated backdrops and overlays are teaching ingredients, not measured experiments, calibrated geometry or operating instructions."
+  ],
+  "nextAction": "Assemble only these exact FATE2-S07 en selected scene identities with their original qualified WAVs; perform actual master integration review."
+}
