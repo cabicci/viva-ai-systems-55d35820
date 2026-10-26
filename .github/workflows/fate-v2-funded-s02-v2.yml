@@ -1,0 +1,50 @@
+name: Fate v2 second-step narration approval-pin repair, reuse existing image
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/funded-s02-v2/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-funded-s02-v2
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/funded-s02-v2
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  speech:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        part: ["S02-01-ar-EG", "S02-02-ar-EG", "S02-03-ar-EG", "S02-04-ar-EG", "S02-05-ar-EG", "S02-01-en", "S02-02-en", "S02-03-en", "S02-04-en", "S02-05-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify live model and preserve complete original
+        env:
+          EXPECTED_REQUEST_SHA256: 8861d3f56976af130b212815ddedb36b90ec799cb895e53ae53bd750d51d1605
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-funded-original-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Blind, reference and accepted-voice acoustic review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-funded-review-${{ matrix.part }}
+          path: |
+            ${{ env.PACKAGE }}/output/review/
+            ${{ env.PACKAGE }}/output/review-summary.json
+          retention-days: 30
