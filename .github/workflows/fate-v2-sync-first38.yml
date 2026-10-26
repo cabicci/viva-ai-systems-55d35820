@@ -1,0 +1,35 @@
+name: Fate v2 first3.8 acoustic review and timing
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/sync-first38/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/sync-first38
+  EXPECTED_REQUEST_SHA256: e3deaf0b38791d1d2a26da5616b30f475aed56bc86e1fb2035f1e45181526af9
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  acoustic:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        part: [S01-01-ar-EG, S01-01-en]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Review exact original and derive actual acoustic word/action cues
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" request "${{ matrix.part }}"
+      - name: Receive each validated result immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-sync38-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

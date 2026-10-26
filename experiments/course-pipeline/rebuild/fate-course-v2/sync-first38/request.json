@@ -1,0 +1,129 @@
+{
+  "id": "fate-v2-s01-sync-first38-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "adjudicationModel": "gemini-2.5-flash",
+  "timingModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxAnalysisCalls": 4,
+  "newSpeechCalls": 0,
+  "ownerCeilingUSD": 25,
+  "additionalReservationUSD": 0.4,
+  "parts": [
+    {
+      "id": "S01-01-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "تخيَّل إنّ معاك نتيجة تحليل لفلفل، ومكتوب فيها إنّ فيه متبقّي لمادة اسمها «ر». هل النتيجة دي لوحدها تقول إنّ اللي أكل الفلفل اتضرّ؟ قبل ما نحكم، خلّينا نفصل الأسئلة. التحليل بيقول لنا إيه اللي اتقاس في العيّنة، وبأيّ طريقة. أمّا التعرُّض، فبيحتاج نعرف مين اتلامس مع المادة، وبأيّ طريق، وبكمّية قدّ إيه، ولمدّة قدّ إيه. وقابلية المادة لإحداث ضرر سؤال تاني، وتقدير المخاطر بيربط دليل الضرر بدليل التعرُّض. يعني اسم مبيد في تقرير مش تشخيص تسمُّم، وفي نفس الوقت ما ينفعش نطَمِّن من غير دليل. هنمشي من المعلومة للاستنتاج، ونقف عند حدود كل معلومة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "c6a68153b255a7895df5d5066522637a3bfa803b0076959efbd603e6df7b4acc",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "result",
+      "scene": 1,
+      "model": "gemini-3.8-flash-tts",
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-01-ar-EG",
+        "file": "S01-01-ar-EG.wav",
+        "sha256": "c0e331b9a3b434ffa6a2b840e8315c292e1f49aeffa2fdd99d0efc5c86c85c7f"
+      },
+      "durationSeconds": 44.32,
+      "audioFrames": 1063680,
+      "voiceReference": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "actions": [
+        {
+          "id": "sample-result",
+          "label": {
+            "ar": "نتيجة العيّنة",
+            "en": "Sample result"
+          },
+          "meaning": "The actual laboratory finding concerns what was measured in a pepper sample."
+        },
+        {
+          "id": "exposure",
+          "label": {
+            "ar": "التعرّض: طريق وكمّية ومدّة",
+            "en": "Exposure: route, amount, duration"
+          },
+          "meaning": "Exposure concerns who encountered the substance and how, how much and how long."
+        },
+        {
+          "id": "risk-evidence",
+          "label": {
+            "ar": "نربط دليل الضرر بدليل التعرّض",
+            "en": "Connect effect and exposure evidence"
+          },
+          "meaning": "Risk assessment relates hazard/effect evidence to exposure; no poisoning diagnosis from a pesticide name."
+        }
+      ],
+      "reviewConcerns": [
+        {
+          "issue": "Complete exact-reference check needed before sync; an initial reviewer response can be truncated by its thinking/output cap. This is a diagnostic gap, not a finding of bad speech.",
+          "required": "Judge actual full recording against reference and accepted same-voice sample; no forced MSA ta-marbuta or mandatory qaf."
+        }
+      ]
+    },
+    {
+      "id": "S01-01-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Imagine a laboratory report for peppers that identifies a residue called R. Does that finding alone show that someone who ate the peppers was harmed? Start by separating the questions. The analysis describes what was measured in a sample, using a particular method. Exposure asks who encountered the substance, by which route, in what amount, and for how long. Hazard concerns the substance's capacity to cause particular effects; risk assessment connects effect evidence with exposure evidence. A pesticide name in a report is not a poisoning diagnosis, and reassurance also requires evidence. We will build conclusions one link at a time, without making the report answer questions it never measured.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "9ae37d630915c69412c2b5c5e3e559861b30be852431848a01e8959d2257e98a",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "result",
+      "scene": 1,
+      "model": "gemini-3.8-flash-tts",
+      "audio": {
+        "run": 40254395212,
+        "artifact": "fate-v2-full38-original-S01-01-en",
+        "file": "S01-01-en.wav",
+        "sha256": "850f3c26f6ac691b60a1225ad8829be8c770cc858db56a84eccee2e2fc3e2b1b"
+      },
+      "durationSeconds": 43.36,
+      "audioFrames": 1040640,
+      "voiceReference": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "actions": [
+        {
+          "id": "sample-result",
+          "label": {
+            "ar": "نتيجة العيّنة",
+            "en": "Sample result"
+          },
+          "meaning": "The actual laboratory finding concerns what was measured in a pepper sample."
+        },
+        {
+          "id": "exposure",
+          "label": {
+            "ar": "التعرّض: طريق وكمّية ومدّة",
+            "en": "Exposure: route, amount, duration"
+          },
+          "meaning": "Exposure concerns who encountered the substance and how, how much and how long."
+        },
+        {
+          "id": "risk-evidence",
+          "label": {
+            "ar": "نربط دليل الضرر بدليل التعرّض",
+            "en": "Connect effect and exposure evidence"
+          },
+          "meaning": "Risk assessment relates hazard/effect evidence to exposure; no poisoning diagnosis from a pesticide name."
+        }
+      ],
+      "reviewConcerns": [
+        {
+          "issue": "Complete exact-reference check needed before sync; an initial reviewer response can be truncated by its thinking/output cap. This is a diagnostic gap, not a finding of bad speech.",
+          "required": "Judge actual full recording against reference and accepted same-voice sample; no forced MSA ta-marbuta or mandatory qaf."
+        }
+      ]
+    }
+  ]
+}
