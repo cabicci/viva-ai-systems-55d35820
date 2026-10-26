@@ -1,0 +1,869 @@
+{
+  "id": "fate-v2-rest-voice-recheck-v1",
+  "model": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "automaticRetries": 0,
+  "maxAnalysisCalls": 15,
+  "reservationUSD": 0.7,
+  "reviewCeilingUSD": 0.7,
+  "sourceHead": "0626cbddf3b334687994f7f8b1e8cea84928d405",
+  "sourceRun": 40296268513,
+  "priorReviewRun": 40300477367,
+  "parts": [
+    {
+      "id": "S04-03-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "levels",
+      "spokenText": "قياس نمو فرد أو بقائه يخص مستوى دليل. تغيّر عدد الأفراد أو النجاح التكاثري في تعداد يخص مستوى آخر. وتغير تركيب الأنواع أو وظيفة النظام البيئي يحتاج بيانات على ذلك المستوى. ما ننقلش نتيجة تجربة فردية مباشرة لاستنتاج إنّ التنوع في منطقة كاملة انخفض، ولا نفترض إنّ غياب موت واضح يعني مفيش تأثير آخر. الملف يعرض علاقات بين التعرّض وديناميات التعداد والمجتمع. نستخدمها لتنظيم الأسئلة، مع إبقاء السببية منفصلة عن التزامن. انخفاض كائن بعد حدث زراعي قد يستدعي فحص المادّة والتوقيت والبدائل مثل الأكسجين والحرارة أو تغيّر الموطن. التدريب مش بيشخّص سببًا لحادث حقيقي.",
+      "textSHA256": "4b804689edc36f2ab7630a5f2ed0757f742d7d22977406a14339ac0d8e78dfc2",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 3,
+      "semanticID": "levels",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-03-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "4b39941b7729a53b10fde981ba7e3ea2b8b3f2309c610b86f9c964d6d8d6115d"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-03-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "cc404e1e5e3e02ed039bc8dfecbe99a0e15249f27dc1a1a020412d5be75b880e"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-03-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "faaa97d31341786df8e79bedf7697f61c65150b322a42d77fdc6b2a38dc228d7"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-03-ar-EG",
+        "file": "S04-03-ar-EG.wav",
+        "sha256": "6286c7061db71cf238ae18e5aedbba7120d9eb20734f2eeb0a00121ad971b454"
+      },
+      "sourceVerificationSHA256": "373d48a72cf9b93f3e7d954b0acb2a2c35f48f6bdd2031a90704cb11144060f5",
+      "referenceVerificationSHA256": "7fbd53da2010ed948e80ee0edd88e72e97722b57194117881a2f0c5079f877e4",
+      "sourceAudioSHA256": "6286c7061db71cf238ae18e5aedbba7120d9eb20734f2eeb0a00121ad971b454",
+      "sourcePCM_SHA256": "9156c69806cde2b0955ad67dfde5dc64f77ef49cf396487013431e8b2ae8ebaf",
+      "durationSeconds": 49.64
+    },
+    {
+      "id": "S04-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "history",
+      "spokenText": "صورة مرض أو رسم كائن في المصدر ينفع يفتح سؤالًا، لكنه مش قياس تعرض ولا تشخيص. مثال الزرنيخ يتصنف مثالًا لمادة سامة؛ مش كلّ مثال في علم السموم البيئية مبيدًا. وذكر راشيل كارسون جزء من تطور النقاش البيئي، مش بديل لدراسة المادّة والحالة اللي قدامنا. آخر خطوة في النموذج إنك تكتب جملة استنتاج بمقدار الدليل، وبعدها اختبارًا ممكن يغيّر رأيك. مثال: «رُصدت المادّة في هذه العينة بهذه الطريقة؛ صلتها بالأثر المقترح لسه محتاجة بيانات تعرض وأثر متوافقة». دي نتيجة مفيدة لأنها تحدّد اللي نعمله بعد كده.",
+      "textSHA256": "476bbe25e057de4ad1a3c54e435582a1c989e2f673f5ceaee91d9ca40e0fabfd",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 4,
+      "semanticID": "history",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-04-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "5a153269112207cb24f5d0cd98acf3b318c8f7c3b00a832fc53a2030e98c07e5"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-04-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "bd94335215d49de89e3b38769bcda0a1e27bf39750df98a8aab79dca1b6ec91e"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-04-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "7bb2faa8a1440a8ff5226fd7d84f1d4b1d2840e8dc513c291e488b0cb3ccc5c7"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-04-ar-EG",
+        "file": "S04-04-ar-EG.wav",
+        "sha256": "17cb35ce926dc321b3084f8eec7c82920ddecefbcfae14f7ff90c280b13965d7"
+      },
+      "sourceVerificationSHA256": "bc6d5bfcb02a6cb2fd21ccd233e66ea2b1de5076b1421609c5a12d89f06051d3",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "17cb35ce926dc321b3084f8eec7c82920ddecefbcfae14f7ff90c280b13965d7",
+      "sourcePCM_SHA256": "366c768b08b73ddf21aeddc77e0808bb0569df9bc210ed7e532c188d0dcbc73c",
+      "durationSeconds": 40.56
+    },
+    {
+      "id": "S04-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "routes",
+      "spokenText": "Water, soil, air and food can carry a substance. Ingestion, surface contact and transfer across respiratory surfaces describe receptor-specific routes of contact or entry. Two organisms in the same medium may experience different routes and amounts. A water concentration in mg/L does not become an organism's dose without further data and a model. Timing matters. A post-rain water sample describes a different moment from a pre-event sample. An application record may establish an activity, but not the concentration reaching a stream. Sampling times, locations and comparisons must fit the question, with appropriate analytical and sampling quality checks.",
+      "textSHA256": "1da6e384fd8f0ef93c16416b5075131274361d270cafe0b16ef68db7f7137d32",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 2,
+      "semanticID": "routes",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-02-en",
+          "file": "review-disposition.en.json",
+          "sha256": "ac6807c5ddfd3069e55b77b90734cd6174a4ff784b1959e3c8298a9bd646c433"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-02-en",
+          "file": "blind-analysis.en.json",
+          "sha256": "5aaff0e213e0875170c96d4859773c0873671aa283be478d4b07d62f6bac86b8"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S04-02-en",
+          "file": "reference-response.en.json",
+          "sha256": "5712ed1784866e36a4dcd6c60cc7b8fa15c760432dfdbaaad626a60b2c728513"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-02-en",
+        "file": "S04-02-en.wav",
+        "sha256": "5ba27d863c4228ea65ec7159ae7b5e49aa26dcd036177ae466fa1a9bbe2bc264"
+      },
+      "sourceVerificationSHA256": "6751c9ed10583e9cccf19f6efe85e8e866ee4126576651644741dcf401115e45",
+      "referenceVerificationSHA256": "6527f8d5a40bbd0465ac3124e036482109d1fe6d4fa3517eb194f31d96cb1268",
+      "sourceAudioSHA256": "5ba27d863c4228ea65ec7159ae7b5e49aa26dcd036177ae466fa1a9bbe2bc264",
+      "sourcePCM_SHA256": "406c128536449a5e771017a35cc008a948c58877dba0ee1ea3ed96c508039468",
+      "durationSeconds": 46.92
+    },
+    {
+      "id": "S06-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "three-terms",
+      "spokenText": "التراكم الحيوي هو الاسم الأوسع لدخول المادّة من المسارات المختلفة مع بقائها في الكائن. في سؤال التركيز الحيوي بنعزل دور الوسط المحيط، مثل المَيّه، عن الغذاء. التضخّم الحيوي يخص زيادة التركيز بين الغذاء والكائن اللي أكله على أساس مقارنة مناسب. استخدام كلمة «تراكم» لكل الرسوم يخفي اختلاف الدليل المطلوب. ملخص أو إي سي دي، تلاتميّة وخمسة يميّز التعرّض المائي عن الغذائي، ويتابع الدخول ثم التخلص بعد التعرّض. نستخدمه لتثبيت الفرق في التصميم، مش كتصريح لتنفيذ تجربة على حيوانات. بيانات حقل فيها مَيّه وغذاء معًا لا تتحول تلقائيًا لاختبار بي سي إف مائي مضبوط.",
+      "textSHA256": "6b1667b969efa0caf5680bd12aadfe9fd2d911cb2e7c310cf8cf282d15a2798f",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S06",
+      "scene": 2,
+      "semanticID": "three-terms",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-02-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "0639d6dc910e8b5ec1f1e4dbafaa4985721eabbc59ca3ea0370b32a7e3fd3ce3"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-02-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "d6b2509464f7d9960dcbf9c20d2c18ccbeb94f5edb49ad6133da50a5fce9d45a"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-02-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "9a61b77d3bd6f6cb3d4668c4f8f95e380ab478c8e5c2a41fa5beb850b263950c"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-02-ar-EG",
+        "file": "S06-02-ar-EG.wav",
+        "sha256": "98bd6e7c11100ed13bbdc34a0078606f0c4cc2a0976429ee3621424c66f3c0d7"
+      },
+      "sourceVerificationSHA256": "0d49f16c195f9d0003a4aad26acd1ee300408b4c8b3b8e09b140cb4518de8849",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "98bd6e7c11100ed13bbdc34a0078606f0c4cc2a0976429ee3621424c66f3c0d7",
+      "sourcePCM_SHA256": "3460ac2bd4030fb89a623bd9ac6fcc6c7e4f8042a36bdc81561c775db22114dc",
+      "durationSeconds": 43.8
+    },
+    {
+      "id": "S06-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "In a hypothetical organism, chemical amount stays at zero point zero two milligrams while body mass increases from zero point zero one to zero point zero two kilograms on the same mass basis. Before growth, dividing chemical amount by body mass gives two milligrams per kilogram. Afterwards, the same amount divided by a larger body mass gives one milligram per kilogram. Concentration has halved, but chemical amount has not decreased. This illustrates growth dilution, not elimination of half the chemical or magnification between prey and predator. A real case needs observations distinguishing denominator changes from changes in chemical amount.",
+      "textSHA256": "8e77b04936d213786e6affe8c3b1ac32e7f518ae258a46e12f07d08381a52d1e",
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S06",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-05-en",
+          "file": "review-disposition.en.json",
+          "sha256": "d16651a214ba84a8dbad117155ecb3fd448b02cc0e06627676ee896a3f6abbc6"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-05-en",
+          "file": "blind-analysis.en.json",
+          "sha256": "e197e64e0f35fbd7ce80241b2cfcf5c8df5113482515881d20a261a171fee7ba"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S06-05-en",
+          "file": "reference-response.en.json",
+          "sha256": "ed6d891a8123d595a4fe4ca656c0713c828737390b2aef728aaca0e16a310a0a"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-05-en",
+        "file": "S06-05-en.wav",
+        "sha256": "f5030068b12cb0db3e3411b4f6adf94cd3c0e62fdae07c0ee1999dab1213da08"
+      },
+      "sourceVerificationSHA256": "196b2a03ce0d033991921ab685ea695733f709a9853d60bd4f06f138ee0bed86",
+      "referenceVerificationSHA256": "2251e5d5df9e020c9d16fa535acff13ead86d5d107a00c2fd08a75fe43472e3d",
+      "sourceAudioSHA256": "f5030068b12cb0db3e3411b4f6adf94cd3c0e62fdae07c0ee1999dab1213da08",
+      "sourcePCM_SHA256": "41367315b30e63b49a7e79a419880c2c66c6adf60c6b68a6d88b277be4349e6e",
+      "durationSeconds": 40.68
+    },
+    {
+      "id": "S07-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "prediction",
+      "spokenText": "المصدر يكتب لوغاريتم عامل التركيز يساوي معامل أ مضروب في لوغاريتم معامل التوزيع، زائد المعامل ب أو صيغة تعتمد على الذوبان. المعامل أ والمعامل ب ومعاملات الملاءمة ومجال الموادّ مش موجودين. لذلك معرفة اللوغاريتم العشري لمعامل توزيع الأوكتانول والمَيّه وحدها ما تطلعش بي سي إف عدديًا من المعادلة دي. كمان أساس اللوغاريتم ووحدات المتغير وتعريفه جزء من النموذج. قبل استخدام علاقة تنبؤ، اسأل عن بيانات بنائها، مجال المركبات، شروط القياس، طريقة التحقق وعدم اليقين. لو المدخل خارج المجال، نكتب إنّ التنبؤ غير مدعوم بدل اختراع معاملات. كيو إس إيه آر هيرجع في خطوة التحول باعتباره ربطًا كميًا محدود الصلاحية، مش بديلًا تلقائيًا للتجربة.",
+      "textSHA256": "0494e02d930ad8d44514943445c6549c7c7f6df0a77624b10e6026cef52a65dd",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S07",
+      "scene": 4,
+      "semanticID": "prediction",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-04-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "f0578b4c212b9b3e10331ee7e987a479d833387ff78b1f3e778a2517a25693ea"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-04-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "b0fab357c168fa30fa173a28d3d5e7f5b4cadea7ed81c46fb76acb1cfbad7309"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-04-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "8169e20ec35d2a1fd2aa4c30fb364b012d05a3e660b69784410681d9005e0b51"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-04-ar-EG",
+        "file": "S07-04-ar-EG.wav",
+        "sha256": "052b7b50c7818e0c269cdbc7d32934f38d375eff5fee04727c57e29fce655507"
+      },
+      "sourceVerificationSHA256": "fc2d6ed28c9d20f0a70b7eec20e51a5353c58f4397664a366b9b6c272d5bbb0c",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "052b7b50c7818e0c269cdbc7d32934f38d375eff5fee04727c57e29fce655507",
+      "sourcePCM_SHA256": "45318593cc2a18ffe53ee5718e3b6efb1532826efaead1362d05802d9f055101",
+      "durationSeconds": 50.44
+    },
+    {
+      "id": "S07-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "نحلّ نموذجًا مائيًّا افتراضيًّا، بحجرة واحدة ومعاملات ثابتة ومن غير نموّ أو مسار غذائي. تركيز الميّه صفر فاصلة صفر صفر اتنين ملِّيجرام لكلّ لتر. معامل الدخول عشرين لتر لكلّ كيلوجرام في اليوم، ومعامل الفقد صفر فاصلة واحد في اليوم. نقسم عشرين على صفر فاصلة واحد، فيطلع عامل تركيز مقداره ميتين لتر لكلّ كيلوجرام. نضربه في تركيز الميّه، فيطلع تركيز الجسم عند الحالة المستقرّة صفر فاصلة أربعة ملِّيجرام لكلّ كيلوجرام. نراجع المعدّلين: الدخول عشرين مضروبة في تركيز الميّه، والفقد صفر فاصلة واحد مضروبة في تركيز الجسم. الاتنين صفر فاصلة صفر أربعة ملِّيجرام لكلّ كيلوجرام في اليوم. صافي المعدّل صفر، لكن الدخول والخروج مستمرّين. النتيجة تخصّ النموذج، مش قياسًا لحقل أو نسبة سمّية.",
+      "textSHA256": "fb46438859ffe05b300ed20a1186c669fd8590919ab2846c000d2e92a1ef0e64",
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S07",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-05-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "c3d8aafc893ed960b9fba7c584bb8718ed6661d4f2ea02660d4188b52e810ca9"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-05-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "69c0c7e00f99b86aed6e0d456ad95e572059eaaf3b391467c61c127136ffe13b"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S07-05-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "b37bd79b3640ed56242a8025965bad9e2a0b634b6bd68aa4a6d401fbb0f2d0ce"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-05-ar-EG",
+        "file": "S07-05-ar-EG.wav",
+        "sha256": "96c2cae5037352032bf2c2c8f461d540caa57f0eb713a0cd4f70720f2c69c6d5"
+      },
+      "sourceVerificationSHA256": "6d7a7dfb968595d03887475e6c6f414b1fee89b021fe5bad20b9cbd6002a3dbf",
+      "referenceVerificationSHA256": "7fbd53da2010ed948e80ee0edd88e72e97722b57194117881a2f0c5079f877e4",
+      "sourceAudioSHA256": "96c2cae5037352032bf2c2c8f461d540caa57f0eb713a0cd4f70720f2c69c6d5",
+      "sourcePCM_SHA256": "414ecb9a8d50612bad7ac0c8640c2885a1bccf07545f756ff88cf4490bf88e76",
+      "durationSeconds": 48.28
+    },
+    {
+      "id": "S09-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "solubility",
+      "spokenText": "الذوبان في المَيّه يُعرض مثلًا بوحدة ملِّيجرام لكلّ لتر، مع درجة حرارة والرقم الهيدروجيني وطريقة قياس. اختلاف الظروف أو الصورة الأيونية ممكن يغيّر قابلية المقارنة. تركيز موجود في عينة مَيّه مش تلقائيًا حد الذوبان؛ واحد نتيجة للعينة، والتاني خاصية تحت شروط محدَّدة. الحركة مع المَيّه محتاجة نفكر في الجزء الذائب والتفاعل مع التربة والرواسب وظروف الجريان، مش الذوبان وحده. مرجع إن بي آي سي يربط الخواص بالحركة في التربة والميه والهواء، مع أهمية ظروف البيئة. ما نفترضش إنّ مادّة قليلة الذوبان مش ممكن تتحرك مع جسيمات أو في ظروف مختلفة.",
+      "textSHA256": "a2d3745da41d974b70d35425a262bb2085ba2d110cd62d0322fa6b8ae57d551d",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S09",
+      "scene": 2,
+      "semanticID": "solubility",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-02-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "5bf978c47dfd4ff1466d72671beba958055cff3cc5bf0a6299f5a58c417bdd92"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-02-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "83dd7d88765664183ebf2986289f5efa6fc609309a3646c71f7f5482cb6d0a16"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-02-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "aabd5a4e631235e0f07337e3dc21ae0aeb64f20674a3b5c30d185c03df3bd2fe"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-02-ar-EG",
+        "file": "S09-02-ar-EG.wav",
+        "sha256": "2eea7b0acd2895015a1fddf9e5d1eb395358e9a82a37e6adc76f756291e1afcf"
+      },
+      "sourceVerificationSHA256": "c86ea494a1b56c7e4391f6f3b4598740691733776d87d10fe02e3e23ec02dffe",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "2eea7b0acd2895015a1fddf9e5d1eb395358e9a82a37e6adc76f756291e1afcf",
+      "sourcePCM_SHA256": "cbaa5b942b640d0e183b776102bc786ceb949a21d9db0dfda6ce29f9f86eaff2",
+      "durationSeconds": 45.64
+    },
+    {
+      "id": "S09-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "vapour",
+      "spokenText": "ضغط البخار خاصية تُذكر عند درجة حرارة معينة وبوحدة واضحة. المصدر يستخدم مِلِّي باسكال: واحد مِلِّي باسكال يساوي صفر فاصلة صفر صفر واحد باسكال، والـباسكال يساوي نيوتن لكلّ متر مربّع. حذف بادئة مِلِّي يغيّر الرقم ألف مرة. ما نقارنش ملّيمتر زئبق ومِلِّي باسكال من غير تحويل صحيح. الانجراف أثناء الرش قد يشمل قطرات محمولة بعيدًا عن الهدف. أما التطاير فيخص انتقال المادّة إلى الطور الغازي. الحركة في الهواء مش آلية واحدة، ودرجة الحرارة والظروف والمستحضر مهمة. مخطط صفحة ١٩ يجمع الثبات والحركة والسمية لغير المستهدف وحجم الاستخدام؛ نقرأها أبعادًا متداخلة، مش ربطًا وحيدًا لكل عملية بخانة واحدة.",
+      "textSHA256": "a54efcf3ab65ad87b5bd1324ae128c7ef42c3c5744bf8c2185d971173905ea9c",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S09",
+      "scene": 4,
+      "semanticID": "vapour",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-04-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "889b1103ff4772d04e4b996b95cccdf5d0b36ce365be0742f3ace031a7a1d84a"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-04-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "174ae3bed7727f0e763a023d9e01c22a2c8ed390918b46971307de321b10dcde"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S09-04-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "cd555c157aface861ab0176ba792b5354a321daefffc8f155bb8d8c57b73637b"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-ar-EG",
+        "file": "S09-04-ar-EG.wav",
+        "sha256": "2fce94908a677f6b21880c7f2174bb6fb5116059cc2fe9a2c41c3381aa267055"
+      },
+      "sourceVerificationSHA256": "74f2b51a028b473e95a0163fa34d7edfabc8447662ff8751b07a2958337b2fff",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "2fce94908a677f6b21880c7f2174bb6fb5116059cc2fe9a2c41c3381aa267055",
+      "sourcePCM_SHA256": "e5216513e04f0fc1fde7031ae0e7562517dd5a146def69a5a9f861b49abbb7a0",
+      "durationSeconds": 51.28
+    },
+    {
+      "id": "S10-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "limits",
+      "spokenText": "فترة ما قبل الحصاد بي إتش آي قيد مرتبط بالاستخدام وبطاقة المنتج السارية. حساب هبوط افتراضي لا يسمح بتقصيرها، وتغيير الجرعة علشان نوصل لقيمة أسرع مش تعليمات معتمدة من الدرس. العينة والسلعة وتعريف المتبقي ونواتج التحول وشروط الاستخدام كلها أسئلة منفصلة عن منحنى بسيط. كيو إس إيه آر يربط البنية أو الخواص بنشاط مقاس كميًا. قبل استعماله، نحتاج تعريف نقطة النشاط وبيانات البناء والتحقق ومجال الصلاحية وعدم اليقين. توقع من نموذج مش قياسًا، ولا تصريح استخدام. لو المجال أو المعاملات مجهولة، نسجل غيابها بدل إنتاج رقم يوحي بثقة غير موجودة.",
+      "textSHA256": "9c4a582de4ea22788ac76ff8a9ccf3715fbb211e106f1158d111e3c04936d4f9",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S10",
+      "scene": 4,
+      "semanticID": "limits",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S10-04-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "4553e9ae86fd77840e6d220bd63a31700f8eb3dcaf3bd73b1482c0513a9f837c"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S10-04-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "411348ac672e612c8814175b49acdec223e64c6b94de6aa0e77e2534c0fdae74"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S10-04-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "88cf321fb37f80b8c22f8d52acf827b5a1e13c20911a6953a1bc32e606cfe2e3"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-04-ar-EG",
+        "file": "S10-04-ar-EG.wav",
+        "sha256": "6a822589aabc4a897259d0492a15e6626b0c56d501280aae9168313dc8de9aeb"
+      },
+      "sourceVerificationSHA256": "1c3047c3ed6ef161aee203c4e33ac62feadb26edddbb907e33d39789971d36b4",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "6a822589aabc4a897259d0492a15e6626b0c56d501280aae9168313dc8de9aeb",
+      "sourcePCM_SHA256": "097d5a28d688a8afeb4bd37c69e23f4fab34bdf53db596bbb36b4e1aa828390b",
+      "durationSeconds": 49.72
+    },
+    {
+      "id": "S11-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "before",
+      "spokenText": "قبل الوصول، المخطّط بيعرض الانجراف والتبخّر. وعند السطح بنراجع الارتداد والاحتفاظ. اصطدام قطرة بورقة مش ضمان إنّها هتفضل عليها كلّها؛ جزء ممكن يرتدّ، وفرع الفقد لازم يفضل ظاهر. حجم القطرات والتشغيل والتركيبة والجوّ ممكن يأثّروا على السيناريو. لكن الرسم ما فيهوش قيم تشغيل نقدر نحوّلها لوصفة. ما نختارش منه ضغطًا أو فونية أو جرعة حقيقيّة. نسمّي العامل، ونقول إيه الدليل اللي محتاجينه، بدل ما نخترع إعدادًا.",
+      "textSHA256": "3134ccc0c1f9a03d07644e0fdc6e8d68d8a102f8d80990d09a900da5d558c22e",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 2,
+      "semanticID": "before",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "0a38e5ba688951ecdfb89245bb2e897af16e9f5ce41ece424d822a5f634f7986"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "1c633a27ef2df85e017f374bddb34f302cd9ce558c6066bbc3b58aec95ef62b4"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "2ce39734195d5598ad7bf68eb00857036b0944cb2dd2a3e9bd579e39fbfc78cb"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-ar-EG",
+        "file": "S11-02-ar-EG.wav",
+        "sha256": "d452b1c771f3a2d220eca11b33bffe63314268773c9e76c4eb016a7161ea7782"
+      },
+      "sourceVerificationSHA256": "08a68866223362ddaa9cc27e770322af9b94451e1c08472a817b95facffd788d",
+      "referenceVerificationSHA256": "4ca6a2b3cb8803ae43d3d15ef10c141f897f8ddefaf05b90891a8cf0c0f8c641",
+      "sourceAudioSHA256": "d452b1c771f3a2d220eca11b33bffe63314268773c9e76c4eb016a7161ea7782",
+      "sourcePCM_SHA256": "bf03793e707fe2a40a06ebc20c7d2a35e628ab365b67c7ed2c0a38fa05fa1418",
+      "durationSeconds": 37.0
+    },
+    {
+      "id": "S11-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "نتابع قطرة في مشهد تعليمي، من غير ما ندّعي إنّه تجربة مقاسة. وصلت للورقة واصطدمت، وارتدّ جزء وفضل جزء وانتشر وجفّ. نربط الوصول بالنقل، واللمس بالاصطدام، والجزء اللي فضل بالاحتفاظ وتكوُّن الترسيب. بعد كده نسأل عن الانتشار والتجفيف، ونخلّي الدخول والأثر الحيوي مجهولين لحدّ ما يبقى فيه دليل. ما عندناش كتلة محتفَظ بيها، ولا قياس امتصاص، ولا نتيجة مكافحة. السؤال التالي ممكن يكون عن الكتلة على السطح، أو توزيعها، أو المتبقّي داخل النبات، أو استجابة مناسبة. ولو نزل مطر ولقينا مادّة في الميّه، يبقى فيه فرضيّة إعادة توزيع محتاجة فحص؛ مش إذن نجزم بالمصدر أو بنسبة الفقد.",
+      "textSHA256": "4786c42022edddf02a937c5366edaec912c856e32c3f89823f7cf3f71f0575e5",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-05-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "eae0852fc749ab8e3e4272c9286c01fa97757758442ebab222fb77e7ddc35fdd"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-05-ar-EG",
+          "file": "blind-analysis.en.json",
+          "sha256": "d4a0782c259539394125ecd5bd75a97d979305fa484976f733d744c2ab97bbea"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-05-ar-EG",
+          "file": "reference-response.en.json",
+          "sha256": "327cc6ea6262eb4619a91ac062c3422f3d7bbeeb4ab7d3c9f98ecbb6da011d16"
+        }
+      ],
+      "mode": "targeted_adjudication",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-05-ar-EG",
+        "file": "S11-05-ar-EG.wav",
+        "sha256": "a9b01f71b8b87748e5e20b4a71d704c9355a56b312b665cb0db0ee1df3c4b506"
+      },
+      "sourceVerificationSHA256": "fd1bdf87fac0c674057071f61a5e0b530986c4497cb791c2061a0ebecc983add",
+      "referenceVerificationSHA256": "7fbd53da2010ed948e80ee0edd88e72e97722b57194117881a2f0c5079f877e4",
+      "sourceAudioSHA256": "a9b01f71b8b87748e5e20b4a71d704c9355a56b312b665cb0db0ee1df3c4b506",
+      "sourcePCM_SHA256": "40cf5273a16e7152c8313cf6b2c0901882618064b7e9cc497aba6cb5c0b3d2e9",
+      "durationSeconds": 45.24
+    },
+    {
+      "id": "S11-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "before",
+      "spokenText": "The diagram includes drift and evaporation before arrival, and reflection and retention at the surface. An impact point on a leaf does not guarantee complete retention. Loss branches must remain visible in the presentation. Droplet characteristics, operating conditions, formulation and atmosphere can affect the scenario, but the diagram provides no operational values for a recipe. It does not authorise selecting a real nozzle, pressure or dose. Name the factor and required evidence rather than inventing a setting.",
+      "textSHA256": "f56e17e5f1916311ec88b2e964c8ec1923135f5734eb55f6f757f01da0de7581",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 2,
+      "semanticID": "before",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-en",
+          "file": "review-disposition.en.json",
+          "sha256": "384f209451e5c57f52c843f8ef7a69f8559d524b8b0cce9fb02f48c1e0b5e16f"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-en",
+          "file": "blind-analysis.en.json",
+          "sha256": "819e2fcc63c7c5e7ace66d53fd327814c213785107d196c0e21f0cd41c945e03"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-02-en",
+          "file": "reference-response.en.json",
+          "sha256": "03da83f5113cdfa4b40248d39a40a8d4dce42de46267cc06e3d50a17060d6de0"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-en",
+        "file": "S11-02-en.wav",
+        "sha256": "6c81878e471f36256635c6b70fe8b24605fb1d70b95a89a5ed5173b2086df050"
+      },
+      "sourceVerificationSHA256": "862aec270a00fb1e7115a92828234d1c754826519baf66d583162d26fd534e12",
+      "referenceVerificationSHA256": "6527f8d5a40bbd0465ac3124e036482109d1fe6d4fa3517eb194f31d96cb1268",
+      "sourceAudioSHA256": "6c81878e471f36256635c6b70fe8b24605fb1d70b95a89a5ed5173b2086df050",
+      "sourcePCM_SHA256": "76833451bb289a833cb02b6d166b157e4109af42dda0c78b21344cfc9d5540e3",
+      "durationSeconds": 37.16
+    },
+    {
+      "id": "S11-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "influences",
+      "spokenText": "Side labels include operating/formulation, atmospheric/operating, spray/surface, atmospheric, and deposit/surface conditions. Retain those factor groups, but do not turn a factor into a measured loss or infer a numerical relationship from label placement. For the final task, select a stage, define an observation, identify a possible loss branch and list needed conditions. Say possible where measurement is absent. Connect the sequence to exposure, properties and transformation from earlier steps rather than reducing pesticide fate to six unexplained pictures.",
+      "textSHA256": "1d17f36213471cb2d957c588fe8b8d8975b21430e2dc342fa50cd6a3ae258f4a",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 4,
+      "semanticID": "influences",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-04-en",
+          "file": "review-disposition.en.json",
+          "sha256": "3f6d76d61f24851b04b36e05396c0def5063fcd9af0f35561ab5182faf56ebb5"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-04-en",
+          "file": "blind-analysis.en.json",
+          "sha256": "da65e0f51cb77b97074c89838386d945a06047296b626703b962f177bf648f1f"
+        },
+        {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S11-04-en",
+          "file": "reference-response.en.json",
+          "sha256": "1f9e996f4e8465caf670b7f613845753f333a9c7452aab1fbb3f2a8355b8f3dd"
+        }
+      ],
+      "mode": "voice_only",
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-04-en",
+        "file": "S11-04-en.wav",
+        "sha256": "257767c759e03eec3d7ff6d4b3f4e045159f5178687e3f14c0712382e68f0a9b"
+      },
+      "sourceVerificationSHA256": "7a0eb3be2b1340bf5ca9c94a4053bd7235274edd899569ec93751ff455dd1174",
+      "referenceVerificationSHA256": "6527f8d5a40bbd0465ac3124e036482109d1fe6d4fa3517eb194f31d96cb1268",
+      "sourceAudioSHA256": "257767c759e03eec3d7ff6d4b3f4e045159f5178687e3f14c0712382e68f0a9b",
+      "sourcePCM_SHA256": "b7b629ec4085ec89330453583d4db63c49b15eb8090c53f708c368728ecd5b11",
+      "durationSeconds": 40.08
+    }
+  ],
+  "workerSHA256": "492d09294c2dc0394e6390e9efc194608e0511b936c0d9b56c02a95091b6f628",
+  "adjudicatorSHA256": "2a54dbf663052e37a571b8c76fdce9f0b27ce76f05c0c340e1b2fb6ba824b5d8",
+  "policy": "13 one-call labelled actual-voice comparisons; one separate two-pass adjudication of actual S11-05ar. No speech repair or inferred voice match; retain raw invalid reports. No native/human acceptance."
+}

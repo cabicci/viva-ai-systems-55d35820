@@ -1,0 +1,43 @@
+{
+  "readyScenes": 78,
+  "heldScenes": 14,
+  "heldIDs": [
+    "S04-03-ar-EG",
+    "S04-04-ar-EG",
+    "S04-02-en",
+    "S06-02-ar-EG",
+    "S06-05-en",
+    "S07-04-ar-EG",
+    "S07-05-ar-EG",
+    "S09-02-ar-EG",
+    "S09-04-ar-EG",
+    "S10-04-ar-EG",
+    "S11-02-ar-EG",
+    "S11-05-ar-EG",
+    "S11-02-en",
+    "S11-04-en"
+  ],
+  "sourceRun": 40296268513,
+  "qualityRun": 40300477367,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 78,
+  "providerReservationUSD": 2.3,
+  "deferredSemanticReservationUSD": 0.42,
+  "totalRemainingSemanticCeilingUSD": 2.72,
+  "outputPackage": "D:\\Masaarat\\Masaarat — Fate of Pesticides in the Environment\\Worktrees\\actor-0c0df2131ade371ac908\\experiments\\course-pipeline\\rebuild\\fate-course-v2\\rest-ready-scenes-v1",
+  "workflow": "D:\\Masaarat\\Masaarat — Fate of Pesticides in the Environment\\Worktrees\\actor-0c0df2131ade371ac908\\.github\\workflows\\fate-v2-rest-ready-scenes-v1.yml",
+  "mode": "apply",
+  "requestSHA256": "f9caf0a3ef05c8ad59a74cf2d1fbb2016afa7bcda93148b57551e56d7c8ebb63",
+  "implementationPinsSHA256": "d7057f920af68512a8ae9e4a6003955d8b5754b613a1efc8515865e88a17f468",
+  "workflowSHA256": "5b71702716f5d4f293f99b07ac415d96aa42acb106e2a2e5d904af5f58a483ce",
+  "sourceEvidence": {
+    "createdUTC": "2026-10-26T09:54:29.756270+00:00",
+    "sourceGenerationRequestSHA256": "bcb7afb029d92c3bbb05e3e4a78f68b280fa0ae6453eefe42ee50962eef6ac95",
+    "sourceReceiptSHA256": "518a059865f0d076e99dcba6d7d9bfc87679a03313719938199da79f6962c664",
+    "qualityReceiptSHA256": "07f34377e854cf1d323618cab1dcf4baedd9cb2996dc84a030b24742ecf1033a",
+    "visualReviewSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+    "methodApprovalSHA256": "7a3a68706573d115304c4371665e15dfff56fefcb2704b56e880cef707036f55",
+    "selectionPolicy": "Exact clear source gates only; holds excluded; actual PCM and clocks verified locally; no inferred human or visual acceptance."
+  }
+}

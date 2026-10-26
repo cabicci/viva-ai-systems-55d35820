@@ -1,0 +1,39 @@
+name: Fate v2 narrow actual-voice checks and one speech adjudication
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/rest-voice-recheck-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-rest-voice-recheck-v1
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/rest-voice-recheck-v1
+  EXPECTED_REQUEST_SHA256: a77568dd3b4b492b79b89627df0a4538750f547b258350a8e939bc04ce8a113f
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  narrow-check:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        part: ["S04-03-ar-EG", "S04-04-ar-EG", "S04-02-en", "S06-02-ar-EG", "S06-05-en", "S07-04-ar-EG", "S07-05-ar-EG", "S09-02-ar-EG", "S09-04-ar-EG", "S10-04-ar-EG", "S11-02-ar-EG", "S11-05-ar-EG", "S11-02-en", "S11-04-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify originals and review only the unresolved acoustic question
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/worker.py" "${{ matrix.part }}"
+      - name: Preserve each diagnostic immediately including held or invalid checks
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-rest-voice-recheck-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

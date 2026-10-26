@@ -1,0 +1,897 @@
+{
+  "id": "fate-v2-s02-visual-recovery-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S02-01-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "two-denominators",
+      "spokenText": "في الخطوة اللي فاتت حسبنا كتلة متبقّي في حصّة أكل. دلوقتي قدّامنا رقم بوحدة ملِّيجرام لكلّ كيلوجرام غذاء، ورقم تاني بوحدة ملِّيجرام لكلّ كيلوجرام من وزن الجسم في اليوم. هل نقارنهم على طول؟ لأ. أوّل مقام يخصّ الغذاء، والتاني يخصّ وزن الجسم ومعاه أساس زمني. في كودكس، الحدّ الأقصى للمتبقّيات، إم آر إل، هو أعلى تركيز توصي هيئة الدستور الغذائي بالسماح القانوني بوجوده في الغذاء أو العلف أو عليه، لسلعة وتعريف متبقّي محدَّدين. ده مش جرعة شخصيّة. أمّا المدخول اليومي المقبول، إيه دي آي، فبيخصّ كمية المادة اللي ممكن تتاخد يوميًّا طول العمر، ويبدو إنها من غير مخاطرة صحّيّة يُعتدّ بيها، حسب الدليل المعروف وقت التقييم. بيتنسب لوزن الجسم، ونوضّح أساس اليوم في حسابنا. ده مرجع لتقييم طويل المدى، مش حدّ تركيز لعيّنة، ولا ضمان مطلق. والقيمة الفعليّة والحدّ الساري لازم نرجع فيهم للمادة والحالة والنظام المعني.",
+      "textSHA256": "387f9ffd6b48c35578d4ffa64c7ec01feedee786dc085cd63052e46adefe1cfb",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "d6dcdf382bffd5892f120a7ee53aa0d1f3c4392d6ae7a0f0ec13c2a366e9062e",
+      "semanticID": "two-denominators",
+      "scene": 1,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 1,
+      "title": {
+        "ar": "١. نفس كلمة «حد» مش معناها نفس الكمية",
+        "en": "1. Read the denominator before comparing numbers"
+      },
+      "actions": [
+        {
+          "id": "bases",
+          "label": {
+            "ar": "المقام وأساس الزمن",
+            "en": "Denominator and time basis"
+          },
+          "meaning": "Food mass differs from body mass with a daily time basis.",
+          "equation": "mg/kg food ≠ mg/kg body weight/day"
+        },
+        {
+          "id": "mrl",
+          "label": {
+            "ar": "حدّ لتركيز في سلعة",
+            "en": "A commodity concentration limit"
+          },
+          "meaning": "MRL is a recommended legally-permitted residue concentration for the commodity and residue definition."
+        },
+        {
+          "id": "adi",
+          "label": {
+            "ar": "مرجع مدخول يومي طويل المدى",
+            "en": "A lifetime daily-intake reference"
+          },
+          "meaning": "ADI is body-weight based, lifetime daily intake appearing without appreciable health risk on evaluation evidence; not an absolute guarantee."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-ar-EG",
+        "file": "S02-01-ar-EG.wav",
+        "sha256": "4b92539aa0b1744b718f36f5e7e2c0ef6a77a8881aa2b2ca8951ca2763365bbb"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-01-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "d8d97e764e4a304cad33ddddd68aad4528361e74cfb41f234300e225bf6d59c6"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-01-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "fe204dc6c5b62bb920a70152ee30ab7908c5f51cc70361b2d9283d7e6c2678b4"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-01-ar-EG",
+        "file": "semantic-response.en.json",
+        "sha256": "0f6f591e01daac2ba8f1e4866dc22ed8aa2fe0afe8ee4217ed122ffd20dc90cb"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-03-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "hypothetical-reference",
+      "spokenText": "لو التدريب ادّاك مدخولًا يوميًّا مقبولًا افتراضيًّا، تقدر تقسم المدخول اللي حسبته عليه، بعد ما تتأكّد إنّ الوحدات متوافقة. ولازم تفضل موضّح إنّ المرجع افتراضي. كلمة أقلّ هنا معناها إنّ نتيجة السيناريو أقلّ من الرقم اللي استخدمناه؛ مش معناها إنّ بقيّة الأكل والمَيّه وكلّ ظروف الناس اتراجعت. أمّا سؤال مطابقة عيّنة غذاء للحدّ الأقصى للمتبقّيات، فله بيانات تانية: أنهي سلعة؟ وأنهي جزء اتحلّل؟ وإيه تعريف المتبقّي؟ وأنهي سوق وجهة وتاريخ وحدّ ساري؟ وكمان طريقة أخذ العيّنة والتحليل وقاعدة القرار. رقم تعليمي مش حدّ قانوني ساري، ومقارنة رقمين لوحدها مش قرار إنفاذ رسمي.",
+      "textSHA256": "cdd626af9dff1aaf641f596262ee86c62f12fb6f99d2cd66039727dcd30ebd33",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "1373b91cfe1801093e68d83ec5766324e95a44fc9949349c6f534d7bb3c9edb6",
+      "semanticID": "hypothetical-reference",
+      "scene": 3,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 3,
+      "title": {
+        "ar": "٣. مقارنة تعليمية بشروطها",
+        "en": "3. Compare only under stated conditions"
+      },
+      "actions": [
+        {
+          "id": "reference",
+          "label": {
+            "ar": "مرجع تعليمي افتراضي",
+            "en": "A hypothetical teaching reference"
+          },
+          "meaning": "Only compare an intake to an explicitly hypothetical ADI with compatible units."
+        },
+        {
+          "id": "percentage",
+          "label": {
+            "ar": "نسبة تحت شروط السيناريو",
+            "en": "A scenario-bound percentage"
+          },
+          "meaning": "Below the teaching reference does not mean unexamined food/water/population circumstances were evaluated."
+        },
+        {
+          "id": "compliance",
+          "label": {
+            "ar": "مطابقة العيّنة لها بياناتها",
+            "en": "Sample compliance has its own evidence"
+          },
+          "meaning": "Commodity, portion, residue definition, jurisdiction/date, sampling/method and decision rule are needed."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-ar-EG",
+        "file": "S02-03-ar-EG.wav",
+        "sha256": "6885aacb9a00090ccc2e6f59692d86e9322efb6282bd3ec5879f7c44e27433ed"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "3a48f85caa0708cfa2ad33c92ef8f416181e92cbeae2bdd96299b5d5e19aa1fd"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3eff7b665f8d755748281666e4ba705f32f973b3932e244217ed1067bed03212"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-03-ar-EG",
+        "file": "semantic-response.en.json",
+        "sha256": "ff0a1ebec5b0019afacc14f8beb6443f586b8e105ecffdf3b9507269c701c491"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "multiple-residues",
+      "spokenText": "فيه كمان فرق بين نجمع مصادر نفس المادة، وبين نقيّم مواد مختلفة مع بعض. في ملخّص الوكالة الأمريكيّة لحماية البيئة لقانون جودة الغذاء، تجميع التعرّض معناه نجمع مصادر مختلفة لنفس المبيد. والتقييم التراكمي في السياق ده يخصّ مبيدات ليها آليّة سُمِّيّة مشتركة. ده ما يخلّيناش نجمع كلّ الأسماء اللي ظهرت في تحليل متعدّد المتبقّيات، ونقارن المجموع بالمدخول المقبول لمادة واحدة. قبل الجمع اسأل: هل دي نفس المادة ونفس تعريف المتبقّي؟ هل الوحدات وأساس الزمن متوافقين؟ وهل المطلوب مدخول، ولا مؤشر مخاطر له طريقة محدَّدة؟ سهولة الجمع مش دليل إنّ الجمع له معنى علمي.",
+      "textSHA256": "a7d5b44bef54a0bf7a366123762b7719dae7e446a5a32315d5532b797ee09f27",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "920a69e765fdf3facd04006141865e2418d5be2c2c5783e459584a0ceb959627",
+      "semanticID": "multiple-residues",
+      "scene": 4,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. نفس المادة ولا مواد مختلفة؟",
+        "en": "4. One substance or several substances?"
+      },
+      "actions": [
+        {
+          "id": "aggregate",
+          "label": {
+            "ar": "مصادر مختلفة لنفس المادة",
+            "en": "Several sources of one substance"
+          },
+          "meaning": "EPA/FQPA aggregate context: combine multiple exposure sources for one pesticide."
+        },
+        {
+          "id": "cumulative",
+          "label": {
+            "ar": "آلية سُمّية مشتركة بدليل",
+            "en": "A supported common toxicity mechanism"
+          },
+          "meaning": "EPA/FQPA cumulative context concerns pesticides with common mechanisms; a shared icon is not evidence."
+        },
+        {
+          "id": "no-arbitrary-sum",
+          "label": {
+            "ar": "ما نجمعش كل الأسماء وخلاص",
+            "en": "No arbitrary concentration sum"
+          },
+          "meaning": "Multiresidue detections do not justify summing concentrations against one chemical ADI."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-ar-EG",
+        "file": "S02-04-ar-EG.wav",
+        "sha256": "ffc131eeee8d2000475b48c9e5d6b2060dbed8e8c79805f54e95196ea6e3b904"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "4bf81130bd5c074842227cb9d1b2008d0bc4cc4d9c44e0e02ce16eb07ed9be6e"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "8ca2610db958074f428b21f02a24b65cdc0381656f8727ff35dfff16bae7b9f1"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-04-ar-EG",
+        "file": "semantic-response.en.json",
+        "sha256": "f90af10745ebe561bfefb7015d5a37fbd089ec6c62d0d64a4ed8803f8e3234da"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "خلّينا نجرّب يومًا افتراضيًّا بأرقام واضحة. في غذاء أ، تركيز المادة ر صفر فاصلة اتنين ملِّيجرام لكلّ كيلوجرام غذاء، والاستهلاك صفر فاصلة واحد خمسة كيلوجرام في اليوم. وفي غذاء ب، التركيز صفر فاصلة صفر خمسة بنفس وحدة التركيز، والاستهلاك صفر فاصلة أربعة كيلوجرام في اليوم. نفترض نفس تعريف المتبقّي، ووزن جسم خمسين كيلوجرام. نضرب لكلّ غذاء: الأوّل يدي صفر فاصلة صفر تلاتة ملِّيجرام في اليوم، والتاني يدي صفر فاصلة صفر اتنين. المجموع صفر فاصلة صفر خمسة ملِّيجرام في اليوم. نقسمه على خمسين كيلوجرام من وزن الجسم، فيطلع صفر فاصلة صفر صفر واحد ملِّيجرام لكلّ كيلوجرام من وزن الجسم في اليوم. لو المرجع التعليمي الافتراضي صفر فاصلة صفر واحد بنفس الوحدة، نقسم عليه ونضرب في ميّة: النتيجة عشرة في الميّة. دي نتيجة اليوم والمصادر والافتراضات اللي ذكرناها بس؛ مش تقييمًا مكتملًا طول العمر، ولا حكم مطابقة لعيّنة غذاء.",
+      "textSHA256": "f866928232a6ba2f090aa3554776310acd97500fe1ceac4f0217b8ca8f76dc45",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "950bae726f32aee678fbf04a8f987d7293aee8ea985413a4145f126ebb0bc33e",
+      "semanticID": "worked-example",
+      "scene": 5,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 5,
+      "title": {
+        "ar": "مثال محلول: يوم افتراضي لشخص افتراضي",
+        "en": "Worked example: a hypothetical daily menu"
+      },
+      "actions": [
+        {
+          "id": "sources",
+          "label": {
+            "ar": "قيم افتراضية ونفس تعريف المتبقّي",
+            "en": "Invented values, matching residue definition"
+          },
+          "meaning": "A0.20mg/kg food with0.15kg/day; B0.05mg/kg food with0.40kg/day; body50kg."
+        },
+        {
+          "id": "masses",
+          "label": {
+            "ar": "كتلة المادة من الغذاءين",
+            "en": "Residue mass from each food"
+          },
+          "meaning": "Multiply each food contribution independently.",
+          "equation": "A: 0.20 × 0.15 = 0.030 mg/day; B: 0.05 × 0.40 = 0.020 mg/day"
+        },
+        {
+          "id": "intake",
+          "label": {
+            "ar": "المجموع بالنسبة لوزن الجسم",
+            "en": "Total normalised to body weight"
+          },
+          "meaning": "Combine0.030and0.020mg/day, divide by50kg.",
+          "equation": "0.050 mg/day ÷ 50 kg body weight = 0.0010 mg/kg body weight/day"
+        },
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "١٠٪ من المرجع الافتراضي",
+            "en": "10% of the hypothetical reference"
+          },
+          "meaning": "Only the hypothetical0.010 reference is used; no compliance or lifetime conclusion.",
+          "equation": "0.0010 ÷ 0.010 × 100 = 10%"
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-ar-EG",
+        "file": "S02-05-ar-EG.wav",
+        "sha256": "314fe1c0b16cd49f257c62f44dbc80ccdffe35c28a5158970044ff1a2bdc265a"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "649b7370d12a848e6e0d38de32c5f77eabf95b720026871e4e0d79af35b8df6b"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3d7f357d92f830e54785cd8df967c703cfcf961c744d63e7467655592e4ef12b"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-05-ar-EG",
+        "file": "semantic-response.en.json",
+        "sha256": "fa17cf77099cf4d2f1a2ca4954eb9d5d61de9a505cb6ce3a00322c22789ae262"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-01-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "two-denominators",
+      "spokenText": "The previous step calculated residue mass in a food portion. Now compare the units of two figures: milligrams per kilogram of food, and milligrams per kilogram of body weight per day. The first denominator is food mass; the second includes body mass and a time basis. In Codex, an MRL is the maximum pesticide-residue concentration recommended to be legally permitted in or on a food commodity or animal feed, for the specified commodity and residue definition. It is not an individual dose. An ADI concerns daily intake over an entire lifetime that appears to be without appreciable health risk on the evidence known at evaluation. It is expressed relative to body weight, with the daily basis explicit in our calculation. This chronic-exposure reference is not a food-sample concentration limit or an absolute guarantee. Retrieve actual values and operative limits for the substance, situation and applicable system.",
+      "textSHA256": "1d22bee700f617d738860ba12a3302992c21ec2598d1e7faf89d65855465ccef",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "df430512e0116a43d741d3728cf9f9125620949971e9c49d0ff42fc049e42174",
+      "semanticID": "two-denominators",
+      "scene": 1,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 1,
+      "title": {
+        "ar": "١. نفس كلمة «حد» مش معناها نفس الكمية",
+        "en": "1. Read the denominator before comparing numbers"
+      },
+      "actions": [
+        {
+          "id": "bases",
+          "label": {
+            "ar": "المقام وأساس الزمن",
+            "en": "Denominator and time basis"
+          },
+          "meaning": "Food mass differs from body mass with a daily time basis.",
+          "equation": "mg/kg food ≠ mg/kg body weight/day"
+        },
+        {
+          "id": "mrl",
+          "label": {
+            "ar": "حدّ لتركيز في سلعة",
+            "en": "A commodity concentration limit"
+          },
+          "meaning": "MRL is a recommended legally-permitted residue concentration for the commodity and residue definition."
+        },
+        {
+          "id": "adi",
+          "label": {
+            "ar": "مرجع مدخول يومي طويل المدى",
+            "en": "A lifetime daily-intake reference"
+          },
+          "meaning": "ADI is body-weight based, lifetime daily intake appearing without appreciable health risk on evaluation evidence; not an absolute guarantee."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-en",
+        "file": "S02-01-en.wav",
+        "sha256": "51058d7075755fdb247c4064592b1b2efcee5fde003d1bc8a98d60dca6284b13"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-01-en",
+        "file": "review-disposition.en.json",
+        "sha256": "fa50c562fab387834d70e35576fae168fafd6d43d3e3097ba679544d52d11fd9"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-01-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "ff3b2c5689ea932f081897c3da1d3da5dcdc0fc61261701b610fd9923aa82339"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-01-en",
+        "file": "semantic-response.en.json",
+        "sha256": "4e386388cfaaa88bff78aa5194807b74a430403866fb34d42ddc293bbbe66fb7"
+      },
+      "indexCorrections": [
+        {
+          "field": "endWordIndex",
+          "old": 135,
+          "new": 136,
+          "caption": "or an absolute guarantee.",
+          "reason": "Include intervening ASR bullet unit136 in adjacent caption clock without introducing unspoken text."
+        }
+      ]
+    },
+    {
+      "id": "S02-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "equation",
+      "spokenText": "For the training calculation, multiply each food concentration by the mass consumed to obtain a mass of residue. Add masses of the same residue, then divide by body weight. Daily consumption inputs produce a daily body-mass-normalised intake. Concentrations must refer to compatible residue definitions or use a justified conversion; similar names are insufficient. A constructed one-day menu does not automatically estimate lifetime average exposure. Nor does having one day's numbers complete an acute assessment, which requires an appropriate reference and method. Here the task is dimensional reasoning, not a consumption recommendation or clinical conclusion.",
+      "textSHA256": "6072b75fc93a9235a9f383f2566d09908ae2b733d16dd3de06eb16e18e8d3065",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "b10b862cc5cbe73e58720229fdbb8a72693af7f2ccd5f578b5c2e56e973ec994",
+      "semanticID": "equation",
+      "scene": 2,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. نبني المدخول خطوة خطوة",
+        "en": "2. Build intake in explicit stages"
+      },
+      "actions": [
+        {
+          "id": "multiply",
+          "label": {
+            "ar": "نضرب لكل غذاء",
+            "en": "Multiply for each food"
+          },
+          "meaning": "Multiply concentration by food consumption; kg food cancels.",
+          "equation": "mg/kg food × kg food/day = mg/day"
+        },
+        {
+          "id": "combine",
+          "label": {
+            "ar": "نجمع كتلًا متوافقة",
+            "en": "Combine compatible masses"
+          },
+          "meaning": "Add masses only for compatible substance/residue definitions, not arbitrary concentrations.",
+          "equation": "Σ residue mass (mg/day)"
+        },
+        {
+          "id": "normalise",
+          "label": {
+            "ar": "نقسم على وزن الجسم",
+            "en": "Normalise by body weight"
+          },
+          "meaning": "Divide total daily chemical mass by kg body weight.",
+          "equation": "mg/day ÷ kg body weight = mg/kg body weight/day"
+        },
+        {
+          "id": "scope",
+          "label": {
+            "ar": "يوم افتراضي مش تقييم كامل",
+            "en": "One hypothetical day is not a complete assessment"
+          },
+          "meaning": "A one-day menu neither establishes lifetime exposure nor completes acute assessment."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-02-en",
+        "file": "S02-02-en.wav",
+        "sha256": "de36ec17704939c7170962496e45a35dfb3ad6dec8eeef7d2e7f41413147906f"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "adeffbc3552c4ed1cdcc3bc89f7ee2ec7d9e86700aa2106de78f404e83512580"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "bc4f82cab74718091e2b370aa257c17fee42c113139f9d2780759ca2076dacc5"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-02-en",
+        "file": "semantic-response.en.json",
+        "sha256": "7988751cb260203acd7582d708a8512b847517200cf6a5e417fb092a7e24f66b"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-03-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "hypothetical-reference",
+      "spokenText": "If the exercise supplies a hypothetical ADI, calculate the estimated-intake-to-reference ratio after matching units. Clearly retain the hypothetical label. Being below that example value describes the calculation; it does not show that the rest of the diet, drinking water or relevant population circumstances have been evaluated. Comparing a sample with an MRL instead requires commodity identity, the analysed portion, residue definition, jurisdiction, market, date, sampling and analytical methods, and the applicable decision rule. A teaching value is not an operative legal limit, and a bare numerical difference is not an enforcement decision.",
+      "textSHA256": "d3b465e3a50c85b6c27a22b4261332020e1d5eabcee7cf572f080568a9334788",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "1b9cc3f32a298ec2e81def6f30f1a480e07f93a960ea4a70c09caa06a7b9cdd4",
+      "semanticID": "hypothetical-reference",
+      "scene": 3,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 3,
+      "title": {
+        "ar": "٣. مقارنة تعليمية بشروطها",
+        "en": "3. Compare only under stated conditions"
+      },
+      "actions": [
+        {
+          "id": "reference",
+          "label": {
+            "ar": "مرجع تعليمي افتراضي",
+            "en": "A hypothetical teaching reference"
+          },
+          "meaning": "Only compare an intake to an explicitly hypothetical ADI with compatible units."
+        },
+        {
+          "id": "percentage",
+          "label": {
+            "ar": "نسبة تحت شروط السيناريو",
+            "en": "A scenario-bound percentage"
+          },
+          "meaning": "Below the teaching reference does not mean unexamined food/water/population circumstances were evaluated."
+        },
+        {
+          "id": "compliance",
+          "label": {
+            "ar": "مطابقة العيّنة لها بياناتها",
+            "en": "Sample compliance has its own evidence"
+          },
+          "meaning": "Commodity, portion, residue definition, jurisdiction/date, sampling/method and decision rule are needed."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-en",
+        "file": "S02-03-en.wav",
+        "sha256": "2f6220bd930223f7e00730b8cf9a0c33a7386a88087de7e921f77c0b7ce18e91"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "bce19173217035836918c790621d36ddfd0526345a23f4cde29c133dbe50f19f"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "6ac3c23fb55b3f0a57e691c90d8d01f6837cf5055b385c64fc0238589db3b643"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-03-en",
+        "file": "semantic-response.en.json",
+        "sha256": "11bebbdc02f233ed65ad8897a0a9449d5c3bf22aba0f7caa11a0d33e31edc4c2"
+      },
+      "indexCorrections": [
+        {
+          "field": "startWordIndex",
+          "old": 63,
+          "new": 62,
+          "caption": "residue definition, jurisdiction, market, date,",
+          "reason": "Include ASR resolution/residue pair in the one residue-definition caption span; preserve source phrase and reviewed original audio."
+        }
+      ]
+    },
+    {
+      "id": "S02-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "multiple-residues",
+      "spokenText": "In EPA's FQPA summary, aggregate exposure brings together multiple sources for one pesticide. Its cumulative assessment requirement concerns pesticides sharing a common toxicity mechanism. Finding several names in a multiresidue report does not justify adding every concentration and comparing the sum with one chemical's ADI. Before combining values, establish substance and residue identity, compatible units and time, and whether the intended result is an intake or a method-specific risk metric. An easy arithmetic sum cannot replace the scientific justification for combining its terms.",
+      "textSHA256": "9330a0bbf861fdc4b775a35146c2c89f6d91499a0db515196dce6ae0049ac52a",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "c516823c9364d28f2a97acdfec1b5d50a924cdae80837adb159113c8ce8fd741",
+      "semanticID": "multiple-residues",
+      "scene": 4,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. نفس المادة ولا مواد مختلفة؟",
+        "en": "4. One substance or several substances?"
+      },
+      "actions": [
+        {
+          "id": "aggregate",
+          "label": {
+            "ar": "مصادر مختلفة لنفس المادة",
+            "en": "Several sources of one substance"
+          },
+          "meaning": "EPA/FQPA aggregate context: combine multiple exposure sources for one pesticide."
+        },
+        {
+          "id": "cumulative",
+          "label": {
+            "ar": "آلية سُمّية مشتركة بدليل",
+            "en": "A supported common toxicity mechanism"
+          },
+          "meaning": "EPA/FQPA cumulative context concerns pesticides with common mechanisms; a shared icon is not evidence."
+        },
+        {
+          "id": "no-arbitrary-sum",
+          "label": {
+            "ar": "ما نجمعش كل الأسماء وخلاص",
+            "en": "No arbitrary concentration sum"
+          },
+          "meaning": "Multiresidue detections do not justify summing concentrations against one chemical ADI."
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-en",
+        "file": "S02-04-en.wav",
+        "sha256": "6b75f7f16b025fbb3805a738598f1616660f151c58f719e4eab2397f2c639380"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "a0072f75fc7ea8db1bda761632957fb87c196d3f6bf0cf8fa1856656500434f3"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "c740ee65d2db8d763f479011320929905ebfc19c3b9e874a3a0b46dc9736c0ce"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-04-en",
+        "file": "semantic-response.en.json",
+        "sha256": "933d6abbf66bcd5983e76c5686c6c36d8461b0af4879996983e6c577b6db0d20"
+      },
+      "indexCorrections": []
+    },
+    {
+      "id": "S02-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "Consider an invented daily menu. Food A contains zero point two milligrams of R per kilogram of food and consumption is zero point one five kilograms per day. Food B contains zero point zero five, with consumption of zero point four kilograms per day. Assume the same residue definition and a body weight of fifty kilograms. The first food contributes zero point zero three milligrams per day; the second contributes zero point zero two. Together they provide zero point zero five milligrams per day. Dividing by fifty gives zero point zero zero one milligrams per kilogram of body weight per day. Against an invented ADI of zero point zero one in the same units, that is ten percent. It describes this hypothetical day and these sources, not a complete lifetime assessment or sample-compliance decision.",
+      "textSHA256": "bf00e2580ca6968b7f31183f3fa312ea47a3bb60bb862767418dd84e5cde01fe",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "58f476fde2c2a095492d28304a12bde3d08434bb0124f55d36aa9ba36ff3a933",
+      "semanticID": "worked-example",
+      "scene": 5,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 5,
+      "title": {
+        "ar": "مثال محلول: يوم افتراضي لشخص افتراضي",
+        "en": "Worked example: a hypothetical daily menu"
+      },
+      "actions": [
+        {
+          "id": "sources",
+          "label": {
+            "ar": "قيم افتراضية ونفس تعريف المتبقّي",
+            "en": "Invented values, matching residue definition"
+          },
+          "meaning": "A0.20mg/kg food with0.15kg/day; B0.05mg/kg food with0.40kg/day; body50kg."
+        },
+        {
+          "id": "masses",
+          "label": {
+            "ar": "كتلة المادة من الغذاءين",
+            "en": "Residue mass from each food"
+          },
+          "meaning": "Multiply each food contribution independently.",
+          "equation": "A: 0.20 × 0.15 = 0.030 mg/day; B: 0.05 × 0.40 = 0.020 mg/day"
+        },
+        {
+          "id": "intake",
+          "label": {
+            "ar": "المجموع بالنسبة لوزن الجسم",
+            "en": "Total normalised to body weight"
+          },
+          "meaning": "Combine0.030and0.020mg/day, divide by50kg.",
+          "equation": "0.050 mg/day ÷ 50 kg body weight = 0.0010 mg/kg body weight/day"
+        },
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "١٠٪ من المرجع الافتراضي",
+            "en": "10% of the hypothetical reference"
+          },
+          "meaning": "Only the hypothetical0.010 reference is used; no compliance or lifetime conclusion.",
+          "equation": "0.0010 ÷ 0.010 × 100 = 10%"
+        }
+      ],
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-en",
+        "file": "S02-05-en.wav",
+        "sha256": "8eb60d0d30d0eed7f075ab74fcb475a4cea796be780ea01d7e0e73123e145530"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "1413e17ac11f3c944bda4497c8c04f4934fd3c3ed131bb86f9bbdc6f2ea31967"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "4fcbe0f7a2b0278a35824bebc60a55b85a2a022b91ed263874feb3287b93b073"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      },
+      "semanticResponse": {
+        "run": 40300477514,
+        "artifact": "fate-v2-s02-clock-S02-05-en",
+        "file": "semantic-response.en.json",
+        "sha256": "d3c5a17468e91649807877dedadfbd8599978e5d994de88b63dc22e4e07133e6"
+      },
+      "indexCorrections": []
+    }
+  ],
+  "heldNotRendered": [
+    "S02-02-ar-EG"
+  ],
+  "audioPolicy": "Only exact clear actual-audio gates; original accepted method/voices preserved. No speech regeneration for visual correction.",
+  "recovery": "Reuses saved actual-recording semantic responses; only two explicitly located index gaps reconciled. Caption inline spaces, worked-card band and FFmpeg extraction compatibility repaired. All original sound preserved."
+}
