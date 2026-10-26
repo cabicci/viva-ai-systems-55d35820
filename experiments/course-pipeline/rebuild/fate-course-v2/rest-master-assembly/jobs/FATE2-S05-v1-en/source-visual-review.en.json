@@ -1,0 +1,556 @@
+{
+  "schema": "fate-selected-scenes-assembly-visual-gate.v2",
+  "step": "FATE2-S05",
+  "locale": "en",
+  "reviewedAtUTC": "2026-10-26T13:14:32.593236+00:00",
+  "status": "clear",
+  "visualDimensionReadyForAssembly": true,
+  "sourceSelectionPlan": {
+    "file": "diagnostics/selection-refresh-candidate/snapshots/FATE2-S05-en-selection.candidate.en.json",
+    "sha256": "304e643bb85736ba3f0eacff358fb50cb0676d087b2827b1cf762ea62c78ecee"
+  },
+  "sourceContract": {
+    "path": "media-plan/FATE2-S05/scene-plan.en.json",
+    "sha256": "d6a3bff537e5fbf165a27588a25f0c72a3f769c78f3efb6f603e2d0a72cd28d7"
+  },
+  "reviewer": "motion_scenes helper",
+  "scope": "Exact five-scene English selection: 14 new actual encoded PNGs viewed, plus five exact earlier inspected scene01 checkpoints reused with explicit attribution. Semantic meaning, scientific units and calculation, captions, cards and visible composition were sampled.",
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "sectionID": "report",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1",
+        "file": "FateV2-S05-01-en-provision-r1.mp4",
+        "sha256": "4f081e53be522a478c168271ebbdcf83cb38601a5b2c62639310cb61733aa0c8",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/FateV2-S05-01-en-provision-r1.mp4"
+      },
+      "visual": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1",
+        "file": "visual.mp4",
+        "sha256": "94fc256cc93f9939609814953b50ce079f737840ec26e171586e9471fccc45b7",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/visual.mp4"
+      },
+      "timing": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "c3cbe0f42d4bf14bbf8884d19ab553bb10e5b90e22f2f112b4f47c48950acd91",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40321033334,
+        "artifact": "fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1",
+        "file": "render.en.json",
+        "sha256": "801bb7362bd2aa58a9e6b716ab54516cf7e36b544043d5aae1c827b5a90b810d",
+        "localPath": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/render.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-01-en",
+        "file": "S05-01-en.wav",
+        "sha256": "55178eb99a5c847d69b7c5f3f0addedaca2994a1a5e0f313023a91d6f88bd54a",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S05-01-en/S05-01-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-01-en",
+        "file": "review-disposition.en.json",
+        "sha256": "45b028058ea335b11639c6d7302fa3bc5768fae6c0166c39019f5a99b0a48307",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-01-en/review-disposition.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/encoded-01.png",
+          "sha256": "d7dc29519bbe373066c60713a7c2b6b67fbe290131772883d1390cca71b225bd",
+          "frame": 0,
+          "timeSeconds": 0.0,
+          "accurateSeekThresholdSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Page 2 names measurements and results below detection and quantification limits,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/encoded-02.png",
+          "sha256": "8492aa5a830c36db4ecb0580d005f6b2be96e05128043eaf39d6b89735aaf5c3",
+          "frame": 303,
+          "timeSeconds": 10.1,
+          "accurateSeekThresholdSeconds": 10.0833335,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "This step is therefore an explicitly referenced teaching addition,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/encoded-03.png",
+          "sha256": "ea135a10182ee61d762e15de4a028f47a23f37a9723714512e5872b7b2e93abf",
+          "frame": 538,
+          "timeSeconds": 17.933333,
+          "accurateSeekThresholdSeconds": 17.916666499999998,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Start with analyte, medium, place, time, method, unit,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/encoded-04.png",
+          "sha256": "ddf3350bdfd7ca03ec8a163f7e6e5a7412c2c5fddcbf36e6c952d0a802b0a623",
+          "frame": 891,
+          "timeSeconds": 29.7,
+          "accurateSeekThresholdSeconds": 29.6833335,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Total water concentration is not automatically freely dissolved concentration,"
+        },
+        {
+          "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S05-01-en-provision-r1/encoded-05.png",
+          "sha256": "c652f0fc3d412e02c99e1758211a49ecbe4c0feb5ffe6343dafc9615d7538478",
+          "frame": 1292,
+          "timeSeconds": 43.066667,
+          "accurateSeekThresholdSeconds": 43.05,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "actualObservations": [
+        "The opening discloses the source outline and referenced teaching addition. Developed metadata cards retain analyte, medium, place/time, unit, method/limits and quality control. Missing inputs remain explicitly unknown.",
+        "The sample-basis cue distinguishes total-water concentration from free-dissolved concentration in its actual caption; no displayed numeric observation or calibrated laboratory result is invented.",
+        "All five inspected states show readable English captions, card text and a generic laboratory backdrop within the safe composition. The apparatus is qualitative context, not proof of a validated analytical procedure."
+      ],
+      "defects": [],
+      "reviewProvenance": {
+        "path": "media-plan/FATE2-S05/scene01-en-extracted-encoded-review.en.json",
+        "sha256": "d9e6b702b18d45913b7dfca8fbd966e30c414edc1da4bf7099e4744cea53eb59",
+        "method": "Exact previous actual-pixel review reused after selected movie and all five PNG hashes were read back; not new pixel inspection."
+      }
+    },
+    {
+      "sceneIndex": 2,
+      "sectionID": "limits",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-02-en",
+        "file": "FateV2-S05-02-en.mp4",
+        "sha256": "3877203be77438eef74dabe4a4af6c5d1b6c0c20f5b31b5fd9c7d15241802332",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/FateV2-S05-02-en.mp4"
+      },
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-02-en",
+        "file": "visual.mp4",
+        "sha256": "a953e4e4d1177221ace136383c4713dbc98c9a29ef0233a308351014cced3218",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/visual.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-02-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "a685940894128abeed16416b12fddfa80e18ead06aecef91f6e99b0d5c6d3be2",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-02-en",
+        "file": "render.en.json",
+        "sha256": "ac5b079715d60dcac1466b2a29c4b24d887a834b3ae0a95a2aa57c1b2b6e8bef",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/render.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-02-en",
+        "file": "S05-02-en.wav",
+        "sha256": "0347bc37c05b29eaefff253cc57e633a4ca6de04e654f92bf22b3f9f93ce6e0a",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S05-02-en/S05-02-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "5131259fcb0d8055f856ab3fbecbd80a39f70c5bf1ccfac4c1560f4293efc948",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-02-en/review-disposition.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/encoded-02.png",
+          "sha256": "a094d3246e31197cf773cc4100fd180771a8a5150eaa2a82c824806c3c95258e",
+          "frame": 24,
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "IUPAC's detection limit definition concerns distinguishing a result from a suitable blank with a stated probability."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/encoded-03.png",
+          "sha256": "2dbf3061a968fc630069eb8b8ab01b393855be2b701c26e73dd56fa68cd9e71b",
+          "frame": 269,
+          "timeSeconds": 8.966666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Quantification limits concern fitness of numerical measurement for an intended purpose."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-02-en/encoded-04.png",
+          "sha256": "7f8da4d989f1a8c485126a1258e1b4c4d95ccd064f7a2379408cddd47da68e84",
+          "frame": 772,
+          "timeSeconds": 25.733333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "A result between LOD and LOQ may indicate detection without meeting quantitative requirements."
+        }
+      ],
+      "actualObservations": [
+        "The blank, LOD and LOQ are distinct qualitative axis markers; the region between LOD and LOQ is explicitly detection with quantitative limits. The developed no-universal-multiplier qualifier is visible. The axis has no invented numerical calibration.",
+        "The three cue cards, actual captions and limits qualifier remain within the composition without collisions in the three meaningful sampled intermediate states."
+      ],
+      "defects": []
+    },
+    {
+      "sceneIndex": 3,
+      "sectionID": "nondetect",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-03-en",
+        "file": "FateV2-S05-03-en.mp4",
+        "sha256": "95b6bd62fa962089521110fa31c1be9944cc893719bd04e9737ce8a0d112bdf1",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/FateV2-S05-03-en.mp4"
+      },
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-03-en",
+        "file": "visual.mp4",
+        "sha256": "af5c182e12143cd46b9264711887f8633228b17d53946615f5fef7de4dd00a65",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/visual.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "0d851ff0a77a8dcb88ee2b56c6aec4ef6a46cba88478ce2378bb5446fa2ce228",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S05-03-en",
+        "file": "render.en.json",
+        "sha256": "5eada14e4fc3958548ed6cec23d54c394a03b51f579320a4075860b7c1e17c93",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/render.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-03-en",
+        "file": "S05-03-en.wav",
+        "sha256": "269b8af59ebfd197ce401225699da657a535407eb40301c8d8c5d470ba358300",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S05-03-en/S05-03-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "c6ff0be6d466c9c6a9468936f66cc13f955de2dd521ca170c182ec5318b55265",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-03-en/review-disposition.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/encoded-02.png",
+          "sha256": "46f60367a9ac775699e82714d34600a8c2f65c0efb1f689031aa10a7b3619507",
+          "frame": 152,
+          "timeSeconds": 5.066666666666666,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "supplies neither a measured zero nor a true value of 0.005."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/encoded-03.png",
+          "sha256": "de08e43566f06e9ceebbbccfe873c4cbe5da77808cd0441779f468f6dbd689f9",
+          "frame": 333,
+          "timeSeconds": 11.1,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Preserve the observation, qualifier, and limit,"
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S05-03-en/encoded-04.png",
+          "sha256": "0205cc54297623ebcd8e775132bfbf52897e6c31b1b92b1b48213a86d3599b08",
+          "frame": 735,
+          "timeSeconds": 24.5,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "An explicit sensitivity exercise can calculate a result"
+        }
+      ],
+      "actualObservations": [
+        "Four reported observations retain 0.030, 0.020, <0.010 and <0.010 mg/L. The display explicitly denies measured-zero substitution and warns that sensitivity assumptions do not rewrite the report.",
+        "The symbolic <0.010 / zero / half-limit contrast is read with the visible reported-qualifier and no-rewrite statements; it is not a numerical determination of the unknown censored values. All three sampled cue states are legible."
+      ],
+      "defects": []
+    },
+    {
+      "sceneIndex": 4,
+      "sectionID": "estimated",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40310655183,
+        "artifact": "fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1",
+        "file": "FateV2-S05-04-en-caption-r1.mp4",
+        "sha256": "0ea056b7a3a7d720fd21ec0db30e40fc817cc65c970b88e3a5180d1b4216bcc1",
+        "localPath": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/FateV2-S05-04-en-caption-r1.mp4"
+      },
+      "visual": {
+        "run": 40310655183,
+        "artifact": "fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1",
+        "file": "visual.mp4",
+        "sha256": "ad697a32ec0cd5f778d731381a9e46ac4284689cdd9d50e2f8adbbf39d116104",
+        "localPath": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/visual.mp4"
+      },
+      "timing": {
+        "run": 40310655183,
+        "artifact": "fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "001010ca6b9679c5e3bfa972e532884e98c6df2d50f445e6ad789c3df8f0487c",
+        "localPath": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40310655183,
+        "artifact": "fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1",
+        "file": "render.en.json",
+        "sha256": "27b8c00e6b9fc9ad549fadc008baa71fcbf17214601e3c0c5db1a850a2a16eaa",
+        "localPath": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/render.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-04-en",
+        "file": "S05-04-en.wav",
+        "sha256": "fb87e975de4a3f192e6a820855fdbf816d9471fe7f6053ff96a0163d34c15052",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S05-04-en/S05-04-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "ae1f19a7921dea4dc252228cafff786721dccc286e378d754c95bbfc52eda8ac",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-04-en/review-disposition.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/encoded-02.png",
+          "sha256": "c1f679114f9c5091e8be3ef22e2342dfaa466a542f7a17013964fe82212d0ee0",
+          "frame": 24,
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "An estimated environmental concentration, EEC,"
+        },
+        {
+          "path": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/encoded-03.png",
+          "sha256": "d684d78b9c59f368b02866fd6472263e5d5914e1e8c1831f97e8e850701fbfb0",
+          "frame": 521,
+          "timeSeconds": 17.366666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "A study should identify model version, inputs,"
+        },
+        {
+          "path": "production/s05-caption-recovery-v1/artifacts/fate-v2-s05-caption-recovery-video-S05-04-en-caption-r1/encoded-04.png",
+          "sha256": "3b9ed7f642bb3cd3510857f7a44ca54022a4facff9dcaf78e3fb131c4cb4876c",
+          "frame": 915,
+          "timeSeconds": 30.5,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "first check comparability:"
+        }
+      ],
+      "actualObservations": [
+        "Model + inputs / EEC and Sample + method / Monitoring are separate boxes; the developed comparison cue retains time, place and measurement basis. The dashed connector is presented at Check comparability, not as evidence that a model output is an observed sample.",
+        "The actual repaired captions retain inline spacing in the three inspected intermediate states; no text/card/disclaimer collision is visible. No continuous playback or acoustic timing precision is inferred."
+      ],
+      "defects": []
+    },
+    {
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S05-05-en-terminal-r2",
+        "file": "FateV2-S05-05-en-terminal-r2.mp4",
+        "sha256": "d25063cd97103b081e00d707e56305d63768ed037673f36bdfe203c5fcc4d26a",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/FateV2-S05-05-en-terminal-r2.mp4"
+      },
+      "visual": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S05-05-en-terminal-r2",
+        "file": "visual.mp4",
+        "sha256": "baa0901b262626d9c2dd75e9c7042540bd298f7b0063ee669af4d46fcb3ef2ae",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/visual.mp4"
+      },
+      "timing": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S05-05-en-terminal-r2",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "474eec7fb2d0004c05e973f3a17b3bf486a309eab5d8160bd2325563d20ec17f",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S05-05-en-terminal-r2",
+        "file": "render.en.json",
+        "sha256": "c4ab87b294fa6539fec630c70b35cf5b3e5be3c5cf97c57405650ed3fef19e46",
+        "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/render.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-05-en",
+        "file": "S05-05-en.wav",
+        "sha256": "2a2db1db64f45b7175a634c3ae31922aaaa6e23b95431999be161206443a7203",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S05-05-en/S05-05-en.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "52ac4a145a263d44642df9bc3e9ef5bd4ec3206d664b0aa8dda810ed87cd33f5",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-05-en/review-disposition.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/encoded-01.png",
+          "sha256": "9fafb118b7b9fa1e65cec3a2b089ea6ed09a6b14422cb21d62a05df459117f93",
+          "frame": 0,
+          "timeSeconds": 0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Use four invented results in milligrams per liter:",
+          "accurateSeekThresholdSeconds": 0
+        },
+        {
+          "path": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/encoded-02.png",
+          "sha256": "f890fec0dd805976923bfbab68ef6afce33e514de0f0f4e46c82421640ac8ac3",
+          "frame": 24,
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "Use four invented results in milligrams per liter:",
+          "accurateSeekThresholdSeconds": 0.7833335
+        },
+        {
+          "path": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/encoded-03.png",
+          "sha256": "10c0169ac399e95eff4969e0898b832c53aaac694a96427e1f806ee2ee28f7ba",
+          "frame": 474,
+          "timeSeconds": 15.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "In a lower scenario, use 0 for both unknowns",
+          "accurateSeekThresholdSeconds": 15.783333500000001
+        },
+        {
+          "path": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/encoded-04.png",
+          "sha256": "e28e902c4184e6095a9f189315d031d8a1b1a2c0694b56d7058275b5e6e84663",
+          "frame": 1025,
+          "timeSeconds": 34.166667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "That upper value is excluded because the reports say less than.",
+          "accurateSeekThresholdSeconds": 34.15
+        },
+        {
+          "path": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S05-05-en-terminal-r2/encoded-05.png",
+          "sha256": "a1084ea871b9b9e71d49a2d770cb0a2f28fa4d91d744c7f164e67ce1db227f41",
+          "frame": 1288,
+          "timeSeconds": 42.933333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null,
+          "accurateSeekThresholdSeconds": 42.9166665
+        }
+      ],
+      "actualObservations": [
+        "All five encoded checkpoints were viewed. The four invented reports remain unchanged; zero substitution is labelled only as the lower teaching scenario. (0.030 + 0.020 + 0 + 0) / 4 = 0.0125 mg/L is legible.",
+        "The interval has a filled lower endpoint and hollow upper endpoint. The final inequality is 0.0125 <= scenario mean < 0.0175 mg/L, with the upper-endpoint-excluded statement in both the diagram and cue card. It does not present 0.0175 as included.",
+        "The actual encoded numeric/units captions, interval, bottom formula, qualifier and three right cards are readable and do not overlap in the sampled states. The final blank caption band is after the last spoken caption, not missing content."
+      ],
+      "defects": []
+    }
+  ],
+  "allCheckpointsRead": 19,
+  "newCheckpointsRead": 14,
+  "defects": [],
+  "resolvedDefects": [
+    "Selected scene04 uses its successful caption-r1 version; selected scene05 uses terminal14-r3 repaired numeric captions. Their actual inspected checkpoint text remains readable and collision-free."
+  ],
+  "newProviderCalls": 0,
+  "newRenderCalls": 0,
+  "Wwrites": 0,
+  "limits": [
+    "This is actual encoded checkpoint sampling, not uninterrupted native playback or final owner acceptance.",
+    "No new listening or native accent/pronunciation certification was performed; original machine-clear audio gates and PCM were retained and verified.",
+    "A generated laboratory backdrop is qualitative context, not proof of a particular analytical instrument, validated method or measured experiment.",
+    "The qualitative LOD/LOQ axis and comparison connector do not establish calibrated distances, a universal limit multiplier or causal production of observations.",
+    "Final subject expert validation and full-master listening remain distinct from this scoped media review."
+  ],
+  "pending": [
+    "Assemble the exact five selected scenes preserving original audio and measured offsets, then inspect actual master checkpoints and joins.",
+    "Owner full-master playback/listening."
+  ],
+  "nextAction": "Proceed to the exact selected five-scene English master assembly with preserved accepted speech; review actual encoded master and join checkpoints when received."
+}
