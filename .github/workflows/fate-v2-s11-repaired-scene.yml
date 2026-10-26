@@ -1,0 +1,55 @@
+name: Fate v2 S11 one repaired synchronized scene, retain91otheroriginals
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/s11-repaired-scene-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/s11-repaired-scene-v1
+  EXPECTED_REQUEST_SHA256: 277d143b58b7b7edf1e3e2b9f84ef5e3096ef7ccb903b21df0ea7bcddf29e4f2
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S11-05-ar-EG-r1"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify audio gate and actual clock, bind explanatory actions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s11-repaired-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/s11-repaired-scene-v1
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful action checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-s11-repaired-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render single scene and decode actual video checkpoints
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s11-repaired-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

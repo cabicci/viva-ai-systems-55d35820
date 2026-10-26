@@ -1,0 +1,683 @@
+{
+  "schema": "fate-s02-selected-encoded-visual-review.v1",
+  "reviewedAtUTC": "2026-10-26T10:11:57.090927+00:00",
+  "step": "FATE2-S02",
+  "locale": "ar-EG",
+  "status": "clear",
+  "visualDimensionReadyForAssembly": true,
+  "sourceSelectionPlan": {
+    "file": "production/s02-selected-scenes-ar-EG-v1.en.json",
+    "sha256": "a811508af94aa17849555498bd399477d75325a848128c89e391c4989589bdac"
+  },
+  "reviewer": "motion_scenes helper",
+  "scope": "All27 selected encoded checkpoints from the five Arabic scenes were actually viewed. Exact selected visual/video/timing/render/clock/audio/review identities were read back and hash-verified. This is sampled encoded visual/layout/scientific-unit qualification for assembly, not continuous native playback or a new listening approval.",
+  "nativePlaybackPerformed": false,
+  "newHumanListeningClaimed": false,
+  "allCheckpointsRead": 27,
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "sectionID": "two-denominators",
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "155defa4ebd2b72e2f21d5d8b9bedb6fd275f83cc9e2b87c3c8f6dfe8a469d54",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-ar-EG",
+        "file": "FateV2-S02-01-ar-EG.mp4",
+        "sha256": "22a215ad2f107a0f204b6c671aef2d61faf7fcee4b1e53667f43a6d84e8e52fa",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/FateV2-S02-01-ar-EG.mp4"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ebe9e5083cd5d6a0834595f7b12784df36bb6fe10534d0281be4d2f36ff3c58f",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-01-ar-EG",
+        "file": "render.en.json",
+        "sha256": "43983ef8c9f4cba4676ae5c046a4ad63c23ae1f2c4fe8c2934f3ed919342500b",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-01-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "fe204dc6c5b62bb920a70152ee30ab7908c5f51cc70361b2d9283d7e6c2678b4",
+        "localPath": "production/s02-clocks-v1/artifacts/fate-v2-actual-clock-S02-01-ar-EG/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-ar-EG",
+        "file": "S02-01-ar-EG.wav",
+        "sha256": "4b92539aa0b1744b718f36f5e7e2c0ef6a77a8881aa2b2ca8951ca2763365bbb",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-01-ar-EG/S02-01-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-01-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "d8d97e764e4a304cad33ddddd68aad4528361e74cfb41f234300e225bf6d59c6",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-01-ar-EG/review-disposition.en.json"
+      },
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "5b36a945bdd8af7f2790a1446b6da21e6e0c9ddac86d47131fc529620baae4ab",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "في الخطوة اللي فاتت حسبنا كتلة متبقي في حصة أكل."
+        },
+        {
+          "frame": 463,
+          "file": "encoded-02.png",
+          "sha256": "713a68fa6ce4691b4ce12798a99397a06fe7e7005c3f74047a1f661c83341d0c",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/encoded-02.png",
+          "timeSeconds": 15.433333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "أول مقام يخص الغذاء، والتاني يخص وزن الجسم ومعاه أساس زمني."
+        },
+        {
+          "frame": 659,
+          "file": "encoded-03.png",
+          "sha256": "2256f7a4bdffabcfcfdc59f4cf3a68300084aa2b477fae0dce38ff2060ce7e3f",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/encoded-03.png",
+          "timeSeconds": 21.966666666666665,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "في كودكس، الحد الأقصى للمتبقيات، MRL،"
+        },
+        {
+          "frame": 1078,
+          "file": "encoded-04.png",
+          "sha256": "e4250dd15508a06cd69bbe2fac3583f6c9bec7785779105acc2fc5792dc934a7",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/encoded-04.png",
+          "timeSeconds": 35.93333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "أما المدخول اليومي المقبول، ADI،"
+        },
+        {
+          "frame": 1863,
+          "file": "encoded-05.png",
+          "sha256": "8da7f20dfe5ca49661652cddc02b6e0d936f1538931cd72eb1e67e55342b35ee",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-01-ar-EG/encoded-05.png",
+          "timeSeconds": 62.1,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "finding": "Food mass and body-weight/day denominators remain distinct; MRL and ADI arrive separately with applicable-context caveat.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 2,
+      "sectionID": "equation",
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "visual": {
+        "run": 40302414719,
+        "artifact": "fate-v2-s02-repaired-video-S02-02-ar-EG-r1",
+        "file": "visual.mp4",
+        "sha256": "e22018b29fe94b0b7332844525e99a9342d0eb1b3d2e49ed08d3100b2de2ec43",
+        "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40302414719,
+        "artifact": "fate-v2-s02-repaired-video-S02-02-ar-EG-r1",
+        "file": "FateV2-S02-02-ar-EG-r1.mp4",
+        "sha256": "2230cd1f32e530ef44f95e72b513550896a7fcee3547d328398069f022104395",
+        "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/FateV2-S02-02-ar-EG-r1.mp4"
+      },
+      "timing": {
+        "run": 40302414719,
+        "artifact": "fate-v2-s02-repaired-video-S02-02-ar-EG-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "31d3d0f7b2e7427c4fd38d23567627e0c7560ac71a279530b4d7518104019c83",
+        "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40302414719,
+        "artifact": "fate-v2-s02-repaired-video-S02-02-ar-EG-r1",
+        "file": "render.en.json",
+        "sha256": "e9dab27e1c8b63b4345bc2c5dfbe43dcfb1db8c081dc5e9c8517c8a7988e3066",
+        "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-clock-S02-02-ar-EG-r1",
+        "file": "actual-word-clock.en.json",
+        "sha256": "57e85900c553ef1078d20bf3fd285fdd44be457f839c6faa8e37a5f7db764327",
+        "localPath": "production/s02-speech-repair-v1/artifacts/fate-v2-s02-repair-clock-S02-02-ar-EG-r1/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-original-S02-02-ar-EG-r1",
+        "file": "S02-02-ar-EG-r1.wav",
+        "sha256": "7cd0a453da8f342fede5adebb704a3369a5dc1f7f65f1fe454cb62a237ce337b",
+        "localPath": "production/s02-speech-repair-v1/artifacts/fate-v2-s02-repair-original-S02-02-ar-EG-r1/S02-02-ar-EG-r1.wav"
+      },
+      "audioGate": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-review-S02-02-ar-EG-r1",
+        "file": "review-disposition.en.json",
+        "sha256": "7acf5375a2ad71cd1e274a005df2d9aa77c4057b09dbf20a3cb668d09a4927d5",
+        "localPath": "production/s02-speech-repair-v1/artifacts/fate-v2-s02-repair-review-S02-02-ar-EG-r1/review-disposition.en.json"
+      },
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "8a4c8512986bc98b6b2f1536f7928b9db54e3a0fdee214c5e7786892f9f7909a",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "تعالى نبني الحساب واحدة واحدة."
+        },
+        {
+          "frame": 234,
+          "file": "encoded-02.png",
+          "sha256": "4584c2d2aa46e94620b6fef3f6385c67d6aa22a98da2419f550e5a089254fd34",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-02.png",
+          "timeSeconds": 7.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "نضربه في كتلة الغذاء المستهلكة في اليوم."
+        },
+        {
+          "frame": 540,
+          "file": "encoded-03.png",
+          "sha256": "29fe96f32c4e48a08e0edafb369634a539fd68ca7406a2fbd5243b7cd9cf65ae",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-03.png",
+          "timeSeconds": 18.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "نعمل كده لكل مصدر ونجمع كتل نفس المتبقي."
+        },
+        {
+          "frame": 599,
+          "file": "encoded-04.png",
+          "sha256": "0a54fd7d9876643c74cf022a67d6d3e70ccdbb97a39b2a477b3b457caa6aa776",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-04.png",
+          "timeSeconds": 19.966666666666665,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "وبعدها نقسم على وزن الجسم بالكيلوجرام."
+        },
+        {
+          "frame": 1124,
+          "file": "encoded-05.png",
+          "sha256": "dda6477df0b6851b543b0a70aa8035387d2f16acb8db01860a67a095ea9a2b4b",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-05.png",
+          "timeSeconds": 37.46666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "وكمان حساب الأكل اللي اخترناه ليوم افتراضي"
+        },
+        {
+          "frame": 1633,
+          "file": "encoded-06.png",
+          "sha256": "d97cd2fedb200b5f335a8ed14b1b9ce84fa4b3a31628f19f057a20851b6bfcbe",
+          "localPath": "production/s02-repaired-scene-v1/artifacts/fate-v2-s02-repaired-video-S02-02-ar-EG-r1/encoded-06.png",
+          "timeSeconds": 54.43333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "finding": "See prior repaired-scene six-checkpoint actual encoded review; explicit multiplication, compatible-mass sum and body-weight division with scope caveat.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 3,
+      "sectionID": "hypothetical-reference",
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-03-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "3c92bfadae53cd797cb279890934c39fcfcd8af6c576645865763053f7db4e0a",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-03-ar-EG",
+        "file": "FateV2-S02-03-ar-EG.mp4",
+        "sha256": "3c4e1e93cf3881e4b1ead0fbc5c27b8a899f61650770b2487c59f0a4ef060e34",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/FateV2-S02-03-ar-EG.mp4"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "f6256bbd6f08f97360fa52c34c59b4dea82eefc69c7df1205ad6d2c778149a69",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-03-ar-EG",
+        "file": "render.en.json",
+        "sha256": "b30594b0abb7c7393db019df7df7992ee5be23cfcd1d09ba4b81191632ac579c",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3eff7b665f8d755748281666e4ba705f32f973b3932e244217ed1067bed03212",
+        "localPath": "production/s02-clocks-v1/artifacts/fate-v2-actual-clock-S02-03-ar-EG/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-ar-EG",
+        "file": "S02-03-ar-EG.wav",
+        "sha256": "6885aacb9a00090ccc2e6f59692d86e9322efb6282bd3ec5879f7c44e27433ed",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-03-ar-EG/S02-03-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "3a48f85caa0708cfa2ad33c92ef8f416181e92cbeae2bdd96299b5d5e19aa1fd",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-03-ar-EG/review-disposition.en.json"
+      },
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "b876d9b9074ccfe8b6713a98953af44271ac4ab2065ac372b52c8c1329713a12",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "لو التدريب اداك مدخولا يوميا مقبولا افتراضيا،"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "3baefc43e2b3432042b9fe2e8b14d3b33576c9cdb8ff91c58a58d44609508c68",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/encoded-02.png",
+          "timeSeconds": 0.8,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "لو التدريب اداك مدخولا يوميا مقبولا افتراضيا،"
+        },
+        {
+          "frame": 364,
+          "file": "encoded-03.png",
+          "sha256": "66d86ab4ab98e852c8e02fbc2dab0d928b9a75e5c7648c803af6c314b21996b3",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/encoded-03.png",
+          "timeSeconds": 12.133333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "كلمة أقل هنا معناها إن نتيجة السيناريو"
+        },
+        {
+          "frame": 628,
+          "file": "encoded-04.png",
+          "sha256": "3825cc5ecdd64171fa2a4f36bfe897237dcf11b6f8a8a792c1b0e873e0bef4bb",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/encoded-04.png",
+          "timeSeconds": 20.933333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "أما سؤال مطابقة عينة غذاء للحد الأقصى للمتبقيات،"
+        },
+        {
+          "frame": 1262,
+          "file": "encoded-05.png",
+          "sha256": "56ab062ebc4e8a6ed77daac0028d1f285bacc3ef6ae056c4929ce03698eebc5e",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-03-ar-EG/encoded-05.png",
+          "timeSeconds": 42.06666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "finding": "Hypothetical comparison is distinguished from sample compliance; assumptions and additional evidence remain visible.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 4,
+      "sectionID": "multiple-residues",
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "cc58a86fcb2157b6cf8cd69a1374d82d54135f075da0bbe8ca43d9a5e35f0d34",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-ar-EG",
+        "file": "FateV2-S02-04-ar-EG.mp4",
+        "sha256": "5053c83028ab72bf61e54808a376c3a4ba3edc74cfb66e656f34779c5cbb73ac",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/FateV2-S02-04-ar-EG.mp4"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "7df63344c3fb771f47b3c7e7457e565df813f1382b575f929f6a93f94b3a702e",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-04-ar-EG",
+        "file": "render.en.json",
+        "sha256": "515ed9a2d81f0fc046c280ef1f79e754ee39f15f913d8f1524a45a5a2e211368",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "8ca2610db958074f428b21f02a24b65cdc0381656f8727ff35dfff16bae7b9f1",
+        "localPath": "production/s02-clocks-v1/artifacts/fate-v2-actual-clock-S02-04-ar-EG/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-ar-EG",
+        "file": "S02-04-ar-EG.wav",
+        "sha256": "ffc131eeee8d2000475b48c9e5d6b2060dbed8e8c79805f54e95196ea6e3b904",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-04-ar-EG/S02-04-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "4bf81130bd5c074842227cb9d1b2008d0bc4cc4d9c44e0e02ce16eb07ed9be6e",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-04-ar-EG/review-disposition.en.json"
+      },
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "0ff207b3d0a5f0a68b97b430d1ef3a34d2d35f23be4903e5cc590c87952c9cf8",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "فيه كمان فرق بين نجمع مصادر نفس المادة"
+        },
+        {
+          "frame": 398,
+          "file": "encoded-02.png",
+          "sha256": "88180f2defcf35e1eb276fc22e4084c55cf2498d1ab366703259889a3081dc2f",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/encoded-02.png",
+          "timeSeconds": 13.266666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "تجميع التعرض معناه نجمع مصادر مختلفة لنفس المبيد."
+        },
+        {
+          "frame": 560,
+          "file": "encoded-03.png",
+          "sha256": "1301d26e322e143b85c2eb87ba2d0c8fac14a9c42a0520243403568a4f0aff09",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/encoded-03.png",
+          "timeSeconds": 18.666666666666668,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "والتقييم التراكمي في السياق ده يخص مبيدات لها آلية سمية مشتركة."
+        },
+        {
+          "frame": 660,
+          "file": "encoded-04.png",
+          "sha256": "c75946c2e31ded1f3d680065c5e73d4d6b8c850246aa0ee21ca72bdac39bba2c",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/encoded-04.png",
+          "timeSeconds": 22.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "ده ما يخليناش نجمع كل الأسماء اللي ظهرت في تحليل متعدد المتبقيات"
+        },
+        {
+          "frame": 1336,
+          "file": "encoded-05.png",
+          "sha256": "aafcf451cbd16bb81bf73d3638ba0b9e85d8f025249b222cb4a332775bf897d5",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-04-ar-EG/encoded-05.png",
+          "timeSeconds": 44.53333333333333,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "finding": "Same substance across sources is grouped; distinct substances require supported common-mechanism evidence; no arbitrary names/concentration sum is authorized.",
+      "defects": []
+    },
+    {
+      "sceneIndex": 5,
+      "sectionID": "worked-example",
+      "status": "clear",
+      "visualQualificationStatus": "SCOPED_ENCODED_VISUAL_PASS_FOR_ASSEMBLY",
+      "visual": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "1cbedf9a9e07b5b4186e4ad6842375a8c6faa6e031bd1edd838b239494c00922",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/visual.mp4"
+      },
+      "selectedVideo": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-ar-EG",
+        "file": "FateV2-S02-05-ar-EG.mp4",
+        "sha256": "64bd178079f49455031f94c51e532f74db5e9296eef3cfbfb8b77d56fb50f345",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/FateV2-S02-05-ar-EG.mp4"
+      },
+      "timing": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "e7095be01b1c8105869080930ffef52b474ff5d38d80981cb223953db709847c",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/timing-and-inputs.en.json"
+      },
+      "render": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-video-S02-05-ar-EG",
+        "file": "render.en.json",
+        "sha256": "1d8575c2d97f23e2c63af11e6877d51c21ac628ab0e1a7ade966fd964b28e2c3",
+        "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/render.en.json"
+      },
+      "sourceClock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3d7f357d92f830e54785cd8df967c703cfcf961c744d63e7467655592e4ef12b",
+        "localPath": "production/s02-clocks-v1/artifacts/fate-v2-actual-clock-S02-05-ar-EG/actual-word-clock.en.json"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-ar-EG",
+        "file": "S02-05-ar-EG.wav",
+        "sha256": "314fe1c0b16cd49f257c62f44dbc80ccdffe35c28a5158970044ff1a2bdc265a",
+        "localPath": "production/funded-s02-v2/artifacts/fate-v2-funded-original-S02-05-ar-EG/S02-05-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "649b7370d12a848e6e0d38de32c5f77eabf95b720026871e4e0d79af35b8df6b",
+        "localPath": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-05-ar-EG/review-disposition.en.json"
+      },
+      "framesRead": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "d8bf4e7e72ed4db6d1e38c3d46f578f8f9364b92dfd91a23b8c5c5dfa17a9593",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-01.png",
+          "timeSeconds": 0.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "خلينا نجرب يوما افتراضيا بأرقام واضحة."
+        },
+        {
+          "frame": 124,
+          "file": "encoded-02.png",
+          "sha256": "80c184619e4cde477c47e8e3201f51618e1bac683aaa33023e78ae4e898dc12c",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-02.png",
+          "timeSeconds": 4.133333333333334,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "في غذاء أ، تركيز المادة ر ٠,٢ مليجرام لكل كيلوجرام غذاء،"
+        },
+        {
+          "frame": 845,
+          "file": "encoded-03.png",
+          "sha256": "2d557d335f851b8576c8ac71a875901a0033889f8caf1824030b15b7301fab7c",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-03.png",
+          "timeSeconds": 28.166666666666668,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "نضرب لكل غذاء:"
+        },
+        {
+          "frame": 1064,
+          "file": "encoded-04.png",
+          "sha256": "c3eb137b1593dffc5a25586003bfff6e521efa1137ed4e6dfaadc7c5d7b66f28",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-04.png",
+          "timeSeconds": 35.46666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "المجموع ٠,٠٥ مليجرام في اليوم."
+        },
+        {
+          "frame": 1410,
+          "file": "encoded-05.png",
+          "sha256": "7132c153865fcf1eb969b9f6a68307760ad1602286705834b6a59b3c9ff92002",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-05.png",
+          "timeSeconds": 47.0,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": "لو المرجع التعليمي الافتراضي ٠,٠١ بنفس الوحدة،"
+        },
+        {
+          "frame": 1877,
+          "file": "encoded-06.png",
+          "sha256": "cb6edda5a49b1221431ecc213e4eec18ad5010c10540a9c37d7210cdc0ac0ec2",
+          "localPath": "production/s02-visual-recovery-v1/artifacts/fate-v2-s02-recovery-video-S02-05-ar-EG/encoded-06.png",
+          "timeSeconds": 62.56666666666667,
+          "dimensions": [
+            1920,
+            1080
+          ],
+          "actualPixelsViewed": true,
+          "captionAtFrame": null
+        }
+      ],
+      "finding": "0.20x0.15=.030 and.05x.40=.020mg/day;sum.050/50=.0010mg/kg body weight/day;ratio.0010/.010x100=10% with hypothetical label. Corrected last card ends~872 before disclaimer~899 and caption~936.",
+      "defects": []
+    }
+  ],
+  "resolvedDefects": [
+    {
+      "id": "worked-card-safe-band",
+      "locale": "ar-EG",
+      "evidence": "S02-05 encoded-05 and06: finalcard bottom~872; disclaimer899+; captions936+. Full normalisation and ratio preserved; no collision."
+    },
+    {
+      "id": "caption-inline-spacing-ar",
+      "evidence": "Caption-bearing selected Arabic checkpoints retain readable word spacing and number/reference text. English0.01 boundary remains a separate pending regression check."
+    }
+  ],
+  "limitations": [
+    "Schematic arrows/object positions are qualitative and do not represent measured transfer fractions.",
+    "The entire continuous motion, every caption interval and full master joins are not certified by checkpoint sampling.",
+    "English scene gate remains separate.",
+    "Original old-render artifacts remain preserved but are not selected by this report."
+  ],
+  "nextAction": "Assemble Arabic S02 from these exact selected scene identities with original source WAVs; perform master integration/probe/timing checks and actual master review."
+}

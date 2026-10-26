@@ -1,0 +1,39 @@
+name: Fate v2 FATE2-S02 selected bilingual master assembly v1-ar
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/rest-master-assembly/jobs/FATE2-S02-v1-ar/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-master-FATE2-S02-v1-ar
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/rest-master-assembly/jobs/FATE2-S02-v1-ar
+  EXPECTED_REQUEST_SHA256: 3817a2cfc1f8a2475a83b2dd10ba672e11ef772732e82b306a0af2b07d474bd0
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  assemble:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: ["ar-EG"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify actual clear source gates and assemble retained speech
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/assemble.py" "${{ matrix.locale }}"
+      - name: Deliver each completed step and locale immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-master-FATE2-S02-v1-ar-${{ matrix.locale }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
