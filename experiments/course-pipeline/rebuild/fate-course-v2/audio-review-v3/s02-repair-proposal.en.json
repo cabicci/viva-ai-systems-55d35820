@@ -1,0 +1,53 @@
+{
+  "id": "S02-02-ar-EG-coherent-repair-proposal",
+  "utc": "2026-10-26T09:14:52.646222+00:00",
+  "status": "PROPOSED_FOR_ONE_BOUNDED_WHOLE_PASSAGE_REPAIR_NOT_DISPATCHED",
+  "evidenceScope": "Actual-audio machine evidence, not native/human listening certification. Blind and reference transcripts independently render قيمة/قيمه at the intended قائمة; valid reference check flags a meaningful substitution around37.08–37.48s.",
+  "sourceAudio": {
+    "run": 40291770716,
+    "artifact": "fate-v2-funded-original-S02-02-ar-EG",
+    "file": "S02-02-ar-EG.wav",
+    "sha256": "5003ca3e5556aa643c5fd5b776048d2da2dea3f9f539f0e495e6a6c8d474a5cf",
+    "pcmSHA256": "87017f94987195d98028a54f43197c2912c1be60624ceb095c8878731e2298fc"
+  },
+  "actualReviewEvidence": [
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/blind-analysis.en.json",
+      "sha256": "4502fc3ab76161ba9bbd9d30ecdd1203923c981564e6c7e7917da6397ff0081a"
+    },
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/reference-analysis.en.json",
+      "sha256": "8a77f3329bb047babf0ee74c819088fe89d0b58bda3d65aa151168e037c078f7"
+    },
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/review-disposition.en.json",
+      "sha256": "57acee1d85366ed833cee8d1c1a4f7a4dde583d2b3d607cdd9a8617c5bcb4913"
+    }
+  ],
+  "originalTextSHA256": "c853a1a500615840e65b8f74154add19cbd10ca10f89f272b8c06ea14a548666",
+  "changedClause": {
+    "before": "وكمان، قائمة أكل افتراضيّة ليوم واحد مش تلقائيًّا متوسّط التعرّض طول العمر.",
+    "after": "وكمان، حساب الأكل اللي اخترناه ليوم افتراضي مش تلقائيًّا متوسّط التعرّض طول العمر."
+  },
+  "newSpokenText": "تعالى نبني الحساب واحدة واحدة. التركيز بيقول لنا كتلة المادة في كلّ كيلوجرام غذاء. نضربه في كتلة الغذاء المستهلَكة في اليوم؛ كده كيلوجرام الغذاء بيختصر، ويتبقّى ملِّيجرام مادة في اليوم. نعمل كده لكلّ مصدر، ونجمع كتل نفس المتبقّي، وبعدها نقسم على وزن الجسم بالكيلوجرام. الناتج يبقى مدخولًا يوميًّا لكلّ كيلوجرام من وزن الجسم. قبل الجمع، لازم تعريف المتبقّي وأساس القياس يبقوا متوافقين، أو يكون فيه تحويل علمي مبرَّر. مش كفاية الأسماء تبقى شبه بعض. وكمان، حساب الأكل اللي اخترناه ليوم افتراضي مش تلقائيًّا متوسّط التعرّض طول العمر. والتقييم الحادّ ليه مرجع وطريقة وسيناريو مناسبين؛ وجود أرقام ليوم واحد ما يكمّلوش. هنا بنتعلّم معنى الوحدات وخطوات الحساب.",
+  "newTextSHA256": "43f1d756ab71cc82ff480caf5b9d1e4e075a6a428331fb83b3e686fe13c4701f",
+  "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+  "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+  "voice": "Kore",
+  "model": "gemini-3.8-flash-tts",
+  "changeScope": "One complete connected passage, same scientific explanation and assumptions; avoid isolated-word generation or audio surgery. Only its existing clock becomes stale. Keep all other9originals and clocks.",
+  "proposedCalls": {
+    "speech": 1,
+    "blindCheck": 1,
+    "referenceAndVoiceCheck": 1,
+    "automaticRetries": 0
+  },
+  "unaffectedMeaning": [
+    "Unit cancellation and daily residue mass",
+    "Same residue identity and compatible mass basis",
+    "Body-weight normalisation",
+    "One-day hypothetical input is not lifetime average exposure",
+    "Acute assessment requires its own method/reference/scenario"
+  ],
+  "requester": "Root requested precise proposal; root dispatch and finite budget binding still required."
+}
