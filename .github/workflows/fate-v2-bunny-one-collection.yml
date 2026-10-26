@@ -1,0 +1,55 @@
+# Stage only after parent inspects actual GET inventory and freezes its exact ref.
+name: Fate v2 one authorized new-edition collection
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/bunny-collection-v1/create-request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-bunny-library670679-project82922e08-collection
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/bunny-collection-v1
+  EXPECTED_COLLECTION_REQUEST_SHA256: 865057f16169f801e5d990a2b11b1e8033e3a3e7e115583bda2b043be9cb9614
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  create-one:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 6
+    env:
+      BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+      BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Reinspect exact name and persist finite collection intent
+        run: python "$PACKAGE/collection_adapter.py" intent --request "$PACKAGE/create-request.json"
+      - id: intent
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: bunny-v2-collection-82922e08-create-intent
+          path: collection-journal/
+          retention-days: 90
+      - name: At most one collection POST after durable intent
+        env:
+          DURABLE_COLLECTION_INTENT_ARTIFACT_ID: ${{ steps.intent.outputs.artifact-id }}
+        run: python "$PACKAGE/collection_adapter.py" create --request "$PACKAGE/create-request.json"
+      - id: guid
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bunny-v2-collection-82922e08-guid-${{ github.run_id }}
+          path: collection-journal/
+          retention-days: 90
+      - name: Verify actual collection GUID/name/library after durable receipt
+        env:
+          DURABLE_COLLECTION_GUID_ARTIFACT_ID: ${{ steps.guid.outputs.artifact-id }}
+        run: python "$PACKAGE/collection_adapter.py" verify --request "$PACKAGE/create-request.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: bunny-v2-collection-82922e08-verified-${{ github.run_id }}
+          path: collection-journal/
+          retention-days: 90

@@ -1,0 +1,29 @@
+{
+  "schema": "masaarat.bunny.collection-request.v1",
+  "projectID": "82922e08-4caf-48f5-b72e-ab2e6a87c51c",
+  "edition": "rebuild-v2",
+  "libraryID": "670679",
+  "name": "مصير المبيدات في البيئة — نسخة v2",
+  "ownerAuthorization": "Create a separate new-v2 collection with this exact owner-selected name; old edition remains unchanged. Parent relayed explicit owner request.",
+  "createEnabled": true,
+  "maxCreateCalls": 1,
+  "automaticRetries": 0,
+  "maxUpdateCalls": 0,
+  "maxDeleteCalls": 0,
+  "observedInventory": {
+    "run": 40312150319,
+    "artifact": "fate-v2-bunny-collection-discovery-40312150319",
+    "file": "collection-inventory.en.json",
+    "sha256": "6a2c7a2daf79183887efdc87563bb4abdf29608389a684f2939422eb67d1e696"
+  },
+  "similarNameDecision": "no_similar_name_candidates_observed",
+  "priorReceiptLedgerReviewed": true,
+  "priorReceiptLedgerEvidence": {
+    "file": "create-ledger-check.en.json",
+    "sha256": "bf7b2a28dbadaf6f59cf53cbf95f92bdd95cbf6363470fef1029e4a6c1fcfe14"
+  },
+  "state": "ONE_NEW_EMPTY_COLLECTION_AUTHORIZED_AFTER_ACTUAL_GET_INVENTORY",
+  "id": "fate-v2-one-authorized-collection-create-v1",
+  "workerSHA256": "eeb6adee8873f5302dcba7edc6182d39c3624808248c65460bb87896c624297b",
+  "apiAdapterSHA256": "fede30cb73375aae874f60459b43eefe9ba3753fda2d002cf95787f74de2218e"
+}
