@@ -1,0 +1,34 @@
+name: Fate v2 first-step bilingual masters from preserved selected scenes
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/first-masters38/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/first-masters38
+  EXPECTED_REQUEST_SHA256: f1b61268d131acf7acaabf5af6604967e262d3c26456eac0f9ebae9b64a9ef54
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  assemble:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: [ar-EG, en]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify selected inputs and assemble without regenerating speech
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          python "$PACKAGE/assemble.py" "${{ matrix.locale }}"
+      - name: Deliver each completed locale and actual encoded checkpoints immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-first-master38-${{ matrix.locale }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

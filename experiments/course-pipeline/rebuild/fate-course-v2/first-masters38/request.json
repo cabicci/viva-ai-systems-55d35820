@@ -1,0 +1,463 @@
+{
+  "id": "fate-v2-s01-first-bilingual-masters38-v1",
+  "newProviderCalls": 0,
+  "scope": "First step only. Six selected explanatory scenes, retained ordinary written lesson/practice/assessment separate.",
+  "speechModel": "gemini-3.8-flash-tts",
+  "ownerSyncAcceptanceSHA256": "a6224de59dcfe7885e597916b495040ff921331230ef8619e818ad5815f5d371",
+  "locales": {
+    "ar-EG": [
+      {
+        "sceneIndex": 1,
+        "title": "نتيجة التحليل تجاوب أنهي سؤال؟",
+        "voice": "Charon",
+        "visual": {
+          "run": 40255276459,
+          "artifact": "fate-v2-ar-sync38-sample",
+          "file": "visual.mp4",
+          "sha256": "f5ed6fb8ddcdf61b2b17c7e652d721a74a8ff04240ecb76ec178e94ab3354d26"
+        },
+        "render": {
+          "run": 40255276459,
+          "artifact": "fate-v2-ar-sync38-sample",
+          "file": "render.en.json",
+          "sha256": "954bcec7e8c6c78ea2e9329bca5553048b99419193b199a5419d65c238b860c2"
+        },
+        "timing": {
+          "run": 40255276459,
+          "artifact": "fate-v2-ar-sync38-sample",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "31fb0775eb1de8a61c924ffcf44bbd18fcc4fe34ee3e0ee6d730c320bc04f8ba"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-01-ar-EG",
+          "file": "S01-01-ar-EG.wav",
+          "sha256": "c0e331b9a3b434ffa6a2b840e8315c292e1f49aeffa2fdd99d0efc5c86c85c7f"
+        },
+        "selectedVideo": {
+          "run": 40255276459,
+          "artifact": "fate-v2-ar-sync38-sample",
+          "file": "FateV2S01ArabicSample.mp4",
+          "sha256": "08c7a8907200ecf3cfeaa34030d450394b6c95e715c76977f727da0ee005296a"
+        }
+      },
+      {
+        "sceneIndex": 2,
+        "title": {
+          "ar": "العيّنة وتعريف المتبقّي",
+          "en": "Residue identity and sample basis"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "7d228656a8b0039656e0f456f4cd50e7e36acf5b8a4ccafa9b7b760644b36c31"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-ar-EG",
+          "file": "render.en.json",
+          "sha256": "a2588e152fdb6de0cff46176d5537e46da14a12bef1e95b5dcc8d6bfc9bb9ae2"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "b43c2abc869fc9c05e81dd38a8adfb16373e91e96ae5fbd930d7a3c3ba06dd4f"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-02-ar-EG",
+          "file": "S01-02-ar-EG.wav",
+          "sha256": "52c45d25e83c1392a06077eb4f43a004a11cac2e069fd91f8a96fac5e0f1282d"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-ar-EG",
+          "file": "FateV2-S01-02-ar-EG.mp4",
+          "sha256": "558ed0c2077baa896973513705b7477285b57bfb543e159a5c223248d0847442"
+        }
+      },
+      {
+        "sceneIndex": 3,
+        "title": {
+          "ar": "من التركيز لكمية في حصّة",
+          "en": "From concentration to amount in a portion"
+        },
+        "voice": "Charon",
+        "visual": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "0ad8a81c9832507240c350384a09c82e21a198acda27842b62632b28d376798a"
+        },
+        "render": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-ar-EG",
+          "file": "render.en.json",
+          "sha256": "d942977f9fde408da95bb4d2d653d304b15ea0b12242c88e65ce1fa2cbf52480"
+        },
+        "timing": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "104f1b104e633c3f87f4ba07472cbba48a4b055968cb0e7a07e904b5c645ce1b"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-03-ar-EG",
+          "file": "S01-03-ar-EG.wav",
+          "sha256": "9ac6ecb40c2ca3de85f9c0fba9f230450a393688db97d379144d10fde796ee95"
+        },
+        "selectedVideo": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-ar-EG",
+          "file": "FateV2-S01-03-ar-EG.mp4",
+          "sha256": "92d3df82a3733c7579bfef328b057b86be47a0db5eb8a004827583b6bb76e9a4"
+        }
+      },
+      {
+        "sceneIndex": 4,
+        "title": {
+          "ar": "مسار محتمل محتاج دليل",
+          "en": "A possible route needs evidence"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "ea2e1dc94d6413f8cee7467d7a57ce28b18f15ec57b7b6a890a24a223d738810"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-ar-EG",
+          "file": "render.en.json",
+          "sha256": "caf573134833a7570b91de2c336607d7d0d2f2d8946b7b7f7891864a3488029d"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "35d28bd33d9effe0106ebb5757dab885e3e035808b3783bf8b1f05ee07e788e2"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-04-ar-EG",
+          "file": "S01-04-ar-EG.wav",
+          "sha256": "89a9eb192fd70731f86507781c7b8ff906a2220402c73ff5b1c639a4c45f46b8"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-ar-EG",
+          "file": "FateV2-S01-04-ar-EG.mp4",
+          "sha256": "e50a00a228738421aa22047681e0b8fb917a2c187136950acb1efa7b625129df"
+        }
+      },
+      {
+        "sceneIndex": 5,
+        "title": {
+          "ar": "نقرأ الجدول ونراجع الدليل",
+          "en": "Read the table and examine the evidence"
+        },
+        "voice": "Charon",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "3fa94c9ace542dac37656b2f5d05ed09cab7c2bc9c53bf88599d64d0d7683a1d"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-ar-EG",
+          "file": "render.en.json",
+          "sha256": "bc5d051d1b528c0bfce0a34705a768480cef56baac1e49093b6af196e4e8bcde"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "680cf300c3e027ef244e876699e85477d34c961b3d06fa72c253a933c7ea8d7b"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-05-ar-EG",
+          "file": "S01-05-ar-EG.wav",
+          "sha256": "646ebab31f56d5cc2e93940f7ea0d168eedbc58ccfd3a7c20249a5017af828d5"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-ar-EG",
+          "file": "FateV2-S01-05-ar-EG.mp4",
+          "sha256": "684e50e94f4d2f34555b4fb938c2ff272988a9f5cec5dd17e2490b8c92aa416b"
+        }
+      },
+      {
+        "sceneIndex": 6,
+        "title": {
+          "ar": "كل استنتاج له بياناته",
+          "en": "Keep each conclusion within its evidence"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "87a26ab3daf9571002b61ae4e0bf9716e748cc4e15e8f83d96ea7bc3e2d3fff0"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-ar-EG",
+          "file": "render.en.json",
+          "sha256": "e2acf078cefecc988935f9698d68344db7991981be9e1b18f1d9bee7f502e41c"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "b9f1b419ba7bc71c0e8fdce6f830ae84d955615234bd91056800e3d4c263bdec"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-06-ar-EG",
+          "file": "S01-06-ar-EG.wav",
+          "sha256": "b91d8517fe432a45bc68784ba9ed3f1f1792569a17032aa91e4393a588836a9e"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-ar-EG",
+          "file": "FateV2-S01-06-ar-EG.mp4",
+          "sha256": "8c5a23a33165cffe88f9be78eaf208d1ad4192963b2b446d0f18692818e9f3ab"
+        }
+      }
+    ],
+    "en": [
+      {
+        "sceneIndex": 1,
+        "title": "What does a sample result establish?",
+        "voice": "Charon",
+        "visual": {
+          "run": 40255907370,
+          "artifact": "fate-v2-en-sync38-sample",
+          "file": "visual.mp4",
+          "sha256": "579ae9626e15ca04a2d2b6f60a8a88512efc8204bffd81cb20afc3d1120b9c40"
+        },
+        "render": {
+          "run": 40255907370,
+          "artifact": "fate-v2-en-sync38-sample",
+          "file": "render.en.json",
+          "sha256": "c0a93e3a873715f038d08222902cd5288646e3036a0ef2b35cf7a554541823ba"
+        },
+        "timing": {
+          "run": 40255907370,
+          "artifact": "fate-v2-en-sync38-sample",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "e318675e3e704d5e6e1fa6e4f11229f6a8c79e9c06fe7e2cfb9e19b5cc9dd1cf"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-01-en",
+          "file": "S01-01-en.wav",
+          "sha256": "850f3c26f6ac691b60a1225ad8829be8c770cc858db56a84eccee2e2fc3e2b1b"
+        },
+        "selectedVideo": {
+          "run": 40255907370,
+          "artifact": "fate-v2-en-sync38-sample",
+          "file": "FateV2S01EnglishSample.mp4",
+          "sha256": "0c1adf614333a4d9da925d2bbebf606ca618f8dbf7194759c82badaaddcf5e99"
+        }
+      },
+      {
+        "sceneIndex": 2,
+        "title": {
+          "ar": "العيّنة وتعريف المتبقّي",
+          "en": "Residue identity and sample basis"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-en",
+          "file": "visual.mp4",
+          "sha256": "25a816ecf45d2f8b94df804bb206284c4a91f0cd46160fddd9594e55a3e5a7b7"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-en",
+          "file": "render.en.json",
+          "sha256": "8bee89119dce8911aacd5ceb8b4eff970521f4b7cb904cb4f2a1e17efd1fb957"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-en",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "81325cf4e8c287c15d783935e10bc6a16d313f961b63958924b697b117dbd2b0"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-02-en",
+          "file": "S01-02-en.wav",
+          "sha256": "50795c02087047c3cbc707659074706a981bda42b16e3b1130ae184076ad67f0"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-02-en",
+          "file": "FateV2-S01-02-en.mp4",
+          "sha256": "c55649ceb98a12d1dcf8b9eec6f2d23500ad70339fcfe1d26e6423a7bdde5759"
+        }
+      },
+      {
+        "sceneIndex": 3,
+        "title": {
+          "ar": "من التركيز لكمية في حصّة",
+          "en": "From concentration to amount in a portion"
+        },
+        "voice": "Charon",
+        "visual": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-en",
+          "file": "visual.mp4",
+          "sha256": "0789d0b216b090dc5b33f7520daf5d6ed3ebd54dac445c9f7d37de750660d09b"
+        },
+        "render": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-en",
+          "file": "render.en.json",
+          "sha256": "48e3b842f7b5e23c16ceaad94435921525113c438e3025656da5895e6b785016"
+        },
+        "timing": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-en",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "c9d7ba8e2cce7d2b224094967b601bcd442d9d7ef7beddde35393edf02d06b13"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-03-en",
+          "file": "S01-03-en.wav",
+          "sha256": "75e9828da819fc51ff26bdc0e1419e0f8723cf4970e8d7ff933dccb71e9a8f1e"
+        },
+        "selectedVideo": {
+          "run": 40258154239,
+          "artifact": "fate-v2-calc-repair38-video-S01-03-en",
+          "file": "FateV2-S01-03-en.mp4",
+          "sha256": "b0bb4cb1792d8d21622dd7170d0033a82a616d509c0d097e64ca6dc7a3cb2a0f"
+        }
+      },
+      {
+        "sceneIndex": 4,
+        "title": {
+          "ar": "مسار محتمل محتاج دليل",
+          "en": "A possible route needs evidence"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-en",
+          "file": "visual.mp4",
+          "sha256": "383d2ffc6d441d58129e9afddd8b0fc1fcdce8f1be6d522ddc05d01e0a186f27"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-en",
+          "file": "render.en.json",
+          "sha256": "ea96122aca924af38ae75e8dc3800800eca38aadf09e5cc2ade7a20fb9c4d71b"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-en",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "069a2806f382a5ad213a8f9fe9589431b1e420a8791e4edfad9759f4a8a2cc0b"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-04-en",
+          "file": "S01-04-en.wav",
+          "sha256": "50813771f8c59e6d4ceed7ea5fe0b58e4eb2f7e2c1d67378a46a8b5f9998a9a6"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-04-en",
+          "file": "FateV2-S01-04-en.mp4",
+          "sha256": "962eed2d0cc182517d15cd967d5eb4d6319d8b6be545e6992fd31caa57c734d8"
+        }
+      },
+      {
+        "sceneIndex": 5,
+        "title": {
+          "ar": "نقرأ الجدول ونراجع الدليل",
+          "en": "Read the table and examine the evidence"
+        },
+        "voice": "Charon",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-en",
+          "file": "visual.mp4",
+          "sha256": "f4c5e33c5dd765776948b14a9fe6068029bd2f10fe6e98301ce902949f0647d9"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-en",
+          "file": "render.en.json",
+          "sha256": "82a89436096287452d52a93b46d80f1145d2a2fb0104346c289eebd373687611"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-en",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "3a44d26306530f456af609988a8c49761886de67118899cf40fbec54a01c0aa6"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-05-en",
+          "file": "S01-05-en.wav",
+          "sha256": "db452c6d8d0aa638003f7abc5f5a9bd683e4a246ac0821cc23cd3c7445cf475c"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-05-en",
+          "file": "FateV2-S01-05-en.mp4",
+          "sha256": "cac56ebe84cac43e725f2121ea0b89976248d477783dc0a3509140f7cdab4c2f"
+        }
+      },
+      {
+        "sceneIndex": 6,
+        "title": {
+          "ar": "كل استنتاج له بياناته",
+          "en": "Keep each conclusion within its evidence"
+        },
+        "voice": "Kore",
+        "visual": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-en",
+          "file": "visual.mp4",
+          "sha256": "7db7016a6071d7f5698bec7344035b0f3305131b502c6ffaac0779825261b8f9"
+        },
+        "render": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-en",
+          "file": "render.en.json",
+          "sha256": "b958432bfe3c68cfb9ad34e5b0c1653bda6134f4d092956853cf93a1d5bcea41"
+        },
+        "timing": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-en",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "3ef22b8619b0c3466f0cc7a3bd841e60aeb72b59bcfae0338a0b2909a2a3e58e"
+        },
+        "audio": {
+          "run": 40254395212,
+          "artifact": "fate-v2-full38-original-S01-06-en",
+          "file": "S01-06-en.wav",
+          "sha256": "b904bd5180f1ee5374fed041d931d98676cd1bb59d61092d7386d8a67fef039b"
+        },
+        "selectedVideo": {
+          "run": 40257270606,
+          "artifact": "fate-v2-scene38-video-S01-06-en",
+          "file": "FateV2-S01-06-en.mp4",
+          "sha256": "bea466bdc916346d64e912dcde2fdd7fc221ad4e5ed6219a5f4944eaff0c4dcb"
+        }
+      }
+    ]
+  }
+}
