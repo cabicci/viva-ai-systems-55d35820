@@ -1,0 +1,66 @@
+name: Fate v2 rest-released-scenes-v1 exact qualified sources
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/rest-released-scenes-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/rest-released-scenes-v1
+  EXPECTED_REQUEST_SHA256: 8637a49a9dfe17bd295fc6e5abc07da6135ad7026eea68c250fa383ea5553b22
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+  EXPECTED_IMPLEMENTATION_SHA256: d7057f920af68512a8ae9e4a6003955d8b5754b613a1efc8515865e88a17f468
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        part: ["S04-03-ar-EG", "S04-04-ar-EG", "S04-02-en", "S06-02-ar-EG", "S06-05-en", "S07-04-ar-EG", "S07-05-ar-EG", "S09-02-ar-EG", "S09-04-ar-EG", "S10-04-ar-EG", "S11-02-ar-EG", "S11-02-en", "S11-04-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact finite request and implementation pins
+        run: |
+          python - <<'PY'
+          import os,json,hashlib,pathlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1'
+          assert s(p/'request.json')==os.environ['EXPECTED_REQUEST_SHA256']
+          assert s(p/'implementation-pins.en.json')==os.environ['EXPECTED_IMPLEMENTATION_SHA256']
+          for n,h in json.loads((p/'implementation-pins.en.json').read_text()).items():assert s(p/n)==h
+          PY
+      - name: Verify audio gate and actual clock, bind explanatory actions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-rest-released-clock-v1-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/rest-released-scenes-v1
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful action checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-rest-released-stills-v1-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render single scene and decode actual video checkpoints
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-rest-released-video-v1-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

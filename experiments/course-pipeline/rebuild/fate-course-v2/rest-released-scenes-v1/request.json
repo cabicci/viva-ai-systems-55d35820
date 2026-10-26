@@ -1,0 +1,1631 @@
+{
+  "id": "fate-v2-rest-released-scenes-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "automaticRetries": 0,
+  "maxSemanticCalls": 13,
+  "maxSemanticCallsPerPart": 1,
+  "providerReservationUSD": 0.39,
+  "remainingSemanticCeilingUSD": 0.42,
+  "deferredHeldSceneReservationUSD": 0.03,
+  "maxSemanticOutputTokens": 8192,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S04-03-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "levels",
+      "spokenText": "قياس نمو فرد أو بقائه يخص مستوى دليل. تغيّر عدد الأفراد أو النجاح التكاثري في تعداد يخص مستوى آخر. وتغير تركيب الأنواع أو وظيفة النظام البيئي يحتاج بيانات على ذلك المستوى. ما ننقلش نتيجة تجربة فردية مباشرة لاستنتاج إنّ التنوع في منطقة كاملة انخفض، ولا نفترض إنّ غياب موت واضح يعني مفيش تأثير آخر. الملف يعرض علاقات بين التعرّض وديناميات التعداد والمجتمع. نستخدمها لتنظيم الأسئلة، مع إبقاء السببية منفصلة عن التزامن. انخفاض كائن بعد حدث زراعي قد يستدعي فحص المادّة والتوقيت والبدائل مثل الأكسجين والحرارة أو تغيّر الموطن. التدريب مش بيشخّص سببًا لحادث حقيقي.",
+      "textSHA256": "4b804689edc36f2ab7630a5f2ed0757f742d7d22977406a14339ac0d8e78dfc2",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 3,
+      "semanticID": "levels",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "sceneIndex": 3,
+      "title": {
+        "ar": "٣. من فرد لتعداد لمجتمع",
+        "en": "3. Individual, population and community evidence"
+      },
+      "actions": [
+        {
+          "id": "individual",
+          "label": {
+            "ar": "الفرد: نمو أو بقاء",
+            "en": "Individual: growth or survival"
+          },
+          "meaning": "An individual endpoint is one evidence level."
+        },
+        {
+          "id": "population",
+          "label": {
+            "ar": "التعداد: وفرة أو تكاثر",
+            "en": "Population: abundance or reproduction"
+          },
+          "meaning": "Population changes need relevant evidence,not extrapolation from one organism."
+        },
+        {
+          "id": "community",
+          "label": {
+            "ar": "المجتمع والنظام البيئي",
+            "en": "Community and ecosystem"
+          },
+          "meaning": "Community composition/function require evidence at those levels; causation remains separate from coincidence."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-03-ar-EG",
+        "file": "S04-03-ar-EG.wav",
+        "sha256": "6286c7061db71cf238ae18e5aedbba7120d9eb20734f2eeb0a00121ad971b454"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-03-ar-EG",
+        "file": "verification.json",
+        "sha256": "373d48a72cf9b93f3e7d954b0acb2a2c35f48f6bdd2031a90704cb11144060f5"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S04-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "20caa997dbd799820406ea256767a3be3406eebbe864c2a9b5e70a12f9563b4b"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S04-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3eed025d7a77c648e9db8c0dc80198d2aca3179fe8e019a1669b79d638723b81"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S04-field-stream-context",
+        "file": "S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      },
+      "imageReview": {
+        "id": "S04-field-stream-context",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "a20c29f847bb225c3b4c7c753e08c74ec3880a94bbe6f99891f22b9a71a52774",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/image.json",
+            "sha256": "20b56dff7eb2cdbf19f8194d26c767d962185cbc1ad4edeeecfe11328659b322"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/provider-metadata.json",
+            "sha256": "6b63f842d4fd4e3f140dea5f9ac8ae7f79f084d08af0325c863da8db5d4128a4"
+          }
+        ],
+        "visibleFeatures": [
+          "A rectangular soil cutaway on a teal base carries crop rows on the left and dense green bank vegetation through the middle. Clear shallow water with visible stones and submerged plants runs beside the bank on the right. Background is plain. No chemical plume, injury, arrows, words or measurement scales are visible."
+        ],
+        "roleComparison": "Fits qualitative field/stream/receptor surroundings without asserting a contaminant pathway.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Conditional exposure context and source-path-receptor discussion with separate evidence/unknown overlays."
+        ],
+        "restrictions": [
+          "Adjacency is not proof of runoff, exposure, dose, harm or causation. Soil and water proportions are illustrative, not calibrated. Do not use this image for species identification or actual stream geometry."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      }
+    },
+    {
+      "id": "S04-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "history",
+      "spokenText": "صورة مرض أو رسم كائن في المصدر ينفع يفتح سؤالًا، لكنه مش قياس تعرض ولا تشخيص. مثال الزرنيخ يتصنف مثالًا لمادة سامة؛ مش كلّ مثال في علم السموم البيئية مبيدًا. وذكر راشيل كارسون جزء من تطور النقاش البيئي، مش بديل لدراسة المادّة والحالة اللي قدامنا. آخر خطوة في النموذج إنك تكتب جملة استنتاج بمقدار الدليل، وبعدها اختبارًا ممكن يغيّر رأيك. مثال: «رُصدت المادّة في هذه العينة بهذه الطريقة؛ صلتها بالأثر المقترح لسه محتاجة بيانات تعرض وأثر متوافقة». دي نتيجة مفيدة لأنها تحدّد اللي نعمله بعد كده.",
+      "textSHA256": "476bbe25e057de4ad1a3c54e435582a1c989e2f673f5ceaee91d9ca40e0fabfd",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 4,
+      "semanticID": "history",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. الصور والتاريخ لهم وظيفة محددة",
+        "en": "4. Use images and history for their actual purpose"
+      },
+      "actions": [
+        {
+          "id": "picture",
+          "label": {
+            "ar": "الصورة تفتح سؤالًا",
+            "en": "An image motivates a question"
+          },
+          "meaning": "Disease or organism pictures are neither exposure measurement nor diagnosis."
+        },
+        {
+          "id": "context",
+          "label": {
+            "ar": "السياق التاريخي مش تجربة",
+            "en": "History is not experimental evidence"
+          },
+          "meaning": "Arsenic andRachelCarson examples retain their limited contextual roles."
+        },
+        {
+          "id": "test",
+          "label": {
+            "ar": "استنتاج محدود واختبار لاحق",
+            "en": "A bounded conclusion and next test"
+          },
+          "meaning": "State the actual detection then specify compatible evidence needed for the proposed effect."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-04-ar-EG",
+        "file": "S04-04-ar-EG.wav",
+        "sha256": "17cb35ce926dc321b3084f8eec7c82920ddecefbcfae14f7ff90c280b13965d7"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-04-ar-EG",
+        "file": "verification.json",
+        "sha256": "bc6d5bfcb02a6cb2fd21ccd233e66ea2b1de5076b1421609c5a12d89f06051d3"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S04-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "73c09498b9824e95f305b56cd01759d32bf7ef8cc6c2e490151689d95dc499c3"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S04-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "29f8fb8d0a86ff449c4640c6d76f8ef379041cd9dc59c5c4f039125ec9fa567f"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S04-field-stream-context",
+        "file": "S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      },
+      "imageReview": {
+        "id": "S04-field-stream-context",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "a20c29f847bb225c3b4c7c753e08c74ec3880a94bbe6f99891f22b9a71a52774",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/image.json",
+            "sha256": "20b56dff7eb2cdbf19f8194d26c767d962185cbc1ad4edeeecfe11328659b322"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/provider-metadata.json",
+            "sha256": "6b63f842d4fd4e3f140dea5f9ac8ae7f79f084d08af0325c863da8db5d4128a4"
+          }
+        ],
+        "visibleFeatures": [
+          "A rectangular soil cutaway on a teal base carries crop rows on the left and dense green bank vegetation through the middle. Clear shallow water with visible stones and submerged plants runs beside the bank on the right. Background is plain. No chemical plume, injury, arrows, words or measurement scales are visible."
+        ],
+        "roleComparison": "Fits qualitative field/stream/receptor surroundings without asserting a contaminant pathway.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Conditional exposure context and source-path-receptor discussion with separate evidence/unknown overlays."
+        ],
+        "restrictions": [
+          "Adjacency is not proof of runoff, exposure, dose, harm or causation. Soil and water proportions are illustrative, not calibrated. Do not use this image for species identification or actual stream geometry."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      }
+    },
+    {
+      "id": "S04-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "routes",
+      "spokenText": "Water, soil, air and food can carry a substance. Ingestion, surface contact and transfer across respiratory surfaces describe receptor-specific routes of contact or entry. Two organisms in the same medium may experience different routes and amounts. A water concentration in mg/L does not become an organism's dose without further data and a model. Timing matters. A post-rain water sample describes a different moment from a pre-event sample. An application record may establish an activity, but not the concentration reaching a stream. Sampling times, locations and comparisons must fit the question, with appropriate analytical and sampling quality checks.",
+      "textSHA256": "1da6e384fd8f0ef93c16416b5075131274361d270cafe0b16ef68db7f7137d32",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "e8514b7603b9a846a4ae448bd56eb97ac9e8d96345aa39632e6cf373e4d7da1c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S04",
+      "scene": 2,
+      "semanticID": "routes",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. الوسط وطريق الدخول مش نفس الحاجة",
+        "en": "2. A medium is not an entry route"
+      },
+      "actions": [
+        {
+          "id": "media",
+          "label": {
+            "ar": "المياه والتربة والهواء والغذاء",
+            "en": "Water, soil, air and food"
+          },
+          "meaning": "Environmental media can carry a substance."
+        },
+        {
+          "id": "contact",
+          "label": {
+            "ar": "التماس والدخول يخصّان الكائن",
+            "en": "Contact and entry are receptor-specific"
+          },
+          "meaning": "Ingestion,surfacecontact andrespiratorytransfer differ from environmental media."
+        },
+        {
+          "id": "time",
+          "label": {
+            "ar": "المكان والزمن والمقارنة",
+            "en": "Location, time and comparison"
+          },
+          "meaning": "A water concentration is not an organism dose; timing/sites and quality must fit the question."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-02-en",
+        "file": "S04-02-en.wav",
+        "sha256": "5ba27d863c4228ea65ec7159ae7b5e49aa26dcd036177ae466fa1a9bbe2bc264"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-02-en",
+        "file": "verification.json",
+        "sha256": "6751c9ed10583e9cccf19f6efe85e8e866ee4126576651644741dcf401115e45"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S04-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "30c4a195dc37cd79dbca1be6a8557c45ba362b413d59497ccd5e516417470d9e"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S04-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "eb84d21097193144ff07f47bec377f6c4dd3570727720a3a8a955ad5b323df8e"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S04-field-stream-context",
+        "file": "S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      },
+      "imageReview": {
+        "id": "S04-field-stream-context",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "a20c29f847bb225c3b4c7c753e08c74ec3880a94bbe6f99891f22b9a71a52774",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/image.json",
+            "sha256": "20b56dff7eb2cdbf19f8194d26c767d962185cbc1ad4edeeecfe11328659b322"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S04-field-stream-context/provider-metadata.json",
+            "sha256": "6b63f842d4fd4e3f140dea5f9ac8ae7f79f084d08af0325c863da8db5d4128a4"
+          }
+        ],
+        "visibleFeatures": [
+          "A rectangular soil cutaway on a teal base carries crop rows on the left and dense green bank vegetation through the middle. Clear shallow water with visible stones and submerged plants runs beside the bank on the right. Background is plain. No chemical plume, injury, arrows, words or measurement scales are visible."
+        ],
+        "roleComparison": "Fits qualitative field/stream/receptor surroundings without asserting a contaminant pathway.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Conditional exposure context and source-path-receptor discussion with separate evidence/unknown overlays."
+        ],
+        "restrictions": [
+          "Adjacency is not proof of runoff, exposure, dose, harm or causation. Soil and water proportions are illustrative, not calibrated. Do not use this image for species identification or actual stream geometry."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      }
+    },
+    {
+      "id": "S06-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "three-terms",
+      "spokenText": "التراكم الحيوي هو الاسم الأوسع لدخول المادّة من المسارات المختلفة مع بقائها في الكائن. في سؤال التركيز الحيوي بنعزل دور الوسط المحيط، مثل المَيّه، عن الغذاء. التضخّم الحيوي يخص زيادة التركيز بين الغذاء والكائن اللي أكله على أساس مقارنة مناسب. استخدام كلمة «تراكم» لكل الرسوم يخفي اختلاف الدليل المطلوب. ملخص أو إي سي دي، تلاتميّة وخمسة يميّز التعرّض المائي عن الغذائي، ويتابع الدخول ثم التخلص بعد التعرّض. نستخدمه لتثبيت الفرق في التصميم، مش كتصريح لتنفيذ تجربة على حيوانات. بيانات حقل فيها مَيّه وغذاء معًا لا تتحول تلقائيًا لاختبار بي سي إف مائي مضبوط.",
+      "textSHA256": "6b1667b969efa0caf5680bd12aadfe9fd2d911cb2e7c310cf8cf282d15a2798f",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S06",
+      "scene": 2,
+      "semanticID": "three-terms",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. نسمّي العملية على أساس السؤال",
+        "en": "2. Name the process by the question"
+      },
+      "actions": [
+        {
+          "id": "accumulation",
+          "label": {
+            "ar": "تراكم حيوي من مسارات متعددة",
+            "en": "Bioaccumulation across routes"
+          },
+          "meaning": "Broaderuptake-and-retentionquestion across exposure routes."
+        },
+        {
+          "id": "concentration",
+          "label": {
+            "ar": "تركيز حيوي من الوسط",
+            "en": "Bioconcentration from surrounding medium"
+          },
+          "meaning": "Isolateaqueousuptake fromdietaryuptake in an appropriate design."
+        },
+        {
+          "id": "magnification",
+          "label": {
+            "ar": "تضخّم بين الغذاء والكائن",
+            "en": "Magnification between diet and consumer"
+          },
+          "meaning": "Compatiblefood-to-consumer comparisonsdifferfromaqueousBCFtests."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-02-ar-EG",
+        "file": "S06-02-ar-EG.wav",
+        "sha256": "98bd6e7c11100ed13bbdc34a0078606f0c4cc2a0976429ee3621424c66f3c0d7"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-02-ar-EG",
+        "file": "verification.json",
+        "sha256": "0d49f16c195f9d0003a4aad26acd1ee300408b4c8b3b8e09b140cb4518de8849"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S06-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "df078970e18974206fff9e7a846d0157d737a13dd8923f66164a3e712e085597"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S06-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "910d92b7ca4029a6a38be0ba55ea61211260230b8063d5ffbc91bf5889acbfec"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S06-organism-mass-balance",
+        "file": "S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      },
+      "imageReview": {
+        "id": "S06-organism-mass-balance",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "91c26eedf840b0c21221a5bd5968e169fdd1d40a9a5ae0ef468f5cb9252e1ea6",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/image.json",
+            "sha256": "bd493e60d5668ec4e525b79ec526a7e2c96bb327ebeeed1030fe3b9ed7627e77"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/provider-metadata.json",
+            "sha256": "9e1bc5e2f18f841b3e65f13ecf175c5e89d83eadd86df178a93bb5cb1eca0e9b"
+          }
+        ],
+        "visibleFeatures": [
+          "One silver-grey, spotted fish appears in side profile in clear shallow water. Visible features include an eye, mouth, gill-cover area, fins and tail; green aquatic vegetation occupies the lower left and a pale granular bed is visible. No comparison fish, toxin particles, anatomical labels, injury or values appear."
+        ],
+        "roleComparison": "Fits a qualitative aquatic-organism context for mass versus concentration without embedding a growth comparison.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Generic organism backdrop for separately labelled chemical-mass/body-mass calculations and uncertainty."
+        ],
+        "restrictions": [
+          "Not a measured specimen, growth trial, anatomical plate or validated taxonomic identification. Do not infer body mass, dose, elimination or health from appearance. Growth/dilution must be shown by explicit hypothetical overlays, not by scaling this raster as data."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      }
+    },
+    {
+      "id": "S06-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "In a hypothetical organism, chemical amount stays at zero point zero two milligrams while body mass increases from zero point zero one to zero point zero two kilograms on the same mass basis. Before growth, dividing chemical amount by body mass gives two milligrams per kilogram. Afterwards, the same amount divided by a larger body mass gives one milligram per kilogram. Concentration has halved, but chemical amount has not decreased. This illustrates growth dilution, not elimination of half the chemical or magnification between prey and predator. A real case needs observations distinguishing denominator changes from changes in chemical amount.",
+      "textSHA256": "8e77b04936d213786e6affe8c3b1ac32e7f518ae258a46e12f07d08381a52d1e",
+      "sourceLessonSHA256": "71fc7b36375589492e53da2e4d328ff08169e42f722c5fbc4b1925ba17a651b8",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S06",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "sceneIndex": 5,
+      "title": {
+        "ar": "مثال محلول: تركيز قلّ من غير فقد مادة",
+        "en": "Worked example: lower concentration without chemical loss"
+      },
+      "actions": [
+        {
+          "id": "amount",
+          "label": {
+            "ar": "كتلة المادّة ثابتة",
+            "en": "Chemical amount stays constant"
+          },
+          "meaning": "Hypotheticalchemicalamount0.020mg throughout."
+        },
+        {
+          "id": "before",
+          "label": {
+            "ar": "قبل النموّ",
+            "en": "Before growth"
+          },
+          "meaning": "Bodymass0.010kg yields2.0mg/kg.",
+          "equation": "0.020 mg / 0.010 kg = 2.0 mg/kg"
+        },
+        {
+          "id": "after",
+          "label": {
+            "ar": "بعد النموّ",
+            "en": "After growth"
+          },
+          "meaning": "Bodymassdoubles to0.020kg,chemicalamountunchanged.",
+          "equation": "0.020 mg / 0.020 kg = 1.0 mg/kg"
+        },
+        {
+          "id": "meaning",
+          "label": {
+            "ar": "المقام اتغيّر، مش كتلة المادّة",
+            "en": "The denominator changed, not chemical amount"
+          },
+          "meaning": "Halvedconcentrationdoesnotdemonstrateelimination orpredator/preymagnification."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-05-en",
+        "file": "S06-05-en.wav",
+        "sha256": "f5030068b12cb0db3e3411b4f6adf94cd3c0e62fdae07c0ee1999dab1213da08"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S06-05-en",
+        "file": "verification.json",
+        "sha256": "196b2a03ce0d033991921ab685ea695733f709a9853d60bd4f06f138ee0bed86"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S06-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "0562f8ade7a75f1f469f6e588b2e105458f96d10f22f316c2f1ca20fb77335eb"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S06-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "79f5d881d04448f616f9b6f09334ef04c70a8fa43a4a963dd6548d72e1a77f0f"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S06-organism-mass-balance",
+        "file": "S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      },
+      "imageReview": {
+        "id": "S06-organism-mass-balance",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/S06-organism-mass-balance.jpg",
+        "sha256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "91c26eedf840b0c21221a5bd5968e169fdd1d40a9a5ae0ef468f5cb9252e1ea6",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/image.json",
+            "sha256": "bd493e60d5668ec4e525b79ec526a7e2c96bb327ebeeed1030fe3b9ed7627e77"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S06-organism-mass-balance/provider-metadata.json",
+            "sha256": "9e1bc5e2f18f841b3e65f13ecf175c5e89d83eadd86df178a93bb5cb1eca0e9b"
+          }
+        ],
+        "visibleFeatures": [
+          "One silver-grey, spotted fish appears in side profile in clear shallow water. Visible features include an eye, mouth, gill-cover area, fins and tail; green aquatic vegetation occupies the lower left and a pale granular bed is visible. No comparison fish, toxin particles, anatomical labels, injury or values appear."
+        ],
+        "roleComparison": "Fits a qualitative aquatic-organism context for mass versus concentration without embedding a growth comparison.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Generic organism backdrop for separately labelled chemical-mass/body-mass calculations and uncertainty."
+        ],
+        "restrictions": [
+          "Not a measured specimen, growth trial, anatomical plate or validated taxonomic identification. Do not infer body mass, dose, elimination or health from appearance. Growth/dilution must be shown by explicit hypothetical overlays, not by scaling this raster as data."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "13940704876092ed964c502761bcf92ce565db4c407599dd04624828fecb3799"
+      }
+    },
+    {
+      "id": "S07-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "prediction",
+      "spokenText": "المصدر يكتب لوغاريتم عامل التركيز يساوي معامل أ مضروب في لوغاريتم معامل التوزيع، زائد المعامل ب أو صيغة تعتمد على الذوبان. المعامل أ والمعامل ب ومعاملات الملاءمة ومجال الموادّ مش موجودين. لذلك معرفة اللوغاريتم العشري لمعامل توزيع الأوكتانول والمَيّه وحدها ما تطلعش بي سي إف عدديًا من المعادلة دي. كمان أساس اللوغاريتم ووحدات المتغير وتعريفه جزء من النموذج. قبل استخدام علاقة تنبؤ، اسأل عن بيانات بنائها، مجال المركبات، شروط القياس، طريقة التحقق وعدم اليقين. لو المدخل خارج المجال، نكتب إنّ التنبؤ غير مدعوم بدل اختراع معاملات. كيو إس إيه آر هيرجع في خطوة التحول باعتباره ربطًا كميًا محدود الصلاحية، مش بديلًا تلقائيًا للتجربة.",
+      "textSHA256": "0494e02d930ad8d44514943445c6549c7c7f6df0a77624b10e6026cef52a65dd",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S07",
+      "scene": 4,
+      "semanticID": "prediction",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. علاقة تجريبية مش آلة تنبؤ من غير بيانات",
+        "en": "4. A regression needs coefficients and a domain"
+      },
+      "actions": [
+        {
+          "id": "form",
+          "label": {
+            "ar": "علاقة تجريبية لها معاملات",
+            "en": "An empirical relation needs coefficients"
+          },
+          "meaning": "SourceformlogBCF=a logKow+b isnotanumericalpredictionbyitself.",
+          "equation": "log BCF = a log Kow + b"
+        },
+        {
+          "id": "missing",
+          "label": {
+            "ar": "المعاملات والمجال غير معطاة",
+            "en": "Coefficients and domain are not supplied"
+          },
+          "meaning": "Do not inventa,b,domain orlogarithmbase."
+        },
+        {
+          "id": "validation",
+          "label": {
+            "ar": "بيانات بناء وتحقّق وعدم يقين",
+            "en": "Training, validation and uncertainty"
+          },
+          "meaning": "Unsupportedextrapolation remainsunresolved; modelisnotmeasurement."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-04-ar-EG",
+        "file": "S07-04-ar-EG.wav",
+        "sha256": "052b7b50c7818e0c269cdbc7d32934f38d375eff5fee04727c57e29fce655507"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-04-ar-EG",
+        "file": "verification.json",
+        "sha256": "fc2d6ed28c9d20f0a70b7eec20e51a5353c58f4397664a366b9b6c272d5bbb0c"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S07-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "713d294afe659259d0af2cece1102e923ff24656ee114ba32096e584d2b9fb4b"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "26be14e8c00f27622f3542316a7bbdd2e2fa7d6bf881d4c6ff80dc266f24568b"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "imageReview": {
+        "id": "S07-aqueous-uptake-chamber",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "f01efeda54b701da06515fe154856c52e4576b0520dfb7b4ec62cc1cdf5ce733",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/image.json",
+            "sha256": "b06324fd2dc91b2cc159d21968498d31403de05d1ebbe57461b3232bf5917e3e"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/provider-metadata.json",
+            "sha256": "193d9c605e4460fcd24ebb28abdd2d4c8f855e3738b0a72f84b43f403f341d97"
+          }
+        ],
+        "visibleFeatures": [
+          "A rectangular clear glass tank contains clear water and one small striped fish. Transparent tubing and dark teal fittings run along and through the left side. The right half of the desk/background is quiet. No feed, chemical particles, arrows, dosed substance, numerical settings or results appear."
+        ],
+        "roleComparison": "Fits generic aqueous-organism/chamber context, with a visually distinct tank and fish. Actual hydraulic operation cannot be established from a still.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Backdrop for conceptual aqueous uptake/elimination balance with independently editable rate equations and arrows."
+        ],
+        "restrictions": [
+          "Do not call this a validated OECD apparatus, experimental protocol, actual exposure or documented flow-through setup. Do not infer tubing direction, flow rate, volumes, steady state, welfare conditions or species validation from the pixels. Kinetic steady state is not thermodynamic equilibrium."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      }
+    },
+    {
+      "id": "S07-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "نحلّ نموذجًا مائيًّا افتراضيًّا، بحجرة واحدة ومعاملات ثابتة ومن غير نموّ أو مسار غذائي. تركيز الميّه صفر فاصلة صفر صفر اتنين ملِّيجرام لكلّ لتر. معامل الدخول عشرين لتر لكلّ كيلوجرام في اليوم، ومعامل الفقد صفر فاصلة واحد في اليوم. نقسم عشرين على صفر فاصلة واحد، فيطلع عامل تركيز مقداره ميتين لتر لكلّ كيلوجرام. نضربه في تركيز الميّه، فيطلع تركيز الجسم عند الحالة المستقرّة صفر فاصلة أربعة ملِّيجرام لكلّ كيلوجرام. نراجع المعدّلين: الدخول عشرين مضروبة في تركيز الميّه، والفقد صفر فاصلة واحد مضروبة في تركيز الجسم. الاتنين صفر فاصلة صفر أربعة ملِّيجرام لكلّ كيلوجرام في اليوم. صافي المعدّل صفر، لكن الدخول والخروج مستمرّين. النتيجة تخصّ النموذج، مش قياسًا لحقل أو نسبة سمّية.",
+      "textSHA256": "fb46438859ffe05b300ed20a1186c669fd8590919ab2846c000d2e92a1ef0e64",
+      "sourceLessonSHA256": "30497524d00035696db53c7451d0a1cd2b64e966e6b2e8d61693e3947b27563f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S07",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "sceneIndex": 5,
+      "title": {
+        "ar": "مثال محلول: فحص النسبة بطريقتين",
+        "en": "Worked example: check a ratio two ways"
+      },
+      "actions": [
+        {
+          "id": "factor",
+          "label": {
+            "ar": "عامل تركيز حركي افتراضي",
+            "en": "An invented kinetic factor"
+          },
+          "meaning": "k1=20L/kg/day,k2=0.10/day understatedone-compartmentassumptions.",
+          "equation": "20 / 0.10 = 200 L/kg"
+        },
+        {
+          "id": "body",
+          "label": {
+            "ar": "تركيز الجسم عند الحالة المستقرّة",
+            "en": "Steady-state body concentration"
+          },
+          "meaning": "Water0.002mg/L times200L/kg gives0.40mg/kg.",
+          "equation": "200 L/kg × 0.002 mg/L = 0.40 mg/kg"
+        },
+        {
+          "id": "fluxes",
+          "label": {
+            "ar": "معدّلا الدخول والفقد متساويان",
+            "en": "Equal uptake and loss rates"
+          },
+          "meaning": "Eachrateis0.040mg/kg/day;netzero doesnotstopflow.",
+          "equation": "20 × 0.002 = 0.10 × 0.40 = 0.040 mg/kg/day"
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-05-ar-EG",
+        "file": "S07-05-ar-EG.wav",
+        "sha256": "96c2cae5037352032bf2c2c8f461d540caa57f0eb713a0cd4f70720f2c69c6d5"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-05-ar-EG",
+        "file": "verification.json",
+        "sha256": "6d7a7dfb968595d03887475e6c6f414b1fee89b021fe5bad20b9cbd6002a3dbf"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S07-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "cba337f28c34f2a3d2a150723837b1cef97d5824d568e6dc936fa0e1349dc56e"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "ed9dbb22d15fdd5423b3b6e4536e5594850ee1991deb88088c570878392e8a34"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "imageReview": {
+        "id": "S07-aqueous-uptake-chamber",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "f01efeda54b701da06515fe154856c52e4576b0520dfb7b4ec62cc1cdf5ce733",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/image.json",
+            "sha256": "b06324fd2dc91b2cc159d21968498d31403de05d1ebbe57461b3232bf5917e3e"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S07-aqueous-uptake-chamber/provider-metadata.json",
+            "sha256": "193d9c605e4460fcd24ebb28abdd2d4c8f855e3738b0a72f84b43f403f341d97"
+          }
+        ],
+        "visibleFeatures": [
+          "A rectangular clear glass tank contains clear water and one small striped fish. Transparent tubing and dark teal fittings run along and through the left side. The right half of the desk/background is quiet. No feed, chemical particles, arrows, dosed substance, numerical settings or results appear."
+        ],
+        "roleComparison": "Fits generic aqueous-organism/chamber context, with a visually distinct tank and fish. Actual hydraulic operation cannot be established from a still.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Backdrop for conceptual aqueous uptake/elimination balance with independently editable rate equations and arrows."
+        ],
+        "restrictions": [
+          "Do not call this a validated OECD apparatus, experimental protocol, actual exposure or documented flow-through setup. Do not infer tubing direction, flow rate, volumes, steady state, welfare conditions or species validation from the pixels. Kinetic steady state is not thermodynamic equilibrium."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      }
+    },
+    {
+      "id": "S09-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "solubility",
+      "spokenText": "الذوبان في المَيّه يُعرض مثلًا بوحدة ملِّيجرام لكلّ لتر، مع درجة حرارة والرقم الهيدروجيني وطريقة قياس. اختلاف الظروف أو الصورة الأيونية ممكن يغيّر قابلية المقارنة. تركيز موجود في عينة مَيّه مش تلقائيًا حد الذوبان؛ واحد نتيجة للعينة، والتاني خاصية تحت شروط محدَّدة. الحركة مع المَيّه محتاجة نفكر في الجزء الذائب والتفاعل مع التربة والرواسب وظروف الجريان، مش الذوبان وحده. مرجع إن بي آي سي يربط الخواص بالحركة في التربة والميه والهواء، مع أهمية ظروف البيئة. ما نفترضش إنّ مادّة قليلة الذوبان مش ممكن تتحرك مع جسيمات أو في ظروف مختلفة.",
+      "textSHA256": "a2d3745da41d974b70d35425a262bb2085ba2d110cd62d0322fa6b8ae57d551d",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S09",
+      "scene": 2,
+      "semanticID": "solubility",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. الذوبان يتقاس تحت شروط",
+        "en": "2. Solubility needs conditions"
+      },
+      "actions": [
+        {
+          "id": "property",
+          "label": {
+            "ar": "ذوبان تحت ظروف محددة",
+            "en": "Solubility under stated conditions"
+          },
+          "meaning": "Solubilitypropertyhasunit,temperature,pHandmethod;sampleconcentrationisdifferent."
+        },
+        {
+          "id": "fractions",
+          "label": {
+            "ar": "جزء ذائب وجسيمات ووسط",
+            "en": "Dissolved fraction, particles and medium"
+          },
+          "meaning": "Watermovementdependsalsoonsoil/sedimentinteractionsandflow."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "قليل الذوبان ممكن يتحرّك بطرق تانية",
+            "en": "Low solubility does not exclude other transport"
+          },
+          "meaning": "Particle-associatedorotherpathwaysarenotruledoutbysolubilityalone."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-02-ar-EG",
+        "file": "S09-02-ar-EG.wav",
+        "sha256": "2eea7b0acd2895015a1fddf9e5d1eb395358e9a82a37e6adc76f756291e1afcf"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-02-ar-EG",
+        "file": "verification.json",
+        "sha256": "c86ea494a1b56c7e4391f6f3b4598740691733776d87d10fe02e3e23ec02dffe"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S09-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "8894619349cb8e712759fc37c17933a2ff1e82d1dadaf067ffc721b0835a0fe9"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "909e5c32df9e39cb62a85dbf4d7202a1ddfdca3c2a4ec9e5e27caee3d39077aa"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "imageReview": {
+        "id": "S09-soil-water-air",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "54acf3a4c84ed17eb630f425062553ce88defd66be13d2c02c1a173b5c2040ad",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/image.json",
+            "sha256": "45c8d3605247140e4dabd0a7a8e4fffe1de1ef76864c4a9dc7e7ac44de30a672"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/provider-metadata.json",
+            "sha256": "d97cd9fe4c29b69550d498cd1b782750e6b95e60d69ac013c7157bd8f8966678"
+          }
+        ],
+        "visibleFeatures": [
+          "A soil cutaway with pore-like cavities and branching roots supports a green plant. A clear adjacent water block exposes submerged roots and sediment; plain light space lies above and to the right. No arrows, vapour cloud, coloured chemicals, phase scales or values appear."
+        ],
+        "roleComparison": "Fits a qualitative soil/water/air context with no embedded numerical partition claims.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Context for contrasting environmental compartments and separately labelled physicochemical quantities."
+        ],
+        "restrictions": [
+          "Cutaway boundaries and relative compartment volumes are illustrative. Do not derive phase fractions, partition coefficients, flux, root uptake, systemic action or molecular-weight rules from the picture. Air space does not depict measured vapour."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      }
+    },
+    {
+      "id": "S09-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "vapour",
+      "spokenText": "ضغط البخار خاصية تُذكر عند درجة حرارة معينة وبوحدة واضحة. المصدر يستخدم مِلِّي باسكال: واحد مِلِّي باسكال يساوي صفر فاصلة صفر صفر واحد باسكال، والـباسكال يساوي نيوتن لكلّ متر مربّع. حذف بادئة مِلِّي يغيّر الرقم ألف مرة. ما نقارنش ملّيمتر زئبق ومِلِّي باسكال من غير تحويل صحيح. الانجراف أثناء الرش قد يشمل قطرات محمولة بعيدًا عن الهدف. أما التطاير فيخص انتقال المادّة إلى الطور الغازي. الحركة في الهواء مش آلية واحدة، ودرجة الحرارة والظروف والمستحضر مهمة. مخطط صفحة ١٩ يجمع الثبات والحركة والسمية لغير المستهدف وحجم الاستخدام؛ نقرأها أبعادًا متداخلة، مش ربطًا وحيدًا لكل عملية بخانة واحدة.",
+      "textSHA256": "a54efcf3ab65ad87b5bd1324ae128c7ef42c3c5744bf8c2185d971173905ea9c",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "86593139eb42bdc10abdb15893ae637b6b2b98cb88f8828f84f60b1ccb2d695c",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S09",
+      "scene": 4,
+      "semanticID": "vapour",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. ضغط البخار غير انجراف القطرة",
+        "en": "4. Vapour pressure and droplet drift differ"
+      },
+      "actions": [
+        {
+          "id": "unit",
+          "label": {
+            "ar": "مِلِّي باسكال وباسكال",
+            "en": "Millipascal and pascal"
+          },
+          "meaning": "Retainmeasurementtemperatureandunit.",
+          "equation": "1 mPa = 0.001 Pa; 1 Pa = 1 N/m²"
+        },
+        {
+          "id": "mechanisms",
+          "label": {
+            "ar": "الانجراف غير التطاير",
+            "en": "Drift differs from volatilisation"
+          },
+          "meaning": "Driftmayinvolvecarrieddroplets;volatilisationtransfersthechemicaltothegasphase."
+        },
+        {
+          "id": "conditions",
+          "label": {
+            "ar": "الجوّ والمستحضر والوسط",
+            "en": "Atmosphere, formulation and medium"
+          },
+          "meaning": "Diagramlayoutisnotauniqueone-to-oneprocessassignment."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-ar-EG",
+        "file": "S09-04-ar-EG.wav",
+        "sha256": "2fce94908a677f6b21880c7f2174bb6fb5116059cc2fe9a2c41c3381aa267055"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-04-ar-EG",
+        "file": "verification.json",
+        "sha256": "74f2b51a028b473e95a0163fa34d7edfabc8447662ff8751b07a2958337b2fff"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S09-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "a4151125f6882046f9624834bdb3f53acfca8978e509fc2f3942ee135dd9cbbc"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "0d57127238701ff04e1b4bd03a46b8cf84680e924d2c37b0c1a8d210029cd791"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "imageReview": {
+        "id": "S09-soil-water-air",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "54acf3a4c84ed17eb630f425062553ce88defd66be13d2c02c1a173b5c2040ad",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/image.json",
+            "sha256": "45c8d3605247140e4dabd0a7a8e4fffe1de1ef76864c4a9dc7e7ac44de30a672"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S09-soil-water-air/provider-metadata.json",
+            "sha256": "d97cd9fe4c29b69550d498cd1b782750e6b95e60d69ac013c7157bd8f8966678"
+          }
+        ],
+        "visibleFeatures": [
+          "A soil cutaway with pore-like cavities and branching roots supports a green plant. A clear adjacent water block exposes submerged roots and sediment; plain light space lies above and to the right. No arrows, vapour cloud, coloured chemicals, phase scales or values appear."
+        ],
+        "roleComparison": "Fits a qualitative soil/water/air context with no embedded numerical partition claims.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Context for contrasting environmental compartments and separately labelled physicochemical quantities."
+        ],
+        "restrictions": [
+          "Cutaway boundaries and relative compartment volumes are illustrative. Do not derive phase fractions, partition coefficients, flux, root uptake, systemic action or molecular-weight rules from the picture. Air space does not depict measured vapour."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      }
+    },
+    {
+      "id": "S10-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "limits",
+      "spokenText": "فترة ما قبل الحصاد بي إتش آي قيد مرتبط بالاستخدام وبطاقة المنتج السارية. حساب هبوط افتراضي لا يسمح بتقصيرها، وتغيير الجرعة علشان نوصل لقيمة أسرع مش تعليمات معتمدة من الدرس. العينة والسلعة وتعريف المتبقي ونواتج التحول وشروط الاستخدام كلها أسئلة منفصلة عن منحنى بسيط. كيو إس إيه آر يربط البنية أو الخواص بنشاط مقاس كميًا. قبل استعماله، نحتاج تعريف نقطة النشاط وبيانات البناء والتحقق ومجال الصلاحية وعدم اليقين. توقع من نموذج مش قياسًا، ولا تصريح استخدام. لو المجال أو المعاملات مجهولة، نسجل غيابها بدل إنتاج رقم يوحي بثقة غير موجودة.",
+      "textSHA256": "9c4a582de4ea22788ac76ff8a9ccf3715fbb211e106f1158d111e3c04936d4f9",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "29c5f8c619f2d039d80ae98ca849726e97565976cc31f3b297cf928fdabfb080",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S10",
+      "scene": 4,
+      "semanticID": "limits",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. PHI وQSAR ما يختصروش الدليل",
+        "en": "4. PHI and QSAR do not bypass the evidence"
+      },
+      "actions": [
+        {
+          "id": "phi",
+          "label": {
+            "ar": "فترة الحصاد من الاستخدام الساري",
+            "en": "Harvest interval from applicable use conditions"
+          },
+          "meaning": "AninventeddeclinecurvedoesnotpermitshorteningPHIorchangingdose."
+        },
+        {
+          "id": "qsar",
+          "label": {
+            "ar": "نموذج له مجال وتحقّق",
+            "en": "A model needs a domain and validation"
+          },
+          "meaning": "QSARneedsspecifiedendpoint,trainingdata,validationanduncertainty."
+        },
+        {
+          "id": "prediction",
+          "label": {
+            "ar": "التنبؤ غير القياس أو التصريح",
+            "en": "Prediction differs from measurement or authorisation"
+          },
+          "meaning": "Missingcoefficients/domainremainmissing; no inventednumber."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-04-ar-EG",
+        "file": "S10-04-ar-EG.wav",
+        "sha256": "6a822589aabc4a897259d0492a15e6626b0c56d501280aae9168313dc8de9aeb"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S10-04-ar-EG",
+        "file": "verification.json",
+        "sha256": "1c3047c3ed6ef161aee203c4e33ac62feadb26edddbb907e33d39789971d36b4"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S10-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "56d6dc3c569785465143f7c36387c5d1ecd5b615cd35825cea346637dd418000"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S10-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "cc459fe1f9c0b61d0fba835784c6a3f9060ef76c8fdc34c53e9d13ff0ec9b860"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S10-transformation-conditions",
+        "file": "S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127"
+      },
+      "imageReview": {
+        "id": "S10-transformation-conditions",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/S10-transformation-conditions.jpg",
+        "sha256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "bb8cdff839b93eb89e8f8fdcbe93c8dbe7f6b716fe37691cc38782a881a76fb5",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/image.json",
+            "sha256": "0794def17e4057f0272cf01859585f0c9a35ee005f2211049be2fafda055267f"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S10-transformation-conditions/provider-metadata.json",
+            "sha256": "563e69b5243cad98b1c9abbb0d3a8a944e050ebcf5c56f117e0f13213b3e3d59"
+          }
+        ],
+        "visibleFeatures": [
+          "A shallow round tray contains dark moist soil and pooled clear water. One detached green leaf lies above the soil; angled sunlight and shadows cross the scene. The right half is quiet. No molecules, glowing particles, arrows, measured decline or disappearance appear."
+        ],
+        "roleComparison": "Fits generic light/soil/water conditions; it is a detached-leaf still rather than a whole-plant experiment.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Qualitative context for environmental transformation conditions, beside explicit hypothetical decay equations and assumptions."
+        ],
+        "restrictions": [
+          "Do not imply the leaf is an intact living plant, or that the tray is a validated transformation experiment. No degradation, detoxification, mineralization, actual half-life or harvest permission is evidenced. Moist appearance cannot establish water content, pH or temperature."
+        ],
+        "localizedIssuesOrUncertainty": [
+          "The leaf is detached and lies on soil rather than being attached above it; keep the use limited to environmental-condition ingredients."
+        ],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "0cefb2a87d2bfeb95edf77a1624f9dd7942539e8f17930f98a4686af6a0c7127"
+      }
+    },
+    {
+      "id": "S11-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "before",
+      "spokenText": "قبل الوصول، المخطّط بيعرض الانجراف والتبخّر. وعند السطح بنراجع الارتداد والاحتفاظ. اصطدام قطرة بورقة مش ضمان إنّها هتفضل عليها كلّها؛ جزء ممكن يرتدّ، وفرع الفقد لازم يفضل ظاهر. حجم القطرات والتشغيل والتركيبة والجوّ ممكن يأثّروا على السيناريو. لكن الرسم ما فيهوش قيم تشغيل نقدر نحوّلها لوصفة. ما نختارش منه ضغطًا أو فونية أو جرعة حقيقيّة. نسمّي العامل، ونقول إيه الدليل اللي محتاجينه، بدل ما نخترع إعدادًا.",
+      "textSHA256": "3134ccc0c1f9a03d07644e0fdc6e8d68d8a102f8d80990d09a900da5d558c22e",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 2,
+      "semanticID": "before",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. أثناء النقل والاصطدام فيه فروع",
+        "en": "2. Transport and impact have branches"
+      },
+      "actions": [
+        {
+          "id": "travel",
+          "label": {
+            "ar": "انجراف وتبخّر قبل الوصول",
+            "en": "Drift and evaporation before arrival"
+          },
+          "meaning": "Retainlossbranchesbeforearrival,noinventedfractions."
+        },
+        {
+          "id": "impact",
+          "label": {
+            "ar": "عند السطح: ارتداد واحتفاظ",
+            "en": "At the surface: reflection and retention"
+          },
+          "meaning": "Contactdoesnotguaranteecompleteretention."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "العامل مش إعداد تشغيل جاهز",
+            "en": "A factor is not an operating recipe"
+          },
+          "meaning": "Nozzle,pressureanddosearenotsuppliedbytheconceptualdiagram."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-ar-EG",
+        "file": "S11-02-ar-EG.wav",
+        "sha256": "d452b1c771f3a2d220eca11b33bffe63314268773c9e76c4eb016a7161ea7782"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-ar-EG",
+        "file": "verification.json",
+        "sha256": "08a68866223362ddaa9cc27e770322af9b94451e1c08472a817b95facffd788d"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S11-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "00519cf6724f2fdee9dc3384f801e0bc1ee26297571f4568546ef6829842e8d4"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S11-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "d5c353481a3ddb7976708f841a78bfc12386d859d3ecc4e1545dcc24c612c8a7"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S11-leaf-impact-surface",
+        "file": "S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      },
+      "imageReview": {
+        "id": "S11-leaf-impact-surface",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "f4d167a484b4d7b78a9f254d8f0fc22f8d3450d01176913d177f1352bb03e4e7",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/image.json",
+            "sha256": "6ae5a020cff86d4bfb08d02c4d28a8a47f484f78c5ddfbd43b4ba5be11e69a77"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/provider-metadata.json",
+            "sha256": "3a716fd7d3c7aa3bad6e025eb782b10091c486b1afefe7b7c5abdf3f717d86a5"
+          }
+        ],
+        "visibleFeatures": [
+          "A single green leaf crosses the left side diagonally with a visible midrib, finer veins, gently curved edge and fine surface texture. The right side has a pale blurred background. No water droplets, films, holes, injury, words or values are visible."
+        ],
+        "roleComparison": "Fits the clean qualitative leaf-surface ingredient; no later spray outcome is precommitted in the raster.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Leaf-surface context beneath separate editable qualitative contact, rebound, retained-residue, spread and drying diagrams."
+        ],
+        "restrictions": [
+          "The raster is not native geometry, a contact-angle measurement, cuticle microscopy or actual droplet experiment. Do not infer uptake, systemic transport or biological effect. If droplets are placed directly on this raster, their surface registration needs actual encoded-frame inspection; the separate schematic leaf has its own contact geometry. No native-3D claim."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      }
+    },
+    {
+      "id": "S11-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "before",
+      "spokenText": "The diagram includes drift and evaporation before arrival, and reflection and retention at the surface. An impact point on a leaf does not guarantee complete retention. Loss branches must remain visible in the presentation. Droplet characteristics, operating conditions, formulation and atmosphere can affect the scenario, but the diagram provides no operational values for a recipe. It does not authorise selecting a real nozzle, pressure or dose. Name the factor and required evidence rather than inventing a setting.",
+      "textSHA256": "f56e17e5f1916311ec88b2e964c8ec1923135f5734eb55f6f757f01da0de7581",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 2,
+      "semanticID": "before",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. أثناء النقل والاصطدام فيه فروع",
+        "en": "2. Transport and impact have branches"
+      },
+      "actions": [
+        {
+          "id": "travel",
+          "label": {
+            "ar": "انجراف وتبخّر قبل الوصول",
+            "en": "Drift and evaporation before arrival"
+          },
+          "meaning": "Retainlossbranchesbeforearrival,noinventedfractions."
+        },
+        {
+          "id": "impact",
+          "label": {
+            "ar": "عند السطح: ارتداد واحتفاظ",
+            "en": "At the surface: reflection and retention"
+          },
+          "meaning": "Contactdoesnotguaranteecompleteretention."
+        },
+        {
+          "id": "limits",
+          "label": {
+            "ar": "العامل مش إعداد تشغيل جاهز",
+            "en": "A factor is not an operating recipe"
+          },
+          "meaning": "Nozzle,pressureanddosearenotsuppliedbytheconceptualdiagram."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-en",
+        "file": "S11-02-en.wav",
+        "sha256": "6c81878e471f36256635c6b70fe8b24605fb1d70b95a89a5ed5173b2086df050"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-02-en",
+        "file": "verification.json",
+        "sha256": "862aec270a00fb1e7115a92828234d1c754826519baf66d583162d26fd534e12"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S11-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "7dfe4725b1a037917b7ae4cafe9522668bd9895f98d3b3c50483e28627dcf7ba"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S11-02-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "6f722af046fbf750b2c96129eda784bd5acb04074a5fc325c099546609ec5a8f"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S11-leaf-impact-surface",
+        "file": "S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      },
+      "imageReview": {
+        "id": "S11-leaf-impact-surface",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "f4d167a484b4d7b78a9f254d8f0fc22f8d3450d01176913d177f1352bb03e4e7",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/image.json",
+            "sha256": "6ae5a020cff86d4bfb08d02c4d28a8a47f484f78c5ddfbd43b4ba5be11e69a77"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/provider-metadata.json",
+            "sha256": "3a716fd7d3c7aa3bad6e025eb782b10091c486b1afefe7b7c5abdf3f717d86a5"
+          }
+        ],
+        "visibleFeatures": [
+          "A single green leaf crosses the left side diagonally with a visible midrib, finer veins, gently curved edge and fine surface texture. The right side has a pale blurred background. No water droplets, films, holes, injury, words or values are visible."
+        ],
+        "roleComparison": "Fits the clean qualitative leaf-surface ingredient; no later spray outcome is precommitted in the raster.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Leaf-surface context beneath separate editable qualitative contact, rebound, retained-residue, spread and drying diagrams."
+        ],
+        "restrictions": [
+          "The raster is not native geometry, a contact-angle measurement, cuticle microscopy or actual droplet experiment. Do not infer uptake, systemic transport or biological effect. If droplets are placed directly on this raster, their surface registration needs actual encoded-frame inspection; the separate schematic leaf has its own contact geometry. No native-3D claim."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      }
+    },
+    {
+      "id": "S11-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "influences",
+      "spokenText": "Side labels include operating/formulation, atmospheric/operating, spray/surface, atmospheric, and deposit/surface conditions. Retain those factor groups, but do not turn a factor into a measured loss or infer a numerical relationship from label placement. For the final task, select a stage, define an observation, identify a possible loss branch and list needed conditions. Say possible where measurement is absent. Connect the sequence to exposure, properties and transformation from earlier steps rather than reducing pesticide fate to six unexplained pictures.",
+      "textSHA256": "1d17f36213471cb2d957c588fe8b8d8975b21430e2dc342fa50cd6a3ae258f4a",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 4,
+      "semanticID": "influences",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. العوامل المؤثرة مش نواتج مؤكدة",
+        "en": "4. Influences are not guaranteed outcomes"
+      },
+      "actions": [
+        {
+          "id": "groups",
+          "label": {
+            "ar": "خمس مجموعات للعوامل",
+            "en": "Five factor groups"
+          },
+          "meaning": "Operating/formulation;atmospheric/operating;spray/surface;atmospheric;deposit/surface."
+        },
+        {
+          "id": "evidence",
+          "label": {
+            "ar": "العامل مش نسبة فقد مقاسة",
+            "en": "A factor is not a measured loss fraction"
+          },
+          "meaning": "Labelplacementdoesnotsupplyanumericalrelationship."
+        },
+        {
+          "id": "report",
+          "label": {
+            "ar": "مرحلة وملاحظة وفرع فقد وسؤال",
+            "en": "Stage, observation, loss branch and question"
+          },
+          "meaning": "Finaltaskconnectstoexposure,propertiesandtransformation;usepossiblewithoutmeasurement."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-04-en",
+        "file": "S11-04-en.wav",
+        "sha256": "257767c759e03eec3d7ff6d4b3f4e045159f5178687e3f14c0712382e68f0a9b"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S11-04-en",
+        "file": "verification.json",
+        "sha256": "7a0eb3be2b1340bf5ca9c94a4053bd7235274edd899569ec93751ff455dd1174"
+      },
+      "review": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S11-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "d230df65ee694ea3a210c1f4895f169601f3641772efb1675d72e52bef6e83c1"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S11-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "f0bc8ad88b2bb366429a1f5c03339c0ab31b886910e9bffb0312f47315ac134d"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S11-leaf-impact-surface",
+        "file": "S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      },
+      "imageReview": {
+        "id": "S11-leaf-impact-surface",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/S11-leaf-impact-surface.jpg",
+        "sha256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "f4d167a484b4d7b78a9f254d8f0fc22f8d3450d01176913d177f1352bb03e4e7",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/image.json",
+            "sha256": "6ae5a020cff86d4bfb08d02c4d28a8a47f484f78c5ddfbd43b4ba5be11e69a77"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S11-leaf-impact-surface/provider-metadata.json",
+            "sha256": "3a716fd7d3c7aa3bad6e025eb782b10091c486b1afefe7b7c5abdf3f717d86a5"
+          }
+        ],
+        "visibleFeatures": [
+          "A single green leaf crosses the left side diagonally with a visible midrib, finer veins, gently curved edge and fine surface texture. The right side has a pale blurred background. No water droplets, films, holes, injury, words or values are visible."
+        ],
+        "roleComparison": "Fits the clean qualitative leaf-surface ingredient; no later spray outcome is precommitted in the raster.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Leaf-surface context beneath separate editable qualitative contact, rebound, retained-residue, spread and drying diagrams."
+        ],
+        "restrictions": [
+          "The raster is not native geometry, a contact-angle measurement, cuticle microscopy or actual droplet experiment. Do not infer uptake, systemic transport or biological effect. If droplets are placed directly on this raster, their surface registration needs actual encoded-frame inspection; the separate schematic leaf has its own contact geometry. No native-3D claim."
+        ],
+        "localizedIssuesOrUncertainty": [],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "fe1b994ba02d9983df8b8aae149cac6c629e8b9fecde5c6f9715735a49d0fec9"
+      }
+    }
+  ],
+  "heldNotRendered": [
+    "S11-05-ar-EG"
+  ],
+  "sourceEvidence": {
+    "createdUTC": "2026-10-26T09:54:29.756270+00:00",
+    "sourceGenerationRequestSHA256": "bcb7afb029d92c3bbb05e3e4a78f68b280fa0ae6453eefe42ee50962eef6ac95",
+    "sourceReceiptSHA256": "518a059865f0d076e99dcba6d7d9bfc87679a03313719938199da79f6962c664",
+    "qualityReceiptSHA256": "07f34377e854cf1d323618cab1dcf4baedd9cb2996dc84a030b24742ecf1033a",
+    "visualReviewSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+    "methodApprovalSHA256": "7a3a68706573d115304c4371665e15dfff56fefcb2704b56e880cef707036f55",
+    "selectionPolicy": "Exact clear source gates only; holds excluded; actual PCM and clocks verified locally; no inferred human or visual acceptance."
+  },
+  "scope": "Only current clear S03-S11 scene sources; ordinary explanatory motion. No new speech/images, retries, master assembly, publication or acceptance invented.",
+  "releaseEvidence": "13 exact original recordings cleared by separately labelled actual same-voice recheck; no new speech or images. One genuinely defective passage remains excluded."
+}

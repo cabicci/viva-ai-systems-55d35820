@@ -1,0 +1,69 @@
+{
+  "id": "fate-v2-s11-speech-repair-v1",
+  "model": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 1,
+  "maxSpeechOutputTokens": 4096,
+  "maxAnalysisCalls": 2,
+  "providerReservationUSD": 0.2,
+  "remainingPathCeilingUSD": 25,
+  "methodApprovalSHA256": "596e495af0a6a465a8540faf4b22b9d8b5256bd167c52e982d197340849ab7f5",
+  "budgetAuthorizationSHA256": "085d693293254079cbbc2f05d6b8ae67d2dd3193c4cb821c1322f49bf887bfba",
+  "retained": [],
+  "segments": [
+    {
+      "id": "S11-05-ar-EG-r1",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "نتابع قطرة في مشهد تعليمي، من غير ما ندّعي إنّه تجربة مقاسة. وصلت للورقة واصطدمت، وارتدّ جزء وفضل جزء وانتشر وجفّ. نربط الوصول بالنقل، واللمس بالاصطدام، والجزء اللي فضل بالاحتفاظ وتكوُّن الترسيب. بعد كده نسأل عن الانتشار والتجفيف، ونخلّي الدخول والأثر الحيوي مجهولين لحدّ ما يبقى فيه دليل. ما عندناش كتلة محتفَظ بيها، ولا قياس امتصاص، ولا نتيجة مكافحة. السؤال التالي ممكن يكون عن الكتلة على السطح، أو توزيعها، أو المتبقّي داخل النبات، أو استجابة مناسبة. ولو نزلت أمطار، ولقينا مادّة في الميّه، يبقى فيه فرضيّة إعادة توزيع محتاجة فحص؛ مش إذن نجزم بالمصدر أو بنسبة الفقد.",
+      "textSHA256": "f9506429d798cd65498fc96b80ab07945c2b119628fc2972295f05096d6347ef",
+      "sourceLessonSHA256": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S11",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "originalPartID": "S11-05-ar-EG",
+      "sourceRepair": "One coherent full worked-example passage; explicit rain clause replaces confirmed rain/string substitution. Other entire passage unchanged.",
+      "requestFingerprintSHA256": "42be0890c37c82b27bea5f524cf800c02cf182040fb0efd563944f445dc6f278"
+    }
+  ],
+  "supersededAudio": {
+    "run": 40296268513,
+    "artifact": "fate-v2-rest-original-S11-05-ar-EG",
+    "file": "S11-05-ar-EG.wav",
+    "sha256": "a9b01f71b8b87748e5e20b4a71d704c9355a56b312b665cb0db0ee1df3c4b506"
+  },
+  "repairEvidence": [
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "review-disposition.en.json",
+      "sha256": "9f6be29525a5a977490a8f6d429d6f4c77f5506ca603d5eabc73793ed8f80916"
+    },
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "blind-analysis.en.json",
+      "sha256": "2ebbebd6715afae50708802632e154739c19da537061d48a40803f6f2669875e"
+    },
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "reference-analysis.en.json",
+      "sha256": "0b31dbfb48711b7b7df9fdd05aacdb67eef1e8491e656abd9cad530408e5c5f5"
+    }
+  ],
+  "authorizedScope": "One complete S11 worked-example Arabic Charon passage, 2strict actual-audio checks and1new observational CPUclock, USD0.20 from existing remaining25ceiling. All other91 original clips retained.",
+  "wordingReview": "نزلت أمطار is natural comprehensible Egyptian narration, preserving the conditional rain event and redistribution hypothesis, including no causal source/fraction claim. No scientific or written lesson changes."
+}

@@ -1,0 +1,54 @@
+{
+  "utc": "2026-10-26T10:03:05.668637+00:00",
+  "scope": "One complete S11 worked-example Arabic Charon passage, 2strict actual-audio checks and1new observational CPUclock, USD0.20 from existing remaining25ceiling. All other91 original clips retained.",
+  "before": {
+    "media-plan/FATE2-S11/spoken-draft.en.json": "adf0e5ebbdbd8842cf4b8093c1ec1ccc6f0f4777941a51e147011a813e59754d",
+    "media-plan/FATE2-S11/script.ar.md": "a3d91122fde7b1829b233fcb34b9afc180c3798b5b09a87f14d7a376050dc5d2"
+  },
+  "after": {
+    "media-plan/FATE2-S11/spoken-draft.en.json": "41a5940223b5e2ce175ba933645b9f2fbcfd8867d6e3bafe2537969a492708eb",
+    "media-plan/FATE2-S11/script.ar.md": "2c34e4acce9de35e948c1c8f93408444646cf693272c8eac2eb5bf86c8a97a78"
+  },
+  "beforeClause": "ولو نزل مطر ولقينا مادّة في الميّه",
+  "afterClause": "ولو نزلت أمطار، ولقينا مادّة في الميّه",
+  "oldTextSHA256": "4786c42022edddf02a937c5366edaec912c856e32c3f89823f7cf3f71f0575e5",
+  "newTextSHA256": "f9506429d798cd65498fc96b80ab07945c2b119628fc2972295f05096d6347ef",
+  "oldSpokenText": "نتابع قطرة في مشهد تعليمي، من غير ما ندّعي إنّه تجربة مقاسة. وصلت للورقة واصطدمت، وارتدّ جزء وفضل جزء وانتشر وجفّ. نربط الوصول بالنقل، واللمس بالاصطدام، والجزء اللي فضل بالاحتفاظ وتكوُّن الترسيب. بعد كده نسأل عن الانتشار والتجفيف، ونخلّي الدخول والأثر الحيوي مجهولين لحدّ ما يبقى فيه دليل. ما عندناش كتلة محتفَظ بيها، ولا قياس امتصاص، ولا نتيجة مكافحة. السؤال التالي ممكن يكون عن الكتلة على السطح، أو توزيعها، أو المتبقّي داخل النبات، أو استجابة مناسبة. ولو نزل مطر ولقينا مادّة في الميّه، يبقى فيه فرضيّة إعادة توزيع محتاجة فحص؛ مش إذن نجزم بالمصدر أو بنسبة الفقد.",
+  "newSpokenText": "نتابع قطرة في مشهد تعليمي، من غير ما ندّعي إنّه تجربة مقاسة. وصلت للورقة واصطدمت، وارتدّ جزء وفضل جزء وانتشر وجفّ. نربط الوصول بالنقل، واللمس بالاصطدام، والجزء اللي فضل بالاحتفاظ وتكوُّن الترسيب. بعد كده نسأل عن الانتشار والتجفيف، ونخلّي الدخول والأثر الحيوي مجهولين لحدّ ما يبقى فيه دليل. ما عندناش كتلة محتفَظ بيها، ولا قياس امتصاص، ولا نتيجة مكافحة. السؤال التالي ممكن يكون عن الكتلة على السطح، أو توزيعها، أو المتبقّي داخل النبات، أو استجابة مناسبة. ولو نزلت أمطار، ولقينا مادّة في الميّه، يبقى فيه فرضيّة إعادة توزيع محتاجة فحص؛ مش إذن نجزم بالمصدر أو بنسبة الفقد.",
+  "oldAudioPreserved": {
+    "run": 40296268513,
+    "artifact": "fate-v2-rest-original-S11-05-ar-EG",
+    "file": "S11-05-ar-EG.wav",
+    "sha256": "a9b01f71b8b87748e5e20b4a71d704c9355a56b312b665cb0db0ee1df3c4b506"
+  },
+  "actualDefectEvidence": [
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "review-disposition.en.json",
+      "sha256": "9f6be29525a5a977490a8f6d429d6f4c77f5506ca603d5eabc73793ed8f80916"
+    },
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "blind-analysis.en.json",
+      "sha256": "2ebbebd6715afae50708802632e154739c19da537061d48a40803f6f2669875e"
+    },
+    {
+      "run": 40303810208,
+      "artifact": "fate-v2-rest-voice-recheck-S11-05-ar-EG",
+      "file": "reference-analysis.en.json",
+      "sha256": "0b31dbfb48711b7b7df9fdd05aacdb67eef1e8491e656abd9cad530408e5c5f5"
+    }
+  ],
+  "voice": "Charon",
+  "model": "gemini-3.8-flash-tts",
+  "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+  "newAudioStatus": "not_generated_yet",
+  "writtenLessonSHA256Unchanged": "8187d3318035f90b659736daba578b9aa3508a9413348105d401415822aff295",
+  "allOther91Originals": "retained unchanged; individual text/delivery/WAV hashes remain valid",
+  "globalSpokenDraftContract": "Only S11 whole-draft hash changed. Parent refreshes only affected S11 downstream contract; do not invalidate other individual accepted parts.",
+  "oldClockPolicy": "Old S11-05ar clock stays with old WAV. New recording needs new actual clock.",
+  "newProviderReservationUSD": 0.2,
+  "rootDispatchRequired": true
+}
