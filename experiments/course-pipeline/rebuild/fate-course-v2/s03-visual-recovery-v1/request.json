@@ -1,0 +1,249 @@
+{
+  "id": "fate-v2-s03-visual-recovery-v1",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S03-03-ar-EG-visual-r1",
+      "step": "FATE2-S03",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "us",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ae6067eda7c1ad021c1fdf97b07771222329d20f0e783988c5bf70b88b714a04"
+      },
+      "sourceRender": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-ar-EG",
+        "file": "render.en.json",
+        "sha256": "378fc7a9a41cac23e7d9277c5e8ac62793db357f9b0243e2c652734b1fa81d44"
+      },
+      "replacedSelectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-ar-EG",
+        "file": "FateV2-S03-03-ar-EG.mp4",
+        "sha256": "4eead1f03b5d57d2ff08d7dfaaaaf70dffa5b7a0118325145faf1b765db7666e"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-03-ar-EG",
+        "file": "S03-03-ar-EG.wav",
+        "sha256": "cbca628b00c2430c845b57157ddf9c749b160c70f2384f9823c20da0e5cdc412"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "c3ec8301aa5eba609fe81819bb8de1e96415b2f7bb78399b042dd39c7be89fc8"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "672428960d1c0e5bff0ead4eadaae98d21c2827f14a9a939b8bca25ceb8c4f58"
+      },
+      "originalTextSHA256": "19eda012401388a8c66afa9513d2cc36f0af4537830284cc1f7aa63c7ea5974c",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1682,
+      "originalAudioFrames": 1344960,
+      "originalActionsSHA256": "a6e41118d6efd8b2281c763b3fefec1cb45855dbf02ac2b3bc509c468bc064f3",
+      "originalCaptionsSHA256": "b0d6171ad95635fa43c421747e2a58f08d2bd927e512d98394d85fe65b02ee5d"
+    },
+    {
+      "id": "S03-05-ar-EG-visual-r1",
+      "step": "FATE2-S03",
+      "locale": "ar-EG",
+      "sceneIndex": 5,
+      "sectionID": "evidence-and-committee-scope",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "9ae7e216dae9d323d324f5500f6290db88bd1c6460b8de57bb414416e6d838dc"
+      },
+      "sourceRender": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-ar-EG",
+        "file": "render.en.json",
+        "sha256": "9bcaf8efbd0f88db5bf5c09e95d3f6a553ce265ab837e0685b5a23ffc92e0b3b"
+      },
+      "replacedSelectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-ar-EG",
+        "file": "FateV2-S03-05-ar-EG.mp4",
+        "sha256": "4cd20cbdf1f301d6177dad71c1a5db853def5815e4709e1edbd37f538e2336b0"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-05-ar-EG",
+        "file": "S03-05-ar-EG.wav",
+        "sha256": "d14dbda5d4f280f932e91c117561537ef932a9e1617fe6508a82327cff1fed99"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "1e57404e086a07f8490d3e2746a745c3dd7342c9a65e5110e8f7614e313f328c"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-05-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "52e9aa14e145ff96c7aaa2b78577498d4e4b4f85424791486e763dc1b92a69c2"
+      },
+      "originalTextSHA256": "87ce25caa18fd9c84bac333b62a506ad9d0267b1d105c48cfad1aa41d75ce3ea",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1922,
+      "originalAudioFrames": 1536960,
+      "originalActionsSHA256": "cd13d1817ebf00e82ff5aa636f5b98e55377a7815b4a0a54415020ef739ec7c2",
+      "originalCaptionsSHA256": "eea3c6abeff8a04ae938789e22a205b4cb883a48f5dec2a779e5d774741fe857"
+    },
+    {
+      "id": "S03-03-en-visual-r1",
+      "step": "FATE2-S03",
+      "locale": "en",
+      "sceneIndex": 3,
+      "sectionID": "us",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "d31fe9cb40f8290f521252d0a87f4d62fdf0e8a990b5a4c4552c104637ffeade"
+      },
+      "sourceRender": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-en",
+        "file": "render.en.json",
+        "sha256": "571dd26b134a8983143573136e442b4a450b7f46ea51868fe197c5e11e314ca9"
+      },
+      "replacedSelectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-03-en",
+        "file": "FateV2-S03-03-en.mp4",
+        "sha256": "8221240eb13be90d1d4055a68eb6daa63d6d5d57da711062d910e3a498297ae0"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-03-en",
+        "file": "S03-03-en.wav",
+        "sha256": "f5d6dc441ea17bc409dccb3d3e308f18ee0e8b94403189c19a868f4a908c7421"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "be61b74e524fd28e337cc57588f2c8592817fefaac73f6daaabf0e1d2532638f"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "37a85a4682f9c63ed058ef2d586eea147e995591a506b1359b847ae292f74d97"
+      },
+      "originalTextSHA256": "9345d63b51e7283a4580d97718b20fa57b6aedf81f299183128f75565f33de97",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1536,
+      "originalAudioFrames": 1228800,
+      "originalActionsSHA256": "180dbeee4c9e64f4f85f77e12d9dada2d5f5fad7eb650ef1fe654c558834606b",
+      "originalCaptionsSHA256": "112f741c776d2efc4fb55613b721c34a41d2c5c6223b1a4a43e66db31a791b6e"
+    },
+    {
+      "id": "S03-05-en-visual-r1",
+      "step": "FATE2-S03",
+      "locale": "en",
+      "sceneIndex": 5,
+      "sectionID": "evidence-and-committee-scope",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "66657422622f9b6a30c42c1f7a2725fa1f70553b7213176bb3a749507cefa88c"
+      },
+      "sourceRender": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-en",
+        "file": "render.en.json",
+        "sha256": "d9ab038fb49c142e114685e1309641a8ad60c8020a1c8a838f85e0d50073ab7b"
+      },
+      "replacedSelectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S03-05-en",
+        "file": "FateV2-S03-05-en.mp4",
+        "sha256": "6d22bcbdca4c1c9fe4faf75e9779061cb79149dc0cc98541e08fa48ba90eeb8e"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-05-en",
+        "file": "S03-05-en.wav",
+        "sha256": "f425b04dd1b50a0f28c3e289c37e1e5be6e8384f86cdba8b494dfa4f91ce267c"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "4295797c978f2605e6b8e26b3ff24619015101ee487517940c42fcfc0c0c13ce"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "c9ad96264034a879ae55215b4f45c32e7565cb619ac579605f059f7751c67fc7"
+      },
+      "originalTextSHA256": "147ada6903d7769a64da529ad301b6442d21d15c8d9f2cea751271a1fe87ffb0",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1847,
+      "originalAudioFrames": 1477440,
+      "originalActionsSHA256": "995226f8ff9b22702811b96be055d1e3a52dcd39ea65532ab8a91ac6148835d8",
+      "originalCaptionsSHA256": "99d5f1c99c839f90efd0ffc1b939b9d9fe9fb4ed90d87049ec362af201134fa5"
+    }
+  ],
+  "targetedDisplayChanges": [
+    "US EPA box uses original assessment cue; FDA and USDA-FSIS appear together at original enforcement cue. Law band appears at original laws cue.",
+    "Only S03 evidencegrid individual cells use uniform neutral white for the two six-item grids. Other steps and grid kinds unchanged."
+  ],
+  "sourceReviewSHA256": "772d6c78a4bc860ba8cb595f42830807e1a1de877e7e219c1356536907761bfc",
+  "preimagesSHA256": "c14c4d8ca98a6aa7f25e0a2ec43fc9742642db02568b47f10768a1ba20b4dd34"
+}

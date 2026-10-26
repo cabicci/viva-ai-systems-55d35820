@@ -1,0 +1,64 @@
+name: Fate v2 recover three interrupted scenes from preserved actual recordings
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/interrupted-scene-recovery-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/interrupted-scene-recovery-v1
+  EXPECTED_REQUEST_SHA256: 896bac6d6877f85bc18c07ace02c5774d6dd0d29401be3b52739f686b7d5f557
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+  EXPECTED_IMPLEMENTATION_SHA256: 58d8bb633382f2200878e2666e4db32df87ca79c9d0b7e5b6c54c59a57dc8a6d
+jobs:
+  scene:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S02-03-en-render-r2", "S03-02-ar-EG-render-r2", "S04-04-en-render-r2"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact finite request and implementation pins
+        run: |
+          python - <<'PY'
+          import os,json,hashlib,pathlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert os.environ['GITHUB_RUN_ATTEMPT']=='1'
+          assert s(p/'request.json')==os.environ['EXPECTED_REQUEST_SHA256']
+          assert s(p/'implementation-pins.en.json')==os.environ['EXPECTED_IMPLEMENTATION_SHA256']
+          for n,h in json.loads((p/'implementation-pins.en.json').read_text()).items():assert s(p/n)==h
+          PY
+      - name: Verify audio gate and actual clock, bind explanatory actions
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-interrupted-recovery-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/interrupted-scene-recovery-v1
+        run: npm ci --no-audit --no-fund
+      - name: Render meaningful action checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-interrupted-recovery-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render single scene and decode actual video checkpoints
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-interrupted-recovery-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

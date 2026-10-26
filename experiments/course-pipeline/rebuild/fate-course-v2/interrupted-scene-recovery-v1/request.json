@@ -1,0 +1,174 @@
+{
+  "id": "fate-v2-interrupted-scene-recovery-v1",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S02-03-en-render-r2",
+      "step": "FATE2-S02",
+      "locale": "en",
+      "sceneIndex": 3,
+      "sectionID": "hypothetical-reference",
+      "sourceTiming": {
+        "run": 40303810203,
+        "artifact": "fate-v2-s02-recovery-clock-S02-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "6f1b5216b6b680d5a6c5d09e24be4a766fdb27a1af93b1169317fa0903cc4bdf"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-en",
+        "file": "S02-03-en.wav",
+        "sha256": "2f6220bd930223f7e00730b8cf9a0c33a7386a88087de7e921f77c0b7ce18e91"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "review": {
+        "run": 40296268492,
+        "artifact": "fate-v2-audio-review-v3-S02-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "bce19173217035836918c790621d36ddfd0526345a23f4cde29c133dbe50f19f"
+      },
+      "clock": {
+        "run": 40296268179,
+        "artifact": "fate-v2-actual-clock-S02-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "6ac3c23fb55b3f0a57e691c90d8d01f6837cf5055b385c64fc0238589db3b643"
+      },
+      "originalTextSHA256": "d3b465e3a50c85b6c27a22b4261332020e1d5eabcee7cf572f080568a9334788",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1280,
+      "originalAudioFrames": 1023360,
+      "originalActionsSHA256": "bc1361fc41e792eb133990d81549dfa313022883d1508b2b22d98ddf95235f45",
+      "originalCaptionsSHA256": "37d372c99c483795e1c8b06c188f4d3049211b2afac372aa64f66c3530f179b3",
+      "previousTerminalEvidence": {
+        "run": 40303810203,
+        "job": 121507865759,
+        "conclusion": "cancelled",
+        "reason": "Actual scene render exceeded finite25minute job window; prepared recording-derived timing/stills remain preserved. No successful final-render receipt selected."
+      }
+    },
+    {
+      "id": "S03-02-ar-EG-render-r2",
+      "step": "FATE2-S03",
+      "locale": "ar-EG",
+      "sceneIndex": 2,
+      "sectionID": "international",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S03-02-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ac9d1b9b4ef35889dece159554e23a301f78a8a9ee0402737398142939ab2f4e"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S03-02-ar-EG",
+        "file": "S03-02-ar-EG.wav",
+        "sha256": "2f4b82e3d862900e3697e75dec26924c74eabea8bcb625956a5d92fd489d1724"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S03-evidence-dossier",
+        "file": "S03-evidence-dossier.jpg",
+        "sha256": "6468d81fbc260cf8ec81283c9b4af83779f883a9c6f2712c943ef7bea842109a"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S03-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "c3231e35e67b6d4bfc8d57237ef890972a5dfd926a7abc4f9b55c2f782219b54"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S03-02-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "3d0be7a44e3d42e61257704c509a37e546d26ba3b543844141edc879d243c878"
+      },
+      "originalTextSHA256": "072c519d198d42d2d641889c359402ee36a35e1a1bc406d17c0f52282a738407",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1362,
+      "originalAudioFrames": 1089600,
+      "originalActionsSHA256": "ff1812b01463eefa621d2d3067a273a9f291dffcfea088bd9c7d3f76a23f06b8",
+      "originalCaptionsSHA256": "0fde1844b4167c307e18152ebc694d075e605aacb6432d74659e27a8ae2fbdf7",
+      "previousTerminalEvidence": {
+        "run": 40303810225,
+        "job": 121507866316,
+        "conclusion": "cancelled",
+        "reason": "Actual scene render exceeded finite25minute job window; prepared recording-derived timing/stills remain preserved. No successful final-render receipt selected."
+      }
+    },
+    {
+      "id": "S04-04-en-render-r2",
+      "step": "FATE2-S04",
+      "locale": "en",
+      "sceneIndex": 4,
+      "sectionID": "history",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S04-04-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ed80fd8bb03344748e749ff63b76b75b59b2a8fda19e34775e3f9a60211fd441"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-04-en",
+        "file": "S04-04-en.wav",
+        "sha256": "6d09c1a735c3b03821372fb3503e4607656613a4b76fd06281f7a881e7f374ea"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S04-field-stream-context",
+        "file": "S04-field-stream-context.jpg",
+        "sha256": "4fc57ecae531a13d6f9d03dc6e55ea33eb3f9e4ef2251b46146fa18bde3c0a57"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "d811e19b8fb9a34b84595a4abf6efcd72c63653f014e9978b0f2eb89563a6551"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S04-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "31f9858c3aed855a6a9e15fbe3c46914c3aaac0e0c018a00a75ea68743858085"
+      },
+      "originalTextSHA256": "9ca3c0bfdaf1a16ce71f444e2479e9b21d4685374408765f858e91744f334f01",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalFrames": 1305,
+      "originalAudioFrames": 1043520,
+      "originalActionsSHA256": "edaba2885a43051db5104b92023cce5b74c2a0fbf7df1b1483ae4c458f663157",
+      "originalCaptionsSHA256": "fa019d807178adb275e67ee7bc64d9fc83a6dc13c9d319b1093e0ef275e75651",
+      "previousTerminalEvidence": {
+        "run": 40303810225,
+        "job": 121507868586,
+        "conclusion": "cancelled",
+        "reason": "Actual scene render exceeded finite25minute job window; prepared recording-derived timing/stills remain preserved. No successful final-render receipt selected."
+      }
+    }
+  ],
+  "targetedDisplayChanges": [
+    "No visual/scientific/source/timing changes. Recover only three terminal cancelled renders from saved valid actual timing. One render page, bounded watchdog and progress diagnostics."
+  ],
+  "rendererRecoveryPolicy": "One bounded attempt for each known terminal interrupted render; no provider synthesis or semantic replay; no bulk restart."
+}

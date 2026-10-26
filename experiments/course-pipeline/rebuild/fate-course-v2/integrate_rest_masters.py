@@ -71,7 +71,7 @@ def main():
  receiptPath='production/'+step+'-selected-masters.en.json';previousReceipt=R/receiptPath;previous=load(previousReceipt) if previousReceipt.exists() else {'step':step,'masters':{}};previous['masters'].update(selected);previous.update(updatedUTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='Actual qualified received explanatory masters only; written practice and private assessment keys remain separate.',fullMasterOwnerListening='Not inferred from machine/author review',platformOrBunnyUploads=0);payloads[receiptPath]=raw(jd(previous))
  expected={n:sha(R/n) for n in beforeFiles};expected[receiptPath]=sha(previousReceipt) if previousReceipt.exists() else None
  plan={'step':step,'locales':list(selected),'manifestSHA256':sha(args.manifest),'before':expected,'after':{n:hashlib.sha256(b).hexdigest() for n,b in payloads.items()},'sourceEvidence':evidence,'firstStepBindingPreserved':True,'S02PracticeModuleSHA256':oldPractice,'otherLessonContentAndPrivateKeys':'Not modified','mode':'apply' if args.apply else 'plan_only','newProviderCalls':0,'notTested':['Native browser layout,screenreader and fullnative playback','Bunny/live platform binding'],'utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
- out=B/'rest-master-assembly/plans'/f'{step}-{datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")}';out.mkdir(parents=True)
+ out=R/'production/master-binding-plans'/f'{step}-{datetime.datetime.now(datetime.timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")}';out.mkdir(parents=True)
  (out/'plan.en.json').write_text(jd(plan),encoding='utf8')
  for n,b in payloads.items():
   dest=out/'proposed'/n;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(b)
