@@ -1,0 +1,29 @@
+{
+  "verifiedUTC": "2026-10-26T10:16:08.557331+00:00",
+  "sources": [
+    {
+      "url": "https://bunny.net/docs/api-reference/stream/manage-videos/create-video",
+      "observed": "POST /library/{libraryId}/videos with Stream AccessKey and title creates a video and returns libraryID/GUID/title. No client idempotency token documented; adapter persists intent and reconciles exact title instead."
+    },
+    {
+      "url": "https://bunny.net/docs/api-reference/stream/manage-videos/upload-video",
+      "observed": "PUT /library/{libraryId}/videos/{videoId}, application/octet-stream, raw file; successful response includes success. Transcription and smart generation flags can incur separate changes/charges, so explicitly disabled."
+    },
+    {
+      "url": "https://bunny.net/docs/api-reference/stream/manage-videos/list-videos",
+      "observed": "GET supports page/itemsPerPage/search; title search is case-insensitive substring, so exact-title filtering and bounded complete pagination are necessary."
+    },
+    {
+      "url": "https://bunny.net/docs/api-reference/stream/manage-videos/get-video",
+      "observed": "GET returns videoLibraryId/GUID/title, processing metadata and originalHash described as original uploaded file SHA256. Exact source proof is separate from transfer acknowledgment and native playback."
+    }
+  ],
+  "failedLegacyURLFetches": [
+    "https://docs.bunny.net/reference/video_createvideo",
+    "https://docs.bunny.net/reference/video_uploadvideo",
+    "https://docs.bunny.net/reference/video_list"
+  ],
+  "fallback": "Followed current official documentation links from the successfully opened Get Video page. No third-party API descriptions used for implementation.",
+  "remoteProviderCallsMadeByHelper": 0,
+  "credentialValuesReadByHelper": false
+}

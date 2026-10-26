@@ -1,0 +1,1 @@
+This package currently enables only the exact configured-library GET probe. No upload manifest or mutating workflow is enabled. Source-bound full-master upload preparation remains in the project delivery proposal until actually reviewed files and durable receipt history are bound.

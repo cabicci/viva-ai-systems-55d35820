@@ -1,0 +1,37 @@
+name: Fate v2 Bunny configured-library read-only probe
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/bunny-delivery-v1/probe-request.en.json]
+permissions:
+  contents: read
+env:
+  EXPECTED_PROBE_SHA256: 4c16fefeb6136ff74ecf46a2c38df422b39e3cd7ab309df444d11403c29a10f1
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/bunny-delivery-v1
+jobs:
+  probe:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact GET-only request and reviewed adapter
+        run: |
+          python - <<'PY'
+          import pathlib,json,hashlib,os
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert s(p/'probe-request.en.json')==os.environ['EXPECTED_PROBE_SHA256']
+          m=json.loads((p/'probe-request.en.json').read_text());assert m['mode']=='GET_ONLY' and m['maxPostCalls']==m['maxPutCalls']==0
+          assert s(p/'bunny_adapter.py')==m['adapterSHA256']
+          PY
+      - name: GET-only probe of the configured Masaarat library
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: python "$PACKAGE/bunny_adapter.py" probe --journal probe-receipt
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-bunny-read-only-probe-${{ github.run_id }}
+          path: probe-receipt/
+          retention-days: 30
