@@ -1,0 +1,63 @@
+{
+  "id": "fate-v2-s02-speech-repair-v1",
+  "model": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 1,
+  "maxSpeechOutputTokens": 4096,
+  "maxAnalysisCalls": 2,
+  "providerReservationUSD": 0.2,
+  "remainingPathCeilingUSD": 25,
+  "methodApprovalSHA256": "596e495af0a6a465a8540faf4b22b9d8b5256bd167c52e982d197340849ab7f5",
+  "budgetAuthorizationSHA256": "c7be476ebc87118240cb009a1f0d561759054d68f22224d6516f26f447e3335b",
+  "retained": [],
+  "segments": [
+    {
+      "id": "S02-02-ar-EG-r1",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "equation",
+      "spokenText": "تعالى نبني الحساب واحدة واحدة. التركيز بيقول لنا كتلة المادة في كلّ كيلوجرام غذاء. نضربه في كتلة الغذاء المستهلَكة في اليوم؛ كده كيلوجرام الغذاء بيختصر، ويتبقّى ملِّيجرام مادة في اليوم. نعمل كده لكلّ مصدر، ونجمع كتل نفس المتبقّي، وبعدها نقسم على وزن الجسم بالكيلوجرام. الناتج يبقى مدخولًا يوميًّا لكلّ كيلوجرام من وزن الجسم. قبل الجمع، لازم تعريف المتبقّي وأساس القياس يبقوا متوافقين، أو يكون فيه تحويل علمي مبرَّر. مش كفاية الأسماء تبقى شبه بعض. وكمان، حساب الأكل اللي اخترناه ليوم افتراضي مش تلقائيًّا متوسّط التعرّض طول العمر. والتقييم الحادّ ليه مرجع وطريقة وسيناريو مناسبين؛ وجود أرقام ليوم واحد ما يكمّلوش. هنا بنتعلّم معنى الوحدات وخطوات الحساب.",
+      "textSHA256": "43f1d756ab71cc82ff480caf5b9d1e4e075a6a428331fb83b3e686fe13c4701f",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "44e52c341eca1d7bd66f7b5fbe6d50b64a9a7756646465608b8a502dcad83514",
+      "semanticID": "equation",
+      "scene": 2,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "originalPartID": "S02-02-ar-EG",
+      "sourceRepair": "One full coherent passage; avoid misleading قائمة/قيمة real substitution, not isolated word generation."
+    }
+  ],
+  "supersededAudio": {
+    "run": 40291770716,
+    "artifact": "fate-v2-funded-original-S02-02-ar-EG",
+    "file": "S02-02-ar-EG.wav",
+    "sha256": "5003ca3e5556aa643c5fd5b776048d2da2dea3f9f539f0e495e6a6c8d474a5cf",
+    "pcmSHA256": "87017f94987195d98028a54f43197c2912c1be60624ceb095c8878731e2298fc"
+  },
+  "repairEvidence": [
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/blind-analysis.en.json",
+      "sha256": "4502fc3ab76161ba9bbd9d30ecdd1203923c981564e6c7e7917da6397ff0081a"
+    },
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/reference-analysis.en.json",
+      "sha256": "8a77f3329bb047babf0ee74c819088fe89d0b58bda3d65aa151168e037c078f7"
+    },
+    {
+      "path": "production/audio-review-v3/artifacts/fate-v2-audio-review-v3-S02-02-ar-EG/review-disposition.en.json",
+      "sha256": "57acee1d85366ed833cee8d1c1a4f7a4dde583d2b3d607cdd9a8617c5bcb4913"
+    }
+  ],
+  "authorizedScope": "One fullS02equationArabicKore passage, two actual-audio checks and one observational CPUclock; other9originals/clocks unchanged."
+}

@@ -1,0 +1,55 @@
+name: Fate v2 remaining actual-audio reviews and observational clocks, no synthesis
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/rest-quality-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-rest-quality-v1
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/rest-quality-v1
+  EXPECTED_REQUEST_SHA256: 829440d7ed83bfe4f967a7328ec37a2d73384b92f9685ac15450311492f8b204
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  quality:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 18
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        part: ["S03-01-ar-EG", "S03-02-ar-EG", "S03-03-ar-EG", "S03-04-ar-EG", "S03-05-ar-EG", "S03-06-ar-EG", "S03-01-en", "S03-02-en", "S03-03-en", "S03-04-en", "S03-05-en", "S03-06-en", "S04-01-ar-EG", "S04-02-ar-EG", "S04-03-ar-EG", "S04-04-ar-EG", "S04-05-ar-EG", "S04-01-en", "S04-02-en", "S04-03-en", "S04-04-en", "S04-05-en", "S05-01-ar-EG", "S05-02-ar-EG", "S05-03-ar-EG", "S05-04-ar-EG", "S05-05-ar-EG", "S05-01-en", "S05-02-en", "S05-03-en", "S05-04-en", "S05-05-en", "S06-01-ar-EG", "S06-02-ar-EG", "S06-03-ar-EG", "S06-04-ar-EG", "S06-05-ar-EG", "S06-01-en", "S06-02-en", "S06-03-en", "S06-04-en", "S06-05-en", "S07-01-ar-EG", "S07-02-ar-EG", "S07-03-ar-EG", "S07-04-ar-EG", "S07-05-ar-EG", "S07-01-en", "S07-02-en", "S07-03-en", "S07-04-en", "S07-05-en", "S08-01-ar-EG", "S08-02-ar-EG", "S08-03-ar-EG", "S08-04-ar-EG", "S08-05-ar-EG", "S08-01-en", "S08-02-en", "S08-03-en", "S08-04-en", "S08-05-en", "S09-01-ar-EG", "S09-02-ar-EG", "S09-03-ar-EG", "S09-04-ar-EG", "S09-05-ar-EG", "S09-01-en", "S09-02-en", "S09-03-en", "S09-04-en", "S09-05-en", "S10-01-ar-EG", "S10-02-ar-EG", "S10-03-ar-EG", "S10-04-ar-EG", "S10-05-ar-EG", "S10-01-en", "S10-02-en", "S10-03-en", "S10-04-en", "S10-05-en", "S11-01-ar-EG", "S11-02-ar-EG", "S11-03-ar-EG", "S11-04-ar-EG", "S11-05-ar-EG", "S11-01-en", "S11-02-en", "S11-03-en", "S11-04-en", "S11-05-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: prepare
+        name: Receive and bind exact verified original before analysis
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - name: Bounded actual blind and source-reference acoustic review
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/run_review.py" "${{ matrix.part }}"
+      - name: Retain each diagnostic disposition immediately
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-rest-review-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Install pinned observational clock implementation
+        if: always() && steps.prepare.outcome == 'success'
+        run: python -m pip install faster-whisper==1.2.1
+      - name: Derive observational ASR clock without provider calls
+        if: always() && steps.prepare.outcome == 'success'
+        run: python "$PACKAGE/run_clock.py" "${{ matrix.part }}"
+      - name: Retain each actual clock separately, including held clips
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-rest-clock-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/clock-output/
+          retention-days: 30

@@ -1,0 +1,59 @@
+name: Fate v2 one coherent S02 Arabic speech repair, preserve other9originals
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/s02-speech-repair-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-s02-speech-repair-v1
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/s02-speech-repair-v1
+  EXPECTED_REQUEST_SHA256: e3d21a032cd39c7b853af18647d822ad400b99fa21eb13a0504e9921d9a6c807
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  repair:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: generate
+        name: Preserve exactly one complete coherent Kore passage
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" S02-02-ar-EG-r1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s02-repair-original-S02-02-ar-EG-r1
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - id: prepare
+        name: Bind new original to review and clock requests
+        run: python "$PACKAGE/prepare_quality.py"
+      - name: Two bounded actual-audio checks with accepted Kore exemplar
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/run_review.py" S02-02-ar-EG-r1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s02-repair-review-S02-02-ar-EG-r1
+          path: ${{ env.PACKAGE }}/review-output/
+          retention-days: 30
+      - name: Install pinned observational clock implementation
+        if: always() && steps.prepare.outcome == 'success'
+        run: python -m pip install faster-whisper==1.2.1
+      - name: Derive only this changed passage clock
+        if: always() && steps.prepare.outcome == 'success'
+        run: python "$PACKAGE/run_clock.py" S02-02-ar-EG-r1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-s02-repair-clock-S02-02-ar-EG-r1
+          path: ${{ env.PACKAGE }}/clock-output/
+          retention-days: 30
