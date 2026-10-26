@@ -1,0 +1,57 @@
+{
+  "id": "fate-v2-voice38-proof-v1",
+  "model": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 4,
+  "maxAnalysisCalls": 8,
+  "retained": [],
+  "ownerAuthorization": "لاء غير للاعلي",
+  "ownerBudgetCeilingUSD": 25,
+  "incrementalReservationUSD": 2,
+  "methodChangeListeningRequired": true,
+  "generationSchema": "Documented GenerateContent speech_metadata.style and speechConfig.voiceConfig.voice; WAV unary response.",
+  "evidenceURLs": [
+    "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash-tts",
+    "https://ai.google.dev/gemini-api/docs/generate-content/speech-generation",
+    "https://ai.google.dev/gemini-api/docs/pricing"
+  ],
+  "segments": [
+    {
+      "id": "AR-Charon",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "في المثال ده، وجود متبقّي في المَحْصول ما يثبتش لوحده إنّ فيه ضرر. لازم نعرف كمّية التعرُّض، وطريقه، والمدّة اللّي حصل فيها.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "9d6d4081bed84af05db10be476aba9b45f87bb08059376d3b70ace590c20fda8",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656"
+    },
+    {
+      "id": "AR-Kore",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "ولو المادّة ظهرت في ميّه المجرى، نراجع مكان العيّنة وتوقيتها. القياس يجاوب سؤالًا محدَّدًا؛ ما نكمّلش باقي القصّة بتخمين، ولا نحكم من صورة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "feaa51b599334ac7a7f87b4fec6a24214c17cc4f06e7b486afd7b9ceaf69e9e3",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656"
+    },
+    {
+      "id": "EN-Charon",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "In this example, a residue in the crop does not establish harm by itself. We need the exposure amount, route and duration before drawing that conclusion.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "faf49311ad71449a9c9191328bbe3f4d2afba003b810edb921ef976f274e9fd2",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3"
+    },
+    {
+      "id": "EN-Kore",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "If the substance appears in stream water, check where and when the sample was collected. Each measurement answers a specific question; missing evidence remains unknown.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "d07cacb6f69dbe5877e00d9c38af9d82809b13daa85bc54dd1c0b593a1548629",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3"
+    }
+  ]
+}
