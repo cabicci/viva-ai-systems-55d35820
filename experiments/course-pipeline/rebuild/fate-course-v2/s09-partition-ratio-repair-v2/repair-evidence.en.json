@@ -1,0 +1,111 @@
+{
+  "schema": "fate-s09-partition-ratio-review-amendment.v2",
+  "status": "hold",
+  "visualDimensionReadyForAssembly": false,
+  "scope": "Exactly scene03 in Arabic and English. Previous sampled clear gates and v1 assembled movies remain preserved as history, not selected as final corrected output.",
+  "reviewer": "audio_review helper independently viewed both actual original-resolution final PNGs; root independently adjudicated the same ambiguity.",
+  "records": [
+    {
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "actualPixelsViewed": true,
+      "actualPNG": {
+        "file": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S09-03-ar-EG-terminal-r2/encoded-05.png",
+        "sha256": "c77b1315102995ff2b023ef4c4f3f7fd7440a85537b20e80973f9d467a94a83d",
+        "frame": 1545,
+        "dimensions": [
+          1920,
+          1080
+        ]
+      },
+      "sourceTiming": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S09-03-ar-EG-terminal-r2",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "3270062c4647bb3e55bba87912ad323dac3c6fb56450fef69e5de5c93e9fbdbc"
+      },
+      "sourceVideoSHA256": "2f3fd7aefe6a415524416ef8c107d472f27106d49e434829f5294d642e3b6112",
+      "sourceAudioSHA256": "b8d8583758631d469191eb78ed1a3ac6ace29eed671bc57baf39abfb760031dd",
+      "priorSampledGate": {
+        "file": "media-plan/FATE2-S09/visual-ar-EG-display-r1-assembly-gate.en.json",
+        "sha256": "8b1771051542d0f3da9314b6bfb0552bc758124fb4da90bd00770c8b90745cc8"
+      },
+      "finding": "The tiny one-way arrow x303→335 is inside the left octanol box (ends415), not between phase boxes. This creates a flow interpretation where the source requires a compatible-concentration ratio at equilibrium. The prior clear-with-caveat gate is held for this scene until a ratio display is verified."
+    },
+    {
+      "locale": "en",
+      "sceneIndex": 3,
+      "actualPixelsViewed": true,
+      "actualPNG": {
+        "file": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S09-03-en/encoded-05.png",
+        "sha256": "8d0ed46bd3866d7964e63cc043eb11e0a750fe2fe621bc16ea967d707c77d263",
+        "frame": 1237,
+        "dimensions": [
+          1920,
+          1080
+        ]
+      },
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S09-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "281fa2de87238aae2a5bda2627b0271e155d95470460bf3b8c4d71ef0b7c517b"
+      },
+      "sourceVideoSHA256": "81b32c59ba6944e52c2b5adce2818bb81e8a09f3434c92a74c82d83623628c0b",
+      "sourceAudioSHA256": "f70ca880fc2893905a455be47c1b08633c30143c63fdbcdcf1726f4c4c3b5dff",
+      "priorSampledGate": {
+        "file": "media-plan/FATE2-S09/visual-en-display-r1-assembly-gate.en.json",
+        "sha256": "2dfa5e4ae24b52643f9b458da5d9dee92d8303e43d2947f91bc46477f4ae1604"
+      },
+      "finding": "The tiny one-way arrow x303→335 is inside the left octanol box (ends415), not between phase boxes. This creates a flow interpretation where the source requires a compatible-concentration ratio at equilibrium. The prior clear-with-caveat gate is held for this scene until a ratio display is verified."
+    }
+  ],
+  "repair": [
+    "Remove the one-way arrow inside the octanol phase. Put ÷ atx450,y255 in the70-unit gap between boxes ending415 and starting485.",
+    "Label the phase concentrations in natural Arabic/English; retain measurement/equilibrium, log and no-toxicity/direct-BCF context.",
+    "Only English visible card spacing directBCF→direct BCF; preserve source authored contract, actual action/caption objects and original recordings."
+  ],
+  "geometry": {
+    "actualViewBox": [
+      0,
+      0,
+      900,
+      650
+    ],
+    "leftBox": [
+      50,
+      165,
+      365,
+      180
+    ],
+    "rightBox": [
+      485,
+      165,
+      365,
+      180
+    ],
+    "gap": [
+      415,
+      485
+    ],
+    "divisionSymbol": [
+      450,
+      255
+    ],
+    "divisionFontSize": 50,
+    "conditionsBox": [
+      110,
+      455,
+      680,
+      100
+    ],
+    "maximumContentY": 555,
+    "limit": "Geometry validation only; actual corrected encoded pixels required for acceptance."
+  },
+  "limits": [
+    "Demonstrated diagram interpretation/localization only; no new acoustics, continuous playback or independent source-coverage certification."
+  ],
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "newSemanticCalls": 0
+}

@@ -1,0 +1,134 @@
+{
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "bootstrapFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "actualLinuxExtractionProof": {
+    "path": "production/encoded7-extraction-rescue-v2/artifacts/fate-v2-encoded7-extraction-v2-S02-03-en-provision-r1/render.en.json",
+    "sha256": "d20f09d48c44e30d44d4328f5fc6c4cae46c641155e11cdf1d39ed3669222054"
+  },
+  "id": "s09-partition-ratio-repair-v2",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "parts": [
+    {
+      "id": "S09-03-ar-EG-partition-r2",
+      "originalPartID": "S09-03-ar-EG",
+      "step": "FATE2-S09",
+      "locale": "ar-EG",
+      "sceneIndex": 3,
+      "sectionID": "partition",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40322427153,
+        "artifact": "fate-v2-terminal14-r3-video-S09-03-ar-EG-terminal-r2",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "3270062c4647bb3e55bba87912ad323dac3c6fb56450fef69e5de5c93e9fbdbc"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-03-ar-EG",
+        "file": "S09-03-ar-EG.wav",
+        "sha256": "b8d8583758631d469191eb78ed1a3ac6ace29eed671bc57baf39abfb760031dd"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "eef38ee7cfff74d02be22a7fde30a1b2bd05d29658a37fd09cefd6ccb332a1a5"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-03-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "0ae76996523f081d2ec58aadd0ca7387f2f66309bd869db51989bc63b3ab4b93"
+      },
+      "originalTextSHA256": "85cec2f1a0ffbd0312dfffa1261e5d1d2bcfc6c30ac199758ccb7f1529ce4839",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalAudioFrames": 1236480,
+      "originalFrames": 1546,
+      "originalActionsSHA256": "f8bec7d8ac56c1d8881cfb30098f53a294bacd11223fb87fec09f16dcfaaea19",
+      "originalCaptionsSHA256": "36a8882f9a74f681d6804e3d4701cb9a03947487df9d1bde8384ef874230fc05"
+    },
+    {
+      "id": "S09-03-en-partition-r2",
+      "originalPartID": "S09-03-en",
+      "step": "FATE2-S09",
+      "locale": "en",
+      "sceneIndex": 3,
+      "sectionID": "partition",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S09-03-en",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "281fa2de87238aae2a5bda2627b0271e155d95470460bf3b8c4d71ef0b7c517b"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S09-03-en",
+        "file": "S09-03-en.wav",
+        "sha256": "f70ca880fc2893905a455be47c1b08633c30143c63fdbcdcf1726f4c4c3b5dff"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S09-soil-water-air",
+        "file": "S09-soil-water-air.jpg",
+        "sha256": "77f99bec951f3361a4ea2c94998eb6aff8019d9cfd0c62d013b8ed4ae01b35bb"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-03-en",
+        "file": "review-disposition.en.json",
+        "sha256": "61089a080cf155bf37fb2d25d0bdb5d3dadd83df9d5a4b8d05df892e52aa80de"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S09-03-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "6d983e999c04c722ba264a36081847dff7bea71b86758413b711be01b1110524"
+      },
+      "originalTextSHA256": "ea78bdf2e7a4adf00108a9212a75f808a0c919fce6ff0236fb9e166cbbb3b9e5",
+      "originalDeliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "originalAudioFrames": 989760,
+      "originalFrames": 1238,
+      "originalActionsSHA256": "fc6c2a3d60af9d055a17d90e8bf2f7deabe321567a3824b286708a7d10b5516b",
+      "originalCaptionsSHA256": "edc7364f9bab4b14cc51dd538222b7826388da66a50b776b4df4eba784502979"
+    }
+  ],
+  "targetedDisplayChanges": [
+    "Remove the one-way arrow inside the octanol phase. Put ÷ atx450,y255 in the70-unit gap between boxes ending415 and starting485.",
+    "Label the phase concentrations in natural Arabic/English; retain measurement/equilibrium, log and no-toxicity/direct-BCF context.",
+    "Only English visible card spacing directBCF→direct BCF; preserve source authored contract, actual action/caption objects and original recordings."
+  ],
+  "sourceReviews": [
+    {
+      "path": "media-plan/FATE2-S09/partition-ratio-r2-review-amendment.en.json",
+      "sha256": "b9ba784453320db805cd86bd1ae513998443a2ba03b0b0c1ef1ea082a9d3865b"
+    }
+  ]
+}
