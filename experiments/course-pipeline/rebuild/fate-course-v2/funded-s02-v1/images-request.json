@@ -1,0 +1,20 @@
+{
+  "id": "fate-v2-s02-image-v1",
+  "imageModel": "gemini-nano-banana-2.1",
+  "reviewModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxOutputTokens": 8192,
+  "maxGenerationCalls": 1,
+  "maxReviewCalls": 1,
+  "style": "University-level photorealistic3D-style educational ingredient. Sophisticated material, soft realistic illumination, off-white clean background, restrained teal accents. No cartoon, no people or visible presenters.",
+  "scenes": [
+    {
+      "id": "S02-two-bases",
+      "title": {
+        "en": "Food mass and body mass are distinct bases"
+      },
+      "meaning": "A food-portion weighing setup and a separate body-weight scale illustrate two different measurement bases, never a measured result or a health threshold.",
+      "visualContract": "On the left half, a realistic clean laboratory food balance with blank display beside a glass food dish and peppers; farther behind but clearly separate a minimal clean unoccupied body-weight platform scale with blank display. Keep equipment plausible, no person, no hands, no measuring tank or safe/unsafe line. Do not merge scales or imply either display has a numerical reading. Quiet right40percent for later exact labels and animated dimensional reasoning."
+    }
+  ]
+}
