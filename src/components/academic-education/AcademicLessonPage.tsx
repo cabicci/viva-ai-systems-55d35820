@@ -88,11 +88,15 @@ function AuthorizedLesson({
   locale,
   courseId,
   revoke,
+  readOnlyPreview = false,
+  previewFigures = [],
 }: {
-  delivery: Extract<AcademicDelivery, { allowed: true }>;
+  delivery: Omit<Extract<AcademicDelivery, { allowed: true }>, "allowed">;
   locale: SupportedLocale;
   courseId: string;
   revoke: () => void;
+  readOnlyPreview?: boolean;
+  previewFigures?: { src: string; alt: string; caption: string }[];
 }) {
   const { lesson } = delivery,
     en = locale === "en";
@@ -121,6 +125,7 @@ function AuthorizedLesson({
   }, [tab]);
   const progress = useQuery({
     queryKey: ["academic-progress", user?.id, courseId, lesson.id, locale],
+    enabled: !readOnlyPreview,
     queryFn: () =>
       academicCommand<{ progress: Record<string, AcademicProgress> }>(
         "status",
@@ -150,6 +155,7 @@ function AuthorizedLesson({
       ? delivery.video
       : null;
   async function save(action: "read" | "practice" | "quiz") {
+    if (readOnlyPreview) return;
     setBusy(true);
     setError(false);
     setSaved(false);
@@ -184,7 +190,7 @@ function AuthorizedLesson({
         className="font-bold text-primary"
         href={`/academic/courses/${courseId}/contents?locale=${locale}`}
       >
-        {c.backToCurriculum}
+        {readOnlyPreview ? (en ? "Back to the path" : "ارجع للمسار") : c.backToCurriculum}
       </a>
       {delivery.reviewOnly && (
         <p role="status" className="mt-4 rounded-xl border p-4">
@@ -222,7 +228,7 @@ function AuthorizedLesson({
           <section className="mt-6 space-y-3 border-t pt-5">
             <h2 className="font-bold">{c.progress}</h2>
             <Progress value={(completed / 3) * 100} aria-label={c.progress} />
-            <p className="text-sm leading-7 text-muted-foreground">{c.progressNote}</p>
+            <p className="text-sm leading-7 text-muted-foreground">{readOnlyPreview ? (en ? "This preview does not save progress to an account." : "المعاينة دي ما بتحفظش تقدّم في حساب.") : c.progressNote}</p>
           </section>
         </aside>
         <section
@@ -256,7 +262,13 @@ function AuthorizedLesson({
               {lesson.readingVisuals?.map((v) => (
                 <ReadingVisual key={v.id} visual={v} />
               ))}
-              <Button disabled={busy} onClick={() => void save("read")}>
+              {readOnlyPreview && previewFigures.map((figure) => (
+                <figure key={figure.src} className="my-5 rounded-2xl border p-4">
+                  <img src={figure.src} alt={figure.alt} className="h-auto w-full rounded-xl" loading="lazy" />
+                  <figcaption className="mt-3 text-sm leading-7 text-muted-foreground">{figure.caption}</figcaption>
+                </figure>
+              ))}
+              <Button disabled={busy || readOnlyPreview} onClick={() => void save("read")}>
                 {c.markRead}
               </Button>
             </>
@@ -329,7 +341,7 @@ function AuthorizedLesson({
                 </fieldset>
               ))}
               <Button
-                disabled={busy || !lesson.quiz.every((q) => q.id in answers)}
+                disabled={readOnlyPreview || busy || !lesson.quiz.every((q) => q.id in answers)}
                 onClick={() => void save("quiz")}
               >
                 {c.submit}
@@ -364,6 +376,7 @@ function AuthorizedLesson({
               ))}
               <Button
                 variant="outline"
+                disabled={readOnlyPreview}
                 onClick={() => {
                   const draft = progress.data?.progress[lesson.id]?.drafts[locale];
                   const restored = normalizeAcademicPracticeValues(
@@ -387,7 +400,7 @@ function AuthorizedLesson({
               ))}
               <Button
                 disabled={
-                  busy ||
+                  readOnlyPreview || busy ||
                   practiceFields.length !== lesson.assignment.fields.length ||
                   practiceFields.some((f) => !f.trim())
                 }
@@ -453,4 +466,25 @@ function AuthorizedLesson({
       />
     </>
   );
+}
+
+/** Explicit public-data preview: no identity, authorization assertion, visit write or saved progress. */
+export function AcademicLessonPreview({ courseId, delivery, figures = [] }: {
+  courseId: string;
+  delivery: Omit<Extract<AcademicDelivery, { allowed: true }>, "allowed">;
+  figures?: { src: string; alt: string; caption: string }[];
+}) {
+  const { locale } = useLocale();
+  const en = locale === "en";
+  return <div className="min-h-dvh">
+    <Navbar variant="account" />
+    <main id="main-content" className="mx-auto max-w-7xl px-4 py-8" dir={en ? "ltr" : "rtl"}>
+      <p role="note" className="mb-5 rounded-xl border bg-accent/20 p-4 leading-7">
+        {en ? "Public read-only preview using the platform interface. No account or subscription is claimed. Answers stay on this page; grading, saved progress and the assistant are not connected."
+          : "معاينة للمحتوى العام بواجهة المنصة. مفيش حساب أو اشتراك مفعّل هنا. الإجابات بتفضل في الصفحة؛ التصحيح وحفظ التقدّم والمساعد مش متصلين."}
+      </p>
+      <AuthorizedLesson delivery={delivery} locale={locale} courseId={courseId} revoke={() => {}} readOnlyPreview previewFigures={figures} />
+    </main>
+    <Footer />
+  </div>;
 }

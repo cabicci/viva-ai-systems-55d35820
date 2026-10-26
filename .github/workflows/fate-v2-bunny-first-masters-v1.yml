@@ -1,0 +1,101 @@
+name: Fate v2 finite reviewed full-step masters to Bunny
+on:
+  push:
+    branches: ['work/masaarat/0c0df2131ade371ac908def0']
+    paths:
+      - 'experiments/course-pipeline/rebuild/fate-course-v2/bunny-first-masters-v1/**'
+      - '.github/workflows/fate-v2-bunny-first-masters-v1.yml'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-bunny-library670679-project82922e08
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/bunny-first-masters-v1
+  GH_TOKEN: ${{ github.token }}
+  EXPECTED_MANIFEST_SHA256: fa79ae952a98e69a41f70b0335db714a3ad039d8f05d565b6242c4b0d5f659aa
+jobs:
+  inventory:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    outputs:
+      ids: ${{ steps.ids.outputs.ids }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: ids
+        name: Verify finite reviewed manifest before selecting work
+        run: |
+          python - <<'PY'
+          import json,hashlib,os,re
+          from pathlib import Path
+          p=Path(os.environ['PACKAGE'])/'manifest.json'
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==os.environ['EXPECTED_MANIFEST_SHA256']
+          x=json.loads(p.read_text());assert x['uploadEnabled'] is True and len(x['entries'])==2
+          ids=[e['id'] for e in x['entries']];assert set(ids)=={'FATE2-S01-ar-EG','FATE2-S01-en'};assert len(set(ids))==len(ids) and all(re.fullmatch(r'FATE2-S(?:0[1-9]|1[01])-(?:ar-EG|en)',v) for v in ids)
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f:f.write('ids='+json.dumps(ids)+'\n')
+          PY
+  upload-reviewed:
+    needs: inventory
+    runs-on: ubuntu-22.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        entry: ${{ fromJSON(needs.inventory.outputs.ids) }}
+    env:
+      BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+      BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - id: intent
+        name: Bind actual reviewed source and record create intent
+        run: python "$PACKAGE/bunny_adapter.py" intent --manifest "$PACKAGE/manifest.json" --entry "${{ matrix.entry }}"
+      - id: createintent
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ${{ steps.intent.outputs.receiptArtifactBase }}-create-intent
+          path: journal/receipt.en.json
+          retention-days: 90
+      - name: At most one create, only after durable intent acknowledgment
+        env:
+          DURABLE_CREATE_INTENT_ARTIFACT_ID: ${{ steps.createintent.outputs.artifact-id }}
+        run: python "$PACKAGE/bunny_adapter.py" create --manifest "$PACKAGE/manifest.json" --entry "${{ matrix.entry }}"
+      - id: guid
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ${{ steps.intent.outputs.receiptArtifactBase }}-guid-receipt
+          path: journal/receipt.en.json
+          retention-days: 90
+      - name: Record upload intent after durable GUID receipt
+        env:
+          DURABLE_GUID_ARTIFACT_ID: ${{ steps.guid.outputs.artifact-id }}
+        run: python "$PACKAGE/bunny_adapter.py" upload-intent --manifest "$PACKAGE/manifest.json" --entry "${{ matrix.entry }}"
+      - id: uploadintent
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ${{ steps.intent.outputs.receiptArtifactBase }}-upload-intent
+          path: journal/receipt.en.json
+          retention-days: 90
+      - name: At most one source-exact raw binary PUT, no automatic retry
+        env:
+          DURABLE_UPLOAD_INTENT_ARTIFACT_ID: ${{ steps.uploadintent.outputs.artifact-id }}
+        run: python "$PACKAGE/bunny_adapter.py" upload --manifest "$PACKAGE/manifest.json" --entry "${{ matrix.entry }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ${{ steps.intent.outputs.receiptArtifactBase }}-upload-receipt
+          path: journal/receipt.en.json
+          retention-days: 90
+      - name: Read processing and exact original-source hash, at most 12 finite GET polls
+        run: python "$PACKAGE/bunny_adapter.py" status --manifest "$PACKAGE/manifest.json" --entry "${{ matrix.entry }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: ${{ steps.intent.outputs.receiptArtifactBase }}-status-receipt
+          path: |
+            journal/receipt.en.json
+            journal/status-observations/*.en.json
+          retention-days: 90

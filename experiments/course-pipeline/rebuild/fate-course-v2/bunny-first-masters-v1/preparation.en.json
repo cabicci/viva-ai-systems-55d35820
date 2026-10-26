@@ -1,0 +1,40 @@
+{
+  "schema": "masaarat.bunny.first-upload-preparation.v1",
+  "scope": "Two S01 full explanatory masters only; root review required before staging. No workflow dispatched by this builder.",
+  "manifestSHA256": "fa79ae952a98e69a41f70b0335db714a3ad039d8f05d565b6242c4b0d5f659aa",
+  "collectionID": "13b22b22-dad4-4e30-8736-753c961011c3",
+  "files": [
+    {
+      "file": "bunny_adapter.py",
+      "sha256": "9b8abc2b62991504d4f08b7776b3531b9d23427581691a13b05b1b7e72723cc1"
+    },
+    {
+      "file": "fate-v2-bunny-first-masters-v1.yml",
+      "sha256": "8abc86f781e87a9b0d8199963341fd4c1d96626e904554e81f84752d0e809230"
+    },
+    {
+      "file": "manifest.json",
+      "sha256": "fa79ae952a98e69a41f70b0335db714a3ad039d8f05d565b6242c4b0d5f659aa"
+    },
+    {
+      "file": "prior-video-ledger-check.en.json",
+      "sha256": "6361b2f2471252bf54d8de8404ddeb477fa0900e6ce51ea17999c34ecfffd89e"
+    },
+    {
+      "file": "README.en.md",
+      "sha256": "dcf45074323e5e45cdf78bec1ec36115ce1376f69f557889a4c4778cc09b42e3"
+    }
+  ],
+  "newRemoteMutations": 0,
+  "gitOperations": 0,
+  "platformWrites": 0,
+  "applyTargets": {
+    "newPackage": "D:\\Masaarat\\Masaarat — Fate of Pesticides in the Environment\\Worktrees\\actor-0c0df2131ade371ac908\\experiments\\course-pipeline\\rebuild\\fate-course-v2\\bunny-first-masters-v1",
+    "newWorkflow": "D:\\Masaarat\\Masaarat — Fate of Pesticides in the Environment\\Worktrees\\actor-0c0df2131ade371ac908\\.github\\workflows\\fate-v2-bunny-first-masters-v1.yml"
+  },
+  "limits": [
+    "Not transferred yet.",
+    "Bunny processing, original-hash proof and native player playback remain distinct pending delivery evidence.",
+    "No merge, DB/catalog activation, live-platform change or publication."
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "masaarat.bunny.prior-video-ledger-check.v1",
+  "scope": "Only new-v2 S01 exact AR/EN originals; no account-wide claim. Permanent project delivery/production receipt folders and exact GitHub durable intent artifact names inspected.",
+  "existingProjectVideoReceipts": [],
+  "githubExactCreateIntentHistory": [
+    {
+      "entry": "FATE2-S01-ar-EG",
+      "artifactName": "bunny-v2-FATE2-S01-ar-EG-866ee6e94a53a2f454206ba23fdab5367d9ff1d156d9db05967259c6dfdb1e40-create-intent",
+      "total_count": 0
+    },
+    {
+      "entry": "FATE2-S01-en",
+      "artifactName": "bunny-v2-FATE2-S01-en-bc3a1addb85c0566023c0808b8ca5510a2a7f92be790e72782a69950bd3d93bc-create-intent",
+      "total_count": 0
+    }
+  ],
+  "collectionArchiveIndex": "delivery/bunny-receipts/collection40312750828/archive-index.en.json",
+  "collectionArchiveIndexSHA256": "64c20b683ade0bf0945e8805d7bb7d66111a3e2dc5c803c4639cfa8f9d3c0ed6",
+  "sourceRun": {
+    "id": 40258600785,
+    "head_sha": "994fa5eb8404e6d13cff04c00b7813af8fbe4044",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "sourceArtifacts": [
+    {
+      "id": 12623820333,
+      "name": "fate-v2-first-master38-ar-EG",
+      "expired": false
+    },
+    {
+      "id": 12622734560,
+      "name": "fate-v2-first-master38-en",
+      "expired": false
+    }
+  ],
+  "hostingArtifacts": [
+    {
+      "id": 12642499272,
+      "name": "fate-v2-hosting-evidence-v1",
+      "expired": false
+    }
+  ],
+  "mutatingCalls": 0
+}

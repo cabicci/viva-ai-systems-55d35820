@@ -1,0 +1,117 @@
+{
+  "schema": "masaarat.bunny.delivery-manifest.v1",
+  "projectID": "82922e08-4caf-48f5-b72e-ab2e6a87c51c",
+  "edition": "rebuild-v2",
+  "libraryID": "670679",
+  "uploadEnabled": true,
+  "automaticRetries": 0,
+  "maxCreateCalls": 2,
+  "maxPutCalls": 2,
+  "maxCaptionCalls": 0,
+  "entries": [
+    {
+      "id": "FATE2-S01-ar-EG",
+      "stepID": "FATE2-S01",
+      "locale": "ar-EG",
+      "role": "full_step_master",
+      "title": "01 — متبقي المبيد: من رقم التحليل لاستنتاج عليه دليل — عربي",
+      "source": {
+        "run": 40258600785,
+        "head": "994fa5eb8404e6d13cff04c00b7813af8fbe4044",
+        "artifact": "fate-v2-first-master38-ar-EG",
+        "file": "FATE2-S01-ar-EG.mp4",
+        "sha256": "866ee6e94a53a2f454206ba23fdab5367d9ff1d156d9db05967259c6dfdb1e40"
+      },
+      "assemblyFile": "assembly.en.json",
+      "assemblySHA256": "ce98ae5b97a6aaea6ed13e4ae4cf32909a4982f14f1a3242157f6c8f5940de1d",
+      "expectedSceneCount": 6,
+      "hostingQualification": {
+        "state": "qualified_for_hosting",
+        "stepID": "FATE2-S01",
+        "locale": "ar-EG",
+        "sourceVideoSHA256": "866ee6e94a53a2f454206ba23fdab5367d9ff1d156d9db05967259c6dfdb1e40",
+        "evidenceRefs": [
+          {
+            "run": 40307493292,
+            "artifact": "fate-v2-hosting-evidence-v1",
+            "file": "qualified-for-hosting.en.json",
+            "sha256": "800969b79c39ff934236c48f3acc5465dd975ea858f0d77cfe938630c198a17e"
+          },
+          {
+            "run": 40307493292,
+            "artifact": "fate-v2-hosting-evidence-v1",
+            "file": "FATE2-S01-media-review.en.json",
+            "sha256": "f684776217d8780aee6431eb7718e243e3cffe3993ea46af4b87c880a4b807b8"
+          }
+        ],
+        "limits": [
+          "Full-master native listening and video playback by owner",
+          "Native browser/mobile/assistive checks",
+          "Independent subject review of remaining held source claims",
+          "Print pagination",
+          "Bunny/platform hosting not performed"
+        ]
+      },
+      "priorReceiptLedgerReviewed": true,
+      "priorReceiptLedgerEvidence": "prior-video-ledger-check.en.json"
+    },
+    {
+      "id": "FATE2-S01-en",
+      "stepID": "FATE2-S01",
+      "locale": "en",
+      "role": "full_step_master",
+      "title": "01 — Pesticide residues: from an analytical value to a supported conclusion — English",
+      "source": {
+        "run": 40258600785,
+        "head": "994fa5eb8404e6d13cff04c00b7813af8fbe4044",
+        "artifact": "fate-v2-first-master38-en",
+        "file": "FATE2-S01-en.mp4",
+        "sha256": "bc3a1addb85c0566023c0808b8ca5510a2a7f92be790e72782a69950bd3d93bc"
+      },
+      "assemblyFile": "assembly.en.json",
+      "assemblySHA256": "7d02c530b4dd1d4bdaac3c4c31d414d53887764358fec12dd9e98be101b8699b",
+      "expectedSceneCount": 6,
+      "hostingQualification": {
+        "state": "qualified_for_hosting",
+        "stepID": "FATE2-S01",
+        "locale": "en",
+        "sourceVideoSHA256": "bc3a1addb85c0566023c0808b8ca5510a2a7f92be790e72782a69950bd3d93bc",
+        "evidenceRefs": [
+          {
+            "run": 40307493292,
+            "artifact": "fate-v2-hosting-evidence-v1",
+            "file": "qualified-for-hosting.en.json",
+            "sha256": "800969b79c39ff934236c48f3acc5465dd975ea858f0d77cfe938630c198a17e"
+          },
+          {
+            "run": 40307493292,
+            "artifact": "fate-v2-hosting-evidence-v1",
+            "file": "FATE2-S01-media-review.en.json",
+            "sha256": "f684776217d8780aee6431eb7718e243e3cffe3993ea46af4b87c880a4b807b8"
+          }
+        ],
+        "limits": [
+          "Full-master native listening and video playback by owner",
+          "Native browser/mobile/assistive checks",
+          "Independent subject review of remaining held source claims",
+          "Print pagination",
+          "Bunny/platform hosting not performed"
+        ]
+      },
+      "priorReceiptLedgerReviewed": true,
+      "priorReceiptLedgerEvidence": "prior-video-ledger-check.en.json"
+    }
+  ],
+  "state": "EXACT_TWO_REVIEWED_S01_MASTERS_ROOT_STAGING_ONLY",
+  "collection": {
+    "name": "مصير المبيدات في البيئة — نسخة v2",
+    "libraryID": "670679",
+    "id": "13b22b22-dad4-4e30-8736-753c961011c3",
+    "receipt": {
+      "run": 40312750828,
+      "artifact": "bunny-v2-collection-82922e08-verified-40312750828",
+      "file": "collection-receipt.en.json",
+      "sha256": "36beaf9d9e7c6d4effe3a9c6173b14e471983d03a8a80fc71baecd61389598ee"
+    }
+  }
+}

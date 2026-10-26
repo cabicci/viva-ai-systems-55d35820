@@ -1,0 +1,202 @@
+{
+  "schema": "fate-known-terminal-provisioning-recovery.v1",
+  "scope": "Seven confirmed terminal provisioning failures; successful and active other recoveries excluded.",
+  "jobs": [
+    {
+      "jobID": 121507868703,
+      "evidenceLines": [
+        "2026-10-26T10:11:37.4165977Z ##[group]Run command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)",
+        "2026-10-26T10:11:37.4166392Z \u001b[36;1mcommand -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)\u001b[0m",
+        "2026-10-26T10:36:18.9728206Z ##[error]The operation was canceled.",
+        "2026-10-26T10:36:21.1128512Z Terminate orphan process: pid (2487) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:29:57.9035803Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T10:30:41.3806613Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:30:45.2685829Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T10:31:42.5729562Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T10:31:44.9825240Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:31:46.8177226Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:31:48.0760211Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:33:26.5077809Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T10:35:01.5059264Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T10:35:09.6909828Z Get:82 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 va-driver-all amd64 2.14.0-1 [3984 B]",
+        "2026-10-26T10:35:10.5052771Z Get:83 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 vdpau-driver-all amd64 1.4-3build2 [4510 B]",
+        "2026-10-26T10:35:11.3750230Z Get:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1 [27.6 MB]",
+        "2026-10-26T10:36:18.9728206Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121510130217,
+      "evidenceLines": [
+        "2026-10-26T10:04:59.8602756Z ##[group]Run command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)",
+        "2026-10-26T10:04:59.8603398Z \u001b[36;1mcommand -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)\u001b[0m",
+        "2026-10-26T10:29:34.4541966Z ##[error]The operation was canceled.",
+        "2026-10-26T10:29:36.7217572Z Terminate orphan process: pid (2351) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:22:39.1000976Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T10:23:22.6969999Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:23:26.6011135Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T10:24:23.4113833Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T10:24:25.4708553Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:24:27.3878597Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:24:28.7700889Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:26:10.2856615Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T10:27:46.7672198Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T10:27:55.1979000Z Get:82 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 va-driver-all amd64 2.14.0-1 [3984 B]",
+        "2026-10-26T10:27:55.7553679Z Get:83 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 vdpau-driver-all amd64 1.4-3build2 [4510 B]",
+        "2026-10-26T10:27:56.3942003Z Get:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1 [27.6 MB]",
+        "2026-10-26T10:29:34.4541966Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121510130382,
+      "evidenceLines": [
+        "2026-10-26T10:05:03.6312361Z ##[group]Run command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)",
+        "2026-10-26T10:05:03.6313088Z \u001b[36;1mcommand -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)\u001b[0m",
+        "2026-10-26T10:29:32.5485115Z ##[error]The operation was canceled.",
+        "2026-10-26T10:29:34.9983216Z Terminate orphan process: pid (2659) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:21:42.1850070Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:21:46.2565517Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T10:22:43.1059354Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T10:22:45.7142821Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:22:47.3259981Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:22:48.3997103Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:23:02.5785511Z Ign:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4",
+        "2026-10-26T10:23:03.3100137Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T10:24:32.9466824Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T10:24:45.9017798Z Get:82 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 va-driver-all amd64 2.14.0-1 [3984 B]",
+        "2026-10-26T10:24:46.6697323Z Get:83 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 vdpau-driver-all amd64 1.4-3build2 [4510 B]",
+        "2026-10-26T10:24:47.4003545Z Get:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1 [27.6 MB]",
+        "2026-10-26T10:29:32.5485115Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121510130521,
+      "evidenceLines": [
+        "2026-10-26T10:08:07.8718065Z ##[group]Run command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)",
+        "2026-10-26T10:08:07.8718947Z \u001b[36;1mcommand -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)\u001b[0m",
+        "2026-10-26T10:32:22.3010136Z ##[error]The operation was canceled.",
+        "2026-10-26T10:32:24.6517930Z Terminate orphan process: pid (2524) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:27:24.4569873Z Get:70 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shape0 amd64 1.14-3ubuntu3 [6158 B]",
+        "2026-10-26T10:27:25.3190190Z Get:71 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxv1 amd64 2:1.0.11-1build2 [11.2 kB]",
+        "2026-10-26T10:27:26.3410136Z Get:72 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libavdevice58 amd64 7:4.4.2-0ubuntu0.22.04.1 [87.5 kB]",
+        "2026-10-26T10:27:28.6448866Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T10:28:05.8836241Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:28:09.4469031Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T10:29:02.8900542Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T10:29:05.1202184Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:29:07.1287588Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:29:08.2798924Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:30:46.0819949Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T10:32:16.7821921Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T10:32:22.3010136Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121510130552,
+      "evidenceLines": [
+        "2026-10-26T10:11:12.2892513Z ##[group]Run command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)",
+        "2026-10-26T10:11:12.2892876Z \u001b[36;1mcommand -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)\u001b[0m",
+        "2026-10-26T10:35:48.7722944Z ##[error]The operation was canceled.",
+        "2026-10-26T10:35:50.7355758Z Terminate orphan process: pid (2392) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:27:39.6010393Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:27:41.2717927Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:27:42.2519755Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:29:44.5595393Z Ign:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4",
+        "2026-10-26T10:29:45.2949478Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T10:31:11.6673150Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T10:31:19.3840424Z Get:82 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 va-driver-all amd64 2.14.0-1 [3984 B]",
+        "2026-10-26T10:31:20.0326923Z Get:83 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 vdpau-driver-all amd64 1.4-3build2 [4510 B]",
+        "2026-10-26T10:31:20.8387951Z Get:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1 [27.6 MB]",
+        "2026-10-26T10:32:35.0278169Z Ign:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1",
+        "2026-10-26T10:32:35.8092573Z Get:9 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libcodec2-1.0 amd64 1.0.1-3 [8435 kB]",
+        "2026-10-26T10:35:08.3480124Z Get:39 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libflite1 amd64 2.2-3 [13.7 MB]",
+        "2026-10-26T10:35:48.7722944Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121524949785,
+      "runID": 40308939812,
+      "evidenceLines": [
+        "2026-10-26T10:38:37.9351719Z Stage: bundle actual scene FateV2-S02-03-en-render-r2 1280",
+        "2026-10-26T10:59:00.9690838Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T11:03:22.3383974Z ##[error]The operation was canceled.",
+        "2026-10-26T11:03:24.5597589Z Terminate orphan process: pid (2337) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:58:41.1479971Z Get:69 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 libsdl2-2.0-0 amd64 2.0.20+dfsg-2ubuntu1.22.04.1 [582 kB]",
+        "2026-10-26T10:58:56.4292811Z Get:70 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxcb-shape0 amd64 1.14-3ubuntu3 [6158 B]",
+        "2026-10-26T10:58:57.2591649Z Get:71 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libxv1 amd64 2:1.0.11-1build2 [11.2 kB]",
+        "2026-10-26T10:58:58.4667394Z Get:72 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libavdevice58 amd64 7:4.4.2-0ubuntu0.22.04.1 [87.5 kB]",
+        "2026-10-26T10:59:00.9690838Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T10:59:44.1364652Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:59:48.5220910Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T11:00:47.6724515Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T11:00:49.9334162Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T11:00:51.7793581Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T11:00:53.4660707Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T11:02:37.9357417Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T11:03:22.3383974Z ##[error]The operation was canceled."
+      ]
+    },
+    {
+      "jobID": 121524950256,
+      "runID": 40308939812,
+      "evidenceLines": [
+        "2026-10-26T10:38:43.3108939Z Stage: bundle actual scene FateV2-S04-04-en-render-r2 1305",
+        "2026-10-26T10:54:24.4414504Z Get:73 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 ffmpeg amd64 7:4.4.2-0ubuntu0.22.04.1 [1696 kB]",
+        "2026-10-26T11:03:24.1968603Z ##[error]The operation was canceled.",
+        "2026-10-26T11:03:26.5535723Z Terminate orphan process: pid (2408) (bash)"
+      ],
+      "lastBeforeCancellation": [
+        "2026-10-26T10:55:06.5021111Z Get:74 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libigdgmm12 amd64 22.1.2+ds1-1 [139 kB]",
+        "2026-10-26T10:55:10.9098611Z Get:75 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 intel-media-va-driver amd64 22.3.1+dfsg1-1ubuntu2 [2283 kB]",
+        "2026-10-26T10:56:06.3842007Z Get:76 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libaacs0 amd64 0.11.1-1 [64.1 kB]",
+        "2026-10-26T10:56:08.7973100Z Get:77 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 libbdplus0 amd64 0.2.0-1 [52.2 kB]",
+        "2026-10-26T10:56:10.5826347Z Get:78 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 libdecor-0-plugin-1-cairo amd64 0.1.0-3build1 [20.4 kB]",
+        "2026-10-26T10:56:11.6668170Z Get:79 http://azure.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 mesa-va-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [4100 kB]",
+        "2026-10-26T10:57:58.2697725Z Get:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4 [3820 kB]",
+        "2026-10-26T11:01:25.2255287Z Ign:80 http://azure.archive.ubuntu.com/ubuntu jammy-updates/main amd64 mesa-vdpau-drivers amd64 23.2.1-1ubuntu3.1~22.04.4",
+        "2026-10-26T11:01:26.3165438Z Get:81 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 i965-va-driver amd64 2.4.1+dfsg1-1 [302 kB]",
+        "2026-10-26T11:01:34.9296017Z Get:82 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 va-driver-all amd64 2.14.0-1 [3984 B]",
+        "2026-10-26T11:01:35.6221267Z Get:83 http://azure.archive.ubuntu.com/ubuntu jammy/main amd64 vdpau-driver-all amd64 1.4-3build2 [4510 B]",
+        "2026-10-26T11:01:36.4635168Z Get:84 http://azure.archive.ubuntu.com/ubuntu jammy/universe amd64 pocketsphinx-en-us all 0.8.0+real5prealpha+1-14ubuntu1 [27.6 MB]",
+        "2026-10-26T11:03:24.1968603Z ##[error]The operation was canceled."
+      ]
+    }
+  ],
+  "conclusion": "All five logs end during Ubuntu package download, before a completed FFmpeg installation or renderer execution. Existing accepted media inputs and valid timing remain reusable.",
+  "excluded": [
+    {
+      "id": "S03-02-ar-EG",
+      "reason": "Replacement r2 succeeded."
+    },
+    {
+      "id": "S05-04-en",
+      "reason": "Dedicated caption r1 recovery active."
+    },
+    {
+      "id": "S05-05-en",
+      "reason": "Dedicated caption r1 recovery active."
+    }
+  ],
+  "newProviderCalls": 0,
+  "evidenceSources": [
+    {
+      "path": "diagnostics\\known-terminal-provisioning-recovery.en.json",
+      "sha256": "5e1b1fd8d08b4815303ed11e4a7e356d3ba61c8703e20deef29ac71303d29d73"
+    },
+    {
+      "path": "diagnostics\\r2-terminal-provisioning-evidence.en.json",
+      "sha256": "25e22d4d39d1c88c64febdec659cfe9ccbfbb34d45c2e678f38fb265288b9ca2"
+    }
+  ]
+}

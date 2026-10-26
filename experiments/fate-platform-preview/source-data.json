@@ -1,0 +1,1270 @@
+{
+  "blueprint": {
+    "state": "proposed_not_owner_approved",
+    "path": {
+      "ar": "مصير المبيدات في البيئة",
+      "en": "Fate of Pesticides in the Environment"
+    },
+    "stations": [
+      {
+        "id": "ST01",
+        "title": {
+          "ar": "المتبقيات وسلامة الغذاء",
+          "en": "Residues and food safety"
+        },
+        "steps": [
+          "FATE2-S01",
+          "FATE2-S02",
+          "FATE2-S03"
+        ]
+      },
+      {
+        "id": "ST02",
+        "title": {
+          "ar": "توصيف التعرّض البيئي",
+          "en": "Characterising environmental exposure"
+        },
+        "steps": [
+          "FATE2-S04",
+          "FATE2-S05"
+        ]
+      },
+      {
+        "id": "ST03",
+        "title": {
+          "ar": "انتقال المواد في الأحياء",
+          "en": "Chemical transfer in organisms"
+        },
+        "steps": [
+          "FATE2-S06",
+          "FATE2-S07"
+        ]
+      },
+      {
+        "id": "ST04",
+        "title": {
+          "ar": "قياس السميّة البيئية",
+          "en": "Interpreting ecotoxicity evidence"
+        },
+        "steps": [
+          "FATE2-S08"
+        ]
+      },
+      {
+        "id": "ST05",
+        "title": {
+          "ar": "خواص المبيد ومصيره",
+          "en": "Pesticide properties and fate"
+        },
+        "steps": [
+          "FATE2-S09",
+          "FATE2-S10",
+          "FATE2-S11"
+        ]
+      }
+    ],
+    "steps": [
+      {
+        "id": "FATE2-S01",
+        "title": {
+          "ar": "المتبقيات والتعرّض والخطر",
+          "en": "Residues, exposure and risk"
+        },
+        "sourcePages": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT01",
+          "SRC01-P03-T01",
+          "SRC01-P03-T02",
+          "SRC01-P03-T03",
+          "SRC01-P04-FIG01",
+          "SRC01-P04-TAB1-R01",
+          "SRC01-P04-TAB1-R02",
+          "SRC01-P04-TAB1-R03",
+          "SRC01-P04-TAB1-R04",
+          "SRC01-P05-TAB1-R05",
+          "SRC01-P05-TAB1-R06",
+          "SRC01-P05-TAB1-R07",
+          "SRC01-P05-TAB1-R08",
+          "SRC01-P05-TAB1-R09",
+          "SRC01-P05-TAB1-R10",
+          "SRC01-P05-TAB1-R11",
+          "SRC01-P05-TAB1-R12",
+          "SRC01-P05-TAB1-R13",
+          "SRC01-P05-TAB1-R15",
+          "SRC01-P05-TAB1-R16",
+          "SRC01-P06-TAB1-R17",
+          "SRC01-P06-TAB1-R18",
+          "SRC01-P06-TAB1-R19",
+          "SRC01-P06-TAB1-R20",
+          "SRC01-P05-TAB1-NUM"
+        ],
+        "prerequisites": [],
+        "outcomes": [
+          {
+            "id": "FATE2-S01-O1",
+            "text": "Define residue without diagnosing harm"
+          },
+          {
+            "id": "FATE2-S01-O2",
+            "text": "Calculate amount in a portion with unit cancellation"
+          },
+          {
+            "id": "FATE2-S01-O3",
+            "text": "Distinguish pathway, contact, effect and risk"
+          },
+          {
+            "id": "FATE2-S01-O4",
+            "text": "Critically read a source table assertion"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "First-step six-scene Arabic/English explanatory masters produced; see production/FATE2-S01-selected-masters.en.json. Native full-master playback not certified."
+      },
+      {
+        "id": "FATE2-S02",
+        "title": {
+          "ar": "حدود المتبقيات والمدخول اليومي",
+          "en": "Residue limits and daily intake"
+        },
+        "sourcePages": [
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT02",
+          "SRC01-P02-OUT03"
+        ],
+        "prerequisites": [
+          "FATE2-S01"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S02-O1",
+            "text": "Separate MRL and ADI dimensions"
+          },
+          {
+            "id": "FATE2-S02-O2",
+            "text": "Calculate a hypothetical body-mass-normalised intake"
+          },
+          {
+            "id": "FATE2-S02-O3",
+            "text": "Distinguish single-substance aggregate and common-mechanism cumulative questions"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S03",
+        "title": {
+          "ar": "التقييم العلمي والتشريعات",
+          "en": "Scientific assessment and regulation"
+        },
+        "sourcePages": [
+          2,
+          7,
+          8,
+          9,
+          10
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT04",
+          "SRC01-P03-T04",
+          "SRC01-P03-T05",
+          "SRC01-P03-T06",
+          "SRC01-P07-T01",
+          "SRC01-P08-T01",
+          "SRC01-P09-T01",
+          "SRC01-P10-T01",
+          "SRC01-P08-REG01",
+          "SRC01-P08-REG02",
+          "SRC01-P08-REG03",
+          "SRC01-P08-REG04",
+          "SRC01-P08-REG05",
+          "SRC01-P08-REG06",
+          "SRC01-P08-CCPR01",
+          "SRC01-P08-CCPR02",
+          "SRC01-P08-CCPR03",
+          "SRC01-P08-CCPR04",
+          "SRC01-P08-CCPR05",
+          "SRC01-P08-CCPR06"
+        ],
+        "prerequisites": [
+          "FATE2-S01",
+          "FATE2-S02"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S03-O1",
+            "text": "Separate JMPR assessment, CCPR recommendations and standard adoption"
+          },
+          {
+            "id": "FATE2-S03-O2",
+            "text": "Interpret historical US legislation in time and jurisdiction"
+          },
+          {
+            "id": "FATE2-S03-O3",
+            "text": "List evidence needed for an actual local compliance decision"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S04",
+        "title": {
+          "ar": "المصدر والمسار والمستقبِل والأثر",
+          "en": "Source, pathway, receptor and effect"
+        },
+        "sourcePages": [
+          11,
+          12
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT07",
+          "SRC01-P11-T01",
+          "SRC01-P11-IMG01"
+        ],
+        "prerequisites": [
+          "FATE2-S01"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S04-O1",
+            "text": "Construct an exposure conceptual model"
+          },
+          {
+            "id": "FATE2-S04-O2",
+            "text": "Separate individual, population and ecosystem evidence"
+          },
+          {
+            "id": "FATE2-S04-O3",
+            "text": "Identify observations missing from a causal claim"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S05",
+        "title": {
+          "ar": "القياسات وحدود الكشف والتقدير",
+          "en": "Measurements, detection and quantitation"
+        },
+        "sourcePages": [
+          2
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT09",
+          "SRC01-P02-OUT10",
+          "SRC01-P02-OUT11"
+        ],
+        "prerequisites": [
+          "FATE2-S02",
+          "FATE2-S04"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S05-O1",
+            "text": "Interpret method-specific LOD/LOQ qualifiers"
+          },
+          {
+            "id": "FATE2-S05-O2",
+            "text": "Distinguish nondetect and measured zero"
+          },
+          {
+            "id": "FATE2-S05-O3",
+            "text": "Separate measured and estimated environmental concentration"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Reference-led development required for outline-only/missing detail",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S06",
+        "title": {
+          "ar": "التراكم والتركيز والتضخّم الحيوي",
+          "en": "Accumulation, bioconcentration and biomagnification"
+        },
+        "sourcePages": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT06",
+          "SRC01-P12-T01",
+          "SRC01-P12-T02",
+          "SRC01-P12-T03",
+          "SRC01-P13-FIG01",
+          "SRC01-P14-T01",
+          "SRC01-P15-FIG01",
+          "SRC01-P15-CHART01"
+        ],
+        "prerequisites": [
+          "FATE2-S04"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S06-O1",
+            "text": "Compare uptake, elimination and growth dilution"
+          },
+          {
+            "id": "FATE2-S06-O2",
+            "text": "Separate water-only, all-route and trophic-level questions"
+          },
+          {
+            "id": "FATE2-S06-O3",
+            "text": "Evaluate a mercury example without calling mercury a pesticide"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S07",
+        "title": {
+          "ar": "المؤشرات والحركية والاتزان",
+          "en": "Metrics, kinetics and steady state"
+        },
+        "sourcePages": [
+          2,
+          15,
+          16
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT08",
+          "SRC01-P15-MET01",
+          "SRC01-P15-MET02",
+          "SRC01-P15-MET03",
+          "SRC01-P15-MET04",
+          "SRC01-P16-EQ01",
+          "SRC01-P16-EQ02"
+        ],
+        "prerequisites": [
+          "FATE2-S02",
+          "FATE2-S06"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S07-O1",
+            "text": "Calculate BCF with L/kg basis and compatible observations"
+          },
+          {
+            "id": "FATE2-S07-O2",
+            "text": "Choose BCF/BAF/BSAF by exposure route and normalisation"
+          },
+          {
+            "id": "FATE2-S07-O3",
+            "text": "Interpret uptake/depuration and distinguish kinetic versus steady-state estimates"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Reference-led development required for outline-only/missing detail",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S08",
+        "title": {
+          "ar": "كائنات الاختبار وقراءة النتائج",
+          "en": "Test organisms and endpoint interpretation"
+        },
+        "sourcePages": [
+          17,
+          18
+        ],
+        "sourceItemIDs": [
+          "SRC01-P17-AQUATIC01",
+          "SRC01-P17-AQUATIC02",
+          "SRC01-P17-AQUATIC03",
+          "SRC01-P17-AQUATIC04",
+          "SRC01-P17-AQUATIC05",
+          "SRC01-P17-AQUATIC06",
+          "SRC01-P17-AQUATIC07",
+          "SRC01-P17-TERRESTRIAL01",
+          "SRC01-P17-TERRESTRIAL02",
+          "SRC01-P17-TERRESTRIAL03",
+          "SRC01-P17-TERRESTRIAL04",
+          "SRC01-P17-TERRESTRIAL05",
+          "SRC01-P17-TERRESTRIAL06",
+          "SRC01-P17-TERRESTRIAL07",
+          "SRC01-P17-NOEC",
+          "SRC01-P17-LOEC",
+          "SRC01-P17-LC50",
+          "SRC01-P17-MATC",
+          "SRC01-P17-EQ01",
+          "SRC01-P18-EQ01",
+          "SRC01-P18-CMC",
+          "SRC01-P18-CCC"
+        ],
+        "prerequisites": [
+          "FATE2-S04",
+          "FATE2-S05"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S08-O1",
+            "text": "Choose organism and endpoint from the environmental question"
+          },
+          {
+            "id": "FATE2-S08-O2",
+            "text": "Interpret NOEC/LOEC/LC50 with test conditions"
+          },
+          {
+            "id": "FATE2-S08-O3",
+            "text": "Calculate hypothetical MATC/ACR without a universal safety claim"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S09",
+        "title": {
+          "ar": "الخواص الفيزيائية والكيميائية والحركة",
+          "en": "Physicochemical properties and movement"
+        },
+        "sourcePages": [
+          19,
+          20,
+          21
+        ],
+        "sourceItemIDs": [
+          "SRC01-P02-OUT05",
+          "SRC01-P19-WHEEL01",
+          "SRC01-P19-WHEEL02",
+          "SRC01-P19-WHEEL03",
+          "SRC01-P19-WHEEL04",
+          "SRC01-P20-PROP01",
+          "SRC01-P20-PROP02",
+          "SRC01-P20-PROP03",
+          "SRC01-P20-PROP04",
+          "SRC01-P20-PROP05",
+          "SRC01-P20-Q01",
+          "SRC01-P20-Q02",
+          "SRC01-P21-Q02"
+        ],
+        "prerequisites": [
+          "FATE2-S04",
+          "FATE2-S07"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S09-O1",
+            "text": "Interpret solubility/log Kow/vapour pressure under conditions"
+          },
+          {
+            "id": "FATE2-S09-O2",
+            "text": "Separate chemical identity/purity/isomers from measured properties"
+          },
+          {
+            "id": "FATE2-S09-O3",
+            "text": "Predict a conditional pathway without a universal threshold rule"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S10",
+        "title": {
+          "ar": "التحول والثبات وعمر النصف",
+          "en": "Transformation, persistence and half-life"
+        },
+        "sourcePages": [
+          12,
+          19,
+          21
+        ],
+        "sourceItemIDs": [
+          "SRC01-P12-T04",
+          "SRC01-P12-T05",
+          "SRC01-P21-T01",
+          "SRC01-P21-Q01"
+        ],
+        "prerequisites": [
+          "FATE2-S06",
+          "FATE2-S09"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S10-O1",
+            "text": "Separate transport, transformation and complete mineralisation"
+          },
+          {
+            "id": "FATE2-S10-O2",
+            "text": "Calculate an authored first-order half-life example"
+          },
+          {
+            "id": "FATE2-S10-O3",
+            "text": "Explain why decay alone cannot set a legal harvest interval"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      },
+      {
+        "id": "FATE2-S11",
+        "title": {
+          "ar": "تتبّع مصير الرش بمخطط Young",
+          "en": "Tracing spray fate with the Young diagram"
+        },
+        "sourcePages": [
+          22
+        ],
+        "sourceItemIDs": [
+          "SRC01-P22-YOUNG-MAIN01",
+          "SRC01-P22-YOUNG-MAIN02",
+          "SRC01-P22-YOUNG-MAIN03",
+          "SRC01-P22-YOUNG-MAIN04",
+          "SRC01-P22-YOUNG-MAIN05",
+          "SRC01-P22-YOUNG-MAIN06",
+          "SRC01-P22-YOUNG-SIDE01",
+          "SRC01-P22-YOUNG-SIDE02",
+          "SRC01-P22-YOUNG-SIDE03",
+          "SRC01-P22-YOUNG-SIDE04",
+          "SRC01-P22-YOUNG-SIDE05",
+          "SRC01-P22-YOUNG-SIDE06",
+          "SRC01-P22-YOUNG-SIDE07",
+          "SRC01-P22-YOUNG-SIDE08",
+          "SRC01-P22-YOUNG-SIDE09",
+          "SRC01-P22-YOUNG-SIDE10",
+          "SRC01-P22-YOUNG-SIDE11",
+          "SRC01-P22-YOUNG-INFLUENCE01",
+          "SRC01-P22-YOUNG-INFLUENCE02",
+          "SRC01-P22-YOUNG-INFLUENCE03",
+          "SRC01-P22-YOUNG-INFLUENCE04",
+          "SRC01-P22-YOUNG-INFLUENCE05"
+        ],
+        "prerequisites": [
+          "FATE2-S09",
+          "FATE2-S10"
+        ],
+        "outcomes": [
+          {
+            "id": "FATE2-S11-O1",
+            "text": "Trace atomisation to biological effect"
+          },
+          {
+            "id": "FATE2-S11-O2",
+            "text": "Locate losses, retention, spreading, drying, redistribution and uptake"
+          },
+          {
+            "id": "FATE2-S11-O3",
+            "text": "Explain influence-versus-outcome relations and unmeasured branches"
+          }
+        ],
+        "evidenceRequired": [
+          "Explain or classify with a reason",
+          "Worked intermediate reasoning with unit/assumption checks where applicable",
+          "A new transfer case, not just repeating the worked values"
+        ],
+        "assessmentPolicy": "Diagnostic, guided and independent evidence; count follows outcomes. A complete bank is not automatically a separate final path assessment.",
+        "criticalCriteria": [
+          "Correct dimensions and interpretation limits",
+          "No unsupported causal, clinical, legal or universal safety conclusion"
+        ],
+        "remediation": "Point to the relevant concept/worked step; provide explanatory feedback and a changed transfer case.",
+        "sourceAdditions": "Any added scenario/value must be labeled authored hypothetical.",
+        "authoringState": "bilingual_written_draft_saved",
+        "practicalEvidence": "Digital/theoretical only; no measured laboratory/field competence claimed.",
+        "mediaProduction": "Spoken drafts and media contracts saved. New media production not yet funded by the first-step-only ceiling."
+      }
+    ],
+    "reason": "Separate residue dimensions, exposure measurement, kinetics, transformation and spray processes rather than forcing the old seven-step quota. No fixed question count or station count inherited."
+  },
+  "firstLesson": {
+    "id": "FATE2-S01",
+    "version": "written-pilot-v1",
+    "sourcePages": [
+      3,
+      4,
+      5,
+      6
+    ],
+    "sourceItems": [
+      "SRC01-P03-T01",
+      "SRC01-P03-T02",
+      "SRC01-P03-T03",
+      "SRC01-P04-FIG01",
+      "SRC01-P04-TAB1-R01",
+      "SRC01-P04-TAB1-R02",
+      "SRC01-P04-TAB1-R03",
+      "SRC01-P04-TAB1-R04",
+      "SRC01-P05-TAB1-R05",
+      "SRC01-P05-TAB1-R06",
+      "SRC01-P05-TAB1-R07",
+      "SRC01-P05-TAB1-R08",
+      "SRC01-P05-TAB1-R09",
+      "SRC01-P05-TAB1-R10",
+      "SRC01-P05-TAB1-R11",
+      "SRC01-P05-TAB1-R12",
+      "SRC01-P05-TAB1-R13",
+      "SRC01-P05-TAB1-R15",
+      "SRC01-P05-TAB1-R16",
+      "SRC01-P06-TAB1-R17",
+      "SRC01-P06-TAB1-R18",
+      "SRC01-P06-TAB1-R19",
+      "SRC01-P06-TAB1-R20"
+    ],
+    "status": "draft_for_owner_content_review_not_media_complete",
+    "ar": {
+      "title": "متبقي المبيد: من رقم التحليل لاستنتاج عليه دليل",
+      "intro": "إزاي تقرأ نتيجة معمل، تحسب اللي في حصة أكل، وتعرف حدود الاستنتاج قبل ما تحكم على الضرر؟",
+      "outcomes": [
+        "تميّز بين متبقي المبيد، والتعرّض، وقابلية إحداث الضرر، وتقدير المخاطر.",
+        "تحوّل كتلة الغذاء وتحسب كمية المتبقي في حصة، بوحدات واضحة وافتراضات معلنة.",
+        "تبني مسار تعرّض محتمل وتحدّد إيه اللي يحتاج قياسًا فعلًا.",
+        "تراجع صفًا من جدول علمي وتفصل هوية المادة عن ادعاءات تأثيرها."
+      ],
+      "sections": [
+        {
+          "id": "opening",
+          "title": "١. رقم صحيح ممكن يتبني عليه استنتاج غلط",
+          "paragraphs": [
+            "تخيّل إن معاك تقرير بيقول إن عينة فلفل فيها متبقي مادة اسمها «ر». زميلك شاف اسم مبيد وقفز فورًا لاستنتاج عن صحة اللي أكلوا المحصول. المشكلة هنا إن التقرير بيجاوب سؤالًا عن المادة الموجودة في عينة؛ أمّا الاستنتاج عن أشخاص بعينهم فبيحتاج معلومات تانية. هدفنا مش إننا نهون من التلوث أو نهوّل فيه. هدفنا نعرف كل دليل يجاوب أنهي سؤال.",
+            "هنمشي في سلسلة استدلال: نعرّف المادة والعينة، نفهم وحدة القياس، نحسب كمية في سيناريو محدد، وبعدها نسأل عن طريق التعرّض ودليل التأثير. لو حلقة ناقصة، بنسميها معلومة ناقصة. ما نكمّلهاش بتخمين."
+          ]
+        },
+        {
+          "id": "residue",
+          "title": "٢. إيه اللي كلمة «متبقي» بتوصفه؟",
+          "paragraphs": [
+            "المتبقي مادة محددة موجودة في أو على غذاء أو سلعة نتيجة استخدام مبيد. وتعريف المتبقي في طريقة تحليل أو تقييم ممكن يشمل المادة الأصلية ونواتج تحوّل أو أيض محددة لها أهمية سمّية. علشان كده، معرفة اسم المبيد وحده مش دايمًا كفاية: لازم نعرف التحليل قاس إيه بالضبط، وبأي تعريف.",
+            "كمان «العينة» لها حدود: هل التحليل على الثمرة كلها ولا الجزء المأكول؟ على وزن طازج ولا جاف؟ وهل العينة ممثلة للكمية اللي بنتكلم عنها؟ في التدريب هنفترض بيانات واضحة ومتجانسة. في تقرير حقيقي، دي أسئلة لازم تتراجع قبل نقل الرقم لحصة أو لشحنة كاملة.",
+            "وجود رقم تحليلي ما يحدّدش لوحده سبب وجود المادة: ممكن نحتاج سجلات الاستخدام أو بيانات بيئية علشان نميّز المصادر المحتملة. ووجود المتبقي مش تشخيص تسمم. برضه غياب اسم من تقرير محدود التحليل مش شهادة إن مفيش أي مادة أخرى."
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "٣. التركيز، والكمية، والجرعة: ثلاث أسئلة",
+          "paragraphs": [
+            "التركيز في الغذاء بيقول لنا كمية مادة لكل كتلة غذاء، مثل `mg/kg food`. أمّا كمية المتبقي في حصة فبوحدة كتلة للمادة، مثل `mg`. عشان ننتقل من الأول للتاني، نحتاج كتلة الغذاء في الحصة. الوحدة اللي تحت الكسر جزء من معنى الرقم؛ حذفها بيغيّر السؤال.",
+            "الكمية المبتلَعة في نموذج غذائي مش بالضرورة الكمية الممتصة للجسم. الامتصاص والتوزيع والتحول والإخراج موضوعات إضافية. ولو احتجنا مدخولًا بالنسبة لوزن الجسم، لازم نعرف وزن الجسم وأساس الزمن المناسب، ونصرّح بإن ده حساب مختلف. الخطوة التالية هتفصل المقياس ده عن حد التركيز في الغذاء.",
+            "قبل الحساب اكتب: المعطى، المطلوب، التحويل، الافتراض، ثم الاستنتاج. نتيجة الحساب من غير الافتراض ممكن تبدو أدق من الدليل اللي بنيت عليه."
+          ]
+        },
+        {
+          "id": "risk",
+          "title": "٤. نفصل دليل الضرر عن دليل التعرّض",
+          "paragraphs": [
+            "قابلية إحداث الضرر، أو `hazard`، سؤال عن أنواع الآثار اللي ممكن المادة تسببها تحت ظروف معينة. التعرّض، أو `exposure`، سؤال عن مين اتلامس مع المادة، وبأي طريق، وكمية، وتكرار ومدة. تقدير المخاطر بيجمع أدلة الضرر والعلاقة بين الجرعة والاستجابة وأدلة التعرّض، مع حدود المعرفة.",
+            "لذلك وصف أثر في تجربة ما بيتحوّلش تلقائيًا لحكم على كل مستهلك. والعكس: مجرد إن التعرض قليل لا يكفي للحكم من غير معرفة المادة ونوع الأثر. هنلتزم باستنتاج يناسب السيناريو، وهنكتب البيانات الناقصة بدل حكم مطلق.",
+            "مثال استدلال: تقرير غذاء يدعم وجود متبقٍ وفق طريقة محددة. سجل استهلاك وكمية غذاء ممكن يدعم تقدير مدخول. دراسة مناسبة للتأثير مع بيانات التعرّض تدخل في تقييم المخاطر. كل خطوة أضافت نوعًا مختلفًا من الدليل؛ ما ينفعش نستبدلهم ببعض."
+          ]
+        },
+        {
+          "id": "pathway",
+          "title": "٥. نقرأ رسم المسارات باعتباره أسئلة للقياس",
+          "paragraphs": [
+            "رسم صفحة ٤ يربط المتبقيات بالإنسان، والنباتات والمياه والتربة، والحياة البرية والأسماك والطيور، والحشرات النافعة. نستخدمه كبداية لخريطة علاقات محتملة. السهم في الرسم ما فيهوش وحده تركيزًا، ولا جرعة، ولا قياس ضرر.",
+            "خد مسارًا واحدًا: مصدر في الحقل، ثم جريان سطحي محتمل، ثم مياه مجرى، ثم تماس كائن مائي بالمادة. وجود المسار كفكرة ما يثبتش إنه حدث، وقياس المادة في المياه ما يثبتش وحده أثرًا في الكائن. نحتاج هوية المادة، وقياسًا في الوقت والمكان المناسبين، وبيانات تناسب سؤال التأثير.",
+            "بنفس المنطق، وجود مادة في تربة أو غذاء ما يخلّيناش نفترض تلقائيًا إن كل الطيور أو النحل أو البشر اتعرضوا بنفس الطريقة. اختلاف الوسط والكائن والتوقيت بيغيّر البيانات المطلوبة."
+          ]
+        },
+        {
+          "id": "critical-table",
+          "title": "٦. جدول الأضرار يتقرأ نقديًا، مش يتحفظ كأحكام نهائية",
+          "paragraphs": [
+            "جدول الصفحات ٤–٦ بيجمع أسماء وصيغًا وآثارًا منسوبة للمبيدات. فيه ١٩ صفًا فعليًا، والترقيم بيقفز من ١٣ إلى ١٥. مش هنخترع مادة للرقم الناقص. وقبل تفسير أي أثر، نراجع إن الاسم والصيغة وهوية المادة متطابقين.",
+            "في صف Methoxychlor، الصيغة المطبوعة تبدأ بـ `C6`، بينما المرجع الكيميائي الرسمي المستخدم في المراجعة يعطي `C16H15Cl3O2`. ده مثال على إن نقل الجدول حرفيًا ممكن ينقل خطأ. تصحيح الصيغة لا يثبت تلقائيًا صحة باقي ادعاءات الصف.",
+            "بعد الهوية، اسأل عن الدراسة: النوع الحيوي، وطريق التعرّض، والكمية أو التركيز، والمدة، والأثر المقاس، والمجموعة المقارنة وعدم اليقين. عبارة واسعة مثل «يسبب ضررًا» من غير السياق ده لا تكفي لتقدير مخاطر حالة جديدة. إحنا هنا بنتعلّم نقد الدليل، مش بنقدّم تصنيفًا طبيًا أو قانونيًا لكل مادة في الجدول."
+          ]
+        },
+        {
+          "id": "prevention",
+          "title": "٧. منع المشكلة يبدأ من الاستخدام المصرّح به",
+          "paragraphs": [
+            "المصدر بيربط إنتاج الغذاء بالممارسات الزراعية الجيدة وبالتقييم العلمي. المعنى اللي نحتاجه هنا إن الاستخدام له شروط معتمدة تخص المنتج والمحصول والمكان، وإن إدارة المادة تمتد خلال دورة حياتها. الدرس ده مش وصفة رش، ولا تعليمات لتغيير الجرعة أو تقصير فترة قبل الحصاد.",
+            "لو سؤالنا عن مطابقة غذاء لحد قانوني، نحتاج تعريف المتبقي والسلعة وأساس العينة والحد الساري للحالة. ولو السؤال عن مخاطر شخص، نحتاج تقييم تعرّض وأدلة سمّية مناسبة. في الخطوة الجاية هنفصل الحسابين ونعرف ليه رقم الحد في الغذاء مش هو رقم المدخول اليومي."
+          ]
+        }
+      ],
+      "example": {
+        "title": "مثال محلول: من التركيز لكمية في حصة",
+        "scenario": "بيانات افتراضية للتدريب فقط: تركيز متبقي «ر» في الفلفل 0.12 mg/kg food، وكتلة الحصة 250 g. نفترض صلاحية القياس، وتجانس الحصة، وإن التركيز المعلن يخص نفس الجزء وأساس الوزن. المطلوب كمية المتبقي في الحصة، مش الجرعة الممتصة ولا حكم على المأمونية.",
+        "steps": [
+          {
+            "text": "نحوّل كتلة الغذاء لكيلوجرام علشان تتوافق مع مقام التركيز.",
+            "equation": "250 g / (1000 g/kg) = 0.250 kg food"
+          },
+          {
+            "text": "نختار العلاقة ونكتب الوحدات قبل الضرب.",
+            "equation": "m_R = C_R * m_food"
+          },
+          {
+            "text": "كتلة الغذاء في البسط والمقام بتختصر، فتتبقى كتلة المادة.",
+            "equation": "0.12 mg/kg food * 0.250 kg food = 0.030 mg"
+          },
+          {
+            "text": "كفحص مستقل، نحول كمية المتبقي لوحدة أصغر.",
+            "equation": "0.030 mg = 30 microgram"
+          }
+        ],
+        "conclusion": "في النموذج والافتراضات المحددة، الحصة تحتوي على 0.030 mg من المتبقي «ر». ما حسبناش الامتصاص، ولا بقية الأغذية أو المياه أو التكرار، وما اتقارنش الرقم بحد مطابق. لذلك النتيجة لا تكفي لحكم على صحة شخص أو مطابقة شحنة.",
+        "commonError": "الغلط الشائع إننا نضرب 0.12 في 250 من غير تحويل الجرام: الناتج بيكون أكبر ألف مرة، والوحدات لم تتوافق أصلًا."
+      },
+      "guided": {
+        "title": "تطبيق بإرشاد: الحساب وحدود الاستنتاج",
+        "scenario": "حالة افتراضية جديدة: تركيز 0.09 mg/kg food، وحصة 300 g. استخدم نفس افتراضات المثال. اكتب كتلة الغذاء بالكيلوجرام وكمية المتبقي بالملليجرام.",
+        "massLabel": "كتلة الغذاء بالكيلوجرام",
+        "amountLabel": "كمية المتبقي بالملليجرام",
+        "feedback": {
+          "empty": "اكتب القيمتين كاملتين الأول. الخانة الفاضية مش صفر.",
+          "invalid": "اكتب رقمًا كاملًا، من غير وحدة أو نص في خانة الرقم.",
+          "mass": "راجع تحويل الجرام إلى كيلوجرام، وبعدين احسب الكمية.",
+          "amount": "التحويل صحيح. راجع ضرب التركيز في كتلة الغذاء، واختصار وحدة كتلة الغذاء.",
+          "unit": "المطلوب كمية المتبقي بوحدة mg. راجع الوحدة المختارة.",
+          "correct": "الحساب والوحدة صحيحان: 300 g = 0.300 kg، و0.09 × 0.300 = 0.027 mg. الخطوة الباقية في إجابتك: اشرح ليه ده مش قياسًا للكمية الممتصة ولا دليل ضرر."
+        }
+      },
+      "practice": [
+        "ارسم مسارًا محتملاً من استخدام مادة في حقل إلى كائن مائي. علّم على كل سهم: افتراض، ولا ملاحظة، ولا قياس؟",
+        "اكتب ملاحظة أو قياسًا ممكن يدعم التعرّض، وآخر يناسب سؤال التأثير. ما تخلطش وجود المادة بحدوث الأثر.",
+        "اكتب فقرة من أربع جمل للحالة: المعطى، والحساب، والاستنتاج المدعوم، ومعلومتان ناقصتان."
+      ],
+      "faq": [
+        {
+          "question": "هل وجود متبقي يساوي حدوث تسمم؟",
+          "answer": "وجود المادة وفق قياس محدد يثبت نتيجة تحليلية في نطاق الطريقة والعينة. الاستنتاج عن الضرر يحتاج أدلة تعرّض وتأثير مناسبة."
+        },
+        {
+          "question": "هل 0.030 mg هي نفس 0.12 mg/kg؟",
+          "answer": "لأ. الأول كمية مادة، والتاني تركيز بالنسبة لكتلة غذاء. الربط بينهم محتاج كتلة الغذاء والافتراضات المناسبة."
+        },
+        {
+          "question": "هل تصحيح صيغة مادة يكفي لاعتماد جدول الأضرار؟",
+          "answer": "لأ. هوية المادة شرط أول؛ ادعاءات التأثير نفسها تحتاج دراسة وسياقًا وأدلة مستقلة."
+        }
+      ],
+      "summary": [
+        "ابدأ بالمادة والعينة وأساس القياس.",
+        "اكتب الوحدة والافتراض قبل الحساب.",
+        "فرّق بين وجود المتبقي والتعرّض والأثر وتقدير المخاطر.",
+        "انقل من المصدر معنى تدعمه أدلة، وسجّل ما لم يتحقق بعد."
+      ],
+      "next": "الخطوة التالية: حدود المتبقيات والمدخول اليومي، وليه الوحدات والسؤال مختلفان."
+    },
+    "en": {
+      "title": "Pesticide residues: from an analytical value to a supported conclusion",
+      "intro": "Read a laboratory result, calculate the amount in a food portion, and identify what the evidence can establish.",
+      "outcomes": [
+        "Distinguish a residue, exposure, hazard and risk characterisation.",
+        "Convert food mass and calculate residue amount using explicit units and assumptions.",
+        "Construct a possible exposure pathway and identify measurements still needed.",
+        "Critically examine chemical identity and effect claims in a source table."
+      ],
+      "sections": [
+        {
+          "id": "opening",
+          "title": "1. A correct measurement can support an incorrect inference",
+          "paragraphs": [
+            "Imagine a laboratory report identifying residue R in a pepper sample. A colleague sees a pesticide name and immediately draws a conclusion about everyone who ate the crop. The report addresses a chemical quantity in a sample. A conclusion about particular people requires additional evidence. The task is to identify which question each piece of evidence can answer.",
+            "Our reasoning sequence is to identify the substance and sample, interpret the units, calculate an amount under stated assumptions, and then ask about the exposure route and effect evidence. An unmeasured link remains an uncertainty; it must not be filled with a guess."
+          ]
+        },
+        {
+          "id": "residue",
+          "title": "2. What does a residue describe?",
+          "paragraphs": [
+            "A residue is a specified substance in or on a food or commodity resulting from pesticide use. Depending on the analytical or assessment purpose, the residue definition may include specified transformation products, metabolites or other substances of toxicological significance. A pesticide name alone therefore does not always identify precisely what the result measures.",
+            "The sample also has a basis. Is the result for the whole commodity or the edible portion? Is it on a fresh- or dry-mass basis? Does the sample represent the material to which we want to apply the result? Training examples can state a uniform concentration. An actual report requires the sampling and measurement basis to be checked before extrapolating to a portion or an entire consignment.",
+            "A concentration does not by itself establish the origin of the residue. Use records or environmental evidence may be needed. Detecting a residue is not a poisoning diagnosis; equally, a limited analytical report does not establish the absence of every unmeasured substance."
+          ]
+        },
+        {
+          "id": "dimensions",
+          "title": "3. Concentration, amount and dose answer different questions",
+          "paragraphs": [
+            "A food concentration, such as `mg/kg food`, expresses chemical mass relative to food mass. The amount in one portion is a chemical mass, such as `mg`. Connecting them requires the food mass. The denominator is part of the meaning of a measurement, not optional notation.",
+            "An estimated ingested amount is not automatically an absorbed amount. Absorption, distribution, transformation and elimination require further information. An intake relative to body mass also requires body mass and a suitable time basis. The next step separates this calculation from comparison with a food concentration limit.",
+            "Before calculating, list the given quantities, requested quantity, conversion, assumption and interpretation. A numerical result without its assumptions can imply greater certainty than the evidence provides."
+          ]
+        },
+        {
+          "id": "risk",
+          "title": "4. Separate evidence of hazard from evidence of exposure",
+          "paragraphs": [
+            "Hazard concerns potential adverse effects under specified conditions. Exposure concerns who encounters a substance, by which route, at what level and over what pattern of contact. Risk characterisation brings hazard, dose–response and exposure evidence together while acknowledging uncertainty.",
+            "An effect reported in one experiment cannot automatically be assigned to every consumer. A small exposure estimate alone is also insufficient without relevant toxicity information. Conclusions must remain bounded by the evidence available for the stated scenario.",
+            "An analytical food result can support a residue finding within its method and sample basis. A consumption record can contribute to an intake estimate. Suitable toxicity evidence and exposure information contribute to a risk assessment. These evidence types are not interchangeable."
+          ]
+        },
+        {
+          "id": "pathway",
+          "title": "5. Read the pathway figure as a set of measurable questions",
+          "paragraphs": [
+            "The source figure on page 4 links residues with people, plants, water, soil, wildlife, fish, birds and beneficial insects. It offers possible relationships, not measured concentrations or doses. An arrow does not quantify an adverse effect.",
+            "Consider one route: a field source, possible runoff, a watercourse, then contact with an aquatic organism. A conceivable route does not prove that transfer occurred. Detecting a chemical in water does not by itself demonstrate a biological effect. Chemical identity, relevant time/place measurements and evidence suited to the endpoint are needed.",
+            "A residue in soil or food therefore does not imply identical exposure in birds, bees and people. Different media, organisms and times change the observations needed."
+          ]
+        },
+        {
+          "id": "critical-table",
+          "title": "6. Critically reading the source effects table",
+          "paragraphs": [
+            "The table on pages 4–6 combines chemical names, formulas and attributed effects. It has 19 actual rows, with printed numbering jumping from 13 to 15. No missing compound should be invented. Check chemical identity before interpreting an effect claim.",
+            "The printed Methoxychlor formula begins with `C6`; the official chemical reference inspected for this review gives `C16H15Cl3O2`. A copied table can carry a copied error. Correcting a formula does not independently validate the remaining effect claims in that row.",
+            "Next ask for the study species, route, dose or concentration, duration, measured endpoint, comparison group and uncertainty. A broad effect label without those conditions is insufficient for a new scenario. This lesson teaches evidence appraisal, not a current clinical or regulatory classification of all nineteen substances."
+          ]
+        },
+        {
+          "id": "prevention",
+          "title": "7. Prevention depends on authorised conditions of use",
+          "paragraphs": [
+            "The handout connects food production with good agricultural practice and scientific assessment. Use conditions belong to a particular product, commodity and jurisdiction, within lifecycle management. This lesson supplies no spray recipe, dose adjustment or shortened harvest interval.",
+            "A compliance question requires a matching residue definition, commodity, sample basis and applicable limit. A question about a person requires suitable exposure and toxicity evidence. The next step separates these purposes and explains why a food concentration limit and a daily intake value are different measures."
+          ]
+        }
+      ],
+      "example": {
+        "title": "Worked reasoning: concentration to amount in a portion",
+        "scenario": "Invented training data only: residue R concentration in peppers is 0.12 mg/kg food and the portion is 250 g. Assume valid measurement, a homogeneous portion, and the same commodity part and mass basis. Find residue amount, not absorbed dose or a safety classification.",
+        "steps": [
+          {
+            "text": "Convert food mass to match the concentration denominator.",
+            "equation": "250 g / (1000 g/kg) = 0.250 kg food"
+          },
+          {
+            "text": "Choose the relation and retain the units.",
+            "equation": "m_R = C_R * m_food"
+          },
+          {
+            "text": "Food-mass units cancel, leaving chemical mass.",
+            "equation": "0.12 mg/kg food * 0.250 kg food = 0.030 mg"
+          },
+          {
+            "text": "Cross-check the amount in a smaller mass unit.",
+            "equation": "0.030 mg = 30 microgram"
+          }
+        ],
+        "conclusion": "Under the stated model and assumptions, the portion contains 0.030 mg of residue R. Absorption, other foods/water and repeated exposure have not been assessed, and no matching limit was supplied. The result alone establishes neither a health outcome nor consignment compliance.",
+        "commonError": "Multiplying 0.12 by 250 without converting grams gives a value one thousand times too large. The input dimensions did not match."
+      },
+      "guided": {
+        "title": "Guided application: calculation and interpretation",
+        "scenario": "New invented case: concentration 0.09 mg/kg food, portion 300 g. Use the worked example’s assumptions. Enter food mass in kilograms and residue amount in milligrams.",
+        "massLabel": "Food mass in kilograms",
+        "amountLabel": "Residue amount in milligrams",
+        "feedback": {
+          "empty": "Enter both complete values. An empty field is not zero.",
+          "invalid": "Enter complete numbers without unit text in the numeric fields.",
+          "mass": "Review grams-to-kilograms conversion before calculating the amount.",
+          "amount": "The mass conversion is correct. Check concentration times food mass and unit cancellation.",
+          "unit": "The requested residue amount must be reported in mg. Check your selected unit.",
+          "correct": "The calculation and unit are correct: 300 g = 0.300 kg and 0.09 × 0.300 = 0.027 mg. Now explain why this is neither an absorbed-amount measurement nor proof of harm."
+        }
+      },
+      "practice": [
+        "Draw a possible field-to-aquatic-organism pathway. Label every link as assumed, observed or measured.",
+        "Specify one observation relevant to exposure and a separate observation relevant to an effect. Do not equate occurrence with biological harm.",
+        "Write four sentences for the case: what is given, calculation, supported inference, and two missing inputs."
+      ],
+      "faq": [
+        {
+          "question": "Does finding a residue establish poisoning?",
+          "answer": "It establishes an analytical finding within the method and sample basis. A health conclusion needs appropriate exposure and effect evidence."
+        },
+        {
+          "question": "Is 0.030 mg the same quantity as 0.12 mg/kg?",
+          "answer": "No. One is chemical mass and the other is concentration relative to food mass. Connecting them requires food mass and suitable assumptions."
+        },
+        {
+          "question": "Does correcting one formula validate the entire effects table?",
+          "answer": "No. Correct identity is a prerequisite. Effect claims still require their own evidence and study conditions."
+        }
+      ],
+      "summary": [
+        "Identify the chemical, sample and measurement basis.",
+        "Keep units and assumptions visible throughout a calculation.",
+        "Distinguish occurrence, exposure, effect and risk characterisation.",
+        "State what the evidence supports and what remains unverified."
+      ],
+      "next": "Next: residue limits and daily intake, and why their dimensions and questions differ."
+    },
+    "visuals": {
+      "opening": {
+        "src": "../production/FATE2-S01-initial-v1/artifacts/fate-v2-image-result-versus-claim/result-versus-claim.jpg",
+        "alt": {
+          "ar": "فلفل في صينية عينات، وورقة تقرير وميزان بلا قراءة.",
+          "en": "Peppers in a sample tray, blank report and balance without a reading."
+        },
+        "caption": {
+          "ar": "تصوّر تعليمي مولّد؛ مش نتيجة تجربة أو دليل تعرّض.",
+          "en": "Generated teaching illustration; not experimental or exposure evidence."
+        },
+        "sha256": "b3fd228678f4c5e19df85ba30199ba81cb93da476195d3fcb90c164805bb3872"
+      },
+      "residue": {
+        "src": "../production/FATE2-S01-initial-v1/artifacts/fate-v2-image-sample-basis/sample-basis.jpg",
+        "alt": {
+          "ar": "ثمرة فلفل كاملة وجزء مقطوع، وصينية وزن ووعاء فارغان.",
+          "en": "Whole and sectioned pepper, an empty balance pan and container."
+        },
+        "caption": {
+          "ar": "تصوّر تعليمي مولّد؛ مش نتيجة تجربة أو دليل تعرّض.",
+          "en": "Generated teaching illustration; not experimental or exposure evidence."
+        },
+        "sha256": "3966b4a0be8d16d27f3c49ff99f80f2ccfe1b328f2e4cdc60841f6790a67c86d"
+      },
+      "pathway": {
+        "src": "../production/FATE2-S01-initial-v1/artifacts/fate-v2-image-source-pathway-receptor/source-pathway-receptor.jpg",
+        "alt": {
+          "ar": "تصوّر مقطعي لحقل ومجرى مائي؛ لا يثبت حدوث انتقال أو ضرر.",
+          "en": "Conceptual field-to-stream cutaway; it does not establish transport or harm."
+        },
+        "caption": {
+          "ar": "تصوّر تعليمي مولّد؛ مش نتيجة تجربة أو دليل تعرّض.",
+          "en": "Generated teaching illustration; not experimental or exposure evidence."
+        },
+        "sha256": "1398c2d1f7b9a8e2f1436635da6f23d0ed994c15a020d07d99985247a3475446"
+      }
+    }
+  },
+  "assessment": {
+    "items": [
+      {
+        "id": "FATE2-S01-D01",
+        "stage": "diagnostic",
+        "type": "mcq",
+        "ar": {
+          "question": "نتيجة تركيز متبقي تثبت أنهي حاجة لوحدها؟",
+          "options": [
+            "كمية ممتصة للجسم",
+            "المطابقة من غير حد مناسب",
+            "نتيجة على أساس العينة والطريقة المحددين",
+            "تسمم كل المستهلكين"
+          ]
+        },
+        "en": {
+          "question": "Which finding alone does a residue concentration establish?",
+          "options": [
+            "Absorbed body amount",
+            "Compliance without a matching limit",
+            "A result on the specified sample/method basis",
+            "Poisoning in every consumer"
+          ]
+        }
+      },
+      {
+        "id": "FATE2-S01-D02",
+        "stage": "diagnostic",
+        "type": "mcq",
+        "ar": {
+          "question": "إيه المعطى اللي يربط mg/kg food بكمية mg في حصة؟",
+          "options": [
+            "صورة كائن",
+            "كتلة الغذاء على أساس متوافق",
+            "لون التقرير",
+            "عدد صفوف الجدول"
+          ]
+        },
+        "en": {
+          "question": "What additional input connects mg/kg food to mg in a portion?",
+          "options": [
+            "An organism photograph",
+            "Food mass with compatible basis",
+            "The colour of the report",
+            "The number of table rows"
+          ]
+        }
+      },
+      {
+        "id": "FATE2-S01-D03",
+        "stage": "diagnostic",
+        "type": "constructed",
+        "ar": {
+          "question": "اشرح الفرق بين مسار محتمل وتعرّض اتقاس فعلًا."
+        },
+        "en": {
+          "question": "Explain the difference between a possible route and a measured exposure."
+        }
+      },
+      {
+        "id": "FATE2-S01-P01",
+        "stage": "post",
+        "type": "mcq",
+        "ar": {
+          "question": "عند تركيز 0.05 mg/kg food، كام كمية المتبقي في حصة 400 g مع افتراض التجانس؟",
+          "options": [
+            "20 mg",
+            "0.125 mg",
+            "0.05 mg/kg food",
+            "0.020 mg"
+          ]
+        },
+        "en": {
+          "question": "At 0.05 mg/kg food, how much residue is in a 400 g portion under a homogeneous-portion assumption?",
+          "options": [
+            "20 mg",
+            "0.125 mg",
+            "0.05 mg/kg food",
+            "0.020 mg"
+          ]
+        }
+      },
+      {
+        "id": "FATE2-S01-P02",
+        "stage": "post",
+        "type": "mcq",
+        "ar": {
+          "question": "أنهي استنتاج إضافي يثبته الحساب ده لوحده؟",
+          "options": [
+            "لم تثبت جرعة ممتصة أو نتيجة صحية",
+            "كل المستهلكين عندهم نفس الجرعة الممتصة",
+            "الشحنة مطابقة لكل الحدود",
+            "اتقيّمت كل طرق التعرّض"
+          ]
+        },
+        "en": {
+          "question": "Which extra conclusion is justified by that calculation alone?",
+          "options": [
+            "No absorbed dose or health outcome has been established",
+            "Every consumer has the same absorbed dose",
+            "The consignment meets all legal limits",
+            "All routes have been assessed"
+          ]
+        }
+      },
+      {
+        "id": "FATE2-S01-P03",
+        "stage": "post",
+        "type": "mcq",
+        "ar": {
+          "question": "بعد التأكد من صيغة مادة في جدول الأضرار، نحتاج إيه؟",
+          "options": [
+            "جرعة عامة من الصيغة",
+            "لا نحتاج مراجعة تانية",
+            "ظروف الدراسة وأدلة التأثير",
+            "اعتماد تلقائي لكل ادعاءات الصف"
+          ]
+        },
+        "en": {
+          "question": "What should follow identification of a correct chemical formula in an effects table?",
+          "options": [
+            "A universal dose from the formula",
+            "No further checking",
+            "Study conditions and effect evidence",
+            "Automatic acceptance of all row claims"
+          ]
+        }
+      },
+      {
+        "id": "FATE2-S01-P04",
+        "stage": "post",
+        "type": "constructed",
+        "ar": {
+          "question": "معاك سهم من الحقل للمياه ونتيجة إيجابية للمادة في المياه. اكتب استنتاجًا مدعومًا، وادعاء أثر غير مدعوم، والملاحظة التالية المطلوبة."
+        },
+        "en": {
+          "question": "A field-to-water arrow and a positive water result are available. Name one supported statement, one unsupported effect claim and the next observation needed."
+        }
+      },
+      {
+        "id": "FATE2-S01-P05",
+        "stage": "post",
+        "type": "constructed",
+        "ar": {
+          "question": "في حالة تركيز 0.05 mg/kg food وحصة 400 g، اكتب التحويل والحساب بالوحدات، وافتراضين، ومعلومتين ناقصتين لتقييم الأثر الصحي."
+        },
+        "en": {
+          "question": "For a concentration of 0.05 mg/kg food and a 400 g portion, state the conversion, calculation with units, two assumptions and two missing inputs for a health assessment."
+        }
+      },
+      {
+        "id": "FATE2-S01-P06",
+        "stage": "post",
+        "type": "constructed",
+        "ar": {
+          "question": "صف في المصدر بيذكر مرضًا من غير نوع الكائن أو الطريق أو الجرعة أو المدة. اكتب نقدًا في أربع جمل، وفسّر ليه حذف الصف وخلاص يضيّع معلومات عن أصل الادعاء."
+        },
+        "en": {
+          "question": "A source row lists a disease without species, route, dose or duration. Write a four-sentence critique and explain why merely deleting the row would lose useful provenance."
+        }
+      },
+      {
+        "id": "FATE2-S01-B01",
+        "stage": "transfer",
+        "type": "constructed",
+        "ar": {
+          "question": "حصتان لهما نفس التركيز وكتلتهما مختلفة. قارن كمية المتبقي من غير حكم صحي."
+        },
+        "en": {
+          "question": "Two portions have the same concentration but different masses. Compare residue amounts without making a health claim."
+        }
+      },
+      {
+        "id": "FATE2-S01-B02",
+        "stage": "transfer",
+        "type": "constructed",
+        "ar": {
+          "question": "معاك نتيجة على وزن طازج ونتيجة على وزن جاف. إيه المطلوب قبل المقارنة؟"
+        },
+        "en": {
+          "question": "A fresh-mass result and a dry-mass result are supplied. What must be known before comparing them?"
+        }
+      },
+      {
+        "id": "FATE2-S01-B03",
+        "stage": "transfer",
+        "type": "constructed",
+        "ar": {
+          "question": "صمّم جدول أدلة مختصر لادعاء عن متبقي مبيد: افصل العينة والقياس والتعرّض ومعلومات التأثير."
+        },
+        "en": {
+          "question": "Design a minimal evidence table for a pesticide-residue claim: identify the sample, measurement, exposure and effect information separately."
+        }
+      }
+    ],
+    "counts": {
+      "diagnostic": 3,
+      "post": 6,
+      "additionalTransfer": 3,
+      "bankTotal": 12
+    },
+    "policy": "The bank reuses these exact IDs; no duplicated awards. Independent/post keys are absent from the public payload. Before questions are diagnostic, not a pass/fail exam."
+  },
+  "sourceFiles": {
+    "blueprint/map.en.json": "34ecdc1075faf446afc7a5823d1e174023bb13797590d6d6e852de660c8b46ba",
+    "lessons/FATE2-S01/lesson.public.json": "a7e2fc5cb25001167b63bfc079c0abfd941cd738e19fada0580fe428800e94e4",
+    "lessons/FATE2-S01/assessment.public.json": "2ed5a54008b3eb3fc775bf189c57ba62b0e1d9d6645f290742a1e50f56899127"
+  }
+}
