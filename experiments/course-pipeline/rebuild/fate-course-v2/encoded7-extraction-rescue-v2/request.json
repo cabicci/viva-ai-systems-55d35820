@@ -1,0 +1,266 @@
+{
+  "id": "encoded7-extraction-rescue-v2",
+  "repository": "cabicci/viva-ai-systems-55d35820",
+  "sourceRun": 40316440689,
+  "sourceHead": "041034fdf83393c8b73aa5f45aa50bbd92a6a70a",
+  "newProviderCalls": 0,
+  "newMovieEncodes": 0,
+  "newMuxes": 0,
+  "noSourceEdits": true,
+  "bootstrapFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "parts": [
+    {
+      "id": "S02-03-en-provision-r1",
+      "artifact": {
+        "id": 12647446380,
+        "name": "fate-v2-provisioning-recovery-video-S02-03-en-provision-r1",
+        "digest": "sha256:89bb71b9c2faa7eae7cfdcb6cf200dd98228bf550b4cd8da3022a0e037246f40",
+        "size_in_bytes": 8855473
+      },
+      "movie": "FateV2-S02-03-en-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "bce19173217035836918c790621d36ddfd0526345a23f4cde29c133dbe50f19f",
+        "FateV2-S02-03-en-provision-r1.mp4": "c3cef85891d72cd678777dcc4013a992503cd2ed07d452d14a53787525d38b2d",
+        "frame-0.png": "0094884ba32ab530fec7d48e93848261e50b1361bdb1cfd5ee3efdeb312cd431",
+        "frame-1.png": "1e541fe36627b1c72568509d7ef55d378a26a8c44329d14157e9d0d6cd3e1d06",
+        "frame-2.png": "dcc1500e823b7c350f7c8b29f8435f855fc2ba08550c34b2feac8e93c8b376ed",
+        "frame-3.png": "3f07493a6df262ce2f7e81c195d1bae74dc69e852f7505e0269fd4ee5e801113",
+        "frame-4.png": "fe16ac68b1abb9c52ba6d2d4df3ac1c51cee22372cd1752bd1ee73014fa19245",
+        "frames.en.json": "8f2058c9dca47dcef36d79d8dc171edfaf8d7372f6e5aa4c7a2094bf3cf1b3fa",
+        "preserved-timing-and-inputs.en.json": "97fcbfc5aa128bac9b16e1e9d4da073d91ff8073b43715e81b99c18b31d79eb8",
+        "timing-and-inputs.en.json": "46d45dade242f7a17ee412e0de78f4010d1651115e3244a0e0c1f8723fea9a52",
+        "visual-recovery-preparation.en.json": "a0aab3a3c8023ddda747c34538ea2c654b29af9db862d3cd749667f2f3ec3f4f",
+        "visual.mp4": "f9f1085b70bca8718d4ed95c42738b4e02aea0ef79da9bf33e5277762b69f3ea"
+      },
+      "actualAudioSHA256": "2f6220bd930223f7e00730b8cf9a0c33a7386a88087de7e921f77c0b7ce18e91",
+      "frames": 1280,
+      "durationSeconds": 42.64
+    },
+    {
+      "id": "S04-04-ar-EG-provision-r1",
+      "artifact": {
+        "id": 12646563645,
+        "name": "fate-v2-provisioning-recovery-video-S04-04-ar-EG-provision-r1",
+        "digest": "sha256:2ba3b133d3422ef213fd2942338891d6829b0ea14910a7f54b81047b97717206",
+        "size_in_bytes": 9691627
+      },
+      "movie": "FateV2-S04-04-ar-EG-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "73c09498b9824e95f305b56cd01759d32bf7ef8cc6c2e490151689d95dc499c3",
+        "FateV2-S04-04-ar-EG-provision-r1.mp4": "587ee1de70bd3e1ff5649b2f4faa627786d973e15fcb56af9280bf3105a63659",
+        "frame-0.png": "4ac95fd46259d96e426efc2765696583463f33d712f608c8783564c90a60c1d6",
+        "frame-1.png": "f62c3beb9d570277c105a3f61b5deae6d5fadb39bad46dbd62b80f9062d272a3",
+        "frame-2.png": "8f480e7950017637cddbfa689e098722e15e4ae4feff4c9b6daede98ed4db337",
+        "frame-3.png": "05f70166b244847aca69973d0456001e2862b5cd6bbd62968883cf9146c4b8a3",
+        "frame-4.png": "8523e5bb9d0ddd8ab02d4f0b7d2a03b56ee22b7c614aab80d06f63b8b57a72af",
+        "frames.en.json": "1f16854fa2fc6bb151a4aa1cbe6475986e3fd8471b79038d3ffad5d83f7d5d58",
+        "preserved-timing-and-inputs.en.json": "96bbb93eee6eb77b91eba1deea234b4facd47b00b12fdde1b49b66eec34dd284",
+        "timing-and-inputs.en.json": "02ee870f5ee46e7d72b4e929df9ece7b808d40f38db662345cdedd5a3cd46c0c",
+        "visual-recovery-preparation.en.json": "9509668d3f4af97ccc3cb6c69a9709442d8564148364072d29d5763745187eb4",
+        "visual.mp4": "38a471cc7eb5db07667d31b91357857b9ae1f480ec4a87ba677256fe7c42fc43"
+      },
+      "actualAudioSHA256": "17cb35ce926dc321b3084f8eec7c82920ddecefbcfae14f7ff90c280b13965d7",
+      "frames": 1217,
+      "durationSeconds": 40.56
+    },
+    {
+      "id": "S04-04-en-provision-r1",
+      "artifact": {
+        "id": 12646924566,
+        "name": "fate-v2-provisioning-recovery-video-S04-04-en-provision-r1",
+        "digest": "sha256:71f676dd353970cd8c8ac7ef3c757a96d1cc6eb7e04fd98ff5f5ef62bc4ab0ba",
+        "size_in_bytes": 10384170
+      },
+      "movie": "FateV2-S04-04-en-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "d811e19b8fb9a34b84595a4abf6efcd72c63653f014e9978b0f2eb89563a6551",
+        "FateV2-S04-04-en-provision-r1.mp4": "2cb094278e60b9fd191f9689099bb7e59efc3ece02e1b399450ebb5f60278898",
+        "frame-0.png": "2b98fdf3c472236456de044dcaf7e77ff8dbdd32a8769e4aa7689998b02daff6",
+        "frame-1.png": "c988bbe388bc831a70a80e8a069fb7935a519574bef092adbb05f7aeee2610b4",
+        "frame-2.png": "2d21a19e9de64cfca007bf5f893321e84faaf300393e58e665eae842849d2da3",
+        "frame-3.png": "6e7473613ad24f1a7f9d68cb8608a4abe461c4b38445e8d876db991d976e01cd",
+        "frame-4.png": "2ed3d2110059d41e9c1541a238558955ae3ae2c11574a218e7a3bee81b967238",
+        "frames.en.json": "e18f5d38fec2658a1037640d39cd8f8b5f160ccfe6a65c46b2dd707fb0daa9e1",
+        "preserved-timing-and-inputs.en.json": "5cd7b609ea462cd500e05549632c80d503c0f2e9e8871a521da51fbf2492cf1c",
+        "timing-and-inputs.en.json": "caebb812f89ec646a85ce443270a5c10ba53420ee41b100e144fefc6be15ff61",
+        "visual-recovery-preparation.en.json": "2cdc559fad5d1f28dac612e38f1cf0d3595dd5cc022daffc7ea97abda8aab934",
+        "visual.mp4": "0346499e50c5ba75bcbcc61ccc2231880ad094ea5385c9506ac3e4285d53fe4d"
+      },
+      "actualAudioSHA256": "6d09c1a735c3b03821372fb3503e4607656613a4b76fd06281f7a881e7f374ea",
+      "frames": 1305,
+      "durationSeconds": 43.48
+    },
+    {
+      "id": "S05-01-en-provision-r1",
+      "artifact": {
+        "id": 12647022944,
+        "name": "fate-v2-provisioning-recovery-video-S05-01-en-provision-r1",
+        "digest": "sha256:08b6ce9cfe6911fc9ec4ed3d2308192d2e8d0edcc60a610455575b8c59915853",
+        "size_in_bytes": 8409135
+      },
+      "movie": "FateV2-S05-01-en-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "45b028058ea335b11639c6d7302fa3bc5768fae6c0166c39019f5a99b0a48307",
+        "FateV2-S05-01-en-provision-r1.mp4": "4f081e53be522a478c168271ebbdcf83cb38601a5b2c62639310cb61733aa0c8",
+        "frame-0.png": "b318197242c2c1c38d936b8da814764ac49a9612e37d1fcd26f680b4de0b6361",
+        "frame-1.png": "315fc452e0589aca5a6c546b161d04302f106681b6b36ff4e89ca54676580926",
+        "frame-2.png": "7dfa1e0c306784a494d0ec320807baa2dfb7babb62ba6dbe0c5c2511e78a5455",
+        "frame-3.png": "0f14149a48825caf70fbfd5cba6bbbe6bfe8cec412e14972feee822f965ec4ae",
+        "frame-4.png": "82627c49d093dc1d8a523a2cd4da18d066c17d9cfd2fe4c1326161d37e2b3780",
+        "frames.en.json": "7682c3c217fab9432f5a322ef53f2f104ff91a5b8099a447fcc5834c3b5e76f4",
+        "preserved-timing-and-inputs.en.json": "a6b370ef7b664b2d6e8981fe7ca4a65e81b528cdbf69685531ea04620b322e4f",
+        "timing-and-inputs.en.json": "c3cbe0f42d4bf14bbf8884d19ab553bb10e5b90e22f2f112b4f47c48950acd91",
+        "visual-recovery-preparation.en.json": "cc7d5ced79c4c108712933de5ac82b589a9dff32fb90c63a97463f432b9f89f9",
+        "visual.mp4": "94fc256cc93f9939609814953b50ce079f737840ec26e171586e9471fccc45b7"
+      },
+      "actualAudioSHA256": "55178eb99a5c847d69b7c5f3f0addedaca2994a1a5e0f313023a91d6f88bd54a",
+      "frames": 1293,
+      "durationSeconds": 43.08
+    },
+    {
+      "id": "S06-05-en-provision-r1",
+      "artifact": {
+        "id": 12647630289,
+        "name": "fate-v2-provisioning-recovery-video-S06-05-en-provision-r1",
+        "digest": "sha256:8f670db71b4af744577d36bc5719e849acfa8b32363cb614c1b1e61ab918444c",
+        "size_in_bytes": 11023327
+      },
+      "movie": "FateV2-S06-05-en-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "0562f8ade7a75f1f469f6e588b2e105458f96d10f22f316c2f1ca20fb77335eb",
+        "FateV2-S06-05-en-provision-r1.mp4": "759419837df557e4211e428340d02c695b8606d105ccb69e734a817623d00c9c",
+        "frame-0.png": "b34c880e69cadc633b9998f716dc29c1788a7999d8ad57acc89081af89663a42",
+        "frame-1.png": "a52a387967b5383a7f5d97b50bd874a3b81b1d6ae9a7389a8b35f3a9c2e7ffef",
+        "frame-2.png": "2ee70c2f872cb053ed4f7032f898ccc1f04435cad48711523820baf3ef51aab7",
+        "frame-3.png": "a3238a8a4ade73f132abb6439efaee16f2ea23bd6ed070a54f298e593b76b8a8",
+        "frame-4.png": "f2b6288ce8b7d0f02c11da691dbcbba3ff9d08fb40a6c40707994933c24931ce",
+        "frame-5.png": "74957d430d46a06badfb2e8f4660dcf013e1d04f9d429eaf3f20d97cf4e7b95f",
+        "frames.en.json": "884b97bb988491b5104648c9199f684bbdbeedd0bc0c9b6447701e1e74499311",
+        "preserved-timing-and-inputs.en.json": "422f30007ca5a62dc67b88669ed9a99acd4d757017805d45dc37845677671c3c",
+        "timing-and-inputs.en.json": "783dfab863fb393b766003f794cda13323a15015554e8ad16ae4164fe8edba0a",
+        "visual-recovery-preparation.en.json": "4ca89c346885759e471701faede646a18e2b00aa0e6071d400e6cf2b0a7b349d",
+        "visual.mp4": "459ba07034b8a2562465bed151ac9975caeb1013dad038031cbb6af841628e1d"
+      },
+      "actualAudioSHA256": "f5030068b12cb0db3e3411b4f6adf94cd3c0e62fdae07c0ee1999dab1213da08",
+      "frames": 1221,
+      "durationSeconds": 40.68
+    },
+    {
+      "id": "S09-02-ar-EG-provision-r1",
+      "artifact": {
+        "id": 12646904052,
+        "name": "fate-v2-provisioning-recovery-video-S09-02-ar-EG-provision-r1",
+        "digest": "sha256:e39e25ccefd01d3dd8ff5ed89e325da98aa099d445b8b6e1690e6599bd97d092",
+        "size_in_bytes": 9139911
+      },
+      "movie": "FateV2-S09-02-ar-EG-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "8894619349cb8e712759fc37c17933a2ff1e82d1dadaf067ffc721b0835a0fe9",
+        "FateV2-S09-02-ar-EG-provision-r1.mp4": "d609a9a85c17e4c1d4c068d95f937cedf3260ea2d93d0148a2892675ca24bab5",
+        "frame-0.png": "b20c13dc55deaecdd3db232cf617db4264f975e273228b3f7f7134dd2a775a93",
+        "frame-1.png": "63faeba52c4c248cda7b9e6480264e4a879bf70b01728345124e986eb1e43769",
+        "frame-2.png": "b30e50840bafb234df91599eabda99018af60ed81b7ca853efc5483ec7cc84bc",
+        "frame-3.png": "5ea9a26ba3f5cd57512faa28608638f5915ed00ccb52b3ce63950bdd814ca553",
+        "frame-4.png": "bcc65307253798aada6153e0a48cbfef63e8dfc775626efed8c32c7295ccc8d5",
+        "frames.en.json": "93258558d04c835c2e79cb01ecdc2c895e30d5d9cb0aa5ae12fde73f9ab81544",
+        "preserved-timing-and-inputs.en.json": "ff55daf524472ce37d7990d7fa312e30237412be6161c861521034f514b8b512",
+        "timing-and-inputs.en.json": "11ab8b02b9f6508517c115b00580ae8bc53f25fed29b38486586620a9fb6923b",
+        "visual-recovery-preparation.en.json": "d52ea58b7e6a1d04edc9b046e9a4d4f96a306415a7aa604fc18253072f155a52",
+        "visual.mp4": "26dbe433cbd933a360fed7016de143033448b65982cbb1abd0327020a056810e"
+      },
+      "actualAudioSHA256": "2eea7b0acd2895015a1fddf9e5d1eb395358e9a82a37e6adc76f756291e1afcf",
+      "frames": 1370,
+      "durationSeconds": 45.64
+    },
+    {
+      "id": "S11-04-en-provision-r1",
+      "artifact": {
+        "id": 12647267738,
+        "name": "fate-v2-provisioning-recovery-video-S11-04-en-provision-r1",
+        "digest": "sha256:99b2241e6a117f46e37a83556494d8734a6e1bcab29652ee21dc75ac57ee7470",
+        "size_in_bytes": 9257625
+      },
+      "movie": "FateV2-S11-04-en-provision-r1.mp4",
+      "sourceFiles": {
+        "audio-gate.en.json": "d230df65ee694ea3a210c1f4895f169601f3641772efb1675d72e52bef6e83c1",
+        "FateV2-S11-04-en-provision-r1.mp4": "179b0d0cae372c43d391ec3524c623695219781fdabacf08865093a722be3e1b",
+        "frame-0.png": "6f8e4a8e97f01081a666926f0527871c23a91e39b8430d553aa334af1f18bfbd",
+        "frame-1.png": "2cde8f180469429801458aa89410d25fac6454d7e3768688789bc66284674db9",
+        "frame-2.png": "0d8034bdb4b807adbfc26c95dedb9d50f6ded76ba22becf668211bf56b5277cc",
+        "frame-3.png": "f00db97c09f55a10676bbc11695920d54133e55d59d191c316b9d89131d4d3b6",
+        "frame-4.png": "8c0fab7e7a33f55d806cb337fc436e7620881ecd57f648f0db6f4e320c785820",
+        "frames.en.json": "48b1ed651f791a2e56623d171d8d8afeb0049584b7d9e479a830d393bda652b9",
+        "preserved-timing-and-inputs.en.json": "ed45649505886f809d7072b77291777b4a00e725b39472b64f8d1eb8efd3d34b",
+        "timing-and-inputs.en.json": "42d081b33c808ff63c675e111fed5310acd8edbd1a7f72b54d16ffe2dded53bc",
+        "visual-recovery-preparation.en.json": "50c1d60a02fc16777bdd1916d2a4d817be100475ab724705414fef405330d514",
+        "visual.mp4": "79213261f4d2d8df7a761fae404a63e0a2c3ff677393811476c1be77adea8b9d"
+      },
+      "actualAudioSHA256": "257767c759e03eec3d7ff6d4b3f4e045159f5178687e3f14c0712382e68f0a9b",
+      "frames": 1203,
+      "durationSeconds": 40.08
+    }
+  ],
+  "retainedDecodeProofs": [
+    {
+      "part": "S02-03-en-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S02-03-en-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "d897887a23faa497e4bbc8b87c2f35e355e0b74f023e598b446071406fd588a1",
+      "sourceVideoSHA256": "c3cef85891d72cd678777dcc4013a992503cd2ed07d452d14a53787525d38b2d"
+    },
+    {
+      "part": "S04-04-ar-EG-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S04-04-ar-EG-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "bd0e8214b945e3d3330fa6b7c554d23ae156bb4de79dc06b39714a407302fbf3",
+      "sourceVideoSHA256": "587ee1de70bd3e1ff5649b2f4faa627786d973e15fcb56af9280bf3105a63659"
+    },
+    {
+      "part": "S04-04-en-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S04-04-en-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "bc5a83eac50b632aca2debfc4ca4e82e509dff68519fe0d2a1588445b481c05a",
+      "sourceVideoSHA256": "2cb094278e60b9fd191f9689099bb7e59efc3ece02e1b399450ebb5f60278898"
+    },
+    {
+      "part": "S05-01-en-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S05-01-en-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "21076541dc78b0db0b0bf3be1fb3a6b1439e1c08d109db1a9c8954760e8ab4bd",
+      "sourceVideoSHA256": "4f081e53be522a478c168271ebbdcf83cb38601a5b2c62639310cb61733aa0c8"
+    },
+    {
+      "part": "S06-05-en-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S06-05-en-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "015e43d19b517d7c44f7b095f54c2bc3ce490d1b51d572522b4b0c194ee143c6",
+      "sourceVideoSHA256": "759419837df557e4211e428340d02c695b8606d105ccb69e734a817623d00c9c"
+    },
+    {
+      "part": "S09-02-ar-EG-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S09-02-ar-EG-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "9f3527de05638dafb7ead66b6bded348761e2171f1566930dc18a65b92ea2ece",
+      "sourceVideoSHA256": "d609a9a85c17e4c1d4c068d95f937cedf3260ea2d93d0148a2892675ca24bab5"
+    },
+    {
+      "part": "S11-04-en-provision-r1",
+      "run": 40320049027,
+      "artifact": "fate-v2-encoded7-rescue-S11-04-en-provision-r1",
+      "file": "decoded-verification.en.json",
+      "sha256": "ed36f460154702445372795448b362972b22781b28d34e649726ec49a39c3ba9",
+      "sourceVideoSHA256": "179b0d0cae372c43d391ec3524c623695219781fdabacf08865093a722be3e1b"
+    }
+  ]
+}
