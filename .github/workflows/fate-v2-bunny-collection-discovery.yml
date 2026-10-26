@@ -1,0 +1,36 @@
+name: Fate v2 exact new collection discovery, GET only
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/bunny-collection-v1/request.json]
+permissions:
+  contents: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/bunny-collection-v1
+  EXPECTED_COLLECTION_REQUEST_SHA256: 4df79f184484d06d1f0502378b9c43e4b145774e42d43020215972af3018e21a
+jobs:
+  discover:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify GET-only worker source pins
+        run: |
+          python - <<'PY'
+          import os,pathlib,json,hashlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest();m=json.loads((p/'request.json').read_text())
+          assert s(p/'request.json')==os.environ['EXPECTED_COLLECTION_REQUEST_SHA256'] and m['createEnabled'] is False
+          assert s(p/'collection_adapter.py')==m['workerSHA256'] and s(p/'bunny_adapter.py')==m['apiAdapterSHA256']
+          PY
+      - name: Inspect exact collection name in configured library only
+        env:
+          BUNNY_STREAM_API_KEY: ${{ secrets.BUNNY_STREAM_API_KEY }}
+          BUNNY_STREAM_LIBRARY_ID: ${{ secrets.BUNNY_STREAM_LIBRARY_ID }}
+        run: python "$PACKAGE/collection_adapter.py" discover --request "$PACKAGE/request.json"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-bunny-collection-discovery-${{ github.run_id }}
+          path: collection-journal/
+          retention-days: 90

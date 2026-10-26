@@ -1,0 +1,51 @@
+{
+  "schema": "fate-production-provisioning-diagnosis.v1",
+  "master": {
+    "runID": 40307493253,
+    "jobID": 121520109950,
+    "conclusion": "cancelled",
+    "source": "Actual completed job log fetched through GitHub connector",
+    "selectedLogLines": [
+      "2026-10-26T10:27:19.0689641Z The following NEW packages will be installed:",
+      "2026-10-26T10:46:35.5620647Z Setting up ffmpeg (7:4.4.2-0ubuntu0.22.04.1) ...",
+      "2026-10-26T10:47:13.3870996Z ##[error]The operation was canceled.",
+      "2026-10-26T10:47:13.6030152Z ##[warning]No files were found with the provided path: experiments/course-pipeline/rebuild/fate-course-v2/rest-master-assembly/jobs/FATE2-S05-v1-ar/output/. No artifacts will be uploaded.",
+      "2026-10-26T10:47:13.9025952Z Terminate orphan process: pid (4336) (ffprobe)"
+    ],
+    "conclusionWithinEvidence": "Apt provisioning consumed most of 20-minute job allowance; no master output artifact. Orphan FFprobe existed at cancellation but does not prove it hung."
+  },
+  "completedScene": {
+    "runID": 40308939812,
+    "jobID": 121524950266,
+    "conclusion": "success",
+    "selectedLogLines": [
+      "2026-10-26T10:39:14.2401033Z Stage: render visual",
+      "2026-10-26T10:39:14.3335024Z {\"stage\":\"render\",\"renderedFrames\":0,\"encodedFrames\":0,\"totalFrames\":1362}",
+      "2026-10-26T10:39:44.5870439Z {\"stage\":\"render\",\"renderedFrames\":300,\"encodedFrames\":197,\"totalFrames\":1362}",
+      "2026-10-26T10:40:14.3022463Z {\"stage\":\"render\",\"renderedFrames\":600,\"encodedFrames\":435,\"totalFrames\":1362}",
+      "2026-10-26T10:40:42.9515389Z {\"stage\":\"render\",\"renderedFrames\":900,\"encodedFrames\":678,\"totalFrames\":1362}",
+      "2026-10-26T10:41:11.4832995Z {\"stage\":\"render\",\"renderedFrames\":1200,\"encodedFrames\":918,\"totalFrames\":1362}",
+      "2026-10-26T10:41:27.2942883Z Stage: mux preserved speech",
+      "2026-10-26T10:41:28.5668373Z Stage: full decode",
+      "2026-10-26T10:41:32.5866273Z Stage: encoded checkpoints"
+    ],
+    "conclusionWithinEvidence": "1362 frames rendered in about133seconds; mux, decode and checkpoints succeeded with current muted renderer."
+  },
+  "pendingScenes": [
+    {
+      "jobID": 121524949785,
+      "id": "S02-03-en-render-r2",
+      "status": "in_progress_when_last_read",
+      "failurePoint": "not yet known"
+    },
+    {
+      "jobID": 121524950256,
+      "id": "S04-04-en-render-r2",
+      "status": "in_progress_when_last_read",
+      "failurePoint": "not yet known"
+    }
+  ],
+  "noAudioCulpritClaim": true,
+  "newProviderCalls": 0,
+  "worktreeMutations": 0
+}

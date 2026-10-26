@@ -1,0 +1,15 @@
+# Owner-selected separate v2 collection
+
+Exact required name: مصير المبيدات في البيئة — نسخة v2. This is a new collection inside verified configured library 670679, stable project 82922e08-4caf-48f5-b72e-ab2e6a87c51c. The owner explicitly authorized this separate folder. Do not rename, delete or move anything in the old edition.
+
+The successful library GET probe reported by parent (run 40306548110) establishes authenticated access to the configured library and zero matching new-video prefixes. It does not prove no collection exists. This helper has not fetched or claimed an empty collection inventory. Root may stage collection-discovery.workflow.yml first with the hash of collection-request.json copied from the disabled template. This workflow supports GET only and records exact matches and similarly named candidates.
+
+Creation is separate: collection-create.workflow.yml.proposal. Root first inspects actual GET results and freezes observedInventory run/artifact/file/SHA in a finite request. An existing exact name with unproven project ownership remains a hold, even when unique or empty. Do not speculatively reuse or rename it or create a duplicate. A previous owned verified receipt can supply the upload binding. Create only after a checked zero-match inventory and permanent on-drive intent-ledger check.
+
+Bound: at most one collection POST, zero updates, zero deletes, zero retries. A bounded fresh GET rechecks the exact name before POST. The create intent is published as a recoverable durable artifact before POST; the response GUID is written immediately and published before verification/export of the binding. An unknown create outcome permits GET-only reconciliation. Without acknowledged GUID provenance, a same-name match remains ownership-unproven; later absence never permits another POST.
+
+Receive collection intent, GUID and verified receipts into the permanent project archive immediately. CI artifacts are recovery/transfer checkpoints with 90-day retention, not permanent storage. Preserve restored journals. No video upload starts until manifest.collection.id and its exact verified receipt are present. The updated bunny_adapter.py downloads and verifies that receipt, then GET-verifies library/GUID/name. Every video POST includes collectionId; video Create/Get/list metadata must match it. Wrong or missing membership holds without moving or overwriting. No video UPDATE or collection reassignment is implemented.
+
+All remote calls are Actions-only, reference existing secret names, enforce library 670679 and deny redirects. No local API call, credential-value read, W/Git change, upload, dispatch or collection creation occurred here. S05 visual qualification remains preserved. The full-master scene count is now an explicit frozen expectedSceneCount verified against the selected assembly, including S01; no count is assumed.
+
+The initial combined metadata/mock-test shell command was rejected by automatic approval review with “blocked by policy” before execution. File-only preparation and static syntax/LF validation completed through a narrower operation. No live or mock-runtime collection test is claimed.

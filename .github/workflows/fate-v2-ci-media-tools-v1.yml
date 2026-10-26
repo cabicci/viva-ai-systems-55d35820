@@ -1,0 +1,37 @@
+name: Fate v2 exact media tools without apt preflight
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/request.json]
+permissions:
+  contents: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+  EXPECTED_REQUEST_SHA256: 4363d55e4b46c8b3a6e3d2bb0b70a62f937b2044631cdea6a138dc5e7f1c3740
+jobs:
+  preflight:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify reviewed package and binary metadata pins
+        run: |
+          python - <<'PY'
+          import os,pathlib,json,hashlib
+          p=pathlib.Path(os.environ['PACKAGE']);s=lambda f:hashlib.sha256(f.read_bytes()).hexdigest()
+          assert s(p/'request.json')==os.environ['EXPECTED_REQUEST_SHA256']
+          for n,h in json.loads((p/'request.json').read_text())['files'].items():assert s(p/n)==h
+          PY
+      - name: Install one exact locked companion without scripts
+        timeout-minutes: 4
+        run: npm ci --prefix "$PACKAGE" --ignore-scripts --no-audit --no-fund
+      - name: Verify Linux binaries and expose own-job PATH
+        timeout-minutes: 1
+        run: node "$PACKAGE/bootstrap.cjs" --dependency-root "$PACKAGE"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-ci-media-tools-v1
+          path: media-bootstrap-receipt.en.json
+          retention-days: 90

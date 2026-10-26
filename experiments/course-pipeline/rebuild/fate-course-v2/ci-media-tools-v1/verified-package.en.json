@@ -1,0 +1,87 @@
+{
+  "package": "@remotion/compositor-linux-x64-gnu",
+  "version": "4.0.466",
+  "url": "https://registry.npmjs.org/@remotion/compositor-linux-x64-gnu/-/compositor-linux-x64-gnu-4.0.466.tgz",
+  "archiveSHA512_SRI": "sha512-5kBmhsY8A4wscWEwA9GOwZj/1cot4Spy8h9enR3drgXsgRICSUlMIRqaUSo99re0oPXfzzkiwvuYPTU/9gDfBw==",
+  "archiveSHA256": "c66f4daac1a375f1b1e719e28a1302990840a1c83957aaa515609d92381f3f75",
+  "files": {
+    "package/package.json": {
+      "sha256": "58e55037fcae64a68ff4daa6f2a3705fa6f2df12ebe04583b2792deb6f57054b",
+      "bytes": 520,
+      "mode": "0o644"
+    },
+    "package/README.md": {
+      "sha256": "b2773b3fb8b4febbc48c8f9b71ba679a358f292d58cd424f0d8a610228f078b8",
+      "bytes": 147,
+      "mode": "0o644"
+    },
+    "package/ffmpeg": {
+      "sha256": "358964462a020c645825bd27f9ec0bdd9ce27e0d0c49d8c1f57c96cd9d1dc2b2",
+      "bytes": 322224,
+      "mode": "0o755"
+    },
+    "package/ffprobe": {
+      "sha256": "5ad4e61f300490f34b2742e464ed249f5961ef8f3eb5bcd9e0575eeb9d4d08ef",
+      "bytes": 171344,
+      "mode": "0o755"
+    },
+    "package/index.d.ts": {
+      "sha256": "32d05b74efe9deaffef9116eb9838fc6a7e4a7ba908e1142daf152bf60a22aca",
+      "bytes": 26,
+      "mode": "0o644"
+    },
+    "package/index.js": {
+      "sha256": "439eed71b21d9e5ad1223983ad7f60a286e24661905f2d918b6ff92430fe6964",
+      "bytes": 25,
+      "mode": "0o644"
+    },
+    "package/index.mjs": {
+      "sha256": "bcd507a747b4d5cdcaf0fcf4da0cab5736a88ab7a6e3abb337db1c81c836140e",
+      "bytes": 132,
+      "mode": "0o644"
+    },
+    "package/libavcodec.so": {
+      "sha256": "17511487dd45c204b531d6a0cc519233bfd7c27292486e15c602df6ede4390e4",
+      "bytes": 21411048,
+      "mode": "0o755"
+    },
+    "package/libavdevice.so": {
+      "sha256": "33ae5195189c31cee01728b8ef579d726376e83c7c5cf13a237758abb5e6f3ab",
+      "bytes": 60384,
+      "mode": "0o755"
+    },
+    "package/libavfilter.so": {
+      "sha256": "3be0bef57e681771cd21f3340e404c9697d5011d34ecc7280320eb5b5c08c8c8",
+      "bytes": 1200392,
+      "mode": "0o755"
+    },
+    "package/libavformat.so": {
+      "sha256": "4bf19cedaaae0e3f4ac78267aab72f4da07e95e3a49fd0956eb3beefd8718cd0",
+      "bytes": 1038160,
+      "mode": "0o755"
+    },
+    "package/libavutil.so": {
+      "sha256": "d9bbcdf514f909e420ed0517f95a26cf1ac4666f3c77bcabedd5933b7f9d22f3",
+      "bytes": 715520,
+      "mode": "0o755"
+    },
+    "package/libswresample.so": {
+      "sha256": "e7fae4ae57bb426096762a3944d692252c9b74ecb17d39d0c4e7a56c5512e268",
+      "bytes": 108912,
+      "mode": "0o755"
+    },
+    "package/libswscale.so": {
+      "sha256": "65c2677137058c107dcb2dd0402b22d456a6700b69e3762ed89c93b28ecdfee0",
+      "bytes": 539032,
+      "mode": "0o755"
+    },
+    "package/remotion": {
+      "sha256": "06e854264ebb848fb90de30098829c0998a85e8803e571d98f2966ce9fe82f5e",
+      "bytes": 1320712,
+      "mode": "0o755"
+    }
+  },
+  "verifiedBeforeInspection": true,
+  "binariesExecuted": false,
+  "credentialValuesRead": false
+}
