@@ -1,0 +1,626 @@
+{
+  "id": "fate-v2-s05-caption-recovery-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "automaticRetries": 0,
+  "maxSemanticCalls": 0,
+  "maxSemanticCallsPerPart": 0,
+  "providerReservationUSD": 0,
+  "remainingSemanticCeilingUSD": 0,
+  "deferredHeldSceneReservationUSD": 0,
+  "maxSemanticOutputTokens": 0,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S05-04-en-caption-r1",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "estimated",
+      "spokenText": "An estimated environmental concentration, EEC, comes from a scenario, model and inputs; it is not a bottle collected from a stream. EPA's model overview describes mathematical estimation of exposure. A study should identify model version, inputs, averaging period, location and scenario, and label predictions separately from monitoring. When monitoring and prediction differ, first check comparability: an instantaneous sample versus a period average, location, dissolved fraction, weather and use conditions. Disagreement alone proves neither laboratory error nor model accuracy. The task is to propose a testable explanation and the additional observations required.",
+      "textSHA256": "371c9682e1665f7eea22f9c1f9efc3f2b51b74e66f5b8192255658501036a0a2",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S05",
+      "scene": 4,
+      "semanticID": "estimated",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "sceneIndex": 4,
+      "title": {
+        "ar": "٤. المقاس غير المقدّر بنموذج",
+        "en": "4. Measured and modelled concentrations are different evidence"
+      },
+      "actions": [
+        {
+          "id": "model",
+          "label": {
+            "ar": "تقدير من نموذج ومدخلات",
+            "en": "Estimate from model and inputs"
+          },
+          "meaning": "EEC is a scenario/modelresult,not a collected sample."
+        },
+        {
+          "id": "observed",
+          "label": {
+            "ar": "الرصد له مكان وزمن وأساس",
+            "en": "Monitoring has place, time and basis"
+          },
+          "meaning": "Keepmodelversion,averagingperiod,location,fraction,weatheranduse conditions."
+        },
+        {
+          "id": "compare",
+          "label": {
+            "ar": "نراجع قابلية المقارنة",
+            "en": "Check comparability"
+          },
+          "meaning": "Disagreement alone proves neither laboratory error nor model accuracy."
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-04-en",
+        "file": "S05-04-en.wav",
+        "sha256": "fb87e975de4a3f192e6a820855fdbf816d9471fe7f6053ff96a0163d34c15052"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-04-en",
+        "file": "verification.json",
+        "sha256": "4b0c5374e722854c1b8183ef22289e62464b044be28c9e45b9748d9ab201cc47"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "ae1f19a7921dea4dc252228cafff786721dccc286e378d754c95bbfc52eda8ac"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S05-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "56289681c4a642a8034f7c8f532b530f1914fc726609a67a906ad3a25f095b2c"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S05-water-analysis-bench",
+        "file": "S05-water-analysis-bench.jpg",
+        "sha256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf"
+      },
+      "imageMetadata": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S05-water-analysis-bench",
+        "file": "image.json",
+        "sha256": "b279aad36ee3133aac67ebe198a95516efae9c74c1b1c2561ca4ed86f507ddfa"
+      },
+      "imageReview": {
+        "id": "S05-water-analysis-bench",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/S05-water-analysis-bench.jpg",
+        "sha256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "262ad29ef11f89b5aabd65922831ee90b3b15adf9bb0659f9b7c51d4af8cb29a",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/image.json",
+            "sha256": "b279aad36ee3133aac67ebe198a95516efae9c74c1b1c2561ca4ed86f507ddfa"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/provider-metadata.json",
+            "sha256": "2bfc6f61c39bfa326bdd30e62da10f791325fa5bab8d8fd43b0ec9005e52f71d"
+          }
+        ],
+        "visibleFeatures": [
+          "Clear bottles and small clear/amber vials sit on a clean bench beside a blank clipboard, a horizontal pipette-like object and a generic instrument with a blank dark display. No readable concentrations, result plots or calibration values appear. The pipette-like object has an unusual narrow metallic-looking extension."
+        ],
+        "roleComparison": "Fits a generic analytical bench context; quantitative analytical claims must come from editable overlays and source content.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Backdrop for water-analysis reporting and the distinction between detection, quantification and reported results."
+        ],
+        "restrictions": [
+          "Do not teach pipetting operation, tip selection, calibration, safe technique or scored apparatus recognition from this illustration. The tip configuration and instrument model are not validated. Do not claim amber vials are visibly empty or filled with a particular analyte. No actual method, performance or measurement is evidenced."
+        ],
+        "localizedIssuesOrUncertainty": [
+          "The pipette-like tip is visually unusual; retain only as background context, not an operational equipment demonstration."
+        ],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf",
+        "report": "media-plan/remaining-visual-review.en.json",
+        "reportSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+        "globalRestrictions": [
+          "All assets are generated realistic 3D-style raster illustrations, not native geometry or experimental records.",
+          "Exact numbers, equations, labels, uncertainty and causal relationships must remain editable course overlays. Apparent sizes and volumes are not quantitative evidence.",
+          "Generated appearances do not prove organism identity, laboratory compliance or scientific outcomes.",
+          "Composition, legibility, localized captions, measured-audio synchronization and actual encoded object contact remain separate video-review requirements.",
+          "No original artifact or worktree source was modified during this review; only this report was created."
+        ]
+      },
+      "originalPartID": "S05-04-en",
+      "semanticResponse": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S05-04-en",
+        "file": "semantic-response.en.json",
+        "sha256": "3e7e65ded0987a5fd00a19106e2775e0730a8ab0d29761f447d71e963f03856f"
+      },
+      "indexCorrections": [
+        {
+          "caption": "and label predictions separately from monitoring.",
+          "field": "endWordIndex",
+          "old": 46,
+          "new": 47,
+          "reason": "Conservatively include existing low-confidence duplicate ASR unit in preceding unchanged clean caption; actual clock and independent acoustic transcripts support unchanged caption text."
+        }
+      ],
+      "repairedSemanticSHA256": "2a04d150dbe827f4006a79e05dbe00a7c193d248432728a15d8617d2949fa7c9",
+      "recoveryScope": "Only one caption end index, no content/audio/image/action change; original invalid response and clock retained."
+    },
+    {
+      "id": "S05-05-en-caption-r1",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "Use four invented results in milligrams per litre: zero point zero three, zero point zero two, and two results below zero point zero one. For this exercise only, assume each censored value lies from zero to below its limit. In a lower scenario, use zero for both unknowns in the calculation without changing the original reports. The measured values sum to zero point zero five; dividing by four gives zero point zero one two five. Using both limits for an upper teaching scenario gives zero point zero one seven five. That upper value is excluded because the reports say less than. This is sensitivity under assumptions, not a measured true mean or a universal statistical procedure.",
+      "textSHA256": "c8b4fa674386f412c4b9a17f263d313edd6ed25c0dc94956e2d88b334b434d4f",
+      "sourceLessonSHA256": "4f98a2bceca3492d8420588c3048c2b6f281c15ce15e1415cd41620d3a5a5164",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; no private assessment keys",
+      "timing": "unknown_until_actual_recording",
+      "step": "FATE2-S05",
+      "scene": 5,
+      "semanticID": "worked-example",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "sceneIndex": 5,
+      "title": {
+        "ar": "مثال محلول: متوسط ببيانات محجوبة",
+        "en": "Worked example: a mean with censored observations"
+      },
+      "actions": [
+        {
+          "id": "reports",
+          "label": {
+            "ar": "نتيجتان مقاسوَتان ونتيجتان محجوبتان",
+            "en": "Two measured and two censored results"
+          },
+          "meaning": "Invented0.030,0.020,<0.010,<0.010mg/L; keep the original reports."
+        },
+        {
+          "id": "lower",
+          "label": {
+            "ar": "افتراض أدنى تعليمي",
+            "en": "A lower teaching scenario"
+          },
+          "meaning": "Use zeros only in this calculation,not as rewritten observations.",
+          "equation": "(0.030 + 0.020 + 0 + 0) / 4 = 0.0125 mg/L"
+        },
+        {
+          "id": "upper",
+          "label": {
+            "ar": "الطرف الأعلى غير مشمول",
+            "en": "The upper endpoint is excluded"
+          },
+          "meaning": "Usinglimitsgives0.0175,butless-than excludes that endpoint.",
+          "equation": "0.0125 ≤ scenario mean < 0.0175 mg/L"
+        }
+      ],
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-05-en",
+        "file": "S05-05-en.wav",
+        "sha256": "2a2db1db64f45b7175a634c3ae31922aaaa6e23b95431999be161206443a7203"
+      },
+      "verification": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S05-05-en",
+        "file": "verification.json",
+        "sha256": "a646f69ab16db0d16069c7e56ef25ee00f92816b89036f5042406c5635193360"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S05-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "52ac4a145a263d44642df9bc3e9ef5bd4ec3206d664b0aa8dda810ed87cd33f5"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S05-05-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "41e116a3a71260e8fff06942b78545b9774e9e584d7b51bcad558d4f48a8c23a"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S05-water-analysis-bench",
+        "file": "S05-water-analysis-bench.jpg",
+        "sha256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf"
+      },
+      "imageMetadata": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S05-water-analysis-bench",
+        "file": "image.json",
+        "sha256": "b279aad36ee3133aac67ebe198a95516efae9c74c1b1c2561ca4ed86f507ddfa"
+      },
+      "imageReview": {
+        "id": "S05-water-analysis-bench",
+        "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/S05-water-analysis-bench.jpg",
+        "sha256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf",
+        "width": 2752,
+        "height": 1536,
+        "format": "JPEG",
+        "model": "gemini-nano-banana-2.1",
+        "returnedModelVersion": "gemini-nano-banana-2.1",
+        "promptSHA256": "262ad29ef11f89b5aabd65922831ee90b3b15adf9bb0659f9b7c51d4af8cb29a",
+        "metadataEvidence": [
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/image.json",
+            "sha256": "b279aad36ee3133aac67ebe198a95516efae9c74c1b1c2561ca4ed86f507ddfa"
+          },
+          {
+            "file": "production/funded-rest-v1/artifacts/fate-v2-rest-image-S05-water-analysis-bench/provider-metadata.json",
+            "sha256": "2bfc6f61c39bfa326bdd30e62da10f791325fa5bab8d8fd43b0ec9005e52f71d"
+          }
+        ],
+        "visibleFeatures": [
+          "Clear bottles and small clear/amber vials sit on a clean bench beside a blank clipboard, a horizontal pipette-like object and a generic instrument with a blank dark display. No readable concentrations, result plots or calibration values appear. The pipette-like object has an unusual narrow metallic-looking extension."
+        ],
+        "roleComparison": "Fits a generic analytical bench context; quantitative analytical claims must come from editable overlays and source content.",
+        "disposition": "USABLE_WITH_SCOPE_RESTRICTIONS",
+        "allowedUses": [
+          "Backdrop for water-analysis reporting and the distinction between detection, quantification and reported results."
+        ],
+        "restrictions": [
+          "Do not teach pipetting operation, tip selection, calibration, safe technique or scored apparatus recognition from this illustration. The tip configuration and instrument model are not validated. Do not claim amber vials are visibly empty or filled with a particular analyte. No actual method, performance or measurement is evidenced."
+        ],
+        "localizedIssuesOrUncertainty": [
+          "The pipette-like tip is visually unusual; retain only as background context, not an operational equipment demonstration."
+        ],
+        "native3D": false,
+        "finalMotionAcceptance": false,
+        "status": "usable",
+        "imageSHA256": "0e94b85377dd007442c300e8444711a98db031a967d7bfffad3a9ba79ac264bf",
+        "report": "media-plan/remaining-visual-review.en.json",
+        "reportSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+        "globalRestrictions": [
+          "All assets are generated realistic 3D-style raster illustrations, not native geometry or experimental records.",
+          "Exact numbers, equations, labels, uncertainty and causal relationships must remain editable course overlays. Apparent sizes and volumes are not quantitative evidence.",
+          "Generated appearances do not prove organism identity, laboratory compliance or scientific outcomes.",
+          "Composition, legibility, localized captions, measured-audio synchronization and actual encoded object contact remain separate video-review requirements.",
+          "No original artifact or worktree source was modified during this review; only this report was created."
+        ]
+      },
+      "originalPartID": "S05-05-en",
+      "semanticResponse": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-clock-v1-S05-05-en",
+        "file": "semantic-response.en.json",
+        "sha256": "92d316856c6b3ffa075b932058e2d290df212711d9b54c43cfdd000de3700933"
+      },
+      "indexCorrections": [
+        {
+          "caption": "dividing by 4 gives 0.0125.",
+          "field": "endWordIndex",
+          "old": 62,
+          "new": 63,
+          "reason": "Conservatively include existing low-confidence duplicate ASR unit in preceding unchanged clean caption; actual clock and independent acoustic transcripts support unchanged caption text."
+        }
+      ],
+      "repairedSemanticSHA256": "9c107bd8995a148ee057933bbb586bbe2b37724d550f53ae4a0dc9e64aae1c7c",
+      "recoveryScope": "Only one caption end index, no content/audio/image/action change; original invalid response and clock retained."
+    }
+  ],
+  "heldNotRendered": [
+    {
+      "id": "S04-03-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "4b39941b7729a53b10fde981ba7e3ea2b8b3f2309c610b86f9c964d6d8d6115d"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S04-04-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "5a153269112207cb24f5d0cd98acf3b318c8f7c3b00a832fc53a2030e98c07e5"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S04-02-en",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "ac6807c5ddfd3069e55b77b90734cd6174a4ff784b1959e3c8298a9bd646c433"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S06-02-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S06-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "0639d6dc910e8b5ec1f1e4dbafaa4985721eabbc59ca3ea0370b32a7e3fd3ce3"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S06-05-en",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S06-05-en",
+        "file": "review-disposition.en.json",
+        "sha256": "d16651a214ba84a8dbad117155ecb3fd448b02cc0e06627676ee896a3f6abbc6"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S07-04-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "f0578b4c212b9b3e10331ee7e987a479d833387ff78b1f3e778a2517a25693ea"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S07-05-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "c3d8aafc893ed960b9fba7c584bb8718ed6661d4f2ea02660d4188b52e810ca9"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S09-02-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "5bf978c47dfd4ff1466d72671beba958055cff3cc5bf0a6299f5a58c417bdd92"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S09-04-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S09-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "889b1103ff4772d04e4b996b95cccdf5d0b36ce365be0742f3ace031a7a1d84a"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S10-04-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S10-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "4553e9ae86fd77840e6d220bd63a31700f8eb3dcaf3bd73b1482c0513a9f837c"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S11-02-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S11-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "0a38e5ba688951ecdfb89245bb2e897af16e9f5ce41ece424d822a5f634f7986"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S11-05-ar-EG",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S11-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "eae0852fc749ab8e3e4272c9286c01fa97757758442ebab222fb77e7ddc35fdd"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: Invalid actual-audio range"
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S11-02-en",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S11-02-en",
+        "file": "review-disposition.en.json",
+        "sha256": "384f209451e5c57f52c843f8ef7a69f8559d524b8b0cce9fb02f48c1e0b5e16f"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    },
+    {
+      "id": "S11-04-en",
+      "status": "hold",
+      "diagnosticStatus": "invalid_diagnostic_hold",
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S11-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "3f6d76d61f24851b04b36e05396c0def5063fcd9af0f35561ab5182faf56ebb5"
+      },
+      "findings": [],
+      "uncertainties": [
+        "Same-voice observation is not documented in the structured reference result; no consistency conclusion is inferred."
+      ],
+      "failures": [
+        "reference: "
+      ],
+      "selectedForRender": false
+    }
+  ],
+  "sourceEvidence": {
+    "createdUTC": "2026-10-26T09:54:29.756270+00:00",
+    "sourceGenerationRequestSHA256": "bcb7afb029d92c3bbb05e3e4a78f68b280fa0ae6453eefe42ee50962eef6ac95",
+    "sourceReceiptSHA256": "518a059865f0d076e99dcba6d7d9bfc87679a03313719938199da79f6962c664",
+    "qualityReceiptSHA256": "07f34377e854cf1d323618cab1dcf4baedd9cb2996dc84a030b24742ecf1033a",
+    "visualReviewSHA256": "bbfd0e117ab7a1cf6bc2ac9c402f7e1f121440012120de3441eeb9d76d9c3aba",
+    "methodApprovalSHA256": "7a3a68706573d115304c4371665e15dfff56fefcb2704b56e880cef707036f55",
+    "selectionPolicy": "Exact clear source gates only; holds excluded; actual PCM and clocks verified locally; no inferred human or visual acceptance."
+  },
+  "scope": "Only current clear S03-S11 scene sources; ordinary explanatory motion. No new speech/images, retries, master assembly, publication or acceptance invented.",
+  "newProviderCalls": 0,
+  "sourceRepairEvidence": {
+    "file": "repair-evidence.en.json",
+    "sha256": "4d318ae9d6ad374281bba9fc360a5e10b5c4d978d2a5c605ddd4ad4ab60b2262"
+  },
+  "authorizedScope": "Exactly2S05English saved-response caption-index recovery scenes. No speech/image/analysis provider calls, no whole-batch restart. Parent dispatch only."
+}

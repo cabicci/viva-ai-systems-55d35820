@@ -1,0 +1,146 @@
+{
+  "schema": "fate-semantic-caption-index-repair.v1",
+  "utc": "2026-10-26T10:38:30.813638+00:00",
+  "sourceRun": 40303810225,
+  "scope": "Exactly2S05English semantic-caption partition failures. No timeout/batch restarts, audio/image generation or Bunny work.",
+  "records": [
+    {
+      "id": "S05-04-en",
+      "status": "SUPPORTED_NO_PROVIDER_CAPTION_INDEX_REPAIR_PROPOSAL",
+      "sourceAudioSHA256": "fb87e975de4a3f192e6a820855fdbf816d9471fe7f6053ff96a0163d34c15052",
+      "sourceClock": {
+        "path": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S05-04-en/actual-word-clock.en.json",
+        "sha256": "56289681c4a642a8034f7c8f532b530f1914fc726609a67a906ad3a25f095b2c"
+      },
+      "originalSemantic": {
+        "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-clock-v1-S05-04-en/semantic-result.en.json",
+        "sha256": "5a71c81b4cd311f117e4256a781daca8b6a0c6860590050760670045dd17f0cc"
+      },
+      "originalAttempt": {
+        "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-clock-v1-S05-04-en/semantic-attempt.en.json",
+        "sha256": "53f1089c251ead658e220e8adbe93f8fa4d8d0ba489239d2d436698fe98b1eb6"
+      },
+      "failedGuard": {
+        "sourceFile": "experiments/course-pipeline/rebuild/fate-course-v2/rest-ready-scenes-v1/prepare.py",
+        "line": 44,
+        "expression": "caption.startWordIndex == nextIndex",
+        "actual": {
+          "captionIndex": 7,
+          "expectedStartIndex": 47,
+          "actualStartIndex": 48
+        }
+      },
+      "patch": {
+        "captionIndex": 6,
+        "before": {
+          "text": "and label predictions separately from monitoring.",
+          "startWordIndex": 41,
+          "endWordIndex": 46
+        },
+        "after": {
+          "text": "and label predictions separately from monitoring.",
+          "startWordIndex": 41,
+          "endWordIndex": 47
+        },
+        "onlyEndIndexChanged": true
+      },
+      "actualClockUnitCovered": {
+        "index": 47,
+        "word": "monitoring.",
+        "start": 26.04,
+        "end": 26.32,
+        "probability": 0.22754085063934326
+      },
+      "support": "Both independent actual-audio transcripts agree with the unchanged clean caption. Prior semantic correction also identified this duplicated low-confidence ASR token. Preserve raw token; conservatively cover its interval with preceding clean caption instead of deleting clock data.",
+      "actualAcousticEvidence": [
+        {
+          "path": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-04-en/blind-analysis.en.json",
+          "sha256": "97fb6041fe35256643993bec923ce6fddffb70ba42b7f7e0d43af25f8825b2e9",
+          "excerpt": ", inputs, averaging period, location, and scenario, and label predictions separately from monitoring. When monitoring and prediction differ, first check comparability. An instantaneous sample versus a period average, location, dissolved fraction, weather and use conditions. Disagreement al"
+        },
+        {
+          "path": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-04-en/reference-analysis.en.json",
+          "sha256": "86d9f405ae711f184faabca18be58c86225c4ed3d62e22379f06caca50c03bed",
+          "excerpt": "n, inputs, averaging period, location and scenario, and label predictions separately from monitoring. When monitoring and prediction differ, first check comparability: an instantaneous sample versus a period average, location, dissolved fraction, weather and use conditions. Disagreement al"
+        }
+      ],
+      "candidate": {
+        "path": "media-plan/FATE2-S05/caption-index-repair/S05-04-en.semantic-result.repaired.en.json",
+        "sha256": "2a04d150dbe827f4006a79e05dbe00a7c193d248432728a15d8617d2949fa7c9"
+      },
+      "guardReplay": "All existing action IDs/ranges, nonempty anchors, <=1s declared uncertainty, valid actual-audio intervals, sequential full-unit caption partition and caption monotonicity guards pass. No relaxed guard.",
+      "newProviderCalls": 0,
+      "originalAudioClockImageAndSemanticUnchanged": true
+    },
+    {
+      "id": "S05-05-en",
+      "status": "SUPPORTED_NO_PROVIDER_CAPTION_INDEX_REPAIR_PROPOSAL",
+      "sourceAudioSHA256": "2a2db1db64f45b7175a634c3ae31922aaaa6e23b95431999be161206443a7203",
+      "sourceClock": {
+        "path": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S05-05-en/actual-word-clock.en.json",
+        "sha256": "41e116a3a71260e8fff06942b78545b9774e9e584d7b51bcad558d4f48a8c23a"
+      },
+      "originalSemantic": {
+        "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-clock-v1-S05-05-en/semantic-result.en.json",
+        "sha256": "8d33b723dc518f96f12c362721fe2162a04362af464e728453d6f1348064bf4f"
+      },
+      "originalAttempt": {
+        "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-clock-v1-S05-05-en/semantic-attempt.en.json",
+        "sha256": "f79410394426eae120aceeaabaae8feb720ab071150c3f26cf92ebf18f510381"
+      },
+      "failedGuard": {
+        "sourceFile": "experiments/course-pipeline/rebuild/fate-course-v2/rest-ready-scenes-v1/prepare.py",
+        "line": 44,
+        "expression": "caption.startWordIndex == nextIndex",
+        "actual": {
+          "captionIndex": 8,
+          "expectedStartIndex": 63,
+          "actualStartIndex": 64
+        }
+      },
+      "patch": {
+        "captionIndex": 7,
+        "before": {
+          "text": "dividing by 4 gives 0.0125.",
+          "startWordIndex": 57,
+          "endWordIndex": 62
+        },
+        "after": {
+          "text": "dividing by 4 gives 0.0125.",
+          "startWordIndex": 57,
+          "endWordIndex": 63
+        },
+        "onlyEndIndexChanged": true
+      },
+      "actualClockUnitCovered": {
+        "index": 63,
+        "word": "5.",
+        "start": 27.04,
+        "end": 27.1,
+        "probability": 0.09803839772939682
+      },
+      "support": "Both independent actual-audio transcripts agree with the unchanged clean caption. Prior semantic correction also identified this duplicated low-confidence ASR token. Preserve raw token; conservatively cover its interval with preceding clean caption instead of deleting clock data.",
+      "actualAcousticEvidence": [
+        {
+          "path": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-05-en/blind-analysis.en.json",
+          "sha256": "2df0025ecc7e87b36f9baab2b52c78f60735a7558fe6196c825cb4f423627a77",
+          "excerpt": "n the calculation without changing the original reports. The measured values sum to 0.05, dividing by four gives 0.0125. Using both limits for an upper teaching scenario gives 0.0175. That upper value is excluded because the reports say less than. This is sensitivity under assumptions, not"
+        },
+        {
+          "path": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S05-05-en/reference-analysis.en.json",
+          "sha256": "57304e78add9e65a83b26c436bc9e4737995901d79b90df6a44faddab8935f71",
+          "excerpt": "n the calculation without changing the original reports. The measured values sum to 0.05; dividing by four gives 0.0125. Using both limits for an upper teaching scenario gives 0.0175. That upper value is excluded because the reports say less than. This is sensitivity under assumptions, not"
+        }
+      ],
+      "candidate": {
+        "path": "media-plan/FATE2-S05/caption-index-repair/S05-05-en.semantic-result.repaired.en.json",
+        "sha256": "9c107bd8995a148ee057933bbb586bbe2b37724d550f53ae4a0dc9e64aae1c7c"
+      },
+      "guardReplay": "All existing action IDs/ranges, nonempty anchors, <=1s declared uncertainty, valid actual-audio intervals, sequential full-unit caption partition and caption monotonicity guards pass. No relaxed guard.",
+      "newProviderCalls": 0,
+      "originalAudioClockImageAndSemanticUnchanged": true
+    }
+  ],
+  "rootExecutionRequired": true,
+  "limits": "Evidence uses actual clock plus independent audio-derived observations; no direct native listening claim. New encoded frame review required after the two scoped renders."
+}

@@ -12,9 +12,11 @@ cache={}
 def get(ref):
  artifact_ref(ref);key=(ref['run'],ref['artifact'])
  if key not in cache:
-  d=R/'downloads'/str(ref['run'])/ref['artifact'];d.mkdir(parents=True);subprocess.run(['gh','run','download',str(ref['run']),'--repo',os.environ['GITHUB_REPOSITORY'],'--name',ref['artifact'],'--dir',str(d)],check=True,capture_output=True);cache[key]=d
+  d=R/'downloads'/str(ref['run'])/ref['artifact'];d.mkdir(parents=True)
+  checkpoint={'stage':'download_actual_source','run':ref['run'],'artifact':ref['artifact'],'utc':datetime.datetime.now(datetime.timezone.utc).isoformat()};save('assembly-attempt.en.json',checkpoint);print(json.dumps(checkpoint),flush=True)
+  subprocess.run(['gh','run','download',str(ref['run']),'--repo',os.environ['GITHUB_REPOSITORY'],'--name',ref['artifact'],'--dir',str(d)],check=True,capture_output=True,timeout=120);cache[key]=d
  f=(cache[key]/ref['file']).resolve();assert f.is_relative_to(cache[key].resolve()) and sha(f)==ref['sha256'];return f
-def probe(f):return json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',str(f)]))
+def probe(f):return json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',str(f)],timeout=120))
 def quiet(pcm):
  samples=array.array('h',pcm)
  if sys.byteorder!='little':samples.byteswap()
@@ -22,6 +24,7 @@ def quiet(pcm):
  return {'thresholdRMS':180,'windowSeconds':.01,'leadingQuietSeconds':next((i for i,x in enumerate(bins) if x>=180),len(bins))*.01,'trailingQuietSeconds':next((i for i,x in enumerate(reversed(bins)) if x>=180),len(bins))*.01,'limit':'Measured thresholded quiet, not native acoustic or phoneme-boundary certification.'}
 pcm_parts=[];visuals=[];timeline=[];captions=[];frameOffset=0;audioOffset=0;signatures=[];evidence=[]
 for i,part in enumerate(C):
+ print(json.dumps({'stage':'verify_scene','sceneIndex':i+1,'step':step,'locale':locale}),flush=True)
  assert part['sceneIndex']==i+1 and part['voice']==('Charon' if i%2==0 else 'Kore')
  proof=next(p for p in approval['files'] if p['id']==('AR' if locale=='ar-EG' else 'EN')+'-'+part['voice']);assert proof['deliverySHA256']==part['deliverySHA256']
  vis=get(part['visual']);rend=get(part['render']);tim=get(part['timing']);audio=get(part['audio']);encoded=get(part['selectedVideo']);gateFile=get(part['audioGate']);r=json.loads(rend.read_text());t=json.loads(tim.read_text());gate=json.loads(gateFile.read_text())
@@ -53,8 +56,11 @@ def stamp(s):
  ms=round(s*1000);return f'{ms//3600000:02}:{(ms//60000)%60:02}:{(ms//1000)%60:02}.{ms%1000:03}'
 (O/(step+'-'+locale+'.vtt')).write_text('WEBVTT\n\n'+'\n\n'.join(f'{i+1}\n{stamp(x["start"])} --> {stamp(x["end"])}\n{x["text"]}' for i,x in enumerate(captions))+'\n',encoding='utf8')
 lst=R/'concat.txt';lst.write_text('\n'.join("file '"+str(p)+"'" for p in visuals)+'\n')
-silent=R/'visual-master.mp4';subprocess.run(['ffmpeg','-v','error','-f','concat','-safe','0','-i',str(lst),'-map','0:v:0','-c:v','copy',str(silent)],check=True)
-out=O/(step+'-'+locale+'.mp4');subprocess.run(['ffmpeg','-v','error','-i',str(silent),'-i',str(wav),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-movflags','+faststart',str(out)],check=True);subprocess.run(['ffmpeg','-v','error','-i',str(out),'-f','null','-'],check=True)
+print(json.dumps({'stage':'concat_verified_visuals','step':step,'locale':locale}),flush=True)
+silent=R/'visual-master.mp4';subprocess.run(['ffmpeg','-v','error','-f','concat','-safe','0','-i',str(lst),'-map','0:v:0','-c:v','copy',str(silent)],check=True,timeout=120)
+out=O/(step+'-'+locale+'.mp4');subprocess.run(['ffmpeg','-v','error','-i',str(silent),'-i',str(wav),'-map','0:v:0','-map','1:a:0','-c:v','copy','-c:a','aac','-b:a','192k','-movflags','+faststart',str(out)],check=True,timeout=120)
+print(json.dumps({'stage':'decode_actual_master','step':step,'locale':locale}),flush=True)
+subprocess.run(['ffmpeg','-v','error','-i',str(out),'-f','null','-'],check=True,timeout=180)
 p=probe(out);v=next(x for x in p['streams'] if x['codec_type']=='video');a=next(x for x in p['streams'] if x['codec_type']=='audio')
 assert int(v['nb_read_frames'])==frameOffset and v['width']==1920 and v['height']==1080 and v['r_frame_rate']=='30/1' and int(a['sample_rate'])==24000 and a['channels']==1
 assert abs(float(p['format']['duration'])-frameOffset/30)<.1 and abs(float(a['start_time']))<.001 and abs(float(v['start_time']))<.001;save('probe.en.json',p)
@@ -63,7 +69,8 @@ for item,part in zip(timeline,C):
  t=json.loads(get(part['timing']).read_text());actions=t['actions'];acts=list(actions.values()) if isinstance(actions,dict) else actions;f=item['startFrame']+min(item['videoFrames']-1,round((max(x['start'] for x in acts)+.8)*30));checkpoints.append((f,f'scene-{item["sceneIndex"]:02}-final.png'))
  if item['sceneIndex']>1:checkpoints.extend([(item['startFrame']-1,f'join-{item["sceneIndex"]:02}-before.png'),(item['startFrame']+min(3,item['videoFrames']-1),f'join-{item["sceneIndex"]:02}-after.png')])
 ordered=sorted({f for f,n in checkpoints});expr='+'.join(f'eq(n\\,{f})' for f in ordered)
-subprocess.run(['ffmpeg','-v','error','-i',str(out),'-vf','select='+expr,'-vsync','0','-frames:v',str(len(ordered)),'-start_number','0',str(O/'decoded-%04d.png')],check=True)
+print(json.dumps({'stage':'extract_actual_join_and_scene_checkpoints','step':step,'locale':locale}),flush=True)
+subprocess.run(['ffmpeg','-v','error','-i',str(out),'-vf','select='+expr,'-vsync','0','-frames:v',str(len(ordered)),'-start_number','0',str(O/'decoded-%04d.png')],check=True,timeout=180)
 for index,f in enumerate(ordered):
  source=O/f'decoded-{index:04}.png';assert source.is_file()
  names=[n for frame,n in checkpoints if frame==f]
