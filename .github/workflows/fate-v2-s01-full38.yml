@@ -1,0 +1,49 @@
+name: Fate v2 S01 accepted3.8 full bilingual narration
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/media-s01-voice38/request.json]
+permissions:
+  contents: read
+concurrency:
+  group: fate-v2-s01-full38
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/media-s01-voice38
+  EXPECTED_REQUEST_SHA256: 1f792f615acaabd06ef95b383c9237abba2e12cb0145c801f6b954c263f936da
+  PYTHONUNBUFFERED: '1'
+jobs:
+  narration:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        part: ["S01-01-ar-EG", "S01-01-en", "S01-02-ar-EG", "S01-02-en", "S01-03-ar-EG", "S01-03-en", "S01-04-ar-EG", "S01-04-en", "S01-05-ar-EG", "S01-05-en", "S01-06-ar-EG", "S01-06-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify model availability and retain original audio
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Deliver each original immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-full38-original-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Actual blind and reference acoustic checks
+        if: success()
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review.py" "${{ matrix.part }}"
+      - name: Preserve actual diagnostic results separately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-full38-review-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/review*
+          retention-days: 30

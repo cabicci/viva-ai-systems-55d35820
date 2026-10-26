@@ -1,0 +1,152 @@
+{
+  "id": "fate-v2-s01-voice38-full-v1",
+  "model": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxSpeechCalls": 12,
+  "maxAnalysisCalls": 24,
+  "retained": [],
+  "segments": [
+    {
+      "id": "S01-01-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "تخيَّل إنّ معاك نتيجة تحليل لفلفل، ومكتوب فيها إنّ فيه متبقّي لمادة اسمها «ر». هل النتيجة دي لوحدها تقول إنّ اللي أكل الفلفل اتضرّ؟ قبل ما نحكم، خلّينا نفصل الأسئلة. التحليل بيقول لنا إيه اللي اتقاس في العيّنة، وبأيّ طريقة. أمّا التعرُّض، فبيحتاج نعرف مين اتلامس مع المادة، وبأيّ طريق، وبكمّية قدّ إيه، ولمدّة قدّ إيه. وقابلية المادة لإحداث ضرر سؤال تاني، وتقدير المخاطر بيربط دليل الضرر بدليل التعرُّض. يعني اسم مبيد في تقرير مش تشخيص تسمُّم، وفي نفس الوقت ما ينفعش نطَمِّن من غير دليل. هنمشي من المعلومة للاستنتاج، ونقف عند حدود كل معلومة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "c6a68153b255a7895df5d5066522637a3bfa803b0076959efbd603e6df7b4acc",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "result",
+      "scene": 1
+    },
+    {
+      "id": "S01-01-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Imagine a laboratory report for peppers that identifies a residue called R. Does that finding alone show that someone who ate the peppers was harmed? Start by separating the questions. The analysis describes what was measured in a sample, using a particular method. Exposure asks who encountered the substance, by which route, in what amount, and for how long. Hazard concerns the substance's capacity to cause particular effects; risk assessment connects effect evidence with exposure evidence. A pesticide name in a report is not a poisoning diagnosis, and reassurance also requires evidence. We will build conclusions one link at a time, without making the report answer questions it never measured.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "9ae37d630915c69412c2b5c5e3e559861b30be852431848a01e8959d2257e98a",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "result",
+      "scene": 1
+    },
+    {
+      "id": "S01-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "طبّ التحليل قاس إيه بالظبط؟ تعريف المتبقّي ممكن يشمل المادة الأصليّة ونواتج تحوُّل محدَّدة، حسب طريقة التحليل أو التقييم. عشان كده محتاجين هوية المادة، مش اسمًا قريبًا وخلاص. وبعدها نبصّ للعيّنة: التحليل على الثمرة كلّها، ولا الجزء المأكول؟ الوزن طازج ولا جاف؟ وهل العيّنة تمثّل الكمّية اللي بنتكلّم عنها؟ لو الأساس مختلف، الرقم ما يتنقلش من مكان للتاني كأنّه نفس القياس. كمان لازم نفرّق التركيز عن الكمّية. ملِّيجرام لكل كيلوجرام غذاء ده تركيز. أمّا الملِّيجرام لوحده فكتلة مادة. عشان نحسب اللي في حصّة أكل، هنحتاج كتلة الحصّة، بوحدة متوافقة مع مقام التركيز.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "7b4aaf010cdb54572307bf7fd7baa52bb5ce1ec416ecd25004ab4151c794944c",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "definition",
+      "scene": 2
+    },
+    {
+      "id": "S01-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "What exactly did the method measure? A residue definition may include the parent substance and specified transformation products, depending on the method or assessment. Confirm substance identity instead of relying on a similar name. Then examine the sample: whole fruit or edible portion, fresh or dry mass, and representative of which quantity? A number cannot be transferred between different sample bases as though it were the same measurement. Concentration and amount also differ. Milligrams per kilogram of food is a concentration; milligrams alone is chemical mass. To estimate residue in a portion, we need the portion's food mass on a basis compatible with the concentration denominator.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "21c214e6bebfab5a8e68635f6e19093655eedef2c2229c919af86eb4ba7b37b0",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "definition",
+      "scene": 2
+    },
+    {
+      "id": "S01-03-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "نجرّب بأرقام افتراضيّة للتدريب، مش نتيجة معمل حقيقيّة. تركيز «ر» في الفلفل، صفر فاصلة واحد اتنين ملِّيجرام لكل كيلوجرام غذاء. وكتلة الحصّة ميتين وخمسين جرام. نفترض إنّ الحصّة متجانسة، وإنّ التركيز يخصّ نفس الجزء وأساس الوزن. أوّل خطوة نحوّل الجرام لكيلوجرام: ميتين وخمسين جرام يساووا صفر فاصلة اتنين خمسة صفر كيلوجرام. نضرب التركيز في كتلة الغذاء. وحدة كيلوجرام غذاء بتختصر، فيتبقّى صفر فاصلة صفر تلاتة صفر ملِّيجرام. وللمراجعة، دي تساوي تلاتين ميكروجرام. حسبنا كتلة المتبقّي في الحصّة بس. ما حسبناش اللي الجسم امتصّه، ولا بقية الأكل والميّه، ولا حكمنا على مطابقة الشحنة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "317f5290244699b04f790e6d009d9af9e6ea3c76a0b0cb34b93410c8d9a24cf2",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "calculation",
+      "scene": 3
+    },
+    {
+      "id": "S01-03-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "Try an invented training example, not an actual laboratory result. Residue R in peppers is zero point one two milligrams per kilogram of food, and the portion weighs two hundred and fifty grams. Assume a homogeneous portion and matching analysed-part and mass bases. First convert grams to kilograms: two hundred and fifty grams is zero point two five zero kilograms. Multiply concentration by food mass. Kilograms of food cancel, leaving zero point zero three zero milligrams of residue. As a cross-check, that equals thirty micrograms. We have calculated residue mass in this portion only. We have not calculated absorption, the rest of the diet or water intake, or shipment compliance.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "1227ee2b81abbc0c5fa97b3b4628d1571e749a4f8aead208ca13ff2e57f6a499",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "calculation",
+      "scene": 3
+    },
+    {
+      "id": "S01-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نرجع لرسم المسارات في صفحة أربعة. هو بيربط المتبقّيات بالإنسان والنباتات والتربة والميّه، وبكائنات زي الأسماك والطيور والحشرات النافعة. هنختار مسارًا واحدًا: مصدر في الحقل، وجريان سطحي محتمل، وبعده ميّه مجرى، وكائن مائي ممكن يتلامس مع المادة. كلمة «محتمل» مهمّة هنا. وجود السهم في الرسم ما يثبتش إنّ المادة وصلت، ووجود المادة في عيّنة ميّه ما يثبتش لوحده أثرًا في الكائن. محتاجين نعرف هوية المادة، ونقيس في مكان ووقت مناسبين، ونختار بيانات تناسب سؤال التأثير. كل حلقة ليها دليلها؛ ما نكمّلش الحلقة الناقصة بتخمين، ولا بصورة بتوحي إنّ الضرر حصل فعلًا.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "a8e3aef8de93e3792aa2eb3ba4b00d9428d14b4b39abc0cc5660313da16549a0",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "pathway",
+      "scene": 4
+    },
+    {
+      "id": "S01-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "Return to the pathway illustration on page four. It connects residues with people, plants, soil and water, and with organisms such as fish, birds and beneficial insects. Follow one possible chain: a field source, possible runoff, stream water and contact with an aquatic organism. Possible matters here. An arrow does not establish that transport occurred, and detecting a substance in a water sample does not by itself establish an effect in the organism. We need chemical identity, observations at suitable places and times, and evidence suited to the effect question. Each link needs its own support. Neither a guess nor an image suggesting visible harm should fill a missing link.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "446eb58434e61435b6285705f1f6194b6f75a790267e74f28c8485c7339470f6",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "pathway",
+      "scene": 4
+    },
+    {
+      "id": "S01-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "spokenText": "طبّ وجدول الأضرار في الصفحات من أربعة لستّة؟ نقرأه قراءة نقديّة، مش نحفظ كل صفّ كحكم نهائي. الجدول فيه تسعتاشر صفّ فعلي، والترقيم بيقفز من تلتاشر لخمستاشر؛ ما نخترعش صفّ عشان نكمّل الترقيم. وكمان لقينا خطأ في صيغة الميثوكسيكلور: المصدر كاتب ستّ ذرات كربون في بداية الصيغة، والمرجع الرسمي المستخدم في المراجعة بيبيّن إنّها ستّاشر. تصحيح الهوية خطوة، واعتماد ادّعاء التأثير خطوة تانية. لازم نسأل: التجربة على أنهي كائن، وبأيّ طريق تعرُّض، وبأيّ كمّية ومدّة؟ وإيه الأثر اللي اتقاس، وإيه مجموعة المقارنة؟ من غير السياق ده، عبارة واسعة عن الضرر ما تكفيش لتقييم حالة جديدة.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "ffcba92dcfe53735f36d8cf14fd26785216637c98f9065cc42bb632789b698fd",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "critical-table",
+      "scene": 5
+    },
+    {
+      "id": "S01-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "spokenText": "What about the effects table on pages four to six? Read it critically rather than memorising each row as a final judgement. It has nineteen actual rows; the numbering jumps from thirteen to fifteen. Do not invent a row to fill that gap. We also found a methoxychlor formula error: the source begins with six carbon atoms, while the official identity reference used in the review gives sixteen. Correcting identity and validating an effect claim are different tasks. Ask which organism was studied, through which exposure route, at what amount and duration, against which comparison group, and for which measured effect. Without that context, a broad harm statement cannot assess a new situation.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "83eeefabe36f18000115c7709d74eebdc567d344e3e0a22a7f3806b8dbbea4cf",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "critical-table",
+      "scene": 5
+    },
+    {
+      "id": "S01-06-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "spokenText": "نلخّص اللي عملناه. بدأنا بنتيجة تحليل، وحدّدنا نوع الكمية ووحدتها، وحسبنا كتلة متبقّي في حصّة بأرقام افتراضيّة، وبعدها وقفنا عند حدود الحساب. عرفنا كمان إنّ المسار المحتمل محتاج قياس، وإنّ جدول التأثيرات محتاج مراجعة لهوية المادة وسياق الدراسة. الاستخدام الفعلي للمبيد له شروط معتمدة تخصّ المنتج والمحصول والمكان؛ الدرس مش وصفة رشّ ولا إذن لتغيير الجرعة أو تقصير فترة قبل الحصاد. لو السؤال مطابقة غذاء، هنحتاج حدًّا ساريًا وتعريف متبقّي وعينة مناسبة. ولو السؤال عن مخاطر شخص، هنحتاج بيانات تعرُّض وتأثير. الخطوة الجاية هنفرّق حدّ التركيز في الغذاء عن المدخول اليومي بالنسبة لوزن الجسم.",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "textSHA256": "34fc8219e55a204611798e88eed7372accc41f91547178619382918a83df266c",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "semanticID": "conclusion",
+      "scene": 6
+    },
+    {
+      "id": "S01-06-en",
+      "locale": "en",
+      "voice": "Kore",
+      "spokenText": "We began with an analytical finding, identified the quantity and units, and calculated residue mass in a portion using invented values. Then we kept the conclusion within those assumptions. A possible pathway still needs observations, and an effects table needs identity checks and study context. Actual pesticide use has authorised conditions for the product, crop and location; this lesson is not a spray recipe or permission to change a dose or shorten a pre-harvest interval. Food compliance needs an applicable limit, residue definition and suitable sample evidence. A person's risk question needs exposure and effect evidence. Next, we will separate a food concentration limit from daily intake normalised to body weight.",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "textSHA256": "feff83107137a20e6f5c21ae3aa1608d54ad873935bd64e0344a0003cbdd3fb3",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "semanticID": "conclusion",
+      "scene": 6
+    }
+  ],
+  "methodApprovalSHA256": "596e495af0a6a465a8540faf4b22b9d8b5256bd167c52e982d197340849ab7f5",
+  "methodApprovalScope": "Four exact clips and unchanged3.8 voice/delivery method; no unheard clip acceptance inferred.",
+  "ownerBudgetCeilingUSD": 25,
+  "additionalReservationUSD": 3.36,
+  "cumulativeConservativeReservationUSD": 18.92,
+  "sourceLessonSHA256": "714590c457abe190b7b1225619e0ae950247e61349e8c6d2f9543d84fbdc9336",
+  "images": "Reuse three inspected existing originals, no new image calls.",
+  "fullVideoRenderAllowed": false,
+  "nextGate": "Actual-audio review/timing and a short synchronized sample; no full video before scoped acceptance."
+}
