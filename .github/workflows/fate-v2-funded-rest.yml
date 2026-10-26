@@ -1,0 +1,61 @@
+name: Fate v2 remaining bilingual original speech and illustration ingredients
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/funded-rest-v1/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-funded-rest-v1
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/funded-rest-v1
+  PYTHONUNBUFFERED: '1'
+jobs:
+  speech:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 6
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        part: ["S03-01-ar-EG", "S03-02-ar-EG", "S03-03-ar-EG", "S03-04-ar-EG", "S03-05-ar-EG", "S03-06-ar-EG", "S03-01-en", "S03-02-en", "S03-03-en", "S03-04-en", "S03-05-en", "S03-06-en", "S04-01-ar-EG", "S04-02-ar-EG", "S04-03-ar-EG", "S04-04-ar-EG", "S04-05-ar-EG", "S04-01-en", "S04-02-en", "S04-03-en", "S04-04-en", "S04-05-en", "S05-01-ar-EG", "S05-02-ar-EG", "S05-03-ar-EG", "S05-04-ar-EG", "S05-05-ar-EG", "S05-01-en", "S05-02-en", "S05-03-en", "S05-04-en", "S05-05-en", "S06-01-ar-EG", "S06-02-ar-EG", "S06-03-ar-EG", "S06-04-ar-EG", "S06-05-ar-EG", "S06-01-en", "S06-02-en", "S06-03-en", "S06-04-en", "S06-05-en", "S07-01-ar-EG", "S07-02-ar-EG", "S07-03-ar-EG", "S07-04-ar-EG", "S07-05-ar-EG", "S07-01-en", "S07-02-en", "S07-03-en", "S07-04-en", "S07-05-en", "S08-01-ar-EG", "S08-02-ar-EG", "S08-03-ar-EG", "S08-04-ar-EG", "S08-05-ar-EG", "S08-01-en", "S08-02-en", "S08-03-en", "S08-04-en", "S08-05-en", "S09-01-ar-EG", "S09-02-ar-EG", "S09-03-ar-EG", "S09-04-ar-EG", "S09-05-ar-EG", "S09-01-en", "S09-02-en", "S09-03-en", "S09-04-en", "S09-05-en", "S10-01-ar-EG", "S10-02-ar-EG", "S10-03-ar-EG", "S10-04-ar-EG", "S10-05-ar-EG", "S10-01-en", "S10-02-en", "S10-03-en", "S10-04-en", "S10-05-en", "S11-01-ar-EG", "S11-02-ar-EG", "S11-03-ar-EG", "S11-04-ar-EG", "S11-05-ar-EG", "S11-01-en", "S11-02-en", "S11-03-en", "S11-04-en", "S11-05-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify live model and preserve complete original speech
+        env:
+          EXPECTED_REQUEST_SHA256: bcb7afb029d92c3bbb05e3e4a78f68b280fa0ae6453eefe42ee50962eef6ac95
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/generate.py" "${{ matrix.part }}"
+      - name: Deliver each original immediately before separate acoustic review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-rest-original-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+  image:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 8
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        ingredient: ["S03-evidence-dossier", "S04-field-stream-context", "S05-water-analysis-bench", "S06-organism-mass-balance", "S07-aqueous-uptake-chamber", "S08-organism-endpoint-context", "S09-soil-water-air", "S10-transformation-conditions", "S11-leaf-impact-surface"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify live image model and preserve one original ingredient
+        env:
+          EXPECTED_REQUEST_SHA256: 5b4375330381276955a68ea19ab2ac85a106cea1377cd76c148d70ccd032e468
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/image_worker.py" "${{ matrix.ingredient }}" generate
+      - name: Deliver each original ingredient immediately for actual-pixel review
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-rest-image-${{ matrix.ingredient }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30

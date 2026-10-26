@@ -1,0 +1,84 @@
+{
+  "id": "fate-v2-remaining-image-originals-v1",
+  "imageModel": "gemini-nano-banana-2.1",
+  "reviewModel": "gemini-2.5-flash",
+  "automaticRetries": 0,
+  "maxOutputTokens": 7680,
+  "maxGenerationCalls": 9,
+  "maxReviewCalls": 0,
+  "style": "University-level, sophisticated photorealistic3D-style educational ingredient. Accurate materials, realistic illumination and anatomy/equipment where present, off-white quiet surroundings, restrained Masaarat teal accents. No cartoon, visible presenters, brand marks, charts, diagrams or written panels.",
+  "scenes": [
+    {
+      "id": "S03-evidence-dossier",
+      "title": {
+        "en": "Evidence dossier for distinct assessment and standard-setting questions"
+      },
+      "meaning": "Blank evidence pages and specimen context illustrate information to review, not an adopted standard or official decision.",
+      "visualContract": "A sophisticated photorealistic3D-style laboratory review desk on the left half: several clean open binders with completely blank unruled pages, two transparent unlabelled sample containers, a magnifying glass, and a small plain produce tray. No people, seals, stamps, flags, official logos, visible handwriting or text. Objects should be distinct and plausible. Restrained spacious right40percent for later editable role/evidence routes. Not a depiction of any actual agency office or document."
+    },
+    {
+      "id": "S04-field-stream-context",
+      "title": {
+        "en": "Environmental source, medium and receptor context"
+      },
+      "meaning": "A field beside a watercourse motivates a testable exposure model, without showing measured transport or injury.",
+      "visualContract": "An elegant realistic3D landscape cutaway concentrated on the left60percent: cultivated soil, shallow clear stream, healthy riparian plants and a plausible small larval aquatic habitat. No visible chemical plume, pollution colour, diseased organism, dead fish, arrows, falling pesticide droplets or quantified route. Calm natural environmental lighting. The stream and field are visually separate contexts, with room for later conditional source/pathway/evidence overlays. This conceptual setting does not prove causality."
+    },
+    {
+      "id": "S05-water-analysis-bench",
+      "title": {
+        "en": "Water analytical report and measurement limits"
+      },
+      "meaning": "A clean sampling and analysis setting illustrates analyte/matrix/method context; LOD,LOQ and censoring are later editable explanations.",
+      "visualContract": "Photorealistic3D-style clean analytical bench, subject arranged on left half: clear empty sample bottles, unlabelled capped vials, a plausible micropipette resting safely, a blank clipboard without even faux writing, and an abstract modern instrument with an unlit blank display. No calibration values, chemical colours, molecular imagery or experiment outcome. Distinct glassware silhouettes, no impossible or merged vessels. Quiet right40percent for editable report values and number-line animation."
+    },
+    {
+      "id": "S06-organism-mass-balance",
+      "title": {
+        "en": "Organism mass versus chemical concentration"
+      },
+      "meaning": "One healthy organism illustrates a mass-balance question; quantities and hypothetical growth are added separately, not inferred from the picture.",
+      "visualContract": "One detailed scientifically plausible healthy freshwater fish in side profile suspended naturally in clear shallow water, left-centred with a softly lit neutral aquatic background. No second comparison fish, no deformity, feeding arrow, toxin specks, concentration map, human, numbers or anatomical labels. Include a little aquatic vegetation near the lower left but leave right45percent open. The fish is a qualitative illustration only, not a measured species growth trial or a percentage-retention diagram."
+    },
+    {
+      "id": "S07-aqueous-uptake-chamber",
+      "title": {
+        "en": "Aquatic uptake and elimination model context"
+      },
+      "meaning": "A simple aqueous setting motivates kinetic fluxes; no measured concentration or full experimental protocol is implied.",
+      "visualContract": "Photorealistic3D-style small clean glass aquatic tank on the left side with one healthy small freshwater fish and clear water. A simple plausible inlet and outlet may be visible externally but no dimension markings, flow arrows, numerical displays, toxic glow, dietary food or visible chemical particles. Clearly separate tank walls and water surface; avoid duplicated fins or impossible tubing. Uncluttered right40percent supports editable rate coefficients and flux diagrams. This is a conceptual context, not an OECD-compliant apparatus claim."
+    },
+    {
+      "id": "S08-organism-endpoint-context",
+      "title": {
+        "en": "Organism identity and endpoint context"
+      },
+      "meaning": "Healthy aquatic and terrestrial subjects show why species and endpoint must be stated; no LC50 result or harm percentage is pictured.",
+      "visualContract": "Sophisticated naturalistic3D educational still life on the left60percent, with a healthy freshwater snail on a small submerged rock in a shallow clear glass habitat, and a separate healthy small seedling rooted in a compact soil sample beside it. Distinct contained aquatic and soil contexts, plausible snail anatomy and plant form. No dead organisms, exposure dosing, biological test results, numerical counts, mortality indicators, labels or molecular structures. Right40percent calm and empty for later editable endpoint/comparison cards. These are illustrative organisms only, not the complete source taxonomy or an experiment."
+    },
+    {
+      "id": "S09-soil-water-air",
+      "title": {
+        "en": "Environmental phases and substance properties"
+      },
+      "meaning": "Soil,water and air suggest possible partitioning and movement questions; no property value or causal pathway is encoded.",
+      "visualContract": "Photorealistic3D-style environmental material study, left60percent: a compact soil cutaway with visible realistic pores, a shallow clear water pool adjacent to its lower edge, exposed clean air above and a healthy small plant. Neutral off-white museum background with natural restrained colours. No arrows, motion trails, vapour clouds, coloured dissolved chemicals, fabricated molecules, numeric scales, text or labels. Keep materials physically plausible and the right40percent quiet for later property axes and editable unit conversions. Do not imply a measured distribution or calibrated phase volume."
+    },
+    {
+      "id": "S10-transformation-conditions",
+      "title": {
+        "en": "Conditions affecting transformation"
+      },
+      "meaning": "Light,water and soil contexts illustrate possible conditions; disappearance of chemical or mineralisation is not visually asserted.",
+      "visualContract": "A high-quality realistic3D-style close environmental still life on left60percent: a healthy leaf above moist textured soil beside a small clear water surface, gently lit by natural angled sunlight. Fine realistic material detail and soft shadows. No luminous chemical particles, atomic symbols, bonds, arrows, decomposed leaf, evaporating substance cloud or measured decay. Quiet neutral right40percent for editable first-order curve and condition labels. This conceptual ingredient does not establish a chemical transformation mechanism or rate."
+    },
+    {
+      "id": "S11-leaf-impact-surface",
+      "title": {
+        "en": "Leaf surface for independent droplet animation"
+      },
+      "meaning": "An uncoated leaf provides a material surface; transport,contact,retention,rebound and uptake remain separate animated claims.",
+      "visualContract": "Photorealistic macro3D-style healthy green leaf spanning the left55percent diagonally and showing a clear gently sloped upper surface with plausible waxy cuticle and fine natural venation. The impact region should be visually clear and unobstructed. NO droplets, spray, arrows, surface film, particle trails, embedded chemical markers, holes, injury, text or numbers. Leave the right45percent softly neutral and uncluttered. Later independent editable droplet geometry will show schematic contact and retention; the image must not pre-decide uptake, loss fractions or biological effect."
+    }
+  ]
+}

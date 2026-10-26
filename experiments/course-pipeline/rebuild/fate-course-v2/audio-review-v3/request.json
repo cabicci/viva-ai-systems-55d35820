@@ -1,0 +1,1691 @@
+{
+  "id": "fate-v2-s02-audio-review-v3",
+  "model": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "automaticRetries": 0,
+  "maxAnalysisCalls": 17,
+  "reservationUSD": 0.8,
+  "reviewCeilingUSD": 0.8,
+  "sourceRun": 40291770716,
+  "fundingRecord": "production/remaining-budget.en.json",
+  "repairReason": "Invalid/truncated2.5Flash diagnostics and criterion hallucinations, not damaged speech. Preserve all originals and raw old reports.",
+  "parts": [
+    {
+      "id": "S02-01-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "two-denominators",
+      "spokenText": "في الخطوة اللي فاتت حسبنا كتلة متبقّي في حصّة أكل. دلوقتي قدّامنا رقم بوحدة ملِّيجرام لكلّ كيلوجرام غذاء، ورقم تاني بوحدة ملِّيجرام لكلّ كيلوجرام من وزن الجسم في اليوم. هل نقارنهم على طول؟ لأ. أوّل مقام يخصّ الغذاء، والتاني يخصّ وزن الجسم ومعاه أساس زمني. في كودكس، الحدّ الأقصى للمتبقّيات، إم آر إل، هو أعلى تركيز توصي هيئة الدستور الغذائي بالسماح القانوني بوجوده في الغذاء أو العلف أو عليه، لسلعة وتعريف متبقّي محدَّدين. ده مش جرعة شخصيّة. أمّا المدخول اليومي المقبول، إيه دي آي، فبيخصّ كمية المادة اللي ممكن تتاخد يوميًّا طول العمر، ويبدو إنها من غير مخاطرة صحّيّة يُعتدّ بيها، حسب الدليل المعروف وقت التقييم. بيتنسب لوزن الجسم، ونوضّح أساس اليوم في حسابنا. ده مرجع لتقييم طويل المدى، مش حدّ تركيز لعيّنة، ولا ضمان مطلق. والقيمة الفعليّة والحدّ الساري لازم نرجع فيهم للمادة والحالة والنظام المعني.",
+      "textSHA256": "387f9ffd6b48c35578d4ffa64c7ec01feedee786dc085cd63052e46adefe1cfb",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "d6dcdf382bffd5892f120a7ee53aa0d1f3c4392d6ae7a0f0ec13c2a366e9062e",
+      "semanticID": "two-denominators",
+      "scene": 1,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-ar-EG",
+        "file": "S02-01-ar-EG.wav",
+        "sha256": "4b92539aa0b1744b718f36f5e7e2c0ef6a77a8881aa2b2ca8951ca2763365bbb"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": []
+    },
+    {
+      "id": "S02-02-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "equation",
+      "spokenText": "تعالى نبني الحساب واحدة واحدة. التركيز بيقول لنا كتلة المادة في كلّ كيلوجرام غذاء. نضربه في كتلة الغذاء المستهلَكة في اليوم؛ كده كيلوجرام الغذاء بيختصر، ويتبقّى ملِّيجرام مادة في اليوم. نعمل كده لكلّ مصدر، ونجمع كتل نفس المتبقّي، وبعدها نقسم على وزن الجسم بالكيلوجرام. الناتج يبقى مدخولًا يوميًّا لكلّ كيلوجرام من وزن الجسم. قبل الجمع، لازم تعريف المتبقّي وأساس القياس يبقوا متوافقين، أو يكون فيه تحويل علمي مبرَّر. مش كفاية الأسماء تبقى شبه بعض. وكمان، قائمة أكل افتراضيّة ليوم واحد مش تلقائيًّا متوسّط التعرّض طول العمر. والتقييم الحادّ ليه مرجع وطريقة وسيناريو مناسبين؛ وجود أرقام ليوم واحد ما يكمّلوش. هنا بنتعلّم معنى الوحدات وخطوات الحساب.",
+      "textSHA256": "c853a1a500615840e65b8f74154add19cbd10ca10f89f272b8c06ea14a548666",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "cafa2e36802cdf3152ac1a91b0fbfac830d63be0019eef8db1c6a0ae700433de",
+      "semanticID": "equation",
+      "scene": 2,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-02-ar-EG",
+        "file": "S02-02-ar-EG.wav",
+        "sha256": "5003ca3e5556aa643c5fd5b776048d2da2dea3f9f539f0e495e6a6c8d474a5cf"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [
+        {
+          "id": "reference-0",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 0.0,
+            "end": 0.0,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "تَعَالَى",
+            "suggestion": "تعالى",
+            "reason": "يوجد توقف قصير قبل كلمة \"تعالى\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-1",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 1.38,
+            "end": 1.38,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وَاحِدَة",
+            "suggestion": "واحدة",
+            "reason": "يوجد توقف قصير قبل كلمة \"واحدة\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-2",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 2.08,
+            "end": 2.08,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "التَّرْكِيز",
+            "suggestion": "التركيز",
+            "reason": "يوجد توقف قصير قبل كلمة \"التركيز\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-3",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 5.96,
+            "end": 5.96,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "نَضْرِبُه",
+            "suggestion": "نضربه",
+            "reason": "يوجد توقف قصير قبل كلمة \"نضربه\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-4",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 9.28,
+            "end": 9.28,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "كِدَه",
+            "suggestion": "كده",
+            "reason": "يوجد توقف قصير قبل كلمة \"كده\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-5",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 14.28,
+            "end": 14.28,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "نَعْمَل",
+            "suggestion": "نعمل",
+            "reason": "يوجد توقف قصير قبل كلمة \"نعمل\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-6",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 16.08,
+            "end": 16.08,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وَنَجْمَع",
+            "suggestion": "ونجمع",
+            "reason": "يوجد توقف قصير قبل كلمة \"ونجمع\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-7",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 18.36,
+            "end": 18.36,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وَبَعْدَهَا",
+            "suggestion": "وبعدها",
+            "reason": "يوجد توقف قصير قبل كلمة \"وبعدها\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-8",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 21.88,
+            "end": 21.88,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "النَّاتِج",
+            "suggestion": "الناتج",
+            "reason": "يوجد توقف قصير قبل كلمة \"الناتج\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-9",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 26.68,
+            "end": 26.68,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "قَبْل",
+            "suggestion": "قبل",
+            "reason": "يوجد توقف قصير قبل كلمة \"قبل\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-10",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 31.88,
+            "end": 31.88,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "أَوْ",
+            "suggestion": "أو",
+            "reason": "يوجد توقف قصير قبل كلمة \"أو\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-11",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 33.88,
+            "end": 33.88,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "مِش",
+            "suggestion": "مش",
+            "reason": "يوجد توقف قصير قبل كلمة \"مش\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-12",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 36.28,
+            "end": 36.28,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وَكَمَان",
+            "suggestion": "وكمان",
+            "reason": "يوجد توقف قصير قبل كلمة \"وكمان\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-13",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 42.36,
+            "end": 42.36,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وَالتَّقْيِيم",
+            "suggestion": "والتقييم",
+            "reason": "يوجد توقف قصير قبل كلمة \"والتقييم\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-14",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 46.56,
+            "end": 46.56,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "وُجُود",
+            "suggestion": "وجود",
+            "reason": "يوجد توقف قصير قبل كلمة \"وجود\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-15",
+          "sourceFile": "S02-02-ar-EG-00-reference.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 49.6,
+            "end": 49.6,
+            "category": "pause_join",
+            "heard": "",
+            "expected": "",
+            "heardPhonetics": "هِنَا",
+            "suggestion": "هنا",
+            "reason": "يوجد توقف قصير قبل كلمة \"هنا\" مما يؤثر على سلاسة النطق.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        }
+      ],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-02-ar-EG",
+          "file": "review/output/flash/S02-02-ar-EG-00-reference.analysis.json",
+          "sha256": "af34faaace440b90bc0e93f3bcb5e66c26c3bfe473b3b8cd2eb4e03da1346233"
+        }
+      ],
+      "targetedQuestions": [
+        "Near the hypothetical one-day menu sentence, does the actual sound support قائمة أكل or قيمة أكل, another word, or is it acoustically uncertain? Do not pick an answer solely from the expected script; distinguish ASR spelling confusion from an actual word substitution."
+      ]
+    },
+    {
+      "id": "S02-03-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "hypothetical-reference",
+      "spokenText": "لو التدريب ادّاك مدخولًا يوميًّا مقبولًا افتراضيًّا، تقدر تقسم المدخول اللي حسبته عليه، بعد ما تتأكّد إنّ الوحدات متوافقة. ولازم تفضل موضّح إنّ المرجع افتراضي. كلمة أقلّ هنا معناها إنّ نتيجة السيناريو أقلّ من الرقم اللي استخدمناه؛ مش معناها إنّ بقيّة الأكل والمَيّه وكلّ ظروف الناس اتراجعت. أمّا سؤال مطابقة عيّنة غذاء للحدّ الأقصى للمتبقّيات، فله بيانات تانية: أنهي سلعة؟ وأنهي جزء اتحلّل؟ وإيه تعريف المتبقّي؟ وأنهي سوق وجهة وتاريخ وحدّ ساري؟ وكمان طريقة أخذ العيّنة والتحليل وقاعدة القرار. رقم تعليمي مش حدّ قانوني ساري، ومقارنة رقمين لوحدها مش قرار إنفاذ رسمي.",
+      "textSHA256": "cdd626af9dff1aaf641f596262ee86c62f12fb6f99d2cd66039727dcd30ebd33",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "1373b91cfe1801093e68d83ec5766324e95a44fc9949349c6f534d7bb3c9edb6",
+      "semanticID": "hypothetical-reference",
+      "scene": 3,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-ar-EG",
+        "file": "S02-03-ar-EG.wav",
+        "sha256": "6885aacb9a00090ccc2e6f59692d86e9322efb6282bd3ec5879f7c44e27433ed"
+      },
+      "checks": [
+        "reference"
+      ],
+      "retainedPasses": {
+        "blind": {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-03-ar-EG",
+          "file": "review/output/flash/S02-03-ar-EG-00-blind.analysis.json",
+          "sha256": "5ee897b67bde7f21b11c64131a56e54fb93b43aa058bbf5862fe30b931f83d4c"
+        }
+      },
+      "previousAllegations": [
+        {
+          "id": "blind-0",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 0.0,
+            "end": 0.8,
+            "category": "pronunciation",
+            "heard": "لو التدريب",
+            "expected": "لو التدريب",
+            "heardPhonetics": "law el tadreeb",
+            "suggestion": "النطق سليم، لكن يوجد إدغام خفيف بين 'لو' و 'التدريب' مما يجعلها تبدو ككلمة واحدة.",
+            "reason": "إدغام بين الكلمتين.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-1",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 1.0,
+            "end": 3.3,
+            "category": "pronunciation",
+            "heard": "مدخولا يوميا مقبولا افتراضيا",
+            "expected": "مدخولاً يومياً مقبولاً افتراضياً",
+            "heardPhonetics": "madkhoolan yawmiyan maqboolan iftiradiyan",
+            "suggestion": "النطق سليم، لكن التنوين بالفتح في 'مدخولا' و 'يوميا' و 'مقبولا' و 'افتراضيا' واضح جداً، وهو أمر شائع في اللهجة المصرية.",
+            "reason": "نطق التنوين بالفتح بشكل واضح.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-2",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 4.0,
+            "end": 6.0,
+            "category": "pronunciation",
+            "heard": "المدخول اللي حسبته عليه",
+            "expected": "المدخول اللي حسبته عليه",
+            "heardPhonetics": "el madkhool elly hasabto 3aleih",
+            "suggestion": "النطق سليم، لكن 'اللي' تُنطق بكسر اللام بشكل خفيف.",
+            "reason": "نطق 'اللي' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-3",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 6.8,
+            "end": 8.5,
+            "category": "pronunciation",
+            "heard": "الوحدات متوافقه",
+            "expected": "الوحدات متوافقة",
+            "heardPhonetics": "el wa7adat motawaf2a",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'متوافقة' تُنطق هاءً عند الوقف، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة هاءً عند الوقف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-4",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 9.0,
+            "end": 11.2,
+            "category": "pronunciation",
+            "heard": "تفضل موضح ان المرجع افتراضي",
+            "expected": "تفضل موضح إن المرجع افتراضي",
+            "heardPhonetics": "tefḍal mowaddaḥ en el marja3 iftiradi",
+            "suggestion": "النطق سليم، لكن 'إن' تُنطق بكسر الهمزة بشكل خفيف.",
+            "reason": "نطق 'إن' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-5",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 11.6,
+            "end": 12.5,
+            "category": "pronunciation",
+            "heard": "كلمه اقل هنا",
+            "expected": "كلمة أقل هنا",
+            "heardPhonetics": "kelma a2all hena",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'كلمة' تُنطق هاءً عند الوقف، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة هاءً عند الوقف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-6",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 13.2,
+            "end": 16.0,
+            "category": "pronunciation",
+            "heard": "نتيجه السيناريو اقل من الرقم اللي استخدمناه",
+            "expected": "نتيجة السيناريو أقل من الرقم اللي استخدمناه",
+            "heardPhonetics": "nateegit el senaryo a2all men el raqam elly estakhdamnah",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'نتيجة' تُنطق تاءً عند الوصل، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة تاءً عند الوصل.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-7",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 16.3,
+            "end": 19.9,
+            "category": "pronunciation",
+            "heard": "مش معناها ان بقيه الاكل والميه وكل ظروف الناس اتراجعت",
+            "expected": "مش معناها إن بقية الأكل والمية وكل ظروف الناس اتراجعت",
+            "heardPhonetics": "mesh ma3naha en ba2eyet el akl wel mayya we koll zoroof el nas etraga3et",
+            "suggestion": "النطق سليم، لكن 'إن' تُنطق بكسر الهمزة بشكل خفيف، و 'المية' تُنطق بياء مشددة، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق 'إن' بكسر خفيف، ونطق 'المية' بياء مشددة.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-8",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 20.3,
+            "end": 24.7,
+            "category": "pronunciation",
+            "heard": "اما سؤال مطابقه عينه غذاء للحد الاقصى للمتبقيات فله بيانات ثانيه",
+            "expected": "أما سؤال مطابقة عينة غذاء للحد الأقصى للمتبقيات فله بيانات تانية",
+            "heardPhonetics": "amma so2al motaba2et 3aynet ghiza2 lel 7add el aqsa lel motabaqqiyat fa loh bayanāt tanya",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'مطابقة' و 'عينة' تُنطق هاءً عند الوقف، و 'تانية' تُنطق بياء مشددة، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة هاءً عند الوقف، ونطق 'تانية' بياء مشددة.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-9",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 25.3,
+            "end": 25.9,
+            "category": "pronunciation",
+            "heard": "انهي سلعه",
+            "expected": "أنهي سلعة",
+            "heardPhonetics": "anhy sel3a",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'سلعة' تُنطق هاءً عند الوقف، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة هاءً عند الوقف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-10",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 26.4,
+            "end": 27.4,
+            "category": "pronunciation",
+            "heard": "وانهي جزء اتحلل",
+            "expected": "وأنهي جزء اتحلل",
+            "heardPhonetics": "w anhy goz2 et7allal",
+            "suggestion": "النطق سليم، لكن 'اتحلل' تُنطق بكسر التاء بشكل خفيف.",
+            "reason": "نطق 'اتحلل' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-11",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 27.9,
+            "end": 29.1,
+            "category": "pronunciation",
+            "heard": "وايه تعريف المتبقي",
+            "expected": "وإيه تعريف المتبقي",
+            "heardPhonetics": "w eh ta3reef el motabaqqi",
+            "suggestion": "النطق سليم، لكن 'إيه' تُنطق بكسر الهمزة بشكل خفيف.",
+            "reason": "نطق 'إيه' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-12",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 29.8,
+            "end": 32.5,
+            "category": "pronunciation",
+            "heard": "وانهي سوء وجهه وتاريخ وحد ساري",
+            "expected": "وأنهي سوق ووجهة وتاريخ وحد ساري",
+            "heardPhonetics": "w anhy soo2 we gehha we tareekh we 7add sari",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'وجهة' تُنطق هاءً عند الوقف، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة هاءً عند الوقف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-13",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 33.0,
+            "end": 36.3,
+            "category": "pronunciation",
+            "heard": "وكمان طريقه اخذ العينه والتحليل وقاعده القرار",
+            "expected": "وكمان طريقة أخذ العينة والتحليل وقاعدة القرار",
+            "heardPhonetics": "w kaman taree2et akhz el 3ayna wel ta7leel we qa3det el qarar",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'طريقة' و 'قاعدة' تُنطق تاءً عند الوصل، وهو أمر طبيعي في اللهجة المصرية.",
+            "reason": "نطق التاء المربوطة تاءً عند الوصل.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-14",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 37.0,
+            "end": 38.8,
+            "category": "pronunciation",
+            "heard": "رقم تعليمي مش حد قانوني ساري",
+            "expected": "رقم تعليمي مش حد قانوني ساري",
+            "heardPhonetics": "raqam ta3leemy mesh 7add qanoony sari",
+            "suggestion": "النطق سليم، لكن 'مش' تُنطق بكسر الميم بشكل خفيف.",
+            "reason": "نطق 'مش' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-15",
+          "sourceFile": "S02-03-ar-EG-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 39.2,
+            "end": 42.08,
+            "category": "pronunciation",
+            "heard": "ومقارنه رقمين لوحدها مش قرار انفاذ رسمي",
+            "expected": "ومقارنة رقمين لوحدها مش قرار إنفاذ رسمي",
+            "heardPhonetics": "w moqarnet raqamein lewa7daha mesh qarar enfaz rasmy",
+            "suggestion": "النطق سليم، لكن التاء المربوطة في 'مقارنة' تُنطق تاءً عند الوصل، و 'مش' تُنطق بكسر الميم بشكل خفيف، و 'إنفاذ' تُنطق بكسر الهمزة بشكل خفيف.",
+            "reason": "نطق التاء المربوطة تاءً عند الوصل، ونطق 'مش' بكسر خفيف، ونطق 'إنفاذ' بكسر خفيف.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        }
+      ],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-03-ar-EG",
+          "file": "review/output/flash/S02-03-ar-EG-00-blind.analysis.json",
+          "sha256": "5ee897b67bde7f21b11c64131a56e54fb93b43aa058bbf5862fe30b931f83d4c"
+        }
+      ]
+    },
+    {
+      "id": "S02-04-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "multiple-residues",
+      "spokenText": "فيه كمان فرق بين نجمع مصادر نفس المادة، وبين نقيّم مواد مختلفة مع بعض. في ملخّص الوكالة الأمريكيّة لحماية البيئة لقانون جودة الغذاء، تجميع التعرّض معناه نجمع مصادر مختلفة لنفس المبيد. والتقييم التراكمي في السياق ده يخصّ مبيدات ليها آليّة سُمِّيّة مشتركة. ده ما يخلّيناش نجمع كلّ الأسماء اللي ظهرت في تحليل متعدّد المتبقّيات، ونقارن المجموع بالمدخول المقبول لمادة واحدة. قبل الجمع اسأل: هل دي نفس المادة ونفس تعريف المتبقّي؟ هل الوحدات وأساس الزمن متوافقين؟ وهل المطلوب مدخول، ولا مؤشر مخاطر له طريقة محدَّدة؟ سهولة الجمع مش دليل إنّ الجمع له معنى علمي.",
+      "textSHA256": "a7d5b44bef54a0bf7a366123762b7719dae7e446a5a32315d5532b797ee09f27",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "920a69e765fdf3facd04006141865e2418d5be2c2c5783e459584a0ceb959627",
+      "semanticID": "multiple-residues",
+      "scene": 4,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-ar-EG",
+        "file": "S02-04-ar-EG.wav",
+        "sha256": "ffc131eeee8d2000475b48c9e5d6b2060dbed8e8c79805f54e95196ea6e3b904"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": []
+    },
+    {
+      "id": "S02-05-ar-EG",
+      "locale": "ar-EG",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "خلّينا نجرّب يومًا افتراضيًّا بأرقام واضحة. في غذاء أ، تركيز المادة ر صفر فاصلة اتنين ملِّيجرام لكلّ كيلوجرام غذاء، والاستهلاك صفر فاصلة واحد خمسة كيلوجرام في اليوم. وفي غذاء ب، التركيز صفر فاصلة صفر خمسة بنفس وحدة التركيز، والاستهلاك صفر فاصلة أربعة كيلوجرام في اليوم. نفترض نفس تعريف المتبقّي، ووزن جسم خمسين كيلوجرام. نضرب لكلّ غذاء: الأوّل يدي صفر فاصلة صفر تلاتة ملِّيجرام في اليوم، والتاني يدي صفر فاصلة صفر اتنين. المجموع صفر فاصلة صفر خمسة ملِّيجرام في اليوم. نقسمه على خمسين كيلوجرام من وزن الجسم، فيطلع صفر فاصلة صفر صفر واحد ملِّيجرام لكلّ كيلوجرام من وزن الجسم في اليوم. لو المرجع التعليمي الافتراضي صفر فاصلة صفر واحد بنفس الوحدة، نقسم عليه ونضرب في ميّة: النتيجة عشرة في الميّة. دي نتيجة اليوم والمصادر والافتراضات اللي ذكرناها بس؛ مش تقييمًا مكتملًا طول العمر، ولا حكم مطابقة لعيّنة غذاء.",
+      "textSHA256": "f866928232a6ba2f090aa3554776310acd97500fe1ceac4f0217b8ca8f76dc45",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "950bae726f32aee678fbf04a8f987d7293aee8ea985413a4145f126ebb0bc33e",
+      "semanticID": "worked-example",
+      "scene": 5,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Charon",
+        "file": "AR-Charon.wav",
+        "sha256": "14ce4addce92d93f3d875063b37c1c2750aab94306dec48c755fcdd9f20bc5b6"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-ar-EG",
+        "file": "S02-05-ar-EG.wav",
+        "sha256": "314fe1c0b16cd49f257c62f44dbc80ccdffe35c28a5158970044ff1a2bdc265a"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": []
+    },
+    {
+      "id": "S02-01-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "two-denominators",
+      "spokenText": "The previous step calculated residue mass in a food portion. Now compare the units of two figures: milligrams per kilogram of food, and milligrams per kilogram of body weight per day. The first denominator is food mass; the second includes body mass and a time basis. In Codex, an MRL is the maximum pesticide-residue concentration recommended to be legally permitted in or on a food commodity or animal feed, for the specified commodity and residue definition. It is not an individual dose. An ADI concerns daily intake over an entire lifetime that appears to be without appreciable health risk on the evidence known at evaluation. It is expressed relative to body weight, with the daily basis explicit in our calculation. This chronic-exposure reference is not a food-sample concentration limit or an absolute guarantee. Retrieve actual values and operative limits for the substance, situation and applicable system.",
+      "textSHA256": "1d22bee700f617d738860ba12a3302992c21ec2598d1e7faf89d65855465ccef",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "df430512e0116a43d741d3728cf9f9125620949971e9c49d0ff42fc049e42174",
+      "semanticID": "two-denominators",
+      "scene": 1,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-01-en",
+        "file": "S02-01-en.wav",
+        "sha256": "51058d7075755fdb247c4064592b1b2efcee5fde003d1bc8a98d60dca6284b13"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-01-en",
+          "file": "review/output/flash/S02-01-en-00-reference.analysis.json",
+          "sha256": "3c71e03dbacdf01ba2891e77427c28a753c918189fd8706540d88d8a2ca99524"
+        }
+      ]
+    },
+    {
+      "id": "S02-02-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "equation",
+      "spokenText": "For the training calculation, multiply each food concentration by the mass consumed to obtain a mass of residue. Add masses of the same residue, then divide by body weight. Daily consumption inputs produce a daily body-mass-normalised intake. Concentrations must refer to compatible residue definitions or use a justified conversion; similar names are insufficient. A constructed one-day menu does not automatically estimate lifetime average exposure. Nor does having one day's numbers complete an acute assessment, which requires an appropriate reference and method. Here the task is dimensional reasoning, not a consumption recommendation or clinical conclusion.",
+      "textSHA256": "6072b75fc93a9235a9f383f2566d09908ae2b733d16dd3de06eb16e18e8d3065",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "b10b862cc5cbe73e58720229fdbb8a72693af7f2ccd5f578b5c2e56e973ec994",
+      "semanticID": "equation",
+      "scene": 2,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-02-en",
+        "file": "S02-02-en.wav",
+        "sha256": "de36ec17704939c7170962496e45a35dfb3ad6dec8eeef7d2e7f41413147906f"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [
+        {
+          "id": "blind-0",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 0.0,
+            "end": 0.0,
+            "category": "omission",
+            "heard": "",
+            "expected": "uh",
+            "heardPhonetics": "",
+            "suggestion": "Consider adding a filler word like 'uh' or 'um' for a more natural start.",
+            "reason": "The speaker starts abruptly without any introductory sounds or filler words.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-1",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 1.08,
+            "end": 1.18,
+            "category": "pronunciation",
+            "heard": "calculation",
+            "expected": "calculation",
+            "heardPhonetics": "kælkjʊˈleɪʃən",
+            "suggestion": "Ensure clear pronunciation of the 'l' sound in 'calculation'.",
+            "reason": "The 'l' sound in 'calculation' is slightly unclear, almost sounding like 'caucation'.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-2",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 10.7,
+            "end": 10.8,
+            "category": "pronunciation",
+            "heard": "divide",
+            "expected": "divide",
+            "heardPhonetics": "dɪˈvaɪd",
+            "suggestion": "Ensure clear pronunciation of the 'd' sound at the end of 'divide'.",
+            "reason": "The final 'd' in 'divide' is slightly unvoiced or softened.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-3",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 15.5,
+            "end": 15.6,
+            "category": "pronunciation",
+            "heard": "normalized",
+            "expected": "normalized",
+            "heardPhonetics": "ˈnɔːrməlaɪzd",
+            "suggestion": "Ensure clear pronunciation of the 'l' sound in 'normalized'.",
+            "reason": "The 'l' sound in 'normalized' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-4",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 20.9,
+            "end": 21.0,
+            "category": "pronunciation",
+            "heard": "justified",
+            "expected": "justified",
+            "heardPhonetics": "ˈdʒʌstɪfaɪd",
+            "suggestion": "Ensure clear pronunciation of the 'd' sound at the end of 'justified'.",
+            "reason": "The final 'd' in 'justified' is slightly unvoiced or softened.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-5",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 22.0,
+            "end": 22.1,
+            "category": "pronunciation",
+            "heard": "conversion",
+            "expected": "conversion",
+            "heardPhonetics": "kənˈvɜːrʒən",
+            "suggestion": "Ensure clear pronunciation of the 's' sound in 'conversion'.",
+            "reason": "The 's' sound in 'conversion' is slightly unclear, almost sounding like 'converion'.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-6",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 24.5,
+            "end": 24.6,
+            "category": "pronunciation",
+            "heard": "insufficient",
+            "expected": "insufficient",
+            "heardPhonetics": "ˌɪnsəˈfɪʃənt",
+            "suggestion": "Ensure clear pronunciation of the 's' sound in 'insufficient'.",
+            "reason": "The 's' sound in 'insufficient' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-7",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 26.0,
+            "end": 26.1,
+            "category": "pronunciation",
+            "heard": "menu",
+            "expected": "menu",
+            "heardPhonetics": "ˈmɛnjuː",
+            "suggestion": "Ensure clear pronunciation of the 'u' sound in 'menu'.",
+            "reason": "The 'u' sound in 'menu' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-8",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 27.0,
+            "end": 27.1,
+            "category": "pronunciation",
+            "heard": "automatically",
+            "expected": "automatically",
+            "heardPhonetics": "ˌɔːtəˈmætɪkli",
+            "suggestion": "Ensure clear pronunciation of the 't' sound in 'automatically'.",
+            "reason": "The 't' sound in 'automatically' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-9",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 28.0,
+            "end": 28.1,
+            "category": "pronunciation",
+            "heard": "estimate",
+            "expected": "estimate",
+            "heardPhonetics": "ˈɛstɪmeɪt",
+            "suggestion": "Ensure clear pronunciation of the 't' sound at the end of 'estimate'.",
+            "reason": "The final 't' in 'estimate' is slightly unvoiced or softened.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-10",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 30.0,
+            "end": 30.1,
+            "category": "pronunciation",
+            "heard": "exposure",
+            "expected": "exposure",
+            "heardPhonetics": "ɪkˈspoʊʒər",
+            "suggestion": "Ensure clear pronunciation of the 'z' sound in 'exposure'.",
+            "reason": "The 'z' sound in 'exposure' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-11",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 33.0,
+            "end": 33.1,
+            "category": "pronunciation",
+            "heard": "assessment",
+            "expected": "assessment",
+            "heardPhonetics": "əˈsɛsmənt",
+            "suggestion": "Ensure clear pronunciation of the 's' sound in 'assessment'.",
+            "reason": "The 's' sound in 'assessment' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-12",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 35.0,
+            "end": 35.1,
+            "category": "pronunciation",
+            "heard": "appropriate",
+            "expected": "appropriate",
+            "heardPhonetics": "əˈproʊpriət",
+            "suggestion": "Ensure clear pronunciation of the 'p' sound in 'appropriate'.",
+            "reason": "The 'p' sound in 'appropriate' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-13",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 36.0,
+            "end": 36.1,
+            "category": "pronunciation",
+            "heard": "method",
+            "expected": "method",
+            "heardPhonetics": "ˈmɛθəd",
+            "suggestion": "Ensure clear pronunciation of the 'd' sound at the end of 'method'.",
+            "reason": "The final 'd' in 'method' is slightly unvoiced or softened.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-14",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 38.0,
+            "end": 38.1,
+            "category": "pronunciation",
+            "heard": "dimensional",
+            "expected": "dimensional",
+            "heardPhonetics": "dɪˈmɛnʃənəl",
+            "suggestion": "Ensure clear pronunciation of the 'l' sound in 'dimensional'.",
+            "reason": "The 'l' sound in 'dimensional' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-15",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 40.0,
+            "end": 40.1,
+            "category": "pronunciation",
+            "heard": "consumption",
+            "expected": "consumption",
+            "heardPhonetics": "kənˈsʌmpʃən",
+            "suggestion": "Ensure clear pronunciation of the 's' sound in 'consumption'.",
+            "reason": "The 's' sound in 'consumption' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-16",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 41.0,
+            "end": 41.1,
+            "category": "pronunciation",
+            "heard": "recommendation",
+            "expected": "recommendation",
+            "heardPhonetics": "ˌrɛkəˌmɛnˈdeɪʃən",
+            "suggestion": "Ensure clear pronunciation of the 'd' sound in 'recommendation'.",
+            "reason": "The 'd' sound in 'recommendation' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-17",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 42.0,
+            "end": 42.1,
+            "category": "pronunciation",
+            "heard": "clinical",
+            "expected": "clinical",
+            "heardPhonetics": "ˈklɪnɪkəl",
+            "suggestion": "Ensure clear pronunciation of the 'l' sound in 'clinical'.",
+            "reason": "The 'l' sound in 'clinical' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-18",
+          "sourceFile": "S02-02-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 43.0,
+            "end": 43.1,
+            "category": "pronunciation",
+            "heard": "conclusion",
+            "expected": "conclusion",
+            "heardPhonetics": "kənˈkluːʒən",
+            "suggestion": "Ensure clear pronunciation of the 'z' sound in 'conclusion'.",
+            "reason": "The 'z' sound in 'conclusion' is slightly unclear.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-0",
+          "sourceFile": "S02-02-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 0.0,
+            "end": 43.56,
+            "category": "delivery",
+            "heard": "For the training calculation, multiply each food concentration by the mass consumed to obtain a mass of residue. Add masses of the same residue, then divide by body weight. Daily consumption inputs produce a daily body mass normalized intake. Concentrations must refer to compatible residue definitions or use a justified conversion. Similar names are insufficient. A constructed one-day menu does not automatically estimate lifetime average exposure. Nor does having one day's numbers complete an acute assessment, which requires an appropriate reference and method. Here the task is dimensional reasoning, not a consumption recommendation or clinical conclusion.",
+            "expected": "For the training calculation, multiply each food concentration by the mass consumed to obtain a mass of residue. Add masses of the same residue, then divide by body weight. Daily consumption inputs produce a daily body-mass-normalised intake. Concentrations must refer to compatible residue definitions or use a justified conversion; similar names are insufficient. A constructed one-day menu does not automatically estimate lifetime average exposure. Nor does having one day's numbers complete an acute assessment, which requires an appropriate reference and method. Here the task is dimensional reasoning, not a consumption recommendation or clinical conclusion.",
+            "heardPhonetics": null,
+            "suggestion": "The speaker's delivery is somewhat rushed, with a slightly faster pace than the exemplar. This affects the clarity and naturalness of the speech, making it sound less deliberate and more hurried.",
+            "reason": "The speaker's pace is faster than the exemplar, leading to a rushed delivery. This impacts the overall naturalness and clarity of the speech.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-1",
+          "sourceFile": "S02-02-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 14.46,
+            "end": 15.96,
+            "category": "pronunciation",
+            "heard": "body mass normalized",
+            "expected": "body-mass-normalised",
+            "heardPhonetics": "ˈbɒdi mæs ˈnɔːrməlaɪzd",
+            "suggestion": "Ensure a clear pause or slight emphasis between 'body' and 'mass' to reflect the hyphenated compound, and pronounce 'normalised' with a 'z' sound as in 'normalized' (American English) or a 's' sound as in 'normalised' (British English) consistently.",
+            "reason": "The speaker pronounces 'body mass normalized' as a single phrase without a clear distinction between 'body' and 'mass', which should be hyphenated. The pronunciation of 'normalised' is also slightly unclear, blending into the next word.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-2",
+          "sourceFile": "S02-02-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 21.7,
+            "end": 22.2,
+            "category": "omission",
+            "heard": "conversion",
+            "expected": "conversion;",
+            "heardPhonetics": "kənˈvɜːrʒən",
+            "suggestion": "Include a slight pause or intonation change after 'conversion' to indicate the semicolon in the reference text.",
+            "reason": "The speaker omits the pause or intonation that would typically indicate a semicolon after 'conversion', making it sound like a continuous phrase with the following sentence.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        }
+      ],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-02-en",
+          "file": "review/output/flash/S02-02-en-00-blind.analysis.json",
+          "sha256": "97e44c2d32fc39f2484218d669c0d257602ee92d13daabc74895664716dda922"
+        },
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-02-en",
+          "file": "review/output/flash/S02-02-en-00-reference.analysis.json",
+          "sha256": "0170b1e652365c7320ffea2da48ea1a90006163fad87f8013b12ef0d9aa25901"
+        }
+      ]
+    },
+    {
+      "id": "S02-03-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "hypothetical-reference",
+      "spokenText": "If the exercise supplies a hypothetical ADI, calculate the estimated-intake-to-reference ratio after matching units. Clearly retain the hypothetical label. Being below that example value describes the calculation; it does not show that the rest of the diet, drinking water or relevant population circumstances have been evaluated. Comparing a sample with an MRL instead requires commodity identity, the analysed portion, residue definition, jurisdiction, market, date, sampling and analytical methods, and the applicable decision rule. A teaching value is not an operative legal limit, and a bare numerical difference is not an enforcement decision.",
+      "textSHA256": "d3b465e3a50c85b6c27a22b4261332020e1d5eabcee7cf572f080568a9334788",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "1b9cc3f32a298ec2e81def6f30f1a480e07f93a960ea4a70c09caa06a7b9cdd4",
+      "semanticID": "hypothetical-reference",
+      "scene": 3,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-03-en",
+        "file": "S02-03-en.wav",
+        "sha256": "2f6220bd930223f7e00730b8cf9a0c33a7386a88087de7e921f77c0b7ce18e91"
+      },
+      "checks": [
+        "blind",
+        "reference"
+      ],
+      "retainedPasses": {},
+      "previousAllegations": [
+        {
+          "id": "blind-0",
+          "sourceFile": "S02-03-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 0.0,
+            "end": 0.0,
+            "category": "omission",
+            "heard": "",
+            "expected": "uh",
+            "heardPhonetics": "",
+            "suggestion": "Consider adding a filler word like \"uh\" for a more natural start.",
+            "reason": "The speaker starts abruptly without any introductory sound or filler word.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-1",
+          "sourceFile": "S02-03-en-00-blind.analysis.json",
+          "previousRangeValid": false,
+          "allegation": {
+            "start": 36.08,
+            "end": 36.08,
+            "category": "omission",
+            "heard": "",
+            "expected": "uh",
+            "heardPhonetics": "",
+            "suggestion": "Consider adding a filler word like \"uh\" for a more natural start.",
+            "reason": "The speaker starts abruptly without any introductory sound or filler word.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        }
+      ],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-03-en",
+          "file": "review/output/flash/S02-03-en-00-blind.analysis.json",
+          "sha256": "715cce4dfb7e7a4026e1926c6225e3bc2e6b2e4ca78a8ee8c246999e8e1dca80"
+        }
+      ]
+    },
+    {
+      "id": "S02-04-en",
+      "locale": "en",
+      "voice": "Kore",
+      "sectionID": "multiple-residues",
+      "spokenText": "In EPA's FQPA summary, aggregate exposure brings together multiple sources for one pesticide. Its cumulative assessment requirement concerns pesticides sharing a common toxicity mechanism. Finding several names in a multiresidue report does not justify adding every concentration and comparing the sum with one chemical's ADI. Before combining values, establish substance and residue identity, compatible units and time, and whether the intended result is an intake or a method-specific risk metric. An easy arithmetic sum cannot replace the scientific justification for combining its terms.",
+      "textSHA256": "9330a0bbf861fdc4b775a35146c2c89f6d91499a0db515196dce6ae0049ac52a",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "c516823c9364d28f2a97acdfec1b5d50a924cdae80837adb159113c8ce8fd741",
+      "semanticID": "multiple-residues",
+      "scene": 4,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Kore",
+        "file": "EN-Kore.wav",
+        "sha256": "486aca8835050c6a1774f963553db4034b761b358fa159ddda4c97d224e420b3"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-04-en",
+        "file": "S02-04-en.wav",
+        "sha256": "6b75f7f16b025fbb3805a738598f1616660f151c58f719e4eab2397f2c639380"
+      },
+      "checks": [
+        "reference"
+      ],
+      "retainedPasses": {
+        "blind": {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-04-en",
+          "file": "review/output/flash/S02-04-en-00-blind.analysis.json",
+          "sha256": "abd14cb0be15d4e677c9dd11b1ab296f292fb9a3990200a5eba9226ba23e3016"
+        }
+      },
+      "previousAllegations": [
+        {
+          "id": "blind-0",
+          "sourceFile": "S02-04-en-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 0.72,
+            "end": 1.28,
+            "category": "pronunciation",
+            "heard": "FQPA",
+            "expected": "FQPA",
+            "heardPhonetics": "ɛf kju pi eɪ",
+            "suggestion": "The pronunciation of 'FQPA' was clear and accurate.",
+            "reason": "The acronym 'FQPA' was pronounced clearly and correctly, with each letter articulated distinctly.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "blind-1",
+          "sourceFile": "S02-04-en-00-blind.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 22.32,
+            "end": 22.56,
+            "category": "pronunciation",
+            "heard": "ADI",
+            "expected": "ADI",
+            "heardPhonetics": "eɪ di aɪ",
+            "suggestion": "The pronunciation of 'ADI' was clear and accurate.",
+            "reason": "The acronym 'ADI' was pronounced clearly and correctly, with each letter articulated distinctly.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-0",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 0.0,
+            "end": 0.29,
+            "category": "omission",
+            "heard": "In",
+            "expected": "In",
+            "heardPhonetics": "ɪn",
+            "suggestion": "In",
+            "reason": "The word 'the' was omitted before 'EPA's'.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-1",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 1.0,
+            "end": 1.5,
+            "category": "pronunciation",
+            "heard": "FQPA",
+            "expected": "FQPA",
+            "heardPhonetics": "ɛf kjuː piː eɪ",
+            "suggestion": "FQPA",
+            "reason": "The pronunciation of 'FQPA' is slightly unclear, with the 'Q' sounding somewhat like 'Kyu'.",
+            "severity": "minor",
+            "certainty": "possible"
+          }
+        },
+        {
+          "id": "reference-2",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 13.0,
+            "end": 13.5,
+            "category": "pause_join",
+            "heard": "mechanism. Finding",
+            "expected": "mechanism. Finding",
+            "heardPhonetics": "ˈmɛkənɪzəm ˈfaɪndɪŋ",
+            "suggestion": "mechanism. Finding",
+            "reason": "There is a slight pause between 'mechanism' and 'Finding', which disrupts the flow.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-3",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 15.0,
+            "end": 15.5,
+            "category": "pronunciation",
+            "heard": "multi-residue",
+            "expected": "multi-residue",
+            "heardPhonetics": "ˈmʌlti ˈrɛzɪdjuː",
+            "suggestion": "multi-residue",
+            "reason": "The 'u' in 'residue' is pronounced with a 'yoo' sound, which is acceptable but slightly different from a more common 'oo' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-4",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 22.0,
+            "end": 22.5,
+            "category": "pronunciation",
+            "heard": "ADI",
+            "expected": "ADI",
+            "heardPhonetics": "eɪ diː aɪ",
+            "suggestion": "ADI",
+            "reason": "The pronunciation of 'ADI' is slightly unclear, with the 'A' sounding somewhat like 'Ay'.",
+            "severity": "minor",
+            "certainty": "possible"
+          }
+        },
+        {
+          "id": "reference-5",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 23.0,
+            "end": 23.5,
+            "category": "pause_join",
+            "heard": "ADI. Before",
+            "expected": "ADI. Before",
+            "heardPhonetics": "eɪ diː aɪ bɪˈfɔːr",
+            "suggestion": "ADI. Before",
+            "reason": "There is a slight pause between 'ADI' and 'Before', which disrupts the flow.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-6",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 26.0,
+            "end": 26.5,
+            "category": "pronunciation",
+            "heard": "substance",
+            "expected": "substance",
+            "heardPhonetics": "ˈsʌbstəns",
+            "suggestion": "substance",
+            "reason": "The 'u' in 'substance' is pronounced with a slightly elongated 'uh' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-7",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 27.0,
+            "end": 27.5,
+            "category": "pronunciation",
+            "heard": "identity",
+            "expected": "identity",
+            "heardPhonetics": "aɪˈdɛntɪti",
+            "suggestion": "identity",
+            "reason": "The 'i' in 'identity' is pronounced with a slightly elongated 'eye' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-8",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 30.0,
+            "end": 30.5,
+            "category": "pause_join",
+            "heard": "time, and",
+            "expected": "time, and",
+            "heardPhonetics": "taɪm ænd",
+            "suggestion": "time, and",
+            "reason": "There is a slight pause between 'time' and 'and', which disrupts the flow.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-9",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 32.0,
+            "end": 32.5,
+            "category": "pronunciation",
+            "heard": "intake",
+            "expected": "intake",
+            "heardPhonetics": "ˈɪnteɪk",
+            "suggestion": "intake",
+            "reason": "The 'i' in 'intake' is pronounced with a slightly elongated 'in' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-10",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 35.0,
+            "end": 35.5,
+            "category": "pause_join",
+            "heard": "metric. An",
+            "expected": "metric. An",
+            "heardPhonetics": "ˈmɛtrɪk æn",
+            "suggestion": "metric. An",
+            "reason": "There is a slight pause between 'metric' and 'An', which disrupts the flow.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-11",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 36.0,
+            "end": 36.5,
+            "category": "pronunciation",
+            "heard": "arithmetic",
+            "expected": "arithmetic",
+            "heardPhonetics": "ˌærɪθˈmɛtɪk",
+            "suggestion": "arithmetic",
+            "reason": "The 'th' in 'arithmetic' is pronounced with a slightly softer 'th' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-12",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 38.0,
+            "end": 38.5,
+            "category": "pronunciation",
+            "heard": "scientific",
+            "expected": "scientific",
+            "heardPhonetics": "ˌsaɪənˈtɪfɪk",
+            "suggestion": "scientific",
+            "reason": "The 'i' in 'scientific' is pronounced with a slightly elongated 'eye' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        },
+        {
+          "id": "reference-13",
+          "sourceFile": "S02-04-en-00-reference.analysis.json",
+          "previousRangeValid": true,
+          "allegation": {
+            "start": 39.0,
+            "end": 39.5,
+            "category": "pronunciation",
+            "heard": "justification",
+            "expected": "justification",
+            "heardPhonetics": "ˌdʒʌstɪfɪˈkeɪʃən",
+            "suggestion": "justification",
+            "reason": "The 'i' in 'justification' is pronounced with a slightly elongated 'i' sound.",
+            "severity": "minor",
+            "certainty": "clear"
+          }
+        }
+      ],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-04-en",
+          "file": "review/output/flash/S02-04-en-00-blind.analysis.json",
+          "sha256": "abd14cb0be15d4e677c9dd11b1ab296f292fb9a3990200a5eba9226ba23e3016"
+        },
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-04-en",
+          "file": "review/output/flash/S02-04-en-00-reference.analysis.json",
+          "sha256": "251347339f90ffeb7ca0370c1c8995d192b80643214d96407f1e6a50eb0f0676"
+        }
+      ]
+    },
+    {
+      "id": "S02-05-en",
+      "locale": "en",
+      "voice": "Charon",
+      "sectionID": "worked-example",
+      "spokenText": "Consider an invented daily menu. Food A contains zero point two milligrams of R per kilogram of food and consumption is zero point one five kilograms per day. Food B contains zero point zero five, with consumption of zero point four kilograms per day. Assume the same residue definition and a body weight of fifty kilograms. The first food contributes zero point zero three milligrams per day; the second contributes zero point zero two. Together they provide zero point zero five milligrams per day. Dividing by fifty gives zero point zero zero one milligrams per kilogram of body weight per day. Against an invented ADI of zero point zero one in the same units, that is ten percent. It describes this hypothetical day and these sources, not a complete lifetime assessment or sample-compliance decision.",
+      "textSHA256": "bf00e2580ca6968b7f31183f3fa312ea47a3bb60bb862767418dd84e5cde01fe",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "Clear natural university English, warm and measured, stable timbre, complete connected phrases. Preserve every qualification and negation. No greeting, roleplay or added words.",
+      "deliverySHA256": "0a0746b13555afc759572dadb6609eb5181e08c06044f2b4e21e6924bbca93d3",
+      "requestFingerprintSHA256": "58f476fde2c2a095492d28304a12bde3d08434bb0124f55d36aa9ba36ff3a933",
+      "semanticID": "worked-example",
+      "scene": 5,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-EN-Charon",
+        "file": "EN-Charon.wav",
+        "sha256": "3b8c7f97238b6ca2c2bedffef6baa85fb2d307de8a6451d726327cd35c2f36bc"
+      },
+      "audio": {
+        "run": 40291770716,
+        "artifact": "fate-v2-funded-original-S02-05-en",
+        "file": "S02-05-en.wav",
+        "sha256": "8eb60d0d30d0eed7f075ab74fcb475a4cea796be780ea01d7e0e73123e145530"
+      },
+      "checks": [
+        "reference"
+      ],
+      "retainedPasses": {
+        "blind": {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-05-en",
+          "file": "review/output/flash/S02-05-en-00-blind.analysis.json",
+          "sha256": "26b9e568efb400dff00783e6987bb0397cf7d0d8c0ada2d47f705e23675fa727"
+        }
+      },
+      "previousAllegations": [],
+      "priorEvidence": [
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-05-en",
+          "file": "review/output/flash/S02-05-en-00-blind.analysis.json",
+          "sha256": "26b9e568efb400dff00783e6987bb0397cf7d0d8c0ada2d47f705e23675fa727"
+        },
+        {
+          "run": 40291770716,
+          "artifact": "fate-v2-funded-review-S02-05-en",
+          "file": "review/output/flash/S02-05-en-00-reference.analysis.json",
+          "sha256": "7aa17111ded7dd3710fa1e281dff81cdbdcb36de3f244d2b3622815db96b3345"
+        }
+      ]
+    }
+  ],
+  "createdUTC": "2026-10-26T08:57:05.545809+00:00"
+}

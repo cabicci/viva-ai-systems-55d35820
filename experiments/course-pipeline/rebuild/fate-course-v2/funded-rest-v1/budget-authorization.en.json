@@ -1,0 +1,32 @@
+{
+  "id": "fate-v2-remaining25-v1",
+  "ownerAnswer": "اعتمد 25 دولارًا لباقي المسار",
+  "currency": "USD",
+  "ceiling": 25,
+  "scope": "Remaining10new-edition steps, Arabic Egyptian and English",
+  "model": "gemini-3.8-flash-tts",
+  "voices": [
+    "Charon",
+    "Kore"
+  ],
+  "automaticRefill": false,
+  "paidCallsBeforeAuthorization": 0,
+  "initialAllocation": {
+    "speechReviewsImagesTimingReservationUSD": 18,
+    "diagnosticAndActionsHeadroomUSD": 7
+  },
+  "policy": "Freeze finite call counts/output caps per dispatched package. Include completed, failed and ambiguous paid attempts, preserve originals and usageMetadata, deduplicate costs by responseId. Reconcile actual cost and reserved running calls before releasing unused allocation. No automatic ambiguous retry. Stop new dispatch before the25USD ceiling. Actions charges/quota need separate actual evidence; no account-wide billing enforcement is claimed.",
+  "allocations": [
+    {
+      "id": "fate-v2-funded-s02-v1",
+      "reservationUSD": 1.75,
+      "status": "prepared_not_dispatched",
+      "speechCalls": 10,
+      "analysisCalls": 20,
+      "imageCalls": 1,
+      "imageReviews": 1,
+      "requestSHA256": "f027e3f6fa0336ffbcd4e4f59b474dee9e7de88592feccb8f0a5587c68f3d3e9"
+    }
+  ],
+  "createdUTC": "2026-10-26T08:12:57.625215+00:00"
+}

@@ -1,0 +1,38 @@
+name: Fate v2 S02 bounded audio-review repair, preserve all original speech
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/audio-review-v3/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-s02-audio-review-v3
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/audio-review-v3
+  EXPECTED_REQUEST_SHA256: 635cb6f6cbb08d6386059e2b8b5bbef8fe9ab52b978199907a827bbb4f9d4843
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+jobs:
+  review:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 12
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        part: ["S02-01-ar-EG", "S02-02-ar-EG", "S02-03-ar-EG", "S02-04-ar-EG", "S02-05-ar-EG", "S02-01-en", "S02-02-en", "S02-03-en", "S02-04-en", "S02-05-en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Reuse valid exact checks, repair only missing or invalid diagnostics
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python "$PACKAGE/review_worker.py" "${{ matrix.part }}"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-audio-review-v3-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
