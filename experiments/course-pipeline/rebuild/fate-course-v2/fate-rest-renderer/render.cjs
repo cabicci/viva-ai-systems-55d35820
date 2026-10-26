@@ -4,6 +4,7 @@ async function main(){
  const R=__dirname,s=JSON.parse(fs.readFileSync(path.join(R,'render-data.json'),'utf8')),o=path.join(R,'output'),contracts=JSON.parse(fs.readFileSync(path.join(R,'contracts.json'),'utf8'));
  fs.mkdirSync(o,{recursive:true});const sha=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
  const c=contracts.scenes.find(x=>x.step===s.step&&x.sectionID===s.sectionID);if(!c)throw Error('Exact authored contract missing');
+ if(s.audioGate?.status!=='clear'||s.audioGate.sourceAudioSHA256!==s.audio?.sha256)throw Error('Exact actual-audio qualification required');
  if(!s.audio?.sha256||sha(path.join(R,'public',s.audioFile))!==s.audio.sha256)throw Error('Original audio identity changed');
  if(s.image?.sha256&&sha(path.join(R,'public',s.imageFile))!==s.image.sha256)throw Error('Selected image identity changed');
  if(!Number.isInteger(s.audioFrames)||s.frames!==Math.ceil(s.audioFrames/800)||Math.abs(s.durationSeconds-s.audioFrames/24000)>1e-6)throw Error('Audio/frame timebase mismatch');
@@ -22,7 +23,7 @@ async function main(){
  const p=JSON.parse(execFileSync('ffprobe',['-v','error','-count_frames','-show_streams','-show_format','-of','json',out],{encoding:'utf8'})),v=p.streams.find(x=>x.codec_type==='video'),a=p.streams.find(x=>x.codec_type==='audio');
  if(v.width!==1920||v.height!==1080||Number(v.nb_read_frames)!==s.frames||v.r_frame_rate!=='30/1'||Number(a.sample_rate)!==24000||a.channels!==1||Math.abs(Number(p.format.duration)-s.durationSeconds)>.15)throw Error('Encoded scene checks failed');
  const filter='select='+frames.map(f=>`eq(n\\,${f})`).join('+');
- execFileSync('ffmpeg',['-v','error','-i',out,'-vf',filter,'-fps_mode','vfr',path.join(o,'encoded-%02d.png')]);
+ execFileSync('ffmpeg',['-v','error','-i',out,'-vf',filter,'-vsync','vfr',path.join(o,'encoded-%02d.png')]);
  const encoded=frames.map((f,i)=>{const file=`encoded-${String(i+1).padStart(2,'0')}.png`;if(!fs.existsSync(path.join(o,file)))throw Error('Encoded checkpoint absent');return {frame:f,file,sha256:sha(path.join(o,file))};});
  fs.writeFileSync(path.join(o,'encoded-checkpoints.en.json'),JSON.stringify(encoded,null,2));
  fs.writeFileSync(path.join(o,'probe.json'),JSON.stringify(p,null,2));

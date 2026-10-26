@@ -1,0 +1,122 @@
+{
+  "id": "fate-v2-s02-repaired-scene-v1",
+  "speechModel": "gemini-3.8-flash-tts",
+  "analysisModel": "gemini-2.5-flash",
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 1,
+  "providerReservationUSD": 0.035,
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "parts": [
+    {
+      "id": "S02-02-ar-EG-r1",
+      "locale": "ar-EG",
+      "voice": "Kore",
+      "sectionID": "equation",
+      "spokenText": "تعالى نبني الحساب واحدة واحدة. التركيز بيقول لنا كتلة المادة في كلّ كيلوجرام غذاء. نضربه في كتلة الغذاء المستهلَكة في اليوم؛ كده كيلوجرام الغذاء بيختصر، ويتبقّى ملِّيجرام مادة في اليوم. نعمل كده لكلّ مصدر، ونجمع كتل نفس المتبقّي، وبعدها نقسم على وزن الجسم بالكيلوجرام. الناتج يبقى مدخولًا يوميًّا لكلّ كيلوجرام من وزن الجسم. قبل الجمع، لازم تعريف المتبقّي وأساس القياس يبقوا متوافقين، أو يكون فيه تحويل علمي مبرَّر. مش كفاية الأسماء تبقى شبه بعض. وكمان، حساب الأكل اللي اخترناه ليوم افتراضي مش تلقائيًّا متوسّط التعرّض طول العمر. والتقييم الحادّ ليه مرجع وطريقة وسيناريو مناسبين؛ وجود أرقام ليوم واحد ما يكمّلوش. هنا بنتعلّم معنى الوحدات وخطوات الحساب.",
+      "textSHA256": "43f1d756ab71cc82ff480caf5b9d1e4e075a6a428331fb83b3e686fe13c4701f",
+      "captionPolicy": "Clean captions after actual recording; pronunciation marks are not display text.",
+      "sourceLessonSHA256": "3523308853b56ec0b878e5899940b2e97b17f420b23ba4f44f5522e1cb30be2f",
+      "disclosure": "ordinary_public_explanation_or_already_public_worked_example; private assessment answers excluded",
+      "timing": "unknown_until_actual_recording; no paragraph-duration estimate",
+      "delivery": "اتكلّم بالمصري القاهري الطبيعي، كأنّك مدرّس بيشرح لطلبة جامعة بهدوء ووضوح. الجيم مصرية زي G في gold، والقاف همزة في الكلام اليومي حيث ينطقها المصريون طبيعيًا. راعي الشدّات من غير مبالغة، وحافظ على المعنى والنفي. نبرة دافية ثابتة وسرعة متوسطة، بلاش فصحى أو لهجة خليجية أو نبرة أخبار. المَيّه هي مياه الحقل el-MAY-ya، والمَحْصول بصاد واضحة el-mah-SOOL. لا تضف كلامًا.",
+      "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "requestFingerprintSHA256": "cafa2e36802cdf3152ac1a91b0fbfac830d63be0019eef8db1c6a0ae700433de",
+      "semanticID": "equation",
+      "scene": 2,
+      "referenceVoice": {
+        "run": 40253957942,
+        "artifact": "fate-v2-voice38-original-AR-Kore",
+        "file": "AR-Kore.wav",
+        "sha256": "9585b8d1083dcae47ff69fe13968c0a11aeaf76bc3468a316dadb9a5d7b105b2"
+      },
+      "step": "FATE2-S02",
+      "sceneIndex": 2,
+      "title": {
+        "ar": "٢. نبني المدخول خطوة خطوة",
+        "en": "2. Build intake in explicit stages"
+      },
+      "actions": [
+        {
+          "id": "multiply",
+          "label": {
+            "ar": "نضرب لكل غذاء",
+            "en": "Multiply for each food"
+          },
+          "meaning": "Multiply concentration by food consumption; kg food cancels.",
+          "equation": "mg/kg food × kg food/day = mg/day"
+        },
+        {
+          "id": "combine",
+          "label": {
+            "ar": "نجمع كتلًا متوافقة",
+            "en": "Combine compatible masses"
+          },
+          "meaning": "Add masses only for compatible substance/residue definitions, not arbitrary concentrations.",
+          "equation": "Σ residue mass (mg/day)"
+        },
+        {
+          "id": "normalise",
+          "label": {
+            "ar": "نقسم على وزن الجسم",
+            "en": "Normalise by body weight"
+          },
+          "meaning": "Divide total daily chemical mass by kg body weight.",
+          "equation": "mg/day ÷ kg body weight = mg/kg body weight/day"
+        },
+        {
+          "id": "scope",
+          "label": {
+            "ar": "يوم افتراضي مش تقييم كامل",
+            "en": "One hypothetical day is not a complete assessment"
+          },
+          "meaning": "A one-day menu neither establishes lifetime exposure nor completes acute assessment."
+        }
+      ],
+      "audio": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-original-S02-02-ar-EG-r1",
+        "file": "S02-02-ar-EG-r1.wav",
+        "sha256": "7cd0a453da8f342fede5adebb704a3369a5dc1f7f65f1fe454cb62a237ce337b"
+      },
+      "review": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-review-S02-02-ar-EG-r1",
+        "file": "review-disposition.en.json",
+        "sha256": "7acf5375a2ad71cd1e274a005df2d9aa77c4057b09dbf20a3cb668d09a4927d5"
+      },
+      "clock": {
+        "run": 40300477749,
+        "artifact": "fate-v2-s02-repair-clock-S02-02-ar-EG-r1",
+        "file": "actual-word-clock.en.json",
+        "sha256": "57e85900c553ef1078d20bf3fd285fdd44be457f839c6faa8e37a5f7db764327"
+      },
+      "image": {
+        "run": 40291143105,
+        "artifact": "fate-v2-funded-image-S02-two-bases",
+        "file": "S02-two-bases.jpg",
+        "sha256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731"
+      },
+      "imageReview": {
+        "status": "usable",
+        "imageSHA256": "fbf1e19750a234445d2ea98d22baedf85fa31ad271951e6b16ec27df8242f731",
+        "review": "Author assistant inspected actual image: distinct blank food-balance and unoccupied body-weight scale, no baked values/text; qualitative background only, no measurement evidence."
+      }
+    }
+  ],
+  "heldNotRendered": [],
+  "audioPolicy": "Only exact clear actual-audio gates; original accepted method/voices preserved. No speech regeneration for visual correction.",
+  "supersedesOnly": "S02-02-ar-EG"
+}
