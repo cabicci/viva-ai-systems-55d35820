@@ -1,0 +1,278 @@
+{
+  "utc": "2026-10-26T02:27:33.441704+00:00",
+  "scope": "First-step six-scene explanatory master per locale; no all-course media completion or full ordinary-lesson replacement claim.",
+  "reviewer": "Same author assistant, bounded visual/source/structure review plus retained actual-audio machine evidence. No independent human/native reviewer invented.",
+  "identities": {
+    "ar-EG": {
+      "video": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/FATE2-S01-ar-EG.mp4",
+      "videoSHA256": "866ee6e94a53a2f454206ba23fdab5367d9ff1d156d9db05967259c6dfdb1e40",
+      "frames": 8183,
+      "durationSeconds": 272.76666666666665,
+      "originalSpeechSeconds": 272.68,
+      "actualZeroTailPaddingSeconds": 0.08666666666666667,
+      "assemblyReceiptSHA256": "ce98ae5b97a6aaea6ed13e4ae4cf32909a4982f14f1a3242157f6c8f5940de1d",
+      "timelineSHA256": "fc245979658da5e95e66106871479c33bf311e5d8b77b7d8dce409d12f95ea58"
+    },
+    "en": {
+      "video": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/FATE2-S01-en.mp4",
+      "videoSHA256": "bc3a1addb85c0566023c0808b8ca5510a2a7f92be790e72782a69950bd3d93bc",
+      "frames": 8345,
+      "durationSeconds": 278.1666666666667,
+      "originalSpeechSeconds": 278.08,
+      "actualZeroTailPaddingSeconds": 0.08666666666666667,
+      "assemblyReceiptSHA256": "7d02c530b4dd1d4bdaac3c4c31d414d53887764358fec12dd9e98be101b8699b",
+      "timelineSHA256": "3eebbbc465c68ec5a6dc9bcd6a0ff058bd153d08dab8d68ebbb0ce3a4d50ba49"
+    }
+  },
+  "actualEncodedFramesInspected": [
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-01-final.png",
+      "sha256": "e147e99e95d2449356013054fe83771cf361feb02dd622a03ec64d3110918c48",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-02-final.png",
+      "sha256": "386697ab225712b4ed05a594f659b7046b99752edd2a37d3d0dce7d53f563f70",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-03-final.png",
+      "sha256": "4f4d463a99ef5384fab746046eccd0f0cd4b37e873edb8c01d04a7b60f657399",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-04-final.png",
+      "sha256": "59e8011538edf56d1673d837b789268c0a02d8fdfeed1b2869ac37e89ec4d556",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-05-final.png",
+      "sha256": "a52178560ea9be66145a6f17c5a9f96d9665eca40f168839b5368c66c2f5f728",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/scene-06-final.png",
+      "sha256": "7d2582abee2911f79513dd2b19ed0cbdb061b1c575cf2c24103183d1065c0f32",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/join-03-before.png",
+      "sha256": "6782e7b8b336857db1ee782756edff6c8d4edc04df82c3ca980dc4ebba99e7e6",
+      "method": "Actual decoded frame at selected scene join visually inspected."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-ar-EG/join-03-after.png",
+      "sha256": "678c4bb5619e3ac8872b4739af4580103734354361bb3217618cb3f01625dba8",
+      "method": "Actual decoded frame at selected scene join visually inspected."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-01-final.png",
+      "sha256": "52609b5bc3cbfd9e7062a0d340ba9156640f16333ef380931732237db5ed32dd",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-02-final.png",
+      "sha256": "55a8644cdfd3e6abd2542727403d7728bf97c76c797ae2a3b3900c43b33b3947",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-03-final.png",
+      "sha256": "0d29c1ff8e8aa6bf8d7619be17bf6c92e370642e922b2e6d721ec2520997a499",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-04-final.png",
+      "sha256": "c2eceb07d9f53838c5b760f64fd3790af2caa3e2442e87efeb50856536b89378",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-05-final.png",
+      "sha256": "ee4a516718dcdc6068ebb915ad507fb482fe31fa39094547c41b54248dc13354",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/scene-06-final.png",
+      "sha256": "573a531cef6ac58ebbb2af5b640b9d27d4c2d0110d768f1b77517b798d764e0c",
+      "method": "Actual decoded full-master frame visually inspected by the author assistant."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/join-05-before.png",
+      "sha256": "c68ab0553d529c0d64d8af2fc6b8181265d3edb2c3f981fc57b25398e4b04f30",
+      "method": "Actual decoded frame at selected scene join visually inspected."
+    },
+    {
+      "path": "production/first-masters38-v1/artifacts/fate-v2-first-master38-en/join-05-after.png",
+      "sha256": "a95c8afa0d4808a9eb8dbc3bab71c57770c555bb28510362e9b51c7fc30a5abb",
+      "method": "Actual decoded frame at selected scene join visually inspected."
+    }
+  ],
+  "visualFindings": [
+    "Readable localized titles, main labels and captions in the12 final explanatory checkpoints.",
+    "Source case remains hypothetical residue R in peppers; no measured experiment claimed.",
+    "Displayed250g conversion now includes1000g/kg;0.12mg/kg food ×0.250kg food =0.030mg =30µg; calculation limit remains visible above captions.",
+    "Nineteen source rows and13-to15 gap preserved; supported Methoxychlor identity correction separated from effects-evidence claim.",
+    "Possible field/runoff/water route remains conditional; detection is not presented as proof of effect.",
+    "Selected decoded join frames show correct next-scene state and no previous caption carried into the new scene."
+  ],
+  "sourceAudioEvidence": "FATE2-S01-voice38-v1/selected-audio-review.en.json",
+  "audioReviewLimits": "Every source passage had bounded actual-recording diagnostic evidence. The assistant did not perform native full-master listening. Byte reuse does not certify native accent, timbre, all acoustic joins or human comprehension.",
+  "speechPreservation": "Actions assembly byte-checked every original PCM passage at its exact assembled sample offset; added only less-than-one-video-frame zero tails. Delivery MP4 uses AAC and is not claimed bit-identical PCM.",
+  "joinMeasurements": [
+    {
+      "locale": "ar-EG",
+      "scene": 1,
+      "paddingFrames": 320,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.28,
+        "trailingQuietSeconds": 0.31,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "ar-EG",
+      "scene": 2,
+      "paddingFrames": 480,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.33,
+        "trailingQuietSeconds": 0.26,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "ar-EG",
+      "scene": 3,
+      "paddingFrames": 160,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.13,
+        "trailingQuietSeconds": 0.41000000000000003,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "ar-EG",
+      "scene": 4,
+      "paddingFrames": 320,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.28,
+        "trailingQuietSeconds": 0.27,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "ar-EG",
+      "scene": 5,
+      "paddingFrames": 480,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.15,
+        "trailingQuietSeconds": 0.14,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "ar-EG",
+      "scene": 6,
+      "paddingFrames": 320,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.17,
+        "trailingQuietSeconds": 0.34,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 1,
+      "paddingFrames": 160,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.3,
+        "trailingQuietSeconds": 0.28,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 2,
+      "paddingFrames": 640,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.27,
+        "trailingQuietSeconds": 0.55,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 3,
+      "paddingFrames": 0,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.29,
+        "trailingQuietSeconds": 0.25,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 4,
+      "paddingFrames": 640,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.23,
+        "trailingQuietSeconds": 0.27,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 5,
+      "paddingFrames": 640,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.33,
+        "trailingQuietSeconds": 0.47000000000000003,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    },
+    {
+      "locale": "en",
+      "scene": 6,
+      "paddingFrames": 0,
+      "quiet": {
+        "thresholdRMS": 180,
+        "windowSeconds": 0.01,
+        "leadingQuietSeconds": 0.3,
+        "trailingQuietSeconds": 0.39,
+        "limit": "Thresholded quiet, not a native acoustic or syllable-boundary judgment."
+      }
+    }
+  ],
+  "timingLimits": "Actual ASR/action clocks, with stated onset-only uncertainty; no text-length timing, model-generated clock rescaling or phoneme-exact claim.",
+  "boundedCaptionReview": "Read selected source-bound generated caption text for all ten remaining scenes; retained semantic corrections and original ASR. Numerical units, conditional pathway, no absorption/compliance conclusion,19rows and formula/effect distinction preserved. Caption/ASR correctness is not acoustic/native certification.",
+  "locatedRepair": "calculation-display-repair38.en.json",
+  "previewRegression": "../first-master-preview-checks.en.json",
+  "disposition": "Qualified production review ready for owner playback. No demonstrated material defect remains in inspected checkpoints; exhaustive frame-by-frame or native playback not claimed.",
+  "openLimits": [
+    "Full-master native listening and video playback by owner",
+    "Native browser/mobile/assistive checks",
+    "Independent subject review of remaining held source claims",
+    "Print pagination",
+    "Bunny/platform hosting not performed"
+  ]
+}
