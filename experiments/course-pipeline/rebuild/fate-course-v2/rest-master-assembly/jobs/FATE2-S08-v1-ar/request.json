@@ -1,0 +1,620 @@
+{
+  "schema": "course-master-assembly.v1",
+  "id": "FATE2-S08-masters-v1-ar",
+  "step": "FATE2-S08",
+  "sceneCount": 5,
+  "newProviderCalls": 0,
+  "speechModel": "gemini-3.8-flash-tts",
+  "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+  "sourceSpokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+  "actualSelectionSHA256": "b3b91ab15744efb489d3dc3b1c891cf35936414ded4ce28fd211de513b9c3096",
+  "implementationSHA256": "a364e48ad7321404aa84ba7b27acbf85452b9c99ac894682170cb7bcf6a80b93",
+  "selectionContractSHA256": "6e9fcebbaf63b64ff30698a25489cb4c72f4ea8031d2b7966bbc2c1fc9832541",
+  "methodApprovalOriginalSHA256": "7a3a68706573d115304c4371665e15dfff56fefcb2704b56e880cef707036f55",
+  "methodApprovalCopySHA256": "596e495af0a6a465a8540faf4b22b9d8b5256bd167c52e982d197340849ab7f5",
+  "mediaToolsFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "mediaToolsRequestSHA256": "4363d55e4b46c8b3a6e3d2bb0b70a62f937b2044631cdea6a138dc5e7f1c3740",
+  "locales": {
+    "ar-EG": [
+      {
+        "sceneIndex": 1,
+        "sectionID": "organisms",
+        "voice": "Charon",
+        "textSHA256": "776752744cfc68f47b27a3bd5221d45a241b8860048689c6a10d8d68c550cf46",
+        "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+        "audio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S08-01-ar-EG",
+          "file": "S08-01-ar-EG.wav",
+          "sha256": "403935033c1461313e951d9a10130619f860e156b3d5a1fd249b6b4f47713002",
+          "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S08-01-ar-EG/S08-01-ar-EG.wav"
+        },
+        "audioGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S08-01-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "3e4e586d2706873369aef63e8bb26bc911bbba5b8434eb21383ca957b50fe1c9",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S08-01-ar-EG/review-disposition.en.json"
+        },
+        "visual": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "fa8f0d40f9625f5192cd2a0e096373f3ffa719e9c74c76cb92a6a9e19eba937a",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/visual.mp4"
+        },
+        "selectedVideo": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "FateV2-S08-01-ar-EG.mp4",
+          "sha256": "ee597e7a6863169e813d6c4ab7255f3ba51d89ed288dd85120848b2aa25ec5b1",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/FateV2-S08-01-ar-EG.mp4"
+        },
+        "timing": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "c99419f72da6779c6e5f0a7ce1aa12216a8338dd5d9fe7ab1460401cf02a78f6",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/timing-and-inputs.en.json"
+        },
+        "render": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "render.en.json",
+          "sha256": "ac70dcd5cdf3f88208756d7a04316a7d1463019c924377aaa883363010863a00",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/render.en.json"
+        },
+        "probe": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "probe.json",
+          "sha256": "1e52c77cf71597802c609285a75fc2763882cebd7f4e2c49bbd5bb2d815537c2",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/probe.json"
+        },
+        "encodedCheckpoints": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-01-ar-EG",
+          "file": "encoded-checkpoints.en.json",
+          "sha256": "c2f058a9b89f691a35699d159883afe98af2e61c9164c47b59c5ccbf56145649",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-checkpoints.en.json"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S08-01-ar-EG",
+          "file": "actual-word-clock.en.json",
+          "sha256": "49b21d805968e7621a40476996c5dcd6b6a6795bb6515293e5fe9b8653c9ccb7",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S08-01-ar-EG/actual-word-clock.en.json"
+        },
+        "actualEncodedCheckpoints": [
+          {
+            "frame": 0,
+            "file": "encoded-01.png",
+            "sha256": "1c8403a2c9a7594b3ce32eec1e9aaaec196ef535eed1d3023b047a72ca2de6c4",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-01.png"
+          },
+          {
+            "frame": 141,
+            "file": "encoded-02.png",
+            "sha256": "7b8fc8c75fb5f282748d3e29d062753b62ae8f7c745c0e41a6b5fac5c0ac8983",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-02.png"
+          },
+          {
+            "frame": 394,
+            "file": "encoded-03.png",
+            "sha256": "313c863b5015246fde9ea1da2ccea7efd1df984def45702871d15ab97872414e",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-03.png"
+          },
+          {
+            "frame": 769,
+            "file": "encoded-04.png",
+            "sha256": "3cf85d544d73aa058b9972dce7e9036f26da4169849044dcbd32b7b2b9369c5d",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-04.png"
+          },
+          {
+            "frame": 1457,
+            "file": "encoded-05.png",
+            "sha256": "aa02510675899991cd3337822bf9888910f89162a9f598e50931e452e73ba36e",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-01-ar-EG/encoded-05.png"
+          }
+        ],
+        "visualQualificationStatus": "pending_actual_frame_review",
+        "visualReviewEvidence": [],
+        "title": {
+          "ar": "١. نختار الكائن عشان السؤال",
+          "en": "1. Choose the organism to answer a question"
+        }
+      },
+      {
+        "sceneIndex": 2,
+        "sectionID": "endpoint",
+        "voice": "Kore",
+        "textSHA256": "01cc650e5810ed8d02818cec60b86fa70125af5d5fc7615d2d9a947a89b6b216",
+        "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+        "audio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S08-02-ar-EG",
+          "file": "S08-02-ar-EG.wav",
+          "sha256": "c279aab16cd7d69cc25a2b478b1593aa96220b09e18edf61923187944d12e609",
+          "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S08-02-ar-EG/S08-02-ar-EG.wav"
+        },
+        "audioGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S08-02-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "a55c46e713df2220e1b1af00c27d174ffb291a338d9d7bdb95167dbb9647a2c3",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S08-02-ar-EG/review-disposition.en.json"
+        },
+        "visual": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "visual.mp4",
+          "sha256": "8cd7e88539a362b720ab253bd202b65b374e09203f68931987271dee57eba903",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/visual.mp4"
+        },
+        "selectedVideo": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "FateV2-S08-02-ar-EG-visual-r1.mp4",
+          "sha256": "36ae2c2c548149d3378fb49fb2f893929c3220d52d7ed316cecb62257e327532",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/FateV2-S08-02-ar-EG-visual-r1.mp4"
+        },
+        "timing": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "2f31af6d913603ba2adfd749ca29a6451202451489ef733839a37a42dd36b2de",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/timing-and-inputs.en.json"
+        },
+        "render": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "render.en.json",
+          "sha256": "0041505cfb6152377e42a29c20ab3c93f3cab9b097ccc0db1e008c7d1617058c",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/render.en.json"
+        },
+        "probe": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "probe.json",
+          "sha256": "628c3fd0b27ee10f849c3cf041b88fe0c3cf18839125f555ae2ef8b56a02164b",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/probe.json"
+        },
+        "encodedCheckpoints": {
+          "run": 40324991105,
+          "artifact": "fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1",
+          "file": "encoded-checkpoints.en.json",
+          "sha256": "d9bba81e874af7d394f03780f1b6e8371bb32ce59acdc03355886433f68177d4",
+          "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-checkpoints.en.json"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S08-02-ar-EG",
+          "file": "actual-word-clock.en.json",
+          "sha256": "06c672a41b4bfd4c836fa1644c54f98701b1af120c9d85c8e7ba55297386cb04",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S08-02-ar-EG/actual-word-clock.en.json"
+        },
+        "actualEncodedCheckpoints": [
+          {
+            "frame": 0,
+            "file": "encoded-01.png",
+            "sha256": "74e968d14cbf4cddf3e2fb14a2227317ba965a5f61d86d568c205e251eee92b0",
+            "actualPresentationTimestampSeconds": 0,
+            "accurateSeekThresholdSeconds": 0,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-01.png"
+          },
+          {
+            "frame": 24,
+            "file": "encoded-02.png",
+            "sha256": "a848e2dd915a6153433dabb14a91f952e44347e27c0ee3e61bd126c591934da9",
+            "actualPresentationTimestampSeconds": 0.8,
+            "accurateSeekThresholdSeconds": 0.7833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-02.png"
+          },
+          {
+            "frame": 722,
+            "file": "encoded-03.png",
+            "sha256": "bfab20a40c023b9b5fd0480918ace71f1bd613acac46003d7aa29714dad2fd66",
+            "actualPresentationTimestampSeconds": 24.066667,
+            "accurateSeekThresholdSeconds": 24.049999999999997,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-03.png"
+          },
+          {
+            "frame": 1247,
+            "file": "encoded-04.png",
+            "sha256": "37a1be64fe49e5897d998c732c599c528737df0d261a6bd287eee794d35b693d",
+            "actualPresentationTimestampSeconds": 41.566667,
+            "accurateSeekThresholdSeconds": 41.55,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-04.png"
+          },
+          {
+            "frame": 1453,
+            "file": "encoded-05.png",
+            "sha256": "808f0eaffa62f5cfa7c229bdd292288fc5d0b69357340798cf54803c01ce9d7c",
+            "actualPresentationTimestampSeconds": 48.433333,
+            "accurateSeekThresholdSeconds": 48.4166665,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-scoped-visual-repair-v1/artifacts/fate-v2-s08-visual-r1-video-S08-02-ar-EG-visual-r1/encoded-05.png"
+          }
+        ],
+        "visualQualificationStatus": "pending_actual_frame_review",
+        "visualReviewEvidence": [],
+        "title": {
+          "ar": "٢. كل نتيجة بتوصف استجابة وشروط",
+          "en": "2. Every endpoint has a response and conditions"
+        }
+      },
+      {
+        "sceneIndex": 3,
+        "sectionID": "matc",
+        "voice": "Charon",
+        "textSHA256": "d9c8c31d769d30ab43584034e26ae73d3b23c0df019c8c72864b7d720edf8aad",
+        "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+        "audio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S08-03-ar-EG",
+          "file": "S08-03-ar-EG.wav",
+          "sha256": "f51b017a0a7de63c148b0f5d9d03bba93b6cf2a9a5f7db329ca6f0e95eed3d29",
+          "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S08-03-ar-EG/S08-03-ar-EG.wav"
+        },
+        "audioGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S08-03-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "9d89e94d41cef24a1f2d12bdd1dff9f4c5111e43333651c6a0aa30e831217170",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S08-03-ar-EG/review-disposition.en.json"
+        },
+        "visual": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "visual.mp4",
+          "sha256": "3c30aa1fb8485f93aeb062358c0d06b23ccca6d265405982a77904d38a2c616c",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/visual.mp4"
+        },
+        "selectedVideo": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "FateV2-S08-03-ar-EG.mp4",
+          "sha256": "ccbe1fe588eaded2504ce9d5744c1aa88df012bd4884c7e708638f35ae75863f",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/FateV2-S08-03-ar-EG.mp4"
+        },
+        "timing": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "9bf91d449f15cfe8991c91c4f75da399b90dd3705cbb4e531896024b1557a188",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/timing-and-inputs.en.json"
+        },
+        "render": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "render.en.json",
+          "sha256": "13b15417dd382fe50cae9273e838b273b23ccad989e780e0879e1317b2f9cedc",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/render.en.json"
+        },
+        "probe": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "probe.json",
+          "sha256": "431ba346d5623045e2d8104c8831e8af5af0ecb65c613f08e26d3e6d1d14528f",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/probe.json"
+        },
+        "encodedCheckpoints": {
+          "run": 40303810225,
+          "artifact": "fate-v2-rest-ready-video-v1-S08-03-ar-EG",
+          "file": "encoded-checkpoints.en.json",
+          "sha256": "13a2f072eedcc58dc9e9045959739d839e13531113e7660932ac6e322cd72be5",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-checkpoints.en.json"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S08-03-ar-EG",
+          "file": "actual-word-clock.en.json",
+          "sha256": "a2dff9a7580f0da656fcec07f32b279baab1dc8409e613ae8d9f0715d9142e13",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S08-03-ar-EG/actual-word-clock.en.json"
+        },
+        "actualEncodedCheckpoints": [
+          {
+            "frame": 0,
+            "file": "encoded-01.png",
+            "sha256": "53a7bafccd86d6bf68c1f3df48eaf11a7740cc23022904e9be24e32936be870b",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-01.png"
+          },
+          {
+            "frame": 157,
+            "file": "encoded-02.png",
+            "sha256": "52f19d2cf2731cdb74e63001d5f73733fed578f9a51a2812f864cb40a2818c73",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-02.png"
+          },
+          {
+            "frame": 232,
+            "file": "encoded-03.png",
+            "sha256": "d5c723e815d6d7017f0c806ddedde5a0e18d60e7e0936fd6ec22aa3c6b1c77e9",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-03.png"
+          },
+          {
+            "frame": 307,
+            "file": "encoded-04.png",
+            "sha256": "3978c3ad144c78965fbc5ed3a0f42eb0a6b0c77d9f4970419dab5c5a74217426",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-04.png"
+          },
+          {
+            "frame": 1005,
+            "file": "encoded-05.png",
+            "sha256": "81ae07d468c882d0af681f2937f1722770fc4688bbe0ce2180fe88be6a2637cf",
+            "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-03-ar-EG/encoded-05.png"
+          }
+        ],
+        "visualQualificationStatus": "pending_actual_frame_review",
+        "visualReviewEvidence": [],
+        "title": {
+          "ar": "٣. المتوسط الهندسي وحدوده",
+          "en": "3. The geometric mean and its limits"
+        }
+      },
+      {
+        "sceneIndex": 4,
+        "sectionID": "acr",
+        "voice": "Kore",
+        "textSHA256": "b4271d6734c11e77458e859ebe98742e50cbf2ba0d71ef1fff35c736b4a06c51",
+        "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+        "audio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S08-04-ar-EG",
+          "file": "S08-04-ar-EG.wav",
+          "sha256": "5cab79fb81f4c01a08ec82ce09d669ca4ec5fef69565b9be8bc1371a16c40790",
+          "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S08-04-ar-EG/S08-04-ar-EG.wav"
+        },
+        "audioGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S08-04-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "8a8aa1b888bbd9e2dd1ae894a01fdac630e279d56c92fed26069ee6a975a8523",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S08-04-ar-EG/review-disposition.en.json"
+        },
+        "visual": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "visual.mp4",
+          "sha256": "4cd67d20ccd190999744f9131224434b31bbd425951649779a2cad60c62eead8",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/visual.mp4"
+        },
+        "selectedVideo": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "FateV2-S08-04-ar-EG-acr-visual-r1.mp4",
+          "sha256": "d58e2b6e2338cd4921a4c164477b8857166dfd3aa3df06d3df5899c51b8a98b1",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/FateV2-S08-04-ar-EG-acr-visual-r1.mp4"
+        },
+        "timing": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "533d92247ce708c94f62e5c0db141b78e5d76ee496fe8d2dfffd185efebd3453",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/timing-and-inputs.en.json"
+        },
+        "render": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "render.en.json",
+          "sha256": "96d00a59d85f0986c0b8d98d4f03e3e7cd58a31bdcb5009849012ab7a644f794",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/render.en.json"
+        },
+        "probe": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "probe.json",
+          "sha256": "e1776147a2ab698b3a083b8380b873e23b1eca79a041d6c1a0812ad695dc9d6c",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/probe.json"
+        },
+        "encodedCheckpoints": {
+          "run": 40325969452,
+          "artifact": "fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1",
+          "file": "encoded-checkpoints.en.json",
+          "sha256": "25e453d8189b5420cd924d7445405a675bc9b84cd34c816ec6d2e0d03b311123",
+          "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-checkpoints.en.json"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S08-04-ar-EG",
+          "file": "actual-word-clock.en.json",
+          "sha256": "f392d468ed40027502afdc25eb193d284734dae16cbc44808b7497fede017c3f",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S08-04-ar-EG/actual-word-clock.en.json"
+        },
+        "actualEncodedCheckpoints": [
+          {
+            "frame": 0,
+            "file": "encoded-01.png",
+            "sha256": "530ef757d0e915d64482bc830d4b8c321d124c6b6e8ec63a5dab3c88d860977e",
+            "actualPresentationTimestampSeconds": 0,
+            "accurateSeekThresholdSeconds": 0,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-01.png"
+          },
+          {
+            "frame": 24,
+            "file": "encoded-02.png",
+            "sha256": "ba0c4e424287661fe04cedfa0ae0433a3c398a1ebe4dc13750ebe1f47ae26485",
+            "actualPresentationTimestampSeconds": 0.8,
+            "accurateSeekThresholdSeconds": 0.7833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-02.png"
+          },
+          {
+            "frame": 209,
+            "file": "encoded-03.png",
+            "sha256": "f3e2129011896bad7a9376fb773e490e2371e672eaafe649cdc68cc8cf5d8520",
+            "actualPresentationTimestampSeconds": 6.966667,
+            "accurateSeekThresholdSeconds": 6.95,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-03.png"
+          },
+          {
+            "frame": 776,
+            "file": "encoded-04.png",
+            "sha256": "09e17a08cb4069314e758a8a1c3d7ff7f8b02e6edae0cb1d0d31e5dc0aa8908a",
+            "actualPresentationTimestampSeconds": 25.866667,
+            "accurateSeekThresholdSeconds": 25.85,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-04.png"
+          },
+          {
+            "frame": 1179,
+            "file": "encoded-05.png",
+            "sha256": "c2f879a3dce26fed6f207232e3792050bd8710359b0dbfbd1cea055a7789101d",
+            "actualPresentationTimestampSeconds": 39.3,
+            "accurateSeekThresholdSeconds": 39.2833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/s08-acr-visual-repair-v1/artifacts/fate-v2-s08-acr-visual-r1-video-S08-04-ar-EG-acr-visual-r1/encoded-05.png"
+          }
+        ],
+        "visualQualificationStatus": "pending_actual_frame_review",
+        "visualReviewEvidence": [],
+        "title": {
+          "ar": "٤. النسبة الحادة للمزمنة مش معيار نهائي",
+          "en": "4. An acute-to-chronic ratio is not a final criterion"
+        }
+      },
+      {
+        "sceneIndex": 5,
+        "sectionID": "worked-example",
+        "voice": "Charon",
+        "textSHA256": "0588e01a279f59d563531e668cf6c7a4897bad56074b405eeda8a1987c2906d5",
+        "deliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+        "audio": {
+          "run": 40296268513,
+          "artifact": "fate-v2-rest-original-S08-05-ar-EG",
+          "file": "S08-05-ar-EG.wav",
+          "sha256": "b3dc62927674c7bafde9542beffad9b3dfdad536e1a65d2c08b49510b41c6a64",
+          "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S08-05-ar-EG/S08-05-ar-EG.wav"
+        },
+        "audioGate": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-review-S08-05-ar-EG",
+          "file": "review-disposition.en.json",
+          "sha256": "789a8810c181c7cd69b16a95cd00f17259c4a3dcf5b3b14742a0f7468b66d630",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S08-05-ar-EG/review-disposition.en.json"
+        },
+        "visual": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "visual.mp4",
+          "sha256": "690b0f9813888b3ea4ac97509ed86632d5f38479d07f1b99a4911ddbd0bc95f3",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/visual.mp4"
+        },
+        "selectedVideo": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "FateV2-S08-05-ar-EG-terminal-r2.mp4",
+          "sha256": "a8f16bf10fb901a3a7b1f7e2bde7996613febff210885982af6e73f34499b2ae",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/FateV2-S08-05-ar-EG-terminal-r2.mp4"
+        },
+        "timing": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "timing-and-inputs.en.json",
+          "sha256": "e7453dd6826b43e981f6afe9f80671fb38dff772dcf8ff8f192d63ff357ca63f",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/timing-and-inputs.en.json"
+        },
+        "render": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "render.en.json",
+          "sha256": "5c56899f4324375bf5823c2811a2b21540624e481a01bd81bd3b37d50aae36da",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/render.en.json"
+        },
+        "probe": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "probe.json",
+          "sha256": "ff983457d3ad1ad8bcadf7343deb508b75749ebe59fa6b6a2979fc93a5cbf45e",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/probe.json"
+        },
+        "encodedCheckpoints": {
+          "run": 40322427153,
+          "artifact": "fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2",
+          "file": "encoded-checkpoints.en.json",
+          "sha256": "062f2fa61b4b77e1bce8e732344f7077c36c8f1ac14f314a032348e920377ce9",
+          "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-checkpoints.en.json"
+        },
+        "sourceClock": {
+          "run": 40300477367,
+          "artifact": "fate-v2-rest-clock-S08-05-ar-EG",
+          "file": "actual-word-clock.en.json",
+          "sha256": "19b4f8bcfb21c4682f8628dcb9cb1077ee198c8a229f5ab6fed09d91384ba363",
+          "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-clock-S08-05-ar-EG/actual-word-clock.en.json"
+        },
+        "actualEncodedCheckpoints": [
+          {
+            "frame": 0,
+            "file": "encoded-01.png",
+            "sha256": "3fabdd7072a659c30e97915758bda8bc10d868e347bd6ea83a1655e4d08b5b2b",
+            "actualPresentationTimestampSeconds": 0,
+            "accurateSeekThresholdSeconds": 0,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-01.png"
+          },
+          {
+            "frame": 24,
+            "file": "encoded-02.png",
+            "sha256": "3061e3764d270260bfa88839f271947bf7d4df186650bb75a1c9c1f4ada8e678",
+            "actualPresentationTimestampSeconds": 0.8,
+            "accurateSeekThresholdSeconds": 0.7833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-02.png"
+          },
+          {
+            "frame": 366,
+            "file": "encoded-03.png",
+            "sha256": "a5dbf06be81bb0de908f88b6a5395789e9f387b8f86516baff28ae8125931e6b",
+            "actualPresentationTimestampSeconds": 12.2,
+            "accurateSeekThresholdSeconds": 12.1833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-03.png"
+          },
+          {
+            "frame": 649,
+            "file": "encoded-04.png",
+            "sha256": "800eec5f7f823aa52ca7e7262bcb013087a6137a3b15878b00ff757cd02b0f6a",
+            "actualPresentationTimestampSeconds": 21.633333,
+            "accurateSeekThresholdSeconds": 21.6166665,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-04.png"
+          },
+          {
+            "frame": 1191,
+            "file": "encoded-05.png",
+            "sha256": "a6ab054aded96858fc2100f38db281c521b70cdbb202792cdf8ce2332eb25a51",
+            "actualPresentationTimestampSeconds": 39.7,
+            "accurateSeekThresholdSeconds": 39.6833335,
+            "method": "First decoded presentation frame after actual previous/current PTS midpoint; frame0 decoded directly; no select filter",
+            "localPath": "production/remaining-terminal14-recovery-v3/artifacts/fate-v2-terminal14-r3-video-S08-05-ar-EG-terminal-r2/encoded-05.png"
+          }
+        ],
+        "visualQualificationStatus": "pending_actual_frame_review",
+        "visualReviewEvidence": [],
+        "title": {
+          "ar": "مثال محلول: من نتيجتين إلى نسبة",
+          "en": "Worked example: endpoints to a ratio"
+        }
+      }
+    ]
+  },
+  "scope": "Ordinary explanatory scenes only. Written lesson, independent practice and private assessment keys remain separate.",
+  "ownerFullMasterListening": "Not claimed",
+  "createdUTC": "2026-10-26T13:19:17.269481+00:00",
+  "sourceVisualQualification": {
+    "file": "source-visual-review.en.json",
+    "sha256": "41d0601926f647ad2bb0e088bc780aa5ccd1ad836a7fa57e1e212263705167fc",
+    "reviewProjectPath": "media-plan/FATE2-S08/visual-ar-EG-encoded-review.en.json",
+    "scope": "Actual selected encoded checkpoints; no continuous/native playback or human-listening claim."
+  }
+}
