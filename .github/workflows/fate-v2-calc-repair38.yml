@@ -1,0 +1,45 @@
+name: Fate v2 calculation display repair, preserve approved audio and clocks
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/calc-display-repair38/request.json]
+permissions:
+  contents: read
+  actions: read
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/calc-display-repair38
+  EXPECTED_REQUEST_SHA256: ecaef7a4a787f30cf734eccb7a14ea58e6ade34c30271ba3b8b5a9c445587463
+  GH_TOKEN: ${{ github.token }}
+jobs:
+  repair:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [S01-03-ar-EG, S01-03-en]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Reuse exact original audio and unchanged validated clock
+        run: python "$PACKAGE/prepare.py" "${{ matrix.part }}"
+      - name: Install pinned renderer
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/calc-display-repair38
+        run: npm ci --no-audit --no-fund
+      - name: Render repaired display checkpoints
+        run: node "$PACKAGE/render.cjs" stills
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-calc-repair38-stills-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
+      - name: Render only affected scene
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+          node "$PACKAGE/render.cjs" video
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: fate-v2-calc-repair38-video-${{ matrix.part }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
