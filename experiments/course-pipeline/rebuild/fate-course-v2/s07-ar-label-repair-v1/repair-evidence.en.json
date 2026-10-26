@@ -1,0 +1,72 @@
+{
+  "schema": "fate-s07-ar-localization-review-amendment.v1",
+  "status": "hold",
+  "visualDimensionReadyForAssembly": false,
+  "scope": "Arabic scene1 common-word diagram labels only; previous sampled review missed this localization defect. Preserve that review as history. English, science/units, source scripts, accepted audio, clocks, actions/times and all other Arabic scene media remain unchanged.",
+  "previousReview": {
+    "file": "media-plan/FATE2-S07/visual-ar-EG-encoded-review.en.json",
+    "sha256": "b760c4841269c6ab70a746be6755561cdd0729accceaf5903147bceca4e66e12"
+  },
+  "sceneIndex": 1,
+  "actualPixelsViewed": true,
+  "finding": "Actual encoded frames02–05 display organism: mg/kg and water: mg/L in the Arabic diagram. Common words must be Arabic; technical unit symbols stay Latin.",
+  "exactDisplayEdits": [
+    {
+      "before": "organism: mg/kg",
+      "after": "الكائن: mg/kg"
+    },
+    {
+      "before": "water: mg/L",
+      "after": "المياه: mg/L"
+    }
+  ],
+  "sourceVideoSHA256": "9ce667f85b995e0319b94b684b6ee4da51fde5f7c892090e780f941200411c8b",
+  "timingSHA256": "eeb4533fc71d67dd5963faa23f0eb0ed4221c634a46f6811c7c768c8bcec4a9b",
+  "sourceAudioSHA256": "96779dab66330324d7f6910bdbf6aa7b6cc23f32fea0758eb909405650902f3e",
+  "actualClock": {
+    "run": 40300477367,
+    "artifact": "fate-v2-rest-clock-S07-01-ar-EG",
+    "file": "actual-word-clock.en.json",
+    "sha256": "a6c21bdf5174fc36aadf5937df794a20e3d23576c615260f649aedf117b2542e"
+  },
+  "audioGate": {
+    "run": 40300477367,
+    "artifact": "fate-v2-rest-review-S07-01-ar-EG",
+    "file": "review-disposition.en.json",
+    "sha256": "dac41ddab7abec8042d99e3ba7cfbf7ef4b00067663915a72cf085089c438c76"
+  },
+  "checkpointsViewed": [
+    {
+      "frame": 0,
+      "file": "encoded-01.png",
+      "sha256": "6266afa1eb605c45a2f0ec4822d8c700390e242b8a92ccc37f0d062424e0d144",
+      "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-ar-EG/encoded-01.png"
+    },
+    {
+      "frame": 364,
+      "file": "encoded-02.png",
+      "sha256": "14d50bb2fdcb50dfabb761d1edb812deac6d56d999586b9a8d13ae197b92ff79",
+      "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-ar-EG/encoded-02.png"
+    },
+    {
+      "frame": 1053,
+      "file": "encoded-03.png",
+      "sha256": "da152a0c574b64ed036fa4c9a6cb1a774c98f6cddbc09bd5aa9f3d9724e12ec0",
+      "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-ar-EG/encoded-03.png"
+    },
+    {
+      "frame": 1455,
+      "file": "encoded-04.png",
+      "sha256": "530def13d4cfe83858e9f8019d1a09a99fe02df3d6f65fa27bc1bb43767b6636",
+      "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-ar-EG/encoded-04.png"
+    },
+    {
+      "frame": 1541,
+      "file": "encoded-05.png",
+      "sha256": "0ce71df7d7c6f033e942468090633be1b701132ce9f0a9de97a5daa324a66f4e",
+      "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S07-01-ar-EG/encoded-05.png"
+    }
+  ],
+  "nativePlaybackPerformed": false,
+  "newListeningClaimed": false
+}

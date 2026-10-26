@@ -1,0 +1,82 @@
+{
+  "contractsSHA256": "b55ceba82fdcd0573e430ed4f582529ff6a8f2de6c3966d771bae8841ad80298",
+  "brandAssets": [
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/Cairo.ttf",
+      "name": "Cairo.ttf",
+      "sha256": "667c987182391c91f4e57a2f455b1794fb5e3ee6ca4ef3383e86bb690fa9c964"
+    },
+    {
+      "path": "experiments/course-pipeline/rebuild/fate-l01-full-pilot-20261020/render/inputs/masaarat-logo-lockup.png",
+      "name": "masaarat-logo-lockup.png",
+      "sha256": "60620006f7f74dcc625ccbd9869a19b45a7683fde04b729694b1c76d1a51d706"
+    }
+  ],
+  "bootstrapFiles": {
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/bootstrap.cjs": "a940abe892666d1a39aff4bbcfc0858f508074043ef49631176870c98bc443f3",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/verified-package.en.json": "82cd4e18ff20c964535bbf5ea61690da23753731fc6b208e10f790cf428d4dac",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package.json": "0bff60e82712dceebf99bbba7792c446967ff30dc0f060d9506cdbe49487895e",
+    "experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1/package-lock.json": "7838f794756faefe1458d53da71f626b57a5bb4aa3c81bbbefb4bb1dddf40c4e"
+  },
+  "id": "s07-ar-label-repair-v1",
+  "newProviderCalls": 0,
+  "newSpeechCalls": 0,
+  "newImageCalls": 0,
+  "maxSemanticCalls": 0,
+  "providerReservationUSD": 0,
+  "parts": [
+    {
+      "id": "S07-01-ar-EG-label-r1",
+      "originalPartID": "S07-01-ar-EG",
+      "step": "FATE2-S07",
+      "locale": "ar-EG",
+      "sceneIndex": 1,
+      "sectionID": "ratios",
+      "sceneImplementation": "baseline",
+      "sourceTiming": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S07-01-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "eeb4533fc71d67dd5963faa23f0eb0ed4221c634a46f6811c7c768c8bcec4a9b"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S07-01-ar-EG",
+        "file": "S07-01-ar-EG.wav",
+        "sha256": "96779dab66330324d7f6910bdbf6aa7b6cc23f32fea0758eb909405650902f3e"
+      },
+      "image": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-image-S07-aqueous-uptake-chamber",
+        "file": "S07-aqueous-uptake-chamber.jpg",
+        "sha256": "dae59b7f446b0f5af2ec310da79aba2ec381c84b3b7db758cc1607668e00f022"
+      },
+      "review": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S07-01-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "dac41ddab7abec8042d99e3ba7cfbf7ef4b00067663915a72cf085089c438c76"
+      },
+      "clock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S07-01-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "a6c21bdf5174fc36aadf5937df794a20e3d23576c615260f649aedf117b2542e"
+      },
+      "originalTextSHA256": "ab05b31573a5698d4db6aa8d252216c69fa0414660554914a6b8a32560b56dff",
+      "originalDeliverySHA256": "c600a1cee536f5fe8615836be56dff11d5f4862b75a5c49b790a3da894136656",
+      "originalFrames": 1542,
+      "originalAudioFrames": 1233600,
+      "originalActionsSHA256": "a1009e0a00426ce3172441d89e5d8474d4e2cf69d38d43ed87e72476668a9a18",
+      "originalCaptionsSHA256": "7a7185cd0551d99a21685e10a1c4498f91fe4671e57aed069db2585298e5d88f"
+    }
+  ],
+  "targetedDisplayChanges": [
+    "Only S07 Arabic scene1 common words organism/water become الكائن/المياه; Latin mg/kg and mg/L symbols unchanged.",
+    "No caption, authored script, audio/PCM/gate, image, clock/action/time/frame or numeric change."
+  ],
+  "sourceRepairEvidence": {
+    "file": "repair-evidence.en.json",
+    "sha256": "f7893718fe2bcc9bf91b28fea11f6026a2a62dc8880288d5866068d8d29a4a3d"
+  }
+}

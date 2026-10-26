@@ -1,0 +1,456 @@
+{
+  "schema": "fate-selected-scenes-assembly-visual-gate.v2",
+  "step": "FATE2-S04",
+  "locale": "ar-EG",
+  "status": "clear",
+  "visualDimensionReadyForAssembly": true,
+  "reviewedAtUTC": "2026-10-26T13:01:22.857803+00:00",
+  "reviewer": "root assistant",
+  "sourceSelectionPlan": {
+    "file": "production/master-ready-selections/FATE2-S04-ar-EG-v2.en.json",
+    "sha256": "426901b69babbd984c197f996d1fedb1804d43ec9c55304a732d84f630a54b98"
+  },
+  "scenes": [
+    {
+      "sceneIndex": 1,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-01-ar-EG",
+        "file": "FateV2-S04-01-ar-EG.mp4",
+        "sha256": "4f27772f08db04c37bccbbea687af31ee14d41b1afc4c8d74f90a81af869921c",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/FateV2-S04-01-ar-EG.mp4"
+      },
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-01-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "a6466167dffee9e0f9c8063a7a13957ff60089fe0178ad26d32599e5d3216ca3",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/visual.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-01-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "127e5e0724b0f480964cbcde36755fd451c3277904456f954ad55bf60c5ddc0d",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/timing-and-inputs.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-01-ar-EG",
+        "file": "S04-01-ar-EG.wav",
+        "sha256": "60017a56b635be560fe2c818146003e52b343ca5d4778bbe2db3a6e7ac984d20",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S04-01-ar-EG/S04-01-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-01-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "eee0d6e710bc11908fbfa90958d2fadaaedaf912b70a33d187da701ccb31e74a",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S04-01-ar-EG/review-disposition.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-01-ar-EG",
+        "file": "render.en.json",
+        "sha256": "3aac5b944111bc7c477e21f5c7fe5bcfb9b792d7d6a8f3604e95ed1c14a6451f",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/encoded-01.png",
+          "sha256": "d66d4ecbab3ff380a76310d48d0baf5080f311ecebbf13821a8392fd0b765f81",
+          "frame": 0,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/encoded-02.png",
+          "sha256": "e2320933fc4d93a036b7e72f18f36357cadb5cdc3a9b9b0bf40e0c422bbf53f6",
+          "frame": 324,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/encoded-03.png",
+          "sha256": "dd0a10751317c6857076ccbfbccc77ff02c3bf8387b7a3805cd75c3a683da721",
+          "frame": 731,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/encoded-04.png",
+          "sha256": "0e7d2652a2a1b336804c521392e956ee20ebce635d94db419e41ea58b2905820",
+          "frame": 939,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-01-ar-EG/encoded-05.png",
+          "sha256": "93314f930c7c79e61eacb6248bf6ef3c2edc6cfcd95f3d9e9f8458fe75ebfc28",
+          "frame": 1156,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        }
+      ],
+      "finding": "Source/stream/receptor/effect chain retains question marks and dashed hypothesis qualifier, with identity/time, oxygen/temperature and habitat/endpoint alternative evidence.",
+      "retainedPriorActualReview": {
+        "file": "media-plan/FATE2-S04/visual-ar-EG-encoded-review-v1.en.json",
+        "sha256": "e5a53429f95cecce96268dd32654def61894881bd392df18b57324e76c6b4da0"
+      }
+    },
+    {
+      "sceneIndex": 2,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-02-ar-EG",
+        "file": "FateV2-S04-02-ar-EG.mp4",
+        "sha256": "0a094a3c83c9a3c356bed9b670ddeb3cb2f5ba6385ce2de73f57f49e2af090b8",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/FateV2-S04-02-ar-EG.mp4"
+      },
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-02-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "5f5f17b94fc8459071173c382221c90f74f512d1786436ec9e6a31166255086f",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/visual.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-02-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "ae1ad336f3a7c5c3c055b7a16a4901998e2b07c2a482dd869213b1508d959a97",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/timing-and-inputs.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-02-ar-EG",
+        "file": "S04-02-ar-EG.wav",
+        "sha256": "4380af54a76837e4627b9a062028f24e5227c248c5a953c1502f220cf4fbaebf",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S04-02-ar-EG/S04-02-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-02-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "3565854d2160138b1edead7da2c7d003478f1f605ea8db5e5a5ade22857dba41",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S04-02-ar-EG/review-disposition.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-02-ar-EG",
+        "file": "render.en.json",
+        "sha256": "7b770e502abb90acb8b307492b55f1b1ed0dd0ff651bf699dc030850dc780c6c",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/encoded-01.png",
+          "sha256": "e68a2a427124128eebd4832302d73b1b50f52798c0e9db1abfb301a408ee2694",
+          "frame": 0,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/encoded-02.png",
+          "sha256": "756b9cd04307e4d851c1b0931ad4a108ec9f19f73233d37a40a506a459ef6d1e",
+          "frame": 24,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/encoded-03.png",
+          "sha256": "abc9fe04eef2218e5f76bfd7978a22249645b17cadf3b7524c41767d5e351112",
+          "frame": 195,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/encoded-04.png",
+          "sha256": "149f3900c51cba59edb1bc8a029af8832f464e97ff1a28a14bcd49aede777cd9",
+          "frame": 846,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-02-ar-EG/encoded-05.png",
+          "sha256": "7b82d49cd172d522cbfcd840eb4238e9059d34766e751215497de82d6e9b4e0a",
+          "frame": 1474,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        }
+      ],
+      "finding": "Four environmental media are named separately from receptor contact/entry; two arrows are illustrative hypotheses, no claim of an exhaustive receptor route taxonomy. No specific food-only or water-only contrast in this contract.",
+      "retainedPriorActualReview": {
+        "file": "media-plan/FATE2-S04/visual-ar-EG-encoded-review-v1.en.json",
+        "sha256": "e5a53429f95cecce96268dd32654def61894881bd392df18b57324e76c6b4da0"
+      }
+    },
+    {
+      "sceneIndex": 3,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40304494209,
+        "artifact": "fate-v2-rest-released-video-v1-S04-03-ar-EG",
+        "file": "FateV2-S04-03-ar-EG.mp4",
+        "sha256": "3e0f1c3a3e6bb22ea0bb586a02f7a418c476f279f2d7329c5b55f4a24fbc64ba",
+        "localPath": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/FateV2-S04-03-ar-EG.mp4"
+      },
+      "visual": {
+        "run": 40304494209,
+        "artifact": "fate-v2-rest-released-video-v1-S04-03-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "5b6d313c0d944a3a6df923c15afdca71cbb2bd5cc78b9c4edff7676820d41caf",
+        "localPath": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/visual.mp4"
+      },
+      "timing": {
+        "run": 40304494209,
+        "artifact": "fate-v2-rest-released-video-v1-S04-03-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "172c14cca81dba7cd844f902eaa4a138a478d1a6b94f47d6d87b7f656d21dc30",
+        "localPath": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/timing-and-inputs.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-03-ar-EG",
+        "file": "S04-03-ar-EG.wav",
+        "sha256": "6286c7061db71cf238ae18e5aedbba7120d9eb20734f2eeb0a00121ad971b454",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S04-03-ar-EG/S04-03-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S04-03-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "20caa997dbd799820406ea256767a3be3406eebbe864c2a9b5e70a12f9563b4b",
+        "localPath": "production/rest-voice-recheck-v1/artifacts/fate-v2-rest-voice-recheck-S04-03-ar-EG/review-disposition.en.json"
+      },
+      "render": {
+        "run": 40304494209,
+        "artifact": "fate-v2-rest-released-video-v1-S04-03-ar-EG",
+        "file": "render.en.json",
+        "sha256": "558a098b0b4ab42604802d7c3626c8a20fc078ac456e50f198b8278deff7dfd2",
+        "localPath": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/encoded-01.png",
+          "sha256": "3d24cf42e8daaabb06c1aefb6bdae5d1d8d5fba6fe57e9135adf2a333ca1ecba",
+          "frame": 0,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/encoded-02.png",
+          "sha256": "331f250ea9dbfc9681b7b423d75a3367367ede996cffbcca6aacf8c97b3a2fce",
+          "frame": 24,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/encoded-03.png",
+          "sha256": "63dad057fcb4e18d1f7fe0be2ce64bb62d3d45b9f3d911df9ca3cf8860595f82",
+          "frame": 139,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/encoded-04.png",
+          "sha256": "e2c6432bd3db0f3ec51aaee7a5d53785420ea442620bd8b88172fc153c15d565",
+          "frame": 298,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-released-scenes-v1/artifacts/fate-v2-rest-released-video-v1-S04-03-ar-EG/encoded-05.png",
+          "sha256": "abcc5eeef470a7e725abb0a278d4563f2ce34ed2c8fe0143bf5dfcb7d08feb20",
+          "frame": 1489,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        }
+      ],
+      "finding": "Individual, population and community/ecosystem levels enter at corresponding cues. The explicit moving-between-levels-is-not-automatic qualifier stays visible.",
+      "retainedPriorActualReview": {
+        "file": "media-plan/FATE2-S04/visual-ar-EG-encoded-review-v1.en.json",
+        "sha256": "e5a53429f95cecce96268dd32654def61894881bd392df18b57324e76c6b4da0"
+      }
+    },
+    {
+      "sceneIndex": 4,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40324991117,
+        "artifact": "fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1",
+        "file": "FateV2-S04-04-ar-EG-display-r1.mp4",
+        "sha256": "9cfa95cc74fe8fa2245575d0d6e76e1929fc8f6e530d23e7b8df86fdc61b0f22",
+        "localPath": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/FateV2-S04-04-ar-EG-display-r1.mp4"
+      },
+      "visual": {
+        "run": 40324991117,
+        "artifact": "fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1",
+        "file": "visual.mp4",
+        "sha256": "ff6f5e92f8fbcaba4a868d6e84e7207aca0979384cb9800863eb455921d2714f",
+        "localPath": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/visual.mp4"
+      },
+      "timing": {
+        "run": 40324991117,
+        "artifact": "fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "65d546a713d9f27599eb20a2fe5029ad5284dddd8e487d2051829d67a2ebb59b",
+        "localPath": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/timing-and-inputs.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-04-ar-EG",
+        "file": "S04-04-ar-EG.wav",
+        "sha256": "17cb35ce926dc321b3084f8eec7c82920ddecefbcfae14f7ff90c280b13965d7",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S04-04-ar-EG/S04-04-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40303810208,
+        "artifact": "fate-v2-rest-voice-recheck-S04-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "73c09498b9824e95f305b56cd01759d32bf7ef8cc6c2e490151689d95dc499c3",
+        "localPath": "production/rest-voice-recheck-v1/artifacts/fate-v2-rest-voice-recheck-S04-04-ar-EG/review-disposition.en.json"
+      },
+      "render": {
+        "run": 40324991117,
+        "artifact": "fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1",
+        "file": "render.en.json",
+        "sha256": "1b453168d3e7bcce5ab2b664885b2210dc25ca8f3ce4ca8e6ff3e565b99be037",
+        "localPath": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/encoded-01.png",
+          "sha256": "abc43fe9216fc4745b319f89c9f3470db95c07587fee4b13862a577e3d2bf041",
+          "frame": 0,
+          "actualPixelsViewed": true,
+          "inspection": "Actual corrected encoded checkpoint viewed in960x540 contact-sheet tile."
+        },
+        {
+          "path": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/encoded-02.png",
+          "sha256": "6d8611f5806551501a114d4522a7d89900cd987e7a855dedc6ca55c10266bacb",
+          "frame": 24,
+          "actualPixelsViewed": true,
+          "inspection": "Actual corrected encoded checkpoint viewed in960x540 contact-sheet tile."
+        },
+        {
+          "path": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/encoded-03.png",
+          "sha256": "80a984964671adfa2598baf51b7e9016b178a22117bde6a589e58287e5a4ed8b",
+          "frame": 224,
+          "actualPixelsViewed": true,
+          "inspection": "Actual corrected encoded checkpoint viewed in960x540 contact-sheet tile."
+        },
+        {
+          "path": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/encoded-04.png",
+          "sha256": "752a1a81746de6b9a44622e236cf4436ab854006bd593cec2c146507162e8a74",
+          "frame": 611,
+          "actualPixelsViewed": true,
+          "inspection": "Actual corrected encoded checkpoint viewed in960x540 contact-sheet tile."
+        },
+        {
+          "path": "production/s04-history-neutral-repair-v1/artifacts/fate-v2-s04-history-r1-video-S04-04-ar-EG-display-r1/encoded-05.png",
+          "sha256": "79b7ab066c470d59ca30ad4d9868536cd16a1a9b61df630219337a991b6ae816",
+          "frame": 1216,
+          "actualPixelsViewed": true,
+          "inspection": "Actual corrected encoded checkpoint viewed in960x540 contact-sheet tile."
+        }
+      ],
+      "finding": "All six evidence-type cells stay uniformly neutral. Semantic action cards alone highlight picture, historical context and bounded next test at exact unchanged source cues. No false pair association remains in sampled encoded frames."
+    },
+    {
+      "sceneIndex": 5,
+      "status": "clear",
+      "selectedVideo": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-05-ar-EG",
+        "file": "FateV2-S04-05-ar-EG.mp4",
+        "sha256": "160c138f93673551c25ae6a299410abfb02611a52556ba7f63f73581a02af383",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/FateV2-S04-05-ar-EG.mp4"
+      },
+      "visual": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-05-ar-EG",
+        "file": "visual.mp4",
+        "sha256": "db310434f4a1653dfca3b21706fba2e9ce7b6578ae5acec673b71b600d34f572",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/visual.mp4"
+      },
+      "timing": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-05-ar-EG",
+        "file": "timing-and-inputs.en.json",
+        "sha256": "44c1b0cf9b4e151d52700c8413cf529e8e4af7c09a40157dc8ec3a77aa6061a1",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/timing-and-inputs.en.json"
+      },
+      "audio": {
+        "run": 40296268513,
+        "artifact": "fate-v2-rest-original-S04-05-ar-EG",
+        "file": "S04-05-ar-EG.wav",
+        "sha256": "e54cf3eb654fdad1923e875b81d5244283b5144484791ad4a4bf5bdac118623c",
+        "localPath": "production/funded-rest-v1/artifacts/fate-v2-rest-original-S04-05-ar-EG/S04-05-ar-EG.wav"
+      },
+      "audioGate": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S04-05-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "9fb27d497b4241b6bbec5aa0a573259193ce08813e3b98933eed34635ec8ce47",
+        "localPath": "production/rest-quality-v1/artifacts/fate-v2-rest-review-S04-05-ar-EG/review-disposition.en.json"
+      },
+      "render": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S04-05-ar-EG",
+        "file": "render.en.json",
+        "sha256": "da5b7c6fef438a446a743503d3fb7ffa16445c513cb97e8a9ee60217e8bab713",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/render.en.json"
+      },
+      "actualEncodedFramesInspected": [
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/encoded-01.png",
+          "sha256": "2ab29636b801292b06a66a0562cb3bfc8c40a46b984858313856f304a8772f2c",
+          "frame": 0,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/encoded-02.png",
+          "sha256": "b5709e84d9238fea00376eb7943992b4e6c13f6408225dd75f80a3bab1a6ea60",
+          "frame": 24,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/encoded-03.png",
+          "sha256": "c6e859ef365e83b99fbf4d891e90dfcba08f505c241db72ec6429cd788537eb5",
+          "frame": 484,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/encoded-04.png",
+          "sha256": "21bef53bd88d5eb5b9ea7987a405086e64470f63b323173a9807642204f6b806",
+          "frame": 870,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        },
+        {
+          "path": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S04-05-ar-EG/encoded-05.png",
+          "sha256": "804cbddd79929ab27c6a0884956179624366c00b2b3c80aee327e8891f7660ce",
+          "frame": 1359,
+          "actualPixelsViewed": true,
+          "inspection": "Five-frame contact sheet at960x540 per retained1920x1080 frame; actual source image identity retained."
+        }
+      ],
+      "finding": "Hypothetical field record and stream sample remain distinct from unconfirmed larval contact and population cause. Dashed arrows and alternatives support rather than overstate causal evidence.",
+      "retainedPriorActualReview": {
+        "file": "media-plan/FATE2-S04/visual-ar-EG-encoded-review-v1.en.json",
+        "sha256": "e5a53429f95cecce96268dd32654def61894881bd392df18b57324e76c6b4da0"
+      }
+    }
+  ],
+  "scope": "Exact five selected scenes;25 actual checkpoints each locale viewed, with5 new corrected and20 unchanged retained read-back. Source speech, clock and caption identities unchanged.",
+  "limits": [
+    "No continuous native playback, human full listening or independent subject certification claimed.",
+    "Master join/PCM review remains required after assembly."
+  ]
+}
