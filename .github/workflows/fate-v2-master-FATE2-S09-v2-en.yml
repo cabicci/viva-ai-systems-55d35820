@@ -1,0 +1,61 @@
+name: Fate v2 FATE2-S09 selected bilingual master assembly v2-en
+on:
+  push:
+    branches: [work/masaarat/0c0df2131ade371ac908def0]
+    paths: [experiments/course-pipeline/rebuild/fate-course-v2/rest-master-assembly/jobs/FATE2-S09-v2-en/request.json]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: fate-v2-master-FATE2-S09-v2-en
+  cancel-in-progress: false
+env:
+  PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/rest-master-assembly/jobs/FATE2-S09-v2-en
+  EXPECTED_REQUEST_SHA256: 205a85cdcb07cfdbbc507eff199edb45d8304352f9eeb1cb07d3b26b03d3dbd8
+  GH_TOKEN: ${{ github.token }}
+  PYTHONUNBUFFERED: '1'
+  MEDIA_TOOLS_PACKAGE: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+jobs:
+  assemble:
+    if: github.run_attempt == 1
+    runs-on: ubuntu-22.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        locale: ["en"]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify exact frozen companion, bootstrap and lock sources
+        run: |
+          python - <<'PY'
+          import hashlib,json,os
+          from pathlib import Path
+          request=Path(os.environ['PACKAGE'])/'request.json'
+          assert hashlib.sha256(request.read_bytes()).hexdigest()==os.environ['EXPECTED_REQUEST_SHA256']
+          data=json.loads(request.read_text())
+          for name,h in data['mediaToolsFiles'].items():assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==h
+          assert hashlib.sha256((Path(os.environ['MEDIA_TOOLS_PACKAGE'])/'request.json').read_bytes()).hexdigest()==data['mediaToolsRequestSHA256']
+          PY
+      - name: Install only the lock-pinned companion, without package scripts
+        working-directory: experiments/course-pipeline/rebuild/fate-course-v2/ci-media-tools-v1
+        run: npm ci --ignore-scripts --no-audit --no-fund
+      - name: Expose verified job-only media tools without APT
+        run: node "$MEDIA_TOOLS_PACKAGE/bootstrap.cjs" --dependency-root "$MEDIA_TOOLS_PACKAGE" --receipt "$PACKAGE/media-bootstrap-receipt.en.json"
+      - name: Preserve actual bootstrap receipt separately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-master-FATE2-S09-v2-en-media-tools-${{ matrix.locale }}
+          path: ${{ env.PACKAGE }}/media-bootstrap-receipt.en.json
+          retention-days: 30
+      - name: Verify actual clear source gates and assemble retained speech
+        run: python "$PACKAGE/assemble.py" "${{ matrix.locale }}"
+      - name: Deliver each completed step and locale immediately
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fate-v2-master-FATE2-S09-v2-en-${{ matrix.locale }}
+          path: ${{ env.PACKAGE }}/output/
+          retention-days: 30
