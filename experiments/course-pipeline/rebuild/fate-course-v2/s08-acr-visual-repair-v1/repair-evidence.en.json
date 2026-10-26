@@ -1,0 +1,178 @@
+{
+  "schema": "fate-s08-acr-actual-pixel-repair.v1",
+  "reviewer": "audio_review helper, actual encoded pixels directly inspected independently from original implementation",
+  "scope": "Exactly S08 scene4 Arabic/English visible ratio diagram; original captions, source written/spoken text, audio/PCM/gates, actual word clocks/actions/times/frames unchanged. No provider calls.",
+  "sourceContract": {
+    "path": "media-plan/FATE2-S08/scene-plan.en.json",
+    "sha256": "d0507d591e72fc23e60d9bca5a2b6421ce2822474ca4697a9a0a938a7f6399b7",
+    "scene": {
+      "step": "FATE2-S08",
+      "stepNumber": 8,
+      "sectionID": "acr",
+      "sceneIndex": 4,
+      "kind": "ratios",
+      "title": {
+        "ar": "٤. النسبة الحادة للمزمنة مش معيار نهائي",
+        "en": "4. An acute-to-chronic ratio is not a final criterion"
+      },
+      "actions": [
+        {
+          "id": "ratio",
+          "label": {
+            "ar": "نسبة حادّة إلى مزمنة",
+            "en": "An acute-to-chronic ratio"
+          },
+          "meaning": "SourceexampledividesLC50byMATCwithcompatibleunits.",
+          "equation": "ACR = LC50 / MATC"
+        },
+        {
+          "id": "compatible",
+          "label": {
+            "ar": "توافق الدراسات قبل القسمة",
+            "en": "Study compatibility before division"
+          },
+          "meaning": "Chemical,species,endpoints,durationsandmethodneedchecking."
+        },
+        {
+          "id": "criterion",
+          "label": {
+            "ar": "النسبة مش معيار مياه ساري",
+            "en": "A ratio is not an operative water criterion"
+          },
+          "meaning": "CMC/CCCderivationneedsitsactualregulatorymethodanddata."
+        }
+      ],
+      "sourceLessonSHA256": "b61348492f64b929a01727ee308cdfde1d3e4c54d4e4b1ff44975941caec15a2",
+      "spokenDraftSHA256": "bdba845d5533a2d4122b3086fd9472ca5b97a22f22f123b6446ca12151340527",
+      "ordinaryLinear": true,
+      "timing": "Actual recording anchors required. No timestamps estimated from text length.",
+      "visualLimits": "Generated backdrop is a qualitative ingredient; independent overlays are schematic and not measured data, ratios, experimental proof or native procedural3D."
+    }
+  },
+  "records": [
+    {
+      "id": "S08-04-ar-EG",
+      "status": "needs_repair",
+      "actualPixelsViewed": true,
+      "finding": "Actual diagram numerator organism mg/kg and denominator water mg/L imply L/kg, contradicting the same scene ACR=LC50/MATC. Authored source and captions require compatible concentration units; ACR is dimensionless. Correct only visible diagram roles/units, retaining exact accepted recording and actual clock.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-04-ar-EG",
+        "file": "FateV2-S08-04-ar-EG.mp4",
+        "sha256": "63e2b089e5146fc87b87a247686943f3ecc1cd27d0991e6f056c26b7605b2281",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/FateV2-S08-04-ar-EG.mp4"
+      },
+      "timingSHA256": "b947f29819be1fa0b4907fbadb95615ec9d688c1ca21eb1989cdc76410a5dd8f",
+      "renderSHA256": "b0e08d0ea487159699d274ba6e1690d570e4449c99e62ba88c0ffb81af0e1160",
+      "checkpointsViewed": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "879663fdbbf91e53ceb810aa943d507e7ed01eb0c6f3ab7ac68f8134476c83b9",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/encoded-01.png"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "0ee3f23f61e49b7cd1f97bed176ccee56d33334ae7d03942679fd1d6b668d7dd",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/encoded-02.png"
+        },
+        {
+          "frame": 209,
+          "file": "encoded-03.png",
+          "sha256": "fe0a40aaa463a8eb27f86ccc9fadba3a7797985cb8a5aacc46d3c0041c1c8d40",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/encoded-03.png"
+        },
+        {
+          "frame": 776,
+          "file": "encoded-04.png",
+          "sha256": "3cdb7769b93fddb0579b305f7728fba8c10639c1608be4804ad87dcc6e633db5",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/encoded-04.png"
+        },
+        {
+          "frame": 1179,
+          "file": "encoded-05.png",
+          "sha256": "5a759d5e4765aeaa3b5b79ecb9be175354de278ed1d538ee02fa7d180355bab6",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-ar-EG/encoded-05.png"
+        }
+      ],
+      "viewMethod": "Five actual encoded frames, contact sheet plus original-resolution caption strips",
+      "sourceAudioSHA256": "5cab79fb81f4c01a08ec82ce09d669ca4ec5fef69565b9be8bc1371a16c40790",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-04-ar-EG",
+        "file": "actual-word-clock.en.json",
+        "sha256": "f392d468ed40027502afdc25eb193d284734dae16cbc44808b7497fede017c3f"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-04-ar-EG",
+        "file": "review-disposition.en.json",
+        "sha256": "8a8aa1b888bbd9e2dd1ae894a01fdac630e279d56c92fed26069ee6a975a8523"
+      }
+    },
+    {
+      "id": "S08-04-en",
+      "status": "needs_repair",
+      "actualPixelsViewed": true,
+      "finding": "Actual diagram numerator organism mg/kg and denominator water mg/L imply L/kg, contradicting the same scene ACR=LC50/MATC. Authored source and captions require compatible concentration units; ACR is dimensionless. Correct only visible diagram roles/units, retaining exact accepted recording and actual clock.",
+      "sourceMovie": {
+        "run": 40303810225,
+        "artifact": "fate-v2-rest-ready-video-v1-S08-04-en",
+        "file": "FateV2-S08-04-en.mp4",
+        "sha256": "d329857dcf101f45c75454f254df289cfad9f991637a76074f94656b4351cabe",
+        "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/FateV2-S08-04-en.mp4"
+      },
+      "timingSHA256": "3ece23af9246f93e4736728651c8bf377996346ba8c245d1dcf9d3ec7adcb770",
+      "renderSHA256": "49bd2a796998f3922a6eddef06298f280a606886b58595921f7ad399dbffd916",
+      "checkpointsViewed": [
+        {
+          "frame": 0,
+          "file": "encoded-01.png",
+          "sha256": "ac190a43dce2fa7e5aeaad41485eba9a76c116c31fbcb4dd68ff5f6da1041f89",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/encoded-01.png"
+        },
+        {
+          "frame": 24,
+          "file": "encoded-02.png",
+          "sha256": "9f608bbd72a39481923d6e5cdf25d4ce52235033f3db51acd7b68fcc916a932c",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/encoded-02.png"
+        },
+        {
+          "frame": 214,
+          "file": "encoded-03.png",
+          "sha256": "925b4f5eedda1bc080160820f616822699feba6bb0bf80353fa459ddf30f8723",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/encoded-03.png"
+        },
+        {
+          "frame": 756,
+          "file": "encoded-04.png",
+          "sha256": "a391f02ea7de62cb894720d0b94671ad0baec873c8a26a1e4805279ac63a3284",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/encoded-04.png"
+        },
+        {
+          "frame": 1189,
+          "file": "encoded-05.png",
+          "sha256": "a945e32733bad710919216df0dce6870de94674e0e1d9b9d94178db927416a53",
+          "localPath": "production/rest-ready-scenes-v1/artifacts/fate-v2-rest-ready-video-v1-S08-04-en/encoded-05.png"
+        }
+      ],
+      "viewMethod": "Five actual encoded frames, contact sheet plus original-resolution caption strips",
+      "sourceAudioSHA256": "6a4d3922196a9d201b8712f3a8b8223924ba900f4a4231e0f89cc99297120952",
+      "sourceClock": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-clock-S08-04-en",
+        "file": "actual-word-clock.en.json",
+        "sha256": "275583ead6b258f1c1ce56bfbac252ee3f8414d6d66abab6e39e4098c12b46f8"
+      },
+      "audioGateSource": {
+        "run": 40300477367,
+        "artifact": "fate-v2-rest-review-S08-04-en",
+        "file": "review-disposition.en.json",
+        "sha256": "d3d29414568b3f28dfd47528bc4d3d810089c77f6fd51f1d48fc24ccb010c0e4"
+      }
+    }
+  ],
+  "nativePlaybackPerformed": false,
+  "humanListeningClaimed": false
+}
